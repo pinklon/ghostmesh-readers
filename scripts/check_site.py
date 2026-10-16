@@ -72,6 +72,22 @@ for name in ("Why REA is bigger than cloning software",
              "How Notion", "calculator", "Ledger Reborn", "What GhostMesh should consider"):
     if name.casefold() not in second.casefold():
         errors.append("Reader 002 missing chapter/implication "+name)
+# Share and footer controls are a contract on every published Reader.
+for slug in ("the-score-is-not-the-system","when-software-becomes-legible"):
+    article=(site/slug/"index.html").read_text(encoding="utf8")
+    for token in ('/brand/ghostmesh-mark.svg', '/assets/reader-chrome.css',
+                  '/assets/reader-share.js', 'data-gm-share', 'data-copy-link',
+                  'data-native-share', 'data-email-link', 'gm-reader-footer',
+                  'href="/"','https://ghostmesh.ai/','https://shareplane.malott.ai/',
+                  'https://malott.ai/','mailto:ghostmesh@malott.ai'):
+        if token not in article:
+            errors.append(f"Reader {slug} missing shared chrome: {token}")
+    if '/.netlify/scripts/hud?' in article:
+        errors.append(f"Reader {slug} includes captured Netlify-injected script")
+for asset in ("assets/reader-chrome.css","assets/reader-share.js",
+              "brand/ghostmesh-mark.svg"):
+    if not (site/asset).is_file():
+        errors.append("missing shared Reader asset: "+asset)
 xml=ET.parse(site/"sitemap.xml")
 urls=[x.text for x in xml.getroot().iter() if x.tag.endswith("loc")]
 for path in ("/","/the-score-is-not-the-system/","/when-software-becomes-legible/"):

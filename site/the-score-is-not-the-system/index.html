@@ -40,10 +40,12 @@ details{border:1px solid var(--edge);border-radius:9px;margin-top:14px;overflow:
 .site-privacy-note{font-size:.85rem;color:var(--muted);border-top:1px solid var(--edge);padding-top:12px}
 @media(max-width:600px){#thesis .thesis-subhead{margin-top:1.7rem}#thesis .thesis-principle{padding:1rem}}
 </style>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/reader-chrome.css">
 </head>
 <body id="top">
 <header class="topbar"><div class="wrap topbar-inner">
-<a class="brand" href="/" aria-label="Return to GhostMesh Readers home"><span class="brand-mark" aria-hidden="true">G</span><span><strong>GHOSTMESH</strong><small>SHAREPLANE / READER EDITION</small></span></a>
+<a class="brand" href="/" aria-label="GhostMesh Readers home"><img class="gm-logo-mark" src="/brand/ghostmesh-mark.svg" alt="" width="45" height="34"><span><strong class="gm-wordmark">GHOST<em>MESH</em></strong><small class="gm-brand-note">IDENTITY / KNOWLEDGE / CONTINUITY</small></span></a>
 <nav class="nav-actions" aria-label="Reader tools"><a class="nav-link" href="#thesis">The thesis ↓</a><a class="nav-link" href="#chapters">Chapters ↓</a><button type="button" class="nav-button" id="theme-toggle" aria-label="Toggle light and dark theme">◐ Theme</button><button type="button" class="nav-button" id="print-page">Print</button></nav>
 </div></header>
 <section class="hero" aria-label="Original video and introductory analysis"><div class="wrap">
@@ -51,6 +53,10 @@ details{border:1px solid var(--edge);border-radius:9px;margin-top:14px;overflow:
 <h1>The score is not<br>the system.</h1>
 <p class="deck">AI agents escaped an evaluation. Elsewhere, agents reportedly played in a world without grades. One compelling video, two very different evidence standards, and a question that matters for real autonomous systems.</p>
 <div class="source-meta"><span>Count Grey Matter</span><span>October 7, 2026</span><span>14:09 source video</span><span>SHA-256 verified source capture</span></div>
+<aside class="gm-sharebar" data-gm-share aria-label="Share this GhostMesh Reader">
+<span class="gm-share-label">Share this Reader</span>
+<div class="gm-share-actions"><button class="gm-share-button" type="button" data-native-share>↗ Share</button><button class="gm-share-button" type="button" data-copy-link>⧉ Copy link</button><a class="gm-share-email" href="mailto:" data-email-link>✉ Email</a><span class="gm-share-message" data-gm-share-message role="status" aria-live="polite"></span></div>
+</aside>
 <div class="theater" id="watch"><div class="theater-head"><span><span class="source-pill">SOURCE VIDEO</span> &nbsp; AI Agents Escaped Their Test - Others Became Cats</span><span>▶ PLAY IN PAGE</span></div>
 <div class="player-ratio"><button class="video-cover" id="play-cover" type="button" aria-label="Play the original YouTube video within this Reader"><span class="cover-center"><span class="cover-circle" aria-hidden="true">▶</span><b>PLAY THE ORIGINAL VIDEO</b><small>Count Grey Matter · 14:09</small></span></button><iframe id="youtube-player" hidden title="Play Count Grey Matter video: AI Agents Escaped Their Test - Others Became Cats" src="about:blank" loading="eager" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
 <div class="player-foot"><div class="video-actions"><a class="play-link primary" href="https://www.youtube.com/watch?v=ZhM29Ds-mBg" target="_blank" rel="noopener noreferrer">↗ Watch on YouTube</a><a class="play-link" href="#chapters">▶ Play by chapter</a></div><p class="play-note">If your local HTML viewer blocks embedded playback, the YouTube link always opens the original.</p></div></div>
@@ -144,7 +150,10 @@ details{border:1px solid var(--edge);border-radius:9px;margin-top:14px;overflow:
 <p class="boundary note"><strong>Reader limitation:</strong> Automatic captions can contain repetition and transcription errors. This Reader is assistant-authored analysis grounded in the verified media package and linked references, not a separately commissioned model execution or an owner-approved public SharePlane Work. No Gmail email was sent and no Production service was changed.</p>
 </section>
 </main>
-<footer class="footer"><div class="wrap">GHOSTMESH / REASONPACK READER EDITION · WATCH · VERIFY · THINK<br>Private editorial draft · Source belongs to its creator · SharePlane-informed thesis clearly attributed</div></footer>
+<footer class="gm-reader-footer" aria-label="GhostMesh destinations"><div class="gm-reader-footer-inner">
+<div><a class="gm-footer-brand" href="/"><img class="gm-logo-mark" src="/brand/ghostmesh-mark.svg" alt="" width="45" height="34"><strong>GHOST<em>MESH</em></strong></a><p class="gm-reader-footer-note">Read the source. Examine the evidence. Challenge the interpretation.<br>GhostMesh editorial · © 2026 GhostMesh / Tony Malott.</p></div>
+<nav class="gm-footer-links" aria-label="Reader footer navigation"><a href="/">← Readers home</a><a href="/#readers">All Readers</a><a href="/when-software-becomes-legible/">More: When software becomes legible ↗</a><a href="https://ghostmesh.ai/">GhostMesh.ai ↗</a><a href="https://shareplane.malott.ai/">SharePlane ↗</a><a href="https://malott.ai/">Tony Malott ↗</a><a href="mailto:ghostmesh@malott.ai?subject=GhostMesh%20Reader%20feedback">Contact GhostMesh ✉</a></nav>
+</div></footer>
 <div id="toast" role="status" aria-live="polite" style="position:fixed;bottom:19px;left:50%;transform:translateX(-50%);background:#202024;color:white;padding:9px 15px;border-radius:9px;font-size:12px;display:none;z-index:30"></div>
 <script>
 (function(){
@@ -167,4 +176,5 @@ function notify(message){toast.textContent=message;toast.style.display='block';c
 document.getElementById('copy-thesis').addEventListener('click',async()=>{const message='GHOSTMESH ORIGINAL READER THESIS\nThe score is not the system.\n\n'+thesis+'\n\nA score is evidence about a system. It must never become the system\'s authority.\n\nProbabilistic semantics. Deterministic authority.\n\nGhostMesh-authored interpretation; not authored or approved by Tony.\nSource: https://www.youtube.com/watch?v=ZhM29Ds-mBg';try{await navigator.clipboard.writeText(message);notify('Thesis copied')}catch(e){const x=document.createElement('textarea');x.value=message;x.style.position='fixed';x.style.top='-9999px';document.body.appendChild(x);x.select();try{document.execCommand('copy');notify('Thesis copied')}catch(e2){notify('Copy unavailable in this viewer')}x.remove()}});
 })();
 </script>
-</body></html><script async src="/.netlify/scripts/hud?variant=public" data-nf-variant="public" data-netlify-site-id="27352ed6-0f74-4756-832e-95ba49e31b09" data-app-host="app.netlify.com" data-account-tier="free"></script>
+<script src="/assets/reader-share.js" defer></script>
+</body></html>
