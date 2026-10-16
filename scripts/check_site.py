@@ -36,6 +36,24 @@ for p in site.rglob("*.html"):
             errors.append(f"broken anchor {p.name}: {href}")
     if p.name=="index.html" and f'<link rel="canonical" href="{host}' not in raw:
         errors.append("canonical mismatch "+str(p))
+# Homepage contract: original thumbnails and opt-in in-page previews must remain
+# prominent, while each article still has its own editorial action.
+home=(site/"index.html").read_text(encoding="utf8")
+for video_id,slug in (("ZhM29Ds-mBg","the-score-is-not-the-system"),
+                       ("PseF3LyXQ04","when-software-becomes-legible")):
+    for marker in (f'i.ytimg.com/vi/{video_id}/hqdefault.jpg',
+                   f'data-video-id="{video_id}"',
+                   f'https://www.youtube.com/watch?v={video_id}',
+                   f'href="/{slug}/"'):
+        if marker not in home: errors.append("homepage video/editorial link missing "+marker)
+if "youtube-nocookie.com/embed/" not in home or "reader-preview" not in home:
+    errors.append("homepage click-to-play player missing")
+for address in ("tony@malott.ai","ghostmesh@malott.ai"):
+    if f"mailto:{address}" not in home: errors.append("homepage contact missing "+address)
+for marker in ("first public reference implementation",
+               "architecture and the connected mesh",
+               "personal and professional identity"):
+    if marker not in home: errors.append("homepage ecosystem description missing "+marker)
 reader=(site/"the-score-is-not-the-system/index.html").read_text(encoding="utf8")
 for marker in ("The Score Is Not the System","ZhM29Ds-mBg",'id="youtube-player"'):
     if marker not in reader: errors.append("Reader missing "+marker)
