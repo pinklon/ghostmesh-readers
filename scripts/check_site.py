@@ -9,7 +9,8 @@ import xml.etree.ElementTree as ET
 site = Path(__file__).resolve().parents[1] / "site"
 host = "https://youtube.shareplane.malott.ai"
 required = ("index.html","404.html","favicon.svg","robots.txt","sitemap.xml","site.webmanifest",
-            "_headers","the-score-is-not-the-system/index.html")
+            "_headers","the-score-is-not-the-system/index.html",
+            "when-software-becomes-legible/index.html")
 errors = []
 class Page(HTMLParser):
     def __init__(self): super().__init__(); self.links=[]; self.ids=set()
@@ -38,9 +39,24 @@ for p in site.rglob("*.html"):
 reader=(site/"the-score-is-not-the-system/index.html").read_text(encoding="utf8")
 for marker in ("The Score Is Not the System","ZhM29Ds-mBg",'id="youtube-player"'):
     if marker not in reader: errors.append("Reader missing "+marker)
+# The second Reader must retain the user's editorial/video-first acceptance criteria.
+# These are static checks; real YouTube playback is checked separately in a browser.
+second=(site/"when-software-becomes-legible/index.html").read_text(encoding="utf8")
+for label in ("PseF3LyXQ04","youtube-nocookie.com/embed/PseF3LyXQ04",
+              "www.youtube.com/watch?v=PseF3LyXQ04"):
+    if label not in second: errors.append("Reader 002 missing source/playback "+label)
+if "i.ytimg.com/vi/PseF3LyXQ04/" not in second:
+    errors.append("Reader 002 must show real YouTube thumbnail")
+chapters=[int(x) for x in re.findall(r'data-start="(\d+)"',second)]
+expected=[0,65,189,218,268,343,529,661,800,990,1126,1192]
+if chapters!=expected: errors.append("Reader 002 12 in-page chapter start points drift")
+for name in ("Why REA is bigger than cloning software",
+             "How Notion", "calculator", "Ledger Reborn", "What GhostMesh should consider"):
+    if name.casefold() not in second.casefold():
+        errors.append("Reader 002 missing chapter/implication "+name)
 xml=ET.parse(site/"sitemap.xml")
 urls=[x.text for x in xml.getroot().iter() if x.tag.endswith("loc")]
-for path in ("/","/the-score-is-not-the-system/"):
+for path in ("/","/the-score-is-not-the-system/","/when-software-becomes-legible/"):
     if host+path not in urls: errors.append("sitemap missing "+path)
 if errors:
     for x in errors: print("FAIL:",x)
