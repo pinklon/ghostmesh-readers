@@ -1,0 +1,8 @@
+{
+  "name": "GhostMesh Readers",
+  "short_name": "GhostMesh",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#111114",
+  "theme_color": "#c72736"
+}

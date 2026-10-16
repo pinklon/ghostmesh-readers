@@ -1,0 +1,48 @@
+#!/usr/bin/env python3
+"""Offline static-site contract checks (Python standard library only)."""
+from pathlib import Path
+from html.parser import HTMLParser
+import sys
+import re
+import xml.etree.ElementTree as ET
+
+site = Path(__file__).resolve().parents[1] / "site"
+host = "https://youtube.shareplane.malott.ai"
+required = ("index.html","404.html","favicon.svg","robots.txt","sitemap.xml","site.webmanifest",
+            "_headers","the-score-is-not-the-system/index.html")
+errors = []
+class Page(HTMLParser):
+    def __init__(self): super().__init__(); self.links=[]; self.ids=set()
+    def handle_starttag(self,tag,attrs):
+        a=dict(attrs)
+        if a.get("id"): self.ids.add(a["id"])
+        if tag in ("a","link") and a.get("href"): self.links.append(a["href"])
+for rel in required:
+    p=site/rel
+    if not p.is_file() or p.stat().st_size==0: errors.append("missing "+rel)
+for p in site.rglob("*.html"):
+    raw=p.read_text(encoding="utf8")
+    parsed=Page(); parsed.feed(raw)
+    if "https://readers.shareplane.malott.ai" in raw: errors.append("stale canonical "+str(p))
+    if re.search(r"/Users/|/private/var/tmp/|/srv/ghostmesh/|ghp_[A-Za-z0-9]{20,}",raw):
+        errors.append("private-source marker "+str(p))
+    for href in parsed.links:
+        if href.startswith("/") and not href.startswith("//"):
+            path=(site/href.split("#",1)[0].split("?",1)[0].lstrip("/"))
+            if not (path.is_file() or (path/"index.html").is_file()):
+                errors.append(f"broken internal link {p.name}: {href}")
+        elif href.startswith("#") and href[1:] and href[1:] not in parsed.ids:
+            errors.append(f"broken anchor {p.name}: {href}")
+    if p.name=="index.html" and f'<link rel="canonical" href="{host}' not in raw:
+        errors.append("canonical mismatch "+str(p))
+reader=(site/"the-score-is-not-the-system/index.html").read_text(encoding="utf8")
+for marker in ("The Score Is Not the System","ZhM29Ds-mBg",'id="youtube-player"'):
+    if marker not in reader: errors.append("Reader missing "+marker)
+xml=ET.parse(site/"sitemap.xml")
+urls=[x.text for x in xml.getroot().iter() if x.tag.endswith("loc")]
+for path in ("/","/the-score-is-not-the-system/"):
+    if host+path not in urls: errors.append("sitemap missing "+path)
+if errors:
+    for x in errors: print("FAIL:",x)
+    sys.exit(1)
+print("PASS: required files, links, canonical hostname, sitemap, and source hygiene")

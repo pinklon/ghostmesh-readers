@@ -1,0 +1,3 @@
+# Dependency-free static publishing, isolated from SharePlane Production.
+[build]
+  publish = "site"
