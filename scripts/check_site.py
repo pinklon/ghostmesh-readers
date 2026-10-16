@@ -11,7 +11,8 @@ host = "https://youtube.shareplane.malott.ai"
 required = ("index.html","404.html","favicon.svg","robots.txt","sitemap.xml","site.webmanifest",
             "_headers","the-score-is-not-the-system/index.html",
             "when-software-becomes-legible/index.html",
-            "the-agent-a-company-owns/index.html")
+            "the-agent-a-company-owns/index.html",
+            "when-agents-become-the-customer/index.html")
 errors = []
 class Page(HTMLParser):
     def __init__(self): super().__init__(); self.links=[]; self.ids=set()
@@ -42,7 +43,8 @@ for p in site.rglob("*.html"):
 home=(site/"index.html").read_text(encoding="utf8")
 for video_id,slug in (("ZhM29Ds-mBg","the-score-is-not-the-system"),
                        ("PseF3LyXQ04","when-software-becomes-legible"),
-                       ("HQXi4snP36I","the-agent-a-company-owns")):
+                       ("HQXi4snP36I","the-agent-a-company-owns"),
+                       ("2DmP5etgh4U","when-agents-become-the-customer")):
     for marker in (f'i.ytimg.com/vi/{video_id}/hqdefault.jpg',
                    f'data-video-id="{video_id}"',
                    f'https://www.youtube.com/watch?v={video_id}',
@@ -106,13 +108,51 @@ for source in ("https://vercel.com/blog/introducing-eve", "https://github.com/ve
                "https://vercel.com/kb/guide/github-agent-eve"):
     if f'href="{source}"' not in third: errors.append("Reader 003 missing source "+source)
 allowlist=re.search(r"const allowed = new Set\(\[(.*?)\]\)",home)
-if not allowlist or re.findall(r"'([^']+)'",allowlist[1]) != ["ZhM29Ds-mBg","PseF3LyXQ04","HQXi4snP36I"]:
-    errors.append("homepage player allowlist must contain exactly the three source IDs")
+if not allowlist or re.findall(r"'([^']+)'",allowlist[1]) != ["ZhM29Ds-mBg","PseF3LyXQ04","HQXi4snP36I","2DmP5etgh4U"]:
+    errors.append("homepage player allowlist must contain exactly the four source IDs")
 if "Explore GhostMesh's take on company agents" not in home:
     errors.append("homepage third editorial action missing")
+# Reader 004: caption-grounded editorial, explicit comparisons, and opt-in seeks.
+fourth=(site/"when-agents-become-the-customer/index.html").read_text(encoding="utf8")
+for marker in ("When Agents Become the Customer", "How to build a $10B AI company (Supabase Co-Founder)",
+               "David Ondrej", "Ant Wilson", "October 16, 2026", "50:26",
+               "https://i.ytimg.com/vi/2DmP5etgh4U/hqdefault.jpg",
+               "youtube-nocookie.com/embed/2DmP5etgh4U", 'id="player"', 'id="play"',
+               "document.createElement('iframe')", "GHOSTMESH EDITORIAL CHAPTERS",
+               '<details class="convergence">', "Independent Convergence / Disagreement",
+               "snapshot as of Oct16, 2026", "Caption attribution", "Primary documentation",
+               "GhostMesh inference", "9,452", "1,341", "2,649", "3,027.599",
+               "What GhostMesh should consider", "Borrow /", "Experiment /", "Hold /",
+               "not yet commissioned", "caption-grounded", "no substantiated position compared"):
+    if marker not in fourth: errors.append("Reader 004 missing contract: "+marker)
+if re.search(r"<iframe\b",fourth,re.I): errors.append("Reader 004 iframe must wait for interaction")
+starts=[int(x) for x in re.findall(r'data-start="(\d+)"',fourth)]
+if starts != [0,480,720,960,1200,1440,1680,2160,2640,2880]:
+    errors.append("Reader 004 ten editorial chapter starts drift")
+for sec in starts:
+    if f'watch?v=2DmP5etgh4U&amp;t={sec}s' not in fourth:
+        errors.append(f"Reader 004 missing chapter fallback {sec}")
+if fourth.find('id="editorial-body"') > fourth.find('<details class="convergence">'):
+    errors.append("Reader 004 thesis must precede comparison")
+for slug in ("the-score-is-not-the-system","when-software-becomes-legible","the-agent-a-company-owns"):
+    if f'href="/{slug}/"' not in fourth: errors.append("Reader 004 missing prior edition "+slug)
+for source in ("https://supabase.com/blog/supabase-is-acquiring-turso",
+               "https://supabase.com/blog/select-2026-build-anything",
+               "https://supabase.com/blog/local-supabase-project-per-agent-with-or-without-docker",
+               "https://supabase.com/blog/supabase-agent-skills",
+               "https://supabase.com/docs/guides/auth/oauth-server/mcp-authentication",
+               "https://supabase.com/blog/introducing-supabase-evals",
+               "https://developers.openai.com/api/docs/guides/agents/sdk",
+               "https://developers.openai.com/api/docs/guides/agents/guardrails-approvals",
+               "https://platform.claude.com/docs/en/managed-agents/permission-policies",
+               "https://github.com/QwenLM/Qwen-Agent",
+               "https://api-docs.deepseek.com/guides/tool_calls/", "https://www.cloudroom.dev/about"):
+    if f'href="{source}"' not in fourth: errors.append("Reader 004 missing primary source "+source)
+if "Read GhostMesh’s take on agents as software customers" not in home:
+    errors.append("homepage fourth editorial action missing")
 # Share and footer controls are a contract on every published Reader.
 for slug in ("the-score-is-not-the-system","when-software-becomes-legible",
-             "the-agent-a-company-owns"):
+             "the-agent-a-company-owns","when-agents-become-the-customer"):
     article=(site/slug/"index.html").read_text(encoding="utf8")
     for token in ('/brand/ghostmesh-mark.svg', '/assets/reader-chrome.css',
                   '/assets/reader-share.js', 'data-gm-share', 'data-copy-link',
@@ -129,7 +169,7 @@ for asset in ("assets/reader-chrome.css","assets/reader-share.js",
         errors.append("missing shared Reader asset: "+asset)
 xml=ET.parse(site/"sitemap.xml")
 urls=[x.text for x in xml.getroot().iter() if x.tag.endswith("loc")]
-for path in ("/","/the-score-is-not-the-system/","/when-software-becomes-legible/","/the-agent-a-company-owns/"):
+for path in ("/","/the-score-is-not-the-system/","/when-software-becomes-legible/","/the-agent-a-company-owns/","/when-agents-become-the-customer/"):
     if host+path not in urls: errors.append("sitemap missing "+path)
 if errors:
     for x in errors: print("FAIL:",x)
