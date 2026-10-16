@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0f1115">
+<title>When software becomes legible — GhostMesh Reader 002</title>
+<meta name="description" content="The interface is the smallest part of the contract. A GhostMesh Reader on REA, implementation evidence, and the human decisions that remain.">
+<link rel="canonical" href="https://youtube.shareplane.malott.ai/when-software-becomes-legible/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="article"><meta property="og:title" content="When software becomes legible — GhostMesh Reader 002">
+<meta property="og:description" content="The interface is the smallest part of the contract. Source, interpretation, and explicit limits.">
+<meta property="og:url" content="https://youtube.shareplane.malott.ai/when-software-becomes-legible/"><meta name="twitter:card" content="summary">
+<style>    :root { color-scheme: dark; --bg: #0f1115; --ink: #f4f5f7; --muted: #a8adb8; --line: #30343c; --red: #c8102e; --accent: #ff7185; }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 24px; }
+    body { margin: 0; background: var(--bg); color: var(--ink); font: 16px/1.65 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; -webkit-font-smoothing: antialiased; }
+    a { color: inherit; text-decoration: none; }
+    a:hover { color: #fff; }
+    a:focus-visible { outline: 2px solid var(--accent); outline-offset: 6px; }
+    ::selection { background: var(--red); color: white; }
+    .wrap { width: min(1280px, calc(100% - 96px)); margin-inline: auto; }
+    .skip { position: absolute; top: -80px; left: 24px; background: white; color: #0f1115; padding: 12px; z-index: 5; }
+    .skip:focus { top: 12px; color: #0f1115; }
+    header { border-bottom: 1px solid var(--line); }
+    .header-inner { min-height: 100px; display: flex; justify-content: space-between; align-items: center; gap: 32px; }
+    .brand { display: inline-flex; align-items: center; gap: 15px; }
+    .brand img { width: 54px; height: 40px; }
+    .wordmark { font-size: 16px; font-weight: 750; letter-spacing: .22em; }
+    .wordmark span { color: #e4314d; }
+    .brand small { display: block; font-size: 9px; color: var(--muted); letter-spacing: .25em; margin-top: 2px; }
+    nav { display: flex; flex-wrap: wrap; gap: 27px; font-size: 12px; }
+    nav a { color: #b9bec8; padding-block: 8px; border-bottom: 1px solid transparent; }
+    .eyebrow { font: 10px/1.5 ui-monospace, SFMono-Regular, Consolas, monospace; letter-spacing: .18em; text-transform: uppercase; color: var(--muted); }
+    .eyebrow::before { content: ""; display: inline-block; width: 19px; height: 2px; background: var(--red); vertical-align: middle; margin-right: 12px; }
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; }
+    .button { display: inline-flex; justify-content: space-between; gap: 30px; align-items: center; padding: 13px 20px; border: 1px solid #555b66; font-size: 12px; font-weight: 650; transition: background .2s, border-color .2s; }
+    .button.primary { background: var(--red); border-color: var(--red); }
+    .button:hover { background: #252a33; border-color: #c2c7d0; }
+    .button.primary:hover { background: #a90c26; border-color: #ed4964; }
+    section.content { padding-block: 88px; }
+    .section-heading { display: flex; justify-content: space-between; gap: 40px; align-items: end; margin-bottom: 32px; }
+    h2 { font-size: clamp(32px, 3.4vw, 46px); font-weight: 550; line-height: 1.15; letter-spacing: -.045em; margin: 15px 0 0; }
+    .section-heading p { color: var(--muted); max-width: 345px; font-size: 14px; margin: 0; }
+    .about { border-block: 1px solid var(--line); background: #12151a; }
+    .authority { border-left: 2px solid var(--red); padding-left: 20px; margin-top: 32px; color: #e1e4eb; font-size: 14px; }
+    footer { border-top: 1px solid var(--line); padding: 34px 0; }
+    .footer-inner { display: flex; justify-content: space-between; align-items: center; gap: 30px; }
+    footer p { color: var(--muted); font-size: 11px; margin: 0; }
+    footer a { font-size: 11px; }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation: none !important; transition: none !important; } }
+    [hidden] { display:none !important; }
+    @media(max-width:950px){.wrap{width:calc(100% - 48px)}nav{gap:16px}.wordmark{font-size:13px}}
+    @media(max-width:700px){.wrap{width:calc(100% - 40px)}.header-inner{flex-direction:column;align-items:start;gap:12px;padding-block:20px}nav{gap:23px;width:100%}section.content{padding-block:56px}.section-heading{flex-direction:column;align-items:start;gap:20px}.footer-inner{flex-wrap:wrap}}
+    .reader-hero { padding: 54px 0 0; }
+    .reader-heading { display:grid;grid-template-columns:1.5fr 1fr;gap:60px;align-items:end;margin-bottom:38px; }
+    .reader-heading h1 {font-size:clamp(46px,5.5vw,76px);margin:22px 0 0;max-width:850px;}
+    .reader-heading p {color:var(--muted);font-size:15px;margin:0;}
+    .player {aspect-ratio:16/9;position:relative;border:1px solid #555b66;background:radial-gradient(ellipse at 70% 50%,#36202a 0,transparent 65%),linear-gradient(#ffffff05 1px,transparent 1px),linear-gradient(90deg,#ffffff05 1px,transparent 1px),#12151b;background-size:auto,40px 40px,40px 40px,auto;display:grid;place-items:center;overflow:hidden;}
+    .player iframe {width:100%;height:100%;border:0;position:absolute;inset:0;}
+    .launch {text-align:center;padding:24px;max-width:600px;}
+    .launch p {font-size:13px;color:var(--muted);}
+    .launch .button {font-size:16px;cursor:pointer;color:white;}
+    .source-meta {display:flex;justify-content:space-between;flex-wrap:wrap;gap:15px;padding:18px 0;font-size:12px;color:var(--muted);border-bottom:1px solid var(--line);}
+    .source-meta a,.prose a,.ledger a,.provenance a {text-decoration:underline;text-underline-offset:4px;}
+    .source-title {font-size:16px;font-weight:500;letter-spacing:-.01em;line-height:1.5;margin:22px 0 8px;}
+    .chapters {display:grid;grid-template-columns:repeat(6,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin:20px 0 0;}
+    .chapter {display:flex;align-items:center;justify-content:space-between;gap:8px;background:#14171d;padding:12px;}
+    .chapter a {font:12px ui-monospace,monospace;color:#d7dce5;text-decoration:underline;text-underline-offset:4px;}
+    .chapter button {background:transparent;color:var(--accent);border:1px solid #555b66;padding:6px 9px;cursor:pointer;}
+    button:focus-visible {outline:2px solid var(--accent);outline-offset:4px;}
+    .chapter button:hover {background:#30343c;}
+    .reading-grid {display:grid;grid-template-columns:250px minmax(0,760px);justify-content:space-between;gap:60px;padding-block:80px;}
+    .reading-grid aside p {font-size:13px;color:var(--muted);}
+    .prose {font-size:18px;line-height:1.85;}
+    .prose h2 {margin:0 0 28px;}
+    .prose p {margin:0 0 24px;color:#c5cad3;}
+    .prose strong {color:var(--ink);font-weight:600;}
+    .pull {border-left:2px solid var(--red);padding:18px 0 18px 24px;font-size:28px;line-height:1.4;letter-spacing:-.03em;color:var(--ink);margin:32px 0;}
+    .ledger {width:100%;border-collapse:collapse;font-size:14px;}
+    .ledger th,.ledger td {text-align:left;vertical-align:top;padding:22px 18px;border-bottom:1px solid var(--line);}
+    .ledger th {font:10px ui-monospace,monospace;letter-spacing:.1em;color:var(--muted);}
+    .ledger td:first-child {width:22%;color:var(--accent);font:12px/1.7 ui-monospace,monospace;}
+    .ledger td:last-child {width:24%;}
+    .experiment {padding:36px;border:1px solid #555b66;background:linear-gradient(120deg,#1c2029,#111318);}
+    .experiment h2 {margin-bottom:24px;}
+    .experiment li {padding:0 0 16px 8px;color:#c5cad3;}
+    .provenance {max-width:880px;color:var(--muted);font-size:14px;}
+    .provenance h2 {color:var(--ink);margin-bottom:24px;}
+    .sr-only {position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;}
+    @media(max-width:900px){.reader-heading{grid-template-columns:1fr;gap:24px}.reading-grid{grid-template-columns:1fr;gap:24px}.reading-grid aside{max-width:600px}.chapters{grid-template-columns:repeat(4,1fr)}}
+    @media(max-width:600px){.ledger thead{display:none}.ledger,.ledger tbody,.ledger tr,.ledger td{display:block;width:100%!important}.ledger tr{border-bottom:1px solid var(--line);padding:14px 0}.ledger td{border-bottom:0!important;padding:5px 0!important;overflow-wrap:anywhere}.ledger td:first-child{font-size:11px!important;letter-spacing:.05em}.ledger td:last-child{padding-top:10px!important}}
+    @media(max-width:600px){.reader-hero{padding-top:36px}.chapters{grid-template-columns:repeat(3,1fr)}.chapter{padding:9px}.prose{font-size:17px}.reading-grid{padding-block:50px}.ledger th,.ledger td{padding:15px 8px;font-size:12px}.ledger td:first-child{width:25%;font-size:10px}.experiment{padding:24px}.launch p{font-size:11px}.launch .button{font-size:14px;padding:10px 16px}}
+</style></head>
+<body id="top"><a class="skip" href="#main">Skip to content</a>
+<header><div class="wrap header-inner"><a class="brand" href="/" aria-label="GhostMesh home"><img src="/brand/ghostmesh-mark.svg" alt="" width="54" height="40"><div><div class="wordmark">GHOST<span>MESH</span></div><small>IDENTITY / KNOWLEDGE / CONTINUITY</small></div></a><nav aria-label="Main navigation"><a href="/">Home</a><a href="/#readers">Readers</a><a href="#thesis">Thesis</a><a href="#evidence">Evidence</a></nav></div></header>
+<main id="main">
+<section class="wrap reader-hero" aria-labelledby="reader-title"><div class="reader-heading"><div><div class="eyebrow">GhostMesh Readers / 002 / October 16, 2026</div><h1 id="reader-title">When software<br>becomes <span>legible.</span></h1></div><p>Start with the source. Examine the mechanism. Keep the decision yours.<br><br>An independent GhostMesh reading of Nate B Jones on REA and the work hidden behind a convincing interface.</p></div>
+<div class="player" id="player"><div class="launch" id="launch"><div class="eyebrow">Source video / 22:37</div><button class="button primary" id="play" type="button" hidden>Play source video <span aria-hidden="true">▶</span></button><noscript><a class="button primary" href="https://www.youtube.com/watch?v=PseF3LyXQ04">Watch source on YouTube ↗</a></noscript><p>Playing loads YouTube’s privacy-enhanced embedded player. No player is loaded before you choose to play.</p></div></div>
+<p id="player-status" class="sr-only" role="status"></p>
+<h2 class="source-title">Your Vibe-Coded App Can Look Right And Fall Apart After Launch. REA Shows You How Real Teams Build.</h2>
+<div class="source-meta"><span>AI News &amp; Strategy Daily | Nate B Jones · Published October 15, 2026 · 22:37 (1,357 seconds)</span><a href="https://www.youtube.com/watch?v=PseF3LyXQ04">Watch on YouTube ↗</a></div>
+<div style="margin-top:28px" class="eyebrow">Source navigation / chapter timestamps</div><p style="color:var(--muted);font-size:12px">Times are supplied source metadata. Select a time for YouTube, or ▶ to start the embedded player there. No editorial chapter titles have been inferred.</p>
+<div class="chapters" aria-label="Source chapter navigation"><div class="chapter"><a href="https://www.youtube.com/watch?v=PseF3LyXQ04&amp;t=0s" aria-label="Watch source at 00:00 on YouTube">00:00</a><button type="button" data-start="0" aria-label="Play embedded video from 00:00" hidden>▶</button></div><div class="chapter"><a href="https://www.youtube.com/watch?v=PseF3LyXQ04&amp;t=65s" aria-label="Watch source at 01:05 on YouTube">01:05</a><button type="button" data-start="65" aria-label="Play embedded video from 01:05" hidden>▶</button></div><div class="chapter"><a href="https://www.youtube.com/watch?v=PseF3LyXQ04&amp;t=189s" aria-label="Watch source at 03:09 on YouTube">03:09</a><button type="button" data-start="189" aria-label="Play embedded video from 03:09" hidden>▶</button></div><div class="chapter"><a href="https://www.youtube.com/watch?v=PseF3LyXQ04&amp;t=218s" aria-label="Watch source at 03:38 on YouTube">03:38</a><button type="button" data-start="218" aria-label="Play embedded video from 03:38" hidden>▶</button></div><div class="chapter"><a href="https://www.youtube.com/watch?v=PseF3LyXQ04&amp;t=268s" aria-label="Watch source at 04:28 on YouTube">04:28</a><button type="button" data-start="268" aria-label="Play embedded video from 04:28" hidden>▶</button></div><div class="chapter"><a href="https://www.youtube.com/watch?v=PseF3LyXQ04&amp;t=343s" aria-label="Watch source at 05:43 on YouTube">05:43</a><button type="button" data-start="343" aria-label="Play embedded video from 05:43" hidden>▶</button></div><div class="chapter"><a href="https://www.youtube.com/watch?v=PseF3LyXQ04&amp;t=529s" aria-label="Watch source at 08:49 on YouTube">08:49</a><button type="button" data-start="529" aria-label="Play embedded video from 08:49" hidden>▶</button></div><div class="chapter"><a href="https://www.youtube.com/watch?v=PseF3LyXQ04&amp;t=661s" aria-label="Watch source at 11:01 on YouTube">11:01</a><button type="button" data-start="661" aria-label="Play embedded video from 11:01" hidden>▶</button></div><div class="chapter"><a href="https://www.youtube.com/watch?v=PseF3LyXQ04&amp;t=800s" aria-label="Watch source at 13:20 on YouTube">13:20</a><button type="button" data-start="800" aria-label="Play embedded video from 13:20" hidden>▶</button></div><div class="chapter"><a href="https://www.youtube.com/watch?v=PseF3LyXQ04&amp;t=990s" aria-label="Watch source at 16:30 on YouTube">16:30</a><button type="button" data-start="990" aria-label="Play embedded video from 16:30" hidden>▶</button></div><div class="chapter"><a href="https://www.youtube.com/watch?v=PseF3LyXQ04&amp;t=1126s" aria-label="Watch source at 18:46 on YouTube">18:46</a><button type="button" data-start="1126" aria-label="Play embedded video from 18:46" hidden>▶</button></div><div class="chapter"><a href="https://www.youtube.com/watch?v=PseF3LyXQ04&amp;t=1192s" aria-label="Watch source at 19:52 on YouTube">19:52</a><button type="button" data-start="1192" aria-label="Play embedded video from 19:52" hidden>▶</button></div></div></section>
+<article class="wrap reading-grid" id="thesis"><aside><div class="eyebrow">01 / Independent thesis</div><p>GhostMesh interpretation.<br>The argument below is ours; the video supplies examples, not endorsement.</p><div class="authority">Probabilistic semantics.<br>Deterministic authority.</div></aside><div class="prose"><h2>The interface is the smallest part of the contract.</h2>
+<p>A screen makes a promise before a system has earned it. A payment button promises that money will be recorded correctly. A copied quotation promises that its meaning will survive the move. A percentage key promises a calculation whose context the user may never articulate. The visible interface is where we encounter these promises. The contract lives in the relationships, permissions, and failure behavior underneath.</p>
+<p>Nate’s video makes that hidden work approachable through implementation examples. In his account of a clipboard investigation, visible text travels alongside richer structure. In the calculator example, the same percentage key behaves differently after addition and multiplication. These are useful provocations for a builder: what must remain attached to this information, and what prior state changes the meaning of this action? They are descriptions from the video, not experiments we reproduced.</p>
+<p><strong>Legibility changes the quality of a question.</strong> Instead of asking an agent to reproduce a polished surface, we can ask it to explain a particular relationship. What survives a copy? What happens when a local record disappears? Which state determines the next result? An inspected implementation offers one concrete answer. It also exposes choices we may reject. An existing product’s behavior can be a useful precedent without becoming our requirement.</p>
+<div class="pull">An explanation can inform a decision. It cannot authorize one.</div>
+<p>This is where GhostMesh’s separation of evidence from authority matters. Observing a mechanism does not establish permission to inspect every connected service, reuse protected material, or ship a derivative product. Work only on software you own or are authorized to analyze, within the permitted operations. Requirements, rights, acceptable risk, and release decisions remain human responsibilities. A tool’s reach does not enlarge that scope.</p>
+<p>There is a second separation: source from behavior. A client bundle, a recovered function, and an observed output are different kinds of evidence. A function can suggest a rule without proving that every production request follows it. A successful interaction can show a result without revealing the server’s policy. Without original source code, reconstructed explanations carry additional uncertainty; even source access would not establish the complete deployed environment. Missing evidence should stay visible rather than being smoothed into a complete specification.</p>
+<p>For a ReasonPack, the useful unit would be a bounded claim with its provenance: the artifact examined, the observation, the interpretation, and the conditions that could overturn it. Immutable provenance should preserve the original evidence separately from later corrections. A new explanation should not silently rewrite the record that supported an earlier one. That is a design principle for evidence handling here, not a claim that this Reader contains a certified package.</p>
+<p>The captions behind this page illustrate the same discipline. They let us examine the narrator’s argument. They do not verify the accounting application he describes, reproduce a recovered function, or certify the underlying media. We can attribute those examples to the video while leaving their independent validation open. A useful account becomes stronger when its limits travel with it.</p>
+<p>The practical opportunity is therefore narrower and more durable than instant software replication. Use an authorized implementation to discover a better question. Turn that question into a small, falsifiable expectation. Compare it with known controls and an error state. Then decide which behavior belongs in your own system, what additional evidence you need, and who has authority to accept the remaining risk. Software becomes legible when its promises can be discussed and tested. Building responsibly still requires choosing which promises to make.</p>
+</div></article>
+<section class="about content" id="evidence"><div class="wrap"><div class="section-heading"><div><div class="eyebrow">02 / Claim ledger</div><h2>Keep the evidence attached.</h2></div><p>Attribution is not replication. Repository checks below concern published documentation, not execution of REA or its showcases.</p></div>
+<table class="ledger"><caption class="sr-only">Claims, evidence classifications, and limits</caption><thead><tr><th scope="col">Classification</th><th scope="col">Claim / boundary</th><th scope="col">Source / limit</th></tr></thead><tbody>
+<tr><td>Video says</td><td>The clipboard example distinguishes ordinary text and HTML from richer locally retained block data. The calculator example makes percentage behavior depend on operation context.</td><td><a href="https://www.youtube.com/watch?v=PseF3LyXQ04">Source video</a><br>Read in normalized captions; not independently reproduced.</td></tr>
+<tr><td>Video says</td><td>Inspection does not expose private server-side source; a focused investigation is more useful than an unbounded explanation of an entire app.</td><td><a href="https://www.youtube.com/watch?v=PseF3LyXQ04">Source video</a><br>Caption-based attribution.</td></tr>
+<tr><td>Checked in REA repo</td><td>The README describes tools for inspecting native binaries, JavaScript/Electron apps, .NET assemblies, and websites, with evidence and limitations in results.</td><td><a href="https://github.com/morluto/rea#readme">Official README</a><br>Documentation checked October 16, 2026; capabilities not executed here.</td></tr>
+<tr><td>Checked in REA repo</td><td>The responsible-use statement requires appropriate authorization and warns that analysis may be incomplete or incorrect. Source-like output does not grant rights to the original.</td><td><a href="https://github.com/morluto/rea/blob/main/DISCLAIMER.md">REA disclaimer</a><br>Living documentation; review the version governing your work.</td></tr>
+<tr><td>Open question</td><td>Would a recovered rule hold across versions, missing state, permission changes, and failures in your authorized target?</td><td>Requires scoped observations and counterexamples. No such target investigation was run for this Reader.</td></tr>
+<tr><td>Open question</td><td>Does any proposed implementation meet your requirements, rights, security needs, and deployment constraints?</td><td>Requires human decisions and independent validation. Inspection alone cannot settle it.</td></tr>
+</tbody></table></div></section>
+<section class="wrap content" id="try"><div class="experiment"><div class="eyebrow">03 / What to try</div><h2>One promise. Three conditions.</h2><p>Use a local notes app you own or have explicit permission to analyze. Use synthetic notes and only operations covered by that permission.</p><ol><li><strong>State a prediction first.</strong> “Copying a quotation into a second note preserves its source link after the original note is deleted.” Record the app version and what “preserves” means: the destination still contains the same usable source URL.</li><li><strong>Establish known controls.</strong> Copy plain text as a baseline, then copy a quotation with a known source URL. Check the destination before changing anything. Record what you actually see.</li><li><strong>Introduce one error state.</strong> In a disposable test workspace, delete the original note and reopen the destination. Does the URL survive? Does the app show a broken reference or a clear error? Stop if an operation exceeds your authorized scope.</li><li><strong>Compare explanation with outcome.</strong> If permitted, ask REA to investigate only the relevant copy path. Separate observed behavior from inferred mechanism. A lost or unusable URL falsifies the prediction; a surviving URL supports it only under these conditions.</li></ol><p>Write down the mismatch and the next question. This is a qualitative learning experiment, not a security audit or a deployment approval.</p></div></section>
+<section class="about content"><div class="wrap provenance"><div class="eyebrow">04 / Provenance &amp; limits</div><h2>Captions are evidence of an argument.</h2><p>A machine locally downloaded the automatically generated English captions (en-orig VTT, approximately 216 KB). The prior ReasonPack caption parser produced a normalized transcript: 643 lines, 4,291 words, with the final source caption at 1,356.6 seconds, near the end of the 1,357-second video. Automated captions can contain transcription errors. This editorial reading used that actual transcript; it does not assert audiovisual verification.</p><p>The canonical source media package remains on HOLD after a metadata cap and a later unavailable f397+140 format request. This is not hash-verified media, a certified source media package, or a full ReasonPack. No model API execution or Gmail delivery was commissioned. No REA investigation or showcase reproduction was performed for this page.</p><p>Read the <a href="https://github.com/morluto/rea">official REA project</a> and its <a href="https://github.com/morluto/rea/blob/main/DISCLAIMER.md">responsible-use boundaries</a>. Nate’s <a href="https://natesnewsletter.substack.com/p/rea-reverse-engineer-anything">companion post</a> is additional context; its full paid content is not evidence used for this thesis. Video title, publication date, channel, duration, and navigation times are user-supplied source metadata.</p></div></section>
+</main><footer><div class="wrap footer-inner"><a class="brand" href="/" aria-label="GhostMesh home"><img src="/brand/ghostmesh-mark.svg" alt="" width="54" height="40"><span class="wordmark">GHOST<span>MESH</span></span></a><p>© 2026 GhostMesh · Tony Malott<br>Human agency. Durable knowledge. Explicit authority.</p><a href="/the-score-is-not-the-system/">Reader 001 ↗</a><a href="#top">Back to top ↑</a></div></footer>
+<script>
+(() => {
+  const player = document.getElementById('player');
+  const status = document.getElementById('player-status');
+  let frame;
+  function playFrom(seconds) {
+    if (!frame) {
+      frame = document.createElement('iframe');
+      frame.title = 'Nate B Jones — REA source video';
+      frame.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
+      frame.allowFullscreen = true;
+      frame.referrerPolicy = 'strict-origin-when-cross-origin';
+      document.getElementById('launch').remove();
+      player.append(frame);
+    }
+    frame.src = 'https://www.youtube-nocookie.com/embed/PseF3LyXQ04?autoplay=1' + (seconds ? '&start=' + seconds : '');
+    status.textContent = 'Source player requested at ' + Math.floor(seconds / 60) + ':' + String(seconds % 60).padStart(2, '0') + '. If playback is unavailable, use Watch on YouTube.';
+    frame.focus();
+  }
+  const play = document.getElementById('play');
+  play.hidden = false;
+  play.addEventListener('click', () => playFrom(0));
+  document.querySelectorAll('[data-start]').forEach(button => {
+    button.hidden = false;
+    button.addEventListener('click', () => playFrom(Number(button.dataset.start)));
+  });
+})();
+</script></body></html>
