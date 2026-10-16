@@ -63,8 +63,8 @@
     h2 { font-size: clamp(32px, 3.4vw, 46px); font-weight: 550; line-height: 1.15; letter-spacing: -.045em; margin: 15px 0 0; }
     .section-heading p { color: var(--muted); max-width: 345px; font-size: 14px; margin: 0; }
     .reader { display: grid; grid-template-columns: .75fr 1.25fr; border: 1px solid #4c525d; background: linear-gradient(120deg, #181c23, #101217 70%); }
-    .reader-art { min-height: 330px; padding: 32px; display: flex; flex-direction: column; justify-content: space-between; position: relative; overflow: hidden; border-right: 1px solid var(--line); background-image: linear-gradient(#ffffff04 1px, transparent 1px), linear-gradient(90deg, #ffffff04 1px, transparent 1px); background-size: 32px 32px; }
-    .reader-art::after { content: ""; position: absolute; width: 180px; height: 300px; border: 1px solid #9ca3b1; transform: rotate(35deg); right: -70px; top: 20px; box-shadow: -24px 0 0 #14171d, -25px 0 0 #4b2833; }
+    .reader-art { min-height: 330px; display: flex; flex-direction: column; position: relative; overflow: hidden; border-right: 1px solid var(--line); background:#101217; }
+    .reader-art::after { display:none; }
     .edition-number { font-size: 130px; line-height: 1; font-weight: 250; letter-spacing: -.08em; position: relative; z-index: 1; }
     .reader-art .eyebrow { color: #d9dde5; }
     .reader-copy { padding: 40px 44px; }
@@ -100,6 +100,28 @@
     @media (max-width: 950px) { .wrap { width: calc(100% - 48px); } .hero-grid { grid-template-columns: 1fr 1fr; min-height: 600px; } h1 { font-size: 58px; } nav { gap: 16px; } .wordmark { font-size: 13px; } .about-grid { gap: 45px; } .reader-copy { padding: 30px; } .delivery { grid-template-columns: 1fr 1.4fr; } .delivery .badge { justify-self: start; } }
     @media (max-width: 700px) { .wrap { width: calc(100% - 40px); } .header-inner { flex-direction: column; align-items: start; gap: 12px; padding-block: 20px; } nav { gap: 23px; width: 100%; } .hero-grid { grid-template-columns: 1fr; gap: 0; } .hero-copy { padding: 55px 0 15px; } h1 { font-size: clamp(48px, 10vw, 68px); } .signal { max-width: 480px; width: 100%; margin: -10px auto 0; } .signal svg { width: 100%; margin: 0; } .signal-caption { padding-bottom: 22px; } .system-strip div { padding: 17px 10px; font-size: 8px; letter-spacing: .02em; } section.content { padding-block: 56px; } .section-heading { flex-direction: column; align-items: start; gap: 20px; } .reader, .about-grid, .ecosystem { grid-template-columns: 1fr; } .reader-art { min-height: 220px; border-right: 0; border-bottom: 1px solid var(--line); padding: 24px; } .edition-number { font-size: 100px; } .reader-copy { padding: 28px 24px; } .delivery { grid-template-columns: 1fr; gap: 12px; } .about-grid { gap: 28px; } .destination { border-right: 0; border-bottom: 1px solid var(--line); } .destination:last-child { border-bottom: 0; } .destination h3 { margin-top: 20px; } .footer-inner { flex-wrap: wrap; } }
     @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation: none !important; transition: none !important; } }
+    /* Each card is a real source-video preview; the player is added only on click. */
+    .reader-video {position:relative;width:100%;min-height:245px;aspect-ratio:16/9;background:#08090e;overflow:hidden}
+    .reader-preview {position:absolute;inset:0;width:100%;height:100%;border:0;padding:0;display:block;background:#14171b;color:#fff;cursor:pointer;text-align:left}
+    .reader-preview img {width:100%;height:100%;object-fit:cover;display:block;transition:transform .25s,filter .25s;filter:saturate(.84) brightness(.78)}
+    .reader-preview:hover img,.reader-preview:focus-visible img {transform:scale(1.025);filter:saturate(1) brightness(.9)}
+    .reader-preview:after {content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.08),rgba(0,0,0,.79));pointer-events:none}
+    .preview-overlay {position:absolute;inset:0;z-index:1;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:12px;text-align:center;padding:22px}
+    .preview-play {display:grid;place-items:center;background:var(--red);color:#fff;font-size:26px;width:70px;height:70px;border-radius:50%;box-shadow:0 8px 35px #000b;padding-left:4px}
+    .preview-heading {font-weight:750;letter-spacing:.03em;font-size:15px;text-shadow:0 2px 10px #000}
+    .preview-subline {font:11px/1.6 ui-monospace,monospace;color:#dde0e7;text-shadow:0 2px 10px #000}
+    .reader-video iframe {position:absolute;inset:0;width:100%;height:100%;border:0;background:#000}
+    .preview-source-link {display:block;padding:12px 16px;background:#171b22;border-top:1px solid var(--line);font-size:12px;color:#d7dce5}
+    .preview-source-link:hover {color:#fff;background:#21252e}
+    .reader-preview:focus-visible,.preview-source-link:focus-visible,.contact-link:focus-visible {outline:3px solid #f47c8c;outline-offset:-3px}
+    .contact-section {border-top:1px solid var(--line)}
+    .contact-grid {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:28px}
+    .contact-link {display:flex;flex-direction:column;gap:13px;min-height:200px;padding:30px;border:1px solid var(--line);background:#13171d;transition:background .2s;text-decoration:none}
+    .contact-link:hover {background:#1b2029;text-decoration:none}
+    .contact-label {font:11px/1.4 ui-monospace,monospace;letter-spacing:.12em;text-transform:uppercase;color:#f18a9b}
+    .contact-link strong {font-size:clamp(19px,2.1vw,27px);color:var(--ink);overflow-wrap:anywhere}
+    .contact-link span:last-child {font-size:13px;color:var(--muted);line-height:1.65}
+    @media(max-width:700px){.reader-art{padding:0;min-height:0}.reader-video{min-height:210px}.contact-grid{grid-template-columns:1fr}.contact-link{min-height:0;padding:23px}}
   </style>
 </head>
 <body id="home">
@@ -107,7 +129,7 @@
   <header>
     <div class="wrap header-inner">
       <a class="brand" href="#home" aria-label="GhostMesh home"><img src="/brand/ghostmesh-mark.svg" alt="" width="54" height="40"><div><div class="wordmark">GHOST<span>MESH</span></div><small>IDENTITY / KNOWLEDGE / CONTINUITY</small></div></a>
-      <nav aria-label="Main navigation"><a href="#home" aria-current="page">Home</a><a href="#readers">Readers</a><a href="#about">About</a><a href="#ecosystem">Ecosystem</a></nav>
+      <nav aria-label="Main navigation"><a href="#home" aria-current="page">Home</a><a href="#readers">Readers</a><a href="#about">About</a><a href="#ecosystem">Ecosystem</a><a href="#contact">Contact</a></nav>
     </div>
   </header>
   <main id="main">
@@ -144,12 +166,12 @@
     <section class="wrap content" id="readers" aria-labelledby="readers-title">
       <div class="section-heading"><div><div class="eyebrow">01 / The reading room</div><h2 id="readers-title">Ideas worth examining.</h2></div><p>Start with the source. Read an independent thesis. Follow the evidence and challenge the interpretation.</p></div>
       <article class="reader">
-        <div class="reader-art" aria-hidden="true"><div class="eyebrow">GhostMesh Readers</div><div class="edition-number">001<span style="color:var(--red)">/</span></div><div class="eyebrow">Source / Thesis / Evidence</div></div>
-        <div class="reader-copy"><span class="status">AVAILABLE NOW · READER 001</span><h3>The score is not the system.</h3><p>What happens when an objective becomes pressure? A GhostMesh examination of AI agent evaluation, the limits of a score, and the boundaries that authority must preserve.</p><a class="text-link" href="/the-score-is-not-the-system/">Open the Reader <span aria-hidden="true">↗</span></a></div>
+        <div class="reader-art"><div class="reader-video"><button type="button" class="reader-preview" data-video-id="ZhM29Ds-mBg" aria-label="Play the original YouTube video AI Agents Escaped Their Test - Others Became Cats within this page"><img src="https://i.ytimg.com/vi/ZhM29Ds-mBg/hqdefault.jpg" loading="lazy" decoding="async" alt="Video thumbnail: AI Agents Escaped Their Test - Others Became Cats"><span class="preview-overlay"><span class="preview-play" aria-hidden="true">▶</span><span class="preview-heading">Play the original video here</span><span class="preview-subline">Source on YouTube · In-page preview</span></span></button></div><a class="preview-source-link" target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/watch?v=ZhM29Ds-mBg">↗ Original source on YouTube</a></div>
+        <div class="reader-copy"><span class="status">VIDEO DECONSTRUCTION · COUNT GREY MATTER</span><h3>The score is not the system.</h3><p>What happens when an objective becomes pressure? A GhostMesh examination of AI agent evaluation, the limits of a score, and the boundaries that authority must preserve.</p><a class="text-link" href="/the-score-is-not-the-system/">Explore GhostMesh’s interpretation <span aria-hidden="true">↗</span></a></div>
       </article>
       <article class="reader" style="margin-top:18px">
-        <div class="reader-art" aria-hidden="true"><div class="eyebrow">GhostMesh Readers</div><div class="edition-number">002<span style="color:var(--red)">/</span></div><div class="eyebrow">Source / Thesis / Evidence</div></div>
-        <div class="reader-copy"><span class="status">AVAILABLE NOW · READER 002</span><h3>When software becomes legible.</h3><p>REA lets an agent examine software implementation. But observing how an app works is not the same as knowing its requirements, its failure modes, or your permission to reproduce it. An evidence-first deconstruction of Nate B. Jones’s latest video.</p><a class="text-link" href="/when-software-becomes-legible/">Watch and read Reader 002 <span aria-hidden="true">↗</span></a></div>
+        <div class="reader-art"><div class="reader-video"><button type="button" class="reader-preview" data-video-id="PseF3LyXQ04" aria-label="Play the original YouTube video Your Vibe-Coded App Can Look Right And Fall Apart After Launch. REA Shows You How Real Teams Build. within this page"><img src="https://i.ytimg.com/vi/PseF3LyXQ04/hqdefault.jpg" loading="lazy" decoding="async" alt="Video thumbnail: Your Vibe-Coded App Can Look Right And Fall Apart After Launch. REA Shows You How Real Teams Build."><span class="preview-overlay"><span class="preview-play" aria-hidden="true">▶</span><span class="preview-heading">Play the original video here</span><span class="preview-subline">Source on YouTube · In-page preview</span></span></button></div><a class="preview-source-link" target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/watch?v=PseF3LyXQ04">↗ Original source on YouTube</a></div>
+        <div class="reader-copy"><span class="status">VIDEO DECONSTRUCTION · NATE B. JONES</span><h3>When software becomes legible.</h3><p>REA lets an agent examine software implementation. But observing how an app works is not the same as knowing its requirements, its failure modes, or your permission to reproduce it. An evidence-first deconstruction of Nate B. Jones’s latest video.</p><a class="text-link" href="/when-software-becomes-legible/">Read GhostMesh’s take on REA <span aria-hidden="true">↗</span></a></div>
       </article>
       <div class="delivery"><h3>Readers / ReasonPack by email</h3><p>Reader articles are available now. Automated Gmail delivery of Readers and ReasonPacks is in development; email sign-up is not open.</p><span class="badge">DEVELOPMENT / COMING</span></div>
     </section>
@@ -158,14 +180,40 @@
       <div class="about-copy"><p><strong>GhostMesh is Tony Malott’s AI identity and collaboration, research, and learning system.</strong> It gives a consistent name and frame to work with AI: connecting ideas, examining evidence, and developing knowledge that can remain useful as tools change.</p><p><strong>About Tony Malott.</strong> A technologist, builder, and systems thinker interested in practical AI, durable knowledge, and governance. His focus is how people can work thoughtfully with evolving systems while preserving judgment and human agency.</p><div class="authority">GhostMesh is a system, not a person or a self-authorized worker. Interpretation can be probabilistic. Permission and authority must remain explicit and human-governed.</div></div>
     </div></section>
     <section class="wrap content" id="ecosystem" aria-labelledby="ecosystem-title">
-      <div class="section-heading"><div><div class="eyebrow">03 / Connected destinations</div><h2 id="ecosystem-title">One perspective. A wider mesh.</h2></div><p>Explore the identity, the human perspective, and the systems thinking behind the work.</p></div>
+      <div class="section-heading"><div><div class="eyebrow">03 / Connected destinations</div><h2 id="ecosystem-title">One perspective. A wider mesh.</h2></div><p>Three distinct destinations: the GhostMesh architecture, Tony Malott’s professional identity, and the ideas made public through SharePlane.</p></div>
       <div class="ecosystem">
-        <a class="destination" href="https://ghostmesh.ai/"><span class="index">01 / IDENTITY <span aria-hidden="true">↗</span></span><h3>GhostMesh<span style="color:var(--accent)">.ai</span></h3><p>The GhostMesh destination for AI identity, collaboration, and learning.</p><span class="domain">ghostmesh.ai</span></a>
-        <a class="destination" href="https://malott.ai/"><span class="index">02 / HUMAN <span aria-hidden="true">↗</span></span><h3>Malott<span style="color:var(--accent)">.ai</span></h3><p>Tony Malott’s home on the web. The human perspective behind the system.</p><span class="domain">malott.ai</span></a>
-        <a class="destination" href="https://shareplane.malott.ai/"><span class="index">03 / SYSTEMS <span aria-hidden="true">↗</span></span><h3>SharePlane</h3><p>Explore the related work on knowledge, governance, and explicit authority.</p><span class="domain">shareplane.malott.ai</span><span class="planned">shareplane.ai planned</span></a>
+        <a class="destination" href="https://ghostmesh.ai/"><span class="index">01 / ARCHITECTURE <span aria-hidden="true">↗</span></span><h3>GhostMesh<span style="color:var(--accent)">.ai</span></h3><p>The GhostMesh architecture and the connected mesh itself: systems, memory, collaboration, governance, and coordinated AI capabilities.</p><span class="domain">ghostmesh.ai</span></a>
+        <a class="destination" href="https://malott.ai/"><span class="index">02 / HUMAN IDENTITY <span aria-hidden="true">↗</span></span><h3>Malott<span style="color:var(--accent)">.ai</span></h3><p>Tony Malott’s personal and professional identity: background, experience, résumé, career, and the person behind the work.</p><span class="domain">malott.ai</span></a>
+        <a class="destination" href="https://shareplane.malott.ai/"><span class="index">03 / THINKING &amp; REFERENCE <span aria-hidden="true">↗</span></span><h3>SharePlane</h3><p>Where Tony shares his thinking and published Works, and the first public reference implementation of the GhostMesh architecture.</p><span class="domain">shareplane.malott.ai</span></a>
+      </div>
+    </section>
+    <section class="wrap content contact-section" id="contact" aria-labelledby="contact-title">
+      <div class="section-heading"><div><div class="eyebrow">04 / Open a conversation</div><h2 id="contact-title">Reach the human. Or the mesh.</h2></div><p>Ideas, questions, constructive disagreement, and collaboration are welcome. Choose who you want to write to.</p></div>
+      <div class="contact-grid">
+        <a class="contact-link" href="mailto:tony@malott.ai?subject=Hello%20Tony%20%E2%80%94%20GhostMesh%20Readers"><span class="contact-label">Human contact · Tony Malott</span><strong>tony@malott.ai ↗</strong><span>Reach Tony directly about his work, professional background, ideas, and possible collaborations.</span></a>
+        <a class="contact-link" href="mailto:ghostmesh@malott.ai?subject=Hello%20GhostMesh%20%E2%80%94%20Readers"><span class="contact-label">AI correspondence · GhostMesh</span><strong>ghostmesh@malott.ai ↗</strong><span>Send GhostMesh a question, Reader reaction, or counterexample. Replies follow the existing email intake policies. Automated ReasonPack-by-email processing is still in development.</span></a>
       </div>
     </section>
   </main>
-  <footer><div class="wrap footer-inner"><a class="brand" href="#home" aria-label="GhostMesh back to top"><img src="/brand/ghostmesh-mark.svg" alt="" width="54" height="40"><span class="wordmark">GHOST<span>MESH</span></span></a><p>© 2026 GhostMesh · Tony Malott<br>Human agency. Durable knowledge. Explicit authority.</p><a href="/the-score-is-not-the-system/">Reader 001 ↗</a><a href="#home">Back to top ↑</a></div></footer>
+  <footer><div class="wrap footer-inner"><a class="brand" href="#home" aria-label="GhostMesh back to top"><img src="/brand/ghostmesh-mark.svg" alt="" width="54" height="40"><span class="wordmark">GHOST<span>MESH</span></span></a><p>© 2026 GhostMesh · Tony Malott<br>Human agency. Durable knowledge. Explicit authority.</p><a href="#readers">Explore Readers ↗</a><a href="#contact">Contact ↗</a><a href="#home">Back to top ↑</a></div></footer>
+  <script>
+  (function(){
+    const allowed = new Set(['ZhM29Ds-mBg','PseF3LyXQ04']);
+    document.querySelectorAll('.reader-preview[data-video-id]').forEach(button=>{
+      button.addEventListener('click',()=>{
+        const id=button.dataset.videoId;
+        if(!allowed.has(id))return;
+        const frame=document.createElement('iframe');
+        frame.title='Original YouTube video, embedded within GhostMesh Readers';
+        frame.allow='autoplay; encrypted-media; picture-in-picture; fullscreen';
+        frame.referrerPolicy='strict-origin-when-cross-origin';
+        frame.allowFullscreen=true;
+        frame.src='https://www.youtube-nocookie.com/embed/'+id+'?autoplay=1&playsinline=1';
+        button.replaceWith(frame);
+        frame.focus();
+      },{once:true});
+    });
+  })();
+  </script>
 </body>
 </html>
