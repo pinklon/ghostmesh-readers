@@ -12,7 +12,8 @@ required = ("index.html","404.html","favicon.svg","robots.txt","sitemap.xml","si
             "_headers","the-score-is-not-the-system/index.html",
             "when-software-becomes-legible/index.html",
             "the-agent-a-company-owns/index.html",
-            "when-agents-become-the-customer/index.html")
+            "when-agents-become-the-customer/index.html",
+            "the-funnel-is-not-the-frontier/index.html")
 errors = []
 class Page(HTMLParser):
     def __init__(self): super().__init__(); self.links=[]; self.ids=set()
@@ -44,7 +45,8 @@ home=(site/"index.html").read_text(encoding="utf8")
 for video_id,slug in (("ZhM29Ds-mBg","the-score-is-not-the-system"),
                        ("PseF3LyXQ04","when-software-becomes-legible"),
                        ("HQXi4snP36I","the-agent-a-company-owns"),
-                       ("2DmP5etgh4U","when-agents-become-the-customer")):
+                       ("2DmP5etgh4U","when-agents-become-the-customer"),
+                       ("BjO_JC6ujXs","the-funnel-is-not-the-frontier")):
     for marker in (f'i.ytimg.com/vi/{video_id}/hqdefault.jpg',
                    f'data-video-id="{video_id}"',
                    f'https://www.youtube.com/watch?v={video_id}',
@@ -108,8 +110,8 @@ for source in ("https://vercel.com/blog/introducing-eve", "https://github.com/ve
                "https://vercel.com/kb/guide/github-agent-eve"):
     if f'href="{source}"' not in third: errors.append("Reader 003 missing source "+source)
 allowlist=re.search(r"const allowed = new Set\(\[(.*?)\]\)",home)
-if not allowlist or re.findall(r"'([^']+)'",allowlist[1]) != ["ZhM29Ds-mBg","PseF3LyXQ04","HQXi4snP36I","2DmP5etgh4U"]:
-    errors.append("homepage player allowlist must contain exactly the four source IDs")
+if not allowlist or re.findall(r"'([^']+)'",allowlist[1]) != ["ZhM29Ds-mBg","PseF3LyXQ04","HQXi4snP36I","2DmP5etgh4U","BjO_JC6ujXs"]:
+    errors.append("homepage player allowlist must contain exactly the five source IDs")
 if "Explore GhostMesh's take on company agents" not in home:
     errors.append("homepage third editorial action missing")
 # Reader 004: caption-grounded editorial, explicit comparisons, and opt-in seeks.
@@ -150,9 +152,37 @@ for source in ("https://supabase.com/blog/supabase-is-acquiring-turso",
     if f'href="{source}"' not in fourth: errors.append("Reader 004 missing primary source "+source)
 if "Read GhostMesh’s take on agents as software customers" not in home:
     errors.append("homepage fourth editorial action missing")
-# Share and footer controls are a contract on every published Reader.
+# Fifth Video Deconstruction: narrator attribution, exact source chapters, and evidence limits.
+fifth=(site/"the-funnel-is-not-the-frontier/index.html").read_text(encoding="utf8")
+for marker in ("The Funnel Is Not the Frontier", "Video Deconstruction", "DevLogic",
+               "October 12, 2026", "6:14", "374", "napkin math", "not Karpathy speaking",
+               "https://i.ytimg.com/vi/BjO_JC6ujXs/hqdefault.jpg",
+               "youtube-nocookie.com/embed/BjO_JC6ujXs?autoplay=1&start=",
+               'id="player"', 'id="play"', "document.createElement('iframe')",
+               '<details class="convergence">', "Evidence ledger", "1,086", "369.12",
+               "70d36196dde825edb359ba1516913ea0c75b4438be63566a099890196e7e71d3"):
+    if marker not in fifth: errors.append("fifth deconstruction missing "+marker)
+if re.search(r"<iframe\b",fifth,re.I): errors.append("fifth player must wait for interaction")
+if [int(x) for x in re.findall(r'data-start="(\d+)"',fifth)] != [0,78,155,224,300]:
+    errors.append("fifth five source chapters drift")
+for sec,label in ((0,"The sharp funnel explained"),(78,"The shallow end: chatbots and casual use"),
+                  (155,"Frontier labs and agent swarms"),(224,"Three filters: ambition, jaggedness, access"),
+                  (300,"Why the AI debate goes nowhere")):
+    if label not in fifth or f'watch?v=BjO_JC6ujXs&amp;t={sec}s' not in fifth:
+        errors.append("fifth source chapter label/fallback missing "+label)
 for slug in ("the-score-is-not-the-system","when-software-becomes-legible",
              "the-agent-a-company-owns","when-agents-become-the-customer"):
+    if f'href="/{slug}/"' not in fifth: errors.append("fifth missing cross-link "+slug)
+for content in (home,fourth):
+    if "READER 004" in content or "video deconstruction" not in content.lower():
+        errors.append("fourth Video Deconstruction label correction lost")
+if "Reader 005" in fifth or "READER 005" in home: errors.append("fifth uses retired Reader number")
+if "Read GhostMesh’s interpretation of the AI capability gap" not in home:
+    errors.append("fifth homepage editorial CTA missing")
+# Share and footer controls are a contract on every published Reader.
+for slug in ("the-score-is-not-the-system","when-software-becomes-legible",
+             "the-agent-a-company-owns","when-agents-become-the-customer",
+             "the-funnel-is-not-the-frontier"):
     article=(site/slug/"index.html").read_text(encoding="utf8")
     for token in ('/brand/ghostmesh-mark.svg', '/assets/reader-chrome.css',
                   '/assets/reader-share.js', 'data-gm-share', 'data-copy-link',
@@ -169,7 +199,7 @@ for asset in ("assets/reader-chrome.css","assets/reader-share.js",
         errors.append("missing shared Reader asset: "+asset)
 xml=ET.parse(site/"sitemap.xml")
 urls=[x.text for x in xml.getroot().iter() if x.tag.endswith("loc")]
-for path in ("/","/the-score-is-not-the-system/","/when-software-becomes-legible/","/the-agent-a-company-owns/","/when-agents-become-the-customer/"):
+for path in ("/","/the-score-is-not-the-system/","/when-software-becomes-legible/","/the-agent-a-company-owns/","/when-agents-become-the-customer/","/the-funnel-is-not-the-frontier/"):
     if host+path not in urls: errors.append("sitemap missing "+path)
 if errors:
     for x in errors: print("FAIL:",x)
