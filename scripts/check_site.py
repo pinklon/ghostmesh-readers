@@ -20,11 +20,18 @@ required = ("index.html","404.html","favicon.svg","robots.txt","sitemap.xml","si
             "the-inbox-was-a-boundary/index.html",
             "autonomy-needs-an-interface/index.html",
             "make-good-work-inspectable/index.html",
-            "make-good-work-inspectable/transcript.txt",
-            "make-good-work-inspectable/captions.vtt",
-            "make-good-work-inspectable/receipt.json",
-            "make-good-work-inspectable/SHA256SUMS.txt")
+            "make-good-work-inspectable/receipt.json")
 errors = []
+# Fail publication if any private media, caption or transcript artifact leaks into site/.
+for candidate in site.rglob("*"):
+    if not candidate.is_file():
+        continue
+    name = candidate.name.lower()
+    suffix = candidate.suffix.lower()
+    if suffix in {".vtt", ".srt", ".sbv", ".ass", ".mp4", ".m4a", ".mp3", ".webm", ".wav"} or (
+        name.startswith(("transcript", "captions", "subtitles")) and suffix in {".txt", ".md", ".json"}
+    ):
+        errors.append("private source artifact in public site: " + str(candidate.relative_to(site)))
 class Page(HTMLParser):
     def __init__(self): super().__init__(); self.links=[]; self.ids=set()
     def handle_starttag(self,tag,attrs):
@@ -262,16 +269,14 @@ for source in ("https://vercel.com/blog/introducing-eve",
 if "Autonomy Needs an Interface" not in home or 'data-video-id="DdbCtAScTsk"' not in home:
     errors.append("eighth homepage source/CTA missing")
 
-# Ninth Video Deconstruction: actionable verdict and independently checkable public source files.
+# Ninth Video Deconstruction: public claim receipt and private source custody.
 ninth_dir=site/"make-good-work-inspectable"
 ninth=(ninth_dir/"index.html").read_text(encoding="utf8")
 for marker in ("Make Good Work Inspectable", "Z8lf5oWKfj0",
                "Take seriously / watch selectively", "The 45-minute interview is optional",
                "26:37", "32:03", "36:01", "spec-driven failure",
-               "download href=\"/make-good-work-inspectable/transcript.txt\"",
-               "download href=\"/make-good-work-inspectable/captions.vtt\"",
-               "download href=\"/make-good-work-inspectable/receipt.json\"",
-               "download href=\"/make-good-work-inspectable/SHA256SUMS.txt\"",
+                "Private evidence custody",
+                "download href=\"/make-good-work-inspectable/receipt.json\"",
                "document.createElement('iframe')", "Evidence ledger"):
     if marker.casefold() not in ninth.casefold():
         errors.append("ninth missing contract: "+marker)
@@ -286,16 +291,18 @@ if receipt_path.is_file():
     receipt=json.loads(receipt_path.read_text(encoding="utf8"))
     if receipt.get("source",{}).get("videoId")!="Z8lf5oWKfj0" or receipt.get("reasonPack",{}).get("verification")!="pass":
         errors.append("ninth receipt source or pack verification mismatch")
-    for name in ("transcript.txt","captions.vtt"):
-        path=ninth_dir/name
-        expected=receipt.get("publicFiles",{}).get(name,{}).get("sha256")
-        if not path.is_file() or hashlib.sha256(path.read_bytes()).hexdigest()!=expected:
-            errors.append("ninth receipt hash mismatch "+name)
-    sums=(ninth_dir/"SHA256SUMS.txt").read_text(encoding="utf8") if (ninth_dir/"SHA256SUMS.txt").is_file() else ""
-    for name in ("transcript.txt","captions.vtt","receipt.json"):
-        digest=hashlib.sha256((ninth_dir/name).read_bytes()).hexdigest() if (ninth_dir/name).is_file() else ""
-        if f"{digest}  {name}" not in sums:
-            errors.append("ninth public checksum missing "+name)
+    if receipt.get("publicFiles"):
+        errors.append("ninth receipt must not advertise private files as public")
+    if "private" not in receipt.get("reasonPack",{}).get("publicationBoundary","").lower():
+        errors.append("ninth receipt must declare private custody")
+    if not receipt.get("editorial",{}).get("claimMap"):
+        errors.append("ninth public claim map missing")
+    if any(token in ninth for token in (
+        '/make-good-work-inspectable/transcript.txt',
+        '/make-good-work-inspectable/captions.vtt',
+        '/make-good-work-inspectable/SHA256SUMS.txt'
+    )):
+        errors.append("ninth links to private source artifacts")
 else:
     errors.append("ninth receipt missing")
 if "Make Good Work Inspectable" not in home or 'data-video-id="Z8lf5oWKfj0"' not in home:
