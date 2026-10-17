@@ -4,6 +4,8 @@ from pathlib import Path
 from html.parser import HTMLParser
 import sys
 import re
+import hashlib
+import json
 import xml.etree.ElementTree as ET
 
 site = Path(__file__).resolve().parents[1] / "site"
@@ -16,7 +18,12 @@ required = ("index.html","404.html","favicon.svg","robots.txt","sitemap.xml","si
             "the-funnel-is-not-the-frontier/index.html",
             "the-microscope-is-not-a-soul/index.html",
             "the-inbox-was-a-boundary/index.html",
-            "autonomy-needs-an-interface/index.html")
+            "autonomy-needs-an-interface/index.html",
+            "make-good-work-inspectable/index.html",
+            "make-good-work-inspectable/transcript.txt",
+            "make-good-work-inspectable/captions.vtt",
+            "make-good-work-inspectable/receipt.json",
+            "make-good-work-inspectable/SHA256SUMS.txt")
 errors = []
 class Page(HTMLParser):
     def __init__(self): super().__init__(); self.links=[]; self.ids=set()
@@ -52,7 +59,8 @@ for video_id,slug in (("ZhM29Ds-mBg","the-score-is-not-the-system"),
                        ("BjO_JC6ujXs","the-funnel-is-not-the-frontier"),
                        ("2oH1NACBgS4","the-microscope-is-not-a-soul"),
                        ("rb4CTZjHCNg","the-inbox-was-a-boundary"),
-                       ("DdbCtAScTsk","autonomy-needs-an-interface")):
+                       ("DdbCtAScTsk","autonomy-needs-an-interface"),
+                       ("Z8lf5oWKfj0","make-good-work-inspectable")):
     for marker in (f'i.ytimg.com/vi/{video_id}/hqdefault.jpg',
                    f'data-video-id="{video_id}"',
                    f'https://www.youtube.com/watch?v={video_id}',
@@ -116,8 +124,8 @@ for source in ("https://vercel.com/blog/introducing-eve", "https://github.com/ve
                "https://vercel.com/kb/guide/github-agent-eve"):
     if f'href="{source}"' not in third: errors.append("Reader 003 missing source "+source)
 allowlist=re.search(r"const allowed = new Set\(\[(.*?)\]\)",home)
-if not allowlist or re.findall(r"'([^']+)'",allowlist[1]) != ["ZhM29Ds-mBg","PseF3LyXQ04","HQXi4snP36I","2DmP5etgh4U","BjO_JC6ujXs","2oH1NACBgS4","rb4CTZjHCNg","DdbCtAScTsk"]:
-    errors.append("homepage player allowlist must contain exactly the eight source IDs")
+if not allowlist or re.findall(r"'([^']+)'",allowlist[1]) != ["ZhM29Ds-mBg","PseF3LyXQ04","HQXi4snP36I","2DmP5etgh4U","BjO_JC6ujXs","2oH1NACBgS4","rb4CTZjHCNg","DdbCtAScTsk","Z8lf5oWKfj0"]:
+    errors.append("homepage player allowlist must contain exactly the nine source IDs")
 if "Explore GhostMesh's take on company agents" not in home:
     errors.append("homepage third editorial action missing")
 # Reader 004: caption-grounded editorial, explicit comparisons, and opt-in seeks.
@@ -254,11 +262,51 @@ for source in ("https://vercel.com/blog/introducing-eve",
 if "Autonomy Needs an Interface" not in home or 'data-video-id="DdbCtAScTsk"' not in home:
     errors.append("eighth homepage source/CTA missing")
 
+# Ninth Video Deconstruction: actionable verdict and independently checkable public source files.
+ninth_dir=site/"make-good-work-inspectable"
+ninth=(ninth_dir/"index.html").read_text(encoding="utf8")
+for marker in ("Make Good Work Inspectable", "Z8lf5oWKfj0",
+               "Take seriously / watch selectively", "The 45-minute interview is optional",
+               "26:37", "32:03", "36:01", "spec-driven failure",
+               "download href=\"/make-good-work-inspectable/transcript.txt\"",
+               "download href=\"/make-good-work-inspectable/captions.vtt\"",
+               "download href=\"/make-good-work-inspectable/receipt.json\"",
+               "download href=\"/make-good-work-inspectable/SHA256SUMS.txt\"",
+               "document.createElement('iframe')", "Evidence ledger"):
+    if marker.casefold() not in ninth.casefold():
+        errors.append("ninth missing contract: "+marker)
+if re.search(r"<iframe\b",ninth,re.I): errors.append("ninth player must wait for interaction")
+if [int(x) for x in re.findall(r'data-start="(\d+)"',ninth)] != [264,975,1597,1923,2161]:
+    errors.append("ninth selected chapter starts drift")
+for sec in [264,975,1597,1923,2161]:
+    if f'watch?v=Z8lf5oWKfj0&amp;t={sec}s' not in ninth:
+        errors.append("ninth missing YouTube chapter fallback "+str(sec))
+receipt_path=ninth_dir/"receipt.json"
+if receipt_path.is_file():
+    receipt=json.loads(receipt_path.read_text(encoding="utf8"))
+    if receipt.get("source",{}).get("videoId")!="Z8lf5oWKfj0" or receipt.get("reasonPack",{}).get("verification")!="pass":
+        errors.append("ninth receipt source or pack verification mismatch")
+    for name in ("transcript.txt","captions.vtt"):
+        path=ninth_dir/name
+        expected=receipt.get("publicFiles",{}).get(name,{}).get("sha256")
+        if not path.is_file() or hashlib.sha256(path.read_bytes()).hexdigest()!=expected:
+            errors.append("ninth receipt hash mismatch "+name)
+    sums=(ninth_dir/"SHA256SUMS.txt").read_text(encoding="utf8") if (ninth_dir/"SHA256SUMS.txt").is_file() else ""
+    for name in ("transcript.txt","captions.vtt","receipt.json"):
+        digest=hashlib.sha256((ninth_dir/name).read_bytes()).hexdigest() if (ninth_dir/name).is_file() else ""
+        if f"{digest}  {name}" not in sums:
+            errors.append("ninth public checksum missing "+name)
+else:
+    errors.append("ninth receipt missing")
+if "Make Good Work Inspectable" not in home or 'data-video-id="Z8lf5oWKfj0"' not in home:
+    errors.append("ninth homepage source/CTA missing")
+
 # Share and footer controls are a contract on every published Reader.
 for slug in ("the-score-is-not-the-system","when-software-becomes-legible",
              "the-agent-a-company-owns","when-agents-become-the-customer",
              "the-funnel-is-not-the-frontier","the-microscope-is-not-a-soul",
-             "the-inbox-was-a-boundary","autonomy-needs-an-interface"):
+             "the-inbox-was-a-boundary","autonomy-needs-an-interface",
+             "make-good-work-inspectable"):
     article=(site/slug/"index.html").read_text(encoding="utf8")
     for token in ('/brand/ghostmesh-mark.svg', '/assets/reader-chrome.css',
                   '/assets/reader-share.js', 'data-gm-share', 'data-copy-link',
@@ -275,7 +323,7 @@ for asset in ("assets/reader-chrome.css","assets/reader-share.js",
         errors.append("missing shared Reader asset: "+asset)
 xml=ET.parse(site/"sitemap.xml")
 urls=[x.text for x in xml.getroot().iter() if x.tag.endswith("loc")]
-for path in ("/","/the-score-is-not-the-system/","/when-software-becomes-legible/","/the-agent-a-company-owns/","/when-agents-become-the-customer/","/the-funnel-is-not-the-frontier/","/the-microscope-is-not-a-soul/","/the-inbox-was-a-boundary/","/autonomy-needs-an-interface/"):
+for path in ("/","/the-score-is-not-the-system/","/when-software-becomes-legible/","/the-agent-a-company-owns/","/when-agents-become-the-customer/","/the-funnel-is-not-the-frontier/","/the-microscope-is-not-a-soul/","/the-inbox-was-a-boundary/","/autonomy-needs-an-interface/","/make-good-work-inspectable/"):
     if host+path not in urls: errors.append("sitemap missing "+path)
 if errors:
     for x in errors: print("FAIL:",x)

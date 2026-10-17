@@ -1,0 +1,197 @@
+{
+  "schema": "ghostmesh-video-receipt-v1",
+  "createdAt": "2026-10-17T12:29:29+00:00",
+  "source": {
+    "url": "https://www.youtube.com/watch?v=Z8lf5oWKfj0",
+    "videoId": "Z8lf5oWKfj0",
+    "title": "Matt Pocock: The Most Valuable Skill to Learn in the Age of AI",
+    "channel": "Nate Herk | AI Automation",
+    "uploadDate": "20261016",
+    "durationSeconds": 2690,
+    "captionType": "YouTube automatic English captions",
+    "captionTrack": "en-orig",
+    "creatorChapters": [
+      {
+        "startSeconds": 0,
+        "title": "Intro"
+      },
+      {
+        "startSeconds": 110,
+        "title": "When Coding Agents Clicked"
+      },
+      {
+        "startSeconds": 264,
+        "title": "Tell Agents What You Care About"
+      },
+      {
+        "startSeconds": 579,
+        "title": "Where the Opportunities Are"
+      },
+      {
+        "startSeconds": 895,
+        "title": "Unknown Unknowns & Grill Me"
+      },
+      {
+        "startSeconds": 1183,
+        "title": "How to Stand Out"
+      },
+      {
+        "startSeconds": 1563,
+        "title": "The Spec-Driven Development Failure"
+      },
+      {
+        "startSeconds": 1848,
+        "title": "Models, Harnesses & Effort Levels"
+      },
+      {
+        "startSeconds": 2127,
+        "title": "How to Get Started"
+      },
+      {
+        "startSeconds": 2491,
+        "title": "What's Next for Matt"
+      }
+    ]
+  },
+  "reasonPack": {
+    "schema": "ghostmesh-reasoning-pack-v1",
+    "verification": "pass",
+    "formatSelection": "136+251-6 (inspected 720p H.264 video plus Opus audio; normalized to MP4/M4A)",
+    "manifestSha256": "06a46ae8e66561e9b53af9ae79ec22820f2dab96012b8a7bad769dbd02f202a9",
+    "members": {
+      "video.mp4": {
+        "sha256": "60c654fe0368e09db9475acef1c484608393ba9ca5ddb7e39c1c855c5fa7cb87",
+        "bytes": 369062828
+      },
+      "audio.m4a": {
+        "sha256": "177613de619f9b07c08d894648055ec1230ca0cf67662f83cb09d98cc36a9a19",
+        "bytes": 41804346
+      },
+      "transcript.txt": {
+        "sha256": "f4ff5be366d1db4b60570eb29dbf0ee577d441abd765cd0784c608afb1ee6771",
+        "bytes": 47021
+      },
+      "transcript-status.json": {
+        "sha256": "de57500cafe4856dd6f43fa1cd0216e975b49dbbbcbe09eafb30ee5318cd7565",
+        "bytes": 284
+      },
+      "source.json": {
+        "sha256": "b05383fab4fc54acdc307418d1e47de27872a8dee9d5d84b8962b90cec9aee82",
+        "bytes": 11655839
+      },
+      "ffprobe.json": {
+        "sha256": "1fd1b7165a7a70b0d30e97ae672e0e17ff25282744b9feca0c33c25158045dcd",
+        "bytes": 4613
+      },
+      "captions.vtt": {
+        "sha256": "c353872fd417831d29c4d0ea1f7c923795d671e6e88e2c70ad55e4042198fbc3",
+        "bytes": 447859
+      }
+    },
+    "publicationBoundary": "Only derived transcript, source VTT, and this public receipt are published. Local video, audio, raw source metadata, and the private manifest are not published."
+  },
+  "derivation": {
+    "captionAcquisition": "The built-in ReasonPack caption command did not retain a track and began local Whisper fallback. That run was stopped; a separate yt-dlp en-orig VTT fetch succeeded. The source VTT and transcript were inserted into the completed media pack, its manifest and sums were regenerated, and ReasonPack verify passed.",
+    "transcript.txt": "Incremental lines in the ReasonPack VTT (cue lines with word-level timestamp tags), HTML entities decoded, grouped by 30-second cue start; no wording correction or speaker attribution.",
+    "captions.vtt": "Byte-for-byte copy of ReasonPack captions.vtt.",
+    "verification": "ReasonPack closed-manifest SHA-256 verification, followed by SHA-256 calculation of public files."
+  },
+  "editorial": {
+    "verdict": "Take the core lesson seriously; watch selected passages, not necessarily the full 44:50 interview. Start with a reversible, checkable task. Seek a separate deployment and security playbook before broader access.",
+    "thesis": "Good agent work depends on closing the loop from intent to inspectable behavior, not merely giving longer instructions.",
+    "recommendedSegments": [
+      {
+        "startSeconds": 1597,
+        "endSeconds": 1760,
+        "why": "First-person failure story about spec-driven work in a video editor."
+      },
+      {
+        "startSeconds": 1923,
+        "endSeconds": 2050,
+        "why": "First-person account of improving the agent environment with app interaction and screenshots."
+      },
+      {
+        "startSeconds": 2161,
+        "endSeconds": 2487,
+        "why": "Start small, observe the agent, expand trust with evidence, and prefer checkable tasks."
+      }
+    ],
+    "claimMap": [
+      {
+        "id": "communication",
+        "sourceStartSeconds": 264,
+        "kind": "speaker-opinion",
+        "finding": "Pocock says agents need explicit priorities and a well-maintained codebase.",
+        "limit": "No comparative study in the interview."
+      },
+      {
+        "id": "primary-sources",
+        "sourceStartSeconds": 439,
+        "kind": "speaker-practice",
+        "finding": "He says he uses agent teaching as an introduction before reading primary material.",
+        "limit": "The practice is described, not independently audited."
+      },
+      {
+        "id": "spec-failure",
+        "sourceStartSeconds": 1597,
+        "kind": "first-person-case",
+        "finding": "He reports his video-editor code and agent results worsened while centering a large spec.",
+        "limit": "One project, no shared logs or controlled comparison."
+      },
+      {
+        "id": "environment-fix",
+        "sourceStartSeconds": 1991,
+        "kind": "first-person-case",
+        "finding": "He reports better results after agents could run and inspect his application.",
+        "limit": "No before/after quality metric or artifacts in the interview."
+      },
+      {
+        "id": "productivity",
+        "sourceStartSeconds": 1850,
+        "kind": "first-person-claim",
+        "finding": "He describes multiple agents and hundreds of commits per day.",
+        "limit": "Commit count is not a quality or value measure; not independently checked here."
+      },
+      {
+        "id": "trust-ladder",
+        "sourceStartSeconds": 2161,
+        "kind": "speaker-advice",
+        "finding": "He recommends supervised, small tasks before widening agent scope.",
+        "limit": "Permission, approval, and rollback controls are GhostMesh recommendations."
+      },
+      {
+        "id": "sales-advice",
+        "sourceStartSeconds": 1255,
+        "kind": "speaker-advice",
+        "finding": "He suggests a client-specific prototype and acknowledges limited experience competing without a large audience.",
+        "limit": "Not a validated sales strategy; an aside about billing should not be treated as guidance."
+      }
+    ],
+    "externalPrimarySources": [
+      {
+        "url": "https://github.com/mattpocock/skills",
+        "role": "Author-owned public skills repository; existence check only."
+      },
+      {
+        "url": "https://ai.engineer/talks/8rABwKRsec4-specifications-are-the-new-code",
+        "role": "Sean Grove talk that Pocock invokes; its position on specs is not a measured comparison of his project."
+      }
+    ],
+    "limits": [
+      "YouTube automatic captions may mishear names, model versions, and technical terms.",
+      "No speaker diarization or manual transcript correction.",
+      "No independent audit of repositories, sessions, costs, commit history, client outcomes, or security controls.",
+      "Editorial judgments are not empirical effect sizes."
+    ]
+  },
+  "publicFiles": {
+    "transcript.txt": {
+      "sha256": "ade52ba3929f156997b4b4b8ec27aff1056657c636fb5f08a245d700ef4f3d19",
+      "bytes": 47289
+    },
+    "captions.vtt": {
+      "sha256": "c353872fd417831d29c4d0ea1f7c923795d671e6e88e2c70ad55e4042198fbc3",
+      "bytes": 447859
+    }
+  }
+}
