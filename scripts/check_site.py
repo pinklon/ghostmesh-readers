@@ -14,7 +14,8 @@ required = ("index.html","404.html","favicon.svg","robots.txt","sitemap.xml","si
             "the-agent-a-company-owns/index.html",
             "when-agents-become-the-customer/index.html",
             "the-funnel-is-not-the-frontier/index.html",
-            "the-microscope-is-not-a-soul/index.html")
+            "the-microscope-is-not-a-soul/index.html",
+            "the-inbox-was-a-boundary/index.html")
 errors = []
 class Page(HTMLParser):
     def __init__(self): super().__init__(); self.links=[]; self.ids=set()
@@ -48,7 +49,8 @@ for video_id,slug in (("ZhM29Ds-mBg","the-score-is-not-the-system"),
                        ("HQXi4snP36I","the-agent-a-company-owns"),
                        ("2DmP5etgh4U","when-agents-become-the-customer"),
                        ("BjO_JC6ujXs","the-funnel-is-not-the-frontier"),
-                       ("2oH1NACBgS4","the-microscope-is-not-a-soul")):
+                       ("2oH1NACBgS4","the-microscope-is-not-a-soul"),
+                       ("rb4CTZjHCNg","the-inbox-was-a-boundary")):
     for marker in (f'i.ytimg.com/vi/{video_id}/hqdefault.jpg',
                    f'data-video-id="{video_id}"',
                    f'https://www.youtube.com/watch?v={video_id}',
@@ -112,8 +114,8 @@ for source in ("https://vercel.com/blog/introducing-eve", "https://github.com/ve
                "https://vercel.com/kb/guide/github-agent-eve"):
     if f'href="{source}"' not in third: errors.append("Reader 003 missing source "+source)
 allowlist=re.search(r"const allowed = new Set\(\[(.*?)\]\)",home)
-if not allowlist or re.findall(r"'([^']+)'",allowlist[1]) != ["ZhM29Ds-mBg","PseF3LyXQ04","HQXi4snP36I","2DmP5etgh4U","BjO_JC6ujXs","2oH1NACBgS4"]:
-    errors.append("homepage player allowlist must contain exactly the six source IDs")
+if not allowlist or re.findall(r"'([^']+)'",allowlist[1]) != ["ZhM29Ds-mBg","PseF3LyXQ04","HQXi4snP36I","2DmP5etgh4U","BjO_JC6ujXs","2oH1NACBgS4","rb4CTZjHCNg"]:
+    errors.append("homepage player allowlist must contain exactly the seven source IDs")
 if "Explore GhostMesh's take on company agents" not in home:
     errors.append("homepage third editorial action missing")
 # Reader 004: caption-grounded editorial, explicit comparisons, and opt-in seeks.
@@ -207,10 +209,32 @@ for href in ("https://www.anthropic.com/news/2026-usage-policy-update",
 if "The Microscope Is Not a Soul" not in home or 'data-video-id="2oH1NACBgS4"' not in home:
     errors.append("sixth homepage source/CTA missing")
 
+# Seventh Video Deconstruction: transcript-derived chapters, source boundaries,
+# opt-in player, and original editorial interpretation.
+seventh=(site/"the-inbox-was-a-boundary/index.html").read_text(encoding="utf8")
+for marker in ("The Inbox Was a Boundary", "AI Copium", "rb4CTZjHCNg",
+               "https://i.ytimg.com/vi/rb4CTZjHCNg/hqdefault.jpg",
+               "youtube-nocookie.com/embed/rb4CTZjHCNg", "document.createElement('iframe')",
+               "0c407beb78cb38dcc942ba40ed9f79274f4cb0bb833f22eb657d4427e10ee6f5",
+               "5fe94c71a95b6f6b4b629991737d6774eb32d55c8ab0706e7031ec3bad61f302",
+               "machine transcript", "source publication date unverified", "model identity remains uncertain",
+               "GhostMesh has not run that experiment", "https://swarmcha.se/posts/chinese-agent-fleet-full-report"):
+    if marker.casefold() not in seventh.casefold():
+        errors.append("seventh missing contract: "+marker)
+if re.search(r"<iframe\b",seventh,re.I): errors.append("seventh player must wait for interaction")
+seventh_starts=[int(x) for x in re.findall(r'data-start="(\d+)"',seventh)]
+if seventh_starts != [0,40,135,305,473,665]: errors.append("seventh transcript chapter starts drift")
+for sec in seventh_starts:
+    if f'watch?v=rb4CTZjHCNg&amp;t={sec}s' not in seventh:
+        errors.append("seventh missing YouTube chapter fallback "+str(sec))
+if "The Inbox Was a Boundary" not in home or 'data-video-id="rb4CTZjHCNg"' not in home:
+    errors.append("seventh homepage source/CTA missing")
+
 # Share and footer controls are a contract on every published Reader.
 for slug in ("the-score-is-not-the-system","when-software-becomes-legible",
              "the-agent-a-company-owns","when-agents-become-the-customer",
-             "the-funnel-is-not-the-frontier","the-microscope-is-not-a-soul"):
+             "the-funnel-is-not-the-frontier","the-microscope-is-not-a-soul",
+             "the-inbox-was-a-boundary"):
     article=(site/slug/"index.html").read_text(encoding="utf8")
     for token in ('/brand/ghostmesh-mark.svg', '/assets/reader-chrome.css',
                   '/assets/reader-share.js', 'data-gm-share', 'data-copy-link',
@@ -227,7 +251,7 @@ for asset in ("assets/reader-chrome.css","assets/reader-share.js",
         errors.append("missing shared Reader asset: "+asset)
 xml=ET.parse(site/"sitemap.xml")
 urls=[x.text for x in xml.getroot().iter() if x.tag.endswith("loc")]
-for path in ("/","/the-score-is-not-the-system/","/when-software-becomes-legible/","/the-agent-a-company-owns/","/when-agents-become-the-customer/","/the-funnel-is-not-the-frontier/","/the-microscope-is-not-a-soul/"):
+for path in ("/","/the-score-is-not-the-system/","/when-software-becomes-legible/","/the-agent-a-company-owns/","/when-agents-become-the-customer/","/the-funnel-is-not-the-frontier/","/the-microscope-is-not-a-soul/","/the-inbox-was-a-boundary/"):
     if host+path not in urls: errors.append("sitemap missing "+path)
 if errors:
     for x in errors: print("FAIL:",x)
