@@ -10,10 +10,10 @@ The public, video-first companion to [SharePlane](https://shareplane.malott.ai/)
 
 1. Create `site/<slug>/index.html`. Show the original YouTube video with an opt-in player, a direct YouTube fallback, and selected timestamp links.
 2. State GhostMesh's verdict near the top: who should watch, what to skip or verify, and what to do next. Ground the call in this video's strongest and weakest evidence. Distinguish a speaker's experience from a measured result and GhostMesh's inference from either.
-3. Publish a UTF-8 timed transcript, the preserved source-caption VTT when available, a machine-readable `receipt.json` with a timestamped claim map and provenance, and `SHA256SUMS.txt` for those public files. Mark automatic captions as uncorrected. The receipt must omit signed stream URLs, credentials, private paths, and nonpublic details; media stays in the local ReasonPack.
+3. Publish original editorial analysis, source-video timestamps, and a sanitized machine-readable `receipt.json` with claim-level provenance and evidence hashes. Retain original media, source captions, and transcripts only in an access-controlled private ReasonPack. Never copy or commit third-party transcript, caption, or media files into `site/`, even if no page links to them. Receipt metadata must omit signed stream URLs, credentials, private paths, and nonpublic details.
 4. Update the collection in `site/index.html` and `site/sitemap.xml`; keep all existing slugs.
 5. Run `python3 scripts/check_site.py` and inspect desktop and narrow-screen layouts before publication. GitHub Actions verifies pull requests and pushes.
-6. Review the proposed change, merge into `main`, and check the Netlify deployment and public downloads.
+6. Review the proposed change, merge into `main` only after verifying private ReasonPack custody, and check the Netlify deployment. Confirm the source video, editorial analysis, and receipt load while the former public transcript and captions return unavailable responses.
 
 ## Hosting separation
 
@@ -26,3 +26,7 @@ The existing Netlify project `shareplane-youtube` is connected to GitHub reposit
 ## Recovery
 
 Restore a previous successful Netlify deploy, or revert a publication commit. Do not force push or delete the public history as a routine rollback.
+
+## Public evidence boundary
+
+The site and repository are public. No third-party video, audio, full transcript, subtitle, or caption artifact belongs in their current source trees, including unlinked files. Publish source links, bounded quotations when warranted, independently authored criticism, and sanitized receipts instead. Keep source artifacts private and hash-verifiable. Deleting a file from the current tree does **not** erase it from Git history or historical Netlify deploy URLs; address historical exposure separately, without force-pushing or destroying private evidence.

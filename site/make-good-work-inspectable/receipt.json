@@ -88,7 +88,7 @@
         "bytes": 447859
       }
     },
-    "publicationBoundary": "Only derived transcript, source VTT, and this public receipt are published. Local video, audio, raw source metadata, and the private manifest are not published."
+    "publicationBoundary": "The public site distributes only original commentary and a sanitized claim-level evidence receipt. Original video, audio, full transcript, and source captions remain in a private, hash-verifiable ReasonPack."
   },
   "derivation": {
     "captionAcquisition": "The built-in ReasonPack caption command did not retain a track and began local Whisper fallback. That run was stopped; a separate yt-dlp en-orig VTT fetch succeeded. The source VTT and transcript were inserted into the completed media pack, its manifest and sums were regenerated, and ReasonPack verify passed.",
@@ -183,15 +183,5 @@
       "No independent audit of repositories, sessions, costs, commit history, client outcomes, or security controls.",
       "Editorial judgments are not empirical effect sizes."
     ]
-  },
-  "publicFiles": {
-    "transcript.txt": {
-      "sha256": "ade52ba3929f156997b4b4b8ec27aff1056657c636fb5f08a245d700ef4f3d19",
-      "bytes": 47289
-    },
-    "captions.vtt": {
-      "sha256": "c353872fd417831d29c4d0ea1f7c923795d671e6e88e2c70ad55e4042198fbc3",
-      "bytes": 447859
-    }
   }
 }
