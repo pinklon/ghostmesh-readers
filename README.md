@@ -8,7 +8,7 @@ The public, video-first companion to [SharePlane](https://shareplane.malott.ai/)
 
 ## Add a Reader
 
-1. Create `site/<slug>/index.html`. Show the original YouTube video with an opt-in player, a direct YouTube fallback, and selected timestamp links.
+1. Create `site/<slug>/index.html`. Show the original supported video with an opt-in player and a direct source fallback. Use timestamp links where the platform supports them; otherwise label source timings without promising a seek.
 2. State GhostMesh's verdict near the top: who should watch, what to skip or verify, and what to do next. Ground the call in this video's strongest and weakest evidence. Distinguish a speaker's experience from a measured result and GhostMesh's inference from either.
 3. Publish original editorial analysis, source-video timestamps, and a sanitized machine-readable `receipt.json` with claim-level provenance and evidence hashes. Retain original media, source captions, and transcripts only in an access-controlled private ReasonPack. Never copy or commit third-party transcript, caption, or media files into `site/`, even if no page links to them. Receipt metadata must omit signed stream URLs, credentials, private paths, and nonpublic details.
 4. Update the collection in `site/index.html` and `site/sitemap.xml`; keep all existing slugs.

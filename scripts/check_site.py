@@ -20,7 +20,9 @@ required = ("index.html","404.html","favicon.svg","robots.txt","sitemap.xml","si
             "the-inbox-was-a-boundary/index.html",
             "autonomy-needs-an-interface/index.html",
             "make-good-work-inspectable/index.html",
-            "make-good-work-inspectable/receipt.json")
+            "make-good-work-inspectable/receipt.json",
+            "a-challenge-is-not-a-verdict/index.html",
+            "a-challenge-is-not-a-verdict/receipt.json")
 errors = []
 # Fail publication if any private media, caption or transcript artifact leaks into site/.
 for candidate in site.rglob("*"):
@@ -308,12 +310,40 @@ else:
 if "Make Good Work Inspectable" not in home or 'data-video-id="Z8lf5oWKfj0"' not in home:
     errors.append("ninth homepage source/CTA missing")
 
+# First Instagram Reader: explicit source, opt-in embed, opinionated editorial,
+# sanitized public receipt and private source custody.
+instagram_dir=site/"a-challenge-is-not-a-verdict"
+instagram=(instagram_dir/"index.html").read_text(encoding="utf8")
+for marker in ("A Challenge Is Not a Verdict", "DeUnZhWgPKd",
+               "Watch the minute. Keep the habit. Test the objections.",
+               "https://www.instagram.com/reel/DeUnZhWgPKd/",
+               "https://www.instagram.com/reel/DeUnZhWgPKd/embed/",
+               "document.createElement('iframe')", "00:48", "What the Reel says",
+               'download href="/a-challenge-is-not-a-verdict/receipt.json"',
+               "https://not-equal.org/content/pdf/misc/Perkins1991.pdf",
+               "https://arxiv.org/abs/2403.01791"):
+    if marker not in instagram: errors.append("Instagram Reader missing " + marker)
+if re.search(r"<iframe\b",instagram,re.I): errors.append("Instagram player must wait for interaction")
+if 'data-reel-id="DeUnZhWgPKd"' not in home or 'href="/a-challenge-is-not-a-verdict/"' not in home:
+    errors.append("Instagram homepage source/editorial link missing")
+instagram_receipt=json.loads((instagram_dir/"receipt.json").read_text(encoding="utf8"))
+if instagram_receipt.get("source",{}).get("shortcode")!="DeUnZhWgPKd" or instagram_receipt.get("reasonPack",{}).get("verification")!="pass":
+    errors.append("Instagram receipt source or ReasonPack verification mismatch")
+if len(instagram_receipt.get("editorial",{}).get("claimMap",[]))!=4:
+    errors.append("Instagram receipt claim map incomplete")
+if instagram_receipt.get("reasonPack",{}).get("manifestSha256")!="ac0d0bf670fbc0d6b5937e96742b2268e5b80d537f49e0ccf662e299d5aee649":
+    errors.append("Instagram receipt pack identity mismatch")
+if "private" not in instagram_receipt.get("reasonPack",{}).get("publicationBoundary","").lower():
+    errors.append("Instagram receipt must declare private custody")
+if any(token in instagram for token in ("/a-challenge-is-not-a-verdict/transcript.txt","/a-challenge-is-not-a-verdict/transcript.srt")):
+    errors.append("Instagram Reader links to private transcript")
+
 # Share and footer controls are a contract on every published Reader.
 for slug in ("the-score-is-not-the-system","when-software-becomes-legible",
              "the-agent-a-company-owns","when-agents-become-the-customer",
              "the-funnel-is-not-the-frontier","the-microscope-is-not-a-soul",
              "the-inbox-was-a-boundary","autonomy-needs-an-interface",
-             "make-good-work-inspectable"):
+             "make-good-work-inspectable","a-challenge-is-not-a-verdict"):
     article=(site/slug/"index.html").read_text(encoding="utf8")
     for token in ('/brand/ghostmesh-mark.svg', '/assets/reader-chrome.css',
                   '/assets/reader-share.js', 'data-gm-share', 'data-copy-link',
@@ -330,7 +360,7 @@ for asset in ("assets/reader-chrome.css","assets/reader-share.js",
         errors.append("missing shared Reader asset: "+asset)
 xml=ET.parse(site/"sitemap.xml")
 urls=[x.text for x in xml.getroot().iter() if x.tag.endswith("loc")]
-for path in ("/","/the-score-is-not-the-system/","/when-software-becomes-legible/","/the-agent-a-company-owns/","/when-agents-become-the-customer/","/the-funnel-is-not-the-frontier/","/the-microscope-is-not-a-soul/","/the-inbox-was-a-boundary/","/autonomy-needs-an-interface/","/make-good-work-inspectable/"):
+for path in ("/","/the-score-is-not-the-system/","/when-software-becomes-legible/","/the-agent-a-company-owns/","/when-agents-become-the-customer/","/the-funnel-is-not-the-frontier/","/the-microscope-is-not-a-soul/","/the-inbox-was-a-boundary/","/autonomy-needs-an-interface/","/make-good-work-inspectable/","/a-challenge-is-not-a-verdict/"):
     if host+path not in urls: errors.append("sitemap missing "+path)
 if errors:
     for x in errors: print("FAIL:",x)

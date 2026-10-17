@@ -1,0 +1,114 @@
+{
+  "schema": "ghostmesh-video-receipt-v1",
+  "createdAt": "2026-10-17T13:49:17.504280+00:00",
+  "source": {
+    "platform": "Instagram",
+    "url": "https://www.instagram.com/reel/DeUnZhWgPKd/",
+    "shortcode": "DeUnZhWgPKd",
+    "title": "Video by stevesystems",
+    "creator": "Steve | Systems & AI",
+    "uploadDate": "20261010",
+    "durationSeconds": 69.933333
+  },
+  "reasonPack": {
+    "skill": "build-reasoning-pack",
+    "version": "1.0.2",
+    "canonicalSkillsCommit": "3a45c8d3613d49d3e02ef3bae815a74d634cd447",
+    "schema": "ghostmesh-reasoning-pack-v1",
+    "verification": "pass",
+    "manifestSha256": "ac0d0bf670fbc0d6b5937e96742b2268e5b80d537f49e0ccf662e299d5aee649",
+    "privateEvidenceHashes": {
+      "video.mp4": {
+        "sha256": "2c3216a319d0ae917da51ea22a6760a61c21b3ef771e056d59cc10703e3ee246",
+        "bytes": 35424695
+      },
+      "audio.m4a": {
+        "sha256": "92d70ce375e155b8b3af42c63472754f69ce5c52ea16db73b2d1e37570762287",
+        "bytes": 1130201
+      },
+      "transcript.txt": {
+        "sha256": "1a5929fec30b223f2656396bc30002c0a0459bc18dcb90acccc201438fa559d8",
+        "bytes": 1071
+      },
+      "transcript-status.json": {
+        "sha256": "02c92c80af87351b1d1db46f45a61a15267f09dee9604023cdab3c1fe57d079a",
+        "bytes": 296
+      }
+    },
+    "transcription": "local Whisper small.en; default attempt failed, bounded CPU retry succeeded; second local CPU pass produced claim timing",
+    "captionSource": "none retained from source",
+    "publicationBoundary": "Original video, audio, full transcripts, source metadata and pack manifest remain private. The public site distributes only original commentary and this sanitized claim-level receipt."
+  },
+  "editorial": {
+    "title": "A Challenge Is Not a Verdict",
+    "verdict": "Watch the Reel and use AI to surface objections; verify consequential objections before changing an engineering decision.",
+    "thesis": "A plausible AI challenge can become another premature stopping point unless the team converts it into tests, sources and accountable review.",
+    "claimMap": [
+      {
+        "id": "makes-sense",
+        "startSeconds": 0,
+        "endSeconds": 24,
+        "kind": "source-attribution",
+        "claim": "Early closure when a choice feels defensible, attributed to Perkins.",
+        "finding": "Perkins and colleagues described a makes-sense epistemology; the Reel paraphrases its name and overstates prevalence with every engineer.",
+        "limit": "No prevalence measurement in Reel.",
+        "evidence": [
+          "https://www.instagram.com/reel/DeUnZhWgPKd/",
+          "https://not-equal.org/content/pdf/misc/Perkins1991.pdf"
+        ]
+      },
+      {
+        "id": "architecture-review",
+        "startSeconds": 24,
+        "endSeconds": 47,
+        "kind": "speaker-example",
+        "claim": "Architecture reviews may omit contrary evidence, edge cases and tradeoffs.",
+        "finding": "Plausible and actionable review risk.",
+        "limit": "No specific review or measured outcome in Reel.",
+        "evidence": [
+          "https://www.instagram.com/reel/DeUnZhWgPKd/"
+        ]
+      },
+      {
+        "id": "people-update",
+        "startSeconds": 48,
+        "endSeconds": 58,
+        "kind": "speaker-generalization",
+        "claim": "Most people update their view if contrary evidence is presented; AI can surface it.",
+        "finding": "The prevalence and AI-effect claims are unsupported in the Reel.",
+        "limit": "No cited study, architecture review, benchmark or before-after evidence.",
+        "evidence": [
+          "https://www.instagram.com/reel/DeUnZhWgPKd/"
+        ]
+      },
+      {
+        "id": "ai-challenge",
+        "startSeconds": 59,
+        "endSeconds": 70,
+        "kind": "speaker-advice",
+        "claim": "Ask AI to argue against the decision.",
+        "finding": "Useful candidate-generation step if objections are independently checked.",
+        "limit": "Exploratory AI-role evidence studied a different decision task and does not validate this prompt for engineering reviews.",
+        "evidence": [
+          "https://www.instagram.com/reel/DeUnZhWgPKd/",
+          "https://arxiv.org/abs/2403.01791"
+        ]
+      }
+    ],
+    "primarySources": [
+      {
+        "url": "https://not-equal.org/content/pdf/misc/Perkins1991.pdf",
+        "role": "1991 chapter by D. N. Perkins, Michael Farady and Barbara Bushey, pp. 98–100, for makes-sense epistemology."
+      },
+      {
+        "url": "https://arxiv.org/abs/2403.01791",
+        "role": "Exploratory study of AI advisor roles in news-item classification, not architecture reviews."
+      }
+    ],
+    "limits": [
+      "Automatic local transcript and timing are uncorrected.",
+      "No observed architecture review or evaluation of the suggested prompt.",
+      "Editorial recommendation is not a measured effect size."
+    ]
+  }
+}
