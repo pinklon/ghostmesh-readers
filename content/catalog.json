@@ -29,7 +29,8 @@
         "title": "Video by stevesystems",
         "creator": "Steve | Systems & AI",
         "uploadDate": "20261010",
-        "durationSeconds": 69.933333
+        "durationSeconds": 69.933333,
+        "mediaAspect": "9:16"
       },
       "published": "2026-10-17",
       "updated": "2026-10-18T14:34:54.306588Z",
@@ -412,7 +413,8 @@
         "title": "Anthropic just shared how they use Claude differently (Master it in 12 mins)",
         "channel": "Jay E | RoboNuggets",
         "uploadDate": "20261017",
-        "durationSeconds": 762
+        "durationSeconds": 762,
+        "mediaAspect": "16:9"
       },
       "published": "2026-10-18",
       "updated": "2026-10-18T14:34:54.306588Z",
@@ -865,7 +867,8 @@
         "platform": "YouTube",
         "videoId": "DdbCtAScTsk",
         "publicationDate": "2026-08-25",
-        "dateNote": "Source metadata reported in original public edition; no independent source-date revalidation."
+        "dateNote": "Source metadata reported in original public edition; no independent source-date revalidation.",
+        "mediaAspect": "16:9"
       },
       "published": "2026-10-17",
       "updated": "2026-10-18T14:34:54.306588Z",
@@ -1152,7 +1155,8 @@
             "title": "What's Next for Matt"
           }
         ],
-        "platform": "YouTube"
+        "platform": "YouTube",
+        "mediaAspect": "16:9"
       },
       "published": "2026-10-17",
       "updated": "2026-10-18T14:34:54.306588Z",
@@ -1652,7 +1656,8 @@
         "platform": "YouTube",
         "videoId": "HQXi4snP36I",
         "publicationDate": "2026-08-06",
-        "dateNote": "Source metadata reported in original public edition; no independent source-date revalidation."
+        "dateNote": "Source metadata reported in original public edition; no independent source-date revalidation.",
+        "mediaAspect": "16:9"
       },
       "published": "2026-10-16",
       "updated": "2026-10-18T14:34:54.306588Z",
@@ -1905,7 +1910,8 @@
         "platform": "YouTube",
         "videoId": "BjO_JC6ujXs",
         "publicationDate": "2026-10-12",
-        "dateNote": "Source metadata reported in original public edition; no independent source-date revalidation."
+        "dateNote": "Source metadata reported in original public edition; no independent source-date revalidation.",
+        "mediaAspect": "16:9"
       },
       "published": "2026-10-16",
       "updated": "2026-10-18T14:34:54.306588Z",
@@ -2195,7 +2201,8 @@
         "platform": "YouTube",
         "videoId": "rb4CTZjHCNg",
         "publicationDate": null,
-        "dateNote": "Source publication date explicitly unverified in original edition."
+        "dateNote": "Source publication date explicitly unverified in original edition.",
+        "mediaAspect": "16:9"
       },
       "published": "2026-10-16",
       "updated": "2026-10-18T14:34:54.306588Z",
@@ -2457,7 +2464,8 @@
         "title": "OpenCode hack is INSANE.",
         "channel": "David Ondrej",
         "uploadDate": "20261018",
-        "durationSeconds": 1894
+        "durationSeconds": 1894,
+        "mediaAspect": "16:9"
       },
       "published": "2026-10-18",
       "updated": "2026-10-18T14:34:54.306588Z",
@@ -2922,7 +2930,8 @@
         "platform": "YouTube",
         "videoId": "2oH1NACBgS4",
         "publicationDate": null,
-        "dateNote": "Source publication date explicitly unverified in original edition."
+        "dateNote": "Source publication date explicitly unverified in original edition.",
+        "mediaAspect": "16:9"
       },
       "published": "2026-10-16",
       "updated": "2026-10-18T14:34:54.306588Z",
@@ -3247,7 +3256,8 @@
         "title": "Someone Just Open Sourced an Autonomous AI Hacker",
         "channel": "AI Fusion",
         "uploadDate": "20261017",
-        "durationSeconds": 444
+        "durationSeconds": 444,
+        "mediaAspect": "16:9"
       },
       "published": "2026-10-18",
       "updated": "2026-10-18T14:34:54.306588Z",
@@ -3664,7 +3674,8 @@
         "platform": "YouTube",
         "videoId": "ZhM29Ds-mBg",
         "publicationDate": "2026-10-07",
-        "dateNote": "Source metadata reported in original public edition; no independent source-date revalidation."
+        "dateNote": "Source metadata reported in original public edition; no independent source-date revalidation.",
+        "mediaAspect": "16:9"
       },
       "published": "2026-10-16",
       "updated": "2026-10-18T14:34:54.306588Z",
@@ -3956,7 +3967,8 @@
         "platform": "YouTube",
         "videoId": "2DmP5etgh4U",
         "publicationDate": "2026-10-16",
-        "dateNote": "Source metadata reported in original public edition; no independent source-date revalidation."
+        "dateNote": "Source metadata reported in original public edition; no independent source-date revalidation.",
+        "mediaAspect": "16:9"
       },
       "published": "2026-10-16",
       "updated": "2026-10-18T14:34:54.306588Z",
@@ -4175,7 +4187,8 @@
         "platform": "YouTube",
         "videoId": "PseF3LyXQ04",
         "publicationDate": "2026-10-15",
-        "dateNote": "Source metadata reported in original public edition; no independent source-date revalidation."
+        "dateNote": "Source metadata reported in original public edition; no independent source-date revalidation.",
+        "mediaAspect": "16:9"
       },
       "published": "2026-10-16",
       "updated": "2026-10-18T14:34:54.306588Z",

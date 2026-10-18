@@ -5,7 +5,8 @@
     "platform": "YouTube",
     "videoId": "HQXi4snP36I",
     "publicationDate": "2026-08-06",
-    "dateNote": "Source metadata reported in original public edition; no independent source-date revalidation."
+    "dateNote": "Source metadata reported in original public edition; no independent source-date revalidation.",
+    "mediaAspect": "16:9"
   },
   "custody": {
     "status": "historical-public-account-only",
@@ -30,7 +31,8 @@
       "platform": "YouTube",
       "videoId": "HQXi4snP36I",
       "publicationDate": "2026-08-06",
-      "dateNote": "Source metadata reported in original public edition; no independent source-date revalidation."
+      "dateNote": "Source metadata reported in original public edition; no independent source-date revalidation.",
+      "mediaAspect": "16:9"
     },
     "published": "2026-10-16",
     "updated": "2026-10-18T14:34:54.306588Z",
