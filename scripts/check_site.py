@@ -10,6 +10,16 @@ ROOT=Path(__file__).resolve().parents[1];SITE=ROOT/'site'
 VERDICTS={'Essential','Worth studying','Interesting, unproven','Mostly recycled','Misleading','Not worth your time'}
 STATES={'corroborated','partially corroborated','contradicted','disputed','unverified'}
 RELATIONS={'examines same claim','extends','challenges','responds to','shares entity','informs architecture','related topic'}
+# This static site publishes only reviewed text assets. New asset formats require
+# an explicit policy change, so an unfamiliar capture container fails closed.
+PUBLIC_TEXT_EXTENSIONS={'.html','.json','.js','.css','.svg','.xml','.webmanifest'}
+PUBLIC_TEXT_PATHS={'robots.txt','_headers'}
+SOURCE_EXTENSIONS=set('.vtt .srt .sbv .ass .ssa .sub .ttml .dfxp .scc .sami .smi .lrc .srv1 .srv2 .srv3 .json3 .mkv .mka .mks .mp4 .m4a .m4v .mp3 .webm .wav .wave .mov .qt .ogg .ogv .oga .opus .flac .aac .aiff .aif .avi .wmv .wma .asf .flv .f4v .mpeg .mpg .mpe .m2v .ts .mts .m2ts .3gp .3g2 .vob .amr .ape .ac3 .aax'.split())
+def capture_signature(data):
+ return (data.startswith((b'\x1a\x45\xdf\xa3',b'OggS',b'fLaC',b'ID3',b'FLV',b'#!AMR',b'WEBVTT'))
+         or data[:4] in (b'RIFF',b'FORM')
+         or data[4:8] in (b'ftyp',b'moov',b'mdat')
+         or data.startswith((b'\x00\x00\x01\xba',b'\x00\x00\x01\xb3')))
 class Page(HTMLParser):
  def __init__(self):super().__init__(convert_charrefs=True);self.ids=[];self.links=[];self.text=[];self.hide=0;self.tags=[];self.frames=[]
  def handle_starttag(self,t,attrs):
@@ -110,8 +120,16 @@ def check(root=ROOT):
  for p in root.rglob('*'):
   if '.git' in p.parts or '__pycache__' in p.parts:continue
   if not p.is_file():continue
-  require(p.suffix.lower() not in {'.vtt','.srt','.sbv','.ass','.mp4','.m4a','.mp3','.webm','.wav','.mov','.ogg'},f'Private source media: {p.relative_to(root)}')
+  require(p.suffix.lower() not in SOURCE_EXTENSIONS,f'Private source media: {p.relative_to(root)}')
   require(not p.name.lower().startswith(('transcript','captions','subtitles')),f'Private source artifact: {p.relative_to(root)}')
+  if p.is_relative_to(site):
+   require(not p.is_symlink(),f'Public symlink: {p.relative_to(site)}')
+   require(p.suffix.lower() in PUBLIC_TEXT_EXTENSIONS or p.relative_to(site).as_posix() in PUBLIC_TEXT_PATHS,f'Unapproved public file type: {p.relative_to(site)}')
+   payload=p.read_bytes()
+   require(not capture_signature(payload),f'Private source capture signature: {p.relative_to(site)}')
+   try:payload.decode('utf-8')
+   except UnicodeDecodeError:errors.append(f'Non-text public asset: {p.relative_to(site)}')
+   require(b'\x00' not in payload,f'Binary public asset: {p.relative_to(site)}')
   if p.is_relative_to(site) and p.suffix in {'.html','.json','.js','.css','.xml'}:
    raw=p.read_text();require(not re.search(r'/Users/|/srv/ghostmesh/|/private/var/|gh[pousr]_[A-Za-z0-9]{20,}|(?:X-Amz-Signature|access_token|client_secret)=',raw),f'Private marker: {p.relative_to(site)}')
    if p.suffix=='.json':

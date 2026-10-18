@@ -3,6 +3,7 @@ const output=process.env.GM_TEST_OUTPUT || '/tmp/ghostmesh-reader-checks';
 require('fs').mkdirSync(output+'/screenshots',{recursive:true});
 const { chromium } = require('playwright');
 const fs=require('fs');
+const {archiveComplete}=require('./browser_assertions.cjs');
 (async()=>{
  const browser=await chromium.launch({headless:true,channel:"chrome"});
  const cat=JSON.parse(fs.readFileSync('content/catalog.json'));
@@ -29,6 +30,6 @@ const fs=require('fs');
  await page.locator('[data-theme-choice]').selectOption('system');if(await page.locator('html').getAttribute('data-theme')!=='dark')failures.push('system preference');
  for(const r of cat.readers){await page.goto('http://127.0.0.1:8765/'+r.slug+'/');const play=page.locator('#play,#play-cover,#play-source,#play-reel,#play-video').first();if(await play.count()){await play.click();if(!(await page.locator('iframe[src^="https://"]').count()))failures.push('player '+r.slug)}else failures.push('play control missing '+r.slug);}
  await context.close();
- const nojs=await browser.newContext({javaScriptEnabled:false,viewport:{width:390,height:844}});const np=await nojs.newPage();await np.goto('http://127.0.0.1:8765/readers/');if(await np.locator('.gm-card').count()!==13)failures.push('no-JS archive');
+ const nojs=await browser.newContext({javaScriptEnabled:false,viewport:{width:390,height:844}});const np=await nojs.newPage();await np.goto('http://127.0.0.1:8765/readers/');if(!(await archiveComplete(np,cat)))failures.push('no-JS archive');
  await nojs.close();await browser.close();fs.writeFileSync(output+'/browser-evidence.json',JSON.stringify({cases:results.length,results,failures},null,2));console.log(JSON.stringify({cases:results.length,failures},null,2));if(failures.length)process.exit(1);
 })();

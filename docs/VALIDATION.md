@@ -27,3 +27,19 @@ Independent review identified and prompted fixes for source-date labeling, evide
 Public outgoing-link check on October 18: 177 distinct HTTPS links, 175 returned HTTP 200 to HEAD. Two remain explicitly unconfirmed: the historical SharePlane source Markdown URL returned 404; OpenAI's historical Hugging Face incident article returned 403 to automation. Neither result certifies a missing article or disproves the underlying claim. Original URLs are retained rather than silently redirected to a guessed destination. The fresh METR incident reference supplies separately scoped evidence.
 
 The previous site checker passed at baseline. This replacement preserves URLs and timed navigation through baseline-derived invariants, rather than retaining brittle requirements for all old videos to appear as homepage cards. No infrastructure workflow was added; existing CI runs the enhanced checker; targeted regression tests run locally and during independent review. The original workflow is unchanged because the existing OAuth credential does not permit workflow edits.
+
+## PR review repairs
+
+The later GitHub review found three gaps in the earlier implementation signoff: omitted capture containers, a contrast script that did not fail its process, and a fixed no-JavaScript archive count. These are repaired on the existing branch. The original signoff does not cover these repairs; exact-head fresh review is recorded in the PR and delivery receipt.
+
+The public directory now permits only the site's reviewed UTF-8 text asset types and two named hosting files. Unknown formats fail closed. Common capture signatures, binary content and symlinks are rejected; repository-wide capture-extension checks include Matroska, audio and caption formats. This bounded gate is not a claim to identify every possible disguised text transcript. Private packs and Git history are untouched.
+
+Run the additional development regression fixture with Playwright and Chrome available:
+
+```sh
+node tests/browser_regressions.cjs
+```
+
+It checks a 14-card archive with JavaScript disabled, rejects missing/extra cards, detects deliberately low-contrast text in a real browser and proves the report process exits 1. A readable fixture passes. The full contrast suite now exits nonzero on violations or execution errors. Catalog cards explicitly display the unverified-claim count; all 131 of 148 unverified statuses are unchanged.
+
+The historical SharePlane source URL returning HTTP 404 is confirmed broken and has been explicitly de-linked in the Reader while preserving attribution. The OpenAI incident URL returning automation HTTP 403 is UNKNOWN, not classified as broken. Current availability reruns are recorded separately in the delivery evidence. Historical link-check counts above describe the original run only.

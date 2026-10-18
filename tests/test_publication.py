@@ -13,6 +13,19 @@ class PublicationGate(unittest.TestCase):
  def rejected(self,term):self.assertTrue(any(term in x for x in check(self.root)),check(self.root))
  def test_source_media_outside_publish_directory(self):
   (self.root/'content/private.vtt').write_text('WEBVTT');self.rejected('Private source media')
+ def test_public_capture_formats(self):
+  for name in ['capture.mkv','capture.MKA','capture.opus','capture.ttml','capture.unknown']:
+   with self.subTest(name=name):
+    p=self.root/'site'/name;p.write_text('capture fixture')
+    self.rejected('Unapproved public file type');p.unlink()
+ def test_renamed_capture_is_rejected(self):
+  for payload in [b'\x1a\x45\xdf\xa3test',b'RIFFtestWAVE',b'\x00\x00\x00\x18ftypisom',b'OggStest',b'WEBVTT\n']:
+   with self.subTest(payload=payload):
+    p=self.root/'site/assets/capture.css';p.write_bytes(payload)
+    self.rejected('Private source capture signature');p.unlink()
+ def test_unknown_binary_public_asset(self):
+  (self.root/'site/assets/capture.css').write_bytes(b'unknown\x00binary')
+  self.rejected('Binary public asset')
  def test_encoded_em_dash_is_rendered_prose(self):
   p=self.root/'site/readers/index.html';p.write_text(p.read_text().replace('</main>','<p>Bad &#8212; prose</p></main>'));self.rejected('Em dash')
  def test_confirmation_without_evidence(self):
