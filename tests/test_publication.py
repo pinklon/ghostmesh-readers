@@ -23,6 +23,14 @@ class PublicationGate(unittest.TestCase):
    with self.subTest(payload=payload):
     p=self.root/'site/assets/capture.css';p.write_bytes(payload)
     self.rejected('Private source capture signature');p.unlink()
+ def test_public_symlinks(self):
+  for name,target in [('directory-link',self.root/'content'),('dangling-link',self.root/'missing'),('file-link.css',self.root/'site/assets/knowledge.css')]:
+   with self.subTest(name=name):
+    p=self.root/'site'/name;p.symlink_to(target)
+    self.rejected('Public symlink');p.unlink()
+ def test_non_utf8_public_asset(self):
+  (self.root/'site/assets/capture.css').write_bytes(b'\xff\xfeinvalid')
+  self.rejected('Non-text public asset')
  def test_unknown_binary_public_asset(self):
   (self.root/'site/assets/capture.css').write_bytes(b'unknown\x00binary')
   self.rejected('Binary public asset')

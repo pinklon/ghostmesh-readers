@@ -119,16 +119,18 @@ def check(root=ROOT):
  # Scan all public files, including unlinked assets and JSON, rather than only HTML.
  for p in root.rglob('*'):
   if '.git' in p.parts or '__pycache__' in p.parts:continue
+  if p.is_relative_to(site) and p.is_symlink():
+   errors.append(f'Public symlink: {p.relative_to(site)}');continue
   if not p.is_file():continue
   require(p.suffix.lower() not in SOURCE_EXTENSIONS,f'Private source media: {p.relative_to(root)}')
   require(not p.name.lower().startswith(('transcript','captions','subtitles')),f'Private source artifact: {p.relative_to(root)}')
   if p.is_relative_to(site):
-   require(not p.is_symlink(),f'Public symlink: {p.relative_to(site)}')
    require(p.suffix.lower() in PUBLIC_TEXT_EXTENSIONS or p.relative_to(site).as_posix() in PUBLIC_TEXT_PATHS,f'Unapproved public file type: {p.relative_to(site)}')
    payload=p.read_bytes()
    require(not capture_signature(payload),f'Private source capture signature: {p.relative_to(site)}')
    try:payload.decode('utf-8')
-   except UnicodeDecodeError:errors.append(f'Non-text public asset: {p.relative_to(site)}')
+   except UnicodeDecodeError:
+    errors.append(f'Non-text public asset: {p.relative_to(site)}');continue
    require(b'\x00' not in payload,f'Binary public asset: {p.relative_to(site)}')
   if p.is_relative_to(site) and p.suffix in {'.html','.json','.js','.css','.xml'}:
    raw=p.read_text();require(not re.search(r'/Users/|/srv/ghostmesh/|/private/var/|gh[pousr]_[A-Za-z0-9]{20,}|(?:X-Amz-Signature|access_token|client_secret)=',raw),f'Private marker: {p.relative_to(site)}')
