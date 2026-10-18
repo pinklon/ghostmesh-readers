@@ -1,6 +1,7 @@
 {
   "schema": "ghostmesh-video-receipt-v1",
   "createdAt": "2026-10-18T12:51:00Z",
+  "updatedAt": "2026-10-18T13:00:00Z",
   "source": {
     "platform": "YouTube",
     "url": "https://www.youtube.com/watch?v=8DKqcbEy-HM",
@@ -53,6 +54,10 @@
     "verification": "ReasonPack closed-manifest verification passed after normalization and transcription."
   },
   "editorial": {
+    "overview": "AI Fusion tours Strix's agent tools, specialized security skills, and scan modes, then describes attempts to run it against a local OWASP Juice Shop sandbox. The presenter manually demonstrates the login flaw; Strix produces no confirmed finding in the video.",
+    "whyItMatters": "Builders, application security teams, and buyers of AI security tools can use the video to see both the proposed workflow and the integration and budget failures that can stop a scan before it tests a target.",
+    "ghostMeshTakeaway": "Evaluate autonomous security tools on an authorized target with visible tool actions, a completed run, explicit coverage, cost, and reproducible findings. Preserve a source-bound run record and require human review before publishing or acting on a result.",
+    "watchGuidance": "Watch 00:52–03:23 for architecture and 04:46–05:52 for the local run. Viewers familiar with Juice Shop may skip the opening manual bypass.",
     "verdict": "The presenter manually bypassed Juice Shop; the Strix attempts shown did not produce a confirmed finding. Diagnose structured tool calling before attributing the local stall to model quality alone.",
     "thesis": "A vulnerable training target, an agent architecture, and partial tool calls establish a test setup, not measured detection coverage.",
     "recommendedSegments": [

@@ -367,7 +367,7 @@ if "private" not in opencode_receipt.get("reasonPack",{}).get("publicationBounda
 # Strix Reader: separate the manual target demonstration from the incomplete agent runs.
 strix_dir=site/"the-scan-never-reached-the-login"
 strix=(strix_dir/"index.html").read_text(encoding="utf8")
-for marker in ("The Scan Never", "8DKqcbEy-HM", "Watch the failed run.",
+for marker in ("The Scan Never", "8DKqcbEy-HM", "Worth seven minutes if you evaluate security agents.",
                "https://docs.strix.ai/llm-providers/local", "https://docs.strix.ai/advanced/skills",
                "https://wstg.owasp.org/v4.2/2-Introduction/",
                "youtube-nocookie.com/embed/8DKqcbEy-HM", "document.createElement('iframe')",
