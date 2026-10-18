@@ -53,6 +53,13 @@ class KnowledgeContractTests(unittest.TestCase):
         self.invalid(lambda m: m["nodes"][2].__setitem__("urlSha256", "0" * 64), "URL hash")
         self.invalid(lambda m: m["nodes"][2].__setitem__("url", "https://unrelated.example/report"), "URL hash")
 
+    def test_citation_url_must_share_exact_claim_anchor(self):
+        def cite_footer(model):
+            url = "https://ghostmesh.ai/"
+            model["nodes"][2]["url"] = url
+            model["nodes"][2]["urlSha256"] = hashlib.sha256(url.encode()).hexdigest()
+        self.invalid(cite_footer, "citation target absent from claim source anchor")
+
     def test_relationship_cannot_be_promoted_or_invented(self):
         self.invalid(lambda m: m["relationships"][0].__setitem__("authority", "admitted"))
         self.invalid(lambda m: m["relationships"][0].__setitem__("type", "governs"))

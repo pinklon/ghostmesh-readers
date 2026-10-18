@@ -11,7 +11,7 @@
       "url": "https://youtube.shareplane.malott.ai/the-inbox-was-a-boundary/",
       "source": {
         "path": "site/the-inbox-was-a-boundary/index.html",
-        "sha256": "8e18056341ec6d981a0e80d1d6526771a3cf446d9435a1d044bf170295c40ac4"
+        "sha256": "a9c6ce49fe0e27b9252739c3e418e8c41048d62b0c963a1c24103a458eeb3cfe"
       }
     },
     {
@@ -23,8 +23,8 @@
       "statement": "Reports more than 2,600 Amap extraction attempts from September 28 to October 8; methods and outcomes vary.",
       "provenance": {
         "sourceNodeId": "urn:ghostmesh-readers:reader:the-inbox-was-a-boundary",
-        "locator": "#evidence",
-        "sourceFileSha256": "8e18056341ec6d981a0e80d1d6526771a3cf446d9435a1d044bf170295c40ac4",
+        "locator": "#fleet-activity-source",
+        "sourceFileSha256": "a9c6ce49fe0e27b9252739c3e418e8c41048d62b0c963a1c24103a458eeb3cfe",
         "quoteSha256": "846ff5ff13d32b94826d855429ca96ab02c922f5bf353fe426d6df57dfd28743"
       }
     },
@@ -193,8 +193,8 @@
       "authority": "source-declared",
       "provenance": {
         "sourceNodeId": "urn:ghostmesh-readers:reader:the-inbox-was-a-boundary",
-        "locator": "#evidence",
-        "sourceFileSha256": "8e18056341ec6d981a0e80d1d6526771a3cf446d9435a1d044bf170295c40ac4",
+        "locator": "#fleet-activity-source",
+        "sourceFileSha256": "a9c6ce49fe0e27b9252739c3e418e8c41048d62b0c963a1c24103a458eeb3cfe",
         "quoteSha256": "846ff5ff13d32b94826d855429ca96ab02c922f5bf353fe426d6df57dfd28743"
       }
     }

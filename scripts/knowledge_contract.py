@@ -99,6 +99,7 @@ class TextAndIds(HTMLParser):
         self.text: list[str] = []
         self.ids: set[str] = set()
         self.by_id: dict[str, list[str]] = {}
+        self.links_by_id: dict[str, list[str]] = {}
         self.canonical_urls: list[str] = []
         self.active: list[tuple[str, int]] = []
         self.tags: list[str] = []
@@ -113,7 +114,11 @@ class TextAndIds(HTMLParser):
         if ident:
             self.ids.add(ident)
             self.by_id[ident] = []
+            self.links_by_id[ident] = []
             self.active.append((ident, len(self.tags)))
+        if tag == "a" and attributes.get("href"):
+            for active_id, _ in self.active:
+                self.links_by_id[active_id].append(attributes["href"])
 
     def handle_endtag(self, tag: str) -> None:
         if tag not in self.tags:
@@ -237,9 +242,9 @@ def validate_contract(model: dict, schema: dict, repo: Path = ROOT) -> None:
         if any(provenance[key] != claim_provenance[key] for key in
                ("sourceNodeId", "locator", "sourceFileSha256", "quoteSha256")):
             raise ValueError("relationship provenance must match claim")
-        raw, _ = parsed_pages[provenance["sourceNodeId"]]
-        if target["url"] not in raw:
-            raise ValueError("citation target absent from published Reader")
+        _, parsed = parsed_pages[provenance["sourceNodeId"]]
+        if target["url"] not in parsed.links_by_id.get(provenance["locator"][1:], []):
+            raise ValueError("citation target absent from claim source anchor")
 
 
 def render_html(model: dict) -> bytes:

@@ -23,7 +23,7 @@ The state axes are deliberately separate:
 
 ## Deterministic build and public surfaces
 
-`python3 scripts/knowledge_contract.py` checks the closed JSON Schema vocabulary offline, validates each record against the schema and complete public catalog, verifies all 13 Reader file hashes, checks exact claim text at its declared anchor and the cited URL, rejects nonpublic classification and private markers, then writes the public outputs. `--check` verifies byte-for-byte regeneration without writing. `scripts/generate_site.py` owns the homepage and sitemap links to `/knowledge/`; the knowledge page uses the normalized site's shell and theme controls.
+`python3 scripts/knowledge_contract.py` checks the closed JSON Schema vocabulary offline, validates each record against the schema and complete public catalog, verifies all 13 Reader file hashes, and requires the exact claim text and cited URL in the same stable source row. A URL elsewhere on the page cannot qualify a citation. It rejects nonpublic classification and private markers, then writes the public outputs. `--check` verifies byte-for-byte regeneration without writing. `scripts/generate_site.py` owns the homepage and sitemap links to `/knowledge/`; the knowledge page uses the normalized site's shell and theme controls.
 
 The generated outputs are:
 
