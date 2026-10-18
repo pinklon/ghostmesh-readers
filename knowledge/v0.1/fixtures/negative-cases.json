@@ -1,0 +1,36 @@
+{
+  "fixtureVersion": "0.1.0",
+  "base": "../readers.source.json",
+  "cases": [
+    {
+      "name": "private-claim-visibility",
+      "pointer": "/nodes/1/visibility",
+      "value": "private",
+      "expected": "schema rejection"
+    },
+    {
+      "name": "promoted-relationship-authority",
+      "pointer": "/relationships/0/authority",
+      "value": "admitted",
+      "expected": "schema rejection"
+    },
+    {
+      "name": "forged-quote-hash",
+      "pointer": "/nodes/1/provenance/quoteSha256",
+      "value": "0000000000000000000000000000000000000000000000000000000000000000",
+      "expected": "source rejection"
+    },
+    {
+      "name": "private-path-in-label",
+      "pointer": "/nodes/1/label",
+      "value": "/Users/synthetic/80-private/example",
+      "expected": "privacy rejection"
+    },
+    {
+      "name": "fine-grained-token-in-label",
+      "pointer": "/nodes/1/label",
+      "value": "github_pat_ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890",
+      "expected": "privacy rejection"
+    }
+  ]
+}

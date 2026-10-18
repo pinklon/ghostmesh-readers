@@ -12,8 +12,8 @@ STATES={'corroborated','partially corroborated','contradicted','disputed','unver
 RELATIONS={'examines same claim','extends','challenges','responds to','shares entity','informs architecture','related topic'}
 # This static site publishes only reviewed text assets. New asset formats require
 # an explicit policy change, so an unfamiliar capture container fails closed.
-PUBLIC_TEXT_EXTENSIONS={'.html','.json','.js','.css','.svg','.xml','.webmanifest'}
-PUBLIC_TEXT_PATHS={'robots.txt','_headers'}
+PUBLIC_TEXT_EXTENSIONS={'.html','.json','.jsonld','.js','.css','.svg','.xml','.webmanifest'}
+PUBLIC_TEXT_PATHS={'robots.txt','_headers','llms.txt'}
 SOURCE_EXTENSIONS=set('.vtt .srt .sbv .ass .ssa .sub .ttml .dfxp .scc .sami .smi .lrc .srv1 .srv2 .srv3 .json3 .mkv .mka .mks .mp4 .m4a .m4v .mp3 .webm .wav .wave .mov .qt .ogg .ogv .oga .opus .flac .aac .aiff .aif .avi .wmv .wma .asf .flv .f4v .mpeg .mpg .mpe .m2v .ts .mts .m2ts .3gp .3g2 .vob .amr .ape .ac3 .aax'.split())
 def capture_signature(data):
  return (data.startswith((b'\x1a\x45\xdf\xa3',b'OggS',b'fLaC',b'ID3',b'FLV',b'#!AMR',b'WEBVTT'))
@@ -113,7 +113,6 @@ def check(root=ROOT):
    except ValueError:errors.append(f'{slug}: invalid asOf')
    if c.get('independentSourceCount'):
     families={refs[i]['evidenceFamily'] for i in c['references']};require(c['independentSourceCount']<=len(families),f'{slug}: duplicate independence')
-  require(len(r['relationships'])<=4,f'{slug}: too many related items')
   for edge in r['relationships']:
    require(edge['target'] in ids and edge['target']!=r['id'] and edge['type'] in RELATIONS and bool(edge['reason']) and bool(edge['provenance']),f'{slug}: unqualified relation')
    for link in edge['provenance']:
@@ -135,15 +134,15 @@ def check(root=ROOT):
    except UnicodeDecodeError:
     errors.append(f'Non-text public asset: {p.relative_to(site)}');continue
    require(b'\x00' not in payload,f'Binary public asset: {p.relative_to(site)}')
-  if p.is_relative_to(site) and p.suffix in {'.html','.json','.js','.css','.xml'}:
+  if p.is_relative_to(site) and p.suffix in {'.html','.json','.jsonld','.js','.css','.xml'}:
    raw=p.read_text();require(not re.search(r'/Users/|/srv/ghostmesh/|/private/var/|gh[pousr]_[A-Za-z0-9]{20,}|(?:X-Amz-Signature|access_token|client_secret)=',raw),f'Private marker: {p.relative_to(site)}')
-   if p.suffix=='.json':
+   if p.suffix in {'.json','.jsonld'}:
     try:validate_text(json.loads(raw))
     except ValueError:errors.append(f'Em dash JSON: {p.relative_to(site)}')
  home=(site/'index.html').read_text();require(home.count('class="gm-card"')==7,'Homepage must have one feature and six cards')
  library=(site/'readers/index.html').read_text();require(library.count('class="gm-card"')==len(readers),'Non-JS archive incomplete')
  sitemap=ET.parse(site/'sitemap.xml');urls=[x.text for x in sitemap.getroot().iter() if x.tag.endswith('loc')]
- expected={data['host']+'/',data['host']+'/readers/'}|{data['host']+'/'+s+'/' for s in slugs}|{data['host']+f'/readers/categories/{i}/' for i in range(6)}
+ expected={data['host']+'/',data['host']+'/readers/',data['host']+'/knowledge/'}|{data['host']+'/'+s+'/' for s in slugs}|{data['host']+f'/readers/categories/{i}/' for i in range(6)}
  require(set(urls)==expected and len(urls)==len(expected),'Sitemap drift')
  if root==ROOT:
   for rel,content in projections().items():require((site/rel).read_text()==content,'Generated drift: '+rel)

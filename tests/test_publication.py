@@ -1,5 +1,5 @@
 """Publication failure modes, not snapshots of implementation details."""
-import json,shutil,sys,tempfile,unittest
+import json,shutil,subprocess,sys,tempfile,unittest
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT/'scripts'))
 from check_site import check
@@ -55,4 +55,38 @@ class PublicationGate(unittest.TestCase):
   self.mutate(lambda d:d['readers'][1]['claims'][0].update(id=d['readers'][0]['claims'][0]['id']));self.rejected('Duplicate global claim')
  def test_relation_requires_provenance(self):
   self.mutate(lambda d:d['readers'][0]['relationships'][0].update(provenance=[]));self.rejected('unqualified relation')
+ def test_five_relations_remain_public_with_four_visible_cards(self):
+  p=self.root/'content/catalog.json';data=json.loads(p.read_text());reader=data['readers'][0]
+  existing={edge['target'] for edge in reader['relationships']}
+  for target in data['readers'][1:]:
+   if target['id'] in existing:continue
+   reader['relationships'].append({'target':target['id'],'type':'related topic',
+    'reason':'Synthetic capacity fixture only; not an editorial relationship.',
+    'provenance':[f'/{reader["slug"]}/#at-a-glance',f'/{target["slug"]}/#at-a-glance'],
+    'basis':'synthetic-test','direction':'outgoing'})
+   if len(reader['relationships'])==5:break
+  self.assertEqual(5,len(reader['relationships']))
+  reader['relationships'][-1]['type']='examines same claim'
+  substantive_target=next(r for r in data['readers'] if r['id']==reader['relationships'][-1]['target'])
+  p.write_text(json.dumps(data))
+  schema=json.loads((self.root/'content/catalog.schema.json').read_text())
+  self.assertNotIn('maxItems',schema['$defs']['reader']['properties']['relationships'])
+  scripts=self.root/'scripts';scripts.mkdir();shutil.copy2(ROOT/'scripts/generate_site.py',scripts/'generate_site.py')
+  result=subprocess.run([sys.executable,str(scripts/'generate_site.py')],capture_output=True,text=True)
+  self.assertEqual(0,result.returncode,result.stdout+result.stderr)
+  self.assertEqual([],check(self.root))
+  slug=reader['slug'];public=json.loads((self.root/'site/catalog.json').read_text())
+  self.assertEqual(5,len(next(r for r in public['readers'] if r['id']==reader['id'])['relationships']))
+  receipt=json.loads((self.root/'site'/slug/'receipt.json').read_text())
+  self.assertEqual(5,len(receipt['normalization']['relationships']))
+  section=(self.root/'site'/slug/'index.html').read_text().split('<section class="gm-related"',1)[1].split('</section>',1)[0]
+  self.assertEqual(4,section.count('<article>'))
+  self.assertIn(f'/{substantive_target["slug"]}/',section)
+  self.assertIn('Showing 4 of 5 qualified relationships',section)
+  fifth=reader['relationships'][-1];provenance=fifth['provenance']
+  fifth['provenance']=[]
+  p.write_text(json.dumps(data));self.rejected('unqualified relation')
+  fifth['provenance']=provenance
+  reader['relationships'][-1]['target']='reader:missing'
+  p.write_text(json.dumps(data));self.rejected('unqualified relation')
 if __name__=='__main__':unittest.main()
