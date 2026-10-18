@@ -1,0 +1,142 @@
+{
+  "schema": "ghostmesh-video-receipt-v1",
+  "createdAt": "2026-10-18T12:51:00Z",
+  "source": {
+    "platform": "YouTube",
+    "url": "https://www.youtube.com/watch?v=8DKqcbEy-HM",
+    "videoId": "8DKqcbEy-HM",
+    "title": "Someone Just Open Sourced an Autonomous AI Hacker",
+    "channel": "AI Fusion",
+    "uploadDate": "20261017",
+    "durationSeconds": 444
+  },
+  "reasonPack": {
+    "schema": "ghostmesh-reasoning-pack-v1",
+    "runtimeVersion": "1.0.1",
+    "verification": "pass",
+    "formatSelection": "609+234-20: public 720p HLS video and original English HLS audio, normalized to MP4 and M4A",
+    "transcription": "Source captions were unavailable; local whisper.cpp small.en produced the uncorrected transcript.",
+    "whisperModelSha256": "c6138d6d58ecc8322097e0f987c32f1be8bb0a18532a3f88f734d1bbf9c41e5d",
+    "manifestSha256": "90f0f545e0ea7b8c7a847427e6c7a18d9f8d4290cbce176b263ed5453bf0748a",
+    "members": {
+      "video.mp4": {
+        "sha256": "b1dc8dab1403a815761eaa8cfd2dbf92ec9f800ad16104312831a34b0240b15a",
+        "bytes": 28631985
+      },
+      "audio.m4a": {
+        "sha256": "711b90718c62a8725da78d21d852142cff881ea490552efcd5d459f472dc126a",
+        "bytes": 7154929
+      },
+      "transcript.txt": {
+        "sha256": "a6d8c4ea86757addb7814498c21cca4b25b768e588dfd0a75e84a95d124fa046",
+        "bytes": 6881
+      },
+      "transcript-status.json": {
+        "sha256": "fe73141185479635589b72ceeef9e2998e00f5afe090618c92eb40f7cb24406f",
+        "bytes": 270
+      },
+      "source.json": {
+        "sha256": "9f7f2a7da82a34d98cfccdf3102f771da8e6e550eccc9a519531db033e365e68",
+        "bytes": 11636376
+      },
+      "ffprobe.json": {
+        "sha256": "4a56a99aa863eb7424021c63de7d59ad60d17fdd6a48e8cc698c0a5617dff4c4",
+        "bytes": 4571
+      }
+    },
+    "publicationBoundary": "The public site contains original editorial analysis and this sanitized receipt. Full third-party video, audio, source metadata, transcript, and timed VTT remain in private local custody."
+  },
+  "derivation": {
+    "timedTranscription": "A separate local whisper.cpp VTT pass against the same normalized 16-kHz mono audio; automatic, uncorrected, and not a member of the closed ReasonPack.",
+    "timedVttSha256": "10c482f991ec9d7a7e96a0008396436f45f19903550f1bf002ea06772b9a1c5f",
+    "sourceTimestamps": "Approximate cue starts from the private timed VTT; verify exact wording against the original video.",
+    "verification": "ReasonPack closed-manifest verification passed after normalization and transcription."
+  },
+  "editorial": {
+    "verdict": "The presenter manually bypassed Juice Shop; the Strix attempts shown did not produce a confirmed finding. Diagnose structured tool calling before attributing the local stall to model quality alone.",
+    "thesis": "A vulnerable training target, an agent architecture, and partial tool calls establish a test setup, not measured detection coverage.",
+    "recommendedSegments": [
+      {
+        "startSeconds": 0,
+        "why": "The presenter's manual bypass of an intentional Juice Shop login challenge."
+      },
+      {
+        "startSeconds": 203,
+        "why": "Provider, model, and quota limitations on incomplete Strix attempts."
+      },
+      {
+        "startSeconds": 286,
+        "why": "The local-model run's ten text-only turns and lack of target actions."
+      }
+    ],
+    "claimMap": [
+      {
+        "id": "manual-login-bypass",
+        "sourceStartSeconds": 0,
+        "kind": "demonstration",
+        "finding": "The presenter manually enters a login bypass on Juice Shop.",
+        "limit": "The action is not performed or discovered by Strix in the video."
+      },
+      {
+        "id": "architecture",
+        "sourceStartSeconds": 52,
+        "kind": "project-design",
+        "finding": "The video tours multi-agent skills and tools documented by Strix.",
+        "limit": "Architecture and skill content do not establish detection coverage or accuracy in this run."
+      },
+      {
+        "id": "paid-run",
+        "sourceStartSeconds": 203,
+        "kind": "speaker-observation",
+        "finding": "A paid model reportedly made tool calls before its quota ended.",
+        "limit": "No complete run log or confirmed vulnerability finding is presented."
+      },
+      {
+        "id": "local-stall",
+        "sourceStartSeconds": 286,
+        "kind": "speaker-observation",
+        "finding": "The local run reportedly emitted text rather than usable tool calls in ten initial turns.",
+        "limit": "The video does not isolate model reasoning from inference-server tool parsing, chat template, thinking mode, or context configuration."
+      },
+      {
+        "id": "future-efficacy",
+        "sourceStartSeconds": 412,
+        "kind": "speaker-inference",
+        "finding": "The speaker expects a properly funded model to deliver a successful autonomous scan.",
+        "limit": "The video's attempts do not complete a scan or measure efficacy."
+      }
+    ],
+    "externalPrimarySources": [
+      {
+        "url": "https://github.com/usestrix/strix",
+        "role": "Public Strix source and project claims."
+      },
+      {
+        "url": "https://docs.strix.ai/advanced/skills",
+        "role": "Strix skill architecture."
+      },
+      {
+        "url": "https://docs.strix.ai/usage/scan-modes",
+        "role": "Strix scan depth and duration descriptions."
+      },
+      {
+        "url": "https://docs.strix.ai/llm-providers/local",
+        "role": "Local model and structured tool-call troubleshooting."
+      },
+      {
+        "url": "https://pwning.owasp-juice.shop/companion-guide/snapshot/part2/injection.html",
+        "role": "Intentional Juice Shop injection login challenge."
+      },
+      {
+        "url": "https://wstg.owasp.org/v4.2/2-Introduction/",
+        "role": "OWASP web security testing guidance and automated-tool limits."
+      }
+    ],
+    "limits": [
+      "Source caption retrieval was unavailable; local Whisper may mishear technical terms.",
+      "Timed cues are approximate and were not manually corrected or speaker diarized.",
+      "The video does not publish complete Strix run logs, inference-server configuration, coverage, or a confirmed finding.",
+      "GhostMesh did not run Strix or independently reproduce the provider attempts."
+    ]
+  }
+}
