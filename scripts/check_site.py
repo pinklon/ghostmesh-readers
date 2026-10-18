@@ -139,7 +139,7 @@ def check(root=ROOT):
    if p.suffix in {'.json','.jsonld'}:
     try:validate_text(json.loads(raw))
     except ValueError:errors.append(f'Em dash JSON: {p.relative_to(site)}')
- home=(site/'index.html').read_text();require(home.count('class="gm-card"')==7,'Homepage must have one feature and six cards')
+ home=(site/'index.html').read_text();require(len(re.findall(r'class="[^"]*\bgm-card\b[^"]*"',home))==7,'Homepage must have one feature and six cards')
  library=(site/'readers/index.html').read_text();require(library.count('class="gm-card"')==len(readers),'Non-JS archive incomplete')
  sitemap=ET.parse(site/'sitemap.xml');urls=[x.text for x in sitemap.getroot().iter() if x.tag.endswith('loc')]
  expected={data['host']+'/',data['host']+'/readers/',data['host']+'/knowledge/'}|{data['host']+'/'+s+'/' for s in slugs}|{data['host']+f'/readers/categories/{i}/' for i in range(6)}

@@ -1,0 +1,15 @@
+<svg viewBox="0 0 600 530" fill="none" role="img" aria-labelledby="mesh-title mesh-desc">
+            <title id="mesh-title">Continuity across a changing mesh</title><desc id="mesh-desc">An abstract architectural diagram of connected planes surrounding the GhostMesh monogram. A visual expression of identity, knowledge, and authority.</desc>
+            <defs><linearGradient id="edge" x1="80" y1="80" x2="510" y2="460" gradientUnits="userSpaceOnUse"><stop stop-color="#eef3ff"/><stop offset=".48" stop-color="#555f70"/><stop offset="1" stop-color="#222832"/></linearGradient><radialGradient id="glow"><stop stop-color="#c8102e" stop-opacity=".12"/><stop offset="1" stop-color="#c8102e" stop-opacity="0"/></radialGradient></defs>
+            <circle cx="310" cy="260" r="245" fill="url(#glow)"/>
+            <g stroke="#272d37" stroke-width=".7"><path d="M40 360 310 510 580 360M40 300 310 450 580 300M40 240 310 390 580 240M40 180 310 330 580 180M40 120 310 270 580 120M94 90v300m108-360v420M310 0v510M418 30v420M526 90v300"/></g>
+            <g stroke="url(#edge)"><path d="m92 163 216-123 215 123v234L308 520 92 397z" opacity=".45"/><path d="m122 180 186-107 185 107v200L308 487 122 380z"/><path d="m151 198 157-90 156 90v164l-156 90-157-90z" opacity=".6"/><path d="M92 163 308 288l215-125M308 288v232M122 380l186-108 185 108" opacity=".5"/></g>
+            <path d="m151 198 157 90 156-90-156-90z" fill="#151920" stroke="#9ba5b4"/>
+            <path d="m151 226 157 90 156-90v110l-156 90-157-90z" fill="#0f1115" stroke="#646f80"/>
+            <path d="m151 226 157 90 156-90M308 316v110" stroke="#c4cbd6"/>
+            <path d="m132 365 176 101 176-101" stroke="#c8102e" stroke-width="5"/>
+            <path class="signal-flow" d="m40 240 82 47 29-17m313 0 29 17 87-50M308 40v68M308 426v84" stroke="#d5dce8"/>
+            <g fill="#dce2eb"><circle cx="92" cy="163" r="3"/><circle cx="523" cy="163" r="3"/><circle cx="308" cy="40" r="3"/><circle cx="308" cy="487" r="3"/></g>
+            <g transform="translate(254 168) scale(.9 .55)"><path fill="#f4f5f7" d="M16 8h56L60 22H24L14 32v24l10 10h25V51H33l10-14h22v29L51 80H18L0 62V26z"/><path fill="#c8102e" d="M62 80V28L76 8l20 29 24-29v72h-16V39L96 50 78 28v52z"/></g>
+            <g fill="#9ca6b6" font-family="ui-monospace, monospace" font-size="8" letter-spacing="1.5"><text x="20" y="150">IDENTITY</text><text x="462" y="433">CONTINUITY</text><text x="335" y="61">AUTHORITY</text></g>
+          </svg>

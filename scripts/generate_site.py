@@ -41,6 +41,17 @@ def related(r,byid):
  return out+'</section>'
 def card(r,featured=False):
  return f'<article class="gm-card" data-category="{esc(r["category"])}" data-tags="{esc(" ".join(r["tags"]))}" data-date="{r["published"]}" data-rank="{r["rank"]}"><p class="gm-kicker">{esc(r["category"])} · {r["published"]}</p><h{2 if featured else 3}><a href="/{r["slug"]}/">{esc(r["title"])}</a></h{2 if featured else 3}><p>{esc(r["overview"])}</p><p>{esc(r["verdict"])} · Mapped evidence: {esc(r["evidenceState"])}. {sum(c["status"]=="unverified" for c in r["claims"])}/{len(r["claims"])} claims unverified</p><p class="gm-tags">{esc(" / ".join(r["tags"]))}</p><a href="{esc(r["source"]["url"])}">Original {esc(r["source"].get("platform","YouTube"))} source</a></article>'
+def home_card(r,number,featured=False):
+ tag='h2' if featured else 'h3'
+ unverified=sum(c['status']=='unverified' for c in r['claims'])
+ visual=f'<div class="gm-home-visual" aria-hidden="true"><span>GM / READER {number:02d}</span><strong>{number:02d}</strong><span>READ / INSPECT / CHALLENGE</span></div>'
+ copy=(f'<div class="gm-home-copy"><p class="gm-kicker">{esc(r["category"])} / {r["published"]}</p>'
+       f'<{tag}><a href="/{r["slug"]}/">{esc(r["title"])}</a></{tag}>'
+       f'<p>{esc(r["overview"])}</p>'
+       f'<p class="gm-home-verdict">{esc(r["verdict"])} · Mapped evidence: {esc(r["evidenceState"])}. {unverified}/{len(r["claims"])} claims unverified</p>'
+       f'<p class="gm-tags">{esc(" / ".join(r["tags"]))}</p>'
+       f'<a class="gm-home-source" href="{esc(r["source"]["url"])}">Original {esc(r["source"].get("platform","YouTube"))} source ↗</a></div>')
+ return f'<article class="gm-card gm-home-card" data-category="{esc(r["category"])}" data-tags="{esc(" ".join(r["tags"]))}" data-date="{r["published"]}" data-rank="{r["rank"]}">'+visual+copy+'</article>'
 def page(title,path,body):return '<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>'+esc(title)+' | GhostMesh Readers</title><meta name="description" content="Original analysis, explicit evidence and accountable judgment."><link rel="canonical" href="https://youtube.shareplane.malott.ai'+path+'"><link rel="icon" href="/favicon.svg">'+head()+'</head><body class="gm-catalog"><a class="gm-skip" href="#main">Skip to content</a>'+controls()+'<main id="main">'+body+'</main><footer class="gm-footer"><a href="/readers/">All Readers</a> · <a href="https://ghostmesh.ai/">GhostMesh</a> · <a href="https://shareplane.malott.ai/">SharePlane</a> · <a href="https://malott.ai/">Tony Malott</a> · <a href="mailto:ghostmesh@malott.ai">Contact GhostMesh</a></footer></body></html>'
 def projections():
  data=json.loads((ROOT/'content/catalog.json').read_text());validate_text(data)
@@ -59,11 +70,38 @@ def projections():
   out[f'{r["slug"]}/receipt.json']=dump(receipt)
  public={**data,'readers':[{k:v for k,v in r.items() if k!='legacyReceipt'} for r in readers]};out['catalog.json']=dump(public)
  categories='<nav aria-label="Categories" class="gm-categories">'+''.join(f'<a href="/readers/categories/{i}/">{esc(c)}</a>' for i,c in enumerate(CATEGORIES))+'</nav>'
- out['index.html']=page('Read the source. Test the claim.','/','<header class="gm-intro"><p class="gm-kicker">GhostMesh / video deconstructions</p><h1>Read the source.<br>Test the claim.</h1><p>Original analysis with explicit judgments, source boundaries and evidence you can challenge.</p><a class="gm-cta" href="/readers/">Explore all 13 Readers →</a></header><section class="gm-feature" aria-label="Featured Reader">'+card(byid[data['featuredId']],True)+'</section><section id="readers"><h2>Continue reading</h2><div class="gm-cards">'+'</div></section>')
- # Keep exactly six compact cards, rather than slicing rendered markup.
- home=out['index.html'];home=home.replace('<div class="gm-cards"></div>','<div class="gm-cards">'+''.join(card(r) for r in [r for r in readers if r['id']!=data['featuredId']][:6])+'</div>');home=home.replace('</main>','<h2>Browse by subject</h2>'+categories+'<p><a href="/readers/">Full library, including the non-JavaScript archive →</a></p><p><a href="/knowledge/">Public knowledge data</a>: source-declared claims and citations from published Readers.</p></main>');legacy='<details class="gm-legacy"><summary>Earlier video bookmarks</summary><ul>'+''.join('<li id="'+esc(r['source'].get('videoId') or r['source'].get('shortcode',''))+'"><a href="/'+r['slug']+'/">'+esc(r['title'])+'</a></li>' for r in readers)+'</ul></details>'
+ signal=(ROOT/'content/home-signal.svg').read_text().strip()
+ home_intro=('<header class="gm-intro"><div class="gm-hero-copy"><p class="gm-kicker">GhostMesh / video deconstructions</p>'
+             '<h1>Read the source.<br><span>Test the claim.</span></h1>'
+             '<p>Original analysis with explicit judgments, source boundaries and evidence you can challenge.</p>'
+             '<div class="gm-hero-actions"><a class="gm-cta" href="#readers">Explore Readers ↗</a>'
+             '<a class="gm-cta gm-cta-secondary" href="#about">The thinking behind it ↓</a></div></div>'
+             '<div class="gm-signal">'+signal+'<p>GM / CONCEPTUAL SIGNAL ARCHITECTURE <span>HUMAN AUTHORITY</span></p></div></header>'
+             '<div class="gm-system-strip" aria-label="Design principles"><div>01 / IDENTITY<strong>Continuity across change</strong></div>'
+             '<div>02 / KNOWLEDGE<strong>Evidence open to inspection</strong></div><div>03 / AUTHORITY<strong>Boundaries set by people</strong></div></div>')
+ featured=byid[data['featuredId']]
+ compact=[r for r in readers if r['id']!=data['featuredId']][:6]
+ home_readers=('<section id="readers"><div class="gm-section-heading"><div><p class="gm-kicker">01 / The reading room</p>'
+               '<h2>Ideas worth examining.</h2></div><p>Start with the source. Read an independent thesis. Follow the evidence and challenge the interpretation.</p></div>'
+               '<section class="gm-feature" aria-label="Featured Reader">'+home_card(featured,1,True)+'</section>'
+               '<h2>Continue reading</h2><div class="gm-cards">'+''.join(home_card(r,i) for i,r in enumerate(compact,2))+'</div></section>')
+ home_browse=('<section class="gm-home-browse"><div class="gm-section-heading"><div><p class="gm-kicker">02 / Browse the library</p>'
+              '<h2>Browse by subject</h2></div><p>All Readers remain available in the complete archive, including without JavaScript.</p></div>'
+              +categories+'<p><a href="/readers/">Full library, including the non-JavaScript archive →</a></p>'
+              '<p><a href="/knowledge/">Public knowledge data</a>: source-declared claims and citations from published Readers.</p></section>')
+ out['index.html']=page('Read the source. Test the claim.','/',home_intro+home_readers+home_browse)
+ home=out['index.html'];legacy='<details class="gm-legacy"><summary>Earlier video bookmarks</summary><ul>'+''.join('<li id="'+esc(r['source'].get('videoId') or r['source'].get('shortcode',''))+'"><a href="/'+r['slug']+'/">'+esc(r['title'])+'</a></li>' for r in readers)+'</ul></details>'
  home=home.replace('<body class="gm-catalog">','<body class="gm-catalog" id="home">').replace('<h1>Read the source.','<h1 id="hero-title">Read the source.').replace('<h2>Continue reading</h2>','<h2 id="readers-title">Continue reading</h2>')
- destinations='<section id="about"><h2 id="about-title">A human at the center.</h2><p>GhostMesh is Tony Malott’s AI identity and collaboration, research and learning system. It is a system, not a person or a self-authorized worker. Judgment and authority remain human-governed.</p></section><section id="ecosystem"><h2 id="ecosystem-title">A wider mesh.</h2><p><a href="https://ghostmesh.ai/">GhostMesh.ai</a> describes the architecture and the connected mesh. <a href="https://malott.ai/">Malott.ai</a> is Tony’s personal and professional identity. <a href="https://shareplane.malott.ai/">SharePlane</a> shares published thinking and is the first public reference implementation of the GhostMesh architecture.</p></section><section id="contact"><h2 id="contact-title">Open a conversation.</h2><p><a href="mailto:tony@malott.ai">Contact Tony</a> or <a href="mailto:ghostmesh@malott.ai">send GhostMesh a question or counterexample</a>.</p></section>'
+ destinations=('<section id="about" class="gm-home-about"><div><p class="gm-kicker">03 / Identity &amp; intent</p><h2 id="about-title">A human at the center.</h2></div>'
+               '<div><p>GhostMesh is Tony Malott’s AI identity and collaboration, research and learning system.</p>'
+               '<p class="gm-authority">It is a system, not a person or a self-authorized worker. Judgment and authority remain human-governed.</p></div></section>'
+               '<section id="ecosystem"><div class="gm-section-heading"><div><p class="gm-kicker">04 / Connected destinations</p><h2 id="ecosystem-title">A wider mesh.</h2></div></div>'
+               '<div class="gm-destinations"><a href="https://ghostmesh.ai/"><span>01 / ARCHITECTURE ↗</span><strong>GhostMesh.ai</strong><p>Describes the architecture and the connected mesh.</p></a>'
+               '<a href="https://malott.ai/"><span>02 / HUMAN IDENTITY ↗</span><strong>Malott.ai</strong><p>Tony’s personal and professional identity.</p></a>'
+               '<a href="https://shareplane.malott.ai/"><span>03 / THINKING &amp; REFERENCE ↗</span><strong>SharePlane</strong><p>Shares published thinking and is the first public reference implementation of the GhostMesh architecture.</p></a></div></section>'
+               '<section id="contact"><div class="gm-section-heading"><div><p class="gm-kicker">05 / Open a conversation</p><h2 id="contact-title">Open a conversation.</h2></div></div>'
+               '<div class="gm-contact-grid"><a href="mailto:tony@malott.ai"><span>HUMAN CONTACT / TONY MALOTT</span><strong>Contact Tony ↗</strong></a>'
+               '<a href="mailto:ghostmesh@malott.ai"><span>AI CORRESPONDENCE / GHOSTMESH</span><strong>Send GhostMesh a question or counterexample ↗</strong></a></div></section>')
  out['index.html']=home.replace('</main>',legacy+destinations+'</main>').replace('all 13 Readers',f'all {len(readers)} Readers').replace('<link rel="icon" href="/favicon.svg">','<link rel="alternate" type="application/json" href="/.well-known/ghostmesh-knowledge.json" title="GhostMesh public knowledge discovery"><link rel="icon" href="/favicon.svg">',1)
  filters='<form class="gm-filters" role="search" onsubmit="return false"><label>Search <input type="search" id="search" placeholder="Title, subject or idea"></label><label>Category <select id="category"><option value="">All categories</option>'+''.join('<option>'+esc(c)+'</option>' for c in CATEGORIES)+'</select></label><label>Tag <select id="tag"><option value="">All tags</option>'+''.join('<option>'+t+'</option>' for t in sorted({t for r in readers for t in r['tags']}))+'</select></label><label>Sort <select id="sort"><option value="recent">Most recent</option><option value="relevance">Editorial order</option><option value="title">Title</option></select></label><button type="reset">Reset</button></form><p id="result-count" role="status" aria-live="polite">13 Readers</p>'
  out['readers/index.html']=page('The Reader library','/readers/','<header class="gm-intro"><p class="gm-kicker">The complete archive</p><h1>Find your next question.</h1><p>Browse all 13 Readers. Evidence labels describe the mapped claims, not a score for the author. Editorial order is a curated reading order, not scientific confidence.</p></header>'+categories+filters+'<noscript><p>Search controls require JavaScript. Every Reader is listed below; category pages work without it.</p></noscript><div class="gm-cards" id="catalog-results">'+''.join(card(r) for r in readers)+'</div><script src="/assets/catalog.js" defer></script>')

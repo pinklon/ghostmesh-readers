@@ -4,7 +4,9 @@
   window.gmThemeReady = true;
   const root = document.documentElement;
   const system = matchMedia('(prefers-color-scheme: dark)');
-  let choice = 'system';
+  // The established GhostMesh landing page opens in dark mode. Visitors can
+  // still choose light or system, and that explicit preference persists.
+  let choice = 'dark';
   try { const saved = localStorage.getItem('gm-appearance'); if (['light','dark','system'].includes(saved)) choice = saved; } catch (_) {}
   function apply() {
     root.dataset.theme = choice === 'system' ? (system.matches ? 'dark' : 'light') : choice;
