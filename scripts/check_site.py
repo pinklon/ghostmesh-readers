@@ -22,7 +22,9 @@ required = ("index.html","404.html","favicon.svg","robots.txt","sitemap.xml","si
             "make-good-work-inspectable/index.html",
             "make-good-work-inspectable/receipt.json",
             "a-challenge-is-not-a-verdict/index.html",
-            "a-challenge-is-not-a-verdict/receipt.json")
+            "a-challenge-is-not-a-verdict/receipt.json",
+            "the-key-was-the-boundary/index.html",
+            "the-key-was-the-boundary/receipt.json")
 errors = []
 # Fail publication if any private media, caption or transcript artifact leaks into site/.
 for candidate in site.rglob("*"):
@@ -69,7 +71,8 @@ for video_id,slug in (("ZhM29Ds-mBg","the-score-is-not-the-system"),
                        ("2oH1NACBgS4","the-microscope-is-not-a-soul"),
                        ("rb4CTZjHCNg","the-inbox-was-a-boundary"),
                        ("DdbCtAScTsk","autonomy-needs-an-interface"),
-                       ("Z8lf5oWKfj0","make-good-work-inspectable")):
+                       ("Z8lf5oWKfj0","make-good-work-inspectable"),
+                       ("YaK6cnET2IE","the-key-was-the-boundary")):
     for marker in (f'i.ytimg.com/vi/{video_id}/hqdefault.jpg',
                    f'data-video-id="{video_id}"',
                    f'https://www.youtube.com/watch?v={video_id}',
@@ -133,8 +136,8 @@ for source in ("https://vercel.com/blog/introducing-eve", "https://github.com/ve
                "https://vercel.com/kb/guide/github-agent-eve"):
     if f'href="{source}"' not in third: errors.append("Reader 003 missing source "+source)
 allowlist=re.search(r"const allowed = new Set\(\[(.*?)\]\)",home)
-if not allowlist or re.findall(r"'([^']+)'",allowlist[1]) != ["ZhM29Ds-mBg","PseF3LyXQ04","HQXi4snP36I","2DmP5etgh4U","BjO_JC6ujXs","2oH1NACBgS4","rb4CTZjHCNg","DdbCtAScTsk","Z8lf5oWKfj0"]:
-    errors.append("homepage player allowlist must contain exactly the nine source IDs")
+if not allowlist or re.findall(r"'([^']+)'",allowlist[1]) != ["ZhM29Ds-mBg","PseF3LyXQ04","HQXi4snP36I","2DmP5etgh4U","BjO_JC6ujXs","2oH1NACBgS4","rb4CTZjHCNg","DdbCtAScTsk","Z8lf5oWKfj0","YaK6cnET2IE"]:
+    errors.append("homepage player allowlist must contain exactly the ten source IDs")
 if "Explore GhostMesh's take on company agents" not in home:
     errors.append("homepage third editorial action missing")
 # Reader 004: caption-grounded editorial, explicit comparisons, and opt-in seeks.
@@ -338,12 +341,33 @@ if "private" not in instagram_receipt.get("reasonPack",{}).get("publicationBound
 if any(token in instagram for token in ("/a-challenge-is-not-a-verdict/transcript.txt","/a-challenge-is-not-a-verdict/transcript.srt")):
     errors.append("Instagram Reader links to private transcript")
 
+# OpenCode Reader: incident scope, attribution limits, source links, and private pack receipt.
+opencode_dir=site/"the-key-was-the-boundary"
+opencode=(opencode_dir/"index.html").read_text(encoding="utf8")
+for marker in ("The Key Was", "YaK6cnET2IE", "Watch the opening. Act on credentials.",
+               "https://opencode.ai/v2/docs/console/providers/", "https://www.anthropic.com/research/distillation-defenses",
+               "https://openai.com/index/disrupting-a-coordinated-model-distillation-campaign/",
+               "youtube-nocookie.com/embed/YaK6cnET2IE", "document.createElement('iframe')",
+               'download href="/the-key-was-the-boundary/receipt.json"'):
+    if marker not in opencode: errors.append("OpenCode Reader missing " + marker)
+if re.search(r"<iframe\b",opencode,re.I): errors.append("OpenCode player must wait for interaction")
+opencode_receipt=json.loads((opencode_dir/"receipt.json").read_text(encoding="utf8"))
+if opencode_receipt.get("source",{}).get("videoId")!="YaK6cnET2IE" or opencode_receipt.get("reasonPack",{}).get("verification")!="pass":
+    errors.append("OpenCode receipt source or ReasonPack verification mismatch")
+if len(opencode_receipt.get("editorial",{}).get("claimMap",[]))!=5:
+    errors.append("OpenCode receipt claim map incomplete")
+if opencode_receipt.get("reasonPack",{}).get("manifestSha256")!="b4da0f88f3adabe378bd50ece3c49cd24e57bdb530fc818fa8d71700e711bedb":
+    errors.append("OpenCode receipt pack identity mismatch")
+if "private" not in opencode_receipt.get("reasonPack",{}).get("publicationBoundary","").lower():
+    errors.append("OpenCode receipt must declare private custody")
+
 # Share and footer controls are a contract on every published Reader.
 for slug in ("the-score-is-not-the-system","when-software-becomes-legible",
              "the-agent-a-company-owns","when-agents-become-the-customer",
              "the-funnel-is-not-the-frontier","the-microscope-is-not-a-soul",
              "the-inbox-was-a-boundary","autonomy-needs-an-interface",
-             "make-good-work-inspectable","a-challenge-is-not-a-verdict"):
+             "make-good-work-inspectable","a-challenge-is-not-a-verdict",
+             "the-key-was-the-boundary"):
     article=(site/slug/"index.html").read_text(encoding="utf8")
     for token in ('/brand/ghostmesh-mark.svg', '/assets/reader-chrome.css',
                   '/assets/reader-share.js', 'data-gm-share', 'data-copy-link',
@@ -360,7 +384,7 @@ for asset in ("assets/reader-chrome.css","assets/reader-share.js",
         errors.append("missing shared Reader asset: "+asset)
 xml=ET.parse(site/"sitemap.xml")
 urls=[x.text for x in xml.getroot().iter() if x.tag.endswith("loc")]
-for path in ("/","/the-score-is-not-the-system/","/when-software-becomes-legible/","/the-agent-a-company-owns/","/when-agents-become-the-customer/","/the-funnel-is-not-the-frontier/","/the-microscope-is-not-a-soul/","/the-inbox-was-a-boundary/","/autonomy-needs-an-interface/","/make-good-work-inspectable/","/a-challenge-is-not-a-verdict/"):
+for path in ("/","/the-score-is-not-the-system/","/when-software-becomes-legible/","/the-agent-a-company-owns/","/when-agents-become-the-customer/","/the-funnel-is-not-the-frontier/","/the-microscope-is-not-a-soul/","/the-inbox-was-a-boundary/","/autonomy-needs-an-interface/","/make-good-work-inspectable/","/a-challenge-is-not-a-verdict/","/the-key-was-the-boundary/"):
     if host+path not in urls: errors.append("sitemap missing "+path)
 if errors:
     for x in errors: print("FAIL:",x)
