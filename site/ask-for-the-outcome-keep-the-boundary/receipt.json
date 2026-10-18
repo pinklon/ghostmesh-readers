@@ -1,0 +1,144 @@
+{
+  "schema": "ghostmesh-video-receipt-v1",
+  "createdAt": "2026-10-18T13:10:02Z",
+  "source": {
+    "platform": "YouTube",
+    "url": "https://www.youtube.com/watch?v=NarezKh3w4o",
+    "videoId": "NarezKh3w4o",
+    "title": "Anthropic just shared how they use Claude differently (Master it in 12 mins)",
+    "channel": "Jay E | RoboNuggets",
+    "uploadDate": "20261017",
+    "durationSeconds": 762
+  },
+  "reasonPack": {
+    "schema": "ghostmesh-reasoning-pack-v1",
+    "runtimeVersion": "1.0.1",
+    "verification": "pass",
+    "formatSelection": "609+234-20: public 720p HLS video and original English HLS audio, normalized to MP4 and M4A",
+    "transcription": "Source captions were unavailable; local whisper.cpp small.en produced the uncorrected transcript.",
+    "whisperModelSha256": "c6138d6d58ecc8322097e0f987c32f1be8bb0a18532a3f88f734d1bbf9c41e5d",
+    "manifestSha256": "a417606635fdb2a880c4793b51d20e02cc30d4349a8b080e62b4e8044d207f00",
+    "members": {
+      "video.mp4": {
+        "sha256": "6711ac0d852aa9c9cad7032326fc1717a3b2dd844951d87b15b2ce8efa95ed47",
+        "bytes": 49889725
+      },
+      "audio.m4a": {
+        "sha256": "7689664f9a3b0526e7b7e782d8948fe37904257548e80b65620f6b6612b26c6f",
+        "bytes": 12300053
+      },
+      "transcript.txt": {
+        "sha256": "4845c7c868e595e2abca804a15152a8fced4971fc78da1e86ba024ee4ad50c1e",
+        "bytes": 14615
+      },
+      "transcript-status.json": {
+        "sha256": "fe73141185479635589b72ceeef9e2998e00f5afe090618c92eb40f7cb24406f",
+        "bytes": 270
+      },
+      "source.json": {
+        "sha256": "6dbbea99bf2ae00ba9cc9552da9a4d1ea3355df9684070d857b441fe66dfe34a",
+        "bytes": 11642551
+      },
+      "ffprobe.json": {
+        "sha256": "f28fca64ce14709c2912b77e8eab077618bc51b73fd25dafc6ec248c5b042bea",
+        "bytes": 4572
+      }
+    },
+    "publicationBoundary": "The public site contains original editorial analysis and this sanitized receipt. Full third-party video, audio, source metadata, transcript, and timed VTT remain in private local custody."
+  },
+  "derivation": {
+    "timedTranscription": "Separate local whisper.cpp VTT pass against normalized 16-kHz mono audio; automatic, uncorrected, and outside the closed ReasonPack.",
+    "timedVttSha256": "179be7975f336bf40c0499edf1e99de983db4cb1d6b0d89262a3224884ce8371",
+    "sourceTimestamps": "Creator chapter starts cross-checked with the private timed VTT; verify exact wording against the original video.",
+    "verification": "Closed-manifest ReasonPack verification passed after capture, normalization, and transcription."
+  },
+  "editorial": {
+    "overview": "Jay of RoboNuggets explains three less obvious types of AI ambition from Felix Rieseberg's personal essay: altitude (outcome over task), depth (raw evidence and expert methods), and range (methods from other fields). He uses business examples and closes on self-efficacy and purpose.",
+    "whyItMatters": "People using AI mainly for faster drafts or template completion can use these frames to ask better questions. The video is useful as a narrated tour; readers who know the concepts can go straight to Rieseberg's shorter primary essay.",
+    "ghostMeshTakeaway": "GhostMesh proposes a bounded trial on one low-risk task: define the outcome and success measure, use permitted data and tools, compare altitude/depth/range variants, and require an independent check before giving an agent wider authority. This is GhostMesh's inference, not a measured result in the video.",
+    "watchGuidance": "Watch 01:38 for altitude, 03:55 for depth, and 07:16 for range. Skip the guide/community promotions if you only want the framework; the eight-minute original essay is the direct source.",
+    "verdict": "Useful prompting and workflow ideas, with a title and percentile framing that are broader than the supplied evidence. Try the ideas on a scoped task before claiming performance gains or expanding agent authority.",
+    "thesis": "Higher ambition improves the assignment only when inputs, methods, permissions, and independent success criteria make the result inspectable.",
+    "recommendedSegments": [
+      {
+        "startSeconds": 98,
+        "why": "Altitude: move from artifact to outcome."
+      },
+      {
+        "startSeconds": 235,
+        "why": "Depth: raw material, expert tools, outside judgment."
+      },
+      {
+        "startSeconds": 436,
+        "why": "Range: borrow actual methods from other fields."
+      },
+      {
+        "startSeconds": 703,
+        "why": "Jay's final reminder about pace and purpose."
+      }
+    ],
+    "claimMap": [
+      {
+        "id": "source-attribution",
+        "sourceStartSeconds": 0,
+        "kind": "source-attribution",
+        "finding": "The presentation is based on an essay by Felix Rieseberg, who identifies an Anthropic role.",
+        "limit": "The linked primary source is his personal essay, not an Anthropic company announcement or policy."
+      },
+      {
+        "id": "top-one-percent",
+        "sourceStartSeconds": 19,
+        "kind": "speaker-framing",
+        "finding": "The video calls these the habits of the top 1% of AI users.",
+        "limit": "No comparative user study or percentile measurement is supplied."
+      },
+      {
+        "id": "four-types",
+        "sourceStartSeconds": 98,
+        "kind": "source-selection",
+        "finding": "The video develops altitude, depth, and range.",
+        "limit": "Rieseberg's original framework has four types, including speed, which he sets aside as familiar. He says the advice is model-agnostic."
+      },
+      {
+        "id": "altitude",
+        "sourceStartSeconds": 98,
+        "kind": "framework-example",
+        "finding": "Ask for the outcome rather than simply for the presumed task.",
+        "limit": "The essay's crash-free app example required reports, version mapping, and computer access; outcome wording alone did not create a durable workflow."
+      },
+      {
+        "id": "depth",
+        "sourceStartSeconds": 235,
+        "kind": "framework-example",
+        "finding": "Use raw data, professional methods, and an outside judge.",
+        "limit": "The video provides examples and prompts, not a controlled comparison establishing performance gain."
+      },
+      {
+        "id": "range",
+        "sourceStartSeconds": 436,
+        "kind": "framework-example",
+        "finding": "Bring methods from other disciplines into a task.",
+        "limit": "Rieseberg cautions that role play without field methods may change wording without improving the result."
+      },
+      {
+        "id": "purpose",
+        "sourceStartSeconds": 703,
+        "kind": "speaker-inference",
+        "finding": "Jay says to pace ambition and know why the work matters.",
+        "limit": "This is a practical judgment, not a measured effect of the framework."
+      }
+    ],
+    "externalPrimarySources": [
+      {
+        "url": "https://felixrieseberg.com/how-to-be-more-ambitious-a-tutorial-for-humans-with-models/",
+        "role": "Rieseberg's original four-type framework, implementation details, and qualifications."
+      }
+    ],
+    "limits": [
+      "Source caption retrieval was unavailable; local Whisper may mishear names or technical terms.",
+      "Timed cues are approximate and were not manually corrected or speaker diarized.",
+      "The video does not supply a measured top-1%-user comparison or controlled test of the prompts.",
+      "GhostMesh has not run the proposed bounded trial."
+    ]
+  }
+}

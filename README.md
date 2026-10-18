@@ -9,11 +9,21 @@ The public, video-first companion to [SharePlane](https://shareplane.malott.ai/)
 ## Add a Reader
 
 1. Create `site/<slug>/index.html`. Show the original supported video with an opt-in player and a direct source fallback. Use timestamp links where the platform supports them; otherwise label source timings without promising a seek.
-2. State GhostMesh's verdict near the top: who should watch, what to skip or verify, and what to do next. Ground the call in this video's strongest and weakest evidence. Distinguish a speaker's experience from a measured result and GhostMesh's inference from either.
+2. Put the three-part [Reader brief](#canonical-reader-brief) near the top, before the long analysis: what the video is about, why the intended reader should care, and what GhostMesh takes away. Follow it with a verdict that says who should watch, what to watch or skip, what to verify, and what to do next. Ground the call in this video's strongest and weakest evidence. Distinguish a speaker's experience from a measured result and GhostMesh's inference from either.
 3. Publish original editorial analysis, source-video timestamps, and a sanitized machine-readable `receipt.json` with claim-level provenance and evidence hashes. Retain original media, source captions, and transcripts only in an access-controlled private ReasonPack. Never copy or commit third-party transcript, caption, or media files into `site/`, even if no page links to them. Receipt metadata must omit signed stream URLs, credentials, private paths, and nonpublic details.
 4. Update the collection in `site/index.html` and `site/sitemap.xml`; keep all existing slugs.
 5. Run `python3 scripts/check_site.py` and inspect desktop and narrow-screen layouts before publication. GitHub Actions verifies pull requests and pushes.
 6. Review the proposed change, merge into `main` only after verifying private ReasonPack custody, and check the Netlify deployment. Confirm the source video, editorial analysis, and receipt load while the former public transcript and captions return unavailable responses.
+
+## Canonical Reader brief
+
+Every future publication must answer these three questions plainly and visibly near the top of the Reader, before the source route, evidence ledger, or detailed critique. Use the questions as headings or equally clear labels; do not make readers infer the answers from a thesis or claim audit.
+
+1. **What is the video about?** Give a short, accessible overview of its subject, speaker, main argument or demonstration, and what happens in the video. State the video's story before evaluating it.
+2. **Why should a reader care?** Name the audience and the practical decision, risk, opportunity, or useful idea the video raises. Say when it is worth watching and when a reader can reasonably skip it.
+3. **What does GhostMesh take away?** State GhostMesh's own conclusion and its practical consequence: an action, bounded experiment, design rule, or reason to hold judgment. Tie it to the source evidence and label inference. A generic recap or a restatement of the speaker's pitch does not satisfy this item.
+
+The near-top verdict should turn the brief into a recommendation: useful source timestamps, sections to skip or verify, and a next step. Keep claim-level scrutiny and custody details below this reader orientation. Include matching `overview`, `whyItMatters`, and `ghostMeshTakeaway` fields in the sanitized receipt so the public editorial intent is inspectable alongside the claim map. `scripts/check_site.py` enforces the visible brief and matching receipt fields for new Readers; earlier editions are grandfathered. During review, read the brief on its own; a reader should understand the video, its relevance, and GhostMesh's conclusion without needing the evidence ledger.
 
 ## Hosting separation
 
