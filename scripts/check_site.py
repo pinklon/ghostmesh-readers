@@ -24,7 +24,9 @@ required = ("index.html","404.html","favicon.svg","robots.txt","sitemap.xml","si
             "a-challenge-is-not-a-verdict/index.html",
             "a-challenge-is-not-a-verdict/receipt.json",
             "the-key-was-the-boundary/index.html",
-            "the-key-was-the-boundary/receipt.json")
+            "the-key-was-the-boundary/receipt.json",
+            "the-scan-never-reached-the-login/index.html",
+            "the-scan-never-reached-the-login/receipt.json")
 errors = []
 # Fail publication if any private media, caption or transcript artifact leaks into site/.
 for candidate in site.rglob("*"):
@@ -72,7 +74,8 @@ for video_id,slug in (("ZhM29Ds-mBg","the-score-is-not-the-system"),
                        ("rb4CTZjHCNg","the-inbox-was-a-boundary"),
                        ("DdbCtAScTsk","autonomy-needs-an-interface"),
                        ("Z8lf5oWKfj0","make-good-work-inspectable"),
-                       ("YaK6cnET2IE","the-key-was-the-boundary")):
+                       ("YaK6cnET2IE","the-key-was-the-boundary"),
+                       ("8DKqcbEy-HM","the-scan-never-reached-the-login")):
     for marker in (f'i.ytimg.com/vi/{video_id}/hqdefault.jpg',
                    f'data-video-id="{video_id}"',
                    f'https://www.youtube.com/watch?v={video_id}',
@@ -136,8 +139,8 @@ for source in ("https://vercel.com/blog/introducing-eve", "https://github.com/ve
                "https://vercel.com/kb/guide/github-agent-eve"):
     if f'href="{source}"' not in third: errors.append("Reader 003 missing source "+source)
 allowlist=re.search(r"const allowed = new Set\(\[(.*?)\]\)",home)
-if not allowlist or re.findall(r"'([^']+)'",allowlist[1]) != ["ZhM29Ds-mBg","PseF3LyXQ04","HQXi4snP36I","2DmP5etgh4U","BjO_JC6ujXs","2oH1NACBgS4","rb4CTZjHCNg","DdbCtAScTsk","Z8lf5oWKfj0","YaK6cnET2IE"]:
-    errors.append("homepage player allowlist must contain exactly the ten source IDs")
+if not allowlist or re.findall(r"'([^']+)'",allowlist[1]) != ["ZhM29Ds-mBg","PseF3LyXQ04","HQXi4snP36I","2DmP5etgh4U","BjO_JC6ujXs","2oH1NACBgS4","rb4CTZjHCNg","DdbCtAScTsk","Z8lf5oWKfj0","YaK6cnET2IE","8DKqcbEy-HM"]:
+    errors.append("homepage player allowlist must contain exactly the eleven source IDs")
 if "Explore GhostMesh's take on company agents" not in home:
     errors.append("homepage third editorial action missing")
 # Reader 004: caption-grounded editorial, explicit comparisons, and opt-in seeks.
@@ -361,13 +364,33 @@ if opencode_receipt.get("reasonPack",{}).get("manifestSha256")!="b4da0f88f3adabe
 if "private" not in opencode_receipt.get("reasonPack",{}).get("publicationBoundary","").lower():
     errors.append("OpenCode receipt must declare private custody")
 
+# Strix Reader: separate the manual target demonstration from the incomplete agent runs.
+strix_dir=site/"the-scan-never-reached-the-login"
+strix=(strix_dir/"index.html").read_text(encoding="utf8")
+for marker in ("The Scan Never", "8DKqcbEy-HM", "Watch the failed run.",
+               "https://docs.strix.ai/llm-providers/local", "https://docs.strix.ai/advanced/skills",
+               "https://wstg.owasp.org/v4.2/2-Introduction/",
+               "youtube-nocookie.com/embed/8DKqcbEy-HM", "document.createElement('iframe')",
+               'download href="/the-scan-never-reached-the-login/receipt.json"'):
+    if marker not in strix: errors.append("Strix Reader missing " + marker)
+if re.search(r"<iframe\b",strix,re.I): errors.append("Strix player must wait for interaction")
+strix_receipt=json.loads((strix_dir/"receipt.json").read_text(encoding="utf8"))
+if strix_receipt.get("source",{}).get("videoId")!="8DKqcbEy-HM" or strix_receipt.get("reasonPack",{}).get("verification")!="pass":
+    errors.append("Strix receipt source or ReasonPack verification mismatch")
+if len(strix_receipt.get("editorial",{}).get("claimMap",[]))!=5:
+    errors.append("Strix receipt claim map incomplete")
+if strix_receipt.get("reasonPack",{}).get("manifestSha256")!="90f0f545e0ea7b8c7a847427e6c7a18d9f8d4290cbce176b263ed5453bf0748a":
+    errors.append("Strix receipt pack identity mismatch")
+if "private" not in strix_receipt.get("reasonPack",{}).get("publicationBoundary","").lower():
+    errors.append("Strix receipt must declare private custody")
+
 # Share and footer controls are a contract on every published Reader.
 for slug in ("the-score-is-not-the-system","when-software-becomes-legible",
              "the-agent-a-company-owns","when-agents-become-the-customer",
              "the-funnel-is-not-the-frontier","the-microscope-is-not-a-soul",
              "the-inbox-was-a-boundary","autonomy-needs-an-interface",
              "make-good-work-inspectable","a-challenge-is-not-a-verdict",
-             "the-key-was-the-boundary"):
+             "the-key-was-the-boundary","the-scan-never-reached-the-login"):
     article=(site/slug/"index.html").read_text(encoding="utf8")
     for token in ('/brand/ghostmesh-mark.svg', '/assets/reader-chrome.css',
                   '/assets/reader-share.js', 'data-gm-share', 'data-copy-link',
@@ -384,7 +407,7 @@ for asset in ("assets/reader-chrome.css","assets/reader-share.js",
         errors.append("missing shared Reader asset: "+asset)
 xml=ET.parse(site/"sitemap.xml")
 urls=[x.text for x in xml.getroot().iter() if x.tag.endswith("loc")]
-for path in ("/","/the-score-is-not-the-system/","/when-software-becomes-legible/","/the-agent-a-company-owns/","/when-agents-become-the-customer/","/the-funnel-is-not-the-frontier/","/the-microscope-is-not-a-soul/","/the-inbox-was-a-boundary/","/autonomy-needs-an-interface/","/make-good-work-inspectable/","/a-challenge-is-not-a-verdict/","/the-key-was-the-boundary/"):
+for path in ("/","/the-score-is-not-the-system/","/when-software-becomes-legible/","/the-agent-a-company-owns/","/when-agents-become-the-customer/","/the-funnel-is-not-the-frontier/","/the-microscope-is-not-a-soul/","/the-inbox-was-a-boundary/","/autonomy-needs-an-interface/","/make-good-work-inspectable/","/a-challenge-is-not-a-verdict/","/the-key-was-the-boundary/","/the-scan-never-reached-the-login/"):
     if host+path not in urls: errors.append("sitemap missing "+path)
 if errors:
     for x in errors: print("FAIL:",x)
