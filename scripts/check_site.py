@@ -5,7 +5,7 @@ from html.parser import HTMLParser
 from urllib.parse import urlsplit,unquote
 from datetime import datetime,date,timezone
 import json,re,sys,xml.etree.ElementTree as ET
-from generate_site import projections,CATEGORIES,validate_text
+from generate_site import projections,CATEGORIES,validate_text,validate_link_only_source
 ROOT=Path(__file__).resolve().parents[1];SITE=ROOT/'site'
 VERDICTS={'Essential','Worth studying','Interesting, unproven','Mostly recycled','Misleading','Not worth your time'}
 STATES={'corroborated','partially corroborated','contradicted','disputed','unverified'}
@@ -92,7 +92,9 @@ def check(root=ROOT):
   if aspect!='unknown':
    require(raw.count('gm-media-frame')==1 and raw.count(f'data-gm-aspect="{aspect}"')==1,f'{slug}: shared source player or aspect missing')
    require('gm-source-layout' in raw or 'class="player gm-media-frame"' in raw or 'class="player-ratio gm-media-frame"' in raw,f'{slug}: source player layout missing')
-  else:require('gm-media-frame' not in raw,f'{slug}: unknown aspect cannot create an embed')
+  else:
+   try:validate_link_only_source(raw,r['source']['url'])
+   except ValueError as exc:errors.append(f'{slug}: {exc}')
   for marker in ['at-a-glance','external-evidence','related-thinking']:require(marker in a.ids,f'{slug}: missing {marker}')
   require('data-theme-choice' in raw and '/assets/theme.js' in raw,f'{slug}: theme missing')
   require(raw.find('id="at-a-glance"')<min([pos for token in ['data-gm-aspect=','id="source"','class="theater"'] if (pos:=raw.find(token))>=0] or [len(raw)]),f'{slug}: brief after source')

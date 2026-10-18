@@ -2,6 +2,7 @@
 """Deterministic static projections. Standard library only; no hosting build required."""
 from pathlib import Path
 from html import escape
+from html.parser import HTMLParser
 import json,re,sys,colorsys
 ROOT=Path(__file__).resolve().parents[1]; SITE=ROOT/'site'
 CATEGORIES=['AI & Technology','Society & Politics','Science','Business','Ethics & Culture','Other']
@@ -53,11 +54,29 @@ def home_card(r,number,featured=False):
        f'<a class="gm-home-source" href="{esc(r["source"]["url"])}">Original {esc(r["source"].get("platform","YouTube"))} source ↗</a></div>')
  return f'<article class="gm-card gm-home-card" data-category="{esc(r["category"])}" data-tags="{esc(" ".join(r["tags"]))}" data-date="{r["published"]}" data-rank="{r["rank"]}">'+visual+copy+'</article>'
 def page(title,path,body):return '<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>'+esc(title)+' | GhostMesh Readers</title><meta name="description" content="Original analysis, explicit evidence and accountable judgment."><link rel="canonical" href="https://youtube.shareplane.malott.ai'+path+'"><link rel="icon" href="/favicon.svg">'+head()+'</head><body class="gm-catalog"><a class="gm-skip" href="#main">Skip to content</a>'+controls()+'<main id="main">'+body+'</main><footer class="gm-footer"><a href="/readers/">All Readers</a> · <a href="https://ghostmesh.ai/">GhostMesh</a> · <a href="https://shareplane.malott.ai/">SharePlane</a> · <a href="https://malott.ai/">Tony Malott</a> · <a href="mailto:ghostmesh@malott.ai">Contact GhostMesh</a></footer></body></html>'
-def player_contract(raw,aspect):
+class LinkOnlySource(HTMLParser):
+ def __init__(self,source_url):
+  super().__init__(convert_charrefs=True);self.source_url=source_url;self.direct_link=False;self.violations=[]
+ def handle_starttag(self,tag,attrs):
+  attrs=dict(attrs)
+  if tag=='a' and attrs.get('href')==self.source_url:self.direct_link=True
+  if tag in {'iframe','video','audio','embed','object','source','track','canvas'}:self.violations.append(tag)
+  if tag=='script' and attrs.get('src') not in {'/assets/theme.js','/assets/reader-share.js'}:self.violations.append('play script')
+  if any(name.startswith('on') or (name in {'href','src'} and str(value or '').lower().startswith('javascript:')) for name,value in attrs.items()):self.violations.append('active handler')
+  for name in ('class','id'):
+   if re.search(r'(?:^|[-_\s])(player|play|embed|iframe|video|media)(?:$|[-_\s])',attrs.get(name,'') or '',re.I):self.violations.append('player marker')
+ def handle_startendtag(self,tag,attrs):self.handle_starttag(tag,attrs)
+
+def validate_link_only_source(raw,source_url):
+ if not isinstance(source_url,str) or not source_url.startswith('https://'):raise ValueError('Link-only fallback needs an HTTPS source URL')
+ scan=LinkOnlySource(source_url);scan.feed(raw)
+ if scan.violations or not scan.direct_link:raise ValueError('Unknown source aspect requires a link-only fallback with the exact direct source link; forbidden '+', '.join(sorted(set(scan.violations))) if scan.violations else 'Unknown source aspect requires a link-only fallback with the exact direct source link')
+
+def player_contract(raw,aspect,source_url):
  if aspect not in {'16:9','9:16','1:1','unknown'}:raise ValueError('Unknown media aspect declaration')
  markers=[name for name in ('video-shell','player','player-ratio') if f'class="{name}"' in raw]
  if aspect=='unknown':
-  if markers:raise ValueError('Unknown source aspect requires a link-only fallback until dimensions are checked')
+  validate_link_only_source(raw,source_url)
   return raw
  if len(markers)!=1:raise ValueError(f'Expected exactly one source player, found {markers}')
  marker=markers[0]
@@ -73,7 +92,7 @@ def projections():
  byid={r['id']:r for r in readers};out={}
  for r in readers:
   raw=(ROOT/'content/readers'/f'{r["slug"]}.html').read_text()
-  raw=player_contract(raw,r['source'].get('mediaAspect'))
+  raw=player_contract(raw,r['source'].get('mediaAspect'),r['source']['url'])
   for slot,value in [('HEAD',head()),('CONTROLS',controls()),('BRIEF',brief(r)),('EVIDENCE',evidence(r)),('RELATED',related(r,byid))]:raw=raw.replace('<!--GM_'+slot+'-->',value)
   # An early synchronous theme loader prevents a light/dark flash before legacy styles load.
   raw=raw.replace('<head>','<head><script src="/assets/theme.js"></script>',1)
