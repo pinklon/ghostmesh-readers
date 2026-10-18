@@ -26,7 +26,9 @@ required = ("index.html","404.html","favicon.svg","robots.txt","sitemap.xml","si
             "the-key-was-the-boundary/index.html",
             "the-key-was-the-boundary/receipt.json",
             "the-scan-never-reached-the-login/index.html",
-            "the-scan-never-reached-the-login/receipt.json")
+            "the-scan-never-reached-the-login/receipt.json",
+            "ask-for-the-outcome-keep-the-boundary/index.html",
+            "ask-for-the-outcome-keep-the-boundary/receipt.json")
 errors = []
 # Fail publication if any private media, caption or transcript artifact leaks into site/.
 for candidate in site.rglob("*"):
@@ -75,7 +77,8 @@ for video_id,slug in (("ZhM29Ds-mBg","the-score-is-not-the-system"),
                        ("DdbCtAScTsk","autonomy-needs-an-interface"),
                        ("Z8lf5oWKfj0","make-good-work-inspectable"),
                        ("YaK6cnET2IE","the-key-was-the-boundary"),
-                       ("8DKqcbEy-HM","the-scan-never-reached-the-login")):
+                       ("8DKqcbEy-HM","the-scan-never-reached-the-login"),
+                       ("NarezKh3w4o","ask-for-the-outcome-keep-the-boundary")):
     for marker in (f'i.ytimg.com/vi/{video_id}/hqdefault.jpg',
                    f'data-video-id="{video_id}"',
                    f'https://www.youtube.com/watch?v={video_id}',
@@ -139,8 +142,8 @@ for source in ("https://vercel.com/blog/introducing-eve", "https://github.com/ve
                "https://vercel.com/kb/guide/github-agent-eve"):
     if f'href="{source}"' not in third: errors.append("Reader 003 missing source "+source)
 allowlist=re.search(r"const allowed = new Set\(\[(.*?)\]\)",home)
-if not allowlist or re.findall(r"'([^']+)'",allowlist[1]) != ["ZhM29Ds-mBg","PseF3LyXQ04","HQXi4snP36I","2DmP5etgh4U","BjO_JC6ujXs","2oH1NACBgS4","rb4CTZjHCNg","DdbCtAScTsk","Z8lf5oWKfj0","YaK6cnET2IE","8DKqcbEy-HM"]:
-    errors.append("homepage player allowlist must contain exactly the eleven source IDs")
+if not allowlist or re.findall(r"'([^']+)'",allowlist[1]) != ["ZhM29Ds-mBg","PseF3LyXQ04","HQXi4snP36I","2DmP5etgh4U","BjO_JC6ujXs","2oH1NACBgS4","rb4CTZjHCNg","DdbCtAScTsk","Z8lf5oWKfj0","YaK6cnET2IE","8DKqcbEy-HM","NarezKh3w4o"]:
+    errors.append("homepage player allowlist must contain exactly the twelve source IDs")
 if "Explore GhostMesh's take on company agents" not in home:
     errors.append("homepage third editorial action missing")
 # Reader 004: caption-grounded editorial, explicit comparisons, and opt-in seeks.
@@ -384,13 +387,66 @@ if strix_receipt.get("reasonPack",{}).get("manifestSha256")!="90f0f545e0ea7b8c7a
 if "private" not in strix_receipt.get("reasonPack",{}).get("publicationBoundary","").lower():
     errors.append("Strix receipt must declare private custody")
 
+# Ambition Reader: primary-essay attribution, opt-in source playback, and pack identity.
+ambition_dir = site / "ask-for-the-outcome-keep-the-boundary"
+ambition = (ambition_dir / "index.html").read_text(encoding="utf8")
+ambition_receipt = json.loads((ambition_dir / "receipt.json").read_text(encoding="utf8"))
+for marker in ("NarezKh3w4o", "Felix Rieseberg", "RoboNuggets",
+               "youtube-nocookie.com/embed/NarezKh3w4o",
+               "felixrieseberg.com/how-to-be-more-ambitious-a-tutorial-for-humans-with-models/",
+               'download href="/ask-for-the-outcome-keep-the-boundary/receipt.json"'):
+    if marker not in ambition:
+        errors.append("Ambition Reader missing " + marker)
+if re.search(r"<iframe\b", ambition, re.I):
+    errors.append("Ambition player must wait for interaction")
+if ambition_receipt.get("source", {}).get("videoId") != "NarezKh3w4o" or ambition_receipt.get("reasonPack", {}).get("verification") != "pass":
+    errors.append("Ambition receipt source or pack verification mismatch")
+if ambition_receipt.get("reasonPack", {}).get("manifestSha256") != "a417606635fdb2a880c4793b51d20e02cc30d4349a8b080e62b4e8044d207f00":
+    errors.append("Ambition receipt pack identity mismatch")
+if len(ambition_receipt.get("editorial", {}).get("claimMap", [])) != 7:
+    errors.append("Ambition receipt claim map incomplete")
+
+# The canonical Reader brief applies to every new publication. Existing editions
+# predating the requirement are grandfathered; all other Reader directories must
+# carry a visible three-part brief and matching sanitized receipt fields.
+legacy_reader_slugs = {
+    "the-score-is-not-the-system", "when-software-becomes-legible",
+    "the-agent-a-company-owns", "when-agents-become-the-customer",
+    "the-funnel-is-not-the-frontier", "the-microscope-is-not-a-soul",
+    "the-inbox-was-a-boundary", "autonomy-needs-an-interface",
+    "make-good-work-inspectable", "a-challenge-is-not-a-verdict",
+    "the-key-was-the-boundary",
+}
+for reader_path in site.glob("*/index.html"):
+    slug = reader_path.parent.name
+    if slug in legacy_reader_slugs:
+        continue
+    article = reader_path.read_text(encoding="utf8")
+    receipt_file = reader_path.parent / "receipt.json"
+    if not receipt_file.is_file():
+        errors.append(f"Reader {slug} missing canonical receipt")
+        continue
+    receipt = json.loads(receipt_file.read_text(encoding="utf8"))
+    for field, heading in (("overview", "What the video is about"),
+                           ("whyItMatters", "Why you should care"),
+                           ("ghostMeshTakeaway", "What GhostMesh takes away")):
+        if not receipt.get("editorial", {}).get(field):
+            errors.append(f"Reader {slug} receipt missing {field}")
+        if heading not in article:
+            errors.append(f"Reader {slug} missing brief heading: {heading}")
+    brief_pos = article.find('id="at-a-glance"')
+    source_pos = article.find('id="source"')
+    if brief_pos < 0 or source_pos < 0 or brief_pos > source_pos:
+        errors.append(f"Reader {slug} brief must precede source and detailed analysis")
+
 # Share and footer controls are a contract on every published Reader.
 for slug in ("the-score-is-not-the-system","when-software-becomes-legible",
              "the-agent-a-company-owns","when-agents-become-the-customer",
              "the-funnel-is-not-the-frontier","the-microscope-is-not-a-soul",
              "the-inbox-was-a-boundary","autonomy-needs-an-interface",
              "make-good-work-inspectable","a-challenge-is-not-a-verdict",
-             "the-key-was-the-boundary","the-scan-never-reached-the-login"):
+             "the-key-was-the-boundary","the-scan-never-reached-the-login",
+             "ask-for-the-outcome-keep-the-boundary"):
     article=(site/slug/"index.html").read_text(encoding="utf8")
     for token in ('/brand/ghostmesh-mark.svg', '/assets/reader-chrome.css',
                   '/assets/reader-share.js', 'data-gm-share', 'data-copy-link',
@@ -407,7 +463,7 @@ for asset in ("assets/reader-chrome.css","assets/reader-share.js",
         errors.append("missing shared Reader asset: "+asset)
 xml=ET.parse(site/"sitemap.xml")
 urls=[x.text for x in xml.getroot().iter() if x.tag.endswith("loc")]
-for path in ("/","/the-score-is-not-the-system/","/when-software-becomes-legible/","/the-agent-a-company-owns/","/when-agents-become-the-customer/","/the-funnel-is-not-the-frontier/","/the-microscope-is-not-a-soul/","/the-inbox-was-a-boundary/","/autonomy-needs-an-interface/","/make-good-work-inspectable/","/a-challenge-is-not-a-verdict/","/the-key-was-the-boundary/","/the-scan-never-reached-the-login/"):
+for path in ("/","/the-score-is-not-the-system/","/when-software-becomes-legible/","/the-agent-a-company-owns/","/when-agents-become-the-customer/","/the-funnel-is-not-the-frontier/","/the-microscope-is-not-a-soul/","/the-inbox-was-a-boundary/","/autonomy-needs-an-interface/","/make-good-work-inspectable/","/a-challenge-is-not-a-verdict/","/the-key-was-the-boundary/","/the-scan-never-reached-the-login/","/ask-for-the-outcome-keep-the-boundary/"):
     if host+path not in urls: errors.append("sitemap missing "+path)
 if errors:
     for x in errors: print("FAIL:",x)
