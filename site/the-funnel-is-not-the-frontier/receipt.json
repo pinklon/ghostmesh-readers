@@ -1,0 +1,303 @@
+{
+  "schema": "ghostmesh-reader-receipt-v2",
+  "source": {
+    "url": "https://www.youtube.com/watch?v=BjO_JC6ujXs",
+    "platform": "YouTube",
+    "videoId": "BjO_JC6ujXs",
+    "publicationDate": "2026-10-12",
+    "dateNote": "Source metadata reported in original public edition; no independent source-date revalidation."
+  },
+  "custody": {
+    "status": "historical-public-account-only",
+    "note": "No private source pack was opened or reverified during normalization. See original provenance on the Reader."
+  },
+  "normalization": {
+    "id": "reader:the-funnel-is-not-the-frontier",
+    "slug": "the-funnel-is-not-the-frontier",
+    "title": "The Funnel Is Not the Frontier",
+    "category": "AI & Technology",
+    "tags": [
+      "evaluation",
+      "verification",
+      "agents"
+    ],
+    "entities": [
+      "METR"
+    ],
+    "source": {
+      "url": "https://www.youtube.com/watch?v=BjO_JC6ujXs",
+      "platform": "YouTube",
+      "videoId": "BjO_JC6ujXs",
+      "publicationDate": "2026-10-12",
+      "dateNote": "Source metadata reported in original public edition; no independent source-date revalidation."
+    },
+    "published": "2026-10-16",
+    "updated": "2026-10-18T14:34:54.306588Z",
+    "overview": "DevLogic narrates Karpathy's AI-use funnel and its proposed filters of ambition, jagged capability and access. It contrasts casual use with technical work and private laboratory accounts.",
+    "whyItMatters": "Useful for interpreting conflicting AI anecdotes. Watch the short framing; skip it if you need a measured census or access to confidential lab results.",
+    "ghostMeshTakeaway": "Separate competence, access and verified outcomes. Compare bounded tasks and disclose interventions rather than ranking people with unmeasured population estimates.",
+    "verdict": "Interesting, unproven",
+    "architectureImpact": "experiment recommended",
+    "falsification": "Reconsider the recommendation if a controlled comparison on the stated task shows no benefit, or exposes permission failures, omitted evidence or greater cost than the ordinary workflow. See the original article for its specific proposed controls.",
+    "evidenceState": "partially corroborated",
+    "lastEvidenceChecked": "2026-10-18T14:33:10Z",
+    "freshness": "Evidence references checked 2026-10-18T14:33:10Z; historical ledger entries remain unverified unless individually mapped below. Mutable product and incident claims can become stale.",
+    "variant": "essay",
+    "accent": "ochre",
+    "claims": [
+      {
+        "id": "the-funnel-is-not-the-frontier--ledger-01",
+        "proposition": "PRIMARY ORIGINAL SOURCE ESTIMATES / UNKNOWN | Karpathy’s October 11 thread | Original estimate source; napkin math without a survey method. Direct X text could not be retrieved in this check; attribution relies on the supplied source context and captions. No independent verification of 5,000 internal people.",
+        "kind": "historical-ledger-entry",
+        "asOf": "2026-10-16",
+        "status": "unverified",
+        "assessment": "Historical published assessment retained in the original ledger below. Fresh independent verification is not established for this complete proposition.",
+        "limits": "Source attribution, documentation and empirical truth are separate. Linked historical references are leads, not a new corroboration attestation.",
+        "sourceLocation": "Original evidence ledger row 1",
+        "references": [],
+        "counterevidence": [],
+        "historicalLinks": [
+          "https://x.com/karpathy/status/2109361546505966046"
+        ],
+        "temporalScope": "Historical published account, not current operational state."
+      },
+      {
+        "id": "the-funnel-is-not-the-frontier--ledger-02",
+        "proposition": "SUPPORT / DIFFERENT METRIC | Stanford HAI 2026 AI Index | Organizational adoption is not depth of use. Rapid coding gains coexist with OSWorld failures. A narrow U.S.–China comparison and competitive open-weight alternatives do not establish internal-lab parity or the funnel counts.",
+        "kind": "historical-ledger-entry",
+        "asOf": "2026-10-16",
+        "status": "unverified",
+        "assessment": "Historical published assessment retained in the original ledger below. Fresh independent verification is not established for this complete proposition.",
+        "limits": "Source attribution, documentation and empirical truth are separate. Linked historical references are leads, not a new corroboration attestation.",
+        "sourceLocation": "Original evidence ledger row 2",
+        "references": [],
+        "counterevidence": [],
+        "historicalLinks": [
+          "https://hai.stanford.edu/ai-index/2026-ai-index-report"
+        ],
+        "temporalScope": "Historical published account, not current operational state."
+      },
+      {
+        "id": "the-funnel-is-not-the-frontier--ledger-03",
+        "proposition": "DIFFERENT METRIC | METR Time Horizon 1.1 | Estimates human task-time associated with model success on a task suite, not a census of users. Task composition, estimated human baselines, and wide intervals limit generalization; this is not elapsed autonomous runtime.",
+        "kind": "historical-ledger-entry",
+        "asOf": "2026-10-16",
+        "status": "unverified",
+        "assessment": "Historical published assessment retained in the original ledger below. Fresh independent verification is not established for this complete proposition.",
+        "limits": "Source attribution, documentation and empirical truth are separate. Linked historical references are leads, not a new corroboration attestation.",
+        "sourceLocation": "Original evidence ledger row 3",
+        "references": [],
+        "counterevidence": [],
+        "historicalLinks": [
+          "https://metr.org/blog/2026-1-29-time-horizon-1-1/"
+        ],
+        "temporalScope": "Historical published account, not current operational state."
+      },
+      {
+        "id": "the-funnel-is-not-the-frontier--ledger-04",
+        "proposition": "CONSTRAINT | Nguyen and Fithian methodology preprint | A nonlinear relation between human time and AI difficulty complicates equal-multiplier comparisons. The authors recommend validity diagnostics alongside horizons. This is methodological scrutiny, not a refutation of every measured improvement.",
+        "kind": "historical-ledger-entry",
+        "asOf": "2026-10-16",
+        "status": "unverified",
+        "assessment": "Historical published assessment retained in the original ledger below. Fresh independent verification is not established for this complete proposition.",
+        "limits": "Source attribution, documentation and empirical truth are separate. Linked historical references are leads, not a new corroboration attestation.",
+        "sourceLocation": "Original evidence ledger row 4",
+        "references": [],
+        "counterevidence": [],
+        "historicalLinks": [
+          "https://arxiv.org/abs/2610.12466"
+        ],
+        "temporalScope": "Historical published account, not current operational state."
+      },
+      {
+        "id": "the-funnel-is-not-the-frontier--ledger-05",
+        "proposition": "SUPPORT / CONSTRAINT | Qwen-Agent · DeepSeek tool calls | Documented frameworks and tool-call protocols support reproducible integration experiments. They do not certify runtime safety, comparable model capability, or successful long-horizon outcomes.",
+        "kind": "historical-ledger-entry",
+        "asOf": "2026-10-16",
+        "status": "unverified",
+        "assessment": "Historical published assessment retained in the original ledger below. Fresh independent verification is not established for this complete proposition.",
+        "limits": "Source attribution, documentation and empirical truth are separate. Linked historical references are leads, not a new corroboration attestation.",
+        "sourceLocation": "Original evidence ledger row 5",
+        "references": [],
+        "counterevidence": [],
+        "historicalLinks": [
+          "https://github.com/QwenLM/Qwen-Agent",
+          "https://api-docs.deepseek.com/guides/tool_calls/"
+        ],
+        "temporalScope": "Historical published account, not current operational state."
+      },
+      {
+        "id": "the-funnel-is-not-the-frontier--unevenness",
+        "proposition": "The 2026 AI Index describes markedly uneven performance across task classes.",
+        "kind": "external-evidence",
+        "asOf": "2026-10-18",
+        "status": "partially corroborated",
+        "assessment": "Different systems and evaluation conditions support a narrow unevenness claim, not a single general intelligence scale or the narrator’s population counts.",
+        "limits": "Different systems and evaluation conditions support a narrow unevenness claim, not a single general intelligence scale or the narrator’s population counts.",
+        "sourceLocation": "External evidence update, 2026-10-18",
+        "references": [
+          "index"
+        ],
+        "counterevidence": []
+      },
+      {
+        "id": "the-funnel-is-not-the-frontier--horizon-limit",
+        "proposition": "Human-equivalent task-time horizons measure elapsed autonomous runtime or the number of people with private laboratory access.",
+        "kind": "external-evidence",
+        "asOf": "2026-10-18",
+        "status": "contradicted",
+        "assessment": "The metric concerns estimated human task time at model success thresholds. Task composition and nonlinear difficulty complicate comparisons; no population census follows.",
+        "limits": "The metric concerns estimated human task time at model success thresholds. Task composition and nonlinear difficulty complicate comparisons; no population census follows.",
+        "sourceLocation": "External evidence update, 2026-10-18",
+        "references": [],
+        "counterevidence": [
+          "horizon",
+          "horizon-critique"
+        ]
+      },
+      {
+        "id": "the-funnel-is-not-the-frontier--population-estimates",
+        "proposition": "The source estimates roughly six billion barely exposed people, one to two billion casual users, twenty million professional frontier users and five thousand internal-lab users.",
+        "kind": "material-prose-claim",
+        "asOf": "2026-10-16",
+        "temporalScope": "Original edition; migration does not establish current operational truth.",
+        "status": "unverified",
+        "assessment": "Illustrative napkin math with no survey methodology; not disjoint or certified census populations.",
+        "limits": "Illustrative napkin math with no survey methodology; not disjoint or certified census populations.",
+        "sourceLocation": "Original article prose; claim identified during full-page migration audit.",
+        "references": [],
+        "counterevidence": []
+      },
+      {
+        "id": "the-funnel-is-not-the-frontier--private-capability",
+        "proposition": "Narrated agent swarms and long-running private laboratory work establish independently audited capabilities.",
+        "kind": "material-prose-claim",
+        "asOf": "2026-10-16",
+        "temporalScope": "Original edition; migration does not establish current operational truth.",
+        "status": "unverified",
+        "assessment": "Inaccessible internal work remains unverified; public comparisons cannot certify it.",
+        "limits": "Inaccessible internal work remains unverified; public comparisons cannot certify it.",
+        "sourceLocation": "Original article prose; claim identified during full-page migration audit.",
+        "references": [],
+        "counterevidence": []
+      },
+      {
+        "id": "the-funnel-is-not-the-frontier--country-gap",
+        "proposition": "The original edition says Stanford’s report describes a narrow US–China performance gap on its selected comparisons.",
+        "kind": "material-prose-claim",
+        "asOf": "2026-10-16",
+        "temporalScope": "Original edition; migration does not establish current operational truth.",
+        "status": "unverified",
+        "assessment": "No claim that every open checkpoint matches every hosted or unpublished system.",
+        "limits": "No claim that every open checkpoint matches every hosted or unpublished system.",
+        "sourceLocation": "Original article prose; claim identified during full-page migration audit.",
+        "references": [],
+        "counterevidence": []
+      }
+    ],
+    "references": [
+      {
+        "id": "index",
+        "title": "2026 AI Index Report",
+        "author": "AI Index Steering Committee",
+        "publisher": "Stanford HAI",
+        "url": "https://hai.stanford.edu/ai-index/2026-ai-index-report",
+        "publicationDate": "2026-04",
+        "eventDate": null,
+        "location": "Takeaway 4; Chapter 2 Technical Performance",
+        "sourceType": "research synthesis",
+        "independence": "Separate from narrator; underlying vendor and benchmark sources can be correlated.",
+        "evidenceFamily": "ai-index-2026",
+        "checkedAt": "2026-10-18T14:33:10Z",
+        "datePrecision": "month",
+        "verification": "Read by independent evidence researcher; limited source-fidelity check, not replication."
+      },
+      {
+        "id": "horizon",
+        "title": "Time Horizon 1.1",
+        "author": "METR",
+        "publisher": "METR",
+        "url": "https://metr.org/blog/2026-01-29-time-horizon-1-1/",
+        "publicationDate": "2026-01-29",
+        "eventDate": null,
+        "location": "Task suite; Updated time horizon estimates",
+        "sourceType": "original measurements",
+        "independence": "Separate evaluator; task suite and estimated human baselines limit applicability.",
+        "evidenceFamily": "metr-horizon",
+        "checkedAt": "2026-10-18T14:33:10Z",
+        "datePrecision": "day",
+        "verification": "Read by independent evidence researcher; limited source-fidelity check, not replication."
+      },
+      {
+        "id": "horizon-critique",
+        "title": "On the estimation and validity of AI time horizons: a statistical look at the METR plot",
+        "author": "Drew T. Nguyen and William Fithian",
+        "publisher": "arXiv",
+        "url": "https://arxiv.org/abs/2610.12466v1",
+        "publicationDate": "2026-10-08",
+        "eventDate": null,
+        "location": "Abstract; reanalysis of 228 tasks and 26 models",
+        "sourceType": "methodological reanalysis",
+        "independence": "Independent authors, same underlying METR data; not an independent task replication. Preprint.",
+        "evidenceFamily": "metr-horizon",
+        "checkedAt": "2026-10-18T14:33:10Z",
+        "datePrecision": "day",
+        "verification": "Read by independent evidence researcher; limited source-fidelity check, not replication."
+      }
+    ],
+    "relationships": [
+      {
+        "target": "reader:ask-for-the-outcome-keep-the-boundary",
+        "type": "related topic",
+        "reason": "Both editorial briefs examine agents, verification. This is a topic-level reading route, not independent corroboration or agreement.",
+        "provenance": [
+          "/the-funnel-is-not-the-frontier/#at-a-glance",
+          "/ask-for-the-outcome-keep-the-boundary/#at-a-glance"
+        ],
+        "basis": "curated-tags",
+        "direction": "outgoing"
+      },
+      {
+        "target": "reader:make-good-work-inspectable",
+        "type": "related topic",
+        "reason": "Both editorial briefs examine agents, verification. This is a topic-level reading route, not independent corroboration or agreement.",
+        "provenance": [
+          "/the-funnel-is-not-the-frontier/#at-a-glance",
+          "/make-good-work-inspectable/#at-a-glance"
+        ],
+        "basis": "curated-tags",
+        "direction": "outgoing"
+      },
+      {
+        "target": "reader:the-scan-never-reached-the-login",
+        "type": "related topic",
+        "reason": "Both editorial briefs examine agents, verification. This is a topic-level reading route, not independent corroboration or agreement.",
+        "provenance": [
+          "/the-funnel-is-not-the-frontier/#at-a-glance",
+          "/the-scan-never-reached-the-login/#at-a-glance"
+        ],
+        "basis": "curated-tags",
+        "direction": "outgoing"
+      }
+    ],
+    "relationshipDisposition": "Qualified topic-level links; no claim of empirical corroboration.",
+    "review": {
+      "status": "pending",
+      "scope": "Source migration and evidence mapping; no claim of empirical replication."
+    },
+    "revisionHistory": [
+      {
+        "at": "2026-10-18T14:34:54.306588Z",
+        "kind": "structural-normalization",
+        "reason": "Issue 23: explicit brief, evidence limits, themes and discovery. Historical conclusions preserved; classification is editorial, not factual confirmation."
+      }
+    ],
+    "editorialOrder": 12,
+    "orderReason": "Reading path from task framing and inspectable work through review, evidence and authority, then product-specific cases."
+  },
+  "editorial": {
+    "overview": "DevLogic narrates Karpathy's AI-use funnel and its proposed filters of ambition, jagged capability and access. It contrasts casual use with technical work and private laboratory accounts.",
+    "whyItMatters": "Useful for interpreting conflicting AI anecdotes. Watch the short framing; skip it if you need a measured census or access to confidential lab results.",
+    "ghostMeshTakeaway": "Separate competence, access and verified outcomes. Compare bounded tasks and disclose interventions rather than ranking people with unmeasured population estimates."
+  }
+}

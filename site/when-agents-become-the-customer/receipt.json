@@ -1,0 +1,235 @@
+{
+  "schema": "ghostmesh-reader-receipt-v2",
+  "source": {
+    "url": "https://www.youtube.com/watch?v=2DmP5etgh4U",
+    "platform": "YouTube",
+    "videoId": "2DmP5etgh4U",
+    "publicationDate": "2026-10-16",
+    "dateNote": "Source metadata reported in original public edition; no independent source-date revalidation."
+  },
+  "custody": {
+    "status": "historical-public-account-only",
+    "note": "No private source pack was opened or reverified during normalization. See original provenance on the Reader."
+  },
+  "normalization": {
+    "id": "reader:when-agents-become-the-customer",
+    "slug": "when-agents-become-the-customer",
+    "title": "When Agents Become the Customer",
+    "category": "Business",
+    "tags": [
+      "agents",
+      "authority",
+      "software"
+    ],
+    "entities": [
+      "Anthropic",
+      "OpenAI",
+      "Supabase"
+    ],
+    "source": {
+      "url": "https://www.youtube.com/watch?v=2DmP5etgh4U",
+      "platform": "YouTube",
+      "videoId": "2DmP5etgh4U",
+      "publicationDate": "2026-10-16",
+      "dateNote": "Source metadata reported in original public edition; no independent source-date revalidation."
+    },
+    "published": "2026-10-16",
+    "updated": "2026-10-18T14:34:54.306588Z",
+    "overview": "David Ondrej interviews Supabase co-founder Ant Wilson about agents building and consuming software, database economics, customer discovery and headless services.",
+    "whyItMatters": "Useful for builders evaluating agent-facing services. Watch the service and access-control passages; skip the promotional portions or seek separate data for market-size claims.",
+    "ghostMeshTakeaway": "Keep the billing principal, caller identity and service authorization explicit. Test isolation, recovery and exit before treating agent adoption as a durable advantage.",
+    "verdict": "Worth studying",
+    "architectureImpact": "experiment recommended",
+    "falsification": "Reconsider the recommendation if a controlled comparison on the stated task shows no benefit, or exposes permission failures, omitted evidence or greater cost than the ordinary workflow. See the original article for its specific proposed controls.",
+    "evidenceState": "partially corroborated",
+    "lastEvidenceChecked": "2026-10-18T14:39:28Z",
+    "freshness": "Primary documentation checked 2026-10-18T14:39:28Z. Historical ledger entries remain unverified unless individually mapped; mutable claims need rechecking before use.",
+    "variant": "essay",
+    "accent": "ochre",
+    "claims": [
+      {
+        "id": "when-agents-become-the-customer--thesis",
+        "proposition": "Keep the billing principal, caller identity and service authorization explicit. Test isolation, recovery and exit before treating agent adoption as a durable advantage.",
+        "kind": "editorial-inference",
+        "asOf": "2026-10-16",
+        "status": "unverified",
+        "assessment": "Proposed experiment, not a measured result.",
+        "limits": "Requires controlled testing.",
+        "sourceLocation": "Original thesis",
+        "references": [],
+        "counterevidence": [],
+        "temporalScope": "Historical published account, not current operational state."
+      },
+      {
+        "id": "when-agents-become-the-customer--mcp-auth",
+        "proposition": "Supabase documents OAuth 2.1 user-scoped MCP access with existing RLS policies and explicit approval in the authorization flow.",
+        "kind": "primary-documentation",
+        "asOf": "2026-10-18",
+        "status": "partially corroborated",
+        "assessment": "Primary source supports this documented design or attributed report. Actual enforcement, effectiveness and suitability remain unverified.",
+        "limits": "No product execution or independent performance study in this tranche. Correct integration and configuration cannot be inferred from documentation.",
+        "sourceLocation": "How MCP authentication works; Security considerations",
+        "references": [
+          "mcp-auth"
+        ],
+        "counterevidence": []
+      },
+      {
+        "id": "when-agents-become-the-customer--agent-skills",
+        "proposition": "Supabase reports observing agents omit RLS, invent CLI commands and create views without security_invoker; it supplies security guidance in its skills package.",
+        "kind": "primary-documentation",
+        "asOf": "2026-10-18",
+        "status": "partially corroborated",
+        "assessment": "Primary source supports this documented design or attributed report. Actual enforcement, effectiveness and suitability remain unverified.",
+        "limits": "No product execution or independent performance study in this tranche. Correct integration and configuration cannot be inferred from documentation.",
+        "sourceLocation": "Opening problem statement; What the skill teaches",
+        "references": [
+          "agent-skills"
+        ],
+        "counterevidence": []
+      },
+      {
+        "id": "when-agents-become-the-customer--valuation",
+        "proposition": "The interview title establishes Supabase’s value or revenue at ten billion dollars.",
+        "kind": "material-prose-claim",
+        "asOf": "2026-10-16",
+        "temporalScope": "Original edition; migration does not establish current operational truth.",
+        "status": "unverified",
+        "assessment": "Headline framing is not independently established valuation or revenue evidence.",
+        "limits": "Headline framing is not independently established valuation or revenue evidence.",
+        "sourceLocation": "Original article prose; claim identified during full-page migration audit.",
+        "references": [],
+        "counterevidence": []
+      },
+      {
+        "id": "when-agents-become-the-customer--acquisition",
+        "proposition": "The original edition attributes a Turso acquisition announcement and agent-demand claims to Supabase on October 2, 2026.",
+        "kind": "material-prose-claim",
+        "asOf": "2026-10-16",
+        "temporalScope": "Original edition; migration does not establish current operational truth.",
+        "status": "unverified",
+        "assessment": "Historical vendor announcement, not independent commercial validation.",
+        "limits": "Historical vendor announcement, not independent commercial validation.",
+        "sourceLocation": "Original article prose; claim identified during full-page migration audit.",
+        "references": [],
+        "counterevidence": []
+      },
+      {
+        "id": "when-agents-become-the-customer--cloudroom",
+        "proposition": "Cloudroom’s described isolated agents and optional self-hosting establish measured isolation and portability.",
+        "kind": "material-prose-claim",
+        "asOf": "2026-10-16",
+        "temporalScope": "Original edition; migration does not establish current operational truth.",
+        "status": "unverified",
+        "assessment": "Vendor claims; no execution or isolation audit in this Reader.",
+        "limits": "Vendor claims; no execution or isolation audit in this Reader.",
+        "sourceLocation": "Original article prose; claim identified during full-page migration audit.",
+        "references": [],
+        "counterevidence": []
+      },
+      {
+        "id": "when-agents-become-the-customer--delivery-state",
+        "proposition": "The original edition says ReasonPack email was disabled and claim signer and one-use ledger were not commissioned.",
+        "kind": "material-prose-claim",
+        "asOf": "2026-10-16",
+        "temporalScope": "Original edition; migration does not establish current operational truth.",
+        "status": "unverified",
+        "assessment": "Historical October 16 context, not current service verification.",
+        "limits": "Historical October 16 context, not current service verification.",
+        "sourceLocation": "Original article prose; claim identified during full-page migration audit.",
+        "references": [],
+        "counterevidence": []
+      }
+    ],
+    "references": [
+      {
+        "id": "mcp-auth",
+        "title": "Model Context Protocol (MCP) Authentication",
+        "author": "Supabase documentation contributors",
+        "publisher": "Supabase",
+        "url": "https://supabase.com/docs/guides/auth/oauth-server/mcp-authentication",
+        "publicationDate": "unknown",
+        "datePrecision": "unknown",
+        "dateNote": "Living documentation date unknown.",
+        "eventDate": null,
+        "location": "How MCP authentication works; Security considerations",
+        "sourceType": "primary-documentation",
+        "independence": "Vendor or project author. Documents its own design and observations; not independent performance or deployment verification.",
+        "evidenceFamily": "Supabase",
+        "checkedAt": "2026-10-18T14:39:28Z",
+        "verification": "Read-only independent researcher checked source wording, not execution."
+      },
+      {
+        "id": "agent-skills",
+        "title": "AI Agents Know About Supabase. They Don’t Always Use It Right.",
+        "author": "Pedro Rodrigues",
+        "publisher": "Supabase",
+        "url": "https://supabase.com/blog/supabase-agent-skills",
+        "publicationDate": "2026-04-09",
+        "datePrecision": "day",
+        "dateNote": "Dated post",
+        "eventDate": null,
+        "location": "Opening problem statement; What the skill teaches",
+        "sourceType": "primary-documentation",
+        "independence": "Vendor or project author. Documents its own design and observations; not independent performance or deployment verification.",
+        "evidenceFamily": "Supabase",
+        "checkedAt": "2026-10-18T14:39:28Z",
+        "verification": "Read-only independent researcher checked source wording, not execution."
+      }
+    ],
+    "relationships": [
+      {
+        "target": "reader:autonomy-needs-an-interface",
+        "type": "related topic",
+        "reason": "Both editorial briefs examine agents, authority. This is a topic-level reading route, not independent corroboration or agreement.",
+        "provenance": [
+          "/when-agents-become-the-customer/#at-a-glance",
+          "/autonomy-needs-an-interface/#at-a-glance"
+        ],
+        "basis": "curated-tags",
+        "direction": "outgoing"
+      },
+      {
+        "target": "reader:make-good-work-inspectable",
+        "type": "related topic",
+        "reason": "Both editorial briefs examine agents, software. This is a topic-level reading route, not independent corroboration or agreement.",
+        "provenance": [
+          "/when-agents-become-the-customer/#at-a-glance",
+          "/make-good-work-inspectable/#at-a-glance"
+        ],
+        "basis": "curated-tags",
+        "direction": "outgoing"
+      },
+      {
+        "target": "reader:the-agent-a-company-owns",
+        "type": "related topic",
+        "reason": "Both editorial briefs examine agents, authority. This is a topic-level reading route, not independent corroboration or agreement.",
+        "provenance": [
+          "/when-agents-become-the-customer/#at-a-glance",
+          "/the-agent-a-company-owns/#at-a-glance"
+        ],
+        "basis": "curated-tags",
+        "direction": "outgoing"
+      }
+    ],
+    "relationshipDisposition": "Qualified topic-level links; no claim of empirical corroboration.",
+    "review": {
+      "status": "pending",
+      "scope": "Source migration and evidence mapping; no claim of empirical replication."
+    },
+    "revisionHistory": [
+      {
+        "at": "2026-10-18T14:34:54.306588Z",
+        "kind": "structural-normalization",
+        "reason": "Issue 23: explicit brief, evidence limits, themes and discovery. Historical conclusions preserved; classification is editorial, not factual confirmation."
+      }
+    ],
+    "editorialOrder": 8,
+    "orderReason": "Reading path from task framing and inspectable work through review, evidence and authority, then product-specific cases."
+  },
+  "editorial": {
+    "overview": "David Ondrej interviews Supabase co-founder Ant Wilson about agents building and consuming software, database economics, customer discovery and headless services.",
+    "whyItMatters": "Useful for builders evaluating agent-facing services. Watch the service and access-control passages; skip the promotional portions or seek separate data for market-size claims.",
+    "ghostMeshTakeaway": "Keep the billing principal, caller identity and service authorization explicit. Test isolation, recovery and exit before treating agent adoption as a durable advantage."
+  }
+}

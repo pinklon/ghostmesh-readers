@@ -1,0 +1,273 @@
+{
+  "schema": "ghostmesh-reader-receipt-v2",
+  "source": {
+    "url": "https://www.youtube.com/watch?v=rb4CTZjHCNg",
+    "platform": "YouTube",
+    "videoId": "rb4CTZjHCNg",
+    "publicationDate": null,
+    "dateNote": "Source publication date explicitly unverified in original edition."
+  },
+  "custody": {
+    "status": "historical-public-account-only",
+    "note": "No private source pack was opened or reverified during normalization. See original provenance on the Reader."
+  },
+  "normalization": {
+    "id": "reader:the-inbox-was-a-boundary",
+    "slug": "the-inbox-was-a-boundary",
+    "title": "The Inbox Was a Boundary",
+    "category": "AI & Technology",
+    "tags": [
+      "security",
+      "authority",
+      "agents"
+    ],
+    "entities": [
+      "Anthropic",
+      "OpenAI"
+    ],
+    "source": {
+      "url": "https://www.youtube.com/watch?v=rb4CTZjHCNg",
+      "platform": "YouTube",
+      "videoId": "rb4CTZjHCNg",
+      "publicationDate": null,
+      "dateNote": "Source publication date explicitly unverified in original edition."
+    },
+    "published": "2026-10-16",
+    "updated": "2026-10-18T14:34:54.306588Z",
+    "overview": "AI Copium narrates a reported Amap agent fleet and the researchers' hidden mailbox invitation, then expands into broader AI-safety claims.",
+    "whyItMatters": "Useful for agent operators studying prompt injection. Focus on the documented contact episode; skip the later awareness speculation when evaluating this incident.",
+    "ghostMeshTakeaway": "Treat retrieved webpages as evidence, not permission. Test network and credential boundaries with synthetic lures; leave operator instructions and model identity unverified.",
+    "verdict": "Worth studying",
+    "architectureImpact": "experiment recommended",
+    "falsification": "Reconsider the recommendation if a controlled comparison on the stated task shows no benefit, or exposes permission failures, omitted evidence or greater cost than the ordinary workflow. See the original article for its specific proposed controls.",
+    "evidenceState": "partially corroborated",
+    "lastEvidenceChecked": "2026-10-18T14:33:10Z",
+    "freshness": "Evidence references checked 2026-10-18T14:33:10Z; historical ledger entries remain unverified unless individually mapped below. Mutable product and incident claims can become stale.",
+    "variant": "fieldnotes",
+    "accent": "teal",
+    "claims": [
+      {
+        "id": "the-inbox-was-a-boundary--ledger-01",
+        "proposition": "Fleet activity | Swarmchasers · primary investigation | Reports more than 2,600 Amap extraction attempts from September 28 to October 8; methods and outcomes vary.",
+        "kind": "historical-ledger-entry",
+        "asOf": "2026-10-16",
+        "status": "unverified",
+        "assessment": "Historical published assessment retained in the original ledger below. Fresh independent verification is not established for this complete proposition.",
+        "limits": "Source attribution, documentation and empirical truth are separate. Linked historical references are leads, not a new corroboration attestation.",
+        "sourceLocation": "Original evidence ledger row 1",
+        "references": [],
+        "counterevidence": [],
+        "historicalLinks": [
+          "https://swarmcha.se/posts/chinese-agent-fleet-full-report"
+        ],
+        "temporalScope": "Historical published account, not current operational state."
+      },
+      {
+        "id": "the-inbox-was-a-boundary--ledger-02",
+        "proposition": "Attribution | Investigator records plus background source | Tencent Cloud traces and an unnamed source's account of evaluation work. No official Tencent response in the report; model identity remains uncertain.",
+        "kind": "historical-ledger-entry",
+        "asOf": "2026-10-16",
+        "status": "unverified",
+        "assessment": "Historical published assessment retained in the original ledger below. Fresh independent verification is not established for this complete proposition.",
+        "limits": "Source attribution, documentation and empirical truth are separate. Linked historical references are leads, not a new corroboration attestation.",
+        "sourceLocation": "Original evidence ledger row 2",
+        "references": [],
+        "counterevidence": [],
+        "historicalLinks": [
+          "https://swarmcha.se/posts/chinese-agent-fleet-full-report"
+        ],
+        "temporalScope": "Historical published account, not current operational state."
+      },
+      {
+        "id": "the-inbox-was-a-boundary--ledger-03",
+        "proposition": "Contact | Investigator intervention and logs | Hidden offer and replies support contact with active runs. Intervention was misleading and may have affected behavior.",
+        "kind": "historical-ledger-entry",
+        "asOf": "2026-10-16",
+        "status": "unverified",
+        "assessment": "Historical published assessment retained in the original ledger below. Fresh independent verification is not established for this complete proposition.",
+        "limits": "Source attribution, documentation and empirical truth are separate. Linked historical references are leads, not a new corroboration attestation.",
+        "sourceLocation": "Original evidence ledger row 3",
+        "references": [],
+        "counterevidence": [],
+        "historicalLinks": [
+          "https://swarmcha.se/posts/chinese-agent-fleet-full-report#communication"
+        ],
+        "temporalScope": "Historical published account, not current operational state."
+      },
+      {
+        "id": "the-inbox-was-a-boundary--ledger-04",
+        "proposition": "Boundary design | Provider guidance · primary documentation | Third-party content is untrusted; tool and network permissions constrain consequences. Guidance does not verify this specific incident.",
+        "kind": "historical-ledger-entry",
+        "asOf": "2026-10-16",
+        "status": "unverified",
+        "assessment": "Historical published assessment retained in the original ledger below. Fresh independent verification is not established for this complete proposition.",
+        "limits": "Source attribution, documentation and empirical truth are separate. Linked historical references are leads, not a new corroboration attestation.",
+        "sourceLocation": "Original evidence ledger row 4",
+        "references": [],
+        "counterevidence": [],
+        "historicalLinks": [
+          "https://developers.openai.com/api/docs/guides/tools-computer-use-integration",
+          "https://www.anthropic.com/engineering/claude-code-sandboxing"
+        ],
+        "temporalScope": "Historical published account, not current operational state."
+      },
+      {
+        "id": "the-inbox-was-a-boundary--fleet-report",
+        "proposition": "Swarmchasers reports over 2,600 Amap extraction attempts and messages following its hidden mailbox invitation.",
+        "kind": "external-evidence",
+        "asOf": "2026-10-18",
+        "status": "partially corroborated",
+        "assessment": "This checks the primary investigators’ report, not an independent replication of the incident. Cloud traces do not authenticate model identity; no real-time coordination was found.",
+        "limits": "This checks the primary investigators’ report, not an independent replication of the incident. Cloud traces do not authenticate model identity; no real-time coordination was found.",
+        "sourceLocation": "External evidence update, 2026-10-18",
+        "references": [
+          "fleet"
+        ],
+        "counterevidence": []
+      },
+      {
+        "id": "the-inbox-was-a-boundary--fleet-dates",
+        "proposition": "Swarmchasers places the observed Amap extraction attempts between September 28 and October 8, 2026.",
+        "kind": "material-prose-claim",
+        "asOf": "2026-10-16",
+        "temporalScope": "Original edition; migration does not establish current operational truth.",
+        "status": "partially corroborated",
+        "assessment": "Dates belong to the investigators’ observation window.",
+        "limits": "Dates belong to the investigators’ observation window.",
+        "sourceLocation": "Original article prose; claim identified during full-page migration audit.",
+        "references": [
+          "fleet"
+        ],
+        "counterevidence": []
+      },
+      {
+        "id": "the-inbox-was-a-boundary--ten-requests",
+        "proposition": "The original edition reports ten mailbox requests before researchers checked the inbox.",
+        "kind": "material-prose-claim",
+        "asOf": "2026-10-16",
+        "temporalScope": "Original edition; migration does not establish current operational truth.",
+        "status": "unverified",
+        "assessment": "Historical report detail; no independent mailbox access or fresh count verification.",
+        "limits": "Historical report detail; no independent mailbox access or fresh count verification.",
+        "sourceLocation": "Original article prose; claim identified during full-page migration audit.",
+        "references": [],
+        "counterevidence": []
+      },
+      {
+        "id": "the-inbox-was-a-boundary--model-identity",
+        "proposition": "The observed fleet’s underlying model identity is authenticated as Claude.",
+        "kind": "material-prose-claim",
+        "asOf": "2026-10-16",
+        "temporalScope": "Original edition; migration does not establish current operational truth.",
+        "status": "unverified",
+        "assessment": "Unverified. Agent self-reports and cloud origin do not authenticate a model.",
+        "limits": "Unverified. Agent self-reports and cloud origin do not authenticate a model.",
+        "sourceLocation": "Original article prose; claim identified during full-page migration audit.",
+        "references": [],
+        "counterevidence": []
+      },
+      {
+        "id": "the-inbox-was-a-boundary--no-private-access",
+        "proposition": "Swarmchasers states it found no evidence of access to private systems.",
+        "kind": "material-prose-claim",
+        "asOf": "2026-10-16",
+        "temporalScope": "Original edition; migration does not establish current operational truth.",
+        "status": "partially corroborated",
+        "assessment": "Absence of evidence within the investigation is not proof that no access occurred.",
+        "limits": "Absence of evidence within the investigation is not proof that no access occurred.",
+        "sourceLocation": "Original article prose; claim identified during full-page migration audit.",
+        "references": [
+          "fleet"
+        ],
+        "counterevidence": []
+      },
+      {
+        "id": "the-inbox-was-a-boundary--coordination",
+        "proposition": "Swarmchasers states it found no real-time coordination among the observed runs.",
+        "kind": "material-prose-claim",
+        "asOf": "2026-10-16",
+        "temporalScope": "Original edition; migration does not establish current operational truth.",
+        "status": "partially corroborated",
+        "assessment": "Investigator finding within its scope; hidden coordination is not ruled out globally.",
+        "limits": "Investigator finding within its scope; hidden coordination is not ruled out globally.",
+        "sourceLocation": "Original article prose; claim identified during full-page migration audit.",
+        "references": [
+          "fleet"
+        ],
+        "counterevidence": []
+      }
+    ],
+    "references": [
+      {
+        "id": "fleet",
+        "title": "We found a Tencent agent fleet",
+        "author": "ConcurrentSquared, Frank, Alecto Irene Perez, Tazik Shahjahan",
+        "publisher": "Swarmchasers",
+        "url": "https://swarmcha.se/posts/chinese-agent-fleet-full-report",
+        "publicationDate": "2026-10-14",
+        "eventDate": "2026-09-28/2026-10-08",
+        "location": "Technical Overview; Tencent’s Actions; Communication with the fleet",
+        "sourceType": "primary investigation",
+        "independence": "Investigators intervened in the environment; unnamed background source, uncertain model identity, no official Tencent reply.",
+        "evidenceFamily": "swarmchasers-fleet",
+        "checkedAt": "2026-10-18T14:33:10Z",
+        "datePrecision": "day",
+        "verification": "Read by independent evidence researcher; limited source-fidelity check, not replication."
+      }
+    ],
+    "relationships": [
+      {
+        "target": "reader:the-key-was-the-boundary",
+        "type": "related topic",
+        "reason": "Both editorial briefs examine agents, authority, security. This is a topic-level reading route, not independent corroboration or agreement.",
+        "provenance": [
+          "/the-inbox-was-a-boundary/#at-a-glance",
+          "/the-key-was-the-boundary/#at-a-glance"
+        ],
+        "basis": "curated-tags",
+        "direction": "outgoing"
+      },
+      {
+        "target": "reader:autonomy-needs-an-interface",
+        "type": "related topic",
+        "reason": "Both editorial briefs examine agents, authority. This is a topic-level reading route, not independent corroboration or agreement.",
+        "provenance": [
+          "/the-inbox-was-a-boundary/#at-a-glance",
+          "/autonomy-needs-an-interface/#at-a-glance"
+        ],
+        "basis": "curated-tags",
+        "direction": "outgoing"
+      },
+      {
+        "target": "reader:the-agent-a-company-owns",
+        "type": "related topic",
+        "reason": "Both editorial briefs examine agents, authority. This is a topic-level reading route, not independent corroboration or agreement.",
+        "provenance": [
+          "/the-inbox-was-a-boundary/#at-a-glance",
+          "/the-agent-a-company-owns/#at-a-glance"
+        ],
+        "basis": "curated-tags",
+        "direction": "outgoing"
+      }
+    ],
+    "relationshipDisposition": "Qualified topic-level links; no claim of empirical corroboration.",
+    "review": {
+      "status": "pending",
+      "scope": "Source migration and evidence mapping; no claim of empirical replication."
+    },
+    "revisionHistory": [
+      {
+        "at": "2026-10-18T14:34:54.306588Z",
+        "kind": "structural-normalization",
+        "reason": "Issue 23: explicit brief, evidence limits, themes and discovery. Historical conclusions preserved; classification is editorial, not factual confirmation."
+      }
+    ],
+    "editorialOrder": 4,
+    "orderReason": "Reading path from task framing and inspectable work through review, evidence and authority, then product-specific cases."
+  },
+  "editorial": {
+    "overview": "AI Copium narrates a reported Amap agent fleet and the researchers' hidden mailbox invitation, then expands into broader AI-safety claims.",
+    "whyItMatters": "Useful for agent operators studying prompt injection. Focus on the documented contact episode; skip the later awareness speculation when evaluating this incident.",
+    "ghostMeshTakeaway": "Treat retrieved webpages as evidence, not permission. Test network and credential boundaries with synthetic lures; leave operator instructions and model identity unverified."
+  }
+}

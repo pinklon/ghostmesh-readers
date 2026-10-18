@@ -182,6 +182,361 @@
       "No speaker diarization or manual transcript correction.",
       "No independent audit of repositories, sessions, costs, commit history, client outcomes, or security controls.",
       "Editorial judgments are not empirical effect sizes."
-    ]
+    ],
+    "overview": "Nate Herk interviews Matt Pocock about communicating intent to agents, a failed specification-centered workflow and improving results by letting agents run and inspect an application.",
+    "whyItMatters": "Watch the failure story at 26:37 and application feedback at 32:03. Skip the full interview if you need a security or deployment playbook rather than practitioner experience.",
+    "ghostMeshTakeaway": "Close the loop between intent and inspectable behavior. Start with one reversible task, observable checks and human review; commit volume is not an outcome measure."
+  },
+  "normalization": {
+    "id": "reader:make-good-work-inspectable",
+    "slug": "make-good-work-inspectable",
+    "title": "Make Good Work Inspectable",
+    "category": "AI & Technology",
+    "tags": [
+      "software",
+      "verification",
+      "agents"
+    ],
+    "entities": [],
+    "source": {
+      "url": "https://www.youtube.com/watch?v=Z8lf5oWKfj0",
+      "videoId": "Z8lf5oWKfj0",
+      "title": "Matt Pocock: The Most Valuable Skill to Learn in the Age of AI",
+      "channel": "Nate Herk | AI Automation",
+      "uploadDate": "20261016",
+      "durationSeconds": 2690,
+      "captionType": "YouTube automatic English captions",
+      "captionTrack": "en-orig",
+      "creatorChapters": [
+        {
+          "startSeconds": 0,
+          "title": "Intro"
+        },
+        {
+          "startSeconds": 110,
+          "title": "When Coding Agents Clicked"
+        },
+        {
+          "startSeconds": 264,
+          "title": "Tell Agents What You Care About"
+        },
+        {
+          "startSeconds": 579,
+          "title": "Where the Opportunities Are"
+        },
+        {
+          "startSeconds": 895,
+          "title": "Unknown Unknowns & Grill Me"
+        },
+        {
+          "startSeconds": 1183,
+          "title": "How to Stand Out"
+        },
+        {
+          "startSeconds": 1563,
+          "title": "The Spec-Driven Development Failure"
+        },
+        {
+          "startSeconds": 1848,
+          "title": "Models, Harnesses & Effort Levels"
+        },
+        {
+          "startSeconds": 2127,
+          "title": "How to Get Started"
+        },
+        {
+          "startSeconds": 2491,
+          "title": "What's Next for Matt"
+        }
+      ],
+      "platform": "YouTube"
+    },
+    "published": "2026-10-17",
+    "updated": "2026-10-18T14:34:54.306588Z",
+    "overview": "Nate Herk interviews Matt Pocock about communicating intent to agents, a failed specification-centered workflow and improving results by letting agents run and inspect an application.",
+    "whyItMatters": "Watch the failure story at 26:37 and application feedback at 32:03. Skip the full interview if you need a security or deployment playbook rather than practitioner experience.",
+    "ghostMeshTakeaway": "Close the loop between intent and inspectable behavior. Start with one reversible task, observable checks and human review; commit volume is not an outcome measure.",
+    "verdict": "Worth studying",
+    "architectureImpact": "experiment recommended",
+    "falsification": "Reconsider the recommendation if a controlled comparison on the stated task shows no benefit, or exposes permission failures, omitted evidence or greater cost than the ordinary workflow. See the original article for its specific proposed controls.",
+    "evidenceState": "unverified",
+    "lastEvidenceChecked": "2026-10-18T14:33:10Z",
+    "freshness": "Evidence references checked 2026-10-18T14:33:10Z; historical ledger entries remain unverified unless individually mapped below. Mutable product and incident claims can become stale.",
+    "variant": "fieldnotes",
+    "accent": "teal",
+    "claims": [
+      {
+        "id": "make-good-work-inspectable--communication",
+        "proposition": "Pocock says agents need explicit priorities and a well-maintained codebase.",
+        "kind": "speaker-opinion",
+        "asOf": "2026-10-17",
+        "status": "unverified",
+        "assessment": "Pocock says agents need explicit priorities and a well-maintained codebase.",
+        "limits": "No comparative study in the interview.",
+        "sourceLocation": "264",
+        "references": [],
+        "counterevidence": [],
+        "temporalScope": "Historical published account, not current operational state."
+      },
+      {
+        "id": "make-good-work-inspectable--primary-sources",
+        "proposition": "He says he uses agent teaching as an introduction before reading primary material.",
+        "kind": "speaker-practice",
+        "asOf": "2026-10-17",
+        "status": "unverified",
+        "assessment": "He says he uses agent teaching as an introduction before reading primary material.",
+        "limits": "The practice is described, not independently audited.",
+        "sourceLocation": "439",
+        "references": [],
+        "counterevidence": [],
+        "temporalScope": "Historical published account, not current operational state."
+      },
+      {
+        "id": "make-good-work-inspectable--spec-failure",
+        "proposition": "He reports his video-editor code and agent results worsened while centering a large spec.",
+        "kind": "first-person-case",
+        "asOf": "2026-10-17",
+        "status": "unverified",
+        "assessment": "He reports his video-editor code and agent results worsened while centering a large spec.",
+        "limits": "One project, no shared logs or controlled comparison.",
+        "sourceLocation": "1597",
+        "references": [],
+        "counterevidence": [],
+        "temporalScope": "Historical published account, not current operational state."
+      },
+      {
+        "id": "make-good-work-inspectable--environment-fix",
+        "proposition": "He reports better results after agents could run and inspect his application.",
+        "kind": "first-person-case",
+        "asOf": "2026-10-17",
+        "status": "unverified",
+        "assessment": "He reports better results after agents could run and inspect his application.",
+        "limits": "No before/after quality metric or artifacts in the interview.",
+        "sourceLocation": "1991",
+        "references": [],
+        "counterevidence": [],
+        "temporalScope": "Historical published account, not current operational state."
+      },
+      {
+        "id": "make-good-work-inspectable--productivity",
+        "proposition": "He describes multiple agents and hundreds of commits per day.",
+        "kind": "first-person-claim",
+        "asOf": "2026-10-17",
+        "status": "unverified",
+        "assessment": "He describes multiple agents and hundreds of commits per day.",
+        "limits": "Commit count is not a quality or value measure; not independently checked here.",
+        "sourceLocation": "1850",
+        "references": [],
+        "counterevidence": [],
+        "temporalScope": "Historical published account, not current operational state."
+      },
+      {
+        "id": "make-good-work-inspectable--trust-ladder",
+        "proposition": "He recommends supervised, small tasks before widening agent scope.",
+        "kind": "speaker-advice",
+        "asOf": "2026-10-17",
+        "status": "unverified",
+        "assessment": "He recommends supervised, small tasks before widening agent scope.",
+        "limits": "Permission, approval, and rollback controls are GhostMesh recommendations.",
+        "sourceLocation": "2161",
+        "references": [],
+        "counterevidence": [],
+        "temporalScope": "Historical published account, not current operational state."
+      },
+      {
+        "id": "make-good-work-inspectable--sales-advice",
+        "proposition": "He suggests a client-specific prototype and acknowledges limited experience competing without a large audience.",
+        "kind": "speaker-advice",
+        "asOf": "2026-10-17",
+        "status": "unverified",
+        "assessment": "He suggests a client-specific prototype and acknowledges limited experience competing without a large audience.",
+        "limits": "Not a validated sales strategy; an aside about billing should not be treated as guidance.",
+        "sourceLocation": "1255",
+        "references": [],
+        "counterevidence": [],
+        "temporalScope": "Historical published account, not current operational state."
+      },
+      {
+        "id": "make-good-work-inspectable--ledger-01",
+        "proposition": "What is his method? | Interview · first-person advice | Tell agents your priorities, improve tests and codebase conditions, and read primary sources. No comparative trial is shown.",
+        "kind": "historical-ledger-entry",
+        "asOf": "2026-10-17",
+        "status": "unverified",
+        "assessment": "Historical published assessment retained in the original ledger below. Fresh independent verification is not established for this complete proposition.",
+        "limits": "Source attribution, documentation and empirical truth are separate. Linked historical references are leads, not a new corroboration attestation.",
+        "sourceLocation": "Original evidence ledger row 1",
+        "references": [],
+        "counterevidence": [],
+        "historicalLinks": [
+          "https://www.youtube.com/watch?v=Z8lf5oWKfj0&t=264s",
+          "https://www.youtube.com/watch?v=Z8lf5oWKfj0&t=439s"
+        ],
+        "temporalScope": "Historical published account, not current operational state."
+      },
+      {
+        "id": "make-good-work-inspectable--ledger-02",
+        "proposition": "Why question a spec-only workflow? | Interview · personal case; original talk | Pocock reports degradation in his editor project. Grove argues for durable, testable intent. Neither source measures a general winner.",
+        "kind": "historical-ledger-entry",
+        "asOf": "2026-10-17",
+        "status": "unverified",
+        "assessment": "Historical published assessment retained in the original ledger below. Fresh independent verification is not established for this complete proposition.",
+        "limits": "Source attribution, documentation and empirical truth are separate. Linked historical references are leads, not a new corroboration attestation.",
+        "sourceLocation": "Original evidence ledger row 2",
+        "references": [],
+        "counterevidence": [],
+        "historicalLinks": [
+          "https://www.youtube.com/watch?v=Z8lf5oWKfj0&t=1597s",
+          "https://ai.engineer/talks/8rABwKRsec4-specifications-are-the-new-code"
+        ],
+        "temporalScope": "Historical published account, not current operational state."
+      },
+      {
+        "id": "make-good-work-inspectable--ledger-03",
+        "proposition": "What changed his agent's work? | Interview · personal case | He says app interaction and screenshots improved the editor workflow. No artifacts or before/after metrics are supplied in this interview.",
+        "kind": "historical-ledger-entry",
+        "asOf": "2026-10-17",
+        "status": "unverified",
+        "assessment": "Historical published assessment retained in the original ledger below. Fresh independent verification is not established for this complete proposition.",
+        "limits": "Source attribution, documentation and empirical truth are separate. Linked historical references are leads, not a new corroboration attestation.",
+        "sourceLocation": "Original evidence ledger row 3",
+        "references": [],
+        "counterevidence": [],
+        "historicalLinks": [
+          "https://www.youtube.com/watch?v=Z8lf5oWKfj0&t=1991s"
+        ],
+        "temporalScope": "Historical published account, not current operational state."
+      },
+      {
+        "id": "make-good-work-inspectable--ledger-04",
+        "proposition": "How should trust grow? | Interview · first-person advice | Start with supervised, checkable work and widen scope gradually. Permission and rollback design are GhostMesh's added requirements.",
+        "kind": "historical-ledger-entry",
+        "asOf": "2026-10-17",
+        "status": "unverified",
+        "assessment": "Historical published assessment retained in the original ledger below. Fresh independent verification is not established for this complete proposition.",
+        "limits": "Source attribution, documentation and empirical truth are separate. Linked historical references are leads, not a new corroboration attestation.",
+        "sourceLocation": "Original evidence ledger row 4",
+        "references": [],
+        "counterevidence": [],
+        "historicalLinks": [
+          "https://www.youtube.com/watch?v=Z8lf5oWKfj0&t=2161s",
+          "https://www.youtube.com/watch?v=Z8lf5oWKfj0&t=2402s"
+        ],
+        "temporalScope": "Historical published account, not current operational state."
+      },
+      {
+        "id": "make-good-work-inspectable--ledger-05",
+        "proposition": "Do his skills exist? | Author's public repository | The repository is inspectable. Its existence does not establish that a skill improves your results.",
+        "kind": "historical-ledger-entry",
+        "asOf": "2026-10-17",
+        "status": "unverified",
+        "assessment": "Historical published assessment retained in the original ledger below. Fresh independent verification is not established for this complete proposition.",
+        "limits": "Source attribution, documentation and empirical truth are separate. Linked historical references are leads, not a new corroboration attestation.",
+        "sourceLocation": "Original evidence ledger row 5",
+        "references": [],
+        "counterevidence": [],
+        "historicalLinks": [
+          "https://github.com/mattpocock/skills"
+        ],
+        "temporalScope": "Historical published account, not current operational state."
+      },
+      {
+        "id": "make-good-work-inspectable--measured-productivity",
+        "proposition": "Pocock’s reported commit volume establishes a general productivity improvement for present-day developers.",
+        "kind": "external-evidence",
+        "asOf": "2026-10-18",
+        "status": "unverified",
+        "assessment": "The 2025 randomized study found a 19% slowdown in its narrow setting. The February 2026 follow-up cannot reliably quantify current uplift. Neither tests Pocock’s workflow.",
+        "limits": "The 2025 randomized study found a 19% slowdown in its narrow setting. The February 2026 follow-up cannot reliably quantify current uplift. Neither tests Pocock’s workflow.",
+        "sourceLocation": "External evidence update, 2026-10-18",
+        "references": [],
+        "counterevidence": [
+          "productivity",
+          "productivity-update"
+        ]
+      }
+    ],
+    "references": [
+      {
+        "id": "productivity",
+        "title": "Measuring the Impact of Early-2025 AI on Experienced Open-Source Developer Productivity",
+        "author": "Joel Becker, Nate Rush, Beth Barnes, David Rein",
+        "publisher": "METR",
+        "url": "https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/",
+        "publicationDate": "2025-07-10",
+        "eventDate": "2025-02/2025-06",
+        "location": "Methodology and Results",
+        "sourceType": "randomized study",
+        "independence": "Non-vendor study; 16 experienced developers, 246 tasks, historical tools and narrow setting.",
+        "evidenceFamily": "metr-productivity",
+        "checkedAt": "2026-10-18T14:33:10Z",
+        "datePrecision": "day",
+        "verification": "Read by independent evidence researcher; limited source-fidelity check, not replication."
+      },
+      {
+        "id": "productivity-update",
+        "title": "We are Changing our Developer Productivity Experiment Design",
+        "author": "Joel Becker, Nate Rush, Tom Cunningham, David Rein, Khalid Mahamud",
+        "publisher": "METR",
+        "url": "https://metr.org/blog/2026-02-24-uplift-update/",
+        "publicationDate": "2026-02-24",
+        "eventDate": "Follow-up began 2025-08",
+        "location": "Opening findings; Details of the productivity study",
+        "sourceType": "methodological update",
+        "independence": "Same research program as 2025 study. Selection and time-measurement bias prevent reliable current uplift estimates.",
+        "evidenceFamily": "metr-productivity",
+        "checkedAt": "2026-10-18T14:33:10Z",
+        "datePrecision": "day",
+        "verification": "Read by independent evidence researcher; limited source-fidelity check, not replication."
+      }
+    ],
+    "relationships": [
+      {
+        "target": "reader:a-challenge-is-not-a-verdict",
+        "type": "related topic",
+        "reason": "Both editorial briefs examine software, verification. This is a topic-level reading route, not independent corroboration or agreement.",
+        "provenance": [
+          "/make-good-work-inspectable/#at-a-glance",
+          "/a-challenge-is-not-a-verdict/#at-a-glance"
+        ],
+        "basis": "curated-tags",
+        "direction": "outgoing"
+      },
+      {
+        "target": "reader:ask-for-the-outcome-keep-the-boundary",
+        "type": "related topic",
+        "reason": "Both editorial briefs examine agents, verification. This is a topic-level reading route, not independent corroboration or agreement.",
+        "provenance": [
+          "/make-good-work-inspectable/#at-a-glance",
+          "/ask-for-the-outcome-keep-the-boundary/#at-a-glance"
+        ],
+        "basis": "curated-tags",
+        "direction": "outgoing"
+      },
+      {
+        "target": "reader:the-funnel-is-not-the-frontier",
+        "type": "related topic",
+        "reason": "Both editorial briefs examine agents, verification. This is a topic-level reading route, not independent corroboration or agreement.",
+        "provenance": [
+          "/make-good-work-inspectable/#at-a-glance",
+          "/the-funnel-is-not-the-frontier/#at-a-glance"
+        ],
+        "basis": "curated-tags",
+        "direction": "outgoing"
+      }
+    ],
+    "relationshipDisposition": "Qualified topic-level links; no claim of empirical corroboration.",
+    "review": {
+      "status": "pending",
+      "scope": "Source migration and evidence mapping; no claim of empirical replication."
+    },
+    "revisionHistory": [
+      {
+        "at": "2026-10-18T14:34:54.306588Z",
+        "kind": "structural-normalization",
+        "reason": "Issue 23: explicit brief, evidence limits, themes and discovery. Historical conclusions preserved; classification is editorial, not factual confirmation."
+      }
+    ],
+    "editorialOrder": 1,
+    "orderReason": "Reading path from task framing and inspectable work through review, evidence and authority, then product-specific cases."
   }
 }
