@@ -24,7 +24,7 @@ class PublicationGate(unittest.TestCase):
     p=self.root/'site/assets/capture.css';p.write_bytes(payload)
     self.rejected('Private source capture signature');p.unlink()
  def test_public_symlinks(self):
-  for name,target in [('directory-link',self.root/'content'),('dangling-link',self.root/'missing'),('file-link.css',self.root/'site/assets/knowledge.css')]:
+  for name,target in [('directory-link',self.root/'content'),('dangling-link',self.root/'missing'),('file-link.html',self.root/'missing-private.html'),('file-link.css',self.root/'site/assets/knowledge.css')]:
    with self.subTest(name=name):
     p=self.root/'site'/name;p.symlink_to(target)
     self.rejected('Public symlink');p.unlink()

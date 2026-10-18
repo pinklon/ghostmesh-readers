@@ -37,6 +37,9 @@ class Page(HTMLParser):
   if not self.hide:self.text.append(d)
 def check(root=ROOT):
  site=root/'site';errors=[]
+ # Reject links before parsing any public file; never read through to a private target.
+ links=[p for p in site.rglob('*') if p.is_symlink()]
+ if links:return [f'Public symlink: {p.relative_to(site)}' for p in links]
  def require(ok,msg):
   if not ok:errors.append(msg)
  try:data=json.loads((root/'content/catalog.json').read_text());validate_text(data)
