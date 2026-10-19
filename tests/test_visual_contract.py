@@ -61,16 +61,16 @@ class VisualContractTest(unittest.TestCase):
         parsed = Tags()
         parsed.feed(home)
         panels = [a for _, a in parsed.tags if 'data-home-player' in a]
-        self.assertEqual(len(panels), 6)
         catalog = json.loads((ROOT / 'content/catalog.json').read_text())
         by_id = {reader['id']: reader for reader in catalog['readers']}
         recent = sorted(catalog['readers'], key=lambda reader: (reader['published'], reader['slug']), reverse=True)
         selected = [by_id[catalog['featuredId']]] + [reader for reader in recent if reader['id'] != catalog['featuredId']][:6]
+        media = [reader for reader in selected if not reader['source'].get('kind')]
+        self.assertEqual(len(panels), len(media))
         self.assertCountEqual([a.get('data-source-platform') for a in panels],
-                              [reader['source']['platform'] for reader in selected
-                               if reader['source'].get('kind') != 'paper'])
-        self.assertEqual(sum(reader['source'].get('kind') == 'paper' for reader in selected), 1)
-        self.assertIn('class="gm-home-visual gm-home-paper"', home)
+                              [reader['source']['platform'] for reader in media])
+        self.assertEqual(home.count('class="gm-home-visual gm-home-paper"'),
+                         sum(bool(reader['source'].get('kind')) for reader in selected))
         self.assertEqual(sum(tag == 'iframe' for tag, _ in parsed.tags), 0)
         self.assertEqual(home.count('class="gm-home-open"'), 7)
         self.assertEqual(home.count('class="gm-home-source"'), 7)
@@ -126,7 +126,7 @@ class VisualContractTest(unittest.TestCase):
         parsed = Tags()
         parsed.feed(archive)
         frames = [a for _, a in parsed.tags if 'gm-library-frame' in a.get('class', '').split()]
-        media = [r for r in catalog['readers'] if r['source'].get('kind') != 'paper']
+        media = [r for r in catalog['readers'] if not r['source'].get('kind')]
         self.assertEqual(len(frames), len(media))
         self.assertCountEqual([a['data-gm-aspect'] for a in frames],
                               [r['source']['mediaAspect'] for r in media])

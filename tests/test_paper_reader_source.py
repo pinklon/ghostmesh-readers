@@ -120,7 +120,8 @@ class PaperReaderSourceTests(unittest.TestCase):
         schema = json.loads((ROOT / "content/catalog.schema.json").read_text())
         source_rule = schema["$defs"]["reader"]["properties"]["source"]
         self.assertEqual(source_rule["oneOf"], [
-            {"$ref": "#/$defs/mediaSource"}, {"$ref": "#/$defs/paperSource"}
+            {"$ref": "#/$defs/mediaSource"}, {"$ref": "#/$defs/paperSource"},
+            {"$ref": "#/$defs/analysisSource"}
         ])
         self.assertEqual(schema["$defs"]["paperSource"]["properties"]["kind"], {"const": "paper"})
         self.assertFalse(schema["$defs"]["paperSource"]["additionalProperties"])
@@ -130,7 +131,7 @@ class PaperReaderSourceTests(unittest.TestCase):
 
     def test_media_source_rejects_paper_fields_without_affecting_legacy_records(self):
         catalog = json.loads((ROOT / "content/catalog.json").read_text())
-        media = [r["source"] for r in catalog["readers"] if r["source"].get("kind") != "paper"]
+        media = [r["source"] for r in catalog["readers"] if not r["source"].get("kind")]
         for source in media:
             validate_media_source(source)
         for extra in ("identity", "htmlUrl", "pdfUrl", "authors", "publisher", "version", "versionDate"):
@@ -150,7 +151,8 @@ class PaperReaderSourceTests(unittest.TestCase):
         self.assertIn('data-gm-share=""', rendered)
         self.assertNotIn("data-home-player", rendered)
         self.assertNotIn("data-gm-aspect", rendered)
-        paper = json.loads((ROOT / "content/catalog.json").read_text())["readers"][-1]
+        paper = next(r for r in json.loads((ROOT / "content/catalog.json").read_text())["readers"]
+                     if r["slug"] == PAPER.stem)
         self.assertEqual(len(paper['relationships']), 1)
         self.assertEqual(paper['relationships'][0]['type'], 'related topic')
         self.assertEqual(paper['relationships'][0]['target'], 'reader:a-scenario-is-not-a-singularity')
