@@ -11,7 +11,7 @@ import json
 import re
 import unittest
 
-from scripts.generate_site import validate_paper_source
+from scripts.generate_site import validate_media_source, validate_paper_source
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -110,6 +110,17 @@ class PaperReaderSourceTests(unittest.TestCase):
         self.assertEqual(schema["$defs"]["paperSource"]["properties"]["kind"], {"const": "paper"})
         self.assertFalse(schema["$defs"]["paperSource"]["additionalProperties"])
         self.assertEqual(schema["$defs"]["mediaSource"]["not"], {"required": ["kind"]})
+        self.assertFalse(schema["$defs"]["mediaSource"]["additionalProperties"])
+        self.assertNotIn("identity", schema["$defs"]["mediaSource"]["properties"])
+
+    def test_media_source_rejects_paper_fields_without_affecting_legacy_records(self):
+        catalog = json.loads((ROOT / "content/catalog.json").read_text())
+        media = [r["source"] for r in catalog["readers"] if r["source"].get("kind") != "paper"]
+        for source in media:
+            validate_media_source(source)
+        for extra in ("identity", "htmlUrl", "pdfUrl", "authors", "publisher", "version", "versionDate"):
+            with self.subTest(extra=extra), self.assertRaises(ValueError):
+                validate_media_source({**media[0], extra: "paper metadata"})
 
     def test_generated_paper_keeps_shared_brief_and_no_media_controls(self):
         rendered = (ROOT / "site" / PAPER.stem / "index.html").read_text()

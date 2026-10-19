@@ -8,6 +8,7 @@ import json,re,sys
 ROOT=Path(__file__).resolve().parents[1]; SITE=ROOT/'site'
 CATEGORIES=['AI & Technology','Society & Politics','Science','Business','Ethics & Culture','Other']
 READER_COUNT=0
+MEDIA_SOURCE_FIELDS={'url','platform','mediaAspect','videoId','shortcode','channel','creator','creatorChapters','captionTrack','captionType','durationSeconds','title','uploadDate','publicationDate','dateNote'}
 def esc(x):return escape(str(x),quote=True)
 def dump(x):return json.dumps(x,indent=2,ensure_ascii=False)+'\n'
 def validate_text(value):
@@ -166,6 +167,12 @@ def validate_paper_source(raw,source):
   if source.get(key)!=expected or f'href="{esc(expected)}"' not in raw:raise ValueError(f'Paper {key} must link to pinned original')
  validate_link_only_source(raw,source['url'])
 
+def validate_media_source(source):
+ if not {'url','platform','mediaAspect'}<=set(source) or set(source)-MEDIA_SOURCE_FIELDS:
+  raise ValueError('Media source has missing required or paper-only fields')
+ if source['platform'] not in {'YouTube','Instagram'} or source['mediaAspect'] not in {'16:9','9:16','1:1','unknown'}:
+  raise ValueError('Invalid media platform or aspect')
+
 def player_contract(raw,aspect,source_url):
  if aspect not in {'16:9','9:16','1:1','unknown'}:raise ValueError('Unknown media aspect declaration')
  markers=[name for name in ('video-shell','player','player-ratio') if f'class="{name}"' in raw]
@@ -189,7 +196,9 @@ def projections():
  for r in readers:
   raw=(ROOT/'content/readers'/f'{r["slug"]}.html').read_text()
   if r['source'].get('kind')=='paper':validate_paper_source(raw,r['source'])
-  else:raw=player_contract(raw,r['source'].get('mediaAspect'),r['source']['url'])
+  else:
+   validate_media_source(r['source'])
+   raw=player_contract(raw,r['source'].get('mediaAspect'),r['source']['url'])
   raw=raw.replace('</head>',f'<meta name="gm-share-description" content="{esc(r["overview"])}"></head>',1)
   for slot,value in [('HEAD',head()),('CONTROLS',''),('BRIEF',brief(r)),('EVIDENCE',evidence(r)),('RELATED',related(r,byid))]:raw=raw.replace('<!--GM_'+slot+'-->',value)
   old_header=re.search(r'<header(?:\s[^>]*)?>.*?</header>',raw,re.S)

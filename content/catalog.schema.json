@@ -29,11 +29,24 @@
     "mediaSource": {
       "type": "object",
       "required": ["url", "platform", "mediaAspect"],
+      "additionalProperties": false,
       "not": {"required": ["kind"]},
       "properties": {
         "url": {"type": "string", "format": "uri"},
-        "platform": {"type": "string", "minLength": 1},
-        "mediaAspect": {"enum": ["16:9", "9:16", "1:1", "unknown"]}
+        "platform": {"enum": ["YouTube", "Instagram"]},
+        "mediaAspect": {"enum": ["16:9", "9:16", "1:1", "unknown"]},
+        "videoId": {"type": "string"},
+        "shortcode": {"type": "string"},
+        "channel": {"type": "string"},
+        "creator": {"type": "string"},
+        "creatorChapters": {"type": "array"},
+        "captionTrack": {"type": "string"},
+        "captionType": {"type": "string"},
+        "durationSeconds": {"type": "number"},
+        "title": {"type": "string"},
+        "uploadDate": {"type": "string"},
+        "publicationDate": {"type": "string"},
+        "dateNote": {"type": "string"}
       }
     },
     "paperSource": {
