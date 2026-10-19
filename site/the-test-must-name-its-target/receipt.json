@@ -48,8 +48,8 @@
       "mediaAspect": "16:9"
     },
     "published": "2026-10-19",
-    "updated": "2026-10-19T12:54:56Z",
-    "overview": "Count Grey Matter traces moving boundaries between minds and machines through calculation, games, conversation and internal representations, then examines whether a functional account of understanding applies to current models.",
+    "updated": "2026-10-19T16:52:08Z",
+    "overview": "The public chapters and caption aid point to calculation, games, conversation and internal representations. A functional account of understanding remains a question, not a verified spoken conclusion.",
     "whyItMatters": "Selectively useful for researchers and product teams setting evaluation criteria. The historical and representation material challenges lazy impossibility claims, but imitation and narrow probes do not establish human-like understanding.",
     "ghostMeshTakeaway": "Define the task and evidence before arguing over a label. Test grounded use, changed premises, error recovery and authority boundaries; keep semantic and subjective claims open beyond the measured capability.",
     "verdict": "Interesting, unproven",
@@ -97,7 +97,7 @@
         "kind": "philosophical-inference",
         "asOf": "2026-10-19",
         "status": "disputed",
-        "assessment": "The video argues for a working-model view; Bender and Koller explicitly argue that form-only training has no a priori route to meaning.",
+        "assessment": "The caption aid suggests a working-model view, but exact spoken argument remains unverified. Bender and Koller argue that form-only training has no a priori route to meaning.",
         "limits": "Neither a single position paper nor this video settles the meaning criterion for all modern multimodal or interactive systems.",
         "sourceLocation": "09:32-12:20",
         "references": [],
@@ -142,7 +142,7 @@
         "kind": "source-interpretation",
         "asOf": "2026-10-19",
         "status": "unverified",
-        "assessment": "Automatic captions suggest a closing move toward human-comparable functional understanding. The creator's description announces a verdict but does not supply its full wording; direct audio review is pending.",
+        "assessment": "The cited studies do not establish human-comparable functional understanding. The creator's description announces a verdict but does not supply its full wording; direct audio review remains pending.",
         "limits": "No agreed operational definition, cross-setting test or comparison of human and model mechanisms is supplied. Do not present caption wording as a verified quote.",
         "sourceLocation": "20:10-21:33 (auto-caption location; direct audio pending)",
         "references": [],
@@ -157,7 +157,7 @@
         "kind": "philosophical-inference",
         "asOf": "2026-10-19",
         "status": "unverified",
-        "assessment": "The cited imitation and representation studies do not measure subjective experience. Automatic captions locate a closing discussion; the narrator's exact audio framing remains pending.",
+        "assessment": "The cited imitation and representation studies do not measure subjective experience. The exact spoken conclusion remains unverified pending direct audio review.",
         "limits": "No test in the video or cited studies measures subjective experience; do not infer either its presence or absence.",
         "sourceLocation": "20:30-21:33 (auto-caption location; direct audio pending)",
         "references": [],
@@ -274,13 +274,18 @@
         "at": "2026-10-19T12:54:56Z",
         "kind": "source-qualification",
         "reason": "Removed a caption-derived direct-looking quotation and qualified narrator-specific conclusions pending direct audio review; primary-paper findings unchanged."
+      },
+      {
+        "at": "2026-10-19T16:52:08Z",
+        "kind": "source-attribution-qualification",
+        "reason": "Removed assertions about unheard narrator speech or clip absence; preserved primary-source findings and explicit source-audio uncertainty."
       }
     ],
     "editorialOrder": 15,
     "orderReason": "Read after the existing Count Grey Matter interpretability Reader to examine a distinct functional-understanding claim."
   },
   "editorial": {
-    "overview": "Count Grey Matter traces moving boundaries between minds and machines through calculation, games, conversation and internal representations, then examines whether a functional account of understanding applies to current models.",
+    "overview": "The public chapters and caption aid point to calculation, games, conversation and internal representations. A functional account of understanding remains a question, not a verified spoken conclusion.",
     "whyItMatters": "Selectively useful for researchers and product teams setting evaluation criteria. The historical and representation material challenges lazy impossibility claims, but imitation and narrow probes do not establish human-like understanding.",
     "ghostMeshTakeaway": "Define the task and evidence before arguing over a label. Test grounded use, changed premises, error recovery and authority boundaries; keep semantic and subjective claims open beyond the measured capability."
   }

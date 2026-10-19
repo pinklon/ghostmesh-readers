@@ -6,7 +6,7 @@ Stage: isolated draft for independent editorial review. Source inspected 2026-10
 
 Tony supplied [the public YouTube source](https://www.youtube.com/watch?v=7O84mdxehWY). Read-only `yt-dlp` inspection reported video ID `7O84mdxehWY`, title “AI Doesn't REALLY Understand. We've Said That Before.”, creator Count Grey Matter, upload date 2026-10-18, duration 1,378 seconds, public availability and landscape 16:9 formats. English automatic captions were reviewed privately as a topic and timestamp aid. Their SHA-256 is `c6d95a76711fce98ddb2c93c8130007a3295692eb0d474899fac9a5f3f84f082`. They can mishear wording; no verbatim caption quotation is published, and the audio was not fully cross-checked. Private caption text and signed download metadata stay outside this repository. No qualified full private ReasonPack is claimed.
 
-The caption aid confirms the video's own sequence: moving historical lines at 00:51–09:32; Chinese room and octopus objections at 09:32–12:20; a Hinton-derived representation explanation at 12:20–18:01; and the narrator's functional-understanding verdict at 18:01–21:33. The exact chapter starts are also present in the public source description. These observations establish what the creator argues, not whether the argument is correct.
+The public source description supplies chapter starts at 00:51, 09:32, 12:20 and 18:01. Automatic captions suggest a historical tour, the Chinese room and octopus objections, a representation explanation and a closing question about functional understanding. That is a provisional topic map, not verified spoken wording or a claim about precisely what the creator argued. The primary studies below are assessed on their own terms.
 
 ## Independent direct-source check
 
@@ -22,7 +22,7 @@ Sources were checked on 2026-10-19; the paper versions and creator's interpretat
 
 ## Editorial judgment
 
-**Interesting, unproven.** The historical argument is a useful warning against lazy impossibility claims, and the representation papers complicate a “mere string lookup” account. The narrator's closing claim that current systems understand much as people do exceeds the scopes of the cited imitation and representation studies. The intended audience is researchers and product teams setting evaluation criteria. Watch selectively at 08:10, 09:32, 12:20 and 18:01. For operational decisions, define a task and failure criterion, test grounding and changed premises, and keep authority boundaries explicit. The draft makes no claim about subjective experience.
+**Interesting, unproven.** The historical argument is a useful warning against lazy impossibility claims, and the representation papers complicate a “mere string lookup” account. A human-comparable understanding claim would exceed the scopes of the cited imitation and representation studies; the video's exact spoken conclusion remains unverified. The intended audience is researchers and product teams setting evaluation criteria. Watch selectively at 08:10, 09:32, 12:20 and 18:01. For operational decisions, define a task and failure criterion, test grounding and changed premises, and keep authority boundaries explicit. The draft makes no claim about subjective experience.
 
 ## Candidate and checks
 

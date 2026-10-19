@@ -51,8 +51,8 @@
       "mediaAspect": "16:9"
     },
     "published": "2026-10-19",
-    "updated": "2026-10-19T12:04:09Z",
-    "overview": "AI Revolution combines a Jack Clark IMF speech claim, a 50-problem physics-agent benchmark and Anthropic’s US economic scenarios to argue that an AI singularity is already here.",
+    "updated": "2026-10-19T16:52:08Z",
+    "overview": "AI Revolution’s public title declares an AI singularity. A private machine transcript suggests a Jack Clark IMF attribution; the first-party benchmark and economic scenarios warrant narrower conclusions.",
     "whyItMatters": "Useful to people setting research or workforce plans who need to separate measured agent performance from a conditional 2030 scenario. Watch the benchmark and scenario explanations; skip the headline as a decision rule.",
     "ghostMeshTakeaway": "The paper shows strong performance on bounded calculations, not open-ended scientific discovery. The $44.4 trillion figure is the extreme branch of a model. Use these as inputs for reversible stress tests, with explicit assumptions and human authority.",
     "verdict": "Mostly recycled",
@@ -70,8 +70,8 @@
         "kind": "speaker-attribution",
         "asOf": "2026-10-19",
         "status": "unverified",
-        "assessment": "The narrator frames this as an indirect paraphrase. We did not locate a first-party speech recording or transcript that verifies these words.",
-        "limits": "A Reuters account of rapid AI progress is not a transcript and cannot settle the narrator’s stronger attribution.",
+        "assessment": "A private machine transcript suggests an indirect paraphrase. Exact video audio and first-party Clark wording remain unverified.",
+        "limits": "A Reuters account of rapid AI progress is not a lecture transcript and cannot establish Clark’s exact wording.",
         "sourceLocation": "00:00–00:58",
         "references": [],
         "counterevidence": [],
@@ -114,7 +114,7 @@
         "asOf": "2026-10-19",
         "status": "disputed",
         "assessment": "Unpublished answers reduce direct answer contamination, but the paper says the small isolated-track change suggests significant memorization of relevant literature.",
-        "limits": "This does not prove any specific answer was copied. It limits the narrator’s categorical exclusion of memorization.",
+        "limits": "This does not prove any specific answer was copied. It limits any categorical exclusion of memorization.",
         "sourceLocation": "02:15–03:55",
         "references": [],
         "counterevidence": [
@@ -248,13 +248,18 @@
         "at": "2026-10-19T12:04:09Z",
         "kind": "new-reader-candidate",
         "reason": "Owner-requested deconstruction of public YouTube source wS3lJpOs9Uw; source pack remains private."
+      },
+      {
+        "at": "2026-10-19T16:52:08Z",
+        "kind": "source-attribution-qualification",
+        "reason": "Removed assertions about unheard narrator speech or clip absence; preserved primary-source findings and explicit source-audio uncertainty."
       }
     ],
     "editorialOrder": 14,
     "orderReason": "Read after other model-score Readers to test how benchmark evidence is converted into a larger forecast."
   },
   "editorial": {
-    "overview": "AI Revolution combines a Jack Clark IMF speech claim, a 50-problem physics-agent benchmark and Anthropic’s US economic scenarios to argue that an AI singularity is already here.",
+    "overview": "AI Revolution’s public title declares an AI singularity. A private machine transcript suggests a Jack Clark IMF attribution; the first-party benchmark and economic scenarios warrant narrower conclusions.",
     "whyItMatters": "Useful to people setting research or workforce plans who need to separate measured agent performance from a conditional 2030 scenario. Watch the benchmark and scenario explanations; skip the headline as a decision rule.",
     "ghostMeshTakeaway": "The paper shows strong performance on bounded calculations, not open-ended scientific discovery. The $44.4 trillion figure is the extreme branch of a model. Use these as inputs for reversible stress tests, with explicit assumptions and human authority."
   }
