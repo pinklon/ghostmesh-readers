@@ -91,7 +91,7 @@ def relationship_map(readers,byid):
          f'<p>All {sum(len(r["relationships"]) for r in ordered)} directed connections are listed under their named Readers. Choose a title to open its full deconstruction.</p></div><div class="gm-map-cards">{entries}</div></section>'
          '<section class="gm-map-shell" aria-label="Reader relationship overview"><div class="gm-map-canvas" aria-label="Reader connection diagram">'
          f'<svg viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">{lines}</svg>{nodes}</div>'
-         f'<div class="gm-map-directory"><p class="gm-kicker">Visual overview / secondary view</p><h2>Follow the numbered paths.</h2><p>{len(pairs)} linked pairs appear in this diagram. Select a number to jump to its named Reader and read the exact reason for each link.</p></div></section>'
+         f'<div class="gm-map-directory"><p class="gm-kicker">Visual overview / secondary view</p><h2>Follow the numbered paths.</h2><p>{len(pairs)} linked pairs appear in this wider-screen diagram. On any screen, the named Reader cards above show the exact reason for each link.</p></div></section>'
          '<section class="gm-map-context"><div><p class="gm-kicker">What a line means</p><h2>Connections need reasons.</h2><p>These categories come from the published Reader records. They describe why one reading points to another; they are not similarity guesses or proof that either claim is true.</p></div>'
          f'<ul>{type_list}</ul><p>SharePlane essays and other sites need their own reviewed identity and link decision before they can appear as connected here. No cross-site Reader edge is included in this map.</p></section>')
 def card(r,featured=False):
