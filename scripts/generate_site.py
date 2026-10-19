@@ -54,9 +54,15 @@ def evidence(r):
  refs={x['id']:x for x in r['references']}
  def links(ids):return ', '.join(f'<a href="#ref-{esc(i)}">{esc(refs[i]["publisher"])}: {esc(refs[i]["title"])}</a>' for i in ids) or 'None qualified'
  out=f'<section class="gm-evidence" id="external-evidence"><p class="gm-kicker">Claim register / revision {esc(r["updated"][:10])}</p><h2>Corroboration &amp; counterevidence</h2><p>{esc(r["freshness"])}</p><p>Custody proves what was retained, not that a claim is true. Historical ledger wording below remains attributed to the original edition. This register does not retroactively certify it. Source assertions, vendor documentation, independent measurements and GhostMesh proposals have different evidentiary reach.</p><p><strong>What would change the call?</strong> {esc(r["falsification"])}</p><p><a href="/{r["slug"]}/receipt.json">Public sanitized evidence receipt</a>. Review: {esc(r["review"]["status"])}.</p>'
+ if r.get('evidenceReview'):
+  note=r['evidenceReview']
+  out+=f'<aside class="gm-evidence-reading"><h3>How to read this evidence</h3><p><strong>Source fidelity:</strong> {esc(note["sourceFidelity"])}</p><p><strong>Bounded conclusion:</strong> {esc(note["conclusion"])}</p><p><strong>Evidence type and limit:</strong> {esc(note["evidenceBoundary"])}</p><p><strong>Next check:</strong> {esc(note["nextVerification"])}</p></aside>'
  out+='<div class="gm-claim-list">'
  for c in r['claims']:
-  out+=f'<details id="{esc(c["id"])}"><summary><strong>{esc(c["status"].capitalize())}</strong>: {esc(c["proposition"])}</summary><p>Claim ID: <code>{esc(c["id"])}</code>. As of {esc(c["asOf"])}. Kind: {esc(c["kind"])}. Location: {esc(c["sourceLocation"])}</p><p>{esc(c["assessment"])}</p><p>Limits: {esc(c["limits"])}</p><p>Supporting evidence: {links(c["references"])}</p><p>Counterevidence / constraints: {links(c["counterevidence"])}</p></details>'
+  role='Historical ledger' if c['kind']=='historical-ledger-entry' else ('Advice / interpretation' if c['kind'] in {'speaker-advice','speaker-opinion','speaker-inference','speaker-framing','editorial-inference','framework-example'} else 'Source or factual assertion')
+  support_types=', '.join(dict.fromkeys(refs[i]['sourceType'] for i in c['references'])) or 'None qualified'
+  counter_types=', '.join(dict.fromkeys(refs[i]['sourceType'] for i in c['counterevidence'])) or 'None qualified'
+  out+=f'<details id="{esc(c["id"])}"><summary><strong>{esc(role)} · {esc(c["status"].capitalize())}</strong>: {esc(c["proposition"])}</summary><p>Claim ID: <code>{esc(c["id"])}</code>. As of {esc(c["asOf"])}. Kind: {esc(c["kind"])}. Mapped source location: {esc(c["sourceLocation"])}</p><p>Supporting evidence type: {esc(support_types)}. Counterevidence type: {esc(counter_types)}. These labels describe the mapped record, not an article-wide verification score.</p><p>{esc(c["assessment"])}</p><p>Limits: {esc(c["limits"])}</p><p>Supporting evidence: {links(c["references"])}</p><p>Counterevidence / constraints: {links(c["counterevidence"])}</p></details>'
  out+='</div><h3>External references and independence</h3>'
  if not refs:out+='<p>No new independent reference is qualified for these claims. The original source links remain available for scrutiny. Do not treat a repeated assertion as confirmation.</p>'
  for x in refs.values():

@@ -34,7 +34,7 @@
       "mediaAspect": "16:9"
     },
     "published": "2026-10-16",
-    "updated": "2026-10-18T14:34:54.306588Z",
+    "updated": "2026-10-19T06:00:41Z",
     "overview": "Nate B Jones explains reverse engineering through clipboard, calculator and accounting examples, using REA to turn visible behavior into questions about hidden software contracts.",
     "whyItMatters": "Useful for builders diagnosing software they own. Watch the clipboard and calculator passages; skip the full tour if direct source reading already answers your question.",
     "ghostMeshTakeaway": "Investigate one disposable fixture and compare reconstructed rules with known source and observed behavior. An explanation cannot supply missing server evidence or authorize action.",
@@ -275,10 +275,22 @@
         "at": "2026-10-18T14:34:54.306588Z",
         "kind": "structural-normalization",
         "reason": "Issue 23: explicit brief, evidence limits, themes and discovery. Historical conclusions preserved; classification is editorial, not factual confirmation."
+      },
+      {
+        "at": "2026-10-19T06:00:41Z",
+        "kind": "evidence-presentation-review",
+        "reason": "Distinguish historical attribution, qualified external evidence and bounded conclusions; source claims are not promoted without matched evidence."
       }
     ],
     "editorialOrder": 7,
-    "orderReason": "Reading path from task framing and inspectable work through review, evidence and authority, then product-specific cases."
+    "orderReason": "Reading path from task framing and inspectable work through review, evidence and authority, then product-specific cases.",
+    "evidenceReview": {
+      "checkedAt": "2026-10-19T06:00:41Z",
+      "sourceFidelity": "Original video analysis and historical ledger retained; this revision did not re-transcribe or recheck private media.",
+      "conclusion": "Repository and project documentation support the existence of described capabilities, within their versioned scope.",
+      "evidenceBoundary": "The original presentation’s broader productivity and reliability implications were not reproduced here.",
+      "nextVerification": "Reproduce a versioned task and measure comprehension, execution and correction outcomes."
+    }
   },
   "editorial": {
     "overview": "Nate B Jones explains reverse engineering through clipboard, calculator and accounting examples, using REA to turn visible behavior into questions about hidden software contracts.",

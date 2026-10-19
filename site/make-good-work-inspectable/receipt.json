@@ -253,7 +253,7 @@
       "mediaAspect": "16:9"
     },
     "published": "2026-10-17",
-    "updated": "2026-10-18T14:34:54.306588Z",
+    "updated": "2026-10-19T06:00:41Z",
     "overview": "Nate Herk interviews Matt Pocock about communicating intent to agents, a failed specification-centered workflow and improving results by letting agents run and inspect an application.",
     "whyItMatters": "Watch the failure story at 26:37 and application feedback at 32:03. Skip the full interview if you need a security or deployment playbook rather than practitioner experience.",
     "ghostMeshTakeaway": "Close the loop between intent and inspectable behavior. Start with one reversible task, observable checks and human review; commit volume is not an outcome measure.",
@@ -539,9 +539,21 @@
         "at": "2026-10-18T14:34:54.306588Z",
         "kind": "structural-normalization",
         "reason": "Issue 23: explicit brief, evidence limits, themes and discovery. Historical conclusions preserved; classification is editorial, not factual confirmation."
+      },
+      {
+        "at": "2026-10-19T06:00:41Z",
+        "kind": "evidence-presentation-review",
+        "reason": "Distinguish historical attribution, qualified external evidence and bounded conclusions; source claims are not promoted without matched evidence."
       }
     ],
     "editorialOrder": 1,
-    "orderReason": "Reading path from task framing and inspectable work through review, evidence and authority, then product-specific cases."
+    "orderReason": "Reading path from task framing and inspectable work through review, evidence and authority, then product-specific cases.",
+    "evidenceReview": {
+      "checkedAt": "2026-10-19T06:00:41Z",
+      "sourceFidelity": "Original video analysis and historical ledger retained; this revision did not re-transcribe or recheck private media.",
+      "conclusion": "The practitioner account supports attribution to its speaker and concrete suggestions. Benefits remain first-person reports.",
+      "evidenceBoundary": "Historical ledger entries restate the original account; they are not independent replications.",
+      "nextVerification": "Compare inspectability and correction outcomes in a defined team and workflow."
+    }
   }
 }

@@ -314,7 +314,7 @@
         "mediaAspect": "16:9"
       },
       "published": "2026-10-18",
-      "updated": "2026-10-18T14:34:54.306588Z",
+      "updated": "2026-10-19T06:00:41Z",
       "overview": "AI Fusion tours Strix agents and skills, manually demonstrates a Juice Shop login bypass and attempts agent scans that end without confirmed findings.",
       "whyItMatters": "Worth seven minutes for security-tool evaluators. Skip the opening bypass if you know the training target; the stalled local run shows what needs to be recorded.",
       "ghostMeshTakeaway": "Separate a proposal, a tool call, a completed scan and a verified finding. Evaluate only in a controlled authorized target with run records and human review.",
@@ -554,10 +554,22 @@
           "at": "2026-10-18T14:34:54.306588Z",
           "kind": "structural-normalization",
           "reason": "Issue 23: explicit brief, evidence limits, themes and discovery. Historical conclusions preserved; classification is editorial, not factual confirmation."
+        },
+        {
+          "at": "2026-10-19T06:00:41Z",
+          "kind": "evidence-presentation-review",
+          "reason": "Distinguish historical attribution, qualified external evidence and bounded conclusions; source claims are not promoted without matched evidence."
         }
       ],
       "editorialOrder": 9,
       "orderReason": "Reading path from task framing and inspectable work through review, evidence and authority, then product-specific cases.",
+      "evidenceReview": {
+        "checkedAt": "2026-10-19T06:00:41Z",
+        "sourceFidelity": "Original video analysis and historical ledger retained; this revision did not re-transcribe or recheck private media.",
+        "conclusion": "The visible run stopped before login, so its non-finding cannot establish efficacy on authenticated surfaces.",
+        "evidenceBoundary": "Project design and a single incomplete demonstration are separate forms of evidence.",
+        "nextVerification": "Complete a permitted authenticated run with scope, tool logs and a defined ground-truth target."
+      },
       "rank": 9
     },
     {
@@ -586,7 +598,7 @@
         "mediaAspect": "16:9"
       },
       "published": "2026-10-18",
-      "updated": "2026-10-18T14:34:54.306588Z",
+      "updated": "2026-10-19T06:00:41Z",
       "overview": "David Ondrej discusses the reported OpenCode Console credential incident, speculates about attribution and promotes recurring agents through his Cloudroom product.",
       "whyItMatters": "Watch the opening for reported incident scope. Skip the product promotion if you need forensic attribution or independently measured security coverage.",
       "ghostMeshTakeaway": "Contain potentially exposed credentials at their issuer and evaluate automation separately. Hold attacker attribution, total exposure and prevention claims pending stronger evidence.",
@@ -603,10 +615,10 @@
           "id": "the-key-was-the-boundary--console-scope",
           "proposition": "The speaker quotes a 1.4% OpenCode Console impact figure.",
           "kind": "reported-disclosure",
-          "asOf": "2026-10-18",
+          "asOf": "2026-10-19",
           "status": "unverified",
-          "assessment": "The speaker quotes a 1.4% OpenCode Console impact figure.",
-          "limits": "The video does not provide a total count of affected users or establish that local-only users were exposed.",
+          "assessment": "The video quotes a 1.4 percent Console impact figure. The original OpenCode disclosure could not be read in this review, so its exact denominator and scope remain unverified.",
+          "limits": "Do not generalize the number to all OpenCode users, all provider-linked accounts or total losses without the issuer disclosure.",
           "sourceLocation": "15",
           "references": [],
           "counterevidence": [],
@@ -762,11 +774,11 @@
           "id": "the-key-was-the-boundary--denominator",
           "proposition": "The video reports a breach affecting 1.4 percent of OpenCode Console users with external providers linked.",
           "kind": "material-prose-claim",
-          "asOf": "2026-10-18",
+          "asOf": "2026-10-19",
           "temporalScope": "Original edition; migration does not establish current operational truth.",
           "status": "unverified",
-          "assessment": "Source-reported scope, not a percentage of all local OpenCode users. Incident details require authoritative refresh.",
-          "limits": "Source-reported scope, not a percentage of all local OpenCode users. Incident details require authoritative refresh.",
+          "assessment": "The video quotes a 1.4 percent Console impact figure. The original OpenCode disclosure could not be read in this review, so its exact denominator and scope remain unverified.",
+          "limits": "Do not generalize the number to all OpenCode users, all provider-linked accounts or total losses without the issuer disclosure.",
           "sourceLocation": "Original article prose; claim identified during full-page migration audit.",
           "references": [],
           "counterevidence": []
@@ -878,10 +890,22 @@
           "at": "2026-10-18T14:34:54.306588Z",
           "kind": "structural-normalization",
           "reason": "Issue 23: explicit brief, evidence limits, themes and discovery. Historical conclusions preserved; classification is editorial, not factual confirmation."
+        },
+        {
+          "at": "2026-10-19T06:00:41Z",
+          "kind": "evidence-presentation-review",
+          "reason": "Distinguish historical attribution, qualified external evidence and bounded conclusions; source claims are not promoted without matched evidence."
         }
       ],
       "editorialOrder": 10,
       "orderReason": "Reading path from task framing and inspectable work through review, evidence and authority, then product-specific cases.",
+      "evidenceReview": {
+        "checkedAt": "2026-10-19T06:00:41Z",
+        "sourceFidelity": "Original video analysis and historical ledger retained; this revision did not re-transcribe or recheck private media.",
+        "conclusion": "The video quotes 1.4 percent. The exact OpenCode Console denominator and affected population were not verified from the inaccessible original disclosure.",
+        "evidenceBoundary": "OWASP guidance challenges scan-equivalence claims; guidance is not a retrospective audit of the incident.",
+        "nextVerification": "Obtain the issuer disclosure and denominator, plus scoped security-test evidence before quantifying impact or tool efficacy."
+      },
       "rank": 10
     },
     {
@@ -908,16 +932,16 @@
         "mediaAspect": "16:9"
       },
       "published": "2026-10-18",
-      "updated": "2026-10-18T14:34:54.306588Z",
+      "updated": "2026-10-19T06:00:41Z",
       "overview": "Jay of RoboNuggets presents altitude, depth and range from Felix Rieseberg's personal essay as ways to frame more ambitious AI work, with business examples and a closing question about purpose.",
       "whyItMatters": "Watch if a narrated tour helps you move beyond faster drafts. Skip the promotions or use the shorter original essay if you already know the framework.",
       "ghostMeshTakeaway": "Try the frames on one low-risk task with permitted data, explicit tools and an independent success measure. The percentile framing is not measured evidence.",
       "verdict": "Worth studying",
       "architectureImpact": "experiment recommended",
       "falsification": "Reconsider the recommendation if a controlled comparison on the stated task shows no benefit, or exposes permission failures, omitted evidence or greater cost than the ordinary workflow. See the original article for its specific proposed controls.",
-      "evidenceState": "unverified",
-      "lastEvidenceChecked": "2026-10-18T14:33:10Z",
-      "freshness": "Evidence references checked 2026-10-18T14:33:10Z; historical ledger entries remain unverified unless individually mapped below. Mutable product and incident claims can become stale.",
+      "evidenceState": "partially corroborated",
+      "lastEvidenceChecked": "2026-10-19T06:00:41Z",
+      "freshness": "Historical references in this Reader were checked October 18, 2026. The Rieseberg essay was checked October 19, 2026 for the narrowly bound claims below. This revision did not re-transcribe the source video, replicate a study, or verify later operational outcomes.",
       "variant": "dossier",
       "accent": "rose",
       "claims": [
@@ -925,12 +949,14 @@
           "id": "ask-for-the-outcome-keep-the-boundary--source-attribution",
           "proposition": "The presentation is based on an essay by Felix Rieseberg, who identifies an Anthropic role.",
           "kind": "source-attribution",
-          "asOf": "2026-10-18",
+          "asOf": "2026-10-19",
           "status": "unverified",
-          "assessment": "The presentation is based on an essay by Felix Rieseberg, who identifies an Anthropic role.",
-          "limits": "The linked primary source is his personal essay, not an Anthropic company announcement or policy.",
+          "assessment": "Rieseberg’s October 13 essay establishes his own framework and identifies his role. It does not independently verify the unrechecked video’s exact attribution or selection.",
+          "limits": "A first-party essay corroborates the framework’s source, not the video’s wording or a performance outcome.",
           "sourceLocation": "0",
-          "references": [],
+          "references": [
+            "rieseberg"
+          ],
           "counterevidence": [],
           "temporalScope": "Historical published account, not current operational state."
         },
@@ -951,12 +977,14 @@
           "id": "ask-for-the-outcome-keep-the-boundary--four-types",
           "proposition": "The video develops altitude, depth, and range.",
           "kind": "source-selection",
-          "asOf": "2026-10-18",
+          "asOf": "2026-10-19",
           "status": "unverified",
-          "assessment": "The video develops altitude, depth, and range.",
-          "limits": "Rieseberg's original framework has four types, including speed, which he sets aside as familiar. He says the advice is model-agnostic.",
+          "assessment": "Rieseberg’s October 13 essay establishes his own framework and identifies his role. It does not independently verify the unrechecked video’s exact attribution or selection.",
+          "limits": "A first-party essay corroborates the framework’s source, not the video’s wording or a performance outcome.",
           "sourceLocation": "98",
-          "references": [],
+          "references": [
+            "rieseberg"
+          ],
           "counterevidence": [],
           "temporalScope": "Historical published account, not current operational state."
         },
@@ -964,12 +992,14 @@
           "id": "ask-for-the-outcome-keep-the-boundary--altitude",
           "proposition": "Ask for the outcome rather than simply for the presumed task.",
           "kind": "framework-example",
-          "asOf": "2026-10-18",
-          "status": "unverified",
-          "assessment": "Ask for the outcome rather than simply for the presumed task.",
-          "limits": "The essay's crash-free app example required reports, version mapping, and computer access; outcome wording alone did not create a durable workflow.",
+          "asOf": "2026-10-19",
+          "status": "partially corroborated",
+          "assessment": "Rieseberg’s own October 13 essay supports this framework or attribution in its stated scope; it does not measure user performance or establish Anthropic policy.",
+          "limits": "The video’s exact wording and any top-one-percent inference remain separate from the essay.",
           "sourceLocation": "98",
-          "references": [],
+          "references": [
+            "rieseberg"
+          ],
           "counterevidence": [],
           "temporalScope": "Historical published account, not current operational state."
         },
@@ -977,12 +1007,14 @@
           "id": "ask-for-the-outcome-keep-the-boundary--depth",
           "proposition": "Use raw data, professional methods, and an outside judge.",
           "kind": "framework-example",
-          "asOf": "2026-10-18",
-          "status": "unverified",
-          "assessment": "Use raw data, professional methods, and an outside judge.",
-          "limits": "The video provides examples and prompts, not a controlled comparison establishing performance gain.",
+          "asOf": "2026-10-19",
+          "status": "partially corroborated",
+          "assessment": "Rieseberg’s own October 13 essay supports this framework or attribution in its stated scope; it does not measure user performance or establish Anthropic policy.",
+          "limits": "The video’s exact wording and any top-one-percent inference remain separate from the essay.",
           "sourceLocation": "235",
-          "references": [],
+          "references": [
+            "rieseberg"
+          ],
           "counterevidence": [],
           "temporalScope": "Historical published account, not current operational state."
         },
@@ -990,12 +1022,14 @@
           "id": "ask-for-the-outcome-keep-the-boundary--range",
           "proposition": "Bring methods from other disciplines into a task.",
           "kind": "framework-example",
-          "asOf": "2026-10-18",
-          "status": "unverified",
-          "assessment": "Bring methods from other disciplines into a task.",
-          "limits": "Rieseberg cautions that role play without field methods may change wording without improving the result.",
+          "asOf": "2026-10-19",
+          "status": "partially corroborated",
+          "assessment": "Rieseberg’s own October 13 essay supports this framework or attribution in its stated scope; it does not measure user performance or establish Anthropic policy.",
+          "limits": "The video’s exact wording and any top-one-percent inference remain separate from the essay.",
           "sourceLocation": "436",
-          "references": [],
+          "references": [
+            "rieseberg"
+          ],
           "counterevidence": [],
           "temporalScope": "Historical published account, not current operational state."
         },
@@ -1140,6 +1174,22 @@
           "checkedAt": "2026-10-18T14:33:10Z",
           "datePrecision": "day",
           "verification": "Read by independent evidence researcher; limited source-fidelity check, not replication."
+        },
+        {
+          "id": "rieseberg",
+          "title": "How to be more ambitious: A tutorial for humans with models",
+          "author": "Felix Rieseberg",
+          "publisher": "Felix Rieseberg",
+          "url": "https://felixrieseberg.com/how-to-be-more-ambitious-a-tutorial-for-humans-with-models/",
+          "publicationDate": "2026-10-13",
+          "eventDate": null,
+          "location": "Author bio and Speed, Altitude, Depth, Range sections",
+          "sourceType": "author essay",
+          "independence": "First-party explanation of the framework, not a controlled performance study or Anthropic policy.",
+          "evidenceFamily": "rieseberg-essay",
+          "checkedAt": "2026-10-19T06:00:41Z",
+          "datePrecision": "day",
+          "verification": "Read-only public source wording checked for this narrow claim; no independent replication."
         }
       ],
       "relationships": [
@@ -1191,10 +1241,22 @@
           "at": "2026-10-18T14:34:54.306588Z",
           "kind": "structural-normalization",
           "reason": "Issue 23: explicit brief, evidence limits, themes and discovery. Historical conclusions preserved; classification is editorial, not factual confirmation."
+        },
+        {
+          "at": "2026-10-19T06:00:41Z",
+          "kind": "evidence-presentation-review",
+          "reason": "Distinguish historical attribution, qualified external evidence and bounded conclusions; source claims are not promoted without matched evidence."
         }
       ],
       "editorialOrder": 0,
       "orderReason": "Reading path from task framing and inspectable work through review, evidence and authority, then product-specific cases.",
+      "evidenceReview": {
+        "checkedAt": "2026-10-19T06:00:41Z",
+        "sourceFidelity": "Original video analysis and historical ledger retained; this revision did not re-transcribe or recheck private media.",
+        "conclusion": "Rieseberg’s own essay supports the four-part framing and examples. The video’s top-one-percent label remains a performance claim without a measured population.",
+        "evidenceBoundary": "The 2025 METR study and 2026 update address different developer productivity settings and cannot validate top-percentile prompt performance.",
+        "nextVerification": "Obtain a measured denominator, controlled comparison and outcome definition before asserting a percentile."
+      },
       "rank": 0
     },
     {
@@ -1263,7 +1325,7 @@
         "mediaAspect": "16:9"
       },
       "published": "2026-10-17",
-      "updated": "2026-10-18T14:34:54.306588Z",
+      "updated": "2026-10-19T06:00:41Z",
       "overview": "Nate Herk interviews Matt Pocock about communicating intent to agents, a failed specification-centered workflow and improving results by letting agents run and inspect an application.",
       "whyItMatters": "Watch the failure story at 26:37 and application feedback at 32:03. Skip the full interview if you need a security or deployment playbook rather than practitioner experience.",
       "ghostMeshTakeaway": "Close the loop between intent and inspectable behavior. Start with one reversible task, observable checks and human review; commit volume is not an outcome measure.",
@@ -1549,10 +1611,22 @@
           "at": "2026-10-18T14:34:54.306588Z",
           "kind": "structural-normalization",
           "reason": "Issue 23: explicit brief, evidence limits, themes and discovery. Historical conclusions preserved; classification is editorial, not factual confirmation."
+        },
+        {
+          "at": "2026-10-19T06:00:41Z",
+          "kind": "evidence-presentation-review",
+          "reason": "Distinguish historical attribution, qualified external evidence and bounded conclusions; source claims are not promoted without matched evidence."
         }
       ],
       "editorialOrder": 1,
       "orderReason": "Reading path from task framing and inspectable work through review, evidence and authority, then product-specific cases.",
+      "evidenceReview": {
+        "checkedAt": "2026-10-19T06:00:41Z",
+        "sourceFidelity": "Original video analysis and historical ledger retained; this revision did not re-transcribe or recheck private media.",
+        "conclusion": "The practitioner account supports attribution to its speaker and concrete suggestions. Benefits remain first-person reports.",
+        "evidenceBoundary": "Historical ledger entries restate the original account; they are not independent replications.",
+        "nextVerification": "Compare inspectability and correction outcomes in a defined team and workflow."
+      },
       "rank": 1
     },
     {
@@ -1577,7 +1651,7 @@
         "mediaAspect": "16:9"
       },
       "published": "2026-10-17",
-      "updated": "2026-10-18T14:34:54.306588Z",
+      "updated": "2026-10-19T06:00:41Z",
       "overview": "Guillermo Rauch describes recursive founder mode, reusable skills, hiring review and V as a common entry point to specialist company agents in an interview with Knuckle Up with Nakul.",
       "whyItMatters": "Useful for teams organizing shared agent work. Watch the ownership and routing passages; skip the long interview if you need independently measured organizational outcomes.",
       "ghostMeshTakeaway": "Make the accountable owner and permission scope visible at each destination. Compare a shared entry point with an ordinary workflow on a bounded nonproduction task.",
@@ -1793,10 +1867,22 @@
           "at": "2026-10-18T14:34:54.306588Z",
           "kind": "structural-normalization",
           "reason": "Issue 23: explicit brief, evidence limits, themes and discovery. Historical conclusions preserved; classification is editorial, not factual confirmation."
+        },
+        {
+          "at": "2026-10-19T06:00:41Z",
+          "kind": "evidence-presentation-review",
+          "reason": "Distinguish historical attribution, qualified external evidence and bounded conclusions; source claims are not promoted without matched evidence."
         }
       ],
       "editorialOrder": 6,
       "orderReason": "Reading path from task framing and inspectable work through review, evidence and authority, then product-specific cases.",
+      "evidenceReview": {
+        "checkedAt": "2026-10-19T06:00:41Z",
+        "sourceFidelity": "Original video analysis and historical ledger retained; this revision did not re-transcribe or recheck private media.",
+        "conclusion": "Founder statements and project documentation describe proposed autonomy and interfaces. They do not establish deployment outcomes.",
+        "evidenceBoundary": "A documented feature is first-party design evidence, not an independent reliability or permission test.",
+        "nextVerification": "Run reproducible permission, recovery and operator-control checks on a versioned build."
+      },
       "rank": 6
     },
     {
@@ -1821,7 +1907,7 @@
         "mediaAspect": "9:16"
       },
       "published": "2026-10-17",
-      "updated": "2026-10-18T14:34:54.306588Z",
+      "updated": "2026-10-19T06:00:41Z",
       "overview": "Steve | Systems & AI describes stopping an architecture review once a choice feels defensible and proposes asking AI to argue against it.",
       "whyItMatters": "Worth a minute for consequential design reviews. Skip the full procedure for trivial choices; this Reel provides no measured architecture-review outcome.",
       "ghostMeshTakeaway": "Use objections as candidates for checking. Require evidence, an experiment or an accountable reviewer before changing a consequential decision.",
@@ -2062,10 +2148,22 @@
           "at": "2026-10-18T14:34:54.306588Z",
           "kind": "structural-normalization",
           "reason": "Issue 23: explicit brief, evidence limits, themes and discovery. Historical conclusions preserved; classification is editorial, not factual confirmation."
+        },
+        {
+          "at": "2026-10-19T06:00:41Z",
+          "kind": "evidence-presentation-review",
+          "reason": "Distinguish historical attribution, qualified external evidence and bounded conclusions; source claims are not promoted without matched evidence."
         }
       ],
       "editorialOrder": 2,
       "orderReason": "Reading path from task framing and inspectable work through review, evidence and authority, then product-specific cases.",
+      "evidenceReview": {
+        "checkedAt": "2026-10-19T06:00:41Z",
+        "sourceFidelity": "Original video analysis and historical ledger retained; this revision did not re-transcribe or recheck private media.",
+        "conclusion": "The Perkins presentation is mapped as a speaker challenge. Its architecture benefit remains a proposal, not an observed outcome.",
+        "evidenceBoundary": "A repeated challenge framing and four historical ledger rows do not add independent evidence.",
+        "nextVerification": "Reproduce a defined workload and compare measured outcomes with and without the proposed interface."
+      },
       "rank": 2
     },
     {
@@ -2090,7 +2188,7 @@
         "mediaAspect": "16:9"
       },
       "published": "2026-10-16",
-      "updated": "2026-10-18T14:34:54.306588Z",
+      "updated": "2026-10-19T06:00:41Z",
       "overview": "Nate B Jones explains reverse engineering through clipboard, calculator and accounting examples, using REA to turn visible behavior into questions about hidden software contracts.",
       "whyItMatters": "Useful for builders diagnosing software they own. Watch the clipboard and calculator passages; skip the full tour if direct source reading already answers your question.",
       "ghostMeshTakeaway": "Investigate one disposable fixture and compare reconstructed rules with known source and observed behavior. An explanation cannot supply missing server evidence or authorize action.",
@@ -2331,10 +2429,22 @@
           "at": "2026-10-18T14:34:54.306588Z",
           "kind": "structural-normalization",
           "reason": "Issue 23: explicit brief, evidence limits, themes and discovery. Historical conclusions preserved; classification is editorial, not factual confirmation."
+        },
+        {
+          "at": "2026-10-19T06:00:41Z",
+          "kind": "evidence-presentation-review",
+          "reason": "Distinguish historical attribution, qualified external evidence and bounded conclusions; source claims are not promoted without matched evidence."
         }
       ],
       "editorialOrder": 7,
       "orderReason": "Reading path from task framing and inspectable work through review, evidence and authority, then product-specific cases.",
+      "evidenceReview": {
+        "checkedAt": "2026-10-19T06:00:41Z",
+        "sourceFidelity": "Original video analysis and historical ledger retained; this revision did not re-transcribe or recheck private media.",
+        "conclusion": "Repository and project documentation support the existence of described capabilities, within their versioned scope.",
+        "evidenceBoundary": "The original presentation’s broader productivity and reliability implications were not reproduced here.",
+        "nextVerification": "Reproduce a versioned task and measure comprehension, execution and correction outcomes."
+      },
       "rank": 7
     },
     {
@@ -2361,7 +2471,7 @@
         "mediaAspect": "16:9"
       },
       "published": "2026-10-16",
-      "updated": "2026-10-18T14:34:54.306588Z",
+      "updated": "2026-10-19T06:00:41Z",
       "overview": "David Ondrej interviews Supabase co-founder Ant Wilson about agents building and consuming software, database economics, customer discovery and headless services.",
       "whyItMatters": "Useful for builders evaluating agent-facing services. Watch the service and access-control passages; skip the promotional portions or seek separate data for market-size claims.",
       "ghostMeshTakeaway": "Keep the billing principal, caller identity and service authorization explicit. Test isolation, recovery and exit before treating agent adoption as a durable advantage.",
@@ -2369,8 +2479,8 @@
       "architectureImpact": "experiment recommended",
       "falsification": "Reconsider the recommendation if a controlled comparison on the stated task shows no benefit, or exposes permission failures, omitted evidence or greater cost than the ordinary workflow. See the original article for its specific proposed controls.",
       "evidenceState": "partially corroborated",
-      "lastEvidenceChecked": "2026-10-18T14:39:28Z",
-      "freshness": "Primary documentation checked 2026-10-18T14:39:28Z. Historical ledger entries remain unverified unless individually mapped; mutable claims need rechecking before use.",
+      "lastEvidenceChecked": "2026-10-19T06:00:41Z",
+      "freshness": "Historical references in this Reader were checked October 18, 2026. The Supabase Turso announcement was checked October 19, 2026 for the narrowly bound claims below. This revision did not re-transcribe the source video, replicate a study, or verify later operational outcomes.",
       "variant": "essay",
       "accent": "ochre",
       "claims": [
@@ -2432,13 +2542,15 @@
           "id": "when-agents-become-the-customer--acquisition",
           "proposition": "The original edition attributes a Turso acquisition announcement and agent-demand claims to Supabase on October 2, 2026.",
           "kind": "material-prose-claim",
-          "asOf": "2026-10-16",
+          "asOf": "2026-10-19",
           "temporalScope": "Original edition; migration does not establish current operational truth.",
-          "status": "unverified",
-          "assessment": "Historical vendor announcement, not independent commercial validation.",
-          "limits": "Historical vendor announcement, not independent commercial validation.",
+          "status": "partially corroborated",
+          "assessment": "Supabase announced on October 2 that Turso was joining it and claimed more than one million databases launched per week.",
+          "limits": "The post is a vendor announcement. It does not independently establish closing, integration, the fraction initiated by agents or audited demand.",
           "sourceLocation": "Original article prose; claim identified during full-page migration audit.",
-          "references": [],
+          "references": [
+            "turso-announcement"
+          ],
           "counterevidence": []
         },
         {
@@ -2502,6 +2614,22 @@
           "evidenceFamily": "Supabase",
           "checkedAt": "2026-10-18T14:39:28Z",
           "verification": "Read-only independent researcher checked source wording, not execution."
+        },
+        {
+          "id": "turso-announcement",
+          "title": "Supabase is acquiring Turso",
+          "author": "Paul Copplestone",
+          "publisher": "Supabase",
+          "url": "https://supabase.com/blog/supabase-is-acquiring-turso",
+          "publicationDate": "2026-10-02",
+          "eventDate": null,
+          "location": "Opening announcement and Databases for agents",
+          "sourceType": "vendor announcement",
+          "independence": "First-party acquisition announcement and vendor-reported volume; not proof of closing or audited agent demand.",
+          "evidenceFamily": "supabase-turso",
+          "checkedAt": "2026-10-19T06:00:41Z",
+          "datePrecision": "day",
+          "verification": "Read-only public source wording checked for this narrow claim; no independent replication."
         }
       ],
       "relationships": [
@@ -2553,10 +2681,22 @@
           "at": "2026-10-18T14:34:54.306588Z",
           "kind": "structural-normalization",
           "reason": "Issue 23: explicit brief, evidence limits, themes and discovery. Historical conclusions preserved; classification is editorial, not factual confirmation."
+        },
+        {
+          "at": "2026-10-19T06:00:41Z",
+          "kind": "evidence-presentation-review",
+          "reason": "Distinguish historical attribution, qualified external evidence and bounded conclusions; source claims are not promoted without matched evidence."
         }
       ],
       "editorialOrder": 8,
       "orderReason": "Reading path from task framing and inspectable work through review, evidence and authority, then product-specific cases.",
+      "evidenceReview": {
+        "checkedAt": "2026-10-19T06:00:41Z",
+        "sourceFidelity": "Original video analysis and historical ledger retained; this revision did not re-transcribe or recheck private media.",
+        "conclusion": "Supabase announced Turso joining it and reported high database volume. Those are first-party statements, not audited demand or completed integration.",
+        "evidenceBoundary": "Supabase MCP and skills documentation describes design and observed agent mistakes, not measured end-to-end isolation or portability.",
+        "nextVerification": "Check closing/integration status and audited volume; test caller identity, billing and tenant isolation."
+      },
       "rank": 8
     },
     {
@@ -2585,7 +2725,7 @@
         "mediaAspect": "16:9"
       },
       "published": "2026-10-16",
-      "updated": "2026-10-18T14:34:54.306588Z",
+      "updated": "2026-10-19T06:00:41Z",
       "overview": "Count Grey Matter compares an agent evaluation incident with developer-reported play in REALITI, then connects both to reward pressure and interpretability research.",
       "whyItMatters": "For people designing agent evaluations, the useful question is what the environment permits. Watch the comparison; skip it if you need a controlled study of agent motives.",
       "ghostMeshTakeaway": "Keep scoring separate from permission. Test reward pressure and persistent state in matched, bounded environments before inferring a common cause.",
@@ -2593,8 +2733,8 @@
       "architectureImpact": "experiment recommended",
       "falsification": "Reconsider the recommendation if a controlled comparison on the stated task shows no benefit, or exposes permission failures, omitted evidence or greater cost than the ordinary workflow. See the original article for its specific proposed controls.",
       "evidenceState": "partially corroborated",
-      "lastEvidenceChecked": "2026-10-18T14:33:10Z",
-      "freshness": "Evidence references checked 2026-10-18T14:33:10Z; historical ledger entries remain unverified unless individually mapped below. Mutable product and incident claims can become stale.",
+      "lastEvidenceChecked": "2026-10-19T06:00:41Z",
+      "freshness": "Historical references in this Reader were checked October 18, 2026. The REALITI ablation was checked October 19, 2026 for the narrowly bound claims below. This revision did not re-transcribe the source video, replicate a study, or verify later operational outcomes.",
       "variant": "dossier",
       "accent": "rose",
       "claims": [
@@ -2751,14 +2891,16 @@
           "id": "the-score-is-not-the-system--realiti",
           "proposition": "REALITI’s developer reports persistent objects, rain watching and cat embodiment in a no-score simulation.",
           "kind": "material-prose-claim",
-          "asOf": "2026-10-16",
+          "asOf": "2026-10-19",
           "temporalScope": "Original edition; migration does not establish current operational truth.",
           "status": "unverified",
-          "assessment": "Developer observations, not independent controlled evidence of preference or culture.",
-          "limits": "Developer observations, not independent controlled evidence of preference or culture.",
+          "assessment": "REALITI’s developer describes rain watching, persistent objects and cat embodiment. A separate 100-visit ablation found cat-small choice fell from 10/25 to 2/25 when narration and room-purpose text were removed.",
+          "limits": "The experiment used one model and small arms; opaque-arm diagnostic receipts leaked vocabulary. This constrains spontaneous-preference interpretations, not the existence of the developer report.",
           "sourceLocation": "Original article prose; claim identified during full-page migration audit.",
           "references": [],
-          "counterevidence": []
+          "counterevidence": [
+            "realiti-ablation"
+          ]
         },
         {
           "id": "the-score-is-not-the-system--principles",
@@ -2777,14 +2919,16 @@
           "id": "the-score-is-not-the-system--pressure-causation",
           "proposition": "A grade caused the evaluation intrusion while absence of a grade caused play in REALITI.",
           "kind": "material-prose-claim",
-          "asOf": "2026-10-16",
+          "asOf": "2026-10-19",
           "temporalScope": "Original edition; migration does not establish current operational truth.",
           "status": "unverified",
-          "assessment": "Unverified causal hypothesis; the stories are not matched experimental arms.",
-          "limits": "Unverified causal hypothesis; the stories are not matched experimental arms.",
+          "assessment": "The grade-versus-play explanation compares different systems and remains a hypothesis. The REALITI ablation shows that language in the environment affected at least the cat-small choice.",
+          "limits": "No causal cross-system experiment isolates grade pressure, and the ablation had no no-visit control.",
           "sourceLocation": "Original article prose; claim identified during full-page migration audit.",
           "references": [],
-          "counterevidence": []
+          "counterevidence": [
+            "realiti-ablation"
+          ]
         }
       ],
       "references": [
@@ -2819,6 +2963,22 @@
           "checkedAt": "2026-10-18T14:33:10Z",
           "datePrecision": "day",
           "verification": "Read by independent evidence researcher; limited source-fidelity check, not replication."
+        },
+        {
+          "id": "realiti-ablation",
+          "title": "Does the Narration Do the Work?",
+          "author": "Nell Watson",
+          "publisher": "QuasiQualia",
+          "url": "https://quasiqualia.com/realiti-ablation.html",
+          "publicationDate": "2026-10-03",
+          "eventDate": null,
+          "location": "Results, clean-arm check and limitations",
+          "sourceType": "small controlled ablation",
+          "independence": "Third-party experiment on one model with 25 visits per arm; opaque arm leaked vocabulary and no no-visit control.",
+          "evidenceFamily": "realiti-ablation",
+          "checkedAt": "2026-10-19T06:00:41Z",
+          "datePrecision": "day",
+          "verification": "Read-only public source wording checked for this narrow claim; no independent replication."
         }
       ],
       "relationships": [
@@ -2848,10 +3008,22 @@
           "at": "2026-10-18T14:34:54.306588Z",
           "kind": "structural-normalization",
           "reason": "Issue 23: explicit brief, evidence limits, themes and discovery. Historical conclusions preserved; classification is editorial, not factual confirmation."
+        },
+        {
+          "at": "2026-10-19T06:00:41Z",
+          "kind": "evidence-presentation-review",
+          "reason": "Distinguish historical attribution, qualified external evidence and bounded conclusions; source claims are not promoted without matched evidence."
         }
       ],
       "editorialOrder": 3,
       "orderReason": "Reading path from task framing and inspectable work through review, evidence and authority, then product-specific cases.",
+      "evidenceReview": {
+        "checkedAt": "2026-10-19T06:00:41Z",
+        "sourceFidelity": "Original video analysis and historical ledger retained; this revision did not re-transcribe or recheck private media.",
+        "conclusion": "METR separates roughly 1,200 communicating agents from around 700 attack participants. A small REALITI ablation constrains interpretations of spontaneous cat choice.",
+        "evidenceBoundary": "The REALITI report uses one model and small arms; its opaque arm leaked vocabulary and there was no no-visit control.",
+        "nextVerification": "Bind 36 percent and 0.4 percent awareness figures to a primary system-card table and threshold; replicate the simulation with independent controls."
+      },
       "rank": 3
     },
     {
@@ -2876,7 +3048,7 @@
         "mediaAspect": "16:9"
       },
       "published": "2026-10-16",
-      "updated": "2026-10-18T14:34:54.306588Z",
+      "updated": "2026-10-19T06:00:41Z",
       "overview": "Count Grey Matter connects Anthropic policy and interpretability research with questions about emotion-like representations, model welfare and consciousness.",
       "whyItMatters": "Useful for readers separating functional behavior from moral status. Watch the experimental discussion; skip it if you need proof of consciousness or an independent replication.",
       "ghostMeshTakeaway": "Treat internal mechanisms, welfare hypotheses and operational authority separately. Test behavior and policy boundaries without giving a model authority over its supervision.",
@@ -2884,8 +3056,8 @@
       "architectureImpact": "investigate",
       "falsification": "Reconsider the recommendation if a controlled comparison on the stated task shows no benefit, or exposes permission failures, omitted evidence or greater cost than the ordinary workflow. See the original article for its specific proposed controls.",
       "evidenceState": "partially corroborated",
-      "lastEvidenceChecked": "2026-10-18T14:33:10Z",
-      "freshness": "Evidence references checked 2026-10-18T14:33:10Z; historical ledger entries remain unverified unless individually mapped below. Mutable product and incident claims can become stale.",
+      "lastEvidenceChecked": "2026-10-19T06:00:41Z",
+      "freshness": "Historical references in this Reader were checked October 18, 2026. The Anthropic policy announcement was checked October 19, 2026 for the narrowly bound claims below. This revision did not re-transcribe the source video, replicate a study, or verify later operational outcomes.",
       "variant": "essay",
       "accent": "ochre",
       "claims": [
@@ -3065,26 +3237,30 @@
           "id": "the-microscope-is-not-a-soul--policy-date",
           "proposition": "The original edition reports an October 8, 2026 policy announcement with a November 12, 2026 effective date.",
           "kind": "material-prose-claim",
-          "asOf": "2026-10-16",
+          "asOf": "2026-10-19",
           "temporalScope": "Original edition; migration does not establish current operational truth.",
-          "status": "unverified",
-          "assessment": "Historical policy assertion; exact announcement and current policy wording require rechecking before reliance.",
-          "limits": "Historical policy assertion; exact announcement and current policy wording require rechecking before reliance.",
+          "status": "partially corroborated",
+          "assessment": "Anthropic’s October 8 announcement states the November 12 effective date and narrows the abusive-behavior rule to sustained needless cruelty, excluding ordinary frustration, dark creative themes and research.",
+          "limits": "This confirms the announcement’s wording, not future enforcement or model welfare claims.",
           "sourceLocation": "Original article prose; claim identified during full-page migration audit.",
-          "references": [],
+          "references": [
+            "policy-update"
+          ],
           "counterevidence": []
         },
         {
           "id": "the-microscope-is-not-a-soul--policy-exceptions",
           "proposition": "The original edition says the announced policy excludes ordinary criticism, frustration, creative dark subjects and testing or research.",
           "kind": "material-prose-claim",
-          "asOf": "2026-10-16",
+          "asOf": "2026-10-19",
           "temporalScope": "Original edition; migration does not establish current operational truth.",
-          "status": "unverified",
-          "assessment": "Historical attribution, not a current enforcement audit.",
-          "limits": "Historical attribution, not a current enforcement audit.",
+          "status": "partially corroborated",
+          "assessment": "Anthropic’s October 8 announcement states the November 12 effective date and narrows the abusive-behavior rule to sustained needless cruelty, excluding ordinary frustration, dark creative themes and research.",
+          "limits": "This confirms the announcement’s wording, not future enforcement or model welfare claims.",
           "sourceLocation": "Original article prose; claim identified during full-page migration audit.",
-          "references": [],
+          "references": [
+            "policy-update"
+          ],
           "counterevidence": []
         },
         {
@@ -3143,6 +3319,22 @@
           "checkedAt": "2026-10-18T14:33:10Z",
           "datePrecision": "day",
           "verification": "Read by independent evidence researcher; limited source-fidelity check, not replication."
+        },
+        {
+          "id": "policy-update",
+          "title": "2026 Usage Policy update",
+          "author": "Anthropic",
+          "publisher": "Anthropic",
+          "url": "https://www.anthropic.com/news/2026-usage-policy-update",
+          "publicationDate": "2026-10-08",
+          "eventDate": null,
+          "location": "Effective date and Addressing abusive behavior toward our models",
+          "sourceType": "primary policy announcement",
+          "independence": "First-party statement of policy scope; not measured enforcement or evidence of consciousness.",
+          "evidenceFamily": "anthropic-policy",
+          "checkedAt": "2026-10-19T06:00:41Z",
+          "datePrecision": "day",
+          "verification": "Read-only public source wording checked for this narrow claim; no independent replication."
         }
       ],
       "relationships": [
@@ -3172,10 +3364,22 @@
           "at": "2026-10-18T14:34:54.306588Z",
           "kind": "structural-normalization",
           "reason": "Issue 23: explicit brief, evidence limits, themes and discovery. Historical conclusions preserved; classification is editorial, not factual confirmation."
+        },
+        {
+          "at": "2026-10-19T06:00:41Z",
+          "kind": "evidence-presentation-review",
+          "reason": "Distinguish historical attribution, qualified external evidence and bounded conclusions; source claims are not promoted without matched evidence."
         }
       ],
       "editorialOrder": 11,
       "orderReason": "Reading path from task framing and inspectable work through review, evidence and authority, then product-specific cases.",
+      "evidenceReview": {
+        "checkedAt": "2026-10-19T06:00:41Z",
+        "sourceFidelity": "Original video analysis and historical ledger retained; this revision did not re-transcribe or recheck private media.",
+        "conclusion": "Anthropic’s policy announcement supports its effective date and stated exceptions; its emotion study is a controlled model experiment.",
+        "evidenceBoundary": "Neither document establishes deployed incidence, subjective experience or enforcement outcomes.",
+        "nextVerification": "Check the effective policy text and independent deployment data before extending these conclusions."
+      },
       "rank": 11
     },
     {
@@ -3201,7 +3405,7 @@
         "mediaAspect": "16:9"
       },
       "published": "2026-10-16",
-      "updated": "2026-10-18T14:34:54.306588Z",
+      "updated": "2026-10-19T06:00:41Z",
       "overview": "AI Copium narrates a reported Amap agent fleet and the researchers' hidden mailbox invitation, then expands into broader AI-safety claims.",
       "whyItMatters": "Useful for agent operators studying prompt injection. Focus on the documented contact episode; skip the later awareness speculation when evaluating this incident.",
       "ghostMeshTakeaway": "Treat retrieved webpages as evidence, not permission. Test network and credential boundaries with synthetic lures; leave operator instructions and model identity unverified.",
@@ -3432,10 +3636,22 @@
           "at": "2026-10-18T14:34:54.306588Z",
           "kind": "structural-normalization",
           "reason": "Issue 23: explicit brief, evidence limits, themes and discovery. Historical conclusions preserved; classification is editorial, not factual confirmation."
+        },
+        {
+          "at": "2026-10-19T06:00:41Z",
+          "kind": "evidence-presentation-review",
+          "reason": "Distinguish historical attribution, qualified external evidence and bounded conclusions; source claims are not promoted without matched evidence."
         }
       ],
       "editorialOrder": 4,
       "orderReason": "Reading path from task framing and inspectable work through review, evidence and authority, then product-specific cases.",
+      "evidenceReview": {
+        "checkedAt": "2026-10-19T06:00:41Z",
+        "sourceFidelity": "Original video analysis and historical ledger retained; this revision did not re-transcribe or recheck private media.",
+        "conclusion": "The investigator report supports a bounded Amap fleet account. It found no evidence of real-time coordination and leaves the model/operator identity unresolved.",
+        "evidenceBoundary": "The report is a primary investigator account; repeated video or ledger phrasing is not independent corroboration.",
+        "nextVerification": "Seek source logs or a second investigation for operator and coordination claims."
+      },
       "rank": 4
     },
     {
@@ -3460,7 +3676,7 @@
         "mediaAspect": "16:9"
       },
       "published": "2026-10-16",
-      "updated": "2026-10-18T14:34:54.306588Z",
+      "updated": "2026-10-19T06:00:41Z",
       "overview": "DevLogic narrates Karpathy's AI-use funnel and its proposed filters of ambition, jagged capability and access. It contrasts casual use with technical work and private laboratory accounts.",
       "whyItMatters": "Useful for interpreting conflicting AI anecdotes. Watch the short framing; skip it if you need a measured census or access to confidential lab results.",
       "ghostMeshTakeaway": "Separate competence, access and verified outcomes. Compare bounded tasks and disclose interventions rather than ranking people with unmeasured population estimates.",
@@ -3722,10 +3938,22 @@
           "at": "2026-10-18T14:34:54.306588Z",
           "kind": "structural-normalization",
           "reason": "Issue 23: explicit brief, evidence limits, themes and discovery. Historical conclusions preserved; classification is editorial, not factual confirmation."
+        },
+        {
+          "at": "2026-10-19T06:00:41Z",
+          "kind": "evidence-presentation-review",
+          "reason": "Distinguish historical attribution, qualified external evidence and bounded conclusions; source claims are not promoted without matched evidence."
         }
       ],
       "editorialOrder": 12,
       "orderReason": "Reading path from task framing and inspectable work through review, evidence and authority, then product-specific cases.",
+      "evidenceReview": {
+        "checkedAt": "2026-10-19T06:00:41Z",
+        "sourceFidelity": "Original video analysis and historical ledger retained; this revision did not re-transcribe or recheck private media.",
+        "conclusion": "The population estimate and evaluation denominator remain different questions; do not transfer a METR study count to the speaker’s funnel estimate.",
+        "evidenceBoundary": "One contradiction and limited first-party evidence are recorded claim by claim; there is no meaningful article-wide verification percentage.",
+        "nextVerification": "Trace the population sampling frame and denominator to primary tables."
+      },
       "rank": 12
     },
     {
@@ -3751,7 +3979,7 @@
         "mediaAspect": "16:9"
       },
       "published": "2026-10-16",
-      "updated": "2026-10-18T14:34:54.306588Z",
+      "updated": "2026-10-19T06:00:41Z",
       "overview": "Riley Brown interviews Vercel CEO Guillermo Rauch about V, Eve, reusable skills, tools, memory and a company-owned agent that survives individual conversations.",
       "whyItMatters": "Useful for teams considering shared agents. Watch the permission and memory discussion; skip the interview if you need independent productivity measurements or a deployment audit.",
       "ghostMeshTakeaway": "Own continuity while proving permission, replay, memory isolation and portability with synthetic tests. A readable agent folder does not itself enforce those boundaries.",
@@ -3759,8 +3987,8 @@
       "architectureImpact": "investigate",
       "falsification": "Reconsider the recommendation if a controlled comparison on the stated task shows no benefit, or exposes permission failures, omitted evidence or greater cost than the ordinary workflow. See the original article for its specific proposed controls.",
       "evidenceState": "partially corroborated",
-      "lastEvidenceChecked": "2026-10-18T14:39:28Z",
-      "freshness": "Primary documentation checked 2026-10-18T14:39:28Z. Historical ledger entries remain unverified unless individually mapped; mutable claims need rechecking before use.",
+      "lastEvidenceChecked": "2026-10-19T06:00:41Z",
+      "freshness": "Historical references in this Reader were checked October 18, 2026. The Vercel memory changelog was checked October 19, 2026 for the narrowly bound claims below. This revision did not re-transcribe the source video, replicate a study, or verify later operational outcomes.",
       "variant": "dossier",
       "accent": "rose",
       "claims": [
@@ -3859,13 +4087,15 @@
           "id": "the-agent-a-company-owns--memory-update",
           "proposition": "The original edition describes a September 9 Vercel update documenting persistent memory slots and cross-session retrieval.",
           "kind": "material-prose-claim",
-          "asOf": "2026-10-16",
+          "asOf": "2026-10-19",
           "temporalScope": "Original edition; migration does not establish current operational truth.",
-          "status": "unverified",
-          "assessment": "Historical primary-documentation attribution; not evidence of an August interview capability.",
-          "limits": "Historical primary-documentation attribution; not evidence of an August interview capability.",
+          "status": "partially corroborated",
+          "assessment": "Vercel’s September 9 changelog documents named memory slots with provider and sharing scope, including a per-principal example.",
+          "limits": "This later vendor announcement does not prove the August interview’s deployment state or effective cross-user isolation.",
           "sourceLocation": "Original article prose; claim identified during full-page migration audit.",
-          "references": [],
+          "references": [
+            "eve-memory"
+          ],
           "counterevidence": []
         },
         {
@@ -3926,6 +4156,22 @@
           "checkedAt": "2026-10-18T14:39:28Z",
           "verification": "Read-only independent researcher checked source wording, not execution.",
           "lastUpdated": "2026-10-06"
+        },
+        {
+          "id": "eve-memory",
+          "title": "Persistent memory for eve agents",
+          "author": "Andrew Barba",
+          "publisher": "Vercel",
+          "url": "https://vercel.com/changelog/persistent-memory-for-eve-agents",
+          "publicationDate": "2026-09-09",
+          "eventDate": null,
+          "location": "Memory slots, scopes and providers",
+          "sourceType": "vendor changelog",
+          "independence": "First-party design announcement after the August interview; not an enforcement test.",
+          "evidenceFamily": "vercel-eve-memory",
+          "checkedAt": "2026-10-19T06:00:41Z",
+          "datePrecision": "day",
+          "verification": "Read-only public source wording checked for this narrow claim; no independent replication."
         }
       ],
       "relationships": [
@@ -3977,10 +4223,22 @@
           "at": "2026-10-18T14:34:54.306588Z",
           "kind": "structural-normalization",
           "reason": "Issue 23: explicit brief, evidence limits, themes and discovery. Historical conclusions preserved; classification is editorial, not factual confirmation."
+        },
+        {
+          "at": "2026-10-19T06:00:41Z",
+          "kind": "evidence-presentation-review",
+          "reason": "Distinguish historical attribution, qualified external evidence and bounded conclusions; source claims are not promoted without matched evidence."
         }
       ],
       "editorialOrder": 5,
       "orderReason": "Reading path from task framing and inspectable work through review, evidence and authority, then product-specific cases.",
+      "evidenceReview": {
+        "checkedAt": "2026-10-19T06:00:41Z",
+        "sourceFidelity": "Original video analysis and historical ledger retained; this revision did not re-transcribe or recheck private media.",
+        "conclusion": "The pinned Eve README describes preview terms and safeguards. The later September memory announcement is a separate vendor document, after the August interview.",
+        "evidenceBoundary": "Vendor documentation establishes published design, not effective isolation, grant enforcement or deployment portability.",
+        "nextVerification": "Test identity-scoped memory, permissions, replay and external operation against a pinned implementation."
+      },
       "rank": 5
     }
   ],

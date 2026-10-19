@@ -38,18 +38,28 @@ class SearchAndEvidenceAuditTest(unittest.TestCase):
         claims = [claim for reader in catalog["readers"] if reader["slug"] in historical_slugs
                   for claim in reader["claims"]]
         self.assertEqual(Counter(claim["status"] for claim in claims),
-                         {"unverified": 131, "partially corroborated": 14,
+                         {"unverified": 124, "partially corroborated": 21,
                           "corroborated": 2, "contradicted": 1})
+        for reader in catalog["readers"]:
+            if reader["slug"] not in historical_slugs:
+                continue
+            note = reader["evidenceReview"]
+            self.assertIn("did not re-transcribe", note["sourceFidelity"])
+            self.assertTrue(all(note[key] for key in
+                                ("conclusion", "evidenceBoundary", "nextVerification")))
+            page = (ROOT / "site" / reader["slug"] / "index.html").read_text()
+            self.assertIn(note["conclusion"], page)
         unverified = [claim for claim in claims if claim["status"] == "unverified"]
         self.assertEqual(sum(c["kind"] == "historical-ledger-entry" for c in unverified), 64)
-        self.assertEqual(sum(c["kind"] == "material-prose-claim" for c in unverified), 33)
-        self.assertEqual(sum(bool(c["references"]) for c in claims), 16)
-        self.assertEqual(sum(bool(c["counterevidence"]) for c in claims), 6)
+        material = sum(c["kind"] == "material-prose-claim" for c in unverified)
+        self.assertEqual(material, 29)
+        self.assertEqual(sum(bool(c["references"]) for c in claims), 25)
+        self.assertEqual(sum(bool(c["counterevidence"]) for c in claims), 8)
         knowledge = (ROOT / "site/knowledge/index.html").read_text()
         current_unverified = sum(c["status"] == "unverified"
                                  for reader in catalog["readers"] for c in reader["claims"])
         self.assertIn(f"<strong>{current_unverified}</strong><span>still labeled unverified", knowledge)
-        self.assertIn("64 are historical-ledger entries and 33 are material-prose claims", knowledge)
+        self.assertIn(f"64 are historical-ledger entries and {material} are material-prose claims", knowledge)
 
 
 if __name__ == "__main__":

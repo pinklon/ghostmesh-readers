@@ -136,7 +136,7 @@
       "mediaAspect": "9:16"
     },
     "published": "2026-10-17",
-    "updated": "2026-10-18T14:34:54.306588Z",
+    "updated": "2026-10-19T06:00:41Z",
     "overview": "Steve | Systems & AI describes stopping an architecture review once a choice feels defensible and proposes asking AI to argue against it.",
     "whyItMatters": "Worth a minute for consequential design reviews. Skip the full procedure for trivial choices; this Reel provides no measured architecture-review outcome.",
     "ghostMeshTakeaway": "Use objections as candidates for checking. Require evidence, an experiment or an accountable reviewer before changing a consequential decision.",
@@ -377,9 +377,21 @@
         "at": "2026-10-18T14:34:54.306588Z",
         "kind": "structural-normalization",
         "reason": "Issue 23: explicit brief, evidence limits, themes and discovery. Historical conclusions preserved; classification is editorial, not factual confirmation."
+      },
+      {
+        "at": "2026-10-19T06:00:41Z",
+        "kind": "evidence-presentation-review",
+        "reason": "Distinguish historical attribution, qualified external evidence and bounded conclusions; source claims are not promoted without matched evidence."
       }
     ],
     "editorialOrder": 2,
-    "orderReason": "Reading path from task framing and inspectable work through review, evidence and authority, then product-specific cases."
+    "orderReason": "Reading path from task framing and inspectable work through review, evidence and authority, then product-specific cases.",
+    "evidenceReview": {
+      "checkedAt": "2026-10-19T06:00:41Z",
+      "sourceFidelity": "Original video analysis and historical ledger retained; this revision did not re-transcribe or recheck private media.",
+      "conclusion": "The Perkins presentation is mapped as a speaker challenge. Its architecture benefit remains a proposal, not an observed outcome.",
+      "evidenceBoundary": "A repeated challenge framing and four historical ledger rows do not add independent evidence.",
+      "nextVerification": "Reproduce a defined workload and compare measured outcomes with and without the proposed interface."
+    }
   }
 }
