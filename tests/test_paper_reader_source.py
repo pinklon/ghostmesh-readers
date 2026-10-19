@@ -151,7 +151,8 @@ class PaperReaderSourceTests(unittest.TestCase):
         self.assertIn('data-gm-share=""', rendered)
         self.assertNotIn("data-home-player", rendered)
         self.assertNotIn("data-gm-aspect", rendered)
-        paper = json.loads((ROOT / "content/catalog.json").read_text())["readers"][-1]
+        paper = next(r for r in json.loads((ROOT / "content/catalog.json").read_text())["readers"]
+                     if r["slug"] == PAPER.stem)
         self.assertEqual(len(paper['relationships']), 1)
         self.assertEqual(paper['relationships'][0]['type'], 'related topic')
         self.assertEqual(paper['relationships'][0]['target'], 'reader:a-scenario-is-not-a-singularity')

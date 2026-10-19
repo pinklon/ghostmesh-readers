@@ -56,6 +56,10 @@ CALLS = {
     'the-test-must-name-its-target': ('Use for evaluation design', 'Test grounded use and changed premises before assigning a broad understanding label.'),
     'the-parallel-result-is-not-the-product': ('Study before migrating', 'Reproduce quality, latency and cost on your own workload before changing the product stack.'),
     'the-experiment-ran-did-the-research-advance': ('Study the evaluation', 'Separate completed engineering from research judgment; two selected cases cannot set a universal ceiling.'),
+    'a-benchmark-is-not-a-lab': ('Read with limits', 'Read the trial for its primary result, then separate secondary progress, the LANL pilot and AISI digital signals.'),
+    'the-forecast-the-box-and-the-welfare-file': ('Study the records', 'Keep the dated forecast, practical control test and model-welfare uncertainty in separate decision files.'),
+    'when-safety-changes-the-work': ('Inspect the decision trail', 'Ask for threshold, test conditions, escalation, dated decision and an outside scoped retest.'),
+    'a-list-is-not-a-ballot-verdict': ('Investigate the leads', 'Treat the disputed list as leads; require individual eligibility evidence and a lawful ballot decision.'),
 }
 
 

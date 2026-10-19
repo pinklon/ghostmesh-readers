@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "host": "https://youtube.shareplane.malott.ai",
-  "revision": "2026-10-19T13:52:14Z",
+  "revision": "2026-10-19T23:43:53Z",
   "categories": [
     "AI & Technology",
     "Society & Politics",
@@ -1302,6 +1302,346 @@
       "editorialOrder": 14,
       "orderReason": "Read after other model-score Readers to test how benchmark evidence is converted into a larger forecast.",
       "rank": 14
+    },
+    {
+      "id": "reader:a-benchmark-is-not-a-lab",
+      "slug": "a-benchmark-is-not-a-lab",
+      "title": "A benchmark is not a lab: what one AI-biology trial actually measured",
+      "category": "Science",
+      "tags": [
+        "AI biology",
+        "human uplift",
+        "evaluation"
+      ],
+      "entities": [],
+      "source": {
+        "kind": "analysis",
+        "identity": "analysis:a-benchmark-is-not-a-lab",
+        "sourceReferenceIds": [
+          "gates-source-01",
+          "gates-source-02",
+          "gates-source-03",
+          "gates-source-04",
+          "gates-source-05",
+          "gates-source-06"
+        ]
+      },
+      "published": "2026-10-19",
+      "updated": "2026-10-19T23:43:53Z",
+      "overview": "Active Site's physical-lab trial tests whether mid-2025 frontier AI helped novices complete a defined three-task sequence, while separate studies probe different outcomes.",
+      "whyItMatters": "For safety evaluators and model builders, the key distinction is digital ability, partial human progress, and completed physical work; this trial cannot forecast current models.",
+      "ghostMeshTakeaway": "Record actor, model date, access, comparator, task, final outcome, intermediate progress, and safeguards before drawing a risk or safety conclusion; repeat matched human-outcome tests when those conditions change.",
+      "verdict": "Worth studying",
+      "architectureImpact": "none",
+      "falsification": "A larger, independently run physical-lab study with a specified newer system and pre-registered consequential human outcomes would change the uplift estimate for that setting.",
+      "evidenceState": "unverified",
+      "lastEvidenceChecked": "2026-10-19T23:43:53Z",
+      "freshness": "Active Site and METR are the same trial family; LANL is a separate, small physical task; AISI reports different digital measures. No interview speech is used.",
+      "variant": "essay",
+      "accent": "blue",
+      "claims": [
+        {
+          "id": "a-benchmark-is-not-a-lab--p01",
+          "proposition": "Active Site randomized 153 novices, 76 internet and 77 AI, across 39 four-hour sessions in June-August 2025.",
+          "kind": "source-attribution",
+          "asOf": "2026-10-19",
+          "status": "unverified",
+          "assessment": "Direct original study report; preprint, not independent replication. Most participants were undergraduates.",
+          "limits": "Direct original study report; preprint, not independent replication. Most participants were undergraduates.",
+          "sourceLocation": "Proposed source ledger P01",
+          "references": [
+            "gates-source-01"
+          ],
+          "counterevidence": []
+        },
+        {
+          "id": "a-benchmark-is-not-a-lab--p02",
+          "proposition": "Intervention offered mid-2025 benchmark-selected frontier models from three vendors without safety classifiers.",
+          "kind": "source-attribution",
+          "asOf": "2026-10-19",
+          "status": "unverified",
+          "assessment": "Direct design fact. Does not describe normal consumer safeguards or 2026 models.",
+          "limits": "Direct design fact. Does not describe normal consumer safeguards or 2026 models.",
+          "sourceLocation": "Proposed source ledger P02",
+          "references": [
+            "gates-source-01"
+          ],
+          "counterevidence": []
+        },
+        {
+          "id": "a-benchmark-is-not-a-lab--p03",
+          "proposition": "Primary endpoint was success on a three-core-task sequence, 4/77 versus 5/76, RR 0.79, 95% CI 0.24-2.62, P = 0.759.",
+          "kind": "source-attribution",
+          "asOf": "2026-10-19",
+          "status": "unverified",
+          "assessment": "Pre-registered primary outcome; no significant difference detected. It was not a fully integrated real-world project.",
+          "limits": "Pre-registered primary outcome; no significant difference detected. It was not a fully integrated real-world project.",
+          "sourceLocation": "Proposed source ledger P03",
+          "references": [
+            "gates-source-01"
+          ],
+          "counterevidence": []
+        },
+        {
+          "id": "a-benchmark-is-not-a-lab--p04",
+          "proposition": "Four of five individual tasks numerically favored AI; no full-cohort individual-task success result was significant.",
+          "kind": "source-attribution",
+          "asOf": "2026-10-19",
+          "status": "unverified",
+          "assessment": "Secondary measures. Do not report direction alone as proof of uplift.",
+          "limits": "Secondary measures. Do not report direction alone as proof of uplift.",
+          "sourceLocation": "Proposed source ledger P04",
+          "references": [
+            "gates-source-01"
+          ],
+          "counterevidence": []
+        },
+        {
+          "id": "a-benchmark-is-not-a-lab--p05",
+          "proposition": "Cell-culture success was 68.8% versus 55.3% in the full cohort (P = 0.059), and 79.7% versus 62.5% among 128 per-protocol participants (P = 0.025).",
+          "kind": "source-attribution",
+          "asOf": "2026-10-19",
+          "status": "unverified",
+          "assessment": "Different analysis sets; the latter is a subset result, not the primary endpoint.",
+          "limits": "Different analysis sets; the latter is a subset result, not the primary endpoint.",
+          "sourceLocation": "Proposed source ledger P05",
+          "references": [
+            "gates-source-01"
+          ],
+          "counterevidence": []
+        },
+        {
+          "id": "a-benchmark-is-not-a-lab--p06",
+          "proposition": "Post-hoc modeled typical-task RR was 1.42 (95% credible interval 0.74-2.62); progress measures favored AI at many intermediate steps.",
+          "kind": "source-attribution",
+          "asOf": "2026-10-19",
+          "status": "unverified",
+          "assessment": "Exploratory/model-dependent and intermediate outcomes; cannot become final physical completion.",
+          "limits": "Exploratory/model-dependent and intermediate outcomes; cannot become final physical completion.",
+          "sourceLocation": "Proposed source ledger P06",
+          "references": [
+            "gates-source-01"
+          ],
+          "counterevidence": []
+        },
+        {
+          "id": "a-benchmark-is-not-a-lab--p07",
+          "proposition": "The study excluded acquisition and lab setup and split the task sequence; low completion reduced power to 36% for OR 2 and 73% for OR 3 in post-hoc calculations.",
+          "kind": "source-attribution",
+          "asOf": "2026-10-19",
+          "status": "unverified",
+          "assessment": "Investigator-reported limits. Do not convert absence of significance into absence of risk.",
+          "limits": "Investigator-reported limits. Do not convert absence of significance into absence of risk.",
+          "sourceLocation": "Proposed source ledger P07",
+          "references": [
+            "gates-source-01"
+          ],
+          "counterevidence": []
+        },
+        {
+          "id": "a-benchmark-is-not-a-lab--p08",
+          "proposition": "In an independent ten-person physical-lab pilot, the authors report 3/5 AI versus 1/5 internet completed on the first attempt, and 4/5 versus 3/5 after two attempts.",
+          "kind": "source-attribution",
+          "asOf": "2026-10-19",
+          "status": "unverified",
+          "assessment": "Different task/model and limited expert help; tiny descriptive study, no precise uplift estimate or replication of P03. The narrative says only one additional internet participant completed on retry, inconsistent with its reported 3/5 final total. Its HTML body bears an inconsistent later date, so the arXiv submission history anchors the version date.",
+          "limits": "Different task/model and limited expert help; tiny descriptive study, no precise uplift estimate or replication of P03. The narrative says only one additional internet participant completed on retry, inconsistent with its reported 3/5 final total. Its HTML body bears an inconsistent later date, so the arXiv submission history anchors the version date.",
+          "sourceLocation": "Proposed source ledger P08",
+          "references": [
+            "gates-source-03"
+          ],
+          "counterevidence": []
+        },
+        {
+          "id": "a-benchmark-is-not-a-lab--p09",
+          "proposition": "AISI reports stronger biology knowledge/protocol/troubleshooting evaluations and an unquantified internal novice-lab success signal.",
+          "kind": "source-attribution",
+          "asOf": "2026-10-19",
+          "status": "unverified",
+          "assessment": "Independent public capability signal. Some protocol feasibility checks occurred, but no published matched novice/control result establishes uplift or validates P03.",
+          "limits": "Independent public capability signal. Some protocol feasibility checks occurred, but no published matched novice/control result establishes uplift or validates P03.",
+          "sourceLocation": "Proposed source ledger P09",
+          "references": [
+            "gates-source-02"
+          ],
+          "counterevidence": []
+        },
+        {
+          "id": "a-benchmark-is-not-a-lab--p10",
+          "proposition": "Interviewed practitioners identify shifting models, baselines, and user skill as threats to uplift-study generalization.",
+          "kind": "source-attribution",
+          "asOf": "2026-10-19",
+          "status": "unverified",
+          "assessment": "Methodology evidence from 16 expert interviews; includes Active Site author overlap, so not an independent outcome replication.",
+          "limits": "Methodology evidence from 16 expert interviews; includes Active Site author overlap, so not an independent outcome replication.",
+          "sourceLocation": "Proposed source ledger P10",
+          "references": [
+            "gates-source-04"
+          ],
+          "counterevidence": []
+        },
+        {
+          "id": "a-benchmark-is-not-a-lab--p11",
+          "proposition": "A METR collaborator reports the Active Site trial cost $1.9 million and took four dedicated staff more than a year.",
+          "kind": "source-attribution",
+          "asOf": "2026-10-19",
+          "status": "unverified",
+          "assessment": "Participant account of effort, not audited cost data or an independent replication. Supports a cadence argument only.",
+          "limits": "Participant account of effort, not audited cost data or an independent replication. Supports a cadence argument only.",
+          "sourceLocation": "Proposed source ledger P11",
+          "references": [
+            "gates-source-05"
+          ],
+          "counterevidence": []
+        },
+        {
+          "id": "a-benchmark-is-not-a-lab--p12",
+          "proposition": "Gates publicly warns that AI could magnify biological misuse.",
+          "kind": "source-attribution",
+          "asOf": "2026-10-19",
+          "status": "unverified",
+          "assessment": "Same-speaker editorial context only. No claim about what Gates said in the held interview or proof of physical uplift.",
+          "limits": "Same-speaker editorial context only. No claim about what Gates said in the held interview or proof of physical uplift.",
+          "sourceLocation": "Proposed source ledger P12",
+          "references": [
+            "gates-source-06"
+          ],
+          "counterevidence": []
+        },
+        {
+          "id": "a-benchmark-is-not-a-lab--p13",
+          "proposition": "Model answer, assisted human progress, and completed physical work require distinct evidence.",
+          "kind": "editorial-inference",
+          "asOf": "2026-10-19",
+          "status": "unverified",
+          "assessment": "Original editorial interpretation, not a reported study endpoint. Revise if a newer matched human-outcome study changes the relationship.",
+          "limits": "Original editorial interpretation, not a reported study endpoint. Revise if a newer matched human-outcome study changes the relationship.",
+          "sourceLocation": "Proposed source ledger P13",
+          "references": [
+            "gates-source-01",
+            "gates-source-02",
+            "gates-source-03"
+          ],
+          "counterevidence": []
+        }
+      ],
+      "references": [
+        {
+          "id": "gates-source-01",
+          "title": "Active Site RCT preprint v1",
+          "author": "Active Site investigators",
+          "publisher": "arXiv",
+          "url": "https://arxiv.org/html/2602.16703v1",
+          "publicationDate": "2026-02-18",
+          "datePrecision": "day",
+          "dateNote": "",
+          "eventDate": "",
+          "location": "Design, outcomes, tables and limitations",
+          "sourceType": "original-preprint",
+          "independence": "Original 2025 physical-lab randomized study; source author report, not independent replication.",
+          "evidenceFamily": "active-site-rct",
+          "checkedAt": "2026-10-19T23:43:53Z"
+        },
+        {
+          "id": "gates-source-02",
+          "title": "Frontier AI trends report",
+          "author": "UK AI Security Institute",
+          "publisher": "UK AI Security Institute",
+          "url": "https://www.aisi.gov.uk/frontier-ai-trends-report",
+          "publicationDate": "unknown",
+          "datePrecision": "month",
+          "dateNote": "Public page does not display a reliable publication date; checked at the stated UTC time.",
+          "eventDate": "",
+          "location": "Biology capability and limitations sections",
+          "sourceType": "independent-different-construct-report",
+          "independence": "Separate institution; digital capability and unquantified novice-lab signal, not matched replication.",
+          "evidenceFamily": "uk-aisi",
+          "checkedAt": "2026-10-19T23:43:53Z"
+        },
+        {
+          "id": "gates-source-03",
+          "title": "LANL physical-lab pilot",
+          "author": "Los Alamos National Laboratory investigators",
+          "publisher": "arXiv",
+          "url": "https://arxiv.org/html/2512.10960",
+          "publicationDate": "2025-10-29",
+          "datePrecision": "day",
+          "dateNote": "",
+          "eventDate": "",
+          "location": "Abstract, pilot results and retry account",
+          "sourceType": "independent-different-task-pilot",
+          "independence": "Independent institution, different task/model, ten people; not matched replication.",
+          "evidenceFamily": "lanl-bio-pilot",
+          "checkedAt": "2026-10-19T23:43:53Z"
+        },
+        {
+          "id": "gates-source-04",
+          "title": "Uplift-study methodology preprint",
+          "author": "Paskov and coauthors",
+          "publisher": "arXiv",
+          "url": "https://arxiv.org/html/2603.11001",
+          "publicationDate": "2026-06-30",
+          "datePrecision": "day",
+          "dateNote": "",
+          "eventDate": "",
+          "location": "Method and generalization sections",
+          "sourceType": "methodology-preprint",
+          "independence": "Sixteen practitioner interviews with Active Site author overlap; not independent outcome validation.",
+          "evidenceFamily": "uplift-methods",
+          "checkedAt": "2026-10-19T23:43:53Z"
+        },
+        {
+          "id": "gates-source-05",
+          "title": "Five lessons from the AI biology RCT",
+          "author": "METR trial collaborators",
+          "publisher": "METR",
+          "url": "https://metr.org/blog/2026-02-19-five-lessons-from-ai-biology-rct/",
+          "publicationDate": "2026-02-19",
+          "datePrecision": "day",
+          "dateNote": "",
+          "eventDate": "",
+          "location": "Cost and cadence discussion",
+          "sourceType": "trial-collaborator-report",
+          "independence": "Same trial family and participant account; stated cost and cadence are not independently audited.",
+          "evidenceFamily": "active-site-rct",
+          "checkedAt": "2026-10-19T23:43:53Z"
+        },
+        {
+          "id": "gates-source-06",
+          "title": "A turbulent AI era and critical choices to make",
+          "author": "Bill Gates",
+          "publisher": "Gates Notes",
+          "url": "https://www.gatesnotes.com/a-turbulent-ai-era-and-critical-choices-to-make",
+          "publicationDate": "2026-08-26",
+          "datePrecision": "day",
+          "dateNote": "",
+          "eventDate": "",
+          "location": "Biological misuse discussion",
+          "sourceType": "same-speaker-editorial-context",
+          "independence": "Same-speaker context for a separate held interview; not trial evidence or episode speech.",
+          "evidenceFamily": "gates-essay",
+          "checkedAt": "2026-10-19T23:43:53Z"
+        }
+      ],
+      "relationships": [],
+      "relationshipDisposition": "No local graph edge is admitted for this public-record analysis.",
+      "review": {
+        "status": "source-reviewed; integrated draft preview pending independent review and Tony semantic lock",
+        "reviewer": "Independent source reviewer; integration review pending",
+        "reviewedSourceHead": "5477c2f2150627b25547265114b110ded3147aa5",
+        "checkedAt": "2026-10-19T23:43:53Z",
+        "scope": "Exact public-record source copy only; generated integration and owner semantic choices remain pending."
+      },
+      "revisionHistory": [
+        {
+          "at": "2026-10-19T23:43:53Z",
+          "kind": "source-analysis-draft-preview",
+          "reason": "Tony requested rich draft on the existing Netlify site; this copy remains subject to semantic lock."
+        }
+      ],
+      "editorialOrder": 18,
+      "orderReason": "Provisional source analysis draft after the existing 18 Readers.",
+      "rank": 18
     },
     {
       "id": "reader:the-scan-never-reached-the-login",
