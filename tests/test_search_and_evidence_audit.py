@@ -14,6 +14,7 @@ class SearchAndEvidenceAuditTest(unittest.TestCase):
         catalog = json.loads((ROOT / "content/catalog.json").read_text())
         index = json.loads((ROOT / "site/readers/search-index.json").read_text())
         self.assertEqual(index["schema"], "ghostmesh-public-reader-text-v1")
+        self.assertEqual(index["readerCount"], len(catalog["readers"]))
         self.assertEqual(len(index["readers"]), len(catalog["readers"]))
         self.assertEqual({entry["url"] for entry in index["readers"]},
                          {f"/{reader['slug']}/" for reader in catalog["readers"]})
@@ -23,6 +24,12 @@ class SearchAndEvidenceAuditTest(unittest.TestCase):
             self.assertEqual(entry["text"], parser.text())
             self.assertNotIn("<iframe", entry["text"])
             self.assertNotIn("<script", entry["text"])
+        new_reader = next(entry for entry in index["readers"]
+                          if entry["id"] == "reader:the-fleet-does-not-prove-the-forecast")
+        body_only_phrase = "false positives and useful work lost"
+        self.assertIn(body_only_phrase, new_reader["text"])
+        self.assertNotIn(body_only_phrase, (ROOT / "content/catalog.json").read_text())
+        self.assertNotIn(body_only_phrase, (ROOT / "site/readers/index.html").read_text())
 
     def test_existing_claim_status_breakdown_is_explicit(self):
         catalog = json.loads((ROOT / "content/catalog.json").read_text())

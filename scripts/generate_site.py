@@ -212,7 +212,7 @@ def projections():
   article=parser.text()
   if len(article)<100:raise ValueError('Reader article search text missing: '+r['slug'])
   search_docs.append({'id':r['id'],'title':r['title'],'url':'/'+r['slug']+'/','category':r['category'],'text':article})
- out['readers/search-index.json']=dump({'schema':'ghostmesh-public-reader-text-v1','scope':f'{READER_COUNT} published Reader article pages only','readers':search_docs})
+ out['readers/search-index.json']=dump({'schema':'ghostmesh-public-reader-text-v1','scope':f'{READER_COUNT} published Reader article pages only','readerCount':READER_COUNT,'readers':search_docs})
  categories='<nav aria-label="Categories" class="gm-categories">'+''.join(f'<a href="/readers/categories/{i}/">{esc(c)}</a>' for i,c in enumerate(CATEGORIES))+'</nav>'
  signal=(ROOT/'content/home-signal.svg').read_text().strip()
  # Draft editorial line for Tony's review. It is not a settled GhostMesh-wide slogan.

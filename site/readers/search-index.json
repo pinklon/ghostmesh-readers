@@ -1,6 +1,7 @@
 {
   "schema": "ghostmesh-public-reader-text-v1",
   "scope": "14 published Reader article pages only",
+  "readerCount": 14,
   "readers": [
     {
       "id": "reader:the-fleet-does-not-prove-the-forecast",
