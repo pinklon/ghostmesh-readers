@@ -4,6 +4,7 @@ from pathlib import Path
 from html import escape
 from html.parser import HTMLParser
 import json,re,sys,colorsys,math
+from collections import Counter
 ROOT=Path(__file__).resolve().parents[1]; SITE=ROOT/'site'
 CATEGORIES=['AI & Technology','Society & Politics','Science','Business','Ethics & Culture','Other']
 def esc(x):return escape(str(x),quote=True)
@@ -14,21 +15,38 @@ def validate_text(value):
   for v in value.values():validate_text(v)
  if isinstance(value,list):
   for v in value:validate_text(v)
+class PublicArticleText(HTMLParser):
+ """Only visible text from the generated public Reader article is searchable."""
+ def __init__(self):super().__init__(convert_charrefs=True);self.main=0;self.skip=0;self.parts=[]
+ def handle_starttag(self,tag,attrs):
+  if tag=='main':self.main+=1
+  if self.main and tag in {'script','style','noscript','nav','button'}:self.skip+=1
+ def handle_endtag(self,tag):
+  if self.main and tag in {'script','style','noscript','nav','button'}:self.skip-=1
+  if tag=='main':self.main-=1
+ def handle_data(self,data):
+  if self.main and not self.skip and data.strip():self.parts.append(data.strip())
+ def text(self):return re.sub(r'\s+',' ',' '.join(self.parts)).strip()
 def controls():return ('<header class="gm-site-header"><div class="gm-site-header-inner">'
  '<a class="gm-site-brand" href="/" aria-label="GhostMesh Readers home"><img src="/brand/ghostmesh-mark.svg" width="45" height="34" alt=""><strong>GHOST<em>MESH</em></strong><span>READERS</span></a>'
  '<nav class="gm-site-nav" aria-label="Main navigation"><a href="/">Home</a><a href="/readers/">Readers</a><a href="/map/">Map</a><a href="/knowledge/">Knowledge</a><a href="/#about">About</a></nav>'
+ '<div class="gm-header-actions"><a class="gm-search-control" href="/readers/#search" aria-label="Search Reader articles; without JavaScript, browse the Reader archive" data-reader-search-open title="Search Reader articles">'
+ '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 5 5"/></svg></a>'
  '<button class="gm-theme-control" id="theme-toggle" data-theme-toggle type="button" aria-label="Light appearance" aria-pressed="false" hidden>'
  '<svg class="gm-theme-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4M19.1 4.9l-1.4 1.4M6.3 17.7l-1.4 1.4"/></svg>'
  '<svg class="gm-theme-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.2 15.9A8.7 8.7 0 0 1 8.1 3.8 8.7 8.7 0 1 0 20.2 15.9Z"/></svg>'
- '<span class="gm-theme-label">Appearance</span></button>'
- '</div></header>')
+ '<span class="gm-theme-label gm-visually-hidden">Appearance</span></button></div>'
+ '</div><dialog class="gm-reader-search" data-reader-search aria-labelledby="gm-search-title"><div class="gm-reader-search-head"><div><p>GHOSTMESH / READER SEARCH</p><h2 id="gm-search-title">Search the published readings.</h2></div><button type="button" data-reader-search-close aria-label="Close Reader search">×</button></div>'
+ '<label for="gm-search-input">Search article text from all 13 public Readers</label><input id="gm-search-input" type="search" autocomplete="off" placeholder="A claim, source or phrase">'
+ '<p class="gm-reader-search-scope">Results are limited to the public Reader articles on this site. <a href="/readers/">Browse all Readers</a>.</p>'
+ '<p data-reader-search-status role="status" aria-live="polite">Type to search the public Reader articles.</p><div data-reader-search-results></div></dialog></header>')
 def footer(include_email=True):return ('<footer aria-label="GhostMesh destinations" class="gm-reader-footer gm-site-footer"><div class="gm-reader-footer-inner">'
  '<div><a class="gm-footer-brand" href="/"><img alt="" class="gm-logo-mark" height="34" src="/brand/ghostmesh-mark.svg" width="45"><strong>GHOST<em>MESH</em></strong></a>'
  '<p class="gm-reader-footer-note">Read the source. Examine the evidence. Challenge the interpretation.<br>GhostMesh editorial · © 2026 GhostMesh / Tony Malott.</p></div>'
  '<nav aria-label="Reader footer navigation" class="gm-footer-links"><a href="/">Readers home</a><a href="/readers/">All Readers</a><a href="/map/">Relationship map</a><a href="/knowledge/">Public knowledge</a>'
  '<a href="https://ghostmesh.ai/">GhostMesh.ai ↗</a><a href="https://shareplane.malott.ai/">SharePlane ↗</a><a href="https://malott.ai/">Tony Malott ↗</a>'
  +('<a href="mailto:ghostmesh@malott.ai?subject=GhostMesh%20Reader%20feedback">Contact GhostMesh ✉</a>' if include_email else '')+'</nav></div></footer>')
-def head():return '<script src="/assets/theme.js"></script><link rel="stylesheet" href="/assets/reader-chrome.css"><link rel="stylesheet" href="/assets/knowledge.css">'
+def head():return '<script src="/assets/theme.js"></script><script src="/assets/reader-search.js" defer></script><link rel="stylesheet" href="/assets/reader-chrome.css"><link rel="stylesheet" href="/assets/knowledge.css">'
 def brief(r):
  return '<section class="gm-brief" id="at-a-glance" aria-label="Reader brief"><span id="brief-title" class="gm-visually-hidden">Reader brief</span>'+''.join('<div><h2>'+h+'</h2><p>'+esc(r[k])+'</p></div>' for k,h in [('overview','What the video is about'),('whyItMatters','Why you should care'),('ghostMeshTakeaway','What GhostMesh takes away')])+f'<p class="gm-verdict"><strong>GhostMesh verdict: {esc(r["verdict"])}</strong>. Editorial recommendation, not factual verification. Architecture impact: {esc(r["architectureImpact"])}. Proposed only; no adoption implied.</p></section>'
 def evidence(r):
@@ -58,18 +76,22 @@ def relationship_map(readers,byid):
  index={r['id']:i for i,r in enumerate(ordered)}
  points=[(50+42*math.cos(-math.pi/2+i*2*math.pi/len(ordered)),50+41*math.sin(-math.pi/2+i*2*math.pi/len(ordered))) for i in range(len(ordered))]
  pairs=sorted({tuple(sorted((r['id'],e['target']))) for r in ordered for e in r['relationships']})
+ types=Counter(e['type'] for r in ordered for e in r['relationships'])
  lines=''.join(f'<line x1="{points[index[a]][0]:.2f}" y1="{points[index[a]][1]:.2f}" x2="{points[index[b]][0]:.2f}" y2="{points[index[b]][1]:.2f}"/>' for a,b in pairs)
  nodes=''.join(f'<a class="gm-map-node" style="--map-x:{points[i][0]:.2f}%;--map-y:{points[i][1]:.2f}%" href="/{esc(r["slug"])}/" aria-label="Reader {i+1}: {esc(r["title"])}" title="{esc(r["title"])}">{i+1:02d}</a>' for i,r in enumerate(ordered))
  entries=''
  for i,r in enumerate(ordered):
   links=''.join(f'<li>{esc(e["type"])}: <a href="/{esc(byid[e["target"]]["slug"])}/">{esc(byid[e["target"]]["title"])}</a>. {esc(e["reason"])}</li>' for e in r['relationships'])
   entries+=f'<details class="gm-map-entry"><summary><span>{i+1:02d}</span><strong>{esc(r["title"])}</strong><small>{esc(r["category"])}</small></summary><ul>{links}</ul><p><a href="/{esc(r["slug"])}/">Open Reader →</a></p></details>'
+ type_list=''.join(f'<li><strong>{esc(kind)}</strong><span>{count} declared links</span></li>' for kind,count in sorted(types.items()))
  return (f'<section class="gm-map-intro"><p class="gm-kicker">Reader connections / {len(ordered)} Readers · {len(pairs)} linked pairs</p>'
          '<h1>See how the readings connect.</h1><p>Each line connects published Readers. Open a title to see why I linked them and decide which thread to follow next. A connection helps you navigate; it does not prove a claim.</p>'
          '<p>Looking for the underlying source and citation records? <a href="/knowledge/">Explore public knowledge data</a>. That page keeps its evidence boundaries visible.</p></section>'
          '<section class="gm-map-shell" aria-label="Reader relationship map"><div class="gm-map-canvas" aria-label="Reader connection diagram">'
          f'<svg viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">{lines}</svg>{nodes}</div>'
-         f'<div class="gm-map-directory"><h2>Follow a connection</h2><p>{len(pairs)} linked pairs · {sum(len(r["relationships"]) for r in ordered)} directed catalog relationships. Expand any Reader for the exact declared links.</p>{entries}</div></section>')
+         f'<div class="gm-map-directory"><h2>Follow a connection</h2><p>{len(pairs)} linked pairs · {sum(len(r["relationships"]) for r in ordered)} directed catalog relationships. Expand any named Reader for the stated connection and reason.</p>{entries}</div></section>'
+         '<section class="gm-map-context"><div><p class="gm-kicker">What a line means</p><h2>Connections need reasons.</h2><p>These categories come from the published Reader records. They describe why one reading points to another; they are not similarity guesses or proof that either claim is true.</p></div>'
+         f'<ul>{type_list}</ul><p>SharePlane essays and other sites need their own reviewed identity and link decision before they can appear as connected here. No cross-site Reader edge is included in this map.</p></section>')
 def card(r,featured=False):
  source=r['source'];platform=source.get('platform','YouTube')
  if source.get('mediaAspect') not in {'16:9','9:16','1:1','unknown'}:raise ValueError('Unsupported catalog source aspect')
@@ -179,6 +201,13 @@ def projections():
   receipt.setdefault('editorial',{}).update({k:r[k] for k in ['overview','whyItMatters','ghostMeshTakeaway']})
   out[f'{r["slug"]}/receipt.json']=dump(receipt)
  public={**data,'readers':[{k:v for k,v in r.items() if k!='legacyReceipt'} for r in readers]};out['catalog.json']=dump(public)
+ search_docs=[]
+ for r in readers:
+  parser=PublicArticleText();parser.feed(out[f'{r["slug"]}/index.html'])
+  article=parser.text()
+  if len(article)<100:raise ValueError('Reader article search text missing: '+r['slug'])
+  search_docs.append({'id':r['id'],'title':r['title'],'url':'/'+r['slug']+'/','category':r['category'],'text':article})
+ out['readers/search-index.json']=dump({'schema':'ghostmesh-public-reader-text-v1','scope':'13 published Reader article pages only','readers':search_docs})
  categories='<nav aria-label="Categories" class="gm-categories">'+''.join(f'<a href="/readers/categories/{i}/">{esc(c)}</a>' for i,c in enumerate(CATEGORIES))+'</nav>'
  signal=(ROOT/'content/home-signal.svg').read_text().strip()
  # Draft editorial line for Tony's review. It is not a settled GhostMesh-wide slogan.

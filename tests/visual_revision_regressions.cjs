@@ -48,15 +48,17 @@ const routes = ['/', '/readers/', '/knowledge/', '/map/', '/ask-for-the-outcome-
           const source = await page.locator('.gm-home-player iframe').first().getAttribute('src');
           assert.match(source, /^https:\/\/www\.youtube-nocookie\.com\/embed\//);
           assert(!source.includes('autoplay='));
-          await page.locator('#home-query').fill('boundary');
+          await page.locator('#home-query').fill('not a company policy');
           await page.locator('.gm-home-search button').click();
-          await page.waitForURL(/\/readers\/\?q=boundary/);
-          assert.equal(await page.locator('#search').inputValue(), 'boundary');
+          await page.waitForURL(/\/readers\/\?q=not.a.company.policy/);
+          assert.equal(await page.locator('#search').inputValue(), 'not a company policy');
+          await page.waitForFunction(() => document.querySelectorAll('#catalog-results .gm-card:not([hidden])').length === 1);
           assert((await page.locator('#catalog-results .gm-card:visible').count()) < 13);
         }
         if (route === '/readers/') {
           assert.equal(await page.locator('#catalog-results .gm-card').count(), 13);
-          await page.locator('#search').fill('boundary');
+          await page.locator('#search').fill('not a company policy');
+          await page.waitForFunction(() => document.querySelectorAll('#catalog-results .gm-card:not([hidden])').length === 1);
           const visible = await page.locator('#catalog-results .gm-card:visible').count();
           assert(visible > 0 && visible < 13);
           assert.match(await page.locator('#result-count').textContent(), new RegExp(`^${visible} of 13 Readers$`));
