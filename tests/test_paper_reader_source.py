@@ -120,7 +120,8 @@ class PaperReaderSourceTests(unittest.TestCase):
         schema = json.loads((ROOT / "content/catalog.schema.json").read_text())
         source_rule = schema["$defs"]["reader"]["properties"]["source"]
         self.assertEqual(source_rule["oneOf"], [
-            {"$ref": "#/$defs/mediaSource"}, {"$ref": "#/$defs/paperSource"}
+            {"$ref": "#/$defs/mediaSource"}, {"$ref": "#/$defs/paperSource"},
+            {"$ref": "#/$defs/analysisSource"}
         ])
         self.assertEqual(schema["$defs"]["paperSource"]["properties"]["kind"], {"const": "paper"})
         self.assertFalse(schema["$defs"]["paperSource"]["additionalProperties"])
