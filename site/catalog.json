@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "host": "https://youtube.shareplane.malott.ai",
-  "revision": "2026-10-19T12:10:16Z",
+  "revision": "2026-10-19T13:00:08Z",
   "categories": [
     "AI & Technology",
     "Society & Politics",
@@ -37,8 +37,8 @@
         "mediaAspect": "16:9"
       },
       "published": "2026-10-19",
-      "updated": "2026-10-19T12:05:27Z",
-      "overview": "Count Grey Matter traces moving boundaries between minds and machines through calculation, games, conversation and internal representations, then argues that current language models understand in a functional sense.",
+      "updated": "2026-10-19T12:54:56Z",
+      "overview": "Count Grey Matter traces moving boundaries between minds and machines through calculation, games, conversation and internal representations, then examines whether a functional account of understanding applies to current models.",
       "whyItMatters": "Selectively useful for researchers and product teams setting evaluation criteria. The historical and representation material challenges lazy impossibility claims, but imitation and narrow probes do not establish human-like understanding.",
       "ghostMeshTakeaway": "Define the task and evidence before arguing over a label. Test grounded use, changed premises, error recovery and authority boundaries; keep semantic and subjective claims open beyond the measured capability.",
       "verdict": "Interesting, unproven",
@@ -131,9 +131,9 @@
           "kind": "source-interpretation",
           "asOf": "2026-10-19",
           "status": "unverified",
-          "assessment": "This is the narrator's closing philosophical verdict, not the stated experimental conclusion of the linked studies.",
-          "limits": "No agreed operational definition, cross-setting test or comparison of human and model mechanisms is supplied.",
-          "sourceLocation": "20:10-21:33",
+          "assessment": "Automatic captions suggest a closing move toward human-comparable functional understanding. The creator's description announces a verdict but does not supply its full wording; direct audio review is pending.",
+          "limits": "No agreed operational definition, cross-setting test or comparison of human and model mechanisms is supplied. Do not present caption wording as a verified quote.",
+          "sourceLocation": "20:10-21:33 (auto-caption location; direct audio pending)",
           "references": [],
           "counterevidence": [
             "bender-koller-2020"
@@ -146,9 +146,9 @@
           "kind": "philosophical-inference",
           "asOf": "2026-10-19",
           "status": "unverified",
-          "assessment": "The narrator distinguishes task performance from the felt aspect of experience.",
+          "assessment": "The cited imitation and representation studies do not measure subjective experience. Automatic captions locate a closing discussion; the narrator's exact audio framing remains pending.",
           "limits": "No test in the video or cited studies measures subjective experience; do not infer either its presence or absence.",
-          "sourceLocation": "20:30-21:33",
+          "sourceLocation": "20:30-21:33 (auto-caption location; direct audio pending)",
           "references": [],
           "counterevidence": [],
           "temporalScope": "Video published 2026-10-18; research statements are tied to the cited methods and versions."
@@ -258,6 +258,11 @@
           "at": "2026-10-19T12:05:27Z",
           "kind": "new-reader-candidate",
           "reason": "Owner-requested deconstruction of public YouTube source 7O84mdxehWY; captions retained privately as a source aid."
+        },
+        {
+          "at": "2026-10-19T12:54:56Z",
+          "kind": "source-qualification",
+          "reason": "Removed a caption-derived direct-looking quotation and qualified narrator-specific conclusions pending direct audio review; primary-paper findings unchanged."
         }
       ],
       "editorialOrder": 15,
@@ -290,16 +295,16 @@
         "mediaAspect": "16:9"
       },
       "published": "2026-10-19",
-      "updated": "2026-10-19T12:10:16Z",
-      "overview": "Cloud Codes explains two October 2026 preprints: NCM generates discrete-code levels in parallel, while HybridAgents alternates latent reasoning and textual tool interaction. It tests their reported Sudoku, text-speed and token-efficiency results against the authors’ own limits.",
+      "updated": "2026-10-19T12:31:00Z",
+      "overview": "Cloud Codes presents two October 2026 preprints: NCM generates discrete-code levels in parallel, while HybridAgents alternates latent reasoning and textual tool interaction. The publisher description highlights reported Sudoku, text-speed and token-efficiency results, and states that the research does not speed local Ollama use today.",
       "whyItMatters": "Worth a selective watch for inference researchers and agent-platform teams choosing what to test next. Application teams deciding on an API or local model today can skip the historical setup and should not infer a production speedup or lower bill from these preprints.",
       "ghostMeshTakeaway": "Keep the current product promise bounded. Reproduce a declared workload against the right baseline with quality, latency, hardware and source-fidelity checks before changing architecture; retain an external audit trail for tool effects.",
       "verdict": "Worth studying",
       "architectureImpact": "investigate",
       "falsification": "Revisit the hold on a product migration if independent results at the target model scale and hardware show quality-preserving speed and cost gains against the actual incumbent, including exact-source fidelity and tool-trace recovery. A failed replication would narrow the research recommendation.",
       "evidenceState": "partially corroborated",
-      "lastEvidenceChecked": "2026-10-19T12:10:16Z",
-      "freshness": "Public source metadata, imperfect automatic captions, two paper versions and current provider documentation checked 2026-10-19. Preprint results and live provider behavior may change; no experiment was replicated.",
+      "lastEvidenceChecked": "2026-10-19T12:31:00Z",
+      "freshness": "Publisher title, description and chapter markers; public source metadata; two paper versions; and current provider documentation checked 2026-10-19. No publisher-provided subtitles or official complete transcript were available. Automatic captions are an imperfect topic aid, not a verbatim source. Preprint results and live provider behavior may change; no experiment was replicated.",
       "variant": "essay",
       "accent": "teal",
       "claims": [
@@ -311,7 +316,7 @@
           "status": "corroborated",
           "assessment": "The paper Table 3 reports the stated rows.",
           "limits": "A task- and model-scale result, not general LLM reasoning performance; FMLM+ reports 81.3% in 16 evaluations.",
-          "sourceLocation": "00:00-01:21; paper Table 3",
+          "sourceLocation": "NCM paper Table 3; publisher 00:00 chapter marker",
           "references": [
             "ncm"
           ],
@@ -328,7 +333,7 @@
           "status": "corroborated",
           "assessment": "The NCM abstract and efficiency discussion report this measured comparison.",
           "limits": "No measured 31x gain against a frontier autoregressive chatbot, production API, or arbitrary end-to-end workload.",
-          "sourceLocation": "04:04-06:10; paper abstract and Section 4.6",
+          "sourceLocation": "NCM paper abstract and Section 4.6; publisher 04:04 and 06:10 chapter markers",
           "references": [
             "ncm"
           ],
@@ -345,7 +350,7 @@
           "status": "corroborated",
           "assessment": "The paper states these limitations and reports approximate 100M main generator scale.",
           "limits": "Future larger-scale performance and entity preservation under product workloads remain unverified.",
-          "sourceLocation": "06:50-07:56; paper Appendix I",
+          "sourceLocation": "NCM paper Appendix I; publisher 06:10 chapter marker",
           "references": [
             "ncm"
           ],
@@ -360,7 +365,7 @@
           "status": "corroborated",
           "assessment": "The paper abstract and evaluation report these ranges using Qwen3-based variants and 11 benchmarks.",
           "limits": "Author-run benchmarks are not an independent replication or a price quote for an existing provider product.",
-          "sourceLocation": "08:05-10:37; paper abstract and Section 5",
+          "sourceLocation": "HybridAgents paper abstract and Section 5; publisher 08:05 chapter marker",
           "references": [
             "hybrid"
           ],
@@ -375,7 +380,7 @@
           "status": "partially corroborated",
           "assessment": "The paper defines nearest-embedding mapping and geometric/lexical interpretability proxies. The stronger faithfulness claim is not demonstrated by those measures.",
           "limits": "GhostMesh inference about the measurement boundary; no independent mechanistic audit was run.",
-          "sourceLocation": "10:37-11:55; paper Appendix F",
+          "sourceLocation": "HybridAgents paper Appendix F; publisher 10:37 chapter marker",
           "references": [
             "hybrid"
           ],
@@ -392,7 +397,7 @@
           "status": "corroborated",
           "assessment": "The current provider guide states this accounting behavior.",
           "limits": "Documentation about OpenAI API behavior does not establish cost savings or deployment of the video papers.",
-          "sourceLocation": "01:21-04:04; provider guide",
+          "sourceLocation": "OpenAI provider guide; publisher 01:21 and 02:14 chapter markers",
           "references": [
             "openai-reasoning"
           ],
@@ -401,14 +406,16 @@
         },
         {
           "id": "the-parallel-result-is-not-the-product--ends-llms",
-          "proposition": "The video title implies that NCM marks the end of LLMs or changes current local model choices.",
-          "kind": "title-framing",
+          "proposition": "The publisher title asks whether NCM ends LLMs, while its description says these small-model preprints do not speed local Ollama use today.",
+          "kind": "publisher-framing",
           "asOf": "2026-10-19",
-          "status": "unverified",
-          "assessment": "The video closes with a narrower view: these are preprints and not a local-model speed upgrade today.",
-          "limits": "No production replacement, independent replication, or local Ollama benchmark is supplied.",
-          "sourceLocation": "00:00; 11:55-12:41",
-          "references": [],
+          "status": "corroborated",
+          "assessment": "The title and Reality Check line in the first-party description support this bounded reading.",
+          "limits": "This verifies published framing, not exact spoken conclusion, market impact or future production performance; no official complete transcript or direct audio review was available.",
+          "sourceLocation": "Publisher title, Reality Check description and 11:55 chapter marker",
+          "references": [
+            "publisher-description"
+          ],
           "counterevidence": [
             "ncm",
             "hybrid"
@@ -461,6 +468,21 @@
           "independence": "Vendor primary description of its own billing and token behavior; not an independent efficiency test.",
           "evidenceFamily": "openai-api-reasoning-docs",
           "checkedAt": "2026-10-19T12:10:16Z"
+        },
+        {
+          "id": "publisher-description",
+          "title": "The End of LLMs? (NCM)",
+          "author": "Cloud Codes",
+          "publisher": "YouTube",
+          "url": "https://www.youtube.com/watch?v=kuO4NOqp7Tc",
+          "publicationDate": "2026-10-18",
+          "eventDate": null,
+          "location": "Publisher title, description, What’s inside, Reality Check and chapter markers",
+          "sourceType": "first-party publisher description",
+          "independence": "The creator describes its own video. This verifies the public framing and chapter list, not experimental truth or exact spoken audio.",
+          "evidenceFamily": "cloud-codes-kuO4NOqp7Tc",
+          "checkedAt": "2026-10-19T12:31:00Z",
+          "datePrecision": "day"
         }
       ],
       "relationships": [],
@@ -469,7 +491,7 @@
         "status": "editorial-review-pending",
         "reviewer": "Pending independent editorial review",
         "reviewedSourceHead": null,
-        "checkedAt": "2026-10-19T12:10:16Z",
+        "checkedAt": "2026-10-19T12:31:00Z",
         "scope": "Source analysis and claim mapping require independent editorial review; direct audio spot checks and publication remain pending.",
         "findings": "No publication decision recorded."
       },
@@ -478,6 +500,11 @@
           "at": "2026-10-19T12:10:16Z",
           "kind": "new-reader-candidate",
           "reason": "Owner-requested deconstruction of public YouTube source kuO4NOqp7Tc; captions retained privately as an imperfect source aid."
+        },
+        {
+          "at": "2026-10-19T12:31:00Z",
+          "kind": "source-qualification-repair",
+          "reason": "Separated primary-paper claims from narrator-specific wording. Reframed title and local-model caveat against publisher description; removed unsupported statements about exact spoken comparator and caveat wording."
         }
       ],
       "editorialOrder": 16,
