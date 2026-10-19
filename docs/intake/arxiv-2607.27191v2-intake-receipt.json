@@ -6,7 +6,7 @@
   "baseCommit": "c7025444cad2f10253556be3cbc77bc82ccc50b9",
   "branch": "codex/reader-paper-2607-27191-research-20261019",
   "draftPath": "docs/intake/arxiv-2607.27191v2-research-draft.md",
-  "draftSha256": "067f48badf1fabb9189d6b786801eacc22bca87bfaea7770f90f92f498b72498",
+  "draftSha256": "05c9567b0b3966960770cc76bcabad632478ce885aec65b5df366238a158d5ca",
   "checkedUtcDate": "2026-10-19",
   "sourceUrls": [
     "https://arxiv.org/abs/2607.27191v2",
@@ -34,5 +34,11 @@
     "git diff --check PASS",
     "python3 scripts/check_site.py PASS",
     "research draft source/hold/style assertions PASS"
-  ]
+  ],
+  "independentReview": {
+    "reviewedCommit": "f4fc4569b8b0088d90ee14324f78e51b0b5601c2",
+    "mode": "read-only",
+    "result": "One P2 time-window omission confirmed; corrected to 120-hour initial deadline plus 24-hour extension, six days total, and three interventions. Other checked claims and research-only hold aligned with sources.",
+    "limits": "Reviewer did not qualify PDF, audit experiments/logs, or independently verify PR361 adapter receipt."
+  }
 }
