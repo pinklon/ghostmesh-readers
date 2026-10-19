@@ -60,6 +60,16 @@ class VisualContractTest(unittest.TestCase):
         self.assertNotIn('autoplay=1', script)
         self.assertNotIn('download', script)
 
+    def test_visible_deconstruction_numbers_are_unique(self):
+        catalog = json.loads((ROOT / 'content/catalog.json').read_text())
+        numbers = []
+        for reader in catalog['readers']:
+            page = (ROOT / 'site' / reader['slug'] / 'index.html').read_text()
+            label = re.search(r'Video Deconstruction\s+(\d+)', page, re.I)
+            if label:
+                numbers.append(int(label.group(1)))
+        self.assertEqual(len(numbers), len(set(numbers)))
+
     def test_light_signal_has_distinct_theme_tokens(self):
         css = (ROOT / 'site/assets/knowledge.css').read_text()
         svg = (ROOT / 'content/home-signal.svg').read_text()

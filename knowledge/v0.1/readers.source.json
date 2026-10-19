@@ -215,7 +215,7 @@
       "url": "https://youtube.shareplane.malott.ai/the-test-must-name-its-target/",
       "source": {
         "path": "site/the-test-must-name-its-target/index.html",
-        "sha256": "d437fbf7e92bca855528c29f948ed63268ad1451c3bb328c4103f844749bc743"
+        "sha256": "bb70974a1a83fcae5104c644f92cdf9f0e5a9f29806ff24d9f71e4c5cf3a01bd"
       }
     },
     {
@@ -227,7 +227,7 @@
       "url": "https://youtube.shareplane.malott.ai/the-parallel-result-is-not-the-product/",
       "source": {
         "path": "site/the-parallel-result-is-not-the-product/index.html",
-        "sha256": "1d3f255bfcc2a4328235852660d5a05e878479e6278cba37af9104f990e0dbd1"
+        "sha256": "fc906e29aaf227de80ff3f91382c65a3a258d5cc5512d03e8a9a78fc07472d09"
       }
     }
   ],
