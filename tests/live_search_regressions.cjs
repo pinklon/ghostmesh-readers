@@ -15,6 +15,10 @@ const base = 'http://127.0.0.1:8765';
       const header = page.locator('.gm-site-header');
       const box = await header.boundingBox();
       assert(box.height <= (width === 390 ? 100 : 70), `header size ${width} ${theme}: ${box.height}`);
+      await page.locator('#home-query').fill('not a company policy');
+      await page.waitForFunction(() => document.querySelector('.gm-home-live')?.textContent.includes('1 Reader article match as you type'));
+      assert.equal(await page.locator('.gm-home-live > a').count(), 1);
+      assert.equal(await page.locator('.gm-home-live > a').getAttribute('href'), '/ask-for-the-outcome-keep-the-boundary/');
       assert.match(await page.locator('.gm-search-control').getAttribute('aria-label'), /^Search Reader articles; without JavaScript, browse the Reader archive$/);
       await page.locator('.gm-search-control').click();
       assert.equal(await page.locator('[data-reader-search]').getAttribute('open'), '');
@@ -45,6 +49,31 @@ const base = 'http://127.0.0.1:8765';
       cases++;
       await context.close();
     }
+    const slow = await browser.newContext();
+    await slow.route('**/readers/search-index.json', async route => {
+      await new Promise(resolve => setTimeout(resolve, 1000));
+      await route.continue();
+    });
+    const slowPage = await slow.newPage();
+    await slowPage.goto(base + '/', { waitUntil: 'domcontentloaded' });
+    await slowPage.locator('.gm-search-control').click();
+    await slowPage.locator('#gm-search-input').fill('not');
+    await slowPage.locator('#gm-search-input').fill('not a company policy');
+    await slowPage.waitForFunction(() => document.querySelector('[data-reader-search-status]')?.textContent.includes('1 of 13'));
+    assert.equal(await slowPage.locator('[data-reader-search-results] > a').count(), 1);
+    assert.equal(await slowPage.locator('[data-reader-search-results] > a').getAttribute('href'),
+      '/ask-for-the-outcome-keep-the-boundary/');
+    await slow.close();
+
+    const missing = await browser.newContext();
+    await missing.route('**/readers/search-index.json', route => route.abort());
+    const missingPage = await missing.newPage();
+    await missingPage.goto(base + '/readers/', { waitUntil: 'domcontentloaded' });
+    await missingPage.waitForFunction(() => document.querySelector('#result-count')?.textContent.includes('Article-text search is unavailable'));
+    await missingPage.locator('#search').fill('not a company policy');
+    assert.match(await missingPage.locator('#result-count').textContent(), /Article-text search is unavailable/);
+    await missing.close();
+
     const context = await browser.newContext({ javaScriptEnabled: false });
     const page = await context.newPage();
     await page.goto(base + '/', { waitUntil: 'domcontentloaded' });
@@ -58,6 +87,7 @@ const base = 'http://127.0.0.1:8765';
     assert.equal(index.readers.length, 13);
     assert(index.readers.every(article => article.text.length > 100));
     assert(index.readers.some(article => article.text.includes('not a company policy')));
-    console.log(JSON.stringify({ cases, noJavaScriptFallback: true, indexedReaderArticles: 13 }));
+    console.log(JSON.stringify({ cases, delayedIndexRace: true, unavailableIndexFallback: true,
+      noJavaScriptFallback: true, indexedReaderArticles: 13 }));
   } finally { await browser.close(); }
 })().catch(error => { console.error(error); process.exitCode = 1; });

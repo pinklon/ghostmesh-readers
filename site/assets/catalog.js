@@ -9,6 +9,7 @@
   const tag = document.getElementById('tag');
   const sort = document.getElementById('sort');
   const status = document.getElementById('result-count');
+  let articleIndexUnavailable = false;
   const normalize = value => value.normalize('NFKD').replace(/[\u0300-\u036f]/g, '').toLocaleLowerCase();
   const searchable = new Map(cards.map(card => [card, { text: card.dataset.search, complete: false }]));
   const snippets = new Map(cards.map(card => {
@@ -37,7 +38,8 @@
         document.text.slice(Math.max(0, at - 75), Math.min(document.text.length, at + 145)).trim() + '…';
       container.appendChild(card);
     });
-    status.textContent = count ? `${count} of ${cards.length} Readers` : 'No Readers match. Clear filters to see all Readers.';
+    status.textContent = (count ? `${count} of ${cards.length} Readers` : 'No Readers match. Clear filters to see all Readers.') +
+      (articleIndexUnavailable ? ' Article-text search is unavailable; title and topic filtering remains.' : '');
   }
   form.addEventListener('submit', event => event.preventDefault());
   form.addEventListener('input', update);
@@ -53,5 +55,5 @@
       }
       update();
     })
-    .catch(() => { status.textContent += ' Article-text search is temporarily unavailable; title and topic filtering remains.'; });
+    .catch(() => { articleIndexUnavailable = true; update(); });
 })();

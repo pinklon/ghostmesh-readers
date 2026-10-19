@@ -76,9 +76,13 @@ class VisualContractTest(unittest.TestCase):
         self.assertEqual(len(nodes), len(catalog['readers']))
         self.assertEqual(len(entries), len(catalog['readers']))
         self.assertEqual(sum(tag == 'line' for tag, _ in parsed.tags), len(pairs))
-        self.assertIn('Its links help you navigate and do not prove a claim.',
+        self.assertIn('Its named editorial links help you navigate and do not prove a claim.',
                       (ROOT / 'site/knowledge/index.html').read_text())
         self.assertIn('it does not prove a claim', page)
+        for reader in catalog['readers']:
+            self.assertIn(f'id="map-reader-{reader["editorialOrder"] + 1:02d}"', page)
+            for edge in reader['relationships']:
+                self.assertIn(html.escape(edge['reason'], quote=True), page)
 
     def test_catalog_aspect_and_share_source_are_explicit(self):
         catalog = json.loads((ROOT / 'content/catalog.json').read_text())

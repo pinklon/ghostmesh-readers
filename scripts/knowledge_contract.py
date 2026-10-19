@@ -255,8 +255,13 @@ def render_html(model: dict) -> bytes:
     claims = [n for n in model["nodes"] if n["type"] == "Claim"]
     citations = model["relationships"]
     by_id = {n["id"]: n for n in model["nodes"]}
+    catalog = json.loads((ROOT / "content/catalog.json").read_text(encoding="utf-8"))
+    catalog_claims = [claim for reader in catalog["readers"] for claim in reader["claims"]]
+    unverified = sum(claim["status"] == "unverified" for claim in catalog_claims)
+    historical = sum(claim["status"] == "unverified" and claim["kind"] == "historical-ledger-entry" for claim in catalog_claims)
+    material = sum(claim["status"] == "unverified" and claim["kind"] == "material-prose-claim" for claim in catalog_claims)
     cards = []
-    for reader in readers:
+    for number, reader in enumerate(readers, 1):
         claim_items = []
         for claim in claims:
             if claim["provenance"]["sourceNodeId"] != reader["id"]:
@@ -278,19 +283,34 @@ def render_html(model: dict) -> bytes:
                   'The Reader page and its own evidence receipt remain the source.</p>')
         cards.append(
             f'<article class="gm-card" data-knowledge-id="{html.escape(reader["id"], quote=True)}">'
+            f'<p class="gm-knowledge-number">READER SOURCE / {number:02d}</p>'
             f'<h2><a href="{html.escape(reader["url"], quote=True)}">{html.escape(reader["label"])}</a></h2>'
-            f'<p>Public Reader source. This source-only record does not certify factual truth or live deployment.</p>'
+            f'<p>Open the published deconstruction for its full claim register, evidence limits and handling receipt. This record identifies the page; it does not certify its claims.</p>'
             f'{detail}</article>'
         )
     body = (
         '<header class="gm-intro"><p class="gm-kicker">Public knowledge / source and citation records</p>'
         '<h1>Follow the source behind a claim.</h1><p>Browse the published Readers and the claim citations we can trace to an exact passage. '
         'A citation shows where a statement came from. It does not prove that the statement is true. Each Reader holds its fuller evidence and limits.</p></header>'
+        '<section class="gm-knowledge-guide" id="how-to-read"><div><p class="gm-kicker">How to read this page</p>'
+        '<h2>Trace a statement. Keep the judgment open.</h2><p>This public record answers a narrow question: which published Reader page and, where admitted, which exact citation can you inspect?</p></div>'
+        '<ol><li><strong>Source attribution</strong><span>A passage or source link shows what was said, not whether it is true.</span></li>'
+        '<li><strong>Evidence assessment</strong><span>The Reader checks qualified corroboration and counterevidence with dates and limits.</span></li>'
+        '<li><strong>Editorial judgment</strong><span>GhostMesh states an interpretation and what might change it. You decide what to make of it.</span></li></ol></section>'
+        f'<aside class="gm-knowledge-counts"><p><strong>{len(readers)}</strong><span>published Reader source records</span></p>'
+        f'<p><strong>{len(claims)}</strong><span>claim citations admitted in this v0.1 projection</span></p>'
+        f'<p><strong>{len(catalog_claims)}</strong><span>separate Reader claim-register entries</span></p>'
+        f'<p><strong>{unverified}</strong><span>still labeled unverified in that register</span></p></aside>'
+        f'<p class="gm-knowledge-limit">Of the {unverified} unverified register entries, {historical} are historical-ledger entries and {material} are material-prose claims. '
+        'Unverified means the current public record does not establish the full proposition; it does not mean the statement is false. '
+        'A source-fidelity check is different from independent corroboration.</p>'
+        '<p class="gm-knowledge-example"><strong>A concrete example:</strong> In <a href="/the-score-is-not-the-system/#the-score-is-not-the-system--incident-counts">The Score Is Not the System</a>, the source is a bounded METR investigation; the Reader marks its reported counts corroborated by a dated reference, while separately warning that the two counts describe different groups and that motive remains interpretation. The source link alone could not establish those conclusions.</p>'
         '<p class="gm-knowledge-links"><a href="/knowledge/v0.1/readers.json">JSON</a> · '
         '<a href="/knowledge/v0.1/readers.jsonld">JSON-LD</a> · '
         '<a href="/knowledge/v0.1/contract.schema.json">Schema</a> · '
         '<a href="/knowledge/v0.1/publication-manifest.json">Publication manifest</a></p>'
-        '<p class="gm-knowledge-map-link">Want to explore related readings? <a href="/map/">Open the Reader connection map</a>. Its links help you navigate and do not prove a claim.</p>'
+        '<p class="gm-knowledge-map-link">Want to explore related readings? <a href="/map/">Open the Reader connection map</a>. Its named editorial links help you navigate and do not prove a claim. '
+        'Other sites, including SharePlane, need an explicit reviewed connection before appearing in this Reader graph.</p>'
         '<section id="knowledge-records" class="gm-cards" aria-label="Public Reader records">'
         + "".join(cards) + '</section>'
     )
