@@ -1,21 +1,16 @@
 (() => {
   const container = document.getElementById('catalog-results');
   const cards = [...container.children];
-  for (const poster of container.querySelectorAll('.gm-library-poster img')) {
-    const failed = () => poster.replaceWith(Object.assign(document.createElement('span'), {
-      textContent: 'Source thumbnail unavailable. Open the Reader or original source.'
-    }));
-    poster.addEventListener('error', failed, { once: true });
-    if (poster.complete && poster.naturalWidth === 0) failed();
-  }
   const form = document.querySelector('.gm-filters');
   const search = document.getElementById('search');
+  const query = new URLSearchParams(location.search).get('q');
+  if (query) search.value = query.slice(0, 120);
   const category = document.getElementById('category');
   const tag = document.getElementById('tag');
   const sort = document.getElementById('sort');
   const status = document.getElementById('result-count');
   const normalize = value => value.normalize('NFKD').replace(/[\u0300-\u036f]/g, '').toLocaleLowerCase();
-  const searchable = new Map(cards.map(card => [card, normalize(card.textContent + ' ' + card.dataset.tags)]));
+  const searchable = new Map(cards.map(card => [card, normalize(card.dataset.search)]));
   function update() {
     const terms = normalize(search.value.trim()).split(/\s+/).filter(Boolean);
     let count = 0;

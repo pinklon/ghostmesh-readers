@@ -283,14 +283,14 @@ def render_html(model: dict) -> bytes:
             f'{detail}</article>'
         )
     body = (
-        '<header class="gm-intro"><p class="gm-kicker">Source-only reference / v0.1</p>'
-        '<h1>Public knowledge data</h1><p>These records identify the public Reader pages. '
-        'A claim and citation appear only when verified against exact published page text. '
-        'This projection does not admit SharePlane Work relationships or certify an external report.</p></header>'
-        '<p><a href="/knowledge/v0.1/readers.json">JSON</a> · '
+        '<header class="gm-intro"><p class="gm-kicker">Public knowledge / source and citation records</p>'
+        '<h1>Follow the source behind a claim.</h1><p>Browse the published Readers and the claim citations we can trace to an exact passage. '
+        'A citation shows where a statement came from. It does not prove that the statement is true. Each Reader holds its fuller evidence and limits.</p></header>'
+        '<p class="gm-knowledge-links"><a href="/knowledge/v0.1/readers.json">JSON</a> · '
         '<a href="/knowledge/v0.1/readers.jsonld">JSON-LD</a> · '
         '<a href="/knowledge/v0.1/contract.schema.json">Schema</a> · '
         '<a href="/knowledge/v0.1/publication-manifest.json">Publication manifest</a></p>'
+        '<p class="gm-knowledge-map-link">Want to explore related readings? <a href="/map/">Open the Reader connection map</a>. Its links help you navigate and do not prove a claim.</p>'
         '<section id="knowledge-records" class="gm-cards" aria-label="Public Reader records">'
         + "".join(cards) + '</section>'
     )

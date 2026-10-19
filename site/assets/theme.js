@@ -10,14 +10,20 @@
   try { const saved = localStorage.getItem('gm-appearance'); if (['light','dark','system'].includes(saved)) choice = saved; } catch (_) {}
   function apply() {
     root.dataset.theme = choice === 'system' ? (system.matches ? 'dark' : 'light') : choice;
-    document.querySelectorAll('[data-theme-choice]').forEach(control => { control.value = choice; });
+    const isLight = root.dataset.theme === 'light';
+    document.querySelectorAll('[data-theme-toggle]').forEach(control => {
+      control.hidden = false;
+      control.setAttribute('aria-label', `Switch to ${isLight ? 'dark' : 'light'} appearance`);
+      control.setAttribute('aria-pressed', String(isLight));
+      control.title = `Switch to ${isLight ? 'dark' : 'light'} appearance`;
+    });
   }
   apply();
   system.addEventListener('change', apply);
   document.addEventListener('DOMContentLoaded', () => {
     apply();
-    document.querySelectorAll('[data-theme-choice]').forEach(control => control.addEventListener('change', () => {
-      choice = control.value;
+    document.querySelectorAll('[data-theme-toggle]').forEach(control => control.addEventListener('click', () => {
+      choice = root.dataset.theme === 'dark' ? 'light' : 'dark';
       try { localStorage.setItem('gm-appearance', choice); } catch (_) {}
       apply();
     }));

@@ -96,7 +96,7 @@ def check(root=ROOT):
    try:validate_link_only_source(raw,r['source']['url'])
    except ValueError as exc:errors.append(f'{slug}: {exc}')
   for marker in ['at-a-glance','external-evidence','related-thinking']:require(marker in a.ids,f'{slug}: missing {marker}')
-  require('data-theme-choice' in raw and '/assets/theme.js' in raw,f'{slug}: theme missing')
+  require('data-theme-toggle' in raw and '/assets/theme.js' in raw,f'{slug}: theme missing')
   require(raw.find('id="at-a-glance"')<min([pos for token in ['data-gm-aspect=','id="source"','class="theater"'] if (pos:=raw.find(token))>=0] or [len(raw)]),f'{slug}: brief after source')
   receipt=json.loads((site/slug/'receipt.json').read_text());require(receipt['normalization']['id']==r['id'],f'{slug}: receipt identity')
   refs={x['id']:x for x in r['references']};require(len(refs)==len(r['references']),f'{slug}: duplicate reference IDs')
@@ -150,7 +150,7 @@ def check(root=ROOT):
  home=(site/'index.html').read_text();require(len(re.findall(r'class="[^"]*\bgm-card\b[^"]*"',home))==7,'Homepage must have one feature and six cards')
  library=(site/'readers/index.html').read_text();require(len(re.findall(r'class="[^\"]*\bgm-card\b[^\"]*"',library))==len(readers),'Non-JS archive incomplete')
  sitemap=ET.parse(site/'sitemap.xml');urls=[x.text for x in sitemap.getroot().iter() if x.tag.endswith('loc')]
- expected={data['host']+'/',data['host']+'/readers/',data['host']+'/knowledge/'}|{data['host']+'/'+s+'/' for s in slugs}|{data['host']+f'/readers/categories/{i}/' for i in range(6)}
+ expected={data['host']+'/',data['host']+'/readers/',data['host']+'/map/',data['host']+'/knowledge/'}|{data['host']+'/'+s+'/' for s in slugs}|{data['host']+f'/readers/categories/{i}/' for i in range(6)}
  require(set(urls)==expected and len(urls)==len(expected),'Sitemap drift')
  if root==ROOT:
   for rel,content in projections().items():require((site/rel).read_text()==content,'Generated drift: '+rel)

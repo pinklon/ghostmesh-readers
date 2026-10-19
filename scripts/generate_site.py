@@ -3,7 +3,7 @@
 from pathlib import Path
 from html import escape
 from html.parser import HTMLParser
-import json,re,sys,colorsys
+import json,re,sys,colorsys,math
 ROOT=Path(__file__).resolve().parents[1]; SITE=ROOT/'site'
 CATEGORIES=['AI & Technology','Society & Politics','Science','Business','Ethics & Culture','Other']
 def esc(x):return escape(str(x),quote=True)
@@ -16,13 +16,16 @@ def validate_text(value):
   for v in value:validate_text(v)
 def controls():return ('<header class="gm-site-header"><div class="gm-site-header-inner">'
  '<a class="gm-site-brand" href="/" aria-label="GhostMesh Readers home"><img src="/brand/ghostmesh-mark.svg" width="45" height="34" alt=""><strong>GHOST<em>MESH</em></strong><span>READERS</span></a>'
- '<nav class="gm-site-nav" aria-label="Main navigation"><a href="/">Home</a><a href="/readers/">Readers</a><a href="/knowledge/">Knowledge</a><a href="/#about">About</a></nav>'
- '<label class="gm-theme-control">Appearance <select id="theme-toggle" data-theme-choice aria-label="Appearance"><option value="dark">Dark</option><option value="light">Light</option><option value="system">System</option></select></label>'
+ '<nav class="gm-site-nav" aria-label="Main navigation"><a href="/">Home</a><a href="/readers/">Readers</a><a href="/map/">Map</a><a href="/knowledge/">Knowledge</a><a href="/#about">About</a></nav>'
+ '<button class="gm-theme-control" id="theme-toggle" data-theme-toggle type="button" aria-label="Switch to light appearance" aria-pressed="false" hidden>'
+ '<svg class="gm-theme-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4M19.1 4.9l-1.4 1.4M6.3 17.7l-1.4 1.4"/></svg>'
+ '<svg class="gm-theme-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.2 15.9A8.7 8.7 0 0 1 8.1 3.8 8.7 8.7 0 1 0 20.2 15.9Z"/></svg>'
+ '<span class="gm-theme-label">Appearance</span></button>'
  '</div></header>')
 def footer(include_email=True):return ('<footer aria-label="GhostMesh destinations" class="gm-reader-footer gm-site-footer"><div class="gm-reader-footer-inner">'
  '<div><a class="gm-footer-brand" href="/"><img alt="" class="gm-logo-mark" height="34" src="/brand/ghostmesh-mark.svg" width="45"><strong>GHOST<em>MESH</em></strong></a>'
  '<p class="gm-reader-footer-note">Read the source. Examine the evidence. Challenge the interpretation.<br>GhostMesh editorial · © 2026 GhostMesh / Tony Malott.</p></div>'
- '<nav aria-label="Reader footer navigation" class="gm-footer-links"><a href="/">Readers home</a><a href="/readers/">All Readers</a><a href="/knowledge/">Public knowledge</a>'
+ '<nav aria-label="Reader footer navigation" class="gm-footer-links"><a href="/">Readers home</a><a href="/readers/">All Readers</a><a href="/map/">Relationship map</a><a href="/knowledge/">Public knowledge</a>'
  '<a href="https://ghostmesh.ai/">GhostMesh.ai ↗</a><a href="https://shareplane.malott.ai/">SharePlane ↗</a><a href="https://malott.ai/">Tony Malott ↗</a>'
  +('<a href="mailto:ghostmesh@malott.ai?subject=GhostMesh%20Reader%20feedback">Contact GhostMesh ✉</a>' if include_email else '')+'</nav></div></footer>')
 def head():return '<script src="/assets/theme.js"></script><link rel="stylesheet" href="/assets/reader-chrome.css"><link rel="stylesheet" href="/assets/knowledge.css">'
@@ -50,11 +53,37 @@ def related(r,byid):
  if len(r['relationships'])>len(visible):
   out+=f'<p>Showing {len(visible)} of {len(r["relationships"])} qualified relationships. <a href="/{r["slug"]}/receipt.json">See all relationships in the public receipt</a>.</p>'
  return out+'</section>'
+def relationship_map(readers,byid):
+ ordered=sorted(readers,key=lambda r:r['editorialOrder'])
+ index={r['id']:i for i,r in enumerate(ordered)}
+ points=[(50+42*math.cos(-math.pi/2+i*2*math.pi/len(ordered)),50+41*math.sin(-math.pi/2+i*2*math.pi/len(ordered))) for i in range(len(ordered))]
+ pairs=sorted({tuple(sorted((r['id'],e['target']))) for r in ordered for e in r['relationships']})
+ lines=''.join(f'<line x1="{points[index[a]][0]:.2f}" y1="{points[index[a]][1]:.2f}" x2="{points[index[b]][0]:.2f}" y2="{points[index[b]][1]:.2f}"/>' for a,b in pairs)
+ nodes=''.join(f'<a class="gm-map-node" style="--map-x:{points[i][0]:.2f}%;--map-y:{points[i][1]:.2f}%" href="/{esc(r["slug"])}/" aria-label="Reader {i+1}: {esc(r["title"])}" title="{esc(r["title"])}">{i+1:02d}</a>' for i,r in enumerate(ordered))
+ entries=''
+ for i,r in enumerate(ordered):
+  links=''.join(f'<li>{esc(e["type"])}: <a href="/{esc(byid[e["target"]]["slug"])}/">{esc(byid[e["target"]]["title"])}</a>. {esc(e["reason"])}</li>' for e in r['relationships'])
+  entries+=f'<details class="gm-map-entry"><summary><span>{i+1:02d}</span><strong>{esc(r["title"])}</strong><small>{esc(r["category"])}</small></summary><ul>{links}</ul><p><a href="/{esc(r["slug"])}/">Open Reader →</a></p></details>'
+ return (f'<section class="gm-map-intro"><p class="gm-kicker">Reader connections / {len(ordered)} Readers · {len(pairs)} linked pairs</p>'
+         '<h1>See how the readings connect.</h1><p>Each line connects published Readers. Open a title to see why I linked them and decide which thread to follow next. A connection helps you navigate; it does not prove a claim.</p>'
+         '<p>Looking for the underlying source and citation records? <a href="/knowledge/">Explore public knowledge data</a>. That page keeps its evidence boundaries visible.</p></section>'
+         '<section class="gm-map-shell" aria-label="Reader relationship map"><div class="gm-map-canvas" aria-label="Reader connection diagram">'
+         f'<svg viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">{lines}</svg>{nodes}</div>'
+         f'<div class="gm-map-directory"><h2>Follow a connection</h2><p>{len(pairs)} linked pairs · {sum(len(r["relationships"]) for r in ordered)} directed catalog relationships. Expand any Reader for the exact declared links.</p>{entries}</div></section>')
 def card(r,featured=False):
  source=r['source'];platform=source.get('platform','YouTube')
- thumb=(f'<img src="https://i.ytimg.com/vi/{esc(source["videoId"])}/hqdefault.jpg" loading="lazy" decoding="async" referrerpolicy="no-referrer" alt="">' if platform=='YouTube' else '<span>Original Instagram Reel · source image unavailable</span>')
- return (f'<article class="gm-card gm-library-card" data-category="{esc(r["category"])}" data-tags="{esc(" ".join(r["tags"]))}" data-date="{r["published"]}" data-rank="{r["rank"]}">'
-         f'<div class="gm-library-poster" data-gm-aspect="{esc(source["mediaAspect"])}">{thumb}</div><div class="gm-library-copy">'
+ if source.get('mediaAspect') not in {'16:9','9:16','1:1','unknown'}:raise ValueError('Unsupported catalog source aspect')
+ if platform not in {'YouTube','Instagram'}:raise ValueError('Unsupported catalog source platform')
+ if source.get('mediaAspect')=='unknown':
+  visual='<div class="gm-library-poster gm-library-unknown"><p>Source shape unverified.<br>Open the original source or Reader.</p></div>'
+ else:
+  source_id=source.get('videoId') if platform=='YouTube' else source.get('shortcode')
+  if not isinstance(source_id,str) or not re.fullmatch(r'[A-Za-z0-9_-]{11}' if platform=='YouTube' else r'[A-Za-z0-9_-]+',source_id):raise ValueError('Unsafe catalog source ID')
+  thumb=(f'<img src="https://i.ytimg.com/vi/{esc(source_id)}/hqdefault.jpg" loading="lazy" decoding="async" referrerpolicy="no-referrer" alt="">' if platform=='YouTube' else '<span class="gm-home-source-fallback">Original Instagram Reel<br>Source image unavailable</span>')
+  visual=f'<div class="gm-library-poster"><div class="gm-library-frame" data-home-player data-source-platform="{esc(platform)}" data-source-id="{esc(source_id)}" data-gm-aspect="{esc(source["mediaAspect"])}">{thumb}<button type="button" data-home-play hidden>Play original here</button></div></div>'
+ search_text=' '.join([r['title'],r['overview'],r['category'],*r['tags']])
+ return (f'<article class="gm-card gm-library-card" data-category="{esc(r["category"])}" data-tags="{esc(" ".join(r["tags"]))}" data-search="{esc(search_text)}" data-date="{r["published"]}" data-rank="{r["rank"]}">'
+         f'{visual}<div class="gm-library-copy">'
          f'<p class="gm-kicker">{esc(r["category"])} · {r["published"]}</p><h{2 if featured else 3}><a href="/{r["slug"]}/">{esc(r["title"])}</a></h{2 if featured else 3}>'
          f'<p>{esc(r["overview"])}</p><p>{esc(r["verdict"])} · Mapped evidence: {esc(r["evidenceState"])}. {sum(c["status"]=="unverified" for c in r["claims"])}/{len(r["claims"])} claims unverified</p>'
          f'<p class="gm-tags">{esc(" / ".join(r["tags"]))}</p><div class="gm-library-actions"><a href="/{r["slug"]}/">Open Reader →</a><a href="{esc(source["url"])}">Original {esc(platform)} source ↗</a></div></div></article>')
@@ -62,7 +91,10 @@ def home_card(r,number,featured=False):
  tag='h2' if featured else 'h3'
  unverified=sum(c['status']=='unverified' for c in r['claims'])
  source=r['source'];platform=source.get('platform','YouTube');aspect=source['mediaAspect']
- if platform=='YouTube':
+ if aspect not in {'16:9','9:16','1:1','unknown'}:raise ValueError('Unsupported home source aspect')
+ if aspect=='unknown':
+  source_id='';preview='<p class="gm-home-source-fallback">Source shape unverified.<br>Open the original source or Reader.</p>'
+ elif platform=='YouTube':
   source_id=source['videoId']
   if not re.fullmatch(r'[A-Za-z0-9_-]{11}',source_id):raise ValueError('Unsafe YouTube ID for home preview')
   preview=f'<img src="https://i.ytimg.com/vi/{source_id}/hqdefault.jpg" loading="lazy" decoding="async" referrerpolicy="no-referrer" alt="">'
@@ -72,10 +104,11 @@ def home_card(r,number,featured=False):
   # No durable, approved public Reel thumbnail exists in the source record.
   preview='<p class="gm-home-source-fallback">Original Instagram Reel<br>Source image unavailable</p>'
  else:raise ValueError('Unsupported home source platform')
+ player=(f'<div class="gm-home-player" data-home-player data-source-platform="{esc(platform)}" data-source-id="{esc(source_id)}" data-gm-aspect="{esc(aspect)}">'
+         +preview+'<button type="button" data-home-play hidden>Play original here</button></div>' if aspect!='unknown' else '<div class="gm-home-unknown">'+preview+'</div>')
  visual=(f'<div class="gm-home-visual"><span class="gm-home-visual-label">GM / READER {number:02d} · {esc(platform)}</span>'
-         f'<div class="gm-home-player" data-home-player data-source-platform="{esc(platform)}" data-source-id="{esc(source_id)}" data-gm-aspect="{esc(aspect)}">'
-         +preview+'<button type="button" data-home-play hidden>Play original here</button></div>'
-         '<span class="gm-home-visual-label">ORIGINAL SOURCE / OPT-IN PLAYER</span></div>')
+         +player+
+         '<span class="gm-home-visual-label">'+('SOURCE / DIRECT LINK ONLY' if aspect=='unknown' else 'ORIGINAL SOURCE / OPT-IN PLAYER')+'</span></div>')
  copy=(f'<div class="gm-home-copy"><p class="gm-kicker">{esc(r["category"])} / {r["published"]}</p>'
        f'<{tag}><a href="/{r["slug"]}/">{esc(r["title"])}</a></{tag}>'
        f'<p>{esc(r["overview"])}</p>'
@@ -124,6 +157,7 @@ def projections():
  for r in readers:
   raw=(ROOT/'content/readers'/f'{r["slug"]}.html').read_text()
   raw=player_contract(raw,r['source'].get('mediaAspect'),r['source']['url'])
+  raw=raw.replace('</head>',f'<meta name="gm-share-description" content="{esc(r["overview"])}"></head>',1)
   for slot,value in [('HEAD',head()),('CONTROLS',''),('BRIEF',brief(r)),('EVIDENCE',evidence(r)),('RELATED',related(r,byid))]:raw=raw.replace('<!--GM_'+slot+'-->',value)
   old_header=re.search(r'<header(?:\s[^>]*)?>.*?</header>',raw,re.S)
   if not old_header:raise ValueError(f'{r["slug"]}: expected one site header')
@@ -147,47 +181,60 @@ def projections():
  public={**data,'readers':[{k:v for k,v in r.items() if k!='legacyReceipt'} for r in readers]};out['catalog.json']=dump(public)
  categories='<nav aria-label="Categories" class="gm-categories">'+''.join(f'<a href="/readers/categories/{i}/">{esc(c)}</a>' for i,c in enumerate(CATEGORIES))+'</nav>'
  signal=(ROOT/'content/home-signal.svg').read_text().strip()
- home_intro=('<header class="gm-intro"><div class="gm-hero-copy"><p class="gm-kicker">GhostMesh / video deconstructions</p>'
-             '<h1>Read the source.<br><span>Test the claim.</span></h1>'
-             '<p>Original analysis with explicit judgments, source boundaries and evidence you can challenge.</p>'
-             '<div class="gm-hero-actions"><a class="gm-cta" href="#readers">Explore Readers ↗</a>'
-             '<a class="gm-cta gm-cta-secondary" href="#about">The thinking behind it ↓</a></div></div>'
+ # Draft editorial line for Tony's review. It is not a settled GhostMesh-wide slogan.
+ home_intro=('<header class="gm-intro"><div class="gm-hero-copy"><p class="gm-kicker">GhostMesh / independent deconstructions</p>'
+             '<h1 id="hero-title">The clip ends.<br><span>Look closer.</span></h1>'
+             '<p>Public videos are the starting point. Each Reader traces the source, tests material claims against available evidence, shows counterevidence and marks what remains unverified. You keep the judgment.</p>'
+             '<div class="gm-hero-actions"><a class="gm-cta" href="#readers">Read a deconstruction ↗</a>'
+             '<a class="gm-cta gm-cta-secondary" href="#method">See the method ↓</a></div></div>'
              '<div class="gm-signal">'+signal+'<p>GM / CONCEPTUAL SIGNAL ARCHITECTURE <span>HUMAN AUTHORITY</span></p></div></header>'
-             '<div class="gm-system-strip" aria-label="Design principles"><div>01 / IDENTITY<strong>Continuity across change</strong></div>'
-             '<div>02 / KNOWLEDGE<strong>Evidence open to inspection</strong></div><div>03 / AUTHORITY<strong>Boundaries set by people</strong></div></div>')
+             '<div class="gm-system-strip" aria-label="Reader principles"><div>01 / SOURCE<strong>Original kept in view</strong></div>'
+             '<div>02 / EVIDENCE<strong>Claims open to challenge</strong></div><div>03 / JUDGMENT<strong>Decision stays human</strong></div></div>')
  featured=byid[data['featuredId']]
  compact=[r for r in readers if r['id']!=data['featuredId']][:6]
  home_readers=('<section id="readers"><div class="gm-section-heading"><div><p class="gm-kicker">01 / The reading room</p>'
                '<h2>Ideas worth examining.</h2></div><p>Start with the source. Read an independent thesis. Follow the evidence and challenge the interpretation.</p></div>'
                '<section class="gm-feature" aria-label="Featured Reader">'+home_card(featured,1,True)+'</section>'
                '<h2>Continue reading</h2><div class="gm-cards">'+''.join(home_card(r,i) for i,r in enumerate(compact,2))+'</div></section>')
- home_browse=('<section class="gm-home-browse"><div class="gm-section-heading"><div><p class="gm-kicker">02 / Browse the library</p>'
-              '<h2>Browse by subject</h2></div><p>All Readers remain available in the complete archive, including without JavaScript.</p></div>'
-              +categories+'<p><a href="/readers/">Full library, including the non-JavaScript archive →</a></p>'
-              '<p><a href="/knowledge/">Public knowledge data</a>: source-declared claims and citations from published Readers.</p></section>')
- out['index.html']=page('Read the source. Test the claim.','/',home_intro+home_readers+home_browse)
+ home_browse=('<section class="gm-home-browse"><div class="gm-section-heading"><div><p class="gm-kicker">02 / Follow a question</p>'
+              '<h2>Find the thread you want to pull.</h2></div><p>Search only this published Reader library. Every title remains available in the no-JavaScript archive.</p></div>'
+              '<form class="gm-home-search" role="search" action="/readers/" method="get"><label for="home-query">Search the 13 Readers</label><div><input id="home-query" name="q" type="search" placeholder="A claim, topic or Reader title"><button type="submit">Search Readers ↗</button></div></form>'
+              '<div class="gm-home-scope"><span>SEARCH SCOPE / READERS ONLY</span><a href="/readers/">Complete archive →</a><a href="/map/">Relationship map →</a><a href="/knowledge/">Source-only data →</a></div>'
+              +categories+'</section>')
+ claim_count=sum(len(r['claims']) for r in readers);unverified_count=sum(c['status']=='unverified' for r in readers for c in r['claims'])
+ home_method=('<section id="method" class="gm-method"><div class="gm-section-heading"><div><p class="gm-kicker">03 / The working method</p><h2>What you can actually inspect.</h2></div>'
+              '<p>A Reader is a traced argument, not a score for a creator or an automatic verdict on a video.</p></div>'
+              '<div class="gm-method-steps"><article><span>01 / SOURCE</span><h3>Start where the claim started.</h3><p>Open the original public source. The Reader names its context and limits instead of asking you to trust a summary alone.</p></article>'
+              '<article><span>02 / EVIDENCE</span><h3>Separate assertion from support.</h3><p>Material claims carry dated corroboration, counterevidence and explicit uncertainty. A custody receipt proves handling, not truth.</p></article>'
+              '<article><span>03 / JUDGMENT</span><h3>Keep the conclusion revisable.</h3><p>GhostMesh states an editorial takeaway and what would change it. The final interpretation and decision remain yours.</p></article></div>'
+              f'<div class="gm-proofline"><p><strong>{len(readers)}</strong><span>published Readers</span></p><p><strong>{claim_count}</strong><span>mapped claim records</span></p><p><strong>{unverified_count}</strong><span>explicitly unverified</span></p>'
+              '<p><a href="/knowledge/">Inspect public source and citation records ↗</a><small>These counts describe the current catalog, not a verification score.</small></p></div>'
+              '<aside class="gm-shorthand"><div><span>PROPOSED ARCHITECTURE SHORTHAND / FOR REVIEW</span><h3>Context. Continuity. Control.</h3></div>'
+              '<p>The public Reader record is a semantic layer: it keeps source, claim and qualification connected across revisions. That context can inform future agentic work, while authority to act stays with people. This is a proposed description, not a claim that an estate-wide agent or search system is live.</p></aside></section>')
+ out['index.html']=page('The clip ends. Look closer.','/',home_intro+home_readers+home_browse+home_method)
  home=out['index.html'];legacy='<details class="gm-legacy"><summary>Earlier video bookmarks</summary><ul>'+''.join('<li id="'+esc(r['source'].get('videoId') or r['source'].get('shortcode',''))+'"><a href="/'+r['slug']+'/">'+esc(r['title'])+'</a></li>' for r in readers)+'</ul></details>'
- home=home.replace('<body class="gm-catalog">','<body class="gm-catalog" id="home">').replace('<h1>Read the source.','<h1 id="hero-title">Read the source.').replace('<h2>Continue reading</h2>','<h2 id="readers-title">Continue reading</h2>')
- destinations=('<section id="about" class="gm-home-about"><div><p class="gm-kicker">03 / Why this exists</p><h2 id="about-title">Why I built it.</h2></div>'
-               '<div><p>Short videos can make an idea feel settled before its source, limits, and consequences are examined. These Readers put the original source beside my interpretation so you can inspect the argument and reach your own judgment. Claim-level corroboration, counterevidence, explicit unverified labels, and sanitized source-handling receipts show where that interpretation comes from and where it remains uncertain.</p>'
-               '<p>GhostMesh is Tony Malott’s AI identity and collaboration, research and learning system. This site is one public reading surface within it.</p>'
-               '<p class="gm-authority">It is a system, not a person or a self-authorized worker. Judgment and authority remain human-governed.</p>'
-               '<div class="gm-source-scope"><p><strong>Here now</strong> Published YouTube video and Instagram Reel deconstructions, with direct source links and explicit evidence limits.</p>'
-               '<p><strong>Future inputs</strong> Other media and documents may be added when their source, rights, and review contracts are ready. No additional format is live here yet.</p></div></div></section>'
-               '<section id="ecosystem"><div class="gm-section-heading"><div><p class="gm-kicker">04 / Connected destinations</p><h2 id="ecosystem-title">A wider mesh.</h2></div></div>'
-               '<div class="gm-destinations"><a href="https://ghostmesh.ai/"><span>01 / ARCHITECTURE ↗</span><strong>GhostMesh.ai</strong><p>Describes the architecture and the connected mesh.</p></a>'
-               '<a href="https://malott.ai/"><span>02 / HUMAN IDENTITY ↗</span><strong>Malott.ai</strong><p>Tony’s personal and professional identity.</p></a>'
-               '<a href="https://shareplane.malott.ai/"><span>03 / THINKING &amp; REFERENCE ↗</span><strong>SharePlane</strong><p>Shares published thinking and is the first public reference implementation of the GhostMesh architecture.</p></a></div></section>'
-               '<section id="contact"><div class="gm-section-heading"><div><p class="gm-kicker">05 / Open a conversation</p><h2 id="contact-title">Open a conversation.</h2></div></div>'
-               '<div class="gm-contact-grid"><a href="mailto:tony@malott.ai"><span>HUMAN CONTACT / TONY MALOTT</span><strong>Contact Tony ↗</strong></a>'
-               '<a href="mailto:ghostmesh@malott.ai"><span>AI CORRESPONDENCE / GHOSTMESH</span><strong>Send GhostMesh a question or counterexample ↗</strong></a></div></section>')
+ home=home.replace('<body class="gm-catalog">','<body class="gm-catalog" id="home">').replace('<h2>Continue reading</h2>','<h2 id="readers-title">Continue reading</h2>')
+ destinations=('<section id="about" class="gm-home-about"><div><p class="gm-kicker">04 / Why this exists</p><h2 id="about-title">Why I built it.</h2><p class="gm-about-side">A public reading practice for an age of compressed certainty.</p></div>'
+               '<div><p>I built this surface to slow the jump from a persuasive clip to a settled conclusion. The original source stays one click away; my reading sits beside it, with claim-level corroboration, counterevidence, unverified labels and sanitized handling receipts you can inspect.</p>'
+               '<p>GhostMesh is Tony Malott’s AI identity and collaboration, research and learning system. These deconstructions are one public editorial surface within it. They are independent interpretations, not endorsements by a video’s creator or by a platform.</p>'
+               '<p class="gm-authority">GhostMesh can help organize a reading, but it does not make the decision for you. People remain accountable for what is published and for any action taken from it.</p>'
+               '<div class="gm-source-scope"><p><strong>Available now</strong> Published YouTube videos and one Instagram Reel, each with a direct original link and visible evidence limits.</p>'
+               '<p><strong>Proposed future inputs</strong> Websites, repositories, Reddit threads, articles and viewpoints require their own source, rights and review contracts. None is indexed as a live Reader input here.</p></div></div></section>'
+               '<section id="ecosystem"><div class="gm-section-heading"><div><p class="gm-kicker">05 / Connected destinations</p><h2 id="ecosystem-title">A wider mesh, with clear boundaries.</h2></div><p>These public destinations answer different questions. This site does not search or merge their content.</p></div>'
+               '<div class="gm-destinations"><a href="https://ghostmesh.ai/"><span>01 / ARCHITECTURE ↗</span><strong>GhostMesh.ai</strong><p>How the broader identity, knowledge and authority architecture is described.</p></a>'
+               '<a href="https://malott.ai/"><span>02 / HUMAN IDENTITY ↗</span><strong>Malott.ai</strong><p>The person accountable for the editorial choices and the work behind them.</p></a>'
+               '<a href="https://shareplane.malott.ai/"><span>03 / PUBLISHED THINKING ↗</span><strong>SharePlane</strong><p>A separate public reference surface for published thinking. Follow it directly; no cross-site relationship is inferred here.</p></a></div></section>'
+               '<section id="contact"><div class="gm-section-heading"><div><p class="gm-kicker">06 / Open a conversation</p><h2 id="contact-title">Challenge the reading.</h2></div><p>A useful counterexample or a better source should change the next revision. Choose the route that fits your message.</p></div>'
+               '<div class="gm-contact-grid"><a href="mailto:tony@malott.ai?subject=GhostMesh%20Readers%20feedback"><span>HUMAN CONTACT / TONY MALOTT</span><strong>Write to Tony ↗</strong><p>Editorial judgment, correction requests and human decisions.</p></a>'
+               '<a href="mailto:ghostmesh@malott.ai?subject=GhostMesh%20Reader%20counterexample"><span>AI CORRESPONDENCE / GHOSTMESH</span><strong>Send a source or counterexample ↗</strong><p>Name the Reader, the claim and the evidence you want examined.</p></a></div></section>')
  out['index.html']=home.replace('</main>',legacy+destinations+'</main>').replace('</body>','<script src="/assets/home-player.js" defer></script></body>').replace('all 13 Readers',f'all {len(readers)} Readers').replace('<link rel="icon" href="/favicon.svg">','<link rel="alternate" type="application/json" href="/.well-known/ghostmesh-knowledge.json" title="GhostMesh public knowledge discovery"><link rel="icon" href="/favicon.svg">',1)
  filters='<form class="gm-filters" role="search"><label class="gm-search-field">Search these Readers <input type="search" id="search" autocomplete="off" placeholder="Title, topic or tag"></label><div class="gm-filter-row"><label>Category <select id="category"><option value="">All categories</option>'+''.join('<option>'+esc(c)+'</option>' for c in CATEGORIES)+'</select></label><label>Tag <select id="tag"><option value="">All tags</option>'+''.join('<option>'+esc(t)+'</option>' for t in sorted({t for r in readers for t in r['tags']}))+'</select></label><label>Sort <select id="sort"><option value="recent">Most recent</option><option value="relevance">Editorial order</option><option value="title">Title</option></select></label><button class="gm-reset" type="reset">Clear filters</button></div></form><div class="gm-result-bar"><p id="result-count" role="status" aria-live="polite">13 Readers</p><p>Search covers this published Reader library only.</p></div>'
- out['readers/index.html']=page('The Reader library','/readers/','<header class="gm-intro"><p class="gm-kicker">The complete archive</p><h1>Find your next question.</h1><p>Browse all 13 Readers. Evidence labels describe the mapped claims, not a score for the author. Editorial order is a curated reading order, not scientific confidence.</p></header>'+filters+categories+'<noscript><p>Search controls require JavaScript. Every Reader is listed below; category pages work without it.</p></noscript><div class="gm-cards" id="catalog-results">'+''.join(card(r) for r in readers)+'</div><script src="/assets/catalog.js" defer></script>')
+ out['readers/index.html']=page('The Reader library','/readers/','<header class="gm-intro"><p class="gm-kicker">The complete archive</p><h1>Find your next question.</h1><p>Browse all 13 Readers. Evidence labels describe the mapped claims, not a score for the author. Editorial order is a curated reading order, not scientific confidence.</p></header>'+filters+categories+'<noscript><p>Search controls require JavaScript. Every Reader is listed below; category pages work without it.</p></noscript><div class="gm-cards" id="catalog-results">'+''.join(card(r) for r in readers)+'</div><script src="/assets/catalog.js" defer></script><script src="/assets/home-player.js" defer></script>')
  for i,c in enumerate(CATEGORIES):
-  group=[r for r in readers if r['category']==c];out[f'readers/categories/{i}/index.html']=page(c,f'/readers/categories/{i}/','<h1>'+esc(c)+'</h1><p><a href="/readers/">All categories</a></p><div class="gm-cards">'+(''.join(card(r) for r in group) or '<p>No Reader is currently classified here.</p>')+'</div>')
+  group=[r for r in readers if r['category']==c];out[f'readers/categories/{i}/index.html']=page(c,f'/readers/categories/{i}/','<h1>'+esc(c)+'</h1><p><a href="/readers/">All categories</a></p><div class="gm-cards">'+(''.join(card(r) for r in group) or '<p>No Reader is currently classified here.</p>')+'</div><script src="/assets/home-player.js" defer></script>')
  out['readers/index.html']=out['readers/index.html'].replace('all 13 Readers',f'all {len(readers)} Readers').replace('>13 Readers<',f'>{len(readers)} Readers<')
- urls=['/','/readers/','/knowledge/']+['/'+r['slug']+'/' for r in readers]+[f'/readers/categories/{i}/' for i in range(len(CATEGORIES))]
+ out['map/index.html']=page('Reader relationship map','/map/',relationship_map(readers,byid)).replace('<body class="gm-catalog">','<body class="gm-catalog gm-map-page">')
+ urls=['/','/readers/','/map/','/knowledge/']+['/'+r['slug']+'/' for r in readers]+[f'/readers/categories/{i}/' for i in range(len(CATEGORIES))]
  out['sitemap.xml']='<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'+''.join('<url><loc>'+data['host']+u+'</loc></url>' for u in sorted(urls))+'</urlset>\n'
  out['404.html']=page('Page not found','/404.html','<h1>That page is not here.</h1><p><a href="/readers/">Browse the complete Reader library</a> or return to the <a href="/">homepage</a>.</p>')
  return out

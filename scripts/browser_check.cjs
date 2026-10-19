@@ -27,9 +27,9 @@ const {archiveComplete}=require('./browser_assertions.cjs');
  await page.goto('http://127.0.0.1:8765/readers/');await page.locator('#search').fill('Strix');if(await page.locator('.gm-card:visible').count()!==1)failures.push('search Strix');
  await page.locator('button[type=reset]').click();await page.locator('#category').selectOption('Business');if(await page.locator('.gm-card:visible').count()!==2)failures.push('category Business');
  await page.locator('#tag').selectOption('security');if(await page.locator('.gm-card:visible').count()!==0)failures.push('combined filters');
- await page.locator('[data-theme-choice]').selectOption('dark');await page.reload();if(await page.locator('html').getAttribute('data-theme')!=='dark')failures.push('theme persistence');
- await page.locator('[data-theme-choice]').selectOption('light');await page.emulateMedia({colorScheme:'dark'});if(await page.locator('html').getAttribute('data-theme')!=='light')failures.push('explicit preference');
- await page.locator('[data-theme-choice]').selectOption('system');if(await page.locator('html').getAttribute('data-theme')!=='dark')failures.push('system preference');
+ await page.locator('[data-theme-toggle]').click();await page.reload();if(await page.locator('html').getAttribute('data-theme')!=='light')failures.push('theme persistence');
+ await page.emulateMedia({colorScheme:'dark'});if(await page.locator('html').getAttribute('data-theme')!=='light')failures.push('explicit preference');
+ await page.evaluate(()=>localStorage.setItem('gm-appearance','system'));await page.reload();if(await page.locator('html').getAttribute('data-theme')!=='dark')failures.push('system preference');
  for(const r of cat.readers){await page.goto('http://127.0.0.1:8765/'+r.slug+'/');const play=page.locator('#play,#play-cover,#play-source,#play-reel,#play-video').first();if(await play.count()){await play.click();if(!(await page.locator('iframe[src^="https://"]').count()))failures.push('player '+r.slug)}else failures.push('play control missing '+r.slug);}
  await context.close();
  const nojs=await browser.newContext({javaScriptEnabled:false,viewport:{width:390,height:844}});const np=await nojs.newPage();await np.goto('http://127.0.0.1:8765/readers/');if(!(await archiveComplete(np,cat)))failures.push('no-JS archive');

@@ -2,7 +2,7 @@ const { chromium } = require('playwright');
 const assert = require('node:assert/strict');
 
 const base = 'http://127.0.0.1:8765';
-const routes = ['/', '/readers/', '/knowledge/', '/ask-for-the-outcome-keep-the-boundary/', '/a-challenge-is-not-a-verdict/'];
+const routes = ['/', '/readers/', '/knowledge/', '/map/', '/ask-for-the-outcome-keep-the-boundary/', '/a-challenge-is-not-a-verdict/'];
 
 (async () => {
   const browser = await chromium.launch({ headless: true, channel: 'chrome' });
@@ -11,6 +11,8 @@ const routes = ['/', '/readers/', '/knowledge/', '/ask-for-the-outcome-keep-the-
     for (const width of [390, 1440]) for (const theme of ['dark', 'light']) {
       const context = await browser.newContext({ viewport: { width, height: 900 }, reducedMotion: 'reduce' });
       await context.addInitScript(choice => localStorage.setItem('gm-appearance', choice), theme);
+      await context.addInitScript(() => Object.defineProperty(navigator, 'share', { configurable: true,
+        value: data => { window.__gmShared = data; return Promise.resolve(); } }));
       await context.route('**/*', route => route.request().url().startsWith(base) ? route.continue() : route.abort());
       const page = await context.newPage();
       for (const route of routes) {
@@ -18,7 +20,7 @@ const routes = ['/', '/readers/', '/knowledge/', '/ask-for-the-outcome-keep-the-
         assert.equal(response.status(), 200, `${route}: response`);
         const state = await page.evaluate(() => ({
           headers: document.querySelectorAll('header.gm-site-header').length,
-          themeChoices: document.querySelectorAll('[data-theme-choice]').length,
+          themeChoices: document.querySelectorAll('[data-theme-toggle]').length,
           theme: document.documentElement.dataset.theme,
           headings: document.querySelectorAll('h1').length,
           overflow: document.documentElement.scrollWidth > innerWidth,
@@ -43,6 +45,11 @@ const routes = ['/', '/readers/', '/knowledge/', '/ask-for-the-outcome-keep-the-
           const source = await page.locator('.gm-home-player iframe').first().getAttribute('src');
           assert.match(source, /^https:\/\/www\.youtube-nocookie\.com\/embed\//);
           assert(!source.includes('autoplay='));
+          await page.locator('#home-query').fill('boundary');
+          await page.locator('.gm-home-search button').click();
+          await page.waitForURL(/\/readers\/\?q=boundary/);
+          assert.equal(await page.locator('#search').inputValue(), 'boundary');
+          assert((await page.locator('#catalog-results .gm-card:visible').count()) < 13);
         }
         if (route === '/readers/') {
           assert.equal(await page.locator('#catalog-results .gm-card').count(), 13);
@@ -52,10 +59,23 @@ const routes = ['/', '/readers/', '/knowledge/', '/ask-for-the-outcome-keep-the-
           assert.match(await page.locator('#result-count').textContent(), new RegExp(`^${visible} of 13 Readers$`));
           await page.locator('.gm-reset').click();
           await page.waitForFunction(() => document.querySelectorAll('#catalog-results .gm-card:not([hidden])').length === 13);
+          assert.equal(await page.locator('.gm-library-frame[data-home-player]').count(), 13);
+          assert.equal(await page.locator('.gm-library-frame[data-gm-aspect="9:16"]').count(), 1);
+          await page.locator('.gm-library-frame[data-source-platform="YouTube"] button').first().click();
+          assert.match(await page.locator('.gm-library-frame iframe').first().getAttribute('src'), /^https:\/\/www\.youtube-nocookie\.com\/embed\//);
+        }
+        if (route === '/map/') {
+          assert.equal(await page.locator('.gm-map-node').count(), 13);
+          assert.equal(await page.locator('.gm-map-entry').count(), 13);
+          assert.equal(await page.locator('.gm-map-canvas line').count(), 21);
         }
         if (route.startsWith('/ask-') || route.startsWith('/a-challenge')) {
           assert.equal(await page.locator('[data-gm-share]').count(), 1);
           assert.equal(await page.locator('.gm-reader-footer').count(), 1);
+          await page.locator('[data-native-share]').click();
+          const shared = await page.evaluate(() => window.__gmShared);
+          assert.equal(shared.url, await page.locator('link[rel="canonical"]').getAttribute('href'));
+          assert.equal(shared.text, await page.locator('meta[name="gm-share-description"]').getAttribute('content'));
         }
         cases++;
       }
@@ -70,6 +90,9 @@ const routes = ['/', '/readers/', '/knowledge/', '/ask-for-the-outcome-keep-the-
     assert.equal(await page.locator('.gm-home-open').count(), 7);
     assert.equal(await page.locator('.gm-home-source').count(), 7);
     assert.equal(await page.locator('iframe').count(), 0);
+    await page.goto(base + '/map/', { waitUntil: 'domcontentloaded' });
+    assert.equal(await page.locator('.gm-map-entry').count(), 13);
+    assert.equal(await page.locator('[data-theme-toggle]:visible').count(), 0);
     console.log(JSON.stringify({ cases, noJavaScript: true, failures: [] }));
     await context.close();
   } finally { await browser.close(); }
