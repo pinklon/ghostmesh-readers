@@ -32,3 +32,5 @@ The current Readers contract is video-first: new catalog entries require a video
 ## Privacy and scope receipt
 
 This branch contains only original, bounded analysis and links to public sources. It adds no catalog record, generated site file, relationship edge, knowledge node, external-source copy, experimental output, or deployment trigger. No claim is marked independently verified from the study authors' own paper or project page. Rollback is to abandon this isolated local branch; PR27 and the combined PR29 preview remain untouched.
+
+The companion [claim-by-claim source qualification](arxiv-2607.27191v2-source-qualification.md) records private PDF page and HTML source-map checks without copying source text. The [paper-format and Creative Lock proposal](paper-reader-format-and-creative-lock-proposal.md) lists the owner decisions and site contract needed before a preview.

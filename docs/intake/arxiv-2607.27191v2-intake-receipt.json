@@ -6,7 +6,7 @@
   "baseCommit": "c7025444cad2f10253556be3cbc77bc82ccc50b9",
   "branch": "codex/reader-paper-2607-27191-research-20261019",
   "draftPath": "docs/intake/arxiv-2607.27191v2-research-draft.md",
-  "draftSha256": "fa9af6062d7b868a5f4ac3e816493ba2c18fb66b8dd6e01b7c805e1d2d9be28b",
+  "draftSha256": "fcd2622015533c62155ca03eaebfa5b12ab60dad44d5cac479bd1d8c436f142d",
   "checkedUtcDate": "2026-10-19",
   "sourceUrls": [
     "https://arxiv.org/abs/2607.27191v2",
@@ -69,5 +69,22 @@
     "metadataAssertedNotVerified": true,
     "readerRuntimeAdopted": false
   },
-  "prototypeVerification": "Current connected GitHub PR361 metadata/body independently fetched at head dfe1c55 on 2026-10-19. Canary artifacts and extraction were not rerun in this Readers task."
+  "prototypeVerification": "Current connected GitHub PR361 metadata/body independently fetched at head dfe1c55 on 2026-10-19. Canary artifacts and extraction were not rerun in this Readers task.",
+  "researchArtifacts": [
+    {
+      "path": "docs/intake/arxiv-2607.27191v2-research-draft.md",
+      "sha256": "fcd2622015533c62155ca03eaebfa5b12ab60dad44d5cac479bd1d8c436f142d"
+    },
+    {
+      "path": "docs/intake/arxiv-2607.27191v2-source-qualification.md",
+      "sha256": "b7da44ce17b0aa7b4697e0d63435f065fa29e3f2eec3b6ca8385c1cca41733d9"
+    },
+    {
+      "path": "docs/intake/paper-reader-format-and-creative-lock-proposal.md",
+      "sha256": "4bb39805ee10bb2eecf69b8cd6c3f3790d9bab4c0b85b6e03de716cea3f1ebef"
+    }
+  ],
+  "sourceQualification": "Six propositions checked against private partial PDF/HTML line maps and short original-source passages. Source reports remain distinct from independent factual verification; figures, equations, tables, OCR, reading order, logs and experiments remain unverified.",
+  "paperFormat": "Proposal only. Owner Creative Lock and paper-source schema are absent; no catalog/site/knowledge admission or preview.",
+  "claimUrl": "https://github.com/pinklon/ghostmesh-readers/issues/23#issuecomment-6268423169"
 }
