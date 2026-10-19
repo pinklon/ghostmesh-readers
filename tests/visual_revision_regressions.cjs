@@ -34,8 +34,8 @@ const routes = ['/', '/readers/', '/knowledge/', '/map/', '/ask-for-the-outcome-
         assert.equal(await toggle.getAttribute('aria-pressed'), String(theme === 'light'));
         if (route === '/') {
           assert.equal(await page.locator('.gm-home-card').count(), 7);
-          assert.equal(await page.locator('.gm-home-player[data-source-platform="YouTube"]').count(), 6);
-          assert.equal(await page.locator('.gm-home-player[data-source-platform="Instagram"]').count(), 1);
+          assert.equal(await page.locator('.gm-home-player[data-source-platform="YouTube"]').count(), 7);
+          assert.equal(await page.locator('.gm-home-player[data-source-platform="Instagram"]').count(), 0);
           const signal = await page.evaluate(() => ({
             flow: getComputedStyle(document.querySelector('.signal-flow')).stroke,
             face: getComputedStyle(document.querySelector('.signal-face-top')).fill,

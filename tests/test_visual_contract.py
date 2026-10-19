@@ -19,6 +19,18 @@ class Tags(HTMLParser):
 
 
 class VisualContractTest(unittest.TestCase):
+    def test_approved_home_hero_and_distinct_destinations(self):
+        home = (ROOT / 'site/index.html').read_text()
+        self.assertIn('THE ALGORITHM GOT YOUR ATTENTION.</span> <span class="gm-hero-question">DID THE ARGUMENT EARN IT?', home)
+        self.assertIn('<title>The algorithm got your attention. Did the argument earn it? | GhostMesh Readers</title>', home)
+        for name, url in (
+            ('ghostmesh', 'https://ghostmesh.ai/'),
+            ('malott', 'https://malott.ai/'),
+            ('shareplane', 'https://shareplane.malott.ai/'),
+        ):
+            self.assertIn(f'class="gm-destination gm-destination-{name}" href="{url}"', home)
+        self.assertEqual(home.count('class="gm-destination gm-destination-'), 3)
+
     def test_single_shared_shell_and_full_archive(self):
         catalog = json.loads((ROOT / 'content/catalog.json').read_text())
         routes = ['index.html', 'readers/index.html', 'knowledge/index.html'] + [

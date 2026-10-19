@@ -189,9 +189,10 @@ def projections():
  out['readers/search-index.json']=dump({'schema':'ghostmesh-public-reader-text-v1','scope':f'{READER_COUNT} published Reader article pages only','readerCount':READER_COUNT,'readers':search_docs})
  categories='<nav aria-label="Categories" class="gm-categories">'+''.join(f'<a href="/readers/categories/{i}/">{esc(c)}</a>' for i,c in enumerate(CATEGORIES))+'</nav>'
  signal=(ROOT/'content/home-signal.svg').read_text().strip()
- # Draft editorial line for Tony's review. It is not a settled GhostMesh-wide slogan.
+ # Tony-approved homepage line. Keep its two-part reading hierarchy intact.
  home_intro=('<header class="gm-intro"><div class="gm-hero-copy"><p class="gm-kicker">GhostMesh / independent deconstructions</p>'
-             '<h1 id="hero-title">The clip ends.<br><span>Look closer.</span></h1>'
+             '<h1 id="hero-title"><span class="gm-hero-premise">THE ALGORITHM GOT YOUR ATTENTION.</span> '
+             '<span class="gm-hero-question">DID THE ARGUMENT EARN IT?</span></h1>'
              '<p>Public videos are the starting point. Each Reader traces the source, tests material claims against available evidence, shows counterevidence and marks what remains unverified. You keep the judgment.</p>'
              '<div class="gm-hero-actions"><a class="gm-cta" href="#readers">Read a deconstruction ↗</a>'
              '<a class="gm-cta gm-cta-secondary" href="#method">See the method ↓</a></div></div>'
@@ -219,7 +220,7 @@ def projections():
               '<p><a href="/knowledge/#how-to-read">Inspect the evidence labels ↗</a><small>These counts describe claim-register entries, not a verification score or a tally of false claims.</small></p></div>'
               '<aside class="gm-shorthand"><div><span>PROPOSED ARCHITECTURE SHORTHAND / FOR REVIEW</span><h3>Context. Continuity. Control.</h3></div>'
               '<p>The public Reader record is a semantic layer: it keeps source, claim and qualification connected across revisions. That context can inform future agentic work, while authority to act stays with people. This is a proposed description, not a claim that an estate-wide agent or search system is live.</p></aside></section>')
- out['index.html']=page('The clip ends. Look closer.','/',home_intro+home_readers+home_browse+home_method)
+ out['index.html']=page('The algorithm got your attention. Did the argument earn it?','/',home_intro+home_readers+home_browse+home_method)
  home=out['index.html'];legacy='<details class="gm-legacy"><summary>Earlier video bookmarks</summary><ul>'+''.join('<li id="'+esc(r['source'].get('videoId') or r['source'].get('shortcode',''))+'"><a href="/'+r['slug']+'/">'+esc(r['title'])+'</a></li>' for r in readers)+'</ul></details>'
  home=home.replace('<body class="gm-catalog">','<body class="gm-catalog" id="home">').replace('<h2>Continue reading</h2>','<h2 id="readers-title">Continue reading</h2>')
  destinations=('<section id="about" class="gm-home-about"><div><p class="gm-kicker">04 / Why this exists</p><h2 id="about-title">Why I built it.</h2><p class="gm-about-side">A public reading practice for an age of compressed certainty.</p></div>'
@@ -229,9 +230,19 @@ def projections():
                '<div class="gm-source-scope"><p><strong>Available now</strong> Published YouTube videos and one Instagram Reel, each with a direct original link and visible evidence limits.</p>'
                '<p><strong>Proposed future inputs</strong> Websites, repositories, Reddit threads, articles and viewpoints require their own source, rights and review contracts. None is indexed as a live Reader input here.</p></div></div></section>'
                '<section id="ecosystem"><div class="gm-section-heading"><div><p class="gm-kicker">05 / Connected destinations</p><h2 id="ecosystem-title">A wider mesh, with clear boundaries.</h2></div><p>These public destinations answer different questions. This site does not search or merge their content.</p></div>'
-               '<div class="gm-destinations"><a href="https://ghostmesh.ai/"><span>01 / ARCHITECTURE ↗</span><strong>GhostMesh.ai</strong><p>How the broader identity, knowledge and authority architecture is described.</p></a>'
-               '<a href="https://malott.ai/"><span>02 / HUMAN IDENTITY ↗</span><strong>Malott.ai</strong><p>The person accountable for the editorial choices and the work behind them.</p></a>'
-               '<a href="https://shareplane.malott.ai/"><span>03 / PUBLISHED THINKING ↗</span><strong>SharePlane</strong><p>A separate public reference surface for published thinking. Follow it directly; no cross-site relationship is inferred here.</p></a></div>'
+               '<div class="gm-destinations">'
+               '<a class="gm-destination gm-destination-ghostmesh" href="https://ghostmesh.ai/">'
+               '<span class="gm-destination-meta">01 / ARCHITECTURE</span><strong>GhostMesh<span>.ai</span></strong>'
+               '<p>How the broader identity, knowledge and authority architecture is described.</p>'
+               '<span class="gm-destination-action">Explore the architecture <span aria-hidden="true">↗</span></span></a>'
+               '<a class="gm-destination gm-destination-malott" href="https://malott.ai/">'
+               '<span class="gm-destination-meta">02 / HUMAN IDENTITY</span><strong>Malott<span>.ai</span></strong>'
+               '<p>The person accountable for the editorial choices and the work behind them.</p>'
+               '<span class="gm-destination-action">Meet the person <span aria-hidden="true">↗</span></span></a>'
+               '<a class="gm-destination gm-destination-shareplane" href="https://shareplane.malott.ai/">'
+               '<span class="gm-destination-meta">03 / PUBLISHED THINKING</span><strong>SharePlane</strong>'
+               '<p>A separate public reference surface for published thinking. Follow it directly; no cross-site relationship is inferred here.</p>'
+               '<span class="gm-destination-action">Read the published work <span aria-hidden="true">↗</span></span></a></div>'
                '<div class="gm-ecosystem-note"><strong>Connected in purpose.<br><em>Separate in evidence.</em></strong><p>The Reader is where a public source becomes a challengeable argument. GhostMesh.ai describes the broader architecture; Malott.ai identifies the person accountable; SharePlane carries separately published work. The links above take you to those surfaces directly. This site does not silently search them, borrow their claims, or infer a relationship.</p></div></section>'
                '<section id="contact"><div class="gm-section-heading"><div><p class="gm-kicker">06 / Open a conversation</p><h2 id="contact-title">Challenge the reading.</h2></div><p>A useful counterexample or a better source should change the next revision. Choose the route that fits your message.</p></div>'
                '<div class="gm-contact-note"><span>CORRECTION / SOURCE / COUNTEREXAMPLE</span><strong>A stronger record can change the conclusion.</strong><p>Point to the Reader, the specific claim, a source link and its date. Say what the source supports or contests. That gives a human editor something checkable to revisit instead of a vague request for agreement.</p></div>'
