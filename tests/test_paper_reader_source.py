@@ -6,8 +6,12 @@ input while its schema and projection are integrated after the design freeze.
 
 from html.parser import HTMLParser
 from pathlib import Path
+import copy
+import json
 import re
 import unittest
+
+from scripts.generate_site import validate_paper_source
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -64,7 +68,7 @@ class PaperReaderSourceTests(unittest.TestCase):
         self.assertLess(self.raw.index('id="source"'), self.raw.index('id="interpretation"'))
         self.assertEqual(sum(tag == "main" for tag, _ in self.scan.tags), 1)
         self.assertEqual(sum(tag == "h1" for tag, _ in self.scan.headings), 1)
-        self.assertTrue(all(link.startswith(("https://", "/", "#")) for link in self.scan.links))
+        self.assertTrue(all(link.startswith(("https://", "/", "#", "mailto:")) for link in self.scan.links))
 
     def test_editorial_limits_and_public_boundary_are_explicit(self):
         for fact in (
@@ -76,6 +80,46 @@ class PaperReaderSourceTests(unittest.TestCase):
         self.assertNotIn("/Users/", self.raw)
         self.assertNotRegex(self.raw, r"(?i)\.vtt|\.srt|\.webm|signed[_ -]?url")
         self.assertLess(len(re.sub(r"<[^>]+>", "", self.raw)), 15000)
+
+    def test_paper_source_identity_rejects_video_fields_and_unpinned_links(self):
+        catalog = json.loads((ROOT / "content/catalog.json").read_text())
+        entry = next(r for r in catalog["readers"] if r["slug"] == PAPER.stem)
+        source = entry["source"]
+        self.assertEqual(source["identity"], "arxiv:" + ARXIV)
+        self.assertNotIn("mediaAspect", source)
+        self.assertNotIn("platform", source)
+        validate_paper_source(self.raw, source)
+        for change in (
+            {"mediaAspect": "unknown"},
+            {"version": "v1"},
+            {"url": "https://arxiv.org/abs/2607.27191v1"},
+            {"versionDate": "not-a-date"},
+        ):
+            with self.subTest(change=change), self.assertRaises(ValueError):
+                validate_paper_source(self.raw, {**source, **change})
+        for marker in ('<iframe src="about:blank"></iframe>', '<div class="player"></div>'):
+            with self.subTest(marker=marker), self.assertRaises(ValueError):
+                validate_paper_source(self.raw + marker, copy.deepcopy(source))
+
+    def test_schema_discriminates_paper_from_legacy_media(self):
+        schema = json.loads((ROOT / "content/catalog.schema.json").read_text())
+        source_rule = schema["$defs"]["reader"]["properties"]["source"]
+        self.assertEqual(source_rule["oneOf"], [
+            {"$ref": "#/$defs/mediaSource"}, {"$ref": "#/$defs/paperSource"}
+        ])
+        self.assertEqual(schema["$defs"]["paperSource"]["properties"]["kind"], {"const": "paper"})
+        self.assertFalse(schema["$defs"]["paperSource"]["additionalProperties"])
+        self.assertEqual(schema["$defs"]["mediaSource"]["not"], {"required": ["kind"]})
+
+    def test_generated_paper_keeps_shared_brief_and_no_media_controls(self):
+        rendered = (ROOT / "site" / PAPER.stem / "index.html").read_text()
+        self.assertIn("What the paper studied", rendered)
+        self.assertIn('id="external-evidence"', rendered)
+        self.assertIn('id="related-thinking"', rendered)
+        self.assertIn('data-gm-share=""', rendered)
+        self.assertNotIn("data-home-player", rendered)
+        self.assertNotIn("data-gm-aspect", rendered)
+        validate_paper_source(rendered, json.loads((ROOT / "content/catalog.json").read_text())["readers"][-1]["source"])
 
 
 if __name__ == "__main__":

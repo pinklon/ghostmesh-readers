@@ -5,7 +5,7 @@ from html.parser import HTMLParser
 from urllib.parse import urlsplit,unquote
 from datetime import datetime,date,timezone
 import json,re,sys,xml.etree.ElementTree as ET
-from generate_site import projections,CATEGORIES,validate_text,validate_link_only_source
+from generate_site import projections,CATEGORIES,validate_text,validate_link_only_source,validate_paper_source
 ROOT=Path(__file__).resolve().parents[1];SITE=ROOT/'site'
 VERDICTS={'Essential','Worth studying','Interesting, unproven','Mostly recycled','Misleading','Not worth your time'}
 STATES={'corroborated','partially corroborated','contradicted','disputed','unverified'}
@@ -87,14 +87,20 @@ def check(root=ROOT):
   require(r['category'] in CATEGORIES and r['verdict'] in VERDICTS,f'Unknown classification {slug}')
   require(r['architectureImpact'] in {'none','watch','investigate','experiment recommended','change proposed'},f'Architecture impact {slug}')
   require(all(r.get(k) for k in ['overview','whyItMatters','ghostMeshTakeaway','published','updated','source','variant','claims','review']),f'Incomplete Reader {slug}')
-  aspect=r['source'].get('mediaAspect')
-  require(aspect in {'16:9','9:16','1:1','unknown'},f'{slug}: source aspect missing or invalid')
-  if aspect!='unknown':
-   require(raw.count('gm-media-frame')==1 and raw.count(f'data-gm-aspect="{aspect}"')==1,f'{slug}: shared source player or aspect missing')
-   require('gm-source-layout' in raw or 'class="player gm-media-frame"' in raw or 'class="player-ratio gm-media-frame"' in raw,f'{slug}: source player layout missing')
-  else:
-   try:validate_link_only_source(raw,r['source']['url'])
+  if r['source'].get('kind')=='paper':
+   try:validate_paper_source(raw,r['source'])
    except ValueError as exc:errors.append(f'{slug}: {exc}')
+   require('mediaAspect' not in r['source'] and 'platform' not in r['source'],f'{slug}: paper has video-only fields')
+   require('gm-media-frame' not in raw and 'data-gm-aspect' not in raw,f'{slug}: paper has a fabricated media frame')
+  else:
+   aspect=r['source'].get('mediaAspect')
+   require(aspect in {'16:9','9:16','1:1','unknown'},f'{slug}: source aspect missing or invalid')
+   if aspect!='unknown':
+    require(raw.count('gm-media-frame')==1 and raw.count(f'data-gm-aspect="{aspect}"')==1,f'{slug}: shared source player or aspect missing')
+    require('gm-source-layout' in raw or 'class="player gm-media-frame"' in raw or 'class="player-ratio gm-media-frame"' in raw,f'{slug}: source player layout missing')
+   else:
+    try:validate_link_only_source(raw,r['source']['url'])
+    except ValueError as exc:errors.append(f'{slug}: {exc}')
   for marker in ['at-a-glance','external-evidence','related-thinking']:require(marker in a.ids,f'{slug}: missing {marker}')
   require('data-theme-toggle' in raw and '/assets/theme.js' in raw,f'{slug}: theme missing')
   require(raw.find('id="at-a-glance"')<min([pos for token in ['data-gm-aspect=','id="source"','class="theater"'] if (pos:=raw.find(token))>=0] or [len(raw)]),f'{slug}: brief after source')

@@ -1,6 +1,6 @@
 # Research draft: The experiment ran. Did the research advance?
 
-**Stage:** research-only paper candidate for Readers Issue #23. This is working analysis, not locked public copy, a catalog entry, a qualified paper pack, or a publication request. Checked 2026-10-19 UTC. Source writer: Task8 `/root/paper_reader_intake`, solely for this file and its receipt on `codex/reader-paper-2607-27191-research-20261019`.
+**Stage:** historical research-only note for Readers Issue #23, checked 2026-10-19 UTC. Tony subsequently authorized a distinct paper Reader draft and preview; the successor branch has a separate original article, paper catalog candidate and integration receipt. This note is not locked public copy or a qualified paper pack. Source writer: Task8 `/root/paper_reader_intake`.
 
 ## Source identity and reading route
 
@@ -25,12 +25,12 @@ Working recommendation: **Worth studying** for people evaluating autonomous rese
 | P5 | Other published evaluations show different capabilities under different constructs. | [RE-Bench paper](https://proceedings.mlr.press/v267/wijk25a.html), abstract; [AI Scientist-v2](https://arxiv.org/abs/2504.08066), abstract; arXiv paper Table 2. | **Context, not replication.** RE-Bench scores seven research-engineering environments with a verifier and human baseline. AI Scientist-v2 reports workshop review of three manuscripts. Neither directly grades the same two shadow questions. |
 | P6 | Public materials permit only partial outside inspection of the cases. | arXiv HTML note after Section 1; [CRUX project artifacts](https://cruxevals.com/crux/can-ai-agents-conduct-research/); [Personas repository](https://github.com/sage-princeton/crux-2-personas-CLEAN). | **Observed access boundary.** Public Personas code exists. TabPFN detailed logs and agent paper remain withheld per the study, despite broad project artifact wording. No experiment or log was independently audited for this candidate. |
 
-## Publication hold
+## Publication transition
 
-The current Readers contract is video-first: new catalog entries require a video source, opt-in media route, near-top three-question brief, claim/reference and receipt bindings, a public permalink, and site/editorial checks. This is a paper, and no approved paper-source identity, paper Reader template, or Creative Lock was found in PR27. Do not force it through the video schema or invent a media player. Before public admission: owner locks the paper format, thesis, prose, verdict, claim language and links; complete an editorial reading of the full paper while accounting for the adapter's **partial** PDF and HTML extraction limits; independently review claims and counterevidence; implement/test only after the agreed site contract. No source or extracted text is copied into this repo.
+The frozen PR27 contract was video-first and had no paper identity or template. Tony authorized a source-appropriate paper draft and preview after this research note. The successor branch adds a discriminated paper source, version-pinned links and a link-only article without inventing a player. Its attributed claims remain bounded by the adapter's **partial** PDF and HTML extraction limits and the claim-by-claim source review. A final editorial decision on thesis, prose, verdict, route and release still follows independent review of the generated page and preview. No source or extracted text is copied into this repo.
 
 ## Privacy and scope receipt
 
-This branch contains only original, bounded analysis and links to public sources. It adds no catalog record, generated site file, relationship edge, knowledge node, external-source copy, experimental output, or deployment trigger. No claim is marked independently verified from the study authors' own paper or project page. Rollback is to abandon this isolated local branch; PR27 and the combined PR29 preview remain untouched.
+This historical note contains only original, bounded analysis and links to public sources. The successor branch adds a candidate catalog record, generated page and source-only knowledge entry; it adds no raw external-source copy, experiment output or deployment trigger. No claim is marked independently verified from the study authors' own paper or project page. Rollback is to abandon the separate successor branch; the combined PR29 design branch remains untouched.
 
 The companion [claim-by-claim source qualification](arxiv-2607.27191v2-source-qualification.md) records private PDF page and HTML source-map checks without copying source text. The [paper-format and Creative Lock proposal](paper-reader-format-and-creative-lock-proposal.md) lists the owner decisions and site contract needed before a preview.

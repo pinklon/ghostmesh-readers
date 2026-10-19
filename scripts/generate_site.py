@@ -3,6 +3,7 @@
 from pathlib import Path
 from html import escape
 from html.parser import HTMLParser
+from datetime import date
 import json,re,sys
 ROOT=Path(__file__).resolve().parents[1]; SITE=ROOT/'site'
 CATEGORIES=['AI & Technology','Society & Politics','Science','Business','Ethics & Culture','Other']
@@ -48,7 +49,8 @@ def footer(include_email=True):return ('<footer aria-label="GhostMesh destinatio
  +('<a href="mailto:ghostmesh@malott.ai?subject=GhostMesh%20Reader%20feedback">Contact GhostMesh ✉</a>' if include_email else '')+'</nav></div></footer>')
 def head():return '<script src="/assets/theme.js"></script><script src="/assets/reader-search.js" defer></script><link rel="stylesheet" href="/assets/reader-chrome.css"><link rel="stylesheet" href="/assets/knowledge.css">'
 def brief(r):
- return '<section class="gm-brief" id="at-a-glance" aria-label="Reader brief"><span id="brief-title" class="gm-visually-hidden">Reader brief</span>'+''.join('<div><h2>'+h+'</h2><p>'+esc(r[k])+'</p></div>' for k,h in [('overview','What the video is about'),('whyItMatters','Why you should care'),('ghostMeshTakeaway','What GhostMesh takes away')])+f'<p class="gm-verdict"><strong>GhostMesh verdict: {esc(r["verdict"])}</strong>. Editorial recommendation, not factual verification. Architecture impact: {esc(r["architectureImpact"])}. Proposed only; no adoption implied.</p></section>'
+ first='What the paper studied' if r['source'].get('kind')=='paper' else 'What the video is about'
+ return '<section class="gm-brief" id="at-a-glance" aria-label="Reader brief"><span id="brief-title" class="gm-visually-hidden">Reader brief</span>'+''.join('<div><h2>'+h+'</h2><p>'+esc(r[k])+'</p></div>' for k,h in [('overview',first),('whyItMatters','Why you should care'),('ghostMeshTakeaway','What GhostMesh takes away')])+f'<p class="gm-verdict"><strong>GhostMesh verdict: {esc(r["verdict"])}</strong>. Editorial recommendation, not factual verification. Architecture impact: {esc(r["architectureImpact"])}. Proposed only; no adoption implied.</p></section>'
 def evidence(r):
  refs={x['id']:x for x in r['references']}
  def links(ids):return ', '.join(f'<a href="#ref-{esc(i)}">{esc(refs[i]["publisher"])}: {esc(refs[i]["title"])}</a>' for i in ids) or 'None qualified'
@@ -89,7 +91,20 @@ def card(r,featured=False):
 def home_card(r,number,featured=False):
  tag='h2' if featured else 'h3'
  unverified=sum(c['status']=='unverified' for c in r['claims'])
- source=r['source'];platform=source.get('platform','YouTube');aspect=source['mediaAspect']
+ source=r['source']
+ if source.get('kind')=='paper':
+  visual=(f'<div class="gm-home-visual gm-home-paper"><span class="gm-home-visual-label">GM / READER {number:02d} · RESEARCH PAPER</span>'
+          '<div class="gm-home-source-fallback"><strong>Original research paper</strong><br>Version-pinned arXiv source<br>No media player</div>'
+          '<span class="gm-home-visual-label">SOURCE / DIRECT LINK ONLY</span></div>')
+  copy=(f'<div class="gm-home-copy"><p class="gm-kicker">{esc(r["category"])} / {r["published"]}</p>'
+        f'<{tag}><a href="/{r["slug"]}/">{esc(r["title"])}</a></{tag}>'
+        f'<p>{esc(r["overview"])}</p>'
+        f'<p class="gm-home-verdict">{esc(r["verdict"])} · Mapped evidence: {esc(r["evidenceState"])}. {unverified}/{len(r["claims"])} claims unverified</p>'
+        f'<p class="gm-tags">{esc(" / ".join(r["tags"]))}</p>'
+        f'<div class="gm-home-actions"><a class="gm-home-open" href="/{esc(r["slug"])}/">Open Reader →</a>'
+        f'<a class="gm-home-source" href="{esc(source["url"])}">Original paper ↗</a></div></div>')
+  return f'<article class="gm-card gm-home-card" data-category="{esc(r["category"])}" data-tags="{esc(" ".join(r["tags"]))}" data-date="{r["published"]}" data-rank="{r["rank"]}">'+visual+copy+'</article>'
+ platform=source.get('platform','YouTube');aspect=source['mediaAspect']
  if aspect not in {'16:9','9:16','1:1','unknown'}:raise ValueError('Unsupported home source aspect')
  if aspect=='unknown':
   source_id='';preview='<p class="gm-home-source-fallback">Source shape unverified.<br>Open the original source or Reader.</p>'
@@ -124,7 +139,7 @@ class LinkOnlySource(HTMLParser):
   attrs=dict(attrs)
   if tag=='a' and attrs.get('href')==self.source_url:self.direct_link=True
   if tag in {'iframe','video','audio','embed','object','source','track','canvas'}:self.violations.append(tag)
-  if tag=='script' and attrs.get('src') not in {'/assets/theme.js','/assets/reader-share.js'}:self.violations.append('play script')
+  if tag=='script' and attrs.get('src') not in {'/assets/theme.js','/assets/reader-share.js','/assets/reader-search.js'}:self.violations.append('play script')
   if any(name.startswith('on') or (name in {'href','src'} and str(value or '').lower().startswith('javascript:')) for name,value in attrs.items()):self.violations.append('active handler')
   for name in ('class','id'):
    if re.search(r'(?:^|[-_\s])(player|play|embed|iframe|video|media)(?:$|[-_\s])',attrs.get(name,'') or '',re.I):self.violations.append('player marker')
@@ -134,6 +149,22 @@ def validate_link_only_source(raw,source_url):
  if not isinstance(source_url,str) or not source_url.startswith('https://'):raise ValueError('Link-only fallback needs an HTTPS source URL')
  scan=LinkOnlySource(source_url);scan.feed(raw)
  if scan.violations or not scan.direct_link:raise ValueError('Unknown source aspect requires a link-only fallback with the exact direct source link; forbidden '+', '.join(sorted(set(scan.violations))) if scan.violations else 'Unknown source aspect requires a link-only fallback with the exact direct source link')
+
+def validate_paper_source(raw,source):
+ """Pin bibliographic identity and keep paper pages entirely link-only."""
+ expected_keys={'kind','identity','url','htmlUrl','pdfUrl','title','authors','publisher','version','versionDate','dateNote'}
+ if set(source)!=expected_keys or source.get('kind')!='paper':raise ValueError('Paper source shape has missing or video-only fields')
+ identity=source.get('identity','')
+ if not re.fullmatch(r'arxiv:[0-9]{4}\.[0-9]{4,5}v[1-9][0-9]*',identity):raise ValueError('Invalid versioned arXiv identity')
+ arxiv=identity.removeprefix('arxiv:')
+ if source.get('version')!=f'v{arxiv.rsplit("v",1)[-1]}':raise ValueError('Paper version mismatch')
+ try:date.fromisoformat(source['versionDate'])
+ except (ValueError,TypeError):raise ValueError('Paper version date missing or invalid')
+ if any(not isinstance(source[k],str) or not source[k].strip() for k in ('title','authors','publisher','dateNote')):raise ValueError('Paper bibliography incomplete')
+ for key,route in [('url','abs'),('htmlUrl','html'),('pdfUrl','pdf')]:
+  expected=f'https://arxiv.org/{route}/{arxiv}'
+  if source.get(key)!=expected or f'href="{esc(expected)}"' not in raw:raise ValueError(f'Paper {key} must link to pinned original')
+ validate_link_only_source(raw,source['url'])
 
 def player_contract(raw,aspect,source_url):
  if aspect not in {'16:9','9:16','1:1','unknown'}:raise ValueError('Unknown media aspect declaration')
@@ -157,7 +188,8 @@ def projections():
  byid={r['id']:r for r in readers};out={}
  for r in readers:
   raw=(ROOT/'content/readers'/f'{r["slug"]}.html').read_text()
-  raw=player_contract(raw,r['source'].get('mediaAspect'),r['source']['url'])
+  if r['source'].get('kind')=='paper':validate_paper_source(raw,r['source'])
+  else:raw=player_contract(raw,r['source'].get('mediaAspect'),r['source']['url'])
   raw=raw.replace('</head>',f'<meta name="gm-share-description" content="{esc(r["overview"])}"></head>',1)
   for slot,value in [('HEAD',head()),('CONTROLS',''),('BRIEF',brief(r)),('EVIDENCE',evidence(r)),('RELATED',related(r,byid))]:raw=raw.replace('<!--GM_'+slot+'-->',value)
   old_header=re.search(r'<header(?:\s[^>]*)?>.*?</header>',raw,re.S)
@@ -193,7 +225,7 @@ def projections():
  home_intro=('<header class="gm-intro"><div class="gm-hero-copy"><p class="gm-kicker">GhostMesh / independent deconstructions</p>'
              '<h1 id="hero-title"><span class="gm-hero-premise">THE ALGORITHM GOT YOUR ATTENTION.</span> '
              '<span class="gm-hero-question">DID THE ARGUMENT EARN IT?</span></h1>'
-             '<p>Public videos are the starting point. Each Reader traces the source, tests material claims against available evidence, shows counterevidence and marks what remains unverified. You keep the judgment.</p>'
+             '<p>Public sources are the starting point. Each Reader traces the source, tests material claims against available evidence, shows counterevidence and marks what remains unverified. You keep the judgment.</p>'
              '<div class="gm-hero-actions"><a class="gm-cta" href="#readers">Read a deconstruction ↗</a>'
              '<a class="gm-cta gm-cta-secondary" href="#method">See the method ↓</a></div></div>'
              '<div class="gm-signal">'+signal+'<p>GM / CONCEPTUAL SIGNAL ARCHITECTURE <span>HUMAN AUTHORITY</span></p></div></header>'
@@ -212,7 +244,7 @@ def projections():
               +categories+'</section>')
  claim_count=sum(len(r['claims']) for r in readers);unverified_count=sum(c['status']=='unverified' for r in readers for c in r['claims'])
  home_method=('<section id="method" class="gm-method"><div class="gm-section-heading"><div><p class="gm-kicker">03 / The working method</p><h2>What you can actually inspect.</h2></div>'
-              '<p>A Reader is a traced argument, not a score for a creator or an automatic verdict on a video.</p></div>'
+              '<p>A Reader is a traced argument, not a score for a creator or an automatic verdict on a source.</p></div>'
               '<div class="gm-method-steps"><article><span>01 / SOURCE</span><h3>Start where the claim started.</h3><p>Open the original public source. The Reader names its context and limits instead of asking you to trust a summary alone.</p></article>'
               '<article><span>02 / EVIDENCE</span><h3>Separate assertion from support.</h3><p>Material claims carry dated corroboration, counterevidence and explicit uncertainty. A custody receipt proves handling, not truth.</p></article>'
               '<article><span>03 / JUDGMENT</span><h3>Keep the conclusion revisable.</h3><p>GhostMesh states an editorial takeaway and what would change it. The final interpretation and decision remain yours.</p></article></div>'
@@ -221,14 +253,14 @@ def projections():
               '<aside class="gm-shorthand"><div><span>PROPOSED ARCHITECTURE SHORTHAND / FOR REVIEW</span><h3>Context. Continuity. Control.</h3></div>'
               '<p>The public Reader record is a semantic layer: it keeps source, claim and qualification connected across revisions. That context can inform future agentic work, while authority to act stays with people. This is a proposed description, not a claim that an estate-wide agent or search system is live.</p></aside></section>')
  out['index.html']=page('The algorithm got your attention. Did the argument earn it?','/',home_intro+home_readers+home_browse+home_method)
- home=out['index.html'];legacy='<details class="gm-legacy"><summary>Earlier video bookmarks</summary><ul>'+''.join('<li id="'+esc(r['source'].get('videoId') or r['source'].get('shortcode',''))+'"><a href="/'+r['slug']+'/">'+esc(r['title'])+'</a></li>' for r in readers)+'</ul></details>'
+ home=out['index.html'];legacy='<details class="gm-legacy"><summary>Earlier video bookmarks</summary><ul>'+''.join('<li id="'+esc(r['source'].get('videoId') or r['source'].get('shortcode',''))+'"><a href="/'+r['slug']+'/">'+esc(r['title'])+'</a></li>' for r in readers if r['source'].get('kind')!='paper')+'</ul></details>'
  home=home.replace('<body class="gm-catalog">','<body class="gm-catalog" id="home">').replace('<h2>Continue reading</h2>','<h2 id="readers-title">Continue reading</h2>')
  destinations=('<section id="about" class="gm-home-about"><div><p class="gm-kicker">04 / Why this exists</p><h2 id="about-title">Why I built it.</h2><p class="gm-about-side">A public reading practice for an age of compressed certainty.</p></div>'
-               '<div><p>I built this surface to slow the jump from a persuasive clip to a settled conclusion. The original source stays one click away; my reading sits beside it, with claim-level corroboration, counterevidence, unverified labels and sanitized handling receipts you can inspect.</p>'
-               '<p>GhostMesh is Tony Malott’s AI identity and collaboration, research and learning system. These deconstructions are one public editorial surface within it. They are independent interpretations, not endorsements by a video’s creator or by a platform.</p>'
+               '<div><p>I built this surface to slow the jump from a persuasive source to a settled conclusion. The original stays one click away; my reading sits beside it, with claim-level corroboration, counterevidence, unverified labels and sanitized handling receipts you can inspect.</p>'
+               '<p>GhostMesh is Tony Malott’s AI identity and collaboration, research and learning system. These deconstructions are one public editorial surface within it. They are independent interpretations, not endorsements by a source’s creator or publisher.</p>'
                '<p class="gm-authority">GhostMesh can help organize a reading, but it does not make the decision for you. People remain accountable for what is published and for any action taken from it.</p>'
-               '<div class="gm-source-scope"><p><strong>Available now</strong> Published YouTube videos and one Instagram Reel, each with a direct original link and visible evidence limits.</p>'
-               '<p><strong>Proposed future inputs</strong> Websites, repositories, Reddit threads, articles and viewpoints require their own source, rights and review contracts. None is indexed as a live Reader input here.</p></div></div></section>'
+               '<div class="gm-source-scope"><p><strong>Available now</strong> Published YouTube videos, one Instagram Reel and one research paper, each with a direct original link and visible evidence limits.</p>'
+               '<p><strong>Proposed future inputs</strong> Websites, repositories, Reddit threads, other article forms and viewpoints require their own source, rights and review contracts. None is indexed as a live Reader input here.</p></div></div></section>'
                '<section id="ecosystem"><div class="gm-section-heading"><div><p class="gm-kicker">05 / Connected destinations</p><h2 id="ecosystem-title">A wider mesh, with clear boundaries.</h2></div><p>These public destinations answer different questions. This site does not search or merge their content.</p></div>'
                '<div class="gm-destinations">'
                '<a class="gm-destination gm-destination-ghostmesh" href="https://ghostmesh.ai/">'

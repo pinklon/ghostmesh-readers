@@ -34,11 +34,15 @@ CALLS = {
     'a-scenario-is-not-a-singularity': ('Watch the bounded evidence', 'Treat the physics score as a calculation result and the $44.4 trillion scenario as conditional.'),
     'the-test-must-name-its-target': ('Use for evaluation design', 'Test grounded use and changed premises before assigning a broad understanding label.'),
     'the-parallel-result-is-not-the-product': ('Study before migrating', 'Reproduce quality, latency and cost on your own workload before changing the product stack.'),
+    'the-experiment-ran-did-the-research-advance': ('Study the evaluation', 'Separate completed engineering from research judgment; two selected cases cannot set a universal ceiling.'),
 }
 
 
 def _poster(reader):
     source = reader['source']
+    if source.get('kind') == 'paper':
+        return ('<div class="gm-archive-source-unknown gm-archive-paper-source">'
+                'Original research paper<br>Version-pinned arXiv source<br>No media player</div>')
     platform = source.get('platform', 'YouTube')
     aspect = source.get('mediaAspect')
     if platform not in {'YouTube', 'Instagram'} or aspect not in {'16:9', '9:16', '1:1', 'unknown'}:
@@ -66,7 +70,8 @@ def card(reader, number=None):
     call_label, call = CALLS[slug]
     unverified = sum(claim['status'] == 'unverified' for claim in reader['claims'])
     total = len(reader['claims'])
-    platform = reader['source'].get('platform', 'YouTube')
+    paper = reader['source'].get('kind') == 'paper'
+    platform = 'paper' if paper else reader['source'].get('platform', 'YouTube')
     number = number if number is not None else reader['editorialOrder'] + 1
     search_text = ' '.join([reader['title'], reader['overview'], reader['category'], *reader['tags'], call_label, call])
     tags = ''.join(f'<span>{_e(tag)}</span>' for tag in reader['tags'])
@@ -89,7 +94,7 @@ def card(reader, number=None):
         f'<a href="/{_e(slug)}/">Read the deconstruction <span aria-hidden="true">↗</span></a>'
         f'<a href="{_e(reader["source"]["url"])}">Original {_e(platform)} source <span aria-hidden="true">↗</span></a>'
         '</div></div>'
-        f'<div class="gm-archive-visual"><span>Original source / opt-in player</span>{_poster(reader)}</div>'
+        f'<div class="gm-archive-visual"><span>{"Original source / direct link" if paper else "Original source / opt-in player"}</span>{_poster(reader)}</div>'
         '</article>'
     )
 

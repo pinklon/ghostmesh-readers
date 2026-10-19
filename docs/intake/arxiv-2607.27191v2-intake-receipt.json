@@ -6,7 +6,7 @@
   "baseCommit": "c7025444cad2f10253556be3cbc77bc82ccc50b9",
   "branch": "codex/reader-paper-2607-27191-research-20261019",
   "draftPath": "docs/intake/arxiv-2607.27191v2-research-draft.md",
-  "draftSha256": "fcd2622015533c62155ca03eaebfa5b12ab60dad44d5cac479bd1d8c436f142d",
+  "draftSha256": "75cfe472c6e6d75bdbedf9bb1ae0583360b045b15465ea4c351c8ab467d8fb88",
   "checkedUtcDate": "2026-10-19",
   "sourceUrls": [
     "https://arxiv.org/abs/2607.27191v2",
@@ -73,7 +73,7 @@
   "researchArtifacts": [
     {
       "path": "docs/intake/arxiv-2607.27191v2-research-draft.md",
-      "sha256": "fcd2622015533c62155ca03eaebfa5b12ab60dad44d5cac479bd1d8c436f142d"
+      "sha256": "75cfe472c6e6d75bdbedf9bb1ae0583360b045b15465ea4c351c8ab467d8fb88"
     },
     {
       "path": "docs/intake/arxiv-2607.27191v2-source-qualification.md",
@@ -81,10 +81,11 @@
     },
     {
       "path": "docs/intake/paper-reader-format-and-creative-lock-proposal.md",
-      "sha256": "4bb39805ee10bb2eecf69b8cd6c3f3790d9bab4c0b85b6e03de716cea3f1ebef"
+      "sha256": "f52709861216c3945316055a5e8c27e1bb3c1eeda5c945f93def121b5bb06f60"
     }
   ],
   "sourceQualification": "Six propositions checked against private partial PDF/HTML line maps and short original-source passages. Source reports remain distinct from independent factual verification; figures, equations, tables, OCR, reading order, logs and experiments remain unverified.",
   "paperFormat": "Proposal only. Owner Creative Lock and paper-source schema are absent; no catalog/site/knowledge admission or preview.",
-  "claimUrl": "https://github.com/pinklon/ghostmesh-readers/issues/23#issuecomment-6268423169"
+  "claimUrl": "https://github.com/pinklon/ghostmesh-readers/issues/23#issuecomment-6268423169",
+  "successorNote": "This research-only receipt preceded Tony’s paper Reader preview direction. Its companion research draft and format proposal were updated on the successor; current hashes above bind those files. The successor implementation and checks are recorded in arxiv-2607.27191v2-preview-qualification.md. Source-review status and original research-only claim remain historical."
 }

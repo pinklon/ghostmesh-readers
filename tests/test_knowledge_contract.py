@@ -27,9 +27,14 @@ class KnowledgeContractTests(unittest.TestCase):
         validate_contract(self.model, self.schema)
         catalog = json.loads((ROOT / "content/catalog.json").read_text())
         self.assertEqual(len([node for node in self.model["nodes"] if node["type"] == "Reader"]), len(catalog["readers"]))
-        self.assertEqual(len(self.model["nodes"]), len(catalog["readers"]) + 2)
-        self.assertEqual(len(self.model["relationships"]), 1)
-        self.invalid(lambda m: m["nodes"].pop(), "Reader inventory")
+        self.assertEqual(len(self.model["nodes"]), len(catalog["readers"]) + 4)
+        self.assertEqual(len(self.model["relationships"]), 2)
+        self.assertIn("urn:ghostmesh-readers:reader:the-experiment-ran-did-the-research-advance",
+                      {node["id"] for node in self.model["nodes"]})
+        self.invalid(lambda m: m["nodes"].__setitem__(
+            slice(None), [node for node in m["nodes"] if node["id"] !=
+                          "urn:ghostmesh-readers:reader:the-experiment-ran-did-the-research-advance"]),
+            "Reader inventory")
 
     def test_private_classification_is_denied(self):
         self.invalid(lambda m: m["nodes"][1].__setitem__("visibility", "private"))

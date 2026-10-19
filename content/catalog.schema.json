@@ -19,7 +19,7 @@
       "properties": {
         "id": {"type": "string", "pattern": "^reader:[a-z0-9-]+$"},
         "slug": {"type": "string", "pattern": "^[a-z0-9-]+$"},
-        "source": {"$ref": "#/$defs/mediaSource"},
+        "source": {"oneOf": [{"$ref": "#/$defs/mediaSource"}, {"$ref": "#/$defs/paperSource"}]},
         "verdict": {"enum": ["Essential", "Worth studying", "Interesting, unproven", "Mostly recycled", "Misleading", "Not worth your time"]},
         "claims": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/claim"}},
         "references": {"type": "array", "items": {"$ref": "#/$defs/reference"}},
@@ -29,10 +29,29 @@
     "mediaSource": {
       "type": "object",
       "required": ["url", "platform", "mediaAspect"],
+      "not": {"required": ["kind"]},
       "properties": {
         "url": {"type": "string", "format": "uri"},
         "platform": {"type": "string", "minLength": 1},
         "mediaAspect": {"enum": ["16:9", "9:16", "1:1", "unknown"]}
+      }
+    },
+    "paperSource": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind", "identity", "url", "htmlUrl", "pdfUrl", "title", "authors", "publisher", "version", "versionDate", "dateNote"],
+      "properties": {
+        "kind": {"const": "paper"},
+        "identity": {"type": "string", "pattern": "^arxiv:[0-9]{4}\\.[0-9]{4,5}v[1-9][0-9]*$"},
+        "url": {"type": "string", "format": "uri"},
+        "htmlUrl": {"type": "string", "format": "uri"},
+        "pdfUrl": {"type": "string", "format": "uri"},
+        "title": {"type": "string", "minLength": 1},
+        "authors": {"type": "string", "minLength": 1},
+        "publisher": {"type": "string", "minLength": 1},
+        "version": {"type": "string", "pattern": "^v[1-9][0-9]*$"},
+        "versionDate": {"type": "string", "format": "date"},
+        "dateNote": {"type": "string", "minLength": 1}
       }
     },
     "claim": {
