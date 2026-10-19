@@ -34,7 +34,7 @@
       "mediaAspect": "16:9"
     },
     "published": "2026-10-17",
-    "updated": "2026-10-18T14:34:54.306588Z",
+    "updated": "2026-10-19T06:00:41Z",
     "overview": "Guillermo Rauch describes recursive founder mode, reusable skills, hiring review and V as a common entry point to specialist company agents in an interview with Knuckle Up with Nakul.",
     "whyItMatters": "Useful for teams organizing shared agent work. Watch the ownership and routing passages; skip the long interview if you need independently measured organizational outcomes.",
     "ghostMeshTakeaway": "Make the accountable owner and permission scope visible at each destination. Compare a shared entry point with an ordinary workflow on a bounded nonproduction task.",
@@ -250,10 +250,22 @@
         "at": "2026-10-18T14:34:54.306588Z",
         "kind": "structural-normalization",
         "reason": "Issue 23: explicit brief, evidence limits, themes and discovery. Historical conclusions preserved; classification is editorial, not factual confirmation."
+      },
+      {
+        "at": "2026-10-19T06:00:41Z",
+        "kind": "evidence-presentation-review",
+        "reason": "Distinguish historical attribution, qualified external evidence and bounded conclusions; source claims are not promoted without matched evidence."
       }
     ],
     "editorialOrder": 6,
-    "orderReason": "Reading path from task framing and inspectable work through review, evidence and authority, then product-specific cases."
+    "orderReason": "Reading path from task framing and inspectable work through review, evidence and authority, then product-specific cases.",
+    "evidenceReview": {
+      "checkedAt": "2026-10-19T06:00:41Z",
+      "sourceFidelity": "Original video analysis and historical ledger retained; this revision did not re-transcribe or recheck private media.",
+      "conclusion": "Founder statements and project documentation describe proposed autonomy and interfaces. They do not establish deployment outcomes.",
+      "evidenceBoundary": "A documented feature is first-party design evidence, not an independent reliability or permission test.",
+      "nextVerification": "Run reproducible permission, recovery and operator-control checks on a versioned build."
+    }
   },
   "editorial": {
     "overview": "Guillermo Rauch describes recursive founder mode, reusable skills, hiring review and V as a common entry point to specialist company agents in an interview with Knuckle Up with Nakul.",
