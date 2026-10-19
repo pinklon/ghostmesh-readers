@@ -3,8 +3,7 @@
 from pathlib import Path
 from html import escape
 from html.parser import HTMLParser
-import json,re,sys,colorsys,math
-from collections import Counter
+import json,re,sys
 ROOT=Path(__file__).resolve().parents[1]; SITE=ROOT/'site'
 CATEGORIES=['AI & Technology','Society & Politics','Science','Business','Ethics & Culture','Other']
 READER_COUNT=0
@@ -70,54 +69,23 @@ def evidence(r):
  return out+'</section>'
 def related(r,byid):
  out='<section class="gm-related" id="related-thinking"><h2>Related thinking</h2><p>'+esc(r['relationshipDisposition'])+'</p><div class="gm-cards">'
- # The catalog and receipt keep every qualified edge. Bound only the visible cards.
- visible=sorted(r['relationships'],key=lambda edge:edge['type']=='related topic')[:4]
- for edge in visible:
+ # Every admitted relationship belongs in the navigable page, as well as the receipt.
+ for edge in sorted(r['relationships'],key=lambda edge:edge['type']=='related topic'):
   t=byid[edge['target']];out+=f'<article><p class="gm-kicker">{esc(edge["type"])}</p><h3><a href="/{t["slug"]}/">{esc(t["title"])}</a></h3><p>{esc(edge["reason"])}</p></article>'
  out+='</div>'
- if len(r['relationships'])>len(visible):
-  out+=f'<p>Showing {len(visible)} of {len(r["relationships"])} qualified relationships. <a href="/{r["slug"]}/receipt.json">See all relationships in the public receipt</a>.</p>'
  return out+'</section>'
 def relationship_map(readers,byid):
- ordered=sorted(readers,key=lambda r:r['editorialOrder'])
- index={r['id']:i for i,r in enumerate(ordered)}
- points=[(50+42*math.cos(-math.pi/2+i*2*math.pi/len(ordered)),50+41*math.sin(-math.pi/2+i*2*math.pi/len(ordered))) for i in range(len(ordered))]
- pairs=sorted({tuple(sorted((r['id'],e['target']))) for r in ordered for e in r['relationships']})
- types=Counter(e['type'] for r in ordered for e in r['relationships'])
- lines=''.join(f'<line x1="{points[index[a]][0]:.2f}" y1="{points[index[a]][1]:.2f}" x2="{points[index[b]][0]:.2f}" y2="{points[index[b]][1]:.2f}"/>' for a,b in pairs)
- nodes=''.join(f'<a class="gm-map-node" style="--map-x:{points[i][0]:.2f}%;--map-y:{points[i][1]:.2f}%" href="#map-reader-{i+1:02d}" aria-label="Find Reader {i+1}: {esc(r["title"])}" title="{esc(r["title"])}">{i+1:02d}</a>' for i,r in enumerate(ordered))
- entries=''
- for i,r in enumerate(ordered):
-  links=''.join(f'<li><span>{esc(e["type"])}</span><a href="/{esc(byid[e["target"]]["slug"])}/">{esc(byid[e["target"]]["title"])}</a><p>{esc(e["reason"])}</p></li>' for e in r['relationships'])
-  entries+=f'<article class="gm-map-entry" id="map-reader-{i+1:02d}"><div class="gm-map-entry-head"><span>{i+1:02d}</span><div><small>{esc(r["category"])}</small><h3><a href="/{esc(r["slug"])}/">{esc(r["title"])}</a></h3></div></div><ul>{links}</ul></article>'
- type_list=''.join(f'<li><strong>{esc(kind)}</strong><span>{count} declared links</span></li>' for kind,count in sorted(types.items()))
- return (f'<section class="gm-map-intro"><p class="gm-kicker">Reader connections / {len(ordered)} Readers · {len(pairs)} linked pairs</p>'
-         '<h1>See how the readings connect.</h1><p>Start with a named Reader below. Each connection names the other reading and explains why I linked them. A connection helps you navigate; it does not prove a claim.</p>'
-         '<p>Looking for the underlying source and citation records? <a href="/knowledge/">Explore public knowledge data</a>. That page keeps its evidence boundaries visible.</p></section>'
-         '<section class="gm-map-paths" aria-label="Named Reader connections"><div class="gm-map-paths-head"><p class="gm-kicker">Start with a reading</p><h2>Every connection has a reason.</h2>'
-         f'<p>All {sum(len(r["relationships"]) for r in ordered)} directed connections are listed under their named Readers. Choose a title to open its full deconstruction.</p></div><div class="gm-map-cards">{entries}</div></section>'
-         '<section class="gm-map-shell" aria-label="Reader relationship overview"><div class="gm-map-canvas" aria-label="Reader connection diagram">'
-         f'<svg viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">{lines}</svg>{nodes}</div>'
-         f'<div class="gm-map-directory"><p class="gm-kicker">Visual overview / secondary view</p><h2>Follow the numbered paths.</h2><p>{len(pairs)} linked pairs appear in this wider-screen diagram. On any screen, the named Reader cards above show the exact reason for each link.</p></div></section>'
-         '<section class="gm-map-context"><div><p class="gm-kicker">What a line means</p><h2>Connections need reasons.</h2><p>These categories come from the published Reader records. They describe why one reading points to another; they are not similarity guesses or proof that either claim is true.</p></div>'
-         f'<ul>{type_list}</ul><p>SharePlane essays and other sites need their own reviewed identity and link decision before they can appear as connected here. No cross-site Reader edge is included in this map.</p></section>')
-def card(r,featured=False):
- source=r['source'];platform=source.get('platform','YouTube')
- if source.get('mediaAspect') not in {'16:9','9:16','1:1','unknown'}:raise ValueError('Unsupported catalog source aspect')
- if platform not in {'YouTube','Instagram'}:raise ValueError('Unsupported catalog source platform')
- if source.get('mediaAspect')=='unknown':
-  visual='<div class="gm-library-poster gm-library-unknown"><p>Source shape unverified.<br>Open the original source or Reader.</p></div>'
+ if __package__:
+  from .map_design import relationship_map as render
  else:
-  source_id=source.get('videoId') if platform=='YouTube' else source.get('shortcode')
-  if not isinstance(source_id,str) or not re.fullmatch(r'[A-Za-z0-9_-]{11}' if platform=='YouTube' else r'[A-Za-z0-9_-]+',source_id):raise ValueError('Unsafe catalog source ID')
-  thumb=(f'<img src="https://i.ytimg.com/vi/{esc(source_id)}/hqdefault.jpg" loading="lazy" decoding="async" referrerpolicy="no-referrer" alt="">' if platform=='YouTube' else '<span class="gm-home-source-fallback">Original Instagram Reel<br>Source image unavailable</span>')
-  visual=f'<div class="gm-library-poster"><div class="gm-library-frame" data-home-player data-source-platform="{esc(platform)}" data-source-id="{esc(source_id)}" data-gm-aspect="{esc(source["mediaAspect"])}">{thumb}<button type="button" data-home-play hidden>Play original here</button></div></div>'
- search_text=' '.join([r['title'],r['overview'],r['category'],*r['tags']])
- return (f'<article class="gm-card gm-library-card" data-category="{esc(r["category"])}" data-tags="{esc(" ".join(r["tags"]))}" data-search="{esc(search_text)}" data-date="{r["published"]}" data-rank="{r["rank"]}">'
-         f'{visual}<div class="gm-library-copy">'
-         f'<p class="gm-kicker">{esc(r["category"])} · {r["published"]}</p><h{2 if featured else 3}><a href="/{r["slug"]}/">{esc(r["title"])}</a></h{2 if featured else 3}>'
-         f'<p>{esc(r["overview"])}</p><p>{esc(r["verdict"])} · Mapped evidence: {esc(r["evidenceState"])}. {sum(c["status"]=="unverified" for c in r["claims"])}/{len(r["claims"])} claims unverified</p>'
-         f'<p class="gm-tags">{esc(" / ".join(r["tags"]))}</p><div class="gm-library-actions"><a href="/{r["slug"]}/">Open Reader →</a><a href="{esc(source["url"])}">Original {esc(platform)} source ↗</a></div></div></article>')
+  from map_design import relationship_map as render
+ return render(readers,byid)
+def card(r,featured=False):
+ if __package__:
+  from .catalog_design import card as render
+ else:
+  from catalog_design import card as render
+ return render(r)
 def home_card(r,number,featured=False):
  tag='h2' if featured else 'h3'
  unverified=sum(c['status']=='unverified' for c in r['claims'])
@@ -270,12 +238,15 @@ def projections():
                '<div class="gm-contact-grid"><a href="mailto:tony@malott.ai?subject=GhostMesh%20Readers%20feedback"><span>HUMAN CONTACT / TONY MALOTT</span><strong>Write to Tony ↗</strong><p>Editorial judgment, correction requests and human decisions.</p></a>'
                '<a href="mailto:ghostmesh@malott.ai?subject=GhostMesh%20Reader%20counterexample"><span>AI CORRESPONDENCE / GHOSTMESH</span><strong>Send a source or counterexample ↗</strong><p>Name the Reader, the claim and the evidence you want examined.</p></a></div></section>')
  out['index.html']=home.replace('</main>',legacy+destinations+'</main>').replace('</body>','<script src="/assets/home-player.js" defer></script></body>').replace('all 13 Readers',f'all {len(readers)} Readers').replace('<link rel="icon" href="/favicon.svg">','<link rel="alternate" type="application/json" href="/.well-known/ghostmesh-knowledge.json" title="GhostMesh public knowledge discovery"><link rel="icon" href="/favicon.svg">',1)
- filters='<form class="gm-filters" role="search"><label class="gm-search-field">Search these Readers <input type="search" id="search" autocomplete="off" placeholder="Title, topic or tag"></label><div class="gm-filter-row"><label>Category <select id="category"><option value="">All categories</option>'+''.join('<option>'+esc(c)+'</option>' for c in CATEGORIES)+'</select></label><label>Tag <select id="tag"><option value="">All tags</option>'+''.join('<option>'+esc(t)+'</option>' for t in sorted({t for r in readers for t in r['tags']}))+'</select></label><label>Sort <select id="sort"><option value="recent">Most recent</option><option value="relevance">Editorial order</option><option value="title">Title</option></select></label><button class="gm-reset" type="reset">Clear filters</button></div></form><div class="gm-result-bar"><p id="result-count" role="status" aria-live="polite">'+str(READER_COUNT)+' Readers</p><p>Search covers this published Reader library only.</p></div>'
- out['readers/index.html']=page('The Reader library','/readers/','<header class="gm-intro"><p class="gm-kicker">The complete archive</p><h1>Find your next question.</h1><p>Browse all 13 Readers. Evidence labels describe the mapped claims, not a score for the author. Editorial order is a curated reading order, not scientific confidence.</p></header>'+filters+categories+'<noscript><p>Search controls require JavaScript. Every Reader is listed below; category pages work without it.</p></noscript><div class="gm-cards" id="catalog-results">'+''.join(card(r) for r in readers)+'</div><script src="/assets/catalog.js" defer></script><script src="/assets/home-player.js" defer></script>')
+ if __package__:
+  from . import catalog_design
+ else:
+  import catalog_design
+ out['readers/index.html']=page('The Reader library','/readers/',catalog_design.archive(readers,CATEGORIES)).replace('</head>','<link rel="stylesheet" href="/assets/catalog-design.css"></head>')
  for i,c in enumerate(CATEGORIES):
-  group=[r for r in readers if r['category']==c];out[f'readers/categories/{i}/index.html']=page(c,f'/readers/categories/{i}/','<h1>'+esc(c)+'</h1><p><a href="/readers/">All categories</a></p><div class="gm-cards">'+(''.join(card(r) for r in group) or '<p>No Reader is currently classified here.</p>')+'</div><script src="/assets/home-player.js" defer></script>')
+  out[f'readers/categories/{i}/index.html']=page(c,f'/readers/categories/{i}/',catalog_design.category(readers,CATEGORIES,c)).replace('</head>','<link rel="stylesheet" href="/assets/catalog-design.css"></head>')
  out['readers/index.html']=out['readers/index.html'].replace('all 13 Readers',f'all {len(readers)} Readers').replace('>13 Readers<',f'>{len(readers)} Readers<')
- out['map/index.html']=page('Reader relationship map','/map/',relationship_map(readers,byid)).replace('<body class="gm-catalog">','<body class="gm-catalog gm-map-page">')
+ out['map/index.html']=page('Reader relationship map','/map/',relationship_map(readers,byid)).replace('</head>','<link rel="stylesheet" href="/assets/map-design.css"></head>').replace('<body class="gm-catalog">','<body class="gm-catalog gm-map-page">')
  urls=['/','/readers/','/map/','/knowledge/']+['/'+r['slug']+'/' for r in readers]+[f'/readers/categories/{i}/' for i in range(len(CATEGORIES))]
  out['sitemap.xml']='<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'+''.join('<url><loc>'+data['host']+u+'</loc></url>' for u in sorted(urls))+'</urlset>\n'
  out['404.html']=page('Page not found','/404.html','<h1>That page is not here.</h1><p><a href="/readers/">Browse the complete Reader library</a> or return to the <a href="/">homepage</a>.</p>')

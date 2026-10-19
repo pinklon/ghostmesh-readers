@@ -69,20 +69,20 @@ class VisualContractTest(unittest.TestCase):
         page = (ROOT / 'site/map/index.html').read_text()
         parsed = Tags()
         parsed.feed(page)
-        nodes = [a for _, a in parsed.tags if 'gm-map-node' in a.get('class', '').split()]
-        entries = [a for _, a in parsed.tags if 'gm-map-entry' in a.get('class', '').split()]
-        pairs = {tuple(sorted((r['id'], edge['target']))) for r in catalog['readers']
-                 for edge in r['relationships']}
-        self.assertEqual(len(nodes), len(catalog['readers']))
+        entries = [a for _, a in parsed.tags if 'gm-atlas-entry' in a.get('class', '').split()]
+        links = [a for _, a in parsed.tags if 'gm-atlas-link' in a.get('class', '').split()]
         self.assertEqual(len(entries), len(catalog['readers']))
-        self.assertEqual(sum(tag == 'line' for tag, _ in parsed.tags), len(pairs))
+        self.assertEqual(len(links), sum(len(r['relationships']) for r in catalog['readers']))
         self.assertIn('Its named editorial links help you navigate and do not prove a claim.',
                       (ROOT / 'site/knowledge/index.html').read_text())
-        self.assertIn('it does not prove a claim', page)
+        self.assertIn('not independent corroboration or agreement', page)
         for reader in catalog['readers']:
             self.assertIn(f'id="map-reader-{reader["editorialOrder"] + 1:02d}"', page)
             for edge in reader['relationships']:
-                self.assertIn(html.escape(edge['reason'], quote=True), page)
+                target = next(r for r in catalog['readers'] if r['id'] == edge['target'])
+                self.assertIn(f'href="/{target["slug"]}/"', page)
+        self.assertIn('Both Readers examine the Amap fleet', page)
+        self.assertIn('limited inference from Anthropic emotion-representation', page)
 
     def test_catalog_aspect_and_share_source_are_explicit(self):
         catalog = json.loads((ROOT / 'content/catalog.json').read_text())

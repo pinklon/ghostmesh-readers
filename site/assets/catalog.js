@@ -16,7 +16,7 @@
     const snippet = document.createElement('p');
     snippet.className = 'gm-library-match-snippet';
     snippet.hidden = true;
-    card.querySelector('.gm-library-copy > p:not(.gm-kicker)')?.after(snippet);
+    card.querySelector('.gm-archive-audience, .gm-library-copy > p:not(.gm-kicker)')?.after(snippet);
     return [card, snippet];
   }));
   function update() {
@@ -29,7 +29,11 @@
       const document = searchable.get(card);
       const matchingText = normalize(document.text);
       card.hidden = !((!terms.length || (exact ? matchingText.includes(query) : terms.every(term => matchingText.includes(term)))) && (!category.value || card.dataset.category === category.value) && (!tag.value || card.dataset.tags.split(' ').includes(tag.value)));
-      if (!card.hidden) count++;
+      if (!card.hidden) {
+        count++;
+        const index = card.querySelector('.gm-archive-index');
+        if (index) index.textContent = String(count).padStart(2, '0');
+      }
       const snippet = snippets.get(card);
       const term = matchingText.includes(query) ? query : terms.find(value => matchingText.includes(value));
       const at = term ? normalize(document.text).indexOf(term) : -1;

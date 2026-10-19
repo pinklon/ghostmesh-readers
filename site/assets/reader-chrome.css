@@ -1,5 +1,7 @@
 /* GhostMesh Reader common chrome: same GM identity as the homepage. */
 .gm-logo-mark{width:45px;height:34px;flex:none;object-fit:contain;display:block}
+/* The source poster stays dark in light mode; keep its helper copy readable. */
+html[data-theme="light"] .player .launch p{color:#f3f5f8}
 .gm-wordmark{font:750 15px/1.2 system-ui,-apple-system,sans-serif;letter-spacing:.2em;color:var(--tone-f5f6f8)}
 .gm-wordmark em{font-style:normal;color:var(--tone-e4314d)}
 .gm-brand-note{display:block;color:var(--tone-b9bcc4);font:9px/1.5 ui-monospace,monospace;letter-spacing:.12em;margin-top:4px}

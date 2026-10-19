@@ -248,7 +248,7 @@ def validate_contract(model: dict, schema: dict, repo: Path = ROOT) -> None:
 
 
 def render_html(model: dict) -> bytes:
-    """Render the source-only index inside the normalized Reader shell."""
+    """Render an explorable human view without broadening the source-only contract."""
     from generate_site import page
 
     readers = [n for n in model["nodes"] if n["type"] == "Reader"]
@@ -256,65 +256,105 @@ def render_html(model: dict) -> bytes:
     citations = model["relationships"]
     by_id = {n["id"]: n for n in model["nodes"]}
     catalog = json.loads((ROOT / "content/catalog.json").read_text(encoding="utf-8"))
+    catalog_by_slug = {entry["slug"]: entry for entry in catalog["readers"]}
     catalog_claims = [claim for reader in catalog["readers"] for claim in reader["claims"]]
     unverified = sum(claim["status"] == "unverified" for claim in catalog_claims)
     historical = sum(claim["status"] == "unverified" and claim["kind"] == "historical-ledger-entry" for claim in catalog_claims)
     material = sum(claim["status"] == "unverified" and claim["kind"] == "material-prose-claim" for claim in catalog_claims)
-    cards = []
+    claims_by_reader: dict[str, list[dict]] = {reader["id"]: [] for reader in readers}
+    for claim in claims:
+        claims_by_reader[claim["provenance"]["sourceNodeId"]].append(claim)
+    source_count = sum(bool(items) for items in claims_by_reader.values())
+    rows = []
     for number, reader in enumerate(readers, 1):
+        entry = catalog_by_slug[reader["id"].removeprefix("urn:ghostmesh-readers:reader:")]
         claim_items = []
-        for claim in claims:
-            if claim["provenance"]["sourceNodeId"] != reader["id"]:
-                continue
+        for claim in claims_by_reader[reader["id"]]:
             evidence = [by_id[e["to"]] for e in citations if e["from"] == claim["id"]]
-            links = " ".join(
-                f'<a href="{html.escape(source["url"], quote=True)}" rel="noopener noreferrer">'
-                f'{html.escape(source["label"])}</a>' for source in evidence
-            )
+            links = ", ".join(f'<a href="{html.escape(source["url"], quote=True)}" rel="noopener noreferrer">'
+                              f'{html.escape(source["label"])}</a>' for source in evidence)
             claim_items.append(
                 f'<li id="{html.escape(claim["id"], quote=True)}" data-knowledge-id="{html.escape(claim["id"], quote=True)}">'
-                f'<strong>{html.escape(claim["label"])}</strong>: {html.escape(claim["statement"])} '
-                f'<small>Epistemic status: {html.escape(claim["epistemicStatus"])}. '
-                f'Source: <a href="{html.escape(reader["url"] + claim["provenance"]["locator"], quote=True)}">'
-                f'published evidence ledger</a>. External evidence: {links}.</small></li>'
+                f'<p class="kx-trace-label">{html.escape(claim["label"])}</p>'
+                f'<blockquote>{html.escape(claim["statement"])}</blockquote>'
+                f'<p class="kx-trace-meta">Status: {html.escape(claim["epistemicStatus"])}. '
+                f'<a href="{html.escape(reader["url"] + claim["provenance"]["locator"], quote=True)}">'
+                f'Inspect the exact published passage</a>.</p>'
+                f'<p class="kx-trace-meta">External source named there: {links or "none admitted"}. '
+                'The link records attribution; external content bytes are not certified here.</p></li>'
             )
-        detail = (f'<ul>{"".join(claim_items)}</ul>' if claim_items else
-                  '<p>No claim citation is projected from this Reader in v0.1. '
-                  'The Reader page and its own evidence receipt remain the source.</p>')
-        cards.append(
-            f'<article class="gm-card" data-knowledge-id="{html.escape(reader["id"], quote=True)}">'
-            f'<p class="gm-knowledge-number">READER SOURCE / {number:02d}</p>'
-            f'<h2><a href="{html.escape(reader["url"], quote=True)}">{html.escape(reader["label"])}</a></h2>'
-            f'<p>Open the published deconstruction for its full claim register, evidence limits and handling receipt. This record identifies the page; it does not certify its claims.</p>'
-            f'{detail}</article>'
+        trace = (f'<details class="kx-record-trace"><summary>Inspect {len(claim_items)} exact '
+                 f'citation{"s" if len(claim_items) != 1 else ""} in this projection</summary>'
+                 f'<ol>{"".join(claim_items)}</ol></details>' if claim_items else '')
+        rows.append(
+            f'<article class="kx-record" data-knowledge-id="{html.escape(reader["id"], quote=True)}" '
+            f'data-trace="{"yes" if claim_items else "no"}">'
+            f'<div class="kx-record-index"><span>{number:02d}</span><span>Reader source</span></div>'
+            '<div class="kx-record-body">'
+            f'<h3><a href="{html.escape(reader["url"], quote=True)}">{html.escape(reader["label"])}</a></h3>'
+            f'<p class="kx-record-overview">{html.escape(entry["overview"])}</p>'
+            f'{trace}</div>'
+            '<span class="kx-record-arrow" aria-hidden="true">↗</span></article>'
         )
+    example = ''
+    if claims:
+        first = claims[0]
+        source = by_id[first["provenance"]["sourceNodeId"]]
+        example = (f'<a class="kx-feature-link" href="#{html.escape(first["id"], quote=True)}">'
+                   f'<span>Trace an admitted citation</span><strong>{html.escape(first["label"])}</strong>'
+                   f'<small>Open the exact statement in {html.escape(source["label"])} <span aria-hidden="true">↗</span></small></a>')
     body = (
-        '<header class="gm-intro"><p class="gm-kicker">Public knowledge / source and citation records</p>'
-        '<h1>Follow the source behind a claim.</h1><p>Browse the published Readers and the claim citations we can trace to an exact passage. '
-        'A citation shows where a statement came from. It does not prove that the statement is true. Each Reader holds its fuller evidence and limits.</p></header>'
-        '<section class="gm-knowledge-guide" id="how-to-read"><div><p class="gm-kicker">How to read this page</p>'
-        '<h2>Trace a statement. Keep the judgment open.</h2><p>This public record answers a narrow question: which published Reader page and, where admitted, which exact citation can you inspect?</p></div>'
-        '<ol><li><strong>Source attribution</strong><span>A passage or source link shows what was said, not whether it is true.</span></li>'
-        '<li><strong>Evidence assessment</strong><span>The Reader checks qualified corroboration and counterevidence with dates and limits.</span></li>'
-        '<li><strong>Editorial judgment</strong><span>GhostMesh states an interpretation and what might change it. You decide what to make of it.</span></li></ol></section>'
-        f'<aside class="gm-knowledge-counts"><p><strong>{len(readers)}</strong><span>published Reader source records</span></p>'
+        '<header class="kx-hero"><p class="gm-kicker">PUBLIC KNOWLEDGE / VERSION 0.1</p>'
+        '<h1>Follow a claim<br>to its source.</h1>'
+        '<p class="kx-hero-intro">This index identifies published Readers and the exact citations admitted to the public knowledge record. '
+        'A source link tells you where a statement came from; it does not establish whether it is true.</p>'
+        '<div class="kx-hero-actions"><a href="#knowledge-records">Browse source records ↓</a>'
+        '<a href="#how-to-read">Understand the limits ↗</a></div></header>'
+        '<section class="kx-overview" aria-label="Knowledge record summary">'
+        f'<div class="kx-overview-numbers"><p><strong>{len(readers)}</strong><span>published Reader source records</span></p>'
         f'<p><strong>{len(claims)}</strong><span>claim citations admitted in this v0.1 projection</span></p>'
         f'<p><strong>{len(catalog_claims)}</strong><span>separate Reader claim-register entries</span></p>'
-        f'<p><strong>{unverified}</strong><span>still labeled unverified in that register</span></p></aside>'
-        f'<p class="gm-knowledge-limit">Of the {unverified} unverified register entries, {historical} are historical-ledger entries and {material} are material-prose claims. '
+        f'<p><strong>{unverified}</strong><span>still labeled unverified in that register</span></p></div>'
+        f'{example}</section>'
+        '<section class="kx-reading-note" id="how-to-read"><div><p class="gm-kicker">READ THE RECORD</p>'
+        '<h2>Attribution is the beginning of an inquiry.</h2></div>'
+        '<div><p>A projected citation binds a statement to an exact passage in a published Reader and, where listed, '
+        'to the external source named there. Its authority is source-declared. It is not independent verification.</p>'
+        f'<p>Of the {unverified} unverified register entries, {historical} are historical-ledger entries and {material} are material-prose claims. '
         'Unverified means the current public record does not establish the full proposition; it does not mean the statement is false. '
         'A source-fidelity check is different from independent corroboration.</p>'
-        '<p class="gm-knowledge-example"><strong>A concrete example:</strong> In <a href="/the-score-is-not-the-system/#the-score-is-not-the-system--incident-counts">The Score Is Not the System</a>, the source is a bounded METR investigation; the Reader marks its reported counts corroborated by a dated reference, while separately warning that the two counts describe different groups and that motive remains interpretation. The source link alone could not establish those conclusions.</p>'
-        '<p class="gm-knowledge-links"><a href="/knowledge/v0.1/readers.json">JSON</a> · '
-        '<a href="/knowledge/v0.1/readers.jsonld">JSON-LD</a> · '
-        '<a href="/knowledge/v0.1/contract.schema.json">Schema</a> · '
-        '<a href="/knowledge/v0.1/publication-manifest.json">Publication manifest</a></p>'
-        '<p class="gm-knowledge-map-link">Want to explore related readings? <a href="/map/">Open the Reader connection map</a>. Its named editorial links help you navigate and do not prove a claim. '
+        '<p>For dated corroboration, counterevidence and the editorial judgment, open the full Reader and its handling receipt. '
+        '<a href="/the-score-is-not-the-system/#the-score-is-not-the-system--incident-counts">See a concrete example of qualified counts ↗</a></p>'
+        '</div></section>'
+        '<section class="kx-directory" id="knowledge-records" aria-label="Public Reader source records">'
+        '<div class="kx-directory-head"><div><p class="gm-kicker">SOURCE DIRECTORY</p><h2>Explore the published record.</h2>'
+        '<p>Search Reader titles, published summaries and admitted statements. The full claim register lives in each Reader.</p></div>'
+        f'<p class="kx-directory-scope">{source_count} of {len(readers)} Readers currently carry an exact citation in v0.1.</p></div>'
+        '<form class="kx-tools" data-knowledge-tools hidden role="search">'
+        '<label for="kx-search">Find a Reader or statement</label><input id="kx-search" type="search" autocomplete="off" '
+        'placeholder="Search this source directory" data-knowledge-query>'
+        '<label for="kx-filter">Show</label><select id="kx-filter" data-knowledge-filter>'
+        '<option value="all">All Reader sources</option><option value="yes">With exact citation</option>'
+        '<option value="no">Without exact citation</option></select>'
+        '<button type="reset">Clear</button></form>'
+        f'<p class="kx-results" data-knowledge-results aria-live="polite">Showing all {len(readers)} Reader sources</p>'
+        '<div class="kx-records">' + "".join(rows) + '</div>'
+        '<p class="kx-empty" data-knowledge-empty hidden>No records match those filters. Clear the search to see every Reader.</p>'
+        '</section>'
+        '<footer class="kx-data-footer"><div><p class="gm-kicker">OPEN FORMATS</p><h2>Use the source-only data.</h2>'
+        '<p>The versioned exports retain identity, provenance and source-only status. They contain no raw third-party media or transcripts.</p></div>'
+        '<nav aria-label="Knowledge data downloads"><a href="/knowledge/v0.1/readers.json">JSON ↗</a>'
+        '<a href="/knowledge/v0.1/readers.jsonld">JSON-LD ↗</a>'
+        '<a href="/knowledge/v0.1/contract.schema.json">Schema ↗</a>'
+        '<a href="/knowledge/v0.1/publication-manifest.json">Publication manifest ↗</a></nav>'
+        '<p>Want to explore related readings? <a href="/map/">Open the Reader connection map</a>. '
+        'Its named editorial links help you navigate and do not prove a claim. '
         'Other sites, including SharePlane, need an explicit reviewed connection before appearing in this Reader graph.</p>'
-        '<section id="knowledge-records" class="gm-cards" aria-label="Public Reader records">'
-        + "".join(cards) + '</section>'
+        '</footer>'
     )
     rendered = page('Public knowledge data', '/knowledge/', body)
+    rendered = rendered.replace('</head>', '<link rel="stylesheet" href="/assets/knowledge-explorer.css">'
+                                '<script src="/assets/knowledge-explorer.js" defer></script></head>', 1)
     # The projection disallows email addresses even in the shared site footer.
     rendered = rendered.replace(' · <a href="mailto:ghostmesh@malott.ai">Contact GhostMesh</a>', '')
     return rendered.encode('utf-8')
