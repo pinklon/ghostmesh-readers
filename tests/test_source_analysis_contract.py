@@ -48,6 +48,15 @@ class SourceAnalysisContractTests(unittest.TestCase):
             self.raw.replace('</section></main>', '</section><section id="sources"></section></main>'),
             self.raw.replace('<a href="https://example.net/response">Response</a>',
                              '</section><a href="https://example.net/response">Response</a>'),
+            self.raw.replace('<section id="sources">', '<section id="sources" hidden>'),
+            self.raw.replace('<section id="sources">', '<section id="sources" style="display:none">'),
+            self.raw.replace('<section id="sources">', '<section id="sources" aria-hidden="true">'),
+            self.raw.replace('<a href="https://example.net/response">',
+                             '<a hidden href="https://example.net/response">'),
+            self.raw.replace('<a href="https://example.net/response">',
+                             '<a style="visibility:hidden" href="https://example.net/response">'),
+            self.raw.replace('<section id="sources">', '<div hidden><section id="sources">').replace('</section></main>', '</section></div></main>'),
+            self.raw.replace('<section id="sources">', '<details><section id="sources">').replace('</section></main>', '</section></details></main>'),
         ):
             with self.subTest(raw=raw), self.assertRaises(ValueError):
                 validate_analysis_source(raw, self.source, self.reader)

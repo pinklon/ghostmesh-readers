@@ -220,25 +220,30 @@ class AnalysisSourceLinks(HTMLParser):
  """Collect exact record links from one inert, visible source section."""
  VOID={'area','base','br','col','embed','hr','img','input','link','meta','param','source','track','wbr'}
  def __init__(self):
-  super().__init__(convert_charrefs=True);self.depth=0;self.sources_depth=None;self.sections=0;self.urls=set();self.violations=[]
+  super().__init__(convert_charrefs=True);self.depth=0;self.sources_depth=None;self.sections=0;self.urls=set();self.violations=[];self.concealed=[]
  def handle_starttag(self,tag,attrs):
   a=dict(attrs)
+  covered=(self.concealed[-1] if self.concealed else False) or 'hidden' in a or a.get('aria-hidden','').lower()=='true' or 'style' in a or tag in {'details','dialog','template'}
   if a.get('id')=='sources':
    self.sections+=1
    if tag!='section':self.violations.append('sources must be a section')
    self.sources_depth=self.depth+1
+  if covered and self.sources_depth is not None:self.violations.append('concealed source')
   if self.sources_depth is not None and tag=='a' and a.get('href'):self.urls.add(a['href'])
   if tag in {'iframe','video','audio','embed','object','source','track','canvas'}:self.violations.append('active source element')
   if tag=='script' and a.get('src') not in {'/assets/theme.js','/assets/reader-search.js','/assets/reader-share.js'}:self.violations.append('unapproved script')
   if tag=='img' and not (a.get('src','').startswith(('/brand/','/assets/'))):self.violations.append('unapproved image')
   if any(name.startswith('on') or (name in {'href','src'} and str(value or '').lower().startswith('javascript:')) for name,value in attrs):self.violations.append('active handler')
   if any(name in a for name in ('data-home-player','data-home-play','data-paper-frame','data-paper-open')):self.violations.append('source player')
-  if tag not in self.VOID:self.depth+=1
+  if tag not in self.VOID:
+   self.depth+=1;self.concealed.append(covered)
  def handle_startendtag(self,tag,attrs):
   self.handle_starttag(tag,attrs)
   if tag not in self.VOID:self.handle_endtag(tag)
  def handle_endtag(self,tag):
-  if tag not in self.VOID:self.depth-=1
+  if tag not in self.VOID:
+   self.depth-=1
+   if self.concealed:self.concealed.pop()
   if self.sources_depth is not None and self.depth<self.sources_depth:self.sources_depth=None
 
 def validate_analysis_source(raw,source,reader):
