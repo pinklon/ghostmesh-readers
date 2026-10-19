@@ -55,7 +55,7 @@ class PublicationGate(unittest.TestCase):
   self.mutate(lambda d:d['readers'][1]['claims'][0].update(id=d['readers'][0]['claims'][0]['id']));self.rejected('Duplicate global claim')
  def test_relation_requires_provenance(self):
   self.mutate(lambda d:d['readers'][0]['relationships'][0].update(provenance=[]));self.rejected('unqualified relation')
- def test_five_relations_remain_public_with_four_visible_cards(self):
+ def test_five_relations_remain_public_and_navigable(self):
   p=self.root/'content/catalog.json';data=json.loads(p.read_text());reader=data['readers'][0]
   existing={edge['target'] for edge in reader['relationships']}
   for target in data['readers'][1:]:
@@ -72,6 +72,8 @@ class PublicationGate(unittest.TestCase):
   schema=json.loads((self.root/'content/catalog.schema.json').read_text())
   self.assertNotIn('maxItems',schema['$defs']['reader']['properties']['relationships'])
   scripts=self.root/'scripts';scripts.mkdir();shutil.copy2(ROOT/'scripts/generate_site.py',scripts/'generate_site.py')
+  shutil.copy2(ROOT/'scripts/map_design.py',scripts/'map_design.py')
+  shutil.copy2(ROOT/'scripts/catalog_design.py',scripts/'catalog_design.py')
   result=subprocess.run([sys.executable,str(scripts/'generate_site.py')],capture_output=True,text=True)
   self.assertEqual(0,result.returncode,result.stdout+result.stderr)
   self.assertEqual([],check(self.root))
@@ -80,9 +82,8 @@ class PublicationGate(unittest.TestCase):
   receipt=json.loads((self.root/'site'/slug/'receipt.json').read_text())
   self.assertEqual(5,len(receipt['normalization']['relationships']))
   section=(self.root/'site'/slug/'index.html').read_text().split('<section class="gm-related"',1)[1].split('</section>',1)[0]
-  self.assertEqual(4,section.count('<article>'))
+  self.assertEqual(5,section.count('<article>'))
   self.assertIn(f'/{substantive_target["slug"]}/',section)
-  self.assertIn('Showing 4 of 5 qualified relationships',section)
   fifth=reader['relationships'][-1];provenance=fifth['provenance']
   fifth['provenance']=[]
   p.write_text(json.dumps(data));self.rejected('unqualified relation')

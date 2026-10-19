@@ -19,6 +19,20 @@ class Tags(HTMLParser):
 
 
 class VisualContractTest(unittest.TestCase):
+    def test_approved_home_hero_and_distinct_destinations(self):
+        home = (ROOT / 'site/index.html').read_text()
+        self.assertIn('THE ALGORITHM GOT YOUR ATTENTION.</span> <span class="gm-hero-question">DID THE ARGUMENT EARN IT?', home)
+        self.assertIn('<title>The algorithm got your attention. Did the argument earn it? | GhostMesh Readers</title>', home)
+        for name, url in (
+            ('ghostmesh', 'https://ghostmesh.ai/'),
+            ('malott', 'https://malott.ai/'),
+            ('shareplane', 'https://shareplane.malott.ai/'),
+        ):
+            self.assertIn(f'class="gm-destination gm-destination-{name}" href="{url}"', home)
+        self.assertEqual(home.count('class="gm-destination gm-destination-'), 3)
+        self.assertIn('Context, evidence and continuity <span>Conceptual illustration · Human authority</span>', home)
+        self.assertNotIn('GM / CONCEPTUAL SIGNAL ARCHITECTURE', home)
+
     def test_single_shared_shell_and_full_archive(self):
         catalog = json.loads((ROOT / 'content/catalog.json').read_text())
         routes = ['index.html', 'readers/index.html', 'knowledge/index.html'] + [
@@ -32,6 +46,8 @@ class VisualContractTest(unittest.TestCase):
                                      for tag, a in parsed.tags), 1)
                 self.assertEqual(sum('data-theme-toggle' in a for _, a in parsed.tags), 1)
                 self.assertEqual(sum(tag == 'h1' for tag, _ in parsed.tags), 1)
+                self.assertIn('<p class="gm-site-tagline">Context endures. Possibility evolves.</p>',
+                              (ROOT / 'site' / route).read_text())
                 if route not in {'index.html', 'readers/index.html', 'knowledge/index.html'}:
                     self.assertEqual(sum('data-gm-share' in a for _, a in parsed.tags), 1)
                     self.assertEqual(sum('gm-reader-footer' in a.get('class', '').split()
@@ -45,9 +61,16 @@ class VisualContractTest(unittest.TestCase):
         parsed = Tags()
         parsed.feed(home)
         panels = [a for _, a in parsed.tags if 'data-home-player' in a]
-        self.assertEqual(len(panels), 7)
-        self.assertEqual(sum(a.get('data-source-platform') == 'YouTube' for a in panels), 6)
-        self.assertEqual(sum(a.get('data-source-platform') == 'Instagram' for a in panels), 1)
+        self.assertEqual(len(panels), 6)
+        catalog = json.loads((ROOT / 'content/catalog.json').read_text())
+        by_id = {reader['id']: reader for reader in catalog['readers']}
+        recent = sorted(catalog['readers'], key=lambda reader: (reader['published'], reader['slug']), reverse=True)
+        selected = [by_id[catalog['featuredId']]] + [reader for reader in recent if reader['id'] != catalog['featuredId']][:6]
+        self.assertCountEqual([a.get('data-source-platform') for a in panels],
+                              [reader['source']['platform'] for reader in selected
+                               if reader['source'].get('kind') != 'paper'])
+        self.assertEqual(sum(reader['source'].get('kind') == 'paper' for reader in selected), 1)
+        self.assertIn('class="gm-home-visual gm-home-paper"', home)
         self.assertEqual(sum(tag == 'iframe' for tag, _ in parsed.tags), 0)
         self.assertEqual(home.count('class="gm-home-open"'), 7)
         self.assertEqual(home.count('class="gm-home-source"'), 7)
@@ -55,6 +78,16 @@ class VisualContractTest(unittest.TestCase):
         self.assertIn('button.addEventListener', script)
         self.assertNotIn('autoplay=1', script)
         self.assertNotIn('download', script)
+
+    def test_visible_deconstruction_numbers_are_unique(self):
+        catalog = json.loads((ROOT / 'content/catalog.json').read_text())
+        numbers = []
+        for reader in catalog['readers']:
+            page = (ROOT / 'site' / reader['slug'] / 'index.html').read_text()
+            label = re.search(r'Video Deconstruction\s+(\d+)', page, re.I)
+            if label:
+                numbers.append(int(label.group(1)))
+        self.assertEqual(len(numbers), len(set(numbers)))
 
     def test_light_signal_has_distinct_theme_tokens(self):
         css = (ROOT / 'site/assets/knowledge.css').read_text()
@@ -69,20 +102,23 @@ class VisualContractTest(unittest.TestCase):
         page = (ROOT / 'site/map/index.html').read_text()
         parsed = Tags()
         parsed.feed(page)
-        nodes = [a for _, a in parsed.tags if 'gm-map-node' in a.get('class', '').split()]
-        entries = [a for _, a in parsed.tags if 'gm-map-entry' in a.get('class', '').split()]
-        pairs = {tuple(sorted((r['id'], edge['target']))) for r in catalog['readers']
-                 for edge in r['relationships']}
-        self.assertEqual(len(nodes), len(catalog['readers']))
+        entries = [a for _, a in parsed.tags if 'gm-atlas-entry' in a.get('class', '').split()]
+        links = [a for _, a in parsed.tags if 'gm-atlas-link' in a.get('class', '').split()]
         self.assertEqual(len(entries), len(catalog['readers']))
-        self.assertEqual(sum(tag == 'line' for tag, _ in parsed.tags), len(pairs))
+        self.assertEqual(len(links), sum(len(r['relationships']) for r in catalog['readers']))
         self.assertIn('Its named editorial links help you navigate and do not prove a claim.',
                       (ROOT / 'site/knowledge/index.html').read_text())
-        self.assertIn('it does not prove a claim', page)
+        self.assertIn('not independent corroboration or agreement', page)
         for reader in catalog['readers']:
             self.assertIn(f'id="map-reader-{reader["editorialOrder"] + 1:02d}"', page)
             for edge in reader['relationships']:
-                self.assertIn(html.escape(edge['reason'], quote=True), page)
+                target = next(r for r in catalog['readers'] if r['id'] == edge['target'])
+                self.assertIn(f'href="/{target["slug"]}/"', page)
+        self.assertIn('Both Readers examine the Amap fleet', page)
+        self.assertIn('Wilson considers services designed for agent customers', page)
+        self.assertIn('The physics benchmark reports 49 of 50 bounded calculations', page)
+        self.assertIn('This paper grades open-ended research contributions', page)
+        self.assertIn('limited inference from Anthropic emotion-representation', page)
 
     def test_catalog_aspect_and_share_source_are_explicit(self):
         catalog = json.loads((ROOT / 'content/catalog.json').read_text())
@@ -90,9 +126,14 @@ class VisualContractTest(unittest.TestCase):
         parsed = Tags()
         parsed.feed(archive)
         frames = [a for _, a in parsed.tags if 'gm-library-frame' in a.get('class', '').split()]
-        self.assertEqual(len(frames), len(catalog['readers']))
+        media = [r for r in catalog['readers'] if r['source'].get('kind') != 'paper']
+        self.assertEqual(len(frames), len(media))
         self.assertCountEqual([a['data-gm-aspect'] for a in frames],
-                              [r['source']['mediaAspect'] for r in catalog['readers']])
+                              [r['source']['mediaAspect'] for r in media])
+        self.assertIn('class="gm-paper-cover"', archive)
+        self.assertIn('LLM<br>personas', archive)
+        self.assertIn('TabPFN<br>distribution', archive)
+        self.assertIn('TWO RESEARCH QUESTIONS', archive)
         self.assertEqual(sum(tag == 'iframe' for tag, _ in parsed.tags), 0)
         self.assertIn('Search covers this published Reader library only.', archive)
         home = (ROOT / 'site/index.html').read_text()

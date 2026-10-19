@@ -1,0 +1,91 @@
+{
+  "schemaVersion": "research-intake-receipt-v1",
+  "candidate": "arxiv:2607.27191v2",
+  "stage": "research-only",
+  "writer": "Task8 /root/paper_reader_intake",
+  "baseCommit": "c7025444cad2f10253556be3cbc77bc82ccc50b9",
+  "branch": "codex/reader-paper-2607-27191-research-20261019",
+  "draftPath": "docs/intake/arxiv-2607.27191v2-research-draft.md",
+  "draftSha256": "75cfe472c6e6d75bdbedf9bb1ae0583360b045b15465ea4c351c8ab467d8fb88",
+  "checkedUtcDate": "2026-10-19",
+  "sourceUrls": [
+    "https://arxiv.org/abs/2607.27191v2",
+    "https://arxiv.org/html/2607.27191v2",
+    "https://cruxevals.com/crux/can-ai-agents-conduct-research/",
+    "https://github.com/sage-princeton/crux-2-personas-CLEAN",
+    "https://proceedings.mlr.press/v267/wijk25a.html",
+    "https://arxiv.org/abs/2504.08066"
+  ],
+  "evidencePosture": "Source-reported study findings and separate-construct context; no experiment or full log independently audited.",
+  "holds": [
+    "Paper format not admitted by video-first Reader schema",
+    "No owner Creative Lock or independent content review",
+    "This Reader research candidate has not completed full-PDF editorial reading or experiment/log audit; separate adapter PDF and HTML extractions are partial",
+    "Separate publication adapter PR361 is a draft prototype, not installed in Readers"
+  ],
+  "siteMutation": false,
+  "catalogMutation": false,
+  "knowledgeMutation": false,
+  "push": false,
+  "draftPr": false,
+  "merge": false,
+  "deployment": false,
+  "checks": [
+    "git diff --check PASS",
+    "python3 scripts/check_site.py PASS",
+    "research draft source/hold/style assertions PASS"
+  ],
+  "independentReview": {
+    "reviewedCommit": "f4fc4569b8b0088d90ee14324f78e51b0b5601c2",
+    "mode": "read-only",
+    "result": "One P2 time-window omission confirmed; corrected to 120-hour initial deadline plus 24-hour extension, six days total, and three interventions. Other checked claims and research-only hold aligned with sources.",
+    "limits": "Reviewer did not qualify PDF, audit experiments/logs, or independently verify PR361 adapter receipt."
+  },
+  "externalPrototypeStatus": {
+    "source": "https://github.com/pinklon/skills/pull/361",
+    "head": "dfe1c55bc32dd8e088d95390c6a8a5c141f80fcb",
+    "stage": "draft, source-only prototype",
+    "pdf": {
+      "status": "partial",
+      "sourceSha256": "1498e9169c3c2031ce9e283d73061d3e63ba2e810b02b357a51477c5260bb508",
+      "derivedSha256": "72793656b0e08b95db16f5fb3f5c03d20191ab9085d36ca6ccf7be9e448397e2",
+      "pages": 35,
+      "pageAnchors": 1808,
+      "limits": [
+        "figures",
+        "tables",
+        "equations",
+        "OCR",
+        "reading order"
+      ]
+    },
+    "html": {
+      "status": "partial",
+      "sourceSha256": "e6707a589d6ebbeb4e15ec8921911d08deea203e479855dd37db79a0c0d840fc",
+      "derivedSha256": "6800a89779458dcfb52ec487c36e5685dc411883919d6acb270e446142fcaa89",
+      "sourceLineAnchors": 3389
+    },
+    "sourceAndDerivedTextPrivate": true,
+    "metadataAssertedNotVerified": true,
+    "readerRuntimeAdopted": false
+  },
+  "prototypeVerification": "Current connected GitHub PR361 metadata/body independently fetched at head dfe1c55 on 2026-10-19. Canary artifacts and extraction were not rerun in this Readers task.",
+  "researchArtifacts": [
+    {
+      "path": "docs/intake/arxiv-2607.27191v2-research-draft.md",
+      "sha256": "75cfe472c6e6d75bdbedf9bb1ae0583360b045b15465ea4c351c8ab467d8fb88"
+    },
+    {
+      "path": "docs/intake/arxiv-2607.27191v2-source-qualification.md",
+      "sha256": "b7da44ce17b0aa7b4697e0d63435f065fa29e3f2eec3b6ca8385c1cca41733d9"
+    },
+    {
+      "path": "docs/intake/paper-reader-format-and-creative-lock-proposal.md",
+      "sha256": "f52709861216c3945316055a5e8c27e1bb3c1eeda5c945f93def121b5bb06f60"
+    }
+  ],
+  "sourceQualification": "Six propositions checked against private partial PDF/HTML line maps and short original-source passages. Source reports remain distinct from independent factual verification; figures, equations, tables, OCR, reading order, logs and experiments remain unverified.",
+  "paperFormat": "Proposal only. Owner Creative Lock and paper-source schema are absent; no catalog/site/knowledge admission or preview.",
+  "claimUrl": "https://github.com/pinklon/ghostmesh-readers/issues/23#issuecomment-6268423169",
+  "successorNote": "This research-only receipt preceded Tony’s paper Reader preview direction. Its companion research draft and format proposal were updated on the successor; current hashes above bind those files. The successor implementation and checks are recorded in arxiv-2607.27191v2-preview-qualification.md. Source-review status and original research-only claim remain historical."
+}

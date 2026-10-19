@@ -35,7 +35,7 @@
       "mediaAspect": "16:9"
     },
     "published": "2026-10-16",
-    "updated": "2026-10-18T14:34:54.306588Z",
+    "updated": "2026-10-19T06:00:41Z",
     "overview": "Riley Brown interviews Vercel CEO Guillermo Rauch about V, Eve, reusable skills, tools, memory and a company-owned agent that survives individual conversations.",
     "whyItMatters": "Useful for teams considering shared agents. Watch the permission and memory discussion; skip the interview if you need independent productivity measurements or a deployment audit.",
     "ghostMeshTakeaway": "Own continuity while proving permission, replay, memory isolation and portability with synthetic tests. A readable agent folder does not itself enforce those boundaries.",
@@ -43,8 +43,8 @@
     "architectureImpact": "investigate",
     "falsification": "Reconsider the recommendation if a controlled comparison on the stated task shows no benefit, or exposes permission failures, omitted evidence or greater cost than the ordinary workflow. See the original article for its specific proposed controls.",
     "evidenceState": "partially corroborated",
-    "lastEvidenceChecked": "2026-10-18T14:39:28Z",
-    "freshness": "Primary documentation checked 2026-10-18T14:39:28Z. Historical ledger entries remain unverified unless individually mapped; mutable claims need rechecking before use.",
+    "lastEvidenceChecked": "2026-10-19T06:00:41Z",
+    "freshness": "Historical references in this Reader were checked October 18, 2026. The Vercel memory changelog was checked October 19, 2026 for the narrowly bound claims below. This revision did not re-transcribe the source video, replicate a study, or verify later operational outcomes.",
     "variant": "dossier",
     "accent": "rose",
     "claims": [
@@ -143,13 +143,15 @@
         "id": "the-agent-a-company-owns--memory-update",
         "proposition": "The original edition describes a September 9 Vercel update documenting persistent memory slots and cross-session retrieval.",
         "kind": "material-prose-claim",
-        "asOf": "2026-10-16",
+        "asOf": "2026-10-19",
         "temporalScope": "Original edition; migration does not establish current operational truth.",
-        "status": "unverified",
-        "assessment": "Historical primary-documentation attribution; not evidence of an August interview capability.",
-        "limits": "Historical primary-documentation attribution; not evidence of an August interview capability.",
+        "status": "partially corroborated",
+        "assessment": "Vercel’s September 9 changelog documents named memory slots with provider and sharing scope, including a per-principal example.",
+        "limits": "This later vendor announcement does not prove the August interview’s deployment state or effective cross-user isolation.",
         "sourceLocation": "Original article prose; claim identified during full-page migration audit.",
-        "references": [],
+        "references": [
+          "eve-memory"
+        ],
         "counterevidence": []
       },
       {
@@ -210,6 +212,22 @@
         "checkedAt": "2026-10-18T14:39:28Z",
         "verification": "Read-only independent researcher checked source wording, not execution.",
         "lastUpdated": "2026-10-06"
+      },
+      {
+        "id": "eve-memory",
+        "title": "Persistent memory for eve agents",
+        "author": "Andrew Barba",
+        "publisher": "Vercel",
+        "url": "https://vercel.com/changelog/persistent-memory-for-eve-agents",
+        "publicationDate": "2026-09-09",
+        "eventDate": null,
+        "location": "Memory slots, scopes and providers",
+        "sourceType": "vendor changelog",
+        "independence": "First-party design announcement after the August interview; not an enforcement test.",
+        "evidenceFamily": "vercel-eve-memory",
+        "checkedAt": "2026-10-19T06:00:41Z",
+        "datePrecision": "day",
+        "verification": "Read-only public source wording checked for this narrow claim; no independent replication."
       }
     ],
     "relationships": [
@@ -261,10 +279,22 @@
         "at": "2026-10-18T14:34:54.306588Z",
         "kind": "structural-normalization",
         "reason": "Issue 23: explicit brief, evidence limits, themes and discovery. Historical conclusions preserved; classification is editorial, not factual confirmation."
+      },
+      {
+        "at": "2026-10-19T06:00:41Z",
+        "kind": "evidence-presentation-review",
+        "reason": "Distinguish historical attribution, qualified external evidence and bounded conclusions; source claims are not promoted without matched evidence."
       }
     ],
     "editorialOrder": 5,
-    "orderReason": "Reading path from task framing and inspectable work through review, evidence and authority, then product-specific cases."
+    "orderReason": "Reading path from task framing and inspectable work through review, evidence and authority, then product-specific cases.",
+    "evidenceReview": {
+      "checkedAt": "2026-10-19T06:00:41Z",
+      "sourceFidelity": "Original video analysis and historical ledger retained; this revision did not re-transcribe or recheck private media.",
+      "conclusion": "The pinned Eve README describes preview terms and safeguards. The later September memory announcement is a separate vendor document, after the August interview.",
+      "evidenceBoundary": "Vendor documentation establishes published design, not effective isolation, grant enforcement or deployment portability.",
+      "nextVerification": "Test identity-scoped memory, permissions, replay and external operation against a pinned implementation."
+    }
   },
   "editorial": {
     "overview": "Riley Brown interviews Vercel CEO Guillermo Rauch about V, Eve, reusable skills, tools, memory and a company-owned agent that survives individual conversations.",

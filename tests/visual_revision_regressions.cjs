@@ -2,6 +2,8 @@ const { chromium } = require('playwright');
 const assert = require('node:assert/strict');
 
 const base = 'http://127.0.0.1:8765';
+const readerCount = require('../content/catalog.json').readers.length;
+const relationshipCount = require('../content/catalog.json').readers.reduce((count, reader) => count + reader.relationships.length, 0);
 const routes = ['/', '/readers/', '/knowledge/', '/map/', '/ask-for-the-outcome-keep-the-boundary/', '/a-challenge-is-not-a-verdict/'];
 
 (async () => {
@@ -32,8 +34,8 @@ const routes = ['/', '/readers/', '/knowledge/', '/map/', '/ask-for-the-outcome-
         assert.equal(await toggle.getAttribute('aria-pressed'), String(theme === 'light'));
         if (route === '/') {
           assert.equal(await page.locator('.gm-home-card').count(), 7);
-          assert.equal(await page.locator('.gm-home-player[data-source-platform="YouTube"]').count(), 6);
-          assert.equal(await page.locator('.gm-home-player[data-source-platform="Instagram"]').count(), 1);
+          assert.equal(await page.locator('.gm-home-player[data-source-platform="YouTube"]').count(), 7);
+          assert.equal(await page.locator('.gm-home-player[data-source-platform="Instagram"]').count(), 0);
           const signal = await page.evaluate(() => ({
             flow: getComputedStyle(document.querySelector('.signal-flow')).stroke,
             face: getComputedStyle(document.querySelector('.signal-face-top')).fill,
@@ -53,26 +55,32 @@ const routes = ['/', '/readers/', '/knowledge/', '/map/', '/ask-for-the-outcome-
           await page.waitForURL(/\/readers\/\?q=not.a.company.policy/);
           assert.equal(await page.locator('#search').inputValue(), 'not a company policy');
           await page.waitForFunction(() => document.querySelectorAll('#catalog-results .gm-card:not([hidden])').length === 1);
-          assert((await page.locator('#catalog-results .gm-card:visible').count()) < 13);
+          assert((await page.locator('#catalog-results .gm-card:visible').count()) < readerCount);
         }
         if (route === '/readers/') {
-          assert.equal(await page.locator('#catalog-results .gm-card').count(), 13);
+          assert.equal(await page.locator('#catalog-results .gm-card').count(), readerCount);
+          const numbered = () => page.locator('#catalog-results .gm-card:visible .gm-archive-index').allTextContents();
+          assert.deepEqual(await numbered(), Array.from({ length: readerCount }, (_, i) => String(i + 1).padStart(2, '0')));
           await page.locator('#search').fill('not a company policy');
           await page.waitForFunction(() => document.querySelectorAll('#catalog-results .gm-card:not([hidden])').length === 1);
           const visible = await page.locator('#catalog-results .gm-card:visible').count();
-          assert(visible > 0 && visible < 13);
-          assert.match(await page.locator('#result-count').textContent(), new RegExp(`^${visible} of 13 Readers$`));
+          assert(visible > 0 && visible < readerCount);
+          assert.match(await page.locator('#result-count').textContent(), new RegExp(`^${visible} of ${readerCount} Readers$`));
+          assert.deepEqual(await numbered(), ['01']);
           await page.locator('.gm-reset').click();
-          await page.waitForFunction(() => document.querySelectorAll('#catalog-results .gm-card:not([hidden])').length === 13);
-          assert.equal(await page.locator('.gm-library-frame[data-home-player]').count(), 13);
+          await page.waitForFunction(expectedCount => document.querySelectorAll('#catalog-results .gm-card:not([hidden])').length === expectedCount, readerCount);
+          assert.deepEqual(await numbered(), Array.from({ length: readerCount }, (_, i) => String(i + 1).padStart(2, '0')));
+          await page.locator('#sort').selectOption('title');
+          assert.deepEqual(await numbered(), Array.from({ length: readerCount }, (_, i) => String(i + 1).padStart(2, '0')));
+          assert.equal(await page.locator('.gm-library-frame[data-home-player]').count(), readerCount);
           assert.equal(await page.locator('.gm-library-frame[data-gm-aspect="9:16"]').count(), 1);
           await page.locator('.gm-library-frame[data-source-platform="YouTube"] button').first().click();
           assert.match(await page.locator('.gm-library-frame iframe').first().getAttribute('src'), /^https:\/\/www\.youtube-nocookie\.com\/embed\//);
         }
         if (route === '/map/') {
-          assert.equal(await page.locator('.gm-map-node').count(), 13);
-          assert.equal(await page.locator('.gm-map-entry').count(), 13);
-          assert.equal(await page.locator('.gm-map-canvas line').count(), 21);
+          assert.equal(await page.locator('.gm-atlas-entry').count(), readerCount);
+          assert.equal(await page.locator('.gm-atlas-link').count(), relationshipCount);
+          assert.equal(await page.locator('.gm-question-list li').count(), 4);
         }
         if (route.startsWith('/ask-') || route.startsWith('/a-challenge')) {
           assert.equal(await page.locator('[data-gm-share]').count(), 1);
@@ -95,13 +103,14 @@ const routes = ['/', '/readers/', '/knowledge/', '/map/', '/ask-for-the-outcome-
     await context.route('**/*', route => route.request().url().startsWith(base) ? route.continue() : route.abort());
     const page = await context.newPage();
     await page.goto(base + '/readers/', { waitUntil: 'domcontentloaded' });
-    assert.equal(await page.locator('#catalog-results .gm-card').count(), 13);
+    assert.equal(await page.locator('#catalog-results .gm-card').count(), readerCount);
     await page.goto(base + '/', { waitUntil: 'domcontentloaded' });
     assert.equal(await page.locator('.gm-home-open').count(), 7);
     assert.equal(await page.locator('.gm-home-source').count(), 7);
     assert.equal(await page.locator('iframe').count(), 0);
     await page.goto(base + '/map/', { waitUntil: 'domcontentloaded' });
-    assert.equal(await page.locator('.gm-map-entry').count(), 13);
+    assert.equal(await page.locator('.gm-atlas-entry').count(), readerCount);
+    assert.equal(await page.locator('.gm-atlas-link').count(), relationshipCount);
     assert.equal(await page.locator('[data-theme-toggle]:visible').count(), 0);
     console.log(JSON.stringify({ cases, noJavaScript: true, failures: [] }));
     await context.close();

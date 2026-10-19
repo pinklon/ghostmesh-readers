@@ -11,6 +11,7 @@ Checked: 2026-10-18T23:49:08.601355+00:00. This is a read-only public metadata c
 | `the-agent-a-company-owns` | `HQXi4snP36I` | 3840 × 2160 | 16:9 |
 | `the-funnel-is-not-the-frontier` | `BjO_JC6ujXs` | 1920 × 1080 | 16:9 |
 | `the-inbox-was-a-boundary` | `rb4CTZjHCNg` | 1920 × 1080 | 16:9 |
+| `the-fleet-does-not-prove-the-forecast` | `btUxMt_tssA` | 1920 × 1080 | 16:9 |
 | `the-key-was-the-boundary` | `YaK6cnET2IE` | 3840 × 2160 | 16:9 |
 | `the-microscope-is-not-a-soul` | `2oH1NACBgS4` | 1920 × 1080 | 16:9 |
 | `the-scan-never-reached-the-login` | `8DKqcbEy-HM` | 1920 × 1080 | 16:9 |
@@ -19,3 +20,5 @@ Checked: 2026-10-18T23:49:08.601355+00:00. This is a read-only public metadata c
 | `when-software-becomes-legible` | `PseF3LyXQ04` | 1920 × 1080 | 16:9 |
 
 The shared player uses the declared aspect, not the platform name. An unknown future source aspect requires a link-only fallback until its intrinsic dimensions are checked. A square frame requires 1:1 source evidence; portrait content remains portrait. Readers retain opt-in loading, external source links and timestamp navigation.
+
+The `btUxMt_tssA` row was added 2026-10-19 from the active ReasonPack public inspector's reported 1920 × 1080 dimensions, also confirmed by the private normalized pack's ffprobe record. It is a source-shape check, not a claim verification.

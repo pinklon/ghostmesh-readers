@@ -165,16 +165,16 @@
       "mediaAspect": "16:9"
     },
     "published": "2026-10-18",
-    "updated": "2026-10-18T14:34:54.306588Z",
+    "updated": "2026-10-19T06:00:41Z",
     "overview": "Jay of RoboNuggets presents altitude, depth and range from Felix Rieseberg's personal essay as ways to frame more ambitious AI work, with business examples and a closing question about purpose.",
     "whyItMatters": "Watch if a narrated tour helps you move beyond faster drafts. Skip the promotions or use the shorter original essay if you already know the framework.",
     "ghostMeshTakeaway": "Try the frames on one low-risk task with permitted data, explicit tools and an independent success measure. The percentile framing is not measured evidence.",
     "verdict": "Worth studying",
     "architectureImpact": "experiment recommended",
     "falsification": "Reconsider the recommendation if a controlled comparison on the stated task shows no benefit, or exposes permission failures, omitted evidence or greater cost than the ordinary workflow. See the original article for its specific proposed controls.",
-    "evidenceState": "unverified",
-    "lastEvidenceChecked": "2026-10-18T14:33:10Z",
-    "freshness": "Evidence references checked 2026-10-18T14:33:10Z; historical ledger entries remain unverified unless individually mapped below. Mutable product and incident claims can become stale.",
+    "evidenceState": "partially corroborated",
+    "lastEvidenceChecked": "2026-10-19T06:00:41Z",
+    "freshness": "Historical references in this Reader were checked October 18, 2026. The Rieseberg essay was checked October 19, 2026 for the narrowly bound claims below. This revision did not re-transcribe the source video, replicate a study, or verify later operational outcomes.",
     "variant": "dossier",
     "accent": "rose",
     "claims": [
@@ -182,12 +182,14 @@
         "id": "ask-for-the-outcome-keep-the-boundary--source-attribution",
         "proposition": "The presentation is based on an essay by Felix Rieseberg, who identifies an Anthropic role.",
         "kind": "source-attribution",
-        "asOf": "2026-10-18",
+        "asOf": "2026-10-19",
         "status": "unverified",
-        "assessment": "The presentation is based on an essay by Felix Rieseberg, who identifies an Anthropic role.",
-        "limits": "The linked primary source is his personal essay, not an Anthropic company announcement or policy.",
+        "assessment": "Rieseberg’s October 13 essay establishes his own framework and identifies his role. It does not independently verify the unrechecked video’s exact attribution or selection.",
+        "limits": "A first-party essay corroborates the framework’s source, not the video’s wording or a performance outcome.",
         "sourceLocation": "0",
-        "references": [],
+        "references": [
+          "rieseberg"
+        ],
         "counterevidence": [],
         "temporalScope": "Historical published account, not current operational state."
       },
@@ -208,12 +210,14 @@
         "id": "ask-for-the-outcome-keep-the-boundary--four-types",
         "proposition": "The video develops altitude, depth, and range.",
         "kind": "source-selection",
-        "asOf": "2026-10-18",
+        "asOf": "2026-10-19",
         "status": "unverified",
-        "assessment": "The video develops altitude, depth, and range.",
-        "limits": "Rieseberg's original framework has four types, including speed, which he sets aside as familiar. He says the advice is model-agnostic.",
+        "assessment": "Rieseberg’s October 13 essay establishes his own framework and identifies his role. It does not independently verify the unrechecked video’s exact attribution or selection.",
+        "limits": "A first-party essay corroborates the framework’s source, not the video’s wording or a performance outcome.",
         "sourceLocation": "98",
-        "references": [],
+        "references": [
+          "rieseberg"
+        ],
         "counterevidence": [],
         "temporalScope": "Historical published account, not current operational state."
       },
@@ -221,12 +225,14 @@
         "id": "ask-for-the-outcome-keep-the-boundary--altitude",
         "proposition": "Ask for the outcome rather than simply for the presumed task.",
         "kind": "framework-example",
-        "asOf": "2026-10-18",
-        "status": "unverified",
-        "assessment": "Ask for the outcome rather than simply for the presumed task.",
-        "limits": "The essay's crash-free app example required reports, version mapping, and computer access; outcome wording alone did not create a durable workflow.",
+        "asOf": "2026-10-19",
+        "status": "partially corroborated",
+        "assessment": "Rieseberg’s own October 13 essay supports this framework or attribution in its stated scope; it does not measure user performance or establish Anthropic policy.",
+        "limits": "The video’s exact wording and any top-one-percent inference remain separate from the essay.",
         "sourceLocation": "98",
-        "references": [],
+        "references": [
+          "rieseberg"
+        ],
         "counterevidence": [],
         "temporalScope": "Historical published account, not current operational state."
       },
@@ -234,12 +240,14 @@
         "id": "ask-for-the-outcome-keep-the-boundary--depth",
         "proposition": "Use raw data, professional methods, and an outside judge.",
         "kind": "framework-example",
-        "asOf": "2026-10-18",
-        "status": "unverified",
-        "assessment": "Use raw data, professional methods, and an outside judge.",
-        "limits": "The video provides examples and prompts, not a controlled comparison establishing performance gain.",
+        "asOf": "2026-10-19",
+        "status": "partially corroborated",
+        "assessment": "Rieseberg’s own October 13 essay supports this framework or attribution in its stated scope; it does not measure user performance or establish Anthropic policy.",
+        "limits": "The video’s exact wording and any top-one-percent inference remain separate from the essay.",
         "sourceLocation": "235",
-        "references": [],
+        "references": [
+          "rieseberg"
+        ],
         "counterevidence": [],
         "temporalScope": "Historical published account, not current operational state."
       },
@@ -247,12 +255,14 @@
         "id": "ask-for-the-outcome-keep-the-boundary--range",
         "proposition": "Bring methods from other disciplines into a task.",
         "kind": "framework-example",
-        "asOf": "2026-10-18",
-        "status": "unverified",
-        "assessment": "Bring methods from other disciplines into a task.",
-        "limits": "Rieseberg cautions that role play without field methods may change wording without improving the result.",
+        "asOf": "2026-10-19",
+        "status": "partially corroborated",
+        "assessment": "Rieseberg’s own October 13 essay supports this framework or attribution in its stated scope; it does not measure user performance or establish Anthropic policy.",
+        "limits": "The video’s exact wording and any top-one-percent inference remain separate from the essay.",
         "sourceLocation": "436",
-        "references": [],
+        "references": [
+          "rieseberg"
+        ],
         "counterevidence": [],
         "temporalScope": "Historical published account, not current operational state."
       },
@@ -397,6 +407,22 @@
         "checkedAt": "2026-10-18T14:33:10Z",
         "datePrecision": "day",
         "verification": "Read by independent evidence researcher; limited source-fidelity check, not replication."
+      },
+      {
+        "id": "rieseberg",
+        "title": "How to be more ambitious: A tutorial for humans with models",
+        "author": "Felix Rieseberg",
+        "publisher": "Felix Rieseberg",
+        "url": "https://felixrieseberg.com/how-to-be-more-ambitious-a-tutorial-for-humans-with-models/",
+        "publicationDate": "2026-10-13",
+        "eventDate": null,
+        "location": "Author bio and Speed, Altitude, Depth, Range sections",
+        "sourceType": "author essay",
+        "independence": "First-party explanation of the framework, not a controlled performance study or Anthropic policy.",
+        "evidenceFamily": "rieseberg-essay",
+        "checkedAt": "2026-10-19T06:00:41Z",
+        "datePrecision": "day",
+        "verification": "Read-only public source wording checked for this narrow claim; no independent replication."
       }
     ],
     "relationships": [
@@ -448,9 +474,21 @@
         "at": "2026-10-18T14:34:54.306588Z",
         "kind": "structural-normalization",
         "reason": "Issue 23: explicit brief, evidence limits, themes and discovery. Historical conclusions preserved; classification is editorial, not factual confirmation."
+      },
+      {
+        "at": "2026-10-19T06:00:41Z",
+        "kind": "evidence-presentation-review",
+        "reason": "Distinguish historical attribution, qualified external evidence and bounded conclusions; source claims are not promoted without matched evidence."
       }
     ],
     "editorialOrder": 0,
-    "orderReason": "Reading path from task framing and inspectable work through review, evidence and authority, then product-specific cases."
+    "orderReason": "Reading path from task framing and inspectable work through review, evidence and authority, then product-specific cases.",
+    "evidenceReview": {
+      "checkedAt": "2026-10-19T06:00:41Z",
+      "sourceFidelity": "Original video analysis and historical ledger retained; this revision did not re-transcribe or recheck private media.",
+      "conclusion": "Rieseberg’s own essay supports the four-part framing and examples. The video’s top-one-percent label remains a performance claim without a measured population.",
+      "evidenceBoundary": "The 2025 METR study and 2026 update address different developer productivity settings and cannot validate top-percentile prompt performance.",
+      "nextVerification": "Obtain a measured denominator, controlled comparison and outcome definition before asserting a percentile."
+    }
   }
 }

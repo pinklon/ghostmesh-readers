@@ -173,7 +173,7 @@
       "mediaAspect": "16:9"
     },
     "published": "2026-10-18",
-    "updated": "2026-10-18T14:34:54.306588Z",
+    "updated": "2026-10-19T06:00:41Z",
     "overview": "David Ondrej discusses the reported OpenCode Console credential incident, speculates about attribution and promotes recurring agents through his Cloudroom product.",
     "whyItMatters": "Watch the opening for reported incident scope. Skip the product promotion if you need forensic attribution or independently measured security coverage.",
     "ghostMeshTakeaway": "Contain potentially exposed credentials at their issuer and evaluate automation separately. Hold attacker attribution, total exposure and prevention claims pending stronger evidence.",
@@ -190,10 +190,10 @@
         "id": "the-key-was-the-boundary--console-scope",
         "proposition": "The speaker quotes a 1.4% OpenCode Console impact figure.",
         "kind": "reported-disclosure",
-        "asOf": "2026-10-18",
+        "asOf": "2026-10-19",
         "status": "unverified",
-        "assessment": "The speaker quotes a 1.4% OpenCode Console impact figure.",
-        "limits": "The video does not provide a total count of affected users or establish that local-only users were exposed.",
+        "assessment": "The video quotes a 1.4 percent Console impact figure. The original OpenCode disclosure could not be read in this review, so its exact denominator and scope remain unverified.",
+        "limits": "Do not generalize the number to all OpenCode users, all provider-linked accounts or total losses without the issuer disclosure.",
         "sourceLocation": "15",
         "references": [],
         "counterevidence": [],
@@ -349,11 +349,11 @@
         "id": "the-key-was-the-boundary--denominator",
         "proposition": "The video reports a breach affecting 1.4 percent of OpenCode Console users with external providers linked.",
         "kind": "material-prose-claim",
-        "asOf": "2026-10-18",
+        "asOf": "2026-10-19",
         "temporalScope": "Original edition; migration does not establish current operational truth.",
         "status": "unverified",
-        "assessment": "Source-reported scope, not a percentage of all local OpenCode users. Incident details require authoritative refresh.",
-        "limits": "Source-reported scope, not a percentage of all local OpenCode users. Incident details require authoritative refresh.",
+        "assessment": "The video quotes a 1.4 percent Console impact figure. The original OpenCode disclosure could not be read in this review, so its exact denominator and scope remain unverified.",
+        "limits": "Do not generalize the number to all OpenCode users, all provider-linked accounts or total losses without the issuer disclosure.",
         "sourceLocation": "Original article prose; claim identified during full-page migration audit.",
         "references": [],
         "counterevidence": []
@@ -465,9 +465,21 @@
         "at": "2026-10-18T14:34:54.306588Z",
         "kind": "structural-normalization",
         "reason": "Issue 23: explicit brief, evidence limits, themes and discovery. Historical conclusions preserved; classification is editorial, not factual confirmation."
+      },
+      {
+        "at": "2026-10-19T06:00:41Z",
+        "kind": "evidence-presentation-review",
+        "reason": "Distinguish historical attribution, qualified external evidence and bounded conclusions; source claims are not promoted without matched evidence."
       }
     ],
     "editorialOrder": 10,
-    "orderReason": "Reading path from task framing and inspectable work through review, evidence and authority, then product-specific cases."
+    "orderReason": "Reading path from task framing and inspectable work through review, evidence and authority, then product-specific cases.",
+    "evidenceReview": {
+      "checkedAt": "2026-10-19T06:00:41Z",
+      "sourceFidelity": "Original video analysis and historical ledger retained; this revision did not re-transcribe or recheck private media.",
+      "conclusion": "The video quotes 1.4 percent. The exact OpenCode Console denominator and affected population were not verified from the inaccessible original disclosure.",
+      "evidenceBoundary": "OWASP guidance challenges scan-equivalence claims; guidance is not a retrospective audit of the incident.",
+      "nextVerification": "Obtain the issuer disclosure and denominator, plus scoped security-test evidence before quantifying impact or tool efficacy."
+    }
   }
 }

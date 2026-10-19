@@ -34,7 +34,7 @@
       "mediaAspect": "16:9"
     },
     "published": "2026-10-16",
-    "updated": "2026-10-18T14:34:54.306588Z",
+    "updated": "2026-10-19T06:00:41Z",
     "overview": "Count Grey Matter connects Anthropic policy and interpretability research with questions about emotion-like representations, model welfare and consciousness.",
     "whyItMatters": "Useful for readers separating functional behavior from moral status. Watch the experimental discussion; skip it if you need proof of consciousness or an independent replication.",
     "ghostMeshTakeaway": "Treat internal mechanisms, welfare hypotheses and operational authority separately. Test behavior and policy boundaries without giving a model authority over its supervision.",
@@ -42,8 +42,8 @@
     "architectureImpact": "investigate",
     "falsification": "Reconsider the recommendation if a controlled comparison on the stated task shows no benefit, or exposes permission failures, omitted evidence or greater cost than the ordinary workflow. See the original article for its specific proposed controls.",
     "evidenceState": "partially corroborated",
-    "lastEvidenceChecked": "2026-10-18T14:33:10Z",
-    "freshness": "Evidence references checked 2026-10-18T14:33:10Z; historical ledger entries remain unverified unless individually mapped below. Mutable product and incident claims can become stale.",
+    "lastEvidenceChecked": "2026-10-19T06:00:41Z",
+    "freshness": "Historical references in this Reader were checked October 18, 2026. The Anthropic policy announcement was checked October 19, 2026 for the narrowly bound claims below. This revision did not re-transcribe the source video, replicate a study, or verify later operational outcomes.",
     "variant": "essay",
     "accent": "ochre",
     "claims": [
@@ -223,26 +223,30 @@
         "id": "the-microscope-is-not-a-soul--policy-date",
         "proposition": "The original edition reports an October 8, 2026 policy announcement with a November 12, 2026 effective date.",
         "kind": "material-prose-claim",
-        "asOf": "2026-10-16",
+        "asOf": "2026-10-19",
         "temporalScope": "Original edition; migration does not establish current operational truth.",
-        "status": "unverified",
-        "assessment": "Historical policy assertion; exact announcement and current policy wording require rechecking before reliance.",
-        "limits": "Historical policy assertion; exact announcement and current policy wording require rechecking before reliance.",
+        "status": "partially corroborated",
+        "assessment": "Anthropic’s October 8 announcement states the November 12 effective date and narrows the abusive-behavior rule to sustained needless cruelty, excluding ordinary frustration, dark creative themes and research.",
+        "limits": "This confirms the announcement’s wording, not future enforcement or model welfare claims.",
         "sourceLocation": "Original article prose; claim identified during full-page migration audit.",
-        "references": [],
+        "references": [
+          "policy-update"
+        ],
         "counterevidence": []
       },
       {
         "id": "the-microscope-is-not-a-soul--policy-exceptions",
         "proposition": "The original edition says the announced policy excludes ordinary criticism, frustration, creative dark subjects and testing or research.",
         "kind": "material-prose-claim",
-        "asOf": "2026-10-16",
+        "asOf": "2026-10-19",
         "temporalScope": "Original edition; migration does not establish current operational truth.",
-        "status": "unverified",
-        "assessment": "Historical attribution, not a current enforcement audit.",
-        "limits": "Historical attribution, not a current enforcement audit.",
+        "status": "partially corroborated",
+        "assessment": "Anthropic’s October 8 announcement states the November 12 effective date and narrows the abusive-behavior rule to sustained needless cruelty, excluding ordinary frustration, dark creative themes and research.",
+        "limits": "This confirms the announcement’s wording, not future enforcement or model welfare claims.",
         "sourceLocation": "Original article prose; claim identified during full-page migration audit.",
-        "references": [],
+        "references": [
+          "policy-update"
+        ],
         "counterevidence": []
       },
       {
@@ -301,6 +305,22 @@
         "checkedAt": "2026-10-18T14:33:10Z",
         "datePrecision": "day",
         "verification": "Read by independent evidence researcher; limited source-fidelity check, not replication."
+      },
+      {
+        "id": "policy-update",
+        "title": "2026 Usage Policy update",
+        "author": "Anthropic",
+        "publisher": "Anthropic",
+        "url": "https://www.anthropic.com/news/2026-usage-policy-update",
+        "publicationDate": "2026-10-08",
+        "eventDate": null,
+        "location": "Effective date and Addressing abusive behavior toward our models",
+        "sourceType": "primary policy announcement",
+        "independence": "First-party statement of policy scope; not measured enforcement or evidence of consciousness.",
+        "evidenceFamily": "anthropic-policy",
+        "checkedAt": "2026-10-19T06:00:41Z",
+        "datePrecision": "day",
+        "verification": "Read-only public source wording checked for this narrow claim; no independent replication."
       }
     ],
     "relationships": [
@@ -330,10 +350,22 @@
         "at": "2026-10-18T14:34:54.306588Z",
         "kind": "structural-normalization",
         "reason": "Issue 23: explicit brief, evidence limits, themes and discovery. Historical conclusions preserved; classification is editorial, not factual confirmation."
+      },
+      {
+        "at": "2026-10-19T06:00:41Z",
+        "kind": "evidence-presentation-review",
+        "reason": "Distinguish historical attribution, qualified external evidence and bounded conclusions; source claims are not promoted without matched evidence."
       }
     ],
     "editorialOrder": 11,
-    "orderReason": "Reading path from task framing and inspectable work through review, evidence and authority, then product-specific cases."
+    "orderReason": "Reading path from task framing and inspectable work through review, evidence and authority, then product-specific cases.",
+    "evidenceReview": {
+      "checkedAt": "2026-10-19T06:00:41Z",
+      "sourceFidelity": "Original video analysis and historical ledger retained; this revision did not re-transcribe or recheck private media.",
+      "conclusion": "Anthropic’s policy announcement supports its effective date and stated exceptions; its emotion study is a controlled model experiment.",
+      "evidenceBoundary": "Neither document establishes deployed incidence, subjective experience or enforcement outcomes.",
+      "nextVerification": "Check the effective policy text and independent deployment data before extending these conclusions."
+    }
   },
   "editorial": {
     "overview": "Count Grey Matter connects Anthropic policy and interpretability research with questions about emotion-like representations, model welfare and consciousness.",

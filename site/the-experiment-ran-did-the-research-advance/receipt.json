@@ -1,0 +1,271 @@
+{
+  "schema": "ghostmesh-paper-receipt-v1",
+  "source": {
+    "kind": "paper",
+    "identity": "arxiv:2607.27191v2",
+    "url": "https://arxiv.org/abs/2607.27191v2",
+    "htmlUrl": "https://arxiv.org/html/2607.27191v2",
+    "pdfUrl": "https://arxiv.org/pdf/2607.27191v2",
+    "title": "Can AI agents conduct open-ended AI research? Early evidence from two case studies",
+    "authors": "Peter Kirgis and coauthors",
+    "publisher": "arXiv",
+    "version": "v2",
+    "versionDate": "2026-08-07",
+    "dateNote": "Experimental HTML title block says August 24, 2026; its relationship to the arXiv v2 record is unresolved."
+  },
+  "custody": {
+    "status": "partial-private-source-inspection",
+    "sourcePdfSha256": "1498e9169c3c2031ce9e283d73061d3e63ba2e810b02b357a51477c5260bb508",
+    "note": "Private partial PDF and HTML text extractions supported bounded source-location checks. Figures, tables, equations, OCR, reading order, full logs and experiments were not independently audited. No extracted text is included."
+  },
+  "normalization": {
+    "id": "reader:the-experiment-ran-did-the-research-advance",
+    "slug": "the-experiment-ran-did-the-research-advance",
+    "title": "The Experiment Ran. Did the Research Advance?",
+    "category": "AI & Technology",
+    "tags": [
+      "AI research",
+      "evaluation",
+      "research judgment"
+    ],
+    "entities": [
+      "CRUX",
+      "TabPFN",
+      "RE-Bench",
+      "AI Scientist-v2"
+    ],
+    "source": {
+      "kind": "paper",
+      "identity": "arxiv:2607.27191v2",
+      "url": "https://arxiv.org/abs/2607.27191v2",
+      "htmlUrl": "https://arxiv.org/html/2607.27191v2",
+      "pdfUrl": "https://arxiv.org/pdf/2607.27191v2",
+      "title": "Can AI agents conduct open-ended AI research? Early evidence from two case studies",
+      "authors": "Peter Kirgis and coauthors",
+      "publisher": "arXiv",
+      "version": "v2",
+      "versionDate": "2026-08-07",
+      "dateNote": "Experimental HTML title block says August 24, 2026; its relationship to the arXiv v2 record is unresolved."
+    },
+    "published": "2026-10-19",
+    "updated": "2026-10-19T13:52:14Z",
+    "overview": "Kirgis and coauthors report two selected shadow evaluations of research agents, covering LLM personas and TabPFN distribution shift.",
+    "whyItMatters": "Worth studying if you evaluate autonomous research. Skip it as a universal forecast or a matched human comparison.",
+    "ghostMeshTakeaway": "Separate research engineering from research judgment. Require expert critique and a reason to revise the method before accepting a claimed advance.",
+    "verdict": "Worth studying",
+    "architectureImpact": "experiment recommended",
+    "falsification": "Revisit this call with blinded, broader and resource-matched evaluations, independent reproduction, full trajectory inspection or a counterexample on the same research questions.",
+    "evidenceState": "unverified",
+    "lastEvidenceChecked": "2026-10-19T13:52:14Z",
+    "freshness": "Version-pinned paper, separate context sources and public artifact index checked 2026-10-19. Authors’ study findings remain attributed, not independently reproduced.",
+    "variant": "essay",
+    "accent": "blue",
+    "claims": [
+      {
+        "id": "the-experiment-ran-did-the-research-advance--design",
+        "proposition": "The authors evaluated agents on two selected research questions, LLM personas and TabPFN distribution shift, with original authors grading the outputs.",
+        "kind": "source-attribution",
+        "asOf": "2026-10-19",
+        "status": "unverified",
+        "assessment": "The study describes these two shadow questions and reviewer roles.",
+        "limits": "The sample is selected and grading is non-blind.",
+        "sourceLocation": "Abstract; Sections 2–3",
+        "references": [
+          "kirgis-v2"
+        ],
+        "counterevidence": []
+      },
+      {
+        "id": "the-experiment-ran-did-the-research-advance--window",
+        "proposition": "Main runs had a 120-hour initial deadline and a 24-hour extension, with a harness fix and requested prose rewrite as human interventions.",
+        "kind": "source-attribution",
+        "asOf": "2026-10-19",
+        "status": "unverified",
+        "assessment": "This is the paper authors’ reported time window and intervention account.",
+        "limits": "Figure pixels and underlying run logs were not independently audited.",
+        "sourceLocation": "Section 3; Figure 1 caption",
+        "references": [
+          "kirgis-v2"
+        ],
+        "counterevidence": []
+      },
+      {
+        "id": "the-experiment-ran-did-the-research-advance--outcomes",
+        "proposition": "The original authors scored the Personas paper 2 of 6 and the TabPFN paper 1 of 6, while reporting substantial research engineering by the agents.",
+        "kind": "source-attribution",
+        "asOf": "2026-10-19",
+        "status": "unverified",
+        "assessment": "The authors report completed engineering work and rejected research conclusions.",
+        "limits": "The scores are non-blind expert judgments, not a matched human performance result.",
+        "sourceLocation": "Abstract; Sections 4–5",
+        "references": [
+          "kirgis-v2"
+        ],
+        "counterevidence": []
+      },
+      {
+        "id": "the-experiment-ran-did-the-research-advance--failure-modes",
+        "proposition": "The authors describe weak research judgment, limited response to critique, poor backtracking, resource awareness problems and instruction drift in these runs.",
+        "kind": "source-attribution",
+        "asOf": "2026-10-19",
+        "status": "unverified",
+        "assessment": "These are the authors’ qualitative interpretations of the observed trajectories.",
+        "limits": "Full trajectory logs and experiments were not independently audited; causes remain open.",
+        "sourceLocation": "Sections 4–5",
+        "references": [
+          "kirgis-v2"
+        ],
+        "counterevidence": []
+      },
+      {
+        "id": "the-experiment-ran-did-the-research-advance--robustness",
+        "proposition": "A second model and native scaffold showed similar failure patterns on one of the two questions.",
+        "kind": "source-attribution",
+        "asOf": "2026-10-19",
+        "status": "unverified",
+        "assessment": "This reported check bears on one scaffold-only explanation.",
+        "limits": "One-question check does not establish a universal model or task limit.",
+        "sourceLocation": "Section 6",
+        "references": [
+          "kirgis-v2"
+        ],
+        "counterevidence": []
+      },
+      {
+        "id": "the-experiment-ran-did-the-research-advance--outside-context",
+        "proposition": "RE-Bench and AI Scientist-v2 report agent capability in different research evaluation setups.",
+        "kind": "source-context",
+        "asOf": "2026-10-19",
+        "status": "unverified",
+        "assessment": "Both are useful counterweights when interpreting a two-case study.",
+        "limits": "Neither replicates these shadow questions or measures the same research-progress construct.",
+        "sourceLocation": "RE-Bench abstract; AI Scientist-v2 abstract",
+        "references": [
+          "re-bench",
+          "ai-scientist-v2"
+        ],
+        "counterevidence": []
+      },
+      {
+        "id": "the-experiment-ran-did-the-research-advance--artifact-boundary",
+        "proposition": "Public Personas materials exist, while the study says detailed TabPFN agent logs and paper are withheld.",
+        "kind": "source-attribution",
+        "asOf": "2026-10-19",
+        "status": "unverified",
+        "assessment": "A public code repository supports availability of Personas materials, not experiment validation.",
+        "limits": "The withheld TabPFN record and full logs were not independently inspected.",
+        "sourceLocation": "Section 1 disclosure; public Personas repository",
+        "references": [
+          "kirgis-v2",
+          "personas-repository"
+        ],
+        "counterevidence": []
+      }
+    ],
+    "references": [
+      {
+        "id": "kirgis-v2",
+        "title": "Can AI agents conduct open-ended AI research? Early evidence from two case studies",
+        "author": "Peter Kirgis and coauthors",
+        "publisher": "arXiv",
+        "url": "https://arxiv.org/html/2607.27191v2",
+        "publicationDate": "2026-08-07",
+        "datePrecision": "day",
+        "dateNote": "arXiv v2 revision date. Experimental HTML title block says August 24; discrepancy unresolved.",
+        "eventDate": "",
+        "location": "Abstract; Sections 2–7; Figure 1 caption",
+        "sourceType": "primary-study-report",
+        "independence": "Study authors report their own design and findings; this is source fidelity, not independent reproduction.",
+        "evidenceFamily": "kirgis-study",
+        "checkedAt": "2026-10-19T13:52:14Z"
+      },
+      {
+        "id": "re-bench",
+        "title": "RE-Bench: Evaluating Frontier AI R&D Capabilities of Language Model Agents against Human Experts",
+        "author": "Wijk and coauthors",
+        "publisher": "Proceedings of Machine Learning Research",
+        "url": "https://proceedings.mlr.press/v267/wijk25a.html",
+        "publicationDate": "2025",
+        "datePrecision": "year",
+        "eventDate": "",
+        "location": "Abstract and benchmark description",
+        "sourceType": "independent-different-construct-study",
+        "independence": "Separate research team and verifier-scored engineering tasks; not a replication of the two shadow questions.",
+        "evidenceFamily": "re-bench",
+        "checkedAt": "2026-10-19T13:52:14Z"
+      },
+      {
+        "id": "ai-scientist-v2",
+        "title": "The AI Scientist-v2: Workshop-Level Automated Scientific Discovery via Agentic Tree Search",
+        "author": "Yamada and coauthors",
+        "publisher": "arXiv",
+        "url": "https://arxiv.org/abs/2504.08066",
+        "publicationDate": "2025",
+        "datePrecision": "year",
+        "eventDate": "",
+        "location": "Abstract",
+        "sourceType": "independent-different-construct-study",
+        "independence": "Separate workshop-review setup; not a replication of the two shadow questions.",
+        "evidenceFamily": "ai-scientist-v2",
+        "checkedAt": "2026-10-19T13:52:14Z"
+      },
+      {
+        "id": "personas-repository",
+        "title": "Public CRUX Personas agent materials",
+        "author": "CRUX project authors",
+        "publisher": "GitHub",
+        "url": "https://github.com/sage-princeton/crux-2-personas-CLEAN",
+        "publicationDate": "unknown",
+        "dateNote": "Repository publication date was not established during this source review.",
+        "eventDate": "",
+        "location": "Repository landing page",
+        "sourceType": "author-controlled-artifact-index",
+        "independence": "Observed availability only; code, logs and experiments were not independently audited.",
+        "evidenceFamily": "kirgis-study",
+        "checkedAt": "2026-10-19T13:52:14Z"
+      }
+    ],
+    "relationships": [
+      {
+        "target": "reader:a-scenario-is-not-a-singularity",
+        "type": "related topic",
+        "reason": "This paper grades open-ended research contributions; the earlier Reader analyzes a 49 of 50 physics benchmark result. Read across them to keep research judgment separate from a bounded task score, not to corroborate either result.",
+        "provenance": [
+          "/the-experiment-ran-did-the-research-advance/#finding",
+          "/a-scenario-is-not-a-singularity/#physics"
+        ],
+        "basis": "curated-editorial-contrast",
+        "direction": "outgoing"
+      }
+    ],
+    "relationshipDisposition": "A topic-level route to the physics benchmark contrasts bounded task scoring with judgments of open-ended research. No local Reader independently verifies these two shadow evaluations or the same research-progress claim; the cited RE-Bench and AI Scientist-v2 studies remain external different-construct reading.",
+    "review": {
+      "status": "draft-source-reviewed; integration review pending",
+      "reviewer": "Independent read-only reviewer of original article only",
+      "reviewedSourceHead": "e301454f07d88041febdde3498d463126c8b8c55",
+      "checkedAt": "2026-10-19T13:52:14Z",
+      "scope": "Original public analysis and source-bound caveats only; not final generated page, claims catalog, or hosted preview."
+    },
+    "revisionHistory": [
+      {
+        "at": "2026-10-19T13:52:14Z",
+        "kind": "paper-reader-draft",
+        "reason": "Bounded source-appropriate Reader variant, pending exact-head integration and editorial preview."
+      }
+    ],
+    "editorialOrder": 17,
+    "orderReason": "New paper source type, shown with the complete Reader library and source-specific citation route.",
+    "evidenceReview": {
+      "checkedAt": "2026-10-19T13:52:14Z",
+      "sourceFidelity": "Study design, scores and limits checked in bounded original sections and partial private PDF/HTML anchors.",
+      "conclusion": "Two selected runs show substantial engineering and poor original-author ratings for the research conclusions; no universal ceiling follows.",
+      "evidenceBoundary": "Study-author reports remain unverified independently; RE-Bench and AI Scientist-v2 examine different constructs.",
+      "nextVerification": "Broader blind, resource-matched evaluation and independent experiment/log review would sharpen the claim."
+    }
+  },
+  "editorial": {
+    "overview": "Kirgis and coauthors report two selected shadow evaluations of research agents, covering LLM personas and TabPFN distribution shift.",
+    "whyItMatters": "Worth studying if you evaluate autonomous research. Skip it as a universal forecast or a matched human comparison.",
+    "ghostMeshTakeaway": "Separate research engineering from research judgment. Require expert critique and a reason to revise the method before accepting a claimed advance."
+  }
+}

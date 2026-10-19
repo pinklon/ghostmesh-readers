@@ -1,4 +1,4 @@
-/* Search only visible text from the thirteen generated public Reader articles. */
+/* Search only visible text from the generated public Reader articles. */
 (() => {
   let indexPromise;
   const load = () => indexPromise ||= fetch('/readers/search-index.json')
@@ -7,7 +7,8 @@
       return response.json();
     })
     .then(index => {
-      if (index.schema !== 'ghostmesh-public-reader-text-v1' || !Array.isArray(index.readers) || index.readers.length !== 13 ||
+      if (index.schema !== 'ghostmesh-public-reader-text-v1' || !Array.isArray(index.readers) ||
+          !Number.isSafeInteger(index.readerCount) || index.readerCount < 1 || index.readers.length !== index.readerCount ||
           index.readers.some(article => !/^\/[a-z0-9-]+\/$/.test(article.url) ||
             !/^reader:[a-z0-9-]+$/.test(article.id) ||
             typeof article.title !== 'string' || typeof article.text !== 'string' || article.text.length < 100))

@@ -1,0 +1,278 @@
+{
+  "schema": "ghostmesh-video-receipt-v1",
+  "createdAt": "2026-10-19T12:04:09Z",
+  "source": {
+    "platform": "YouTube",
+    "url": "https://www.youtube.com/watch?v=wS3lJpOs9Uw",
+    "videoId": "wS3lJpOs9Uw",
+    "title": "Anthropic Just Shocked The World... AI SINGULARITY Is Here!",
+    "creator": "AI Revolution",
+    "uploadDate": "20261019",
+    "durationSeconds": 847,
+    "mediaAspect": "16:9"
+  },
+  "reasonPack": {
+    "skill": "build-reasoning-pack",
+    "version": "1.0.2",
+    "schema": "ghostmesh-reasoning-pack-v1",
+    "verification": "pass",
+    "manifestSha256": "59656988a0017217b1505b73181990a7cf22facc86eb8bebba8226ac0307ee87",
+    "transcriptSha256": "674f78d5370bdd2dce1ea95840b7982b17050059bd5e8496d4a26c9c65af517e",
+    "transcription": "Local Whisper fallback; automated text was used for topic review, not verbatim public quotation.",
+    "publicationBoundary": "Original video, audio, transcript and source metadata remain private. The public Reader contains original analysis, source links and this sanitized receipt only."
+  },
+  "custody": {
+    "status": "qualified-private-pack-verified",
+    "note": "A closed local ReasonPack passed verification. Hashes prove retained bytes, not the truth of claims."
+  },
+  "normalization": {
+    "id": "reader:a-scenario-is-not-a-singularity",
+    "slug": "a-scenario-is-not-a-singularity",
+    "title": "A Scenario Is Not a Singularity",
+    "category": "AI & Technology",
+    "tags": [
+      "ai-evaluation",
+      "economics",
+      "forecasting"
+    ],
+    "entities": [
+      "Anthropic",
+      "OpenAI",
+      "IMF"
+    ],
+    "source": {
+      "platform": "YouTube",
+      "url": "https://www.youtube.com/watch?v=wS3lJpOs9Uw",
+      "videoId": "wS3lJpOs9Uw",
+      "title": "Anthropic Just Shocked The World... AI SINGULARITY Is Here!",
+      "creator": "AI Revolution",
+      "uploadDate": "20261019",
+      "durationSeconds": 847,
+      "mediaAspect": "16:9"
+    },
+    "published": "2026-10-19",
+    "updated": "2026-10-19T16:52:08Z",
+    "overview": "AI Revolution’s public title declares an AI singularity. A private machine transcript suggests a Jack Clark IMF attribution; the first-party benchmark and economic scenarios warrant narrower conclusions.",
+    "whyItMatters": "Useful to people setting research or workforce plans who need to separate measured agent performance from a conditional 2030 scenario. Watch the benchmark and scenario explanations; skip the headline as a decision rule.",
+    "ghostMeshTakeaway": "The paper shows strong performance on bounded calculations, not open-ended scientific discovery. The $44.4 trillion figure is the extreme branch of a model. Use these as inputs for reversible stress tests, with explicit assumptions and human authority.",
+    "verdict": "Mostly recycled",
+    "architectureImpact": "watch",
+    "falsification": "Revise the benchmark assessment if independent reruns and broader discovery tasks support a different capability claim. Revise the economic call when observed adoption, displacement and GDP data discriminate among the model scenarios.",
+    "evidenceState": "partially corroborated",
+    "lastEvidenceChecked": "2026-10-19T12:04:09Z",
+    "freshness": "Primary benchmark and scenario sources checked 2026-10-19. The IMF singularity attribution remains unverified; 2030 results are conditional, not observed.",
+    "variant": "essay",
+    "accent": "violet",
+    "claims": [
+      {
+        "id": "a-scenario-is-not-a-singularity--singularity-attribution",
+        "proposition": "Jack Clark declared at an IMF lecture that the technological singularity has already arrived.",
+        "kind": "speaker-attribution",
+        "asOf": "2026-10-19",
+        "status": "unverified",
+        "assessment": "A private machine transcript suggests an indirect paraphrase. Exact video audio and first-party Clark wording remain unverified.",
+        "limits": "A Reuters account of rapid AI progress is not a lecture transcript and cannot establish Clark’s exact wording.",
+        "sourceLocation": "00:00–00:58",
+        "references": [],
+        "counterevidence": [],
+        "temporalScope": "Source and linked reports checked 2026-10-19; model and economic conditions may change."
+      },
+      {
+        "id": "a-scenario-is-not-a-singularity--physics-49-of-50",
+        "proposition": "GPT-6 Astra solved 49 of 50 unpublished TheoPhysEval physics problems in the authors’ realistic agent track.",
+        "kind": "source-report",
+        "asOf": "2026-10-19",
+        "status": "partially corroborated",
+        "assessment": "The benchmark authors report 98% for the Astra plus Codex harness.",
+        "limits": "One run, 50 selected problems and grading ambiguities limit generalization. GhostMesh has not rerun the evaluation.",
+        "sourceLocation": "02:15–03:55",
+        "references": [
+          "theophyseval"
+        ],
+        "counterevidence": [],
+        "temporalScope": "Source and linked reports checked 2026-10-19; model and economic conditions may change."
+      },
+      {
+        "id": "a-scenario-is-not-a-singularity--physics-not-breakthrough",
+        "proposition": "The TheoPhysEval score demonstrates solutions to breakthrough open problems in physics.",
+        "kind": "source-interpretation",
+        "asOf": "2026-10-19",
+        "status": "contradicted",
+        "assessment": "The paper explicitly says its tasks are not breakthrough open problems and do not require construction of new physical theories.",
+        "limits": "Strong performance on bounded calculations remains important; it is a different result from original discovery.",
+        "sourceLocation": "02:15–04:00",
+        "references": [],
+        "counterevidence": [
+          "theophyseval"
+        ],
+        "temporalScope": "Source and linked reports checked 2026-10-19; model and economic conditions may change."
+      },
+      {
+        "id": "a-scenario-is-not-a-singularity--no-memorization",
+        "proposition": "Unpublished benchmark answers mean the agents could not rely on memorized physics literature.",
+        "kind": "source-interpretation",
+        "asOf": "2026-10-19",
+        "status": "disputed",
+        "assessment": "Unpublished answers reduce direct answer contamination, but the paper says the small isolated-track change suggests significant memorization of relevant literature.",
+        "limits": "This does not prove any specific answer was copied. It limits any categorical exclusion of memorization.",
+        "sourceLocation": "02:15–03:55",
+        "references": [],
+        "counterevidence": [
+          "theophyseval"
+        ],
+        "temporalScope": "Source and linked reports checked 2026-10-19; model and economic conditions may change."
+      },
+      {
+        "id": "a-scenario-is-not-a-singularity--economic-extreme",
+        "proposition": "Anthropic’s extreme scenario yields US GDP of $44.4 trillion in 2030, 32.4% above its no-AI baseline.",
+        "kind": "scenario-report",
+        "asOf": "2026-10-19",
+        "status": "partially corroborated",
+        "assessment": "Anthropic’s public scenario explorer gives these values at 2025 prices and specifies demanding capability and adoption assumptions.",
+        "limits": "This is one conditional modeled path, not Anthropic’s prediction or a measured effect.",
+        "sourceLocation": "05:17–09:40",
+        "references": [
+          "anthropic-scenarios",
+          "cepr-21939"
+        ],
+        "counterevidence": [],
+        "temporalScope": "Source and linked reports checked 2026-10-19; model and economic conditions may change."
+      },
+      {
+        "id": "a-scenario-is-not-a-singularity--economic-forecast",
+        "proposition": "The United States is forecast to reach $44.4 trillion GDP in 2030 because of AI.",
+        "kind": "forecast",
+        "asOf": "2026-10-19",
+        "status": "disputed",
+        "assessment": "Anthropic presents $44.4 trillion as its extreme case alongside $34.1 trillion modest and $36.3 trillion substantial cases.",
+        "limits": "The model omits policy responses, business cycles and some demand effects; actual outcomes may differ materially.",
+        "sourceLocation": "05:17–09:40",
+        "references": [],
+        "counterevidence": [
+          "anthropic-scenarios"
+        ],
+        "temporalScope": "Source and linked reports checked 2026-10-19; model and economic conditions may change."
+      },
+      {
+        "id": "a-scenario-is-not-a-singularity--job-displacement",
+        "proposition": "The extreme scenario produces unusually high knowledge-worker displacement and a lower labor share.",
+        "kind": "scenario-report",
+        "asOf": "2026-10-19",
+        "status": "partially corroborated",
+        "assessment": "The CEPR authors describe nearly one in five cognitive workers unemployed in the extreme case and a labor share decline from about 60% to 45%.",
+        "limits": "These are modeled conditional outcomes, not current layoffs or a point forecast.",
+        "sourceLocation": "10:26–13:30",
+        "references": [
+          "cepr-21939",
+          "anthropic-scenarios"
+        ],
+        "counterevidence": [],
+        "temporalScope": "Source and linked reports checked 2026-10-19; model and economic conditions may change."
+      },
+      {
+        "id": "a-scenario-is-not-a-singularity--scenario-not-decision",
+        "proposition": "A single extreme scenario is enough to justify irreversible staffing or infrastructure decisions now.",
+        "kind": "editorial-inference",
+        "asOf": "2026-10-19",
+        "status": "contradicted",
+        "assessment": "GhostMesh rejects this decision rule because the source offers distinct paths and explicitly says the future is not predetermined.",
+        "limits": "A reversible stress test could still be useful; it requires an organization-specific baseline and human review.",
+        "sourceLocation": "10:26–13:55",
+        "references": [],
+        "counterevidence": [
+          "anthropic-scenarios"
+        ],
+        "temporalScope": "Source and linked reports checked 2026-10-19; model and economic conditions may change."
+      }
+    ],
+    "references": [
+      {
+        "id": "theophyseval",
+        "title": "TheoPhysEval: Assessing AI agents at autonomous theoretical physics problem solving",
+        "author": "A. Ramesh Chandra and coauthors",
+        "publisher": "arXiv",
+        "url": "https://arxiv.org/abs/2610.16733",
+        "publicationDate": "2026-10-09",
+        "eventDate": null,
+        "location": "Abstract; sections II–V, especially problem selection, grading and discussion",
+        "sourceType": "first-party benchmark preprint",
+        "independence": "The authors report one run of their own 50-problem evaluation. Their score is not an independent replication or a test of breakthrough research.",
+        "evidenceFamily": "theophyseval-2610.16733",
+        "checkedAt": "2026-10-19T12:04:09Z",
+        "datePrecision": "day"
+      },
+      {
+        "id": "anthropic-scenarios",
+        "title": "Scenarios for our Economic Future",
+        "author": "Anthropic Economics team",
+        "publisher": "Anthropic",
+        "url": "https://www.anthropic.com/institute/econ-scenarios",
+        "publicationDate": "2026-09",
+        "eventDate": null,
+        "location": "Three scenarios; GDP, employment and model limitations",
+        "sourceType": "first-party scenario model",
+        "independence": "The model authors expose assumptions and caveats. The scenarios are conditional illustrations, not observed 2030 outcomes.",
+        "evidenceFamily": "anthropic-econ-scenarios-2026",
+        "checkedAt": "2026-10-19T12:04:09Z",
+        "datePrecision": "month",
+        "dateNote": "The public explorer states v1.0, September 2026; no day is shown on the page."
+      },
+      {
+        "id": "cepr-21939",
+        "title": "Economic Scenarios for Transformative AI",
+        "author": "Anton Korinek, Chad Jones, Szymon Sacher, Tess Cotter and Peter McCrory",
+        "publisher": "CEPR",
+        "url": "https://cepr.org/publications/dp21939",
+        "publicationDate": "2026-09-15",
+        "eventDate": null,
+        "location": "Abstract and three modeled scenarios",
+        "sourceType": "authors’ research summary",
+        "independence": "This is the same research family as Anthropic’s explorer, not an independent replication of the model or forecast.",
+        "evidenceFamily": "anthropic-econ-scenarios-2026",
+        "checkedAt": "2026-10-19T12:04:09Z",
+        "datePrecision": "day"
+      }
+    ],
+    "relationships": [
+      {
+        "target": "reader:the-experiment-ran-did-the-research-advance",
+        "type": "related topic",
+        "reason": "The physics benchmark reports 49 of 50 bounded calculations; the paper examines expert judgments about contributions to two open-ended research questions. Compare what a task score and a research judgment establish without treating either as a test of the other.",
+        "provenance": [
+          "/a-scenario-is-not-a-singularity/#physics",
+          "/the-experiment-ran-did-the-research-advance/#finding"
+        ],
+        "basis": "curated-editorial-contrast",
+        "direction": "outgoing"
+      }
+    ],
+    "relationshipDisposition": "One topic-level route contrasts a bounded physics benchmark with expert judgment of open-ended research. Neither Reader corroborates or rebuts the other's measured result.",
+    "review": {
+      "status": "editorial-review-pending",
+      "reviewer": "Pending independent editorial review",
+      "reviewedSourceHead": null,
+      "checkedAt": "2026-10-19T12:04:09Z",
+      "scope": "Draft Reader and claim map; primary-source interpretation and publication require review.",
+      "findings": "No publication decision recorded."
+    },
+    "revisionHistory": [
+      {
+        "at": "2026-10-19T12:04:09Z",
+        "kind": "new-reader-candidate",
+        "reason": "Owner-requested deconstruction of public YouTube source wS3lJpOs9Uw; source pack remains private."
+      },
+      {
+        "at": "2026-10-19T16:52:08Z",
+        "kind": "source-attribution-qualification",
+        "reason": "Removed assertions about unheard narrator speech or clip absence; preserved primary-source findings and explicit source-audio uncertainty."
+      }
+    ],
+    "editorialOrder": 14,
+    "orderReason": "Read after other model-score Readers to test how benchmark evidence is converted into a larger forecast."
+  },
+  "editorial": {
+    "overview": "AI Revolution’s public title declares an AI singularity. A private machine transcript suggests a Jack Clark IMF attribution; the first-party benchmark and economic scenarios warrant narrower conclusions.",
+    "whyItMatters": "Useful to people setting research or workforce plans who need to separate measured agent performance from a conditional 2030 scenario. Watch the benchmark and scenario explanations; skip the headline as a decision rule.",
+    "ghostMeshTakeaway": "The paper shows strong performance on bounded calculations, not open-ended scientific discovery. The $44.4 trillion figure is the extreme branch of a model. Use these as inputs for reversible stress tests, with explicit assumptions and human authority."
+  }
+}

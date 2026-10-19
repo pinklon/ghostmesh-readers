@@ -1,0 +1,30 @@
+# Reader candidate intake: wS3lJpOs9Uw
+
+Status: draft for independent source and editorial review, 2026-10-19 UTC. Writer: `/root/new_video_intake`, sole writer in branch `codex/reader-wS3lJpOs9Uw-intake-20261019`, based on frozen Reader PR27 head `c7025444cad2f10253556be3cbc77bc82ccc50b9`. No production publication or merge is authorized.
+
+## Source and custody
+
+- [Original YouTube video](https://www.youtube.com/watch?v=wS3lJpOs9Uw): AI Revolution, “Anthropic Just Shocked The World... AI SINGULARITY Is Here!”, YouTube-reported upload date 2026-10-19, 847 seconds, public, 1920 × 1080. Public metadata was inspected with `yt-dlp 2026.08.19` without authentication or cookies. The chapter starts in the Reader are the creator's public description markers: 00:58, 02:15, 05:17 and 10:26.
+- The qualified local `$build-reasoning-pack@1.0.2` route passed `doctor`, built the private pack and passed closed-manifest `verify`. Manifest SHA-256: `59656988a0017217b1505b73181990a7cf22facc86eb8bebba8226ac0307ee87`. Transcript SHA-256: `674f78d5370bdd2dce1ea95840b7982b17050059bd5e8496d4a26c9c65af517e`.
+- The transcript status is `local-whisper-fallback`. It supports topic-sequence review, but automated recognition may mishear wording and numbers. No transcript quotation was used in the draft. Full source media, transcript, timed captions and metadata remain in access-controlled task-local custody outside this public repository. Hashes prove retained bytes, not the truth of the video's claims.
+
+## Claim checks and counterevidence
+
+| Video move | Primary source result | Draft posture |
+| --- | --- | --- |
+| Opening paraphrase that Jack Clark declared the singularity had arrived at an IMF event | No first-party speech recording or transcript was bound to the exact assertion in this review. | **Unverified attribution.** Do not turn a private machine-transcript reading into an Anthropic declaration; exact video speech remains unverified. |
+| 02:15 physics-agent score and implied breakthrough | [TheoPhysEval, submitted 2026-10-09](https://arxiv.org/abs/2610.16733) reports GPT-6 Astra in Codex solved 49 of 50 unpublished research-level problems in its realistic track. Its authors say these tasks are not breakthrough open problems, note one full run per agent and grading ambiguities, and say near-unchanged isolated scores suggest memorization of relevant literature. They corrected subtle errors in some original reference solutions. | **Partially corroborated** score as an author report; **contradicted** breakthrough interpretation; **disputed** categorical no-memorization inference. |
+| 05:17 $44.4 trillion US GDP by 2030 | [Anthropic's September 2026 scenario explorer](https://www.anthropic.com/institute/econ-scenarios) displays $34.1T modest, $36.3T substantial and $44.4T extreme cases at 2025 prices. The extreme case is 32.4% above the no-AI baseline and requires exceptional capabilities, adoption and little task replacement. Its own page says the future is not predetermined and lists model omissions. | **Partially corroborated conditional scenario**, **disputed as a point forecast**. Anthropic reports September 2026 for v1.0; a precise publication day was not inferred. |
+| 10:26 job and wage outcomes | [CEPR DP21939, published 2026-09-15](https://cepr.org/publications/dp21939) describes the same authors' three scenarios. In the extreme branch, annual GDP growth reaches about 15%, labor share falls from about 60% to 45%, and nearly one in five cognitive workers is unemployed. | **Partially corroborated modeled outcome**, not observed displacement. CEPR and the Anthropic explorer are one research family, not independent replications. |
+
+The underlying economic model identifies its outcomes as scenarios and states several omissions. The public video title promotes a singularity conclusion beyond the cited research, while the opening's exact speech remains unverified. Editorial recommendation: **Mostly recycled**. The useful material is a route into the benchmark and model; researchers and workforce planners should inspect those originals and use reversible, assumption-led tests rather than the headline for a staffing or system decision.
+
+## Draft implementation and release boundary
+
+Draft title: **A Scenario Is Not a Singularity**. Proposed route: `/a-scenario-is-not-a-singularity/`. The candidate adds a near-top three-part brief, a direct opt-in YouTube source route, original analysis, 8 claim-register entries, 3 bounded primary references, a sanitized public receipt, and a Reader node in the source-only knowledge inventory. No relationship edge was inferred from topical similarity. Existing 14 Reader records and permalinks remain present. The shared search label moves from 14 to 15, so regenerated historical Reader bytes and their pinned knowledge-source hashes change only for that label; a byte comparison against the base commit verified this before rebinding.
+
+Pending before any draft PR: independent review of source entailment, exact video attribution, public-safe content, generated diff and visual behavior. Even a successful preview will not authorize production publication. Rollback before merge is discarding this isolated branch; after a later authorized merge, use a revert rather than rewriting public history.
+
+## Local validation
+
+`python3 scripts/generate_site.py --check`, `python3 scripts/knowledge_contract.py --check`, `python3 scripts/check_site.py`, `python3 -m unittest discover -s tests -v` (39 tests) and `git diff --check` passed. The first browser-suite attempt stopped at `Cannot find module 'playwright'`; no package was installed. Local headless Chrome CDP then loaded the generated Reader at 1440 × 900 and 390 × 844 in dark and light appearances: HTTP 200, one H1, no horizontal overflow, all three brief headings, one share control and no source iframe before Play in all four cases. Local review images and measurements are retained outside the Git worktree in the task's `readers/video-intake-preview-wS3lJpOs9Uw/` directory. These checks are source preview evidence, not a hosted Netlify preview or owner acceptance.

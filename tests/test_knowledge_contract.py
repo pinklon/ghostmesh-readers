@@ -25,10 +25,16 @@ class KnowledgeContractTests(unittest.TestCase):
 
     def test_reference_is_source_backed(self):
         validate_contract(self.model, self.schema)
-        self.assertEqual(len([node for node in self.model["nodes"] if node["type"] == "Reader"]), 13)
-        self.assertEqual(len(self.model["nodes"]), 15)
-        self.assertEqual(len(self.model["relationships"]), 1)
-        self.invalid(lambda m: m["nodes"].pop(), "Reader inventory")
+        catalog = json.loads((ROOT / "content/catalog.json").read_text())
+        self.assertEqual(len([node for node in self.model["nodes"] if node["type"] == "Reader"]), len(catalog["readers"]))
+        self.assertEqual(len(self.model["nodes"]), len(catalog["readers"]) + 4)
+        self.assertEqual(len(self.model["relationships"]), 2)
+        self.assertIn("urn:ghostmesh-readers:reader:the-experiment-ran-did-the-research-advance",
+                      {node["id"] for node in self.model["nodes"]})
+        self.invalid(lambda m: m["nodes"].__setitem__(
+            slice(None), [node for node in m["nodes"] if node["id"] !=
+                          "urn:ghostmesh-readers:reader:the-experiment-ran-did-the-research-advance"]),
+            "Reader inventory")
 
     def test_private_classification_is_denied(self):
         self.invalid(lambda m: m["nodes"][1].__setitem__("visibility", "private"))
@@ -103,6 +109,18 @@ class KnowledgeContractTests(unittest.TestCase):
         for entry in manifest["outputs"]:
             self.assertEqual(entry["sha256"], hashlib.sha256(expected[entry["path"]]).hexdigest())
             self.assertEqual(entry["bytes"], len(expected[entry["path"]]))
+        page = expected["site/knowledge/index.html"].decode()
+        catalog = json.loads((ROOT / "content/catalog.json").read_text())
+        for reader in catalog["readers"]:
+            with self.subTest(slug=reader["slug"]):
+                self.assertIn(f'<h3><a href="/{reader["slug"]}/">', page)
+                self.assertNotIn(f'<h3><a href="{catalog["host"]}/{reader["slug"]}/">', page)
+        for node in self.model["nodes"]:
+            if node["type"] == "Claim":
+                slug = node["provenance"]["sourceNodeId"].removeprefix("urn:ghostmesh-readers:reader:")
+                self.assertIn(f'href="/{slug}/{node["provenance"]["locator"]}"', page)
+        self.assertNotIn('>Reader source</span>', page)
+        self.assertIn('<span>Paper · arXiv</span>', page)
         with tempfile.TemporaryDirectory() as folder:
             repo = Path(folder)
             source_paths = [node["source"]["path"] for node in self.model["nodes"]

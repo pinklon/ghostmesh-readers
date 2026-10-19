@@ -1,0 +1,297 @@
+{
+  "schema": "ghostmesh-video-receipt-v1",
+  "createdAt": "2026-10-19T12:05:27Z",
+  "source": {
+    "platform": "YouTube",
+    "url": "https://www.youtube.com/watch?v=7O84mdxehWY",
+    "videoId": "7O84mdxehWY",
+    "title": "AI Doesn't REALLY Understand. We've Said That Before.",
+    "creator": "Count Grey Matter",
+    "uploadDate": "20261018",
+    "durationSeconds": 1378,
+    "mediaAspect": "16:9"
+  },
+  "sourceInspection": {
+    "method": "public yt-dlp metadata, private English auto captions and bounded local Whisper ASR comparison",
+    "status": "source-reviewed-caption-aid",
+    "captionSha256": "c6d95a76711fce98ddb2c93c8130007a3295692eb0d474899fac9a5f3f84f082",
+    "caveat": "Automatic captions and local ASR can mishear names and exact wording. Their agreement supports a bounded paraphrase, not an exact quote, direct listening or a qualified private ReasonPack.",
+    "publicationBoundary": "Source captions, full media, signed stream metadata and private paths remain outside the public repository."
+  },
+  "custody": {
+    "status": "private-caption-aid-only",
+    "note": "Caption digest and local ASR comparison record machine source aids, not truth of video claims, exact speech or a verified full ReasonPack."
+  },
+  "normalization": {
+    "id": "reader:the-test-must-name-its-target",
+    "slug": "the-test-must-name-its-target",
+    "title": "The Test Must Name Its Target",
+    "category": "AI & Technology",
+    "tags": [
+      "models",
+      "evaluation",
+      "meaning"
+    ],
+    "entities": [
+      "Count Grey Matter",
+      "Geoffrey Hinton",
+      "Emily M. Bender"
+    ],
+    "source": {
+      "platform": "YouTube",
+      "url": "https://www.youtube.com/watch?v=7O84mdxehWY",
+      "videoId": "7O84mdxehWY",
+      "title": "AI Doesn't REALLY Understand. We've Said That Before.",
+      "creator": "Count Grey Matter",
+      "uploadDate": "20261018",
+      "durationSeconds": 1378,
+      "mediaAspect": "16:9"
+    },
+    "published": "2026-10-19",
+    "updated": "2026-10-19T17:13:50Z",
+    "overview": "The chapter list, private captions and bounded local ASR indicate a historical tour and a functional-understanding verdict. The narrator appears to separate task competence from untested subjective feeling; exact speech and the broader conclusion remain unverified.",
+    "whyItMatters": "Selectively useful for researchers and product teams setting evaluation criteria. The historical and representation material challenges lazy impossibility claims, but imitation and narrow probes do not establish human-like understanding.",
+    "ghostMeshTakeaway": "Define the task and evidence before arguing over a label. Test grounded use, changed premises, error recovery and authority boundaries; keep semantic and subjective claims open beyond the measured capability.",
+    "verdict": "Interesting, unproven",
+    "architectureImpact": "investigate",
+    "falsification": "Revisit the bounded assessment if independent, preregistered tests demonstrate reliable transferable semantic grounding across declared settings, or show that the cited internal probes disappear under replication. A subjective-experience conclusion needs a separate justified criterion.",
+    "evidenceState": "partially corroborated",
+    "lastEvidenceChecked": "2026-10-19T17:13:50Z",
+    "freshness": "Direct papers and public metadata checked 2026-10-19. Private automatic captions and bounded local ASR were compared on consequential passages; both can mishear speech. Paper results and broader philosophical claims remain bounded.",
+    "variant": "essay",
+    "accent": "teal",
+    "claims": [
+      {
+        "id": "the-test-must-name-its-target--dreyfus-argument",
+        "proposition": "Dreyfus argued in 1965 that then-current digital AI missed important forms of human information processing.",
+        "kind": "historical-source",
+        "asOf": "2026-10-19",
+        "status": "corroborated",
+        "assessment": "The RAND publication and abstract state this argument.",
+        "limits": "This verifies what the paper argued, not a universal impossibility or what all current systems can do.",
+        "sourceLocation": "00:51-04:18",
+        "references": [
+          "dreyfus-rand"
+        ],
+        "counterevidence": [],
+        "temporalScope": "Video published 2026-10-18; research statements are tied to the cited methods and versions."
+      },
+      {
+        "id": "the-test-must-name-its-target--turing-73",
+        "proposition": "GPT-4.5 with a humanlike persona was judged human 73% of the time in the Jones and Bergen experimental protocol.",
+        "kind": "study-result",
+        "asOf": "2026-10-19",
+        "status": "partially corroborated",
+        "assessment": "The authors report 73% in five-minute, three-party conversations.",
+        "limits": "Specific model, prompt, participant protocol and preprint scope; GhostMesh did not replicate the study. It is not a direct measure of meaning or experience.",
+        "sourceLocation": "08:10-09:20",
+        "references": [
+          "jones-bergen-2025"
+        ],
+        "counterevidence": [],
+        "temporalScope": "Video published 2026-10-18; research statements are tied to the cited methods and versions."
+      },
+      {
+        "id": "the-test-must-name-its-target--form-meaning",
+        "proposition": "Success at processing linguistic form alone establishes semantic understanding.",
+        "kind": "philosophical-inference",
+        "asOf": "2026-10-19",
+        "status": "disputed",
+        "assessment": "Private captions and bounded local ASR agree the video raises the Chinese-room and octopus objections before its functional account. Bender and Koller argue that form-only training has no a priori route to meaning; exact speech remains unverified.",
+        "limits": "Neither a single position paper nor this video settles the meaning criterion for all modern multimodal or interactive systems.",
+        "sourceLocation": "09:32-12:20",
+        "references": [],
+        "counterevidence": [
+          "bender-koller-2020"
+        ],
+        "temporalScope": "Video published 2026-10-18; research statements are tied to the cited methods and versions."
+      },
+      {
+        "id": "the-test-must-name-its-target--spacetime",
+        "proposition": "Researchers found linear spatial and temporal features in the studied Llama-2 models and datasets.",
+        "kind": "study-result",
+        "asOf": "2026-10-19",
+        "status": "partially corroborated",
+        "assessment": "Gurnee and Tegmark report this result across named spatial and temporal datasets.",
+        "limits": "The authors call for more investigation; the result does not establish a general or always accurate world model.",
+        "sourceLocation": "19:31-20:01",
+        "references": [
+          "gurnee-tegmark-2024"
+        ],
+        "counterevidence": [],
+        "temporalScope": "Video published 2026-10-18; research statements are tied to the cited methods and versions."
+      },
+      {
+        "id": "the-test-must-name-its-target--othello",
+        "proposition": "Researchers found an internal Othello board-state representation in a trained sequence model and affected outputs by intervention.",
+        "kind": "study-result",
+        "asOf": "2026-10-19",
+        "status": "partially corroborated",
+        "assessment": "Li and colleagues report a nonlinear representation and interventional evidence in a synthetic task.",
+        "limits": "A constrained game representation does not demonstrate open-world grounding or human-like understanding.",
+        "sourceLocation": "19:42-20:01",
+        "references": [
+          "li-othello-2023"
+        ],
+        "counterevidence": [],
+        "temporalScope": "Video published 2026-10-18; research statements are tied to the cited methods and versions."
+      },
+      {
+        "id": "the-test-must-name-its-target--humanlike",
+        "proposition": "Current language models understand much the way humans do.",
+        "kind": "source-interpretation",
+        "asOf": "2026-10-19",
+        "status": "unverified",
+        "assessment": "Private automatic captions and bounded local ASR both suggest the creator concludes that machines understand functionally and compares this to people. Their wording is not a verified quotation; the cited studies do not establish that human-comparable conclusion.",
+        "limits": "No agreed operational definition, cross-setting test or comparison of human and model mechanisms is supplied. Do not present caption wording as a verified quote.",
+        "sourceLocation": "20:10-21:33 (private caption and bounded local ASR location; exact speech unverified)",
+        "references": [],
+        "counterevidence": [
+          "bender-koller-2020"
+        ],
+        "temporalScope": "Video published 2026-10-18; research statements are tied to the cited methods and versions."
+      },
+      {
+        "id": "the-test-must-name-its-target--subjective",
+        "proposition": "A test of linguistic performance establishes whether a model has subjective experience.",
+        "kind": "philosophical-inference",
+        "asOf": "2026-10-19",
+        "status": "unverified",
+        "assessment": "The closing private caption and local ASR aids suggest the creator separates doing from feeling and says the latter lacks a test. The cited studies do not measure subjective experience; exact speech remains unverified.",
+        "limits": "No test in the video or cited studies measures subjective experience; do not infer either its presence or absence.",
+        "sourceLocation": "20:30-21:33 (private caption and bounded local ASR location; exact speech unverified)",
+        "references": [],
+        "counterevidence": [],
+        "temporalScope": "Video published 2026-10-18; research statements are tied to the cited methods and versions."
+      }
+    ],
+    "references": [
+      {
+        "id": "dreyfus-rand",
+        "title": "Alchemy and Artificial Intelligence",
+        "author": "Hubert L. Dreyfus",
+        "publisher": "RAND Corporation",
+        "url": "https://www.rand.org/pubs/papers/P3244.html",
+        "publicationDate": "1965",
+        "eventDate": null,
+        "location": "Original publication and abstract",
+        "sourceType": "historical research paper",
+        "independence": "Direct author paper; describes the period argument, not current system performance.",
+        "evidenceFamily": "dreyfus-1965",
+        "checkedAt": "2026-10-19T12:05:27Z",
+        "datePrecision": "year"
+      },
+      {
+        "id": "jones-bergen-2025",
+        "title": "Large Language Models Pass the Turing Test",
+        "author": "Cameron R. Jones and Benjamin K. Bergen",
+        "publisher": "arXiv",
+        "url": "https://arxiv.org/abs/2503.23674",
+        "publicationDate": "2025-03-31",
+        "eventDate": null,
+        "location": "Abstract and experimental protocol",
+        "sourceType": "research preprint",
+        "independence": "Authors report a preregistered study; GhostMesh did not replicate it or audit participants.",
+        "evidenceFamily": "jones-bergen-turing-2025",
+        "checkedAt": "2026-10-19T12:05:27Z",
+        "datePrecision": "day"
+      },
+      {
+        "id": "bender-koller-2020",
+        "title": "Climbing towards NLU: On Meaning, Form, and Understanding in the Age of Data",
+        "author": "Emily M. Bender and Alexander Koller",
+        "publisher": "Association for Computational Linguistics",
+        "url": "https://aclanthology.org/2020.acl-main.463/",
+        "publicationDate": "2020-07",
+        "eventDate": null,
+        "location": "Abstract and position argument",
+        "sourceType": "peer-reviewed position paper",
+        "independence": "Independent theoretical counterargument; not a direct test of this video or every present model.",
+        "evidenceFamily": "bender-koller-form-meaning-2020",
+        "checkedAt": "2026-10-19T12:05:27Z",
+        "datePrecision": "month"
+      },
+      {
+        "id": "gurnee-tegmark-2024",
+        "title": "Language Models Represent Space and Time",
+        "author": "Wes Gurnee and Max Tegmark",
+        "publisher": "arXiv",
+        "url": "https://arxiv.org/abs/2310.02207",
+        "publicationDate": "2023-10-03",
+        "eventDate": null,
+        "location": "Abstract; version 3 revised 2024-03-04",
+        "sourceType": "research preprint",
+        "independence": "Authors test particular representations in the Llama-2 family; no independent replication by GhostMesh.",
+        "evidenceFamily": "gurnee-tegmark-spacetime-2023",
+        "checkedAt": "2026-10-19T12:05:27Z",
+        "datePrecision": "day"
+      },
+      {
+        "id": "li-othello-2023",
+        "title": "Emergent World Representations: Exploring a Sequence Model Trained on a Synthetic Task",
+        "author": "Kenneth Li and coauthors",
+        "publisher": "ICLR / arXiv",
+        "url": "https://arxiv.org/abs/2210.13382",
+        "publicationDate": "2022-10-24",
+        "eventDate": null,
+        "location": "Abstract; ICLR 2023; version 5 revised 2024-06-26",
+        "sourceType": "research paper",
+        "independence": "A synthetic Othello model; its intervention does not settle open-world semantic grounding.",
+        "evidenceFamily": "li-othello-2023",
+        "checkedAt": "2026-10-19T12:05:27Z",
+        "datePrecision": "day"
+      }
+    ],
+    "relationships": [
+      {
+        "target": "reader:the-microscope-is-not-a-soul",
+        "type": "related topic",
+        "reason": "Both Count Grey Matter Readers examine the inference from internal model evidence to a broader mental-state claim; this edition examines functional understanding, while the earlier one separates interpretation from consciousness and welfare.",
+        "provenance": [
+          "/the-test-must-name-its-target/#representation",
+          "/the-microscope-is-not-a-soul/#evidence"
+        ],
+        "basis": "curated-source-overlap",
+        "direction": "outgoing"
+      }
+    ],
+    "relationshipDisposition": "One qualified topic-level link to an earlier Reader by the same creator; neither Reader independently verifies the other.",
+    "review": {
+      "status": "editorial-review-pending",
+      "reviewer": "Pending independent editorial review",
+      "reviewedSourceHead": null,
+      "checkedAt": "2026-10-19T17:13:50Z",
+      "scope": "Source analysis and claim mapping require Tony's editorial decision. Bounded caption and local ASR comparison supports only attributed paraphrase, not exact quotation or publication authority.",
+      "findings": "No publication decision recorded."
+    },
+    "revisionHistory": [
+      {
+        "at": "2026-10-19T12:05:27Z",
+        "kind": "new-reader-candidate",
+        "reason": "Owner-requested deconstruction of public YouTube source 7O84mdxehWY; captions retained privately as a source aid."
+      },
+      {
+        "at": "2026-10-19T12:54:56Z",
+        "kind": "source-qualification",
+        "reason": "Removed a caption-derived direct-looking quotation and qualified narrator-specific conclusions pending direct audio review; primary-paper findings unchanged."
+      },
+      {
+        "at": "2026-10-19T16:52:08Z",
+        "kind": "source-attribution-qualification",
+        "reason": "Removed assertions about unheard narrator speech or clip absence; preserved primary-source findings and explicit source-audio uncertainty."
+      },
+      {
+        "at": "2026-10-19T17:13:50Z",
+        "kind": "bounded-local-asr-comparison",
+        "reason": "Private captions and existing local Whisper ASR agree on a functional-understanding close; published attributed paraphrase remains qualified and claim truth status unchanged."
+      }
+    ],
+    "editorialOrder": 15,
+    "orderReason": "Read after the existing Count Grey Matter interpretability Reader to examine a distinct functional-understanding claim."
+  },
+  "editorial": {
+    "overview": "The chapter list, private captions and bounded local ASR indicate a historical tour and a functional-understanding verdict. The narrator appears to separate task competence from untested subjective feeling; exact speech and the broader conclusion remain unverified.",
+    "whyItMatters": "Selectively useful for researchers and product teams setting evaluation criteria. The historical and representation material challenges lazy impossibility claims, but imitation and narrow probes do not establish human-like understanding.",
+    "ghostMeshTakeaway": "Define the task and evidence before arguing over a label. Test grounded use, changed premises, error recovery and authority boundaries; keep semantic and subjective claims open beyond the measured capability."
+  }
+}

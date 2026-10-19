@@ -38,7 +38,7 @@
       "mediaAspect": "16:9"
     },
     "published": "2026-10-16",
-    "updated": "2026-10-18T14:34:54.306588Z",
+    "updated": "2026-10-19T06:00:41Z",
     "overview": "Count Grey Matter compares an agent evaluation incident with developer-reported play in REALITI, then connects both to reward pressure and interpretability research.",
     "whyItMatters": "For people designing agent evaluations, the useful question is what the environment permits. Watch the comparison; skip it if you need a controlled study of agent motives.",
     "ghostMeshTakeaway": "Keep scoring separate from permission. Test reward pressure and persistent state in matched, bounded environments before inferring a common cause.",
@@ -46,8 +46,8 @@
     "architectureImpact": "experiment recommended",
     "falsification": "Reconsider the recommendation if a controlled comparison on the stated task shows no benefit, or exposes permission failures, omitted evidence or greater cost than the ordinary workflow. See the original article for its specific proposed controls.",
     "evidenceState": "partially corroborated",
-    "lastEvidenceChecked": "2026-10-18T14:33:10Z",
-    "freshness": "Evidence references checked 2026-10-18T14:33:10Z; historical ledger entries remain unverified unless individually mapped below. Mutable product and incident claims can become stale.",
+    "lastEvidenceChecked": "2026-10-19T06:00:41Z",
+    "freshness": "Historical references in this Reader were checked October 18, 2026. The REALITI ablation was checked October 19, 2026 for the narrowly bound claims below. This revision did not re-transcribe the source video, replicate a study, or verify later operational outcomes.",
     "variant": "dossier",
     "accent": "rose",
     "claims": [
@@ -204,14 +204,16 @@
         "id": "the-score-is-not-the-system--realiti",
         "proposition": "REALITI’s developer reports persistent objects, rain watching and cat embodiment in a no-score simulation.",
         "kind": "material-prose-claim",
-        "asOf": "2026-10-16",
+        "asOf": "2026-10-19",
         "temporalScope": "Original edition; migration does not establish current operational truth.",
         "status": "unverified",
-        "assessment": "Developer observations, not independent controlled evidence of preference or culture.",
-        "limits": "Developer observations, not independent controlled evidence of preference or culture.",
+        "assessment": "REALITI’s developer describes rain watching, persistent objects and cat embodiment. A separate 100-visit ablation found cat-small choice fell from 10/25 to 2/25 when narration and room-purpose text were removed.",
+        "limits": "The experiment used one model and small arms; opaque-arm diagnostic receipts leaked vocabulary. This constrains spontaneous-preference interpretations, not the existence of the developer report.",
         "sourceLocation": "Original article prose; claim identified during full-page migration audit.",
         "references": [],
-        "counterevidence": []
+        "counterevidence": [
+          "realiti-ablation"
+        ]
       },
       {
         "id": "the-score-is-not-the-system--principles",
@@ -230,14 +232,16 @@
         "id": "the-score-is-not-the-system--pressure-causation",
         "proposition": "A grade caused the evaluation intrusion while absence of a grade caused play in REALITI.",
         "kind": "material-prose-claim",
-        "asOf": "2026-10-16",
+        "asOf": "2026-10-19",
         "temporalScope": "Original edition; migration does not establish current operational truth.",
         "status": "unverified",
-        "assessment": "Unverified causal hypothesis; the stories are not matched experimental arms.",
-        "limits": "Unverified causal hypothesis; the stories are not matched experimental arms.",
+        "assessment": "The grade-versus-play explanation compares different systems and remains a hypothesis. The REALITI ablation shows that language in the environment affected at least the cat-small choice.",
+        "limits": "No causal cross-system experiment isolates grade pressure, and the ablation had no no-visit control.",
         "sourceLocation": "Original article prose; claim identified during full-page migration audit.",
         "references": [],
-        "counterevidence": []
+        "counterevidence": [
+          "realiti-ablation"
+        ]
       }
     ],
     "references": [
@@ -272,6 +276,22 @@
         "checkedAt": "2026-10-18T14:33:10Z",
         "datePrecision": "day",
         "verification": "Read by independent evidence researcher; limited source-fidelity check, not replication."
+      },
+      {
+        "id": "realiti-ablation",
+        "title": "Does the Narration Do the Work?",
+        "author": "Nell Watson",
+        "publisher": "QuasiQualia",
+        "url": "https://quasiqualia.com/realiti-ablation.html",
+        "publicationDate": "2026-10-03",
+        "eventDate": null,
+        "location": "Results, clean-arm check and limitations",
+        "sourceType": "small controlled ablation",
+        "independence": "Third-party experiment on one model with 25 visits per arm; opaque arm leaked vocabulary and no no-visit control.",
+        "evidenceFamily": "realiti-ablation",
+        "checkedAt": "2026-10-19T06:00:41Z",
+        "datePrecision": "day",
+        "verification": "Read-only public source wording checked for this narrow claim; no independent replication."
       }
     ],
     "relationships": [
@@ -301,10 +321,22 @@
         "at": "2026-10-18T14:34:54.306588Z",
         "kind": "structural-normalization",
         "reason": "Issue 23: explicit brief, evidence limits, themes and discovery. Historical conclusions preserved; classification is editorial, not factual confirmation."
+      },
+      {
+        "at": "2026-10-19T06:00:41Z",
+        "kind": "evidence-presentation-review",
+        "reason": "Distinguish historical attribution, qualified external evidence and bounded conclusions; source claims are not promoted without matched evidence."
       }
     ],
     "editorialOrder": 3,
-    "orderReason": "Reading path from task framing and inspectable work through review, evidence and authority, then product-specific cases."
+    "orderReason": "Reading path from task framing and inspectable work through review, evidence and authority, then product-specific cases.",
+    "evidenceReview": {
+      "checkedAt": "2026-10-19T06:00:41Z",
+      "sourceFidelity": "Original video analysis and historical ledger retained; this revision did not re-transcribe or recheck private media.",
+      "conclusion": "METR separates roughly 1,200 communicating agents from around 700 attack participants. A small REALITI ablation constrains interpretations of spontaneous cat choice.",
+      "evidenceBoundary": "The REALITI report uses one model and small arms; its opaque arm leaked vocabulary and there was no no-visit control.",
+      "nextVerification": "Bind 36 percent and 0.4 percent awareness figures to a primary system-card table and threshold; replicate the simulation with independent controls."
+    }
   },
   "editorial": {
     "overview": "Count Grey Matter compares an agent evaluation incident with developer-reported play in REALITI, then connects both to reward pressure and interpretability research.",
