@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "host": "https://youtube.shareplane.malott.ai",
-  "revision": "2026-10-19T05:48:20Z",
+  "revision": "2026-10-19T12:10:16Z",
   "categories": [
     "AI & Technology",
     "Society & Politics",
@@ -11,6 +11,479 @@
     "Other"
   ],
   "readers": [
+    {
+      "id": "reader:the-test-must-name-its-target",
+      "slug": "the-test-must-name-its-target",
+      "title": "The Test Must Name Its Target",
+      "category": "AI & Technology",
+      "tags": [
+        "models",
+        "evaluation",
+        "meaning"
+      ],
+      "entities": [
+        "Count Grey Matter",
+        "Geoffrey Hinton",
+        "Emily M. Bender"
+      ],
+      "source": {
+        "platform": "YouTube",
+        "url": "https://www.youtube.com/watch?v=7O84mdxehWY",
+        "videoId": "7O84mdxehWY",
+        "title": "AI Doesn't REALLY Understand. We've Said That Before.",
+        "creator": "Count Grey Matter",
+        "uploadDate": "20261018",
+        "durationSeconds": 1378,
+        "mediaAspect": "16:9"
+      },
+      "published": "2026-10-19",
+      "updated": "2026-10-19T12:05:27Z",
+      "overview": "Count Grey Matter traces moving boundaries between minds and machines through calculation, games, conversation and internal representations, then argues that current language models understand in a functional sense.",
+      "whyItMatters": "Selectively useful for researchers and product teams setting evaluation criteria. The historical and representation material challenges lazy impossibility claims, but imitation and narrow probes do not establish human-like understanding.",
+      "ghostMeshTakeaway": "Define the task and evidence before arguing over a label. Test grounded use, changed premises, error recovery and authority boundaries; keep semantic and subjective claims open beyond the measured capability.",
+      "verdict": "Interesting, unproven",
+      "architectureImpact": "investigate",
+      "falsification": "Revisit the bounded assessment if independent, preregistered tests demonstrate reliable transferable semantic grounding across declared settings, or show that the cited internal probes disappear under replication. A subjective-experience conclusion needs a separate justified criterion.",
+      "evidenceState": "partially corroborated",
+      "lastEvidenceChecked": "2026-10-19T12:05:27Z",
+      "freshness": "Direct source papers and public source metadata checked 2026-10-19. Captions are an imperfect source aid. Paper versions and model results are bounded by their methods; broader claims remain open.",
+      "variant": "essay",
+      "accent": "teal",
+      "claims": [
+        {
+          "id": "the-test-must-name-its-target--dreyfus-argument",
+          "proposition": "Dreyfus argued in 1965 that then-current digital AI missed important forms of human information processing.",
+          "kind": "historical-source",
+          "asOf": "2026-10-19",
+          "status": "corroborated",
+          "assessment": "The RAND publication and abstract state this argument.",
+          "limits": "This verifies what the paper argued, not a universal impossibility or what all current systems can do.",
+          "sourceLocation": "00:51-04:18",
+          "references": [
+            "dreyfus-rand"
+          ],
+          "counterevidence": [],
+          "temporalScope": "Video published 2026-10-18; research statements are tied to the cited methods and versions."
+        },
+        {
+          "id": "the-test-must-name-its-target--turing-73",
+          "proposition": "GPT-4.5 with a humanlike persona was judged human 73% of the time in the Jones and Bergen experimental protocol.",
+          "kind": "study-result",
+          "asOf": "2026-10-19",
+          "status": "partially corroborated",
+          "assessment": "The authors report 73% in five-minute, three-party conversations.",
+          "limits": "Specific model, prompt, participant protocol and preprint scope; GhostMesh did not replicate the study. It is not a direct measure of meaning or experience.",
+          "sourceLocation": "08:10-09:20",
+          "references": [
+            "jones-bergen-2025"
+          ],
+          "counterevidence": [],
+          "temporalScope": "Video published 2026-10-18; research statements are tied to the cited methods and versions."
+        },
+        {
+          "id": "the-test-must-name-its-target--form-meaning",
+          "proposition": "Success at processing linguistic form alone establishes semantic understanding.",
+          "kind": "philosophical-inference",
+          "asOf": "2026-10-19",
+          "status": "disputed",
+          "assessment": "The video argues for a working-model view; Bender and Koller explicitly argue that form-only training has no a priori route to meaning.",
+          "limits": "Neither a single position paper nor this video settles the meaning criterion for all modern multimodal or interactive systems.",
+          "sourceLocation": "09:32-12:20",
+          "references": [],
+          "counterevidence": [
+            "bender-koller-2020"
+          ],
+          "temporalScope": "Video published 2026-10-18; research statements are tied to the cited methods and versions."
+        },
+        {
+          "id": "the-test-must-name-its-target--spacetime",
+          "proposition": "Researchers found linear spatial and temporal features in the studied Llama-2 models and datasets.",
+          "kind": "study-result",
+          "asOf": "2026-10-19",
+          "status": "partially corroborated",
+          "assessment": "Gurnee and Tegmark report this result across named spatial and temporal datasets.",
+          "limits": "The authors call for more investigation; the result does not establish a general or always accurate world model.",
+          "sourceLocation": "19:31-20:01",
+          "references": [
+            "gurnee-tegmark-2024"
+          ],
+          "counterevidence": [],
+          "temporalScope": "Video published 2026-10-18; research statements are tied to the cited methods and versions."
+        },
+        {
+          "id": "the-test-must-name-its-target--othello",
+          "proposition": "Researchers found an internal Othello board-state representation in a trained sequence model and affected outputs by intervention.",
+          "kind": "study-result",
+          "asOf": "2026-10-19",
+          "status": "partially corroborated",
+          "assessment": "Li and colleagues report a nonlinear representation and interventional evidence in a synthetic task.",
+          "limits": "A constrained game representation does not demonstrate open-world grounding or human-like understanding.",
+          "sourceLocation": "19:42-20:01",
+          "references": [
+            "li-othello-2023"
+          ],
+          "counterevidence": [],
+          "temporalScope": "Video published 2026-10-18; research statements are tied to the cited methods and versions."
+        },
+        {
+          "id": "the-test-must-name-its-target--humanlike",
+          "proposition": "Current language models understand much the way humans do.",
+          "kind": "source-interpretation",
+          "asOf": "2026-10-19",
+          "status": "unverified",
+          "assessment": "This is the narrator's closing philosophical verdict, not the stated experimental conclusion of the linked studies.",
+          "limits": "No agreed operational definition, cross-setting test or comparison of human and model mechanisms is supplied.",
+          "sourceLocation": "20:10-21:33",
+          "references": [],
+          "counterevidence": [
+            "bender-koller-2020"
+          ],
+          "temporalScope": "Video published 2026-10-18; research statements are tied to the cited methods and versions."
+        },
+        {
+          "id": "the-test-must-name-its-target--subjective",
+          "proposition": "A test of linguistic performance establishes whether a model has subjective experience.",
+          "kind": "philosophical-inference",
+          "asOf": "2026-10-19",
+          "status": "unverified",
+          "assessment": "The narrator distinguishes task performance from the felt aspect of experience.",
+          "limits": "No test in the video or cited studies measures subjective experience; do not infer either its presence or absence.",
+          "sourceLocation": "20:30-21:33",
+          "references": [],
+          "counterevidence": [],
+          "temporalScope": "Video published 2026-10-18; research statements are tied to the cited methods and versions."
+        }
+      ],
+      "references": [
+        {
+          "id": "dreyfus-rand",
+          "title": "Alchemy and Artificial Intelligence",
+          "author": "Hubert L. Dreyfus",
+          "publisher": "RAND Corporation",
+          "url": "https://www.rand.org/pubs/papers/P3244.html",
+          "publicationDate": "1965",
+          "eventDate": null,
+          "location": "Original publication and abstract",
+          "sourceType": "historical research paper",
+          "independence": "Direct author paper; describes the period argument, not current system performance.",
+          "evidenceFamily": "dreyfus-1965",
+          "checkedAt": "2026-10-19T12:05:27Z",
+          "datePrecision": "year"
+        },
+        {
+          "id": "jones-bergen-2025",
+          "title": "Large Language Models Pass the Turing Test",
+          "author": "Cameron R. Jones and Benjamin K. Bergen",
+          "publisher": "arXiv",
+          "url": "https://arxiv.org/abs/2503.23674",
+          "publicationDate": "2025-03-31",
+          "eventDate": null,
+          "location": "Abstract and experimental protocol",
+          "sourceType": "research preprint",
+          "independence": "Authors report a preregistered study; GhostMesh did not replicate it or audit participants.",
+          "evidenceFamily": "jones-bergen-turing-2025",
+          "checkedAt": "2026-10-19T12:05:27Z",
+          "datePrecision": "day"
+        },
+        {
+          "id": "bender-koller-2020",
+          "title": "Climbing towards NLU: On Meaning, Form, and Understanding in the Age of Data",
+          "author": "Emily M. Bender and Alexander Koller",
+          "publisher": "Association for Computational Linguistics",
+          "url": "https://aclanthology.org/2020.acl-main.463/",
+          "publicationDate": "2020-07",
+          "eventDate": null,
+          "location": "Abstract and position argument",
+          "sourceType": "peer-reviewed position paper",
+          "independence": "Independent theoretical counterargument; not a direct test of this video or every present model.",
+          "evidenceFamily": "bender-koller-form-meaning-2020",
+          "checkedAt": "2026-10-19T12:05:27Z",
+          "datePrecision": "month"
+        },
+        {
+          "id": "gurnee-tegmark-2024",
+          "title": "Language Models Represent Space and Time",
+          "author": "Wes Gurnee and Max Tegmark",
+          "publisher": "arXiv",
+          "url": "https://arxiv.org/abs/2310.02207",
+          "publicationDate": "2023-10-03",
+          "eventDate": null,
+          "location": "Abstract; version 3 revised 2024-03-04",
+          "sourceType": "research preprint",
+          "independence": "Authors test particular representations in the Llama-2 family; no independent replication by GhostMesh.",
+          "evidenceFamily": "gurnee-tegmark-spacetime-2023",
+          "checkedAt": "2026-10-19T12:05:27Z",
+          "datePrecision": "day"
+        },
+        {
+          "id": "li-othello-2023",
+          "title": "Emergent World Representations: Exploring a Sequence Model Trained on a Synthetic Task",
+          "author": "Kenneth Li and coauthors",
+          "publisher": "ICLR / arXiv",
+          "url": "https://arxiv.org/abs/2210.13382",
+          "publicationDate": "2022-10-24",
+          "eventDate": null,
+          "location": "Abstract; ICLR 2023; version 5 revised 2024-06-26",
+          "sourceType": "research paper",
+          "independence": "A synthetic Othello model; its intervention does not settle open-world semantic grounding.",
+          "evidenceFamily": "li-othello-2023",
+          "checkedAt": "2026-10-19T12:05:27Z",
+          "datePrecision": "day"
+        }
+      ],
+      "relationships": [
+        {
+          "target": "reader:the-microscope-is-not-a-soul",
+          "type": "related topic",
+          "reason": "Both Count Grey Matter Readers examine the inference from internal model evidence to a broader mental-state claim; this edition examines functional understanding, while the earlier one separates interpretation from consciousness and welfare.",
+          "provenance": [
+            "/the-test-must-name-its-target/#representation",
+            "/the-microscope-is-not-a-soul/#evidence"
+          ],
+          "basis": "curated-source-overlap",
+          "direction": "outgoing"
+        }
+      ],
+      "relationshipDisposition": "One qualified topic-level link to an earlier Reader by the same creator; neither Reader independently verifies the other.",
+      "review": {
+        "status": "editorial-review-pending",
+        "reviewer": "Pending independent editorial review",
+        "reviewedSourceHead": null,
+        "checkedAt": "2026-10-19T12:05:27Z",
+        "scope": "Source analysis and claim mapping require independent editorial review; direct audio spot checks and publication remain pending.",
+        "findings": "No publication decision recorded."
+      },
+      "revisionHistory": [
+        {
+          "at": "2026-10-19T12:05:27Z",
+          "kind": "new-reader-candidate",
+          "reason": "Owner-requested deconstruction of public YouTube source 7O84mdxehWY; captions retained privately as a source aid."
+        }
+      ],
+      "editorialOrder": 15,
+      "orderReason": "Read after the existing Count Grey Matter interpretability Reader to examine a distinct functional-understanding claim.",
+      "rank": 15
+    },
+    {
+      "id": "reader:the-parallel-result-is-not-the-product",
+      "slug": "the-parallel-result-is-not-the-product",
+      "title": "The Parallel Result Is Not the Product",
+      "category": "AI & Technology",
+      "tags": [
+        "models",
+        "inference",
+        "evaluation"
+      ],
+      "entities": [
+        "Cloud Codes",
+        "Next-Concept Modeling",
+        "HybridAgents"
+      ],
+      "source": {
+        "platform": "YouTube",
+        "url": "https://www.youtube.com/watch?v=kuO4NOqp7Tc",
+        "videoId": "kuO4NOqp7Tc",
+        "title": "The End of LLMs? (NCM)",
+        "creator": "Cloud Codes",
+        "uploadDate": "20261018",
+        "durationSeconds": 761,
+        "mediaAspect": "16:9"
+      },
+      "published": "2026-10-19",
+      "updated": "2026-10-19T12:10:16Z",
+      "overview": "Cloud Codes explains two October 2026 preprints: NCM generates discrete-code levels in parallel, while HybridAgents alternates latent reasoning and textual tool interaction. It tests their reported Sudoku, text-speed and token-efficiency results against the authors’ own limits.",
+      "whyItMatters": "Worth a selective watch for inference researchers and agent-platform teams choosing what to test next. Application teams deciding on an API or local model today can skip the historical setup and should not infer a production speedup or lower bill from these preprints.",
+      "ghostMeshTakeaway": "Keep the current product promise bounded. Reproduce a declared workload against the right baseline with quality, latency, hardware and source-fidelity checks before changing architecture; retain an external audit trail for tool effects.",
+      "verdict": "Worth studying",
+      "architectureImpact": "investigate",
+      "falsification": "Revisit the hold on a product migration if independent results at the target model scale and hardware show quality-preserving speed and cost gains against the actual incumbent, including exact-source fidelity and tool-trace recovery. A failed replication would narrow the research recommendation.",
+      "evidenceState": "partially corroborated",
+      "lastEvidenceChecked": "2026-10-19T12:10:16Z",
+      "freshness": "Public source metadata, imperfect automatic captions, two paper versions and current provider documentation checked 2026-10-19. Preprint results and live provider behavior may change; no experiment was replicated.",
+      "variant": "essay",
+      "accent": "teal",
+      "claims": [
+        {
+          "id": "the-parallel-result-is-not-the-product--sudoku",
+          "proposition": "NCM reports 86.1% completely solved hard Sudoku boards in 12 function evaluations, compared with 1.0% for a matched autoregressive greedy baseline using 128.",
+          "kind": "paper-benchmark",
+          "asOf": "2026-10-19",
+          "status": "corroborated",
+          "assessment": "The paper Table 3 reports the stated rows.",
+          "limits": "A task- and model-scale result, not general LLM reasoning performance; FMLM+ reports 81.3% in 16 evaluations.",
+          "sourceLocation": "00:00-01:21; paper Table 3",
+          "references": [
+            "ncm"
+          ],
+          "counterevidence": [
+            "ncm"
+          ],
+          "temporalScope": "Video published 2026-10-18; research findings are tied to the cited paper versions and benchmark methods."
+        },
+        {
+          "id": "the-parallel-result-is-not-the-product--xsum-speed",
+          "proposition": "NCM reports 31x faster XSum generation at comparable ROUGE-L against its selected diffusion baseline.",
+          "kind": "paper-benchmark",
+          "asOf": "2026-10-19",
+          "status": "corroborated",
+          "assessment": "The NCM abstract and efficiency discussion report this measured comparison.",
+          "limits": "No measured 31x gain against a frontier autoregressive chatbot, production API, or arbitrary end-to-end workload.",
+          "sourceLocation": "04:04-06:10; paper abstract and Section 4.6",
+          "references": [
+            "ncm"
+          ],
+          "counterevidence": [
+            "ncm"
+          ],
+          "temporalScope": "Video published 2026-10-18; research findings are tied to the cited paper versions and benchmark methods."
+        },
+        {
+          "id": "the-parallel-result-is-not-the-product--ncm-limits",
+          "proposition": "NCM has fixed hierarchy lengths, a separately trained tokenizer, and only preliminary scaling to 725M parameters in the paper.",
+          "kind": "paper-limitation",
+          "asOf": "2026-10-19",
+          "status": "corroborated",
+          "assessment": "The paper states these limitations and reports approximate 100M main generator scale.",
+          "limits": "Future larger-scale performance and entity preservation under product workloads remain unverified.",
+          "sourceLocation": "06:50-07:56; paper Appendix I",
+          "references": [
+            "ncm"
+          ],
+          "counterevidence": [],
+          "temporalScope": "Video published 2026-10-18; research findings are tied to the cited paper versions and benchmark methods."
+        },
+        {
+          "id": "the-parallel-result-is-not-the-product--hybrid-efficiency",
+          "proposition": "HybridAgents authors report 35.5%-54.7% fewer tokens and 1.8x-2.6x faster inference across their evaluated comparisons.",
+          "kind": "paper-benchmark",
+          "asOf": "2026-10-19",
+          "status": "corroborated",
+          "assessment": "The paper abstract and evaluation report these ranges using Qwen3-based variants and 11 benchmarks.",
+          "limits": "Author-run benchmarks are not an independent replication or a price quote for an existing provider product.",
+          "sourceLocation": "08:05-10:37; paper abstract and Section 5",
+          "references": [
+            "hybrid"
+          ],
+          "counterevidence": [],
+          "temporalScope": "Video published 2026-10-18; research findings are tied to the cited paper versions and benchmark methods."
+        },
+        {
+          "id": "the-parallel-result-is-not-the-product--latent-readout",
+          "proposition": "Nearest-token readout of HybridAgents latent states yields a readable proxy but does not establish an exact or complete reasoning trace.",
+          "kind": "editorial-inference",
+          "asOf": "2026-10-19",
+          "status": "partially corroborated",
+          "assessment": "The paper defines nearest-embedding mapping and geometric/lexical interpretability proxies. The stronger faithfulness claim is not demonstrated by those measures.",
+          "limits": "GhostMesh inference about the measurement boundary; no independent mechanistic audit was run.",
+          "sourceLocation": "10:37-11:55; paper Appendix F",
+          "references": [
+            "hybrid"
+          ],
+          "counterevidence": [
+            "hybrid"
+          ],
+          "temporalScope": "Video published 2026-10-18; research findings are tied to the cited paper versions and benchmark methods."
+        },
+        {
+          "id": "the-parallel-result-is-not-the-product--reasoning-bill",
+          "proposition": "OpenAI API reasoning tokens may be invisible to the caller but use context and are billed as output tokens.",
+          "kind": "provider-documentation",
+          "asOf": "2026-10-19",
+          "status": "corroborated",
+          "assessment": "The current provider guide states this accounting behavior.",
+          "limits": "Documentation about OpenAI API behavior does not establish cost savings or deployment of the video papers.",
+          "sourceLocation": "01:21-04:04; provider guide",
+          "references": [
+            "openai-reasoning"
+          ],
+          "counterevidence": [],
+          "temporalScope": "Video published 2026-10-18; research findings are tied to the cited paper versions and benchmark methods."
+        },
+        {
+          "id": "the-parallel-result-is-not-the-product--ends-llms",
+          "proposition": "The video title implies that NCM marks the end of LLMs or changes current local model choices.",
+          "kind": "title-framing",
+          "asOf": "2026-10-19",
+          "status": "unverified",
+          "assessment": "The video closes with a narrower view: these are preprints and not a local-model speed upgrade today.",
+          "limits": "No production replacement, independent replication, or local Ollama benchmark is supplied.",
+          "sourceLocation": "00:00; 11:55-12:41",
+          "references": [],
+          "counterevidence": [
+            "ncm",
+            "hybrid"
+          ],
+          "temporalScope": "Video published 2026-10-18; research findings are tied to the cited paper versions and benchmark methods."
+        }
+      ],
+      "references": [
+        {
+          "id": "ncm",
+          "title": "Next-Concept Modeling: Fast, Parallel Coarse-to-Fine Text Generation",
+          "author": "Hermann Kumbong et al.",
+          "publisher": "arXiv",
+          "url": "https://arxiv.org/html/2610.14162v1",
+          "publicationDate": "2026-10-09",
+          "eventDate": null,
+          "location": "Abstract; Sections 4.4, 4.6; Appendix I",
+          "sourceType": "research preprint",
+          "independence": "Original authors and experiment; independently read, not replicated.",
+          "evidenceFamily": "ncm-2610.14162",
+          "checkedAt": "2026-10-19T12:10:16Z",
+          "datePrecision": "day"
+        },
+        {
+          "id": "hybrid",
+          "title": "Hybrid Reasoning Agents",
+          "author": "Jiaru Zou et al.",
+          "publisher": "arXiv",
+          "url": "https://arxiv.org/html/2610.18861v1",
+          "publicationDate": "2026-10-13",
+          "eventDate": null,
+          "location": "Abstract; Sections 5-6; Appendix F",
+          "sourceType": "research preprint",
+          "independence": "Original authors and experiment; independently read, not replicated.",
+          "evidenceFamily": "hybrid-2610.18861",
+          "checkedAt": "2026-10-19T12:10:16Z",
+          "datePrecision": "day"
+        },
+        {
+          "id": "openai-reasoning",
+          "title": "Reasoning models",
+          "author": "OpenAI",
+          "publisher": "OpenAI API documentation",
+          "url": "https://developers.openai.com/api/docs/guides/reasoning",
+          "publicationDate": "unknown",
+          "dateNote": "Live documentation has no stable publication date in the inspected page.",
+          "eventDate": null,
+          "location": "How reasoning works and output token accounting",
+          "sourceType": "provider documentation",
+          "independence": "Vendor primary description of its own billing and token behavior; not an independent efficiency test.",
+          "evidenceFamily": "openai-api-reasoning-docs",
+          "checkedAt": "2026-10-19T12:10:16Z"
+        }
+      ],
+      "relationships": [],
+      "relationshipDisposition": "No local Reader edge is admitted yet. The two methods are related inside this source, but a site-to-site relationship needs a separately reviewed basis.",
+      "review": {
+        "status": "editorial-review-pending",
+        "reviewer": "Pending independent editorial review",
+        "reviewedSourceHead": null,
+        "checkedAt": "2026-10-19T12:10:16Z",
+        "scope": "Source analysis and claim mapping require independent editorial review; direct audio spot checks and publication remain pending.",
+        "findings": "No publication decision recorded."
+      },
+      "revisionHistory": [
+        {
+          "at": "2026-10-19T12:10:16Z",
+          "kind": "new-reader-candidate",
+          "reason": "Owner-requested deconstruction of public YouTube source kuO4NOqp7Tc; captions retained privately as an imperfect source aid."
+        }
+      ],
+      "editorialOrder": 16,
+      "orderReason": "Read after the current collection as a research-method comparison with explicit deployment limits.",
+      "rank": 16
+    },
     {
       "id": "reader:the-fleet-does-not-prove-the-forecast",
       "slug": "the-fleet-does-not-prove-the-forecast",
@@ -289,6 +762,235 @@
       "editorialOrder": 13,
       "orderReason": "Read after the earlier Amap fleet case to examine the broader forecast and its evidence limits.",
       "rank": 13
+    },
+    {
+      "id": "reader:a-scenario-is-not-a-singularity",
+      "slug": "a-scenario-is-not-a-singularity",
+      "title": "A Scenario Is Not a Singularity",
+      "category": "AI & Technology",
+      "tags": [
+        "ai-evaluation",
+        "economics",
+        "forecasting"
+      ],
+      "entities": [
+        "Anthropic",
+        "OpenAI",
+        "IMF"
+      ],
+      "source": {
+        "platform": "YouTube",
+        "url": "https://www.youtube.com/watch?v=wS3lJpOs9Uw",
+        "videoId": "wS3lJpOs9Uw",
+        "title": "Anthropic Just Shocked The World... AI SINGULARITY Is Here!",
+        "creator": "AI Revolution",
+        "uploadDate": "20261019",
+        "durationSeconds": 847,
+        "mediaAspect": "16:9"
+      },
+      "published": "2026-10-19",
+      "updated": "2026-10-19T12:04:09Z",
+      "overview": "AI Revolution combines a Jack Clark IMF speech claim, a 50-problem physics-agent benchmark and Anthropic’s US economic scenarios to argue that an AI singularity is already here.",
+      "whyItMatters": "Useful to people setting research or workforce plans who need to separate measured agent performance from a conditional 2030 scenario. Watch the benchmark and scenario explanations; skip the headline as a decision rule.",
+      "ghostMeshTakeaway": "The paper shows strong performance on bounded calculations, not open-ended scientific discovery. The $44.4 trillion figure is the extreme branch of a model. Use these as inputs for reversible stress tests, with explicit assumptions and human authority.",
+      "verdict": "Mostly recycled",
+      "architectureImpact": "watch",
+      "falsification": "Revise the benchmark assessment if independent reruns and broader discovery tasks support a different capability claim. Revise the economic call when observed adoption, displacement and GDP data discriminate among the model scenarios.",
+      "evidenceState": "partially corroborated",
+      "lastEvidenceChecked": "2026-10-19T12:04:09Z",
+      "freshness": "Primary benchmark and scenario sources checked 2026-10-19. The IMF singularity attribution remains unverified; 2030 results are conditional, not observed.",
+      "variant": "essay",
+      "accent": "violet",
+      "claims": [
+        {
+          "id": "a-scenario-is-not-a-singularity--singularity-attribution",
+          "proposition": "Jack Clark declared at an IMF lecture that the technological singularity has already arrived.",
+          "kind": "speaker-attribution",
+          "asOf": "2026-10-19",
+          "status": "unverified",
+          "assessment": "The narrator frames this as an indirect paraphrase. We did not locate a first-party speech recording or transcript that verifies these words.",
+          "limits": "A Reuters account of rapid AI progress is not a transcript and cannot settle the narrator’s stronger attribution.",
+          "sourceLocation": "00:00–00:58",
+          "references": [],
+          "counterevidence": [],
+          "temporalScope": "Source and linked reports checked 2026-10-19; model and economic conditions may change."
+        },
+        {
+          "id": "a-scenario-is-not-a-singularity--physics-49-of-50",
+          "proposition": "GPT-6 Astra solved 49 of 50 unpublished TheoPhysEval physics problems in the authors’ realistic agent track.",
+          "kind": "source-report",
+          "asOf": "2026-10-19",
+          "status": "partially corroborated",
+          "assessment": "The benchmark authors report 98% for the Astra plus Codex harness.",
+          "limits": "One run, 50 selected problems and grading ambiguities limit generalization. GhostMesh has not rerun the evaluation.",
+          "sourceLocation": "02:15–03:55",
+          "references": [
+            "theophyseval"
+          ],
+          "counterevidence": [],
+          "temporalScope": "Source and linked reports checked 2026-10-19; model and economic conditions may change."
+        },
+        {
+          "id": "a-scenario-is-not-a-singularity--physics-not-breakthrough",
+          "proposition": "The TheoPhysEval score demonstrates solutions to breakthrough open problems in physics.",
+          "kind": "source-interpretation",
+          "asOf": "2026-10-19",
+          "status": "contradicted",
+          "assessment": "The paper explicitly says its tasks are not breakthrough open problems and do not require construction of new physical theories.",
+          "limits": "Strong performance on bounded calculations remains important; it is a different result from original discovery.",
+          "sourceLocation": "02:15–04:00",
+          "references": [],
+          "counterevidence": [
+            "theophyseval"
+          ],
+          "temporalScope": "Source and linked reports checked 2026-10-19; model and economic conditions may change."
+        },
+        {
+          "id": "a-scenario-is-not-a-singularity--no-memorization",
+          "proposition": "Unpublished benchmark answers mean the agents could not rely on memorized physics literature.",
+          "kind": "source-interpretation",
+          "asOf": "2026-10-19",
+          "status": "disputed",
+          "assessment": "Unpublished answers reduce direct answer contamination, but the paper says the small isolated-track change suggests significant memorization of relevant literature.",
+          "limits": "This does not prove any specific answer was copied. It limits the narrator’s categorical exclusion of memorization.",
+          "sourceLocation": "02:15–03:55",
+          "references": [],
+          "counterevidence": [
+            "theophyseval"
+          ],
+          "temporalScope": "Source and linked reports checked 2026-10-19; model and economic conditions may change."
+        },
+        {
+          "id": "a-scenario-is-not-a-singularity--economic-extreme",
+          "proposition": "Anthropic’s extreme scenario yields US GDP of $44.4 trillion in 2030, 32.4% above its no-AI baseline.",
+          "kind": "scenario-report",
+          "asOf": "2026-10-19",
+          "status": "partially corroborated",
+          "assessment": "Anthropic’s public scenario explorer gives these values at 2025 prices and specifies demanding capability and adoption assumptions.",
+          "limits": "This is one conditional modeled path, not Anthropic’s prediction or a measured effect.",
+          "sourceLocation": "05:17–09:40",
+          "references": [
+            "anthropic-scenarios",
+            "cepr-21939"
+          ],
+          "counterevidence": [],
+          "temporalScope": "Source and linked reports checked 2026-10-19; model and economic conditions may change."
+        },
+        {
+          "id": "a-scenario-is-not-a-singularity--economic-forecast",
+          "proposition": "The United States is forecast to reach $44.4 trillion GDP in 2030 because of AI.",
+          "kind": "forecast",
+          "asOf": "2026-10-19",
+          "status": "disputed",
+          "assessment": "Anthropic presents $44.4 trillion as its extreme case alongside $34.1 trillion modest and $36.3 trillion substantial cases.",
+          "limits": "The model omits policy responses, business cycles and some demand effects; actual outcomes may differ materially.",
+          "sourceLocation": "05:17–09:40",
+          "references": [],
+          "counterevidence": [
+            "anthropic-scenarios"
+          ],
+          "temporalScope": "Source and linked reports checked 2026-10-19; model and economic conditions may change."
+        },
+        {
+          "id": "a-scenario-is-not-a-singularity--job-displacement",
+          "proposition": "The extreme scenario produces unusually high knowledge-worker displacement and a lower labor share.",
+          "kind": "scenario-report",
+          "asOf": "2026-10-19",
+          "status": "partially corroborated",
+          "assessment": "The CEPR authors describe nearly one in five cognitive workers unemployed in the extreme case and a labor share decline from about 60% to 45%.",
+          "limits": "These are modeled conditional outcomes, not current layoffs or a point forecast.",
+          "sourceLocation": "10:26–13:30",
+          "references": [
+            "cepr-21939",
+            "anthropic-scenarios"
+          ],
+          "counterevidence": [],
+          "temporalScope": "Source and linked reports checked 2026-10-19; model and economic conditions may change."
+        },
+        {
+          "id": "a-scenario-is-not-a-singularity--scenario-not-decision",
+          "proposition": "A single extreme scenario is enough to justify irreversible staffing or infrastructure decisions now.",
+          "kind": "editorial-inference",
+          "asOf": "2026-10-19",
+          "status": "contradicted",
+          "assessment": "GhostMesh rejects this decision rule because the source offers distinct paths and explicitly says the future is not predetermined.",
+          "limits": "A reversible stress test could still be useful; it requires an organization-specific baseline and human review.",
+          "sourceLocation": "10:26–13:55",
+          "references": [],
+          "counterevidence": [
+            "anthropic-scenarios"
+          ],
+          "temporalScope": "Source and linked reports checked 2026-10-19; model and economic conditions may change."
+        }
+      ],
+      "references": [
+        {
+          "id": "theophyseval",
+          "title": "TheoPhysEval: Assessing AI agents at autonomous theoretical physics problem solving",
+          "author": "A. Ramesh Chandra and coauthors",
+          "publisher": "arXiv",
+          "url": "https://arxiv.org/abs/2610.16733",
+          "publicationDate": "2026-10-09",
+          "eventDate": null,
+          "location": "Abstract; sections II–V, especially problem selection, grading and discussion",
+          "sourceType": "first-party benchmark preprint",
+          "independence": "The authors report one run of their own 50-problem evaluation. Their score is not an independent replication or a test of breakthrough research.",
+          "evidenceFamily": "theophyseval-2610.16733",
+          "checkedAt": "2026-10-19T12:04:09Z",
+          "datePrecision": "day"
+        },
+        {
+          "id": "anthropic-scenarios",
+          "title": "Scenarios for our Economic Future",
+          "author": "Anthropic Economics team",
+          "publisher": "Anthropic",
+          "url": "https://www.anthropic.com/institute/econ-scenarios",
+          "publicationDate": "2026-09",
+          "eventDate": null,
+          "location": "Three scenarios; GDP, employment and model limitations",
+          "sourceType": "first-party scenario model",
+          "independence": "The model authors expose assumptions and caveats. The scenarios are conditional illustrations, not observed 2030 outcomes.",
+          "evidenceFamily": "anthropic-econ-scenarios-2026",
+          "checkedAt": "2026-10-19T12:04:09Z",
+          "datePrecision": "month",
+          "dateNote": "The public explorer states v1.0, September 2026; no day is shown on the page."
+        },
+        {
+          "id": "cepr-21939",
+          "title": "Economic Scenarios for Transformative AI",
+          "author": "Anton Korinek, Chad Jones, Szymon Sacher, Tess Cotter and Peter McCrory",
+          "publisher": "CEPR",
+          "url": "https://cepr.org/publications/dp21939",
+          "publicationDate": "2026-09-15",
+          "eventDate": null,
+          "location": "Abstract and three modeled scenarios",
+          "sourceType": "authors’ research summary",
+          "independence": "This is the same research family as Anthropic’s explorer, not an independent replication of the model or forecast.",
+          "evidenceFamily": "anthropic-econ-scenarios-2026",
+          "checkedAt": "2026-10-19T12:04:09Z",
+          "datePrecision": "day"
+        }
+      ],
+      "relationships": [],
+      "relationshipDisposition": "No Reader relationship is admitted yet. A shared interest in model scores alone does not establish a qualified editorial edge.",
+      "review": {
+        "status": "editorial-review-pending",
+        "reviewer": "Pending independent editorial review",
+        "reviewedSourceHead": null,
+        "checkedAt": "2026-10-19T12:04:09Z",
+        "scope": "Draft Reader and claim map; primary-source interpretation and publication require review.",
+        "findings": "No publication decision recorded."
+      },
+      "revisionHistory": [
+        {
+          "at": "2026-10-19T12:04:09Z",
+          "kind": "new-reader-candidate",
+          "reason": "Owner-requested deconstruction of public YouTube source wS3lJpOs9Uw; source pack remains private."
+        }
+      ],
+      "editorialOrder": 14,
+      "orderReason": "Read after other model-score Readers to test how benchmark evidence is converted into a larger forecast.",
+      "rank": 14
     },
     {
       "id": "reader:the-scan-never-reached-the-login",

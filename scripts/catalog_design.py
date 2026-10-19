@@ -31,6 +31,9 @@ CALLS = {
     'the-microscope-is-not-a-soul': ('Investigate the boundary', 'Keep mechanisms, welfare hypotheses and operational authority separate.'),
     'the-funnel-is-not-the-frontier': ('Use as a prompt, not a ranking', 'Compare bounded tasks instead of ranking people with an unmeasured population estimate.'),
     'the-fleet-does-not-prove-the-forecast': ('Study the cases', 'Separate reported fleet behavior and lab results from the predicted agent internet.'),
+    'a-scenario-is-not-a-singularity': ('Watch the bounded evidence', 'Treat the physics score as a calculation result and the $44.4 trillion scenario as conditional.'),
+    'the-test-must-name-its-target': ('Use for evaluation design', 'Test grounded use and changed premises before assigning a broad understanding label.'),
+    'the-parallel-result-is-not-the-product': ('Study before migrating', 'Reproduce quality, latency and cost on your own workload before changing the product stack.'),
 }
 
 

@@ -46,8 +46,12 @@ class VisualContractTest(unittest.TestCase):
         parsed.feed(home)
         panels = [a for _, a in parsed.tags if 'data-home-player' in a]
         self.assertEqual(len(panels), 7)
-        self.assertEqual(sum(a.get('data-source-platform') == 'YouTube' for a in panels), 6)
-        self.assertEqual(sum(a.get('data-source-platform') == 'Instagram' for a in panels), 1)
+        catalog = json.loads((ROOT / 'content/catalog.json').read_text())
+        by_id = {reader['id']: reader for reader in catalog['readers']}
+        recent = sorted(catalog['readers'], key=lambda reader: (reader['published'], reader['slug']), reverse=True)
+        selected = [by_id[catalog['featuredId']]] + [reader for reader in recent if reader['id'] != catalog['featuredId']][:6]
+        self.assertCountEqual([a.get('data-source-platform') for a in panels],
+                              [reader['source']['platform'] for reader in selected])
         self.assertEqual(sum(tag == 'iframe' for tag, _ in parsed.tags), 0)
         self.assertEqual(home.count('class="gm-home-open"'), 7)
         self.assertEqual(home.count('class="gm-home-source"'), 7)
