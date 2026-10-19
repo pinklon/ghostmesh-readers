@@ -2,6 +2,7 @@ const { chromium } = require('playwright');
 const assert = require('node:assert/strict');
 
 const base = 'http://127.0.0.1:8765';
+const readerCount = require('../content/catalog.json').readers.length;
 (async () => {
   const browser = await chromium.launch({ headless: true, channel: 'chrome' });
   let cases = 0;
@@ -23,7 +24,7 @@ const base = 'http://127.0.0.1:8765';
       await page.locator('.gm-search-control').click();
       assert.equal(await page.locator('[data-reader-search]').getAttribute('open'), '');
       await page.locator('#gm-search-input').fill('not a company policy');
-      await page.waitForFunction(() => document.querySelector('[data-reader-search-status]')?.textContent.includes('1 of 13'));
+      await page.waitForFunction(expectedCount => document.querySelector('[data-reader-search-status]')?.textContent.includes(`1 of ${expectedCount}`), readerCount);
       const result = page.locator('[data-reader-search-results] > a');
       assert.equal(await result.count(), 1);
       assert.equal(await result.getAttribute('href'), '/ask-for-the-outcome-keep-the-boundary/');
@@ -59,7 +60,7 @@ const base = 'http://127.0.0.1:8765';
     await slowPage.locator('.gm-search-control').click();
     await slowPage.locator('#gm-search-input').fill('not');
     await slowPage.locator('#gm-search-input').fill('not a company policy');
-    await slowPage.waitForFunction(() => document.querySelector('[data-reader-search-status]')?.textContent.includes('1 of 13'));
+    await slowPage.waitForFunction(expectedCount => document.querySelector('[data-reader-search-status]')?.textContent.includes(`1 of ${expectedCount}`), readerCount);
     assert.equal(await slowPage.locator('[data-reader-search-results] > a').count(), 1);
     assert.equal(await slowPage.locator('[data-reader-search-results] > a').getAttribute('href'),
       '/ask-for-the-outcome-keep-the-boundary/');
@@ -81,13 +82,13 @@ const base = 'http://127.0.0.1:8765';
     assert.match(await page.locator('.gm-search-control').getAttribute('aria-label'), /without JavaScript, browse the Reader archive/);
     await page.locator('.gm-search-control').click();
     assert.match(page.url(), /\/readers\/#search$/);
-    assert.equal(await page.locator('#catalog-results .gm-card').count(), 13);
+    assert.equal(await page.locator('#catalog-results .gm-card').count(), readerCount);
     await context.close();
     const index = await (await fetch(base + '/readers/search-index.json')).json();
-    assert.equal(index.readers.length, 13);
+    assert.equal(index.readers.length, readerCount);
     assert(index.readers.every(article => article.text.length > 100));
     assert(index.readers.some(article => article.text.includes('not a company policy')));
     console.log(JSON.stringify({ cases, delayedIndexRace: true, unavailableIndexFallback: true,
-      noJavaScriptFallback: true, indexedReaderArticles: 13 }));
+      noJavaScriptFallback: true, indexedReaderArticles: readerCount }));
   } finally { await browser.close(); }
 })().catch(error => { console.error(error); process.exitCode = 1; });

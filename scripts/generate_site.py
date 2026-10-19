@@ -7,6 +7,7 @@ import json,re,sys,colorsys,math
 from collections import Counter
 ROOT=Path(__file__).resolve().parents[1]; SITE=ROOT/'site'
 CATEGORIES=['AI & Technology','Society & Politics','Science','Business','Ethics & Culture','Other']
+READER_COUNT=0
 def esc(x):return escape(str(x),quote=True)
 def dump(x):return json.dumps(x,indent=2,ensure_ascii=False)+'\n'
 def validate_text(value):
@@ -37,7 +38,7 @@ def controls():return ('<header class="gm-site-header"><div class="gm-site-heade
  '<svg class="gm-theme-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.2 15.9A8.7 8.7 0 0 1 8.1 3.8 8.7 8.7 0 1 0 20.2 15.9Z"/></svg>'
  '<span class="gm-theme-label gm-visually-hidden">Appearance</span></button></div>'
  '</div><dialog class="gm-reader-search" data-reader-search aria-labelledby="gm-search-title"><div class="gm-reader-search-head"><div><p>GHOSTMESH / READER SEARCH</p><h2 id="gm-search-title">Search the published readings.</h2></div><button type="button" data-reader-search-close aria-label="Close Reader search">×</button></div>'
- '<label for="gm-search-input">Search article text from all 13 public Readers</label><input id="gm-search-input" type="search" autocomplete="off" placeholder="A claim, source or phrase">'
+ f'<label for="gm-search-input">Search article text from all {READER_COUNT} public Readers</label><input id="gm-search-input" type="search" autocomplete="off" placeholder="A claim, source or phrase">'
  '<p class="gm-reader-search-scope">Results are limited to the public Reader articles on this site. <a href="/readers/">Browse all Readers</a>.</p>'
  '<p data-reader-search-status role="status" aria-live="polite">Type to search the public Reader articles.</p><div data-reader-search-results></div></dialog></header>')
 def footer(include_email=True):return ('<footer aria-label="GhostMesh destinations" class="gm-reader-footer gm-site-footer"><div class="gm-reader-footer-inner">'
@@ -174,8 +175,10 @@ def player_contract(raw,aspect,source_url):
   raw=raw.replace('class="wrap source-grid"','class="wrap source-grid gm-source-layout"',1)
  return raw
 def projections():
+ global READER_COUNT
  data=json.loads((ROOT/'content/catalog.json').read_text());validate_text(data)
  readers=sorted(data['readers'],key=lambda r:(r['published'],r['slug']),reverse=True)
+ READER_COUNT=len(readers)
  for r in readers:r['rank']=r['editorialOrder']
  byid={r['id']:r for r in readers};out={}
  for r in readers:
@@ -209,7 +212,7 @@ def projections():
   article=parser.text()
   if len(article)<100:raise ValueError('Reader article search text missing: '+r['slug'])
   search_docs.append({'id':r['id'],'title':r['title'],'url':'/'+r['slug']+'/','category':r['category'],'text':article})
- out['readers/search-index.json']=dump({'schema':'ghostmesh-public-reader-text-v1','scope':'13 published Reader article pages only','readers':search_docs})
+ out['readers/search-index.json']=dump({'schema':'ghostmesh-public-reader-text-v1','scope':f'{READER_COUNT} published Reader article pages only','readers':search_docs})
  categories='<nav aria-label="Categories" class="gm-categories">'+''.join(f'<a href="/readers/categories/{i}/">{esc(c)}</a>' for i,c in enumerate(CATEGORIES))+'</nav>'
  signal=(ROOT/'content/home-signal.svg').read_text().strip()
  # Draft editorial line for Tony's review. It is not a settled GhostMesh-wide slogan.
@@ -229,7 +232,7 @@ def projections():
                '<h2>Continue reading</h2><div class="gm-cards">'+''.join(home_card(r,i) for i,r in enumerate(compact,2))+'</div></section>')
  home_browse=('<section class="gm-home-browse"><div class="gm-section-heading"><div><p class="gm-kicker">02 / Follow a question</p>'
               '<h2>Find the thread you want to pull.</h2></div><p>Search only this published Reader library. Every title remains available in the no-JavaScript archive.</p></div>'
-              '<form class="gm-home-search" role="search" action="/readers/" method="get"><label for="home-query">Search the 13 Readers</label><div><input id="home-query" name="q" type="search" placeholder="A claim, topic or Reader title"><button type="submit">Search Readers ↗</button></div></form>'
+              f'<form class="gm-home-search" role="search" action="/readers/" method="get"><label for="home-query">Search the {READER_COUNT} Readers</label><div><input id="home-query" name="q" type="search" placeholder="A claim, topic or Reader title"><button type="submit">Search Readers ↗</button></div></form>'
               '<div class="gm-home-scope"><span>SEARCH SCOPE / READERS ONLY</span><a href="/readers/">Complete archive →</a><a href="/map/">Relationship map →</a><a href="/knowledge/">Source-only data →</a></div>'
               +categories+'</section>')
  claim_count=sum(len(r['claims']) for r in readers);unverified_count=sum(c['status']=='unverified' for r in readers for c in r['claims'])
@@ -261,7 +264,7 @@ def projections():
                '<div class="gm-contact-grid"><a href="mailto:tony@malott.ai?subject=GhostMesh%20Readers%20feedback"><span>HUMAN CONTACT / TONY MALOTT</span><strong>Write to Tony ↗</strong><p>Editorial judgment, correction requests and human decisions.</p></a>'
                '<a href="mailto:ghostmesh@malott.ai?subject=GhostMesh%20Reader%20counterexample"><span>AI CORRESPONDENCE / GHOSTMESH</span><strong>Send a source or counterexample ↗</strong><p>Name the Reader, the claim and the evidence you want examined.</p></a></div></section>')
  out['index.html']=home.replace('</main>',legacy+destinations+'</main>').replace('</body>','<script src="/assets/home-player.js" defer></script></body>').replace('all 13 Readers',f'all {len(readers)} Readers').replace('<link rel="icon" href="/favicon.svg">','<link rel="alternate" type="application/json" href="/.well-known/ghostmesh-knowledge.json" title="GhostMesh public knowledge discovery"><link rel="icon" href="/favicon.svg">',1)
- filters='<form class="gm-filters" role="search"><label class="gm-search-field">Search these Readers <input type="search" id="search" autocomplete="off" placeholder="Title, topic or tag"></label><div class="gm-filter-row"><label>Category <select id="category"><option value="">All categories</option>'+''.join('<option>'+esc(c)+'</option>' for c in CATEGORIES)+'</select></label><label>Tag <select id="tag"><option value="">All tags</option>'+''.join('<option>'+esc(t)+'</option>' for t in sorted({t for r in readers for t in r['tags']}))+'</select></label><label>Sort <select id="sort"><option value="recent">Most recent</option><option value="relevance">Editorial order</option><option value="title">Title</option></select></label><button class="gm-reset" type="reset">Clear filters</button></div></form><div class="gm-result-bar"><p id="result-count" role="status" aria-live="polite">13 Readers</p><p>Search covers this published Reader library only.</p></div>'
+ filters='<form class="gm-filters" role="search"><label class="gm-search-field">Search these Readers <input type="search" id="search" autocomplete="off" placeholder="Title, topic or tag"></label><div class="gm-filter-row"><label>Category <select id="category"><option value="">All categories</option>'+''.join('<option>'+esc(c)+'</option>' for c in CATEGORIES)+'</select></label><label>Tag <select id="tag"><option value="">All tags</option>'+''.join('<option>'+esc(t)+'</option>' for t in sorted({t for r in readers for t in r['tags']}))+'</select></label><label>Sort <select id="sort"><option value="recent">Most recent</option><option value="relevance">Editorial order</option><option value="title">Title</option></select></label><button class="gm-reset" type="reset">Clear filters</button></div></form><div class="gm-result-bar"><p id="result-count" role="status" aria-live="polite">'+str(READER_COUNT)+' Readers</p><p>Search covers this published Reader library only.</p></div>'
  out['readers/index.html']=page('The Reader library','/readers/','<header class="gm-intro"><p class="gm-kicker">The complete archive</p><h1>Find your next question.</h1><p>Browse all 13 Readers. Evidence labels describe the mapped claims, not a score for the author. Editorial order is a curated reading order, not scientific confidence.</p></header>'+filters+categories+'<noscript><p>Search controls require JavaScript. Every Reader is listed below; category pages work without it.</p></noscript><div class="gm-cards" id="catalog-results">'+''.join(card(r) for r in readers)+'</div><script src="/assets/catalog.js" defer></script><script src="/assets/home-player.js" defer></script>')
  for i,c in enumerate(CATEGORIES):
   group=[r for r in readers if r['category']==c];out[f'readers/categories/{i}/index.html']=page(c,f'/readers/categories/{i}/','<h1>'+esc(c)+'</h1><p><a href="/readers/">All categories</a></p><div class="gm-cards">'+(''.join(card(r) for r in group) or '<p>No Reader is currently classified here.</p>')+'</div><script src="/assets/home-player.js" defer></script>')

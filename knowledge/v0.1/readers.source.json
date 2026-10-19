@@ -11,7 +11,7 @@
       "url": "https://youtube.shareplane.malott.ai/the-inbox-was-a-boundary/",
       "source": {
         "path": "site/the-inbox-was-a-boundary/index.html",
-        "sha256": "833db3d5f8b0181d759fdcfa78bc9f270b2d28e6ce56d0d353ff7165b39c7092"
+        "sha256": "c505c9e3a245c516afa9c518915c6cfd93e090b55536fd6f4c8fa40c40a69792"
       }
     },
     {
@@ -24,7 +24,7 @@
       "provenance": {
         "sourceNodeId": "urn:ghostmesh-readers:reader:the-inbox-was-a-boundary",
         "locator": "#fleet-activity-source",
-        "sourceFileSha256": "833db3d5f8b0181d759fdcfa78bc9f270b2d28e6ce56d0d353ff7165b39c7092",
+        "sourceFileSha256": "c505c9e3a245c516afa9c518915c6cfd93e090b55536fd6f4c8fa40c40a69792",
         "quoteSha256": "846ff5ff13d32b94826d855429ca96ab02c922f5bf353fe426d6df57dfd28743"
       }
     },
@@ -47,7 +47,7 @@
       "url": "https://youtube.shareplane.malott.ai/a-challenge-is-not-a-verdict/",
       "source": {
         "path": "site/a-challenge-is-not-a-verdict/index.html",
-        "sha256": "3e85842e00dc7fd600236cbf7e3821b0340ed2b5d59aa04a9557a19d5fe2780a"
+        "sha256": "0f76cdf9bc88f9fd6376e1145f515702345a6cec4269315c814f602a4706c185"
       }
     },
     {
@@ -59,7 +59,7 @@
       "url": "https://youtube.shareplane.malott.ai/ask-for-the-outcome-keep-the-boundary/",
       "source": {
         "path": "site/ask-for-the-outcome-keep-the-boundary/index.html",
-        "sha256": "ab50beebf09aa5d023e324b2fd1e52f16fa5ebf8ffb6b435844bfdd527411754"
+        "sha256": "6c563b9c838fe55f5ae64e4ecc2b05052c529997759affd319db4daf6b114a52"
       }
     },
     {
@@ -71,7 +71,7 @@
       "url": "https://youtube.shareplane.malott.ai/autonomy-needs-an-interface/",
       "source": {
         "path": "site/autonomy-needs-an-interface/index.html",
-        "sha256": "ab951a597932f8c31f195d7320cb5a5fb7d67ae7a5ff7800772dfced4ae79dc9"
+        "sha256": "692fd46962072052682fca82c8ad48fe74f4b7f97bf6a16b1ee5a7324020b670"
       }
     },
     {
@@ -83,7 +83,7 @@
       "url": "https://youtube.shareplane.malott.ai/make-good-work-inspectable/",
       "source": {
         "path": "site/make-good-work-inspectable/index.html",
-        "sha256": "f95b6fddb68ec56c584fce894260598af055a4c63a2b340542c09e98236b6ff8"
+        "sha256": "e90d395060822823fae8299eb57218948ed4a67836a85462a55099e4952d51bc"
       }
     },
     {
@@ -95,7 +95,7 @@
       "url": "https://youtube.shareplane.malott.ai/the-agent-a-company-owns/",
       "source": {
         "path": "site/the-agent-a-company-owns/index.html",
-        "sha256": "f8785e4efb6169bc34db3076c87721a86b496597afed0d24a8826f38046aa394"
+        "sha256": "66bb67599d88e0ed5717c3220a814ffede47495f6d9b9ecec3bef9c91eef79e2"
       }
     },
     {
@@ -107,7 +107,7 @@
       "url": "https://youtube.shareplane.malott.ai/the-funnel-is-not-the-frontier/",
       "source": {
         "path": "site/the-funnel-is-not-the-frontier/index.html",
-        "sha256": "e1fa0b05fc3339c08851337e0b41bf936be414c57548dadc1fbbf258185ebb66"
+        "sha256": "91ef5edf0fb4b7abf502c30a25d6643ab440ce22b91059c0e7e274a8c6035bb7"
       }
     },
     {
@@ -119,7 +119,7 @@
       "url": "https://youtube.shareplane.malott.ai/the-key-was-the-boundary/",
       "source": {
         "path": "site/the-key-was-the-boundary/index.html",
-        "sha256": "a91241d5e971cc15cb3a19d40b6694de0c40b31078f2bf773079d2211b2dfd6e"
+        "sha256": "7797ba2f1588fa34c6480cebc1f551c83fd294ec7177063f977c18a4aaf31c86"
       }
     },
     {
@@ -131,7 +131,7 @@
       "url": "https://youtube.shareplane.malott.ai/the-microscope-is-not-a-soul/",
       "source": {
         "path": "site/the-microscope-is-not-a-soul/index.html",
-        "sha256": "f5b4083fe4994d921e0245181a8f5d6fa893b5667d903ba5e4176601b79178e0"
+        "sha256": "f3f022346b816d25dbca6a7fd9dc3d5d41c14196684ab4e86fd9018339944be2"
       }
     },
     {
@@ -143,7 +143,7 @@
       "url": "https://youtube.shareplane.malott.ai/the-scan-never-reached-the-login/",
       "source": {
         "path": "site/the-scan-never-reached-the-login/index.html",
-        "sha256": "8d584490c0c501dd8ec3e7ea854b37adfb314e5b05de9b3b019f2c13e3d135a1"
+        "sha256": "af2bbe3904c4dfab609ed940a04d2ad1347ab9e547497a074aea86bb159b8241"
       }
     },
     {
@@ -155,7 +155,7 @@
       "url": "https://youtube.shareplane.malott.ai/the-score-is-not-the-system/",
       "source": {
         "path": "site/the-score-is-not-the-system/index.html",
-        "sha256": "40bf98cde1a506ceb7bef248f7c9e6eed5300dd5c679108ad044091453f1260f"
+        "sha256": "3ba002e896cca259fbbd80804fd81b98dcee39c416a5660c12e88c9206c8b6c0"
       }
     },
     {
@@ -167,7 +167,7 @@
       "url": "https://youtube.shareplane.malott.ai/when-agents-become-the-customer/",
       "source": {
         "path": "site/when-agents-become-the-customer/index.html",
-        "sha256": "bdf3d1ca99a242883d93a95789e121756389d92195781578573e509cf4a11ad2"
+        "sha256": "c5ac99b81b7423bd82fb78b74ee5863beb870b2687f60f7aa3cf5cd3e061ec8a"
       }
     },
     {
@@ -179,7 +179,19 @@
       "url": "https://youtube.shareplane.malott.ai/when-software-becomes-legible/",
       "source": {
         "path": "site/when-software-becomes-legible/index.html",
-        "sha256": "46ac7a2ac7e93e7d23389c777d99e2f945d17485fa27f36370188dc88d19cb0e"
+        "sha256": "79eef7b12316612986ef233bc3b5a0fc2656eb118c2b7714c4080a5c054f18f9"
+      }
+    },
+    {
+      "id": "urn:ghostmesh-readers:reader:the-fleet-does-not-prove-the-forecast",
+      "type": "Reader",
+      "visibility": "public",
+      "epistemicStatus": "source-editorial",
+      "label": "The Fleet Does Not Prove the Forecast",
+      "url": "https://youtube.shareplane.malott.ai/the-fleet-does-not-prove-the-forecast/",
+      "source": {
+        "path": "site/the-fleet-does-not-prove-the-forecast/index.html",
+        "sha256": "b1a49ef55d05a0c7796168a656ae99150f661686e703dcf101f8463f959e53bb"
       }
     }
   ],
@@ -194,7 +206,7 @@
       "provenance": {
         "sourceNodeId": "urn:ghostmesh-readers:reader:the-inbox-was-a-boundary",
         "locator": "#fleet-activity-source",
-        "sourceFileSha256": "833db3d5f8b0181d759fdcfa78bc9f270b2d28e6ce56d0d353ff7165b39c7092",
+        "sourceFileSha256": "c505c9e3a245c516afa9c518915c6cfd93e090b55536fd6f4c8fa40c40a69792",
         "quoteSha256": "846ff5ff13d32b94826d855429ca96ab02c922f5bf353fe426d6df57dfd28743"
       }
     }

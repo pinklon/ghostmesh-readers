@@ -25,8 +25,8 @@ class KnowledgeContractTests(unittest.TestCase):
 
     def test_reference_is_source_backed(self):
         validate_contract(self.model, self.schema)
-        self.assertEqual(len([node for node in self.model["nodes"] if node["type"] == "Reader"]), 13)
-        self.assertEqual(len(self.model["nodes"]), 15)
+        self.assertEqual(len([node for node in self.model["nodes"] if node["type"] == "Reader"]), 14)
+        self.assertEqual(len(self.model["nodes"]), 16)
         self.assertEqual(len(self.model["relationships"]), 1)
         self.invalid(lambda m: m["nodes"].pop(), "Reader inventory")
 

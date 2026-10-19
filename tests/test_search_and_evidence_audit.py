@@ -26,7 +26,10 @@ class SearchAndEvidenceAuditTest(unittest.TestCase):
 
     def test_existing_claim_status_breakdown_is_explicit(self):
         catalog = json.loads((ROOT / "content/catalog.json").read_text())
-        claims = [claim for reader in catalog["readers"] for claim in reader["claims"]]
+        baseline = json.loads((ROOT / "docs/baseline-audit.json").read_text())
+        historical_slugs = {reader["slug"] for reader in baseline["readers"]}
+        claims = [claim for reader in catalog["readers"] if reader["slug"] in historical_slugs
+                  for claim in reader["claims"]]
         self.assertEqual(Counter(claim["status"] for claim in claims),
                          {"unverified": 131, "partially corroborated": 14,
                           "corroborated": 2, "contradicted": 1})
@@ -36,7 +39,9 @@ class SearchAndEvidenceAuditTest(unittest.TestCase):
         self.assertEqual(sum(bool(c["references"]) for c in claims), 16)
         self.assertEqual(sum(bool(c["counterevidence"]) for c in claims), 6)
         knowledge = (ROOT / "site/knowledge/index.html").read_text()
-        self.assertIn("131", knowledge)
+        current_unverified = sum(c["status"] == "unverified"
+                                 for reader in catalog["readers"] for c in reader["claims"])
+        self.assertIn(f"<strong>{current_unverified}</strong><span>still labeled unverified", knowledge)
         self.assertIn("64 are historical-ledger entries and 33 are material-prose claims", knowledge)
 
 
