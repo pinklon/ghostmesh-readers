@@ -37,8 +37,8 @@
         "mediaAspect": "16:9"
       },
       "published": "2026-10-19",
-      "updated": "2026-10-19T12:54:56Z",
-      "overview": "Count Grey Matter traces moving boundaries between minds and machines through calculation, games, conversation and internal representations, then examines whether a functional account of understanding applies to current models.",
+      "updated": "2026-10-19T16:52:08Z",
+      "overview": "The public chapters and caption aid point to calculation, games, conversation and internal representations. A functional account of understanding remains a question, not a verified spoken conclusion.",
       "whyItMatters": "Selectively useful for researchers and product teams setting evaluation criteria. The historical and representation material challenges lazy impossibility claims, but imitation and narrow probes do not establish human-like understanding.",
       "ghostMeshTakeaway": "Define the task and evidence before arguing over a label. Test grounded use, changed premises, error recovery and authority boundaries; keep semantic and subjective claims open beyond the measured capability.",
       "verdict": "Interesting, unproven",
@@ -86,7 +86,7 @@
           "kind": "philosophical-inference",
           "asOf": "2026-10-19",
           "status": "disputed",
-          "assessment": "The video argues for a working-model view; Bender and Koller explicitly argue that form-only training has no a priori route to meaning.",
+          "assessment": "The caption aid suggests a working-model view, but exact spoken argument remains unverified. Bender and Koller argue that form-only training has no a priori route to meaning.",
           "limits": "Neither a single position paper nor this video settles the meaning criterion for all modern multimodal or interactive systems.",
           "sourceLocation": "09:32-12:20",
           "references": [],
@@ -131,7 +131,7 @@
           "kind": "source-interpretation",
           "asOf": "2026-10-19",
           "status": "unverified",
-          "assessment": "Automatic captions suggest a closing move toward human-comparable functional understanding. The creator's description announces a verdict but does not supply its full wording; direct audio review is pending.",
+          "assessment": "The cited studies do not establish human-comparable functional understanding. The creator's description announces a verdict but does not supply its full wording; direct audio review remains pending.",
           "limits": "No agreed operational definition, cross-setting test or comparison of human and model mechanisms is supplied. Do not present caption wording as a verified quote.",
           "sourceLocation": "20:10-21:33 (auto-caption location; direct audio pending)",
           "references": [],
@@ -146,7 +146,7 @@
           "kind": "philosophical-inference",
           "asOf": "2026-10-19",
           "status": "unverified",
-          "assessment": "The cited imitation and representation studies do not measure subjective experience. Automatic captions locate a closing discussion; the narrator's exact audio framing remains pending.",
+          "assessment": "The cited imitation and representation studies do not measure subjective experience. The exact spoken conclusion remains unverified pending direct audio review.",
           "limits": "No test in the video or cited studies measures subjective experience; do not infer either its presence or absence.",
           "sourceLocation": "20:30-21:33 (auto-caption location; direct audio pending)",
           "references": [],
@@ -263,6 +263,11 @@
           "at": "2026-10-19T12:54:56Z",
           "kind": "source-qualification",
           "reason": "Removed a caption-derived direct-looking quotation and qualified narrator-specific conclusions pending direct audio review; primary-paper findings unchanged."
+        },
+        {
+          "at": "2026-10-19T16:52:08Z",
+          "kind": "source-attribution-qualification",
+          "reason": "Removed assertions about unheard narrator speech or clip absence; preserved primary-source findings and explicit source-audio uncertainty."
         }
       ],
       "editorialOrder": 15,
@@ -1050,8 +1055,8 @@
         "mediaAspect": "16:9"
       },
       "published": "2026-10-19",
-      "updated": "2026-10-19T12:04:09Z",
-      "overview": "AI Revolution combines a Jack Clark IMF speech claim, a 50-problem physics-agent benchmark and Anthropic’s US economic scenarios to argue that an AI singularity is already here.",
+      "updated": "2026-10-19T16:52:08Z",
+      "overview": "AI Revolution’s public title declares an AI singularity. A private machine transcript suggests a Jack Clark IMF attribution; the first-party benchmark and economic scenarios warrant narrower conclusions.",
       "whyItMatters": "Useful to people setting research or workforce plans who need to separate measured agent performance from a conditional 2030 scenario. Watch the benchmark and scenario explanations; skip the headline as a decision rule.",
       "ghostMeshTakeaway": "The paper shows strong performance on bounded calculations, not open-ended scientific discovery. The $44.4 trillion figure is the extreme branch of a model. Use these as inputs for reversible stress tests, with explicit assumptions and human authority.",
       "verdict": "Mostly recycled",
@@ -1069,8 +1074,8 @@
           "kind": "speaker-attribution",
           "asOf": "2026-10-19",
           "status": "unverified",
-          "assessment": "The narrator frames this as an indirect paraphrase. We did not locate a first-party speech recording or transcript that verifies these words.",
-          "limits": "A Reuters account of rapid AI progress is not a transcript and cannot settle the narrator’s stronger attribution.",
+          "assessment": "A private machine transcript suggests an indirect paraphrase. Exact video audio and first-party Clark wording remain unverified.",
+          "limits": "A Reuters account of rapid AI progress is not a lecture transcript and cannot establish Clark’s exact wording.",
           "sourceLocation": "00:00–00:58",
           "references": [],
           "counterevidence": [],
@@ -1113,7 +1118,7 @@
           "asOf": "2026-10-19",
           "status": "disputed",
           "assessment": "Unpublished answers reduce direct answer contamination, but the paper says the small isolated-track change suggests significant memorization of relevant literature.",
-          "limits": "This does not prove any specific answer was copied. It limits the narrator’s categorical exclusion of memorization.",
+          "limits": "This does not prove any specific answer was copied. It limits any categorical exclusion of memorization.",
           "sourceLocation": "02:15–03:55",
           "references": [],
           "counterevidence": [
@@ -1247,6 +1252,11 @@
           "at": "2026-10-19T12:04:09Z",
           "kind": "new-reader-candidate",
           "reason": "Owner-requested deconstruction of public YouTube source wS3lJpOs9Uw; source pack remains private."
+        },
+        {
+          "at": "2026-10-19T16:52:08Z",
+          "kind": "source-attribution-qualification",
+          "reason": "Removed assertions about unheard narrator speech or clip absence; preserved primary-source findings and explicit source-audio uncertainty."
         }
       ],
       "editorialOrder": 14,
