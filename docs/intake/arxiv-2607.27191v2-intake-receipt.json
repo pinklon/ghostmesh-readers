@@ -1,0 +1,38 @@
+{
+  "schemaVersion": "research-intake-receipt-v1",
+  "candidate": "arxiv:2607.27191v2",
+  "stage": "research-only",
+  "writer": "Task8 /root/paper_reader_intake",
+  "baseCommit": "c7025444cad2f10253556be3cbc77bc82ccc50b9",
+  "branch": "codex/reader-paper-2607-27191-research-20261019",
+  "draftPath": "docs/intake/arxiv-2607.27191v2-research-draft.md",
+  "draftSha256": "067f48badf1fabb9189d6b786801eacc22bca87bfaea7770f90f92f498b72498",
+  "checkedUtcDate": "2026-10-19",
+  "sourceUrls": [
+    "https://arxiv.org/abs/2607.27191v2",
+    "https://arxiv.org/html/2607.27191v2",
+    "https://cruxevals.com/crux/can-ai-agents-conduct-research/",
+    "https://github.com/sage-princeton/crux-2-personas-CLEAN",
+    "https://proceedings.mlr.press/v267/wijk25a.html",
+    "https://arxiv.org/abs/2504.08066"
+  ],
+  "evidencePosture": "Source-reported study findings and separate-construct context; no experiment or full log independently audited.",
+  "holds": [
+    "Paper format not admitted by video-first Reader schema",
+    "No owner Creative Lock or independent content review",
+    "arXiv experimental HTML was partially read; PDF not qualified",
+    "Separate publication adapter PR361 is a prototype, not installed in Readers"
+  ],
+  "siteMutation": false,
+  "catalogMutation": false,
+  "knowledgeMutation": false,
+  "push": false,
+  "draftPr": false,
+  "merge": false,
+  "deployment": false,
+  "checks": [
+    "git diff --check PASS",
+    "python3 scripts/check_site.py PASS",
+    "research draft source/hold/style assertions PASS"
+  ]
+}
