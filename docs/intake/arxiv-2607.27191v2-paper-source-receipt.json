@@ -1,0 +1,41 @@
+{
+  "schemaVersion": "paper-reader-source-receipt-v1",
+  "candidate": "arxiv:2607.27191v2",
+  "stage": "original-public-analysis-source-only",
+  "writer": "Task8 /root/paper_reader_intake",
+  "claimUrl": "https://github.com/pinklon/ghostmesh-readers/issues/23#issuecomment-6268722120",
+  "baseCommit": "c7025444cad2f10253556be3cbc77bc82ccc50b9",
+  "articleCommit": "e301454f07d88041febdde3498d463126c8b8c55",
+  "articlePath": "content/readers/the-experiment-ran-did-the-research-advance.html",
+  "articleSha256": "fbda68cc660be02ba45c2d92e07378ac04cf962c3c85452354a0cb8c12b3e2f6",
+  "sourceTestPath": "tests/test_paper_reader_source.py",
+  "sourceTestSha256": "4e716887c2666eaf838ede1205a3dc0167aaf0c5cc59a344d37a69271a458657",
+  "sourceLinks": [
+    "https://arxiv.org/abs/2607.27191v2",
+    "https://arxiv.org/html/2607.27191v2",
+    "https://arxiv.org/pdf/2607.27191v2"
+  ],
+  "publicBoundary": "Original analysis and bounded citations only; no raw paper, extracted source, logs or unpublished artifacts in this branch.",
+  "qualification": "Selected source claims checked against bounded original passages and partial private PDF/HTML line maps. The study's results are attributed, not independently reproduced; figures, tables, equations, OCR, reading order and full logs remain unverified.",
+  "materialCaveats": [
+    "Two selected questions",
+    "Non-blind original-author grading",
+    "120-hour initial deadline plus 24-hour extension and human interventions",
+    "Unequal human time and GPU resources",
+    "Unpublished TabPFN agent paper and detailed logs withheld",
+    "August 7 arXiv v2 and August 24 experimental HTML title-block discrepancy",
+    "No universal research-automation ceiling"
+  ],
+  "checks": [
+    "python3 -m unittest tests.test_paper_reader_source -v: 3 passed",
+    "git diff --cached --check: passed at article commit"
+  ],
+  "independentArticleReview": "Read-only exact-commit review at e301454f07d88041febdde3498d463126c8b8c55: no actionable P0-P2. Reviewer checked source attribution, 120+24-hour window, scoring, caveats, private-source exclusion and HTML slots. Three focused tests and scripts/check_site.py passed. No rendered preview, PDF visual, experiment or full-log audit.",
+  "integrationHold": "Await reviewed and pushed PR29 design successor before editing shared generator, schema, checker or generated site.",
+  "catalogMutation": false,
+  "generatedSiteMutation": false,
+  "push": false,
+  "preview": false,
+  "merge": false,
+  "deployment": false
+}
