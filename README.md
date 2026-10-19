@@ -43,6 +43,8 @@ The site and repository are public. No third-party video, audio, full transcript
 
 ## Normalized publishing contract (Issue 23)
 
+Separately approved articles based on multiple public records use the closed `source.kind=analysis` shape described in [the source-analysis format](docs/SOURCE_ANALYSIS_FORMAT.md). They retain the common three-part brief, claim register, sanitized receipt and theme/route checks, with source-analysis labels and direct links to each declared record. A related video's speech is not treated as reviewed by publishing a public-record analysis.
+
 All 13 existing Readers and future editions now use the same structural gate. There are no grandfather exceptions. `content/catalog.json` is the authoring authority for identity, brief, classification, source metadata, claim inventory, references, relationships, editorial ordering, theme variant and revision history. `content/readers/<slug>.html` retains the original analysis and source controls, with bounded generation slots. Edit these inputs, then run:
 
 ```sh
