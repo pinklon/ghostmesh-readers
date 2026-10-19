@@ -43,3 +43,18 @@ node tests/browser_regressions.cjs
 It checks a 14-card archive with JavaScript disabled, rejects missing/extra cards, detects deliberately low-contrast text in a real browser and proves the report process exits 1. A readable fixture passes. The full contrast suite now exits nonzero on violations or execution errors. Catalog cards explicitly display the unverified-claim count; all 131 of 148 unverified statuses are unchanged.
 
 The historical SharePlane source URL returning HTTP 404 is confirmed broken and has been explicitly de-linked in the Reader while preserving attribution. The OpenAI incident URL returning automation HTTP 403 is UNKNOWN, not classified as broken. Current availability reruns are recorded separately in the delivery evidence. Historical link-check counts above describe the original run only.
+
+## Shared shell and source preview revision
+
+The generated home, archive, knowledge index and 13 Reader pages now use one Reader-derived top shell with one theme control. The Reader editorial bodies, near-top brief, retained historical anchors and chapter controls are independent of that shell. The full archive is present in static HTML; the local search is progressive enhancement, not an estate-wide search service.
+
+The homepage displays six current YouTube source thumbnails from the same public `i.ytimg.com` host already used by Reader source pages. Those are third-party **image requests before Play**; they do not load an iframe or video stream. The Instagram Reel has no durable approved public poster URL in its source record, so it uses a labeled fallback and direct source link. A deliberate Play click creates one non-autoplay inline iframe; the Open Reader and original-source links remain separate. No source media, caption, transcript, proxy or player dependency was added to Git.
+
+With a local static server, Playwright and Chrome available, run:
+
+```sh
+node tests/visual_revision_regressions.cjs
+node tests/player_regressions.cjs
+```
+
+The first checks one shell and heading per route, responsive light/dark behavior, legible light-mode signal tokens, 13 static archive entries, local search/reset, seven separate home Reader/source actions, click-gated non-autoplay playback and no-JavaScript links. The second checks all Reader source-player shapes, opt-in behavior, external fallback and reduced motion. Visual acceptance still requires owner review of the draft deploy preview.

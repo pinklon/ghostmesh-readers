@@ -1,0 +1,76 @@
+const { chromium } = require('playwright');
+const assert = require('node:assert/strict');
+
+const base = 'http://127.0.0.1:8765';
+const routes = ['/', '/readers/', '/knowledge/', '/ask-for-the-outcome-keep-the-boundary/', '/a-challenge-is-not-a-verdict/'];
+
+(async () => {
+  const browser = await chromium.launch({ headless: true, channel: 'chrome' });
+  let cases = 0;
+  try {
+    for (const width of [390, 1440]) for (const theme of ['dark', 'light']) {
+      const context = await browser.newContext({ viewport: { width, height: 900 }, reducedMotion: 'reduce' });
+      await context.addInitScript(choice => localStorage.setItem('gm-appearance', choice), theme);
+      await context.route('**/*', route => route.request().url().startsWith(base) ? route.continue() : route.abort());
+      const page = await context.newPage();
+      for (const route of routes) {
+        const response = await page.goto(base + route, { waitUntil: 'domcontentloaded' });
+        assert.equal(response.status(), 200, `${route}: response`);
+        const state = await page.evaluate(() => ({
+          headers: document.querySelectorAll('header.gm-site-header').length,
+          themeChoices: document.querySelectorAll('[data-theme-choice]').length,
+          theme: document.documentElement.dataset.theme,
+          headings: document.querySelectorAll('h1').length,
+          overflow: document.documentElement.scrollWidth > innerWidth,
+          frames: document.querySelectorAll('iframe').length,
+        }));
+        assert.deepEqual(state, { headers: 1, themeChoices: 1, theme, headings: 1, overflow: false, frames: 0 }, `${route} ${width} ${theme}`);
+        if (route === '/') {
+          assert.equal(await page.locator('.gm-home-card').count(), 7);
+          assert.equal(await page.locator('.gm-home-player[data-source-platform="YouTube"]').count(), 6);
+          assert.equal(await page.locator('.gm-home-player[data-source-platform="Instagram"]').count(), 1);
+          const signal = await page.evaluate(() => ({
+            flow: getComputedStyle(document.querySelector('.signal-flow')).stroke,
+            face: getComputedStyle(document.querySelector('.signal-face-top')).fill,
+            motion: getComputedStyle(document.querySelector('.signal-flow')).animationName,
+          }));
+          assert.equal(signal.motion, 'none');
+          if (theme === 'light') {
+            assert.equal(signal.flow, 'rgb(140, 33, 62)');
+            assert.equal(signal.face, 'rgb(255, 255, 255)');
+          }
+          await page.locator('.gm-home-player[data-source-platform="YouTube"] button').first().click();
+          const source = await page.locator('.gm-home-player iframe').first().getAttribute('src');
+          assert.match(source, /^https:\/\/www\.youtube-nocookie\.com\/embed\//);
+          assert(!source.includes('autoplay='));
+        }
+        if (route === '/readers/') {
+          assert.equal(await page.locator('#catalog-results .gm-card').count(), 13);
+          await page.locator('#search').fill('boundary');
+          const visible = await page.locator('#catalog-results .gm-card:visible').count();
+          assert(visible > 0 && visible < 13);
+          assert.match(await page.locator('#result-count').textContent(), new RegExp(`^${visible} of 13 Readers$`));
+          await page.locator('.gm-reset').click();
+          await page.waitForFunction(() => document.querySelectorAll('#catalog-results .gm-card:not([hidden])').length === 13);
+        }
+        if (route.startsWith('/ask-') || route.startsWith('/a-challenge')) {
+          assert.equal(await page.locator('[data-gm-share]').count(), 1);
+          assert.equal(await page.locator('.gm-reader-footer').count(), 1);
+        }
+        cases++;
+      }
+      await context.close();
+    }
+    const context = await browser.newContext({ javaScriptEnabled: false, viewport: { width: 390, height: 844 } });
+    await context.route('**/*', route => route.request().url().startsWith(base) ? route.continue() : route.abort());
+    const page = await context.newPage();
+    await page.goto(base + '/readers/', { waitUntil: 'domcontentloaded' });
+    assert.equal(await page.locator('#catalog-results .gm-card').count(), 13);
+    await page.goto(base + '/', { waitUntil: 'domcontentloaded' });
+    assert.equal(await page.locator('.gm-home-open').count(), 7);
+    assert.equal(await page.locator('.gm-home-source').count(), 7);
+    assert.equal(await page.locator('iframe').count(), 0);
+    console.log(JSON.stringify({ cases, noJavaScript: true, failures: [] }));
+    await context.close();
+  } finally { await browser.close(); }
+})().catch(error => { console.error(error); process.exitCode = 1; });

@@ -14,8 +14,18 @@ def validate_text(value):
   for v in value.values():validate_text(v)
  if isinstance(value,list):
   for v in value:validate_text(v)
-def controls():return '<div class="gm-controls"><a class="gm-control-brand" href="/"><img src="/brand/ghostmesh-mark.svg" width="36" height="28" alt="">GhostMesh Readers</a><a href="/readers/">Browse library</a><label>Appearance <select id="theme-toggle" data-theme-choice aria-label="Appearance"><option value="system">System</option><option value="light">Light</option><option value="dark">Dark</option></select></label><noscript>Appearance follows your system setting.</noscript></div>'
-def head():return '<script src="/assets/theme.js"></script><link rel="stylesheet" href="/assets/knowledge.css">'
+def controls():return ('<header class="gm-site-header"><div class="gm-site-header-inner">'
+ '<a class="gm-site-brand" href="/" aria-label="GhostMesh Readers home"><img src="/brand/ghostmesh-mark.svg" width="45" height="34" alt=""><strong>GHOST<em>MESH</em></strong><span>READERS</span></a>'
+ '<nav class="gm-site-nav" aria-label="Main navigation"><a href="/">Home</a><a href="/readers/">Readers</a><a href="/knowledge/">Knowledge</a><a href="/#about">About</a></nav>'
+ '<label class="gm-theme-control">Appearance <select id="theme-toggle" data-theme-choice aria-label="Appearance"><option value="dark">Dark</option><option value="light">Light</option><option value="system">System</option></select></label>'
+ '</div></header>')
+def footer(include_email=True):return ('<footer aria-label="GhostMesh destinations" class="gm-reader-footer gm-site-footer"><div class="gm-reader-footer-inner">'
+ '<div><a class="gm-footer-brand" href="/"><img alt="" class="gm-logo-mark" height="34" src="/brand/ghostmesh-mark.svg" width="45"><strong>GHOST<em>MESH</em></strong></a>'
+ '<p class="gm-reader-footer-note">Read the source. Examine the evidence. Challenge the interpretation.<br>GhostMesh editorial · © 2026 GhostMesh / Tony Malott.</p></div>'
+ '<nav aria-label="Reader footer navigation" class="gm-footer-links"><a href="/">Readers home</a><a href="/readers/">All Readers</a><a href="/knowledge/">Public knowledge</a>'
+ '<a href="https://ghostmesh.ai/">GhostMesh.ai ↗</a><a href="https://shareplane.malott.ai/">SharePlane ↗</a><a href="https://malott.ai/">Tony Malott ↗</a>'
+ +('<a href="mailto:ghostmesh@malott.ai?subject=GhostMesh%20Reader%20feedback">Contact GhostMesh ✉</a>' if include_email else '')+'</nav></div></footer>')
+def head():return '<script src="/assets/theme.js"></script><link rel="stylesheet" href="/assets/reader-chrome.css"><link rel="stylesheet" href="/assets/knowledge.css">'
 def brief(r):
  return '<section class="gm-brief" id="at-a-glance" aria-label="Reader brief"><span id="brief-title" class="gm-visually-hidden">Reader brief</span>'+''.join('<div><h2>'+h+'</h2><p>'+esc(r[k])+'</p></div>' for k,h in [('overview','What the video is about'),('whyItMatters','Why you should care'),('ghostMeshTakeaway','What GhostMesh takes away')])+f'<p class="gm-verdict"><strong>GhostMesh verdict: {esc(r["verdict"])}</strong>. Editorial recommendation, not factual verification. Architecture impact: {esc(r["architectureImpact"])}. Proposed only; no adoption implied.</p></section>'
 def evidence(r):
@@ -41,19 +51,40 @@ def related(r,byid):
   out+=f'<p>Showing {len(visible)} of {len(r["relationships"])} qualified relationships. <a href="/{r["slug"]}/receipt.json">See all relationships in the public receipt</a>.</p>'
  return out+'</section>'
 def card(r,featured=False):
- return f'<article class="gm-card" data-category="{esc(r["category"])}" data-tags="{esc(" ".join(r["tags"]))}" data-date="{r["published"]}" data-rank="{r["rank"]}"><p class="gm-kicker">{esc(r["category"])} · {r["published"]}</p><h{2 if featured else 3}><a href="/{r["slug"]}/">{esc(r["title"])}</a></h{2 if featured else 3}><p>{esc(r["overview"])}</p><p>{esc(r["verdict"])} · Mapped evidence: {esc(r["evidenceState"])}. {sum(c["status"]=="unverified" for c in r["claims"])}/{len(r["claims"])} claims unverified</p><p class="gm-tags">{esc(" / ".join(r["tags"]))}</p><a href="{esc(r["source"]["url"])}">Original {esc(r["source"].get("platform","YouTube"))} source</a></article>'
+ source=r['source'];platform=source.get('platform','YouTube')
+ thumb=(f'<img src="https://i.ytimg.com/vi/{esc(source["videoId"])}/hqdefault.jpg" loading="lazy" decoding="async" referrerpolicy="no-referrer" alt="">' if platform=='YouTube' else '<span>Original Instagram Reel · source image unavailable</span>')
+ return (f'<article class="gm-card gm-library-card" data-category="{esc(r["category"])}" data-tags="{esc(" ".join(r["tags"]))}" data-date="{r["published"]}" data-rank="{r["rank"]}">'
+         f'<div class="gm-library-poster" data-gm-aspect="{esc(source["mediaAspect"])}">{thumb}</div><div class="gm-library-copy">'
+         f'<p class="gm-kicker">{esc(r["category"])} · {r["published"]}</p><h{2 if featured else 3}><a href="/{r["slug"]}/">{esc(r["title"])}</a></h{2 if featured else 3}>'
+         f'<p>{esc(r["overview"])}</p><p>{esc(r["verdict"])} · Mapped evidence: {esc(r["evidenceState"])}. {sum(c["status"]=="unverified" for c in r["claims"])}/{len(r["claims"])} claims unverified</p>'
+         f'<p class="gm-tags">{esc(" / ".join(r["tags"]))}</p><div class="gm-library-actions"><a href="/{r["slug"]}/">Open Reader →</a><a href="{esc(source["url"])}">Original {esc(platform)} source ↗</a></div></div></article>')
 def home_card(r,number,featured=False):
  tag='h2' if featured else 'h3'
  unverified=sum(c['status']=='unverified' for c in r['claims'])
- visual=f'<div class="gm-home-visual" aria-hidden="true"><span>GM / READER {number:02d}</span><strong>{number:02d}</strong><span>READ / INSPECT / CHALLENGE</span></div>'
+ source=r['source'];platform=source.get('platform','YouTube');aspect=source['mediaAspect']
+ if platform=='YouTube':
+  source_id=source['videoId']
+  if not re.fullmatch(r'[A-Za-z0-9_-]{11}',source_id):raise ValueError('Unsafe YouTube ID for home preview')
+  preview=f'<img src="https://i.ytimg.com/vi/{source_id}/hqdefault.jpg" loading="lazy" decoding="async" referrerpolicy="no-referrer" alt="">'
+ elif platform=='Instagram':
+  source_id=source['shortcode']
+  if not re.fullmatch(r'[A-Za-z0-9_-]+',source_id):raise ValueError('Unsafe Instagram shortcode for home preview')
+  # No durable, approved public Reel thumbnail exists in the source record.
+  preview='<p class="gm-home-source-fallback">Original Instagram Reel<br>Source image unavailable</p>'
+ else:raise ValueError('Unsupported home source platform')
+ visual=(f'<div class="gm-home-visual"><span class="gm-home-visual-label">GM / READER {number:02d} · {esc(platform)}</span>'
+         f'<div class="gm-home-player" data-home-player data-source-platform="{esc(platform)}" data-source-id="{esc(source_id)}" data-gm-aspect="{esc(aspect)}">'
+         +preview+'<button type="button" data-home-play hidden>Play original here</button></div>'
+         '<span class="gm-home-visual-label">ORIGINAL SOURCE / OPT-IN PLAYER</span></div>')
  copy=(f'<div class="gm-home-copy"><p class="gm-kicker">{esc(r["category"])} / {r["published"]}</p>'
        f'<{tag}><a href="/{r["slug"]}/">{esc(r["title"])}</a></{tag}>'
        f'<p>{esc(r["overview"])}</p>'
        f'<p class="gm-home-verdict">{esc(r["verdict"])} · Mapped evidence: {esc(r["evidenceState"])}. {unverified}/{len(r["claims"])} claims unverified</p>'
        f'<p class="gm-tags">{esc(" / ".join(r["tags"]))}</p>'
-       f'<a class="gm-home-source" href="{esc(r["source"]["url"])}">Original {esc(r["source"].get("platform","YouTube"))} source ↗</a></div>')
+       f'<div class="gm-home-actions"><a class="gm-home-open" href="/{esc(r["slug"])}/">Open Reader →</a>'
+       f'<a class="gm-home-source" href="{esc(source["url"])}">Original {esc(platform)} source ↗</a></div></div>')
  return f'<article class="gm-card gm-home-card" data-category="{esc(r["category"])}" data-tags="{esc(" ".join(r["tags"]))}" data-date="{r["published"]}" data-rank="{r["rank"]}">'+visual+copy+'</article>'
-def page(title,path,body):return '<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>'+esc(title)+' | GhostMesh Readers</title><meta name="description" content="Original analysis, explicit evidence and accountable judgment."><link rel="canonical" href="https://youtube.shareplane.malott.ai'+path+'"><link rel="icon" href="/favicon.svg">'+head()+'</head><body class="gm-catalog"><a class="gm-skip" href="#main">Skip to content</a>'+controls()+'<main id="main">'+body+'</main><footer class="gm-footer"><a href="/readers/">All Readers</a> · <a href="https://ghostmesh.ai/">GhostMesh</a> · <a href="https://shareplane.malott.ai/">SharePlane</a> · <a href="https://malott.ai/">Tony Malott</a> · <a href="mailto:ghostmesh@malott.ai">Contact GhostMesh</a></footer></body></html>'
+def page(title,path,body):return '<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>'+esc(title)+' | GhostMesh Readers</title><meta name="description" content="Original analysis, explicit evidence and accountable judgment."><link rel="canonical" href="https://youtube.shareplane.malott.ai'+path+'"><link rel="icon" href="/favicon.svg">'+head()+'</head><body class="gm-catalog"><a class="gm-skip" href="#main">Skip to content</a>'+controls()+'<main id="main">'+body+'</main>'+footer(include_email=path!='/knowledge/')+'</body></html>'
 class LinkOnlySource(HTMLParser):
  def __init__(self,source_url):
   super().__init__(convert_charrefs=True);self.source_url=source_url;self.direct_link=False;self.violations=[]
@@ -93,9 +124,21 @@ def projections():
  for r in readers:
   raw=(ROOT/'content/readers'/f'{r["slug"]}.html').read_text()
   raw=player_contract(raw,r['source'].get('mediaAspect'),r['source']['url'])
-  for slot,value in [('HEAD',head()),('CONTROLS',controls()),('BRIEF',brief(r)),('EVIDENCE',evidence(r)),('RELATED',related(r,byid))]:raw=raw.replace('<!--GM_'+slot+'-->',value)
-  # An early synchronous theme loader prevents a light/dark flash before legacy styles load.
-  raw=raw.replace('<head>','<head><script src="/assets/theme.js"></script>',1)
+  for slot,value in [('HEAD',head()),('CONTROLS',''),('BRIEF',brief(r)),('EVIDENCE',evidence(r)),('RELATED',related(r,byid))]:raw=raw.replace('<!--GM_'+slot+'-->',value)
+  old_header=re.search(r'<header(?:\s[^>]*)?>.*?</header>',raw,re.S)
+  if not old_header:raise ValueError(f'{r["slug"]}: expected one site header')
+  new_header=controls()
+  if 'id="print-page"' in old_header.group():
+   new_header=new_header.replace('</nav>','<button class="gm-header-print" id="print-page" type="button">Print</button></nav>',1)
+  raw,header_count=re.subn(r'<header(?:\s[^>]*)?>.*?</header>',lambda _:new_header,raw,count=1,flags=re.S)
+  if header_count!=1:raise ValueError(f'{r["slug"]}: expected one site header')
+  old_footer=re.search(r'<footer\b[^>]*>.*?</footer>',raw,re.S)
+  if not old_footer:raise ValueError(f'{r["slug"]}: missing site footer')
+  # Keep pre-existing hand-picked Reader routes as navigation, not graph claims.
+  old_routes=re.findall(r'<a\b[^>]*href="(/[^"#?]+/)"[^>]*>.*?</a>',old_footer.group(),re.S)
+  preserved=[u for u in dict.fromkeys(old_routes) if u.strip('/') in {x['slug'] for x in readers}]
+  extra='<nav class="gm-footer-more" aria-label="More Reader routes">'+''.join(f'<a href="{esc(u)}">{esc(byid[next(x["id"] for x in readers if x["slug"]==u.strip("/"))]["title"])}</a>' for u in preserved)+'</nav>' if preserved else ''
+  raw=raw[:old_footer.start()]+footer().replace('</footer>',extra+'</footer>')+raw[old_footer.end():]
   out[f'{r["slug"]}/index.html']=raw
   receipt=dict(r.get('legacyReceipt') or {'schema':'ghostmesh-reader-receipt-v2','source':r['source'],'custody':{'status':'historical-public-account-only','note':'No private source pack was opened or reverified during normalization. See original provenance on the Reader.'}})
   receipt['normalization']={k:v for k,v in r.items() if k not in ['legacyReceipt','rank']}
@@ -125,9 +168,12 @@ def projections():
  out['index.html']=page('Read the source. Test the claim.','/',home_intro+home_readers+home_browse)
  home=out['index.html'];legacy='<details class="gm-legacy"><summary>Earlier video bookmarks</summary><ul>'+''.join('<li id="'+esc(r['source'].get('videoId') or r['source'].get('shortcode',''))+'"><a href="/'+r['slug']+'/">'+esc(r['title'])+'</a></li>' for r in readers)+'</ul></details>'
  home=home.replace('<body class="gm-catalog">','<body class="gm-catalog" id="home">').replace('<h1>Read the source.','<h1 id="hero-title">Read the source.').replace('<h2>Continue reading</h2>','<h2 id="readers-title">Continue reading</h2>')
- destinations=('<section id="about" class="gm-home-about"><div><p class="gm-kicker">03 / Identity &amp; intent</p><h2 id="about-title">A human at the center.</h2></div>'
-               '<div><p>GhostMesh is Tony Malott’s AI identity and collaboration, research and learning system.</p>'
-               '<p class="gm-authority">It is a system, not a person or a self-authorized worker. Judgment and authority remain human-governed.</p></div></section>'
+ destinations=('<section id="about" class="gm-home-about"><div><p class="gm-kicker">03 / Why this exists</p><h2 id="about-title">Why I built it.</h2></div>'
+               '<div><p>Short videos can make an idea feel settled before its source, limits, and consequences are examined. These Readers put the original source beside my interpretation so you can inspect the argument and reach your own judgment.</p>'
+               '<p>GhostMesh is Tony Malott’s AI identity and collaboration, research and learning system. This site is one public reading surface within it.</p>'
+               '<p class="gm-authority">It is a system, not a person or a self-authorized worker. Judgment and authority remain human-governed.</p>'
+               '<div class="gm-source-scope"><p><strong>Here now</strong> Published YouTube video and Instagram Reel deconstructions, with direct source links and explicit evidence limits.</p>'
+               '<p><strong>Future inputs</strong> Other media and documents may be added when their source, rights, and review contracts are ready. No additional format is live here yet.</p></div></div></section>'
                '<section id="ecosystem"><div class="gm-section-heading"><div><p class="gm-kicker">04 / Connected destinations</p><h2 id="ecosystem-title">A wider mesh.</h2></div></div>'
                '<div class="gm-destinations"><a href="https://ghostmesh.ai/"><span>01 / ARCHITECTURE ↗</span><strong>GhostMesh.ai</strong><p>Describes the architecture and the connected mesh.</p></a>'
                '<a href="https://malott.ai/"><span>02 / HUMAN IDENTITY ↗</span><strong>Malott.ai</strong><p>Tony’s personal and professional identity.</p></a>'
@@ -135,9 +181,9 @@ def projections():
                '<section id="contact"><div class="gm-section-heading"><div><p class="gm-kicker">05 / Open a conversation</p><h2 id="contact-title">Open a conversation.</h2></div></div>'
                '<div class="gm-contact-grid"><a href="mailto:tony@malott.ai"><span>HUMAN CONTACT / TONY MALOTT</span><strong>Contact Tony ↗</strong></a>'
                '<a href="mailto:ghostmesh@malott.ai"><span>AI CORRESPONDENCE / GHOSTMESH</span><strong>Send GhostMesh a question or counterexample ↗</strong></a></div></section>')
- out['index.html']=home.replace('</main>',legacy+destinations+'</main>').replace('all 13 Readers',f'all {len(readers)} Readers').replace('<link rel="icon" href="/favicon.svg">','<link rel="alternate" type="application/json" href="/.well-known/ghostmesh-knowledge.json" title="GhostMesh public knowledge discovery"><link rel="icon" href="/favicon.svg">',1)
- filters='<form class="gm-filters" role="search" onsubmit="return false"><label>Search <input type="search" id="search" placeholder="Title, subject or idea"></label><label>Category <select id="category"><option value="">All categories</option>'+''.join('<option>'+esc(c)+'</option>' for c in CATEGORIES)+'</select></label><label>Tag <select id="tag"><option value="">All tags</option>'+''.join('<option>'+t+'</option>' for t in sorted({t for r in readers for t in r['tags']}))+'</select></label><label>Sort <select id="sort"><option value="recent">Most recent</option><option value="relevance">Editorial order</option><option value="title">Title</option></select></label><button type="reset">Reset</button></form><p id="result-count" role="status" aria-live="polite">13 Readers</p>'
- out['readers/index.html']=page('The Reader library','/readers/','<header class="gm-intro"><p class="gm-kicker">The complete archive</p><h1>Find your next question.</h1><p>Browse all 13 Readers. Evidence labels describe the mapped claims, not a score for the author. Editorial order is a curated reading order, not scientific confidence.</p></header>'+categories+filters+'<noscript><p>Search controls require JavaScript. Every Reader is listed below; category pages work without it.</p></noscript><div class="gm-cards" id="catalog-results">'+''.join(card(r) for r in readers)+'</div><script src="/assets/catalog.js" defer></script>')
+ out['index.html']=home.replace('</main>',legacy+destinations+'</main>').replace('</body>','<script src="/assets/home-player.js" defer></script></body>').replace('all 13 Readers',f'all {len(readers)} Readers').replace('<link rel="icon" href="/favicon.svg">','<link rel="alternate" type="application/json" href="/.well-known/ghostmesh-knowledge.json" title="GhostMesh public knowledge discovery"><link rel="icon" href="/favicon.svg">',1)
+ filters='<form class="gm-filters" role="search"><label class="gm-search-field">Search these Readers <input type="search" id="search" autocomplete="off" placeholder="Title, topic or tag"></label><div class="gm-filter-row"><label>Category <select id="category"><option value="">All categories</option>'+''.join('<option>'+esc(c)+'</option>' for c in CATEGORIES)+'</select></label><label>Tag <select id="tag"><option value="">All tags</option>'+''.join('<option>'+esc(t)+'</option>' for t in sorted({t for r in readers for t in r['tags']}))+'</select></label><label>Sort <select id="sort"><option value="recent">Most recent</option><option value="relevance">Editorial order</option><option value="title">Title</option></select></label><button class="gm-reset" type="reset">Clear filters</button></div></form><div class="gm-result-bar"><p id="result-count" role="status" aria-live="polite">13 Readers</p><p>Search covers this published Reader library only.</p></div>'
+ out['readers/index.html']=page('The Reader library','/readers/','<header class="gm-intro"><p class="gm-kicker">The complete archive</p><h1>Find your next question.</h1><p>Browse all 13 Readers. Evidence labels describe the mapped claims, not a score for the author. Editorial order is a curated reading order, not scientific confidence.</p></header>'+filters+categories+'<noscript><p>Search controls require JavaScript. Every Reader is listed below; category pages work without it.</p></noscript><div class="gm-cards" id="catalog-results">'+''.join(card(r) for r in readers)+'</div><script src="/assets/catalog.js" defer></script>')
  for i,c in enumerate(CATEGORIES):
   group=[r for r in readers if r['category']==c];out[f'readers/categories/{i}/index.html']=page(c,f'/readers/categories/{i}/','<h1>'+esc(c)+'</h1><p><a href="/readers/">All categories</a></p><div class="gm-cards">'+(''.join(card(r) for r in group) or '<p>No Reader is currently classified here.</p>')+'</div>')
  out['readers/index.html']=out['readers/index.html'].replace('all 13 Readers',f'all {len(readers)} Readers').replace('>13 Readers<',f'>{len(readers)} Readers<')
