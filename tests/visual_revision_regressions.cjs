@@ -27,6 +27,9 @@ const routes = ['/', '/readers/', '/knowledge/', '/map/', '/ask-for-the-outcome-
           frames: document.querySelectorAll('iframe').length,
         }));
         assert.deepEqual(state, { headers: 1, themeChoices: 1, theme, headings: 1, overflow: false, frames: 0 }, `${route} ${width} ${theme}`);
+        const toggle = page.locator('[data-theme-toggle]');
+        assert.equal(await toggle.getAttribute('aria-label'), 'Light appearance');
+        assert.equal(await toggle.getAttribute('aria-pressed'), String(theme === 'light'));
         if (route === '/') {
           assert.equal(await page.locator('.gm-home-card').count(), 7);
           assert.equal(await page.locator('.gm-home-player[data-source-platform="YouTube"]').count(), 6);
@@ -79,6 +82,11 @@ const routes = ['/', '/readers/', '/knowledge/', '/map/', '/ask-for-the-outcome-
         }
         cases++;
       }
+      const toggle = page.locator('[data-theme-toggle]');
+      await toggle.click();
+      assert.equal(await toggle.getAttribute('aria-label'), 'Light appearance');
+      assert.equal(await toggle.getAttribute('aria-pressed'), String(theme !== 'light'));
+      assert.equal(await page.locator('html').getAttribute('data-theme'), theme === 'light' ? 'dark' : 'light');
       await context.close();
     }
     const context = await browser.newContext({ javaScriptEnabled: false, viewport: { width: 390, height: 844 } });

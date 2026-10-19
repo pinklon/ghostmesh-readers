@@ -101,7 +101,7 @@ class VisualContractTest(unittest.TestCase):
 
     def test_theme_icon_control_has_named_keyboard_action(self):
         home = (ROOT / 'site/index.html').read_text()
-        self.assertIn('data-theme-toggle type="button" aria-label="Switch to light appearance"', home)
+        self.assertIn('data-theme-toggle type="button" aria-label="Light appearance" aria-pressed="false"', home)
         self.assertIn('class="gm-theme-sun"', home)
         self.assertIn('class="gm-theme-moon"', home)
         script = (ROOT / 'site/assets/theme.js').read_text()

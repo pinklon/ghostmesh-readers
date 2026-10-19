@@ -13,9 +13,9 @@
     const isLight = root.dataset.theme === 'light';
     document.querySelectorAll('[data-theme-toggle]').forEach(control => {
       control.hidden = false;
-      control.setAttribute('aria-label', `Switch to ${isLight ? 'dark' : 'light'} appearance`);
+      control.setAttribute('aria-label', 'Light appearance');
       control.setAttribute('aria-pressed', String(isLight));
-      control.title = `Switch to ${isLight ? 'dark' : 'light'} appearance`;
+      control.title = `Light appearance ${isLight ? 'on' : 'off'}`;
     });
   }
   apply();
