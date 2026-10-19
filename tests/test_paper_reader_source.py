@@ -131,7 +131,7 @@ class PaperReaderSourceTests(unittest.TestCase):
 
     def test_media_source_rejects_paper_fields_without_affecting_legacy_records(self):
         catalog = json.loads((ROOT / "content/catalog.json").read_text())
-        media = [r["source"] for r in catalog["readers"] if r["source"].get("kind") != "paper"]
+        media = [r["source"] for r in catalog["readers"] if not r["source"].get("kind")]
         for source in media:
             validate_media_source(source)
         for extra in ("identity", "htmlUrl", "pdfUrl", "authors", "publisher", "version", "versionDate"):

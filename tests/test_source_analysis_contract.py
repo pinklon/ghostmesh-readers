@@ -1,11 +1,15 @@
 """An article may cite multiple public records without masquerading as media."""
 import copy
 from pathlib import Path
+import shutil
 import sys
+import tempfile
 import unittest
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
+import catalog_design
+import generate_site
 from catalog_design import analysis_cover, _poster
 from generate_site import brief, home_card, validate_analysis_source
 
@@ -83,6 +87,61 @@ class SourceAnalysisContractTests(unittest.TestCase):
         self.assertIn('Inspect source records', card)
         self.assertNotIn('data-home-player', card)
         self.assertNotIn('Original paper', card)
+
+    def test_analysis_flows_through_catalog_and_static_projections(self):
+        """A temporary nineteenth article reaches every public route without changing the repository."""
+        with tempfile.TemporaryDirectory() as tmp:
+            target = Path(tmp)
+            shutil.copytree(ROOT / 'content', target / 'content')
+            catalog_path = target / 'content/catalog.json'
+            catalog = __import__('json').loads(catalog_path.read_text())
+            old_slugs = {reader['slug'] for reader in catalog['readers']}
+            article = copy.deepcopy(catalog['readers'][-1])
+            article.update({
+                'id': 'reader:source-analysis-fixture', 'slug': 'source-analysis-fixture',
+                'title': 'A test of the records', 'published': '2026-10-20',
+                'updated': '2026-10-20T00:00:00Z', 'editorialOrder': len(old_slugs),
+                'overview': 'Two public records set up one bounded question.',
+                'whyItMatters': 'Readers need to know where the evidence ends.',
+                'ghostMeshTakeaway': 'Inspect both records before acting.',
+                'source': copy.deepcopy(self.source), 'relationships': [],
+                'relationshipDisposition': 'No local relationship is admitted.',
+                'legacyReceipt': None,
+            })
+            article['source']['sourceReferenceIds'] = [article['references'][0]['id']]
+            source_url = article['references'][0]['url']
+            (target / 'content/readers/source-analysis-fixture.html').write_text(
+                '<!doctype html><html lang="en"><head><title>A test of the records</title><!--GM_HEAD--></head>'
+                '<body><header>Site header</header><main><h1>A test of the records</h1><!--GM_BRIEF-->'
+                f'<section id="sources"><h2>Public records</h2><a href="{source_url}">Original record</a></section>'
+                '<p>This is an original fixture about comparing a public record with its reported limits.</p>'
+                '<!--GM_EVIDENCE--><!--GM_RELATED--></main><footer>Site footer</footer></body></html>'
+            )
+            catalog['readers'].append(article)
+            catalog_path.write_text(__import__('json').dumps(catalog))
+            old_root = generate_site.ROOT
+            old_call = catalog_design.CALLS.get(article['slug'])
+            try:
+                generate_site.ROOT = target
+                catalog_design.CALLS[article['slug']] = ('Inspect the records', 'Compare the cited public records.')
+                pages = generate_site.projections()
+            finally:
+                generate_site.ROOT = old_root
+                if old_call is None:
+                    catalog_design.CALLS.pop(article['slug'], None)
+                else:
+                    catalog_design.CALLS[article['slug']] = old_call
+            rendered = pages['source-analysis-fixture/index.html']
+            self.assertIn('What the records establish', rendered)
+            self.assertIn('id="sources"', rendered)
+            self.assertIn(source_url, rendered)
+            self.assertNotIn('data-gm-aspect', rendered)
+            self.assertIn('/source-analysis-fixture/#sources', pages['index.html'])
+            self.assertIn('/source-analysis-fixture/#sources', pages['readers/index.html'])
+            self.assertIn('reader:source-analysis-fixture', pages['source-analysis-fixture/receipt.json'])
+            self.assertIn('/source-analysis-fixture/', pages['readers/search-index.json'])
+            self.assertIn('/source-analysis-fixture/', pages['sitemap.xml'])
+            self.assertTrue({slug + '/index.html' for slug in old_slugs} <= set(pages))
 
 if __name__ == "__main__":
     unittest.main()
