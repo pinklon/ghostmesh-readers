@@ -4,7 +4,17 @@
   if(!bar) return;
   const canonical=document.querySelector('link[rel="canonical"]')?.href || location.href;
   const title=document.title.split(' | ')[0].split(' — GhostMesh')[0].trim();
+  const description=document.querySelector('meta[name="gm-share-description"]')?.content?.trim() ||
+    document.querySelector('meta[property="og:description"]')?.content?.trim() ||
+    'An independent GhostMesh Reader with the original source, evidence and explicit limits.';
   const notice=bar.querySelector('[data-gm-share-message]');
+  const label=bar.querySelector('.gm-share-label');
+  if(label){
+    const summary=document.createElement('p');
+    summary.className='gm-share-description';
+    summary.textContent=description;
+    label.after(summary);
+  }
   function show(message){notice.textContent=message;notice.setAttribute('role','status');}
   async function copyLink(){
     try{
@@ -24,9 +34,9 @@
   bar.querySelector('[data-copy-link]')?.addEventListener('click',copyLink);
   bar.querySelector('[data-native-share]')?.addEventListener('click',async()=>{
     if(typeof navigator.share!=='function'){await copyLink();return;}
-    try{await navigator.share({title, text:'GhostMesh Reader: '+title, url:canonical});show('Share panel opened.');}
+    try{await navigator.share({title, text:description, url:canonical});show('Share panel opened.');}
     catch(e){if(e?.name!=='AbortError')await copyLink();}
   });
   const mail=bar.querySelector('[data-email-link]');
-  if(mail) mail.href='mailto:?subject='+encodeURIComponent('GhostMesh Reader: '+title)+'&body='+encodeURIComponent('Watch the original and read GhostMesh’s interpretation:\n'+canonical);
+  if(mail) mail.href='mailto:?subject='+encodeURIComponent('GhostMesh Reader: '+title)+'&body='+encodeURIComponent(description+'\n\n'+canonical);
 })();

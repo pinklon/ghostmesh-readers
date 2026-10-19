@@ -16,3 +16,5 @@ jobs:
         with:
           python-version: '3.12'
       - run: python3 scripts/check_site.py
+      - run: python3 scripts/knowledge_contract.py --check
+      - run: python3 -m unittest discover -s tests -p 'test_*.py'

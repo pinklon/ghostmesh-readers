@@ -1,0 +1,88 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://youtube.shareplane.malott.ai/knowledge/v0.1/contract.schema.json",
+  "title": "GhostMesh Readers public source projection v0.1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["contractVersion", "publicationMode", "nodes", "relationships"],
+  "properties": {
+    "contractVersion": {"const": "0.1.0"},
+    "publicationMode": {"const": "source-only"},
+    "nodes": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"oneOf": [
+        {"$ref": "#/$defs/reader"},
+        {"$ref": "#/$defs/claim"},
+        {"$ref": "#/$defs/evidenceSource"}
+      ]}
+    },
+    "relationships": {"type": "array", "items": {"$ref": "#/$defs/relationship"}}
+  },
+  "$defs": {
+    "id": {"type": "string", "pattern": "^urn:ghostmesh-readers:(reader|claim|source|relationship):[a-z0-9]+(?:-[a-z0-9]+)*$"},
+    "hash": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "url": {"type": "string", "pattern": "^https://[^\\s]+$"},
+    "source": {
+      "type": "object", "additionalProperties": false,
+      "required": ["path", "sha256"],
+      "properties": {
+        "path": {"type": "string", "pattern": "^site/[a-z0-9-]+/index\\.html$"},
+        "sha256": {"$ref": "#/$defs/hash"}
+      }
+    },
+    "provenance": {
+      "type": "object", "additionalProperties": false,
+      "required": ["sourceNodeId", "locator", "sourceFileSha256", "quoteSha256"],
+      "properties": {
+        "sourceNodeId": {"$ref": "#/$defs/id"},
+        "locator": {"type": "string", "pattern": "^#[a-z0-9-]+$"},
+        "sourceFileSha256": {"$ref": "#/$defs/hash"},
+        "quoteSha256": {"$ref": "#/$defs/hash"}
+      }
+    },
+    "reader": {
+      "type": "object", "additionalProperties": false,
+      "required": ["id", "type", "visibility", "epistemicStatus", "label", "url", "source"],
+      "properties": {
+        "id": {"$ref": "#/$defs/id"}, "type": {"const": "Reader"},
+        "visibility": {"const": "public"}, "epistemicStatus": {"const": "source-editorial"},
+        "label": {"type": "string", "minLength": 1}, "url": {"$ref": "#/$defs/url"},
+        "source": {"$ref": "#/$defs/source"}
+      }
+    },
+    "claim": {
+      "type": "object", "additionalProperties": false,
+      "required": ["id", "type", "visibility", "epistemicStatus", "label", "statement", "provenance"],
+      "properties": {
+        "id": {"$ref": "#/$defs/id"}, "type": {"const": "Claim"},
+        "visibility": {"const": "public"},
+        "epistemicStatus": {"enum": ["attributed-report", "source-editorial", "unverified"]},
+        "label": {"type": "string", "minLength": 1},
+        "statement": {"type": "string", "minLength": 1},
+        "provenance": {"$ref": "#/$defs/provenance"}
+      }
+    },
+    "evidenceSource": {
+      "type": "object", "additionalProperties": false,
+      "required": ["id", "type", "visibility", "epistemicStatus", "label", "url", "urlSha256", "contentSha256"],
+      "properties": {
+        "id": {"$ref": "#/$defs/id"}, "type": {"const": "EvidenceSource"},
+        "visibility": {"const": "public"}, "epistemicStatus": {"const": "external-primary-report"},
+        "label": {"type": "string", "minLength": 1}, "url": {"$ref": "#/$defs/url"},
+        "urlSha256": {"$ref": "#/$defs/hash"},
+        "contentSha256": {"type": ["string", "null"], "pattern": "^[a-f0-9]{64}$"}
+      }
+    },
+    "relationship": {
+      "type": "object", "additionalProperties": false,
+      "required": ["id", "type", "from", "to", "visibility", "authority", "provenance"],
+      "properties": {
+        "id": {"$ref": "#/$defs/id"}, "type": {"const": "cites"},
+        "from": {"$ref": "#/$defs/id"}, "to": {"$ref": "#/$defs/id"},
+        "visibility": {"const": "public"}, "authority": {"const": "source-declared"},
+        "provenance": {"$ref": "#/$defs/provenance"}
+      }
+    }
+  }
+}

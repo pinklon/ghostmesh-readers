@@ -54,9 +54,9 @@
     "verification": "ReasonPack closed-manifest verification passed after normalization and transcription."
   },
   "editorial": {
-    "overview": "AI Fusion tours Strix's agent tools, specialized security skills, and scan modes, then describes attempts to run it against a local OWASP Juice Shop sandbox. The presenter manually demonstrates the login flaw; Strix produces no confirmed finding in the video.",
-    "whyItMatters": "Builders, application security teams, and buyers of AI security tools can use the video to see both the proposed workflow and the integration and budget failures that can stop a scan before it tests a target.",
-    "ghostMeshTakeaway": "Evaluate autonomous security tools on an authorized target with visible tool actions, a completed run, explicit coverage, cost, and reproducible findings. Preserve a source-bound run record and require human review before publishing or acting on a result.",
+    "overview": "AI Fusion tours Strix agents and skills, manually demonstrates a Juice Shop login bypass and attempts agent scans that end without confirmed findings.",
+    "whyItMatters": "Worth seven minutes for security-tool evaluators. Skip the opening bypass if you know the training target; the stalled local run shows what needs to be recorded.",
+    "ghostMeshTakeaway": "Separate a proposal, a tool call, a completed scan and a verified finding. Evaluate only in a controlled authorized target with run records and human review.",
     "watchGuidance": "Watch 00:52–03:23 for architecture and 04:46–05:52 for the local run. Viewers familiar with Juice Shop may skip the opening manual bypass.",
     "verdict": "The presenter manually bypassed Juice Shop; the Strix attempts shown did not produce a confirmed finding. Diagnose structured tool calling before attributing the local stall to model quality alone.",
     "thesis": "A vulnerable training target, an agent architecture, and partial tool calls establish a test setup, not measured detection coverage.",
@@ -143,5 +143,274 @@
       "The video does not publish complete Strix run logs, inference-server configuration, coverage, or a confirmed finding.",
       "GhostMesh did not run Strix or independently reproduce the provider attempts."
     ]
+  },
+  "normalization": {
+    "id": "reader:the-scan-never-reached-the-login",
+    "slug": "the-scan-never-reached-the-login",
+    "title": "The Scan Never Reached the Login",
+    "category": "AI & Technology",
+    "tags": [
+      "security",
+      "verification",
+      "agents"
+    ],
+    "entities": [
+      "Strix"
+    ],
+    "source": {
+      "platform": "YouTube",
+      "url": "https://www.youtube.com/watch?v=8DKqcbEy-HM",
+      "videoId": "8DKqcbEy-HM",
+      "title": "Someone Just Open Sourced an Autonomous AI Hacker",
+      "channel": "AI Fusion",
+      "uploadDate": "20261017",
+      "durationSeconds": 444,
+      "mediaAspect": "16:9"
+    },
+    "published": "2026-10-18",
+    "updated": "2026-10-18T14:34:54.306588Z",
+    "overview": "AI Fusion tours Strix agents and skills, manually demonstrates a Juice Shop login bypass and attempts agent scans that end without confirmed findings.",
+    "whyItMatters": "Worth seven minutes for security-tool evaluators. Skip the opening bypass if you know the training target; the stalled local run shows what needs to be recorded.",
+    "ghostMeshTakeaway": "Separate a proposal, a tool call, a completed scan and a verified finding. Evaluate only in a controlled authorized target with run records and human review.",
+    "verdict": "Worth studying",
+    "architectureImpact": "experiment recommended",
+    "falsification": "Reconsider the recommendation if a controlled comparison on the stated task shows no benefit, or exposes permission failures, omitted evidence or greater cost than the ordinary workflow. See the original article for its specific proposed controls.",
+    "evidenceState": "unverified",
+    "lastEvidenceChecked": "2026-10-18T14:33:10Z",
+    "freshness": "Evidence references checked 2026-10-18T14:33:10Z; historical ledger entries remain unverified unless individually mapped below. Mutable product and incident claims can become stale.",
+    "variant": "fieldnotes",
+    "accent": "teal",
+    "claims": [
+      {
+        "id": "the-scan-never-reached-the-login--manual-login-bypass",
+        "proposition": "The presenter manually enters a login bypass on Juice Shop.",
+        "kind": "demonstration",
+        "asOf": "2026-10-18",
+        "status": "unverified",
+        "assessment": "The presenter manually enters a login bypass on Juice Shop.",
+        "limits": "The action is not performed or discovered by Strix in the video.",
+        "sourceLocation": "0",
+        "references": [],
+        "counterevidence": [],
+        "temporalScope": "Historical published account, not current operational state."
+      },
+      {
+        "id": "the-scan-never-reached-the-login--architecture",
+        "proposition": "The video tours multi-agent skills and tools documented by Strix.",
+        "kind": "project-design",
+        "asOf": "2026-10-18",
+        "status": "unverified",
+        "assessment": "The video tours multi-agent skills and tools documented by Strix.",
+        "limits": "Architecture and skill content do not establish detection coverage or accuracy in this run.",
+        "sourceLocation": "52",
+        "references": [],
+        "counterevidence": [],
+        "temporalScope": "Historical published account, not current operational state."
+      },
+      {
+        "id": "the-scan-never-reached-the-login--paid-run",
+        "proposition": "A paid model reportedly made tool calls before its quota ended.",
+        "kind": "speaker-observation",
+        "asOf": "2026-10-18",
+        "status": "unverified",
+        "assessment": "A paid model reportedly made tool calls before its quota ended.",
+        "limits": "No complete run log or confirmed vulnerability finding is presented.",
+        "sourceLocation": "203",
+        "references": [],
+        "counterevidence": [],
+        "temporalScope": "Historical published account, not current operational state."
+      },
+      {
+        "id": "the-scan-never-reached-the-login--local-stall",
+        "proposition": "The local run reportedly emitted text rather than usable tool calls in ten initial turns.",
+        "kind": "speaker-observation",
+        "asOf": "2026-10-18",
+        "status": "unverified",
+        "assessment": "The local run reportedly emitted text rather than usable tool calls in ten initial turns.",
+        "limits": "The video does not isolate model reasoning from inference-server tool parsing, chat template, thinking mode, or context configuration.",
+        "sourceLocation": "286",
+        "references": [],
+        "counterevidence": [],
+        "temporalScope": "Historical published account, not current operational state."
+      },
+      {
+        "id": "the-scan-never-reached-the-login--future-efficacy",
+        "proposition": "The speaker expects a properly funded model to deliver a successful autonomous scan.",
+        "kind": "speaker-inference",
+        "asOf": "2026-10-18",
+        "status": "unverified",
+        "assessment": "The speaker expects a properly funded model to deliver a successful autonomous scan.",
+        "limits": "The video's attempts do not complete a scan or measure efficacy.",
+        "sourceLocation": "412",
+        "references": [],
+        "counterevidence": [],
+        "temporalScope": "Historical published account, not current operational state."
+      },
+      {
+        "id": "the-scan-never-reached-the-login--ledger-01",
+        "proposition": "00:00–00:22 | A login payload bypasses the stock Juice Shop form. | The presenter performs the bypass. It illustrates an intentional training flaw, not a Strix discovery.",
+        "kind": "historical-ledger-entry",
+        "asOf": "2026-10-18",
+        "status": "unverified",
+        "assessment": "Historical published assessment retained in the original ledger below. Fresh independent verification is not established for this complete proposition.",
+        "limits": "Source attribution, documentation and empirical truth are separate. Linked historical references are leads, not a new corroboration attestation.",
+        "sourceLocation": "Original evidence ledger row 1",
+        "references": [],
+        "counterevidence": [],
+        "historicalLinks": [
+          "https://pwning.owasp-juice.shop/companion-guide/snapshot/part2/injection.html"
+        ],
+        "temporalScope": "Historical published account, not current operational state."
+      },
+      {
+        "id": "the-scan-never-reached-the-login--ledger-02",
+        "proposition": "00:52–02:30 | Strix's specialized agents and skills can pursue common vulnerability classes. | The repository and docs support the design. The video does not demonstrate completed coverage or measured accuracy.",
+        "kind": "historical-ledger-entry",
+        "asOf": "2026-10-18",
+        "status": "unverified",
+        "assessment": "Historical published assessment retained in the original ledger below. Fresh independent verification is not established for this complete proposition.",
+        "limits": "Source attribution, documentation and empirical truth are separate. Linked historical references are leads, not a new corroboration attestation.",
+        "sourceLocation": "Original evidence ledger row 2",
+        "references": [],
+        "counterevidence": [],
+        "historicalLinks": [
+          "https://docs.strix.ai/advanced/skills"
+        ],
+        "temporalScope": "Historical published account, not current operational state."
+      },
+      {
+        "id": "the-scan-never-reached-the-login--ledger-03",
+        "proposition": "03:23–04:05 | A paid model made real calls, but the run ended when free quota ran out. | The presenter reports integration progress and no confirmed finding; independent run logs are not provided.",
+        "kind": "historical-ledger-entry",
+        "asOf": "2026-10-18",
+        "status": "unverified",
+        "assessment": "Historical published assessment retained in the original ledger below. Fresh independent verification is not established for this complete proposition.",
+        "limits": "Source attribution, documentation and empirical truth are separate. Linked historical references are leads, not a new corroboration attestation.",
+        "sourceLocation": "Original evidence ledger row 3",
+        "references": [],
+        "counterevidence": [],
+        "historicalLinks": [
+          "https://www.youtube.com/watch?v=8DKqcbEy-HM&t=203s"
+        ],
+        "temporalScope": "Historical published account, not current operational state."
+      },
+      {
+        "id": "the-scan-never-reached-the-login--ledger-04",
+        "proposition": "04:46–05:12 | The local run made no useful tool calls in ten turns. | The agent never tested the login. Strix's own guide says text-form calls may indicate inference-server parsing or template issues; this video does not isolate the cause.",
+        "kind": "historical-ledger-entry",
+        "asOf": "2026-10-18",
+        "status": "unverified",
+        "assessment": "Historical published assessment retained in the original ledger below. Fresh independent verification is not established for this complete proposition.",
+        "limits": "Source attribution, documentation and empirical truth are separate. Linked historical references are leads, not a new corroboration attestation.",
+        "sourceLocation": "Original evidence ledger row 4",
+        "references": [],
+        "counterevidence": [],
+        "historicalLinks": [
+          "https://docs.strix.ai/llm-providers/local"
+        ],
+        "temporalScope": "Historical published account, not current operational state."
+      },
+      {
+        "id": "the-scan-never-reached-the-login--ledger-05",
+        "proposition": "06:52–07:13 | A properly funded model should deliver the intended autonomous scan. | That is a future testable hypothesis. This video contains no completed Strix scan or confirmed finding.",
+        "kind": "historical-ledger-entry",
+        "asOf": "2026-10-18",
+        "status": "unverified",
+        "assessment": "Historical published assessment retained in the original ledger below. Fresh independent verification is not established for this complete proposition.",
+        "limits": "Source attribution, documentation and empirical truth are separate. Linked historical references are leads, not a new corroboration attestation.",
+        "sourceLocation": "Original evidence ledger row 5",
+        "references": [],
+        "counterevidence": [],
+        "historicalLinks": [
+          "https://www.youtube.com/watch?v=8DKqcbEy-HM&t=412s"
+        ],
+        "temporalScope": "Historical published account, not current operational state."
+      },
+      {
+        "id": "the-scan-never-reached-the-login--scan-coverage",
+        "proposition": "An automated run with no findings is equivalent to a complete security assessment.",
+        "kind": "external-evidence",
+        "asOf": "2026-10-18",
+        "status": "unverified",
+        "assessment": "OWASP treats automated scanning as part of a broader method and requires scope and reproducible reporting. It does not measure Strix or Cloudroom performance.",
+        "limits": "OWASP treats automated scanning as part of a broader method and requires scope and reproducible reporting. It does not measure Strix or Cloudroom performance.",
+        "sourceLocation": "External evidence update, 2026-10-18",
+        "references": [],
+        "counterevidence": [
+          "owasp"
+        ]
+      }
+    ],
+    "references": [
+      {
+        "id": "owasp",
+        "title": "Web Security Testing Guide v4.2: Introduction",
+        "author": "OWASP contributors",
+        "publisher": "OWASP Foundation",
+        "url": "https://wstg.owasp.org/v4.2/2-Introduction/",
+        "publicationDate": "2020-12-03",
+        "eventDate": null,
+        "location": "Use the Right Tools; Document the Test Results; A Note about Web Application Scanners",
+        "sourceType": "community guidance",
+        "independence": "Independent of Strix and Cloudroom; method guidance, not a contemporary product evaluation.",
+        "evidenceFamily": "owasp-wstg",
+        "checkedAt": "2026-10-18T14:33:10Z",
+        "datePrecision": "day",
+        "verification": "Read by independent evidence researcher; limited source-fidelity check, not replication."
+      }
+    ],
+    "relationships": [
+      {
+        "target": "reader:ask-for-the-outcome-keep-the-boundary",
+        "type": "related topic",
+        "reason": "Both editorial briefs examine agents, verification. This is a topic-level reading route, not independent corroboration or agreement.",
+        "provenance": [
+          "/the-scan-never-reached-the-login/#at-a-glance",
+          "/ask-for-the-outcome-keep-the-boundary/#at-a-glance"
+        ],
+        "basis": "curated-tags",
+        "direction": "outgoing"
+      },
+      {
+        "target": "reader:make-good-work-inspectable",
+        "type": "related topic",
+        "reason": "Both editorial briefs examine agents, verification. This is a topic-level reading route, not independent corroboration or agreement.",
+        "provenance": [
+          "/the-scan-never-reached-the-login/#at-a-glance",
+          "/make-good-work-inspectable/#at-a-glance"
+        ],
+        "basis": "curated-tags",
+        "direction": "outgoing"
+      },
+      {
+        "target": "reader:the-funnel-is-not-the-frontier",
+        "type": "related topic",
+        "reason": "Both editorial briefs examine agents, verification. This is a topic-level reading route, not independent corroboration or agreement.",
+        "provenance": [
+          "/the-scan-never-reached-the-login/#at-a-glance",
+          "/the-funnel-is-not-the-frontier/#at-a-glance"
+        ],
+        "basis": "curated-tags",
+        "direction": "outgoing"
+      }
+    ],
+    "relationshipDisposition": "Qualified topic-level links; no claim of empirical corroboration.",
+    "review": {
+      "status": "source-reviewed",
+      "reviewer": "Independent read-only Codex reviewer",
+      "reviewedSourceHead": "06c64eecdcc053548b14427f62d0c8c2d4f91f47",
+      "checkedAt": "2026-10-18T14:51:39Z",
+      "scope": "Bounded source implementation and evidence representation. Not certification of every factual claim, private custody, third-party playback, formal WCAG compliance or deployment.",
+      "findings": "No remaining material findings in reviewed scope. Generator, site checker and ten negative tests independently passed."
+    },
+    "revisionHistory": [
+      {
+        "at": "2026-10-18T14:34:54.306588Z",
+        "kind": "structural-normalization",
+        "reason": "Issue 23: explicit brief, evidence limits, themes and discovery. Historical conclusions preserved; classification is editorial, not factual confirmation."
+      }
+    ],
+    "editorialOrder": 9,
+    "orderReason": "Reading path from task framing and inspectable work through review, evidence and authority, then product-specific cases."
   }
 }

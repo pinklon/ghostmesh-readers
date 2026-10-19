@@ -1,0 +1,263 @@
+{
+  "schema": "ghostmesh-reader-receipt-v2",
+  "source": {
+    "url": "https://www.youtube.com/watch?v=DdbCtAScTsk",
+    "platform": "YouTube",
+    "videoId": "DdbCtAScTsk",
+    "publicationDate": "2026-08-25",
+    "dateNote": "Source metadata reported in original public edition; no independent source-date revalidation.",
+    "mediaAspect": "16:9"
+  },
+  "custody": {
+    "status": "historical-public-account-only",
+    "note": "No private source pack was opened or reverified during normalization. See original provenance on the Reader."
+  },
+  "normalization": {
+    "id": "reader:autonomy-needs-an-interface",
+    "slug": "autonomy-needs-an-interface",
+    "title": "Autonomy Needs an Interface",
+    "category": "Business",
+    "tags": [
+      "agents",
+      "authority",
+      "memory"
+    ],
+    "entities": [
+      "Vercel"
+    ],
+    "source": {
+      "url": "https://www.youtube.com/watch?v=DdbCtAScTsk",
+      "platform": "YouTube",
+      "videoId": "DdbCtAScTsk",
+      "publicationDate": "2026-08-25",
+      "dateNote": "Source metadata reported in original public edition; no independent source-date revalidation.",
+      "mediaAspect": "16:9"
+    },
+    "published": "2026-10-17",
+    "updated": "2026-10-18T14:34:54.306588Z",
+    "overview": "Guillermo Rauch describes recursive founder mode, reusable skills, hiring review and V as a common entry point to specialist company agents in an interview with Knuckle Up with Nakul.",
+    "whyItMatters": "Useful for teams organizing shared agent work. Watch the ownership and routing passages; skip the long interview if you need independently measured organizational outcomes.",
+    "ghostMeshTakeaway": "Make the accountable owner and permission scope visible at each destination. Compare a shared entry point with an ordinary workflow on a bounded nonproduction task.",
+    "verdict": "Worth studying",
+    "architectureImpact": "experiment recommended",
+    "falsification": "Reconsider the recommendation if a controlled comparison on the stated task shows no benefit, or exposes permission failures, omitted evidence or greater cost than the ordinary workflow. See the original article for its specific proposed controls.",
+    "evidenceState": "partially corroborated",
+    "lastEvidenceChecked": "2026-10-18T14:39:28Z",
+    "freshness": "Primary documentation checked 2026-10-18T14:39:28Z. Historical ledger entries remain unverified unless individually mapped; mutable claims need rechecking before use.",
+    "variant": "essay",
+    "accent": "ochre",
+    "claims": [
+      {
+        "id": "autonomy-needs-an-interface--ledger-01",
+        "proposition": "Recursive founder mode | CEO interview · first-person account | Rauch describes broad product ownership inside a shared company frame. No independent outcome comparison is provided.",
+        "kind": "historical-ledger-entry",
+        "asOf": "2026-10-17",
+        "status": "unverified",
+        "assessment": "Historical published assessment retained in the original ledger below. Fresh independent verification is not established for this complete proposition.",
+        "limits": "Source attribution, documentation and empirical truth are separate. Linked historical references are leads, not a new corroboration attestation.",
+        "sourceLocation": "Original evidence ledger row 1",
+        "references": [],
+        "counterevidence": [],
+        "historicalLinks": [
+          "https://www.youtube.com/watch?v=DdbCtAScTsk&t=121s"
+        ],
+        "temporalScope": "Historical published account, not current operational state."
+      },
+      {
+        "id": "autonomy-needs-an-interface--ledger-02",
+        "proposition": "Hiring and security exception | CEO interview · first-person account | Rauch says he reviews every hire and describes security as able to stop a launch. The actual policy and its frequency are not verified here.",
+        "kind": "historical-ledger-entry",
+        "asOf": "2026-10-17",
+        "status": "unverified",
+        "assessment": "Historical published assessment retained in the original ledger below. Fresh independent verification is not established for this complete proposition.",
+        "limits": "Source attribution, documentation and empirical truth are separate. Linked historical references are leads, not a new corroboration attestation.",
+        "sourceLocation": "Original evidence ledger row 2",
+        "references": [],
+        "counterevidence": [],
+        "historicalLinks": [
+          "https://www.youtube.com/watch?v=DdbCtAScTsk&t=873s"
+        ],
+        "temporalScope": "Historical published account, not current operational state."
+      },
+      {
+        "id": "autonomy-needs-an-interface--ledger-03",
+        "proposition": "V as the front door | Interview and Vercel primary documentation | The interview describes V's role; Vercel's eve post describes routing and built-in controls. Both are Vercel-side accounts.",
+        "kind": "historical-ledger-entry",
+        "asOf": "2026-10-17",
+        "status": "unverified",
+        "assessment": "Historical published assessment retained in the original ledger below. Fresh independent verification is not established for this complete proposition.",
+        "limits": "Source attribution, documentation and empirical truth are separate. Linked historical references are leads, not a new corroboration attestation.",
+        "sourceLocation": "Original evidence ledger row 3",
+        "references": [],
+        "counterevidence": [],
+        "historicalLinks": [
+          "https://www.youtube.com/watch?v=DdbCtAScTsk&t=2147s",
+          "https://vercel.com/blog/introducing-eve"
+        ],
+        "temporalScope": "Historical published account, not current operational state."
+      },
+      {
+        "id": "autonomy-needs-an-interface--ledger-04",
+        "proposition": "Authorization and operating limits | Vercel primary documentation | Vercel presents identity, system access, model choice, and cost as separate controls. That is product design evidence, not a deployment audit.",
+        "kind": "historical-ledger-entry",
+        "asOf": "2026-10-17",
+        "status": "unverified",
+        "assessment": "Historical published assessment retained in the original ledger below. Fresh independent verification is not established for this complete proposition.",
+        "limits": "Source attribution, documentation and empirical truth are separate. Linked historical references are leads, not a new corroboration attestation.",
+        "sourceLocation": "Original evidence ledger row 4",
+        "references": [],
+        "counterevidence": [],
+        "historicalLinks": [
+          "https://vercel.com/blog/vercel-for-enterprise-apps-and-agents"
+        ],
+        "temporalScope": "Historical published account, not current operational state."
+      },
+      {
+        "id": "autonomy-needs-an-interface--ledger-05",
+        "proposition": "Accountable autonomy | GhostMesh interpretation | Ownership, permission checks, and testable outcomes are a proposed design response. No GhostMesh experiment is reported.",
+        "kind": "historical-ledger-entry",
+        "asOf": "2026-10-17",
+        "status": "unverified",
+        "assessment": "Historical published assessment retained in the original ledger below. Fresh independent verification is not established for this complete proposition.",
+        "limits": "Source attribution, documentation and empirical truth are separate. Linked historical references are leads, not a new corroboration attestation.",
+        "sourceLocation": "Original evidence ledger row 5",
+        "references": [],
+        "counterevidence": [],
+        "historicalLinks": [
+          "#experiment"
+        ],
+        "temporalScope": "Historical published account, not current operational state."
+      },
+      {
+        "id": "autonomy-needs-an-interface--enterprise",
+        "proposition": "Vercel documents separate agent access and connected-system access controls, including identity-provider integration and task-scoped credentials.",
+        "kind": "primary-documentation",
+        "asOf": "2026-10-18",
+        "status": "partially corroborated",
+        "assessment": "Primary source supports this documented design or attributed report. Actual enforcement, effectiveness and suitability remain unverified.",
+        "limits": "No product execution or independent performance study in this tranche. Correct integration and configuration cannot be inferred from documentation.",
+        "sourceLocation": "Vercel Passport; Vercel Connect",
+        "references": [
+          "enterprise"
+        ],
+        "counterevidence": []
+      },
+      {
+        "id": "autonomy-needs-an-interface--hiring",
+        "proposition": "Rauch says he reviews every hire at a company he describes as nearly 800 people.",
+        "kind": "material-prose-claim",
+        "asOf": "2026-10-17",
+        "temporalScope": "Original edition; migration does not establish current operational truth.",
+        "status": "unverified",
+        "assessment": "Interview attribution, no hiring records or independent staffing verification.",
+        "limits": "Interview attribution, no hiring records or independent staffing verification.",
+        "sourceLocation": "Original article prose; claim identified during full-page migration audit.",
+        "references": [],
+        "counterevidence": []
+      },
+      {
+        "id": "autonomy-needs-an-interface--security-veto",
+        "proposition": "Rauch describes security as able to stop a Vercel launch.",
+        "kind": "material-prose-claim",
+        "asOf": "2026-10-17",
+        "temporalScope": "Original edition; migration does not establish current operational truth.",
+        "status": "unverified",
+        "assessment": "Interview account; actual policy and frequency not audited.",
+        "limits": "Interview account; actual policy and frequency not audited.",
+        "sourceLocation": "Original article prose; claim identified during full-page migration audit.",
+        "references": [],
+        "counterevidence": []
+      },
+      {
+        "id": "autonomy-needs-an-interface--skills-effect",
+        "proposition": "Shared skills and UI components improve every team’s outcomes.",
+        "kind": "material-prose-claim",
+        "asOf": "2026-10-17",
+        "temporalScope": "Original edition; migration does not establish current operational truth.",
+        "status": "unverified",
+        "assessment": "Not established. The proposed comparison must measure quality, rework and ownership.",
+        "limits": "Not established. The proposed comparison must measure quality, rework and ownership.",
+        "sourceLocation": "Original article prose; claim identified during full-page migration audit.",
+        "references": [],
+        "counterevidence": []
+      }
+    ],
+    "references": [
+      {
+        "id": "enterprise",
+        "title": "Vercel for Enterprise Apps and Agents",
+        "author": "Kim Neuwirth and Jeanne Grosser",
+        "publisher": "Vercel",
+        "url": "https://vercel.com/blog/vercel-for-enterprise-apps-and-agents",
+        "publicationDate": "2026-06-16",
+        "datePrecision": "day",
+        "dateNote": "Dated post",
+        "eventDate": null,
+        "location": "Vercel Passport; Vercel Connect",
+        "sourceType": "primary-documentation",
+        "independence": "Vendor or project author. Documents its own design and observations; not independent performance or deployment verification.",
+        "evidenceFamily": "Vercel",
+        "checkedAt": "2026-10-18T14:39:28Z",
+        "verification": "Read-only independent researcher checked source wording, not execution."
+      }
+    ],
+    "relationships": [
+      {
+        "target": "reader:the-agent-a-company-owns",
+        "type": "extends",
+        "reason": "The later Reader explicitly builds on the earlier Vercel interview, shifting from agent identity and memory to product ownership and routed authority.",
+        "provenance": [
+          "/autonomy-needs-an-interface/#evidence",
+          "/the-agent-a-company-owns/#evidence"
+        ],
+        "basis": "editorial-comparison",
+        "direction": "outgoing"
+      },
+      {
+        "target": "reader:the-inbox-was-a-boundary",
+        "type": "related topic",
+        "reason": "Both editorial briefs examine agents, authority. This is a topic-level reading route, not independent corroboration or agreement.",
+        "provenance": [
+          "/autonomy-needs-an-interface/#at-a-glance",
+          "/the-inbox-was-a-boundary/#at-a-glance"
+        ],
+        "basis": "curated-tags",
+        "direction": "outgoing"
+      },
+      {
+        "target": "reader:the-key-was-the-boundary",
+        "type": "related topic",
+        "reason": "Both editorial briefs examine agents, authority. This is a topic-level reading route, not independent corroboration or agreement.",
+        "provenance": [
+          "/autonomy-needs-an-interface/#at-a-glance",
+          "/the-key-was-the-boundary/#at-a-glance"
+        ],
+        "basis": "curated-tags",
+        "direction": "outgoing"
+      }
+    ],
+    "relationshipDisposition": "Qualified topic-level links; no claim of empirical corroboration.",
+    "review": {
+      "status": "source-reviewed",
+      "reviewer": "Independent read-only Codex reviewer",
+      "reviewedSourceHead": "06c64eecdcc053548b14427f62d0c8c2d4f91f47",
+      "checkedAt": "2026-10-18T14:51:39Z",
+      "scope": "Bounded source implementation and evidence representation. Not certification of every factual claim, private custody, third-party playback, formal WCAG compliance or deployment.",
+      "findings": "No remaining material findings in reviewed scope. Generator, site checker and ten negative tests independently passed."
+    },
+    "revisionHistory": [
+      {
+        "at": "2026-10-18T14:34:54.306588Z",
+        "kind": "structural-normalization",
+        "reason": "Issue 23: explicit brief, evidence limits, themes and discovery. Historical conclusions preserved; classification is editorial, not factual confirmation."
+      }
+    ],
+    "editorialOrder": 6,
+    "orderReason": "Reading path from task framing and inspectable work through review, evidence and authority, then product-specific cases."
+  },
+  "editorial": {
+    "overview": "Guillermo Rauch describes recursive founder mode, reusable skills, hiring review and V as a common entry point to specialist company agents in an interview with Knuckle Up with Nakul.",
+    "whyItMatters": "Useful for teams organizing shared agent work. Watch the ownership and routing passages; skip the long interview if you need independently measured organizational outcomes.",
+    "ghostMeshTakeaway": "Make the accountable owner and permission scope visible at each destination. Compare a shared entry point with an ordinary workflow on a bounded nonproduction task."
+  }
+}

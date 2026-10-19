@@ -1,0 +1,14 @@
+// Optional development verification. Requires Playwright and installed Chrome, not used by hosting.
+const output=process.env.GM_TEST_OUTPUT || '/tmp/ghostmesh-reader-checks';
+require('fs').mkdirSync(output+'/screenshots',{recursive:true});
+const {chromium}=require('playwright');const fs=require('fs');
+async function main(){const b=await chromium.launch({channel:'chrome',headless:true});let results=[];let cat=JSON.parse(fs.readFileSync('content/catalog.json'));for(const theme of ['light','dark']){let c=await b.newContext({colorScheme:theme,viewport:{width:390,height:844}});await c.addInitScript(()=>localStorage.setItem('gm-appearance','system'));await c.route('**/*',r=>r.request().url().startsWith('http://127.0.0.1')?r.continue():r.abort());let p=await c.newPage();for(const slug of ['', 'readers',...cat.readers.map(r=>r.slug)]){await p.goto('http://127.0.0.1:8765/'+slug+'/');let bad=await inspectContrast(p);if(bad.length)results.push({slug,theme,bad});}await c.close();}await b.close();writeReport(results);}
+
+async function inspectContrast(p){return await p.evaluate(()=>{let out=[];const rgb=s=>(s.match(/[\d.]+/g)||[]).map(Number);const lum=c=>c.slice(0,3).map(v=>{v/=255;return v<=.04045?v/12.92:((v+.055)/1.055)**2.4}).reduce((s,v,i)=>s+v*[.2126,.7152,.0722][i],0);for(const e of document.querySelectorAll('body *')){if(![...e.childNodes].some(n=>n.nodeType===3&&n.textContent.trim())||!e.getClientRects().length||['SCRIPT','STYLE','OPTION','NOSCRIPT'].includes(e.tagName))continue;let st=getComputedStyle(e);if(st.visibility==='hidden'||st.display==='none')continue;let bg=[255,255,255],n=e;let layers=[];while(n){let cs=getComputedStyle(n);let v=rgb(cs.backgroundColor);if(v.length>=3)layers.push(v);n=n.parentElement;}for(const v of layers.reverse()){let a=v[3]??1;bg=bg.map((x,i)=>a*v[i]+(1-a)*x);}let fg=rgb(st.color);let l1=lum(fg),l2=lum(bg);let ratio=(Math.max(l1,l2)+.05)/(Math.min(l1,l2)+.05);let min=parseFloat(st.fontSize)>=24||(parseFloat(st.fontSize)>=18.66&&parseFloat(st.fontWeight)>=700)?3:4.5;if(ratio<min-.05)out.push({tag:e.tagName,cls:e.className,text:e.textContent.trim().slice(0,85),ratio:+ratio.toFixed(2),fg:st.color,bg});}return out;});}
+function writeReport(results){
+ fs.writeFileSync(output+'/contrast.json',JSON.stringify(results,null,2));
+ console.log(JSON.stringify(results.map(x=>({...x,bad:x.bad.slice(0,12),total:x.bad.length})),null,2));
+ if(results.length)process.exitCode=1;
+}
+module.exports={inspectContrast,writeReport};
+if(require.main===module)main().catch(error=>{console.error(error);process.exitCode=1;});

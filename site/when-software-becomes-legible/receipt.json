@@ -1,0 +1,288 @@
+{
+  "schema": "ghostmesh-reader-receipt-v2",
+  "source": {
+    "url": "https://www.youtube.com/watch?v=PseF3LyXQ04",
+    "platform": "YouTube",
+    "videoId": "PseF3LyXQ04",
+    "publicationDate": "2026-10-15",
+    "dateNote": "Source metadata reported in original public edition; no independent source-date revalidation.",
+    "mediaAspect": "16:9"
+  },
+  "custody": {
+    "status": "historical-public-account-only",
+    "note": "No private source pack was opened or reverified during normalization. See original provenance on the Reader."
+  },
+  "normalization": {
+    "id": "reader:when-software-becomes-legible",
+    "slug": "when-software-becomes-legible",
+    "title": "When software becomes legible",
+    "category": "AI & Technology",
+    "tags": [
+      "software",
+      "verification",
+      "authority"
+    ],
+    "entities": [
+      "REA"
+    ],
+    "source": {
+      "url": "https://www.youtube.com/watch?v=PseF3LyXQ04",
+      "platform": "YouTube",
+      "videoId": "PseF3LyXQ04",
+      "publicationDate": "2026-10-15",
+      "dateNote": "Source metadata reported in original public edition; no independent source-date revalidation.",
+      "mediaAspect": "16:9"
+    },
+    "published": "2026-10-16",
+    "updated": "2026-10-18T14:34:54.306588Z",
+    "overview": "Nate B Jones explains reverse engineering through clipboard, calculator and accounting examples, using REA to turn visible behavior into questions about hidden software contracts.",
+    "whyItMatters": "Useful for builders diagnosing software they own. Watch the clipboard and calculator passages; skip the full tour if direct source reading already answers your question.",
+    "ghostMeshTakeaway": "Investigate one disposable fixture and compare reconstructed rules with known source and observed behavior. An explanation cannot supply missing server evidence or authorize action.",
+    "verdict": "Worth studying",
+    "architectureImpact": "investigate",
+    "falsification": "Reconsider the recommendation if a controlled comparison on the stated task shows no benefit, or exposes permission failures, omitted evidence or greater cost than the ordinary workflow. See the original article for its specific proposed controls.",
+    "evidenceState": "partially corroborated",
+    "lastEvidenceChecked": "2026-10-18T14:39:28Z",
+    "freshness": "Primary documentation checked 2026-10-18T14:39:28Z. Historical ledger entries remain unverified unless individually mapped; mutable claims need rechecking before use.",
+    "variant": "fieldnotes",
+    "accent": "teal",
+    "claims": [
+      {
+        "id": "when-software-becomes-legible--ledger-01",
+        "proposition": "Video says | The clipboard example distinguishes ordinary text and HTML from richer locally retained block data. The calculator example makes percentage behavior depend on operation context. | Source video Read in normalized captions; not independently reproduced.",
+        "kind": "historical-ledger-entry",
+        "asOf": "2026-10-16",
+        "status": "unverified",
+        "assessment": "Historical published assessment retained in the original ledger below. Fresh independent verification is not established for this complete proposition.",
+        "limits": "Source attribution, documentation and empirical truth are separate. Linked historical references are leads, not a new corroboration attestation.",
+        "sourceLocation": "Original evidence ledger row 1",
+        "references": [],
+        "counterevidence": [],
+        "historicalLinks": [
+          "https://www.youtube.com/watch?v=PseF3LyXQ04"
+        ],
+        "temporalScope": "Historical published account, not current operational state."
+      },
+      {
+        "id": "when-software-becomes-legible--ledger-02",
+        "proposition": "Video says | Inspection does not expose private server-side source; a focused investigation is more useful than an unbounded explanation of an entire app. | Source video Caption-based attribution.",
+        "kind": "historical-ledger-entry",
+        "asOf": "2026-10-16",
+        "status": "unverified",
+        "assessment": "Historical published assessment retained in the original ledger below. Fresh independent verification is not established for this complete proposition.",
+        "limits": "Source attribution, documentation and empirical truth are separate. Linked historical references are leads, not a new corroboration attestation.",
+        "sourceLocation": "Original evidence ledger row 2",
+        "references": [],
+        "counterevidence": [],
+        "historicalLinks": [
+          "https://www.youtube.com/watch?v=PseF3LyXQ04"
+        ],
+        "temporalScope": "Historical published account, not current operational state."
+      },
+      {
+        "id": "when-software-becomes-legible--ledger-03",
+        "proposition": "Checked in REA repo | The README describes tools for inspecting native binaries, JavaScript/Electron apps, .NET assemblies, and websites, with evidence and limitations in results. | Official README Documentation checked October 16, 2026; capabilities not executed here.",
+        "kind": "historical-ledger-entry",
+        "asOf": "2026-10-16",
+        "status": "unverified",
+        "assessment": "Historical published assessment retained in the original ledger below. Fresh independent verification is not established for this complete proposition.",
+        "limits": "Source attribution, documentation and empirical truth are separate. Linked historical references are leads, not a new corroboration attestation.",
+        "sourceLocation": "Original evidence ledger row 3",
+        "references": [],
+        "counterevidence": [],
+        "historicalLinks": [
+          "https://github.com/morluto/rea#readme"
+        ],
+        "temporalScope": "Historical published account, not current operational state."
+      },
+      {
+        "id": "when-software-becomes-legible--ledger-04",
+        "proposition": "Checked in REA repo | The responsible-use statement requires appropriate authorization and warns that analysis may be incomplete or incorrect. Source-like output does not grant rights to the original. | REA disclaimer Living documentation; review the version governing your work.",
+        "kind": "historical-ledger-entry",
+        "asOf": "2026-10-16",
+        "status": "unverified",
+        "assessment": "Historical published assessment retained in the original ledger below. Fresh independent verification is not established for this complete proposition.",
+        "limits": "Source attribution, documentation and empirical truth are separate. Linked historical references are leads, not a new corroboration attestation.",
+        "sourceLocation": "Original evidence ledger row 4",
+        "references": [],
+        "counterevidence": [],
+        "historicalLinks": [
+          "https://github.com/morluto/rea/blob/main/DISCLAIMER.md"
+        ],
+        "temporalScope": "Historical published account, not current operational state."
+      },
+      {
+        "id": "when-software-becomes-legible--ledger-05",
+        "proposition": "Open question | Would a recovered rule hold across versions, missing state, permission changes, and failures in your authorized target? | Requires scoped observations and counterexamples. No such target investigation was run for this Reader.",
+        "kind": "historical-ledger-entry",
+        "asOf": "2026-10-16",
+        "status": "unverified",
+        "assessment": "Historical published assessment retained in the original ledger below. Fresh independent verification is not established for this complete proposition.",
+        "limits": "Source attribution, documentation and empirical truth are separate. Linked historical references are leads, not a new corroboration attestation.",
+        "sourceLocation": "Original evidence ledger row 5",
+        "references": [],
+        "counterevidence": [],
+        "historicalLinks": [],
+        "temporalScope": "Historical published account, not current operational state."
+      },
+      {
+        "id": "when-software-becomes-legible--ledger-06",
+        "proposition": "Open question | Does any proposed implementation meet your requirements, rights, security needs, and deployment constraints? | Requires human decisions and independent validation. Inspection alone cannot settle it.",
+        "kind": "historical-ledger-entry",
+        "asOf": "2026-10-16",
+        "status": "unverified",
+        "assessment": "Historical published assessment retained in the original ledger below. Fresh independent verification is not established for this complete proposition.",
+        "limits": "Source attribution, documentation and empirical truth are separate. Linked historical references are leads, not a new corroboration attestation.",
+        "sourceLocation": "Original evidence ledger row 6",
+        "references": [],
+        "counterevidence": [],
+        "historicalLinks": [],
+        "temporalScope": "Historical published account, not current operational state."
+      },
+      {
+        "id": "when-software-becomes-legible--rea",
+        "proposition": "The pinned REA README describes local inspection of native binaries, JavaScript/Electron, .NET assemblies and websites, with evidence and limitations.",
+        "kind": "primary-documentation",
+        "asOf": "2026-10-18",
+        "status": "partially corroborated",
+        "assessment": "Primary source supports this documented design or attributed report. Actual enforcement, effectiveness and suitability remain unverified.",
+        "limits": "No product execution or independent performance study in this tranche. Correct integration and configuration cannot be inferred from documentation.",
+        "sourceLocation": "How REA works; What you can analyze",
+        "references": [
+          "rea"
+        ],
+        "counterevidence": []
+      },
+      {
+        "id": "when-software-becomes-legible--ledger-reborn",
+        "proposition": "The video describes Ledger Reborn as a developer’s accounting reconstruction informed by QuickBooks inspection.",
+        "kind": "material-prose-claim",
+        "asOf": "2026-10-16",
+        "temporalScope": "Original edition; migration does not establish current operational truth.",
+        "status": "unverified",
+        "assessment": "Reported project, not financial-correctness validation or reproduction.",
+        "limits": "Reported project, not financial-correctness validation or reproduction.",
+        "sourceLocation": "Original article prose; claim identified during full-page migration audit.",
+        "references": [],
+        "counterevidence": []
+      },
+      {
+        "id": "when-software-becomes-legible--percentage",
+        "proposition": "The video describes calculator percentage behavior that changes with the selected arithmetic operation.",
+        "kind": "material-prose-claim",
+        "asOf": "2026-10-16",
+        "temporalScope": "Original edition; migration does not establish current operational truth.",
+        "status": "unverified",
+        "assessment": "Source example; not independently reproduced for this Reader.",
+        "limits": "Source example; not independently reproduced for this Reader.",
+        "sourceLocation": "Original article prose; claim identified during full-page migration audit.",
+        "references": [],
+        "counterevidence": []
+      },
+      {
+        "id": "when-software-becomes-legible--clipboard",
+        "proposition": "The video describes Notion clipboard behavior preserving structured block data beyond plain text and HTML.",
+        "kind": "material-prose-claim",
+        "asOf": "2026-10-16",
+        "temporalScope": "Original edition; migration does not establish current operational truth.",
+        "status": "unverified",
+        "assessment": "Source example; version-dependent behavior not executed in this tranche.",
+        "limits": "Source example; version-dependent behavior not executed in this tranche.",
+        "sourceLocation": "Original article prose; claim identified during full-page migration audit.",
+        "references": [],
+        "counterevidence": []
+      },
+      {
+        "id": "when-software-becomes-legible--source-pack",
+        "proposition": "The original edition reports a canonical media pack on HOLD after capture failures.",
+        "kind": "material-prose-claim",
+        "asOf": "2026-10-16",
+        "temporalScope": "Original edition; migration does not establish current operational truth.",
+        "status": "unverified",
+        "assessment": "Historical custody statement retained; no private pack reinspection or new qualification.",
+        "limits": "Historical custody statement retained; no private pack reinspection or new qualification.",
+        "sourceLocation": "Original article prose; claim identified during full-page migration audit.",
+        "references": [],
+        "counterevidence": []
+      }
+    ],
+    "references": [
+      {
+        "id": "rea",
+        "title": "REA README",
+        "author": "morluto/REA contributors",
+        "publisher": "morluto/REA",
+        "url": "https://github.com/morluto/rea/blob/01cdbbdc556262c47d04a5b3391dd9c17946d3fc/README.md",
+        "publicationDate": "unknown",
+        "datePrecision": "day",
+        "dateNote": "README dates are latest file commit, not original publication.",
+        "eventDate": null,
+        "location": "How REA works; What you can analyze",
+        "sourceType": "primary-documentation",
+        "independence": "Vendor or project author. Documents its own design and observations; not independent performance or deployment verification.",
+        "evidenceFamily": "morluto/REA",
+        "checkedAt": "2026-10-18T14:39:28Z",
+        "verification": "Read-only independent researcher checked source wording, not execution.",
+        "lastUpdated": "2026-10-17"
+      }
+    ],
+    "relationships": [
+      {
+        "target": "reader:a-challenge-is-not-a-verdict",
+        "type": "related topic",
+        "reason": "Both editorial briefs examine software, verification. This is a topic-level reading route, not independent corroboration or agreement.",
+        "provenance": [
+          "/when-software-becomes-legible/#at-a-glance",
+          "/a-challenge-is-not-a-verdict/#at-a-glance"
+        ],
+        "basis": "curated-tags",
+        "direction": "outgoing"
+      },
+      {
+        "target": "reader:make-good-work-inspectable",
+        "type": "related topic",
+        "reason": "Both editorial briefs examine software, verification. This is a topic-level reading route, not independent corroboration or agreement.",
+        "provenance": [
+          "/when-software-becomes-legible/#at-a-glance",
+          "/make-good-work-inspectable/#at-a-glance"
+        ],
+        "basis": "curated-tags",
+        "direction": "outgoing"
+      },
+      {
+        "target": "reader:when-agents-become-the-customer",
+        "type": "related topic",
+        "reason": "Both editorial briefs examine authority, software. This is a topic-level reading route, not independent corroboration or agreement.",
+        "provenance": [
+          "/when-software-becomes-legible/#at-a-glance",
+          "/when-agents-become-the-customer/#at-a-glance"
+        ],
+        "basis": "curated-tags",
+        "direction": "outgoing"
+      }
+    ],
+    "relationshipDisposition": "Qualified topic-level links; no claim of empirical corroboration.",
+    "review": {
+      "status": "source-reviewed",
+      "reviewer": "Independent read-only Codex reviewer",
+      "reviewedSourceHead": "06c64eecdcc053548b14427f62d0c8c2d4f91f47",
+      "checkedAt": "2026-10-18T14:51:39Z",
+      "scope": "Bounded source implementation and evidence representation. Not certification of every factual claim, private custody, third-party playback, formal WCAG compliance or deployment.",
+      "findings": "No remaining material findings in reviewed scope. Generator, site checker and ten negative tests independently passed."
+    },
+    "revisionHistory": [
+      {
+        "at": "2026-10-18T14:34:54.306588Z",
+        "kind": "structural-normalization",
+        "reason": "Issue 23: explicit brief, evidence limits, themes and discovery. Historical conclusions preserved; classification is editorial, not factual confirmation."
+      }
+    ],
+    "editorialOrder": 7,
+    "orderReason": "Reading path from task framing and inspectable work through review, evidence and authority, then product-specific cases."
+  },
+  "editorial": {
+    "overview": "Nate B Jones explains reverse engineering through clipboard, calculator and accounting examples, using REA to turn visible behavior into questions about hidden software contracts.",
+    "whyItMatters": "Useful for builders diagnosing software they own. Watch the clipboard and calculator passages; skip the full tour if direct source reading already answers your question.",
+    "ghostMeshTakeaway": "Investigate one disposable fixture and compare reconstructed rules with known source and observed behavior. An explanation cannot supply missing server evidence or authorize action."
+  }
+}

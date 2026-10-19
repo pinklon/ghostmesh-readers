@@ -1,0 +1,6 @@
+# GhostMesh Readers
+
+Source-only public knowledge reference: https://youtube.shareplane.malott.ai/knowledge/
+JSON: https://youtube.shareplane.malott.ai/knowledge/v0.1/readers.json
+JSON-LD: https://youtube.shareplane.malott.ai/knowledge/v0.1/readers.jsonld
+Claims are attributed to their published Reader sources. External content is not hash-certified.

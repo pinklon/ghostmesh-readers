@@ -20,12 +20,30 @@
     "whisperModelSha256": "c6138d6d58ecc8322097e0f987c32f1be8bb0a18532a3f88f734d1bbf9c41e5d",
     "manifestSha256": "b4da0f88f3adabe378bd50ece3c49cd24e57bdb530fc818fa8d71700e711bedb",
     "members": {
-      "video.mp4": {"sha256": "c63626d4310f3a86c73d50a80d28d72cb46bc3f42e28af0d205ed2df7416253c", "bytes": 122681179},
-      "audio.m4a": {"sha256": "fb66c5b4c141e1f352fc543708e6a9a229c5d0857af10f8250804af05e44b141", "bytes": 29382793},
-      "transcript.txt": {"sha256": "7b150edb7ec5477a39c1cdc8cab796d13151d76f97052a807c2b365ff4c75d65", "bytes": 33309},
-      "transcript-status.json": {"sha256": "fe73141185479635589b72ceeef9e2998e00f5afe090618c92eb40f7cb24406f", "bytes": 270},
-      "source.json": {"sha256": "822829d3e226c9cee0a1d193a5cca76406be98dc0ac8d8655733d8d2a6968bf4", "bytes": 11106626},
-      "ffprobe.json": {"sha256": "a385b74731fd340115873f889724e101fa7b65d43b750597fa5c3f48ab2d5da3", "bytes": 4576}
+      "video.mp4": {
+        "sha256": "c63626d4310f3a86c73d50a80d28d72cb46bc3f42e28af0d205ed2df7416253c",
+        "bytes": 122681179
+      },
+      "audio.m4a": {
+        "sha256": "fb66c5b4c141e1f352fc543708e6a9a229c5d0857af10f8250804af05e44b141",
+        "bytes": 29382793
+      },
+      "transcript.txt": {
+        "sha256": "7b150edb7ec5477a39c1cdc8cab796d13151d76f97052a807c2b365ff4c75d65",
+        "bytes": 33309
+      },
+      "transcript-status.json": {
+        "sha256": "fe73141185479635589b72ceeef9e2998e00f5afe090618c92eb40f7cb24406f",
+        "bytes": 270
+      },
+      "source.json": {
+        "sha256": "822829d3e226c9cee0a1d193a5cca76406be98dc0ac8d8655733d8d2a6968bf4",
+        "bytes": 11106626
+      },
+      "ffprobe.json": {
+        "sha256": "a385b74731fd340115873f889724e101fa7b65d43b750597fa5c3f48ab2d5da3",
+        "bytes": 4576
+      }
     },
     "publicationBoundary": "The public site contains original editorial analysis and this sanitized receipt. Full third-party video, audio, source metadata, transcript, and timed VTT remain in private local custody."
   },
@@ -39,31 +57,417 @@
     "verdict": "Contain potentially exposed Console-linked provider keys. Treat the video's attacker attribution and agent-loop remedy as unproven.",
     "thesis": "The credential custody boundary is the actionable incident fact; distillation purpose, intrusion mechanism, and a proposed security product require separate evidence.",
     "recommendedSegments": [
-      {"startSeconds": 15, "why": "The reported 1.4% Console scope and the broader-user extrapolation."},
-      {"startSeconds": 222, "why": "Legacy-system description and unsupported actor attribution."},
-      {"startSeconds": 991, "why": "Comparison of an AI scan with a professional penetration test."}
+      {
+        "startSeconds": 15,
+        "why": "The reported 1.4% Console scope and the broader-user extrapolation."
+      },
+      {
+        "startSeconds": 222,
+        "why": "Legacy-system description and unsupported actor attribution."
+      },
+      {
+        "startSeconds": 991,
+        "why": "Comparison of an AI scan with a professional penetration test."
+      }
     ],
     "claimMap": [
-      {"id": "console-scope", "sourceStartSeconds": 15, "kind": "reported-disclosure", "finding": "The speaker quotes a 1.4% OpenCode Console impact figure.", "limit": "The video does not provide a total count of affected users or establish that local-only users were exposed."},
-      {"id": "legacy-and-attribution", "sourceStartSeconds": 222, "kind": "speaker-inference", "finding": "The speaker describes a legacy system and suggests Chinese-origin operators.", "limit": "No incident forensics or official actor attribution is presented."},
-      {"id": "distillation-causality", "sourceStartSeconds": 463, "kind": "speaker-inference", "finding": "The speaker argues that stronger lab defenses drove attackers toward OpenCode.", "limit": "Anthropic and OpenAI document separate campaigns; neither establishes this causal chain."},
-      {"id": "pentest-equivalence", "sourceStartSeconds": 991, "kind": "product-claim", "finding": "A Cloudroom run with no findings is compared to a professional penetration test.", "limit": "No tested coverage, false-negative rate, methodology, or independent comparison is provided."},
-      {"id": "agent-loop-remedy", "sourceStartSeconds": 1485, "kind": "product-claim", "finding": "The speaker recommends autonomous agent loops as the necessary defensive response.", "limit": "The video does not show that those loops could contain a copied provider key or prevent this Console breach."}
+      {
+        "id": "console-scope",
+        "sourceStartSeconds": 15,
+        "kind": "reported-disclosure",
+        "finding": "The speaker quotes a 1.4% OpenCode Console impact figure.",
+        "limit": "The video does not provide a total count of affected users or establish that local-only users were exposed."
+      },
+      {
+        "id": "legacy-and-attribution",
+        "sourceStartSeconds": 222,
+        "kind": "speaker-inference",
+        "finding": "The speaker describes a legacy system and suggests Chinese-origin operators.",
+        "limit": "No incident forensics or official actor attribution is presented."
+      },
+      {
+        "id": "distillation-causality",
+        "sourceStartSeconds": 463,
+        "kind": "speaker-inference",
+        "finding": "The speaker argues that stronger lab defenses drove attackers toward OpenCode.",
+        "limit": "Anthropic and OpenAI document separate campaigns; neither establishes this causal chain."
+      },
+      {
+        "id": "pentest-equivalence",
+        "sourceStartSeconds": 991,
+        "kind": "product-claim",
+        "finding": "A Cloudroom run with no findings is compared to a professional penetration test.",
+        "limit": "No tested coverage, false-negative rate, methodology, or independent comparison is provided."
+      },
+      {
+        "id": "agent-loop-remedy",
+        "sourceStartSeconds": 1485,
+        "kind": "product-claim",
+        "finding": "The speaker recommends autonomous agent loops as the necessary defensive response.",
+        "limit": "The video does not show that those loops could contain a copied provider key or prevent this Console breach."
+      }
     ],
     "externalPrimarySources": [
-      {"url": "https://x.com/opencode/status/2111516673953935833", "role": "OpenCode public incident statement linked for reported scope; full technical report unavailable at publication."},
-      {"url": "https://opencode.ai/v2/docs/console/providers/", "role": "OpenCode documentation for hosted provider credential custody and billing."},
-      {"url": "https://www.anthropic.com/research/distillation-defenses", "role": "Anthropic account of its separate anti-distillation defenses."},
-      {"url": "https://openai.com/index/disrupting-a-coordinated-model-distillation-campaign/", "role": "OpenAI account of a separate campaign and its distinct mechanism."},
-      {"url": "https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety", "role": "OpenAI guidance on suspected key exposure."},
-      {"url": "https://support.anthropic.com/en/articles/9767949-api-key-best-practices-keeping-your-keys-safe-and-secure", "role": "Anthropic guidance on revoking compromised keys."},
-      {"url": "https://docs.cloud.google.com/docs/security/compromised-credentials", "role": "Google Cloud guidance on compromised credentials."}
+      {
+        "url": "https://x.com/opencode/status/2111516673953935833",
+        "role": "OpenCode public incident statement linked for reported scope; full technical report unavailable at publication."
+      },
+      {
+        "url": "https://opencode.ai/v2/docs/console/providers/",
+        "role": "OpenCode documentation for hosted provider credential custody and billing."
+      },
+      {
+        "url": "https://www.anthropic.com/research/distillation-defenses",
+        "role": "Anthropic account of its separate anti-distillation defenses."
+      },
+      {
+        "url": "https://openai.com/index/disrupting-a-coordinated-model-distillation-campaign/",
+        "role": "OpenAI account of a separate campaign and its distinct mechanism."
+      },
+      {
+        "url": "https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety",
+        "role": "OpenAI guidance on suspected key exposure."
+      },
+      {
+        "url": "https://support.anthropic.com/en/articles/9767949-api-key-best-practices-keeping-your-keys-safe-and-secure",
+        "role": "Anthropic guidance on revoking compromised keys."
+      },
+      {
+        "url": "https://docs.cloud.google.com/docs/security/compromised-credentials",
+        "role": "Google Cloud guidance on compromised credentials."
+      }
     ],
     "limits": [
       "YouTube caption retrieval was rate limited; local Whisper may mishear technical terms.",
       "Timed cues are approximate and were not manually corrected or speaker diarized.",
       "No independent incident forensics, total key count, attacker attribution, loss total, or Cloudroom efficacy test was available.",
       "Editorial recommendations are not a measurement of product effectiveness."
-    ]
+    ],
+    "overview": "David Ondrej discusses the reported OpenCode Console credential incident, speculates about attribution and promotes recurring agents through his Cloudroom product.",
+    "whyItMatters": "Watch the opening for reported incident scope. Skip the product promotion if you need forensic attribution or independently measured security coverage.",
+    "ghostMeshTakeaway": "Contain potentially exposed credentials at their issuer and evaluate automation separately. Hold attacker attribution, total exposure and prevention claims pending stronger evidence."
+  },
+  "normalization": {
+    "id": "reader:the-key-was-the-boundary",
+    "slug": "the-key-was-the-boundary",
+    "title": "The Key Was the Boundary",
+    "category": "AI & Technology",
+    "tags": [
+      "security",
+      "authority",
+      "agents"
+    ],
+    "entities": [
+      "Anthropic",
+      "OpenAI",
+      "OpenCode"
+    ],
+    "source": {
+      "platform": "YouTube",
+      "url": "https://www.youtube.com/watch?v=YaK6cnET2IE",
+      "videoId": "YaK6cnET2IE",
+      "title": "OpenCode hack is INSANE.",
+      "channel": "David Ondrej",
+      "uploadDate": "20261018",
+      "durationSeconds": 1894,
+      "mediaAspect": "16:9"
+    },
+    "published": "2026-10-18",
+    "updated": "2026-10-18T14:34:54.306588Z",
+    "overview": "David Ondrej discusses the reported OpenCode Console credential incident, speculates about attribution and promotes recurring agents through his Cloudroom product.",
+    "whyItMatters": "Watch the opening for reported incident scope. Skip the product promotion if you need forensic attribution or independently measured security coverage.",
+    "ghostMeshTakeaway": "Contain potentially exposed credentials at their issuer and evaluate automation separately. Hold attacker attribution, total exposure and prevention claims pending stronger evidence.",
+    "verdict": "Interesting, unproven",
+    "architectureImpact": "watch",
+    "falsification": "Reconsider the recommendation if a controlled comparison on the stated task shows no benefit, or exposes permission failures, omitted evidence or greater cost than the ordinary workflow. See the original article for its specific proposed controls.",
+    "evidenceState": "unverified",
+    "lastEvidenceChecked": "2026-10-18T14:33:10Z",
+    "freshness": "Evidence references checked 2026-10-18T14:33:10Z; historical ledger entries remain unverified unless individually mapped below. Mutable product and incident claims can become stale.",
+    "variant": "dossier",
+    "accent": "rose",
+    "claims": [
+      {
+        "id": "the-key-was-the-boundary--console-scope",
+        "proposition": "The speaker quotes a 1.4% OpenCode Console impact figure.",
+        "kind": "reported-disclosure",
+        "asOf": "2026-10-18",
+        "status": "unverified",
+        "assessment": "The speaker quotes a 1.4% OpenCode Console impact figure.",
+        "limits": "The video does not provide a total count of affected users or establish that local-only users were exposed.",
+        "sourceLocation": "15",
+        "references": [],
+        "counterevidence": [],
+        "temporalScope": "Historical published account, not current operational state."
+      },
+      {
+        "id": "the-key-was-the-boundary--legacy-and-attribution",
+        "proposition": "The speaker describes a legacy system and suggests Chinese-origin operators.",
+        "kind": "speaker-inference",
+        "asOf": "2026-10-18",
+        "status": "unverified",
+        "assessment": "The speaker describes a legacy system and suggests Chinese-origin operators.",
+        "limits": "No incident forensics or official actor attribution is presented.",
+        "sourceLocation": "222",
+        "references": [],
+        "counterevidence": [],
+        "temporalScope": "Historical published account, not current operational state."
+      },
+      {
+        "id": "the-key-was-the-boundary--distillation-causality",
+        "proposition": "The speaker argues that stronger lab defenses drove attackers toward OpenCode.",
+        "kind": "speaker-inference",
+        "asOf": "2026-10-18",
+        "status": "unverified",
+        "assessment": "The speaker argues that stronger lab defenses drove attackers toward OpenCode.",
+        "limits": "Anthropic and OpenAI document separate campaigns; neither establishes this causal chain.",
+        "sourceLocation": "463",
+        "references": [],
+        "counterevidence": [],
+        "temporalScope": "Historical published account, not current operational state."
+      },
+      {
+        "id": "the-key-was-the-boundary--pentest-equivalence",
+        "proposition": "A Cloudroom run with no findings is compared to a professional penetration test.",
+        "kind": "product-claim",
+        "asOf": "2026-10-18",
+        "status": "unverified",
+        "assessment": "A Cloudroom run with no findings is compared to a professional penetration test.",
+        "limits": "No tested coverage, false-negative rate, methodology, or independent comparison is provided.",
+        "sourceLocation": "991",
+        "references": [],
+        "counterevidence": [],
+        "temporalScope": "Historical published account, not current operational state."
+      },
+      {
+        "id": "the-key-was-the-boundary--agent-loop-remedy",
+        "proposition": "The speaker recommends autonomous agent loops as the necessary defensive response.",
+        "kind": "product-claim",
+        "asOf": "2026-10-18",
+        "status": "unverified",
+        "assessment": "The speaker recommends autonomous agent loops as the necessary defensive response.",
+        "limits": "The video does not show that those loops could contain a copied provider key or prevent this Console breach.",
+        "sourceLocation": "1485",
+        "references": [],
+        "counterevidence": [],
+        "temporalScope": "Historical published account, not current operational state."
+      },
+      {
+        "id": "the-key-was-the-boundary--ledger-01",
+        "proposition": "00:15 | OpenCode disclosed a breach affecting 1.4% of Console users; many general OpenCode users may be impacted. | The 1.4% denominator is Console users with linked external providers. The video does not establish a count from the broader local user base.",
+        "kind": "historical-ledger-entry",
+        "asOf": "2026-10-18",
+        "status": "unverified",
+        "assessment": "Historical published assessment retained in the original ledger below. Fresh independent verification is not established for this complete proposition.",
+        "limits": "Source attribution, documentation and empirical truth are separate. Linked historical references are leads, not a new corroboration attestation.",
+        "sourceLocation": "Original evidence ledger row 1",
+        "references": [],
+        "counterevidence": [],
+        "historicalLinks": [
+          "https://x.com/opencode/status/2111516673953935833"
+        ],
+        "temporalScope": "Historical published account, not current operational state."
+      },
+      {
+        "id": "the-key-was-the-boundary--ledger-02",
+        "proposition": "03:42–04:09 | A legacy system was compromised; usage suggests a Chinese attacker. | The video's actor inference is unverified. Public incident details do not establish an intrusion path or attribution.",
+        "kind": "historical-ledger-entry",
+        "asOf": "2026-10-18",
+        "status": "unverified",
+        "assessment": "Historical published assessment retained in the original ledger below. Fresh independent verification is not established for this complete proposition.",
+        "limits": "Source attribution, documentation and empirical truth are separate. Linked historical references are leads, not a new corroboration attestation.",
+        "sourceLocation": "Original evidence ledger row 2",
+        "references": [],
+        "counterevidence": [],
+        "historicalLinks": [
+          "https://www.youtube.com/watch?v=YaK6cnET2IE&t=222s"
+        ],
+        "temporalScope": "Historical published account, not current operational state."
+      },
+      {
+        "id": "the-key-was-the-boundary--ledger-03",
+        "proposition": "07:43–11:13 | Anthropic's stronger distillation defenses pushed attackers toward OpenCode; DeepSeek behavior points to the culprit. | Anthropic documents its own defenses. The proposed causal chain and actor attribution for OpenCode are not established.",
+        "kind": "historical-ledger-entry",
+        "asOf": "2026-10-18",
+        "status": "unverified",
+        "assessment": "Historical published assessment retained in the original ledger below. Fresh independent verification is not established for this complete proposition.",
+        "limits": "Source attribution, documentation and empirical truth are separate. Linked historical references are leads, not a new corroboration attestation.",
+        "sourceLocation": "Original evidence ledger row 3",
+        "references": [],
+        "counterevidence": [],
+        "historicalLinks": [
+          "https://www.anthropic.com/research/distillation-defenses"
+        ],
+        "temporalScope": "Historical published account, not current operational state."
+      },
+      {
+        "id": "the-key-was-the-boundary--ledger-04",
+        "proposition": "16:31 | A Cloudroom agent run with no findings is equivalent to a professional penetration test that found nothing. | The video shows a product demonstration, not evidence of comparable scope, methods, or detection performance.",
+        "kind": "historical-ledger-entry",
+        "asOf": "2026-10-18",
+        "status": "unverified",
+        "assessment": "Historical published assessment retained in the original ledger below. Fresh independent verification is not established for this complete proposition.",
+        "limits": "Source attribution, documentation and empirical truth are separate. Linked historical references are leads, not a new corroboration attestation.",
+        "sourceLocation": "Original evidence ledger row 4",
+        "references": [],
+        "counterevidence": [],
+        "historicalLinks": [
+          "https://www.youtube.com/watch?v=YaK6cnET2IE&t=991s"
+        ],
+        "temporalScope": "Historical published account, not current operational state."
+      },
+      {
+        "id": "the-key-was-the-boundary--ledger-05",
+        "proposition": "24:45–31:25 | Autonomous agent loops are the necessary way to avoid this class of breach. | Routine checks may help with some code and dependency risks. No evidence here shows they would have prevented the Console credential exposure.",
+        "kind": "historical-ledger-entry",
+        "asOf": "2026-10-18",
+        "status": "unverified",
+        "assessment": "Historical published assessment retained in the original ledger below. Fresh independent verification is not established for this complete proposition.",
+        "limits": "Source attribution, documentation and empirical truth are separate. Linked historical references are leads, not a new corroboration attestation.",
+        "sourceLocation": "Original evidence ledger row 5",
+        "references": [],
+        "counterevidence": [],
+        "historicalLinks": [
+          "https://opencode.ai/v2/docs/console/providers/"
+        ],
+        "temporalScope": "Historical published account, not current operational state."
+      },
+      {
+        "id": "the-key-was-the-boundary--scan-coverage",
+        "proposition": "An automated run with no findings is equivalent to a complete security assessment.",
+        "kind": "external-evidence",
+        "asOf": "2026-10-18",
+        "status": "unverified",
+        "assessment": "OWASP treats automated scanning as part of a broader method and requires scope and reproducible reporting. It does not measure Strix or Cloudroom performance.",
+        "limits": "OWASP treats automated scanning as part of a broader method and requires scope and reproducible reporting. It does not measure Strix or Cloudroom performance.",
+        "sourceLocation": "External evidence update, 2026-10-18",
+        "references": [],
+        "counterevidence": [
+          "owasp"
+        ]
+      },
+      {
+        "id": "the-key-was-the-boundary--denominator",
+        "proposition": "The video reports a breach affecting 1.4 percent of OpenCode Console users with external providers linked.",
+        "kind": "material-prose-claim",
+        "asOf": "2026-10-18",
+        "temporalScope": "Original edition; migration does not establish current operational truth.",
+        "status": "unverified",
+        "assessment": "Source-reported scope, not a percentage of all local OpenCode users. Incident details require authoritative refresh.",
+        "limits": "Source-reported scope, not a percentage of all local OpenCode users. Incident details require authoritative refresh.",
+        "sourceLocation": "Original article prose; claim identified during full-page migration audit.",
+        "references": [],
+        "counterevidence": []
+      },
+      {
+        "id": "the-key-was-the-boundary--actor",
+        "proposition": "A Chinese actor caused the OpenCode Console incident.",
+        "kind": "material-prose-claim",
+        "asOf": "2026-10-18",
+        "temporalScope": "Original edition; migration does not establish current operational truth.",
+        "status": "unverified",
+        "assessment": "Unverified attribution; separate distillation campaigns do not establish this actor.",
+        "limits": "Unverified attribution; separate distillation campaigns do not establish this actor.",
+        "sourceLocation": "Original article prose; claim identified during full-page migration audit.",
+        "references": [],
+        "counterevidence": []
+      },
+      {
+        "id": "the-key-was-the-boundary--cost",
+        "proposition": "Individual provider-loss reports establish total incident-wide cost.",
+        "kind": "material-prose-claim",
+        "asOf": "2026-10-18",
+        "temporalScope": "Original edition; migration does not establish current operational truth.",
+        "status": "unverified",
+        "assessment": "Unsupported aggregation; no verified comprehensive loss inventory.",
+        "limits": "Unsupported aggregation; no verified comprehensive loss inventory.",
+        "sourceLocation": "Original article prose; claim identified during full-page migration audit.",
+        "references": [],
+        "counterevidence": []
+      },
+      {
+        "id": "the-key-was-the-boundary--issuer-revocation",
+        "proposition": "Replacing a provider key only in the hosted Console invalidates a copy held elsewhere.",
+        "kind": "material-prose-claim",
+        "asOf": "2026-10-18",
+        "temporalScope": "Original edition; migration does not establish current operational truth.",
+        "status": "unverified",
+        "assessment": "Do not rely on this proposition. Issuer-side revocation and provider guidance are needed; no credential action taken here.",
+        "limits": "Do not rely on this proposition. Issuer-side revocation and provider guidance are needed; no credential action taken here.",
+        "sourceLocation": "Original article prose; claim identified during full-page migration audit.",
+        "references": [],
+        "counterevidence": []
+      }
+    ],
+    "references": [
+      {
+        "id": "owasp",
+        "title": "Web Security Testing Guide v4.2: Introduction",
+        "author": "OWASP contributors",
+        "publisher": "OWASP Foundation",
+        "url": "https://wstg.owasp.org/v4.2/2-Introduction/",
+        "publicationDate": "2020-12-03",
+        "eventDate": null,
+        "location": "Use the Right Tools; Document the Test Results; A Note about Web Application Scanners",
+        "sourceType": "community guidance",
+        "independence": "Independent of Strix and Cloudroom; method guidance, not a contemporary product evaluation.",
+        "evidenceFamily": "owasp-wstg",
+        "checkedAt": "2026-10-18T14:33:10Z",
+        "datePrecision": "day",
+        "verification": "Read by independent evidence researcher; limited source-fidelity check, not replication."
+      }
+    ],
+    "relationships": [
+      {
+        "target": "reader:the-inbox-was-a-boundary",
+        "type": "related topic",
+        "reason": "Both editorial briefs examine agents, authority, security. This is a topic-level reading route, not independent corroboration or agreement.",
+        "provenance": [
+          "/the-key-was-the-boundary/#at-a-glance",
+          "/the-inbox-was-a-boundary/#at-a-glance"
+        ],
+        "basis": "curated-tags",
+        "direction": "outgoing"
+      },
+      {
+        "target": "reader:autonomy-needs-an-interface",
+        "type": "related topic",
+        "reason": "Both editorial briefs examine agents, authority. This is a topic-level reading route, not independent corroboration or agreement.",
+        "provenance": [
+          "/the-key-was-the-boundary/#at-a-glance",
+          "/autonomy-needs-an-interface/#at-a-glance"
+        ],
+        "basis": "curated-tags",
+        "direction": "outgoing"
+      },
+      {
+        "target": "reader:the-agent-a-company-owns",
+        "type": "related topic",
+        "reason": "Both editorial briefs examine agents, authority. This is a topic-level reading route, not independent corroboration or agreement.",
+        "provenance": [
+          "/the-key-was-the-boundary/#at-a-glance",
+          "/the-agent-a-company-owns/#at-a-glance"
+        ],
+        "basis": "curated-tags",
+        "direction": "outgoing"
+      }
+    ],
+    "relationshipDisposition": "Qualified topic-level links; no claim of empirical corroboration.",
+    "review": {
+      "status": "source-reviewed",
+      "reviewer": "Independent read-only Codex reviewer",
+      "reviewedSourceHead": "06c64eecdcc053548b14427f62d0c8c2d4f91f47",
+      "checkedAt": "2026-10-18T14:51:39Z",
+      "scope": "Bounded source implementation and evidence representation. Not certification of every factual claim, private custody, third-party playback, formal WCAG compliance or deployment.",
+      "findings": "No remaining material findings in reviewed scope. Generator, site checker and ten negative tests independently passed."
+    },
+    "revisionHistory": [
+      {
+        "at": "2026-10-18T14:34:54.306588Z",
+        "kind": "structural-normalization",
+        "reason": "Issue 23: explicit brief, evidence limits, themes and discovery. Historical conclusions preserved; classification is editorial, not factual confirmation."
+      }
+    ],
+    "editorialOrder": 10,
+    "orderReason": "Reading path from task framing and inspectable work through review, evidence and authority, then product-specific cases."
   }
 }

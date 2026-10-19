@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://youtube.shareplane.malott.ai/catalog.schema.json",
+  "title": "GhostMesh Reader catalog v1",
+  "type": "object",
+  "required": ["schemaVersion", "host", "revision", "categories", "featuredId", "readers"],
+  "properties": {
+    "schemaVersion": {"const": 1},
+    "host": {"type": "string", "format": "uri"},
+    "revision": {"type": "string", "format": "date-time"},
+    "featuredId": {"type": "string"},
+    "categories": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "readers": {"type": "array", "minItems": 13, "items": {"$ref": "#/$defs/reader"}}
+  },
+  "$defs": {
+    "reader": {
+      "type": "object",
+      "required": ["id", "slug", "title", "category", "tags", "entities", "source", "published", "updated", "overview", "whyItMatters", "ghostMeshTakeaway", "verdict", "architectureImpact", "claims", "references", "relationships", "review", "revisionHistory", "editorialOrder"],
+      "properties": {
+        "id": {"type": "string", "pattern": "^reader:[a-z0-9-]+$"},
+        "slug": {"type": "string", "pattern": "^[a-z0-9-]+$"},
+        "source": {"$ref": "#/$defs/mediaSource"},
+        "verdict": {"enum": ["Essential", "Worth studying", "Interesting, unproven", "Mostly recycled", "Misleading", "Not worth your time"]},
+        "claims": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/claim"}},
+        "references": {"type": "array", "items": {"$ref": "#/$defs/reference"}},
+        "relationships": {"type": "array", "items": {"$ref": "#/$defs/relationship"}}
+      }
+    },
+    "mediaSource": {
+      "type": "object",
+      "required": ["url", "platform", "mediaAspect"],
+      "properties": {
+        "url": {"type": "string", "format": "uri"},
+        "platform": {"type": "string", "minLength": 1},
+        "mediaAspect": {"enum": ["16:9", "9:16", "1:1", "unknown"]}
+      }
+    },
+    "claim": {
+      "type": "object",
+      "required": ["id", "proposition", "kind", "asOf", "status", "assessment", "limits", "sourceLocation", "references", "counterevidence"],
+      "properties": {
+        "status": {"enum": ["corroborated", "partially corroborated", "contradicted", "disputed", "unverified"]},
+        "asOf": {"type": "string", "format": "date"},
+        "references": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+        "counterevidence": {"type": "array", "items": {"type": "string"}, "uniqueItems": true}
+      }
+    },
+    "reference": {
+      "type": "object",
+      "required": ["id", "title", "author", "publisher", "url", "publicationDate", "eventDate", "location", "sourceType", "independence", "evidenceFamily", "checkedAt"],
+      "properties": {"url": {"type": "string", "format": "uri"}, "checkedAt": {"type": "string", "format": "date-time"}}
+    },
+    "relationship": {
+      "type": "object",
+      "required": ["target", "type", "reason", "provenance", "basis", "direction"],
+      "properties": {
+        "type": {"enum": ["examines same claim", "extends", "challenges", "responds to", "shares entity", "informs architecture", "related topic"]},
+        "direction": {"const": "outgoing"},
+        "provenance": {"type": "array", "minItems": 1, "items": {"type": "string"}}
+      }
+    }
+  }
+}

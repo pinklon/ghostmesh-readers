@@ -1,0 +1,274 @@
+{
+  "schema": "ghostmesh-reader-receipt-v2",
+  "source": {
+    "url": "https://www.youtube.com/watch?v=HQXi4snP36I",
+    "platform": "YouTube",
+    "videoId": "HQXi4snP36I",
+    "publicationDate": "2026-08-06",
+    "dateNote": "Source metadata reported in original public edition; no independent source-date revalidation.",
+    "mediaAspect": "16:9"
+  },
+  "custody": {
+    "status": "historical-public-account-only",
+    "note": "No private source pack was opened or reverified during normalization. See original provenance on the Reader."
+  },
+  "normalization": {
+    "id": "reader:the-agent-a-company-owns",
+    "slug": "the-agent-a-company-owns",
+    "title": "The Agent a Company Owns",
+    "category": "AI & Technology",
+    "tags": [
+      "agents",
+      "authority",
+      "memory"
+    ],
+    "entities": [
+      "REA",
+      "Vercel"
+    ],
+    "source": {
+      "url": "https://www.youtube.com/watch?v=HQXi4snP36I",
+      "platform": "YouTube",
+      "videoId": "HQXi4snP36I",
+      "publicationDate": "2026-08-06",
+      "dateNote": "Source metadata reported in original public edition; no independent source-date revalidation.",
+      "mediaAspect": "16:9"
+    },
+    "published": "2026-10-16",
+    "updated": "2026-10-18T14:34:54.306588Z",
+    "overview": "Riley Brown interviews Vercel CEO Guillermo Rauch about V, Eve, reusable skills, tools, memory and a company-owned agent that survives individual conversations.",
+    "whyItMatters": "Useful for teams considering shared agents. Watch the permission and memory discussion; skip the interview if you need independent productivity measurements or a deployment audit.",
+    "ghostMeshTakeaway": "Own continuity while proving permission, replay, memory isolation and portability with synthetic tests. A readable agent folder does not itself enforce those boundaries.",
+    "verdict": "Worth studying",
+    "architectureImpact": "investigate",
+    "falsification": "Reconsider the recommendation if a controlled comparison on the stated task shows no benefit, or exposes permission failures, omitted evidence or greater cost than the ordinary workflow. See the original article for its specific proposed controls.",
+    "evidenceState": "partially corroborated",
+    "lastEvidenceChecked": "2026-10-18T14:39:28Z",
+    "freshness": "Primary documentation checked 2026-10-18T14:39:28Z. Historical ledger entries remain unverified unless individually mapped; mutable claims need rechecking before use.",
+    "variant": "dossier",
+    "accent": "rose",
+    "claims": [
+      {
+        "id": "the-agent-a-company-owns--ledger-01",
+        "proposition": "Founder interview | V coordinates internal knowledge, content, and analysis; skills and feedback improve the company agent. | August 6 source · Caption-based attribution, no independent productivity measurement.",
+        "kind": "historical-ledger-entry",
+        "asOf": "2026-10-16",
+        "status": "unverified",
+        "assessment": "Historical published assessment retained in the original ledger below. Fresh independent verification is not established for this complete proposition.",
+        "limits": "Source attribution, documentation and empirical truth are separate. Linked historical references are leads, not a new corroboration attestation.",
+        "sourceLocation": "Original evidence ledger row 1",
+        "references": [],
+        "counterevidence": [],
+        "historicalLinks": [
+          "https://www.youtube.com/watch?v=HQXi4snP36I"
+        ],
+        "temporalScope": "Historical published account, not current operational state."
+      },
+      {
+        "id": "the-agent-a-company-owns--ledger-02",
+        "proposition": "Vercel documented | Eve uses a filesystem-first structure and documents durable execution and configurable approvals. Its README warns of preview status and permissive defaults. | Current package README · Living documentation checked October 16; no runtime verification.",
+        "kind": "historical-ledger-entry",
+        "asOf": "2026-10-16",
+        "status": "unverified",
+        "assessment": "Historical published assessment retained in the original ledger below. Fresh independent verification is not established for this complete proposition.",
+        "limits": "Source attribution, documentation and empirical truth are separate. Linked historical references are leads, not a new corroboration attestation.",
+        "sourceLocation": "Original evidence ledger row 2",
+        "references": [],
+        "counterevidence": [],
+        "historicalLinks": [
+          "https://github.com/vercel/eve/blob/main/packages/eve/README.md"
+        ],
+        "temporalScope": "Historical published account, not current operational state."
+      },
+      {
+        "id": "the-agent-a-company-owns--ledger-03",
+        "proposition": "Later primary updates | Scoped persistent memory is documented September 9; the October 15 recap describes subsequent platform updates. | Memory update · Ship recap · Not August evidence.",
+        "kind": "historical-ledger-entry",
+        "asOf": "2026-10-16",
+        "status": "unverified",
+        "assessment": "Historical published assessment retained in the original ledger below. Fresh independent verification is not established for this complete proposition.",
+        "limits": "Source attribution, documentation and empirical truth are separate. Linked historical references are leads, not a new corroboration attestation.",
+        "sourceLocation": "Original evidence ledger row 3",
+        "references": [],
+        "counterevidence": [],
+        "historicalLinks": [
+          "https://vercel.com/changelog/persistent-memory-for-eve-agents",
+          "https://vercel.com/blog/vercel-ship-2026-recap"
+        ],
+        "temporalScope": "Historical published account, not current operational state."
+      },
+      {
+        "id": "the-agent-a-company-owns--ledger-04",
+        "proposition": "GhostMesh proposal | Continuity, isolated roles, replay safety, credential scope, and runtime portability should be tested before adoption. | Editorial recommendations above. No experiments or integrations were run for this Reader.",
+        "kind": "historical-ledger-entry",
+        "asOf": "2026-10-16",
+        "status": "unverified",
+        "assessment": "Historical published assessment retained in the original ledger below. Fresh independent verification is not established for this complete proposition.",
+        "limits": "Source attribution, documentation and empirical truth are separate. Linked historical references are leads, not a new corroboration attestation.",
+        "sourceLocation": "Original evidence ledger row 4",
+        "references": [],
+        "counterevidence": [],
+        "historicalLinks": [],
+        "temporalScope": "Historical published account, not current operational state."
+      },
+      {
+        "id": "the-agent-a-company-owns--ledger-05",
+        "proposition": "Open / uncommissioned | Permission grants, one-use ledger, model execution, and Gmail delivery are not established by this publication. | Source-only scope; disabled scaffold is not authorization or delivery evidence.",
+        "kind": "historical-ledger-entry",
+        "asOf": "2026-10-16",
+        "status": "unverified",
+        "assessment": "Historical published assessment retained in the original ledger below. Fresh independent verification is not established for this complete proposition.",
+        "limits": "Source attribution, documentation and empirical truth are separate. Linked historical references are leads, not a new corroboration attestation.",
+        "sourceLocation": "Original evidence ledger row 5",
+        "references": [],
+        "counterevidence": [],
+        "historicalLinks": [],
+        "temporalScope": "Historical published account, not current operational state."
+      },
+      {
+        "id": "the-agent-a-company-owns--eve",
+        "proposition": "The pinned Eve README describes preview status, deployer-configured safeguards, permissive omitted approvals and sandbox egress that is not deny-all.",
+        "kind": "primary-documentation",
+        "asOf": "2026-10-18",
+        "status": "partially corroborated",
+        "assessment": "Primary source supports this documented design or attributed report. Actual enforcement, effectiveness and suitability remain unverified.",
+        "limits": "No product execution or independent performance study in this tranche. Correct integration and configuration cannot be inferred from documentation.",
+        "sourceLocation": "Preview Terms and Safeguards",
+        "references": [
+          "eve"
+        ],
+        "counterevidence": []
+      },
+      {
+        "id": "the-agent-a-company-owns--memory-update",
+        "proposition": "The original edition describes a September 9 Vercel update documenting persistent memory slots and cross-session retrieval.",
+        "kind": "material-prose-claim",
+        "asOf": "2026-10-16",
+        "temporalScope": "Original edition; migration does not establish current operational truth.",
+        "status": "unverified",
+        "assessment": "Historical primary-documentation attribution; not evidence of an August interview capability.",
+        "limits": "Historical primary-documentation attribution; not evidence of an August interview capability.",
+        "sourceLocation": "Original article prose; claim identified during full-page migration audit.",
+        "references": [],
+        "counterevidence": []
+      },
+      {
+        "id": "the-agent-a-company-owns--ship-update",
+        "proposition": "The original edition describes an October 15 Ship recap announcing later agent-platform changes.",
+        "kind": "material-prose-claim",
+        "asOf": "2026-10-16",
+        "temporalScope": "Original edition; migration does not establish current operational truth.",
+        "status": "unverified",
+        "assessment": "Historical announcement attribution; not a deployment audit.",
+        "limits": "Historical announcement attribution; not a deployment audit.",
+        "sourceLocation": "Original article prose; claim identified during full-page migration audit.",
+        "references": [],
+        "counterevidence": []
+      },
+      {
+        "id": "the-agent-a-company-owns--self-hosting",
+        "proposition": "Eve can be operated outside Vercel with operator-supplied workflow storage, sandbox and authentication.",
+        "kind": "material-prose-claim",
+        "asOf": "2026-10-16",
+        "temporalScope": "Original edition; migration does not establish current operational truth.",
+        "status": "unverified",
+        "assessment": "Historical guide attribution. Portability equivalence and recovery are untested.",
+        "limits": "Historical guide attribution. Portability equivalence and recovery are untested.",
+        "sourceLocation": "Original article prose; claim identified during full-page migration audit.",
+        "references": [],
+        "counterevidence": []
+      },
+      {
+        "id": "the-agent-a-company-owns--delivery-state",
+        "proposition": "The original edition described GhostMesh delivery grants and a one-use ledger as uncommissioned and email scaffolding as disabled.",
+        "kind": "material-prose-claim",
+        "asOf": "2026-10-16",
+        "temporalScope": "Original edition; migration does not establish current operational truth.",
+        "status": "unverified",
+        "assessment": "Historical October 16 context only. This Reader does not verify present GhostMesh service state.",
+        "limits": "Historical October 16 context only. This Reader does not verify present GhostMesh service state.",
+        "sourceLocation": "Original article prose; claim identified during full-page migration audit.",
+        "references": [],
+        "counterevidence": []
+      }
+    ],
+    "references": [
+      {
+        "id": "eve",
+        "title": "Eve package README",
+        "author": "Vercel contributors",
+        "publisher": "Vercel",
+        "url": "https://github.com/vercel/eve/blob/198d6f5cefed3496fcc78fff0482893fa70bfd8b/packages/eve/README.md",
+        "publicationDate": "unknown",
+        "datePrecision": "day",
+        "dateNote": "README dates are latest file commit, not original publication.",
+        "eventDate": null,
+        "location": "Preview Terms and Safeguards",
+        "sourceType": "primary-documentation",
+        "independence": "Vendor or project author. Documents its own design and observations; not independent performance or deployment verification.",
+        "evidenceFamily": "Vercel",
+        "checkedAt": "2026-10-18T14:39:28Z",
+        "verification": "Read-only independent researcher checked source wording, not execution.",
+        "lastUpdated": "2026-10-06"
+      }
+    ],
+    "relationships": [
+      {
+        "target": "reader:autonomy-needs-an-interface",
+        "type": "related topic",
+        "reason": "Both editorial briefs examine agents, authority, memory. This is a topic-level reading route, not independent corroboration or agreement.",
+        "provenance": [
+          "/the-agent-a-company-owns/#at-a-glance",
+          "/autonomy-needs-an-interface/#at-a-glance"
+        ],
+        "basis": "curated-tags",
+        "direction": "outgoing"
+      },
+      {
+        "target": "reader:the-inbox-was-a-boundary",
+        "type": "related topic",
+        "reason": "Both editorial briefs examine agents, authority. This is a topic-level reading route, not independent corroboration or agreement.",
+        "provenance": [
+          "/the-agent-a-company-owns/#at-a-glance",
+          "/the-inbox-was-a-boundary/#at-a-glance"
+        ],
+        "basis": "curated-tags",
+        "direction": "outgoing"
+      },
+      {
+        "target": "reader:the-key-was-the-boundary",
+        "type": "related topic",
+        "reason": "Both editorial briefs examine agents, authority. This is a topic-level reading route, not independent corroboration or agreement.",
+        "provenance": [
+          "/the-agent-a-company-owns/#at-a-glance",
+          "/the-key-was-the-boundary/#at-a-glance"
+        ],
+        "basis": "curated-tags",
+        "direction": "outgoing"
+      }
+    ],
+    "relationshipDisposition": "Qualified topic-level links; no claim of empirical corroboration.",
+    "review": {
+      "status": "source-reviewed",
+      "reviewer": "Independent read-only Codex reviewer",
+      "reviewedSourceHead": "06c64eecdcc053548b14427f62d0c8c2d4f91f47",
+      "checkedAt": "2026-10-18T14:51:39Z",
+      "scope": "Bounded source implementation and evidence representation. Not certification of every factual claim, private custody, third-party playback, formal WCAG compliance or deployment.",
+      "findings": "No remaining material findings in reviewed scope. Generator, site checker and ten negative tests independently passed."
+    },
+    "revisionHistory": [
+      {
+        "at": "2026-10-18T14:34:54.306588Z",
+        "kind": "structural-normalization",
+        "reason": "Issue 23: explicit brief, evidence limits, themes and discovery. Historical conclusions preserved; classification is editorial, not factual confirmation."
+      }
+    ],
+    "editorialOrder": 5,
+    "orderReason": "Reading path from task framing and inspectable work through review, evidence and authority, then product-specific cases."
+  },
+  "editorial": {
+    "overview": "Riley Brown interviews Vercel CEO Guillermo Rauch about V, Eve, reusable skills, tools, memory and a company-owned agent that survives individual conversations.",
+    "whyItMatters": "Useful for teams considering shared agents. Watch the permission and memory discussion; skip the interview if you need independent productivity measurements or a deployment audit.",
+    "ghostMeshTakeaway": "Own continuity while proving permission, replay, memory isolation and portability with synthetic tests. A readable agent folder does not itself enforce those boundaries."
+  }
+}
