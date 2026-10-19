@@ -4953,9 +4953,20 @@
           ],
           "basis": "curated-source-overlap",
           "direction": "outgoing"
+        },
+        {
+          "target": "reader:when-agents-become-the-customer",
+          "type": "related topic",
+          "reason": "Jones forecasts how agents may reach websites; Wilson considers services designed for agent customers. Read them together to compare the forecasts and product incentives with authorization boundaries, not as mutual evidence for adoption.",
+          "provenance": [
+            "/the-fleet-does-not-prove-the-forecast/#forecast",
+            "/when-agents-become-the-customer/#authority"
+          ],
+          "basis": "curated-editorial-contrast",
+          "direction": "outgoing"
         }
       ],
-      "relationshipDisposition": "One topic-level link to the earlier Amap Reader; neither article independently corroborates the other.",
+      "relationshipDisposition": "Two topic-level reading routes compare the Amap source and the separate forecast about agent-facing services. Neither link independently corroborates the other Reader's claims.",
       "legacyReceipt": {
         "schema": "ghostmesh-video-receipt-v1",
         "createdAt": "2026-10-19T05:48:20Z",
@@ -5210,8 +5221,20 @@
           "datePrecision": "day"
         }
       ],
-      "relationships": [],
-      "relationshipDisposition": "No Reader relationship is admitted yet. A shared interest in model scores alone does not establish a qualified editorial edge.",
+      "relationships": [
+        {
+          "target": "reader:the-experiment-ran-did-the-research-advance",
+          "type": "related topic",
+          "reason": "The physics benchmark reports 49 of 50 bounded calculations; the paper examines expert judgments about contributions to two open-ended research questions. Compare what a task score and a research judgment establish without treating either as a test of the other.",
+          "provenance": [
+            "/a-scenario-is-not-a-singularity/#physics",
+            "/the-experiment-ran-did-the-research-advance/#finding"
+          ],
+          "basis": "curated-editorial-contrast",
+          "direction": "outgoing"
+        }
+      ],
+      "relationshipDisposition": "One topic-level route contrasts a bounded physics benchmark with expert judgment of open-ended research. Neither Reader corroborates or rebuts the other's measured result.",
       "legacyReceipt": {
         "schema": "ghostmesh-video-receipt-v1",
         "createdAt": "2026-10-19T12:04:09Z",
@@ -6028,8 +6051,20 @@
           "checkedAt": "2026-10-19T13:52:14Z"
         }
       ],
-      "relationships": [],
-      "relationshipDisposition": "No local Reader examines these two shadow evaluations or the same research-progress claim. The separately cited RE-Bench and AI Scientist-v2 studies test different constructs; they are related reading, not graph corroboration.",
+      "relationships": [
+        {
+          "target": "reader:a-scenario-is-not-a-singularity",
+          "type": "related topic",
+          "reason": "This paper grades open-ended research contributions; the earlier Reader analyzes a 49 of 50 physics benchmark result. Read across them to keep research judgment separate from a bounded task score, not to corroborate either result.",
+          "provenance": [
+            "/the-experiment-ran-did-the-research-advance/#finding",
+            "/a-scenario-is-not-a-singularity/#physics"
+          ],
+          "basis": "curated-editorial-contrast",
+          "direction": "outgoing"
+        }
+      ],
+      "relationshipDisposition": "A topic-level route to the physics benchmark contrasts bounded task scoring with judgments of open-ended research. No local Reader independently verifies these two shadow evaluations or the same research-progress claim; the cited RE-Bench and AI Scientist-v2 studies remain external different-construct reading.",
       "legacyReceipt": {
         "schema": "ghostmesh-paper-receipt-v1",
         "source": {

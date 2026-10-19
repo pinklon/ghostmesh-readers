@@ -30,6 +30,8 @@ class VisualContractTest(unittest.TestCase):
         ):
             self.assertIn(f'class="gm-destination gm-destination-{name}" href="{url}"', home)
         self.assertEqual(home.count('class="gm-destination gm-destination-'), 3)
+        self.assertIn('Context, evidence and continuity <span>Conceptual illustration · Human authority</span>', home)
+        self.assertNotIn('GM / CONCEPTUAL SIGNAL ARCHITECTURE', home)
 
     def test_single_shared_shell_and_full_archive(self):
         catalog = json.loads((ROOT / 'content/catalog.json').read_text())
@@ -44,6 +46,8 @@ class VisualContractTest(unittest.TestCase):
                                      for tag, a in parsed.tags), 1)
                 self.assertEqual(sum('data-theme-toggle' in a for _, a in parsed.tags), 1)
                 self.assertEqual(sum(tag == 'h1' for tag, _ in parsed.tags), 1)
+                self.assertIn('<p class="gm-site-tagline">Context endures. Possibility evolves.</p>',
+                              (ROOT / 'site' / route).read_text())
                 if route not in {'index.html', 'readers/index.html', 'knowledge/index.html'}:
                     self.assertEqual(sum('data-gm-share' in a for _, a in parsed.tags), 1)
                     self.assertEqual(sum('gm-reader-footer' in a.get('class', '').split()
@@ -111,6 +115,9 @@ class VisualContractTest(unittest.TestCase):
                 target = next(r for r in catalog['readers'] if r['id'] == edge['target'])
                 self.assertIn(f'href="/{target["slug"]}/"', page)
         self.assertIn('Both Readers examine the Amap fleet', page)
+        self.assertIn('Wilson considers services designed for agent customers', page)
+        self.assertIn('The physics benchmark reports 49 of 50 bounded calculations', page)
+        self.assertIn('This paper grades open-ended research contributions', page)
         self.assertIn('limited inference from Anthropic emotion-representation', page)
 
     def test_catalog_aspect_and_share_source_are_explicit(self):

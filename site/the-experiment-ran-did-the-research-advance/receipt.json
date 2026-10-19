@@ -225,8 +225,20 @@
         "checkedAt": "2026-10-19T13:52:14Z"
       }
     ],
-    "relationships": [],
-    "relationshipDisposition": "No local Reader examines these two shadow evaluations or the same research-progress claim. The separately cited RE-Bench and AI Scientist-v2 studies test different constructs; they are related reading, not graph corroboration.",
+    "relationships": [
+      {
+        "target": "reader:a-scenario-is-not-a-singularity",
+        "type": "related topic",
+        "reason": "This paper grades open-ended research contributions; the earlier Reader analyzes a 49 of 50 physics benchmark result. Read across them to keep research judgment separate from a bounded task score, not to corroborate either result.",
+        "provenance": [
+          "/the-experiment-ran-did-the-research-advance/#finding",
+          "/a-scenario-is-not-a-singularity/#physics"
+        ],
+        "basis": "curated-editorial-contrast",
+        "direction": "outgoing"
+      }
+    ],
+    "relationshipDisposition": "A topic-level route to the physics benchmark contrasts bounded task scoring with judgments of open-ended research. No local Reader independently verifies these two shadow evaluations or the same research-progress claim; the cited RE-Bench and AI Scientist-v2 studies remain external different-construct reading.",
     "review": {
       "status": "draft-source-reviewed; integration review pending",
       "reviewer": "Independent read-only reviewer of original article only",

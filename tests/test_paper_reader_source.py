@@ -143,14 +143,17 @@ class PaperReaderSourceTests(unittest.TestCase):
         self.assertIn('id="external-evidence"', rendered)
         self.assertIn('id="related-thinking"', rendered)
         self.assertIn("External study / outside the Reader graph", rendered)
-        self.assertIn("No local Reader examines these two shadow evaluations", rendered)
+        self.assertIn("No local Reader independently verifies these two shadow evaluations", rendered)
+        self.assertIn('href="/a-scenario-is-not-a-singularity/"', rendered)
         self.assertIn('href="https://proceedings.mlr.press/v267/wijk25a.html"', rendered)
         self.assertIn('href="https://arxiv.org/abs/2504.08066"', rendered)
         self.assertIn('data-gm-share=""', rendered)
         self.assertNotIn("data-home-player", rendered)
         self.assertNotIn("data-gm-aspect", rendered)
         paper = json.loads((ROOT / "content/catalog.json").read_text())["readers"][-1]
-        self.assertEqual(paper['relationships'], [])
+        self.assertEqual(len(paper['relationships']), 1)
+        self.assertEqual(paper['relationships'][0]['type'], 'related topic')
+        self.assertEqual(paper['relationships'][0]['target'], 'reader:a-scenario-is-not-a-singularity')
         validate_paper_source(rendered, paper['source'])
 
 

@@ -213,6 +213,7 @@ body#home #ecosystem,body#home #contact{border-top:1px solid var(--gm-border);pa
 /* Compact GhostMesh shell, adapted from the referenced SharePlane header hierarchy. */
 .gm-site-header-inner{min-height:64px;gap:15px}
 .gm-site-brand{font-size:13px;letter-spacing:.1em}
+.gm-site-tagline{max-width:245px;margin:0;color:var(--gm-muted);font:600 12px/1.3 system-ui;letter-spacing:0}
 .gm-site-nav{gap:2px}
 .gm-site-nav a{padding:8px 7px;font-size:12px}
 .gm-header-actions{display:flex;align-items:center;gap:8px}
@@ -241,11 +242,12 @@ body#home #ecosystem,body#home #contact{border-top:1px solid var(--gm-border);pa
 .gm-reader-search [data-reader-search-results] span{font:13px/1.5 system-ui;color:var(--gm-muted)}
 .gm-library-match-snippet{padding:11px 14px;background:var(--gm-soft);border-left:2px solid var(--gm-accent);color:var(--gm-ink)!important;font:13px/1.55 system-ui}
 @media(max-width:700px){
- .gm-site-header-inner{width:calc(100% - 40px);min-height:82px;padding-block:0;display:grid;grid-template-columns:minmax(0,1fr) auto;grid-template-rows:46px 36px;gap:0 8px}
+ .gm-site-header-inner{width:calc(100% - 40px);min-height:112px;padding-block:0;display:grid;grid-template-columns:minmax(0,1fr) auto;grid-template-rows:46px 30px 36px;gap:0 8px}
  .gm-site-brand{grid-column:1;grid-row:1;font-size:12px}
  .gm-site-brand span{display:none}
+ .gm-site-tagline{grid-column:1/-1;grid-row:2;align-self:center;max-width:none;font-size:12px}
  .gm-header-actions{grid-column:2;grid-row:1}
- .gm-site-nav{grid-column:1/-1;grid-row:2;width:100%;margin:0;justify-content:space-between;gap:0;flex-wrap:nowrap}
+ .gm-site-nav{grid-column:1/-1;grid-row:3;width:100%;margin:0;justify-content:space-between;gap:0;flex-wrap:nowrap}
  .gm-site-nav a{font-size:11px;padding:8px 3px;white-space:nowrap}
  .gm-reader-search{padding:18px}
 }

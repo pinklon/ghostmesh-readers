@@ -268,6 +268,12 @@ def render_html(model: dict) -> bytes:
     rows = []
     for number, reader in enumerate(readers, 1):
         entry = catalog_by_slug[reader["id"].removeprefix("urn:ghostmesh-readers:reader:")]
+        local_url = "/" + entry["slug"] + "/"
+        source = entry["source"]
+        if source.get("kind") == "paper":
+            source_label = "Paper · " + source["publisher"]
+        else:
+            source_label = source["platform"] + (" · " + source["creator"] if source.get("creator") else "")
         claim_items = []
         for claim in claims_by_reader[reader["id"]]:
             evidence = [by_id[e["to"]] for e in citations if e["from"] == claim["id"]]
@@ -278,7 +284,7 @@ def render_html(model: dict) -> bytes:
                 f'<p class="kx-trace-label">{html.escape(claim["label"])}</p>'
                 f'<blockquote>{html.escape(claim["statement"])}</blockquote>'
                 f'<p class="kx-trace-meta">Status: {html.escape(claim["epistemicStatus"])}. '
-                f'<a href="{html.escape(reader["url"] + claim["provenance"]["locator"], quote=True)}">'
+                f'<a href="{html.escape(local_url + claim["provenance"]["locator"], quote=True)}">'
                 f'Inspect the exact published passage</a>.</p>'
                 f'<p class="kx-trace-meta">External source named there: {links or "none admitted"}. '
                 'The link records attribution; external content bytes are not certified here.</p></li>'
@@ -289,9 +295,9 @@ def render_html(model: dict) -> bytes:
         rows.append(
             f'<article class="kx-record" data-knowledge-id="{html.escape(reader["id"], quote=True)}" '
             f'data-trace="{"yes" if claim_items else "no"}">'
-            f'<div class="kx-record-index"><span>{number:02d}</span><span>Reader source</span></div>'
+            f'<div class="kx-record-index"><span>{number:02d}</span><span>{html.escape(source_label)}</span></div>'
             '<div class="kx-record-body">'
-            f'<h3><a href="{html.escape(reader["url"], quote=True)}">{html.escape(reader["label"])}</a></h3>'
+            f'<h3><a href="{html.escape(local_url, quote=True)}">{html.escape(reader["label"])}</a></h3>'
             f'<p class="kx-record-overview">{html.escape(entry["overview"])}</p>'
             f'{trace}</div>'
             '<span class="kx-record-arrow" aria-hidden="true">↗</span></article>'
