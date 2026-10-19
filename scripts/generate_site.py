@@ -29,6 +29,7 @@ class PublicArticleText(HTMLParser):
  def text(self):return re.sub(r'\s+',' ',' '.join(self.parts)).strip()
 def controls():return ('<header class="gm-site-header"><div class="gm-site-header-inner">'
  '<a class="gm-site-brand" href="/" aria-label="GhostMesh Readers home"><img src="/brand/ghostmesh-mark.svg" width="45" height="34" alt=""><strong>GHOST<em>MESH</em></strong><span>READERS</span></a>'
+ '<p class="gm-site-tagline">Context endures. Possibility evolves.</p>'
  '<nav class="gm-site-nav" aria-label="Main navigation"><a href="/">Home</a><a href="/readers/">Readers</a><a href="/map/">Map</a><a href="/knowledge/">Knowledge</a><a href="/#about">About</a></nav>'
  '<div class="gm-header-actions"><a class="gm-search-control" href="/readers/#search" aria-label="Search Reader articles; without JavaScript, browse the Reader archive" data-reader-search-open title="Search Reader articles">'
  '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 5 5"/></svg></a>'
@@ -196,7 +197,7 @@ def projections():
              '<p>Public videos are the starting point. Each Reader traces the source, tests material claims against available evidence, shows counterevidence and marks what remains unverified. You keep the judgment.</p>'
              '<div class="gm-hero-actions"><a class="gm-cta" href="#readers">Read a deconstruction ↗</a>'
              '<a class="gm-cta gm-cta-secondary" href="#method">See the method ↓</a></div></div>'
-             '<div class="gm-signal">'+signal+'<p>GM / CONCEPTUAL SIGNAL ARCHITECTURE <span>HUMAN AUTHORITY</span></p></div></header>'
+             '<div class="gm-signal">'+signal+'<p>Context, evidence and continuity <span>Conceptual illustration · Human authority</span></p></div></header>'
              '<div class="gm-system-strip" aria-label="Reader principles"><div>01 / SOURCE<strong>Original kept in view</strong></div>'
              '<div>02 / EVIDENCE<strong>Claims open to challenge</strong></div><div>03 / JUDGMENT<strong>Decision stays human</strong></div></div>')
  featured=byid[data['featuredId']]

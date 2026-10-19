@@ -778,9 +778,20 @@
           ],
           "basis": "curated-source-overlap",
           "direction": "outgoing"
+        },
+        {
+          "target": "reader:when-agents-become-the-customer",
+          "type": "related topic",
+          "reason": "Jones forecasts how agents may reach websites; Wilson considers services designed for agent customers. Read them together to compare the forecasts and product incentives with authorization boundaries, not as mutual evidence for adoption.",
+          "provenance": [
+            "/the-fleet-does-not-prove-the-forecast/#forecast",
+            "/when-agents-become-the-customer/#authority"
+          ],
+          "basis": "curated-editorial-contrast",
+          "direction": "outgoing"
         }
       ],
-      "relationshipDisposition": "One topic-level link to the earlier Amap Reader; neither article independently corroborates the other.",
+      "relationshipDisposition": "Two topic-level reading routes compare the Amap source and the separate forecast about agent-facing services. Neither link independently corroborates the other Reader's claims.",
       "review": {
         "status": "editorial-review-pending",
         "reviewer": "Pending independent editorial review",
