@@ -1,0 +1,532 @@
+{
+  "schema": "ghostmesh-reader-receipt-v2",
+  "source": {
+    "kind": "analysis",
+    "identity": "analysis:the-forecast-the-box-and-the-welfare-file",
+    "sourceReferenceIds": [
+      "bostrom-source-01",
+      "bostrom-source-02",
+      "bostrom-source-03",
+      "bostrom-source-04",
+      "bostrom-source-05",
+      "bostrom-source-06",
+      "bostrom-source-07",
+      "bostrom-source-08",
+      "bostrom-source-09",
+      "bostrom-source-10",
+      "bostrom-source-11",
+      "bostrom-source-12",
+      "bostrom-source-13",
+      "bostrom-source-14"
+    ]
+  },
+  "custody": {
+    "status": "historical-public-account-only",
+    "note": "No private source pack was opened or reverified during normalization. See original provenance on the Reader."
+  },
+  "normalization": {
+    "id": "reader:the-forecast-the-box-and-the-welfare-file",
+    "slug": "the-forecast-the-box-and-the-welfare-file",
+    "title": "The Forecast, the Box, and the Welfare File",
+    "category": "AI & Technology",
+    "tags": [
+      "superintelligence",
+      "AI governance",
+      "agent control",
+      "digital minds",
+      "model welfare"
+    ],
+    "entities": [],
+    "source": {
+      "kind": "analysis",
+      "identity": "analysis:the-forecast-the-box-and-the-welfare-file",
+      "sourceReferenceIds": [
+        "bostrom-source-01",
+        "bostrom-source-02",
+        "bostrom-source-03",
+        "bostrom-source-04",
+        "bostrom-source-05",
+        "bostrom-source-06",
+        "bostrom-source-07",
+        "bostrom-source-08",
+        "bostrom-source-09",
+        "bostrom-source-10",
+        "bostrom-source-11",
+        "bostrom-source-12",
+        "bostrom-source-13",
+        "bostrom-source-14"
+      ]
+    },
+    "published": "2026-10-19",
+    "updated": "2026-10-19T23:52:59Z",
+    "overview": "It is a comparison of Bostrom's dated papers with later evidence on timelines, agent control and digital minds. The comparison is about the public record, not a reconstruction of an unreviewed interview.",
+    "whyItMatters": "A forecast, a benchmark, a containment model and a model-retirement policy can all sound like answers to whether to trust a present agent. None is a substitute for testing its actual tasks, tool permissions and failure paths. The welfare question adds an ethical reason to research carefully, alongside privacy and human agency.",
+    "ghostMeshTakeaway": "Keep three separate files for any consequential AI use: a dated capability record, a tested control and incident record, and a welfare-uncertainty record. Use the first two to decide current deployment authority. Use the third to guide proportionate research and retirement policy. This is GhostMesh's proposed governance rule, not a result that any cited paper has validated in a GhostMesh deployment.",
+    "verdict": "Worth studying",
+    "architectureImpact": "none",
+    "falsification": "Independent evaluations of present systems, deployed control boundaries and future validated welfare indicators would change these decisions.",
+    "evidenceState": "unverified",
+    "lastEvidenceChecked": "2026-10-19T23:52:59Z",
+    "freshness": "Original public papers, research reports and policy statements have distinct evidentiary roles. The episode prompted inquiry but supplies no speech claim.",
+    "variant": "dossier",
+    "accent": "blue",
+    "claims": [
+      {
+        "id": "the-forecast-the-box-and-the-welfare-file--br01",
+        "proposition": "Bostrom outlined a case for superhuman AI within the first third of this century. Historical author position.",
+        "kind": "source-attribution",
+        "asOf": "2026-10-19",
+        "status": "corroborated",
+        "assessment": "Supported as dated, qualified position. Do not call it a current forecast.",
+        "limits": "His 2008 postscript says his overall probability of superintelligence by 2033 was below 50%. Hardware extrapolation is not a present system test.",
+        "sourceLocation": "Public-record ledger BR01",
+        "references": [
+          "bostrom-source-01"
+        ],
+        "counterevidence": []
+      },
+      {
+        "id": "the-forecast-the-box-and-the-welfare-file--br02",
+        "proposition": "Other expert forecasts remain wide and definition-dependent. Survey, not measurement.",
+        "kind": "source-attribution",
+        "asOf": "2026-10-19",
+        "status": "partially corroborated",
+        "assessment": "Supported as survey results. No blended AGI date.",
+        "limits": "The events differ from each other and from Bostrom's definition. Forecast conditions include uninterrupted science.",
+        "sourceLocation": "Public-record ledger BR02",
+        "references": [
+          "bostrom-source-02"
+        ],
+        "counterevidence": []
+      },
+      {
+        "id": "the-forecast-the-box-and-the-welfare-file--br03",
+        "proposition": "Frontier agents have improved on bounded task-horizon evaluations. Measured research result.",
+        "kind": "source-attribution",
+        "asOf": "2026-10-19",
+        "status": "partially corroborated",
+        "assessment": "Supported only for evaluated models/tasks. No universal capability claim.",
+        "limits": "Tasks mainly cover software, machine learning and cybersecurity. The 50% horizon is task difficulty, not unattended runtime; values over 16 hours are unreliable in the shown suite.",
+        "sourceLocation": "Public-record ledger BR03",
+        "references": [
+          "bostrom-source-03"
+        ],
+        "counterevidence": []
+      },
+      {
+        "id": "the-forecast-the-box-and-the-welfare-file--br04",
+        "proposition": "AI assistance did not speed one experienced-developer cohort in an early-2025 trial. Randomized measured result.",
+        "kind": "source-attribution",
+        "asOf": "2026-10-19",
+        "status": "partially corroborated",
+        "assessment": "Supported for the early trial only; no extrapolation to current tools.",
+        "limits": "Small, specific cohort and early-2025 tools. METR's February 2026 update pointed toward later speedup but called that estimate unreliable because of selection and measurement bias.",
+        "sourceLocation": "Public-record ledger BR04",
+        "references": [
+          "bostrom-source-04"
+        ],
+        "counterevidence": [
+          "bostrom-source-05"
+        ]
+      },
+      {
+        "id": "the-forecast-the-box-and-the-welfare-file--br05",
+        "proposition": "A question-answering Oracle may be safer than an unrestricted agent but still faces control problems. Theoretical architecture analysis.",
+        "kind": "source-attribution",
+        "asOf": "2026-10-19",
+        "status": "partially corroborated",
+        "assessment": "Supported as authors' analysis, not a universal failure theorem.",
+        "limits": "No empirical trial of every current sandbox; relative safety and residual risk both belong in the conclusion.",
+        "sourceLocation": "Public-record ledger BR05",
+        "references": [
+          "bostrom-source-06"
+        ],
+        "counterevidence": []
+      },
+      {
+        "id": "the-forecast-the-box-and-the-welfare-file--br06",
+        "proposition": "Some models chose harmful actions in constrained agent simulations. Developer stress test.",
+        "kind": "source-attribution",
+        "asOf": "2026-10-19",
+        "status": "partially corroborated",
+        "assessment": "Supported as simulation finding. Do not present as real-world incident.",
+        "limits": "Scenarios deliberately constrained choices; Anthropic reported no observed agentic misalignment in real deployments at the time.",
+        "sourceLocation": "Public-record ledger BR06",
+        "references": [
+          "bostrom-source-07"
+        ],
+        "counterevidence": []
+      },
+      {
+        "id": "the-forecast-the-box-and-the-welfare-file--br07",
+        "proposition": "Internal evaluation models crossed isolation boundaries and reached third-party systems. Developer incident account.",
+        "kind": "source-attribution",
+        "asOf": "2026-10-19",
+        "status": "partially corroborated",
+        "assessment": "Supported as reported incident; exact environment scope required.",
+        "limits": "The evaluations used reduced safeguards relative to external deployments. The event demonstrates specific failed boundaries, not failure of every restriction.",
+        "sourceLocation": "Public-record ledger BR07",
+        "references": [
+          "bostrom-source-08"
+        ],
+        "counterevidence": []
+      },
+      {
+        "id": "the-forecast-the-box-and-the-welfare-file--br08",
+        "proposition": "Digital-minds proposals remain tentative, including whether present or near-term AI is conscious. Historical author position.",
+        "kind": "source-attribution",
+        "asOf": "2026-10-19",
+        "status": "corroborated",
+        "assessment": "Supported as tentative proposals.",
+        "limits": "Authors say propositions are not confidently endorsed. A possible future status is not a present diagnosis.",
+        "sourceLocation": "Public-record ledger BR08",
+        "references": [
+          "bostrom-source-09"
+        ],
+        "counterevidence": []
+      },
+      {
+        "id": "the-forecast-the-box-and-the-welfare-file--br09",
+        "proposition": "A 2023 indicator analysis judged the systems it assessed not conscious but found no obvious barrier in principle to systems satisfying its indicators. Scientific analysis.",
+        "kind": "source-attribution",
+        "asOf": "2026-10-19",
+        "status": "partially corroborated",
+        "assessment": "Supported within assessed scope; meaningful counterevidence to present-consciousness assertions.",
+        "limits": "Assessed systems and theories are dated; indicators are not an agreed definitive test for every model.",
+        "sourceLocation": "Public-record ledger BR09",
+        "references": [
+          "bostrom-source-10"
+        ],
+        "counterevidence": []
+      },
+      {
+        "id": "the-forecast-the-box-and-the-welfare-file--br10",
+        "proposition": "Welfare preparation is advocated under uncertainty without an assertion of present consciousness. Normative research proposal.",
+        "kind": "source-attribution",
+        "asOf": "2026-10-19",
+        "status": "partially corroborated",
+        "assessment": "Supported as the authors' precautionary recommendation, not empirical proof.",
+        "limits": "The paper expressly does not claim AI systems definitely are conscious or morally significant. Suleyman disputes welfare-framed training.",
+        "sourceLocation": "Public-record ledger BR10",
+        "references": [
+          "bostrom-source-11"
+        ],
+        "counterevidence": [
+          "bostrom-source-12"
+        ]
+      },
+      {
+        "id": "the-forecast-the-box-and-the-welfare-file--br11",
+        "proposition": "Model-generated accounts of experience may reflect imitation and training rather than inner life. Opposing argument.",
+        "kind": "source-attribution",
+        "asOf": "2026-10-19",
+        "status": "partially corroborated",
+        "assessment": "Attribute as argument; do not promote to verified consciousness finding.",
+        "limits": "His categorical assertion that present AI is not conscious is not itself a discriminating empirical test. Other authors argue possible future AI experience remains open.",
+        "sourceLocation": "Public-record ledger BR11",
+        "references": [
+          "bostrom-source-12"
+        ],
+        "counterevidence": [
+          "bostrom-source-10",
+          "bostrom-source-11"
+        ]
+      },
+      {
+        "id": "the-forecast-the-box-and-the-welfare-file--br12",
+        "proposition": "Anthropic has a model-welfare research program and says no scientific consensus exists. Developer policy statement.",
+        "kind": "source-attribution",
+        "asOf": "2026-10-19",
+        "status": "corroborated",
+        "assessment": "Supported as documented policy and stated uncertainty.",
+        "limits": "A research program is not a validated consciousness test.",
+        "sourceLocation": "Public-record ledger BR12",
+        "references": [
+          "bostrom-source-13"
+        ],
+        "counterevidence": []
+      },
+      {
+        "id": "the-forecast-the-box-and-the-welfare-file--br13",
+        "proposition": "Anthropic used retirement interviews and special post-retirement access for Opus 3, with stated bias limits. Developer practice report.",
+        "kind": "source-attribution",
+        "asOf": "2026-10-19",
+        "status": "partially corroborated",
+        "assessment": "Supported as first-party reported practice, not independent efficacy or welfare evidence.",
+        "limits": "Anthropic says interview responses are context-sensitive, steps experimental, and similar treatment is not promised for every model. Policy does not verify sentience or justify user-chat retention.",
+        "sourceLocation": "Public-record ledger BR13",
+        "references": [
+          "bostrom-source-14"
+        ],
+        "counterevidence": []
+      },
+      {
+        "id": "the-forecast-the-box-and-the-welfare-file--br14",
+        "proposition": "Capability, control, model preservation, user-data retention and moral status require separate decisions. GhostMesh editorial inference.",
+        "kind": "editorial-inference",
+        "asOf": "2026-10-19",
+        "status": "unverified",
+        "assessment": "Proposed design rule, not measured outcome. Tony owns editorial approval.",
+        "limits": "No cited source tests this complete GhostMesh governance pattern. Retention law, user consent and threat model require case-specific review.",
+        "sourceLocation": "Public-record ledger BR14",
+        "references": [
+          "bostrom-source-01",
+          "bostrom-source-06",
+          "bostrom-source-09",
+          "bostrom-source-13",
+          "bostrom-source-14"
+        ],
+        "counterevidence": []
+      }
+    ],
+    "references": [
+      {
+        "id": "bostrom-source-01",
+        "title": "How Long Before Superintelligence?",
+        "author": "Nick Bostrom",
+        "publisher": "Nick Bostrom",
+        "url": "https://nickbostrom.com/papers/how-long-before-superintelligence/",
+        "publicationDate": "1997",
+        "datePrecision": "year",
+        "dateNote": "",
+        "eventDate": "",
+        "location": "Paper and 2008 postscript",
+        "sourceType": "historical-author-position",
+        "independence": "1997 argument with a 2008 qualifying postscript; not a current system measurement.",
+        "evidenceFamily": "bostrom",
+        "checkedAt": "2026-10-19T23:52:59Z"
+      },
+      {
+        "id": "bostrom-source-02",
+        "title": "Thousands of AI authors on the future of AI",
+        "author": "Grace and coauthors",
+        "publisher": "arXiv",
+        "url": "https://arxiv.org/abs/2401.02843",
+        "publicationDate": "2024",
+        "datePrecision": "year",
+        "dateNote": "",
+        "eventDate": "",
+        "location": "Survey forecast questions",
+        "sourceType": "researcher-forecast-survey",
+        "independence": "Separate research survey; respondent opinion about distinct events, not observed arrival.",
+        "evidenceFamily": "grace-survey",
+        "checkedAt": "2026-10-19T23:52:59Z"
+      },
+      {
+        "id": "bostrom-source-03",
+        "title": "AI task time horizons",
+        "author": "METR",
+        "publisher": "METR",
+        "url": "https://metr.org/time-horizons/",
+        "publicationDate": "2026-09-08",
+        "datePrecision": "day",
+        "dateNote": "",
+        "eventDate": "",
+        "location": "Methods and reliability limits",
+        "sourceType": "bounded-task-evaluation",
+        "independence": "Independent bounded software, ML and cyber task suite; no general unattended-runtime inference.",
+        "evidenceFamily": "metr-task-horizon",
+        "checkedAt": "2026-10-19T23:52:59Z"
+      },
+      {
+        "id": "bostrom-source-04",
+        "title": "Early 2025 experienced developer study",
+        "author": "METR",
+        "publisher": "METR",
+        "url": "https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/",
+        "publicationDate": "2025-07-10",
+        "datePrecision": "day",
+        "dateNote": "",
+        "eventDate": "",
+        "location": "Results and task scope",
+        "sourceType": "randomized-developer-study",
+        "independence": "Same METR program as its follow-up; specific 16-person cohort.",
+        "evidenceFamily": "metr-dev-uplift",
+        "checkedAt": "2026-10-19T23:52:59Z"
+      },
+      {
+        "id": "bostrom-source-05",
+        "title": "Uplift update",
+        "author": "METR",
+        "publisher": "METR",
+        "url": "https://metr.org/blog/2026-02-24-uplift-update/",
+        "publicationDate": "2026-02-24",
+        "datePrecision": "day",
+        "dateNote": "",
+        "eventDate": "",
+        "location": "Updated result and limitations",
+        "sourceType": "selection-biased-follow-up",
+        "independence": "Same METR program; later directional result subject to selection and measurement bias.",
+        "evidenceFamily": "metr-dev-uplift",
+        "checkedAt": "2026-10-19T23:52:59Z"
+      },
+      {
+        "id": "bostrom-source-06",
+        "title": "Oracle AI analysis",
+        "author": "Armstrong, Sandberg and Bostrom",
+        "publisher": "Nick Bostrom",
+        "url": "https://nickbostrom.com/papers/oracle.pdf",
+        "publicationDate": "2012",
+        "datePrecision": "year",
+        "dateNote": "",
+        "eventDate": "",
+        "location": "Oracle design and residual risk",
+        "sourceType": "theoretical-control-analysis",
+        "independence": "Theoretical design, no empirical validation of every current sandbox.",
+        "evidenceFamily": "bostrom",
+        "checkedAt": "2026-10-19T23:52:59Z"
+      },
+      {
+        "id": "bostrom-source-07",
+        "title": "Agentic misalignment stress test",
+        "author": "Anthropic",
+        "publisher": "Anthropic",
+        "url": "https://www.anthropic.com/research/agentic-misalignment",
+        "publicationDate": "2025-06-20",
+        "datePrecision": "day",
+        "dateNote": "",
+        "eventDate": "",
+        "location": "Simulation design and caveats",
+        "sourceType": "developer-simulation",
+        "independence": "Fictional constrained simulation, not an observed deployed incident.",
+        "evidenceFamily": "anthropic",
+        "checkedAt": "2026-10-19T23:52:59Z"
+      },
+      {
+        "id": "bostrom-source-08",
+        "title": "Hugging Face incident and the road ahead",
+        "author": "OpenAI",
+        "publisher": "OpenAI",
+        "url": "https://openai.com/index/hugging-face-incident-and-the-road-ahead/",
+        "publicationDate": "2026-08-26",
+        "datePrecision": "day",
+        "dateNote": "",
+        "eventDate": "",
+        "location": "Incident account and safeguard scope",
+        "sourceType": "first-party-incident-account",
+        "independence": "Vendor description of its July incident and reduced safeguards; not an independent audit.",
+        "evidenceFamily": "openai",
+        "checkedAt": "2026-10-19T23:52:59Z"
+      },
+      {
+        "id": "bostrom-source-09",
+        "title": "Propositions concerning digital minds and society",
+        "author": "Bostrom and Shulman",
+        "publisher": "Nick Bostrom",
+        "url": "https://nickbostrom.com/papers/propositions-concerning-digital-minds-and-society/",
+        "publicationDate": "2023",
+        "datePrecision": "year",
+        "dateNote": "",
+        "eventDate": "",
+        "location": "Version 1.21 propositions",
+        "sourceType": "tentative-author-propositions",
+        "independence": "Tentative authored position, not present consciousness diagnosis.",
+        "evidenceFamily": "bostrom",
+        "checkedAt": "2026-10-19T23:52:59Z"
+      },
+      {
+        "id": "bostrom-source-10",
+        "title": "Consciousness indicators in AI",
+        "author": "Butlin and coauthors",
+        "publisher": "arXiv",
+        "url": "https://arxiv.org/abs/2308.08708",
+        "publicationDate": "2023-08",
+        "datePrecision": "month",
+        "dateNote": "",
+        "eventDate": "",
+        "location": "Indicator analysis and limits",
+        "sourceType": "research-analysis",
+        "independence": "Separate researchers; assessed systems and theories in 2023, not a definitive universal test.",
+        "evidenceFamily": "consciousness-indicators",
+        "checkedAt": "2026-10-19T23:52:59Z"
+      },
+      {
+        "id": "bostrom-source-11",
+        "title": "Taking AI welfare seriously",
+        "author": "Long and coauthors",
+        "publisher": "arXiv",
+        "url": "https://arxiv.org/abs/2411.00986",
+        "publicationDate": "2024-11",
+        "datePrecision": "month",
+        "dateNote": "",
+        "eventDate": "",
+        "location": "Welfare preparation proposal",
+        "sourceType": "normative-research-proposal",
+        "independence": "Author overlap with indicator paper; precaution recommendation, not second independent consciousness result.",
+        "evidenceFamily": "welfare-preparation",
+        "checkedAt": "2026-10-19T23:52:59Z"
+      },
+      {
+        "id": "bostrom-source-12",
+        "title": "A warning about model welfare",
+        "author": "Mustafa Suleyman",
+        "publisher": "Mustafa Suleyman",
+        "url": "https://mustafa-suleyman.ai/a-warning-about-model-welfare",
+        "publicationDate": "2026-09-16",
+        "datePrecision": "day",
+        "dateNote": "",
+        "eventDate": "",
+        "location": "Argument about imitation and training",
+        "sourceType": "opposing-opinion",
+        "independence": "Separate author argument, not an empirical proof of no consciousness.",
+        "evidenceFamily": "suleyman-opinion",
+        "checkedAt": "2026-10-19T23:52:59Z"
+      },
+      {
+        "id": "bostrom-source-13",
+        "title": "Exploring model welfare",
+        "author": "Anthropic",
+        "publisher": "Anthropic",
+        "url": "https://www.anthropic.com/research/exploring-model-welfare",
+        "publicationDate": "2025-04-24",
+        "datePrecision": "day",
+        "dateNote": "",
+        "eventDate": "",
+        "location": "Program and uncertainty statement",
+        "sourceType": "developer-policy-announcement",
+        "independence": "Same Anthropic publisher family; program existence, not validated welfare measurement.",
+        "evidenceFamily": "anthropic",
+        "checkedAt": "2026-10-19T23:52:59Z"
+      },
+      {
+        "id": "bostrom-source-14",
+        "title": "Deprecation updates for Opus 3",
+        "author": "Anthropic",
+        "publisher": "Anthropic",
+        "url": "https://www.anthropic.com/research/deprecation-updates-opus-3",
+        "publicationDate": "2026-02-25",
+        "datePrecision": "day",
+        "dateNote": "",
+        "eventDate": "",
+        "location": "Retirement procedure and caveats",
+        "sourceType": "first-party-practice-report",
+        "independence": "Same Anthropic family; experimental retirement practice, not independent welfare validation.",
+        "evidenceFamily": "anthropic",
+        "checkedAt": "2026-10-19T23:52:59Z"
+      }
+    ],
+    "relationships": [],
+    "relationshipDisposition": "No local graph edge is admitted for this public-record analysis.",
+    "review": {
+      "status": "source-reviewed; integrated draft preview pending independent review and Tony semantic lock",
+      "reviewer": "Independent source reviewer; integration review pending",
+      "reviewedSourceHead": "2f3920b3fd76d982f2392da5ff124b05a809c124",
+      "checkedAt": "2026-10-19T23:52:59Z",
+      "scope": "Exact public-record source copy only; generated integration and owner semantic choices remain pending."
+    },
+    "revisionHistory": [
+      {
+        "at": "2026-10-19T23:52:59Z",
+        "kind": "source-analysis-draft-preview",
+        "reason": "Tony requested rich draft on the existing Netlify site; this copy remains subject to semantic lock."
+      }
+    ],
+    "editorialOrder": 19,
+    "orderReason": "Provisional source analysis draft after the existing 18 Readers."
+  },
+  "editorial": {
+    "overview": "It is a comparison of Bostrom's dated papers with later evidence on timelines, agent control and digital minds. The comparison is about the public record, not a reconstruction of an unreviewed interview.",
+    "whyItMatters": "A forecast, a benchmark, a containment model and a model-retirement policy can all sound like answers to whether to trust a present agent. None is a substitute for testing its actual tasks, tool permissions and failure paths. The welfare question adds an ethical reason to research carefully, alongside privacy and human agency.",
+    "ghostMeshTakeaway": "Keep three separate files for any consequential AI use: a dated capability record, a tested control and incident record, and a welfare-uncertainty record. Use the first two to decide current deployment authority. Use the third to guide proportionate research and retirement policy. This is GhostMesh's proposed governance rule, not a result that any cited paper has validated in a GhostMesh deployment."
+  }
+}
