@@ -22,7 +22,7 @@ def paper_cover(source):
             f'<span class="gm-paper-cover-id">ARXIV / {_e(source["identity"].removeprefix("arxiv:"))}</span>'
             '<div class="gm-paper-cover-cases"><span><small>01 / MODEL BEHAVIOR</small><strong>LLM<br>personas</strong></span>'
             '<span><small>02 / MODEL SHIFT</small><strong>TabPFN<br>distribution</strong></span></div>'
-            '<span class="gm-paper-cover-footer">TWO CASES <b>↘</b> ONE RESEARCH QUESTION</span></div>')
+            '<span class="gm-paper-cover-footer">TWO CASES <b>↘</b> TWO RESEARCH QUESTIONS</span></div>')
 
 
 # Reader-specific route labels and calls. These are recommendations to read or

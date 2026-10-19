@@ -126,6 +126,7 @@ class VisualContractTest(unittest.TestCase):
         self.assertIn('class="gm-paper-cover"', archive)
         self.assertIn('LLM<br>personas', archive)
         self.assertIn('TabPFN<br>distribution', archive)
+        self.assertIn('TWO RESEARCH QUESTIONS', archive)
         self.assertEqual(sum(tag == 'iframe' for tag, _ in parsed.tags), 0)
         self.assertIn('Search covers this published Reader library only.', archive)
         home = (ROOT / 'site/index.html').read_text()
