@@ -13,6 +13,18 @@ def _e(value):
     return escape(str(value), quote=True)
 
 
+def paper_cover(source):
+    """Original typographic art; never a captured or redistributed paper page."""
+    if source.get('kind') != 'paper' or not re.fullmatch(r'arxiv:\d{4}\.\d{4,5}v\d+', source.get('identity', '')):
+        raise ValueError('Paper cover requires a version-pinned arXiv identity')
+    return ('<div class="gm-paper-cover" role="img" '
+            'aria-label="Original Reader illustration of the paper\'s two selected cases, LLM personas and TabPFN distribution shift; not a page from the paper">'
+            f'<span class="gm-paper-cover-id">ARXIV / {_e(source["identity"].removeprefix("arxiv:"))}</span>'
+            '<div class="gm-paper-cover-cases"><span><small>01 / MODEL BEHAVIOR</small><strong>LLM<br>personas</strong></span>'
+            '<span><small>02 / MODEL SHIFT</small><strong>TabPFN<br>distribution</strong></span></div>'
+            '<span class="gm-paper-cover-footer">TWO CASES <b>↘</b> ONE RESEARCH QUESTION</span></div>')
+
+
 # Reader-specific route labels and calls. These are recommendations to read or
 # test, not verification labels. Keep the source-grounding checks below when
 # adding a Reader; never infer a call from its category or claim count.
@@ -41,8 +53,7 @@ CALLS = {
 def _poster(reader):
     source = reader['source']
     if source.get('kind') == 'paper':
-        return ('<div class="gm-archive-source-unknown gm-archive-paper-source">'
-                'Original research paper<br>Version-pinned arXiv source<br>No media player</div>')
+        return paper_cover(source)
     platform = source.get('platform', 'YouTube')
     aspect = source.get('mediaAspect')
     if platform not in {'YouTube', 'Instagram'} or aspect not in {'16:9', '9:16', '1:1', 'unknown'}:

@@ -1,8 +1,4 @@
-"""Source-only checks for the proposed paper Reader variant.
-
-The shared generator has not admitted papers yet. These tests protect the draft
-input while its schema and projection are integrated after the design freeze.
-"""
+"""Source identity, opt-in viewer, and public-boundary checks for the paper Reader."""
 
 from html.parser import HTMLParser
 from pathlib import Path
@@ -52,12 +48,23 @@ class PaperReaderSourceTests(unittest.TestCase):
         cls.scan = SourceScan()
         cls.scan.feed(cls.raw)
 
-    def test_source_is_pinned_and_link_only(self):
+    def test_source_is_pinned_with_inert_original_host_viewer(self):
         self.assertIn(f"https://arxiv.org/abs/{ARXIV}", self.scan.links)
         self.assertIn(f"https://arxiv.org/html/{ARXIV}", self.scan.links)
         self.assertIn(f"https://arxiv.org/pdf/{ARXIV}", self.scan.links)
-        forbidden = {"iframe", "video", "audio", "embed", "object", "source", "track", "canvas"}
+        forbidden = {"video", "audio", "embed", "object", "source", "track", "canvas"}
         self.assertFalse(forbidden.intersection(tag for tag, _ in self.scan.tags))
+        frames = [attrs for tag, attrs in self.scan.tags if tag == "iframe"]
+        self.assertEqual(len(frames), 1)
+        self.assertNotIn("src", frames[0])
+        self.assertIn("hidden", frames[0])
+        self.assertEqual(frames[0]["referrerpolicy"], "no-referrer")
+        self.assertIn("data-paper-frame", frames[0])
+        openers = [attrs for tag, attrs in self.scan.tags if tag == "button" and "data-paper-open" in attrs]
+        self.assertEqual(len(openers), 1)
+        self.assertIn("hidden", openers[0])
+        self.assertIn('data-paper-original href="https://arxiv.org/pdf/2607.27191v2"', self.raw)
+        self.assertIn('src="/assets/paper-viewer.js"', self.raw)
         self.assertNotRegex(self.raw, r"data-home-player|data-home-play|data-start|youtube-nocookie|Play original here")
         self.assertFalse(any(name.startswith("on") for _, attrs in self.scan.tags for name in attrs))
 
@@ -97,9 +104,17 @@ class PaperReaderSourceTests(unittest.TestCase):
         ):
             with self.subTest(change=change), self.assertRaises(ValueError):
                 validate_paper_source(self.raw, {**source, **change})
-        for marker in ('<iframe src="about:blank"></iframe>', '<div class="player"></div>'):
+        for marker in ('<iframe src="about:blank"></iframe>', '<div class="player"></div>',
+                       '<script src="https://example.test/viewer.js"></script>', '<script>alert(1)</script>'):
             with self.subTest(marker=marker), self.assertRaises(ValueError):
                 validate_paper_source(self.raw + marker, copy.deepcopy(source))
+        with self.assertRaises(ValueError):
+            validate_paper_source(self.raw.replace('data-paper-frame title=', 'data-paper-frame src="https://example.test/copy.pdf" title='), source)
+        with self.assertRaises(ValueError):
+            validate_paper_source(self.raw.replace('data-paper-frame title=', 'data-paper-frame srcdoc="<h1>copy</h1>" title='), source)
+        with self.assertRaises(ValueError):
+            validate_paper_source(self.raw.replace('data-paper-original href="https://arxiv.org/pdf/2607.27191v2"',
+                                                   'data-paper-original href="https://example.test/copy.pdf"'), source)
 
     def test_schema_discriminates_paper_from_legacy_media(self):
         schema = json.loads((ROOT / "content/catalog.schema.json").read_text())
@@ -127,10 +142,16 @@ class PaperReaderSourceTests(unittest.TestCase):
         self.assertIn("What the paper studied", rendered)
         self.assertIn('id="external-evidence"', rendered)
         self.assertIn('id="related-thinking"', rendered)
+        self.assertIn("External study / outside the Reader graph", rendered)
+        self.assertIn("No local Reader examines these two shadow evaluations", rendered)
+        self.assertIn('href="https://proceedings.mlr.press/v267/wijk25a.html"', rendered)
+        self.assertIn('href="https://arxiv.org/abs/2504.08066"', rendered)
         self.assertIn('data-gm-share=""', rendered)
         self.assertNotIn("data-home-player", rendered)
         self.assertNotIn("data-gm-aspect", rendered)
-        validate_paper_source(rendered, json.loads((ROOT / "content/catalog.json").read_text())["readers"][-1]["source"])
+        paper = json.loads((ROOT / "content/catalog.json").read_text())["readers"][-1]
+        self.assertEqual(paper['relationships'], [])
+        validate_paper_source(rendered, paper['source'])
 
 
 if __name__ == "__main__":

@@ -123,7 +123,9 @@ class VisualContractTest(unittest.TestCase):
         self.assertEqual(len(frames), len(media))
         self.assertCountEqual([a['data-gm-aspect'] for a in frames],
                               [r['source']['mediaAspect'] for r in media])
-        self.assertIn('class="gm-archive-source-unknown gm-archive-paper-source"', archive)
+        self.assertIn('class="gm-paper-cover"', archive)
+        self.assertIn('LLM<br>personas', archive)
+        self.assertIn('TabPFN<br>distribution', archive)
         self.assertEqual(sum(tag == 'iframe' for tag, _ in parsed.tags), 0)
         self.assertIn('Search covers this published Reader library only.', archive)
         home = (ROOT / 'site/index.html').read_text()

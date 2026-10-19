@@ -28,6 +28,14 @@
     .gm-paper-reader .paper-source-route p,.gm-paper-reader .paper-source-route li{margin:0 0 10px}
     .gm-paper-reader .paper-source-route ul{margin:0;padding-left:22px}
     .gm-paper-reader .paper-source-route aside{border-left:2px solid var(--tone-ff7185);padding-left:20px;font-size:14px;color:var(--tone-c5cad3)}
+    .gm-paper-reader .paper-pdf-preview{grid-column:1/-1;border-top:1px solid var(--tone-555b66);padding-top:24px}
+    .gm-paper-reader .paper-pdf-preview h3{font-size:clamp(22px,2.4vw,30px);letter-spacing:-.03em;margin:0 0 8px}
+    .gm-paper-reader .paper-pdf-preview p{color:var(--tone-c5cad3);max-width:72ch}
+    .gm-paper-reader .paper-pdf-actions{display:flex;flex-wrap:wrap;gap:12px 24px;align-items:center;margin-top:18px}
+    .gm-paper-reader .paper-pdf-actions button{background:#a90c32;color:#fff;border:1px solid #a90c32;padding:12px 18px;font:750 14px/1.3 system-ui;cursor:pointer}
+    .gm-paper-reader .paper-pdf-actions button:focus-visible{outline:3px solid var(--tone-f4f5f7);outline-offset:4px}
+    .gm-paper-reader .paper-pdf-preview iframe{display:block;width:100%;height:min(72vh,780px);min-height:440px;margin-top:22px;background:#fff;border:1px solid var(--tone-555b66)}
+    .gm-paper-reader .paper-pdf-preview iframe[hidden]{display:none}
     .gm-paper-reader .paper-article{display:grid;grid-template-columns:minmax(0,720px) minmax(180px,280px);justify-content:space-between;gap:clamp(28px,6vw,90px);margin:50px 0}
     .gm-paper-reader .paper-article section{border-top:1px solid var(--tone-555b66);padding-top:28px;margin-top:34px}
     .gm-paper-reader .paper-article section:first-child{margin-top:0}
@@ -41,7 +49,7 @@
     .gm-paper-reader .paper-limits li{margin:0 0 8px}
     .gm-paper-reader .paper-provenance{border-top:1px solid var(--tone-555b66);padding-top:28px;max-width:780px;font-size:14px;color:var(--tone-c5cad3)}
     .gm-paper-reader .paper-provenance h2{font-size:27px;color:var(--tone-f4f5f7)}
-    @media(max-width:760px){.gm-paper-reader .paper-source-route,.gm-paper-reader .paper-article{grid-template-columns:1fr}.gm-paper-reader .paper-source-route aside{border-left:0;border-top:2px solid var(--tone-ff7185);padding:16px 0 0}.gm-paper-reader main{padding-inline:20px}}
+    @media(max-width:760px){.gm-paper-reader .paper-source-route,.gm-paper-reader .paper-article{grid-template-columns:1fr}.gm-paper-reader .paper-source-route aside{border-left:0;border-top:2px solid var(--tone-ff7185);padding:16px 0 0}.gm-paper-reader .paper-pdf-preview iframe{height:65vh;min-height:340px}.gm-paper-reader main{padding-inline:20px}}
     @media(prefers-reduced-motion:reduce){.gm-paper-reader *, .gm-paper-reader *::before,.gm-paper-reader *::after{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
   </style>
 </head>
@@ -74,6 +82,14 @@
         <strong>Source and custody limit</strong>
         <p>These links open the authors' source. GhostMesh does not host the paper, its extracted text, experimental logs or generated manuscripts. Local PDF and HTML extraction was partial; text anchors do not verify figures, tables, equations or the experiments.</p>
       </aside>
+      <div class="paper-pdf-preview" data-paper-preview aria-labelledby="paper-pdf-heading">
+        <p class="paper-kicker">Original-host preview / optional</p>
+        <h3 id="paper-pdf-heading">Read the pinned PDF here if your browser supports it.</h3>
+        <p>The viewer requests arXiv's original v2 PDF only after you choose to load it. Some mobile browsers show a download or a blank frame instead. This view does not verify figures, equations, logs or study claims.</p>
+        <div class="paper-pdf-actions"><button type="button" data-paper-open hidden>Load original PDF preview</button><a data-paper-original href="https://arxiv.org/pdf/2607.27191v2">Open original PDF at arXiv ↗</a></div>
+        <iframe data-paper-frame title="Original arXiv version 2 PDF preview" loading="lazy" referrerpolicy="no-referrer" hidden></iframe>
+        <noscript><p>The embedded viewer needs JavaScript. The original PDF link above remains available.</p></noscript>
+      </div>
     </section>
 
     <article class="paper-article" id="interpretation" aria-label="GhostMesh interpretation">
@@ -135,5 +151,6 @@
   </main>
   <footer><a href="/">Readers home</a></footer>
   <script src="/assets/reader-share.js" defer></script>
+  <script src="/assets/paper-viewer.js" defer></script>
 </body>
 </html>

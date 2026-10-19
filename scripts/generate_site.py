@@ -75,6 +75,10 @@ def related(r,byid):
  # Every admitted relationship belongs in the navigable page, as well as the receipt.
  for edge in sorted(r['relationships'],key=lambda edge:edge['type']=='related topic'):
   t=byid[edge['target']];out+=f'<article><p class="gm-kicker">{esc(edge["type"])}</p><h3><a href="/{t["slug"]}/">{esc(t["title"])}</a></h3><p>{esc(edge["reason"])}</p></article>'
+ if r['source'].get('kind')=='paper':
+  for ref in r['references']:
+   if ref['sourceType']=='independent-different-construct-study':
+    out+=f'<article><p class="gm-kicker">External study / outside the Reader graph</p><h3><a href="{esc(ref["url"])}">{esc(ref["title"])}</a></h3><p>{esc(ref["independence"])}</p></article>'
  out+='</div>'
  return out+'</section>'
 def relationship_map(readers,byid):
@@ -94,9 +98,13 @@ def home_card(r,number,featured=False):
  unverified=sum(c['status']=='unverified' for c in r['claims'])
  source=r['source']
  if source.get('kind')=='paper':
+  if __package__:
+   from .catalog_design import paper_cover
+  else:
+   from catalog_design import paper_cover
   visual=(f'<div class="gm-home-visual gm-home-paper"><span class="gm-home-visual-label">GM / READER {number:02d} · RESEARCH PAPER</span>'
-          '<div class="gm-home-source-fallback"><strong>Original research paper</strong><br>Version-pinned arXiv source<br>No media player</div>'
-          '<span class="gm-home-visual-label">SOURCE / DIRECT LINK ONLY</span></div>')
+          +paper_cover(source)+
+          '<span class="gm-home-visual-label">ORIGINAL READER ART / PINNED PAPER ↗</span></div>')
   copy=(f'<div class="gm-home-copy"><p class="gm-kicker">{esc(r["category"])} / {r["published"]}</p>'
         f'<{tag}><a href="/{r["slug"]}/">{esc(r["title"])}</a></{tag}>'
         f'<p>{esc(r["overview"])}</p>'
@@ -152,7 +160,7 @@ def validate_link_only_source(raw,source_url):
  if scan.violations or not scan.direct_link:raise ValueError('Unknown source aspect requires a link-only fallback with the exact direct source link; forbidden '+', '.join(sorted(set(scan.violations))) if scan.violations else 'Unknown source aspect requires a link-only fallback with the exact direct source link')
 
 def validate_paper_source(raw,source):
- """Pin bibliographic identity and keep paper pages entirely link-only."""
+ """Pin paper identity and permit only an inert opt-in original-host viewer."""
  expected_keys={'kind','identity','url','htmlUrl','pdfUrl','title','authors','publisher','version','versionDate','dateNote'}
  if set(source)!=expected_keys or source.get('kind')!='paper':raise ValueError('Paper source shape has missing or video-only fields')
  identity=source.get('identity','')
@@ -165,7 +173,29 @@ def validate_paper_source(raw,source):
  for key,route in [('url','abs'),('htmlUrl','html'),('pdfUrl','pdf')]:
   expected=f'https://arxiv.org/{route}/{arxiv}'
   if source.get(key)!=expected or f'href="{esc(expected)}"' not in raw:raise ValueError(f'Paper {key} must link to pinned original')
- validate_link_only_source(raw,source['url'])
+ scan=PaperViewerSource(source['pdfUrl']);scan.feed(raw)
+ if scan.violations or len(scan.frames)!=1 or len(scan.openers)!=1 or not scan.pdf_fallback:
+  raise ValueError('Paper viewer must be one inert opt-in frame with a pinned original PDF fallback; '+', '.join(sorted(set(scan.violations))))
+
+class PaperViewerSource(HTMLParser):
+ def __init__(self,pdf_url):
+  super().__init__(convert_charrefs=True);self.pdf_url=pdf_url;self.frames=[];self.openers=[];self.pdf_fallback=False;self.violations=[]
+ def handle_starttag(self,tag,attrs):
+  a=dict(attrs)
+  if any(name.startswith('on') or (name in {'href','src'} and str(value or '').lower().startswith('javascript:')) for name,value in attrs):self.violations.append('active handler')
+  if tag in {'video','audio','embed','object','source','track','canvas'}:self.violations.append(tag)
+  if 'data-home-player' in a or 'data-home-play' in a or re.search(r'(?:^|\s)player(?:$|\s)',a.get('class',''),re.I):self.violations.append('video player')
+  if tag=='iframe':
+   self.frames.append(a)
+   if set(a)-{'data-paper-frame','title','loading','referrerpolicy','hidden'} or 'data-paper-frame' not in a or 'hidden' not in a or not a.get('title') or a.get('loading')!='lazy' or a.get('referrerpolicy')!='no-referrer':self.violations.append('active or unlabelled paper frame')
+  if tag=='button' and 'data-paper-open' in a:
+   self.openers.append(a)
+   if a.get('type')!='button' or 'hidden' not in a:self.violations.append('paper opener must be inert without JavaScript')
+  if tag=='a' and 'data-paper-original' in a:
+   if a.get('href')==self.pdf_url:self.pdf_fallback=True
+   else:self.violations.append('unpinned PDF fallback')
+  if tag=='script' and a.get('src') not in {'/assets/theme.js','/assets/reader-search.js','/assets/reader-share.js','/assets/paper-viewer.js'}:self.violations.append('unapproved paper script')
+ def handle_startendtag(self,tag,attrs):self.handle_starttag(tag,attrs)
 
 def validate_media_source(source):
  if not {'url','platform','mediaAspect'}<=set(source) or set(source)-MEDIA_SOURCE_FIELDS:
