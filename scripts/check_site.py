@@ -20,6 +20,27 @@ def capture_signature(data):
          or data[:4] in (b'RIFF',b'FORM')
          or data[4:8] in (b'ftyp',b'moov',b'mdat')
          or data.startswith((b'\x00\x00\x01\xba',b'\x00\x00\x01\xb3')))
+def source_custody_errors(reader):
+ """Check honest public receipt labels; private evidence itself stays outside Git."""
+ slug=reader['slug'];receipt=reader.get('legacyReceipt') or {};custody=receipt.get('custody') or {}
+ errors=[]
+ if not custody.get('status') or not custody.get('note'):
+  errors.append(f'{slug}: source custody status and limits required')
+ source=receipt.get('source') or {}
+ if source.get('url')!=reader['source'].get('url') or source.get('videoId')!=reader['source'].get('videoId'):
+  errors.append(f'{slug}: receipt source identity mismatch')
+ pack=receipt.get('reasonPack') or {}
+ if custody.get('status')=='qualified-private-pack-verified':
+  if pack.get('verification')!='pass' or not re.fullmatch(r'[0-9a-f]{64}',pack.get('manifestSha256','')):
+   errors.append(f'{slug}: verified pack claim lacks a manifest digest')
+ else:
+  if pack.get('verification')=='pass':errors.append(f'{slug}: unverified custody claims pack verification')
+  inspection=receipt.get('sourceInspection') or {}
+  if not all(inspection.get(k) for k in ('method','caveat','publicationBoundary')):
+   errors.append(f'{slug}: limited source inspection needs method, caveat and privacy boundary')
+  if not any(re.fullmatch(r'[0-9a-f]{64}',v) for k,v in inspection.items() if k.lower().endswith('sha256') and isinstance(v,str)):
+   errors.append(f'{slug}: limited source inspection needs a retained-source digest')
+ return errors
 class Page(HTMLParser):
  def __init__(self):super().__init__(convert_charrefs=True);self.ids=[];self.links=[];self.text=[];self.hide=0;self.tags=[];self.frames=[]
  def handle_starttag(self,t,attrs):
@@ -95,6 +116,7 @@ def check(root=ROOT):
   else:
    try:validate_media_source(r['source'])
    except ValueError as exc:errors.append(f'{slug}: {exc}')
+   if slug not in {old['slug'] for old in baseline}:errors.extend(source_custody_errors(r))
    aspect=r['source'].get('mediaAspect')
    require(aspect in {'16:9','9:16','1:1','unknown'},f'{slug}: source aspect missing or invalid')
    if aspect!='unknown':
