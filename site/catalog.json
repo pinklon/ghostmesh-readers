@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "host": "https://youtube.shareplane.malott.ai",
-  "revision": "2026-10-20T20:39:00Z",
+  "revision": "2026-10-20T20:44:00Z",
   "categories": [
     "AI & Technology",
     "Society & Politics",
@@ -786,7 +786,7 @@
         "mediaAspect": "16:9"
       },
       "published": "2026-10-20",
-      "updated": "2026-10-20T20:39:00Z",
+      "updated": "2026-10-20T20:44:00Z",
       "overview": "A five-check video asks how to keep an acting AI within authority, verify its work and stop every continuing action.",
       "whyItMatters": "Useful for people connecting assistants to browsers, inboxes and scheduled jobs. The video combines controlled research tests with reported product incidents that need different evidentiary labels.",
       "ghostMeshTakeaway": "Give agents scoped tools, test failure handling, verify outcomes at the destination, and practice a stop procedure that reaches processes, schedules and account access.",
@@ -978,18 +978,23 @@
       ],
       "relationshipDisposition": "Three qualified editorial comparisons about inspectable action, testable brakes and outcome verification; none corroborates another incident.",
       "review": {
-        "status": "editorial-review-pending",
-        "reviewer": "Independent editorial review pending",
-        "reviewedSourceHead": null,
-        "checkedAt": "2026-10-20T20:39:00Z",
-        "scope": "Check exact source attribution, incident dates, counterevidence, private custody, article copy and graph routes before publication.",
-        "findings": "Candidate is not yet an independent publication decision."
+        "status": "independent-public-copy-reviewed; source-qualified",
+        "reviewer": "Independent read-only Codex editorial reviewer",
+        "reviewedSourceHead": "062174eeafaa5d3a4a7a5e093ebd3df12c69d9c9",
+        "checkedAt": "2026-10-20T20:44:00Z",
+        "scope": "Exact article, primary Anthropic/OpenAI/Brave reports, private source/pack hashes, receipt, all 25 relationship assessments, three new graph routes, source privacy, native 16:9 opt-in playback and generated site.",
+        "findings": "No actionable finding in the reviewed copy. Article SHA-256 27f9890eceb4884e870414f56124f87d9f766657bc788f1e97bc8d4a1b02fb17. Replit and personal inbox anecdotes remain explicitly unverified; case studies are not an incident rate."
       },
       "revisionHistory": [
         {
           "at": "2026-10-20T20:39:00Z",
           "kind": "new-reader-candidate",
           "reason": "Owner-requested exact video deconstruction with private source custody and bounded incident comparisons."
+        },
+        {
+          "at": "2026-10-20T20:44:00Z",
+          "kind": "independent-editorial-review",
+          "reason": "Independent read-only review of exact source copy, private custody, claim limits, graph and public boundary found no remaining issue."
         }
       ],
       "editorialOrder": 21,
