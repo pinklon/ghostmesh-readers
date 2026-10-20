@@ -12,6 +12,395 @@
   ],
   "readers": [
     {
+      "id": "reader:the-warning-is-not-a-ballot-ruling",
+      "slug": "the-warning-is-not-a-ballot-ruling",
+      "title": "The Warning Is Not a Ballot Ruling",
+      "category": "Society & Politics",
+      "tags": [
+        "elections",
+        "legal process",
+        "evidence"
+      ],
+      "entities": [
+        "Democracy Docket",
+        "U.S. Department of Justice",
+        "California Secretary of State",
+        "Los Angeles County",
+        "Nevada Secretary of State"
+      ],
+      "source": {
+        "platform": "YouTube",
+        "url": "https://www.youtube.com/watch?v=ZSbtmNnSRYI",
+        "videoId": "ZSbtmNnSRYI",
+        "title": "Trump DOJ Threatens to PROSECUTE Election Officials for Counting Votes",
+        "creator": "Democracy Docket",
+        "uploadDate": "20261017",
+        "durationSeconds": 1738,
+        "mediaAspect": "16:9"
+      },
+      "published": "2026-10-20",
+      "updated": "2026-10-20T00:42:00Z",
+      "overview": "In the captioned episode, Marc Elias argues that DOJ's conditional criminal warning could pressure California and Los Angeles County officials to set aside ballots tied to a disputed likely-noncitizen list. He compares Nevada's earlier dispute, then turns to litigation advocacy and support appeals. Exact speech is not human-verified.",
+      "whyItMatters": "Worth a selective watch for election workers and readers evaluating the legal-pressure argument. Focus on the opening warning and the central lead-to-ballot inference; start with the original letters if you only need operative facts. The later appeals add little verification.",
+      "ghostMeshTakeaway": "The warning is real and contested. DOJ describes layered screening, but this packet has no reviewed voter-level validation sample or list error rate. Demand the method and an individualized lawful decision before treating likely leads as ballot holds or an official's criminal act; that is GhostMesh's inference, not a court holding.",
+      "verdict": "Worth studying",
+      "architectureImpact": "none",
+      "falsification": "Revisit the call if a signed California order or validated individual matching sample establishes the legal bridge and list accuracy, or if direct source review materially changes the mapped argument.",
+      "evidenceState": "partially corroborated",
+      "lastEvidenceChecked": "2026-10-20T00:42:00Z",
+      "freshness": "Exact-video machine-caption and ASR handoff reviewed October 20, 2026; original legal records checked through October 19 at 23:33 UTC. DOJ October 19 motion and charges announcement are post-episode context. Current signed order and individual charging instruments were not inspected.",
+      "variant": "dossier",
+      "accent": "red",
+      "claims": [
+        {
+          "id": "the-warning-is-not-a-ballot-ruling--v01-warning",
+          "proposition": "DOJ sent a conditional criminal-exposure warning about how California and Los Angeles County handle ballots linked to its likely-noncitizen list.",
+          "kind": "document-action",
+          "asOf": "2026-10-20",
+          "status": "partially corroborated",
+          "assessment": "The October 16 original letter establishes the warning. State and County responses dispute the requested ballot handling and legal basis.",
+          "limits": "The warning is not a charge against an official or a court ruling; statutory application is unresolved.",
+          "sourceLocation": "Automatic-caption cue range 00:00–02:40; local ASR broad-topic match; timing and speech unverified",
+          "references": [
+            "source-video",
+            "doj-letter"
+          ],
+          "counterevidence": [
+            "ca-letter",
+            "county-letter"
+          ]
+        },
+        {
+          "id": "the-warning-is-not-a-ballot-ruling--v02-advocacy",
+          "proposition": "The episode draws on the publisher's litigation experience and asks the audience to support its work.",
+          "kind": "captioned-speaker-framing",
+          "asOf": "2026-10-20",
+          "status": "unverified",
+          "assessment": "The complete machine-caption arc locates a personal and organizational appeal; the publisher discloses related litigation work.",
+          "limits": "Personal history, precise wording, and historical superlatives were not independently verified from the audio or case record.",
+          "sourceLocation": "Automatic-caption cue range 02:40–06:35; local ASR broad-topic match; timing and speech unverified",
+          "references": [
+            "source-video",
+            "publisher-interest"
+          ],
+          "counterevidence": []
+        },
+        {
+          "id": "the-warning-is-not-a-ballot-ruling--v03-nevada",
+          "proposition": "Nevada's records indicated that 185 reviewed IDs were citizens after a preliminary federal list of 15,903, but that does not measure California's list error rate.",
+          "kind": "cross-state-comparison",
+          "asOf": "2026-10-20",
+          "status": "partially corroborated",
+          "assessment": "Nevada's original response and later DHS exchange support the bounded 185 finding and show a disputed method.",
+          "limits": "DHS contests the state resolution; 6,218 other IDs lacked the same manual review. No 100% error rate for the full Nevada list or California is established.",
+          "sourceLocation": "Automatic-caption cue range 06:40–08:25; local ASR broad-topic match; timing and speech unverified",
+          "references": [
+            "source-video",
+            "nevada-july",
+            "nevada-september"
+          ],
+          "counterevidence": [
+            "doj-complaint"
+          ]
+        },
+        {
+          "id": "the-warning-is-not-a-ballot-ruling--v04-suspicion",
+          "proposition": "DOJ's operative public papers describe likely or suspected matches rather than a court finding of ineligible votes.",
+          "kind": "document-qualification",
+          "asOf": "2026-10-20",
+          "status": "partially corroborated",
+          "assessment": "The complaint and warning use qualified language and describe an investigative list.",
+          "limits": "The captioned social post and its author were not authenticated in sampled frames; the government's layered screening is material counterevidence to a single-hit description.",
+          "sourceLocation": "Automatic-caption cue range 08:25–11:35; local ASR broad-topic match; timing and speech unverified",
+          "references": [
+            "source-video",
+            "doj-letter",
+            "doj-complaint"
+          ],
+          "counterevidence": [
+            "doj-tro"
+          ]
+        },
+        {
+          "id": "the-warning-is-not-a-ballot-ruling--v05-litigation",
+          "proposition": "The captioned episode invokes earlier voter-file litigation as context for the California dispute.",
+          "kind": "captioned-legal-context",
+          "asOf": "2026-10-20",
+          "status": "partially corroborated",
+          "assessment": "The machine-source arc supports the bounded attribution. California invokes a separate D.C. order; DOJ disputes its applicability in a stay motion.",
+          "limits": "The separate D.C. result does not decide California in this packet. No California signed order was inspected. Captioned litigation counts and an apparent Supreme Court vote were not matched to cases and are omitted from the article.",
+          "sourceLocation": "Automatic-caption cue range 11:35–14:50; local ASR broad-topic match; timing and speech unverified",
+          "references": [
+            "source-video",
+            "ca-letter"
+          ],
+          "counterevidence": [
+            "doj-stay"
+          ]
+        },
+        {
+          "id": "the-warning-is-not-a-ballot-ruling--v06-ballot-bridge",
+          "proposition": "The captioned episode challenges whether likely-list leads alone justify ballot segregation or an official's criminal exposure.",
+          "kind": "captioned-legal-inference",
+          "asOf": "2026-10-20",
+          "status": "partially corroborated",
+          "assessment": "Complete automatic captions and local ASR support the broad video argument. California, County and proposed intervenors contest DOJ's demanded action.",
+          "limits": "Exact audio wording remains unverified. DOJ describes layered screening; the list, validation sample, error rate, current signed order and application of criminal statutes were not independently resolved. This is not a court finding.",
+          "sourceLocation": "Automatic-caption cue range 14:50–19:35; local ASR broad-topic match; timing and speech unverified",
+          "references": [
+            "source-video",
+            "ca-letter",
+            "county-letter",
+            "naacp-motion"
+          ],
+          "counterevidence": [
+            "doj-letter",
+            "doj-complaint",
+            "doj-tro"
+          ]
+        },
+        {
+          "id": "the-warning-is-not-a-ballot-ruling--v07-mobilization",
+          "proposition": "The latter portion of the episode pivots to voting, organizing, criticism, and requests to support the publisher.",
+          "kind": "captioned-advocacy",
+          "asOf": "2026-10-20",
+          "status": "unverified",
+          "assessment": "The complete machine-caption track supports the broad topic sequence and the publisher has a disclosed interest.",
+          "limits": "No self-reported case count, institutional motive, personal allegation, exact wording, or speaker identity is verified here.",
+          "sourceLocation": "Automatic-caption cue range 19:35–25:30; local ASR broad-topic match; timing and speech unverified",
+          "references": [
+            "source-video",
+            "publisher-interest"
+          ],
+          "counterevidence": []
+        },
+        {
+          "id": "the-warning-is-not-a-ballot-ruling--v08-intervention",
+          "proposition": "The inspected NAACP/LULAC California filing establishes a motion to intervene, not granted intervention.",
+          "kind": "document-status",
+          "asOf": "2026-10-20",
+          "status": "partially corroborated",
+          "assessment": "The original stamped ECF 15 is a motion; publisher material discloses related representation.",
+          "limits": "Current docket access was restricted. Separately named clients' precise filing status and any later grant remain unverified. Spillover to other states is a forecast.",
+          "sourceLocation": "Automatic-caption cue range 25:30–28:57; local ASR broad-topic match; timing and speech unverified",
+          "references": [
+            "source-video",
+            "naacp-motion",
+            "publisher-interest"
+          ],
+          "counterevidence": []
+        }
+      ],
+      "references": [
+        {
+          "id": "source-video",
+          "title": "Trump DOJ Threatens to PROSECUTE Election Officials for Counting Votes",
+          "author": "Marc Elias (publisher metadata)",
+          "publisher": "Democracy Docket",
+          "url": "https://www.youtube.com/watch?v=ZSbtmNnSRYI",
+          "publicationDate": "2026-10-17",
+          "datePrecision": "day",
+          "eventDate": "",
+          "location": "Full 28:57.689 video; automatic-caption navigation only",
+          "sourceType": "original video",
+          "independence": "Publisher's own video. Complete auto captions and separate local ASR were read; no human listening or full visual review.",
+          "evidenceFamily": "democracy-docket-video",
+          "checkedAt": "2026-10-20T00:29:00Z"
+        },
+        {
+          "id": "doj-letter",
+          "title": "October 16 warning to Los Angeles County counsel",
+          "author": "U.S. Department of Justice",
+          "publisher": "DOJ letter, public mirror",
+          "url": "https://www.democracydocket.com/wp-content/uploads/2026/10/DOJ-threatens-CA-official-with-criminal-exposure.pdf",
+          "publicationDate": "2026-10-16",
+          "datePrecision": "day",
+          "eventDate": "",
+          "location": "Pages 1–2",
+          "sourceType": "original party letter",
+          "independence": "DOJ's legal position and conditional warning, not a judicial ruling.",
+          "evidenceFamily": "doj-california-litigation",
+          "checkedAt": "2026-10-19T23:33:00Z"
+        },
+        {
+          "id": "ca-letter",
+          "title": "California Secretary of State response to DOJ",
+          "author": "Shirley N. Weber",
+          "publisher": "California Secretary of State",
+          "url": "https://admin.cdn.sos.ca.gov/pdf/other/casos-to-doj-101526.pdf",
+          "publicationDate": "2026-10-15",
+          "datePrecision": "day",
+          "eventDate": "",
+          "location": "Pages 1–3",
+          "sourceType": "original recipient letter",
+          "independence": "State recipient account and legal position; interested party, not a list audit.",
+          "evidenceFamily": "california-sos",
+          "checkedAt": "2026-10-19T23:33:00Z"
+        },
+        {
+          "id": "county-letter",
+          "title": "Los Angeles County Counsel response to DOJ",
+          "author": "Los Angeles County Counsel",
+          "publisher": "Los Angeles County",
+          "url": "https://rrcc.box.com/index.php?rm=box_download_shared_file&shared_name=y750a5njl1wiyksohn7aik9k2w3ilzkm&file_id=f_2528995513425",
+          "publicationDate": "2026-10-15",
+          "datePrecision": "day",
+          "eventDate": "",
+          "location": "Pages 1–4",
+          "sourceType": "original recipient letter",
+          "independence": "County first-hand account and legal position; interested party, not a voter-level validation.",
+          "evidenceFamily": "la-county",
+          "checkedAt": "2026-10-19T23:33:00Z"
+        },
+        {
+          "id": "doj-complaint",
+          "title": "United States v. California complaint",
+          "author": "U.S. Department of Justice",
+          "publisher": "U.S. Department of Justice",
+          "url": "https://www.justice.gov/opa/media/1466286/dl",
+          "publicationDate": "2026-10-15",
+          "datePrecision": "day",
+          "eventDate": "",
+          "location": "Paragraphs 33–49, 60, 62–63",
+          "sourceType": "original party pleading",
+          "independence": "DOJ describes its matching method and requested relief; assertions are unadjudicated.",
+          "evidenceFamily": "doj-california-litigation",
+          "checkedAt": "2026-10-19T23:33:00Z"
+        },
+        {
+          "id": "nevada-july",
+          "title": "Nevada response to DHS voter-roll allegation",
+          "author": "Nevada Secretary of State",
+          "publisher": "Nevada Secretary of State, public mirror",
+          "url": "https://www.democracydocket.com/wp-content/uploads/2026/07/Nevada-response-to-DHS.pdf",
+          "publicationDate": "2026-07-29",
+          "datePrecision": "day",
+          "eventDate": "",
+          "location": "Pages 1–2",
+          "sourceType": "original state response",
+          "independence": "State's response to a preliminary federal list; separate jurisdiction and method from California.",
+          "evidenceFamily": "nevada-dhs-exchange",
+          "checkedAt": "2026-10-19T23:33:00Z"
+        },
+        {
+          "id": "nevada-september",
+          "title": "Nevada September 23 exchange with DHS",
+          "author": "Nevada Secretary of State and DHS",
+          "publisher": "Nevada Secretary of State, public mirror",
+          "url": "https://www.democracydocket.com/wp-content/uploads/2026/09/voter-roll-letter-to-dhs.pdf",
+          "publicationDate": "2026-09-23",
+          "datePrecision": "day",
+          "eventDate": "",
+          "location": "Lines 9–23",
+          "sourceType": "original agency exchange",
+          "independence": "The state reports 185 reviewed IDs were citizens; DHS contests the resolution. Thousands of other IDs were not comparably reviewed.",
+          "evidenceFamily": "nevada-dhs-exchange",
+          "checkedAt": "2026-10-19T23:33:00Z"
+        },
+        {
+          "id": "doj-stay",
+          "title": "DOJ motion to stay D.C. voter-file order",
+          "author": "U.S. Department of Justice",
+          "publisher": "DOJ filing, public mirror",
+          "url": "https://www.democracydocket.com/wp-content/uploads/2026/04/57-2026-10-16-DOJs-motion-for-stay-pending-appeal.pdf",
+          "publicationDate": "2026-10-16",
+          "datePrecision": "day",
+          "eventDate": "",
+          "location": "Pages 13–14",
+          "sourceType": "original party motion",
+          "independence": "DOJ disputes how a separate D.C. order applies; not a California holding.",
+          "evidenceFamily": "doj-california-litigation",
+          "checkedAt": "2026-10-19T23:33:00Z"
+        },
+        {
+          "id": "naacp-motion",
+          "title": "NAACP and LULAC motion to intervene",
+          "author": "NAACP and LULAC",
+          "publisher": "NAACP",
+          "url": "https://naacp.org/sites/default/files/documents/U.S.%20v.%20California%20et%20al.%20-%20NAACP%20and%20LULAC%20Mot.%20to%20Intervene%20%5B10.16.26%5D%20%5Bas-filed%5D.pdf",
+          "publicationDate": "2026-10-16",
+          "datePrecision": "day",
+          "eventDate": "",
+          "location": "Pages 3–5, 17–19",
+          "sourceType": "original proposed-intervenor motion",
+          "independence": "Interested advocates describe potential eligible-voter harm; a motion is not a grant.",
+          "evidenceFamily": "voter-advocate-motion",
+          "checkedAt": "2026-10-19T23:33:00Z"
+        },
+        {
+          "id": "doj-tro",
+          "title": "DOJ ex parte TRO support memorandum, ECF 22-2",
+          "author": "U.S. Department of Justice",
+          "publisher": "DOJ filing, public mirror",
+          "url": "https://electionlawblog.org/wp-content/uploads/gov.uscourts.cacd_.1043513.22.2.pdf",
+          "publicationDate": "2026-10-19",
+          "datePrecision": "day",
+          "eventDate": "",
+          "location": "Pages 12–15, 20–23",
+          "sourceType": "original party motion",
+          "independence": "Post-episode government method and relief argument; not a signed order or independent audit.",
+          "evidenceFamily": "doj-california-litigation",
+          "checkedAt": "2026-10-19T23:33:00Z"
+        },
+        {
+          "id": "doj-charges",
+          "title": "DOJ announcement of California election charges",
+          "author": "U.S. Department of Justice",
+          "publisher": "U.S. Attorney, Central District of California",
+          "url": "https://www.justice.gov/usao-cdca/pr/11-foreign-nationals-arrested-california-federal-charges-alleging-they-illegally",
+          "publicationDate": "2026-10-19",
+          "datePrecision": "day",
+          "eventDate": "",
+          "location": "Announcement",
+          "sourceType": "prosecutorial announcement",
+          "independence": "Post-episode allegation; charging instruments and adjudication were not inspected.",
+          "evidenceFamily": "doj-california-litigation",
+          "checkedAt": "2026-10-19T23:33:00Z"
+        },
+        {
+          "id": "publisher-interest",
+          "title": "Democracy Docket report on California dispute",
+          "author": "Democracy Docket",
+          "publisher": "Democracy Docket",
+          "url": "https://www.democracydocket.com/news-alerts/trump-admin-claims-it-confirmed-20000-california-voters-are-noncitizens-it-didnt/",
+          "publicationDate": "2026-10-17",
+          "datePrecision": "day",
+          "eventDate": "",
+          "location": "Publisher disclosure",
+          "sourceType": "publisher disclosure",
+          "independence": "Discloses Elias Law Group's relationship to proposed intervenors; interested publisher context.",
+          "evidenceFamily": "democracy-docket-publisher",
+          "checkedAt": "2026-10-19T23:33:00Z"
+        }
+      ],
+      "relationships": [],
+      "relationshipDisposition": "No cross-Reader relationship is asserted; topical overlap requires its own qualified edge.",
+      "review": {
+        "status": "independent-public-copy-reviewed; source-qualified",
+        "reviewer": "Task18 public integration and exact-page review",
+        "reviewedSourceHead": "06f410b33489879e68bc9af1ee6e6ddbead82068",
+        "checkedAt": "2026-10-20T11:56:24Z",
+        "scope": "Retained writer article, eight claim and twelve reference limits, sanitized custody receipt, generated page, desktop/mobile layout and opt-in playback. No full ReasonPack or exact speech verification claimed.",
+        "findings": "No blocking source, privacy or layout issue in the reviewed edition; legal and source limits remain disclosed."
+      },
+      "revisionHistory": [
+        {
+          "at": "2026-10-20T00:42:00Z",
+          "kind": "video-reader-source-candidate",
+          "reason": "Video-first original analysis reconciled with dated legal records and hash-identified partial private custody."
+        }
+      ],
+      "editorialOrder": 19,
+      "orderReason": "Twentieth Reader, following the Muse edition in the existing archive.",
+      "evidenceReview": {
+        "sourceFidelity": "Full automatic-caption text and separate local ASR were read for broad argument sequence. Exact speech and cue timing were not human-verified; two sampled frames do not authenticate the cited social post.",
+        "conclusion": "Selective watch for the warning and lead-to-ballot inference. Hold the Nevada full-list error extrapolation, litigation scorecard, social-post quotation and intervention status.",
+        "evidenceBoundary": "DOJ, state, County and advocate documents establish their dated positions, not list accuracy or a current court outcome. The publisher has its own litigation interest.",
+        "nextVerification": "Check original audio or visuals before adding exact quotations or frame claims; inspect the current docket before asserting a court outcome."
+      },
+      "rank": 19
+    },
+    {
       "id": "reader:the-list-is-the-business-claim",
       "slug": "the-list-is-the-business-claim",
       "title": "The List Is the Business Claim",

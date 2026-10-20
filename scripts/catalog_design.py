@@ -48,6 +48,7 @@ CALLS = {
     'the-parallel-result-is-not-the-product': ('Study before migrating', 'Reproduce quality, latency and cost on your own workload before changing the product stack.'),
     'the-experiment-ran-did-the-research-advance': ('Study the evaluation', 'Separate completed engineering from research judgment; two selected cases cannot set a universal ceiling.'),
     'the-list-is-the-business-claim': ('Interesting, unproven', 'Treat an agent-assisted lead list as a hypothesis with a data-rights ledger.'),
+    'the-warning-is-not-a-ballot-ruling': ('Watch selectively', 'Test the warning against the original letters; a likely match list is not itself a ballot ruling.'),
 }
 
 
