@@ -401,6 +401,324 @@
       "rank": 19
     },
     {
+      "id": "reader:the-threshold-is-a-claim-not-a-test",
+      "slug": "the-threshold-is-a-claim-not-a-test",
+      "title": "The Threshold Is a Claim, Not a Test",
+      "category": "AI & Technology",
+      "tags": [
+        "AI risk",
+        "governance",
+        "human outcomes"
+      ],
+      "entities": [
+        "Bill Gates",
+        "Ezra Klein",
+        "Active Site",
+        "METR"
+      ],
+      "source": {
+        "platform": "YouTube",
+        "url": "https://www.youtube.com/watch?v=A_156w0aYtU",
+        "videoId": "A_156w0aYtU",
+        "title": "Bill Gates: A.I. 'Makes Nuclear Weapons Look Like Nothing' | The Ezra Klein Show",
+        "uploadDate": "20260929",
+        "durationSeconds": 4430,
+        "mediaAspect": "16:9",
+        "creator": "The Ezra Klein Show"
+      },
+      "published": "2026-10-20",
+      "updated": "2026-10-20T00:00:00Z",
+      "overview": "In a long Ezra Klein interview, Gates connects fast AI capability gains to cyber and biological misuse, governance, work, global development and education. Klein presses how strong those risk claims are and whether adoption can be accelerated while warning of harm. This arc is mapped from exact-video automatic captions with speaker turns and exact speech left unconfirmed.",
+      "whyItMatters": "AI-risk and policy readers can use the debate to separate a capability warning from measured human harm. Watch the governance exchange and threshold response; use the later work and education chapters if those decisions are yours.",
+      "ghostMeshTakeaway": "Ask for a model- and actor-specific human-outcome test before treating a danger threshold as established. Keep monitoring and bounded permissions while testing, because an uncertain estimate is not a safety guarantee. This is GhostMesh's proposed inference, not a video-tested control.",
+      "verdict": "Interesting, unproven",
+      "architectureImpact": "investigate",
+      "falsification": "Check disputed episode passages in original audio, then compare model- and actor-specific human-outcome tests with the proposed threshold.",
+      "evidenceState": "unverified",
+      "lastEvidenceChecked": "2026-10-20T00:00:00Z",
+      "freshness": "Full exact-video automatic text, 1,991 timestamped lines; last line begins at 1:13:34. Its duration and later video content are unknown.",
+      "variant": "dossier",
+      "accent": "rose",
+      "claims": [
+        {
+          "id": "the-threshold-is-a-claim-not-a-test--g01",
+          "proposition": "Automatic captions suggest Gates argues current cyber and biological misuse has crossed a dangerous threshold.",
+          "kind": "caption-grounded-source-reading",
+          "asOf": "2026-10-20",
+          "status": "unverified",
+          "assessment": "Automatic captions suggest Gates argues current cyber and biological misuse has crossed a dangerous threshold.",
+          "limits": "Speaker and wording unchecked; no declared human-outcome test or quantified catastrophic probability in the episode passage.",
+          "sourceLocation": "Automatic-caption navigation from 628 seconds; G01",
+          "references": [
+            "VIDEO",
+            "GATES",
+            "ANTHROPIC"
+          ],
+          "counterevidence": [
+            "ACTIVE_SITE"
+          ]
+        },
+        {
+          "id": "the-threshold-is-a-claim-not-a-test--g02",
+          "proposition": "Automatic captions suggest Klein tests company incentives and liability against Gates's call for prospective oversight.",
+          "kind": "caption-grounded-source-reading",
+          "asOf": "2026-10-20",
+          "status": "unverified",
+          "assessment": "Automatic captions suggest Klein tests company incentives and liability against Gates's call for prospective oversight.",
+          "limits": "Retain the provisional adversarial reading; confirm a turn against original audio if stated as fact. Neither argument alone establishes a policy's effectiveness.",
+          "sourceLocation": "Automatic-caption navigation from 887 seconds; G02",
+          "references": [
+            "VIDEO",
+            "APPLE"
+          ],
+          "counterevidence": []
+        },
+        {
+          "id": "the-threshold-is-a-claim-not-a-test--g03",
+          "proposition": "Automatic captions suggest the speakers distinguish near-term malicious human use from later autonomous-control problems.",
+          "kind": "caption-grounded-source-reading",
+          "asOf": "2026-10-20",
+          "status": "unverified",
+          "assessment": "Automatic captions suggest the speakers distinguish near-term malicious human use from later autonomous-control problems.",
+          "limits": "This is a caption-derived reading; the OpenAI incident is separate and cannot prove the proposed broader harm.",
+          "sourceLocation": "Automatic-caption navigation from 1071 seconds; G03",
+          "references": [
+            "VIDEO",
+            "OPENAI"
+          ],
+          "counterevidence": []
+        },
+        {
+          "id": "the-threshold-is-a-claim-not-a-test--g04",
+          "proposition": "Automatic captions place Gates's nuclear-weapons comparison around 22:32 in the interview.",
+          "kind": "caption-grounded-source-reading",
+          "asOf": "2026-10-20",
+          "status": "unverified",
+          "assessment": "Automatic captions place Gates's nuclear-weapons comparison around 22:32 in the interview.",
+          "limits": "Rhetorical comparison, not a numerical risk equivalence; exact wording and attribution require original-audio review.",
+          "sourceLocation": "Automatic-caption navigation from 1315 seconds; G04",
+          "references": [
+            "VIDEO"
+          ],
+          "counterevidence": []
+        },
+        {
+          "id": "the-threshold-is-a-claim-not-a-test--g05",
+          "proposition": "Automatic captions map a dispute over AI work displacement, demand elasticity, taxation and distribution.",
+          "kind": "caption-grounded-source-reading",
+          "asOf": "2026-10-20",
+          "status": "unverified",
+          "assessment": "Automatic captions map a dispute over AI work displacement, demand elasticity, taxation and distribution.",
+          "limits": "Video forecasts are not observed job losses; ILO exposure measures a different construct.",
+          "sourceLocation": "Automatic-caption navigation from 1623 seconds; G05",
+          "references": [
+            "VIDEO",
+            "ILO"
+          ],
+          "counterevidence": []
+        },
+        {
+          "id": "the-threshold-is-a-claim-not-a-test--g06",
+          "proposition": "Automatic captions suggest a tension between accelerating beneficial adoption and warning of serious harms, with physical-world bottlenecks discussed.",
+          "kind": "caption-grounded-source-reading",
+          "asOf": "2026-10-20",
+          "status": "unverified",
+          "assessment": "Automatic captions suggest a tension between accelerating beneficial adoption and warning of serious harms, with physical-world bottlenecks discussed.",
+          "limits": "Physical constraints may slow transfer; they neither settle the bio claim nor remove policy choices.",
+          "sourceLocation": "Automatic-caption navigation from 2580 seconds; G06",
+          "references": [
+            "VIDEO",
+            "ACTIVE_SITE"
+          ],
+          "counterevidence": []
+        },
+        {
+          "id": "the-threshold-is-a-claim-not-a-test--g07",
+          "proposition": "Automatic captions map education, learning shortcuts, child safety and privacy tradeoffs.",
+          "kind": "caption-grounded-source-reading",
+          "asOf": "2026-10-20",
+          "status": "unverified",
+          "assessment": "Automatic captions map education, learning shortcuts, child safety and privacy tradeoffs.",
+          "limits": "No program result or specific classroom example is promoted without original audio and a matching primary record.",
+          "sourceLocation": "Automatic-caption navigation from 3548 seconds; G07",
+          "references": [
+            "VIDEO"
+          ],
+          "counterevidence": []
+        },
+        {
+          "id": "the-threshold-is-a-claim-not-a-test--g08",
+          "proposition": "The publisher identifies the episode, host, guest and date and frames it around AI risk and governance.",
+          "kind": "producer-metadata",
+          "asOf": "2026-10-20",
+          "status": "corroborated",
+          "assessment": "The publisher identifies the episode, host, guest and date and frames it around AI risk and governance.",
+          "limits": "Publisher framing does not independently confirm the dialogue or the predicted harms.",
+          "sourceLocation": "Automatic-caption navigation from 0 seconds; G08",
+          "references": [
+            "APPLE"
+          ],
+          "counterevidence": []
+        }
+      ],
+      "references": [
+        {
+          "id": "VIDEO",
+          "title": "Original Ezra Klein Show interview",
+          "author": "The Ezra Klein Show",
+          "publisher": "The Ezra Klein Show",
+          "url": "https://www.youtube.com/watch?v=A_156w0aYtU",
+          "publicationDate": "2026-09-29",
+          "datePrecision": "day",
+          "dateNote": "",
+          "eventDate": "",
+          "location": "exact source video",
+          "sourceType": "exact source video",
+          "independence": "original episode; automatic text remains uncorrected",
+          "evidenceFamily": "video",
+          "checkedAt": "2026-10-20T00:00:00Z"
+        },
+        {
+          "id": "APPLE",
+          "title": "Publisher episode listing",
+          "author": "Apple Podcasts / The Ezra Klein Show",
+          "publisher": "Apple Podcasts / The Ezra Klein Show",
+          "url": "https://podcasts.apple.com/us/podcast/bill-gatess-blunt-warning-on-a-i/id1548604447?i=1000792163003",
+          "publicationDate": "2026-09-29",
+          "datePrecision": "day",
+          "dateNote": "",
+          "eventDate": "",
+          "location": "publisher identity and episode framing",
+          "sourceType": "publisher identity and episode framing",
+          "independence": "same publisher family as video; not a second account of harm",
+          "evidenceFamily": "apple",
+          "checkedAt": "2026-10-20T00:00:00Z"
+        },
+        {
+          "id": "GATES",
+          "title": "A turbulent AI era and critical choices to make",
+          "author": "Gates Notes",
+          "publisher": "Gates Notes",
+          "url": "https://www.gatesnotes.com/a-turbulent-ai-era-and-critical-choices-to-make",
+          "publicationDate": "2026-08-26",
+          "datePrecision": "day",
+          "dateNote": "",
+          "eventDate": "",
+          "location": "speaker's August 26, 2026 published view",
+          "sourceType": "speaker's August 26, 2026 published view",
+          "independence": "same speaker, not independent corroboration",
+          "evidenceFamily": "gates",
+          "checkedAt": "2026-10-20T00:00:00Z"
+        },
+        {
+          "id": "ACTIVE_SITE",
+          "title": "Active Site novice wet-lab randomized trial",
+          "author": "arXiv / Active Site authors",
+          "publisher": "arXiv / Active Site authors",
+          "url": "https://arxiv.org/html/2602.16703v1",
+          "publicationDate": "2026-02-18",
+          "datePrecision": "day",
+          "dateNote": "",
+          "eventDate": "",
+          "location": "February 18, 2026 original novice wet-lab RCT and bounded counterevidence",
+          "sourceType": "February 18, 2026 original novice wet-lab RCT and bounded counterevidence",
+          "independence": "independent of speaker and publisher; study-family with METR commentary",
+          "evidenceFamily": "active-site-trial",
+          "checkedAt": "2026-10-20T00:00:00Z"
+        },
+        {
+          "id": "METR",
+          "title": "Five lessons from the AI biology RCT",
+          "author": "METR",
+          "publisher": "METR",
+          "url": "https://metr.org/blog/2026-02-19-five-lessons-from-ai-biology-rct/",
+          "publicationDate": "2026-02-19",
+          "datePrecision": "day",
+          "dateNote": "",
+          "eventDate": "",
+          "location": "study collaborator interpretation and human-outcome measurement context",
+          "sourceType": "study collaborator interpretation and human-outcome measurement context",
+          "independence": "not a replication of Active Site",
+          "evidenceFamily": "active-site-trial",
+          "checkedAt": "2026-10-20T00:00:00Z"
+        },
+        {
+          "id": "ANTHROPIC",
+          "title": "Claude Mythos developer page",
+          "author": "Anthropic",
+          "publisher": "Anthropic",
+          "url": "https://www.anthropic.com/claude/mythos",
+          "publicationDate": "unknown",
+          "datePrecision": "unknown",
+          "dateNote": "Exact publication day not established in this handoff.",
+          "eventDate": "",
+          "location": "developer's restricted-access and capability account",
+          "sourceType": "developer's restricted-access and capability account",
+          "independence": "developer self-report, not independent human-outcome validation",
+          "evidenceFamily": "anthropic",
+          "checkedAt": "2026-10-20T00:00:00Z"
+        },
+        {
+          "id": "OPENAI",
+          "title": "Hugging Face incident and the road ahead",
+          "author": "OpenAI",
+          "publisher": "OpenAI",
+          "url": "https://openai.com/index/hugging-face-incident-and-the-road-ahead/",
+          "publicationDate": "2026-08-26",
+          "datePrecision": "day",
+          "dateNote": "",
+          "eventDate": "",
+          "location": "developer's separate experimental agent-security incident",
+          "sourceType": "developer's separate experimental agent-security incident",
+          "independence": "incident owner; different mechanism and outcome",
+          "evidenceFamily": "openai",
+          "checkedAt": "2026-10-20T00:00:00Z"
+        },
+        {
+          "id": "ILO",
+          "title": "Generative AI and jobs: refined global index",
+          "author": "International Labour Organization",
+          "publisher": "International Labour Organization",
+          "url": "https://www.ilo.org/publications/generative-ai-and-jobs-refined-global-index-occupational-exposure",
+          "publicationDate": "2025-05-20",
+          "datePrecision": "day",
+          "dateNote": "",
+          "eventDate": "",
+          "location": "task-exposure evidence for employment discussion",
+          "sourceType": "task-exposure evidence for employment discussion",
+          "independence": "different construct from observed job loss",
+          "evidenceFamily": "ilo",
+          "checkedAt": "2026-10-20T00:00:00Z"
+        }
+      ],
+      "relationships": [],
+      "relationshipDisposition": "No cross-Reader claim relationship is qualified by the writer source map; use the original sources directly.",
+      "review": {
+        "status": "independent-public-copy-reviewed; source-qualified",
+        "reviewer": "Task18 public integration and exact-page review",
+        "reviewedSourceHead": "627c1a65033094bd72740c1edadba1b848734a79",
+        "checkedAt": "2026-10-20T12:00:00Z",
+        "scope": "Retained writer article, eight claim and eight reference limits, sanitized custody receipt, generated page, desktop/mobile layout and opt-in playback. No full ReasonPack or exact speech verification claimed.",
+        "findings": "No blocking source, privacy or layout issue in the reviewed edition; evidence limits remain disclosed."
+      },
+      "revisionHistory": [
+        {
+          "at": "2026-10-20T00:00:00Z",
+          "kind": "private-integration-candidate",
+          "reason": "Mechanical projection of incumbent writer source map."
+        }
+      ],
+      "editorialOrder": 19,
+      "orderReason": "Twentieth Reader, following the Muse edition in the existing archive.",
+      "evidenceReview": {
+        "sourceFidelity": "Full exact-video automatic text, 1,991 timed lines; no direct audio review or frames.",
+        "conclusion": "The threshold warning merits scrutiny, but model capability, actor uplift, physical completion and governance response need separate evidence.",
+        "evidenceBoundary": "The trial measures novice mid-2025 tasks; publisher, speaker and developer sources retain their stated roles. Episode wording remains provisional.",
+        "nextVerification": "Check any retained exact or ambiguous speech against original audio before attributing it; keep capability, actor uplift and outcomes as separate tests."
+      },
+      "rank": 19
+    },
+    {
       "id": "reader:the-list-is-the-business-claim",
       "slug": "the-list-is-the-business-claim",
       "title": "The List Is the Business Claim",
