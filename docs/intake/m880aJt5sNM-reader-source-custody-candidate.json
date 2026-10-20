@@ -1,0 +1,614 @@
+{
+  "schema": "ghostmesh-reader-source-custody-candidate-v1",
+  "status": "source-reviewed-local-integration-candidate-awaiting-release-review",
+  "article": {
+    "slug": "the-label-the-box-and-the-bargain",
+    "title": "The Label, the Box, and the Bargain",
+    "sourceHtmlSha256": "efac24312da624d37133200780d317e9469c07d5b50c9b8f74e8fdc05912ec09",
+    "sourceOnly": true
+  },
+  "originalSource": {
+    "platform": "YouTube",
+    "url": "https://www.youtube.com/watch?v=m880aJt5sNM",
+    "videoId": "m880aJt5sNM",
+    "title": "Superintelligence Author: We May Already Have AGI | Nick Bostrom",
+    "creator": "The Roman Forum with Roman Yampolskiy",
+    "uploadDate": "20261016",
+    "durationSeconds": 5119,
+    "mediaAspect": "16:9"
+  },
+  "editorial": {
+    "overview": "The producer presents an interview with Bostrom whose caption arc moves from simulation and containment through AGI definitions and an earlier forecast into a sustained discussion of reciprocal trust and possible digital minds. It then tests consciousness, specialized systems and human uploads as alternative routes before closing on changed research priorities. The article's source-grounded question is whether the headline's AGI label is less consequential than the possibility that powerful AI and humans will need justified grounds to trust each other. This is GhostMesh's reading of automatic captions across the full runtime, not an authenticated speaker thesis.",
+    "whyItMatters": "Leaders and builders may be tempted to turn the headline into a capability verdict, a hypothetical bargain into a risk estimate, or welfare uncertainty into a retention policy. The interview is worth selective viewing because its caption arc keeps those questions in conversation while repeatedly marking uncertainty. It provides no empirical system test or reason to change production authority.",
+    "ghostMeshTakeaway": "Keep three records distinct: measured task capability, scoped control and revocation, and evidence about potential digital welfare. Trust must be earned through observable conduct, but a philosophical bargain does not authorize one with an untrusted agent. Treat a model label as a prompt for evaluation, retain current isolation and audit paths, and explore welfare questions without retaining private user sessions by default. This is GhostMesh's inference, not a claim demonstrated by the video.",
+    "verdict": "Interesting, unproven",
+    "architectureImpact": "investigate"
+  },
+  "custody": {
+    "classification": "private-hash-identified-partial-capture",
+    "privateAccess": "Owner-only local directory mode 0700 and files mode 0600 at last check; raw media, captions, ASR and source metadata remain outside the public repository.",
+    "sourceIdentityBasis": "Exact YouTube video ID, producer metadata and 15 producer chapter starts; source metadata was inspected locally.",
+    "sourceMetadataSha256": "b9573fb08380a93c2ce2aca2804f6c648d46ba7ba80fb8a4ab1f9540f867e979",
+    "partialPrivateInventorySha256": "bc400ff2a8c980ed3e3154ae2398d864010ee4d2185fd6bd3ecad5836ea58839",
+    "automaticCaption": {
+      "kind": "YouTube English automatic captions (en-orig)",
+      "sha256": "5932fb7ee9f8a09cdbddcd2d95983b49a06c53723ca013521027b733eb1096e9",
+      "bytes": 694065,
+      "timedCues": 4129,
+      "firstCueStart": "00:00:00.080",
+      "lastCueEnd": "01:25:20.239",
+      "confidenceLimit": "Automatically generated text spans approximately the source runtime but is not publisher-authored; recognition, exact wording and speaker attribution remain provisional"
+    },
+    "originalAudio": {
+      "coverage": "Six noncontiguous original-English clips, 1221 requested seconds of 5119-second episode; no full audio or video copy.",
+      "technicalDecode": "Each clip identified and fully decoded without error; this is not listening or speech verification.",
+      "windows": [
+        {
+          "id": "01",
+          "start": "00:04:35",
+          "end": "00:05:15",
+          "durationSeconds": 40.008,
+          "bytes": 405505,
+          "sha256": "6374f6953f06b4c3245a8ad6b75c2bd102e3b95ffe471a345b21f1842360073b"
+        },
+        {
+          "id": "02",
+          "start": "00:11:29",
+          "end": "00:16:23",
+          "durationSeconds": 294.008,
+          "bytes": 2960510,
+          "sha256": "301476091be8c269118830678a2bd2060fe1e9b4ae6af3e6eae5551f7c9fa804"
+        },
+        {
+          "id": "03",
+          "start": "00:19:14",
+          "end": "00:22:20",
+          "durationSeconds": 186.008,
+          "bytes": 1831410,
+          "sha256": "fe858084b2cf8eb53d0d4767d08cfcc1c8fd038e5432f6aa934f95b347e0f161"
+        },
+        {
+          "id": "04",
+          "start": "00:26:56",
+          "end": "00:30:56",
+          "durationSeconds": 240.008,
+          "bytes": 2429682,
+          "sha256": "7d7d1c86e5b99f9d6ea3efab89f17931458152b4a58c256c35fe809c08bd23d3"
+        },
+        {
+          "id": "05",
+          "start": "00:33:00",
+          "end": "00:38:30",
+          "durationSeconds": 330.008,
+          "bytes": 3278306,
+          "sha256": "2b6b548212307aa45a1a08e32067ddfb34d7d40cb27fe70f251aec4232133038"
+        },
+        {
+          "id": "06",
+          "start": "00:54:25",
+          "end": "00:56:36",
+          "durationSeconds": 131.008,
+          "bytes": 1301739,
+          "sha256": "26348fcd94014ee8dfef9c1deb2142c8d3d0f738a8c0dac5cb4f13a3a03128df"
+        }
+      ]
+    },
+    "localAsr": {
+      "scope": "Second offline machine transcription of six clips; machine agreement is not an accuracy or speaker-confidence score.",
+      "tool": "whisper-cli 1.9.2, offline CPU mode, English, four threads",
+      "modelSha256": "c6138d6d58ecc8322097e0f987c32f1be8bb0a18532a3f88f734d1bbf9c41e5d",
+      "normalizedWordSequenceOverlapByWindow": {
+        "01": 0.933,
+        "02": 0.958,
+        "03": 0.941,
+        "04": 0.916,
+        "05": 0.936,
+        "06": 0.918
+      }
+    },
+    "fullVideoCaptured": false,
+    "videoViewed": false,
+    "humanAudioListeningVerified": false,
+    "speakerTurnsAuthenticated": false,
+    "exactSpokenWordingVerified": false,
+    "completeProducerTranscriptFound": false,
+    "canonicalReasonPackVerified": false,
+    "limit": "The full automatic-caption arc supports provisional topic and argument analysis. Six audio windows have independent local ASR but were not heard by a person in this task. Exact quotations, named speaker turns, visual demonstrations and disputed conditionals are omitted or require a targeted original-source check."
+  },
+  "chapterMap": [
+    {
+      "start": "00:47",
+      "topic": "simulation",
+      "evidenceLimit": "Caption-only hypothetical. · speech and timing unverified"
+    },
+    {
+      "start": "04:35",
+      "topic": "containment",
+      "evidenceLimit": "First 40 seconds dual-machine; remainder caption-only. Clip edge incomplete. · speech and timing unverified"
+    },
+    {
+      "start": "07:58",
+      "topic": "AI childhood",
+      "evidenceLimit": "Caption-only conditional analogy, no observed longitudinal AI result. · speech and timing unverified"
+    },
+    {
+      "start": "11:29",
+      "topic": "control",
+      "evidenceLimit": "Dual-machine broad theme; long-range forecast unverified. · speech and timing unverified"
+    },
+    {
+      "start": "15:08",
+      "topic": "AGI",
+      "evidenceLimit": "Opening dual-machine; rest caption-only. Model-name recognition error. · speech and timing unverified"
+    },
+    {
+      "start": "19:00",
+      "topic": "retrospective",
+      "evidenceLimit": "Most of chapter dual-machine; historical paper independently checked. No measured safety benefit. · speech and timing unverified"
+    },
+    {
+      "start": "22:23",
+      "topic": "Musk",
+      "evidenceLimit": "Caption-only. Do not infer biographical facts about Musk. · speech and timing unverified"
+    },
+    {
+      "start": "25:07",
+      "topic": "doom",
+      "evidenceLimit": "Caption-only. No probability estimate. · speech and timing unverified"
+    },
+    {
+      "start": "26:56",
+      "topic": "reciprocal trust",
+      "evidenceLimit": "First four minutes dual-machine; rest caption-only. Not a calibrated threat model. · speech and timing unverified"
+    },
+    {
+      "start": "33:00",
+      "topic": "digital experience",
+      "evidenceLimit": "First 5:30 dual-machine; exact Anthropic feature claim not independently established. · speech and timing unverified"
+    },
+    {
+      "start": "38:33",
+      "topic": "suffering",
+      "evidenceLimit": "Caption-only thought experiment; no consciousness or safety finding. · speech and timing unverified"
+    },
+    {
+      "start": "44:34",
+      "topic": "consciousness and alignment",
+      "evidenceLimit": "Caption-only philosophical analysis; no validated causal effect or demonstrated protective system. · speech and timing unverified"
+    },
+    {
+      "start": "54:25",
+      "topic": "specialized systems",
+      "evidenceLimit": "First 2:11 dual-machine; disputed 54:40 conditional omitted. Remainder caption-only. · speech and timing unverified"
+    },
+    {
+      "start": "1:00:54",
+      "topic": "uploads",
+      "evidenceLimit": "Caption-only philosophical analysis; no demonstration of upload feasibility. · speech and timing unverified"
+    },
+    {
+      "start": "1:12:11",
+      "topic": "academic shift",
+      "evidenceLimit": "Caption-only retrospective; exact wording and speaker unverified. · speech and timing unverified"
+    }
+  ],
+  "claims": [
+    {
+      "id": "the-label-the-box-and-the-bargain--bv01",
+      "proposition": "Episode identity, 85:19 runtime and chapter boundaries.",
+      "kind": "producer-metadata",
+      "asOf": "2026-10-20",
+      "status": "corroborated",
+      "assessment": "Producer-verified metadata. Safe to identify the source and link the chapters.",
+      "limits": "Machine source does not authenticate speech or speakers. Producer-verified metadata. Safe to identify the source and link the chapters.",
+      "sourceLocation": "Original producer listing and chapter metadata, 00:00–85:19; provisional machine-source navigation; BV01",
+      "references": [
+        "source-video"
+      ],
+      "counterevidence": [],
+      "machineSourceBasis": "Producer metadata and chapter starts; not speech evidence.",
+      "externalRecordRole": "Original producer metadata identifies the episode and chapter boundaries only."
+    },
+    {
+      "id": "the-label-the-box-and-the-bargain--bv02",
+      "proposition": "The simulation-to-boxing analogy reverses who has the security advantage at 04:35.",
+      "kind": "caption-grounded-source-reading",
+      "asOf": "2026-10-20",
+      "status": "unverified",
+      "assessment": "Dual-machine opening, caption-only context. Thought experiment; omit a categorical claim that present AI escaped all sandboxes.",
+      "limits": "Machine source does not authenticate speech or speakers. Dual-machine opening, caption-only context. Thought experiment; omit a categorical claim that present AI escaped all sandboxes.",
+      "sourceLocation": "04:35 chapter start; first 40 seconds dual-machine, remainder automatic captions; provisional machine-source navigation; BV02",
+      "references": [
+        "source-video",
+        "restricted-oracle"
+      ],
+      "counterevidence": [
+        "openai-incident"
+      ],
+      "machineSourceBasis": "First 40 seconds compared with local ASR; rest automatic captions only.",
+      "externalRecordRole": "Context or counterevidence only; external records do not authenticate interview speech."
+    },
+    {
+      "id": "the-label-the-box-and-the-bargain--bv03",
+      "proposition": "Early training may shape later motivations at 07:58.",
+      "kind": "caption-grounded-source-reading",
+      "asOf": "2026-10-20",
+      "status": "unverified",
+      "assessment": "Caption-only, conditional. Do not equate AI training with childhood as fact.",
+      "limits": "Machine source does not authenticate speech or speakers. Caption-only, conditional. Do not equate AI training with childhood as fact.",
+      "sourceLocation": "07:58 producer chapter; automatic captions only; provisional machine-source navigation; BV03",
+      "references": [
+        "source-video"
+      ],
+      "counterevidence": [],
+      "machineSourceBasis": "Automatic captions only; conditional analogy.",
+      "externalRecordRole": "Context or counterevidence only; external records do not authenticate interview speech."
+    },
+    {
+      "id": "the-label-the-box-and-the-bargain--bv04",
+      "proposition": "Capability control differs from alignment, and AGI labeling is definition-dependent at 11:29–19:00.",
+      "kind": "caption-grounded-source-reading",
+      "asOf": "2026-10-20",
+      "status": "unverified",
+      "assessment": "Dual-machine core, caption-only extension. No authenticated turn or current-model classification.",
+      "limits": "Machine source does not authenticate speech or speakers. Dual-machine core, caption-only extension. No authenticated turn or current-model classification.",
+      "sourceLocation": "11:29–19:00 chapters; dual-machine core and caption-only extension; provisional machine-source navigation; BV04",
+      "references": [
+        "source-video",
+        "openai-charter",
+        "stanford-agi"
+      ],
+      "counterevidence": [],
+      "machineSourceBasis": "Six-window dual-machine core; remaining chapter analysis uses automatic captions.",
+      "externalRecordRole": "Context or counterevidence only; external records do not authenticate interview speech."
+    },
+    {
+      "id": "the-label-the-box-and-the-bargain--bv05",
+      "proposition": "Gradual progress appears to allow more alignment work than a sudden breakthrough at 19:00.",
+      "kind": "caption-grounded-source-reading",
+      "asOf": "2026-10-20",
+      "status": "unverified",
+      "assessment": "Dual-machine core. No observed safety gain follows.",
+      "limits": "Machine source does not authenticate speech or speakers. Dual-machine core. No observed safety gain follows.",
+      "sourceLocation": "19:00 producer chapter; dual-machine core; provisional machine-source navigation; BV05",
+      "references": [
+        "source-video",
+        "bostrom-forecast"
+      ],
+      "counterevidence": [],
+      "machineSourceBasis": "Original-English excerpt compared with local ASR; no observed safety gain.",
+      "externalRecordRole": "Context or counterevidence only; external records do not authenticate interview speech."
+    },
+    {
+      "id": "the-label-the-box-and-the-bargain--bv06",
+      "proposition": "A risk/upside framing and hedging across futures appear at 22:23–26:56.",
+      "kind": "caption-grounded-source-reading",
+      "asOf": "2026-10-20",
+      "status": "unverified",
+      "assessment": "Caption-only. Omit Musk motive inference and any numeric doom probability.",
+      "limits": "Machine source does not authenticate speech or speakers. Caption-only. Omit Musk motive inference and any numeric doom probability.",
+      "sourceLocation": "22:23–26:56 chapters; automatic captions only; provisional machine-source navigation; BV06",
+      "references": [
+        "source-video",
+        "bostrom-essay"
+      ],
+      "counterevidence": [],
+      "machineSourceBasis": "Automatic captions only; no motive or numeric risk estimate.",
+      "externalRecordRole": "Context or counterevidence only; external records do not authenticate interview speech."
+    },
+    {
+      "id": "the-label-the-box-and-the-bargain--bv07",
+      "proposition": "Human trustworthiness enters a possible AI bargain at 26:56.",
+      "kind": "caption-grounded-source-reading",
+      "asOf": "2026-10-20",
+      "status": "unverified",
+      "assessment": "Dual-machine core. The 5% is hypothetical, not a forecast or permission to negotiate with a misaligned system.",
+      "limits": "Machine source does not authenticate speech or speakers. Dual-machine core. The 5% is hypothetical, not a forecast or permission to negotiate with a misaligned system.",
+      "sourceLocation": "26:56 producer chapter; first four minutes dual-machine; provisional machine-source navigation; BV07",
+      "references": [
+        "source-video"
+      ],
+      "counterevidence": [],
+      "machineSourceBasis": "Original-English excerpt compared with local ASR; 5% is hypothetical.",
+      "externalRecordRole": "Context or counterevidence only; external records do not authenticate interview speech."
+    },
+    {
+      "id": "the-label-the-box-and-the-bargain--bv08",
+      "proposition": "Possible AI experience, distinct moral status and small precautions appear at 33:00.",
+      "kind": "caption-grounded-source-reading",
+      "asOf": "2026-10-20",
+      "status": "unverified",
+      "assessment": "Dual-machine core. “More” transcripts is the bounded machine reading; omit the unverified Anthropic session-exit feature and any default retention recommendation.",
+      "limits": "Machine source does not authenticate speech or speakers. Dual-machine core. “More” transcripts is the bounded machine reading; omit the unverified Anthropic session-exit feature and any default retention recommendation.",
+      "sourceLocation": "33:00 producer chapter; first five minutes dual-machine; provisional machine-source navigation; BV08",
+      "references": [
+        "source-video",
+        "bostrom-digital",
+        "anthropic-welfare",
+        "anthropic-opus"
+      ],
+      "counterevidence": [
+        "butlin",
+        "long",
+        "suleyman"
+      ],
+      "machineSourceBasis": "First 5:30 compared with local ASR; transcript-preservation wording remains provisional.",
+      "externalRecordRole": "Context or counterevidence only; external records do not authenticate interview speech."
+    },
+    {
+      "id": "the-label-the-box-and-the-bargain--bv09",
+      "proposition": "AI suffering and consciousness-alignment questions remain uncertain at 38:33–54:25; the late passage considers a safely built protector alongside agency-amplifying tools.",
+      "kind": "caption-grounded-source-reading",
+      "asOf": "2026-10-20",
+      "status": "unverified",
+      "assessment": "Caption-only. No proven present suffering, direct consciousness-to-alignment effect or demonstrated protective system. Childhood analogy is speculative.",
+      "limits": "Machine source does not authenticate speech or speakers. Caption-only. No proven present suffering, direct consciousness-to-alignment effect or demonstrated protective system. Childhood analogy is speculative.",
+      "sourceLocation": "38:33–54:25 chapters; automatic captions only; provisional machine-source navigation; BV09",
+      "references": [
+        "source-video",
+        "butlin",
+        "long"
+      ],
+      "counterevidence": [],
+      "machineSourceBasis": "Automatic captions only; no consciousness or protector trial.",
+      "externalRecordRole": "Context or counterevidence only; external records do not authenticate interview speech."
+    },
+    {
+      "id": "the-label-the-box-and-the-bargain--bv10",
+      "proposition": "Specialized systems and uploads are considered alternatives at 54:25–1:12:11.",
+      "kind": "caption-grounded-source-reading",
+      "asOf": "2026-10-20",
+      "status": "unverified",
+      "assessment": "Dual-machine narrow-systems opening, caption-only later analysis. Omit disputed 54:40 conditional; neither path is demonstrated safer.",
+      "limits": "Machine source does not authenticate speech or speakers. Dual-machine narrow-systems opening, caption-only later analysis. Omit disputed 54:40 conditional; neither path is demonstrated safer.",
+      "sourceLocation": "54:25–1:12:11 chapters; dual-machine opening and caption-only extension; provisional machine-source navigation; BV10",
+      "references": [
+        "source-video",
+        "restricted-oracle"
+      ],
+      "counterevidence": [],
+      "machineSourceBasis": "First 2:11 compared with local ASR; disputed 54:40 condition omitted, later analysis caption-only.",
+      "externalRecordRole": "Context or counterevidence only; external records do not authenticate interview speech."
+    },
+    {
+      "id": "the-label-the-box-and-the-bargain--bv11",
+      "proposition": "The closing contrasts an apparently stable underlying view with changed emphasis at 1:21:49.",
+      "kind": "caption-grounded-source-reading",
+      "asOf": "2026-10-20",
+      "status": "unverified",
+      "assessment": "Caption-only. A cautious late-exchange reading; no exact quote or verified personal change of view.",
+      "limits": "Machine source does not authenticate speech or speakers. Caption-only. A cautious late-exchange reading; no exact quote or verified personal change of view.",
+      "sourceLocation": "1:21:49 late passage; automatic captions only; provisional machine-source navigation; BV11",
+      "references": [
+        "source-video",
+        "bostrom-forecast",
+        "bostrom-essay"
+      ],
+      "counterevidence": [],
+      "machineSourceBasis": "Automatic captions only; no authenticated speaker or personal change of view.",
+      "externalRecordRole": "Context or counterevidence only; external records do not authenticate interview speech."
+    }
+  ],
+  "references": [
+    {
+      "id": "source-video",
+      "title": "Original producer video",
+      "author": "The Roman Forum",
+      "publisher": "The Roman Forum",
+      "url": "https://www.youtube.com/watch?v=m880aJt5sNM",
+      "publicationDate": "2026-10-16",
+      "eventDate": "",
+      "sourceType": "producer video",
+      "independence": "Original producer identity and chapter starts; full auto-caption arc and six ASR windows are provisional machine source.",
+      "evidenceFamily": "bostrom-episode",
+      "checkedAt": "2026-10-20T00:00:00Z"
+    },
+    {
+      "id": "openai-charter",
+      "title": "OpenAI Charter",
+      "author": "OpenAI",
+      "publisher": "OpenAI",
+      "url": "https://openai.com/charter/",
+      "publicationDate": "unknown",
+      "eventDate": "",
+      "sourceType": "organization definition",
+      "independence": "OpenAI's definition is context, not proof of the interview's wording or present AGI status.",
+      "evidenceFamily": "openai",
+      "checkedAt": "2026-10-20T00:00:00Z"
+    },
+    {
+      "id": "stanford-agi",
+      "title": "What is artificial general intelligence?",
+      "author": "Stanford HAI",
+      "publisher": "Stanford HAI",
+      "url": "https://hai.stanford.edu/ai-definitions/what-is-agi-artificial-general-intelligence",
+      "publicationDate": "unknown",
+      "eventDate": "",
+      "sourceType": "independent concept analysis",
+      "independence": "Describes definitional uncertainty, not a test of this source's claims.",
+      "evidenceFamily": "stanford-hai",
+      "checkedAt": "2026-10-20T00:00:00Z"
+    },
+    {
+      "id": "restricted-oracle",
+      "title": "Thinking Inside the Box: Controlling and Using an Oracle AI",
+      "author": "Stuart Armstrong, Anders Sandberg and Nick Bostrom",
+      "publisher": "Nick Bostrom",
+      "url": "https://nickbostrom.com/papers/oracle.pdf",
+      "publicationDate": "2012",
+      "eventDate": "",
+      "sourceType": "theoretical paper",
+      "independence": "Hypothetical design analysis with Bostrom author overlap, not a field test.",
+      "evidenceFamily": "bostrom-research",
+      "checkedAt": "2026-10-20T00:00:00Z"
+    },
+    {
+      "id": "openai-incident",
+      "title": "Hugging Face incident and the road ahead",
+      "author": "OpenAI",
+      "publisher": "OpenAI",
+      "url": "https://openai.com/index/hugging-face-incident-and-the-road-ahead/",
+      "publicationDate": "2026-08-26",
+      "eventDate": "",
+      "sourceType": "first-party incident account",
+      "independence": "A bounded incident and retrospective controls, not universal sandbox failure.",
+      "evidenceFamily": "openai",
+      "checkedAt": "2026-10-20T00:00:00Z"
+    },
+    {
+      "id": "bostrom-forecast",
+      "title": "How long before superintelligence?",
+      "author": "Nick Bostrom",
+      "publisher": "Nick Bostrom",
+      "url": "https://nickbostrom.com/papers/how-long-before-superintelligence/",
+      "publicationDate": "1997",
+      "eventDate": "",
+      "sourceType": "historical author paper",
+      "independence": "1997 paper with 2008 postscript; historical position, not verified interview speech.",
+      "evidenceFamily": "bostrom-research",
+      "checkedAt": "2026-10-20T00:00:00Z"
+    },
+    {
+      "id": "bostrom-digital",
+      "title": "Propositions Concerning Digital Minds and Society",
+      "author": "Nick Bostrom and Carl Shulman",
+      "publisher": "Nick Bostrom",
+      "url": "https://nickbostrom.com/papers/propositions-concerning-digital-minds-and-society/",
+      "publicationDate": "2023",
+      "eventDate": "",
+      "sourceType": "historical author proposal",
+      "independence": "Tentative Bostrom/Shulman propositions, not a present diagnosis.",
+      "evidenceFamily": "bostrom-research",
+      "checkedAt": "2026-10-20T00:00:00Z"
+    },
+    {
+      "id": "butlin",
+      "title": "Consciousness in Artificial Intelligence",
+      "author": "Patrick Butlin and coauthors",
+      "publisher": "arXiv",
+      "url": "https://arxiv.org/abs/2308.08708",
+      "publicationDate": "2023",
+      "eventDate": "",
+      "sourceType": "research analysis",
+      "independence": "Separate author analysis; assessed systems were not judged conscious.",
+      "evidenceFamily": "butlin-consciousness",
+      "checkedAt": "2026-10-20T00:00:00Z"
+    },
+    {
+      "id": "long",
+      "title": "Taking AI Welfare Seriously",
+      "author": "Robert Long and coauthors",
+      "publisher": "arXiv",
+      "url": "https://arxiv.org/abs/2411.00986",
+      "publicationDate": "2024",
+      "eventDate": "",
+      "sourceType": "research proposal",
+      "independence": "Normative proposal under uncertainty; overlaps with Butlin authors and is no independent consciousness test.",
+      "evidenceFamily": "digital-welfare-methods",
+      "checkedAt": "2026-10-20T00:00:00Z"
+    },
+    {
+      "id": "anthropic-welfare",
+      "title": "Exploring model welfare",
+      "author": "Anthropic",
+      "publisher": "Anthropic",
+      "url": "https://www.anthropic.com/research/exploring-model-welfare",
+      "publicationDate": "2025-04-24",
+      "eventDate": "",
+      "sourceType": "first-party policy announcement",
+      "independence": "Organization's research program, not consciousness evidence.",
+      "evidenceFamily": "anthropic",
+      "checkedAt": "2026-10-20T00:00:00Z"
+    },
+    {
+      "id": "anthropic-opus",
+      "title": "Deprecation updates for Opus 3",
+      "author": "Anthropic",
+      "publisher": "Anthropic",
+      "url": "https://www.anthropic.com/research/deprecation-updates-opus-3",
+      "publicationDate": "2026-02-25",
+      "eventDate": "",
+      "sourceType": "first-party practice account",
+      "independence": "Experimental retirement practice, not independent welfare validation or default user-session retention authority.",
+      "evidenceFamily": "anthropic",
+      "checkedAt": "2026-10-20T00:00:00Z"
+    },
+    {
+      "id": "suleyman",
+      "title": "A warning about model welfare",
+      "author": "Mustafa Suleyman",
+      "publisher": "Mustafa Suleyman",
+      "url": "https://mustafa-suleyman.ai/a-warning-about-model-welfare",
+      "publicationDate": "2026-09-16",
+      "eventDate": "",
+      "sourceType": "opposing opinion",
+      "independence": "Separate argument, not empirical disproof of experience.",
+      "evidenceFamily": "suleyman",
+      "checkedAt": "2026-10-20T00:00:00Z"
+    },
+    {
+      "id": "bostrom-essay",
+      "title": "Superintelligence",
+      "author": "Nick Bostrom",
+      "publisher": "Nick Bostrom",
+      "url": "https://nickbostrom.com/views/superintelligence.pdf",
+      "publicationDate": "2009",
+      "eventDate": "",
+      "sourceType": "historical author essay",
+      "independence": "Dated written position, not verified interview speech or current probability.",
+      "evidenceFamily": "bostrom-research",
+      "checkedAt": "2026-10-20T00:00:00Z"
+    }
+  ],
+  "publicBoundary": {
+    "rawThirdPartyMediaOrTranscriptIncluded": false,
+    "signedMediaUrlsOrPrivatePathsIncluded": false,
+    "exactPublicCopyIndependentlyReviewed": false,
+    "publicReleasePerformed": false,
+    "nextGate": "Independent editor verifies the exact article source, receipt, claims and privacy; integration writer then reconciles current-main catalog and generated site before owner-authorized release."
+  },
+  "legacyReceipt": {
+    "schema": "ghostmesh-video-partial-custody-v1",
+    "source": {
+      "platform": "YouTube",
+      "url": "https://www.youtube.com/watch?v=m880aJt5sNM",
+      "videoId": "m880aJt5sNM",
+      "title": "Superintelligence Author: We May Already Have AGI | Nick Bostrom",
+      "creator": "The Roman Forum with Roman Yampolskiy",
+      "uploadDate": "20261016",
+      "durationSeconds": 5119,
+      "mediaAspect": "16:9"
+    },
+    "custody": {
+      "status": "hash-identified-partial-private-capture",
+      "note": "Full English automatic-caption track, six noncontiguous original-English audio windows and local ASR are held in owner-only private custody. No full video or audio capture, human listening, authenticated speaker turns or verified complete ReasonPack is claimed."
+    },
+    "sourceInspection": {
+      "method": "yt-dlp captured exact-video producer metadata and the automatic English VTT; bounded original-English audio excerpts were captured for six windows, identified and decoded with ffprobe/ffmpeg, then compared with offline local Whisper ASR. The full caption reading index was checked against 15 producer chapter starts.",
+      "caveat": "Automatic captions and local ASR may share errors. No direct human listening, full visual review, exact speech or authenticated speaker attribution is claimed. Ten interview proposition claims remain unverified.",
+      "publicationBoundary": "Only original commentary, source links and sanitized hashes enter public source. Raw audio, caption, ASR and source-metadata bytes stay in access-controlled private custody. Independent source review and bounded local generated-page checks passed; final public release approval remains pending.",
+      "captionSha256": "5932fb7ee9f8a09cdbddcd2d95983b49a06c53723ca013521027b733eb1096e9",
+      "sourceMetadataSha256": "b9573fb08380a93c2ce2aca2804f6c648d46ba7ba80fb8a4ab1f9540f867e979",
+      "partialPrivateInventorySha256": "bc400ff2a8c980ed3e3154ae2398d864010ee4d2185fd6bd3ecad5836ea58839"
+    },
+    "reasonPack": {
+      "verification": "not-run"
+    },
+    "publicationBoundary": "Article-specific candidate only; no PR, merge, production deployment or public release performed."
+  },
+  "policyAuthority": {
+    "repository": "pinklon/ghostmesh-readers",
+    "mainCommit": "58511874a842bd8cf45ef332b0d182b46edefcf6",
+    "rule": "Merged PR35 allows bounded Reader analysis from a truthful hash-identified partial private capture; a verified complete ReasonPack is optional, not claimed here."
+  },
+  "integrationMapping": {
+    "catalogLegacyReceipt": "Copy only the nested legacyReceipt object into the current-main Reader catalog record. Keep the 11 claim statuses and 13 reference roles aligned with the accepted source; recheck the regenerated exact page before release.",
+    "generatedReceipt": "Regenerate from current-main catalog and this authored Reader source; do not treat this standalone review receipt as a generated site output.",
+    "oldNonreleaseCandidate": "The earlier 2ca3208 combined candidate retains owner-only labels and is not release source."
+  },
+  "claimStatusSummary": {
+    "producerMetadataCorroborated": 1,
+    "interviewPropositionsUnverified": 10,
+    "speechAuthenticated": 0
+  }
+}
