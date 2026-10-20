@@ -61,16 +61,16 @@ class VisualContractTest(unittest.TestCase):
         parsed = Tags()
         parsed.feed(home)
         panels = [a for _, a in parsed.tags if 'data-home-player' in a]
-        self.assertEqual(len(panels), 6)
         catalog = json.loads((ROOT / 'content/catalog.json').read_text())
         by_id = {reader['id']: reader for reader in catalog['readers']}
         recent = sorted(catalog['readers'], key=lambda reader: (reader['published'], reader['slug']), reverse=True)
         selected = [by_id[catalog['featuredId']]] + [reader for reader in recent if reader['id'] != catalog['featuredId']][:6]
+        paper_count = sum(reader['source'].get('kind') == 'paper' for reader in selected)
+        self.assertEqual(len(panels), len(selected) - paper_count)
         self.assertCountEqual([a.get('data-source-platform') for a in panels],
                               [reader['source']['platform'] for reader in selected
                                if reader['source'].get('kind') != 'paper'])
-        self.assertEqual(sum(reader['source'].get('kind') == 'paper' for reader in selected), 1)
-        self.assertIn('class="gm-home-visual gm-home-paper"', home)
+        self.assertEqual(home.count('class="gm-home-visual gm-home-paper"'), paper_count)
         self.assertEqual(sum(tag == 'iframe' for tag, _ in parsed.tags), 0)
         self.assertEqual(home.count('class="gm-home-open"'), 7)
         self.assertEqual(home.count('class="gm-home-source"'), 7)

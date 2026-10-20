@@ -1,0 +1,61 @@
+{
+  "schema": "ghostmesh-video-receipt-v1",
+  "status": "source-custody-limited; episode speech mapped from automatic captions",
+  "checkedAt": "2026-10-20",
+  "source": {
+    "platform": "YouTube",
+    "url": "https://www.youtube.com/watch?v=A_156w0aYtU",
+    "videoId": "A_156w0aYtU",
+    "title": "Bill Gates: A.I. 'Makes Nuclear Weapons Look Like Nothing' | The Ezra Klein Show",
+    "channel": "The Ezra Klein Show",
+    "uploadDate": "2026-09-29",
+    "durationSeconds": 4430,
+    "mediaAspect": "16:9"
+  },
+  "custody": {
+    "coverage": "Exact-video English automatic timed captions, 1991 timestamped lines, first 00:00 and last 1:13:34; earlier bounded original-audio excerpt 10:20-17:20 with local automatic transcription.",
+    "timedCaptionSha256": "1bcdd5e152f03d068559d261a27812dcb23087a8dbb47b60e3ff935ee8ecf15d",
+    "originalAudioExcerptSha256": "577992c403f69ab37c74041a44577a5497e475838f17dc977ed46c45279adb40",
+    "originalAudioExcerptRange": "10:20-17:20",
+    "localExcerptTranscriptionSha256": "e88082895ad44f16aebb93a3935d6a9282bbb319a082c191cd730ed5e08f0747",
+    "directAudioReview": "none",
+    "frameReview": "none",
+    "closedFullReasonPackVerification": "not performed",
+    "transcriptStatus": "Automatic captions used for navigation and provisional argument mapping; not a corrected or publisher-edited transcript. No exact spoken wording or speaker turn is certified.",
+    "privateBoundary": "Third-party media, captions, full transcript and private file locations are excluded from Git and the public site."
+  },
+  "editorial": {
+    "overview": "In a long Ezra Klein interview, Gates connects fast AI capability gains to cyber and biological misuse, governance, work, global development and education. Klein presses how strong those risk claims are and whether adoption can be accelerated while warning of harm. This arc is mapped from exact-video automatic captions with speaker turns and exact speech left unconfirmed.",
+    "whyItMatters": "AI-risk and policy readers can use the debate to separate a capability warning from measured human harm. Watch the governance exchange and threshold response; use the later work and education chapters if those decisions are yours.",
+    "ghostMeshTakeaway": "Ask for a model- and actor-specific human-outcome test before treating a danger threshold as established. Keep monitoring and bounded permissions while testing, because an uncertain estimate is not a safety guarantee. This is GhostMesh's proposed inference, not a video-tested control.",
+    "verdict": "Interesting, unproven",
+    "watchGuidance": "Start at 10:28 for the incentive and cyber/bio exchange, 17:51 for monitorability, and 21:55 for the threshold and nuclear comparison. The 27:03 jobs and 59:08 education chapters are separate questions. Exact speech is not verified against original audio.",
+    "thesis": "The threshold warning merits scrutiny, but model capability, actor uplift, physical completion and governance response need separate evidence.",
+    "claimMap": [
+      {"id":"G01","sourceStartSeconds":628,"status":"unverified","finding":"Automatic captions suggest Gates argues current cyber and biological misuse has crossed a dangerous threshold.","limit":"Speaker and wording unchecked; no declared human-outcome test or quantified catastrophic probability in the episode passage.","references":["VIDEO","GATES","ANTHROPIC"],"counterevidence":["ACTIVE_SITE"]},
+      {"id":"G02","sourceStartSeconds":887,"status":"unverified","finding":"Automatic captions suggest Klein tests company incentives and liability against Gates's call for prospective oversight.","limit":"Retain the provisional adversarial reading; confirm a turn against original audio if stated as fact. Neither argument alone establishes a policy's effectiveness.","references":["VIDEO","APPLE"]},
+      {"id":"G03","sourceStartSeconds":1071,"status":"unverified","finding":"Automatic captions suggest the speakers distinguish near-term malicious human use from later autonomous-control problems.","limit":"This is a caption-derived reading; the OpenAI incident is separate and cannot prove the proposed broader harm.","references":["VIDEO","OPENAI"]},
+      {"id":"G04","sourceStartSeconds":1315,"status":"unverified","finding":"Automatic captions place Gates's nuclear-weapons comparison around 22:32 in the interview.","limit":"Rhetorical comparison, not a numerical risk equivalence; exact wording and attribution require original-audio review.","references":["VIDEO"]},
+      {"id":"G05","sourceStartSeconds":1623,"status":"unverified","finding":"Automatic captions map a dispute over AI work displacement, demand elasticity, taxation and distribution.","limit":"Video forecasts are not observed job losses; ILO exposure measures a different construct.","references":["VIDEO","ILO"]},
+      {"id":"G06","sourceStartSeconds":2580,"status":"unverified","finding":"Automatic captions suggest a tension between accelerating beneficial adoption and warning of serious harms, with physical-world bottlenecks discussed.","limit":"Physical constraints may slow transfer; they neither settle the bio claim nor remove policy choices.","references":["VIDEO","ACTIVE_SITE"]},
+      {"id":"G07","sourceStartSeconds":3548,"status":"unverified","finding":"Automatic captions map education, learning shortcuts, child safety and privacy tradeoffs.","limit":"No program result or specific classroom example is promoted without original audio and a matching primary record.","references":["VIDEO"]},
+      {"id":"G08","sourceStartSeconds":0,"status":"corroborated","finding":"The publisher identifies the episode, host, guest and date and frames it around AI risk and governance.","limit":"Publisher framing does not independently confirm the dialogue or the predicted harms.","references":["APPLE"]}
+    ],
+    "references": [
+      {"id":"VIDEO","url":"https://www.youtube.com/watch?v=A_156w0aYtU","role":"exact source video","independence":"original episode; automatic text remains uncorrected"},
+      {"id":"APPLE","url":"https://podcasts.apple.com/us/podcast/bill-gatess-blunt-warning-on-a-i/id1548604447?i=1000792163003","role":"publisher identity and episode framing","independence":"same publisher family as video; not a second account of harm"},
+      {"id":"GATES","url":"https://www.gatesnotes.com/a-turbulent-ai-era-and-critical-choices-to-make","role":"speaker's August 26, 2026 published view","independence":"same speaker, not independent corroboration"},
+      {"id":"ACTIVE_SITE","url":"https://arxiv.org/html/2602.16703v1","role":"February 18, 2026 original novice wet-lab RCT and bounded counterevidence","independence":"independent of speaker and publisher; study-family with METR commentary"},
+      {"id":"METR","url":"https://metr.org/blog/2026-02-19-five-lessons-from-ai-biology-rct/","role":"study collaborator interpretation and human-outcome measurement context","independence":"not a replication of Active Site"},
+      {"id":"ANTHROPIC","url":"https://www.anthropic.com/claude/mythos","role":"developer's restricted-access and capability account","independence":"developer self-report, not independent human-outcome validation"},
+      {"id":"OPENAI","url":"https://openai.com/index/hugging-face-incident-and-the-road-ahead/","role":"developer's separate experimental agent-security incident","independence":"incident owner; different mechanism and outcome"},
+      {"id":"ILO","url":"https://www.ilo.org/publications/generative-ai-and-jobs-refined-global-index-occupational-exposure","role":"task-exposure evidence for employment discussion","independence":"different construct from observed job loss"}
+    ],
+    "limits": [
+      "Speaker turns, direct wording, archival inserts and frames have not been checked against original playback. Bounded machine-attributed paraphrase may remain labeled; exact quotations, confirmed ambiguous turns and retained exact technical wording need targeted source review.",
+      "The last timestamped line begins at 1:13:34; its duration and subsequent video content are unknown.",
+      "The Active Site trial tested novices and mid-2025 models; it cannot settle expert, newer-model or different-access scenarios.",
+      "A generated receipt and automated site checks do not certify spoken wording or the empirical truth of a risk forecast."
+    ]
+  }
+}

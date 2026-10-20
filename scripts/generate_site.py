@@ -226,6 +226,11 @@ def projections():
  byid={r['id']:r for r in readers};out={}
  for r in readers:
   raw=(ROOT/'content/readers'/f'{r["slug"]}.html').read_text()
+  if r['slug']=='the-threshold-is-a-claim-not-a-test':
+   # Preserve the incumbent writer file byte-for-byte; normalize its colliding
+   # local brief anchor and missing canonical only in this public projection.
+   raw=raw.replace('aria-labelledby="brief-title"','aria-labelledby="writer-brief-title"',1).replace('<h2 id="brief-title">','<h2 id="writer-brief-title">',1)
+   raw=raw.replace('</head>','<link rel="canonical" href="https://youtube.shareplane.malott.ai/the-threshold-is-a-claim-not-a-test/"></head>',1)
   if r['slug']=='the-brakes-need-a-test':
    # Public-stage label only; the accepted writer article stays byte-for-byte intact.
    raw=raw.replace('Video deconstruction · source-qualified draft','Video deconstruction · source-qualified reading',1)
@@ -255,6 +260,31 @@ def projections():
   preserved=[u for u in dict.fromkeys(old_routes) if u.strip('/') in {x['slug'] for x in readers}]
   extra='<nav class="gm-footer-more" aria-label="More Reader routes">'+''.join(f'<a href="{esc(u)}">{esc(byid[next(x["id"] for x in readers if x["slug"]==u.strip("/"))]["title"])}</a>' for u in preserved)+'</nav>' if preserved else ''
   raw=raw[:old_footer.start()]+footer().replace('</footer>',extra+'</footer>')+raw[old_footer.end():]
+  if r['slug']=='the-label-the-box-and-the-bargain':
+   raw=raw.replace('class="gm-sharebar" data-gm-share=""','class="gm-sharebar"',1)
+   # Shared Reader controls are projected without changing the writer-owned HTML.
+   share=('<div class="gm-sharebar" data-gm-share=""><span class="gm-share-label">Share this Video Deconstruction</span>'
+          '<div class="gm-share-actions"><button class="gm-share-button" data-native-share="" type="button">Share</button>'
+          '<button class="gm-share-button" data-copy-link="" type="button">Copy link</button>'
+          '<a class="gm-share-email" data-email-link="" href="mailto:?subject='+esc(r['title'])+'">Email</a>'
+          '<span aria-live="polite" class="gm-share-message" data-gm-share-message="" role="status"></span></div></div>')
+   raw=raw.replace('</main>',share+'</main>',1).replace('</body>','<script defer src="/assets/reader-share.js"></script></body>',1)
+  if r['slug']=='the-warning-is-not-a-ballot-ruling':
+   # Shared Reader controls are projected without changing the writer-owned HTML.
+   share=('<div class="gm-sharebar" data-gm-share=""><span class="gm-share-label">Share this Video Deconstruction</span>'
+          '<div class="gm-share-actions"><button class="gm-share-button" data-native-share="" type="button">Share</button>'
+          '<button class="gm-share-button" data-copy-link="" type="button">Copy link</button>'
+          '<a class="gm-share-email" data-email-link="" href="mailto:?subject='+esc(r['title'])+'">Email</a>'
+          '<span aria-live="polite" class="gm-share-message" data-gm-share-message="" role="status"></span></div></div>')
+   raw=raw.replace('</main>',share+'</main>',1).replace('</body>','<script defer src="/assets/reader-share.js"></script></body>',1)
+  if r['slug']=='the-threshold-is-a-claim-not-a-test':
+   # Shared Reader controls are projected without changing the writer-owned HTML.
+   share=('<div class="gm-sharebar" data-gm-share=""><span class="gm-share-label">Share this Video Deconstruction</span>'
+          '<div class="gm-share-actions"><button class="gm-share-button" data-native-share="" type="button">Share</button>'
+          '<button class="gm-share-button" data-copy-link="" type="button">Copy link</button>'
+          '<a class="gm-share-email" data-email-link="" href="mailto:?subject='+esc(r['title'])+'">Email</a>'
+          '<span aria-live="polite" class="gm-share-message" data-gm-share-message="" role="status"></span></div></div>')
+   raw=raw.replace('</main>',share+'</main>',1).replace('</body>','<script defer src="/assets/reader-share.js"></script></body>',1)
   if r['slug']=='the-brakes-need-a-test':
    # Shared Reader controls are projected without changing the writer-owned HTML.
    share=('<div class="gm-sharebar" data-gm-share=""><span class="gm-share-label">Share this Video Deconstruction</span>'

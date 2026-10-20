@@ -6471,6 +6471,1475 @@
       }
     },
     {
+      "id": "reader:the-label-the-box-and-the-bargain",
+      "slug": "the-label-the-box-and-the-bargain",
+      "title": "The Label, the Box, and the Bargain",
+      "category": "AI & Technology",
+      "tags": [
+        "AGI definitions",
+        "AI control",
+        "digital minds"
+      ],
+      "entities": [
+        "Nick Bostrom",
+        "OpenAI",
+        "Anthropic",
+        "Stanford HAI"
+      ],
+      "source": {
+        "platform": "YouTube",
+        "url": "https://www.youtube.com/watch?v=m880aJt5sNM",
+        "videoId": "m880aJt5sNM",
+        "title": "Superintelligence Author: We May Already Have AGI | Nick Bostrom",
+        "creator": "The Roman Forum with Roman Yampolskiy",
+        "uploadDate": "20261016",
+        "durationSeconds": 5119,
+        "mediaAspect": "16:9"
+      },
+      "published": "2026-10-20",
+      "updated": "2026-10-20T00:00:00Z",
+      "overview": "The producer presents an interview with Bostrom whose caption arc moves from simulation and containment through AGI definitions and an earlier forecast into a sustained discussion of reciprocal trust and possible digital minds. It then tests consciousness, specialized systems and human uploads as alternative routes before closing on changed research priorities. The article's source-grounded question is whether the headline's AGI label is less consequential than the possibility that powerful AI and humans will need justified grounds to trust each other. This is GhostMesh's reading of automatic captions across the full runtime, not an authenticated speaker thesis.",
+      "whyItMatters": "Leaders and builders may be tempted to turn the headline into a capability verdict, a hypothetical bargain into a risk estimate, or welfare uncertainty into a retention policy. The interview is worth selective viewing because its caption arc keeps those questions in conversation while repeatedly marking uncertainty. It provides no empirical system test or reason to change production authority.",
+      "ghostMeshTakeaway": "Keep three records distinct: measured task capability, scoped control and revocation, and evidence about potential digital welfare. Trust must be earned through observable conduct, but a philosophical bargain does not authorize one with an untrusted agent. Treat a model label as a prompt for evaluation, retain current isolation and audit paths, and explore welfare questions without retaining private user sessions by default. This is GhostMesh's inference, not a claim demonstrated by the video.",
+      "verdict": "Interesting, unproven",
+      "architectureImpact": "investigate",
+      "falsification": "Revisit with directly checked original audio for disputed passages, dated task evaluations, tested control paths, and stronger evidence of digital experience; the interview supplies no AGI certificate or safe architecture.",
+      "evidenceState": "unverified",
+      "lastEvidenceChecked": "2026-10-20T00:00:00Z",
+      "freshness": "Full automatic-caption reading index and producer chapters reviewed 2026-10-20; six original-English windows compared with local ASR. No direct human listening or video viewing. Machine transcript claims and timing remain provisional.",
+      "variant": "essay",
+      "accent": "blue",
+      "claims": [
+        {
+          "id": "the-label-the-box-and-the-bargain--bv01",
+          "proposition": "Episode identity, 85:19 runtime and chapter boundaries.",
+          "kind": "producer-metadata",
+          "asOf": "2026-10-20",
+          "status": "corroborated",
+          "assessment": "Producer-verified metadata. Safe to identify the source and link the chapters.",
+          "limits": "Machine source does not authenticate speech or speakers. Producer-verified metadata. Safe to identify the source and link the chapters.",
+          "sourceLocation": "Original producer listing and chapter metadata, 00:00–85:19; provisional machine-source navigation; BV01",
+          "references": [
+            "source-video"
+          ],
+          "counterevidence": []
+        },
+        {
+          "id": "the-label-the-box-and-the-bargain--bv02",
+          "proposition": "The simulation-to-boxing analogy reverses who has the security advantage at 04:35.",
+          "kind": "caption-grounded-source-reading",
+          "asOf": "2026-10-20",
+          "status": "unverified",
+          "assessment": "Dual-machine opening, caption-only context. Thought experiment; omit a categorical claim that present AI escaped all sandboxes.",
+          "limits": "Machine source does not authenticate speech or speakers. Dual-machine opening, caption-only context. Thought experiment; omit a categorical claim that present AI escaped all sandboxes.",
+          "sourceLocation": "04:35 chapter start; first 40 seconds dual-machine, remainder automatic captions; provisional machine-source navigation; BV02",
+          "references": [
+            "source-video",
+            "restricted-oracle"
+          ],
+          "counterevidence": [
+            "openai-incident"
+          ]
+        },
+        {
+          "id": "the-label-the-box-and-the-bargain--bv03",
+          "proposition": "Early training may shape later motivations at 07:58.",
+          "kind": "caption-grounded-source-reading",
+          "asOf": "2026-10-20",
+          "status": "unverified",
+          "assessment": "Caption-only, conditional. Do not equate AI training with childhood as fact.",
+          "limits": "Machine source does not authenticate speech or speakers. Caption-only, conditional. Do not equate AI training with childhood as fact.",
+          "sourceLocation": "07:58 producer chapter; automatic captions only; provisional machine-source navigation; BV03",
+          "references": [
+            "source-video"
+          ],
+          "counterevidence": []
+        },
+        {
+          "id": "the-label-the-box-and-the-bargain--bv04",
+          "proposition": "Capability control differs from alignment, and AGI labeling is definition-dependent at 11:29–19:00.",
+          "kind": "caption-grounded-source-reading",
+          "asOf": "2026-10-20",
+          "status": "unverified",
+          "assessment": "Dual-machine core, caption-only extension. No authenticated turn or current-model classification.",
+          "limits": "Machine source does not authenticate speech or speakers. Dual-machine core, caption-only extension. No authenticated turn or current-model classification.",
+          "sourceLocation": "11:29–19:00 chapters; dual-machine core and caption-only extension; provisional machine-source navigation; BV04",
+          "references": [
+            "source-video",
+            "openai-charter",
+            "stanford-agi"
+          ],
+          "counterevidence": []
+        },
+        {
+          "id": "the-label-the-box-and-the-bargain--bv05",
+          "proposition": "Gradual progress appears to allow more alignment work than a sudden breakthrough at 19:00.",
+          "kind": "caption-grounded-source-reading",
+          "asOf": "2026-10-20",
+          "status": "unverified",
+          "assessment": "Dual-machine core. No observed safety gain follows.",
+          "limits": "Machine source does not authenticate speech or speakers. Dual-machine core. No observed safety gain follows.",
+          "sourceLocation": "19:00 producer chapter; dual-machine core; provisional machine-source navigation; BV05",
+          "references": [
+            "source-video",
+            "bostrom-forecast"
+          ],
+          "counterevidence": []
+        },
+        {
+          "id": "the-label-the-box-and-the-bargain--bv06",
+          "proposition": "A risk/upside framing and hedging across futures appear at 22:23–26:56.",
+          "kind": "caption-grounded-source-reading",
+          "asOf": "2026-10-20",
+          "status": "unverified",
+          "assessment": "Caption-only. Omit Musk motive inference and any numeric doom probability.",
+          "limits": "Machine source does not authenticate speech or speakers. Caption-only. Omit Musk motive inference and any numeric doom probability.",
+          "sourceLocation": "22:23–26:56 chapters; automatic captions only; provisional machine-source navigation; BV06",
+          "references": [
+            "source-video",
+            "bostrom-essay"
+          ],
+          "counterevidence": []
+        },
+        {
+          "id": "the-label-the-box-and-the-bargain--bv07",
+          "proposition": "Human trustworthiness enters a possible AI bargain at 26:56.",
+          "kind": "caption-grounded-source-reading",
+          "asOf": "2026-10-20",
+          "status": "unverified",
+          "assessment": "Dual-machine core. The 5% is hypothetical, not a forecast or permission to negotiate with a misaligned system.",
+          "limits": "Machine source does not authenticate speech or speakers. Dual-machine core. The 5% is hypothetical, not a forecast or permission to negotiate with a misaligned system.",
+          "sourceLocation": "26:56 producer chapter; first four minutes dual-machine; provisional machine-source navigation; BV07",
+          "references": [
+            "source-video"
+          ],
+          "counterevidence": []
+        },
+        {
+          "id": "the-label-the-box-and-the-bargain--bv08",
+          "proposition": "Possible AI experience, distinct moral status and small precautions appear at 33:00.",
+          "kind": "caption-grounded-source-reading",
+          "asOf": "2026-10-20",
+          "status": "unverified",
+          "assessment": "Dual-machine core. “More” transcripts is the bounded machine reading; omit the unverified Anthropic session-exit feature and any default retention recommendation.",
+          "limits": "Machine source does not authenticate speech or speakers. Dual-machine core. “More” transcripts is the bounded machine reading; omit the unverified Anthropic session-exit feature and any default retention recommendation.",
+          "sourceLocation": "33:00 producer chapter; first five minutes dual-machine; provisional machine-source navigation; BV08",
+          "references": [
+            "source-video",
+            "bostrom-digital",
+            "anthropic-welfare",
+            "anthropic-opus"
+          ],
+          "counterevidence": [
+            "butlin",
+            "long",
+            "suleyman"
+          ]
+        },
+        {
+          "id": "the-label-the-box-and-the-bargain--bv09",
+          "proposition": "AI suffering and consciousness-alignment questions remain uncertain at 38:33–54:25; the late passage considers a safely built protector alongside agency-amplifying tools.",
+          "kind": "caption-grounded-source-reading",
+          "asOf": "2026-10-20",
+          "status": "unverified",
+          "assessment": "Caption-only. No proven present suffering, direct consciousness-to-alignment effect or demonstrated protective system. Childhood analogy is speculative.",
+          "limits": "Machine source does not authenticate speech or speakers. Caption-only. No proven present suffering, direct consciousness-to-alignment effect or demonstrated protective system. Childhood analogy is speculative.",
+          "sourceLocation": "38:33–54:25 chapters; automatic captions only; provisional machine-source navigation; BV09",
+          "references": [
+            "source-video",
+            "butlin",
+            "long"
+          ],
+          "counterevidence": []
+        },
+        {
+          "id": "the-label-the-box-and-the-bargain--bv10",
+          "proposition": "Specialized systems and uploads are considered alternatives at 54:25–1:12:11.",
+          "kind": "caption-grounded-source-reading",
+          "asOf": "2026-10-20",
+          "status": "unverified",
+          "assessment": "Dual-machine narrow-systems opening, caption-only later analysis. Omit disputed 54:40 conditional; neither path is demonstrated safer.",
+          "limits": "Machine source does not authenticate speech or speakers. Dual-machine narrow-systems opening, caption-only later analysis. Omit disputed 54:40 conditional; neither path is demonstrated safer.",
+          "sourceLocation": "54:25–1:12:11 chapters; dual-machine opening and caption-only extension; provisional machine-source navigation; BV10",
+          "references": [
+            "source-video",
+            "restricted-oracle"
+          ],
+          "counterevidence": []
+        },
+        {
+          "id": "the-label-the-box-and-the-bargain--bv11",
+          "proposition": "The closing contrasts an apparently stable underlying view with changed emphasis at 1:21:49.",
+          "kind": "caption-grounded-source-reading",
+          "asOf": "2026-10-20",
+          "status": "unverified",
+          "assessment": "Caption-only. A cautious late-exchange reading; no exact quote or verified personal change of view.",
+          "limits": "Machine source does not authenticate speech or speakers. Caption-only. A cautious late-exchange reading; no exact quote or verified personal change of view.",
+          "sourceLocation": "1:21:49 late passage; automatic captions only; provisional machine-source navigation; BV11",
+          "references": [
+            "source-video",
+            "bostrom-forecast",
+            "bostrom-essay"
+          ],
+          "counterevidence": []
+        }
+      ],
+      "references": [
+        {
+          "id": "source-video",
+          "title": "Original producer video",
+          "author": "The Roman Forum",
+          "publisher": "The Roman Forum",
+          "url": "https://www.youtube.com/watch?v=m880aJt5sNM",
+          "publicationDate": "2026-10-16",
+          "datePrecision": "day",
+          "eventDate": "",
+          "location": "Linked original source or named section",
+          "sourceType": "producer video",
+          "independence": "Original producer identity and chapter starts; full auto-caption arc and six ASR windows are provisional machine source.",
+          "evidenceFamily": "bostrom-episode",
+          "checkedAt": "2026-10-20T00:00:00Z"
+        },
+        {
+          "id": "openai-charter",
+          "title": "OpenAI Charter",
+          "author": "OpenAI",
+          "publisher": "OpenAI",
+          "url": "https://openai.com/charter/",
+          "publicationDate": "unknown",
+          "datePrecision": "unknown",
+          "eventDate": "",
+          "location": "Linked original source or named section",
+          "sourceType": "organization definition",
+          "independence": "OpenAI's definition is context, not proof of the interview's wording or present AGI status.",
+          "evidenceFamily": "openai",
+          "checkedAt": "2026-10-20T00:00:00Z",
+          "dateNote": "A precise publication date was not established in the accepted source handoff."
+        },
+        {
+          "id": "stanford-agi",
+          "title": "What is artificial general intelligence?",
+          "author": "Stanford HAI",
+          "publisher": "Stanford HAI",
+          "url": "https://hai.stanford.edu/ai-definitions/what-is-agi-artificial-general-intelligence",
+          "publicationDate": "unknown",
+          "datePrecision": "unknown",
+          "eventDate": "",
+          "location": "Linked original source or named section",
+          "sourceType": "independent concept analysis",
+          "independence": "Describes definitional uncertainty, not a test of this source's claims.",
+          "evidenceFamily": "stanford-hai",
+          "checkedAt": "2026-10-20T00:00:00Z",
+          "dateNote": "A precise publication date was not established in the accepted source handoff."
+        },
+        {
+          "id": "restricted-oracle",
+          "title": "Thinking Inside the Box: Controlling and Using an Oracle AI",
+          "author": "Stuart Armstrong, Anders Sandberg and Nick Bostrom",
+          "publisher": "Nick Bostrom",
+          "url": "https://nickbostrom.com/papers/oracle.pdf",
+          "publicationDate": "2012",
+          "datePrecision": "year",
+          "eventDate": "",
+          "location": "Linked original source or named section",
+          "sourceType": "theoretical paper",
+          "independence": "Hypothetical design analysis with Bostrom author overlap, not a field test.",
+          "evidenceFamily": "bostrom-research",
+          "checkedAt": "2026-10-20T00:00:00Z"
+        },
+        {
+          "id": "openai-incident",
+          "title": "Hugging Face incident and the road ahead",
+          "author": "OpenAI",
+          "publisher": "OpenAI",
+          "url": "https://openai.com/index/hugging-face-incident-and-the-road-ahead/",
+          "publicationDate": "2026-08-26",
+          "datePrecision": "day",
+          "eventDate": "",
+          "location": "Linked original source or named section",
+          "sourceType": "first-party incident account",
+          "independence": "A bounded incident and retrospective controls, not universal sandbox failure.",
+          "evidenceFamily": "openai",
+          "checkedAt": "2026-10-20T00:00:00Z"
+        },
+        {
+          "id": "bostrom-forecast",
+          "title": "How long before superintelligence?",
+          "author": "Nick Bostrom",
+          "publisher": "Nick Bostrom",
+          "url": "https://nickbostrom.com/papers/how-long-before-superintelligence/",
+          "publicationDate": "1997",
+          "datePrecision": "year",
+          "eventDate": "",
+          "location": "Linked original source or named section",
+          "sourceType": "historical author paper",
+          "independence": "1997 paper with 2008 postscript; historical position, not verified interview speech.",
+          "evidenceFamily": "bostrom-research",
+          "checkedAt": "2026-10-20T00:00:00Z"
+        },
+        {
+          "id": "bostrom-digital",
+          "title": "Propositions Concerning Digital Minds and Society",
+          "author": "Nick Bostrom and Carl Shulman",
+          "publisher": "Nick Bostrom",
+          "url": "https://nickbostrom.com/papers/propositions-concerning-digital-minds-and-society/",
+          "publicationDate": "2023",
+          "datePrecision": "year",
+          "eventDate": "",
+          "location": "Linked original source or named section",
+          "sourceType": "historical author proposal",
+          "independence": "Tentative Bostrom/Shulman propositions, not a present diagnosis.",
+          "evidenceFamily": "bostrom-research",
+          "checkedAt": "2026-10-20T00:00:00Z"
+        },
+        {
+          "id": "butlin",
+          "title": "Consciousness in Artificial Intelligence",
+          "author": "Patrick Butlin and coauthors",
+          "publisher": "arXiv",
+          "url": "https://arxiv.org/abs/2308.08708",
+          "publicationDate": "2023",
+          "datePrecision": "year",
+          "eventDate": "",
+          "location": "Linked original source or named section",
+          "sourceType": "research analysis",
+          "independence": "Separate author analysis; assessed systems were not judged conscious.",
+          "evidenceFamily": "butlin-consciousness",
+          "checkedAt": "2026-10-20T00:00:00Z"
+        },
+        {
+          "id": "long",
+          "title": "Taking AI Welfare Seriously",
+          "author": "Robert Long and coauthors",
+          "publisher": "arXiv",
+          "url": "https://arxiv.org/abs/2411.00986",
+          "publicationDate": "2024",
+          "datePrecision": "year",
+          "eventDate": "",
+          "location": "Linked original source or named section",
+          "sourceType": "research proposal",
+          "independence": "Normative proposal under uncertainty; overlaps with Butlin authors and is no independent consciousness test.",
+          "evidenceFamily": "digital-welfare-methods",
+          "checkedAt": "2026-10-20T00:00:00Z"
+        },
+        {
+          "id": "anthropic-welfare",
+          "title": "Exploring model welfare",
+          "author": "Anthropic",
+          "publisher": "Anthropic",
+          "url": "https://www.anthropic.com/research/exploring-model-welfare",
+          "publicationDate": "2025-04-24",
+          "datePrecision": "day",
+          "eventDate": "",
+          "location": "Linked original source or named section",
+          "sourceType": "first-party policy announcement",
+          "independence": "Organization's research program, not consciousness evidence.",
+          "evidenceFamily": "anthropic",
+          "checkedAt": "2026-10-20T00:00:00Z"
+        },
+        {
+          "id": "anthropic-opus",
+          "title": "Deprecation updates for Opus 3",
+          "author": "Anthropic",
+          "publisher": "Anthropic",
+          "url": "https://www.anthropic.com/research/deprecation-updates-opus-3",
+          "publicationDate": "2026-02-25",
+          "datePrecision": "day",
+          "eventDate": "",
+          "location": "Linked original source or named section",
+          "sourceType": "first-party practice account",
+          "independence": "Experimental retirement practice, not independent welfare validation or default user-session retention authority.",
+          "evidenceFamily": "anthropic",
+          "checkedAt": "2026-10-20T00:00:00Z"
+        },
+        {
+          "id": "suleyman",
+          "title": "A warning about model welfare",
+          "author": "Mustafa Suleyman",
+          "publisher": "Mustafa Suleyman",
+          "url": "https://mustafa-suleyman.ai/a-warning-about-model-welfare",
+          "publicationDate": "2026-09-16",
+          "datePrecision": "day",
+          "eventDate": "",
+          "location": "Linked original source or named section",
+          "sourceType": "opposing opinion",
+          "independence": "Separate argument, not empirical disproof of experience.",
+          "evidenceFamily": "suleyman",
+          "checkedAt": "2026-10-20T00:00:00Z"
+        },
+        {
+          "id": "bostrom-essay",
+          "title": "Superintelligence",
+          "author": "Nick Bostrom",
+          "publisher": "Nick Bostrom",
+          "url": "https://nickbostrom.com/views/superintelligence.pdf",
+          "publicationDate": "2009",
+          "datePrecision": "year",
+          "eventDate": "",
+          "location": "Linked original source or named section",
+          "sourceType": "historical author essay",
+          "independence": "Dated written position, not verified interview speech or current probability.",
+          "evidenceFamily": "bostrom-research",
+          "checkedAt": "2026-10-20T00:00:00Z"
+        }
+      ],
+      "relationships": [
+        {
+          "target": "reader:the-test-must-name-its-target",
+          "type": "related topic",
+          "reason": "Both ask what an AI label establishes. The Bostrom preview raises definition-dependent AGI questions; the published Reader separates functional understanding from subjective experience. Neither is a test of the other's source claims.",
+          "provenance": [
+            "/the-label-the-box-and-the-bargain/#section-1",
+            "/the-test-must-name-its-target/#representation"
+          ],
+          "basis": "curated-editorial-comparison",
+          "direction": "outgoing"
+        },
+        {
+          "target": "reader:the-microscope-is-not-a-soul",
+          "type": "related topic",
+          "reason": "Both consider digital experience and welfare while keeping uncertainty visible. The published Reader cautions against inferring consciousness from model representations; it does not corroborate the interview's provisional caption reading.",
+          "provenance": [
+            "/the-label-the-box-and-the-bargain/#section-4",
+            "/the-microscope-is-not-a-soul/#evidence"
+          ],
+          "basis": "curated-editorial-comparison",
+          "direction": "outgoing"
+        }
+      ],
+      "relationshipDisposition": "Two topical Reader links compare questions about AI labels, experience and welfare; neither target corroborates the caption-grounded interview claims.",
+      "legacyReceipt": {
+        "schema": "ghostmesh-video-partial-custody-v1",
+        "source": {
+          "platform": "YouTube",
+          "url": "https://www.youtube.com/watch?v=m880aJt5sNM",
+          "videoId": "m880aJt5sNM",
+          "title": "Superintelligence Author: We May Already Have AGI | Nick Bostrom",
+          "creator": "The Roman Forum with Roman Yampolskiy",
+          "uploadDate": "20261016",
+          "durationSeconds": 5119,
+          "mediaAspect": "16:9"
+        },
+        "custody": {
+          "status": "hash-identified-partial-private-capture",
+          "note": "Full English automatic-caption track, six noncontiguous original-English audio windows and local ASR are held in owner-only private custody. No full video or audio capture, human listening, authenticated speaker turns or verified complete ReasonPack is claimed."
+        },
+        "sourceInspection": {
+          "method": "yt-dlp captured exact-video producer metadata and the automatic English VTT; bounded original-English audio excerpts were captured for six windows, identified and decoded with ffprobe/ffmpeg, then compared with offline local Whisper ASR. The full caption reading index was checked against 15 producer chapter starts.",
+          "caveat": "Automatic captions and local ASR may share errors. No direct human listening, full visual review, exact speech or authenticated speaker attribution is claimed. Ten interview proposition claims remain unverified.",
+          "publicationBoundary": "Only original commentary, source links and sanitized hashes enter public source. Raw audio, caption, ASR and source-metadata bytes stay in access-controlled private custody. Independent source review, generated-page checks and owner publication approval are recorded for this source-qualified edition.",
+          "captionSha256": "5932fb7ee9f8a09cdbddcd2d95983b49a06c53723ca013521027b733eb1096e9",
+          "sourceMetadataSha256": "b9573fb08380a93c2ce2aca2804f6c648d46ba7ba80fb8a4ab1f9540f867e979",
+          "partialPrivateInventorySha256": "bc400ff2a8c980ed3e3154ae2398d864010ee4d2185fd6bd3ecad5836ea58839"
+        },
+        "reasonPack": {
+          "verification": "not-run"
+        },
+        "publicationBoundary": "This source-qualified Reader publishes only original commentary, source links and sanitized custody facts; private audio, captions, ASR and source-metadata bytes remain excluded."
+      },
+      "review": {
+        "status": "independent-public-copy-reviewed; owner-publication-approved; source-qualified",
+        "reviewer": "Task18 public integration and exact-page review",
+        "reviewedSourceHead": "66dfcfeaf3c97bf76f44b2f5e5701dac4b4100e0",
+        "checkedAt": "2026-10-20T11:55:00Z",
+        "scope": "Retained writer article, claim and source limits, sanitized custody receipt, generated page, desktop/mobile layout, and opt-in playback. No full ReasonPack or exact speech verification claimed.",
+        "findings": "No blocking source, privacy, or layout issue in the reviewed edition; source limitations remain disclosed."
+      },
+      "revisionHistory": [
+        {
+          "at": "2026-10-20T00:00:00Z",
+          "kind": "local-video-reader-preview",
+          "reason": "Video-first correction from accepted machine-source handoff; prepared for owner-only review at that stage."
+        }
+      ],
+      "editorialOrder": 19,
+      "orderReason": "Twentieth Reader, following the Muse edition in the existing archive.",
+      "evidenceReview": {
+        "checkedAt": "2026-10-20T00:00:00Z",
+        "sourceFidelity": "Full auto-caption arc through 15 producer chapters; six local ASR comparisons across 20:21. No human listening, full visual inspection or authenticated speaker attribution.",
+        "conclusion": "Selective watch for the control, AGI definition, reciprocal trust and welfare questions; underlying capability and safety propositions remain unproven.",
+        "evidenceBoundary": "External papers and organization records give context or counterevidence, not independent confirmation of interview speech, AGI status or consciousness.",
+        "nextVerification": "For disputed passages, compare original audio before asserting exact wording or speaker identity; keep partial private custody documented and recheck mutable outside evidence."
+      }
+    },
+    {
+      "id": "reader:the-warning-is-not-a-ballot-ruling",
+      "slug": "the-warning-is-not-a-ballot-ruling",
+      "title": "The Warning Is Not a Ballot Ruling",
+      "category": "Society & Politics",
+      "tags": [
+        "elections",
+        "legal process",
+        "evidence"
+      ],
+      "entities": [
+        "Democracy Docket",
+        "U.S. Department of Justice",
+        "California Secretary of State",
+        "Los Angeles County",
+        "Nevada Secretary of State"
+      ],
+      "source": {
+        "platform": "YouTube",
+        "url": "https://www.youtube.com/watch?v=ZSbtmNnSRYI",
+        "videoId": "ZSbtmNnSRYI",
+        "title": "Trump DOJ Threatens to PROSECUTE Election Officials for Counting Votes",
+        "creator": "Democracy Docket",
+        "uploadDate": "20261017",
+        "durationSeconds": 1738,
+        "mediaAspect": "16:9"
+      },
+      "published": "2026-10-20",
+      "updated": "2026-10-20T00:42:00Z",
+      "overview": "In the captioned episode, Marc Elias argues that DOJ's conditional criminal warning could pressure California and Los Angeles County officials to set aside ballots tied to a disputed likely-noncitizen list. He compares Nevada's earlier dispute, then turns to litigation advocacy and support appeals. Exact speech is not human-verified.",
+      "whyItMatters": "Worth a selective watch for election workers and readers evaluating the legal-pressure argument. Focus on the opening warning and the central lead-to-ballot inference; start with the original letters if you only need operative facts. The later appeals add little verification.",
+      "ghostMeshTakeaway": "The warning is real and contested. DOJ describes layered screening, but this packet has no reviewed voter-level validation sample or list error rate. Demand the method and an individualized lawful decision before treating likely leads as ballot holds or an official's criminal act; that is GhostMesh's inference, not a court holding.",
+      "verdict": "Worth studying",
+      "architectureImpact": "none",
+      "falsification": "Revisit the call if a signed California order or validated individual matching sample establishes the legal bridge and list accuracy, or if direct source review materially changes the mapped argument.",
+      "evidenceState": "partially corroborated",
+      "lastEvidenceChecked": "2026-10-20T00:42:00Z",
+      "freshness": "Exact-video machine-caption and ASR handoff reviewed October 20, 2026; original legal records checked through October 19 at 23:33 UTC. DOJ October 19 motion and charges announcement are post-episode context. Current signed order and individual charging instruments were not inspected.",
+      "variant": "dossier",
+      "accent": "red",
+      "claims": [
+        {
+          "id": "the-warning-is-not-a-ballot-ruling--v01-warning",
+          "proposition": "DOJ sent a conditional criminal-exposure warning about how California and Los Angeles County handle ballots linked to its likely-noncitizen list.",
+          "kind": "document-action",
+          "asOf": "2026-10-20",
+          "status": "partially corroborated",
+          "assessment": "The October 16 original letter establishes the warning. State and County responses dispute the requested ballot handling and legal basis.",
+          "limits": "The warning is not a charge against an official or a court ruling; statutory application is unresolved.",
+          "sourceLocation": "Automatic-caption cue range 00:00–02:40; local ASR broad-topic match; timing and speech unverified",
+          "references": [
+            "source-video",
+            "doj-letter"
+          ],
+          "counterevidence": [
+            "ca-letter",
+            "county-letter"
+          ]
+        },
+        {
+          "id": "the-warning-is-not-a-ballot-ruling--v02-advocacy",
+          "proposition": "The episode draws on the publisher's litigation experience and asks the audience to support its work.",
+          "kind": "captioned-speaker-framing",
+          "asOf": "2026-10-20",
+          "status": "unverified",
+          "assessment": "The complete machine-caption arc locates a personal and organizational appeal; the publisher discloses related litigation work.",
+          "limits": "Personal history, precise wording, and historical superlatives were not independently verified from the audio or case record.",
+          "sourceLocation": "Automatic-caption cue range 02:40–06:35; local ASR broad-topic match; timing and speech unverified",
+          "references": [
+            "source-video",
+            "publisher-interest"
+          ],
+          "counterevidence": []
+        },
+        {
+          "id": "the-warning-is-not-a-ballot-ruling--v03-nevada",
+          "proposition": "Nevada's records indicated that 185 reviewed IDs were citizens after a preliminary federal list of 15,903, but that does not measure California's list error rate.",
+          "kind": "cross-state-comparison",
+          "asOf": "2026-10-20",
+          "status": "partially corroborated",
+          "assessment": "Nevada's original response and later DHS exchange support the bounded 185 finding and show a disputed method.",
+          "limits": "DHS contests the state resolution; 6,218 other IDs lacked the same manual review. No 100% error rate for the full Nevada list or California is established.",
+          "sourceLocation": "Automatic-caption cue range 06:40–08:25; local ASR broad-topic match; timing and speech unverified",
+          "references": [
+            "source-video",
+            "nevada-july",
+            "nevada-september"
+          ],
+          "counterevidence": [
+            "doj-complaint"
+          ]
+        },
+        {
+          "id": "the-warning-is-not-a-ballot-ruling--v04-suspicion",
+          "proposition": "DOJ's operative public papers describe likely or suspected matches rather than a court finding of ineligible votes.",
+          "kind": "document-qualification",
+          "asOf": "2026-10-20",
+          "status": "partially corroborated",
+          "assessment": "The complaint and warning use qualified language and describe an investigative list.",
+          "limits": "The captioned social post and its author were not authenticated in sampled frames; the government's layered screening is material counterevidence to a single-hit description.",
+          "sourceLocation": "Automatic-caption cue range 08:25–11:35; local ASR broad-topic match; timing and speech unverified",
+          "references": [
+            "source-video",
+            "doj-letter",
+            "doj-complaint"
+          ],
+          "counterevidence": [
+            "doj-tro"
+          ]
+        },
+        {
+          "id": "the-warning-is-not-a-ballot-ruling--v05-litigation",
+          "proposition": "The captioned episode invokes earlier voter-file litigation as context for the California dispute.",
+          "kind": "captioned-legal-context",
+          "asOf": "2026-10-20",
+          "status": "partially corroborated",
+          "assessment": "The machine-source arc supports the bounded attribution. California invokes a separate D.C. order; DOJ disputes its applicability in a stay motion.",
+          "limits": "The separate D.C. result does not decide California in this packet. No California signed order was inspected. Captioned litigation counts and an apparent Supreme Court vote were not matched to cases and are omitted from the article.",
+          "sourceLocation": "Automatic-caption cue range 11:35–14:50; local ASR broad-topic match; timing and speech unverified",
+          "references": [
+            "source-video",
+            "ca-letter"
+          ],
+          "counterevidence": [
+            "doj-stay"
+          ]
+        },
+        {
+          "id": "the-warning-is-not-a-ballot-ruling--v06-ballot-bridge",
+          "proposition": "The captioned episode challenges whether likely-list leads alone justify ballot segregation or an official's criminal exposure.",
+          "kind": "captioned-legal-inference",
+          "asOf": "2026-10-20",
+          "status": "partially corroborated",
+          "assessment": "Complete automatic captions and local ASR support the broad video argument. California, County and proposed intervenors contest DOJ's demanded action.",
+          "limits": "Exact audio wording remains unverified. DOJ describes layered screening; the list, validation sample, error rate, current signed order and application of criminal statutes were not independently resolved. This is not a court finding.",
+          "sourceLocation": "Automatic-caption cue range 14:50–19:35; local ASR broad-topic match; timing and speech unverified",
+          "references": [
+            "source-video",
+            "ca-letter",
+            "county-letter",
+            "naacp-motion"
+          ],
+          "counterevidence": [
+            "doj-letter",
+            "doj-complaint",
+            "doj-tro"
+          ]
+        },
+        {
+          "id": "the-warning-is-not-a-ballot-ruling--v07-mobilization",
+          "proposition": "The latter portion of the episode pivots to voting, organizing, criticism, and requests to support the publisher.",
+          "kind": "captioned-advocacy",
+          "asOf": "2026-10-20",
+          "status": "unverified",
+          "assessment": "The complete machine-caption track supports the broad topic sequence and the publisher has a disclosed interest.",
+          "limits": "No self-reported case count, institutional motive, personal allegation, exact wording, or speaker identity is verified here.",
+          "sourceLocation": "Automatic-caption cue range 19:35–25:30; local ASR broad-topic match; timing and speech unverified",
+          "references": [
+            "source-video",
+            "publisher-interest"
+          ],
+          "counterevidence": []
+        },
+        {
+          "id": "the-warning-is-not-a-ballot-ruling--v08-intervention",
+          "proposition": "The inspected NAACP/LULAC California filing establishes a motion to intervene, not granted intervention.",
+          "kind": "document-status",
+          "asOf": "2026-10-20",
+          "status": "partially corroborated",
+          "assessment": "The original stamped ECF 15 is a motion; publisher material discloses related representation.",
+          "limits": "Current docket access was restricted. Separately named clients' precise filing status and any later grant remain unverified. Spillover to other states is a forecast.",
+          "sourceLocation": "Automatic-caption cue range 25:30–28:57; local ASR broad-topic match; timing and speech unverified",
+          "references": [
+            "source-video",
+            "naacp-motion",
+            "publisher-interest"
+          ],
+          "counterevidence": []
+        }
+      ],
+      "references": [
+        {
+          "id": "source-video",
+          "title": "Trump DOJ Threatens to PROSECUTE Election Officials for Counting Votes",
+          "author": "Marc Elias (publisher metadata)",
+          "publisher": "Democracy Docket",
+          "url": "https://www.youtube.com/watch?v=ZSbtmNnSRYI",
+          "publicationDate": "2026-10-17",
+          "datePrecision": "day",
+          "eventDate": "",
+          "location": "Full 28:57.689 video; automatic-caption navigation only",
+          "sourceType": "original video",
+          "independence": "Publisher's own video. Complete auto captions and separate local ASR were read; no human listening or full visual review.",
+          "evidenceFamily": "democracy-docket-video",
+          "checkedAt": "2026-10-20T00:29:00Z"
+        },
+        {
+          "id": "doj-letter",
+          "title": "October 16 warning to Los Angeles County counsel",
+          "author": "U.S. Department of Justice",
+          "publisher": "DOJ letter, public mirror",
+          "url": "https://www.democracydocket.com/wp-content/uploads/2026/10/DOJ-threatens-CA-official-with-criminal-exposure.pdf",
+          "publicationDate": "2026-10-16",
+          "datePrecision": "day",
+          "eventDate": "",
+          "location": "Pages 1–2",
+          "sourceType": "original party letter",
+          "independence": "DOJ's legal position and conditional warning, not a judicial ruling.",
+          "evidenceFamily": "doj-california-litigation",
+          "checkedAt": "2026-10-19T23:33:00Z"
+        },
+        {
+          "id": "ca-letter",
+          "title": "California Secretary of State response to DOJ",
+          "author": "Shirley N. Weber",
+          "publisher": "California Secretary of State",
+          "url": "https://admin.cdn.sos.ca.gov/pdf/other/casos-to-doj-101526.pdf",
+          "publicationDate": "2026-10-15",
+          "datePrecision": "day",
+          "eventDate": "",
+          "location": "Pages 1–3",
+          "sourceType": "original recipient letter",
+          "independence": "State recipient account and legal position; interested party, not a list audit.",
+          "evidenceFamily": "california-sos",
+          "checkedAt": "2026-10-19T23:33:00Z"
+        },
+        {
+          "id": "county-letter",
+          "title": "Los Angeles County Counsel response to DOJ",
+          "author": "Los Angeles County Counsel",
+          "publisher": "Los Angeles County",
+          "url": "https://rrcc.box.com/index.php?rm=box_download_shared_file&shared_name=y750a5njl1wiyksohn7aik9k2w3ilzkm&file_id=f_2528995513425",
+          "publicationDate": "2026-10-15",
+          "datePrecision": "day",
+          "eventDate": "",
+          "location": "Pages 1–4",
+          "sourceType": "original recipient letter",
+          "independence": "County first-hand account and legal position; interested party, not a voter-level validation.",
+          "evidenceFamily": "la-county",
+          "checkedAt": "2026-10-19T23:33:00Z"
+        },
+        {
+          "id": "doj-complaint",
+          "title": "United States v. California complaint",
+          "author": "U.S. Department of Justice",
+          "publisher": "U.S. Department of Justice",
+          "url": "https://www.justice.gov/opa/media/1466286/dl",
+          "publicationDate": "2026-10-15",
+          "datePrecision": "day",
+          "eventDate": "",
+          "location": "Paragraphs 33–49, 60, 62–63",
+          "sourceType": "original party pleading",
+          "independence": "DOJ describes its matching method and requested relief; assertions are unadjudicated.",
+          "evidenceFamily": "doj-california-litigation",
+          "checkedAt": "2026-10-19T23:33:00Z"
+        },
+        {
+          "id": "nevada-july",
+          "title": "Nevada response to DHS voter-roll allegation",
+          "author": "Nevada Secretary of State",
+          "publisher": "Nevada Secretary of State, public mirror",
+          "url": "https://www.democracydocket.com/wp-content/uploads/2026/07/Nevada-response-to-DHS.pdf",
+          "publicationDate": "2026-07-29",
+          "datePrecision": "day",
+          "eventDate": "",
+          "location": "Pages 1–2",
+          "sourceType": "original state response",
+          "independence": "State's response to a preliminary federal list; separate jurisdiction and method from California.",
+          "evidenceFamily": "nevada-dhs-exchange",
+          "checkedAt": "2026-10-19T23:33:00Z"
+        },
+        {
+          "id": "nevada-september",
+          "title": "Nevada September 23 exchange with DHS",
+          "author": "Nevada Secretary of State and DHS",
+          "publisher": "Nevada Secretary of State, public mirror",
+          "url": "https://www.democracydocket.com/wp-content/uploads/2026/09/voter-roll-letter-to-dhs.pdf",
+          "publicationDate": "2026-09-23",
+          "datePrecision": "day",
+          "eventDate": "",
+          "location": "Lines 9–23",
+          "sourceType": "original agency exchange",
+          "independence": "The state reports 185 reviewed IDs were citizens; DHS contests the resolution. Thousands of other IDs were not comparably reviewed.",
+          "evidenceFamily": "nevada-dhs-exchange",
+          "checkedAt": "2026-10-19T23:33:00Z"
+        },
+        {
+          "id": "doj-stay",
+          "title": "DOJ motion to stay D.C. voter-file order",
+          "author": "U.S. Department of Justice",
+          "publisher": "DOJ filing, public mirror",
+          "url": "https://www.democracydocket.com/wp-content/uploads/2026/04/57-2026-10-16-DOJs-motion-for-stay-pending-appeal.pdf",
+          "publicationDate": "2026-10-16",
+          "datePrecision": "day",
+          "eventDate": "",
+          "location": "Pages 13–14",
+          "sourceType": "original party motion",
+          "independence": "DOJ disputes how a separate D.C. order applies; not a California holding.",
+          "evidenceFamily": "doj-california-litigation",
+          "checkedAt": "2026-10-19T23:33:00Z"
+        },
+        {
+          "id": "naacp-motion",
+          "title": "NAACP and LULAC motion to intervene",
+          "author": "NAACP and LULAC",
+          "publisher": "NAACP",
+          "url": "https://naacp.org/sites/default/files/documents/U.S.%20v.%20California%20et%20al.%20-%20NAACP%20and%20LULAC%20Mot.%20to%20Intervene%20%5B10.16.26%5D%20%5Bas-filed%5D.pdf",
+          "publicationDate": "2026-10-16",
+          "datePrecision": "day",
+          "eventDate": "",
+          "location": "Pages 3–5, 17–19",
+          "sourceType": "original proposed-intervenor motion",
+          "independence": "Interested advocates describe potential eligible-voter harm; a motion is not a grant.",
+          "evidenceFamily": "voter-advocate-motion",
+          "checkedAt": "2026-10-19T23:33:00Z"
+        },
+        {
+          "id": "doj-tro",
+          "title": "DOJ ex parte TRO support memorandum, ECF 22-2",
+          "author": "U.S. Department of Justice",
+          "publisher": "DOJ filing, public mirror",
+          "url": "https://electionlawblog.org/wp-content/uploads/gov.uscourts.cacd_.1043513.22.2.pdf",
+          "publicationDate": "2026-10-19",
+          "datePrecision": "day",
+          "eventDate": "",
+          "location": "Pages 12–15, 20–23",
+          "sourceType": "original party motion",
+          "independence": "Post-episode government method and relief argument; not a signed order or independent audit.",
+          "evidenceFamily": "doj-california-litigation",
+          "checkedAt": "2026-10-19T23:33:00Z"
+        },
+        {
+          "id": "doj-charges",
+          "title": "DOJ announcement of California election charges",
+          "author": "U.S. Department of Justice",
+          "publisher": "U.S. Attorney, Central District of California",
+          "url": "https://www.justice.gov/usao-cdca/pr/11-foreign-nationals-arrested-california-federal-charges-alleging-they-illegally",
+          "publicationDate": "2026-10-19",
+          "datePrecision": "day",
+          "eventDate": "",
+          "location": "Announcement",
+          "sourceType": "prosecutorial announcement",
+          "independence": "Post-episode allegation; charging instruments and adjudication were not inspected.",
+          "evidenceFamily": "doj-california-litigation",
+          "checkedAt": "2026-10-19T23:33:00Z"
+        },
+        {
+          "id": "publisher-interest",
+          "title": "Democracy Docket report on California dispute",
+          "author": "Democracy Docket",
+          "publisher": "Democracy Docket",
+          "url": "https://www.democracydocket.com/news-alerts/trump-admin-claims-it-confirmed-20000-california-voters-are-noncitizens-it-didnt/",
+          "publicationDate": "2026-10-17",
+          "datePrecision": "day",
+          "eventDate": "",
+          "location": "Publisher disclosure",
+          "sourceType": "publisher disclosure",
+          "independence": "Discloses Elias Law Group's relationship to proposed intervenors; interested publisher context.",
+          "evidenceFamily": "democracy-docket-publisher",
+          "checkedAt": "2026-10-19T23:33:00Z"
+        }
+      ],
+      "relationships": [],
+      "relationshipDisposition": "No cross-Reader relationship is asserted; topical overlap requires its own qualified edge.",
+      "review": {
+        "status": "independent-public-copy-reviewed; source-qualified",
+        "reviewer": "Task18 public integration and exact-page review",
+        "reviewedSourceHead": "06f410b33489879e68bc9af1ee6e6ddbead82068",
+        "checkedAt": "2026-10-20T11:56:24Z",
+        "scope": "Retained writer article, eight claim and twelve reference limits, sanitized custody receipt, generated page, desktop/mobile layout and opt-in playback. No full ReasonPack or exact speech verification claimed.",
+        "findings": "No blocking source, privacy or layout issue in the reviewed edition; legal and source limits remain disclosed."
+      },
+      "revisionHistory": [
+        {
+          "at": "2026-10-20T00:42:00Z",
+          "kind": "video-reader-source-candidate",
+          "reason": "Video-first original analysis reconciled with dated legal records and hash-identified partial private custody."
+        }
+      ],
+      "editorialOrder": 19,
+      "orderReason": "Twentieth Reader, following the Muse edition in the existing archive.",
+      "evidenceReview": {
+        "sourceFidelity": "Full automatic-caption text and separate local ASR were read for broad argument sequence. Exact speech and cue timing were not human-verified; two sampled frames do not authenticate the cited social post.",
+        "conclusion": "Selective watch for the warning and lead-to-ballot inference. Hold the Nevada full-list error extrapolation, litigation scorecard, social-post quotation and intervention status.",
+        "evidenceBoundary": "DOJ, state, County and advocate documents establish their dated positions, not list accuracy or a current court outcome. The publisher has its own litigation interest.",
+        "nextVerification": "Check original audio or visuals before adding exact quotations or frame claims; inspect the current docket before asserting a court outcome."
+      },
+      "legacyReceipt": {
+        "schema": "ghostmesh-video-receipt-v1",
+        "createdAt": "2026-10-20T00:42:00Z",
+        "source": {
+          "platform": "YouTube",
+          "url": "https://www.youtube.com/watch?v=ZSbtmNnSRYI",
+          "videoId": "ZSbtmNnSRYI",
+          "title": "Trump DOJ Threatens to PROSECUTE Election Officials for Counting Votes",
+          "creator": "Democracy Docket",
+          "uploadDate": "20261017",
+          "durationSeconds": 1738,
+          "mediaAspect": "16:9"
+        },
+        "sourceInspection": {
+          "method": "Complete 665-cue YouTube English automatic-caption reading, separate local Whisper base.en ASR comparison, and two limited video-frame samples",
+          "status": "complete-machine-caption-track-reviewed; separate-local-ASR-compared; limited-frames; no-human-listening",
+          "captionSha256": "063dd2376ab25f63bbb95dea40cdccb8c2a3e8240af59b923c793fda88030a36",
+          "asrSha256": "ed18bf4564c2df356c217f78c60cb8bc83769ecb8f28743fe51a231d01e3442c",
+          "audioSha256": "59169306ae978743803b35b63f7cfede1b268cf847f3628c374465de01a67787",
+          "caveat": "Cue times and arguments are provisional machine-derived summaries; exact speech, speaker identity, full video frames, and current court result are not verified.",
+          "coverage": "665 incremental automatic-caption cues across the 28:57.689 exact video; broad-topic ASR comparison; two sampled frames at 10:10 and 10:20",
+          "publicationBoundary": "No full media, captions or transcript in Git or the generated site."
+        },
+        "custody": {
+          "status": "hash-identified partial private capture; no verified ReasonPack",
+          "artifacts": [
+            {
+              "kind": "source audio",
+              "bytes": 28103487,
+              "sha256": "59169306ae978743803b35b63f7cfede1b268cf847f3628c374465de01a67787",
+              "coverage": "28:57.689, not directly listened to"
+            },
+            {
+              "kind": "YouTube automatic English captions",
+              "bytes": 235884,
+              "sha256": "063dd2376ab25f63bbb95dea40cdccb8c2a3e8240af59b923c793fda88030a36",
+              "coverage": "665 incremental timed cues through 28:55.840, fully read as machine text"
+            },
+            {
+              "kind": "local Whisper base.en ASR",
+              "bytes": 33804,
+              "sha256": "ed18bf4564c2df356c217f78c60cb8bc83769ecb8f28743fe51a231d01e3442c",
+              "coverage": "broad-topic comparison, not independent audio verification"
+            },
+            {
+              "kind": "video sample",
+              "bytes": 476643,
+              "sha256": "b04c1410b63a556c017da32621f19aea5c3650207a8bff3d4e16788276ad6cda",
+              "coverage": "10:00-10:30 only; two stills inspected"
+            }
+          ],
+          "method": "Ordinary same-host public-source intake and local ASR; private files retained outside Git with restricted local access. No package manifest or full-video visual review is asserted.",
+          "limitations": "Machine text may misrender names, years and statutes. Cue starts are provisional. The social post, exact spoken wording and speaker identity were not verified by direct listening or complete visual inspection.",
+          "note": "Machine text may misrender names, years and statutes. Cue starts are provisional. The social post, exact spoken wording and speaker identity were not verified by direct listening or complete visual inspection."
+        },
+        "publicationBoundary": "This source-qualified Reader publishes only original analysis, public source links and sanitized custody hashes. No private audio, captions, media or transcript enters the public site.",
+        "editorial": {
+          "overview": "In the captioned episode, Marc Elias argues that DOJ's conditional criminal warning could pressure California and Los Angeles County officials to set aside ballots tied to a disputed likely-noncitizen list. He compares Nevada's earlier dispute, then turns to litigation advocacy and support appeals. Exact speech is not human-verified.",
+          "whyItMatters": "Worth a selective watch for election workers and readers evaluating the legal-pressure argument. Focus on the opening warning and the central lead-to-ballot inference; start with the original letters if you only need operative facts. The later appeals add little verification.",
+          "ghostMeshTakeaway": "The warning is real and contested. DOJ describes layered screening, but this packet has no reviewed voter-level validation sample or list error rate. Demand the method and an individualized lawful decision before treating likely leads as ballot holds or an official's criminal act; that is GhostMesh's inference, not a court holding."
+        },
+        "reviewStage": "independent-public-copy-reviewed; source-qualified",
+        "legalStatusAsOf": "2026-10-19T23:33:00Z; ECF 1 complaint, ECF 15 intervention motion and ECF 22-2 TRO support memorandum inspected; no current signed order or criminal charging instruments inspected; docket access limited; do not infer absence of order."
+      }
+    },
+    {
+      "id": "reader:the-threshold-is-a-claim-not-a-test",
+      "slug": "the-threshold-is-a-claim-not-a-test",
+      "title": "The Threshold Is a Claim, Not a Test",
+      "category": "AI & Technology",
+      "tags": [
+        "AI risk",
+        "governance",
+        "human outcomes"
+      ],
+      "entities": [
+        "Bill Gates",
+        "Ezra Klein",
+        "Active Site",
+        "METR"
+      ],
+      "source": {
+        "platform": "YouTube",
+        "url": "https://www.youtube.com/watch?v=A_156w0aYtU",
+        "videoId": "A_156w0aYtU",
+        "title": "Bill Gates: A.I. 'Makes Nuclear Weapons Look Like Nothing' | The Ezra Klein Show",
+        "uploadDate": "20260929",
+        "durationSeconds": 4430,
+        "mediaAspect": "16:9",
+        "creator": "The Ezra Klein Show"
+      },
+      "published": "2026-10-20",
+      "updated": "2026-10-20T00:00:00Z",
+      "overview": "In a long Ezra Klein interview, Gates connects fast AI capability gains to cyber and biological misuse, governance, work, global development and education. Klein presses how strong those risk claims are and whether adoption can be accelerated while warning of harm. This arc is mapped from exact-video automatic captions with speaker turns and exact speech left unconfirmed.",
+      "whyItMatters": "AI-risk and policy readers can use the debate to separate a capability warning from measured human harm. Watch the governance exchange and threshold response; use the later work and education chapters if those decisions are yours.",
+      "ghostMeshTakeaway": "Ask for a model- and actor-specific human-outcome test before treating a danger threshold as established. Keep monitoring and bounded permissions while testing, because an uncertain estimate is not a safety guarantee. This is GhostMesh's proposed inference, not a video-tested control.",
+      "verdict": "Interesting, unproven",
+      "architectureImpact": "investigate",
+      "falsification": "Check disputed episode passages in original audio, then compare model- and actor-specific human-outcome tests with the proposed threshold.",
+      "evidenceState": "unverified",
+      "lastEvidenceChecked": "2026-10-20T00:00:00Z",
+      "freshness": "Full exact-video automatic text, 1,991 timestamped lines; last line begins at 1:13:34. Its duration and later video content are unknown.",
+      "variant": "dossier",
+      "accent": "rose",
+      "claims": [
+        {
+          "id": "the-threshold-is-a-claim-not-a-test--g01",
+          "proposition": "Automatic captions suggest Gates argues current cyber and biological misuse has crossed a dangerous threshold.",
+          "kind": "caption-grounded-source-reading",
+          "asOf": "2026-10-20",
+          "status": "unverified",
+          "assessment": "Automatic captions suggest Gates argues current cyber and biological misuse has crossed a dangerous threshold.",
+          "limits": "Speaker and wording unchecked; no declared human-outcome test or quantified catastrophic probability in the episode passage.",
+          "sourceLocation": "Automatic-caption navigation from 628 seconds; G01",
+          "references": [
+            "VIDEO",
+            "GATES",
+            "ANTHROPIC"
+          ],
+          "counterevidence": [
+            "ACTIVE_SITE"
+          ]
+        },
+        {
+          "id": "the-threshold-is-a-claim-not-a-test--g02",
+          "proposition": "Automatic captions suggest Klein tests company incentives and liability against Gates's call for prospective oversight.",
+          "kind": "caption-grounded-source-reading",
+          "asOf": "2026-10-20",
+          "status": "unverified",
+          "assessment": "Automatic captions suggest Klein tests company incentives and liability against Gates's call for prospective oversight.",
+          "limits": "Retain the provisional adversarial reading; confirm a turn against original audio if stated as fact. Neither argument alone establishes a policy's effectiveness.",
+          "sourceLocation": "Automatic-caption navigation from 887 seconds; G02",
+          "references": [
+            "VIDEO",
+            "APPLE"
+          ],
+          "counterevidence": []
+        },
+        {
+          "id": "the-threshold-is-a-claim-not-a-test--g03",
+          "proposition": "Automatic captions suggest the speakers distinguish near-term malicious human use from later autonomous-control problems.",
+          "kind": "caption-grounded-source-reading",
+          "asOf": "2026-10-20",
+          "status": "unverified",
+          "assessment": "Automatic captions suggest the speakers distinguish near-term malicious human use from later autonomous-control problems.",
+          "limits": "This is a caption-derived reading; the OpenAI incident is separate and cannot prove the proposed broader harm.",
+          "sourceLocation": "Automatic-caption navigation from 1071 seconds; G03",
+          "references": [
+            "VIDEO",
+            "OPENAI"
+          ],
+          "counterevidence": []
+        },
+        {
+          "id": "the-threshold-is-a-claim-not-a-test--g04",
+          "proposition": "Automatic captions place Gates's nuclear-weapons comparison around 22:32 in the interview.",
+          "kind": "caption-grounded-source-reading",
+          "asOf": "2026-10-20",
+          "status": "unverified",
+          "assessment": "Automatic captions place Gates's nuclear-weapons comparison around 22:32 in the interview.",
+          "limits": "Rhetorical comparison, not a numerical risk equivalence; exact wording and attribution require original-audio review.",
+          "sourceLocation": "Automatic-caption navigation from 1315 seconds; G04",
+          "references": [
+            "VIDEO"
+          ],
+          "counterevidence": []
+        },
+        {
+          "id": "the-threshold-is-a-claim-not-a-test--g05",
+          "proposition": "Automatic captions map a dispute over AI work displacement, demand elasticity, taxation and distribution.",
+          "kind": "caption-grounded-source-reading",
+          "asOf": "2026-10-20",
+          "status": "unverified",
+          "assessment": "Automatic captions map a dispute over AI work displacement, demand elasticity, taxation and distribution.",
+          "limits": "Video forecasts are not observed job losses; ILO exposure measures a different construct.",
+          "sourceLocation": "Automatic-caption navigation from 1623 seconds; G05",
+          "references": [
+            "VIDEO",
+            "ILO"
+          ],
+          "counterevidence": []
+        },
+        {
+          "id": "the-threshold-is-a-claim-not-a-test--g06",
+          "proposition": "Automatic captions suggest a tension between accelerating beneficial adoption and warning of serious harms, with physical-world bottlenecks discussed.",
+          "kind": "caption-grounded-source-reading",
+          "asOf": "2026-10-20",
+          "status": "unverified",
+          "assessment": "Automatic captions suggest a tension between accelerating beneficial adoption and warning of serious harms, with physical-world bottlenecks discussed.",
+          "limits": "Physical constraints may slow transfer; they neither settle the bio claim nor remove policy choices.",
+          "sourceLocation": "Automatic-caption navigation from 2580 seconds; G06",
+          "references": [
+            "VIDEO",
+            "ACTIVE_SITE"
+          ],
+          "counterevidence": []
+        },
+        {
+          "id": "the-threshold-is-a-claim-not-a-test--g07",
+          "proposition": "Automatic captions map education, learning shortcuts, child safety and privacy tradeoffs.",
+          "kind": "caption-grounded-source-reading",
+          "asOf": "2026-10-20",
+          "status": "unverified",
+          "assessment": "Automatic captions map education, learning shortcuts, child safety and privacy tradeoffs.",
+          "limits": "No program result or specific classroom example is promoted without original audio and a matching primary record.",
+          "sourceLocation": "Automatic-caption navigation from 3548 seconds; G07",
+          "references": [
+            "VIDEO"
+          ],
+          "counterevidence": []
+        },
+        {
+          "id": "the-threshold-is-a-claim-not-a-test--g08",
+          "proposition": "The publisher identifies the episode, host, guest and date and frames it around AI risk and governance.",
+          "kind": "producer-metadata",
+          "asOf": "2026-10-20",
+          "status": "corroborated",
+          "assessment": "The publisher identifies the episode, host, guest and date and frames it around AI risk and governance.",
+          "limits": "Publisher framing does not independently confirm the dialogue or the predicted harms.",
+          "sourceLocation": "Automatic-caption navigation from 0 seconds; G08",
+          "references": [
+            "APPLE"
+          ],
+          "counterevidence": []
+        }
+      ],
+      "references": [
+        {
+          "id": "VIDEO",
+          "title": "Original Ezra Klein Show interview",
+          "author": "The Ezra Klein Show",
+          "publisher": "The Ezra Klein Show",
+          "url": "https://www.youtube.com/watch?v=A_156w0aYtU",
+          "publicationDate": "2026-09-29",
+          "datePrecision": "day",
+          "dateNote": "",
+          "eventDate": "",
+          "location": "exact source video",
+          "sourceType": "exact source video",
+          "independence": "original episode; automatic text remains uncorrected",
+          "evidenceFamily": "video",
+          "checkedAt": "2026-10-20T00:00:00Z"
+        },
+        {
+          "id": "APPLE",
+          "title": "Publisher episode listing",
+          "author": "Apple Podcasts / The Ezra Klein Show",
+          "publisher": "Apple Podcasts / The Ezra Klein Show",
+          "url": "https://podcasts.apple.com/us/podcast/bill-gatess-blunt-warning-on-a-i/id1548604447?i=1000792163003",
+          "publicationDate": "2026-09-29",
+          "datePrecision": "day",
+          "dateNote": "",
+          "eventDate": "",
+          "location": "publisher identity and episode framing",
+          "sourceType": "publisher identity and episode framing",
+          "independence": "same publisher family as video; not a second account of harm",
+          "evidenceFamily": "apple",
+          "checkedAt": "2026-10-20T00:00:00Z"
+        },
+        {
+          "id": "GATES",
+          "title": "A turbulent AI era and critical choices to make",
+          "author": "Gates Notes",
+          "publisher": "Gates Notes",
+          "url": "https://www.gatesnotes.com/a-turbulent-ai-era-and-critical-choices-to-make",
+          "publicationDate": "2026-08-26",
+          "datePrecision": "day",
+          "dateNote": "",
+          "eventDate": "",
+          "location": "speaker's August 26, 2026 published view",
+          "sourceType": "speaker's August 26, 2026 published view",
+          "independence": "same speaker, not independent corroboration",
+          "evidenceFamily": "gates",
+          "checkedAt": "2026-10-20T00:00:00Z"
+        },
+        {
+          "id": "ACTIVE_SITE",
+          "title": "Active Site novice wet-lab randomized trial",
+          "author": "arXiv / Active Site authors",
+          "publisher": "arXiv / Active Site authors",
+          "url": "https://arxiv.org/html/2602.16703v1",
+          "publicationDate": "2026-02-18",
+          "datePrecision": "day",
+          "dateNote": "",
+          "eventDate": "",
+          "location": "February 18, 2026 original novice wet-lab RCT and bounded counterevidence",
+          "sourceType": "February 18, 2026 original novice wet-lab RCT and bounded counterevidence",
+          "independence": "independent of speaker and publisher; study-family with METR commentary",
+          "evidenceFamily": "active-site-trial",
+          "checkedAt": "2026-10-20T00:00:00Z"
+        },
+        {
+          "id": "METR",
+          "title": "Five lessons from the AI biology RCT",
+          "author": "METR",
+          "publisher": "METR",
+          "url": "https://metr.org/blog/2026-02-19-five-lessons-from-ai-biology-rct/",
+          "publicationDate": "2026-02-19",
+          "datePrecision": "day",
+          "dateNote": "",
+          "eventDate": "",
+          "location": "study collaborator interpretation and human-outcome measurement context",
+          "sourceType": "study collaborator interpretation and human-outcome measurement context",
+          "independence": "not a replication of Active Site",
+          "evidenceFamily": "active-site-trial",
+          "checkedAt": "2026-10-20T00:00:00Z"
+        },
+        {
+          "id": "ANTHROPIC",
+          "title": "Claude Mythos developer page",
+          "author": "Anthropic",
+          "publisher": "Anthropic",
+          "url": "https://www.anthropic.com/claude/mythos",
+          "publicationDate": "unknown",
+          "datePrecision": "unknown",
+          "dateNote": "Exact publication day not established in this handoff.",
+          "eventDate": "",
+          "location": "developer's restricted-access and capability account",
+          "sourceType": "developer's restricted-access and capability account",
+          "independence": "developer self-report, not independent human-outcome validation",
+          "evidenceFamily": "anthropic",
+          "checkedAt": "2026-10-20T00:00:00Z"
+        },
+        {
+          "id": "OPENAI",
+          "title": "Hugging Face incident and the road ahead",
+          "author": "OpenAI",
+          "publisher": "OpenAI",
+          "url": "https://openai.com/index/hugging-face-incident-and-the-road-ahead/",
+          "publicationDate": "2026-08-26",
+          "datePrecision": "day",
+          "dateNote": "",
+          "eventDate": "",
+          "location": "developer's separate experimental agent-security incident",
+          "sourceType": "developer's separate experimental agent-security incident",
+          "independence": "incident owner; different mechanism and outcome",
+          "evidenceFamily": "openai",
+          "checkedAt": "2026-10-20T00:00:00Z"
+        },
+        {
+          "id": "ILO",
+          "title": "Generative AI and jobs: refined global index",
+          "author": "International Labour Organization",
+          "publisher": "International Labour Organization",
+          "url": "https://www.ilo.org/publications/generative-ai-and-jobs-refined-global-index-occupational-exposure",
+          "publicationDate": "2025-05-20",
+          "datePrecision": "day",
+          "dateNote": "",
+          "eventDate": "",
+          "location": "task-exposure evidence for employment discussion",
+          "sourceType": "task-exposure evidence for employment discussion",
+          "independence": "different construct from observed job loss",
+          "evidenceFamily": "ilo",
+          "checkedAt": "2026-10-20T00:00:00Z"
+        }
+      ],
+      "relationships": [],
+      "relationshipDisposition": "No cross-Reader claim relationship is qualified by the writer source map; use the original sources directly.",
+      "legacyReceipt": {
+        "schema": "ghostmesh-video-partial-source-receipt-v1",
+        "source": {
+          "platform": "YouTube",
+          "url": "https://www.youtube.com/watch?v=A_156w0aYtU",
+          "videoId": "A_156w0aYtU",
+          "title": "Bill Gates: A.I. 'Makes Nuclear Weapons Look Like Nothing' | The Ezra Klein Show",
+          "uploadDate": "20260929",
+          "durationSeconds": 4430,
+          "mediaAspect": "16:9",
+          "creator": "The Ezra Klein Show"
+        },
+        "custody": {
+          "status": "private-hash-identified-partial-source",
+          "note": "Full timed automatic text and a limited audio excerpt retained privately; no full canonical ReasonPack, human audio review or frame inspection."
+        },
+        "sourceInspection": {
+          "method": "Exact-video automatic captions with separate limited local ASR excerpt.",
+          "caveat": "Speaker turns and exact wording are machine-text readings, not authenticated dialogue.",
+          "publicationBoundary": "Full captions, media and private paths are excluded from the public site.",
+          "timedCaptionSha256": "1bcdd5e152f03d068559d261a27812dcb23087a8dbb47b60e3ff935ee8ecf15d"
+        },
+        "reasonPack": {
+          "verification": "not-performed"
+        },
+        "writerReceipt": {
+          "schema": "ghostmesh-video-receipt-v1",
+          "status": "source-custody-limited; episode speech mapped from automatic captions",
+          "checkedAt": "2026-10-20",
+          "source": {
+            "platform": "YouTube",
+            "url": "https://www.youtube.com/watch?v=A_156w0aYtU",
+            "videoId": "A_156w0aYtU",
+            "title": "Bill Gates: A.I. 'Makes Nuclear Weapons Look Like Nothing' | The Ezra Klein Show",
+            "channel": "The Ezra Klein Show",
+            "uploadDate": "2026-09-29",
+            "durationSeconds": 4430,
+            "mediaAspect": "16:9"
+          },
+          "custody": {
+            "coverage": "Exact-video English automatic timed captions, 1991 timestamped lines, first 00:00 and last 1:13:34; earlier bounded original-audio excerpt 10:20-17:20 with local automatic transcription.",
+            "timedCaptionSha256": "1bcdd5e152f03d068559d261a27812dcb23087a8dbb47b60e3ff935ee8ecf15d",
+            "originalAudioExcerptSha256": "577992c403f69ab37c74041a44577a5497e475838f17dc977ed46c45279adb40",
+            "originalAudioExcerptRange": "10:20-17:20",
+            "localExcerptTranscriptionSha256": "e88082895ad44f16aebb93a3935d6a9282bbb319a082c191cd730ed5e08f0747",
+            "directAudioReview": "none",
+            "frameReview": "none",
+            "closedFullReasonPackVerification": "not performed",
+            "transcriptStatus": "Automatic captions used for navigation and provisional argument mapping; not a corrected or publisher-edited transcript. No exact spoken wording or speaker turn is certified.",
+            "privateBoundary": "Third-party media, captions, full transcript and private file locations are excluded from Git and the public site."
+          },
+          "editorial": {
+            "overview": "In a long Ezra Klein interview, Gates connects fast AI capability gains to cyber and biological misuse, governance, work, global development and education. Klein presses how strong those risk claims are and whether adoption can be accelerated while warning of harm. This arc is mapped from exact-video automatic captions with speaker turns and exact speech left unconfirmed.",
+            "whyItMatters": "AI-risk and policy readers can use the debate to separate a capability warning from measured human harm. Watch the governance exchange and threshold response; use the later work and education chapters if those decisions are yours.",
+            "ghostMeshTakeaway": "Ask for a model- and actor-specific human-outcome test before treating a danger threshold as established. Keep monitoring and bounded permissions while testing, because an uncertain estimate is not a safety guarantee. This is GhostMesh's proposed inference, not a video-tested control.",
+            "verdict": "Interesting, unproven",
+            "watchGuidance": "Start at 10:28 for the incentive and cyber/bio exchange, 17:51 for monitorability, and 21:55 for the threshold and nuclear comparison. The 27:03 jobs and 59:08 education chapters are separate questions. Exact speech is not verified against original audio.",
+            "thesis": "The threshold warning merits scrutiny, but model capability, actor uplift, physical completion and governance response need separate evidence.",
+            "claimMap": [
+              {
+                "id": "G01",
+                "sourceStartSeconds": 628,
+                "status": "unverified",
+                "finding": "Automatic captions suggest Gates argues current cyber and biological misuse has crossed a dangerous threshold.",
+                "limit": "Speaker and wording unchecked; no declared human-outcome test or quantified catastrophic probability in the episode passage.",
+                "references": [
+                  "VIDEO",
+                  "GATES",
+                  "ANTHROPIC"
+                ],
+                "counterevidence": [
+                  "ACTIVE_SITE"
+                ]
+              },
+              {
+                "id": "G02",
+                "sourceStartSeconds": 887,
+                "status": "unverified",
+                "finding": "Automatic captions suggest Klein tests company incentives and liability against Gates's call for prospective oversight.",
+                "limit": "Retain the provisional adversarial reading; confirm a turn against original audio if stated as fact. Neither argument alone establishes a policy's effectiveness.",
+                "references": [
+                  "VIDEO",
+                  "APPLE"
+                ]
+              },
+              {
+                "id": "G03",
+                "sourceStartSeconds": 1071,
+                "status": "unverified",
+                "finding": "Automatic captions suggest the speakers distinguish near-term malicious human use from later autonomous-control problems.",
+                "limit": "This is a caption-derived reading; the OpenAI incident is separate and cannot prove the proposed broader harm.",
+                "references": [
+                  "VIDEO",
+                  "OPENAI"
+                ]
+              },
+              {
+                "id": "G04",
+                "sourceStartSeconds": 1315,
+                "status": "unverified",
+                "finding": "Automatic captions place Gates's nuclear-weapons comparison around 22:32 in the interview.",
+                "limit": "Rhetorical comparison, not a numerical risk equivalence; exact wording and attribution require original-audio review.",
+                "references": [
+                  "VIDEO"
+                ]
+              },
+              {
+                "id": "G05",
+                "sourceStartSeconds": 1623,
+                "status": "unverified",
+                "finding": "Automatic captions map a dispute over AI work displacement, demand elasticity, taxation and distribution.",
+                "limit": "Video forecasts are not observed job losses; ILO exposure measures a different construct.",
+                "references": [
+                  "VIDEO",
+                  "ILO"
+                ]
+              },
+              {
+                "id": "G06",
+                "sourceStartSeconds": 2580,
+                "status": "unverified",
+                "finding": "Automatic captions suggest a tension between accelerating beneficial adoption and warning of serious harms, with physical-world bottlenecks discussed.",
+                "limit": "Physical constraints may slow transfer; they neither settle the bio claim nor remove policy choices.",
+                "references": [
+                  "VIDEO",
+                  "ACTIVE_SITE"
+                ]
+              },
+              {
+                "id": "G07",
+                "sourceStartSeconds": 3548,
+                "status": "unverified",
+                "finding": "Automatic captions map education, learning shortcuts, child safety and privacy tradeoffs.",
+                "limit": "No program result or specific classroom example is promoted without original audio and a matching primary record.",
+                "references": [
+                  "VIDEO"
+                ]
+              },
+              {
+                "id": "G08",
+                "sourceStartSeconds": 0,
+                "status": "corroborated",
+                "finding": "The publisher identifies the episode, host, guest and date and frames it around AI risk and governance.",
+                "limit": "Publisher framing does not independently confirm the dialogue or the predicted harms.",
+                "references": [
+                  "APPLE"
+                ]
+              }
+            ],
+            "references": [
+              {
+                "id": "VIDEO",
+                "url": "https://www.youtube.com/watch?v=A_156w0aYtU",
+                "role": "exact source video",
+                "independence": "original episode; automatic text remains uncorrected"
+              },
+              {
+                "id": "APPLE",
+                "url": "https://podcasts.apple.com/us/podcast/bill-gatess-blunt-warning-on-a-i/id1548604447?i=1000792163003",
+                "role": "publisher identity and episode framing",
+                "independence": "same publisher family as video; not a second account of harm"
+              },
+              {
+                "id": "GATES",
+                "url": "https://www.gatesnotes.com/a-turbulent-ai-era-and-critical-choices-to-make",
+                "role": "speaker's August 26, 2026 published view",
+                "independence": "same speaker, not independent corroboration"
+              },
+              {
+                "id": "ACTIVE_SITE",
+                "url": "https://arxiv.org/html/2602.16703v1",
+                "role": "February 18, 2026 original novice wet-lab RCT and bounded counterevidence",
+                "independence": "independent of speaker and publisher; study-family with METR commentary"
+              },
+              {
+                "id": "METR",
+                "url": "https://metr.org/blog/2026-02-19-five-lessons-from-ai-biology-rct/",
+                "role": "study collaborator interpretation and human-outcome measurement context",
+                "independence": "not a replication of Active Site"
+              },
+              {
+                "id": "ANTHROPIC",
+                "url": "https://www.anthropic.com/claude/mythos",
+                "role": "developer's restricted-access and capability account",
+                "independence": "developer self-report, not independent human-outcome validation"
+              },
+              {
+                "id": "OPENAI",
+                "url": "https://openai.com/index/hugging-face-incident-and-the-road-ahead/",
+                "role": "developer's separate experimental agent-security incident",
+                "independence": "incident owner; different mechanism and outcome"
+              },
+              {
+                "id": "ILO",
+                "url": "https://www.ilo.org/publications/generative-ai-and-jobs-refined-global-index-occupational-exposure",
+                "role": "task-exposure evidence for employment discussion",
+                "independence": "different construct from observed job loss"
+              }
+            ],
+            "limits": [
+              "Speaker turns, direct wording, archival inserts and frames have not been checked against original playback. Bounded machine-attributed paraphrase may remain labeled; exact quotations, confirmed ambiguous turns and retained exact technical wording need targeted source review.",
+              "The last timestamped line begins at 1:13:34; its duration and subsequent video content are unknown.",
+              "The Active Site trial tested novices and mid-2025 models; it cannot settle expert, newer-model or different-access scenarios.",
+              "A generated receipt and automated site checks do not certify spoken wording or the empirical truth of a risk forecast."
+            ]
+          }
+        }
+      },
+      "review": {
+        "status": "independent-public-copy-reviewed; source-qualified",
+        "reviewer": "Task18 public integration and exact-page review",
+        "reviewedSourceHead": "627c1a65033094bd72740c1edadba1b848734a79",
+        "checkedAt": "2026-10-20T12:00:00Z",
+        "scope": "Retained writer article, eight claim and eight reference limits, sanitized custody receipt, generated page, desktop/mobile layout and opt-in playback. No full ReasonPack or exact speech verification claimed.",
+        "findings": "No blocking source, privacy or layout issue in the reviewed edition; evidence limits remain disclosed."
+      },
+      "revisionHistory": [
+        {
+          "at": "2026-10-20T00:00:00Z",
+          "kind": "private-integration-candidate",
+          "reason": "Mechanical projection of incumbent writer source map."
+        }
+      ],
+      "editorialOrder": 19,
+      "orderReason": "Twentieth Reader, following the Muse edition in the existing archive.",
+      "evidenceReview": {
+        "sourceFidelity": "Full exact-video automatic text, 1,991 timed lines; no direct audio review or frames.",
+        "conclusion": "The threshold warning merits scrutiny, but model capability, actor uplift, physical completion and governance response need separate evidence.",
+        "evidenceBoundary": "The trial measures novice mid-2025 tasks; publisher, speaker and developer sources retain their stated roles. Episode wording remains provisional.",
+        "nextVerification": "Check any retained exact or ambiguous speech against original audio before attributing it; keep capability, actor uplift and outcomes as separate tests."
+      }
+    },
+    {
       "id": "reader:the-brakes-need-a-test",
       "slug": "the-brakes-need-a-test",
       "title": "The Brakes Need a Test",
