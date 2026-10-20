@@ -19,7 +19,7 @@
       "properties": {
         "id": {"type": "string", "pattern": "^reader:[a-z0-9-]+$"},
         "slug": {"type": "string", "pattern": "^[a-z0-9-]+$"},
-        "source": {"oneOf": [{"$ref": "#/$defs/mediaSource"}, {"$ref": "#/$defs/paperSource"}]},
+        "source": {"oneOf": [{"$ref": "#/$defs/mediaSource"}, {"$ref": "#/$defs/paperSource"}, {"$ref": "#/$defs/analysisSource"}]},
         "verdict": {"enum": ["Essential", "Worth studying", "Interesting, unproven", "Mostly recycled", "Misleading", "Not worth your time"]},
         "claims": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/claim"}},
         "references": {"type": "array", "items": {"$ref": "#/$defs/reference"}},
@@ -65,6 +65,16 @@
         "version": {"type": "string", "pattern": "^v[1-9][0-9]*$"},
         "versionDate": {"type": "string", "format": "date"},
         "dateNote": {"type": "string", "minLength": 1}
+      }
+    },
+    "analysisSource": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind", "identity", "sourceReferenceIds"],
+      "properties": {
+        "kind": {"const": "analysis"},
+        "identity": {"type": "string", "pattern": "^analysis:[a-z0-9-]+$"},
+        "sourceReferenceIds": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "minLength": 1}}
       }
     },
     "claim": {

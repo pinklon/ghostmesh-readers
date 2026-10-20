@@ -5,7 +5,7 @@ from html.parser import HTMLParser
 from urllib.parse import urlsplit,unquote
 from datetime import datetime,date,timezone
 import json,re,sys,xml.etree.ElementTree as ET
-from generate_site import projections,CATEGORIES,validate_text,validate_link_only_source,validate_paper_source,validate_media_source
+from generate_site import projections,CATEGORIES,validate_text,validate_link_only_source,validate_paper_source,validate_analysis_source,validate_media_source
 ROOT=Path(__file__).resolve().parents[1];SITE=ROOT/'site'
 VERDICTS={'Essential','Worth studying','Interesting, unproven','Mostly recycled','Misleading','Not worth your time'}
 STATES={'corroborated','partially corroborated','contradicted','disputed','unverified'}
@@ -92,6 +92,11 @@ def check(root=ROOT):
    except ValueError as exc:errors.append(f'{slug}: {exc}')
    require('mediaAspect' not in r['source'] and 'platform' not in r['source'],f'{slug}: paper has video-only fields')
    require('gm-media-frame' not in raw and 'data-gm-aspect' not in raw,f'{slug}: paper has a fabricated media frame')
+  elif r['source'].get('kind')=='analysis':
+   try:validate_analysis_source(raw,r['source'],r)
+   except ValueError as exc:errors.append(f'{slug}: {exc}')
+   require('gm-media-frame' not in raw and 'data-gm-aspect' not in raw,f'{slug}: analysis has a fabricated media frame')
+   require('sources' in a.ids,f'{slug}: analysis source section missing')
   else:
    try:validate_media_source(r['source'])
    except ValueError as exc:errors.append(f'{slug}: {exc}')
@@ -105,7 +110,7 @@ def check(root=ROOT):
     except ValueError as exc:errors.append(f'{slug}: {exc}')
   for marker in ['at-a-glance','external-evidence','related-thinking']:require(marker in a.ids,f'{slug}: missing {marker}')
   require('data-theme-toggle' in raw and '/assets/theme.js' in raw,f'{slug}: theme missing')
-  require(raw.find('id="at-a-glance"')<min([pos for token in ['data-gm-aspect=','id="source"','class="theater"'] if (pos:=raw.find(token))>=0] or [len(raw)]),f'{slug}: brief after source')
+  require(raw.find('id="at-a-glance"')<min([pos for token in ['data-gm-aspect=','id="source"','id="sources"','class="theater"'] if (pos:=raw.find(token))>=0] or [len(raw)]),f'{slug}: brief after source')
   receipt=json.loads((site/slug/'receipt.json').read_text());require(receipt['normalization']['id']==r['id'],f'{slug}: receipt identity')
   refs={x['id']:x for x in r['references']};require(len(refs)==len(r['references']),f'{slug}: duplicate reference IDs')
   require(len({c['id'] for c in r['claims']})==len(r['claims']),f'{slug}: duplicate claim IDs')
