@@ -487,6 +487,16 @@
       "conclusion": "Selective watch for the control, AGI definition, reciprocal trust and welfare questions; underlying capability and safety propositions remain unproven.",
       "evidenceBoundary": "External papers and organization records give context or counterevidence, not independent confirmation of interview speech, AGI status or consciousness.",
       "nextVerification": "For disputed passages, compare original audio before asserting exact wording or speaker identity; keep partial private custody documented and recheck mutable outside evidence."
+    },
+    "relationshipReview": {
+      "reviewedAt": "2026-10-20",
+      "reviewedCatalogSize": 23,
+      "decision": "linked",
+      "reviewedTargets": [
+        "reader:the-test-must-name-its-target",
+        "reader:the-microscope-is-not-a-soul"
+      ],
+      "rationale": "The existing routes distinguish AGI labels from functional understanding and digital experience from representation evidence. Neither verifies the interview's exact speech."
     }
   },
   "editorial": {

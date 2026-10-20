@@ -12,6 +12,8 @@ The projection is not a new canonical knowledge graph, SharePlane KOS admission,
 
 The only v0.1 relationship is a Claim-to-EvidenceSource `cites` link that must already exist in the Reader page. The validator rejects other endpoint classes, predicates and authority values. A future contract version may add kinds only after source owner and semantic owner review. Existing IDs must remain stable for unchanged referents; changed meaning requires a new claim ID and explicit supersession design.
 
+The separate `/map/relationships.json` projection contains catalog-curated Reader-to-Reader editorial routes and a dated relationship assessment for every Reader. Its authority is local navigation only. `content/catalog.json` owns the typed edges and their source/target anchors, reason, basis and direction. `scripts/check_site.py` requires a substantive assessment covering the current full catalog, exact target parity and an explicit justified `none` when no local route qualifies. These edges do not enter the v0.1 citation contract or another site's graph.
+
 The state axes are deliberately separate:
 
 | Axis | v0.1 value in the reference | Meaning |

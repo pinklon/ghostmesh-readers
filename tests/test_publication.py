@@ -55,6 +55,17 @@ class PublicationGate(unittest.TestCase):
   self.mutate(lambda d:d['readers'][1]['claims'][0].update(id=d['readers'][0]['claims'][0]['id']));self.rejected('Duplicate global claim')
  def test_relation_requires_provenance(self):
   self.mutate(lambda d:d['readers'][0]['relationships'][0].update(provenance=[]));self.rejected('unqualified relation')
+ def test_missing_or_generic_relationship_assessment_is_rejected(self):
+  self.mutate(lambda d:d['readers'][0].pop('relationshipReview'));self.rejected('missing or invalid relationship review date')
+  self.mutate(lambda d:d['readers'][0].update(relationshipReview={'reviewedAt':'2026-10-20','reviewedCatalogSize':23,'decision':'none','reviewedTargets':[],'rationale':'No links'}));self.rejected('relationship review needs a substantive rationale')
+ def test_stale_or_false_zero_relationship_assessment_is_rejected(self):
+  self.mutate(lambda d:d['readers'][0]['relationshipReview'].update(reviewedCatalogSize=22));self.rejected('stale relationship review catalog size')
+  self.mutate(lambda d:d['readers'][0]['relationshipReview'].update(reviewedCatalogSize=23,decision='none',reviewedTargets=[]));self.rejected('relationship review targets differ from catalog edges')
+ def test_justified_zero_relationship_assessment_is_allowed(self):
+  data=json.loads((self.root/'content/catalog.json').read_text())
+  unlinked=[r for r in data['readers'] if not r['relationships']]
+  self.assertEqual({'the-warning-is-not-a-ballot-ruling','the-parallel-result-is-not-the-product'},{r['slug'] for r in unlinked})
+  self.assertEqual([],check(self.root))
  def test_five_relations_remain_public_and_navigable(self):
   p=self.root/'content/catalog.json';data=json.loads(p.read_text());reader=data['readers'][0]
   existing={edge['target'] for edge in reader['relationships']}
@@ -68,6 +79,7 @@ class PublicationGate(unittest.TestCase):
   self.assertEqual(5,len(reader['relationships']))
   reader['relationships'][-1]['type']='examines same claim'
   substantive_target=next(r for r in data['readers'] if r['id']==reader['relationships'][-1]['target'])
+  reader['relationshipReview']['reviewedTargets']=[edge['target'] for edge in reader['relationships']]
   p.write_text(json.dumps(data))
   schema=json.loads((self.root/'content/catalog.schema.json').read_text())
   self.assertNotIn('maxItems',schema['$defs']['reader']['properties']['relationships'])

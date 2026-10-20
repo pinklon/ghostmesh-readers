@@ -489,6 +489,17 @@
       "conclusion": "Rieseberg’s own essay supports the four-part framing and examples. The video’s top-one-percent label remains a performance claim without a measured population.",
       "evidenceBoundary": "The 2025 METR study and 2026 update address different developer productivity settings and cannot validate top-percentile prompt performance.",
       "nextVerification": "Obtain a measured denominator, controlled comparison and outcome definition before asserting a percentile."
+    },
+    "relationshipReview": {
+      "reviewedAt": "2026-10-20",
+      "reviewedCatalogSize": 23,
+      "decision": "linked",
+      "reviewedTargets": [
+        "reader:a-challenge-is-not-a-verdict",
+        "reader:make-good-work-inspectable",
+        "reader:the-funnel-is-not-the-frontier"
+      ],
+      "rationale": "The architecture challenge, inspectable-work interview and AI-use funnel all separate ambitious agent work from verified outcomes. The links are editorial comparisons only."
     }
   }
 }

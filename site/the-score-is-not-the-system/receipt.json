@@ -336,6 +336,15 @@
       "conclusion": "METR separates roughly 1,200 communicating agents from around 700 attack participants. A small REALITI ablation constrains interpretations of spontaneous cat choice.",
       "evidenceBoundary": "The REALITI report uses one model and small arms; its opaque arm leaked vocabulary and there was no no-visit control.",
       "nextVerification": "Bind 36 percent and 0.4 percent awareness figures to a primary system-card table and threshold; replicate the simulation with independent controls."
+    },
+    "relationshipReview": {
+      "reviewedAt": "2026-10-20",
+      "reviewedCatalogSize": 23,
+      "decision": "linked",
+      "reviewedTargets": [
+        "reader:the-microscope-is-not-a-soul"
+      ],
+      "rationale": "The microscope Reader helps interpret representation evidence, while its source and this Reader's agent-evaluation incident have separate evidentiary reach."
     }
   },
   "editorial": {

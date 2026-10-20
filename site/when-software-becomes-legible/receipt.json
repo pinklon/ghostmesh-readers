@@ -290,6 +290,17 @@
       "conclusion": "Repository and project documentation support the existence of described capabilities, within their versioned scope.",
       "evidenceBoundary": "The original presentation’s broader productivity and reliability implications were not reproduced here.",
       "nextVerification": "Reproduce a versioned task and measure comprehension, execution and correction outcomes."
+    },
+    "relationshipReview": {
+      "reviewedAt": "2026-10-20",
+      "reviewedCatalogSize": 23,
+      "decision": "linked",
+      "reviewedTargets": [
+        "reader:a-challenge-is-not-a-verdict",
+        "reader:make-good-work-inspectable",
+        "reader:when-agents-become-the-customer"
+      ],
+      "rationale": "The architecture challenge, inspectable-work interview and agent-service forecast provide distinct routes through software legibility, not corroboration of reverse engineering."
     }
   },
   "editorial": {

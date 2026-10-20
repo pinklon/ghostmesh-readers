@@ -379,6 +379,11 @@ def projections():
   out[f'readers/categories/{i}/index.html']=page(c,f'/readers/categories/{i}/',catalog_design.category(readers,CATEGORIES,c)).replace('</head>','<link rel="stylesheet" href="/assets/catalog-design.css"></head>')
  out['readers/index.html']=out['readers/index.html'].replace('all 13 Readers',f'all {len(readers)} Readers').replace('>13 Readers<',f'>{len(readers)} Readers<')
  out['map/index.html']=page('Reader relationship map','/map/',relationship_map(readers,byid)).replace('</head>','<link rel="stylesheet" href="/assets/map-design.css"></head>').replace('<body class="gm-catalog">','<body class="gm-catalog gm-map-page">')
+ if __package__:
+  from .map_design import relationship_graph
+ else:
+  from map_design import relationship_graph
+ out['map/relationships.json']=dump(relationship_graph(readers,byid,data['host']))
  urls=['/','/readers/','/map/','/knowledge/']+['/'+r['slug']+'/' for r in readers]+[f'/readers/categories/{i}/' for i in range(len(CATEGORIES))]
  out['sitemap.xml']='<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'+''.join('<url><loc>'+data['host']+u+'</loc></url>' for u in sorted(urls))+'</urlset>\n'
  out['404.html']=page('Page not found','/404.html','<h1>That page is not here.</h1><p><a href="/readers/">Browse the complete Reader library</a> or return to the <a href="/">homepage</a>.</p>')

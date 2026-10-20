@@ -518,8 +518,31 @@
         "checkedAt": "2026-10-20T00:00:00Z"
       }
     ],
-    "relationships": [],
-    "relationshipDisposition": "No cross-Reader claim relationship is qualified by the writer source map; use the original sources directly.",
+    "relationships": [
+      {
+        "target": "reader:the-label-the-box-and-the-bargain",
+        "type": "related topic",
+        "reason": "Both use OpenAI's August 2026 Hugging Face incident. Robinson examines bounded intrusion forensics and safeguards; Bostrom uses the incident as a limited example of a present boundary failure. Their shared source is not independent corroboration or a forecast of universal escape.",
+        "provenance": [
+          "/the-brakes-need-a-test/#incident",
+          "/the-label-the-box-and-the-bargain/#section-2"
+        ],
+        "basis": "curated-source-overlap",
+        "direction": "outgoing"
+      },
+      {
+        "target": "reader:the-threshold-is-a-claim-not-a-test",
+        "type": "related topic",
+        "reason": "Robinson asks whether tests, pauses and retests keep pace with releases; Gates raises a broader threshold for cyber and biological danger and public oversight. The questions complement each other, but Robinson's interview does not measure Gates's actor-uplift claim.",
+        "provenance": [
+          "/the-brakes-need-a-test/#takeaway",
+          "/the-threshold-is-a-claim-not-a-test/#measurement"
+        ],
+        "basis": "curated-editorial-contrast",
+        "direction": "outgoing"
+      }
+    ],
+    "relationshipDisposition": "Two qualified routes compare the bounded Hugging Face incident and release-safety tests with broader control and risk-threshold questions. Shared source evidence is not independent corroboration.",
     "review": {
       "status": "independent-public-copy-reviewed; source-qualified",
       "reviewer": "Task18 public integration and exact-page review",
@@ -542,6 +565,16 @@
       "conclusion": "The useful test is whether a warning reaches a named threshold, an accountable pause-or-proceed decision, and a scoped outside retest. Real pauses and a real intrusion both belong in the record; neither alone settles whether revised controls work.",
       "evidenceBoundary": "Company, affected-platform and independent-but-source-dependent incident records have distinct roles; none authenticates interview speech.",
       "nextVerification": "Verify targeted original audio before attributing contested wording, speakers or numbers; inspect source visuals before making a visual claim."
+    },
+    "relationshipReview": {
+      "reviewedAt": "2026-10-20",
+      "reviewedCatalogSize": 23,
+      "decision": "linked",
+      "reviewedTargets": [
+        "reader:the-label-the-box-and-the-bargain",
+        "reader:the-threshold-is-a-claim-not-a-test"
+      ],
+      "rationale": "Robinson's incident and release-process analysis supports routes to Bostrom's bounded control example and Gates's risk threshold. These are comparison paths, not independent interview corroboration."
     }
   },
   "editorial": {

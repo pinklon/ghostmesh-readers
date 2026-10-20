@@ -496,8 +496,31 @@
         "checkedAt": "2026-10-20T00:00:00Z"
       }
     ],
-    "relationships": [],
-    "relationshipDisposition": "No cross-Reader claim relationship is qualified by the writer source map; use the original sources directly.",
+    "relationships": [
+      {
+        "target": "reader:the-brakes-need-a-test",
+        "type": "related topic",
+        "reason": "Gates asks when cyber or biological actor uplift and control risk warrant intervention; Robinson asks whether developer tests, pauses and retests support a release decision. Read these as policy-threshold and safety-process questions, not independent evidence for either interview's forecasts.",
+        "provenance": [
+          "/the-threshold-is-a-claim-not-a-test/#exchange",
+          "/the-brakes-need-a-test/#brakes"
+        ],
+        "basis": "curated-editorial-contrast",
+        "direction": "outgoing"
+      },
+      {
+        "target": "reader:the-label-the-box-and-the-bargain",
+        "type": "related topic",
+        "reason": "Both distinguish a capability label from evidence about control. Gates proposes measured actor outcomes and scoped controls; Bostrom's caption-grounded boxing discussion separates present boundaries from longer-run alignment. Neither Reader establishes the other's risk timeline.",
+        "provenance": [
+          "/the-threshold-is-a-claim-not-a-test/#next-step",
+          "/the-label-the-box-and-the-bargain/#section-2"
+        ],
+        "basis": "curated-editorial-comparison",
+        "direction": "outgoing"
+      }
+    ],
+    "relationshipDisposition": "Two qualified reading routes compare risk thresholds with release-safety process and control evidence. Neither target independently verifies this caption-derived interview.",
     "review": {
       "status": "independent-public-copy-reviewed; source-qualified",
       "reviewer": "Task18 public integration and exact-page review",
@@ -520,6 +543,16 @@
       "conclusion": "The threshold warning merits scrutiny, but model capability, actor uplift, physical completion and governance response need separate evidence.",
       "evidenceBoundary": "The trial measures novice mid-2025 tasks; publisher, speaker and developer sources retain their stated roles. Episode wording remains provisional.",
       "nextVerification": "Check any retained exact or ambiguous speech against original audio before attributing it; keep capability, actor uplift and outcomes as separate tests."
+    },
+    "relationshipReview": {
+      "reviewedAt": "2026-10-20",
+      "reviewedCatalogSize": 23,
+      "decision": "linked",
+      "reviewedTargets": [
+        "reader:the-brakes-need-a-test",
+        "reader:the-label-the-box-and-the-bargain"
+      ],
+      "rationale": "The Gates risk interview supports two qualified routes: Robinson examines release safety process, and Bostrom distinguishes capability from control. Neither source verifies the other's risk magnitude."
     }
   },
   "editorial": {
