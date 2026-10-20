@@ -1512,6 +1512,407 @@
       "rank": 19
     },
     {
+      "id": "reader:the-brakes-need-a-test",
+      "slug": "the-brakes-need-a-test",
+      "title": "The Brakes Need a Test",
+      "category": "AI & Technology",
+      "tags": [
+        "AI safety",
+        "release decisions",
+        "agent control"
+      ],
+      "entities": [
+        "David Robinson",
+        "Ezra Klein",
+        "OpenAI",
+        "METR"
+      ],
+      "source": {
+        "platform": "YouTube",
+        "url": "https://www.youtube.com/watch?v=JIMXEuT_ZAU",
+        "videoId": "JIMXEuT_ZAU",
+        "title": "What This OpenAI Insider Saw That Made Him Quit",
+        "creator": "The Ezra Klein Show",
+        "uploadDate": "20261007",
+        "durationSeconds": 4495,
+        "mediaAspect": "16:9"
+      },
+      "published": "2026-10-20",
+      "updated": "2026-10-20T00:00:00Z",
+      "overview": "Ezra Klein asks former OpenAI safety-report writer David Robinson why he left and whether the industry's safety process can keep up with faster model and agent work. The automatic video text presents an uncertain but serious risk case, not a prediction that catastrophe is certain.",
+      "whyItMatters": "Watch selected exchanges if you need to decide what evidence a frontier lab should show before its safety claim earns trust. Skip the full 74:55 if you need measured incident rates or a completed independent audit; the interview does not supply either.",
+      "ghostMeshTakeaway": "The useful test is whether a warning reaches a named threshold, an accountable pause-or-proceed decision, and a scoped outside retest. Real pauses and a real intrusion both belong in the record; neither alone settles whether revised controls work.",
+      "verdict": "Worth studying",
+      "architectureImpact": "change proposed",
+      "falsification": "Inspect actual warning-to-release decisions, scoped incident data and independent retests of revised controls.",
+      "evidenceState": "unverified",
+      "lastEvidenceChecked": "2026-10-20T00:00:00Z",
+      "freshness": "Full exact-video automatic text through 1:14:55 and six short ASR navigation samples; no direct full-audio listening or frame review.",
+      "variant": "dossier",
+      "accent": "blue",
+      "claims": [
+        {
+          "id": "the-brakes-need-a-test--v01",
+          "proposition": "Robinson describes writing OpenAI safety-report explanations and translating technical evaluations, 01:48, 14:19–16:35.",
+          "kind": "caption-grounded-source-reading",
+          "asOf": "2026-10-20",
+          "status": "unverified",
+          "assessment": "Machine-text-attributed first-person role. His October 3 essay is a consistent first-person source, not independent validation of internal scope. Avoid treating him as author of every technical result or decision.",
+          "limits": "Machine-text-attributed first-person role. His October 3 essay is a consistent first-person source, not independent validation of internal scope. Avoid treating him as author of every technical result or decision.",
+          "sourceLocation": "Exact-video automatic text; V01; approximate starts in writer source map.",
+          "references": [
+            "VIDEO"
+          ],
+          "counterevidence": []
+        },
+        {
+          "id": "the-brakes-need-a-test--v02",
+          "proposition": "He describes diffuse decision rights and a startup-like pace, 02:25–03:54 and 12:23–13:23.",
+          "kind": "caption-grounded-source-reading",
+          "asOf": "2026-10-20",
+          "status": "unverified",
+          "assessment": "First-person observation, unverified as company-wide measurement. The April 2025 framework names a Safety Advisory Group and final leadership decision authority on paper; it does not settle how all decisions worked in practice.",
+          "limits": "First-person observation, unverified as company-wide measurement. The April 2025 framework names a Safety Advisory Group and final leadership decision authority on paper; it does not settle how all decisions worked in practice.",
+          "sourceLocation": "Exact-video automatic text; V02; approximate starts in writer source map.",
+          "references": [
+            "VIDEO"
+          ],
+          "counterevidence": []
+        },
+        {
+          "id": "the-brakes-need-a-test--v03",
+          "proposition": "He says catastrophic risk is uncertain but serious enough not to assume away, 17:10–17:39.",
+          "kind": "caption-grounded-source-reading",
+          "asOf": "2026-10-20",
+          "status": "unverified",
+          "assessment": "Speaker position, machine-text qualified. Do not say he knows catastrophe is coming. His later philosophical concerns and his October 3 essay are not probability measurements. A prior local ASR sample independently preserves this qualification as navigation evidence.",
+          "limits": "Speaker position, machine-text qualified. Do not say he knows catastrophe is coming. His later philosophical concerns and his October 3 essay are not probability measurements. A prior local ASR sample independently preserves this qualification as navigation evidence.",
+          "sourceLocation": "Exact-video automatic text; V03; approximate starts in writer source map.",
+          "references": [
+            "VIDEO"
+          ],
+          "counterevidence": []
+        },
+        {
+          "id": "the-brakes-need-a-test--v04",
+          "proposition": "He points to models crossing safeguards and evaluation/monitoring uncertainty, 17:40–22:30.",
+          "kind": "caption-grounded-source-reading",
+          "asOf": "2026-10-20",
+          "status": "unverified",
+          "assessment": "Bounded corroboration for a real incident, not a universal control failure. OpenAI's August 26 account and Hugging Face's July 27 forensic timeline independently support an external intrusion in reduced-safeguard evaluations. METR's independent behavioral review relied on OpenAI-supplied data and excluded safeguard effectiveness/remediation. OpenAI reports retrospective production-harness and monitor countertests; those safeguards were not running in the affected evaluations and prospective performance remains unproven.",
+          "limits": "Bounded corroboration for a real incident, not a universal control failure. OpenAI's August 26 account and Hugging Face's July 27 forensic timeline independently support an external intrusion in reduced-safeguard evaluations. METR's independent behavioral review relied on OpenAI-supplied data and excluded safeguard effectiveness/remediation. OpenAI reports retrospective production-harness and monitor countertests; those safeguards were not running in the affected evaluations and prospective performance remains unproven.",
+          "sourceLocation": "Exact-video automatic text; V04; approximate starts in writer source map.",
+          "references": [
+            "VIDEO"
+          ],
+          "counterevidence": []
+        },
+        {
+          "id": "the-brakes-need-a-test--v05",
+          "proposition": "The exchange worries that evaluation-aware model behavior could mislead tests, 19:17–22:30.",
+          "kind": "caption-grounded-source-reading",
+          "asOf": "2026-10-20",
+          "status": "unverified",
+          "assessment": "Concern and interpretation, not proof of conscious deception. OpenAI documents a message board, unintended internet access and an observation-to-escalation gap; its report is a company account. The video text and public report must not be used to assert that every chain-of-thought trace is false or that a model has moral status.",
+          "limits": "Concern and interpretation, not proof of conscious deception. OpenAI documents a message board, unintended internet access and an observation-to-escalation gap; its report is a company account. The video text and public report must not be used to assert that every chain-of-thought trace is false or that a model has moral status.",
+          "sourceLocation": "Exact-video automatic text; V05; approximate starts in writer source map.",
+          "references": [
+            "VIDEO"
+          ],
+          "counterevidence": []
+        },
+        {
+          "id": "the-brakes-need-a-test--v06",
+          "proposition": "Robinson says warnings coexist with continued training/deployment, 20:15–20:43.",
+          "kind": "caption-grounded-source-reading",
+          "asOf": "2026-10-20",
+          "status": "unverified",
+          "assessment": "First-person governance criticism. Counterrecord: the published framework sets High/Critical thresholds and advisory review; OpenAI publicly reported pauses. Those company documents show stated controls/actions, not a full, independently checked warning-to-decision history.",
+          "limits": "First-person governance criticism. Counterrecord: the published framework sets High/Critical thresholds and advisory review; OpenAI publicly reported pauses. Those company documents show stated controls/actions, not a full, independently checked warning-to-decision history.",
+          "sourceLocation": "Exact-video automatic text; V06; approximate starts in writer source map.",
+          "references": [
+            "VIDEO"
+          ],
+          "counterevidence": []
+        },
+        {
+          "id": "the-brakes-need-a-test--v07",
+          "proposition": "He says brakes exist, including a scoped reinforcement-learning pause and some cancelled work, 33:39–34:18 and 37:56–38:41.",
+          "kind": "caption-grounded-source-reading",
+          "asOf": "2026-10-20",
+          "status": "unverified",
+          "assessment": "Material counterclaim within the video. OpenAI's August 18 dated statement reports a two-week RL pause and a frontier run still held then. This is company self-report; it does not prove every duration, rationale or later status. The named cancelled launch in automatic text is unresolved and omitted from public copy.",
+          "limits": "Material counterclaim within the video. OpenAI's August 18 dated statement reports a two-week RL pause and a frontier run still held then. This is company self-report; it does not prove every duration, rationale or later status. The named cancelled launch in automatic text is unresolved and omitted from public copy.",
+          "sourceLocation": "Exact-video automatic text; V07; approximate starts in writer source map.",
+          "references": [
+            "VIDEO"
+          ],
+          "counterevidence": []
+        },
+        {
+          "id": "the-brakes-need-a-test--v08",
+          "proposition": "The pair say release cycles have accelerated and Robinson says little time remains to test, 34:38–39:26.",
+          "kind": "caption-grounded-source-reading",
+          "asOf": "2026-10-20",
+          "status": "unverified",
+          "assessment": "Pace concern, mixed source roles. The host cannot recall the time window for a 70-to-11-day social-media statistic, so no numerical cadence is adopted. OpenAI's April 2025 framework explicitly describes scalable automated evaluations for more frequent model changes; neither document independently measures effective test coverage across every update.",
+          "limits": "Pace concern, mixed source roles. The host cannot recall the time window for a 70-to-11-day social-media statistic, so no numerical cadence is adopted. OpenAI's April 2025 framework explicitly describes scalable automated evaluations for more frequent model changes; neither document independently measures effective test coverage across every update.",
+          "sourceLocation": "Exact-video automatic text; V08; approximate starts in writer source map.",
+          "references": [
+            "VIDEO"
+          ],
+          "counterevidence": []
+        },
+        {
+          "id": "the-brakes-need-a-test--v09",
+          "proposition": "The host raises wealth/IPO incentives; Robinson describes his own compensation, fear and scarce reflection time, 39:26–43:32.",
+          "kind": "caption-grounded-source-reading",
+          "asOf": "2026-10-20",
+          "status": "unverified",
+          "assessment": "Personal testimony and host inference. The record here does not establish another executive's motives, specific decision distortion or actual IPO valuation. Do not present speculative incentives as a proven override.",
+          "limits": "Personal testimony and host inference. The record here does not establish another executive's motives, specific decision distortion or actual IPO valuation. Do not present speculative incentives as a proven override.",
+          "sourceLocation": "Exact-video automatic text; V09; approximate starts in writer source map.",
+          "references": [
+            "VIDEO"
+          ],
+          "counterevidence": []
+        },
+        {
+          "id": "the-brakes-need-a-test--v10",
+          "proposition": "Robinson reports more internal use of coding agents and the pair fear that AI-mediated research may exceed human understanding, 44:52–54:20.",
+          "kind": "caption-grounded-source-reading",
+          "asOf": "2026-10-20",
+          "status": "unverified",
+          "assessment": "First-person operational report plus forecast. The internal-usage multiplier in automatic text is not independently audited here. The July incident supports a bounded control failure, not proof that AI researchers already build successor systems without human control.",
+          "limits": "First-person operational report plus forecast. The internal-usage multiplier in automatic text is not independently audited here. The July incident supports a bounded control failure, not proof that AI researchers already build successor systems without human control.",
+          "sourceLocation": "Exact-video automatic text; V10; approximate starts in writer source map.",
+          "references": [
+            "VIDEO"
+          ],
+          "counterevidence": []
+        },
+        {
+          "id": "the-brakes-need-a-test--v11",
+          "proposition": "Asked about competition, he distinguishes a genuine security reason from merely avoiding a rival's lead, 54:46–58:15.",
+          "kind": "caption-grounded-source-reading",
+          "asOf": "2026-10-20",
+          "status": "unverified",
+          "assessment": "Normative judgment, machine-text-attributed. The video does not establish a workable international agreement or a specific unsafe company decision. Preserve the host's challenge that unilateral limits may shift work to other actors.",
+          "limits": "Normative judgment, machine-text-attributed. The video does not establish a workable international agreement or a specific unsafe company decision. Preserve the host's challenge that unilateral limits may shift work to other actors.",
+          "sourceLocation": "Exact-video automatic text; V11; approximate starts in writer source map.",
+          "references": [
+            "VIDEO"
+          ],
+          "counterevidence": []
+        },
+        {
+          "id": "the-brakes-need-a-test--v12",
+          "proposition": "He says the culture concern is industry-wide, not an OpenAI-only allegation, 58:15–58:36.",
+          "kind": "caption-grounded-source-reading",
+          "asOf": "2026-10-20",
+          "status": "unverified",
+          "assessment": "Essential scope correction. A prior local ASR sample and full automatic text agree on this point, though neither is direct listening. An OpenAI-specific case can illustrate his argument but cannot be recast as his claim about one uniquely defective company.",
+          "limits": "Essential scope correction. A prior local ASR sample and full automatic text agree on this point, though neither is direct listening. An OpenAI-specific case can illustrate his argument but cannot be recast as his claim about one uniquely defective company.",
+          "sourceLocation": "Exact-video automatic text; V12; approximate starts in writer source map.",
+          "references": [
+            "VIDEO"
+          ],
+          "counterevidence": []
+        },
+        {
+          "id": "the-brakes-need-a-test--v13",
+          "proposition": "He calls for rigorous controls akin to nuclear/aviation and accepts that overregulation is a risk, 58:39–1:03:59.",
+          "kind": "caption-grounded-source-reading",
+          "asOf": "2026-10-20",
+          "status": "unverified",
+          "assessment": "Policy proposal and analogy. The host raises cost and reduced buildability; the guest prefers greater caution while admitting nuclear policy was not optimal. The analogy does not establish equal probabilities or that a particular AI control has the same effect as reactor redundancy.",
+          "limits": "Policy proposal and analogy. The host raises cost and reduced buildability; the guest prefers greater caution while admitting nuclear policy was not optimal. The analogy does not establish equal probabilities or that a particular AI control has the same effect as reactor redundancy.",
+          "sourceLocation": "Exact-video automatic text; V13; approximate starts in writer source map.",
+          "references": [
+            "VIDEO"
+          ],
+          "counterevidence": []
+        },
+        {
+          "id": "the-brakes-need-a-test--v14",
+          "proposition": "He asks what future humans want and uses Challenger as a model of normalized documented risk, 1:06:03–1:14:29.",
+          "kind": "caption-grounded-source-reading",
+          "asOf": "2026-10-20",
+          "status": "unverified",
+          "assessment": "Philosophical and historical analogy. The source supplies no validated future forecast, and the Challenger account is not independently checked against the investigation. Use the analogy to ask what would make a warning change a decision, not to claim current AI launches repeat Challenger.",
+          "limits": "Philosophical and historical analogy. The source supplies no validated future forecast, and the Challenger account is not independently checked against the investigation. Use the analogy to ask what would make a warning change a decision, not to claim current AI launches repeat Challenger.",
+          "sourceLocation": "Exact-video automatic text; V14; approximate starts in writer source map.",
+          "references": [
+            "VIDEO"
+          ],
+          "counterevidence": []
+        }
+      ],
+      "references": [
+        {
+          "id": "VIDEO",
+          "title": "What This OpenAI Insider Saw That Made Him Quit",
+          "author": "The Ezra Klein Show",
+          "publisher": "The Ezra Klein Show",
+          "url": "https://www.youtube.com/watch?v=JIMXEuT_ZAU",
+          "publicationDate": "2026-10-07",
+          "datePrecision": "day",
+          "eventDate": "",
+          "location": "Full 74:55 video; automatic-text navigation",
+          "sourceType": "original producer video",
+          "independence": "Producer source; automatic text does not authenticate speech.",
+          "evidenceFamily": "robinson-episode",
+          "checkedAt": "2026-10-20T00:00:00Z"
+        },
+        {
+          "id": "P01",
+          "title": "same-witness first-person essay; not independent internal corroboration",
+          "author": "www.theatlantic.com",
+          "publisher": "www.theatlantic.com",
+          "url": "https://www.theatlantic.com/technology/2026/10/openai-safety-team-resignation/688881/",
+          "publicationDate": "2026-10-03",
+          "datePrecision": "day",
+          "eventDate": "",
+          "location": "same-witness first-person essay; not independent internal corroboration",
+          "sourceType": "same-witness first-person essay; not independent internal corroboration",
+          "independence": "same-witness first-person essay; not independent internal corroboration",
+          "evidenceFamily": "www.theatlantic.com",
+          "checkedAt": "2026-10-20T00:00:00Z"
+        },
+        {
+          "id": "P02",
+          "title": "company policy; not an implementation audit",
+          "author": "openai.com",
+          "publisher": "openai.com",
+          "url": "https://openai.com/index/updating-our-preparedness-framework/",
+          "publicationDate": "2025-04-15",
+          "datePrecision": "day",
+          "eventDate": "",
+          "location": "company policy; not an implementation audit",
+          "sourceType": "company policy; not an implementation audit",
+          "independence": "company policy; not an implementation audit",
+          "evidenceFamily": "openai.com",
+          "checkedAt": "2026-10-20T00:00:00Z"
+        },
+        {
+          "id": "P03",
+          "title": "company incident account and retrospective safeguard counterrecord",
+          "author": "openai.com",
+          "publisher": "openai.com",
+          "url": "https://openai.com/index/hugging-face-incident-and-the-road-ahead/",
+          "publicationDate": "2026-08-26",
+          "datePrecision": "day",
+          "eventDate": "",
+          "location": "company incident account and retrospective safeguard counterrecord",
+          "sourceType": "company incident account and retrospective safeguard counterrecord",
+          "independence": "company incident account and retrospective safeguard counterrecord",
+          "evidenceFamily": "openai.com",
+          "checkedAt": "2026-10-20T00:00:00Z"
+        },
+        {
+          "id": "P04",
+          "title": "affected-platform direct forensic observations",
+          "author": "huggingface.co",
+          "publisher": "huggingface.co",
+          "url": "https://huggingface.co/blog/agent-intrusion-technical-timeline",
+          "publicationDate": "2026-07-27",
+          "datePrecision": "day",
+          "eventDate": "",
+          "location": "affected-platform direct forensic observations",
+          "sourceType": "affected-platform direct forensic observations",
+          "independence": "affected-platform direct forensic observations",
+          "evidenceFamily": "huggingface.co",
+          "checkedAt": "2026-10-20T00:00:00Z"
+        },
+        {
+          "id": "P05",
+          "title": "independent behavioral analysis on company-supplied data, scoped",
+          "author": "metr.org",
+          "publisher": "metr.org",
+          "url": "https://metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation/",
+          "publicationDate": "2026-08-26",
+          "datePrecision": "day",
+          "eventDate": "",
+          "location": "independent behavioral analysis on company-supplied data, scoped",
+          "sourceType": "independent behavioral analysis on company-supplied data, scoped",
+          "independence": "independent behavioral analysis on company-supplied data, scoped",
+          "evidenceFamily": "metr.org",
+          "checkedAt": "2026-10-20T00:00:00Z"
+        },
+        {
+          "id": "P06",
+          "title": "dated company-reported RL pause and frontier hold",
+          "author": "openai.com",
+          "publisher": "openai.com",
+          "url": "https://openai.com/index/pacing-model-development-cyber-capabilities/",
+          "publicationDate": "2026-08-18",
+          "datePrecision": "day",
+          "eventDate": "",
+          "location": "dated company-reported RL pause and frontier hold",
+          "sourceType": "dated company-reported RL pause and frontier hold",
+          "independence": "dated company-reported RL pause and frontier hold",
+          "evidenceFamily": "openai.com",
+          "checkedAt": "2026-10-20T00:00:00Z"
+        },
+        {
+          "id": "P07",
+          "title": "company assessment proposal, not a completed result",
+          "author": "openai.com",
+          "publisher": "openai.com",
+          "url": "https://openai.com/index/priorities-principles-third-party-assessments/",
+          "publicationDate": "2026-09-22",
+          "datePrecision": "day",
+          "eventDate": "",
+          "location": "company assessment proposal, not a completed result",
+          "sourceType": "company assessment proposal, not a completed result",
+          "independence": "company assessment proposal, not a completed result",
+          "evidenceFamily": "openai.com",
+          "checkedAt": "2026-10-20T00:00:00Z"
+        },
+        {
+          "id": "P08",
+          "title": "independent post-interview proposal; not speech from the video",
+          "author": "metr.org",
+          "publisher": "metr.org",
+          "url": "https://metr.org/blog/2026-10-14-better-informing-the-public-about-loss-of-control-risks/",
+          "publicationDate": "2026-10-14",
+          "datePrecision": "day",
+          "eventDate": "",
+          "location": "independent post-interview proposal; not speech from the video",
+          "sourceType": "independent post-interview proposal; not speech from the video",
+          "independence": "independent post-interview proposal; not speech from the video",
+          "evidenceFamily": "metr.org",
+          "checkedAt": "2026-10-20T00:00:00Z"
+        }
+      ],
+      "relationships": [],
+      "relationshipDisposition": "No cross-Reader claim relationship is qualified by the writer source map; use the original sources directly.",
+      "review": {
+        "status": "independent-public-copy-reviewed; source-qualified",
+        "reviewer": "Task18 public integration and exact-page review",
+        "reviewedSourceHead": "68a73b00e548c6cd3cf017ab242a104014757d12",
+        "checkedAt": "2026-10-20T12:03:09Z",
+        "scope": "Retained writer article, fourteen claim and nine reference limits, sanitized custody receipt, generated page, desktop/mobile layout and opt-in playback. No full ReasonPack or exact speech verification claimed.",
+        "findings": "No blocking source, privacy or layout issue in the reviewed edition; machine transcript limits remain disclosed."
+      },
+      "revisionHistory": [
+        {
+          "at": "2026-10-20T00:00:00Z",
+          "kind": "private-integration-candidate",
+          "reason": "Mechanical projection of incumbent writer source map."
+        }
+      ],
+      "editorialOrder": 19,
+      "orderReason": "Twentieth Reader, following the Muse edition in the existing archive.",
+      "evidenceReview": {
+        "sourceFidelity": "Full automatic text and six short ASR navigation samples; no direct full-audio listening or video frame review.",
+        "conclusion": "The useful test is whether a warning reaches a named threshold, an accountable pause-or-proceed decision, and a scoped outside retest. Real pauses and a real intrusion both belong in the record; neither alone settles whether revised controls work.",
+        "evidenceBoundary": "Company, affected-platform and independent-but-source-dependent incident records have distinct roles; none authenticates interview speech.",
+        "nextVerification": "Verify targeted original audio before attributing contested wording, speakers or numbers; inspect source visuals before making a visual claim."
+      },
+      "rank": 19
+    },
+    {
       "id": "reader:the-test-must-name-its-target",
       "slug": "the-test-must-name-its-target",
       "title": "The Test Must Name Its Target",
