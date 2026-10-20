@@ -51,6 +51,7 @@ CALLS = {
     'the-label-the-box-and-the-bargain': ('Watch selectively', 'Keep AGI labels, control evidence and digital welfare questions in separate records.'),
     'the-warning-is-not-a-ballot-ruling': ('Watch selectively', 'Test the warning against the original letters; a likely match list is not itself a ballot ruling.'),
     'the-threshold-is-a-claim-not-a-test': ('Watch selectively', 'Ask what human-outcome test establishes each proposed danger threshold.'),
+    'the-brakes-need-a-test': ('Watch selectively', 'Ask whether a warning reaches a named threshold, a decision and an outside retest.'),
 }
 
 
