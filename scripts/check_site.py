@@ -158,7 +158,10 @@ def check(root=ROOT):
   require(bool(r.get('relationshipDisposition','').strip()),f'{slug}: missing relation disposition')
   assessment=r.get('relationshipReview') or {}
   try:
-   reviewed=date.fromisoformat(assessment.get('reviewedAt',''))
+   reviewed_value=assessment.get('reviewedAt','')
+   if not isinstance(reviewed_value,str) or not re.fullmatch(r'\d{4}-\d{2}-\d{2}',reviewed_value):
+    raise ValueError('relationship review date must use YYYY-MM-DD')
+   reviewed=date.fromisoformat(reviewed_value)
    require(reviewed<=date.today(),f'{slug}: future relationship review')
   except (ValueError,TypeError):errors.append(f'{slug}: missing or invalid relationship review date')
   require(assessment.get('reviewedCatalogSize')==len(readers),f'{slug}: stale relationship review catalog size')

@@ -1,0 +1,286 @@
+{
+  "schema": "ghostmesh-reader-receipt-v2",
+  "createdAt": "2026-10-20T17:20:00Z",
+  "source": {
+    "platform": "YouTube",
+    "url": "https://www.youtube.com/watch?v=AKovdUFvThA",
+    "videoId": "AKovdUFvThA",
+    "title": "Don’t Learn Harness Engineering. Learn This Instead",
+    "creator": "Cloud Codes",
+    "uploadDate": "20261020",
+    "durationSeconds": 748,
+    "mediaAspect": "16:9"
+  },
+  "sourceInspection": {
+    "method": "Exact YouTube metadata, private English SRT caption and browser transcript export, and private ReasonPack v1.0 media/caption capture; direct author papers checked separately",
+    "status": "verified-private-legacy-pack-and-caption-aid",
+    "manifestSha256": "630a3c3eafb1d5bcbaf375cbea4336553cde32704ebcb6c7b3169d9bc050ac9a",
+    "caveat": "The v1.0 pack members passed hash checks; automatic captions may mishear exact speech. This is not a current canonical ReasonPack qualification or replication of paper results.",
+    "publicationBoundary": "No video, audio, captions, full transcript, signed media URL or private path is published.",
+    "captionSha256": "c8521a685b02c8ce0012965136b713e5b73fcd8dc4f40ab38215634f66b04f52",
+    "transcriptExportSha256": "b0fdfcd766e019784ce0aa2df4082f13a6444d2ab8643d0dcb38c684f23396ae"
+  },
+  "custody": {
+    "status": "private-source-capture-verified",
+    "note": "Exact video ID and private pack member hashes were verified. The installed v1.0 tool does not produce the newer canonical pack format."
+  },
+  "overview": "A critique of two studies in which an AI revises the procedures used by another agent and the role of evaluation in that loop.",
+  "whyItMatters": "Research benchmarks can justify a scoped experiment, but not a general production claim.",
+  "ghostMeshTakeaway": "Specify a grader and holdout before allowing a harness to adapt.",
+  "normalization": {
+    "id": "reader:the-grader-is-part-of-the-harness",
+    "slug": "the-grader-is-part-of-the-harness",
+    "title": "The Grader Is Part of the Harness",
+    "category": "AI & Technology",
+    "tags": [
+      "agents",
+      "evaluation",
+      "research"
+    ],
+    "entities": [
+      "Cloud Codes",
+      "Harness Learning",
+      "MASS",
+      "Sakana AI"
+    ],
+    "source": {
+      "platform": "YouTube",
+      "url": "https://www.youtube.com/watch?v=AKovdUFvThA",
+      "videoId": "AKovdUFvThA",
+      "title": "Don’t Learn Harness Engineering. Learn This Instead",
+      "creator": "Cloud Codes",
+      "uploadDate": "20261020",
+      "durationSeconds": 748,
+      "mediaAspect": "16:9"
+    },
+    "published": "2026-10-20",
+    "updated": "2026-10-20T20:29:00Z",
+    "overview": "Cloud Codes compares two research efforts that let an AI system revise its own working procedure, then argues that evaluation design determines whether this feedback helps.",
+    "whyItMatters": "Useful for teams tempted to treat an adaptive agent harness as a reusable product recipe. The reported gains are real author results on specified tasks, while coding transfer is mixed.",
+    "ghostMeshTakeaway": "Treat a proposed harness change as an experiment with a named grader, held-out tasks and a rollback path. Do not promote a self-judged gain into production authority.",
+    "verdict": "Worth studying",
+    "architectureImpact": "experiment recommended",
+    "falsification": "Revisit the cautious call if independent held-out coding and operational tasks show reliable gains with recorded failures, cost, authority constraints and external grading; abandon a candidate if it only improves its own proxy score.",
+    "evidenceState": "partially corroborated",
+    "lastEvidenceChecked": "2026-10-20T20:25:00Z",
+    "freshness": "Publisher video, private caption aids and direct paper versions checked 2026-10-20. Benchmarks and product behavior can change; the two studies are not independent confirmations of the same outcome.",
+    "variant": "dossier",
+    "accent": "teal",
+    "claims": [
+      {
+        "id": "the-grader-is-part-of-the-harness--harness-learning-protocol",
+        "proposition": "Harness learning revises executable agent orchestration from task feedback while model weights stay fixed during test-time adaptation.",
+        "kind": "study-method",
+        "asOf": "2026-10-20",
+        "status": "corroborated",
+        "assessment": "The authors define a proposer that edits a frozen solver harness and train it with execution feedback.",
+        "limits": "Corroborates the reported design, not safe self-modification in an open production environment.",
+        "sourceLocation": "02:27-04:50",
+        "references": [
+          "harness-learning-2026"
+        ],
+        "counterevidence": [],
+        "temporalScope": "Video and paper versions checked 2026-10-20; study outcomes are specific to their reported protocols."
+      },
+      {
+        "id": "the-grader-is-part-of-the-harness--harness-learning-scores",
+        "proposition": "In the paper’s 21 unseen Reasoning Gym families, a trained 4B proposer averages 0.62 for one revision versus 0.56 for its 35B teacher under the same protocol.",
+        "kind": "study-result",
+        "asOf": "2026-10-20",
+        "status": "partially corroborated",
+        "assessment": "The author paper reports the comparison and a base proposer mean of 0.32.",
+        "limits": "The teacher does better under oracle best-of-eight selection. These are bounded puzzle scores, not coding reliability or a general model ranking.",
+        "sourceLocation": "03:15-04:50",
+        "references": [
+          "harness-learning-2026"
+        ],
+        "counterevidence": [],
+        "temporalScope": "Video and paper versions checked 2026-10-20; study outcomes are specific to their reported protocols."
+      },
+      {
+        "id": "the-grader-is-part-of-the-harness--mass-design",
+        "proposition": "MASS uses a single base model in distinct solver, optimizer and evaluator roles, then alternates workflow search with training on generated trajectories.",
+        "kind": "study-method",
+        "asOf": "2026-10-20",
+        "status": "corroborated",
+        "assessment": "The author paper specifies the role loop and two rounds using Qwen3.6-27B.",
+        "limits": "The evaluator inside workflow search is part of the same model family. Final research reporting is separate, using withheld external model judgments for workflow comparisons and the named benchmarks' own scoring rules.",
+        "sourceLocation": "04:51-07:01",
+        "references": [
+          "mass-2026"
+        ],
+        "counterevidence": [],
+        "temporalScope": "Video and paper versions checked 2026-10-20; study outcomes are specific to their reported protocols."
+      },
+      {
+        "id": "the-grader-is-part-of-the-harness--mass-transfer",
+        "proposition": "After two MASS rounds, score per output token rises 1.20 to 1.60 times baseline on four research benchmarks but is 0.96 on Terminal-Bench 2.0 and 0.94 on SWE-bench Verified.",
+        "kind": "study-result",
+        "asOf": "2026-10-20",
+        "status": "partially corroborated",
+        "assessment": "The research team reports these ratios for the stated benchmark set.",
+        "limits": "The coding ratios are below baseline and the team notes uneven transfer. The authors also find optimizer capacity can limit workflow improvement speed even when the evaluator can rank candidates. Neither ratio predicts a GhostMesh workflow result.",
+        "sourceLocation": "06:04-08:05",
+        "references": [
+          "mass-2026",
+          "mass-team-2026"
+        ],
+        "counterevidence": [],
+        "temporalScope": "Video and paper versions checked 2026-10-20; study outcomes are specific to their reported protocols."
+      },
+      {
+        "id": "the-grader-is-part-of-the-harness--evaluation-bottleneck",
+        "proposition": "Grader design determines whether an adaptive harness gain reflects the intended task.",
+        "kind": "editorial-inference",
+        "asOf": "2026-10-20",
+        "status": "unverified",
+        "assessment": "Private automatic captions indicate the narrator treats evaluation quality as the central design problem. The cited papers and Anthropic guide explain feedback and grading, but no source tests this video’s proposed production prescription.",
+        "limits": "This is a GhostMesh production-design inference from the reported studies and source aid, not the optimizer-capacity bottleneck measured in the MASS ablation, a measured deployment result, or a verified exact quotation.",
+        "sourceLocation": "08:06-11:23",
+        "references": [
+          "harness-learning-2026",
+          "mass-2026",
+          "anthropic-evals-2026"
+        ],
+        "counterevidence": [],
+        "temporalScope": "Video and paper versions checked 2026-10-20; study outcomes are specific to their reported protocols."
+      }
+    ],
+    "references": [
+      {
+        "id": "harness-learning-2026",
+        "title": "Harness Learning Enables Generalizable Test-Time Adaptation",
+        "author": "Alvin Zhang and coauthors",
+        "publisher": "arXiv",
+        "url": "https://arxiv.org/html/2609.35738v1",
+        "publicationDate": "2026-09-28",
+        "eventDate": null,
+        "location": "Sections 3-6, Table 1 and Appendix B.1",
+        "sourceType": "research preprint",
+        "independence": "Direct author report, not independent replication or a production coding trial.",
+        "evidenceFamily": "harness-learning-2026",
+        "checkedAt": "2026-10-20T17:20:00Z",
+        "datePrecision": "day"
+      },
+      {
+        "id": "mass-2026",
+        "title": "Recursive Self-Improvement through Multi-Agent Self-Supervision",
+        "author": "Hyunin Lee and coauthors",
+        "publisher": "arXiv",
+        "url": "https://arxiv.org/html/2610.12176v1",
+        "publicationDate": "2026-10-08",
+        "eventDate": null,
+        "location": "Abstract, experiments and benchmark protocol",
+        "sourceType": "research preprint",
+        "independence": "Direct author report; the Sakana explanation describes the same evidence family.",
+        "evidenceFamily": "mass-2026",
+        "checkedAt": "2026-10-20T17:20:00Z",
+        "datePrecision": "day"
+      },
+      {
+        "id": "mass-team-2026",
+        "title": "MASS: Recursive Self-Improvement through Multi-Agent Self-Supervision",
+        "author": "Sakana AI research team",
+        "publisher": "Sakana AI",
+        "url": "https://pub.sakana.ai/mass/",
+        "publicationDate": "2026-10",
+        "eventDate": null,
+        "location": "Public benchmark Figure 3 and transfer discussion",
+        "sourceType": "research team report",
+        "independence": "Team explanation of its own paper, not an independent corroborating study.",
+        "evidenceFamily": "mass-2026",
+        "checkedAt": "2026-10-20T17:20:00Z",
+        "datePrecision": "month"
+      },
+      {
+        "id": "anthropic-evals-2026",
+        "title": "Demystifying Evals for AI Agents",
+        "author": "Anthropic engineering team",
+        "publisher": "Anthropic",
+        "url": "https://www.anthropic.com/research/demystifying-evals-for-ai-agents",
+        "publicationDate": "2026-01-09",
+        "eventDate": null,
+        "location": "Evaluation design and grader discussion",
+        "sourceType": "engineering guidance",
+        "independence": "Practitioner guidance for designing evaluations; no validation of either 2026 paper.",
+        "evidenceFamily": "anthropic-evals-guide",
+        "checkedAt": "2026-10-20T17:20:00Z",
+        "datePrecision": "day"
+      }
+    ],
+    "relationships": [
+      {
+        "target": "reader:make-good-work-inspectable",
+        "type": "related topic",
+        "reason": "Both ask how an agent result becomes inspectable. This Reader examines feedback used to change a harness; the earlier Reader asks for visible work and a reviewable result. The earlier video does not validate the paper benchmarks.",
+        "provenance": [
+          "/the-grader-is-part-of-the-harness/#grading",
+          "/make-good-work-inspectable/#core"
+        ],
+        "basis": "curated-editorial-comparison",
+        "direction": "outgoing"
+      },
+      {
+        "target": "reader:the-experiment-ran-did-the-research-advance",
+        "type": "related topic",
+        "reason": "Both consider evaluated research agents. This video highlights adaptive workflow optimization, while the paper Reader distinguishes a completed experiment from an advance in scientific knowledge. Shared interest is not independent replication.",
+        "provenance": [
+          "/the-grader-is-part-of-the-harness/#research-transfer",
+          "/the-experiment-ran-did-the-research-advance/#interpretation"
+        ],
+        "basis": "curated-editorial-contrast",
+        "direction": "outgoing"
+      },
+      {
+        "target": "reader:the-score-is-not-the-system",
+        "type": "related topic",
+        "reason": "Both ask whether an agent can improve a measured score while missing the intended outcome. This video examines adaptive harness graders; the earlier Reader examines reward and evaluation boundary failures. Their distinct sources are a comparison, not independent replication of either paper.",
+        "provenance": [
+          "/the-grader-is-part-of-the-harness/#grading",
+          "/the-score-is-not-the-system/#thesis"
+        ],
+        "basis": "curated-editorial-comparison",
+        "direction": "outgoing"
+      }
+    ],
+    "relationshipDisposition": "Three qualified editorial comparisons about evaluation, inspectability and reward signals; none independently validates the research results.",
+    "review": {
+      "status": "independent-public-copy-reviewed; source-qualified",
+      "reviewer": "Independent read-only Codex editorial reviewer",
+      "reviewedSourceHead": "9a08b6f03da9000e770e82c3f9b56bb2f842a1f9",
+      "checkedAt": "2026-10-20T20:29:00Z",
+      "scope": "Exact public article, author paper findings, private caption and manifest hashes, receipt, graph routes, source privacy, opt-in 16:9 playback, and generated site checks.",
+      "findings": "Two MASS attribution issues corrected in the reviewed source copy; no remaining finding. Reviewed article SHA-256 eb326cad0a71a3158ee81bf477c94830c65347084cc8ec94e463d25d90a62d8d. Paper results remain author reports, not independently replicated."
+    },
+    "revisionHistory": [
+      {
+        "at": "2026-10-20T17:20:00Z",
+        "kind": "new-reader-candidate",
+        "reason": "Owner-requested exact-source video deconstruction with private custody and paper comparison."
+      },
+      {
+        "at": "2026-10-20T20:25:00Z",
+        "kind": "editorial-provenance-correction",
+        "reason": "Replaced a strawman claim with a bounded grader inference, identified distinct caption and browser transcript digests, and added the reward-versus-outcome Reader route."
+      }
+    ],
+    "editorialOrder": 20,
+    "orderReason": "Follow the existing evaluation and research-agent Readers with a focused test of adaptive harness claims.",
+    "relationshipReview": {
+      "reviewedAt": "2026-10-20",
+      "reviewedCatalogSize": 24,
+      "decision": "linked",
+      "reviewedTargets": [
+        "reader:make-good-work-inspectable",
+        "reader:the-experiment-ran-did-the-research-advance",
+        "reader:the-score-is-not-the-system"
+      ],
+      "rationale": "Compared the new video with all 23 existing Readers. Inspectable work, research evaluation and reward-versus-outcome design offer three substantive comparisons. The earlier Readers do not replicate the two papers."
+    }
+  },
+  "editorial": {
+    "overview": "Cloud Codes compares two research efforts that let an AI system revise its own working procedure, then argues that evaluation design determines whether this feedback helps.",
+    "whyItMatters": "Useful for teams tempted to treat an adaptive agent harness as a reusable product recipe. The reported gains are real author results on specified tasks, while coding transfer is mixed.",
+    "ghostMeshTakeaway": "Treat a proposed harness change as an experiment with a named grader, held-out tasks and a rollback path. Do not promote a self-judged gain into production authority."
+  }
+}

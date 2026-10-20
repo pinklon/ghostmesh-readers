@@ -57,10 +57,12 @@ class PublicationGate(unittest.TestCase):
   self.mutate(lambda d:d['readers'][0]['relationships'][0].update(provenance=[]));self.rejected('unqualified relation')
  def test_missing_or_generic_relationship_assessment_is_rejected(self):
   self.mutate(lambda d:d['readers'][0].pop('relationshipReview'));self.rejected('missing or invalid relationship review date')
-  self.mutate(lambda d:d['readers'][0].update(relationshipReview={'reviewedAt':'2026-10-20','reviewedCatalogSize':23,'decision':'none','reviewedTargets':[],'rationale':'No links'}));self.rejected('relationship review needs a substantive rationale')
+  self.mutate(lambda d:d['readers'][0].update(relationshipReview={'reviewedAt':'2026-10-20','reviewedCatalogSize':len(d['readers']),'decision':'none','reviewedTargets':[],'rationale':'No links'}));self.rejected('relationship review needs a substantive rationale')
+ def test_compact_relationship_review_date_is_rejected(self):
+  self.mutate(lambda d:d['readers'][0]['relationshipReview'].update(reviewedAt='20261020'));self.rejected('missing or invalid relationship review date')
  def test_stale_or_false_zero_relationship_assessment_is_rejected(self):
   self.mutate(lambda d:d['readers'][0]['relationshipReview'].update(reviewedCatalogSize=22));self.rejected('stale relationship review catalog size')
-  self.mutate(lambda d:d['readers'][0]['relationshipReview'].update(reviewedCatalogSize=23,decision='none',reviewedTargets=[]));self.rejected('relationship review targets differ from catalog edges')
+  self.mutate(lambda d:d['readers'][0]['relationshipReview'].update(reviewedCatalogSize=len(d['readers']),decision='none',reviewedTargets=[]));self.rejected('relationship review targets differ from catalog edges')
  def test_justified_zero_relationship_assessment_is_allowed(self):
   data=json.loads((self.root/'content/catalog.json').read_text())
   unlinked=[r for r in data['readers'] if not r['relationships']]
