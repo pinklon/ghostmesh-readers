@@ -2,9 +2,9 @@
 
 This is the one publication queue and release path for `pinklon/ghostmesh-readers`. One accepted publisher owns a candidate from source handoff through the final production receipt. Source custodians and independent reviewers can supply evidence or read-only findings; they do not start competing uploads. The public repository contains original analysis and sanitized receipts, never copied media, captions, full transcripts, private source packs, signed URLs, or credentials.
 
-## Queue record
+## Canonical queue and evidence
 
-Keep one short record per proposed Reader in the publisher's current task receipt, using these fields. Do not create a second tracker or uploader.
+The status table below is the one maintained Reader queue. Add a row when a source is accepted; update its exact candidate head, review gate, PR and deployment state as work advances. The publisher's task receipt holds detailed evidence for these fields, not a second status queue. Keep private custody in private storage and cite only sanitized evidence in public Git. Do not create a second tracker or uploader.
 
 | Field | Required entry |
 | --- | --- |
@@ -15,12 +15,12 @@ Keep one short record per proposed Reader in the publisher's current task receip
 | Editorial gate | Independent review of exact article and public receipt; findings and resolution. Reuse that review while those reviewed bytes and source claims are unchanged. Review changed material again. |
 | Deployment | PR and exact head, CI and Netlify preview, owner publication decision, production commit, live page/catalog/map/sitemap checks, and final receipt. |
 
-Current queue checkpoint, October 20, 2026: the production catalog has 25 Readers. There is no currently approved, unpublished Reader.
+Current queue checkpoint, October 20, 2026: the production catalog has 25 Readers. There is no currently approved, unpublished Reader. Update this table when that changes; a dated checkpoint is not a substitute for maintaining the rows.
 
-| Exact source | Publication state | Public receipt |
+| Exact source | Candidate and editorial gate | Deployment state and public receipt |
 | --- | --- | --- |
-| [Cloud Codes, `AKovdUFvThA`](https://www.youtube.com/watch?v=AKovdUFvThA) | Reviewed and published through [PR 42](https://github.com/pinklon/ghostmesh-readers/pull/42). | [The Grader Is Part of the Harness](https://youtube.shareplane.malott.ai/the-grader-is-part-of-the-harness/) |
-| [16-Bit Business, `DP9YPiWL_zM`](https://www.youtube.com/watch?v=DP9YPiWL_zM) | Reviewed and published through [PR 43](https://github.com/pinklon/ghostmesh-readers/pull/43), merge `8b3a6a8f0853848e3105d9e75c09a2896edbb2e4`. | [The Stop Button Is Outside the Chat](https://youtube.shareplane.malott.ai/the-stop-button-is-outside-the-chat/) |
+| [Cloud Codes, `AKovdUFvThA`](https://www.youtube.com/watch?v=AKovdUFvThA) | Head `c89a3d4ab560bc12c5e2fda9a519f7cf33453fb5`; independent public-copy and privacy review passed. | [PR 42](https://github.com/pinklon/ghostmesh-readers/pull/42) merged; [The Grader Is Part of the Harness](https://youtube.shareplane.malott.ai/the-grader-is-part-of-the-harness/) live. |
+| [16-Bit Business, `DP9YPiWL_zM`](https://www.youtube.com/watch?v=DP9YPiWL_zM) | Head `20b446627931dcfc9bbb2942cedac3d7d06a2435`; independent public-copy and privacy review passed. | [PR 43](https://github.com/pinklon/ghostmesh-readers/pull/43) merged at `8b3a6a8f0853848e3105d9e75c09a2896edbb2e4`; [The Stop Button Is Outside the Chat](https://youtube.shareplane.malott.ai/the-stop-button-is-outside-the-chat/) live. |
 
 Muse, Bostrom, California, Gates, and Robinson are published through PRs 36–40. Historical draft PRs 31–34 retain their VIDEO-FIRST holds; their previews are not release candidates.
 
