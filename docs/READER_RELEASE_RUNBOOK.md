@@ -4,7 +4,7 @@ This is the one publication queue and release path for `pinklon/ghostmesh-reader
 
 ## Canonical queue and evidence
 
-The status table below is the one maintained Reader queue. Add a row when a source is accepted; update its exact candidate head, review gate, PR and deployment state as work advances. The publisher's task receipt holds detailed evidence for these fields, not a second status queue. Keep private custody in private storage and cite only sanitized evidence in public Git. Do not create a second tracker or uploader.
+The status table below is the one maintained Reader queue. Add a row when a source is accepted; update its public-safe evidence status or receipt reference, exact candidate head, review gate, PR and deployment state as work advances. The publisher's task receipt holds detailed evidence for these fields, not a second status queue. Keep private custody in private storage and cite only sanitized evidence in public Git. Do not create a second tracker or uploader.
 
 | Field | Required entry |
 | --- | --- |
@@ -17,10 +17,10 @@ The status table below is the one maintained Reader queue. Add a row when a sour
 
 Current queue checkpoint, October 20, 2026: the production catalog has 25 Readers. There is no currently approved, unpublished Reader. Update this table when that changes; a dated checkpoint is not a substitute for maintaining the rows.
 
-| Exact source | Candidate and editorial gate | Deployment state and public receipt |
-| --- | --- | --- |
-| [Cloud Codes, `AKovdUFvThA`](https://www.youtube.com/watch?v=AKovdUFvThA) | Head `c89a3d4ab560bc12c5e2fda9a519f7cf33453fb5`; independent public-copy and privacy review passed. | [PR 42](https://github.com/pinklon/ghostmesh-readers/pull/42) merged; [The Grader Is Part of the Harness](https://youtube.shareplane.malott.ai/the-grader-is-part-of-the-harness/) live. |
-| [16-Bit Business, `DP9YPiWL_zM`](https://www.youtube.com/watch?v=DP9YPiWL_zM) | Head `20b446627931dcfc9bbb2942cedac3d7d06a2435`; independent public-copy and privacy review passed. | [PR 43](https://github.com/pinklon/ghostmesh-readers/pull/43) merged at `8b3a6a8f0853848e3105d9e75c09a2896edbb2e4`; [The Stop Button Is Outside the Chat](https://youtube.shareplane.malott.ai/the-stop-button-is-outside-the-chat/) live. |
+| Exact source | Public-safe evidence gate | Candidate and editorial gate | Deployment state |
+| --- | --- | --- | --- |
+| [Cloud Codes, `AKovdUFvThA`](https://www.youtube.com/watch?v=AKovdUFvThA) | Private source qualified; [sanitized claim and custody receipt](https://youtube.shareplane.malott.ai/the-grader-is-part-of-the-harness/receipt.json). | Head `c89a3d4ab560bc12c5e2fda9a519f7cf33453fb5`; independent public-copy and privacy review passed. | [PR 42](https://github.com/pinklon/ghostmesh-readers/pull/42) merged; [The Grader Is Part of the Harness](https://youtube.shareplane.malott.ai/the-grader-is-part-of-the-harness/) live. |
+| [16-Bit Business, `DP9YPiWL_zM`](https://www.youtube.com/watch?v=DP9YPiWL_zM) | Private source qualified; [sanitized claim and custody receipt](https://youtube.shareplane.malott.ai/the-stop-button-is-outside-the-chat/receipt.json). | Head `20b446627931dcfc9bbb2942cedac3d7d06a2435`; independent public-copy and privacy review passed. | [PR 43](https://github.com/pinklon/ghostmesh-readers/pull/43) merged at `8b3a6a8f0853848e3105d9e75c09a2896edbb2e4`; [The Stop Button Is Outside the Chat](https://youtube.shareplane.malott.ai/the-stop-button-is-outside-the-chat/) live. |
 
 Muse, Bostrom, California, Gates, and Robinson are published through PRs 36–40. Historical draft PRs 31–34 retain their VIDEO-FIRST holds; their previews are not release candidates.
 
