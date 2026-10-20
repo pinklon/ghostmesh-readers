@@ -24,6 +24,15 @@ def paper_cover(source):
             '<span><small>02 / MODEL SHIFT</small><strong>TabPFN<br>distribution</strong></span></div>'
             '<span class="gm-paper-cover-footer">TWO CASES <b>↘</b> TWO RESEARCH QUESTIONS</span></div>')
 
+def analysis_cover():
+    """Shared original typographic cover; no third-party page or media capture."""
+    return ('<div class="gm-paper-cover" role="img" '
+            'aria-label="Original GhostMesh typographic cover for a public-record source analysis">'
+            '<span class="gm-paper-cover-id">GHOSTMESH / SOURCE ANALYSIS</span>'
+            '<div class="gm-paper-cover-cases"><span><small>01 / RECORD</small><strong>Read the<br>source</strong></span>'
+            '<span><small>02 / JUDGMENT</small><strong>Test the<br>claim</strong></span></div>'
+            '<span class="gm-paper-cover-footer">EVIDENCE <b>↘</b> INFERENCE</span></div>')
+
 
 # Reader-specific route labels and calls. These are recommendations to read or
 # test, not verification labels. Keep the source-grounding checks below when
@@ -47,6 +56,10 @@ CALLS = {
     'the-test-must-name-its-target': ('Use for evaluation design', 'Test grounded use and changed premises before assigning a broad understanding label.'),
     'the-parallel-result-is-not-the-product': ('Study before migrating', 'Reproduce quality, latency and cost on your own workload before changing the product stack.'),
     'the-experiment-ran-did-the-research-advance': ('Study the evaluation', 'Separate completed engineering from research judgment; two selected cases cannot set a universal ceiling.'),
+    'a-benchmark-is-not-a-lab': ('Read with limits', 'Read the trial for its primary result, then separate secondary progress, the LANL pilot and AISI digital signals.'),
+    'the-forecast-the-box-and-the-welfare-file': ('Study the records', 'Keep the dated forecast, practical control test and model-welfare uncertainty in separate decision files.'),
+    'when-safety-changes-the-work': ('Inspect the decision trail', 'Ask for threshold, test conditions, escalation, dated decision and an outside scoped retest.'),
+    'a-list-is-not-a-ballot-verdict': ('Investigate the leads', 'Treat the disputed list as leads; require individual eligibility evidence and a lawful ballot decision.'),
 }
 
 
@@ -54,6 +67,8 @@ def _poster(reader):
     source = reader['source']
     if source.get('kind') == 'paper':
         return paper_cover(source)
+    if source.get('kind') == 'analysis':
+        return analysis_cover()
     platform = source.get('platform', 'YouTube')
     aspect = source.get('mediaAspect')
     if platform not in {'YouTube', 'Instagram'} or aspect not in {'16:9', '9:16', '1:1', 'unknown'}:
@@ -81,8 +96,12 @@ def card(reader, number=None):
     call_label, call = CALLS[slug]
     unverified = sum(claim['status'] == 'unverified' for claim in reader['claims'])
     total = len(reader['claims'])
-    paper = reader['source'].get('kind') == 'paper'
-    platform = 'paper' if paper else reader['source'].get('platform', 'YouTube')
+    kind = reader['source'].get('kind')
+    paper = kind == 'paper'
+    analysis = kind == 'analysis'
+    platform = 'public records' if analysis else 'paper' if paper else reader['source'].get('platform', 'YouTube')
+    source_href = f'/{_e(slug)}/#sources' if analysis else _e(reader['source']['url'])
+    source_label = 'Inspect cited records' if analysis else f'Original {_e(platform)} source'
     number = number if number is not None else reader['editorialOrder'] + 1
     search_text = ' '.join([reader['title'], reader['overview'], reader['category'], *reader['tags'], call_label, call])
     tags = ''.join(f'<span>{_e(tag)}</span>' for tag in reader['tags'])
@@ -102,10 +121,10 @@ def card(reader, number=None):
         'These labels are claim-level, not an article-wide verification score.</p>'
         f'<p class="gm-archive-tags" aria-label="Topics">{tags}</p>'
         '<div class="gm-library-actions gm-archive-actions">'
-        f'<a href="/{_e(slug)}/">Read the deconstruction <span aria-hidden="true">↗</span></a>'
-        f'<a href="{_e(reader["source"]["url"])}">Original {_e(platform)} source <span aria-hidden="true">↗</span></a>'
+        f'<a href="/{_e(slug)}/">{"Read the analysis" if analysis else "Read the deconstruction"} <span aria-hidden="true">↗</span></a>'
+        f'<a href="{source_href}">{source_label} <span aria-hidden="true">↗</span></a>'
         '</div></div>'
-        f'<div class="gm-archive-visual"><span>{"Original source / direct link" if paper else "Original source / opt-in player"}</span>{_poster(reader)}</div>'
+        f'<div class="gm-archive-visual"><span>{"Public records / links inside analysis" if analysis else "Original source / direct link" if paper else "Original source / opt-in player"}</span>{_poster(reader)}</div>'
         '</article>'
     )
 
