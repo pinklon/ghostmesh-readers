@@ -49,6 +49,7 @@ CALLS = {
     'the-experiment-ran-did-the-research-advance': ('Study the evaluation', 'Separate completed engineering from research judgment; two selected cases cannot set a universal ceiling.'),
     'the-list-is-the-business-claim': ('Interesting, unproven', 'Treat an agent-assisted lead list as a hypothesis with a data-rights ledger.'),
     'the-label-the-box-and-the-bargain': ('Watch selectively', 'Keep AGI labels, control evidence and digital welfare questions in separate records.'),
+    'the-warning-is-not-a-ballot-ruling': ('Watch selectively', 'Test the warning against the original letters; a likely match list is not itself a ballot ruling.'),
 }
 
 
