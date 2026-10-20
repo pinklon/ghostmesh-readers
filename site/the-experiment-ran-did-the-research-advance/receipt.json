@@ -264,12 +264,12 @@
     },
     "relationshipReview": {
       "reviewedAt": "2026-10-20",
-      "reviewedCatalogSize": 23,
+      "reviewedCatalogSize": 24,
       "decision": "linked",
       "reviewedTargets": [
         "reader:a-scenario-is-not-a-singularity"
       ],
-      "rationale": "The physics benchmark Reader provides a contrasting bounded task score. It does not assess the two open-ended research contributions studied in this paper."
+      "rationale": "The physics benchmark Reader provides a contrasting bounded task score. It does not assess the two open-ended research contributions studied in this paper. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted."
     }
   },
   "editorial": {

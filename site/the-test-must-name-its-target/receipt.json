@@ -290,12 +290,12 @@
     "orderReason": "Read after the existing Count Grey Matter interpretability Reader to examine a distinct functional-understanding claim.",
     "relationshipReview": {
       "reviewedAt": "2026-10-20",
-      "reviewedCatalogSize": 23,
+      "reviewedCatalogSize": 24,
       "decision": "linked",
       "reviewedTargets": [
         "reader:the-microscope-is-not-a-soul"
       ],
-      "rationale": "The microscope Reader by the same creator also limits inferences from model internals. Functional understanding and subjective experience remain distinct claims."
+      "rationale": "The microscope Reader by the same creator also limits inferences from model internals. Functional understanding and subjective experience remain distinct claims. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted."
     }
   },
   "editorial": {

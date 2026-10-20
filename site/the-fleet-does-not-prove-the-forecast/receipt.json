@@ -315,13 +315,13 @@
     "orderReason": "Read after the earlier Amap fleet case to examine the broader forecast and its evidence limits.",
     "relationshipReview": {
       "reviewedAt": "2026-10-20",
-      "reviewedCatalogSize": 23,
+      "reviewedCatalogSize": 24,
       "decision": "linked",
       "reviewedTargets": [
         "reader:the-inbox-was-a-boundary",
         "reader:when-agents-become-the-customer"
       ],
-      "rationale": "The Amap inbox Reader shares a source event; the agent-customer Reader offers a separate product forecast. Neither validates broad web-adoption predictions."
+      "rationale": "The Amap inbox Reader shares a source event; the agent-customer Reader offers a separate product forecast. Neither validates broad web-adoption predictions. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted."
     }
   },
   "editorial": {

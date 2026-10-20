@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "host": "https://youtube.shareplane.malott.ai",
-  "revision": "2026-10-19T13:52:14Z",
+  "revision": "2026-10-20T17:20:00Z",
   "categories": [
     "AI & Technology",
     "Society & Politics",
@@ -406,14 +406,14 @@
       },
       "relationshipReview": {
         "reviewedAt": "2026-10-20",
-        "reviewedCatalogSize": 23,
+        "reviewedCatalogSize": 24,
         "decision": "linked",
         "reviewedTargets": [
           "reader:ask-for-the-outcome-keep-the-boundary",
           "reader:make-good-work-inspectable",
           "reader:when-software-becomes-legible"
         ],
-        "rationale": "The three existing routes compare how an AI-assisted choice is challenged, verified and made inspectable. Their briefs support navigation, not proof of a shared observed result."
+        "rationale": "The three existing routes compare how an AI-assisted choice is challenged, verified and made inspectable. Their briefs support navigation, not proof of a shared observed result. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted."
       }
     },
     {
@@ -911,14 +911,14 @@
       },
       "relationshipReview": {
         "reviewedAt": "2026-10-20",
-        "reviewedCatalogSize": 23,
+        "reviewedCatalogSize": 24,
         "decision": "linked",
         "reviewedTargets": [
           "reader:a-challenge-is-not-a-verdict",
           "reader:make-good-work-inspectable",
           "reader:the-funnel-is-not-the-frontier"
         ],
-        "rationale": "The architecture challenge, inspectable-work interview and AI-use funnel all separate ambitious agent work from verified outcomes. The links are editorial comparisons only."
+        "rationale": "The architecture challenge, inspectable-work interview and AI-use funnel all separate ambitious agent work from verified outcomes. The links are editorial comparisons only. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted."
       }
     },
     {
@@ -1178,14 +1178,14 @@
       },
       "relationshipReview": {
         "reviewedAt": "2026-10-20",
-        "reviewedCatalogSize": 23,
+        "reviewedCatalogSize": 24,
         "decision": "linked",
         "reviewedTargets": [
           "reader:the-agent-a-company-owns",
           "reader:the-inbox-was-a-boundary",
           "reader:the-key-was-the-boundary"
         ],
-        "rationale": "The company-agent interview builds on the same Vercel subject; the inbox and credential Readers compare separate authority boundaries. None verifies the others' incidents."
+        "rationale": "The company-agent interview builds on the same Vercel subject; the inbox and credential Readers compare separate authority boundaries. None verifies the others' incidents. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted."
       }
     },
     {
@@ -1745,14 +1745,14 @@
       },
       "relationshipReview": {
         "reviewedAt": "2026-10-20",
-        "reviewedCatalogSize": 23,
+        "reviewedCatalogSize": 24,
         "decision": "linked",
         "reviewedTargets": [
           "reader:a-challenge-is-not-a-verdict",
           "reader:ask-for-the-outcome-keep-the-boundary",
           "reader:the-funnel-is-not-the-frontier"
         ],
-        "rationale": "The linked architecture review, outcome framing and AI-use funnel all ask how to inspect agent work. They do not independently establish this interview's results."
+        "rationale": "The linked architecture review, outcome framing and AI-use funnel all ask how to inspect agent work. They do not independently establish this interview's results. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted."
       }
     },
     {
@@ -2041,14 +2041,14 @@
       },
       "relationshipReview": {
         "reviewedAt": "2026-10-20",
-        "reviewedCatalogSize": 23,
+        "reviewedCatalogSize": 24,
         "decision": "linked",
         "reviewedTargets": [
           "reader:autonomy-needs-an-interface",
           "reader:the-inbox-was-a-boundary",
           "reader:the-key-was-the-boundary"
         ],
-        "rationale": "The Vercel follow-on shares a named company-agent subject, while the inbox and credential Readers compare delegated authority through distinct source events."
+        "rationale": "The Vercel follow-on shares a named company-agent subject, while the inbox and credential Readers compare delegated authority through distinct source events. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted."
       }
     },
     {
@@ -2354,14 +2354,14 @@
       },
       "relationshipReview": {
         "reviewedAt": "2026-10-20",
-        "reviewedCatalogSize": 23,
+        "reviewedCatalogSize": 24,
         "decision": "linked",
         "reviewedTargets": [
           "reader:ask-for-the-outcome-keep-the-boundary",
           "reader:make-good-work-inspectable",
           "reader:the-scan-never-reached-the-login"
         ],
-        "rationale": "The three routes compare ambition and verification in agent workflows, including a scan that ended without confirmed findings. No shared empirical outcome is claimed."
+        "rationale": "The three routes compare ambition and verification in agent workflows, including a scan that ended without confirmed findings. No shared empirical outcome is claimed. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted."
       }
     },
     {
@@ -2637,14 +2637,14 @@
       },
       "relationshipReview": {
         "reviewedAt": "2026-10-20",
-        "reviewedCatalogSize": 23,
+        "reviewedCatalogSize": 24,
         "decision": "linked",
         "reviewedTargets": [
           "reader:the-key-was-the-boundary",
           "reader:autonomy-needs-an-interface",
           "reader:the-agent-a-company-owns"
         ],
-        "rationale": "The hidden mailbox case is compared with a separate credential exposure and two company-agent authority readings. The incidents and their evidence remain distinct."
+        "rationale": "The hidden mailbox case is compared with a separate credential exposure and two company-agent authority readings. The incidents and their evidence remain distinct. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted."
       }
     },
     {
@@ -3130,14 +3130,14 @@
       },
       "relationshipReview": {
         "reviewedAt": "2026-10-20",
-        "reviewedCatalogSize": 23,
+        "reviewedCatalogSize": 24,
         "decision": "linked",
         "reviewedTargets": [
           "reader:the-inbox-was-a-boundary",
           "reader:autonomy-needs-an-interface",
           "reader:the-agent-a-company-owns"
         ],
-        "rationale": "The credential incident is compared with a hidden mailbox boundary and company-agent permissions. Shared authority questions do not make the events equivalent."
+        "rationale": "The credential incident is compared with a hidden mailbox boundary and company-agent permissions. Shared authority questions do not make the events equivalent. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted."
       }
     },
     {
@@ -3497,12 +3497,12 @@
       },
       "relationshipReview": {
         "reviewedAt": "2026-10-20",
-        "reviewedCatalogSize": 23,
+        "reviewedCatalogSize": 24,
         "decision": "linked",
         "reviewedTargets": [
           "reader:the-score-is-not-the-system"
         ],
-        "rationale": "The score Reader discusses the same Anthropic representation-steering evidence family. The link does not create independent support for consciousness or experience."
+        "rationale": "The score Reader discusses the same Anthropic representation-steering evidence family. The link does not create independent support for consciousness or experience. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted."
       }
     },
     {
@@ -3934,14 +3934,14 @@
       },
       "relationshipReview": {
         "reviewedAt": "2026-10-20",
-        "reviewedCatalogSize": 23,
+        "reviewedCatalogSize": 24,
         "decision": "linked",
         "reviewedTargets": [
           "reader:ask-for-the-outcome-keep-the-boundary",
           "reader:make-good-work-inspectable",
           "reader:the-funnel-is-not-the-frontier"
         ],
-        "rationale": "The outcome, inspectable-work and AI-use Readers frame the limits of agent-tool demonstrations. None independently verifies this incomplete scan."
+        "rationale": "The outcome, inspectable-work and AI-use Readers frame the limits of agent-tool demonstrations. None independently verifies this incomplete scan. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted."
       }
     },
     {
@@ -4272,12 +4272,12 @@
       },
       "relationshipReview": {
         "reviewedAt": "2026-10-20",
-        "reviewedCatalogSize": 23,
+        "reviewedCatalogSize": 24,
         "decision": "linked",
         "reviewedTargets": [
           "reader:the-microscope-is-not-a-soul"
         ],
-        "rationale": "The microscope Reader helps interpret representation evidence, while its source and this Reader's agent-evaluation incident have separate evidentiary reach."
+        "rationale": "The microscope Reader helps interpret representation evidence, while its source and this Reader's agent-evaluation incident have separate evidentiary reach. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted."
       }
     },
     {
@@ -4533,14 +4533,14 @@
       },
       "relationshipReview": {
         "reviewedAt": "2026-10-20",
-        "reviewedCatalogSize": 23,
+        "reviewedCatalogSize": 24,
         "decision": "linked",
         "reviewedTargets": [
           "reader:autonomy-needs-an-interface",
           "reader:make-good-work-inspectable",
           "reader:the-agent-a-company-owns"
         ],
-        "rationale": "The linked founder, inspectable-work and company-agent Readers compare product workflows and authority. Forecasts are kept separate from observed adoption."
+        "rationale": "The linked founder, inspectable-work and company-agent Readers compare product workflows and authority. Forecasts are kept separate from observed adoption. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted."
       }
     },
     {
@@ -4825,14 +4825,14 @@
       },
       "relationshipReview": {
         "reviewedAt": "2026-10-20",
-        "reviewedCatalogSize": 23,
+        "reviewedCatalogSize": 24,
         "decision": "linked",
         "reviewedTargets": [
           "reader:a-challenge-is-not-a-verdict",
           "reader:make-good-work-inspectable",
           "reader:when-agents-become-the-customer"
         ],
-        "rationale": "The architecture challenge, inspectable-work interview and agent-service forecast provide distinct routes through software legibility, not corroboration of reverse engineering."
+        "rationale": "The architecture challenge, inspectable-work interview and agent-service forecast provide distinct routes through software legibility, not corroboration of reverse engineering. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted."
       }
     },
     {
@@ -5153,13 +5153,13 @@
       "orderReason": "Read after the earlier Amap fleet case to examine the broader forecast and its evidence limits.",
       "relationshipReview": {
         "reviewedAt": "2026-10-20",
-        "reviewedCatalogSize": 23,
+        "reviewedCatalogSize": 24,
         "decision": "linked",
         "reviewedTargets": [
           "reader:the-inbox-was-a-boundary",
           "reader:when-agents-become-the-customer"
         ],
-        "rationale": "The Amap inbox Reader shares a source event; the agent-customer Reader offers a separate product forecast. Neither validates broad web-adoption predictions."
+        "rationale": "The Amap inbox Reader shares a source event; the agent-customer Reader offers a separate product forecast. Neither validates broad web-adoption predictions. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted."
       }
     },
     {
@@ -5436,12 +5436,12 @@
       "orderReason": "Read after other model-score Readers to test how benchmark evidence is converted into a larger forecast.",
       "relationshipReview": {
         "reviewedAt": "2026-10-20",
-        "reviewedCatalogSize": 23,
+        "reviewedCatalogSize": 24,
         "decision": "linked",
         "reviewedTargets": [
           "reader:the-experiment-ran-did-the-research-advance"
         ],
-        "rationale": "The physics benchmark and research-evaluation paper measure different constructs. Their one link invites comparison without treating a bounded score as research judgment."
+        "rationale": "The physics benchmark and research-evaluation paper measure different constructs. Their one link invites comparison without treating a bounded score as research judgment. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted."
       }
     },
     {
@@ -5737,12 +5737,12 @@
       "orderReason": "Read after the existing Count Grey Matter interpretability Reader to examine a distinct functional-understanding claim.",
       "relationshipReview": {
         "reviewedAt": "2026-10-20",
-        "reviewedCatalogSize": 23,
+        "reviewedCatalogSize": 24,
         "decision": "linked",
         "reviewedTargets": [
           "reader:the-microscope-is-not-a-soul"
         ],
-        "rationale": "The microscope Reader by the same creator also limits inferences from model internals. Functional understanding and subjective experience remain distinct claims."
+        "rationale": "The microscope Reader by the same creator also limits inferences from model internals. Functional understanding and subjective experience remain distinct claims. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted."
       }
     },
     {
@@ -6012,10 +6012,10 @@
       "orderReason": "Read after the current collection as a research-method comparison with explicit deployment limits.",
       "relationshipReview": {
         "reviewedAt": "2026-10-20",
-        "reviewedCatalogSize": 23,
+        "reviewedCatalogSize": 24,
         "decision": "none",
         "reviewedTargets": [],
-        "rationale": "No other local Reader analyzes NCM or HybridAgents, their parallel-code and latent-reasoning methods, or the same benchmark claims. External studies remain outside this Reader graph."
+        "rationale": "No other local Reader analyzes NCM or HybridAgents, their parallel-code and latent-reasoning methods, or the same benchmark claims. External studies remain outside this Reader graph. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted."
       }
     },
     {
@@ -6285,12 +6285,12 @@
       },
       "relationshipReview": {
         "reviewedAt": "2026-10-20",
-        "reviewedCatalogSize": 23,
+        "reviewedCatalogSize": 24,
         "decision": "linked",
         "reviewedTargets": [
           "reader:a-scenario-is-not-a-singularity"
         ],
-        "rationale": "The physics benchmark Reader provides a contrasting bounded task score. It does not assess the two open-ended research contributions studied in this paper."
+        "rationale": "The physics benchmark Reader provides a contrasting bounded task score. It does not assess the two open-ended research contributions studied in this paper. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted."
       }
     },
     {
@@ -6654,13 +6654,13 @@
       },
       "relationshipReview": {
         "reviewedAt": "2026-10-20",
-        "reviewedCatalogSize": 23,
+        "reviewedCatalogSize": 24,
         "decision": "linked",
         "reviewedTargets": [
           "reader:when-agents-become-the-customer",
           "reader:the-agent-a-company-owns"
         ],
-        "rationale": "The agent-customer and company-agent Readers compare business authority and ownership questions. Neither establishes Muse lead rights or business outcomes."
+        "rationale": "The agent-customer and company-agent Readers compare business authority and ownership questions. Neither establishes Muse lead rights or business outcomes. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted."
       }
     },
     {
@@ -7156,13 +7156,13 @@
       },
       "relationshipReview": {
         "reviewedAt": "2026-10-20",
-        "reviewedCatalogSize": 23,
+        "reviewedCatalogSize": 24,
         "decision": "linked",
         "reviewedTargets": [
           "reader:the-test-must-name-its-target",
           "reader:the-microscope-is-not-a-soul"
         ],
-        "rationale": "The existing routes distinguish AGI labels from functional understanding and digital experience from representation evidence. Neither verifies the interview's exact speech."
+        "rationale": "The existing routes distinguish AGI labels from functional understanding and digital experience from representation evidence. Neither verifies the interview's exact speech. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted."
       }
     },
     {
@@ -7618,10 +7618,10 @@
       },
       "relationshipReview": {
         "reviewedAt": "2026-10-20",
-        "reviewedCatalogSize": 23,
+        "reviewedCatalogSize": 24,
         "decision": "none",
         "reviewedTargets": [],
-        "rationale": "The other published Readers do not examine this California voter-list dispute, individualized ballot procedure or conditional DOJ warning. AI evaluation analogies are too distant to admit as local routes."
+        "rationale": "The other published Readers do not examine this California voter-list dispute, individualized ballot procedure or conditional DOJ warning. AI evaluation analogies are too distant to admit as local routes. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted."
       }
     },
     {
@@ -8173,13 +8173,13 @@
       },
       "relationshipReview": {
         "reviewedAt": "2026-10-20",
-        "reviewedCatalogSize": 23,
+        "reviewedCatalogSize": 24,
         "decision": "linked",
         "reviewedTargets": [
           "reader:the-brakes-need-a-test",
           "reader:the-label-the-box-and-the-bargain"
         ],
-        "rationale": "The Gates risk interview supports two qualified routes: Robinson examines release safety process, and Bostrom distinguishes capability from control. Neither source verifies the other's risk magnitude."
+        "rationale": "The Gates risk interview supports two qualified routes: Robinson examines release safety process, and Bostrom distinguishes capability from control. Neither source verifies the other's risk magnitude. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted."
       }
     },
     {
@@ -8753,13 +8753,277 @@
       },
       "relationshipReview": {
         "reviewedAt": "2026-10-20",
-        "reviewedCatalogSize": 23,
+        "reviewedCatalogSize": 24,
         "decision": "linked",
         "reviewedTargets": [
           "reader:the-label-the-box-and-the-bargain",
           "reader:the-threshold-is-a-claim-not-a-test"
         ],
-        "rationale": "Robinson's incident and release-process analysis supports routes to Bostrom's bounded control example and Gates's risk threshold. These are comparison paths, not independent interview corroboration."
+        "rationale": "Robinson's incident and release-process analysis supports routes to Bostrom's bounded control example and Gates's risk threshold. These are comparison paths, not independent interview corroboration. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted."
+      }
+    },
+    {
+      "id": "reader:the-grader-is-part-of-the-harness",
+      "slug": "the-grader-is-part-of-the-harness",
+      "title": "The Grader Is Part of the Harness",
+      "category": "AI & Technology",
+      "tags": [
+        "agents",
+        "evaluation",
+        "research"
+      ],
+      "entities": [
+        "Cloud Codes",
+        "Harness Learning",
+        "MASS",
+        "Sakana AI"
+      ],
+      "source": {
+        "platform": "YouTube",
+        "url": "https://www.youtube.com/watch?v=AKovdUFvThA",
+        "videoId": "AKovdUFvThA",
+        "title": "Don’t Learn Harness Engineering. Learn This Instead",
+        "creator": "Cloud Codes",
+        "uploadDate": "20261020",
+        "durationSeconds": 748,
+        "mediaAspect": "16:9"
+      },
+      "published": "2026-10-20",
+      "updated": "2026-10-20T17:20:00Z",
+      "overview": "Cloud Codes compares two research efforts that let an AI system revise its own working procedure, then argues that evaluation design determines whether this feedback helps.",
+      "whyItMatters": "Useful for teams tempted to treat an adaptive agent harness as a reusable product recipe. The reported gains are real author results on specified tasks, while coding transfer is mixed.",
+      "ghostMeshTakeaway": "Treat a proposed harness change as an experiment with a named grader, held-out tasks and a rollback path. Do not promote a self-judged gain into production authority.",
+      "verdict": "Worth studying",
+      "architectureImpact": "experiment recommended",
+      "falsification": "Revisit the cautious call if independent held-out coding and operational tasks show reliable gains with recorded failures, cost, authority constraints and external grading; abandon a candidate if it only improves its own proxy score.",
+      "evidenceState": "partially corroborated",
+      "lastEvidenceChecked": "2026-10-20T17:20:00Z",
+      "freshness": "Publisher video, private caption aids and direct paper versions checked 2026-10-20. Benchmarks and product behavior can change; the two studies are not independent confirmations of the same outcome.",
+      "variant": "dossier",
+      "accent": "teal",
+      "claims": [
+        {
+          "id": "the-grader-is-part-of-the-harness--harness-learning-protocol",
+          "proposition": "Harness learning revises executable agent orchestration from task feedback while model weights stay fixed during test-time adaptation.",
+          "kind": "study-method",
+          "asOf": "2026-10-20",
+          "status": "corroborated",
+          "assessment": "The authors define a proposer that edits a frozen solver harness and train it with execution feedback.",
+          "limits": "Corroborates the reported design, not safe self-modification in an open production environment.",
+          "sourceLocation": "02:27-04:50",
+          "references": [
+            "harness-learning-2026"
+          ],
+          "counterevidence": [],
+          "temporalScope": "Video and paper versions checked 2026-10-20; study outcomes are specific to their reported protocols."
+        },
+        {
+          "id": "the-grader-is-part-of-the-harness--harness-learning-scores",
+          "proposition": "In the paper’s 21 unseen Reasoning Gym families, a trained 4B proposer averages 0.62 for one revision versus 0.56 for its 35B teacher under the same protocol.",
+          "kind": "study-result",
+          "asOf": "2026-10-20",
+          "status": "partially corroborated",
+          "assessment": "The author paper reports the comparison and a base proposer mean of 0.32.",
+          "limits": "The teacher does better under oracle best-of-eight selection. These are bounded puzzle scores, not coding reliability or a general model ranking.",
+          "sourceLocation": "03:15-04:50",
+          "references": [
+            "harness-learning-2026"
+          ],
+          "counterevidence": [],
+          "temporalScope": "Video and paper versions checked 2026-10-20; study outcomes are specific to their reported protocols."
+        },
+        {
+          "id": "the-grader-is-part-of-the-harness--mass-design",
+          "proposition": "MASS uses a single base model in distinct solver, optimizer and evaluator roles, then alternates workflow search with training on generated trajectories.",
+          "kind": "study-method",
+          "asOf": "2026-10-20",
+          "status": "corroborated",
+          "assessment": "The author paper specifies the role loop and two rounds using Qwen3.6-27B.",
+          "limits": "The evaluator is part of the same model family; this is not independent external grading.",
+          "sourceLocation": "04:51-07:01",
+          "references": [
+            "mass-2026"
+          ],
+          "counterevidence": [],
+          "temporalScope": "Video and paper versions checked 2026-10-20; study outcomes are specific to their reported protocols."
+        },
+        {
+          "id": "the-grader-is-part-of-the-harness--mass-transfer",
+          "proposition": "After two MASS rounds, score per output token rises 1.20 to 1.60 times baseline on four research benchmarks but is 0.96 on Terminal-Bench 2.0 and 0.94 on SWE-bench Verified.",
+          "kind": "study-result",
+          "asOf": "2026-10-20",
+          "status": "partially corroborated",
+          "assessment": "The research team reports these ratios for the stated benchmark set.",
+          "limits": "The coding ratios are below baseline and the team notes uneven transfer. Neither ratio predicts a GhostMesh workflow result.",
+          "sourceLocation": "06:04-08:05",
+          "references": [
+            "mass-2026",
+            "mass-team-2026"
+          ],
+          "counterevidence": [],
+          "temporalScope": "Video and paper versions checked 2026-10-20; study outcomes are specific to their reported protocols."
+        },
+        {
+          "id": "the-grader-is-part-of-the-harness--evaluation-bottleneck",
+          "proposition": "Better agent scaffolding by itself makes an agent trustworthy on new work.",
+          "kind": "editorial-inference",
+          "asOf": "2026-10-20",
+          "status": "disputed",
+          "assessment": "The video itself argues that a weak grader can optimize the wrong target; the two papers measure particular tasks and feedback loops.",
+          "limits": "A production decision needs holdout tasks, authority boundaries, cost and failure checks, with independent verification of important actions.",
+          "sourceLocation": "08:06-11:23",
+          "references": [
+            "harness-learning-2026",
+            "mass-2026"
+          ],
+          "counterevidence": [
+            "anthropic-evals-2026"
+          ],
+          "temporalScope": "Video and paper versions checked 2026-10-20; study outcomes are specific to their reported protocols."
+        }
+      ],
+      "references": [
+        {
+          "id": "harness-learning-2026",
+          "title": "Harness Learning Enables Generalizable Test-Time Adaptation",
+          "author": "Alvin Zhang and coauthors",
+          "publisher": "arXiv",
+          "url": "https://arxiv.org/html/2609.35738v1",
+          "publicationDate": "2026-09-28",
+          "eventDate": null,
+          "location": "Sections 3-6, Table 1 and Appendix B.1",
+          "sourceType": "research preprint",
+          "independence": "Direct author report, not independent replication or a production coding trial.",
+          "evidenceFamily": "harness-learning-2026",
+          "checkedAt": "2026-10-20T17:20:00Z",
+          "datePrecision": "day"
+        },
+        {
+          "id": "mass-2026",
+          "title": "Recursive Self-Improvement through Multi-Agent Self-Supervision",
+          "author": "Hyunin Lee and coauthors",
+          "publisher": "arXiv",
+          "url": "https://arxiv.org/html/2610.12176v1",
+          "publicationDate": "2026-10-08",
+          "eventDate": null,
+          "location": "Abstract, experiments and benchmark protocol",
+          "sourceType": "research preprint",
+          "independence": "Direct author report; the Sakana explanation describes the same evidence family.",
+          "evidenceFamily": "mass-2026",
+          "checkedAt": "2026-10-20T17:20:00Z",
+          "datePrecision": "day"
+        },
+        {
+          "id": "mass-team-2026",
+          "title": "MASS: Recursive Self-Improvement through Multi-Agent Self-Supervision",
+          "author": "Sakana AI research team",
+          "publisher": "Sakana AI",
+          "url": "https://pub.sakana.ai/mass/",
+          "publicationDate": "2026-10",
+          "eventDate": null,
+          "location": "Public benchmark Figure 3 and transfer discussion",
+          "sourceType": "research team report",
+          "independence": "Team explanation of its own paper, not an independent corroborating study.",
+          "evidenceFamily": "mass-2026",
+          "checkedAt": "2026-10-20T17:20:00Z",
+          "datePrecision": "month"
+        },
+        {
+          "id": "anthropic-evals-2026",
+          "title": "Demystifying Evals for AI Agents",
+          "author": "Anthropic engineering team",
+          "publisher": "Anthropic",
+          "url": "https://www.anthropic.com/research/demystifying-evals-for-ai-agents",
+          "publicationDate": "2026-01-09",
+          "eventDate": null,
+          "location": "Evaluation design and grader discussion",
+          "sourceType": "engineering guidance",
+          "independence": "Practitioner guidance for designing evaluations; no validation of either 2026 paper.",
+          "evidenceFamily": "anthropic-evals-guide",
+          "checkedAt": "2026-10-20T17:20:00Z",
+          "datePrecision": "day"
+        }
+      ],
+      "relationships": [
+        {
+          "target": "reader:make-good-work-inspectable",
+          "type": "related topic",
+          "reason": "Both ask how an agent result becomes inspectable. This Reader examines feedback used to change a harness; the earlier Reader asks for visible work and a reviewable result. The earlier video does not validate the paper benchmarks.",
+          "provenance": [
+            "/the-grader-is-part-of-the-harness/#grading",
+            "/make-good-work-inspectable/#core"
+          ],
+          "basis": "curated-editorial-comparison",
+          "direction": "outgoing"
+        },
+        {
+          "target": "reader:the-experiment-ran-did-the-research-advance",
+          "type": "related topic",
+          "reason": "Both consider evaluated research agents. This video highlights adaptive workflow optimization, while the paper Reader distinguishes a completed experiment from an advance in scientific knowledge. Shared interest is not independent replication.",
+          "provenance": [
+            "/the-grader-is-part-of-the-harness/#research-transfer",
+            "/the-experiment-ran-did-the-research-advance/#interpretation"
+          ],
+          "basis": "curated-editorial-contrast",
+          "direction": "outgoing"
+        }
+      ],
+      "relationshipDisposition": "Two qualified editorial comparisons about evaluation and inspectability; neither independently validates the research results.",
+      "legacyReceipt": {
+        "schema": "ghostmesh-reader-receipt-v2",
+        "createdAt": "2026-10-20T17:20:00Z",
+        "source": {
+          "platform": "YouTube",
+          "url": "https://www.youtube.com/watch?v=AKovdUFvThA",
+          "videoId": "AKovdUFvThA",
+          "title": "Don’t Learn Harness Engineering. Learn This Instead",
+          "creator": "Cloud Codes",
+          "uploadDate": "20261020",
+          "durationSeconds": 748,
+          "mediaAspect": "16:9"
+        },
+        "sourceInspection": {
+          "method": "Exact YouTube source metadata, private English caption export and private ReasonPack v1.0 media/caption capture; direct author papers checked separately",
+          "status": "verified-private-legacy-pack-and-caption-aid",
+          "captionSha256": "b0fdfcd766e019784ce0aa2df4082f13a6444d2ab8643d0dcb38c684f23396ae",
+          "manifestSha256": "630a3c3eafb1d5bcbaf375cbea4336553cde32704ebcb6c7b3169d9bc050ac9a",
+          "caveat": "The v1.0 pack members passed hash checks; automatic captions may mishear exact speech. This is not a current canonical ReasonPack qualification or replication of paper results.",
+          "publicationBoundary": "No video, audio, captions, full transcript, signed media URL or private path is published."
+        },
+        "custody": {
+          "status": "private-source-capture-verified",
+          "note": "Exact video ID and private pack member hashes were verified. The installed v1.0 tool does not produce the newer canonical pack format."
+        },
+        "overview": "A critique of two studies in which an AI revises the procedures used by another agent and the role of evaluation in that loop.",
+        "whyItMatters": "Research benchmarks can justify a scoped experiment, but not a general production claim.",
+        "ghostMeshTakeaway": "Specify a grader and holdout before allowing a harness to adapt."
+      },
+      "review": {
+        "status": "editorial-review-pending",
+        "reviewer": "Independent editorial review pending",
+        "reviewedSourceHead": null,
+        "checkedAt": "2026-10-20T17:20:00Z",
+        "scope": "Check source attribution, research results, counterevidence, privacy and article copy against the exact candidate before merge.",
+        "findings": "Candidate is not yet a publication decision."
+      },
+      "revisionHistory": [
+        {
+          "at": "2026-10-20T17:20:00Z",
+          "kind": "new-reader-candidate",
+          "reason": "Owner-requested exact-source video deconstruction with private custody and paper comparison."
+        }
+      ],
+      "editorialOrder": 20,
+      "orderReason": "Follow the existing evaluation and research-agent Readers with a focused test of adaptive harness claims.",
+      "relationshipReview": {
+        "reviewedAt": "2026-10-20",
+        "reviewedCatalogSize": 24,
+        "decision": "linked",
+        "reviewedTargets": [
+          "reader:make-good-work-inspectable",
+          "reader:the-experiment-ran-did-the-research-advance"
+        ],
+        "rationale": "Compared this video with all 23 published Readers. Only the inspectable-work and research-evaluation Readers present close substantive questions; their shared topics do not independently corroborate either paper."
       }
     }
   ],

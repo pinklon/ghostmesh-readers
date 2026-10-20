@@ -264,14 +264,14 @@
     },
     "relationshipReview": {
       "reviewedAt": "2026-10-20",
-      "reviewedCatalogSize": 23,
+      "reviewedCatalogSize": 24,
       "decision": "linked",
       "reviewedTargets": [
         "reader:autonomy-needs-an-interface",
         "reader:make-good-work-inspectable",
         "reader:the-agent-a-company-owns"
       ],
-      "rationale": "The linked founder, inspectable-work and company-agent Readers compare product workflows and authority. Forecasts are kept separate from observed adoption."
+      "rationale": "The linked founder, inspectable-work and company-agent Readers compare product workflows and authority. Forecasts are kept separate from observed adoption. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted."
     }
   },
   "editorial": {

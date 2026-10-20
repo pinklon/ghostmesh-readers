@@ -52,6 +52,7 @@ CALLS = {
     'the-warning-is-not-a-ballot-ruling': ('Watch selectively', 'Test the warning against the original letters; a likely match list is not itself a ballot ruling.'),
     'the-threshold-is-a-claim-not-a-test': ('Watch selectively', 'Ask what human-outcome test establishes each proposed danger threshold.'),
     'the-brakes-need-a-test': ('Watch selectively', 'Ask whether a warning reaches a named threshold, a decision and an outside retest.'),
+    'the-grader-is-part-of-the-harness': ('Test the grader first', 'Use held-out tasks and an outside outcome check before accepting an adaptive harness gain.'),
 }
 
 

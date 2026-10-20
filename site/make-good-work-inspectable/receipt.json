@@ -557,14 +557,14 @@
     },
     "relationshipReview": {
       "reviewedAt": "2026-10-20",
-      "reviewedCatalogSize": 23,
+      "reviewedCatalogSize": 24,
       "decision": "linked",
       "reviewedTargets": [
         "reader:a-challenge-is-not-a-verdict",
         "reader:ask-for-the-outcome-keep-the-boundary",
         "reader:the-funnel-is-not-the-frontier"
       ],
-      "rationale": "The linked architecture review, outcome framing and AI-use funnel all ask how to inspect agent work. They do not independently establish this interview's results."
+      "rationale": "The linked architecture review, outcome framing and AI-use funnel all ask how to inspect agent work. They do not independently establish this interview's results. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted."
     }
   }
 }
