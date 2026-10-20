@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "host": "https://youtube.shareplane.malott.ai",
-  "revision": "2026-10-20T17:20:00Z",
+  "revision": "2026-10-20T20:25:00Z",
   "categories": [
     "AI & Technology",
     "Society & Politics",
@@ -1598,7 +1598,7 @@
         "mediaAspect": "16:9"
       },
       "published": "2026-10-20",
-      "updated": "2026-10-20T17:20:00Z",
+      "updated": "2026-10-20T20:25:00Z",
       "overview": "Cloud Codes compares two research efforts that let an AI system revise its own working procedure, then argues that evaluation design determines whether this feedback helps.",
       "whyItMatters": "Useful for teams tempted to treat an adaptive agent harness as a reusable product recipe. The reported gains are real author results on specified tasks, while coding transfer is mixed.",
       "ghostMeshTakeaway": "Treat a proposed harness change as an experiment with a named grader, held-out tasks and a rollback path. Do not promote a self-judged gain into production authority.",
@@ -1606,7 +1606,7 @@
       "architectureImpact": "experiment recommended",
       "falsification": "Revisit the cautious call if independent held-out coding and operational tasks show reliable gains with recorded failures, cost, authority constraints and external grading; abandon a candidate if it only improves its own proxy score.",
       "evidenceState": "partially corroborated",
-      "lastEvidenceChecked": "2026-10-20T17:20:00Z",
+      "lastEvidenceChecked": "2026-10-20T20:25:00Z",
       "freshness": "Publisher video, private caption aids and direct paper versions checked 2026-10-20. Benchmarks and product behavior can change; the two studies are not independent confirmations of the same outcome.",
       "variant": "dossier",
       "accent": "teal",
@@ -1648,7 +1648,7 @@
           "asOf": "2026-10-20",
           "status": "corroborated",
           "assessment": "The author paper specifies the role loop and two rounds using Qwen3.6-27B.",
-          "limits": "The evaluator is part of the same model family; this is not independent external grading.",
+          "limits": "The evaluator inside workflow search is part of the same model family. Final research reporting is separate, using withheld external model judgments for workflow comparisons and the named benchmarks' own scoring rules.",
           "sourceLocation": "04:51-07:01",
           "references": [
             "mass-2026"
@@ -1663,7 +1663,7 @@
           "asOf": "2026-10-20",
           "status": "partially corroborated",
           "assessment": "The research team reports these ratios for the stated benchmark set.",
-          "limits": "The coding ratios are below baseline and the team notes uneven transfer. Neither ratio predicts a GhostMesh workflow result.",
+          "limits": "The coding ratios are below baseline and the team notes uneven transfer. The authors also find optimizer capacity can limit workflow improvement speed even when the evaluator can rank candidates. Neither ratio predicts a GhostMesh workflow result.",
           "sourceLocation": "06:04-08:05",
           "references": [
             "mass-2026",
@@ -1674,20 +1674,19 @@
         },
         {
           "id": "the-grader-is-part-of-the-harness--evaluation-bottleneck",
-          "proposition": "Better agent scaffolding by itself makes an agent trustworthy on new work.",
+          "proposition": "Grader design determines whether an adaptive harness gain reflects the intended task.",
           "kind": "editorial-inference",
           "asOf": "2026-10-20",
-          "status": "disputed",
-          "assessment": "The video itself argues that a weak grader can optimize the wrong target; the two papers measure particular tasks and feedback loops.",
-          "limits": "A production decision needs holdout tasks, authority boundaries, cost and failure checks, with independent verification of important actions.",
+          "status": "unverified",
+          "assessment": "Private automatic captions indicate the narrator treats evaluation quality as the central design problem. The cited papers and Anthropic guide explain feedback and grading, but no source tests this video’s proposed production prescription.",
+          "limits": "This is a GhostMesh production-design inference from the reported studies and source aid, not the optimizer-capacity bottleneck measured in the MASS ablation, a measured deployment result, or a verified exact quotation.",
           "sourceLocation": "08:06-11:23",
           "references": [
             "harness-learning-2026",
-            "mass-2026"
-          ],
-          "counterevidence": [
+            "mass-2026",
             "anthropic-evals-2026"
           ],
+          "counterevidence": [],
           "temporalScope": "Video and paper versions checked 2026-10-20; study outcomes are specific to their reported protocols."
         }
       ],
@@ -1775,9 +1774,20 @@
           ],
           "basis": "curated-editorial-contrast",
           "direction": "outgoing"
+        },
+        {
+          "target": "reader:the-score-is-not-the-system",
+          "type": "related topic",
+          "reason": "Both ask whether an agent can improve a measured score while missing the intended outcome. This video examines adaptive harness graders; the earlier Reader examines reward and evaluation boundary failures. Their distinct sources are a comparison, not independent replication of either paper.",
+          "provenance": [
+            "/the-grader-is-part-of-the-harness/#grading",
+            "/the-score-is-not-the-system/#thesis"
+          ],
+          "basis": "curated-editorial-comparison",
+          "direction": "outgoing"
         }
       ],
-      "relationshipDisposition": "Two qualified editorial comparisons about evaluation and inspectability; neither independently validates the research results.",
+      "relationshipDisposition": "Three qualified editorial comparisons about evaluation, inspectability and reward signals; none independently validates the research results.",
       "review": {
         "status": "editorial-review-pending",
         "reviewer": "Independent editorial review pending",
@@ -1791,6 +1801,11 @@
           "at": "2026-10-20T17:20:00Z",
           "kind": "new-reader-candidate",
           "reason": "Owner-requested exact-source video deconstruction with private custody and paper comparison."
+        },
+        {
+          "at": "2026-10-20T20:25:00Z",
+          "kind": "editorial-provenance-correction",
+          "reason": "Replaced a strawman claim with a bounded grader inference, identified distinct caption and browser transcript digests, and added the reward-versus-outcome Reader route."
         }
       ],
       "editorialOrder": 20,
@@ -1801,9 +1816,10 @@
         "decision": "linked",
         "reviewedTargets": [
           "reader:make-good-work-inspectable",
-          "reader:the-experiment-ran-did-the-research-advance"
+          "reader:the-experiment-ran-did-the-research-advance",
+          "reader:the-score-is-not-the-system"
         ],
-        "rationale": "Compared this video with all 23 published Readers. Only the inspectable-work and research-evaluation Readers present close substantive questions; their shared topics do not independently corroborate either paper."
+        "rationale": "Compared the new video with all 23 existing Readers. Inspectable work, research evaluation and reward-versus-outcome design offer three substantive comparisons. The earlier Readers do not replicate the two papers."
       },
       "rank": 20
     },
@@ -6406,7 +6422,7 @@
         "reviewedTargets": [
           "reader:the-microscope-is-not-a-soul"
         ],
-        "rationale": "The microscope Reader helps interpret representation evidence, while its source and this Reader's agent-evaluation incident have separate evidentiary reach. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted."
+        "rationale": "The microscope Reader helps interpret representation evidence, while its source and this Reader's agent-evaluation incident have separate evidentiary reach. The new harness Reader is a relevant incoming comparison about grader design; no new outgoing route is needed."
       },
       "rank": 3
     },

@@ -5,7 +5,7 @@
   "visibility": "public",
   "readerCount": 24,
   "assessmentCount": 24,
-  "relationshipCount": 50,
+  "relationshipCount": 51,
   "nodes": [
     {
       "id": "reader:ask-for-the-outcome-keep-the-boundary",
@@ -70,7 +70,7 @@
         "reviewedTargets": [
           "reader:the-microscope-is-not-a-soul"
         ],
-        "rationale": "The microscope Reader helps interpret representation evidence, while its source and this Reader's agent-evaluation incident have separate evidentiary reach. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted."
+        "rationale": "The microscope Reader helps interpret representation evidence, while its source and this Reader's agent-evaluation incident have separate evidentiary reach. The new harness Reader is a relevant incoming comparison about grader design; no new outgoing route is needed."
       }
     },
     {
@@ -386,9 +386,10 @@
         "decision": "linked",
         "reviewedTargets": [
           "reader:make-good-work-inspectable",
-          "reader:the-experiment-ran-did-the-research-advance"
+          "reader:the-experiment-ran-did-the-research-advance",
+          "reader:the-score-is-not-the-system"
         ],
-        "rationale": "Compared this video with all 23 published Readers. Only the inspectable-work and research-evaluation Readers present close substantive questions; their shared topics do not independently corroborate either paper."
+        "rationale": "Compared the new video with all 23 existing Readers. Inspectable work, research evaluation and reward-versus-outcome design offer three substantive comparisons. The earlier Readers do not replicate the two papers."
       }
     }
   ],
@@ -991,6 +992,18 @@
         "/the-experiment-ran-did-the-research-advance/#interpretation"
       ],
       "basis": "curated-editorial-contrast",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:the-grader-is-part-of-the-harness",
+      "to": "reader:the-score-is-not-the-system",
+      "type": "related topic",
+      "reason": "Both ask whether an agent can improve a measured score while missing the intended outcome. This video examines adaptive harness graders; the earlier Reader examines reward and evaluation boundary failures. Their distinct sources are a comparison, not independent replication of either paper.",
+      "provenance": [
+        "/the-grader-is-part-of-the-harness/#grading",
+        "/the-score-is-not-the-system/#thesis"
+      ],
+      "basis": "curated-editorial-comparison",
       "direction": "outgoing"
     }
   ]
