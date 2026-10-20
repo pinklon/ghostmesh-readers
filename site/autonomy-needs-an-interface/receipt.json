@@ -268,14 +268,14 @@
     },
     "relationshipReview": {
       "reviewedAt": "2026-10-20",
-      "reviewedCatalogSize": 24,
+      "reviewedCatalogSize": 25,
       "decision": "linked",
       "reviewedTargets": [
         "reader:the-agent-a-company-owns",
         "reader:the-inbox-was-a-boundary",
         "reader:the-key-was-the-boundary"
       ],
-      "rationale": "The company-agent interview builds on the same Vercel subject; the inbox and credential Readers compare separate authority boundaries. None verifies the others' incidents. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted."
+      "rationale": "The company-agent interview builds on the same Vercel subject; the inbox and credential Readers compare separate authority boundaries. None verifies the others' incidents. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted."
     }
   },
   "editorial": {
