@@ -12,6 +12,335 @@
   ],
   "readers": [
     {
+      "id": "reader:the-list-is-the-business-claim",
+      "slug": "the-list-is-the-business-claim",
+      "title": "The List Is the Business Claim",
+      "category": "Business",
+      "tags": [
+        "agents",
+        "marketplaces",
+        "data rights"
+      ],
+      "entities": [
+        "Greg Isenberg",
+        "Meta Muse",
+        "Bland AI"
+      ],
+      "source": {
+        "platform": "YouTube",
+        "url": "https://www.youtube.com/watch?v=tpZOU1ugODQ",
+        "videoId": "tpZOU1ugODQ",
+        "title": "Meta Muse Will Create 1,000 Millionaires",
+        "creator": "Greg Isenberg",
+        "uploadDate": "20261019",
+        "durationSeconds": 1474,
+        "mediaAspect": "16:9"
+      },
+      "published": "2026-10-20",
+      "updated": "2026-10-20T04:39:08Z",
+      "overview": "The creator frames Meta's Muse agent as a way to find a local service niche, organize information from Facebook and Instagram surfaces, add an AI phone line, and turn the activity into a business.",
+      "whyItMatters": "Builders considering an agent-assisted marketplace can use this pitch to pressure-test where value actually accrues.",
+      "ghostMeshTakeaway": "Treat an agent-assisted lead list as a hypothesis with a data-rights ledger.",
+      "verdict": "Interesting, unproven",
+      "architectureImpact": "experiment recommended",
+      "falsification": "Revisit if a platform-permitted, consented workflow produces verified customer/provider matches, fulfilled service, repeat use and net revenue after acquisition and service costs. The millionaire forecast separately needs a declared denominator and observed outcomes.",
+      "evidenceState": "unverified",
+      "lastEvidenceChecked": "2026-10-20T04:29:55Z",
+      "freshness": "Source metadata and creator framing checked 2026-10-19; private automatic captions and eight frames read 2026-10-20. First-party Meta, Bland and FTC pages rechecked 2026-10-20. Pricing and product terms can change; no demo outcome or current case-specific platform permission verified.",
+      "variant": "essay",
+      "accent": "ochre",
+      "claims": [
+        {
+          "id": "MUSE-01",
+          "proposition": "Muse can browse and carry out approved tasks.",
+          "kind": "vendor-capability",
+          "asOf": "2026-10-20",
+          "status": "partially corroborated",
+          "assessment": "Publisher frames Muse as a working agent; sampled diagrams propose browser and calling tasks. Meta documents a browser, connected apps, background work and approvals.",
+          "limits": "Only Meta-documented capability is retained. No proof this demo successfully used every feature or had permission for this collection.",
+          "sourceLocation": "03:22–08:27; 13:46–17:20 (publisher chapters and private caption navigation)",
+          "references": [
+            "meta-muse-announcement",
+            "meta-muse-design"
+          ],
+          "counterevidence": [],
+          "temporalScope": "Video published 2026-10-19; source captions and sampled frames are imperfect aids. Product and policy statements are time-bounded to the checked records."
+        },
+        {
+          "id": "MUSE-02",
+          "proposition": "The Montreal night-nurse example demonstrates a viable $30/hour match.",
+          "kind": "source-outcome",
+          "asOf": "2026-10-20",
+          "status": "unverified",
+          "assessment": "Publisher description supplies the example; sampled screens show a proposal and prospective lists, not a completed match.",
+          "limits": "No verified customer, provider, consent, transaction, paid rate, fulfilled care or margin. Retain only as an illustrated search.",
+          "sourceLocation": "07:24–10:36; 20:38–21:40 (automatic-caption navigation)",
+          "references": [],
+          "counterevidence": [],
+          "temporalScope": "Video published 2026-10-19; source captions and sampled frames are imperfect aids. Product and policy statements are time-bounded to the checked records."
+        },
+        {
+          "id": "MUSE-03",
+          "proposition": "Social-platform material can become an owned, reusable lead list.",
+          "kind": "data-rights-inference",
+          "asOf": "2026-10-20",
+          "status": "unverified",
+          "assessment": "Publisher and sampled diagrams propose a retained list. Screens at 13:50 and 20:45 show separate apparent passes with different claimed provenance. Meta says automated Facebook collection requires prior permission.",
+          "limits": "No verified external search, collection permission, individual consent, lawful reuse or sale. No on-screen identities or contacts reproduced.",
+          "sourceLocation": "05:44–08:01; 13:46–17:20; 20:38–21:40 (captions and sampled frames)",
+          "references": [],
+          "counterevidence": [
+            "meta-facebook-scraping"
+          ],
+          "temporalScope": "Video published 2026-10-19; source captions and sampled frames are imperfect aids. Product and policy statements are time-bounded to the checked records."
+        },
+        {
+          "id": "MUSE-04",
+          "proposition": "The agent phone line costs about $15.",
+          "kind": "vendor-price",
+          "asOf": "2026-10-20",
+          "status": "partially corroborated",
+          "assessment": "Bland advertises $14.99 only for the first month of the first Agent Phone Plan per account owner, then $29.99 monthly; extra plans start at $29.99. The plan has one concurrent call and fair-use limits.",
+          "limits": "Current vendor price is not proof the creator bought the plan, placed a working call, or achieved lead quality or margin. Recheck mutable pricing before treating it as current.",
+          "sourceLocation": "10:37–11:30 (publisher chapter and automatic-caption navigation)",
+          "references": [
+            "bland-agent-plan",
+            "bland-agent-plan-docs"
+          ],
+          "counterevidence": [],
+          "temporalScope": "Video published 2026-10-19; source captions and sampled frames are imperfect aids. Product and policy statements are time-bounded to the checked records."
+        },
+        {
+          "id": "MUSE-05",
+          "proposition": "A four-stage model will create 1,000 millionaires.",
+          "kind": "publisher-prediction",
+          "asOf": "2026-10-20",
+          "status": "unverified",
+          "assessment": "Publisher title makes the prediction; a sampled 20:15 diagram shows four proposed levels.",
+          "limits": "No cohort, profit ledger, denominator or observed millionaire outcomes. The visual framework is a proposal, not a demonstrated trajectory.",
+          "sourceLocation": "17:20–20:38 (captions); 20:15 sampled diagram",
+          "references": [],
+          "counterevidence": [],
+          "temporalScope": "Video published 2026-10-19; source captions and sampled frames are imperfect aids. Product and policy statements are time-bounded to the checked records."
+        },
+        {
+          "id": "MUSE-06",
+          "proposition": "An agent can responsibly run night-nurse matching.",
+          "kind": "editorial-inference",
+          "asOf": "2026-10-20",
+          "status": "unverified",
+          "assessment": "The video illustrates a care-search idea; GhostMesh proposes first-party opt-in, provider qualification, human review and measured fulfillment as a bounded design test.",
+          "limits": "No evidence that this demo met those conditions. Meta/Bland controls and FTC cases concern different settings; they do not determine the creator’s legality or outcome.",
+          "sourceLocation": "03:52–10:36; 20:38–21:40 (caption navigation and sampled frames)",
+          "references": [],
+          "counterevidence": [
+            "meta-muse-safety",
+            "bland-privacy",
+            "ftc-betterhelp",
+            "ftc-telemarketing"
+          ],
+          "temporalScope": "Video published 2026-10-19; source captions and sampled frames are imperfect aids. Product and policy statements are time-bounded to the checked records."
+        }
+      ],
+      "references": [
+        {
+          "id": "meta-muse-announcement",
+          "title": "Introducing Muse: The World’s First Personal AI Agent Built for Everyone",
+          "author": "Meta",
+          "publisher": "Meta",
+          "url": "https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent/",
+          "publicationDate": "2026-09-08",
+          "eventDate": null,
+          "location": "Takeaways; How It Works; Built to be Private, Safe, and Secure",
+          "sourceType": "vendor product announcement",
+          "independence": "Meta describes its own product; not independent evidence that the video workflow succeeded or was permitted.",
+          "evidenceFamily": "meta-muse",
+          "checkedAt": "2026-10-20T04:29:55Z",
+          "datePrecision": "day",
+          "dateNote": "Page shows initial September 8, 2026 and a September 30, 2026 update; publication date is the initial date."
+        },
+        {
+          "id": "meta-muse-design",
+          "title": "How We Designed Muse",
+          "author": "Mona Sarantakos with Christine Awad",
+          "publisher": "Meta",
+          "url": "https://introducing.muse.ai/",
+          "publicationDate": "2026-09",
+          "eventDate": null,
+          "location": "Muse Is an Agent That Can Actually Do Things; Getting Things Done With Muse",
+          "sourceType": "vendor design account",
+          "independence": "First-party product design description; not a test of the creator demo.",
+          "evidenceFamily": "meta-muse",
+          "checkedAt": "2026-10-20T04:29:55Z",
+          "datePrecision": "month"
+        },
+        {
+          "id": "meta-facebook-scraping",
+          "title": "How We Combat Scraping",
+          "author": "Meta",
+          "publisher": "Meta",
+          "url": "https://about.fb.com/news/2021/04/how-we-combat-scraping/",
+          "publicationDate": "2021-04",
+          "eventDate": null,
+          "location": "Paragraph on automated collection and prior permission",
+          "sourceType": "vendor policy explanation",
+          "independence": "Meta states its policy position; current Muse-specific permission and actual video behavior remain unverified.",
+          "evidenceFamily": "meta-facebook-policy",
+          "checkedAt": "2026-10-20T04:29:55Z",
+          "datePrecision": "month"
+        },
+        {
+          "id": "meta-muse-safety",
+          "title": "How We Built Safety Into Muse",
+          "author": "Tarek Sheasha",
+          "publisher": "Meta AI Research",
+          "url": "https://research.meta.ai/blog/security-and-safety-for-ai-agents-our-approach-with-muse",
+          "publicationDate": "2026-09-08",
+          "eventDate": null,
+          "location": "Connectors; Muse Secure VM; Sentinel approval description",
+          "sourceType": "vendor safety account",
+          "independence": "Describes Meta design controls, not successful care matching, consent or data rights in this video.",
+          "evidenceFamily": "meta-muse",
+          "checkedAt": "2026-10-20T04:29:55Z",
+          "datePrecision": "day"
+        },
+        {
+          "id": "bland-agent-plan",
+          "title": "Agent Phone Plan",
+          "author": "Bland AI",
+          "publisher": "Bland AI",
+          "url": "https://www.bland.ai/ai-phone-plan",
+          "publicationDate": "unknown",
+          "eventDate": null,
+          "location": "A phone plan with a predictable bill; How much does it cost?",
+          "sourceType": "vendor pricing page",
+          "independence": "Current advertised offer only; no tested subscription, invoice, working call or economic outcome.",
+          "evidenceFamily": "bland-plan",
+          "checkedAt": "2026-10-20T04:29:55Z",
+          "dateNote": "No publication date stated on the pricing page; mutable offer checked at the stated time."
+        },
+        {
+          "id": "bland-agent-plan-docs",
+          "title": "Agent Phone Plan",
+          "author": "Bland AI",
+          "publisher": "Bland AI",
+          "url": "https://docs.bland.ai/platform/agent-phone-plan",
+          "publicationDate": "unknown",
+          "eventDate": null,
+          "location": "Overview; Limits; Subscribe",
+          "sourceType": "vendor product documentation",
+          "independence": "Same vendor and evidence family as pricing page; not independent corroboration.",
+          "evidenceFamily": "bland-plan",
+          "checkedAt": "2026-10-20T04:29:55Z",
+          "dateNote": "No publication date stated on the documentation page; mutable terms checked at the stated time."
+        },
+        {
+          "id": "bland-privacy",
+          "title": "Privacy Policy",
+          "author": "Bland AI",
+          "publisher": "Bland AI",
+          "url": "https://www.bland.ai/legal/privacy",
+          "publicationDate": "unknown",
+          "eventDate": null,
+          "location": "Submitted content and service data categories",
+          "sourceType": "vendor privacy policy",
+          "independence": "Describes Bland handling generally; no determination of this creator’s call or consent.",
+          "evidenceFamily": "bland-privacy",
+          "checkedAt": "2026-10-20T04:29:55Z",
+          "dateNote": "Publication date not established in this intake."
+        },
+        {
+          "id": "ftc-betterhelp",
+          "title": "FTC to Ban BetterHelp from Revealing Consumers’ Data, Including Sensitive Mental Health Information",
+          "author": "Federal Trade Commission",
+          "publisher": "Federal Trade Commission",
+          "url": "https://www.ftc.gov/news-events/news/press-releases/2023/03/ftc-ban-betterhelp-revealing-consumers-data-including-sensitive-mental-health-information-facebook",
+          "publicationDate": "2023-03",
+          "eventDate": null,
+          "location": "FTC order announcement and described fact pattern",
+          "sourceType": "regulatory enforcement account",
+          "independence": "Different company and facts; illustrates privacy risk, not a finding about the video.",
+          "evidenceFamily": "ftc-betterhelp",
+          "checkedAt": "2026-10-20T04:29:55Z",
+          "datePrecision": "month"
+        },
+        {
+          "id": "ftc-telemarketing",
+          "title": "Complying with the Telemarketing Sales Rule",
+          "author": "Federal Trade Commission",
+          "publisher": "Federal Trade Commission",
+          "url": "https://www.ftc.gov/business-guidance/resources/complying-telemarketing-sales-rule",
+          "publicationDate": "unknown",
+          "eventDate": null,
+          "location": "Scope, exemptions, disclosures and prerecorded-call sections",
+          "sourceType": "regulatory guidance",
+          "independence": "Applicability depends on specific calling facts; no claim that the video made a regulated call.",
+          "evidenceFamily": "ftc-telemarketing",
+          "checkedAt": "2026-10-20T04:29:55Z",
+          "dateNote": "Page summarizes amendments from multiple years; current page publication date was not established."
+        }
+      ],
+      "relationships": [
+        {
+          "target": "reader:when-agents-become-the-customer",
+          "type": "related topic",
+          "reason": "Both examine agents as part of a business workflow. The published Reader tests caller identity, billing and service authorization; it does not validate this video’s proposed matching business or its outcomes.",
+          "provenance": [
+            "/the-list-is-the-business-claim/#what-does-ghostmesh-take-away",
+            "/when-agents-become-the-customer/#authority"
+          ],
+          "basis": "curated-editorial-comparison",
+          "direction": "outgoing"
+        },
+        {
+          "target": "reader:the-agent-a-company-owns",
+          "type": "related topic",
+          "reason": "Both ask what a company actually owns when agents mediate work. The published Reader treats continuity, memory and permission as separate tests; it does not establish rights to the third-party lead data proposed here.",
+          "provenance": [
+            "/the-list-is-the-business-claim/#what-does-ghostmesh-take-away",
+            "/the-agent-a-company-owns/#permission"
+          ],
+          "basis": "curated-editorial-comparison",
+          "direction": "outgoing"
+        }
+      ],
+      "relationshipDisposition": "Two qualified editorial topic routes compare authority and ownership questions; neither Reader independently corroborates the Muse demonstration, data rights or business outcomes.",
+      "review": {
+        "status": "independent-public-copy-reviewed; owner-publication-approved; source-qualified",
+        "reviewer": "Task18 independent integration and editorial/privacy review",
+        "reviewedSourceHead": "043750a7b8d987ce4b90371529ce9e698939b86b",
+        "checkedAt": "2026-10-20T04:39:08Z",
+        "scope": "Exact integrated article, six claim dispositions, nine source records, sanitized custody receipt, generated Reader navigation, desktop/mobile presentation and opt-in playback. No full ReasonPack or exact speech verification claimed.",
+        "findings": "No P0-P2 source, privacy or layout issue found. Vendor pages support only their own product and terms; creator outcomes, data rights and consent remain unverified."
+      },
+      "revisionHistory": [
+        {
+          "at": "2026-10-20T04:28:25Z",
+          "kind": "source-candidate",
+          "reason": "Mechanically mapped the accepted owner-preview argument to an article-specific public source candidate with six source-limited claim rows; no publication occurred."
+        },
+        {
+          "at": "2026-10-20T04:34:34Z",
+          "kind": "integration-candidate",
+          "reason": "Added the retained writer article and six-claim handoff to the static Readers catalog for exact-version release review; no new source claim."
+        },
+        {
+          "at": "2026-10-20T04:39:08Z",
+          "kind": "independent-public-review",
+          "reason": "Task18 reviewed the exact source-qualified integration and normal site checks; this review preceded the final release decision."
+        }
+      ],
+      "editorialOrder": 18,
+      "orderReason": "Nineteenth Reader, following the existing 18 published editions.",
+      "evidenceReview": {
+        "sourceFidelity": "Publisher description, complete private automatic-caption reading and eight sampled frames support an attributed proposal, not exact speech or observed transactions.",
+        "conclusion": "Study the proposed workflow and hold the millionaire, match and owned-data claims.",
+        "evidenceBoundary": "First-party vendor pages document product terms and Meta policy positions; they do not corroborate the creator demo or grant data rights.",
+        "nextVerification": "Recheck mutable product terms and platform permissions before treating them as current; retain source media privately. This edition's limited source custody is disclosed above."
+      },
+      "rank": 18
+    },
+    {
       "id": "reader:the-test-must-name-its-target",
       "slug": "the-test-must-name-its-target",
       "title": "The Test Must Name Its Target",

@@ -226,6 +226,12 @@ def projections():
  byid={r['id']:r for r in readers};out={}
  for r in readers:
   raw=(ROOT/'content/readers'/f'{r["slug"]}.html').read_text()
+  if r['slug']=='the-list-is-the-business-claim':
+   # Shared Reader controls wrap the writer's unchanged article source.
+   raw=raw.replace('referrerpolicy="no-referrer" referrerpolicy="no-referrer"','referrerpolicy="no-referrer"')
+   if 'data-gm-share' not in raw:
+    share='<div class="gm-sharebar" data-gm-share=""><span class="gm-share-label">Share this Video Deconstruction</span><div class="gm-share-actions"><button class="gm-share-button" data-native-share="" type="button">Share</button><button class="gm-share-button" data-copy-link="" type="button">Copy link</button><a class="gm-share-email" data-email-link="" href="mailto:">Email</a><span aria-live="polite" class="gm-share-message" data-gm-share-message="" role="status"></span></div></div>'
+    raw=raw.replace('<!--GM_BRIEF-->',share+'<!--GM_BRIEF-->',1).replace('</body>','<script src="/assets/reader-share.js" defer></script></body>',1)
   if r['source'].get('kind')=='paper':validate_paper_source(raw,r['source'])
   else:
    validate_media_source(r['source'])
