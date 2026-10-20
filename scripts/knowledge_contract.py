@@ -250,6 +250,7 @@ def validate_contract(model: dict, schema: dict, repo: Path = ROOT) -> None:
 def render_html(model: dict) -> bytes:
     """Render an explorable human view without broadening the source-only contract."""
     from generate_site import page
+    from social_cards import approval, specs
 
     readers = [n for n in model["nodes"] if n["type"] == "Reader"]
     claims = [n for n in model["nodes"] if n["type"] == "Claim"]
@@ -359,7 +360,8 @@ def render_html(model: dict) -> bytes:
         'Other sites, including SharePlane, need an explicit reviewed connection before appearing in this Reader graph.</p>'
         '</footer>'
     )
-    rendered = page('Public knowledge data', '/knowledge/', body)
+    rendered = page('Public knowledge data', '/knowledge/', body,
+                    specs(catalog, preview_base=approval(ROOT).get("previewBaseUrl"))["/knowledge/"])
     rendered = rendered.replace('</head>', '<link rel="stylesheet" href="/assets/knowledge-explorer.css">'
                                 '<script src="/assets/knowledge-explorer.js" defer></script></head>', 1)
     # The projection disallows email addresses even in the shared site footer.

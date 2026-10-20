@@ -5,6 +5,7 @@ from html import escape
 from html.parser import HTMLParser
 from datetime import date
 import json,re,sys
+import social_cards
 ROOT=Path(__file__).resolve().parents[1]; SITE=ROOT/'site'
 CATEGORIES=['AI & Technology','Society & Politics','Science','Business','Ethics & Culture','Other']
 READER_COUNT=0
@@ -143,7 +144,9 @@ def home_card(r,number,featured=False):
        f'<div class="gm-home-actions"><a class="gm-home-open" href="/{esc(r["slug"])}/">Open Reader →</a>'
        f'<a class="gm-home-source" href="{esc(source["url"])}">Original {esc(platform)} source ↗</a></div></div>')
  return f'<article class="gm-card gm-home-card" data-category="{esc(r["category"])}" data-tags="{esc(" ".join(r["tags"]))}" data-date="{r["published"]}" data-rank="{r["rank"]}">'+visual+copy+'</article>'
-def page(title,path,body):return '<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>'+esc(title)+' | GhostMesh Readers</title><meta name="description" content="Original analysis, explicit evidence and accountable judgment."><link rel="canonical" href="https://youtube.shareplane.malott.ai'+path+'"><link rel="icon" href="/favicon.svg">'+head()+'</head><body class="gm-catalog"><a class="gm-skip" href="#main">Skip to content</a>'+controls()+'<main id="main">'+body+'</main>'+footer(include_email=path!='/knowledge/')+'</body></html>'
+def page(title,path,body,social_spec=None):
+ raw='<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>'+esc(title)+' | GhostMesh Readers</title><meta name="description" content="Original analysis, explicit evidence and accountable judgment."><link rel="canonical" href="https://youtube.shareplane.malott.ai'+path+'"><link rel="icon" href="/favicon.svg">'+head()+'</head><body class="gm-catalog"><a class="gm-skip" href="#main">Skip to content</a>'+controls()+'<main id="main">'+body+'</main>'+footer(include_email=path!='/knowledge/')+'</body></html>'
+ return social_cards.inject(raw,social_spec) if social_spec else raw
 class LinkOnlySource(HTMLParser):
  def __init__(self,source_url):
   super().__init__(convert_charrefs=True);self.source_url=source_url;self.direct_link=False;self.violations=[]
@@ -222,6 +225,8 @@ def player_contract(raw,aspect,source_url):
 def projections():
  global READER_COUNT
  data=json.loads((ROOT/'content/catalog.json').read_text());validate_text(data)
+ social_record=social_cards.approval(ROOT)
+ social_specs=social_cards.specs(data,preview_base=social_record.get('previewBaseUrl'))
  readers=sorted(data['readers'],key=lambda r:(r['published'],r['slug']),reverse=True)
  READER_COUNT=len(readers)
  for r in readers:r['rank']=r['editorialOrder']
@@ -297,7 +302,7 @@ def projections():
    raw=raw.replace('</main>',share+'</main>',1)
    if '/assets/reader-share.js' not in raw:
     raw=raw.replace('</body>','<script defer src="/assets/reader-share.js"></script></body>',1)
-  out[f'{r["slug"]}/index.html']=raw
+  out[f'{r["slug"]}/index.html']=social_cards.inject(raw,social_specs[f'/{r["slug"]}/'])
   receipt=dict(r.get('legacyReceipt') or {'schema':'ghostmesh-reader-receipt-v2','source':r['source'],'custody':{'status':'historical-public-account-only','note':'No private source pack was opened or reverified during normalization. See original provenance on the Reader.'}})
   receipt['normalization']={k:v for k,v in r.items() if k not in ['legacyReceipt','rank']}
   receipt.setdefault('editorial',{}).update({k:r[k] for k in ['overview','whyItMatters','ghostMeshTakeaway']})
@@ -343,7 +348,7 @@ def projections():
               '<p><a href="/knowledge/#how-to-read">Inspect the evidence labels ↗</a><small>These counts describe claim-register entries, not a verification score or a tally of false claims.</small></p></div>'
               '<aside class="gm-shorthand"><div><span>PROPOSED ARCHITECTURE SHORTHAND / FOR REVIEW</span><h3>Context. Continuity. Control.</h3></div>'
               '<p>The public Reader record is a semantic layer: it keeps source, claim and qualification connected across revisions. That context can inform future agentic work, while authority to act stays with people. This is a proposed description, not a claim that an estate-wide agent or search system is live.</p></aside></section>')
- out['index.html']=page('The algorithm got your attention. Did the argument earn it?','/',home_intro+home_readers+home_browse+home_method)
+ out['index.html']=page('The algorithm got your attention. Did the argument earn it?','/',home_intro+home_readers+home_browse+home_method,social_specs['/'])
  home=out['index.html'];legacy='<details class="gm-legacy"><summary>Earlier video bookmarks</summary><ul>'+''.join('<li id="'+esc(r['source'].get('videoId') or r['source'].get('shortcode',''))+'"><a href="/'+r['slug']+'/">'+esc(r['title'])+'</a></li>' for r in readers if r['source'].get('kind')!='paper')+'</ul></details>'
  home=home.replace('<body class="gm-catalog">','<body class="gm-catalog" id="home">').replace('<h2>Continue reading</h2>','<h2 id="readers-title">Continue reading</h2>')
  destinations=('<section id="about" class="gm-home-about"><div><p class="gm-kicker">04 / Why this exists</p><h2 id="about-title">Why I built it.</h2><p class="gm-about-side">A public reading practice for an age of compressed certainty.</p></div>'
@@ -376,11 +381,12 @@ def projections():
   from . import catalog_design
  else:
   import catalog_design
- out['readers/index.html']=page('The Reader library','/readers/',catalog_design.archive(readers,CATEGORIES)).replace('</head>','<link rel="stylesheet" href="/assets/catalog-design.css"></head>')
+ out['readers/index.html']=page('The Reader library','/readers/',catalog_design.archive(readers,CATEGORIES),social_specs['/readers/']).replace('</head>','<link rel="stylesheet" href="/assets/catalog-design.css"></head>')
  for i,c in enumerate(CATEGORIES):
-  out[f'readers/categories/{i}/index.html']=page(c,f'/readers/categories/{i}/',catalog_design.category(readers,CATEGORIES,c)).replace('</head>','<link rel="stylesheet" href="/assets/catalog-design.css"></head>')
+  route=f'/readers/categories/{i}/'
+  out[f'readers/categories/{i}/index.html']=page(c,route,catalog_design.category(readers,CATEGORIES,c),social_specs[route]).replace('</head>','<link rel="stylesheet" href="/assets/catalog-design.css"></head>')
  out['readers/index.html']=out['readers/index.html'].replace('all 13 Readers',f'all {len(readers)} Readers').replace('>13 Readers<',f'>{len(readers)} Readers<')
- out['map/index.html']=page('Reader relationship map','/map/',relationship_map(readers,byid)).replace('</head>','<link rel="stylesheet" href="/assets/map-design.css"></head>').replace('<body class="gm-catalog">','<body class="gm-catalog gm-map-page">')
+ out['map/index.html']=page('Reader relationship map','/map/',relationship_map(readers,byid),social_specs['/map/']).replace('</head>','<link rel="stylesheet" href="/assets/map-design.css"></head>').replace('<body class="gm-catalog">','<body class="gm-catalog gm-map-page">')
  if __package__:
   from .map_design import relationship_graph
  else:
@@ -389,13 +395,17 @@ def projections():
  urls=['/','/readers/','/map/','/knowledge/']+['/'+r['slug']+'/' for r in readers]+[f'/readers/categories/{i}/' for i in range(len(CATEGORIES))]
  out['sitemap.xml']='<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'+''.join('<url><loc>'+data['host']+u+'</loc></url>' for u in sorted(urls))+'</urlset>\n'
  out['404.html']=page('Page not found','/404.html','<h1>That page is not here.</h1><p><a href="/readers/">Browse the complete Reader library</a> or return to the <a href="/">homepage</a>.</p>')
+ out.update(social_cards.asset_outputs(data,social_record.get('previewBaseUrl')))
  return out
 if __name__=='__main__':
  outputs=projections();bad=[]
  for rel,content in outputs.items():
   p=SITE/rel
   if '--check' in sys.argv:
-   if not p.exists() or p.read_text()!=content:bad.append(rel)
-  else:p.parent.mkdir(parents=True,exist_ok=True);p.write_text(content)
+   if not p.exists() or (p.read_bytes() if isinstance(content,bytes) else p.read_text())!=content:bad.append(rel)
+  else:
+   p.parent.mkdir(parents=True,exist_ok=True)
+   if isinstance(content,bytes):p.write_bytes(content)
+   else:p.write_text(content)
  if bad:print('Generated projections drift: '+', '.join(bad));sys.exit(1)
  print('PASS: '+str(len(outputs))+' deterministic projections'+(' checked' if '--check' in sys.argv else ' generated'))

@@ -88,6 +88,7 @@ class PublicationGate(unittest.TestCase):
   scripts=self.root/'scripts';scripts.mkdir();shutil.copy2(ROOT/'scripts/generate_site.py',scripts/'generate_site.py')
   shutil.copy2(ROOT/'scripts/map_design.py',scripts/'map_design.py')
   shutil.copy2(ROOT/'scripts/catalog_design.py',scripts/'catalog_design.py')
+  shutil.copy2(ROOT/'scripts/social_cards.py',scripts/'social_cards.py')
   result=subprocess.run([sys.executable,str(scripts/'generate_site.py')],capture_output=True,text=True)
   self.assertEqual(0,result.returncode,result.stdout+result.stderr)
   self.assertEqual([],check(self.root))

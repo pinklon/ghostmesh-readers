@@ -6,6 +6,7 @@ from urllib.parse import urlsplit,unquote
 from datetime import datetime,date,timezone
 import json,re,sys,xml.etree.ElementTree as ET
 from generate_site import projections,CATEGORIES,validate_text,validate_link_only_source,validate_paper_source,validate_media_source
+import social_cards,check_social
 ROOT=Path(__file__).resolve().parents[1];SITE=ROOT/'site'
 VERDICTS={'Essential','Worth studying','Interesting, unproven','Mostly recycled','Misleading','Not worth your time'}
 STATES={'corroborated','partially corroborated','contradicted','disputed','unverified'}
@@ -72,6 +73,8 @@ def check(root=ROOT):
    if parsed.tzinfo:require(parsed<=datetime.now(timezone.utc),label+': future timestamp')
   except (ValueError,TypeError):errors.append(label+': invalid timestamp')
  readers=data['readers'];ids={r['id'] for r in readers};slugs={r['slug'] for r in readers}
+ social_record=social_cards.approval(root)
+ social_images={site/spec['image'].lstrip('/') for spec in social_cards.specs(data,preview_base=social_record.get('previewBaseUrl')).values()}
  baseline=json.loads((root/'docs/baseline-audit.json').read_text())['readers']
  require({r['slug'] for r in baseline}<=slugs,'Existing permalink removed')
  require(len(ids)==len(readers)==len(slugs),'Duplicate Reader identity')
@@ -179,9 +182,10 @@ def check(root=ROOT):
   require(p.suffix.lower() not in SOURCE_EXTENSIONS,f'Private source media: {p.relative_to(root)}')
   require(not p.name.lower().startswith(('transcript','captions','subtitles')),f'Private source artifact: {p.relative_to(root)}')
   if p.is_relative_to(site):
-   require(p.suffix.lower() in PUBLIC_TEXT_EXTENSIONS or p.relative_to(site).as_posix() in PUBLIC_TEXT_PATHS,f'Unapproved public file type: {p.relative_to(site)}')
+   require(p in social_images or p.suffix.lower() in PUBLIC_TEXT_EXTENSIONS or p.relative_to(site).as_posix() in PUBLIC_TEXT_PATHS,f'Unapproved public file type: {p.relative_to(site)}')
    payload=p.read_bytes()
    require(not capture_signature(payload),f'Private source capture signature: {p.relative_to(site)}')
+   if p in social_images:continue
    try:payload.decode('utf-8')
    except UnicodeDecodeError:
     errors.append(f'Non-text public asset: {p.relative_to(site)}');continue
@@ -196,8 +200,11 @@ def check(root=ROOT):
  sitemap=ET.parse(site/'sitemap.xml');urls=[x.text for x in sitemap.getroot().iter() if x.tag.endswith('loc')]
  expected={data['host']+'/',data['host']+'/readers/',data['host']+'/map/',data['host']+'/knowledge/'}|{data['host']+'/'+s+'/' for s in slugs}|{data['host']+f'/readers/categories/{i}/' for i in range(6)}
  require(set(urls)==expected and len(urls)==len(expected),'Sitemap drift')
+ errors.extend(check_social.check(root,release=False))
  if root==ROOT:
-  for rel,content in projections().items():require((site/rel).read_text()==content,'Generated drift: '+rel)
+  for rel,content in projections().items():
+   actual=(site/rel).read_bytes() if isinstance(content,bytes) else (site/rel).read_text()
+   require(actual==content,'Generated drift: '+rel)
  return errors
 if __name__=='__main__':
  errors=check()

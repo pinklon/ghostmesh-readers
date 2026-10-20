@@ -16,5 +16,8 @@ jobs:
         with:
           python-version: '3.12'
       - run: python3 scripts/check_site.py
+      # Draft preview cards pass technical checks but intentionally fail this
+      # owner creative gate until exact artwork is approved in issue #45.
+      - run: python3 scripts/check_social.py --release
       - run: python3 scripts/knowledge_contract.py --check
       - run: python3 -m unittest discover -s tests -p 'test_*.py'
