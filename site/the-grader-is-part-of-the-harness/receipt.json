@@ -54,7 +54,7 @@
       "mediaAspect": "16:9"
     },
     "published": "2026-10-20",
-    "updated": "2026-10-20T20:25:00Z",
+    "updated": "2026-10-20T20:29:00Z",
     "overview": "Cloud Codes compares two research efforts that let an AI system revise its own working procedure, then argues that evaluation design determines whether this feedback helps.",
     "whyItMatters": "Useful for teams tempted to treat an adaptive agent harness as a reusable product recipe. The reported gains are real author results on specified tasks, while coding transfer is mixed.",
     "ghostMeshTakeaway": "Treat a proposed harness change as an experiment with a named grader, held-out tasks and a rollback path. Do not promote a self-judged gain into production authority.",
@@ -245,12 +245,12 @@
     ],
     "relationshipDisposition": "Three qualified editorial comparisons about evaluation, inspectability and reward signals; none independently validates the research results.",
     "review": {
-      "status": "editorial-review-pending",
-      "reviewer": "Independent editorial review pending",
-      "reviewedSourceHead": null,
-      "checkedAt": "2026-10-20T17:20:00Z",
-      "scope": "Check source attribution, research results, counterevidence, privacy and article copy against the exact candidate before merge.",
-      "findings": "Candidate is not yet a publication decision."
+      "status": "independent-public-copy-reviewed; source-qualified",
+      "reviewer": "Independent read-only Codex editorial reviewer",
+      "reviewedSourceHead": "9a08b6f03da9000e770e82c3f9b56bb2f842a1f9",
+      "checkedAt": "2026-10-20T20:29:00Z",
+      "scope": "Exact public article, author paper findings, private caption and manifest hashes, receipt, graph routes, source privacy, opt-in 16:9 playback, and generated site checks.",
+      "findings": "Two MASS attribution issues corrected in the reviewed source copy; no remaining finding. Reviewed article SHA-256 eb326cad0a71a3158ee81bf477c94830c65347084cc8ec94e463d25d90a62d8d. Paper results remain author reports, not independently replicated."
     },
     "revisionHistory": [
       {
