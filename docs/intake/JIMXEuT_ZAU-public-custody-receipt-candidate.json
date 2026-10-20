@@ -1,0 +1,82 @@
+{
+  "schema": "ghostmesh-video-partial-custody-candidate-v1",
+  "status": "private-source-reviewed-release-pending",
+  "checkedAt": "2026-10-20",
+  "reader": {
+    "id": "reader:the-brakes-need-a-test",
+    "slug": "the-brakes-need-a-test",
+    "title": "The Brakes Need a Test",
+    "category": "AI & Technology",
+    "variant": "dossier",
+    "overview": "Ezra Klein asks former OpenAI safety-report writer David Robinson why he left and whether the industry's safety process can keep up with faster model and agent work. The automatic video text presents an uncertain but serious risk case, not a prediction that catastrophe is certain.",
+    "whyItMatters": "Watch selected exchanges if you need to decide what evidence a frontier lab should show before its safety claim earns trust. Skip the full 74:55 if you need measured incident rates or a completed independent audit; the interview does not supply either.",
+    "ghostMeshTakeaway": "The useful test is whether a warning reaches a named threshold, an accountable pause-or-proceed decision, and a scoped outside retest. Real pauses and a real intrusion both belong in the record; neither alone settles whether revised controls work.",
+    "proposedVerdict": "Worth studying",
+    "verdictScope": "Selective watch, approximately 21 minutes; source starts are machine-text-derived and must be checked in the original video. No exact quote or visually observed demonstration is asserted.",
+    "architectureImpact": "review process proposed"
+  },
+  "source": {
+    "url": "https://www.youtube.com/watch?v=JIMXEuT_ZAU",
+    "videoId": "JIMXEuT_ZAU",
+    "title": "What This OpenAI Insider Saw That Made Him Quit",
+    "publisher": "The Ezra Klein Show",
+    "publicationDate": "2026-10-07",
+    "publisherDurationSeconds": 4495,
+    "publicMetadataWidth": 1920,
+    "publicMetadataHeight": 1080,
+    "mediaAspect": "16:9",
+    "textRoute": "Exact-video English auto-generated transcript, privately held; machine text is not directly heard speech",
+    "timedTextStart": "00:00",
+    "timedTextEnd": "1:14:55",
+    "timedTextLineCount": 2139,
+    "timedTextSha256": "722d261126f8d809514ae3cd7bd35d85af6a038e40a5e9148a45a76669469ecf"
+  },
+  "privateCustody": {
+    "classification": "partial",
+    "originalAudioByteCount": 27361649,
+    "originalAudioDurationSeconds": 4495.52254,
+    "originalAudioSha256": "44b57efcc6808274b2b976ddf00025e45dabac37760dbba2cddb29c2b5e603ee",
+    "originalAudioDecodedWithoutError": true,
+    "directFullAudioListening": false,
+    "videoFramesReviewed": false,
+    "sixLocalAsrNavigationSamples": true,
+    "speakerTurnsAuthenticated": false,
+    "podcastEditionMatched": false,
+    "podcastDurationNote": "The NYT-distributed Apple listing says 1h11m; it is not used as the 74:55 video's transcript.",
+    "privateMaterialsPublished": false
+  },
+  "methodAndLimits": [
+    "Read the complete timed automatic video text across 00:00-1:14:55 and compared six prior local ASR navigation windows at the opening, 17:10, 37:29, 46:10, 58:31 and 1:11:20.",
+    "The full text and audio remain private; this receipt contains original paraphrases, bounded citations and hashes only.",
+    "Automatic transcription can mishear names, numbers, negations and speaker turns. No exact interview quotation, visual claim or certified speaker transcription is published by this candidate.",
+    "Public primary records corroborate the bounded July intrusion and document company policy and pauses; they do not prove every interview interpretation, current control effectiveness, or future outcome.",
+    "OpenAI pages are one company evidence family. Hugging Face documents its observed platform intrusion. METR's independent behavioral analysis relied on OpenAI-supplied records and excluded safeguard effectiveness and remediation.",
+    "A separate private integration candidate has a catalog record and generated page. No live Netlify preview, public catalog record, pull request or deployment is represented by this writer candidate."
+  ],
+  "videoClaimIds": [
+    "V01", "V02", "V03", "V04", "V05", "V06", "V07",
+    "V08", "V09", "V10", "V11", "V12", "V13", "V14"
+  ],
+  "sourceMap": "docs/intake/JIMXEuT_ZAU-video-first-source-map.md",
+  "publicReferences": [
+    {"id": "P01", "url": "https://www.theatlantic.com/technology/2026/10/openai-safety-team-resignation/688881/", "date": "2026-10-03", "role": "same-witness first-person essay; not independent internal corroboration"},
+    {"id": "P02", "url": "https://openai.com/index/updating-our-preparedness-framework/", "date": "2025-04-15", "role": "company policy; not an implementation audit"},
+    {"id": "P03", "url": "https://openai.com/index/hugging-face-incident-and-the-road-ahead/", "date": "2026-08-26", "role": "company incident account and retrospective safeguard counterrecord"},
+    {"id": "P04", "url": "https://huggingface.co/blog/agent-intrusion-technical-timeline", "date": "2026-07-27", "role": "affected-platform direct forensic observations"},
+    {"id": "P05", "url": "https://metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation/", "date": "2026-08-26", "role": "independent behavioral analysis on company-supplied data, scoped"},
+    {"id": "P06", "url": "https://openai.com/index/pacing-model-development-cyber-capabilities/", "date": "2026-08-18", "role": "dated company-reported RL pause and frontier hold"},
+    {"id": "P07", "url": "https://openai.com/index/priorities-principles-third-party-assessments/", "date": "2026-09-22", "role": "company assessment proposal, not a completed result"},
+    {"id": "P08", "url": "https://metr.org/blog/2026-10-14-better-informing-the-public-about-loss-of-control-risks/", "date": "2026-10-14", "role": "independent post-interview proposal; not speech from the video"}
+  ],
+  "reviewGate": {
+    "independentSourceReview": "writer-source-reviewed-no-blocking-findings; exact integrated page not yet independently approved",
+    "privacyReview": "writer source checked; exact integrated page privacy review pending",
+    "ownerEditorialLock": "pending",
+    "publicReleaseEligible": false,
+    "targetedChecksBeforePromotion": [
+      "Listen to any exact quoted wording, disputed speaker turn, named model or launch, or contested numerical claim before including it.",
+      "Check any material on-screen evidence before making a visual claim; source metadata reports a 1920x1080 landscape video.",
+      "Independently review the exact integrated page and receipt after applying any writer-source correction."
+    ]
+  }
+}
