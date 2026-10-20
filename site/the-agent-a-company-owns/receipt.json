@@ -297,14 +297,14 @@
     },
     "relationshipReview": {
       "reviewedAt": "2026-10-20",
-      "reviewedCatalogSize": 24,
+      "reviewedCatalogSize": 25,
       "decision": "linked",
       "reviewedTargets": [
         "reader:autonomy-needs-an-interface",
         "reader:the-inbox-was-a-boundary",
         "reader:the-key-was-the-boundary"
       ],
-      "rationale": "The Vercel follow-on shares a named company-agent subject, while the inbox and credential Readers compare delegated authority through distinct source events. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted."
+      "rationale": "The Vercel follow-on shares a named company-agent subject, while the inbox and credential Readers compare delegated authority through distinct source events. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted."
     }
   },
   "editorial": {

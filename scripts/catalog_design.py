@@ -53,6 +53,7 @@ CALLS = {
     'the-threshold-is-a-claim-not-a-test': ('Watch selectively', 'Ask what human-outcome test establishes each proposed danger threshold.'),
     'the-brakes-need-a-test': ('Watch selectively', 'Ask whether a warning reaches a named threshold, a decision and an outside retest.'),
     'the-grader-is-part-of-the-harness': ('Test the grader first', 'Use held-out tasks and an outside outcome check before accepting an adaptive harness gain.'),
+    'the-stop-button-is-outside-the-chat': ('Test the stop surface', 'Limit agent authority, inspect the real outcome and verify that active work and future access have stopped.'),
 }
 
 

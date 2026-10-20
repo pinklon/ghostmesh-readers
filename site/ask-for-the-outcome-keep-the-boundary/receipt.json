@@ -492,14 +492,14 @@
     },
     "relationshipReview": {
       "reviewedAt": "2026-10-20",
-      "reviewedCatalogSize": 24,
+      "reviewedCatalogSize": 25,
       "decision": "linked",
       "reviewedTargets": [
         "reader:a-challenge-is-not-a-verdict",
         "reader:make-good-work-inspectable",
         "reader:the-funnel-is-not-the-frontier"
       ],
-      "rationale": "The architecture challenge, inspectable-work interview and AI-use funnel all separate ambitious agent work from verified outcomes. The links are editorial comparisons only. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted."
+      "rationale": "The architecture challenge, inspectable-work interview and AI-use funnel all separate ambitious agent work from verified outcomes. The links are editorial comparisons only. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted."
     }
   }
 }

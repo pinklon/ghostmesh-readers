@@ -368,12 +368,12 @@
     },
     "relationshipReview": {
       "reviewedAt": "2026-10-20",
-      "reviewedCatalogSize": 24,
+      "reviewedCatalogSize": 25,
       "decision": "linked",
       "reviewedTargets": [
         "reader:the-score-is-not-the-system"
       ],
-      "rationale": "The score Reader discusses the same Anthropic representation-steering evidence family. The link does not create independent support for consciousness or experience. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted."
+      "rationale": "The score Reader discusses the same Anthropic representation-steering evidence family. The link does not create independent support for consciousness or experience. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted."
     }
   },
   "editorial": {
