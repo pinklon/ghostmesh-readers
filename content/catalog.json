@@ -6200,7 +6200,7 @@
           "asOf": "2026-10-20",
           "status": "partially corroborated",
           "assessment": "Bland advertises $14.99 only for the first month of the first Agent Phone Plan per account owner, then $29.99 monthly; extra plans start at $29.99. The plan has one concurrent call and fair-use limits.",
-          "limits": "Current vendor price is not proof the creator bought the plan, placed a working call, or achieved lead quality or margin. Recheck mutable pricing before release.",
+          "limits": "Current vendor price is not proof the creator bought the plan, placed a working call, or achieved lead quality or margin. Recheck mutable pricing before treating it as current.",
           "sourceLocation": "10:37–11:30 (publisher chapter and automatic-caption navigation)",
           "references": [
             "bland-agent-plan",
@@ -6437,7 +6437,7 @@
         }
       },
       "review": {
-        "status": "independent-public-copy-reviewed; owner exact-head review pending",
+        "status": "independent-public-copy-reviewed; owner-publication-approved; source-qualified",
         "reviewer": "Task18 independent integration and editorial/privacy review",
         "reviewedSourceHead": "043750a7b8d987ce4b90371529ce9e698939b86b",
         "checkedAt": "2026-10-20T04:39:08Z",
@@ -6458,7 +6458,7 @@
         {
           "at": "2026-10-20T04:39:08Z",
           "kind": "independent-public-review",
-          "reason": "Task18 reviewed the exact source-qualified integration and normal site checks; owner exact-head release decision remains pending."
+          "reason": "Task18 reviewed the exact source-qualified integration and normal site checks; this review preceded the final release decision."
         }
       ],
       "editorialOrder": 18,
@@ -6467,7 +6467,7 @@
         "sourceFidelity": "Publisher description, complete private automatic-caption reading and eight sampled frames support an attributed proposal, not exact speech or observed transactions.",
         "conclusion": "Study the proposed workflow and hold the millionaire, match and owned-data claims.",
         "evidenceBoundary": "First-party vendor pages document product terms and Meta policy positions; they do not corroborate the creator demo or grant data rights.",
-        "nextVerification": "Check the exact integrated copy, retain media privately, recheck mutable terms and resolve source-custody status before release."
+        "nextVerification": "Recheck mutable product terms and platform permissions before treating them as current; retain source media privately. This edition's limited source custody is disclosed above."
       }
     }
   ],
