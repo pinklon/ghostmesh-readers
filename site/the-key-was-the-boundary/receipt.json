@@ -480,6 +480,17 @@
       "conclusion": "The video quotes 1.4 percent. The exact OpenCode Console denominator and affected population were not verified from the inaccessible original disclosure.",
       "evidenceBoundary": "OWASP guidance challenges scan-equivalence claims; guidance is not a retrospective audit of the incident.",
       "nextVerification": "Obtain the issuer disclosure and denominator, plus scoped security-test evidence before quantifying impact or tool efficacy."
+    },
+    "relationshipReview": {
+      "reviewedAt": "2026-10-20",
+      "reviewedCatalogSize": 23,
+      "decision": "linked",
+      "reviewedTargets": [
+        "reader:the-inbox-was-a-boundary",
+        "reader:autonomy-needs-an-interface",
+        "reader:the-agent-a-company-owns"
+      ],
+      "rationale": "The credential incident is compared with a hidden mailbox boundary and company-agent permissions. Shared authority questions do not make the events equivalent."
     }
   }
 }

@@ -1,0 +1,957 @@
+{
+  "schema": "ghostmesh-reader-relationship-map-v1",
+  "scope": "Local public editorial reading routes; no independent corroboration or cross-site graph admission.",
+  "authority": "catalog-curated-editorial",
+  "visibility": "public",
+  "readerCount": 23,
+  "assessmentCount": 23,
+  "relationshipCount": 48,
+  "nodes": [
+    {
+      "id": "reader:ask-for-the-outcome-keep-the-boundary",
+      "slug": "ask-for-the-outcome-keep-the-boundary",
+      "title": "Ask for the Outcome. Keep the Boundary",
+      "url": "https://youtube.shareplane.malott.ai/ask-for-the-outcome-keep-the-boundary/",
+      "review": {
+        "reviewedAt": "2026-10-20",
+        "reviewedCatalogSize": 23,
+        "decision": "linked",
+        "reviewedTargets": [
+          "reader:a-challenge-is-not-a-verdict",
+          "reader:make-good-work-inspectable",
+          "reader:the-funnel-is-not-the-frontier"
+        ],
+        "rationale": "The architecture challenge, inspectable-work interview and AI-use funnel all separate ambitious agent work from verified outcomes. The links are editorial comparisons only."
+      }
+    },
+    {
+      "id": "reader:make-good-work-inspectable",
+      "slug": "make-good-work-inspectable",
+      "title": "Make Good Work Inspectable",
+      "url": "https://youtube.shareplane.malott.ai/make-good-work-inspectable/",
+      "review": {
+        "reviewedAt": "2026-10-20",
+        "reviewedCatalogSize": 23,
+        "decision": "linked",
+        "reviewedTargets": [
+          "reader:a-challenge-is-not-a-verdict",
+          "reader:ask-for-the-outcome-keep-the-boundary",
+          "reader:the-funnel-is-not-the-frontier"
+        ],
+        "rationale": "The linked architecture review, outcome framing and AI-use funnel all ask how to inspect agent work. They do not independently establish this interview's results."
+      }
+    },
+    {
+      "id": "reader:a-challenge-is-not-a-verdict",
+      "slug": "a-challenge-is-not-a-verdict",
+      "title": "A Challenge Is Not a Verdict",
+      "url": "https://youtube.shareplane.malott.ai/a-challenge-is-not-a-verdict/",
+      "review": {
+        "reviewedAt": "2026-10-20",
+        "reviewedCatalogSize": 23,
+        "decision": "linked",
+        "reviewedTargets": [
+          "reader:ask-for-the-outcome-keep-the-boundary",
+          "reader:make-good-work-inspectable",
+          "reader:when-software-becomes-legible"
+        ],
+        "rationale": "The three existing routes compare how an AI-assisted choice is challenged, verified and made inspectable. Their briefs support navigation, not proof of a shared observed result."
+      }
+    },
+    {
+      "id": "reader:the-score-is-not-the-system",
+      "slug": "the-score-is-not-the-system",
+      "title": "The score is not the system",
+      "url": "https://youtube.shareplane.malott.ai/the-score-is-not-the-system/",
+      "review": {
+        "reviewedAt": "2026-10-20",
+        "reviewedCatalogSize": 23,
+        "decision": "linked",
+        "reviewedTargets": [
+          "reader:the-microscope-is-not-a-soul"
+        ],
+        "rationale": "The microscope Reader helps interpret representation evidence, while its source and this Reader's agent-evaluation incident have separate evidentiary reach."
+      }
+    },
+    {
+      "id": "reader:the-inbox-was-a-boundary",
+      "slug": "the-inbox-was-a-boundary",
+      "title": "The Inbox Was a Boundary",
+      "url": "https://youtube.shareplane.malott.ai/the-inbox-was-a-boundary/",
+      "review": {
+        "reviewedAt": "2026-10-20",
+        "reviewedCatalogSize": 23,
+        "decision": "linked",
+        "reviewedTargets": [
+          "reader:the-key-was-the-boundary",
+          "reader:autonomy-needs-an-interface",
+          "reader:the-agent-a-company-owns"
+        ],
+        "rationale": "The hidden mailbox case is compared with a separate credential exposure and two company-agent authority readings. The incidents and their evidence remain distinct."
+      }
+    },
+    {
+      "id": "reader:the-agent-a-company-owns",
+      "slug": "the-agent-a-company-owns",
+      "title": "The Agent a Company Owns",
+      "url": "https://youtube.shareplane.malott.ai/the-agent-a-company-owns/",
+      "review": {
+        "reviewedAt": "2026-10-20",
+        "reviewedCatalogSize": 23,
+        "decision": "linked",
+        "reviewedTargets": [
+          "reader:autonomy-needs-an-interface",
+          "reader:the-inbox-was-a-boundary",
+          "reader:the-key-was-the-boundary"
+        ],
+        "rationale": "The Vercel follow-on shares a named company-agent subject, while the inbox and credential Readers compare delegated authority through distinct source events."
+      }
+    },
+    {
+      "id": "reader:autonomy-needs-an-interface",
+      "slug": "autonomy-needs-an-interface",
+      "title": "Autonomy Needs an Interface",
+      "url": "https://youtube.shareplane.malott.ai/autonomy-needs-an-interface/",
+      "review": {
+        "reviewedAt": "2026-10-20",
+        "reviewedCatalogSize": 23,
+        "decision": "linked",
+        "reviewedTargets": [
+          "reader:the-agent-a-company-owns",
+          "reader:the-inbox-was-a-boundary",
+          "reader:the-key-was-the-boundary"
+        ],
+        "rationale": "The company-agent interview builds on the same Vercel subject; the inbox and credential Readers compare separate authority boundaries. None verifies the others' incidents."
+      }
+    },
+    {
+      "id": "reader:when-software-becomes-legible",
+      "slug": "when-software-becomes-legible",
+      "title": "When software becomes legible",
+      "url": "https://youtube.shareplane.malott.ai/when-software-becomes-legible/",
+      "review": {
+        "reviewedAt": "2026-10-20",
+        "reviewedCatalogSize": 23,
+        "decision": "linked",
+        "reviewedTargets": [
+          "reader:a-challenge-is-not-a-verdict",
+          "reader:make-good-work-inspectable",
+          "reader:when-agents-become-the-customer"
+        ],
+        "rationale": "The architecture challenge, inspectable-work interview and agent-service forecast provide distinct routes through software legibility, not corroboration of reverse engineering."
+      }
+    },
+    {
+      "id": "reader:when-agents-become-the-customer",
+      "slug": "when-agents-become-the-customer",
+      "title": "When Agents Become the Customer",
+      "url": "https://youtube.shareplane.malott.ai/when-agents-become-the-customer/",
+      "review": {
+        "reviewedAt": "2026-10-20",
+        "reviewedCatalogSize": 23,
+        "decision": "linked",
+        "reviewedTargets": [
+          "reader:autonomy-needs-an-interface",
+          "reader:make-good-work-inspectable",
+          "reader:the-agent-a-company-owns"
+        ],
+        "rationale": "The linked founder, inspectable-work and company-agent Readers compare product workflows and authority. Forecasts are kept separate from observed adoption."
+      }
+    },
+    {
+      "id": "reader:the-scan-never-reached-the-login",
+      "slug": "the-scan-never-reached-the-login",
+      "title": "The Scan Never Reached the Login",
+      "url": "https://youtube.shareplane.malott.ai/the-scan-never-reached-the-login/",
+      "review": {
+        "reviewedAt": "2026-10-20",
+        "reviewedCatalogSize": 23,
+        "decision": "linked",
+        "reviewedTargets": [
+          "reader:ask-for-the-outcome-keep-the-boundary",
+          "reader:make-good-work-inspectable",
+          "reader:the-funnel-is-not-the-frontier"
+        ],
+        "rationale": "The outcome, inspectable-work and AI-use Readers frame the limits of agent-tool demonstrations. None independently verifies this incomplete scan."
+      }
+    },
+    {
+      "id": "reader:the-key-was-the-boundary",
+      "slug": "the-key-was-the-boundary",
+      "title": "The Key Was the Boundary",
+      "url": "https://youtube.shareplane.malott.ai/the-key-was-the-boundary/",
+      "review": {
+        "reviewedAt": "2026-10-20",
+        "reviewedCatalogSize": 23,
+        "decision": "linked",
+        "reviewedTargets": [
+          "reader:the-inbox-was-a-boundary",
+          "reader:autonomy-needs-an-interface",
+          "reader:the-agent-a-company-owns"
+        ],
+        "rationale": "The credential incident is compared with a hidden mailbox boundary and company-agent permissions. Shared authority questions do not make the events equivalent."
+      }
+    },
+    {
+      "id": "reader:the-microscope-is-not-a-soul",
+      "slug": "the-microscope-is-not-a-soul",
+      "title": "The Microscope Is Not a Soul",
+      "url": "https://youtube.shareplane.malott.ai/the-microscope-is-not-a-soul/",
+      "review": {
+        "reviewedAt": "2026-10-20",
+        "reviewedCatalogSize": 23,
+        "decision": "linked",
+        "reviewedTargets": [
+          "reader:the-score-is-not-the-system"
+        ],
+        "rationale": "The score Reader discusses the same Anthropic representation-steering evidence family. The link does not create independent support for consciousness or experience."
+      }
+    },
+    {
+      "id": "reader:the-funnel-is-not-the-frontier",
+      "slug": "the-funnel-is-not-the-frontier",
+      "title": "The Funnel Is Not the Frontier",
+      "url": "https://youtube.shareplane.malott.ai/the-funnel-is-not-the-frontier/",
+      "review": {
+        "reviewedAt": "2026-10-20",
+        "reviewedCatalogSize": 23,
+        "decision": "linked",
+        "reviewedTargets": [
+          "reader:ask-for-the-outcome-keep-the-boundary",
+          "reader:make-good-work-inspectable",
+          "reader:the-scan-never-reached-the-login"
+        ],
+        "rationale": "The three routes compare ambition and verification in agent workflows, including a scan that ended without confirmed findings. No shared empirical outcome is claimed."
+      }
+    },
+    {
+      "id": "reader:the-fleet-does-not-prove-the-forecast",
+      "slug": "the-fleet-does-not-prove-the-forecast",
+      "title": "The Fleet Does Not Prove the Forecast",
+      "url": "https://youtube.shareplane.malott.ai/the-fleet-does-not-prove-the-forecast/",
+      "review": {
+        "reviewedAt": "2026-10-20",
+        "reviewedCatalogSize": 23,
+        "decision": "linked",
+        "reviewedTargets": [
+          "reader:the-inbox-was-a-boundary",
+          "reader:when-agents-become-the-customer"
+        ],
+        "rationale": "The Amap inbox Reader shares a source event; the agent-customer Reader offers a separate product forecast. Neither validates broad web-adoption predictions."
+      }
+    },
+    {
+      "id": "reader:a-scenario-is-not-a-singularity",
+      "slug": "a-scenario-is-not-a-singularity",
+      "title": "A Scenario Is Not a Singularity",
+      "url": "https://youtube.shareplane.malott.ai/a-scenario-is-not-a-singularity/",
+      "review": {
+        "reviewedAt": "2026-10-20",
+        "reviewedCatalogSize": 23,
+        "decision": "linked",
+        "reviewedTargets": [
+          "reader:the-experiment-ran-did-the-research-advance"
+        ],
+        "rationale": "The physics benchmark and research-evaluation paper measure different constructs. Their one link invites comparison without treating a bounded score as research judgment."
+      }
+    },
+    {
+      "id": "reader:the-test-must-name-its-target",
+      "slug": "the-test-must-name-its-target",
+      "title": "The Test Must Name Its Target",
+      "url": "https://youtube.shareplane.malott.ai/the-test-must-name-its-target/",
+      "review": {
+        "reviewedAt": "2026-10-20",
+        "reviewedCatalogSize": 23,
+        "decision": "linked",
+        "reviewedTargets": [
+          "reader:the-microscope-is-not-a-soul"
+        ],
+        "rationale": "The microscope Reader by the same creator also limits inferences from model internals. Functional understanding and subjective experience remain distinct claims."
+      }
+    },
+    {
+      "id": "reader:the-parallel-result-is-not-the-product",
+      "slug": "the-parallel-result-is-not-the-product",
+      "title": "The Parallel Result Is Not the Product",
+      "url": "https://youtube.shareplane.malott.ai/the-parallel-result-is-not-the-product/",
+      "review": {
+        "reviewedAt": "2026-10-20",
+        "reviewedCatalogSize": 23,
+        "decision": "none",
+        "reviewedTargets": [],
+        "rationale": "No other local Reader analyzes NCM or HybridAgents, their parallel-code and latent-reasoning methods, or the same benchmark claims. External studies remain outside this Reader graph."
+      }
+    },
+    {
+      "id": "reader:the-experiment-ran-did-the-research-advance",
+      "slug": "the-experiment-ran-did-the-research-advance",
+      "title": "The Experiment Ran. Did the Research Advance?",
+      "url": "https://youtube.shareplane.malott.ai/the-experiment-ran-did-the-research-advance/",
+      "review": {
+        "reviewedAt": "2026-10-20",
+        "reviewedCatalogSize": 23,
+        "decision": "linked",
+        "reviewedTargets": [
+          "reader:a-scenario-is-not-a-singularity"
+        ],
+        "rationale": "The physics benchmark Reader provides a contrasting bounded task score. It does not assess the two open-ended research contributions studied in this paper."
+      }
+    },
+    {
+      "id": "reader:the-list-is-the-business-claim",
+      "slug": "the-list-is-the-business-claim",
+      "title": "The List Is the Business Claim",
+      "url": "https://youtube.shareplane.malott.ai/the-list-is-the-business-claim/",
+      "review": {
+        "reviewedAt": "2026-10-20",
+        "reviewedCatalogSize": 23,
+        "decision": "linked",
+        "reviewedTargets": [
+          "reader:when-agents-become-the-customer",
+          "reader:the-agent-a-company-owns"
+        ],
+        "rationale": "The agent-customer and company-agent Readers compare business authority and ownership questions. Neither establishes Muse lead rights or business outcomes."
+      }
+    },
+    {
+      "id": "reader:the-warning-is-not-a-ballot-ruling",
+      "slug": "the-warning-is-not-a-ballot-ruling",
+      "title": "The Warning Is Not a Ballot Ruling",
+      "url": "https://youtube.shareplane.malott.ai/the-warning-is-not-a-ballot-ruling/",
+      "review": {
+        "reviewedAt": "2026-10-20",
+        "reviewedCatalogSize": 23,
+        "decision": "none",
+        "reviewedTargets": [],
+        "rationale": "The other published Readers do not examine this California voter-list dispute, individualized ballot procedure or conditional DOJ warning. AI evaluation analogies are too distant to admit as local routes."
+      }
+    },
+    {
+      "id": "reader:the-threshold-is-a-claim-not-a-test",
+      "slug": "the-threshold-is-a-claim-not-a-test",
+      "title": "The Threshold Is a Claim, Not a Test",
+      "url": "https://youtube.shareplane.malott.ai/the-threshold-is-a-claim-not-a-test/",
+      "review": {
+        "reviewedAt": "2026-10-20",
+        "reviewedCatalogSize": 23,
+        "decision": "linked",
+        "reviewedTargets": [
+          "reader:the-brakes-need-a-test",
+          "reader:the-label-the-box-and-the-bargain"
+        ],
+        "rationale": "The Gates risk interview supports two qualified routes: Robinson examines release safety process, and Bostrom distinguishes capability from control. Neither source verifies the other's risk magnitude."
+      }
+    },
+    {
+      "id": "reader:the-label-the-box-and-the-bargain",
+      "slug": "the-label-the-box-and-the-bargain",
+      "title": "The Label, the Box, and the Bargain",
+      "url": "https://youtube.shareplane.malott.ai/the-label-the-box-and-the-bargain/",
+      "review": {
+        "reviewedAt": "2026-10-20",
+        "reviewedCatalogSize": 23,
+        "decision": "linked",
+        "reviewedTargets": [
+          "reader:the-test-must-name-its-target",
+          "reader:the-microscope-is-not-a-soul"
+        ],
+        "rationale": "The existing routes distinguish AGI labels from functional understanding and digital experience from representation evidence. Neither verifies the interview's exact speech."
+      }
+    },
+    {
+      "id": "reader:the-brakes-need-a-test",
+      "slug": "the-brakes-need-a-test",
+      "title": "The Brakes Need a Test",
+      "url": "https://youtube.shareplane.malott.ai/the-brakes-need-a-test/",
+      "review": {
+        "reviewedAt": "2026-10-20",
+        "reviewedCatalogSize": 23,
+        "decision": "linked",
+        "reviewedTargets": [
+          "reader:the-label-the-box-and-the-bargain",
+          "reader:the-threshold-is-a-claim-not-a-test"
+        ],
+        "rationale": "Robinson's incident and release-process analysis supports routes to Bostrom's bounded control example and Gates's risk threshold. These are comparison paths, not independent interview corroboration."
+      }
+    }
+  ],
+  "edges": [
+    {
+      "from": "reader:ask-for-the-outcome-keep-the-boundary",
+      "to": "reader:a-challenge-is-not-a-verdict",
+      "type": "related topic",
+      "reason": "Both editorial briefs examine judgment, verification. This is a topic-level reading route, not independent corroboration or agreement.",
+      "provenance": [
+        "/ask-for-the-outcome-keep-the-boundary/#at-a-glance",
+        "/a-challenge-is-not-a-verdict/#at-a-glance"
+      ],
+      "basis": "curated-tags",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:ask-for-the-outcome-keep-the-boundary",
+      "to": "reader:make-good-work-inspectable",
+      "type": "related topic",
+      "reason": "Both editorial briefs examine agents, verification. This is a topic-level reading route, not independent corroboration or agreement.",
+      "provenance": [
+        "/ask-for-the-outcome-keep-the-boundary/#at-a-glance",
+        "/make-good-work-inspectable/#at-a-glance"
+      ],
+      "basis": "curated-tags",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:ask-for-the-outcome-keep-the-boundary",
+      "to": "reader:the-funnel-is-not-the-frontier",
+      "type": "related topic",
+      "reason": "Both editorial briefs examine agents, verification. This is a topic-level reading route, not independent corroboration or agreement.",
+      "provenance": [
+        "/ask-for-the-outcome-keep-the-boundary/#at-a-glance",
+        "/the-funnel-is-not-the-frontier/#at-a-glance"
+      ],
+      "basis": "curated-tags",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:make-good-work-inspectable",
+      "to": "reader:a-challenge-is-not-a-verdict",
+      "type": "related topic",
+      "reason": "Both editorial briefs examine software, verification. This is a topic-level reading route, not independent corroboration or agreement.",
+      "provenance": [
+        "/make-good-work-inspectable/#at-a-glance",
+        "/a-challenge-is-not-a-verdict/#at-a-glance"
+      ],
+      "basis": "curated-tags",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:make-good-work-inspectable",
+      "to": "reader:ask-for-the-outcome-keep-the-boundary",
+      "type": "related topic",
+      "reason": "Both editorial briefs examine agents, verification. This is a topic-level reading route, not independent corroboration or agreement.",
+      "provenance": [
+        "/make-good-work-inspectable/#at-a-glance",
+        "/ask-for-the-outcome-keep-the-boundary/#at-a-glance"
+      ],
+      "basis": "curated-tags",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:make-good-work-inspectable",
+      "to": "reader:the-funnel-is-not-the-frontier",
+      "type": "related topic",
+      "reason": "Both editorial briefs examine agents, verification. This is a topic-level reading route, not independent corroboration or agreement.",
+      "provenance": [
+        "/make-good-work-inspectable/#at-a-glance",
+        "/the-funnel-is-not-the-frontier/#at-a-glance"
+      ],
+      "basis": "curated-tags",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:a-challenge-is-not-a-verdict",
+      "to": "reader:ask-for-the-outcome-keep-the-boundary",
+      "type": "related topic",
+      "reason": "Both editorial briefs examine judgment, verification. This is a topic-level reading route, not independent corroboration or agreement.",
+      "provenance": [
+        "/a-challenge-is-not-a-verdict/#at-a-glance",
+        "/ask-for-the-outcome-keep-the-boundary/#at-a-glance"
+      ],
+      "basis": "curated-tags",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:a-challenge-is-not-a-verdict",
+      "to": "reader:make-good-work-inspectable",
+      "type": "related topic",
+      "reason": "Both editorial briefs examine software, verification. This is a topic-level reading route, not independent corroboration or agreement.",
+      "provenance": [
+        "/a-challenge-is-not-a-verdict/#at-a-glance",
+        "/make-good-work-inspectable/#at-a-glance"
+      ],
+      "basis": "curated-tags",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:a-challenge-is-not-a-verdict",
+      "to": "reader:when-software-becomes-legible",
+      "type": "related topic",
+      "reason": "Both editorial briefs examine software, verification. This is a topic-level reading route, not independent corroboration or agreement.",
+      "provenance": [
+        "/a-challenge-is-not-a-verdict/#at-a-glance",
+        "/when-software-becomes-legible/#at-a-glance"
+      ],
+      "basis": "curated-tags",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:the-score-is-not-the-system",
+      "to": "reader:the-microscope-is-not-a-soul",
+      "type": "related topic",
+      "reason": "Both editorial briefs examine authority, evaluation, interpretability. This is a topic-level reading route, not independent corroboration or agreement.",
+      "provenance": [
+        "/the-score-is-not-the-system/#at-a-glance",
+        "/the-microscope-is-not-a-soul/#at-a-glance"
+      ],
+      "basis": "curated-tags",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:the-inbox-was-a-boundary",
+      "to": "reader:the-key-was-the-boundary",
+      "type": "related topic",
+      "reason": "Both editorial briefs examine agents, authority, security. This is a topic-level reading route, not independent corroboration or agreement.",
+      "provenance": [
+        "/the-inbox-was-a-boundary/#at-a-glance",
+        "/the-key-was-the-boundary/#at-a-glance"
+      ],
+      "basis": "curated-tags",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:the-inbox-was-a-boundary",
+      "to": "reader:autonomy-needs-an-interface",
+      "type": "related topic",
+      "reason": "Both editorial briefs examine agents, authority. This is a topic-level reading route, not independent corroboration or agreement.",
+      "provenance": [
+        "/the-inbox-was-a-boundary/#at-a-glance",
+        "/autonomy-needs-an-interface/#at-a-glance"
+      ],
+      "basis": "curated-tags",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:the-inbox-was-a-boundary",
+      "to": "reader:the-agent-a-company-owns",
+      "type": "related topic",
+      "reason": "Both editorial briefs examine agents, authority. This is a topic-level reading route, not independent corroboration or agreement.",
+      "provenance": [
+        "/the-inbox-was-a-boundary/#at-a-glance",
+        "/the-agent-a-company-owns/#at-a-glance"
+      ],
+      "basis": "curated-tags",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:the-agent-a-company-owns",
+      "to": "reader:autonomy-needs-an-interface",
+      "type": "related topic",
+      "reason": "Both editorial briefs examine agents, authority, memory. This is a topic-level reading route, not independent corroboration or agreement.",
+      "provenance": [
+        "/the-agent-a-company-owns/#at-a-glance",
+        "/autonomy-needs-an-interface/#at-a-glance"
+      ],
+      "basis": "curated-tags",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:the-agent-a-company-owns",
+      "to": "reader:the-inbox-was-a-boundary",
+      "type": "related topic",
+      "reason": "Both editorial briefs examine agents, authority. This is a topic-level reading route, not independent corroboration or agreement.",
+      "provenance": [
+        "/the-agent-a-company-owns/#at-a-glance",
+        "/the-inbox-was-a-boundary/#at-a-glance"
+      ],
+      "basis": "curated-tags",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:the-agent-a-company-owns",
+      "to": "reader:the-key-was-the-boundary",
+      "type": "related topic",
+      "reason": "Both editorial briefs examine agents, authority. This is a topic-level reading route, not independent corroboration or agreement.",
+      "provenance": [
+        "/the-agent-a-company-owns/#at-a-glance",
+        "/the-key-was-the-boundary/#at-a-glance"
+      ],
+      "basis": "curated-tags",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:autonomy-needs-an-interface",
+      "to": "reader:the-agent-a-company-owns",
+      "type": "extends",
+      "reason": "The later Reader explicitly builds on the earlier Vercel interview, shifting from agent identity and memory to product ownership and routed authority.",
+      "provenance": [
+        "/autonomy-needs-an-interface/#evidence",
+        "/the-agent-a-company-owns/#evidence"
+      ],
+      "basis": "editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:autonomy-needs-an-interface",
+      "to": "reader:the-inbox-was-a-boundary",
+      "type": "related topic",
+      "reason": "Both editorial briefs examine agents, authority. This is a topic-level reading route, not independent corroboration or agreement.",
+      "provenance": [
+        "/autonomy-needs-an-interface/#at-a-glance",
+        "/the-inbox-was-a-boundary/#at-a-glance"
+      ],
+      "basis": "curated-tags",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:autonomy-needs-an-interface",
+      "to": "reader:the-key-was-the-boundary",
+      "type": "related topic",
+      "reason": "Both editorial briefs examine agents, authority. This is a topic-level reading route, not independent corroboration or agreement.",
+      "provenance": [
+        "/autonomy-needs-an-interface/#at-a-glance",
+        "/the-key-was-the-boundary/#at-a-glance"
+      ],
+      "basis": "curated-tags",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:when-software-becomes-legible",
+      "to": "reader:a-challenge-is-not-a-verdict",
+      "type": "related topic",
+      "reason": "Both editorial briefs examine software, verification. This is a topic-level reading route, not independent corroboration or agreement.",
+      "provenance": [
+        "/when-software-becomes-legible/#at-a-glance",
+        "/a-challenge-is-not-a-verdict/#at-a-glance"
+      ],
+      "basis": "curated-tags",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:when-software-becomes-legible",
+      "to": "reader:make-good-work-inspectable",
+      "type": "related topic",
+      "reason": "Both editorial briefs examine software, verification. This is a topic-level reading route, not independent corroboration or agreement.",
+      "provenance": [
+        "/when-software-becomes-legible/#at-a-glance",
+        "/make-good-work-inspectable/#at-a-glance"
+      ],
+      "basis": "curated-tags",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:when-software-becomes-legible",
+      "to": "reader:when-agents-become-the-customer",
+      "type": "related topic",
+      "reason": "Both editorial briefs examine authority, software. This is a topic-level reading route, not independent corroboration or agreement.",
+      "provenance": [
+        "/when-software-becomes-legible/#at-a-glance",
+        "/when-agents-become-the-customer/#at-a-glance"
+      ],
+      "basis": "curated-tags",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:when-agents-become-the-customer",
+      "to": "reader:autonomy-needs-an-interface",
+      "type": "related topic",
+      "reason": "Both editorial briefs examine agents, authority. This is a topic-level reading route, not independent corroboration or agreement.",
+      "provenance": [
+        "/when-agents-become-the-customer/#at-a-glance",
+        "/autonomy-needs-an-interface/#at-a-glance"
+      ],
+      "basis": "curated-tags",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:when-agents-become-the-customer",
+      "to": "reader:make-good-work-inspectable",
+      "type": "related topic",
+      "reason": "Both editorial briefs examine agents, software. This is a topic-level reading route, not independent corroboration or agreement.",
+      "provenance": [
+        "/when-agents-become-the-customer/#at-a-glance",
+        "/make-good-work-inspectable/#at-a-glance"
+      ],
+      "basis": "curated-tags",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:when-agents-become-the-customer",
+      "to": "reader:the-agent-a-company-owns",
+      "type": "related topic",
+      "reason": "Both editorial briefs examine agents, authority. This is a topic-level reading route, not independent corroboration or agreement.",
+      "provenance": [
+        "/when-agents-become-the-customer/#at-a-glance",
+        "/the-agent-a-company-owns/#at-a-glance"
+      ],
+      "basis": "curated-tags",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:the-scan-never-reached-the-login",
+      "to": "reader:ask-for-the-outcome-keep-the-boundary",
+      "type": "related topic",
+      "reason": "Both editorial briefs examine agents, verification. This is a topic-level reading route, not independent corroboration or agreement.",
+      "provenance": [
+        "/the-scan-never-reached-the-login/#at-a-glance",
+        "/ask-for-the-outcome-keep-the-boundary/#at-a-glance"
+      ],
+      "basis": "curated-tags",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:the-scan-never-reached-the-login",
+      "to": "reader:make-good-work-inspectable",
+      "type": "related topic",
+      "reason": "Both editorial briefs examine agents, verification. This is a topic-level reading route, not independent corroboration or agreement.",
+      "provenance": [
+        "/the-scan-never-reached-the-login/#at-a-glance",
+        "/make-good-work-inspectable/#at-a-glance"
+      ],
+      "basis": "curated-tags",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:the-scan-never-reached-the-login",
+      "to": "reader:the-funnel-is-not-the-frontier",
+      "type": "related topic",
+      "reason": "Both editorial briefs examine agents, verification. This is a topic-level reading route, not independent corroboration or agreement.",
+      "provenance": [
+        "/the-scan-never-reached-the-login/#at-a-glance",
+        "/the-funnel-is-not-the-frontier/#at-a-glance"
+      ],
+      "basis": "curated-tags",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:the-key-was-the-boundary",
+      "to": "reader:the-inbox-was-a-boundary",
+      "type": "related topic",
+      "reason": "Both editorial briefs examine agents, authority, security. This is a topic-level reading route, not independent corroboration or agreement.",
+      "provenance": [
+        "/the-key-was-the-boundary/#at-a-glance",
+        "/the-inbox-was-a-boundary/#at-a-glance"
+      ],
+      "basis": "curated-tags",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:the-key-was-the-boundary",
+      "to": "reader:autonomy-needs-an-interface",
+      "type": "related topic",
+      "reason": "Both editorial briefs examine agents, authority. This is a topic-level reading route, not independent corroboration or agreement.",
+      "provenance": [
+        "/the-key-was-the-boundary/#at-a-glance",
+        "/autonomy-needs-an-interface/#at-a-glance"
+      ],
+      "basis": "curated-tags",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:the-key-was-the-boundary",
+      "to": "reader:the-agent-a-company-owns",
+      "type": "related topic",
+      "reason": "Both editorial briefs examine agents, authority. This is a topic-level reading route, not independent corroboration or agreement.",
+      "provenance": [
+        "/the-key-was-the-boundary/#at-a-glance",
+        "/the-agent-a-company-owns/#at-a-glance"
+      ],
+      "basis": "curated-tags",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:the-microscope-is-not-a-soul",
+      "to": "reader:the-score-is-not-the-system",
+      "type": "examines same claim",
+      "reason": "Both examine the limited inference from Anthropic emotion-representation steering to behavior, without treating it as proof of experience.",
+      "provenance": [
+        "/the-microscope-is-not-a-soul/#evidence",
+        "/the-score-is-not-the-system/#evidence"
+      ],
+      "basis": "editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:the-funnel-is-not-the-frontier",
+      "to": "reader:ask-for-the-outcome-keep-the-boundary",
+      "type": "related topic",
+      "reason": "Both editorial briefs examine agents, verification. This is a topic-level reading route, not independent corroboration or agreement.",
+      "provenance": [
+        "/the-funnel-is-not-the-frontier/#at-a-glance",
+        "/ask-for-the-outcome-keep-the-boundary/#at-a-glance"
+      ],
+      "basis": "curated-tags",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:the-funnel-is-not-the-frontier",
+      "to": "reader:make-good-work-inspectable",
+      "type": "related topic",
+      "reason": "Both editorial briefs examine agents, verification. This is a topic-level reading route, not independent corroboration or agreement.",
+      "provenance": [
+        "/the-funnel-is-not-the-frontier/#at-a-glance",
+        "/make-good-work-inspectable/#at-a-glance"
+      ],
+      "basis": "curated-tags",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:the-funnel-is-not-the-frontier",
+      "to": "reader:the-scan-never-reached-the-login",
+      "type": "related topic",
+      "reason": "Both editorial briefs examine agents, verification. This is a topic-level reading route, not independent corroboration or agreement.",
+      "provenance": [
+        "/the-funnel-is-not-the-frontier/#at-a-glance",
+        "/the-scan-never-reached-the-login/#at-a-glance"
+      ],
+      "basis": "curated-tags",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:the-fleet-does-not-prove-the-forecast",
+      "to": "reader:the-inbox-was-a-boundary",
+      "type": "related topic",
+      "reason": "Both Readers examine the Amap fleet; this edition tests the wider internet forecast, while the earlier Reader examines the hidden inbox and permission boundary.",
+      "provenance": [
+        "/the-fleet-does-not-prove-the-forecast/#at-a-glance",
+        "/the-inbox-was-a-boundary/#at-a-glance"
+      ],
+      "basis": "curated-source-overlap",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:the-fleet-does-not-prove-the-forecast",
+      "to": "reader:when-agents-become-the-customer",
+      "type": "related topic",
+      "reason": "Jones forecasts how agents may reach websites; Wilson considers services designed for agent customers. Read them together to compare the forecasts and product incentives with authorization boundaries, not as mutual evidence for adoption.",
+      "provenance": [
+        "/the-fleet-does-not-prove-the-forecast/#forecast",
+        "/when-agents-become-the-customer/#authority"
+      ],
+      "basis": "curated-editorial-contrast",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:a-scenario-is-not-a-singularity",
+      "to": "reader:the-experiment-ran-did-the-research-advance",
+      "type": "related topic",
+      "reason": "The physics benchmark reports 49 of 50 bounded calculations; the paper examines expert judgments about contributions to two open-ended research questions. Compare what a task score and a research judgment establish without treating either as a test of the other.",
+      "provenance": [
+        "/a-scenario-is-not-a-singularity/#physics",
+        "/the-experiment-ran-did-the-research-advance/#finding"
+      ],
+      "basis": "curated-editorial-contrast",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:the-test-must-name-its-target",
+      "to": "reader:the-microscope-is-not-a-soul",
+      "type": "related topic",
+      "reason": "Both Count Grey Matter Readers examine the inference from internal model evidence to a broader mental-state claim; this edition examines functional understanding, while the earlier one separates interpretation from consciousness and welfare.",
+      "provenance": [
+        "/the-test-must-name-its-target/#representation",
+        "/the-microscope-is-not-a-soul/#evidence"
+      ],
+      "basis": "curated-source-overlap",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:the-experiment-ran-did-the-research-advance",
+      "to": "reader:a-scenario-is-not-a-singularity",
+      "type": "related topic",
+      "reason": "This paper grades open-ended research contributions; the earlier Reader analyzes a 49 of 50 physics benchmark result. Read across them to keep research judgment separate from a bounded task score, not to corroborate either result.",
+      "provenance": [
+        "/the-experiment-ran-did-the-research-advance/#finding",
+        "/a-scenario-is-not-a-singularity/#physics"
+      ],
+      "basis": "curated-editorial-contrast",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:the-list-is-the-business-claim",
+      "to": "reader:when-agents-become-the-customer",
+      "type": "related topic",
+      "reason": "Both examine agents as part of a business workflow. The published Reader tests caller identity, billing and service authorization; it does not validate this video’s proposed matching business or its outcomes.",
+      "provenance": [
+        "/the-list-is-the-business-claim/#what-does-ghostmesh-take-away",
+        "/when-agents-become-the-customer/#authority"
+      ],
+      "basis": "curated-editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:the-list-is-the-business-claim",
+      "to": "reader:the-agent-a-company-owns",
+      "type": "related topic",
+      "reason": "Both ask what a company actually owns when agents mediate work. The published Reader treats continuity, memory and permission as separate tests; it does not establish rights to the third-party lead data proposed here.",
+      "provenance": [
+        "/the-list-is-the-business-claim/#what-does-ghostmesh-take-away",
+        "/the-agent-a-company-owns/#permission"
+      ],
+      "basis": "curated-editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:the-threshold-is-a-claim-not-a-test",
+      "to": "reader:the-brakes-need-a-test",
+      "type": "related topic",
+      "reason": "Gates asks when cyber or biological actor uplift and control risk warrant intervention; Robinson asks whether developer tests, pauses and retests support a release decision. Read these as policy-threshold and safety-process questions, not independent evidence for either interview's forecasts.",
+      "provenance": [
+        "/the-threshold-is-a-claim-not-a-test/#exchange",
+        "/the-brakes-need-a-test/#brakes"
+      ],
+      "basis": "curated-editorial-contrast",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:the-threshold-is-a-claim-not-a-test",
+      "to": "reader:the-label-the-box-and-the-bargain",
+      "type": "related topic",
+      "reason": "Both distinguish a capability label from evidence about control. Gates proposes measured actor outcomes and scoped controls; Bostrom's caption-grounded boxing discussion separates present boundaries from longer-run alignment. Neither Reader establishes the other's risk timeline.",
+      "provenance": [
+        "/the-threshold-is-a-claim-not-a-test/#next-step",
+        "/the-label-the-box-and-the-bargain/#section-2"
+      ],
+      "basis": "curated-editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:the-label-the-box-and-the-bargain",
+      "to": "reader:the-test-must-name-its-target",
+      "type": "related topic",
+      "reason": "Both ask what an AI label establishes. The Bostrom preview raises definition-dependent AGI questions; the published Reader separates functional understanding from subjective experience. Neither is a test of the other's source claims.",
+      "provenance": [
+        "/the-label-the-box-and-the-bargain/#section-1",
+        "/the-test-must-name-its-target/#representation"
+      ],
+      "basis": "curated-editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:the-label-the-box-and-the-bargain",
+      "to": "reader:the-microscope-is-not-a-soul",
+      "type": "related topic",
+      "reason": "Both consider digital experience and welfare while keeping uncertainty visible. The published Reader cautions against inferring consciousness from model representations; it does not corroborate the interview's provisional caption reading.",
+      "provenance": [
+        "/the-label-the-box-and-the-bargain/#section-4",
+        "/the-microscope-is-not-a-soul/#evidence"
+      ],
+      "basis": "curated-editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:the-brakes-need-a-test",
+      "to": "reader:the-label-the-box-and-the-bargain",
+      "type": "related topic",
+      "reason": "Both use OpenAI's August 2026 Hugging Face incident. Robinson examines bounded intrusion forensics and safeguards; Bostrom uses the incident as a limited example of a present boundary failure. Their shared source is not independent corroboration or a forecast of universal escape.",
+      "provenance": [
+        "/the-brakes-need-a-test/#incident",
+        "/the-label-the-box-and-the-bargain/#section-2"
+      ],
+      "basis": "curated-source-overlap",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:the-brakes-need-a-test",
+      "to": "reader:the-threshold-is-a-claim-not-a-test",
+      "type": "related topic",
+      "reason": "Robinson asks whether tests, pauses and retests keep pace with releases; Gates raises a broader threshold for cyber and biological danger and public oversight. The questions complement each other, but Robinson's interview does not measure Gates's actor-uplift claim.",
+      "provenance": [
+        "/the-brakes-need-a-test/#takeaway",
+        "/the-threshold-is-a-claim-not-a-test/#measurement"
+      ],
+      "basis": "curated-editorial-contrast",
+      "direction": "outgoing"
+    }
+  ]
+}

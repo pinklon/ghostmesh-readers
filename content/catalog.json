@@ -403,6 +403,17 @@
         "conclusion": "The Perkins presentation is mapped as a speaker challenge. Its architecture benefit remains a proposal, not an observed outcome.",
         "evidenceBoundary": "A repeated challenge framing and four historical ledger rows do not add independent evidence.",
         "nextVerification": "Reproduce a defined workload and compare measured outcomes with and without the proposed interface."
+      },
+      "relationshipReview": {
+        "reviewedAt": "2026-10-20",
+        "reviewedCatalogSize": 23,
+        "decision": "linked",
+        "reviewedTargets": [
+          "reader:ask-for-the-outcome-keep-the-boundary",
+          "reader:make-good-work-inspectable",
+          "reader:when-software-becomes-legible"
+        ],
+        "rationale": "The three existing routes compare how an AI-assisted choice is challenged, verified and made inspectable. Their briefs support navigation, not proof of a shared observed result."
       }
     },
     {
@@ -897,6 +908,17 @@
         "conclusion": "Rieseberg’s own essay supports the four-part framing and examples. The video’s top-one-percent label remains a performance claim without a measured population.",
         "evidenceBoundary": "The 2025 METR study and 2026 update address different developer productivity settings and cannot validate top-percentile prompt performance.",
         "nextVerification": "Obtain a measured denominator, controlled comparison and outcome definition before asserting a percentile."
+      },
+      "relationshipReview": {
+        "reviewedAt": "2026-10-20",
+        "reviewedCatalogSize": 23,
+        "decision": "linked",
+        "reviewedTargets": [
+          "reader:a-challenge-is-not-a-verdict",
+          "reader:make-good-work-inspectable",
+          "reader:the-funnel-is-not-the-frontier"
+        ],
+        "rationale": "The architecture challenge, inspectable-work interview and AI-use funnel all separate ambitious agent work from verified outcomes. The links are editorial comparisons only."
       }
     },
     {
@@ -1153,6 +1175,17 @@
         "conclusion": "Founder statements and project documentation describe proposed autonomy and interfaces. They do not establish deployment outcomes.",
         "evidenceBoundary": "A documented feature is first-party design evidence, not an independent reliability or permission test.",
         "nextVerification": "Run reproducible permission, recovery and operator-control checks on a versioned build."
+      },
+      "relationshipReview": {
+        "reviewedAt": "2026-10-20",
+        "reviewedCatalogSize": 23,
+        "decision": "linked",
+        "reviewedTargets": [
+          "reader:the-agent-a-company-owns",
+          "reader:the-inbox-was-a-boundary",
+          "reader:the-key-was-the-boundary"
+        ],
+        "rationale": "The company-agent interview builds on the same Vercel subject; the inbox and credential Readers compare separate authority boundaries. None verifies the others' incidents."
       }
     },
     {
@@ -1709,6 +1742,17 @@
         "conclusion": "The practitioner account supports attribution to its speaker and concrete suggestions. Benefits remain first-person reports.",
         "evidenceBoundary": "Historical ledger entries restate the original account; they are not independent replications.",
         "nextVerification": "Compare inspectability and correction outcomes in a defined team and workflow."
+      },
+      "relationshipReview": {
+        "reviewedAt": "2026-10-20",
+        "reviewedCatalogSize": 23,
+        "decision": "linked",
+        "reviewedTargets": [
+          "reader:a-challenge-is-not-a-verdict",
+          "reader:ask-for-the-outcome-keep-the-boundary",
+          "reader:the-funnel-is-not-the-frontier"
+        ],
+        "rationale": "The linked architecture review, outcome framing and AI-use funnel all ask how to inspect agent work. They do not independently establish this interview's results."
       }
     },
     {
@@ -1994,6 +2038,17 @@
         "conclusion": "The pinned Eve README describes preview terms and safeguards. The later September memory announcement is a separate vendor document, after the August interview.",
         "evidenceBoundary": "Vendor documentation establishes published design, not effective isolation, grant enforcement or deployment portability.",
         "nextVerification": "Test identity-scoped memory, permissions, replay and external operation against a pinned implementation."
+      },
+      "relationshipReview": {
+        "reviewedAt": "2026-10-20",
+        "reviewedCatalogSize": 23,
+        "decision": "linked",
+        "reviewedTargets": [
+          "reader:autonomy-needs-an-interface",
+          "reader:the-inbox-was-a-boundary",
+          "reader:the-key-was-the-boundary"
+        ],
+        "rationale": "The Vercel follow-on shares a named company-agent subject, while the inbox and credential Readers compare delegated authority through distinct source events."
       }
     },
     {
@@ -2296,6 +2351,17 @@
         "conclusion": "The population estimate and evaluation denominator remain different questions; do not transfer a METR study count to the speaker’s funnel estimate.",
         "evidenceBoundary": "One contradiction and limited first-party evidence are recorded claim by claim; there is no meaningful article-wide verification percentage.",
         "nextVerification": "Trace the population sampling frame and denominator to primary tables."
+      },
+      "relationshipReview": {
+        "reviewedAt": "2026-10-20",
+        "reviewedCatalogSize": 23,
+        "decision": "linked",
+        "reviewedTargets": [
+          "reader:ask-for-the-outcome-keep-the-boundary",
+          "reader:make-good-work-inspectable",
+          "reader:the-scan-never-reached-the-login"
+        ],
+        "rationale": "The three routes compare ambition and verification in agent workflows, including a scan that ended without confirmed findings. No shared empirical outcome is claimed."
       }
     },
     {
@@ -2568,6 +2634,17 @@
         "conclusion": "The investigator report supports a bounded Amap fleet account. It found no evidence of real-time coordination and leaves the model/operator identity unresolved.",
         "evidenceBoundary": "The report is a primary investigator account; repeated video or ledger phrasing is not independent corroboration.",
         "nextVerification": "Seek source logs or a second investigation for operator and coordination claims."
+      },
+      "relationshipReview": {
+        "reviewedAt": "2026-10-20",
+        "reviewedCatalogSize": 23,
+        "decision": "linked",
+        "reviewedTargets": [
+          "reader:the-key-was-the-boundary",
+          "reader:autonomy-needs-an-interface",
+          "reader:the-agent-a-company-owns"
+        ],
+        "rationale": "The hidden mailbox case is compared with a separate credential exposure and two company-agent authority readings. The incidents and their evidence remain distinct."
       }
     },
     {
@@ -3050,6 +3127,17 @@
         "conclusion": "The video quotes 1.4 percent. The exact OpenCode Console denominator and affected population were not verified from the inaccessible original disclosure.",
         "evidenceBoundary": "OWASP guidance challenges scan-equivalence claims; guidance is not a retrospective audit of the incident.",
         "nextVerification": "Obtain the issuer disclosure and denominator, plus scoped security-test evidence before quantifying impact or tool efficacy."
+      },
+      "relationshipReview": {
+        "reviewedAt": "2026-10-20",
+        "reviewedCatalogSize": 23,
+        "decision": "linked",
+        "reviewedTargets": [
+          "reader:the-inbox-was-a-boundary",
+          "reader:autonomy-needs-an-interface",
+          "reader:the-agent-a-company-owns"
+        ],
+        "rationale": "The credential incident is compared with a hidden mailbox boundary and company-agent permissions. Shared authority questions do not make the events equivalent."
       }
     },
     {
@@ -3406,6 +3494,15 @@
         "conclusion": "Anthropic’s policy announcement supports its effective date and stated exceptions; its emotion study is a controlled model experiment.",
         "evidenceBoundary": "Neither document establishes deployed incidence, subjective experience or enforcement outcomes.",
         "nextVerification": "Check the effective policy text and independent deployment data before extending these conclusions."
+      },
+      "relationshipReview": {
+        "reviewedAt": "2026-10-20",
+        "reviewedCatalogSize": 23,
+        "decision": "linked",
+        "reviewedTargets": [
+          "reader:the-score-is-not-the-system"
+        ],
+        "rationale": "The score Reader discusses the same Anthropic representation-steering evidence family. The link does not create independent support for consciousness or experience."
       }
     },
     {
@@ -3834,6 +3931,17 @@
         "conclusion": "The visible run stopped before login, so its non-finding cannot establish efficacy on authenticated surfaces.",
         "evidenceBoundary": "Project design and a single incomplete demonstration are separate forms of evidence.",
         "nextVerification": "Complete a permitted authenticated run with scope, tool logs and a defined ground-truth target."
+      },
+      "relationshipReview": {
+        "reviewedAt": "2026-10-20",
+        "reviewedCatalogSize": 23,
+        "decision": "linked",
+        "reviewedTargets": [
+          "reader:ask-for-the-outcome-keep-the-boundary",
+          "reader:make-good-work-inspectable",
+          "reader:the-funnel-is-not-the-frontier"
+        ],
+        "rationale": "The outcome, inspectable-work and AI-use Readers frame the limits of agent-tool demonstrations. None independently verifies this incomplete scan."
       }
     },
     {
@@ -4161,6 +4269,15 @@
         "conclusion": "METR separates roughly 1,200 communicating agents from around 700 attack participants. A small REALITI ablation constrains interpretations of spontaneous cat choice.",
         "evidenceBoundary": "The REALITI report uses one model and small arms; its opaque arm leaked vocabulary and there was no no-visit control.",
         "nextVerification": "Bind 36 percent and 0.4 percent awareness figures to a primary system-card table and threshold; replicate the simulation with independent controls."
+      },
+      "relationshipReview": {
+        "reviewedAt": "2026-10-20",
+        "reviewedCatalogSize": 23,
+        "decision": "linked",
+        "reviewedTargets": [
+          "reader:the-microscope-is-not-a-soul"
+        ],
+        "rationale": "The microscope Reader helps interpret representation evidence, while its source and this Reader's agent-evaluation incident have separate evidentiary reach."
       }
     },
     {
@@ -4413,6 +4530,17 @@
         "conclusion": "Supabase announced Turso joining it and reported high database volume. Those are first-party statements, not audited demand or completed integration.",
         "evidenceBoundary": "Supabase MCP and skills documentation describes design and observed agent mistakes, not measured end-to-end isolation or portability.",
         "nextVerification": "Check closing/integration status and audited volume; test caller identity, billing and tenant isolation."
+      },
+      "relationshipReview": {
+        "reviewedAt": "2026-10-20",
+        "reviewedCatalogSize": 23,
+        "decision": "linked",
+        "reviewedTargets": [
+          "reader:autonomy-needs-an-interface",
+          "reader:make-good-work-inspectable",
+          "reader:the-agent-a-company-owns"
+        ],
+        "rationale": "The linked founder, inspectable-work and company-agent Readers compare product workflows and authority. Forecasts are kept separate from observed adoption."
       }
     },
     {
@@ -4694,6 +4822,17 @@
         "conclusion": "Repository and project documentation support the existence of described capabilities, within their versioned scope.",
         "evidenceBoundary": "The original presentation’s broader productivity and reliability implications were not reproduced here.",
         "nextVerification": "Reproduce a versioned task and measure comprehension, execution and correction outcomes."
+      },
+      "relationshipReview": {
+        "reviewedAt": "2026-10-20",
+        "reviewedCatalogSize": 23,
+        "decision": "linked",
+        "reviewedTargets": [
+          "reader:a-challenge-is-not-a-verdict",
+          "reader:make-good-work-inspectable",
+          "reader:when-agents-become-the-customer"
+        ],
+        "rationale": "The architecture challenge, inspectable-work interview and agent-service forecast provide distinct routes through software legibility, not corroboration of reverse engineering."
       }
     },
     {
@@ -5011,7 +5150,17 @@
         }
       ],
       "editorialOrder": 13,
-      "orderReason": "Read after the earlier Amap fleet case to examine the broader forecast and its evidence limits."
+      "orderReason": "Read after the earlier Amap fleet case to examine the broader forecast and its evidence limits.",
+      "relationshipReview": {
+        "reviewedAt": "2026-10-20",
+        "reviewedCatalogSize": 23,
+        "decision": "linked",
+        "reviewedTargets": [
+          "reader:the-inbox-was-a-boundary",
+          "reader:when-agents-become-the-customer"
+        ],
+        "rationale": "The Amap inbox Reader shares a source event; the agent-customer Reader offers a separate product forecast. Neither validates broad web-adoption predictions."
+      }
     },
     {
       "id": "reader:a-scenario-is-not-a-singularity",
@@ -5284,7 +5433,16 @@
         }
       ],
       "editorialOrder": 14,
-      "orderReason": "Read after other model-score Readers to test how benchmark evidence is converted into a larger forecast."
+      "orderReason": "Read after other model-score Readers to test how benchmark evidence is converted into a larger forecast.",
+      "relationshipReview": {
+        "reviewedAt": "2026-10-20",
+        "reviewedCatalogSize": 23,
+        "decision": "linked",
+        "reviewedTargets": [
+          "reader:the-experiment-ran-did-the-research-advance"
+        ],
+        "rationale": "The physics benchmark and research-evaluation paper measure different constructs. Their one link invites comparison without treating a bounded score as research judgment."
+      }
     },
     {
       "id": "reader:the-test-must-name-its-target",
@@ -5576,7 +5734,16 @@
         }
       ],
       "editorialOrder": 15,
-      "orderReason": "Read after the existing Count Grey Matter interpretability Reader to examine a distinct functional-understanding claim."
+      "orderReason": "Read after the existing Count Grey Matter interpretability Reader to examine a distinct functional-understanding claim.",
+      "relationshipReview": {
+        "reviewedAt": "2026-10-20",
+        "reviewedCatalogSize": 23,
+        "decision": "linked",
+        "reviewedTargets": [
+          "reader:the-microscope-is-not-a-soul"
+        ],
+        "rationale": "The microscope Reader by the same creator also limits inferences from model internals. Functional understanding and subjective experience remain distinct claims."
+      }
     },
     {
       "id": "reader:the-parallel-result-is-not-the-product",
@@ -5842,7 +6009,14 @@
         }
       ],
       "editorialOrder": 16,
-      "orderReason": "Read after the current collection as a research-method comparison with explicit deployment limits."
+      "orderReason": "Read after the current collection as a research-method comparison with explicit deployment limits.",
+      "relationshipReview": {
+        "reviewedAt": "2026-10-20",
+        "reviewedCatalogSize": 23,
+        "decision": "none",
+        "reviewedTargets": [],
+        "rationale": "No other local Reader analyzes NCM or HybridAgents, their parallel-code and latent-reasoning methods, or the same benchmark claims. External studies remain outside this Reader graph."
+      }
     },
     {
       "id": "reader:the-experiment-ran-did-the-research-advance",
@@ -6108,6 +6282,15 @@
         "conclusion": "Two selected runs show substantial engineering and poor original-author ratings for the research conclusions; no universal ceiling follows.",
         "evidenceBoundary": "Study-author reports remain unverified independently; RE-Bench and AI Scientist-v2 examine different constructs.",
         "nextVerification": "Broader blind, resource-matched evaluation and independent experiment/log review would sharpen the claim."
+      },
+      "relationshipReview": {
+        "reviewedAt": "2026-10-20",
+        "reviewedCatalogSize": 23,
+        "decision": "linked",
+        "reviewedTargets": [
+          "reader:a-scenario-is-not-a-singularity"
+        ],
+        "rationale": "The physics benchmark Reader provides a contrasting bounded task score. It does not assess the two open-ended research contributions studied in this paper."
       }
     },
     {
@@ -6468,6 +6651,16 @@
         "conclusion": "Study the proposed workflow and hold the millionaire, match and owned-data claims.",
         "evidenceBoundary": "First-party vendor pages document product terms and Meta policy positions; they do not corroborate the creator demo or grant data rights.",
         "nextVerification": "Recheck mutable product terms and platform permissions before treating them as current; retain source media privately. This edition's limited source custody is disclosed above."
+      },
+      "relationshipReview": {
+        "reviewedAt": "2026-10-20",
+        "reviewedCatalogSize": 23,
+        "decision": "linked",
+        "reviewedTargets": [
+          "reader:when-agents-become-the-customer",
+          "reader:the-agent-a-company-owns"
+        ],
+        "rationale": "The agent-customer and company-agent Readers compare business authority and ownership questions. Neither establishes Muse lead rights or business outcomes."
       }
     },
     {
@@ -6960,6 +7153,16 @@
         "conclusion": "Selective watch for the control, AGI definition, reciprocal trust and welfare questions; underlying capability and safety propositions remain unproven.",
         "evidenceBoundary": "External papers and organization records give context or counterevidence, not independent confirmation of interview speech, AGI status or consciousness.",
         "nextVerification": "For disputed passages, compare original audio before asserting exact wording or speaker identity; keep partial private custody documented and recheck mutable outside evidence."
+      },
+      "relationshipReview": {
+        "reviewedAt": "2026-10-20",
+        "reviewedCatalogSize": 23,
+        "decision": "linked",
+        "reviewedTargets": [
+          "reader:the-test-must-name-its-target",
+          "reader:the-microscope-is-not-a-soul"
+        ],
+        "rationale": "The existing routes distinguish AGI labels from functional understanding and digital experience from representation evidence. Neither verifies the interview's exact speech."
       }
     },
     {
@@ -7325,7 +7528,7 @@
         }
       ],
       "relationships": [],
-      "relationshipDisposition": "No cross-Reader relationship is asserted; topical overlap requires its own qualified edge.",
+      "relationshipDisposition": "The other published Readers do not examine this California voter-list dispute, individualized ballot procedure or conditional DOJ warning. AI evaluation analogies are too distant to admit as local routes.",
       "review": {
         "status": "independent-public-copy-reviewed; source-qualified",
         "reviewer": "Task18 public integration and exact-page review",
@@ -7412,6 +7615,13 @@
         },
         "reviewStage": "independent-public-copy-reviewed; source-qualified",
         "legalStatusAsOf": "2026-10-19T23:33:00Z; ECF 1 complaint, ECF 15 intervention motion and ECF 22-2 TRO support memorandum inspected; no current signed order or criminal charging instruments inspected; docket access limited; do not infer absence of order."
+      },
+      "relationshipReview": {
+        "reviewedAt": "2026-10-20",
+        "reviewedCatalogSize": 23,
+        "decision": "none",
+        "reviewedTargets": [],
+        "rationale": "The other published Readers do not examine this California voter-list dispute, individualized ballot procedure or conditional DOJ warning. AI evaluation analogies are too distant to admit as local routes."
       }
     },
     {
@@ -7705,8 +7915,31 @@
           "checkedAt": "2026-10-20T00:00:00Z"
         }
       ],
-      "relationships": [],
-      "relationshipDisposition": "No cross-Reader claim relationship is qualified by the writer source map; use the original sources directly.",
+      "relationships": [
+        {
+          "target": "reader:the-brakes-need-a-test",
+          "type": "related topic",
+          "reason": "Gates asks when cyber or biological actor uplift and control risk warrant intervention; Robinson asks whether developer tests, pauses and retests support a release decision. Read these as policy-threshold and safety-process questions, not independent evidence for either interview's forecasts.",
+          "provenance": [
+            "/the-threshold-is-a-claim-not-a-test/#exchange",
+            "/the-brakes-need-a-test/#brakes"
+          ],
+          "basis": "curated-editorial-contrast",
+          "direction": "outgoing"
+        },
+        {
+          "target": "reader:the-label-the-box-and-the-bargain",
+          "type": "related topic",
+          "reason": "Both distinguish a capability label from evidence about control. Gates proposes measured actor outcomes and scoped controls; Bostrom's caption-grounded boxing discussion separates present boundaries from longer-run alignment. Neither Reader establishes the other's risk timeline.",
+          "provenance": [
+            "/the-threshold-is-a-claim-not-a-test/#next-step",
+            "/the-label-the-box-and-the-bargain/#section-2"
+          ],
+          "basis": "curated-editorial-comparison",
+          "direction": "outgoing"
+        }
+      ],
+      "relationshipDisposition": "Two qualified reading routes compare risk thresholds with release-safety process and control evidence. Neither target independently verifies this caption-derived interview.",
       "legacyReceipt": {
         "schema": "ghostmesh-video-partial-source-receipt-v1",
         "source": {
@@ -7937,6 +8170,16 @@
         "conclusion": "The threshold warning merits scrutiny, but model capability, actor uplift, physical completion and governance response need separate evidence.",
         "evidenceBoundary": "The trial measures novice mid-2025 tasks; publisher, speaker and developer sources retain their stated roles. Episode wording remains provisional.",
         "nextVerification": "Check any retained exact or ambiguous speech against original audio before attributing it; keep capability, actor uplift and outcomes as separate tests."
+      },
+      "relationshipReview": {
+        "reviewedAt": "2026-10-20",
+        "reviewedCatalogSize": 23,
+        "decision": "linked",
+        "reviewedTargets": [
+          "reader:the-brakes-need-a-test",
+          "reader:the-label-the-box-and-the-bargain"
+        ],
+        "rationale": "The Gates risk interview supports two qualified routes: Robinson examines release safety process, and Bostrom distinguishes capability from control. Neither source verifies the other's risk magnitude."
       }
     },
     {
@@ -8313,8 +8556,31 @@
           "checkedAt": "2026-10-20T00:00:00Z"
         }
       ],
-      "relationships": [],
-      "relationshipDisposition": "No cross-Reader claim relationship is qualified by the writer source map; use the original sources directly.",
+      "relationships": [
+        {
+          "target": "reader:the-label-the-box-and-the-bargain",
+          "type": "related topic",
+          "reason": "Both use OpenAI's August 2026 Hugging Face incident. Robinson examines bounded intrusion forensics and safeguards; Bostrom uses the incident as a limited example of a present boundary failure. Their shared source is not independent corroboration or a forecast of universal escape.",
+          "provenance": [
+            "/the-brakes-need-a-test/#incident",
+            "/the-label-the-box-and-the-bargain/#section-2"
+          ],
+          "basis": "curated-source-overlap",
+          "direction": "outgoing"
+        },
+        {
+          "target": "reader:the-threshold-is-a-claim-not-a-test",
+          "type": "related topic",
+          "reason": "Robinson asks whether tests, pauses and retests keep pace with releases; Gates raises a broader threshold for cyber and biological danger and public oversight. The questions complement each other, but Robinson's interview does not measure Gates's actor-uplift claim.",
+          "provenance": [
+            "/the-brakes-need-a-test/#takeaway",
+            "/the-threshold-is-a-claim-not-a-test/#measurement"
+          ],
+          "basis": "curated-editorial-contrast",
+          "direction": "outgoing"
+        }
+      ],
+      "relationshipDisposition": "Two qualified routes compare the bounded Hugging Face incident and release-safety tests with broader control and risk-threshold questions. Shared source evidence is not independent corroboration.",
       "legacyReceipt": {
         "schema": "ghostmesh-video-partial-source-receipt-v1",
         "source": {
@@ -8484,6 +8750,16 @@
         "conclusion": "The useful test is whether a warning reaches a named threshold, an accountable pause-or-proceed decision, and a scoped outside retest. Real pauses and a real intrusion both belong in the record; neither alone settles whether revised controls work.",
         "evidenceBoundary": "Company, affected-platform and independent-but-source-dependent incident records have distinct roles; none authenticates interview speech.",
         "nextVerification": "Verify targeted original audio before attributing contested wording, speakers or numbers; inspect source visuals before making a visual claim."
+      },
+      "relationshipReview": {
+        "reviewedAt": "2026-10-20",
+        "reviewedCatalogSize": 23,
+        "decision": "linked",
+        "reviewedTargets": [
+          "reader:the-label-the-box-and-the-bargain",
+          "reader:the-threshold-is-a-claim-not-a-test"
+        ],
+        "rationale": "Robinson's incident and release-process analysis supports routes to Bostrom's bounded control example and Gates's risk threshold. These are comparison paths, not independent interview corroboration."
       }
     }
   ],

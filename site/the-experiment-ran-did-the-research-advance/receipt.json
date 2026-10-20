@@ -261,6 +261,15 @@
       "conclusion": "Two selected runs show substantial engineering and poor original-author ratings for the research conclusions; no universal ceiling follows.",
       "evidenceBoundary": "Study-author reports remain unverified independently; RE-Bench and AI Scientist-v2 examine different constructs.",
       "nextVerification": "Broader blind, resource-matched evaluation and independent experiment/log review would sharpen the claim."
+    },
+    "relationshipReview": {
+      "reviewedAt": "2026-10-20",
+      "reviewedCatalogSize": 23,
+      "decision": "linked",
+      "reviewedTargets": [
+        "reader:a-scenario-is-not-a-singularity"
+      ],
+      "rationale": "The physics benchmark Reader provides a contrasting bounded task score. It does not assess the two open-ended research contributions studied in this paper."
     }
   },
   "editorial": {

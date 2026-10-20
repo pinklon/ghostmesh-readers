@@ -287,7 +287,16 @@
       }
     ],
     "editorialOrder": 15,
-    "orderReason": "Read after the existing Count Grey Matter interpretability Reader to examine a distinct functional-understanding claim."
+    "orderReason": "Read after the existing Count Grey Matter interpretability Reader to examine a distinct functional-understanding claim.",
+    "relationshipReview": {
+      "reviewedAt": "2026-10-20",
+      "reviewedCatalogSize": 23,
+      "decision": "linked",
+      "reviewedTargets": [
+        "reader:the-microscope-is-not-a-soul"
+      ],
+      "rationale": "The microscope Reader by the same creator also limits inferences from model internals. Functional understanding and subjective experience remain distinct claims."
+    }
   },
   "editorial": {
     "overview": "The chapter list, private captions and bounded local ASR indicate a historical tour and a functional-understanding verdict. The narrator appears to separate task competence from untested subjective feeling; exact speech and the broader conclusion remain unverified.",

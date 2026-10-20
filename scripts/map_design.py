@@ -29,6 +29,27 @@ def _reason(edge):
     return reason
 
 
+def relationship_graph(readers, byid, host):
+    """Project catalog routes and explicit review outcomes without graph admission."""
+    ordered = sorted(readers, key=lambda reader: reader["editorialOrder"])
+    return {
+        "schema": "ghostmesh-reader-relationship-map-v1",
+        "scope": "Local public editorial reading routes; no independent corroboration or cross-site graph admission.",
+        "authority": "catalog-curated-editorial",
+        "visibility": "public",
+        "readerCount": len(ordered),
+        "assessmentCount": sum(bool(reader.get("relationshipReview")) for reader in ordered),
+        "relationshipCount": sum(len(reader["relationships"]) for reader in ordered),
+        "nodes": [{"id": reader["id"], "slug": reader["slug"], "title": reader["title"],
+                   "url": f'{host}/{reader["slug"]}/', "review": reader["relationshipReview"]}
+                  for reader in ordered],
+        "edges": [{"from": reader["id"], "to": edge["target"], "type": edge["type"],
+                   "reason": edge["reason"], "provenance": edge["provenance"],
+                   "basis": edge["basis"], "direction": edge["direction"]}
+                  for reader in ordered for edge in reader["relationships"]],
+    }
+
+
 def relationship_map(readers, byid):
     """Return the complete HTML body for /map/.
 
@@ -99,7 +120,8 @@ def relationship_map(readers, byid):
         '<p>These routes connect named public Readers by their declared editorial reasons. '
         'A shared topic is a way to read onward, not independent corroboration or agreement.</p>'
         '<div class="gm-atlas-hero-actions"><a href="#map-questions">Choose a question ↓</a>'
-        '<a href="#map-all">Browse every connection ↓</a></div></header>'
+        '<a href="#map-all">Browse every connection ↓</a>'
+        '<a href="/map/relationships.json">Download reviewed routes JSON ↗</a></div></header>'
         '<section class="gm-question-section" id="map-questions" aria-labelledby="map-questions-title">'
         '<div class="gm-question-head"><p class="gm-kicker">A way in</p>'
         '<h2 id="map-questions-title">What are you trying to understand?</h2>'

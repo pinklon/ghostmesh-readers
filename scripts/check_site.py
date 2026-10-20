@@ -155,7 +155,18 @@ def check(root=ROOT):
    require(edge['target'] in ids and edge['target']!=r['id'] and edge['type'] in RELATIONS and bool(edge['reason']) and bool(edge['provenance']),f'{slug}: unqualified relation')
    for link in edge['provenance']:
     u=urlsplit(link);q=site/u.path.strip('/')/'index.html';require(q in pages and (not u.fragment or u.fragment in pages[q].ids),f'{slug}: broken relation provenance {link}')
-  require(bool(r['relationshipDisposition']),f'{slug}: missing relation disposition')
+  require(bool(r.get('relationshipDisposition','').strip()),f'{slug}: missing relation disposition')
+  assessment=r.get('relationshipReview') or {}
+  try:
+   reviewed=date.fromisoformat(assessment.get('reviewedAt',''))
+   require(reviewed<=date.today(),f'{slug}: future relationship review')
+  except (ValueError,TypeError):errors.append(f'{slug}: missing or invalid relationship review date')
+  require(assessment.get('reviewedCatalogSize')==len(readers),f'{slug}: stale relationship review catalog size')
+  targets=[edge['target'] for edge in r['relationships']]
+  require(len(targets)==len(set(targets)),f'{slug}: duplicate relationship target')
+  require(assessment.get('reviewedTargets')==targets,f'{slug}: relationship review targets differ from catalog edges')
+  require(assessment.get('decision')==('linked' if targets else 'none'),f'{slug}: relationship review decision does not match edges')
+  require(len(str(assessment.get('rationale','')).strip())>=80,f'{slug}: relationship review needs a substantive rationale, including justified none')
  # Scan all public files, including unlinked assets and JSON, rather than only HTML.
  for p in root.rglob('*'):
   if '.git' in p.parts or '__pycache__' in p.parts:continue

@@ -268,7 +268,16 @@
       }
     ],
     "editorialOrder": 14,
-    "orderReason": "Read after other model-score Readers to test how benchmark evidence is converted into a larger forecast."
+    "orderReason": "Read after other model-score Readers to test how benchmark evidence is converted into a larger forecast.",
+    "relationshipReview": {
+      "reviewedAt": "2026-10-20",
+      "reviewedCatalogSize": 23,
+      "decision": "linked",
+      "reviewedTargets": [
+        "reader:the-experiment-ran-did-the-research-advance"
+      ],
+      "rationale": "The physics benchmark and research-evaluation paper measure different constructs. Their one link invites comparison without treating a bounded score as research judgment."
+    }
   },
   "editorial": {
     "overview": "AI Revolution’s public title declares an AI singularity. A private machine transcript suggests a Jack Clark IMF attribution; the first-party benchmark and economic scenarios warrant narrower conclusions.",

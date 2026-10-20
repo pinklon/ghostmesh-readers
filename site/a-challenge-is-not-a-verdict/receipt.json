@@ -392,6 +392,17 @@
       "conclusion": "The Perkins presentation is mapped as a speaker challenge. Its architecture benefit remains a proposal, not an observed outcome.",
       "evidenceBoundary": "A repeated challenge framing and four historical ledger rows do not add independent evidence.",
       "nextVerification": "Reproduce a defined workload and compare measured outcomes with and without the proposed interface."
+    },
+    "relationshipReview": {
+      "reviewedAt": "2026-10-20",
+      "reviewedCatalogSize": 23,
+      "decision": "linked",
+      "reviewedTargets": [
+        "reader:ask-for-the-outcome-keep-the-boundary",
+        "reader:make-good-work-inspectable",
+        "reader:when-software-becomes-legible"
+      ],
+      "rationale": "The three existing routes compare how an AI-assisted choice is challenged, verified and made inspectable. Their briefs support navigation, not proof of a shared observed result."
     }
   }
 }

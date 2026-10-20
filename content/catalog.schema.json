@@ -15,7 +15,7 @@
   "$defs": {
     "reader": {
       "type": "object",
-      "required": ["id", "slug", "title", "category", "tags", "entities", "source", "published", "updated", "overview", "whyItMatters", "ghostMeshTakeaway", "verdict", "architectureImpact", "claims", "references", "relationships", "review", "revisionHistory", "editorialOrder"],
+      "required": ["id", "slug", "title", "category", "tags", "entities", "source", "published", "updated", "overview", "whyItMatters", "ghostMeshTakeaway", "verdict", "architectureImpact", "claims", "references", "relationships", "relationshipDisposition", "relationshipReview", "review", "revisionHistory", "editorialOrder"],
       "properties": {
         "id": {"type": "string", "pattern": "^reader:[a-z0-9-]+$"},
         "slug": {"type": "string", "pattern": "^[a-z0-9-]+$"},
@@ -23,7 +23,9 @@
         "verdict": {"enum": ["Essential", "Worth studying", "Interesting, unproven", "Mostly recycled", "Misleading", "Not worth your time"]},
         "claims": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/claim"}},
         "references": {"type": "array", "items": {"$ref": "#/$defs/reference"}},
-        "relationships": {"type": "array", "items": {"$ref": "#/$defs/relationship"}}
+        "relationships": {"type": "array", "items": {"$ref": "#/$defs/relationship"}},
+        "relationshipDisposition": {"type": "string", "minLength": 1},
+        "relationshipReview": {"$ref": "#/$defs/relationshipReview"}
       }
     },
     "mediaSource": {
@@ -81,6 +83,18 @@
       "type": "object",
       "required": ["id", "title", "author", "publisher", "url", "publicationDate", "eventDate", "location", "sourceType", "independence", "evidenceFamily", "checkedAt"],
       "properties": {"url": {"type": "string", "format": "uri"}, "checkedAt": {"type": "string", "format": "date-time"}}
+    },
+    "relationshipReview": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["reviewedAt", "reviewedCatalogSize", "decision", "reviewedTargets", "rationale"],
+      "properties": {
+        "reviewedAt": {"type": "string", "format": "date"},
+        "reviewedCatalogSize": {"type": "integer", "minimum": 1},
+        "decision": {"enum": ["linked", "none"]},
+        "reviewedTargets": {"type": "array", "uniqueItems": true, "items": {"type": "string", "pattern": "^reader:[a-z0-9-]+$"}},
+        "rationale": {"type": "string", "minLength": 80}
+      }
     },
     "relationship": {
       "type": "object",
