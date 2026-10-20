@@ -365,6 +365,15 @@
       "conclusion": "Anthropic’s policy announcement supports its effective date and stated exceptions; its emotion study is a controlled model experiment.",
       "evidenceBoundary": "Neither document establishes deployed incidence, subjective experience or enforcement outcomes.",
       "nextVerification": "Check the effective policy text and independent deployment data before extending these conclusions."
+    },
+    "relationshipReview": {
+      "reviewedAt": "2026-10-20",
+      "reviewedCatalogSize": 23,
+      "decision": "linked",
+      "reviewedTargets": [
+        "reader:the-score-is-not-the-system"
+      ],
+      "rationale": "The score Reader discusses the same Anthropic representation-steering evidence family. The link does not create independent support for consciousness or experience."
     }
   },
   "editorial": {

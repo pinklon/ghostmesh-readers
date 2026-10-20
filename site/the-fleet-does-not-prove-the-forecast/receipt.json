@@ -312,7 +312,17 @@
       }
     ],
     "editorialOrder": 13,
-    "orderReason": "Read after the earlier Amap fleet case to examine the broader forecast and its evidence limits."
+    "orderReason": "Read after the earlier Amap fleet case to examine the broader forecast and its evidence limits.",
+    "relationshipReview": {
+      "reviewedAt": "2026-10-20",
+      "reviewedCatalogSize": 23,
+      "decision": "linked",
+      "reviewedTargets": [
+        "reader:the-inbox-was-a-boundary",
+        "reader:when-agents-become-the-customer"
+      ],
+      "rationale": "The Amap inbox Reader shares a source event; the agent-customer Reader offers a separate product forecast. Neither validates broad web-adoption predictions."
+    }
   },
   "editorial": {
     "overview": "Nate B Jones links a reported Tencent Cloud agent fleet, laboratory replication work and a separate OpenAI incident to argue that agents will reshape how people and websites use the internet.",

@@ -104,8 +104,14 @@ class VisualContractTest(unittest.TestCase):
         parsed.feed(page)
         entries = [a for _, a in parsed.tags if 'gm-atlas-entry' in a.get('class', '').split()]
         links = [a for _, a in parsed.tags if 'gm-atlas-link' in a.get('class', '').split()]
+        graph = json.loads((ROOT / 'site/map/relationships.json').read_text())
         self.assertEqual(len(entries), len(catalog['readers']))
         self.assertEqual(len(links), sum(len(r['relationships']) for r in catalog['readers']))
+        self.assertEqual((len(catalog['readers']), len(catalog['readers']), len(links)),
+                         (graph['readerCount'], graph['assessmentCount'], graph['relationshipCount']))
+        self.assertEqual({(r['id'], e['target'], e['reason']) for r in catalog['readers'] for e in r['relationships']},
+                         {(e['from'], e['to'], e['reason']) for e in graph['edges']})
+        self.assertIn('/map/relationships.json', page)
         self.assertIn('Its named editorial links help you navigate and do not prove a claim.',
                       (ROOT / 'site/knowledge/index.html').read_text())
         self.assertIn('not independent corroboration or agreement', page)

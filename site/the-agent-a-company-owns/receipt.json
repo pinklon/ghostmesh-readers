@@ -294,6 +294,17 @@
       "conclusion": "The pinned Eve README describes preview terms and safeguards. The later September memory announcement is a separate vendor document, after the August interview.",
       "evidenceBoundary": "Vendor documentation establishes published design, not effective isolation, grant enforcement or deployment portability.",
       "nextVerification": "Test identity-scoped memory, permissions, replay and external operation against a pinned implementation."
+    },
+    "relationshipReview": {
+      "reviewedAt": "2026-10-20",
+      "reviewedCatalogSize": 23,
+      "decision": "linked",
+      "reviewedTargets": [
+        "reader:autonomy-needs-an-interface",
+        "reader:the-inbox-was-a-boundary",
+        "reader:the-key-was-the-boundary"
+      ],
+      "rationale": "The Vercel follow-on shares a named company-agent subject, while the inbox and credential Readers compare delegated authority through distinct source events."
     }
   },
   "editorial": {

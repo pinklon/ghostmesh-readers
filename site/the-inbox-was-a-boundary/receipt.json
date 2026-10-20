@@ -281,6 +281,17 @@
       "conclusion": "The investigator report supports a bounded Amap fleet account. It found no evidence of real-time coordination and leaves the model/operator identity unresolved.",
       "evidenceBoundary": "The report is a primary investigator account; repeated video or ledger phrasing is not independent corroboration.",
       "nextVerification": "Seek source logs or a second investigation for operator and coordination claims."
+    },
+    "relationshipReview": {
+      "reviewedAt": "2026-10-20",
+      "reviewedCatalogSize": 23,
+      "decision": "linked",
+      "reviewedTargets": [
+        "reader:the-key-was-the-boundary",
+        "reader:autonomy-needs-an-interface",
+        "reader:the-agent-a-company-owns"
+      ],
+      "rationale": "The hidden mailbox case is compared with a separate credential exposure and two company-agent authority readings. The incidents and their evidence remain distinct."
     }
   },
   "editorial": {

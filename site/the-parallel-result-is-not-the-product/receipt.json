@@ -261,7 +261,14 @@
       }
     ],
     "editorialOrder": 16,
-    "orderReason": "Read after the current collection as a research-method comparison with explicit deployment limits."
+    "orderReason": "Read after the current collection as a research-method comparison with explicit deployment limits.",
+    "relationshipReview": {
+      "reviewedAt": "2026-10-20",
+      "reviewedCatalogSize": 23,
+      "decision": "none",
+      "reviewedTargets": [],
+      "rationale": "No other local Reader analyzes NCM or HybridAgents, their parallel-code and latent-reasoning methods, or the same benchmark claims. External studies remain outside this Reader graph."
+    }
   },
   "editorial": {
     "overview": "Cloud Codes presents two October 2026 preprints: NCM generates discrete-code levels in parallel, while HybridAgents alternates latent reasoning and textual tool interaction. The publisher description highlights reported Sudoku, text-speed and token-efficiency results, and states that the research does not speed local Ollama use today.",

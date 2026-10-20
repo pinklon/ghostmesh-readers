@@ -261,6 +261,17 @@
       "conclusion": "Supabase announced Turso joining it and reported high database volume. Those are first-party statements, not audited demand or completed integration.",
       "evidenceBoundary": "Supabase MCP and skills documentation describes design and observed agent mistakes, not measured end-to-end isolation or portability.",
       "nextVerification": "Check closing/integration status and audited volume; test caller identity, billing and tenant isolation."
+    },
+    "relationshipReview": {
+      "reviewedAt": "2026-10-20",
+      "reviewedCatalogSize": 23,
+      "decision": "linked",
+      "reviewedTargets": [
+        "reader:autonomy-needs-an-interface",
+        "reader:make-good-work-inspectable",
+        "reader:the-agent-a-company-owns"
+      ],
+      "rationale": "The linked founder, inspectable-work and company-agent Readers compare product workflows and authority. Forecasts are kept separate from observed adoption."
     }
   },
   "editorial": {
