@@ -9437,7 +9437,7 @@
           "status": "unverified",
           "assessment": "The $7,000 title is a scenario frame and roughly 95 percent task coverage is a speaker estimate. The article models capital allocation at assumed 36-month life and several task volumes; those figures are arithmetic illustrations only.",
           "limits": "No itemized actual purchase, measured watts, utilization, accepted-task count, maintenance hours, hosted comparator or break-even result was established. The task mix and quality threshold for 95 percent are absent.",
-          "sourceLocation": "34:00-49:05 and 1:23:50-1:25:25",
+          "sourceLocation": "36:50-49:05 and 1:23:50-1:25:25",
           "references": [
             "mlperf-client"
           ],
