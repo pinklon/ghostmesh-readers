@@ -204,13 +204,14 @@
         "publisher": "Anthropic Engineering",
         "url": "https://www.anthropic.com/research/redesigning-source-control",
         "publicationDate": "2026-10-13",
-        "eventDate": "2026-10-15",
+        "eventDate": null,
         "location": "Growing our monorepo; Principles; How Scion works; Scaling Scion; What we learned",
         "sourceType": "first-party engineering report",
         "independence": "Operator account of internal workload, architecture and outcomes. No independent telemetry, cost ledger or source audit is public in this record.",
         "evidenceFamily": "anthropic-operator",
         "checkedAt": "2026-10-21T02:34:41Z",
-        "datePrecision": "day"
+        "datePrecision": "day",
+        "dateNote": "Anthropic marks an October 15, 2026 update to this article; that revision date is not the date of its reported workload measurements."
       },
       {
         "id": "git-partial",
