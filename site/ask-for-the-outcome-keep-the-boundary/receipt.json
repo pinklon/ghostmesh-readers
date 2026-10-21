@@ -491,15 +491,15 @@
       "nextVerification": "Obtain a measured denominator, controlled comparison and outcome definition before asserting a percentile."
     },
     "relationshipReview": {
-      "reviewedAt": "2026-10-20",
-      "reviewedCatalogSize": 25,
+      "reviewedAt": "2026-10-21",
+      "reviewedCatalogSize": 27,
       "decision": "linked",
       "reviewedTargets": [
         "reader:a-challenge-is-not-a-verdict",
         "reader:make-good-work-inspectable",
         "reader:the-funnel-is-not-the-frontier"
       ],
-      "rationale": "The architecture challenge, inspectable-work interview and AI-use funnel all separate ambitious agent work from verified outcomes. The links are editorial comparisons only. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted."
+      "rationale": "The architecture challenge, inspectable-work interview and AI-use funnel all separate ambitious agent work from verified outcomes. The links are editorial comparisons only. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged."
     }
   }
 }

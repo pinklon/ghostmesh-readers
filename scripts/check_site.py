@@ -4,8 +4,9 @@ from pathlib import Path
 from html.parser import HTMLParser
 from urllib.parse import urlsplit,unquote
 from datetime import datetime,date,timezone
-import json,re,sys,xml.etree.ElementTree as ET
-from generate_site import projections,CATEGORIES,validate_text,validate_link_only_source,validate_paper_source,validate_media_source
+import json,os,re,sys,xml.etree.ElementTree as ET
+from generate_site import projections,CATEGORIES,validate_text,validate_link_only_source,validate_paper_source,validate_article_source,validate_media_source
+from editorial_depth import validate_reader as validate_editorial_depth
 import social_cards,check_social
 ROOT=Path(__file__).resolve().parents[1];SITE=ROOT/'site'
 VERDICTS={'Essential','Worth studying','Interesting, unproven','Mostly recycled','Misleading','Not worth your time'}
@@ -59,6 +60,15 @@ class Page(HTMLParser):
   if not self.hide:self.text.append(d)
 def check(root=ROOT):
  site=root/'site';errors=[]
+ event_pr=None
+ if os.environ.get('GITHUB_EVENT_NAME')=='pull_request':
+  try:
+   event=json.loads(Path(os.environ['GITHUB_EVENT_PATH']).read_text())
+   event_pr=event['number']
+   if not isinstance(event_pr,int) or isinstance(event_pr,bool) or event_pr<1:raise ValueError
+  except (OSError,KeyError,ValueError,TypeError):
+   return ['GitHub pull request identity unavailable for editorial gate']
+ require_merged=os.environ.get('GITHUB_EVENT_NAME')=='push' and os.environ.get('GITHUB_REF')=='refs/heads/main'
  # Reject links before parsing any public file; never read through to a private target.
  links=[p for p in site.rglob('*') if p.is_symlink()]
  if links:return [f'Public symlink: {p.relative_to(site)}' for p in links]
@@ -103,6 +113,7 @@ def check(root=ROOT):
   require(re.findall(r'data-start="(\d+)"',raw)==old.get('chapterStarts',[]),'Chapter timestamps drift: '+old['slug'])
  for r in readers:
   slug=r['slug'];p=site/slug/'index.html';raw=p.read_text();a=pages[p]
+  errors.extend(validate_editorial_depth(root,r,event_pr=event_pr,require_merged=require_merged))
   timestamp(r['updated'],slug+' updated')
   try:date.fromisoformat(r['published'])
   except ValueError:errors.append(slug+': invalid publication date')
@@ -116,6 +127,11 @@ def check(root=ROOT):
    except ValueError as exc:errors.append(f'{slug}: {exc}')
    require('mediaAspect' not in r['source'] and 'platform' not in r['source'],f'{slug}: paper has video-only fields')
    require('gm-media-frame' not in raw and 'data-gm-aspect' not in raw,f'{slug}: paper has a fabricated media frame')
+  elif r['source'].get('kind')=='article':
+   try:validate_article_source(raw,r['source'])
+   except ValueError as exc:errors.append(f'{slug}: {exc}')
+   require('mediaAspect' not in r['source'] and 'platform' not in r['source'],f'{slug}: article has video-only fields')
+   require('gm-media-frame' not in raw and 'data-gm-aspect' not in raw,f'{slug}: article has a fabricated media frame')
   else:
    try:validate_media_source(r['source'])
    except ValueError as exc:errors.append(f'{slug}: {exc}')
@@ -165,7 +181,7 @@ def check(root=ROOT):
    if not isinstance(reviewed_value,str) or not re.fullmatch(r'\d{4}-\d{2}-\d{2}',reviewed_value):
     raise ValueError('relationship review date must use YYYY-MM-DD')
    reviewed=date.fromisoformat(reviewed_value)
-   require(reviewed<=date.today(),f'{slug}: future relationship review')
+   require(reviewed<=datetime.now(timezone.utc).date(),f'{slug}: future relationship review')
   except (ValueError,TypeError):errors.append(f'{slug}: missing or invalid relationship review date')
   require(assessment.get('reviewedCatalogSize')==len(readers),f'{slug}: stale relationship review catalog size')
   targets=[edge['target'] for edge in r['relationships']]

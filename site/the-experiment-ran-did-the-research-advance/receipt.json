@@ -263,13 +263,13 @@
       "nextVerification": "Broader blind, resource-matched evaluation and independent experiment/log review would sharpen the claim."
     },
     "relationshipReview": {
-      "reviewedAt": "2026-10-20",
-      "reviewedCatalogSize": 25,
+      "reviewedAt": "2026-10-21",
+      "reviewedCatalogSize": 27,
       "decision": "linked",
       "reviewedTargets": [
         "reader:a-scenario-is-not-a-singularity"
       ],
-      "rationale": "The physics benchmark Reader provides a contrasting bounded task score. It does not assess the two open-ended research contributions studied in this paper. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted."
+      "rationale": "The physics benchmark Reader provides a contrasting bounded task score. It does not assess the two open-ended research contributions studied in this paper. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged."
     }
   },
   "editorial": {

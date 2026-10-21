@@ -54,11 +54,16 @@ CALLS = {
     'the-brakes-need-a-test': ('Watch selectively', 'Ask whether a warning reaches a named threshold, a decision and an outside retest.'),
     'the-grader-is-part-of-the-harness': ('Test the grader first', 'Use held-out tasks and an outside outcome check before accepting an adaptive harness gain.'),
     'the-stop-button-is-outside-the-chat': ('Test the stop surface', 'Limit agent authority, inspect the real outcome and verify that active work and future access have stopped.'),
+    'the-boundary-is-bigger-than-the-box': ('Test the whole boundary', 'Compare a real task locally and in the cloud, then inspect network paths, tool access and total cost.'),
+    'the-commit-is-not-the-control': ('Test the acceptance path', 'Measure useful changes safely accepted and reversible, not merges per second alone.'),
 }
 
 
 def _poster(reader):
     source = reader['source']
+    if source.get('kind') == 'article':
+        return (f'<div class="gm-archive-source-unknown">{_e(source["publisher"])}<br>'
+                f'{_e(source["title"])}</div>')
     if source.get('kind') == 'paper':
         return paper_cover(source)
     platform = source.get('platform', 'YouTube')
@@ -88,8 +93,8 @@ def card(reader, number=None):
     call_label, call = CALLS[slug]
     unverified = sum(claim['status'] == 'unverified' for claim in reader['claims'])
     total = len(reader['claims'])
-    paper = reader['source'].get('kind') == 'paper'
-    platform = 'paper' if paper else reader['source'].get('platform', 'YouTube')
+    written = reader['source'].get('kind') in {'paper', 'article'}
+    platform = reader['source']['kind'] if written else reader['source'].get('platform', 'YouTube')
     number = number if number is not None else reader['editorialOrder'] + 1
     search_text = ' '.join([reader['title'], reader['overview'], reader['category'], *reader['tags'], call_label, call])
     tags = ''.join(f'<span>{_e(tag)}</span>' for tag in reader['tags'])
@@ -112,7 +117,7 @@ def card(reader, number=None):
         f'<a href="/{_e(slug)}/">Read the deconstruction <span aria-hidden="true">↗</span></a>'
         f'<a href="{_e(reader["source"]["url"])}">Original {_e(platform)} source <span aria-hidden="true">↗</span></a>'
         '</div></div>'
-        f'<div class="gm-archive-visual"><span>{"Original source / direct link" if paper else "Original source / opt-in player"}</span>{_poster(reader)}</div>'
+        f'<div class="gm-archive-visual"><span>{"Original source / direct link" if written else "Original source / opt-in player"}</span>{_poster(reader)}</div>'
         '</article>'
     )
 

@@ -1,0 +1,303 @@
+{
+  "schema": "ghostmesh-reader-receipt-v2",
+  "createdAt": "2026-10-21T00:44:00Z",
+  "source": {
+    "platform": "YouTube",
+    "url": "https://www.youtube.com/watch?v=DwoWIf8f2yQ",
+    "videoId": "DwoWIf8f2yQ",
+    "title": "Build a $7,000 AI Datacenter at Home, Here’s How",
+    "creator": "David Ondrej",
+    "uploadDate": "20261020",
+    "durationSeconds": 5739,
+    "mediaAspect": "16:9"
+  },
+  "sourceInspection": {
+    "method": "Exact YouTube page metadata and private browser export of full auto-generated English transcript with timestamp cues; primary vendor and provider pages checked separately",
+    "status": "private-transcript-aid-only",
+    "transcriptExportSha256": "d2484d42dff7b6cc92b72ac6805477b2f8bb446ea2fe5030a0052f47a441bfef",
+    "caveat": "Auto-generated captions are a timestamp and paraphrase aid. No direct audio or frame audit, verified ReasonPack, independent machine benchmark or network trace was obtained. A separate subtitle download was rate limited.",
+    "publicationBoundary": "No media, audio, captions, full transcript, private path or signed URL is published."
+  },
+  "custody": {
+    "status": "private-transcript-aid-verified",
+    "note": "Exact 11-character video identity, timestamp coverage from 00:00 to 1:35:38 and private export digest checked. YouTube and metadata fetch showed different public titles for the same ID."
+  },
+  "overview": "David Ondrej interviews Osmantic founder Ahmad Osman about running open models on a local RTX Spark machine, with ODS as the software layer.",
+  "whyItMatters": "Local inference can change where sensitive prompts and files are processed. The episode also makes large speed, cost and privacy claims that require a defined workload and network boundary.",
+  "ghostMeshTakeaway": "Test the exact task on the intended machine, inspect network paths and agent permissions, then compare quality, latency and total cost with the cloud option it would replace.",
+  "normalization": {
+    "id": "reader:the-boundary-is-bigger-than-the-box",
+    "slug": "the-boundary-is-bigger-than-the-box",
+    "title": "The Boundary Is Bigger Than the Box",
+    "category": "AI & Technology",
+    "tags": [
+      "local AI",
+      "privacy",
+      "inference"
+    ],
+    "entities": [
+      "David Ondrej",
+      "Ahmad Osman",
+      "Osmantic",
+      "NVIDIA",
+      "OpenAI"
+    ],
+    "source": {
+      "platform": "YouTube",
+      "url": "https://www.youtube.com/watch?v=DwoWIf8f2yQ",
+      "videoId": "DwoWIf8f2yQ",
+      "title": "Build a $7,000 AI Datacenter at Home, Here’s How",
+      "creator": "David Ondrej",
+      "uploadDate": "20261020",
+      "durationSeconds": 5739,
+      "mediaAspect": "16:9"
+    },
+    "published": "2026-10-21",
+    "updated": "2026-10-21T00:44:00Z",
+    "overview": "David Ondrej interviews Osmantic founder Ahmad Osman about running open models on a local RTX Spark machine, with ODS as the software layer.",
+    "whyItMatters": "Local inference can change where sensitive prompts and files are processed. The episode also makes large speed, cost and privacy claims that require a defined workload and network boundary.",
+    "ghostMeshTakeaway": "Test the exact task on the intended machine, inspect network paths and agent permissions, then compare quality, latency and total cost with the cloud option it would replace.",
+    "verdict": "Worth studying",
+    "architectureImpact": "experiment recommended",
+    "falsification": "Revise the recommendation if a reproducible, matched-workload test shows the local setup cannot meet task quality or cost requirements, or if network and tool audits show that the intended private data still leaves the owner-controlled boundary.",
+    "evidenceState": "partially corroborated",
+    "lastEvidenceChecked": "2026-10-21T00:44:00Z",
+    "freshness": "Exact video metadata and full timestamped auto-generated transcript inspected 2026-10-21. ODS maintainer documentation, NVIDIA hardware announcement and OpenAI business-data policy checked the same day. No hardware, network or price benchmark was independently run.",
+    "variant": "dossier",
+    "accent": "teal",
+    "claims": [
+      {
+        "id": "the-boundary-is-bigger-than-the-box--local-capability",
+        "proposition": "A local RTX Spark class PC can run model inference on owner-controlled hardware.",
+        "kind": "hardware-capability",
+        "asOf": "2026-10-21",
+        "status": "partially corroborated",
+        "assessment": "NVIDIA advertises RTX Spark laptops with up to 128 GB unified memory and local AI support. ODS documents local inference and offline chat after setup.",
+        "limits": "Neither source proves this interview machine achieved a particular model quality, speed or price. The speaker demo was not independently reproduced.",
+        "sourceLocation": "19:15-27:15 and 1:05:26-1:09:50",
+        "references": [
+          "nvidia-spark",
+          "ods-faq"
+        ],
+        "counterevidence": [],
+        "temporalScope": "Video uploaded 2026-10-20; external pages checked 2026-10-21. Product versions and provider terms may change."
+      },
+      {
+        "id": "the-boundary-is-bigger-than-the-box--throughput",
+        "proposition": "The episode reports roughly 70-plus output tokens per second and suggests a local setup beats named cloud experiences.",
+        "kind": "speaker-benchmark-claim",
+        "asOf": "2026-10-21",
+        "status": "unverified",
+        "assessment": "The auto-generated captions map the reported throughput to a demonstration, but do not include a comparable model, quantization, prompt, batch size, inference engine, latency definition or repeatable run log.",
+        "limits": "A single narrated number cannot establish cloud superiority, workload quality or general performance. Captioned model names may be misheard.",
+        "sourceLocation": "19:15-27:15 and 1:24:45-1:25:35",
+        "references": [],
+        "counterevidence": [
+          "nvidia-spark"
+        ],
+        "temporalScope": "Video uploaded 2026-10-20; external pages checked 2026-10-21. Product versions and provider terms may change."
+      },
+      {
+        "id": "the-boundary-is-bigger-than-the-box--privacy-boundary",
+        "proposition": "ODS documents offline inference after setup but also identifies default and optional network paths.",
+        "kind": "maintainer-documentation",
+        "asOf": "2026-10-21",
+        "status": "partially corroborated",
+        "assessment": "The ODS FAQ says setup downloads models and containers; update checks and some agent web searches can contact services. Optional cloud providers and workflows add further paths.",
+        "limits": "This is the maintainer account, not a packet capture or independent code audit. Local inference alone does not prove every integrated agent or service stays local.",
+        "sourceLocation": "20:03-20:30 and 1:10:30-1:16:10",
+        "references": [
+          "ods-faq",
+          "ods-readme"
+        ],
+        "counterevidence": [],
+        "temporalScope": "Video uploaded 2026-10-20; external pages checked 2026-10-21. Product versions and provider terms may change."
+      },
+      {
+        "id": "the-boundary-is-bigger-than-the-box--provider-policy",
+        "proposition": "The data-handling terms of a hosted AI service depend on the actual product and provider policy.",
+        "kind": "provider-policy-boundary",
+        "asOf": "2026-10-21",
+        "status": "partially corroborated",
+        "assessment": "OpenAI states that its business and API products do not train on customer data by default. The interview raises broader concerns about control and exposure; its transcript does not establish that hosted providers train on a particular customer’s business data.",
+        "limits": "This is OpenAI’s published policy, not an independent audit of every product or provider. Network exposure, retention, connectors and model training are separate questions.",
+        "sourceLocation": "1:12:22-1:16:10",
+        "references": [
+          "openai-enterprise"
+        ],
+        "counterevidence": [],
+        "temporalScope": "Video uploaded 2026-10-20; external pages checked 2026-10-21. Product versions and provider terms may change."
+      },
+      {
+        "id": "the-boundary-is-bigger-than-the-box--cost-and-coverage",
+        "proposition": "The $7,000 framing and the claim that local models can handle about 95 percent of tasks are not supported by a task mix or total-cost analysis in the episode.",
+        "kind": "speaker-estimate",
+        "asOf": "2026-10-21",
+        "status": "unverified",
+        "assessment": "The interview offers a concrete local workflow and a broad estimate, but no representative task set, failure rate, electricity cost, maintenance cost, purchase bill or cloud comparator.",
+        "limits": "This is not a finding that local hardware is poor value. It is a limit on treating the headline and percentage as measured results.",
+        "sourceLocation": "34:00-49:05 and 1:23:50-1:25:25",
+        "references": [],
+        "counterevidence": [
+          "nvidia-spark"
+        ],
+        "temporalScope": "Video uploaded 2026-10-20; external pages checked 2026-10-21. Product versions and provider terms may change."
+      },
+      {
+        "id": "the-boundary-is-bigger-than-the-box--pre-release",
+        "proposition": "The cited ODS repository describes V3 as a pre-release with moving installers.",
+        "kind": "release-status",
+        "asOf": "2026-10-21",
+        "status": "corroborated",
+        "assessment": "The maintainer README explicitly labels V3 pre-release and says its main-branch installers are not a signed release.",
+        "limits": "The project may publish a signed release later. This status does not prove the demonstrated installation is unsafe or unusable.",
+        "sourceLocation": "20:03-20:30 and 55:30-56:20",
+        "references": [
+          "ods-readme"
+        ],
+        "counterevidence": [],
+        "temporalScope": "Video uploaded 2026-10-20; external pages checked 2026-10-21. Product versions and provider terms may change."
+      },
+      {
+        "id": "the-boundary-is-bigger-than-the-box--bounded-test",
+        "proposition": "A privacy or performance decision should be made from a matched task test plus network and tool audit.",
+        "kind": "editorial-inference",
+        "asOf": "2026-10-21",
+        "status": "unverified",
+        "assessment": "This is GhostMesh guidance derived from the gap between the video demo, maintainer network disclosures and unmeasured comparisons.",
+        "limits": "No cited source evaluates this exact checklist or guarantees a given deployment. The recommendation is a test design, not a measured product conclusion.",
+        "sourceLocation": "19:15-27:15, 1:10:30-1:16:10 and 1:34:15-1:35:38",
+        "references": [
+          "ods-faq",
+          "nvidia-spark"
+        ],
+        "counterevidence": [],
+        "temporalScope": "Video uploaded 2026-10-20; external pages checked 2026-10-21. Product versions and provider terms may change."
+      }
+    ],
+    "references": [
+      {
+        "id": "ods-faq",
+        "title": "ODS FAQ",
+        "author": "Osmantic maintainers",
+        "publisher": "Osmantic",
+        "url": "https://github.com/Osmantic/ODS/blob/main/ods/FAQ.md",
+        "publicationDate": "unknown",
+        "dateNote": "Continuously edited repository FAQ; original publication date not established.",
+        "eventDate": null,
+        "location": "Internet connection, privacy, installation and network features",
+        "sourceType": "maintainer documentation",
+        "independence": "Product maintainer documentation describes intended behavior; it is not an independent egress audit.",
+        "evidenceFamily": "ods-maintainer",
+        "checkedAt": "2026-10-21T00:44:00Z"
+      },
+      {
+        "id": "ods-readme",
+        "title": "ODS V3 Pre-Release README",
+        "author": "Osmantic maintainers",
+        "publisher": "Osmantic",
+        "url": "https://github.com/Osmantic/ODS",
+        "publicationDate": "unknown",
+        "dateNote": "Continuously edited repository README; original publication date not established.",
+        "eventDate": null,
+        "location": "Pre-release status, installer channel and software scope",
+        "sourceType": "maintainer documentation",
+        "independence": "The project documents its own release status and capabilities; no independent validation of a particular install.",
+        "evidenceFamily": "ods-maintainer",
+        "checkedAt": "2026-10-21T00:44:00Z"
+      },
+      {
+        "id": "nvidia-spark",
+        "title": "NVIDIA RTX Spark PCs Available Today",
+        "author": "NVIDIA",
+        "publisher": "NVIDIA Newsroom",
+        "url": "https://nvidianews.nvidia.com/news/nvidia-rtx-spark-pcs-available-today-a-new-beginning-for-windows-pcs",
+        "publicationDate": "2026-10-16",
+        "datePrecision": "day",
+        "eventDate": "2026-10-16",
+        "location": "Hardware availability and up-to specifications",
+        "sourceType": "vendor announcement",
+        "independence": "Vendor specifications describe a product class, not the episode workload or an independent throughput result.",
+        "evidenceFamily": "nvidia-vendor",
+        "checkedAt": "2026-10-21T00:44:00Z"
+      },
+      {
+        "id": "openai-enterprise",
+        "title": "Enterprise privacy at OpenAI",
+        "author": "OpenAI",
+        "publisher": "OpenAI",
+        "url": "https://openai.com/enterprise-privacy/",
+        "publicationDate": "2026-01-08",
+        "datePrecision": "day",
+        "eventDate": null,
+        "location": "Business data training defaults and controls",
+        "sourceType": "provider policy",
+        "independence": "Published provider policy is a counterexample to a universal training claim, not an independent audit of every deployment.",
+        "evidenceFamily": "openai-policy",
+        "checkedAt": "2026-10-21T00:44:00Z"
+      }
+    ],
+    "relationships": [
+      {
+        "target": "reader:the-agent-a-company-owns",
+        "type": "related topic",
+        "reason": "Both examine who controls an AI agent stack. The earlier Reader discusses company-owned interfaces and memory, while this one tests whether local inference, network paths and tool permissions keep data under owner control; neither video verifies the other.",
+        "provenance": [
+          "/the-boundary-is-bigger-than-the-box/#boundary",
+          "/the-agent-a-company-owns/#thesis"
+        ],
+        "basis": "curated-editorial-comparison",
+        "direction": "outgoing"
+      },
+      {
+        "target": "reader:the-stop-button-is-outside-the-chat",
+        "type": "related topic",
+        "reason": "A machine running inference locally may still grant agents file, browser and account authority. The earlier Reader addresses stopping that authority; this one addresses locality and egress. The link is an operational comparison, not shared incident evidence.",
+        "provenance": [
+          "/the-boundary-is-bigger-than-the-box/#test",
+          "/the-stop-button-is-outside-the-chat/#stop-surface"
+        ],
+        "basis": "curated-editorial-comparison",
+        "direction": "outgoing"
+      }
+    ],
+    "relationshipDisposition": "Two supported editorial comparisons connect owner-controlled infrastructure and agent authority. Neither target corroborates the episode’s throughput, pricing or privacy assertions.",
+    "review": {
+      "status": "independent-public-copy-reviewed; source-limited",
+      "reviewer": "Independent read-only Codex editorial reviewer",
+      "reviewedSourceHead": "base 7b4e8601a2e735aa00b6d19954cdb978f370bdb4; exact article SHA-256 79087ab00c87a66e4b06c9859334d5e235f3c078b935a932353145b37680e38b",
+      "checkedAt": "2026-10-21T00:48:00Z",
+      "scope": "Exact article, source attribution, claim limits, relationship rationale, public receipt and privacy boundary.",
+      "findings": "Two findings corrected before final review: cloud-training attribution and UTC review-date chronology. Final independent review found no remaining finding. Article SHA-256 79087ab00c87a66e4b06c9859334d5e235f3c078b935a932353145b37680e38b; pre-review-metadata receipt SHA-256 91eaf9ad136039e6711706e2ccb451fce68f6c16dc938e55326dd7588f69192a. No media or full captions in public tree."
+    },
+    "revisionHistory": [
+      {
+        "at": "2026-10-21T00:44:00Z",
+        "kind": "new-reader-candidate",
+        "reason": "Issue 46 exact-video deconstruction with private transcript aid, bounded claim review and source privacy."
+      },
+      {
+        "at": "2026-10-21T00:48:00Z",
+        "kind": "independent-editorial-review",
+        "reason": "Corrected source attribution and assessment date, then obtained no-findings independent public-copy and privacy review."
+      }
+    ],
+    "editorialOrder": 22,
+    "orderReason": "Place the local deployment and privacy-boundary reading after the agent control readings.",
+    "relationshipReview": {
+      "reviewedAt": "2026-10-21",
+      "reviewedCatalogSize": 27,
+      "decision": "linked",
+      "reviewedTargets": [
+        "reader:the-agent-a-company-owns",
+        "reader:the-stop-button-is-outside-the-chat"
+      ],
+      "rationale": "Compared this source with all 25 existing Readers. Two qualified routes cover company-owned agent infrastructure and continuing agent authority. No prior Reader independently measures this machine or validates its cost and privacy claims. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged."
+    }
+  },
+  "editorial": {
+    "overview": "David Ondrej interviews Osmantic founder Ahmad Osman about running open models on a local RTX Spark machine, with ODS as the software layer.",
+    "whyItMatters": "Local inference can change where sensitive prompts and files are processed. The episode also makes large speed, cost and privacy claims that require a defined workload and network boundary.",
+    "ghostMeshTakeaway": "Test the exact task on the intended machine, inspect network paths and agent permissions, then compare quality, latency and total cost with the cloud option it would replace."
+  }
+}

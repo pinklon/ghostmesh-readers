@@ -273,6 +273,8 @@ def render_html(model: dict) -> bytes:
         source = entry["source"]
         if source.get("kind") == "paper":
             source_label = "Paper · " + source["publisher"]
+        elif source.get("kind") == "article":
+            source_label = "Article · " + source["publisher"]
         else:
             source_label = source["platform"] + (" · " + source["creator"] if source.get("creator") else "")
         claim_items = []

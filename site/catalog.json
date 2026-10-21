@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "host": "https://youtube.shareplane.malott.ai",
-  "revision": "2026-10-20T20:44:00Z",
+  "revision": "2026-10-21T02:34:41Z",
   "categories": [
     "AI & Technology",
     "Society & Politics",
@@ -11,6 +11,593 @@
     "Other"
   ],
   "readers": [
+    {
+      "id": "reader:the-commit-is-not-the-control",
+      "slug": "the-commit-is-not-the-control",
+      "title": "The Commit Is Not the Control",
+      "category": "AI & Technology",
+      "tags": [
+        "source control",
+        "coding agents",
+        "review",
+        "infrastructure"
+      ],
+      "entities": [
+        "Anthropic",
+        "Scion",
+        "Git",
+        "GitHub",
+        "Google Piper",
+        "Meta Mononoke"
+      ],
+      "source": {
+        "kind": "article",
+        "identity": "anthropic-redesigning-source-control-2026",
+        "url": "https://www.anthropic.com/research/redesigning-source-control",
+        "title": "Redesigning source control at Anthropic",
+        "authors": "Nick G. and the Anthropic source control team",
+        "publisher": "Anthropic Engineering",
+        "publicationDate": "2026-10-13",
+        "updatedDate": "2026-10-15",
+        "dateNote": "The page marks publication October 13 and says it was updated October 15 with prior-art detail."
+      },
+      "published": "2026-10-21",
+      "updated": "2026-10-21T02:34:41Z",
+      "overview": "Anthropic reports a jump to more than 30,000 daily monorepo merges and describes Scion, an online source-control service built for sparse agent and CI workloads.",
+      "whyItMatters": "The reported speed gains are striking, but server-side commits and shared caches move integrity, availability, permission and recovery decisions into a central control plane.",
+      "ghostMeshTakeaway": "Measure the entire path from proposed change to accepted, deployable and reversible outcome before replacing Git or treating merge throughput as engineering quality.",
+      "verdict": "Worth studying",
+      "architectureImpact": "experiment recommended",
+      "falsification": "Revise the recommendation if matched synthetic workloads show configured Git is the binding constraint and a server-centric alternative meets integrity, permission, review and recovery thresholds at sustainable total cost.",
+      "evidenceState": "partially corroborated",
+      "lastEvidenceChecked": "2026-10-21T02:34:41Z",
+      "freshness": "Anthropic original engineering page published October 13 and updated October 15, 2026, privately captured and checked 2026-10-21. Git, GitHub, Google and Meta primary materials checked the same day. No Scion telemetry or implementation was independently audited.",
+      "variant": "dossier",
+      "accent": "blue",
+      "claims": [
+        {
+          "id": "the-commit-is-not-the-control--write-pressure",
+          "proposition": "Anthropic reports that daily merges grew from about 2,500 in May to more than 30,000 in September 2026.",
+          "kind": "first-party-operational-metric",
+          "asOf": "2026-10-21",
+          "status": "unverified",
+          "assessment": "The operator states both figures and describes accelerated agent work; no underlying event definition or telemetry is public in this source.",
+          "limits": "Growth is not an independent measure of review quality, useful output or a typical organization’s load.",
+          "sourceLocation": "Growing our monorepo",
+          "references": [
+            "anthropic-scion"
+          ],
+          "counterevidence": [],
+          "temporalScope": "Anthropic article published October 13 and updated October 15, 2026; external materials inspected 2026-10-21."
+        },
+        {
+          "id": "the-commit-is-not-the-control--checkout-pressure",
+          "proposition": "Anthropic reports roughly 25 million CI checkouts per day; 600 PB per day is its naive fetch projection, not observed traffic.",
+          "kind": "first-party-operational-metric",
+          "asOf": "2026-10-21",
+          "status": "unverified",
+          "assessment": "The article distinguishes the reported checkout count from what naive full fetching would imply.",
+          "limits": "The measurement method, cache hit rates and actual transmitted bytes are unavailable here.",
+          "sourceLocation": "Growing our monorepo",
+          "references": [
+            "anthropic-scion"
+          ],
+          "counterevidence": [],
+          "temporalScope": "Anthropic article published October 13 and updated October 15, 2026; external materials inspected 2026-10-21."
+        },
+        {
+          "id": "the-commit-is-not-the-control--scion-design",
+          "proposition": "Scion uses server-side changesets, content-addressed blobs, derived metadata and sparse or virtualized working copies.",
+          "kind": "operator-architecture-description",
+          "asOf": "2026-10-21",
+          "status": "partially corroborated",
+          "assessment": "Anthropic describes this design in detail and credits earlier centralized systems; Google Piper and Meta Mononoke demonstrate the broader architectural family.",
+          "limits": "Scion itself is internal. Prior art does not verify the exact code path, integrity properties or production configuration.",
+          "sourceLocation": "Principles for agent-scale source control; Data structures; Scaling Scion",
+          "references": [
+            "anthropic-scion",
+            "google-piper",
+            "meta-mononoke"
+          ],
+          "counterevidence": [],
+          "temporalScope": "Anthropic article published October 13 and updated October 15, 2026; external materials inspected 2026-10-21."
+        },
+        {
+          "id": "the-commit-is-not-the-control--reported-gains",
+          "proposition": "Anthropic reports a 200-times smaller former-mirror CPU/memory footprint, much faster checkouts and a 25 percent CI CPU capacity gain.",
+          "kind": "first-party-performance-claim",
+          "asOf": "2026-10-21",
+          "status": "unverified",
+          "assessment": "The article attributes all three changes to its Scion migration and shows the directional benefit claimed by the operator.",
+          "limits": "No reproducible workload, p95 distribution, dollar cost or matched tuned-Git benchmark appears in the cited record.",
+          "sourceLocation": "Scaling Scion; Observed performance improvements",
+          "references": [
+            "anthropic-scion"
+          ],
+          "counterevidence": [],
+          "temporalScope": "Anthropic article published October 13 and updated October 15, 2026; external materials inspected 2026-10-21."
+        },
+        {
+          "id": "the-commit-is-not-the-control--git-alternatives",
+          "proposition": "Partial clone, promisor remotes, sparse checkout and server maintenance offer Git-based ways to reduce some large-repository costs.",
+          "kind": "documented-alternative",
+          "asOf": "2026-10-21",
+          "status": "partially corroborated",
+          "assessment": "Git’s design documentation describes omitted-object fetches, while GitHub documents its own repacking work; Anthropic says it tried related measures.",
+          "limits": "These features may be insufficient at Anthropic’s scale and do not duplicate Scion’s server-side API or results.",
+          "sourceLocation": "Growing our monorepo; Contributing to the wider ecosystem",
+          "references": [
+            "git-partial",
+            "github-maintenance",
+            "anthropic-scion"
+          ],
+          "counterevidence": [],
+          "temporalScope": "Anthropic article published October 13 and updated October 15, 2026; external materials inspected 2026-10-21."
+        },
+        {
+          "id": "the-commit-is-not-the-control--human-review",
+          "proposition": "Anthropic says the Scion and Antique team reviews each change request for its own systems; the article does not establish human review of every companywide merge.",
+          "kind": "first-party-process-claim",
+          "asOf": "2026-10-21",
+          "status": "unverified",
+          "assessment": "The operator describes intent-focused reviews of source-control system changes, Antique policy expressiveness and post-merge or pre-deploy tests.",
+          "limits": "The separate 30,000-merges-per-day figure is companywide. The source does not say every one of those changes received human review or publish a companywide approval-error rate.",
+          "sourceLocation": "What we learned building Scion",
+          "references": [
+            "anthropic-scion"
+          ],
+          "counterevidence": [],
+          "temporalScope": "Anthropic article published October 13 and updated October 15, 2026; external materials inspected 2026-10-21."
+        },
+        {
+          "id": "the-commit-is-not-the-control--control-shift",
+          "proposition": "An always-online server-centric repository shifts availability, integrity, IAM and recovery questions toward shared services.",
+          "kind": "editorial-inference",
+          "asOf": "2026-10-21",
+          "status": "unverified",
+          "assessment": "This is GhostMesh’s threat-model inference from the source’s online premise, server-side operations, tiered caches and rich IAM description.",
+          "limits": "The article does not report an outage, exploit or actual Scion control failure. These are tests to run, not observed incidents.",
+          "sourceLocation": "Principles; Scaling Scion; What we learned",
+          "references": [
+            "anthropic-scion"
+          ],
+          "counterevidence": [],
+          "temporalScope": "Anthropic article published October 13 and updated October 15, 2026; external materials inspected 2026-10-21."
+        },
+        {
+          "id": "the-commit-is-not-the-control--bounded-test",
+          "proposition": "A migration decision should compare accepted-and-reversible changes, not commits per second, under matched workload and failure drills.",
+          "kind": "editorial-inference",
+          "asOf": "2026-10-21",
+          "status": "unverified",
+          "assessment": "GhostMesh proposes a baseline Git tuning arm, a server-centric arm, exact-change review and recovery measurements.",
+          "limits": "This experiment has not been run, and no universal threshold follows from Anthropic’s first-party case.",
+          "sourceLocation": "Contributing to the wider ecosystem",
+          "references": [
+            "anthropic-scion",
+            "git-partial"
+          ],
+          "counterevidence": [],
+          "temporalScope": "Anthropic article published October 13 and updated October 15, 2026; external materials inspected 2026-10-21."
+        }
+      ],
+      "references": [
+        {
+          "id": "anthropic-scion",
+          "title": "Redesigning source control at Anthropic",
+          "author": "Nick G. and the source control team",
+          "publisher": "Anthropic Engineering",
+          "url": "https://www.anthropic.com/research/redesigning-source-control",
+          "publicationDate": "2026-10-13",
+          "eventDate": null,
+          "location": "Growing our monorepo; Principles; How Scion works; Scaling Scion; What we learned",
+          "sourceType": "first-party engineering report",
+          "independence": "Operator account of internal workload, architecture and outcomes. No independent telemetry, cost ledger or source audit is public in this record.",
+          "evidenceFamily": "anthropic-operator",
+          "checkedAt": "2026-10-21T02:34:41Z",
+          "datePrecision": "day",
+          "dateNote": "Anthropic marks an October 15, 2026 update to this article; that revision date is not the date of its reported workload measurements."
+        },
+        {
+          "id": "git-partial",
+          "title": "Partial clone design",
+          "author": "Git contributors",
+          "publisher": "Git documentation",
+          "url": "https://git-scm.com/docs/partial-clone",
+          "publicationDate": "unknown",
+          "eventDate": null,
+          "location": "Design Overview; promisor remotes; non-goals",
+          "sourceType": "primary software documentation",
+          "independence": "Documents Git mechanisms and their online dependency, not a matched benchmark against Scion.",
+          "evidenceFamily": "git-project",
+          "checkedAt": "2026-10-21T02:34:41Z",
+          "dateNote": "The continuously updated Git documentation does not establish a stable original publication date for this inspected version."
+        },
+        {
+          "id": "github-maintenance",
+          "title": "Scaling monorepo maintenance",
+          "author": "Taylor Blau",
+          "publisher": "GitHub Engineering",
+          "url": "https://github.blog/open-source/git/scaling-monorepo-maintenance/",
+          "publicationDate": "2021-04-29",
+          "eventDate": null,
+          "location": "Large-repository repacking and server maintenance",
+          "sourceType": "primary engineering account",
+          "independence": "GitHub reports its own large-repository maintenance work; its workload is not Anthropic’s and no Scion comparison is supplied.",
+          "evidenceFamily": "github-engineering",
+          "checkedAt": "2026-10-21T02:34:41Z",
+          "datePrecision": "day"
+        },
+        {
+          "id": "google-piper",
+          "title": "Why Google Stores Billions of Lines of Code in a Single Repository",
+          "author": "Rachel Potvin and Josh Levenberg",
+          "publisher": "Google Research",
+          "url": "https://research.google/pubs/why-google-stores-billions-of-lines-of-code-in-a-single-repository/",
+          "publicationDate": "2016",
+          "eventDate": null,
+          "location": "Monolithic source repository and organizational tradeoffs",
+          "sourceType": "research paper",
+          "independence": "Independent prior-art account of a centralized monorepo design, not a Scion replication.",
+          "evidenceFamily": "google-research",
+          "checkedAt": "2026-10-21T02:34:41Z",
+          "datePrecision": "year"
+        },
+        {
+          "id": "meta-mononoke",
+          "title": "Mononoke README",
+          "author": "Meta Sapling maintainers",
+          "publisher": "Meta Sapling",
+          "url": "https://github.com/facebook/sapling/blob/main/eden/mononoke/README.md",
+          "publicationDate": "unknown",
+          "eventDate": null,
+          "location": "Server overview and Caveat Emptor",
+          "sourceType": "maintainer documentation",
+          "independence": "Open source prior art for a server, with explicit omissions in the published build; not a measure of Anthropic’s implementation.",
+          "evidenceFamily": "meta-sapling",
+          "checkedAt": "2026-10-21T02:34:41Z",
+          "dateNote": "The continuously edited repository README does not establish a stable original publication date for this inspected version."
+        }
+      ],
+      "relationships": [
+        {
+          "target": "reader:make-good-work-inspectable",
+          "type": "related topic",
+          "reason": "Both examine the gap between agent-produced code and work a human can inspect. The earlier Reader concerns task-level intent and outcome; this one asks whether high-volume source control and acceptance records preserve that inspectability. Neither source verifies the other’s metrics.",
+          "provenance": [
+            "/the-commit-is-not-the-control/#thesis",
+            "/make-good-work-inspectable/#limits"
+          ],
+          "basis": "curated-editorial-comparison",
+          "direction": "outgoing"
+        },
+        {
+          "target": "reader:the-grader-is-part-of-the-harness",
+          "type": "related topic",
+          "reason": "Both treat evaluation infrastructure as part of the outcome. The harness Reader tests whether a grader can certify adaptive work; this Reader asks whether review, CI and recovery can keep pace with faster landing. This is a design comparison, not evidence for Anthropic’s performance figures.",
+          "provenance": [
+            "/the-commit-is-not-the-control/#measurements",
+            "/the-grader-is-part-of-the-harness/#grading"
+          ],
+          "basis": "curated-editorial-comparison",
+          "direction": "outgoing"
+        }
+      ],
+      "relationshipDisposition": "Two substantive editorial comparisons connect agent work inspectability and evaluation infrastructure. They do not corroborate Anthropic’s internal scale or performance reports.",
+      "relationshipReview": {
+        "reviewedAt": "2026-10-21",
+        "reviewedCatalogSize": 27,
+        "decision": "linked",
+        "reviewedTargets": [
+          "reader:make-good-work-inspectable",
+          "reader:the-grader-is-part-of-the-harness"
+        ],
+        "rationale": "Compared the Anthropic engineering source with all 26 existing Readers. Two qualified routes concern inspectable agent work and evaluation gates; the others lack a sufficiently specific shared question. No existing Reader independently verifies Scion metrics."
+      },
+      "review": {
+        "status": "independent-source-and-copy-reviewed; owner-accepted",
+        "reviewer": "Independent read-only Codex editorial reviewer",
+        "reviewedSourceHead": "Exact authored article SHA-256 4a5b455ef28b824e75c9dc521767f5813e42ee04ccca3b3f194fde942b0d7462",
+        "checkedAt": "2026-10-21T02:49:48Z",
+        "scope": "Original article, private source capture hash and metadata, first-party metrics, alternatives, public claims, relationship links and privacy boundary.",
+        "findings": "One initial attribution overreach was corrected. The targeted follow-up verified that only a direct Anthropic source link was added to the measurements paragraph, with no substantive or privacy change. No remaining actionable finding. Owner qualitative acceptance was subsequently recorded in the unedited GitHub PR 52 comment 6307267366. Final production release remains a separate decision."
+      },
+      "revisionHistory": [
+        {
+          "at": "2026-10-21T02:34:41Z",
+          "kind": "new-reader-candidate",
+          "reason": "Owner-requested deconstruction of Anthropic’s source-control engineering article with private source custody and bounded claim review."
+        },
+        {
+          "at": "2026-10-21T02:38:46Z",
+          "kind": "independent-editorial-review",
+          "reason": "Corrected the scope of Anthropic’s human-review statement and obtained no-findings source, argument and privacy review of the exact authored article."
+        },
+        {
+          "at": "2026-10-21T02:49:48Z",
+          "kind": "source-map-link-review",
+          "reason": "Independent reviewer verified the added direct source link in the measurements section; the argument and privacy boundary are unchanged."
+        }
+      ],
+      "editorialOrder": 23,
+      "orderReason": "Place the source-control infrastructure reading after the agent control and evaluation readings.",
+      "editorialDepth": {
+        "schemaVersion": 1,
+        "receiptPath": "content/editorial-depth/the-commit-is-not-the-control.json"
+      },
+      "rank": 23
+    },
+    {
+      "id": "reader:the-boundary-is-bigger-than-the-box",
+      "slug": "the-boundary-is-bigger-than-the-box",
+      "title": "The Boundary Is Bigger Than the Box",
+      "category": "AI & Technology",
+      "tags": [
+        "local AI",
+        "privacy",
+        "inference"
+      ],
+      "entities": [
+        "David Ondrej",
+        "Ahmad Osman",
+        "Osmantic",
+        "NVIDIA",
+        "OpenAI"
+      ],
+      "source": {
+        "platform": "YouTube",
+        "url": "https://www.youtube.com/watch?v=DwoWIf8f2yQ",
+        "videoId": "DwoWIf8f2yQ",
+        "title": "Build a $7,000 AI Datacenter at Home, Here’s How",
+        "creator": "David Ondrej",
+        "uploadDate": "20261020",
+        "durationSeconds": 5739,
+        "mediaAspect": "16:9"
+      },
+      "published": "2026-10-21",
+      "updated": "2026-10-21T00:44:00Z",
+      "overview": "David Ondrej interviews Osmantic founder Ahmad Osman about running open models on a local RTX Spark machine, with ODS as the software layer.",
+      "whyItMatters": "Local inference can change where sensitive prompts and files are processed. The episode also makes large speed, cost and privacy claims that require a defined workload and network boundary.",
+      "ghostMeshTakeaway": "Test the exact task on the intended machine, inspect network paths and agent permissions, then compare quality, latency and total cost with the cloud option it would replace.",
+      "verdict": "Worth studying",
+      "architectureImpact": "experiment recommended",
+      "falsification": "Revise the recommendation if a reproducible, matched-workload test shows the local setup cannot meet task quality or cost requirements, or if network and tool audits show that the intended private data still leaves the owner-controlled boundary.",
+      "evidenceState": "partially corroborated",
+      "lastEvidenceChecked": "2026-10-21T00:44:00Z",
+      "freshness": "Exact video metadata and full timestamped auto-generated transcript inspected 2026-10-21. ODS maintainer documentation, NVIDIA hardware announcement and OpenAI business-data policy checked the same day. No hardware, network or price benchmark was independently run.",
+      "variant": "dossier",
+      "accent": "teal",
+      "claims": [
+        {
+          "id": "the-boundary-is-bigger-than-the-box--local-capability",
+          "proposition": "A local RTX Spark class PC can run model inference on owner-controlled hardware.",
+          "kind": "hardware-capability",
+          "asOf": "2026-10-21",
+          "status": "partially corroborated",
+          "assessment": "NVIDIA advertises RTX Spark laptops with up to 128 GB unified memory and local AI support. ODS documents local inference and offline chat after setup.",
+          "limits": "Neither source proves this interview machine achieved a particular model quality, speed or price. The speaker demo was not independently reproduced.",
+          "sourceLocation": "19:15-27:15 and 1:05:26-1:09:50",
+          "references": [
+            "nvidia-spark",
+            "ods-faq"
+          ],
+          "counterevidence": [],
+          "temporalScope": "Video uploaded 2026-10-20; external pages checked 2026-10-21. Product versions and provider terms may change."
+        },
+        {
+          "id": "the-boundary-is-bigger-than-the-box--throughput",
+          "proposition": "The episode reports roughly 70-plus output tokens per second and suggests a local setup beats named cloud experiences.",
+          "kind": "speaker-benchmark-claim",
+          "asOf": "2026-10-21",
+          "status": "unverified",
+          "assessment": "The auto-generated captions map the reported throughput to a demonstration, but do not include a comparable model, quantization, prompt, batch size, inference engine, latency definition or repeatable run log.",
+          "limits": "A single narrated number cannot establish cloud superiority, workload quality or general performance. Captioned model names may be misheard.",
+          "sourceLocation": "19:15-27:15 and 1:24:45-1:25:35",
+          "references": [],
+          "counterevidence": [
+            "nvidia-spark"
+          ],
+          "temporalScope": "Video uploaded 2026-10-20; external pages checked 2026-10-21. Product versions and provider terms may change."
+        },
+        {
+          "id": "the-boundary-is-bigger-than-the-box--privacy-boundary",
+          "proposition": "ODS documents offline inference after setup but also identifies default and optional network paths.",
+          "kind": "maintainer-documentation",
+          "asOf": "2026-10-21",
+          "status": "partially corroborated",
+          "assessment": "The ODS FAQ says setup downloads models and containers; update checks and some agent web searches can contact services. Optional cloud providers and workflows add further paths.",
+          "limits": "This is the maintainer account, not a packet capture or independent code audit. Local inference alone does not prove every integrated agent or service stays local.",
+          "sourceLocation": "20:03-20:30 and 1:10:30-1:16:10",
+          "references": [
+            "ods-faq",
+            "ods-readme"
+          ],
+          "counterevidence": [],
+          "temporalScope": "Video uploaded 2026-10-20; external pages checked 2026-10-21. Product versions and provider terms may change."
+        },
+        {
+          "id": "the-boundary-is-bigger-than-the-box--provider-policy",
+          "proposition": "The data-handling terms of a hosted AI service depend on the actual product and provider policy.",
+          "kind": "provider-policy-boundary",
+          "asOf": "2026-10-21",
+          "status": "partially corroborated",
+          "assessment": "OpenAI states that its business and API products do not train on customer data by default. The interview raises broader concerns about control and exposure; its transcript does not establish that hosted providers train on a particular customer’s business data.",
+          "limits": "This is OpenAI’s published policy, not an independent audit of every product or provider. Network exposure, retention, connectors and model training are separate questions.",
+          "sourceLocation": "1:12:22-1:16:10",
+          "references": [
+            "openai-enterprise"
+          ],
+          "counterevidence": [],
+          "temporalScope": "Video uploaded 2026-10-20; external pages checked 2026-10-21. Product versions and provider terms may change."
+        },
+        {
+          "id": "the-boundary-is-bigger-than-the-box--cost-and-coverage",
+          "proposition": "The $7,000 framing and the claim that local models can handle about 95 percent of tasks are not supported by a task mix or total-cost analysis in the episode.",
+          "kind": "speaker-estimate",
+          "asOf": "2026-10-21",
+          "status": "unverified",
+          "assessment": "The interview offers a concrete local workflow and a broad estimate, but no representative task set, failure rate, electricity cost, maintenance cost, purchase bill or cloud comparator.",
+          "limits": "This is not a finding that local hardware is poor value. It is a limit on treating the headline and percentage as measured results.",
+          "sourceLocation": "34:00-49:05 and 1:23:50-1:25:25",
+          "references": [],
+          "counterevidence": [
+            "nvidia-spark"
+          ],
+          "temporalScope": "Video uploaded 2026-10-20; external pages checked 2026-10-21. Product versions and provider terms may change."
+        },
+        {
+          "id": "the-boundary-is-bigger-than-the-box--pre-release",
+          "proposition": "The cited ODS repository describes V3 as a pre-release with moving installers.",
+          "kind": "release-status",
+          "asOf": "2026-10-21",
+          "status": "corroborated",
+          "assessment": "The maintainer README explicitly labels V3 pre-release and says its main-branch installers are not a signed release.",
+          "limits": "The project may publish a signed release later. This status does not prove the demonstrated installation is unsafe or unusable.",
+          "sourceLocation": "20:03-20:30 and 55:30-56:20",
+          "references": [
+            "ods-readme"
+          ],
+          "counterevidence": [],
+          "temporalScope": "Video uploaded 2026-10-20; external pages checked 2026-10-21. Product versions and provider terms may change."
+        },
+        {
+          "id": "the-boundary-is-bigger-than-the-box--bounded-test",
+          "proposition": "A privacy or performance decision should be made from a matched task test plus network and tool audit.",
+          "kind": "editorial-inference",
+          "asOf": "2026-10-21",
+          "status": "unverified",
+          "assessment": "This is GhostMesh guidance derived from the gap between the video demo, maintainer network disclosures and unmeasured comparisons.",
+          "limits": "No cited source evaluates this exact checklist or guarantees a given deployment. The recommendation is a test design, not a measured product conclusion.",
+          "sourceLocation": "19:15-27:15, 1:10:30-1:16:10 and 1:34:15-1:35:38",
+          "references": [
+            "ods-faq",
+            "nvidia-spark"
+          ],
+          "counterevidence": [],
+          "temporalScope": "Video uploaded 2026-10-20; external pages checked 2026-10-21. Product versions and provider terms may change."
+        }
+      ],
+      "references": [
+        {
+          "id": "ods-faq",
+          "title": "ODS FAQ",
+          "author": "Osmantic maintainers",
+          "publisher": "Osmantic",
+          "url": "https://github.com/Osmantic/ODS/blob/main/ods/FAQ.md",
+          "publicationDate": "unknown",
+          "dateNote": "Continuously edited repository FAQ; original publication date not established.",
+          "eventDate": null,
+          "location": "Internet connection, privacy, installation and network features",
+          "sourceType": "maintainer documentation",
+          "independence": "Product maintainer documentation describes intended behavior; it is not an independent egress audit.",
+          "evidenceFamily": "ods-maintainer",
+          "checkedAt": "2026-10-21T00:44:00Z"
+        },
+        {
+          "id": "ods-readme",
+          "title": "ODS V3 Pre-Release README",
+          "author": "Osmantic maintainers",
+          "publisher": "Osmantic",
+          "url": "https://github.com/Osmantic/ODS",
+          "publicationDate": "unknown",
+          "dateNote": "Continuously edited repository README; original publication date not established.",
+          "eventDate": null,
+          "location": "Pre-release status, installer channel and software scope",
+          "sourceType": "maintainer documentation",
+          "independence": "The project documents its own release status and capabilities; no independent validation of a particular install.",
+          "evidenceFamily": "ods-maintainer",
+          "checkedAt": "2026-10-21T00:44:00Z"
+        },
+        {
+          "id": "nvidia-spark",
+          "title": "NVIDIA RTX Spark PCs Available Today",
+          "author": "NVIDIA",
+          "publisher": "NVIDIA Newsroom",
+          "url": "https://nvidianews.nvidia.com/news/nvidia-rtx-spark-pcs-available-today-a-new-beginning-for-windows-pcs",
+          "publicationDate": "2026-10-16",
+          "datePrecision": "day",
+          "eventDate": "2026-10-16",
+          "location": "Hardware availability and up-to specifications",
+          "sourceType": "vendor announcement",
+          "independence": "Vendor specifications describe a product class, not the episode workload or an independent throughput result.",
+          "evidenceFamily": "nvidia-vendor",
+          "checkedAt": "2026-10-21T00:44:00Z"
+        },
+        {
+          "id": "openai-enterprise",
+          "title": "Enterprise privacy at OpenAI",
+          "author": "OpenAI",
+          "publisher": "OpenAI",
+          "url": "https://openai.com/enterprise-privacy/",
+          "publicationDate": "2026-01-08",
+          "datePrecision": "day",
+          "eventDate": null,
+          "location": "Business data training defaults and controls",
+          "sourceType": "provider policy",
+          "independence": "Published provider policy is a counterexample to a universal training claim, not an independent audit of every deployment.",
+          "evidenceFamily": "openai-policy",
+          "checkedAt": "2026-10-21T00:44:00Z"
+        }
+      ],
+      "relationships": [
+        {
+          "target": "reader:the-agent-a-company-owns",
+          "type": "related topic",
+          "reason": "Both examine who controls an AI agent stack. The earlier Reader discusses company-owned interfaces and memory, while this one tests whether local inference, network paths and tool permissions keep data under owner control; neither video verifies the other.",
+          "provenance": [
+            "/the-boundary-is-bigger-than-the-box/#boundary",
+            "/the-agent-a-company-owns/#thesis"
+          ],
+          "basis": "curated-editorial-comparison",
+          "direction": "outgoing"
+        },
+        {
+          "target": "reader:the-stop-button-is-outside-the-chat",
+          "type": "related topic",
+          "reason": "A machine running inference locally may still grant agents file, browser and account authority. The earlier Reader addresses stopping that authority; this one addresses locality and egress. The link is an operational comparison, not shared incident evidence.",
+          "provenance": [
+            "/the-boundary-is-bigger-than-the-box/#test",
+            "/the-stop-button-is-outside-the-chat/#stop-surface"
+          ],
+          "basis": "curated-editorial-comparison",
+          "direction": "outgoing"
+        }
+      ],
+      "relationshipDisposition": "Two supported editorial comparisons connect owner-controlled infrastructure and agent authority. Neither target corroborates the episode’s throughput, pricing or privacy assertions.",
+      "review": {
+        "status": "independent-public-copy-reviewed; source-limited",
+        "reviewer": "Independent read-only Codex editorial reviewer",
+        "reviewedSourceHead": "base 7b4e8601a2e735aa00b6d19954cdb978f370bdb4; exact article SHA-256 79087ab00c87a66e4b06c9859334d5e235f3c078b935a932353145b37680e38b",
+        "checkedAt": "2026-10-21T00:48:00Z",
+        "scope": "Exact article, source attribution, claim limits, relationship rationale, public receipt and privacy boundary.",
+        "findings": "Two findings corrected before final review: cloud-training attribution and UTC review-date chronology. Final independent review found no remaining finding. Article SHA-256 79087ab00c87a66e4b06c9859334d5e235f3c078b935a932353145b37680e38b; pre-review-metadata receipt SHA-256 91eaf9ad136039e6711706e2ccb451fce68f6c16dc938e55326dd7588f69192a. No media or full captions in public tree."
+      },
+      "revisionHistory": [
+        {
+          "at": "2026-10-21T00:44:00Z",
+          "kind": "new-reader-candidate",
+          "reason": "Issue 46 exact-video deconstruction with private transcript aid, bounded claim review and source privacy."
+        },
+        {
+          "at": "2026-10-21T00:48:00Z",
+          "kind": "independent-editorial-review",
+          "reason": "Corrected source attribution and assessment date, then obtained no-findings independent public-copy and privacy review."
+        }
+      ],
+      "editorialOrder": 22,
+      "orderReason": "Place the local deployment and privacy-boundary reading after the agent control readings.",
+      "relationshipReview": {
+        "reviewedAt": "2026-10-21",
+        "reviewedCatalogSize": 27,
+        "decision": "linked",
+        "reviewedTargets": [
+          "reader:the-agent-a-company-owns",
+          "reader:the-stop-button-is-outside-the-chat"
+        ],
+        "rationale": "Compared this source with all 25 existing Readers. Two qualified routes cover company-owned agent infrastructure and continuing agent authority. No prior Reader independently measures this machine or validates its cost and privacy claims. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged."
+      },
+      "rank": 22
+    },
     {
       "id": "reader:the-warning-is-not-a-ballot-ruling",
       "slug": "the-warning-is-not-a-ballot-ruling",
@@ -399,11 +986,11 @@
         "nextVerification": "Check original audio or visuals before adding exact quotations or frame claims; inspect the current docket before asserting a court outcome."
       },
       "relationshipReview": {
-        "reviewedAt": "2026-10-20",
-        "reviewedCatalogSize": 25,
+        "reviewedAt": "2026-10-21",
+        "reviewedCatalogSize": 27,
         "decision": "none",
         "reviewedTargets": [],
-        "rationale": "The other published Readers do not examine this California voter-list dispute, individualized ballot procedure or conditional DOJ warning. AI evaluation analogies are too distant to admit as local routes. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted."
+        "rationale": "The other published Readers do not examine this California voter-list dispute, individualized ballot procedure or conditional DOJ warning. AI evaluation analogies are too distant to admit as local routes. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged."
       },
       "rank": 19
     },
@@ -747,14 +1334,14 @@
         "nextVerification": "Check any retained exact or ambiguous speech against original audio before attributing it; keep capability, actor uplift and outcomes as separate tests."
       },
       "relationshipReview": {
-        "reviewedAt": "2026-10-20",
-        "reviewedCatalogSize": 25,
+        "reviewedAt": "2026-10-21",
+        "reviewedCatalogSize": 27,
         "decision": "linked",
         "reviewedTargets": [
           "reader:the-brakes-need-a-test",
           "reader:the-label-the-box-and-the-bargain"
         ],
-        "rationale": "The Gates risk interview supports two qualified routes: Robinson examines release safety process, and Bostrom distinguishes capability from control. Neither source verifies the other's risk magnitude. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted."
+        "rationale": "The Gates risk interview supports two qualified routes: Robinson examines release safety process, and Bostrom distinguishes capability from control. Neither source verifies the other's risk magnitude. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged."
       },
       "rank": 19
     },
@@ -1000,15 +1587,15 @@
       "editorialOrder": 21,
       "orderReason": "Place the operational agent-boundary Reader after the harness-evaluation Reader.",
       "relationshipReview": {
-        "reviewedAt": "2026-10-20",
-        "reviewedCatalogSize": 25,
+        "reviewedAt": "2026-10-21",
+        "reviewedCatalogSize": 27,
         "decision": "linked",
         "reviewedTargets": [
           "reader:make-good-work-inspectable",
           "reader:the-brakes-need-a-test",
           "reader:the-score-is-not-the-system"
         ],
-        "rationale": "Compared this video with all 24 existing Readers. Inspectable work, testable brakes and reward-versus-outcome analysis support three qualified routes. The earlier Readers do not corroborate these incident reports."
+        "rationale": "Compared this video with all 24 existing Readers. Inspectable work, testable brakes and reward-versus-outcome analysis support three qualified routes. The earlier Readers do not corroborate these incident reports. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged."
       },
       "rank": 21
     },
@@ -1340,14 +1927,14 @@
         "nextVerification": "Recheck mutable product terms and platform permissions before treating them as current; retain source media privately. This edition's limited source custody is disclosed above."
       },
       "relationshipReview": {
-        "reviewedAt": "2026-10-20",
-        "reviewedCatalogSize": 25,
+        "reviewedAt": "2026-10-21",
+        "reviewedCatalogSize": 27,
         "decision": "linked",
         "reviewedTargets": [
           "reader:when-agents-become-the-customer",
           "reader:the-agent-a-company-owns"
         ],
-        "rationale": "The agent-customer and company-agent Readers compare business authority and ownership questions. Neither establishes Muse lead rights or business outcomes. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted."
+        "rationale": "The agent-customer and company-agent Readers compare business authority and ownership questions. Neither establishes Muse lead rights or business outcomes. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged."
       },
       "rank": 18
     },
@@ -1814,14 +2401,14 @@
         "nextVerification": "For disputed passages, compare original audio before asserting exact wording or speaker identity; keep partial private custody documented and recheck mutable outside evidence."
       },
       "relationshipReview": {
-        "reviewedAt": "2026-10-20",
-        "reviewedCatalogSize": 25,
+        "reviewedAt": "2026-10-21",
+        "reviewedCatalogSize": 27,
         "decision": "linked",
         "reviewedTargets": [
           "reader:the-test-must-name-its-target",
           "reader:the-microscope-is-not-a-soul"
         ],
-        "rationale": "The existing routes distinguish AGI labels from functional understanding and digital experience from representation evidence. Neither verifies the interview's exact speech. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted."
+        "rationale": "The existing routes distinguish AGI labels from functional understanding and digital experience from representation evidence. Neither verifies the interview's exact speech. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged."
       },
       "rank": 19
     },
@@ -2065,15 +2652,15 @@
       "editorialOrder": 20,
       "orderReason": "Follow the existing evaluation and research-agent Readers with a focused test of adaptive harness claims.",
       "relationshipReview": {
-        "reviewedAt": "2026-10-20",
-        "reviewedCatalogSize": 25,
+        "reviewedAt": "2026-10-21",
+        "reviewedCatalogSize": 27,
         "decision": "linked",
         "reviewedTargets": [
           "reader:make-good-work-inspectable",
           "reader:the-experiment-ran-did-the-research-advance",
           "reader:the-score-is-not-the-system"
         ],
-        "rationale": "Compared the new video with all 23 existing Readers. Inspectable work, research evaluation and reward-versus-outcome design offer three substantive comparisons. The earlier Readers do not replicate the two papers. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted."
+        "rationale": "Compared the new video with all 23 existing Readers. Inspectable work, research evaluation and reward-versus-outcome design offer three substantive comparisons. The earlier Readers do not replicate the two papers. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged."
       },
       "rank": 20
     },
@@ -2500,14 +3087,14 @@
         "nextVerification": "Verify targeted original audio before attributing contested wording, speakers or numbers; inspect source visuals before making a visual claim."
       },
       "relationshipReview": {
-        "reviewedAt": "2026-10-20",
-        "reviewedCatalogSize": 25,
+        "reviewedAt": "2026-10-21",
+        "reviewedCatalogSize": 27,
         "decision": "linked",
         "reviewedTargets": [
           "reader:the-label-the-box-and-the-bargain",
           "reader:the-threshold-is-a-claim-not-a-test"
         ],
-        "rationale": "Robinson's incident and release-process analysis supports routes to Bostrom's bounded control example and Gates's risk threshold. These are comparison paths, not independent interview corroboration. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted."
+        "rationale": "Robinson's incident and release-process analysis supports routes to Bostrom's bounded control example and Gates's risk threshold. These are comparison paths, not independent interview corroboration. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged."
       },
       "rank": 19
     },
@@ -2778,13 +3365,13 @@
       "editorialOrder": 15,
       "orderReason": "Read after the existing Count Grey Matter interpretability Reader to examine a distinct functional-understanding claim.",
       "relationshipReview": {
-        "reviewedAt": "2026-10-20",
-        "reviewedCatalogSize": 25,
+        "reviewedAt": "2026-10-21",
+        "reviewedCatalogSize": 27,
         "decision": "linked",
         "reviewedTargets": [
           "reader:the-microscope-is-not-a-soul"
         ],
-        "rationale": "The microscope Reader by the same creator also limits inferences from model internals. Functional understanding and subjective experience remain distinct claims. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted."
+        "rationale": "The microscope Reader by the same creator also limits inferences from model internals. Functional understanding and subjective experience remain distinct claims. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged."
       },
       "rank": 15
     },
@@ -3029,11 +3616,11 @@
       "editorialOrder": 16,
       "orderReason": "Read after the current collection as a research-method comparison with explicit deployment limits.",
       "relationshipReview": {
-        "reviewedAt": "2026-10-20",
-        "reviewedCatalogSize": 25,
+        "reviewedAt": "2026-10-21",
+        "reviewedCatalogSize": 27,
         "decision": "none",
         "reviewedTargets": [],
-        "rationale": "No other local Reader analyzes NCM or HybridAgents, their parallel-code and latent-reasoning methods, or the same benchmark claims. External studies remain outside this Reader graph. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted."
+        "rationale": "No other local Reader analyzes NCM or HybridAgents, their parallel-code and latent-reasoning methods, or the same benchmark claims. External studies remain outside this Reader graph. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged."
       },
       "rank": 16
     },
@@ -3326,14 +3913,14 @@
       "editorialOrder": 13,
       "orderReason": "Read after the earlier Amap fleet case to examine the broader forecast and its evidence limits.",
       "relationshipReview": {
-        "reviewedAt": "2026-10-20",
-        "reviewedCatalogSize": 25,
+        "reviewedAt": "2026-10-21",
+        "reviewedCatalogSize": 27,
         "decision": "linked",
         "reviewedTargets": [
           "reader:the-inbox-was-a-boundary",
           "reader:when-agents-become-the-customer"
         ],
-        "rationale": "The Amap inbox Reader shares a source event; the agent-customer Reader offers a separate product forecast. Neither validates broad web-adoption predictions. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted."
+        "rationale": "The Amap inbox Reader shares a source event; the agent-customer Reader offers a separate product forecast. Neither validates broad web-adoption predictions. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged."
       },
       "rank": 13
     },
@@ -3582,13 +4169,13 @@
         "nextVerification": "Broader blind, resource-matched evaluation and independent experiment/log review would sharpen the claim."
       },
       "relationshipReview": {
-        "reviewedAt": "2026-10-20",
-        "reviewedCatalogSize": 25,
+        "reviewedAt": "2026-10-21",
+        "reviewedCatalogSize": 27,
         "decision": "linked",
         "reviewedTargets": [
           "reader:a-scenario-is-not-a-singularity"
         ],
-        "rationale": "The physics benchmark Reader provides a contrasting bounded task score. It does not assess the two open-ended research contributions studied in this paper. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted."
+        "rationale": "The physics benchmark Reader provides a contrasting bounded task score. It does not assess the two open-ended research contributions studied in this paper. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged."
       },
       "rank": 17
     },
@@ -3837,13 +4424,13 @@
       "editorialOrder": 14,
       "orderReason": "Read after other model-score Readers to test how benchmark evidence is converted into a larger forecast.",
       "relationshipReview": {
-        "reviewedAt": "2026-10-20",
-        "reviewedCatalogSize": 25,
+        "reviewedAt": "2026-10-21",
+        "reviewedCatalogSize": 27,
         "decision": "linked",
         "reviewedTargets": [
           "reader:the-experiment-ran-did-the-research-advance"
         ],
-        "rationale": "The physics benchmark and research-evaluation paper measure different constructs. Their one link invites comparison without treating a bounded score as research judgment. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted."
+        "rationale": "The physics benchmark and research-evaluation paper measure different constructs. Their one link invites comparison without treating a bounded score as research judgment. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged."
       },
       "rank": 14
     },
@@ -4128,15 +4715,15 @@
         "nextVerification": "Complete a permitted authenticated run with scope, tool logs and a defined ground-truth target."
       },
       "relationshipReview": {
-        "reviewedAt": "2026-10-20",
-        "reviewedCatalogSize": 25,
+        "reviewedAt": "2026-10-21",
+        "reviewedCatalogSize": 27,
         "decision": "linked",
         "reviewedTargets": [
           "reader:ask-for-the-outcome-keep-the-boundary",
           "reader:make-good-work-inspectable",
           "reader:the-funnel-is-not-the-frontier"
         ],
-        "rationale": "The outcome, inspectable-work and AI-use Readers frame the limits of agent-tool demonstrations. None independently verifies this incomplete scan. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted."
+        "rationale": "The outcome, inspectable-work and AI-use Readers frame the limits of agent-tool demonstrations. None independently verifies this incomplete scan. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged."
       },
       "rank": 9
     },
@@ -4475,15 +5062,15 @@
         "nextVerification": "Obtain the issuer disclosure and denominator, plus scoped security-test evidence before quantifying impact or tool efficacy."
       },
       "relationshipReview": {
-        "reviewedAt": "2026-10-20",
-        "reviewedCatalogSize": 25,
+        "reviewedAt": "2026-10-21",
+        "reviewedCatalogSize": 27,
         "decision": "linked",
         "reviewedTargets": [
           "reader:the-inbox-was-a-boundary",
           "reader:autonomy-needs-an-interface",
           "reader:the-agent-a-company-owns"
         ],
-        "rationale": "The credential incident is compared with a hidden mailbox boundary and company-agent permissions. Shared authority questions do not make the events equivalent. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted."
+        "rationale": "The credential incident is compared with a hidden mailbox boundary and company-agent permissions. Shared authority questions do not make the events equivalent. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged."
       },
       "rank": 10
     },
@@ -4837,15 +5424,15 @@
         "nextVerification": "Obtain a measured denominator, controlled comparison and outcome definition before asserting a percentile."
       },
       "relationshipReview": {
-        "reviewedAt": "2026-10-20",
-        "reviewedCatalogSize": 25,
+        "reviewedAt": "2026-10-21",
+        "reviewedCatalogSize": 27,
         "decision": "linked",
         "reviewedTargets": [
           "reader:a-challenge-is-not-a-verdict",
           "reader:make-good-work-inspectable",
           "reader:the-funnel-is-not-the-frontier"
         ],
-        "rationale": "The architecture challenge, inspectable-work interview and AI-use funnel all separate ambitious agent work from verified outcomes. The links are editorial comparisons only. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted."
+        "rationale": "The architecture challenge, inspectable-work interview and AI-use funnel all separate ambitious agent work from verified outcomes. The links are editorial comparisons only. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged."
       },
       "rank": 0
     },
@@ -5218,15 +5805,15 @@
         "nextVerification": "Compare inspectability and correction outcomes in a defined team and workflow."
       },
       "relationshipReview": {
-        "reviewedAt": "2026-10-20",
-        "reviewedCatalogSize": 25,
+        "reviewedAt": "2026-10-21",
+        "reviewedCatalogSize": 27,
         "decision": "linked",
         "reviewedTargets": [
           "reader:a-challenge-is-not-a-verdict",
           "reader:ask-for-the-outcome-keep-the-boundary",
           "reader:the-funnel-is-not-the-frontier"
         ],
-        "rationale": "The linked architecture review, outcome framing and AI-use funnel all ask how to inspect agent work. They do not independently establish this interview's results. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted."
+        "rationale": "The linked architecture review, outcome framing and AI-use funnel all ask how to inspect agent work. They do not independently establish this interview's results. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged."
       },
       "rank": 1
     },
@@ -5485,15 +6072,15 @@
         "nextVerification": "Run reproducible permission, recovery and operator-control checks on a versioned build."
       },
       "relationshipReview": {
-        "reviewedAt": "2026-10-20",
-        "reviewedCatalogSize": 25,
+        "reviewedAt": "2026-10-21",
+        "reviewedCatalogSize": 27,
         "decision": "linked",
         "reviewedTargets": [
           "reader:the-agent-a-company-owns",
           "reader:the-inbox-was-a-boundary",
           "reader:the-key-was-the-boundary"
         ],
-        "rationale": "The company-agent interview builds on the same Vercel subject; the inbox and credential Readers compare separate authority boundaries. None verifies the others' incidents. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted."
+        "rationale": "The company-agent interview builds on the same Vercel subject; the inbox and credential Readers compare separate authority boundaries. None verifies the others' incidents. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged."
       },
       "rank": 6
     },
@@ -5777,15 +6364,15 @@
         "nextVerification": "Reproduce a defined workload and compare measured outcomes with and without the proposed interface."
       },
       "relationshipReview": {
-        "reviewedAt": "2026-10-20",
-        "reviewedCatalogSize": 25,
+        "reviewedAt": "2026-10-21",
+        "reviewedCatalogSize": 27,
         "decision": "linked",
         "reviewedTargets": [
           "reader:ask-for-the-outcome-keep-the-boundary",
           "reader:make-good-work-inspectable",
           "reader:when-software-becomes-legible"
         ],
-        "rationale": "The three existing routes compare how an AI-assisted choice is challenged, verified and made inspectable. Their briefs support navigation, not proof of a shared observed result. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted."
+        "rationale": "The three existing routes compare how an AI-assisted choice is challenged, verified and made inspectable. Their briefs support navigation, not proof of a shared observed result. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged."
       },
       "rank": 2
     },
@@ -6069,15 +6656,15 @@
         "nextVerification": "Reproduce a versioned task and measure comprehension, execution and correction outcomes."
       },
       "relationshipReview": {
-        "reviewedAt": "2026-10-20",
-        "reviewedCatalogSize": 25,
+        "reviewedAt": "2026-10-21",
+        "reviewedCatalogSize": 27,
         "decision": "linked",
         "reviewedTargets": [
           "reader:a-challenge-is-not-a-verdict",
           "reader:make-good-work-inspectable",
           "reader:when-agents-become-the-customer"
         ],
-        "rationale": "The architecture challenge, inspectable-work interview and agent-service forecast provide distinct routes through software legibility, not corroboration of reverse engineering. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted."
+        "rationale": "The architecture challenge, inspectable-work interview and agent-service forecast provide distinct routes through software legibility, not corroboration of reverse engineering. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged."
       },
       "rank": 7
     },
@@ -6332,15 +6919,15 @@
         "nextVerification": "Check closing/integration status and audited volume; test caller identity, billing and tenant isolation."
       },
       "relationshipReview": {
-        "reviewedAt": "2026-10-20",
-        "reviewedCatalogSize": 25,
+        "reviewedAt": "2026-10-21",
+        "reviewedCatalogSize": 27,
         "decision": "linked",
         "reviewedTargets": [
           "reader:autonomy-needs-an-interface",
           "reader:make-good-work-inspectable",
           "reader:the-agent-a-company-owns"
         ],
-        "rationale": "The linked founder, inspectable-work and company-agent Readers compare product workflows and authority. Forecasts are kept separate from observed adoption. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted."
+        "rationale": "The linked founder, inspectable-work and company-agent Readers compare product workflows and authority. Forecasts are kept separate from observed adoption. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged."
       },
       "rank": 8
     },
@@ -6670,13 +7257,13 @@
         "nextVerification": "Bind 36 percent and 0.4 percent awareness figures to a primary system-card table and threshold; replicate the simulation with independent controls."
       },
       "relationshipReview": {
-        "reviewedAt": "2026-10-20",
-        "reviewedCatalogSize": 25,
+        "reviewedAt": "2026-10-21",
+        "reviewedCatalogSize": 27,
         "decision": "linked",
         "reviewedTargets": [
           "reader:the-microscope-is-not-a-soul"
         ],
-        "rationale": "The microscope Reader helps interpret representation evidence, while its source and this Reader's agent-evaluation incident have separate evidentiary reach. The new harness Reader is a relevant incoming comparison about grader design; no new outgoing route is needed. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted."
+        "rationale": "The microscope Reader helps interpret representation evidence, while its source and this Reader's agent-evaluation incident have separate evidentiary reach. The new harness Reader is a relevant incoming comparison about grader design; no new outgoing route is needed. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged."
       },
       "rank": 3
     },
@@ -7035,13 +7622,13 @@
         "nextVerification": "Check the effective policy text and independent deployment data before extending these conclusions."
       },
       "relationshipReview": {
-        "reviewedAt": "2026-10-20",
-        "reviewedCatalogSize": 25,
+        "reviewedAt": "2026-10-21",
+        "reviewedCatalogSize": 27,
         "decision": "linked",
         "reviewedTargets": [
           "reader:the-score-is-not-the-system"
         ],
-        "rationale": "The score Reader discusses the same Anthropic representation-steering evidence family. The link does not create independent support for consciousness or experience. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted."
+        "rationale": "The score Reader discusses the same Anthropic representation-steering evidence family. The link does not create independent support for consciousness or experience. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged."
       },
       "rank": 11
     },
@@ -7316,15 +7903,15 @@
         "nextVerification": "Seek source logs or a second investigation for operator and coordination claims."
       },
       "relationshipReview": {
-        "reviewedAt": "2026-10-20",
-        "reviewedCatalogSize": 25,
+        "reviewedAt": "2026-10-21",
+        "reviewedCatalogSize": 27,
         "decision": "linked",
         "reviewedTargets": [
           "reader:the-key-was-the-boundary",
           "reader:autonomy-needs-an-interface",
           "reader:the-agent-a-company-owns"
         ],
-        "rationale": "The hidden mailbox case is compared with a separate credential exposure and two company-agent authority readings. The incidents and their evidence remain distinct. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted."
+        "rationale": "The hidden mailbox case is compared with a separate credential exposure and two company-agent authority readings. The incidents and their evidence remain distinct. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged."
       },
       "rank": 4
     },
@@ -7629,15 +8216,15 @@
         "nextVerification": "Trace the population sampling frame and denominator to primary tables."
       },
       "relationshipReview": {
-        "reviewedAt": "2026-10-20",
-        "reviewedCatalogSize": 25,
+        "reviewedAt": "2026-10-21",
+        "reviewedCatalogSize": 27,
         "decision": "linked",
         "reviewedTargets": [
           "reader:ask-for-the-outcome-keep-the-boundary",
           "reader:make-good-work-inspectable",
           "reader:the-scan-never-reached-the-login"
         ],
-        "rationale": "The three routes compare ambition and verification in agent workflows, including a scan that ended without confirmed findings. No shared empirical outcome is claimed. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted."
+        "rationale": "The three routes compare ambition and verification in agent workflows, including a scan that ended without confirmed findings. No shared empirical outcome is claimed. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged."
       },
       "rank": 12
     },
@@ -7925,15 +8512,15 @@
         "nextVerification": "Test identity-scoped memory, permissions, replay and external operation against a pinned implementation."
       },
       "relationshipReview": {
-        "reviewedAt": "2026-10-20",
-        "reviewedCatalogSize": 25,
+        "reviewedAt": "2026-10-21",
+        "reviewedCatalogSize": 27,
         "decision": "linked",
         "reviewedTargets": [
           "reader:autonomy-needs-an-interface",
           "reader:the-inbox-was-a-boundary",
           "reader:the-key-was-the-boundary"
         ],
-        "rationale": "The Vercel follow-on shares a named company-agent subject, while the inbox and credential Readers compare delegated authority through distinct source events. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted."
+        "rationale": "The Vercel follow-on shares a named company-agent subject, while the inbox and credential Readers compare delegated authority through distinct source events. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged."
       },
       "rank": 5
     }
