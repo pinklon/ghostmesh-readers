@@ -7,6 +7,7 @@
       "readerId": "reader:a-challenge-is-not-a-verdict",
       "sourceId": "DeUnZhWgPKd",
       "sourceDigest": "1ce3ca6bc469512b2fa70dc71b6c2213b3ec93d39dd0c01b0f0e9129a0b11593",
+      "sourceAidSha256": "ac0d0bf670fbc0d6b5937e96742b2268e5b80d537f49e0ccf662e299d5aee649",
       "articleSha256": "415650ed4d03517b71b9d866413b2c264ac286062c92c28bd60c166f2d038d23",
       "evidenceRevision": "a52050dd14c093facb0d1e3b64c4e3cd9ac765502d1946dcee52f3aa6ca746ce"
     },
@@ -14,6 +15,7 @@
       "readerId": "reader:ask-for-the-outcome-keep-the-boundary",
       "sourceId": "NarezKh3w4o",
       "sourceDigest": "39be0153e07e80e6986e79ad4758e5c9a3c7e883add293b046197048654433ab",
+      "sourceAidSha256": "a417606635fdb2a880c4793b51d20e02cc30d4349a8b080e62b4e8044d207f00",
       "articleSha256": "2f6ceb5c1a39b5fcdec37713d2e151c94f5da55ea37e7c9bf5064c9de71653ef",
       "evidenceRevision": "5aa7357df53c3409babbf129e7072c0f4ad64170fc26eb95f5e9e7dd7939db68"
     },
@@ -21,6 +23,7 @@
       "readerId": "reader:autonomy-needs-an-interface",
       "sourceId": "DdbCtAScTsk",
       "sourceDigest": "f822b0082baf7a4348f1934e2487f2a4dd678ae39d676a78ad2fddbb706184b7",
+      "sourceAidSha256": "",
       "articleSha256": "317c603edf016dfd2c7b889244ac3513a2cf791e2493a944b85fe87316cb23ac",
       "evidenceRevision": "62941b534b3ebbafd853e9972bb5af959a09dee23ac29acb8f2c4ad2a1b12293"
     },
@@ -28,6 +31,7 @@
       "readerId": "reader:make-good-work-inspectable",
       "sourceId": "Z8lf5oWKfj0",
       "sourceDigest": "55a17556797b65a3af87fd4ad8caa358a1f6342bb93524ae83ede978e5af1512",
+      "sourceAidSha256": "06a46ae8e66561e9b53af9ae79ec22820f2dab96012b8a7bad769dbd02f202a9",
       "articleSha256": "246ae0cb89aefc2ec2f1470031b7a5c60a800d4260182ea7b710287a3fbc21e9",
       "evidenceRevision": "10f4ceb90f6d5848040d4ca8db6cd7b3ee8d1049d7ec10edb6886e84bf9907d4"
     },
@@ -35,6 +39,7 @@
       "readerId": "reader:the-agent-a-company-owns",
       "sourceId": "HQXi4snP36I",
       "sourceDigest": "918c5f96a25f00d85a404bd6ea1718ce5af96f707bf90dd69afbf75fab054dbc",
+      "sourceAidSha256": "",
       "articleSha256": "f46e8f7017b5c53f64577174e9b200693d7ff67ee8edd683362b18e44fd2d47e",
       "evidenceRevision": "dc899a6cb60e9de7053a60c84c36045442429da6dc5268302ab186c183334f62"
     },
@@ -42,6 +47,7 @@
       "readerId": "reader:the-funnel-is-not-the-frontier",
       "sourceId": "BjO_JC6ujXs",
       "sourceDigest": "d1f869b84244f950fe94cb308f612bf4a8fbe042096d4e92099ea82b288d6c0a",
+      "sourceAidSha256": "",
       "articleSha256": "871cd801b58cf78f2d21e37fab46e1282247f98917665f22890238649b1dbce9",
       "evidenceRevision": "c0dadba163ca42955e3b75a1b6f943bcf4168acb42e81a0a5023add93f868266"
     },
@@ -49,6 +55,7 @@
       "readerId": "reader:the-inbox-was-a-boundary",
       "sourceId": "rb4CTZjHCNg",
       "sourceDigest": "04f023b4b7f1e8f7e99a26b62223147c23c11e9bad2b3f97659778b0ee40830e",
+      "sourceAidSha256": "",
       "articleSha256": "07f54b235315fac9106725d6b3656c72f435b0748432e4359be5642a2b38aba3",
       "evidenceRevision": "233baa9bce7b204108d33a2ab89e75ce39027cbe20b4dd1dd9def8de046a149f"
     },
@@ -56,6 +63,7 @@
       "readerId": "reader:the-key-was-the-boundary",
       "sourceId": "YaK6cnET2IE",
       "sourceDigest": "6afcfdf78228a06cac06f9c9dce05059f7b042d7608cdd522362f99e5b7daaf6",
+      "sourceAidSha256": "b4da0f88f3adabe378bd50ece3c49cd24e57bdb530fc818fa8d71700e711bedb",
       "articleSha256": "40d5eccb018aba40409add772b0af79b1a6f3d33dd1041132facabf5bf026b36",
       "evidenceRevision": "f64b499e62cf27cfbffa7eb650981c6a4659049c4459cd523faf7569e87ced6e"
     },
@@ -63,6 +71,7 @@
       "readerId": "reader:the-microscope-is-not-a-soul",
       "sourceId": "2oH1NACBgS4",
       "sourceDigest": "265a64d95e399e0bb907eda8810dfec7502d53f19f2e48fe1fb7f112dba2542e",
+      "sourceAidSha256": "",
       "articleSha256": "140bc3c6deb0c8744958a884df89be025e73c295ff8936ec14af9de38159fc38",
       "evidenceRevision": "ee672677522ebf1224517070bcb9265cc96084b2929f30b4cad6dcb1a7fc1f61"
     },
@@ -70,6 +79,7 @@
       "readerId": "reader:the-scan-never-reached-the-login",
       "sourceId": "8DKqcbEy-HM",
       "sourceDigest": "713fb7a15587ffe4816334995c4cfc9877e890e68cdf1fefb491a9734ea0cbfe",
+      "sourceAidSha256": "90f0f545e0ea7b8c7a847427e6c7a18d9f8d4290cbce176b263ed5453bf0748a",
       "articleSha256": "eef8453d53e9b87f84034542dafdbb4efe162461858c229365cbd0c7f22fce53",
       "evidenceRevision": "f647a1b389f13a4c0a01f9a335fd6abdee90c1ec026efb0d99a271372c5141f8"
     },
@@ -77,6 +87,7 @@
       "readerId": "reader:the-score-is-not-the-system",
       "sourceId": "ZhM29Ds-mBg",
       "sourceDigest": "126202bd7d393716129abf6e071514e1d7287b7cfec3b16a419a835767ff4805",
+      "sourceAidSha256": "",
       "articleSha256": "7292406f8b5d229d9c91c88aba7df8c5a746ac205ca7e7e652ad5fa4f456d47e",
       "evidenceRevision": "1d56cc93ee88b3a9c79eeb883ed764442d144e897d267c7a96390cc531195fd3"
     },
@@ -84,6 +95,7 @@
       "readerId": "reader:when-agents-become-the-customer",
       "sourceId": "2DmP5etgh4U",
       "sourceDigest": "c67bd9cad5a4ea583679dda6b5602c3766732b806c29f858a04480dbc909b587",
+      "sourceAidSha256": "",
       "articleSha256": "b7cc0cb26f4d8ef6ef12d233584cb894ca558b8f696d5c9f6c0f7e39bf3d2582",
       "evidenceRevision": "2cd4a8fb783de03bf19be3ac24801992a269b6701ceb3663fabaf843687f6029"
     },
@@ -91,6 +103,7 @@
       "readerId": "reader:when-software-becomes-legible",
       "sourceId": "PseF3LyXQ04",
       "sourceDigest": "2580b1d1b437433057c8a1ced982b2aecdfa23c5b45487aac41129445f8129cc",
+      "sourceAidSha256": "",
       "articleSha256": "a7cef0a94718a53d3fb4a87efbe66f6ba8d1498a43db5a27f6f2f882022d3d55",
       "evidenceRevision": "3786fe6daa22ff6a4dccd05418d87db29be6b22d865f882e02972c920488b63e"
     },
@@ -98,6 +111,7 @@
       "readerId": "reader:the-fleet-does-not-prove-the-forecast",
       "sourceId": "btUxMt_tssA",
       "sourceDigest": "a019134ac2785da23a7ac678e268bcbb8d77eb9ad1fd55fd07ef7c20412e51b6",
+      "sourceAidSha256": "0ede73ebddad18ebb1918ad114fff89790bb170ebb898e1624b6bdb432ed51dd",
       "articleSha256": "7d03f74a0b305083d36470a3db5217e611784a2c1ac811e2ce00edf3d638d87a",
       "evidenceRevision": "31a2fdd7e182aa975202d93b02e8f17c54dc25d0c3c3e10519023054f7122c2d"
     },
@@ -105,6 +119,7 @@
       "readerId": "reader:a-scenario-is-not-a-singularity",
       "sourceId": "wS3lJpOs9Uw",
       "sourceDigest": "a194979ec3e6da70eb6f6311073b821f011b17d525b7c22bc8025790c72eec98",
+      "sourceAidSha256": "59656988a0017217b1505b73181990a7cf22facc86eb8bebba8226ac0307ee87",
       "articleSha256": "9c414bba90f189f6201e47f172909080fcb5c878410b82644159d8a0327a053b",
       "evidenceRevision": "8c28b9ac0219b3577a954ea0472f10b74d36dbebb01e512d126001a0153ca737"
     },
@@ -112,6 +127,7 @@
       "readerId": "reader:the-test-must-name-its-target",
       "sourceId": "7O84mdxehWY",
       "sourceDigest": "0aa844529f2f235004c2d9995ed12e6c226f1c1ebf05bac92e5073b697f477b8",
+      "sourceAidSha256": "c6d95a76711fce98ddb2c93c8130007a3295692eb0d474899fac9a5f3f84f082",
       "articleSha256": "40e0af3d62161423f93ceed9df58c57cb79e25ae8a680b435732992b007c439c",
       "evidenceRevision": "3a9d3823466932b9e057e5c219aed015dc699d7764df43c9bf686a53261c7691"
     },
@@ -119,6 +135,7 @@
       "readerId": "reader:the-parallel-result-is-not-the-product",
       "sourceId": "kuO4NOqp7Tc",
       "sourceDigest": "6da6554ed735db0f961dbbd597975fb9e097b857aad1ab6af280be07f2456b42",
+      "sourceAidSha256": "bfc7f83b51cf006a7961073bb98957612434782fd4075444468f9c1f11a0526b",
       "articleSha256": "7d45b5f9dd05bb063fd53adf06c76a3e3d922ed88022344e4cbb574b72f4e27d",
       "evidenceRevision": "04602081f935f1b93538243911580e014cbd5701c38880f9c201e188c9423bfc"
     },
@@ -126,6 +143,7 @@
       "readerId": "reader:the-experiment-ran-did-the-research-advance",
       "sourceId": "arxiv:2607.27191v2",
       "sourceDigest": "b7355cb3c8f0a0bbf3f64f5741f6619e46d7c47d350bba042fb6dc9ce35af4a3",
+      "sourceAidSha256": "",
       "articleSha256": "963eab8f81221029bdf5eb1e6346e1ed4ceb13875957199428471bd6c04d5f66",
       "evidenceRevision": "9a14cd38f4f3df95c614ef544a8b64a8ba31308230949189d885e3711097e200"
     },
@@ -133,6 +151,7 @@
       "readerId": "reader:the-list-is-the-business-claim",
       "sourceId": "tpZOU1ugODQ",
       "sourceDigest": "57dd4aacf25ce8279b5c3dfc7fe8bb28572fc9aa4397a9e7bcad923211962855",
+      "sourceAidSha256": "",
       "articleSha256": "28cb112111f8b450a7c97f5cc2885926da15074c5baa6affc259647971b9bdcf",
       "evidenceRevision": "8a6c34fab9068df75d35a6d505184f77fc1ec2691c88d2d6c2d607668fc95288"
     },
@@ -140,6 +159,7 @@
       "readerId": "reader:the-label-the-box-and-the-bargain",
       "sourceId": "m880aJt5sNM",
       "sourceDigest": "41c0af35041f7c22f6d02f1dd9dff4b5b18264af790be9a858f7b8b2530af0d4",
+      "sourceAidSha256": "",
       "articleSha256": "efac24312da624d37133200780d317e9469c07d5b50c9b8f74e8fdc05912ec09",
       "evidenceRevision": "bf19f6839718f240d18b5f49800f2d22128531727b29a13afc0f7946c47e7535"
     },
@@ -147,6 +167,7 @@
       "readerId": "reader:the-warning-is-not-a-ballot-ruling",
       "sourceId": "ZSbtmNnSRYI",
       "sourceDigest": "8011528f7062541dd2205e0456368fe9e10b1bc009dfb9618578ccc5e2a5cbb9",
+      "sourceAidSha256": "",
       "articleSha256": "6a702e3209a39b0be943c0af4362d6d2d02914263103a450cdebcd19910455cd",
       "evidenceRevision": "42e3bec99fe7d597e3bcab17f08e81f62b194b794a65592cd99674c582c12215"
     },
@@ -154,6 +175,7 @@
       "readerId": "reader:the-threshold-is-a-claim-not-a-test",
       "sourceId": "A_156w0aYtU",
       "sourceDigest": "72ef8f4ed3ebff0a18cc203336d9e0a017c732867b225819d501d95f59b17251",
+      "sourceAidSha256": "1bcdd5e152f03d068559d261a27812dcb23087a8dbb47b60e3ff935ee8ecf15d",
       "articleSha256": "8b63b7c0c76253352a2e379754a99cd397482178549cf4935589fc46e45570ca",
       "evidenceRevision": "419592f299c70270e0ef851c107129a70b15011d9ffbb50f52847e9d15e00e80"
     },
@@ -161,6 +183,7 @@
       "readerId": "reader:the-brakes-need-a-test",
       "sourceId": "JIMXEuT_ZAU",
       "sourceDigest": "a73464f4ae85b3a5f19709767fc003a6d4e6f965c3dd6348e2b3bc9f0b1f90da",
+      "sourceAidSha256": "722d261126f8d809514ae3cd7bd35d85af6a038e40a5e9148a45a76669469ecf",
       "articleSha256": "814b9aa5023f40228d22e2b69789b5dc4088f79ee921f59c532a7b4c048d210c",
       "evidenceRevision": "4ad583b845f37c408d85df7d58e2c7f1d7c56648cc85bc66286442e80fc23651"
     },
@@ -168,6 +191,7 @@
       "readerId": "reader:the-grader-is-part-of-the-harness",
       "sourceId": "AKovdUFvThA",
       "sourceDigest": "e87438f374b6972fc3f2a34b6cf9e44a3b4e2c4482d0775480f8535a11703a29",
+      "sourceAidSha256": "",
       "articleSha256": "eb326cad0a71a3158ee81bf477c94830c65347084cc8ec94e463d25d90a62d8d",
       "evidenceRevision": "70fa487e5acf60e19f115a3fa0563c61e3f94654b67500531e7b96ee9d2c0490"
     },
@@ -175,6 +199,7 @@
       "readerId": "reader:the-stop-button-is-outside-the-chat",
       "sourceId": "DP9YPiWL_zM",
       "sourceDigest": "5f9d61b589f32f0ea75dd3d88e110a1738bedade9b3e6df17d68eb99a0c83b7c",
+      "sourceAidSha256": "",
       "articleSha256": "27f9890eceb4884e870414f56124f87d9f766657bc788f1e97bc8d4a1b02fb17",
       "evidenceRevision": "79e456114fd5d007f957e8282077c18f002dc1fa04d026af98b01c71d310e479"
     },
@@ -182,6 +207,7 @@
       "readerId": "reader:the-boundary-is-bigger-than-the-box",
       "sourceId": "DwoWIf8f2yQ",
       "sourceDigest": "957b9c0ad6c9d23c2f997dc4c926efeeb7c4a771d9b383270b1a48407025378e",
+      "sourceAidSha256": "d2484d42dff7b6cc92b72ac6805477b2f8bb446ea2fe5030a0052f47a441bfef",
       "articleSha256": "79087ab00c87a66e4b06c9859334d5e235f3c078b935a932353145b37680e38b",
       "evidenceRevision": "b775b7c1d2cc0ff8687ad6518e43cad2779c2f74f8eacc1010583956c5fe8c6a"
     }

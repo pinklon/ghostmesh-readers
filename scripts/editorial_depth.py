@@ -11,6 +11,7 @@ from html.parser import HTMLParser
 import json
 from pathlib import Path
 import re
+from urllib.request import Request, urlopen
 
 AREAS = (
     "sourceCoverage", "supportingArgument", "evidenceRoles", "counterargument",
@@ -22,7 +23,7 @@ GAP_TYPES = {"source", "claim", "evidence", "counterargument", "scope", "risk", 
 PLACEHOLDERS = re.compile(r"\b(?:TBD|TODO|lorem ipsum|add analysis here|placeholder)\b", re.I)
 SHA = re.compile(r"[0-9a-f]{64}\Z")
 LEGACY_BASELINE = "141a31c1fe9e44a07f9ccdf6f4471347dd13108b"
-LEGACY_BINDINGS_SHA = "2382811aee95816946eb1fd0b30de06654833c1c4252584b046d81c6b2bc4f2a"
+LEGACY_BINDINGS_SHA = "45eba2b01e6a1de5f89bbbe222f60a653265e0d554a3a2d23e4bc3a5129a9378"
 
 
 def digest(value: object) -> str:
@@ -46,11 +47,24 @@ def evidence_revision(reader: dict) -> str:
     return digest(payload)
 
 
+def source_aid_sha256(reader: dict) -> str:
+    """Digest of the retained private source aid, never its contents or local path."""
+    receipt = reader.get("legacyReceipt") or {}
+    pack = receipt.get("reasonPack") or {}
+    if pack.get("verification") == "pass":
+        return pack.get("manifestSha256", "")
+    inspection = receipt.get("sourceInspection") or {}
+    values = [value for key, value in inspection.items()
+              if key.lower().endswith("sha256") and isinstance(value, str) and SHA.fullmatch(value)]
+    return values[0] if len(values) == 1 else ""
+
+
 def binding(reader: dict, authored_html: bytes) -> dict:
     return {
         "readerId": reader["id"],
         "sourceId": source_id(reader),
         "sourceDigest": digest(reader["source"]),
+        "sourceAidSha256": source_aid_sha256(reader),
         "articleSha256": hashlib.sha256(authored_html).hexdigest(),
         "evidenceRevision": evidence_revision(reader),
     }
@@ -102,6 +116,43 @@ def _mapped_prose(raw: str, anchor: str) -> bool:
     return any(prose and not PLACEHOLDERS.search(prose) for prose in parsed.paragraphs)
 
 
+def _get_json(url: str) -> dict:
+    request = Request(url, headers={"Accept": "application/vnd.github+json", "User-Agent": "ghostmesh-editorial-gate"})
+    with urlopen(request, timeout=8) as response:
+        return json.load(response)
+
+
+def _authenticated_review_errors(slug: str, receipt: dict) -> list[str]:
+    """Check a submitted GitHub review, not a candidate-authored identity claim."""
+    reviewer = receipt["reviewer"]
+    if (not isinstance(reviewer, dict) or set(reviewer) != {"login", "pullNumber", "reviewId"}
+            or not isinstance(reviewer.get("login"), str) or not re.fullmatch(r"[A-Za-z0-9-]{1,39}", reviewer["login"])
+            or not isinstance(reviewer.get("pullNumber"), int) or isinstance(reviewer["pullNumber"], bool) or reviewer["pullNumber"] < 1
+            or not isinstance(reviewer.get("reviewId"), int) or isinstance(reviewer["reviewId"], bool) or reviewer["reviewId"] < 1):
+        return [f"{slug}: authenticated reviewer locator missing"]
+    number = reviewer["pullNumber"]
+    base = f"https://api.github.com/repos/pinklon/ghostmesh-readers/pulls/{number}"
+    try:
+        pull = _get_json(base)
+        review = _get_json(f"{base}/reviews/{reviewer['reviewId']}")
+    except (OSError, ValueError, KeyError, TypeError) as exc:
+        return [f"{slug}: authenticated editorial review could not be verified ({type(exc).__name__})"]
+    author = pull.get("user") or {}
+    user = review.get("user") or {}
+    marker = (f"GhostMesh-Editorial-Acceptance: readerId={receipt['readerId']}; "
+              f"sourceAidSha256={receipt['sourceAidSha256']}; articleSha256={receipt['articleSha256']}; "
+              f"evidenceRevision={receipt['evidenceRevision']}")
+    if (pull.get("number") != number or review.get("id") != reviewer["reviewId"]
+            or review.get("pull_request_url") != base
+            or review.get("state") != "APPROVED"
+            or user.get("login", "").casefold() != reviewer["login"].casefold()
+            or author.get("login", "").casefold() != str(receipt["candidateAuthor"]).casefold()
+            or user.get("id") == author.get("id")
+            or marker not in (review.get("body") or "")):
+        return [f"{slug}: authenticated independent acceptance or exact hash marker missing"]
+    return []
+
+
 def validate_reader(root: Path, reader: dict, *, release: bool = True) -> list[str]:
     """Validate one candidate or an unchanged, explicitly listed historical page."""
     slug = reader["slug"]
@@ -145,9 +196,11 @@ def validate_reader(root: Path, reader: dict, *, release: bool = True) -> list[s
     for key, value in actual.items():
         if receipt.get(key) != value:
             errors.append(f"{slug}: editorial {key} binding mismatch")
-    for key in ("sourceDigest", "articleSha256", "evidenceRevision"):
+    for key in ("sourceDigest", "sourceAidSha256", "articleSha256", "evidenceRevision"):
         if not SHA.fullmatch(str(receipt.get(key, ""))):
             errors.append(f"{slug}: invalid editorial {key}")
+    if not SHA.fullmatch(actual["sourceAidSha256"]):
+        errors.append(f"{slug}: exact retained source-aid SHA-256 missing")
     complexity = receipt["complexity"]
     if not isinstance(complexity, dict) or set(complexity) != {"tier", "factors", "rationale"} or complexity.get("tier") not in {"brief", "extended"} or not isinstance(complexity.get("factors"), list) or not complexity["factors"] or not _reasoned(complexity.get("rationale")):
         errors.append(f"{slug}: complexity disposition missing or superficial")
@@ -178,7 +231,8 @@ def validate_reader(root: Path, reader: dict, *, release: bool = True) -> list[s
     else:
         claim_ids = {claim["id"] for claim in reader["claims"]}
         anchors = set(re.findall(r'\bid="([^"]+)"', raw.decode("utf-8", "replace")))
-        source_links = {int(value) for value in re.findall(r"[?&](?:amp;)?t=(\d+)s", raw.decode("utf-8", "replace"))}
+        article = raw.decode("utf-8", "replace")
+        source_video = reader["source"].get("videoId")
         seen: set[tuple[int, str]] = set()
         for entry in source_map:
             if not isinstance(entry, dict) or set(entry) != {"atSeconds", "sectionId", "claimIds", "rationale"}:
@@ -187,8 +241,16 @@ def validate_reader(root: Path, reader: dict, *, release: bool = True) -> list[s
             if reader["source"].get("kind") == "paper":
                 if second is not None:
                     errors.append(f"{slug}: paper source map must use section locators rather than video time")
-            elif not isinstance(second, int) or isinstance(second, bool) or second < 0 or (reader["source"].get("durationSeconds") and second >= reader["source"]["durationSeconds"]) or second not in source_links:
+            elif not isinstance(second, int) or isinstance(second, bool) or second < 0 or (reader["source"].get("durationSeconds") and second >= reader["source"]["durationSeconds"]):
                 errors.append(f"{slug}: source map timestamp absent from article or source duration")
+            elif source_video:
+                section = re.search(r'<section\b[^>]*\bid="' + re.escape(str(entry["sectionId"])) + r'"[^>]*>(.*?)</section>', article, re.S)
+                links = re.findall(r'<a\b[^>]*href="([^"]+)"', section.group(1) if section else "")
+                exact = (f"https://www.youtube.com/watch?v={source_video}&amp;t={second}s",
+                         f"https://www.youtube.com/watch?v={source_video}&t={second}s",
+                         f"https://youtu.be/{source_video}?t={second}s")
+                if not any(any(link.startswith(prefix) for prefix in exact) for link in links):
+                    errors.append(f"{slug}: source map timestamp absent from exact video in mapped section")
             if not isinstance(entry["sectionId"], str) or entry["sectionId"] not in anchors or not _mapped_prose(raw.decode("utf-8", "replace"), entry["sectionId"]) or not isinstance(entry["claimIds"], list) or not entry["claimIds"] or not all(isinstance(x, str) for x in entry["claimIds"]) or not set(entry["claimIds"]) <= claim_ids or not _reasoned(entry["rationale"]):
                 errors.append(f"{slug}: ungrounded source/claim map entry")
             marker = (str(second), str(entry["sectionId"]))
@@ -196,13 +258,13 @@ def validate_reader(root: Path, reader: dict, *, release: bool = True) -> list[s
             seen.add(marker)
         if isinstance(complexity, dict) and complexity.get("tier") == "extended" and len({str(e.get("sectionId")) for e in source_map if isinstance(e, dict)}) < 3:
             errors.append(f"{slug}: extended source map misses distinct analytical sections")
+        if isinstance(complexity, dict) and complexity.get("tier") == "extended" and len({e.get("atSeconds") for e in source_map if isinstance(e, dict)}) < 3:
+            errors.append(f"{slug}: extended source map repeats a single source moment")
     reviewer = receipt["reviewer"]
     if not isinstance(receipt["candidateAuthor"], str) or not receipt["candidateAuthor"].strip():
         errors.append(f"{slug}: accountable candidate author missing")
-    if not isinstance(reviewer, dict) or set(reviewer) != {"name", "role", "independentFromAuthor", "evidenceUrl"} or not all(isinstance(reviewer.get(k), str) and reviewer[k].strip() for k in ("name", "role", "evidenceUrl")) or reviewer.get("independentFromAuthor") is not True or not str(reviewer.get("evidenceUrl", "")).startswith("https://"):
-        errors.append(f"{slug}: independent qualitative review evidence missing")
-    elif isinstance(receipt["candidateAuthor"], str) and reviewer["name"].casefold().strip() == receipt["candidateAuthor"].casefold().strip():
-        errors.append(f"{slug}: author cannot self-certify qualitative acceptance")
+    if release and receipt.get("decision") == "accept" and not any("binding mismatch" in error for error in errors):
+        errors.extend(_authenticated_review_errors(slug, receipt))
     gaps = receipt["gaps"]
     if not isinstance(gaps, list) or any(not isinstance(g, dict) or set(g) != {"type", "severity", "rationale"} or g.get("type") not in GAP_TYPES or g.get("severity") not in {"blocking", "nonblocking"} or not _reasoned(g.get("rationale")) for g in gaps):
         errors.append(f"{slug}: typed editorial gaps invalid")

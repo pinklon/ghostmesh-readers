@@ -6,6 +6,7 @@ import shutil
 import sys
 import tempfile
 import unittest
+from unittest.mock import patch
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
@@ -30,13 +31,29 @@ class EditorialDepthGate(unittest.TestCase):
         self.article.write_text('''<section id="hardware"><h2>What the machine changes</h2><p>The speaker describes local inference as one route for keeping sensitive inputs close to their owner. <a href="https://www.youtube.com/watch?v=DwoWIf8f2yQ&amp;t=1155s">19:15</a> is a source assertion, while the vendor page establishes only a hardware class. Model quality and this configuration's network traffic remain unmeasured.</p></section><section id="performance"><h2>The counterargument</h2><p>A throughput demonstration is not a completed-work comparison. <a href="https://www.youtube.com/watch?v=DwoWIf8f2yQ&amp;t=1515s">25:15</a> reports a rate, but first-token wait, outcome quality and multiple users could change the conclusion. A controlled hosted route might meet stronger quality and recovery requirements.</p></section><section id="decision"><h2>A decision that can fail</h2><p><a href="https://www.youtube.com/watch?v=DwoWIf8f2yQ&amp;t=4230s">1:10:30</a> opens a hybrid path. Pin versions, run matched safe tasks, inspect egress and tools, and restore from backup. If the local option fails a prespecified quality or data-boundary threshold, revise the recommendation.</p></section>''')
         self.receipt = self.make_receipt()
         self.save_receipt()
+        self.api = patch("editorial_depth._get_json", side_effect=self.github_record)
+        self.api.start()
 
     def tearDown(self):
+        self.api.stop()
         self.tmp.cleanup()
+
+    def github_record(self, url):
+        base = "https://api.github.com/repos/pinklon/ghostmesh-readers/pulls/99"
+        if url == base:
+            return {"number": 99, "user": {"login": "fixture-writer", "id": 1}}
+        if url == base + "/reviews/77":
+            r = self.receipt
+            marker = (f"GhostMesh-Editorial-Acceptance: readerId={r['readerId']}; "
+                      f"sourceAidSha256={r['sourceAidSha256']}; articleSha256={r['articleSha256']}; "
+                      f"evidenceRevision={r['evidenceRevision']}")
+            return {"id": 77, "pull_request_url": base, "state": "APPROVED",
+                    "user": {"login": "fixture-reviewer", "id": 2}, "body": marker}
+        raise ValueError("unrecognized fixture URL")
 
     def make_receipt(self):
         record = {"schemaVersion": 1, **binding(self.reader, self.article.read_bytes()),
-                  "candidateAuthor": "Fixture Writer",
+                  "candidateAuthor": "fixture-writer",
                   "complexity": {"tier": "extended", "factors": ["95 minute source", "privacy and cost claims"], "rationale": "The long interview makes material performance, economic and privacy claims that warrant extended analysis."},
                   "sourceMap": [
                       {"atSeconds": 1155, "sectionId": "hardware", "claimIds": [self.reader["claims"][0]["id"]], "rationale": "The source describes a local configuration, but the article separates the speaker report from a measured outcome."},
@@ -45,7 +62,7 @@ class EditorialDepthGate(unittest.TestCase):
                   ],
                   "assessment": {area: {"disposition": "covered", "rationale": f"The independent fixture reviewer assessed {area} against the three argument sections and the source map."} for area in AREAS},
                   "independentCorroboration": "none",
-                  "reviewer": {"name": "Fixture Independent Reviewer", "role": "test-only independent editorial role", "independentFromAuthor": True, "evidenceUrl": "https://github.com/pinklon/ghostmesh-readers/issues/49"},
+                  "reviewer": {"login": "fixture-reviewer", "pullNumber": 99, "reviewId": 77},
                   "decision": "accept", "gaps": [],
                   "decisionRationale": "This is a synthetic contract fixture for testing the accepted state, not a qualitative review of a real Reader.",
                   "assessedAt": "2026-10-21T00:00:00Z"}
@@ -101,11 +118,40 @@ class EditorialDepthGate(unittest.TestCase):
         self.assert_rejected("vendor-only or methodological")
 
     def test_self_review_and_placeholders_fail(self):
-        self.receipt["reviewer"]["name"] = self.receipt["candidateAuthor"]
-        self.assert_rejected("self-certify")
-        self.receipt["reviewer"]["name"] = "Fixture Independent Reviewer"
+        self.receipt["reviewer"]["login"] = self.receipt["candidateAuthor"]
+        self.assert_rejected("authenticated independent acceptance")
+        self.receipt["reviewer"]["login"] = "fixture-reviewer"
         self.receipt["assessment"]["sourceCoverage"]["rationale"] = "TODO add analysis here with a long explanation later"
         self.assert_rejected("assessment missing or superficial")
+
+    def test_fictitious_review_or_wrong_hash_marker_fails(self):
+        self.receipt["reviewer"]["reviewId"] = 78
+        self.assert_rejected("could not be verified")
+        self.receipt["reviewer"]["reviewId"] = 77
+        original = self.github_record
+        with patch("editorial_depth._get_json", side_effect=lambda url: ({**original(url), "body": "Looks good"} if url.endswith("/reviews/77") else original(url))):
+            self.assert_rejected("exact hash marker missing")
+
+    def test_dismissed_review_or_same_github_actor_fails(self):
+        original = self.github_record
+        for changes in ({"state": "DISMISSED"}, {"user": {"login": "fixture-writer", "id": 1}}):
+            with self.subTest(changes=changes):
+                with patch("editorial_depth._get_json", side_effect=lambda url: ({**original(url), **changes} if url.endswith("/reviews/77") else original(url))):
+                    self.assert_rejected("authenticated independent acceptance")
+
+    def test_missing_exact_source_aid_digest_fails(self):
+        self.reader["legacyReceipt"]["sourceInspection"].pop("transcriptExportSha256")
+        self.receipt = self.make_receipt()
+        self.assert_rejected("exact retained source-aid SHA-256 missing")
+
+    def test_unrelated_video_link_cannot_ground_a_source_map(self):
+        self.article.write_text(self.article.read_text().replace("watch?v=DwoWIf8f2yQ&amp;t=1155s", "watch?v=OtherVideoX&amp;t=1155s"))
+        self.receipt = self.make_receipt()
+        self.assert_rejected("exact video in mapped section")
+
+    def test_source_link_in_another_section_cannot_ground_map(self):
+        self.receipt["sourceMap"][0]["atSeconds"] = 1515
+        self.assert_rejected("exact video in mapped section")
 
     def test_empty_or_placeholder_mapped_article_section_fails(self):
         self.article.write_text(self.article.read_text().replace('The speaker describes local inference as one route for keeping sensitive inputs close to their owner.', 'TODO add analysis here'))
