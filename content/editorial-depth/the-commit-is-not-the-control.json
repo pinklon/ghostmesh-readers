@@ -1,0 +1,101 @@
+{
+  "schemaVersion": 1,
+  "readerId": "reader:the-commit-is-not-the-control",
+  "sourceId": "anthropic-redesigning-source-control-2026",
+  "sourceDigest": "0a7da9eed43887d739e997c9627c7d0bafaeb9aa98255c2130c8f54607c8228a",
+  "sourceAidSha256": "b7bc489ef952cc9caba07e1a8b33a96f9aae8302b827dcd6f475ad0bed03a7ca",
+  "sourceMapEvidenceSha256": "91ceb7732c6b0a95fcafe21cd659b307357f456789a681d5ea8568f8f45258fd",
+  "reviewEvidenceSha256": "2a87b763537b900fb2ad689c42f321797df0ec17eeb64b7f8edbb9a49b0e7197",
+  "articleSha256": "4a5b455ef28b824e75c9dc521767f5813e42ee04ccca3b3f194fde942b0d7462",
+  "evidenceRevision": "822dcaddbd237d21010f314c94cac61723265d14e8efeb32c4b532ff21d557fa",
+  "candidateAuthor": "pinklon",
+  "complexity": {
+    "tier": "extended",
+    "factors": [
+      "Eight material claims including operator-only measurements",
+      "Consequential source-control, permission and recovery design"
+    ],
+    "rationale": "The technical and governance implications require a mapped argument, credible alternatives, explicit measurement limits and a falsifiable migration test."
+  },
+  "sourceMap": [
+    {
+      "atSeconds": null,
+      "sectionId": "volume",
+      "claimIds": [
+        "the-commit-is-not-the-control--write-pressure",
+        "the-commit-is-not-the-control--checkout-pressure",
+        "the-commit-is-not-the-control--git-alternatives"
+      ],
+      "rationale": "This section distinguishes reported growth and attempted mitigations from measured traffic or a universal Git limitation."
+    },
+    {
+      "atSeconds": null,
+      "sectionId": "architecture",
+      "claimIds": [
+        "the-commit-is-not-the-control--scion-design",
+        "the-commit-is-not-the-control--control-shift"
+      ],
+      "rationale": "This section separates the stated architecture from the proposed integrity, availability, IAM and recovery tests."
+    },
+    {
+      "atSeconds": null,
+      "sectionId": "measurements",
+      "claimIds": [
+        "the-commit-is-not-the-control--reported-gains",
+        "the-commit-is-not-the-control--human-review"
+      ],
+      "rationale": "This section attributes performance to the operator and limits the human-review statement to source-control system changes."
+    }
+  ],
+  "assessment": {
+    "sourceCoverage": {
+      "disposition": "covered",
+      "rationale": "The public source has no video timeline. Three distinct analytical sections are tied to checked original article headings and seven material source claims; the proposed test is original synthesis."
+    },
+    "supportingArgument": {
+      "disposition": "covered",
+      "rationale": "Anthropic’s reported scale, online changeset design, cache structure and relative performance case are represented as operator claims with their strongest technical rationale."
+    },
+    "evidenceRoles": {
+      "disposition": "covered",
+      "rationale": "The Reader distinguishes first-party workload and performance reports, primary documentation of alternatives, GhostMesh threat-model inference and an unrun experiment."
+    },
+    "counterargument": {
+      "disposition": "covered",
+      "rationale": "Git partial clone and maintenance form a practical baseline, while the strongest opposing view is that Anthropic’s agent-heavy checkout volume could justify a server-centered system."
+    },
+    "tradeoffs": {
+      "disposition": "covered",
+      "rationale": "The essay examines client simplicity against online availability, centralized authority, derived-metadata integrity, credential blast radius and recovery dependence."
+    },
+    "falsifiability": {
+      "disposition": "covered",
+      "rationale": "A matched synthetic replay and outage, corruption, review and recovery drills could change the recommendation in either direction; no benchmark is presented as already run."
+    },
+    "originalSynthesis": {
+      "disposition": "covered",
+      "rationale": "GhostMesh connects merge throughput to the separate human and machine authority needed for acceptance, deployment and rollback; the commit itself is not the final control."
+    },
+    "performance": {
+      "disposition": "covered",
+      "rationale": "The essay contrasts reported relative checkout and CPU gains with missing percentile latency, reliability, matched tuned-Git workloads and accepted-change quality."
+    },
+    "economics": {
+      "disposition": "covered",
+      "rationale": "The essay notes missing dollar costs and non-portable team staffing, and proposes CPU, network and operating cost per accepted change under matched workloads."
+    },
+    "threatGovernance": {
+      "disposition": "covered",
+      "rationale": "The analysis names source bytes, derived metadata, agent authority, review authority and deployment authority, with explicit tests for failure and privilege boundaries."
+    }
+  },
+  "independentCorroboration": "none",
+  "ownerDecision": {
+    "pullNumber": 52,
+    "commentId": 6307267366
+  },
+  "decision": "accept",
+  "gaps": [],
+  "decisionRationale": "Tony qualitatively accepted the exact authored article SHA-256 4a5b455ef28b824e75c9dc521767f5813e42ee04ccca3b3f194fde942b0d7462 after reviewing the preview. The independent findings and assessment remain bound here; his required direct GitHub hash comment and separate exact-head release authorization are still pending.",
+  "assessedAt": "2026-10-21T03:08:13Z"
+}

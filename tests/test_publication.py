@@ -1,13 +1,19 @@
 """Publication failure modes, not snapshots of implementation details."""
 import json,shutil,subprocess,sys,tempfile,unittest
 from pathlib import Path
+from unittest.mock import patch
 ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT/'scripts'))
 from check_site import check
 class PublicationGate(unittest.TestCase):
  def setUp(self):
   self.tmp=tempfile.TemporaryDirectory();self.root=Path(self.tmp.name)
   for name in ['site','content','docs']:shutil.copytree(ROOT/name,self.root/name)
- def tearDown(self):self.tmp.cleanup()
+  # These fixtures test local publication rules. The separate CI site gate checks
+  # live owner provenance; test_editorial_depth exercises its adversarial cases.
+  self.owner=patch('editorial_depth._authenticated_owner_decision_errors',return_value=[])
+  self.owner.start()
+ def tearDown(self):
+  self.owner.stop();self.tmp.cleanup()
  def mutate(self,fn):
   p=self.root/'content/catalog.json';d=json.loads(p.read_text());fn(d);p.write_text(json.dumps(d))
  def rejected(self,term):self.assertTrue(any(term in x for x in check(self.root)),check(self.root))

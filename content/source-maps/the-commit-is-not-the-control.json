@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "readerId": "reader:the-commit-is-not-the-control",
+  "sourceId": "anthropic-redesigning-source-control-2026",
+  "sourceAidSha256": "b7bc489ef952cc9caba07e1a8b33a96f9aae8302b827dcd6f475ad0bed03a7ca",
+  "points": [
+    {
+      "atSeconds": null,
+      "sectionId": "volume",
+      "claimIds": [
+        "the-commit-is-not-the-control--write-pressure",
+        "the-commit-is-not-the-control--checkout-pressure",
+        "the-commit-is-not-the-control--git-alternatives"
+      ],
+      "cueParaphrase": "The operator reports rapid merge and checkout growth and describes Git tuning attempted before the Scion migration; the 600 PB figure is a hypothetical fetch projection.",
+      "privateAidCheck": "The retained original HTML was inspected under the source headings for repository growth and earlier mitigations; the independent editor checked the qualified public wording against it."
+    },
+    {
+      "atSeconds": null,
+      "sectionId": "architecture",
+      "claimIds": [
+        "the-commit-is-not-the-control--scion-design",
+        "the-commit-is-not-the-control--control-shift"
+      ],
+      "cueParaphrase": "The operator describes changesets, server-side operations, derived metadata, caches and an always-online client premise; the risk shift is GhostMesh inference.",
+      "privateAidCheck": "The retained original HTML was checked for the architecture and scaling sections; the independent editor confirmed the public article does not claim an audit of Scion code or controls."
+    },
+    {
+      "atSeconds": null,
+      "sectionId": "measurements",
+      "claimIds": [
+        "the-commit-is-not-the-control--reported-gains",
+        "the-commit-is-not-the-control--human-review"
+      ],
+      "cueParaphrase": "The operator reports relative former-mirror and CI gains, and describes its source-control team reviewing Scion and Antique change requests, not all companywide merges.",
+      "privateAidCheck": "The retained original HTML was checked for reported performance and team-review scope; the independent editor required correction of the earlier companywide-review implication."
+    }
+  ]
+}
