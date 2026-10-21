@@ -25,7 +25,8 @@
         "references": {"type": "array", "items": {"$ref": "#/$defs/reference"}},
         "relationships": {"type": "array", "items": {"$ref": "#/$defs/relationship"}},
         "relationshipDisposition": {"type": "string", "minLength": 1},
-        "relationshipReview": {"$ref": "#/$defs/relationshipReview"}
+        "relationshipReview": {"$ref": "#/$defs/relationshipReview"},
+        "editorialDepth": {"type": "object", "additionalProperties": false, "required": ["schemaVersion", "receiptPath"], "properties": {"schemaVersion": {"const": 1}, "receiptPath": {"type": "string", "pattern": "^content/editorial-depth/[a-z0-9-]+\\.json$"}}}
       }
     },
     "mediaSource": {
