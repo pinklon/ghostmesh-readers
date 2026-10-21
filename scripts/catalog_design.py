@@ -54,6 +54,7 @@ CALLS = {
     'the-brakes-need-a-test': ('Watch selectively', 'Ask whether a warning reaches a named threshold, a decision and an outside retest.'),
     'the-grader-is-part-of-the-harness': ('Test the grader first', 'Use held-out tasks and an outside outcome check before accepting an adaptive harness gain.'),
     'the-stop-button-is-outside-the-chat': ('Test the stop surface', 'Limit agent authority, inspect the real outcome and verify that active work and future access have stopped.'),
+    'the-boundary-is-bigger-than-the-box': ('Test the whole boundary', 'Compare a real task locally and in the cloud, then inspect network paths, tool access and total cost.'),
 }
 
 

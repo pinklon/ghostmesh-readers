@@ -162,7 +162,7 @@ def check(root=ROOT):
    if not isinstance(reviewed_value,str) or not re.fullmatch(r'\d{4}-\d{2}-\d{2}',reviewed_value):
     raise ValueError('relationship review date must use YYYY-MM-DD')
    reviewed=date.fromisoformat(reviewed_value)
-   require(reviewed<=date.today(),f'{slug}: future relationship review')
+   require(reviewed<=datetime.now(timezone.utc).date(),f'{slug}: future relationship review')
   except (ValueError,TypeError):errors.append(f'{slug}: missing or invalid relationship review date')
   require(assessment.get('reviewedCatalogSize')==len(readers),f'{slug}: stale relationship review catalog size')
   targets=[edge['target'] for edge in r['relationships']]
