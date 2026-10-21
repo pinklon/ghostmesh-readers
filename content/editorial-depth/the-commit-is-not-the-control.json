@@ -90,9 +90,12 @@
     }
   },
   "independentCorroboration": "none",
-  "ownerDecision": null,
-  "decision": "hold",
+  "ownerDecision": {
+    "pullNumber": 52,
+    "commentId": null
+  },
+  "decision": "accept",
   "gaps": [],
-  "decisionRationale": "Independent findings support owner review, but Tony has not yet accepted this exact article, source map and assessment. Publication remains held until his authenticated decision and separate release authorization.",
-  "assessedAt": "2026-10-21T02:49:48Z"
+  "decisionRationale": "Tony qualitatively accepted the exact authored article SHA-256 4a5b455ef28b824e75c9dc521767f5813e42ee04ccca3b3f194fde942b0d7462 after reviewing the preview. The independent findings and assessment remain bound here; his required direct GitHub hash comment and separate exact-head release authorization are still pending.",
+  "assessedAt": "2026-10-21T03:08:13Z"
 }
