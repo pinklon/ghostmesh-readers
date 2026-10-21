@@ -1,26 +1,43 @@
-"""Adversarial contract fixtures; synthetic reviewers here are not real signoff."""
+"""Adversarial fixtures; synthetic owner and agent records are not real signoff."""
+import base64
 import copy
 import hashlib
+import io
 import json
+import os
 from pathlib import Path
 import shutil
 import sys
 import tempfile
 import unittest
 from unittest.mock import patch
+from urllib.parse import unquote, urlsplit
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
-from editorial_depth import AREAS, acceptance_marker, binding, validate_reader
+from editorial_depth import AREAS, _get_json, acceptance_marker, binding, validate_reader
 
 
 class EditorialDepthGate(unittest.TestCase):
+    def test_existing_contents_token_is_not_sent_to_public_pr_or_comment_reads(self):
+        seen = []
+        def response(request, timeout):
+            seen.append((request.full_url, request.has_header("Authorization")))
+            return io.BytesIO(b"{}")
+        base = "https://api.github.com/repos/pinklon/ghostmesh-readers"
+        with patch.dict(os.environ, {"GITHUB_TOKEN": "synthetic-test-token"}):
+            with patch("editorial_depth.urlopen", side_effect=response):
+                for path in ("/pulls/99", "/issues/comments/77", "/contents/content/catalog.json?ref=" + "a" * 40):
+                    _get_json(base + path)
+        self.assertEqual([False, False, True], [authorized for _, authorized in seen])
+
     def setUp(self):
         self.tmp = tempfile.TemporaryDirectory()
         self.root = Path(self.tmp.name)
         (self.root / "content/readers").mkdir(parents=True)
         (self.root / "content/editorial-depth").mkdir(parents=True)
         (self.root / "content/source-maps").mkdir(parents=True)
+        (self.root / "content/editorial-reviews").mkdir(parents=True)
         shutil.copy2(ROOT / "content/editorial-depth/legacy-policy.json", self.root / "content/editorial-depth/legacy-policy.json")
         catalog = json.loads((ROOT / "content/catalog.json").read_text())
         self.reader = copy.deepcopy(next(r for r in catalog["readers"] if r["slug"] == "the-boundary-is-bigger-than-the-box"))
@@ -28,6 +45,7 @@ class EditorialDepthGate(unittest.TestCase):
         self.article = self.root / "content/readers" / f"{self.slug}.html"
         self.receipt_path = self.root / "content/editorial-depth" / f"{self.slug}.json"
         self.map_path = self.root / "content/source-maps" / f"{self.slug}.json"
+        self.review_path = self.root / "content/editorial-reviews" / f"{self.slug}.json"
         self.reader["editorialDepth"] = {"schemaVersion": 1, "receiptPath": f"content/editorial-depth/{self.slug}.json"}
         # Representative argument fixture. Only the external human decision can
         # call actual public prose substantively sufficient.
@@ -44,12 +62,22 @@ class EditorialDepthGate(unittest.TestCase):
     def github_record(self, url):
         base = "https://api.github.com/repos/pinklon/ghostmesh-readers/pulls/99"
         if url == base:
-            return {"number": 99, "user": {"login": "fixture-writer", "id": 1}}
-        if url == base + "/reviews/77":
+            return {"number": 99, "merged": False, "head": {"sha": "a" * 40},
+                    "user": {"login": "fixture-writer", "id": 1}}
+        if url == "https://api.github.com/repos/pinklon/ghostmesh-readers/issues/comments/77":
             r = self.receipt
             marker = acceptance_marker(r)
-            return {"id": 77, "pull_request_url": base, "state": "APPROVED", "author_association": "COLLABORATOR",
-                    "user": {"login": "fixture-reviewer", "id": 2, "type": "User"}, "body": marker}
+            return {"id": 77, "issue_url": "https://api.github.com/repos/pinklon/ghostmesh-readers/issues/99",
+                    "author_association": "OWNER", "performed_via_github_app": None,
+                    "created_at": "2026-10-21T00:02:00Z", "updated_at": "2026-10-21T00:02:00Z",
+                    "user": {"login": "pinklon", "id": 10054714, "type": "User"}, "body": marker}
+        prefix = "https://api.github.com/repos/pinklon/ghostmesh-readers/contents/"
+        if url.startswith(prefix) and url.endswith("?ref=" + "a" * 40):
+            path = unquote(urlsplit(url).path.split("/contents/", 1)[1])
+            data = (json.dumps({"readers": [self.reader]}).encode() if path == "content/catalog.json"
+                    else (self.root / path).read_bytes())
+            return {"type": "file", "encoding": "base64", "size": len(data),
+                    "content": base64.b64encode(data).decode()}
         raise ValueError("unrecognized fixture URL")
 
     def make_receipt(self):
@@ -63,12 +91,25 @@ class EditorialDepthGate(unittest.TestCase):
                   ],
                   "assessment": {area: {"disposition": "covered", "rationale": f"The independent fixture reviewer assessed {area} against the three argument sections and the source map."} for area in AREAS},
                   "independentCorroboration": "none",
-                  "reviewer": {"login": "fixture-reviewer", "pullNumber": 99, "reviewId": 77},
+                  "ownerDecision": {"pullNumber": 99, "commentId": 77},
                   "decision": "accept", "gaps": [],
                   "decisionRationale": "This is a synthetic contract fixture for testing the accepted state, not a qualitative review of a real Reader.",
                   "assessedAt": "2026-10-21T00:00:00Z"}
         record["sourceMapEvidenceSha256"] = self.write_map(record)
+        record["reviewEvidenceSha256"] = self.write_review(record)
         return record
+
+    def write_review(self, record):
+        data = {"schemaVersion": 1, "readerId": record["readerId"], "sourceId": record["sourceId"],
+                "sourceAidSha256": record["sourceAidSha256"], "articleSha256": record["articleSha256"],
+                "evidenceRevision": record["evidenceRevision"], "reviewedAt": "2026-10-21T00:01:00Z",
+                "provenance": {"kind": "codex-task-agent",
+                               "reference": "Synthetic fixture agent report in this local adversarial test, not a real reviewer identity.",
+                               "limits": "This candidate-authored fixture record cannot authenticate any private agent's identity."},
+                "summary": "The synthetic independent findings provide a testable record for the owner's separate decision.",
+                "findings": [], "conclusion": "accept-for-owner-review"}
+        self.review_path.write_text(json.dumps(data))
+        return hashlib.sha256(self.review_path.read_bytes()).hexdigest()
 
     def write_map(self, record):
         points = [{"atSeconds": entry["atSeconds"], "sectionId": entry["sectionId"],
@@ -89,7 +130,7 @@ class EditorialDepthGate(unittest.TestCase):
         errors = validate_reader(self.root, self.reader)
         self.assertTrue(any(term in error for error in errors), errors)
 
-    def test_long_form_fixture_with_independent_acceptance_is_admitted(self):
+    def test_long_form_fixture_with_owner_acceptance_after_retained_findings_is_admitted(self):
         self.assertEqual([], validate_reader(self.root, self.reader))
 
     def test_schema_complete_but_reviewer_rejected_superficial_argument_is_held(self):
@@ -127,38 +168,116 @@ class EditorialDepthGate(unittest.TestCase):
         self.reader["claims"][0]["assessment"] = "Changed after signoff"
         self.assert_rejected("evidenceRevision binding mismatch")
 
-    def test_candidate_cannot_change_acceptance_or_assessment_after_review(self):
-        approved = self.github_record("https://api.github.com/repos/pinklon/ghostmesh-readers/pulls/99/reviews/77")
+    def test_candidate_cannot_change_acceptance_or_assessment_after_owner_decision(self):
+        approved = self.github_record("https://api.github.com/repos/pinklon/ghostmesh-readers/issues/comments/77")
         self.receipt["assessment"]["counterargument"]["rationale"] = "A different account of the counterargument was inserted after the submitted editorial review."
-        with patch("editorial_depth._get_json", side_effect=lambda url: approved if url.endswith("/reviews/77") else self.github_record(url)):
+        with patch("editorial_depth._get_json", side_effect=lambda url: approved if url.endswith("/comments/77") else self.github_record(url)):
             self.assert_rejected("exact hash marker missing")
 
     def test_vendor_only_refs_cannot_claim_independent_outcome(self):
         self.receipt["independentCorroboration"] = "qualified"
         self.assert_rejected("vendor-only or methodological")
 
-    def test_self_review_and_placeholders_fail(self):
-        self.receipt["reviewer"]["login"] = self.receipt["candidateAuthor"]
-        self.assert_rejected("authenticated independent acceptance")
-        self.receipt["reviewer"]["login"] = "fixture-reviewer"
+    def test_connector_posted_owner_comment_and_placeholders_fail(self):
+        original = self.github_record
+        with patch("editorial_depth._get_json", side_effect=lambda url: ({**original(url), "performed_via_github_app": {"slug": "chatgpt-codex-connector"}} if url.endswith("/comments/77") else original(url))):
+            self.assert_rejected("authenticated unchanged owner acceptance")
         self.receipt["assessment"]["sourceCoverage"]["rationale"] = "TODO add analysis here with a long explanation later"
         self.assert_rejected("assessment missing or superficial")
 
-    def test_fictitious_review_or_wrong_hash_marker_fails(self):
-        self.receipt["reviewer"]["reviewId"] = 78
+    def test_fictitious_owner_comment_or_wrong_hash_marker_fails(self):
+        self.receipt["ownerDecision"]["commentId"] = 78
         self.assert_rejected("could not be verified")
-        self.receipt["reviewer"]["reviewId"] = 77
+        self.receipt["ownerDecision"]["commentId"] = 77
         original = self.github_record
-        with patch("editorial_depth._get_json", side_effect=lambda url: ({**original(url), "body": "Looks good"} if url.endswith("/reviews/77") else original(url))):
+        with patch("editorial_depth._get_json", side_effect=lambda url: ({**original(url), "body": "Looks good"} if url.endswith("/comments/77") else original(url))):
             self.assert_rejected("exact hash marker missing")
 
-    def test_dismissed_review_or_same_github_actor_fails(self):
+    def test_no_owner_decision_remains_held(self):
+        self.receipt["ownerDecision"] = None
+        self.assert_rejected("authenticated owner decision locator missing")
+
+    def test_owner_can_calculate_exact_pr_marker_before_comment_exists(self):
+        self.receipt["ownerDecision"]["commentId"] = None
+        self.assertIn("pullNumber=99", acceptance_marker(self.receipt))
+        self.assert_rejected("authenticated owner decision locator missing")
+
+    def test_wrong_open_pr_or_unmerged_main_release_fails(self):
+        self.assertTrue(any("owner acceptance" in x for x in
+                            validate_reader(self.root, self.reader, event_pr=98)))
+        self.assertTrue(any("owner acceptance" in x for x in
+                            validate_reader(self.root, self.reader, require_merged=True)))
+
+    def test_same_author_comment_from_another_pr_cannot_be_replayed(self):
+        old_marker = acceptance_marker(self.receipt)
+        self.receipt["ownerDecision"]["pullNumber"] = 98
         original = self.github_record
-        for changes in ({"state": "DISMISSED"}, {"user": {"login": "fixture-writer", "id": 1, "type": "User"}},
+        def wrong_pr(url):
+            if url.endswith("/pulls/98"):
+                return {"number": 98, "merged": False, "head": {"sha": "a" * 40},
+                        "user": {"login": "fixture-writer", "id": 1}}
+            if url.endswith("/comments/77"):
+                return {**original(url), "issue_url": "https://api.github.com/repos/pinklon/ghostmesh-readers/issues/98",
+                        "body": old_marker}
+            return original(url)
+        with patch("editorial_depth._get_json", side_effect=wrong_pr):
+            self.assert_rejected("exact hash marker missing")
+
+    def test_referenced_pr_must_contain_exact_accepted_artifacts(self):
+        original = self.github_record
+        path = f"/contents/content/readers/{self.slug}.html"
+        def altered(url):
+            item = original(url)
+            if path in url:
+                data = b"Different article in a same-author PR"
+                return {**item, "size": len(data), "content": base64.b64encode(data).decode()}
+            return item
+        with patch("editorial_depth._get_json", side_effect=altered):
+            self.assert_rejected("referenced PR does not contain the accepted artifacts")
+
+    def test_merged_pr_has_durable_commit_proof_on_later_pr(self):
+        original = self.github_record
+        def merged(url):
+            item = original(url)
+            if url.endswith("/pulls/99"):
+                return {**item, "merged": True, "merge_commit_sha": "a" * 40}
+            return item
+        with patch("editorial_depth._get_json", side_effect=merged):
+            self.assertEqual([], validate_reader(self.root, self.reader, event_pr=100, require_merged=True))
+
+    def test_edited_replayed_or_wrong_actor_decision_fails(self):
+        original = self.github_record
+        for changes in ({"updated_at": "2026-10-21T00:03:00Z"},
+                        {"issue_url": "https://api.github.com/repos/pinklon/ghostmesh-readers/issues/98"},
+                        {"created_at": "2026-10-21T00:00:00Z", "updated_at": "2026-10-21T00:00:00Z"},
+                        {"user": {"login": "fixture-writer", "id": 1, "type": "User"}},
                         {"author_association": "NONE"}):
             with self.subTest(changes=changes):
-                with patch("editorial_depth._get_json", side_effect=lambda url: ({**original(url), **changes} if url.endswith("/reviews/77") else original(url))):
-                    self.assert_rejected("authenticated independent acceptance")
+                with patch("editorial_depth._get_json", side_effect=lambda url: ({**original(url), **changes} if url.endswith("/comments/77") else original(url))):
+                    self.assert_rejected("authenticated unchanged owner acceptance")
+
+    def test_quoted_or_negated_marker_is_not_acceptance(self):
+        original = self.github_record
+        with patch("editorial_depth._get_json", side_effect=lambda url: ({**original(url), "body": "I do not approve. " + original(url)["body"]} if url.endswith("/comments/77") else original(url))):
+            self.assert_rejected("exact hash marker missing")
+
+    def test_retained_findings_change_or_hold_invalidates_owner_acceptance(self):
+        data = json.loads(self.review_path.read_text())
+        data["summary"] = "An altered account of the agent's findings was inserted after the owner's exact decision."
+        self.review_path.write_text(json.dumps(data))
+        self.assert_rejected("retained qualitative findings digest mismatch")
+        self.receipt["reviewEvidenceSha256"] = hashlib.sha256(self.review_path.read_bytes()).hexdigest()
+        data["conclusion"] = "hold"
+        self.review_path.write_text(json.dumps(data))
+        self.receipt["reviewEvidenceSha256"] = hashlib.sha256(self.review_path.read_bytes()).hexdigest()
+        self.assert_rejected("do not support owner acceptance")
+
+    def test_retained_findings_reject_private_marker_with_fresh_digest(self):
+        data = json.loads(self.review_path.read_text())
+        data["summary"] += " Synthetic token ghp_ABCDEFGHIJKLMNOPQRSTUVWXYZ123456 must stay private."
+        self.review_path.write_text(json.dumps(data))
+        self.receipt["reviewEvidenceSha256"] = hashlib.sha256(self.review_path.read_bytes()).hexdigest()
+        self.assert_rejected("qualitative findings contain a private marker")
 
     def test_missing_exact_source_aid_digest_fails(self):
         self.reader["legacyReceipt"]["sourceInspection"].pop("transcriptExportSha256")

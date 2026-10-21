@@ -4,7 +4,7 @@
   "title": "GhostMesh Reader editorial depth receipt v1",
   "type": "object",
   "additionalProperties": false,
-  "required": ["schemaVersion", "readerId", "sourceId", "sourceDigest", "sourceAidSha256", "sourceMapEvidenceSha256", "articleSha256", "evidenceRevision", "candidateAuthor", "complexity", "sourceMap", "assessment", "independentCorroboration", "reviewer", "decision", "gaps", "decisionRationale", "assessedAt"],
+  "required": ["schemaVersion", "readerId", "sourceId", "sourceDigest", "sourceAidSha256", "sourceMapEvidenceSha256", "reviewEvidenceSha256", "articleSha256", "evidenceRevision", "candidateAuthor", "complexity", "sourceMap", "assessment", "independentCorroboration", "ownerDecision", "decision", "gaps", "decisionRationale", "assessedAt"],
   "properties": {
     "schemaVersion": {"const": 1},
     "readerId": {"type": "string", "pattern": "^reader:[a-z0-9-]+$"},
@@ -12,6 +12,7 @@
     "sourceDigest": {"$ref": "#/$defs/sha256"},
     "sourceAidSha256": {"$ref": "#/$defs/sha256"},
     "sourceMapEvidenceSha256": {"$ref": "#/$defs/sha256"},
+    "reviewEvidenceSha256": {"$ref": "#/$defs/sha256"},
     "articleSha256": {"$ref": "#/$defs/sha256"},
     "evidenceRevision": {"$ref": "#/$defs/sha256"},
     "candidateAuthor": {"type": "string", "description": "GitHub login of the PR author", "minLength": 1},
@@ -30,7 +31,7 @@
       "threatGovernance": {"$ref": "#/$defs/disposition"}
     }},
     "independentCorroboration": {"enum": ["none", "qualified"]},
-    "reviewer": {"type": "object", "additionalProperties": false, "required": ["login", "pullNumber", "reviewId"], "properties": {"login": {"type": "string", "minLength": 1}, "pullNumber": {"type": "integer", "minimum": 1}, "reviewId": {"type": "integer", "minimum": 1}}},
+    "ownerDecision": {"oneOf": [{"type": "null"}, {"type": "object", "additionalProperties": false, "required": ["pullNumber", "commentId"], "properties": {"pullNumber": {"type": "integer", "minimum": 1}, "commentId": {"type": ["integer", "null"], "minimum": 1}}]},
     "decision": {"enum": ["accept", "revise", "hold"]},
     "gaps": {"type": "array", "items": {"type": "object", "additionalProperties": false, "required": ["type", "severity", "rationale"], "properties": {"type": {"enum": ["source", "claim", "evidence", "counterargument", "scope", "risk", "test", "synthesis"]}, "severity": {"enum": ["blocking", "nonblocking"]}, "rationale": {"type": "string", "minLength": 35}}}},
     "decisionRationale": {"type": "string", "minLength": 35},

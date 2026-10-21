@@ -1,17 +1,21 @@
-"""Hash-bound human editorial decisions for Reader publication.
+"""Hash-bound owner editorial decisions for Reader publication.
 
 The checks prove that the reviewed source, evidence and authored HTML match the
-candidate. They cannot decide whether the reviewer's argument is good.
+candidate and that the owner posted an unchanged decision through GitHub without
+the Codex connector. They cannot authenticate a private agent or judge prose.
 """
 from __future__ import annotations
 
 from datetime import datetime, timezone
+import base64
 import hashlib
 import html
 from html.parser import HTMLParser
 import json
+import os
 from pathlib import Path
 import re
+from urllib.parse import quote
 from urllib.request import Request, urlopen
 from knowledge_contract import DENIED as PRIVATE_MARKERS
 
@@ -73,16 +77,16 @@ def binding(reader: dict, authored_html: bytes) -> dict:
 
 
 def assessment_digest(receipt: dict) -> str:
-    """Bind every candidate-authored assessment field, excluding only the later review locator."""
-    return digest({key: value for key, value in receipt.items() if key != "reviewer"})
+    """Bind candidate assessment bytes, excluding only the later owner comment locator."""
+    return digest({key: value for key, value in receipt.items() if key != "ownerDecision"})
 
 
 def acceptance_marker(receipt: dict) -> str:
-    return (f"GhostMesh-Editorial-Acceptance: readerId={receipt['readerId']}; "
+    return (f"GhostMesh-Owner-Editorial-Acceptance: pullNumber={receipt['ownerDecision']['pullNumber']}; readerId={receipt['readerId']}; "
             f"sourceId={receipt['sourceId']}; sourceDigest={receipt['sourceDigest']}; "
             f"sourceAidSha256={receipt['sourceAidSha256']}; sourceMapEvidenceSha256={receipt['sourceMapEvidenceSha256']}; "
-            f"articleSha256={receipt['articleSha256']}; "
-            f"evidenceRevision={receipt['evidenceRevision']}; assessmentSha256={assessment_digest(receipt)}")
+            f"reviewEvidenceSha256={receipt['reviewEvidenceSha256']}; articleSha256={receipt['articleSha256']}; "
+            f"evidenceRevision={receipt['evidenceRevision']}; assessmentSha256={assessment_digest(receipt)}; decision=accept")
 
 
 def _reasoned(value: object) -> bool:
@@ -132,43 +136,93 @@ def _mapped_prose(raw: str, anchor: str) -> bool:
 
 
 def _get_json(url: str) -> dict:
-    request = Request(url, headers={"Accept": "application/vnd.github+json", "User-Agent": "ghostmesh-editorial-gate"})
+    headers = {"Accept": "application/vnd.github+json", "User-Agent": "ghostmesh-editorial-gate"}
+    # The existing Actions token has contents: read only. PRs and comments are
+    # public reads; never send that token to endpoints outside its permission.
+    if ("/contents/" in url or "/git/blobs/" in url) and os.environ.get("GITHUB_TOKEN"):
+        headers["Authorization"] = f"Bearer {os.environ['GITHUB_TOKEN']}"
+    request = Request(url, headers=headers)
     with urlopen(request, timeout=8) as response:
         return json.load(response)
 
 
-def _authenticated_review_errors(slug: str, receipt: dict) -> list[str]:
-    """Check a submitted GitHub review, not a candidate-authored identity claim."""
-    reviewer = receipt["reviewer"]
-    if (not isinstance(reviewer, dict) or set(reviewer) != {"login", "pullNumber", "reviewId"}
-            or not isinstance(reviewer.get("login"), str) or not re.fullmatch(r"[A-Za-z0-9-]{1,39}", reviewer["login"])
-            or not isinstance(reviewer.get("pullNumber"), int) or isinstance(reviewer["pullNumber"], bool) or reviewer["pullNumber"] < 1
-            or not isinstance(reviewer.get("reviewId"), int) or isinstance(reviewer["reviewId"], bool) or reviewer["reviewId"] < 1):
-        return [f"{slug}: authenticated reviewer locator missing"]
-    number = reviewer["pullNumber"]
+def _pr_file(path: str, ref: str) -> bytes:
+    """Read a file at an immutable GitHub commit, rejecting truncated API replies."""
+    url = f"https://api.github.com/repos/pinklon/ghostmesh-readers/contents/{quote(path)}?ref={ref}"
+    item = _get_json(url)
+    if item.get("type") != "file" or item.get("encoding") != "base64":
+        raise ValueError("remote file body unavailable")
+    payload = item.get("content")
+    if not payload and item.get("size", 0) > 0:
+        blob = _get_json(f"https://api.github.com/repos/pinklon/ghostmesh-readers/git/blobs/{item['sha']}")
+        if blob.get("encoding") != "base64" or blob.get("sha") != item["sha"]:
+            raise ValueError("remote blob body unavailable")
+        payload = blob["content"]
+    data = base64.b64decode(payload, validate=False)
+    if len(data) != item.get("size"):
+        raise ValueError("remote file body truncated")
+    return data
+
+
+def _authenticated_owner_decision_errors(root: Path, reader: dict, receipt: dict,
+                                         review_evidence: dict | None, *, event_pr: int | None,
+                                         require_merged: bool) -> list[str]:
+    """Check Tony's GitHub comment, rejecting connector-posted or edited text."""
+    slug = reader["slug"]
+    locator = receipt["ownerDecision"]
+    if (not isinstance(locator, dict) or set(locator) != {"pullNumber", "commentId"}
+            or not isinstance(locator.get("pullNumber"), int) or isinstance(locator["pullNumber"], bool) or locator["pullNumber"] < 1
+            or not isinstance(locator.get("commentId"), int) or isinstance(locator["commentId"], bool) or locator["commentId"] < 1):
+        return [f"{slug}: authenticated owner decision locator missing"]
+    number = locator["pullNumber"]
     base = f"https://api.github.com/repos/pinklon/ghostmesh-readers/pulls/{number}"
     try:
         pull = _get_json(base)
-        review = _get_json(f"{base}/reviews/{reviewer['reviewId']}")
+        comment = _get_json(f"https://api.github.com/repos/pinklon/ghostmesh-readers/issues/comments/{locator['commentId']}")
     except (OSError, ValueError, KeyError, TypeError) as exc:
-        return [f"{slug}: authenticated editorial review could not be verified ({type(exc).__name__})"]
+        return [f"{slug}: authenticated owner decision could not be verified ({type(exc).__name__})"]
     author = pull.get("user") or {}
-    user = review.get("user") or {}
+    user = comment.get("user") or {}
     marker = acceptance_marker(receipt)
-    if (pull.get("number") != number or review.get("id") != reviewer["reviewId"]
-            or review.get("pull_request_url") != base
-            or review.get("state") != "APPROVED"
-            or user.get("login", "").casefold() != reviewer["login"].casefold()
-            or user.get("type") != "User"
-            or review.get("author_association") not in {"COLLABORATOR", "MEMBER", "OWNER"}
+    try:
+        posted = datetime.fromisoformat(comment["created_at"].replace("Z", "+00:00"))
+        reviewed = datetime.fromisoformat(review_evidence["reviewedAt"].replace("Z", "+00:00"))
+        assessed = datetime.fromisoformat(receipt["assessedAt"].replace("Z", "+00:00"))
+        chronology_ok = all(value.tzinfo is not None for value in (posted, reviewed, assessed)) and posted >= max(reviewed, assessed)
+    except (KeyError, TypeError, ValueError, AttributeError):
+        chronology_ok = False
+    if (pull.get("number") != number or comment.get("id") != locator["commentId"]
+            or pull.get("merged") not in (True, False)
+            or (require_merged and pull.get("merged") is not True)
+            or (event_pr is not None and pull.get("merged") is False and number != event_pr)
+            or comment.get("issue_url") != f"https://api.github.com/repos/pinklon/ghostmesh-readers/issues/{number}"
+            or user.get("login") != "pinklon" or user.get("id") != 10054714 or user.get("type") != "User"
+            or comment.get("author_association") != "OWNER"
+            or "performed_via_github_app" not in comment or comment["performed_via_github_app"] is not None
+            or not comment.get("created_at") or comment.get("created_at") != comment.get("updated_at")
+            or not chronology_ok
             or author.get("login", "").casefold() != str(receipt["candidateAuthor"]).casefold()
-            or user.get("id") == author.get("id")
-            or marker not in (review.get("body") or "")):
-        return [f"{slug}: authenticated independent acceptance or exact hash marker missing"]
+            or (comment.get("body") or "").strip() != marker):
+        return [f"{slug}: authenticated unchanged owner acceptance or exact hash marker missing"]
+    ref = pull.get("merge_commit_sha") if pull["merged"] else (pull.get("head") or {}).get("sha")
+    if not isinstance(ref, str) or not re.fullmatch(r"[0-9a-f]{40}", ref):
+        return [f"{slug}: referenced PR has no immutable artifact commit"]
+    paths = (f"content/readers/{slug}.html", f"content/source-maps/{slug}.json",
+             f"content/editorial-reviews/{slug}.json", f"content/editorial-depth/{slug}.json")
+    try:
+        if any(_pr_file(path, ref) != (root / path).read_bytes() for path in paths):
+            return [f"{slug}: referenced PR does not contain the accepted artifacts"]
+        catalog = json.loads(_pr_file("content/catalog.json", ref))
+        remote = next(item for item in catalog["readers"] if item["id"] == reader["id"])
+        if binding(remote, (root / paths[0]).read_bytes()) != binding(reader, (root / paths[0]).read_bytes()):
+            return [f"{slug}: referenced PR catalog does not contain the accepted Reader"]
+    except (OSError, ValueError, KeyError, TypeError, StopIteration) as exc:
+        return [f"{slug}: referenced PR artifacts could not be verified ({type(exc).__name__})"]
     return []
 
 
-def validate_reader(root: Path, reader: dict, *, release: bool = True) -> list[str]:
+def validate_reader(root: Path, reader: dict, *, release: bool = True,
+                    event_pr: int | None = None, require_merged: bool = False) -> list[str]:
     """Validate one candidate or an unchanged, explicitly listed historical page."""
     slug = reader["slug"]
     article_path = root / "content" / "readers" / f"{slug}.html"
@@ -205,7 +259,7 @@ def validate_reader(root: Path, reader: dict, *, release: bool = True) -> list[s
         receipt = json.loads((root / expected_path).read_text())
     except (OSError, ValueError):
         return errors + [f"{slug}: editorial receipt missing or invalid"]
-    required = {"schemaVersion", *actual, "sourceMapEvidenceSha256", "candidateAuthor", "complexity", "sourceMap", "assessment", "independentCorroboration", "reviewer", "decision", "gaps", "decisionRationale", "assessedAt"}
+    required = {"schemaVersion", *actual, "sourceMapEvidenceSha256", "reviewEvidenceSha256", "candidateAuthor", "complexity", "sourceMap", "assessment", "independentCorroboration", "ownerDecision", "decision", "gaps", "decisionRationale", "assessedAt"}
     if not isinstance(receipt, dict) or set(receipt) != required or receipt.get("schemaVersion") != 1:
         return errors + [f"{slug}: editorial receipt schema mismatch"]
     for key, value in actual.items():
@@ -228,6 +282,37 @@ def validate_reader(root: Path, reader: dict, *, release: bool = True) -> list[s
         errors.append(f"{slug}: separate source-map evidence contains a private marker")
     if not SHA.fullmatch(str(receipt.get("sourceMapEvidenceSha256", ""))) or hashlib.sha256(map_bytes).hexdigest() != receipt.get("sourceMapEvidenceSha256"):
         errors.append(f"{slug}: separate source-map evidence digest mismatch")
+    review_path = root / "content" / "editorial-reviews" / f"{slug}.json"
+    try:
+        review_bytes = review_path.read_bytes()
+        review_evidence = json.loads(review_bytes)
+    except (OSError, ValueError):
+        review_evidence = None
+        review_bytes = b""
+        errors.append(f"{slug}: retained qualitative findings record missing or invalid")
+    if review_bytes and any(marker.search(review_bytes.decode("utf-8", "replace")) for marker in PRIVATE_MARKERS):
+        errors.append(f"{slug}: retained qualitative findings contain a private marker")
+    if not SHA.fullmatch(str(receipt.get("reviewEvidenceSha256", ""))) or hashlib.sha256(review_bytes).hexdigest() != receipt.get("reviewEvidenceSha256"):
+        errors.append(f"{slug}: retained qualitative findings digest mismatch")
+    if (not isinstance(review_evidence, dict)
+            or set(review_evidence) != {"schemaVersion", "readerId", "sourceId", "sourceAidSha256", "articleSha256", "evidenceRevision", "reviewedAt", "provenance", "summary", "findings", "conclusion"}
+            or review_evidence.get("schemaVersion") != 1
+            or any(review_evidence.get(key) != actual[key] for key in ("readerId", "sourceId", "sourceAidSha256", "articleSha256", "evidenceRevision"))
+            or not isinstance(review_evidence.get("provenance"), dict)
+            or set(review_evidence["provenance"]) != {"kind", "reference", "limits"}
+            or review_evidence["provenance"].get("kind") not in {"codex-task-agent", "external-human-report"}
+            or not _reasoned(review_evidence["provenance"].get("reference"))
+            or not _reasoned(review_evidence["provenance"].get("limits"))
+            or not _reasoned(review_evidence.get("summary"))
+            or review_evidence.get("conclusion") not in {"accept-for-owner-review", "revise", "hold"}
+            or not isinstance(review_evidence.get("findings"), list)
+            or any(not _reasoned(finding) for finding in review_evidence["findings"])):
+        errors.append(f"{slug}: qualitative findings provenance or exact binding invalid")
+    try:
+        reviewed = datetime.fromisoformat(review_evidence["reviewedAt"].replace("Z", "+00:00"))
+        if reviewed.tzinfo is None or reviewed > datetime.now(timezone.utc):raise ValueError
+    except (TypeError, ValueError, AttributeError, KeyError):
+        errors.append(f"{slug}: qualitative findings review date invalid")
     complexity = receipt["complexity"]
     if not isinstance(complexity, dict) or set(complexity) != {"tier", "factors", "rationale"} or complexity.get("tier") not in {"brief", "extended"} or not isinstance(complexity.get("factors"), list) or not complexity["factors"] or not _reasoned(complexity.get("rationale")):
         errors.append(f"{slug}: complexity disposition missing or superficial")
@@ -310,11 +395,13 @@ def validate_reader(root: Path, reader: dict, *, release: bool = True) -> list[s
             errors.append(f"{slug}: extended source map misses distinct analytical sections")
         if isinstance(complexity, dict) and complexity.get("tier") == "extended" and len({e.get("atSeconds") for e in source_map if isinstance(e, dict)}) < 3:
             errors.append(f"{slug}: extended source map repeats a single source moment")
-    reviewer = receipt["reviewer"]
     if not isinstance(receipt["candidateAuthor"], str) or not receipt["candidateAuthor"].strip():
         errors.append(f"{slug}: accountable candidate author missing")
     if release and receipt.get("decision") == "accept" and not any("binding mismatch" in error for error in errors):
-        errors.extend(_authenticated_review_errors(slug, receipt))
+        if not isinstance(review_evidence, dict) or review_evidence.get("conclusion") != "accept-for-owner-review":
+            errors.append(f"{slug}: retained qualitative findings do not support owner acceptance")
+        errors.extend(_authenticated_owner_decision_errors(root, reader, receipt, review_evidence,
+                                                           event_pr=event_pr, require_merged=require_merged))
     gaps = receipt["gaps"]
     if not isinstance(gaps, list) or any(not isinstance(g, dict) or set(g) != {"type", "severity", "rationale"} or g.get("type") not in GAP_TYPES or g.get("severity") not in {"blocking", "nonblocking"} or not _reasoned(g.get("rationale")) for g in gaps):
         errors.append(f"{slug}: typed editorial gaps invalid")
