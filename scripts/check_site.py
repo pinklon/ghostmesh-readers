@@ -215,6 +215,8 @@ def check(root=ROOT):
  home=(site/'index.html').read_text();require(len(re.findall(r'class="[^"]*\bgm-card\b[^"]*"',home))==7,'Homepage must have one feature and six cards')
  library=(site/'readers/index.html').read_text();require(len(re.findall(r'class="[^\"]*\bgm-card\b[^\"]*"',library))==len(readers),'Non-JS archive incomplete')
  sitemap=ET.parse(site/'sitemap.xml');urls=[x.text for x in sitemap.getroot().iter() if x.tag.endswith('loc')]
+ try:ET.parse(site/'feed.xml')
+ except ET.ParseError:errors.append('Invalid RSS XML')
  expected={data['host']+'/',data['host']+'/readers/',data['host']+'/map/',data['host']+'/knowledge/',data['host']+'/scout/'}|{data['host']+'/'+s+'/' for s in slugs}|{data['host']+f'/readers/categories/{i}/' for i in range(6)}
  require(set(urls)==expected and len(urls)==len(expected),'Sitemap drift')
  if root==ROOT:

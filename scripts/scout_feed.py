@@ -11,10 +11,11 @@ RATINGS = {'high', 'mixed', 'low', 'unknown'}
 METHODS = {'metadata-reviewed', 'source-inspected', 'executed', 'independently-measured'}
 KINDS = {'new-reader', 'material-reader-update', 'new-scout-review', 'material-scout-update'}
 PRIVATE = re.compile(r'/Users/|/srv/ghostmesh/|/private/var/|gh[pousr]_[A-Za-z0-9]{20,}|(?:X-Amz-Signature|access_token|client_secret)=', re.I)
+INVALID_XML = re.compile('[\x00-\x08\x0b\x0c\x0e-\x1f\ud800-\udfff\ufffe\uffff]')
 
 
 def _text(value, label):
-    if not isinstance(value, str) or not value.strip() or PRIVATE.search(value):
+    if not isinstance(value, str) or not value.strip() or PRIVATE.search(value) or INVALID_XML.search(value):
         raise ValueError(f'{label}: missing or private text')
     return value.strip()
 
@@ -80,6 +81,7 @@ def validate_events(source, catalog, scout):
     readers = {r['id']: r for r in catalog['readers']}
     reviews = {r['id']: r for r in scout['reviews']}
     seen = set()
+    first_releases = set()
     for event in source['events']:
         required = {'id', 'kind', 'subjectId', 'url', 'title', 'summary', 'publicDate'}
         if not isinstance(event, dict) or not required <= set(event) or set(event) - (required | {'releasedAt'}):
@@ -101,6 +103,10 @@ def validate_events(source, catalog, scout):
                 raise ValueError('Release event Reader identity')
         elif subject not in reviews or event['url'] != host + '/scout/#' + subject:
             raise ValueError('Release event Scout identity')
+        if kind in {'new-reader', 'new-scout-review'}:
+            if identity in first_releases:
+                raise ValueError('Duplicate first public release for subject')
+            first_releases.add(identity)
         _url(event['url'], 'Release URL', host)
         _text(event['title'], 'Release title')
         _text(event['summary'], 'Release summary')

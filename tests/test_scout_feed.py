@@ -80,6 +80,15 @@ class ScoutFeedTests(unittest.TestCase):
         duplicate['events'].append(first)
         with self.assertRaisesRegex(ValueError, 'Duplicate'):
             validate_events(duplicate, self.catalog, scout)
+        repeated_first = copy.deepcopy(source)
+        repeated_first['events'].append({**first, 'id': reader['id'] + ':another-first',
+                                         'publicDate': '2026-10-20'})
+        with self.assertRaisesRegex(ValueError, 'Duplicate first public release'):
+            validate_events(repeated_first, self.catalog, scout)
+        control = copy.deepcopy(source)
+        control['events'][0]['summary'] = 'invalid\x00XML'
+        with self.assertRaisesRegex(ValueError, 'private text'):
+            validate_events(control, self.catalog, scout)
         mismatch = copy.deepcopy(source)
         mismatch['events'][0]['url'] = host + '/other/'
         with self.assertRaisesRegex(ValueError, 'Reader identity'):
@@ -88,6 +97,19 @@ class ScoutFeedTests(unittest.TestCase):
         moved['events'][1]['releasedAt'] = '2026-10-19T11:45:00Z'
         with self.assertRaisesRegex(ValueError, 'match public date'):
             validate_events(moved, self.catalog, scout)
+
+    def test_one_first_scout_review_per_subject(self):
+        scout = {'schema': 'ghostmesh-public-scout-v1', 'reviews': [self.review()]}
+        host = self.catalog['host']
+        first = {'id': 'scout:fixture-tool:first-review', 'kind': 'new-scout-review',
+                 'subjectId': 'fixture-tool', 'url': host + '/scout/#fixture-tool',
+                 'title': 'First review', 'summary': 'A bounded public assessment.',
+                 'publicDate': '2026-10-20'}
+        source = {'schema': 'ghostmesh-public-release-events-v1', 'events': [first]}
+        validate_events(source, self.catalog, scout)
+        source['events'].append({**first, 'id': 'scout:fixture-tool:other-first'})
+        with self.assertRaisesRegex(ValueError, 'Duplicate first public release'):
+            validate_events(source, self.catalog, scout)
 
     def test_static_projection_links_scout_and_rss_without_event_churn(self):
         site = ROOT / 'site'
