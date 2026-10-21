@@ -388,7 +388,7 @@ def render_html(model: dict, catalog: dict, register: dict) -> bytes:
         '<section class="kx-reading-note" id="how-to-read"><div><p class="gm-kicker">READ THE RECORD</p>'
         '<h2>Attribution is the beginning of an inquiry.</h2></div>'
         '<div><p>Version 0.1 names the source-only data contract, not the maturity or truth of the Readers. '
-        'The four exact-passage citations are a deliberately narrow machine graph; they are not the denominator of public evidence. '
+        f'The {len(claims)} exact-passage citations are a deliberately narrow machine graph; they are not the denominator of public evidence. '
         f'All {len(catalog_claims)} published editorial claim assessments are indexed below and in the separate claim-register JSON. '
         f'{support_count} have a mapped supporting reference and {counter_count} have a mapped counterreference. '
         'A reference can be an original source, vendor account, independent study or other named role; a link is not an independent replication.</p>'
