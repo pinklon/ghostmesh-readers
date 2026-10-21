@@ -35,8 +35,10 @@ class SocialPreviewGate(unittest.TestCase):
         image.unlink()
         self.assertIn("Social image missing", " ".join(check(self.root)))
         page = self.root / "site/index.html"
+        catalog = json.loads((self.root / "content/catalog.json").read_text())
+        image_url = specs(catalog, preview_base=approval(self.root)["previewBaseUrl"])["/"]["imageUrl"]
         page.write_text(page.read_text().replace(
-            "https://youtube.shareplane.malott.ai/social/previews/home.png",
+            image_url,
             "https://external.example/card.png"))
         self.assertIn("Social metadata og:image", " ".join(check(self.root)))
 
