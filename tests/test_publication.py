@@ -17,6 +17,11 @@ class PublicationGate(unittest.TestCase):
  def mutate(self,fn):
   p=self.root/'content/catalog.json';d=json.loads(p.read_text());fn(d);p.write_text(json.dumps(d))
  def rejected(self,term):self.assertTrue(any(term in x for x in check(self.root)),check(self.root))
+ def only_editorial_holds(self):
+  # A draft Reader can be structurally sound while publication remains held.
+  # These two positive fixtures exercise relationship rules, not owner acceptance.
+  errors=check(self.root)
+  self.assertTrue(all(error.endswith(': editorial release held by qualitative decision or unresolved gap') for error in errors),errors)
  def test_source_media_outside_publish_directory(self):
   (self.root/'content/private.vtt').write_text('WEBVTT');self.rejected('Private source media')
  def test_public_capture_formats(self):
@@ -73,7 +78,7 @@ class PublicationGate(unittest.TestCase):
   data=json.loads((self.root/'content/catalog.json').read_text())
   unlinked=[r for r in data['readers'] if not r['relationships']]
   self.assertEqual({'the-warning-is-not-a-ballot-ruling','the-parallel-result-is-not-the-product'},{r['slug'] for r in unlinked})
-  self.assertEqual([],check(self.root))
+  self.only_editorial_holds()
  def test_five_relations_remain_public_and_navigable(self):
   p=self.root/'content/catalog.json';data=json.loads(p.read_text());reader=data['readers'][0]
   existing={edge['target'] for edge in reader['relationships']}
@@ -96,7 +101,7 @@ class PublicationGate(unittest.TestCase):
   shutil.copy2(ROOT/'scripts/catalog_design.py',scripts/'catalog_design.py')
   result=subprocess.run([sys.executable,str(scripts/'generate_site.py')],capture_output=True,text=True)
   self.assertEqual(0,result.returncode,result.stdout+result.stderr)
-  self.assertEqual([],check(self.root))
+  self.only_editorial_holds()
   slug=reader['slug'];public=json.loads((self.root/'site/catalog.json').read_text())
   self.assertEqual(5,len(next(r for r in public['readers'] if r['id']==reader['id'])['relationships']))
   receipt=json.loads((self.root/'site'/slug/'receipt.json').read_text())

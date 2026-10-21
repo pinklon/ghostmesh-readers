@@ -1,0 +1,105 @@
+{
+  "schemaVersion": 1,
+  "readerId": "reader:the-page-is-part-of-the-proof",
+  "sourceId": "claude-code-html-artifacts-2026",
+  "sourceDigest": "885331ff74863c1c3670e0fe1cd467536c75ac64f4f96ec0bc04d51635b9f904",
+  "sourceAidSha256": "d968ac98c9c514d3861698860fbe3d43c323f9122bbc5d933754fced89449cd9",
+  "articleSha256": "caaa10eecfc327ad4b54468396df5f602d95b93490bc3e3a27706af2021f40b9",
+  "evidenceRevision": "1fcedfa85a50543a497168c9e11d0134fa25115c026bec763ca931c6421a7c56",
+  "sourceMapEvidenceSha256": "af7f3239a522c725d30ba547ac6b562bbd242e2eb0adcb8201a2af18d1c1da28",
+  "reviewEvidenceSha256": "3d7cc6d34765bcdee527ed5bdce26f4f7e7b20bf9a6219cfc62a04770b4de640",
+  "candidateAuthor": "pinklon",
+  "complexity": {
+    "tier": "extended",
+    "factors": [
+      "Eight claims span format affordances, reported reviewer experience, accessibility and browser execution boundary.",
+      "The owner requested a source-grounded comparison with counterevidence and a falsifiable human-review test."
+    ],
+    "rationale": "A short practitioner essay can support proportionate analysis of the strongest use cases and counterargument without invented productivity statistics or a universal format verdict."
+  },
+  "sourceMap": [
+    {
+      "atSeconds": null,
+      "sectionId": "surface",
+      "claimIds": [
+        "the-page-is-part-of-the-proof--readability",
+        "the-page-is-part-of-the-proof--engagement-effect"
+      ],
+      "rationale": "The mapped opening differentiates the author’s personal Markdown reading friction and examples from any unmeasured outcome claim."
+    },
+    {
+      "atSeconds": null,
+      "sectionId": "agency",
+      "claimIds": [
+        "the-page-is-part-of-the-proof--markdown-record",
+        "the-page-is-part-of-the-proof--source-to-view"
+      ],
+      "rationale": "The mapped comparison preserves the author’s explicit Markdown caveat while GhostMesh proposes a versioned source and view."
+    },
+    {
+      "atSeconds": null,
+      "sectionId": "boundary",
+      "claimIds": [
+        "the-page-is-part-of-the-proof--browser-boundary",
+        "the-page-is-part-of-the-proof--html-affordances"
+      ],
+      "rationale": "The mapped section attributes interactive examples to the source and labels browser execution or network controls as external documentation and GhostMesh inference."
+    },
+    {
+      "atSeconds": null,
+      "sectionId": "capability",
+      "claimIds": [
+        "the-page-is-part-of-the-proof--accessibility"
+      ],
+      "rationale": "The mapped visual capability is qualified by W3C accessibility guidance; the Reader does not claim the original examples passed an accessibility audit."
+    }
+  ],
+  "assessment": {
+    "sourceCoverage": {
+      "disposition": "covered",
+      "rationale": "Four distinct sections map the practitioner essay’s opening, visual and interactive examples, Markdown caveat and editing workflow. No fictitious video timeline is used."
+    },
+    "supportingArgument": {
+      "disposition": "covered",
+      "rationale": "The argument for HTML’s visual comparison, browser sharing and exportable interaction is represented sympathetically before judging outcomes."
+    },
+    "evidenceRoles": {
+      "disposition": "covered",
+      "rationale": "Personal experience, format specifications, accessibility guidance, browser-security documentation and proposed GhostMesh experiments are distinguished."
+    },
+    "counterargument": {
+      "disposition": "covered",
+      "rationale": "Markdown’s plain-text portability and diffable source role receive a concrete alternative, including the risk of drift in a dual-record workflow."
+    },
+    "tradeoffs": {
+      "disposition": "covered",
+      "rationale": "The essay weighs richer engagement against version identity, accessibility, remote dependencies, scripts and maintenance burden."
+    },
+    "falsifiability": {
+      "disposition": "covered",
+      "rationale": "A matched reviewer study with defects, accuracy, time, accessibility, offline behavior and export integrity could alter the format recommendation."
+    },
+    "originalSynthesis": {
+      "disposition": "covered",
+      "rationale": "GhostMesh treats the page as a versioned review surface that must expose source, alternative, behavior and accountable choice rather than as proof by polish."
+    },
+    "performance": {
+      "disposition": "covered",
+      "rationale": "The source gives no measured comprehension or review-speed result; the proposed test measures decision accuracy and time for short and visual tasks separately."
+    },
+    "economics": {
+      "disposition": "not-applicable",
+      "rationale": "The source concerns document review and presentation, not a material price or total-cost claim; maintenance work is addressed as a workflow tradeoff."
+    },
+    "threatGovernance": {
+      "disposition": "covered",
+      "rationale": "The Reader identifies sharing, script, resource, accessibility, provenance and export boundaries without alleging any security incident in the source examples."
+    }
+  },
+  "independentCorroboration": "none",
+  "ownerDecision": null,
+  "decision": "hold",
+  "gaps": [],
+  "decisionRationale": "Independent review and targeted source-link follow-up found no actionable defect on the exact article and source-map hashes. Tony has not qualitatively accepted these bytes; authenticated acceptance and a separate production decision are still required.",
+  "assessedAt": "2026-10-21T04:59:21Z"
+}

@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "host": "https://youtube.shareplane.malott.ai",
-  "revision": "2026-10-21T02:34:41Z",
+  "revision": "2026-10-21T04:54:07Z",
   "categories": [
     "AI & Technology",
     "Society & Politics",
@@ -11,6 +11,307 @@
     "Other"
   ],
   "readers": [
+    {
+      "id": "reader:the-page-is-part-of-the-proof",
+      "slug": "the-page-is-part-of-the-proof",
+      "title": "The Page Is Part of the Proof",
+      "category": "AI & Technology",
+      "tags": [
+        "coding agents",
+        "HTML",
+        "Markdown",
+        "human review",
+        "accessibility"
+      ],
+      "entities": [
+        "Claude Code",
+        "HTML",
+        "Markdown",
+        "CommonMark",
+        "W3C"
+      ],
+      "source": {
+        "kind": "article",
+        "identity": "claude-code-html-artifacts-2026",
+        "url": "https://claude.dev/blog/using-claude-code-the-unreasonable-effectiveness-of-html/",
+        "title": "Using Claude Code: The unreasonable effectiveness of HTML",
+        "authors": "Thariq Shihipar",
+        "publisher": "claude.dev Blog",
+        "publicationDate": "2026-05-20",
+        "updatedDate": "2026-05-20",
+        "dateNote": "The page identifies May 20, 2026 as publication date; no separate updated date is stated, so the publication date is repeated for the required field."
+      },
+      "published": "2026-10-21",
+      "updated": "2026-10-21T04:54:07Z",
+      "overview": "Thariq Shihipar argues that HTML artifacts make agent-generated plans, comparisons and editing tools easier to inspect and share than long Markdown files.",
+      "whyItMatters": "A richer presentation can improve a human review surface, but it also adds execution, accessibility, provenance and versioning questions that a plain document may avoid.",
+      "ghostMeshTakeaway": "Choose the smallest review surface that exposes the evidence and decision; bind a richer page to inspectable source, behavior and accessible structure.",
+      "verdict": "Worth studying",
+      "architectureImpact": "experiment recommended",
+      "falsification": "Revise the recommendation if a matched task study shows that a richer HTML artifact improves error detection and accurate decisions without unacceptable security, accessibility or provenance costs.",
+      "evidenceState": "partially corroborated",
+      "lastEvidenceChecked": "2026-10-21T04:54:07Z",
+      "freshness": "Original essay published May 20, 2026 and privately captured October 21. CommonMark, W3C and MDN primary documentation checked the same day. No controlled review-outcome study or audit of the author’s examples was available.",
+      "variant": "dossier",
+      "accent": "teal",
+      "claims": [
+        {
+          "id": "the-page-is-part-of-the-proof--readability",
+          "proposition": "The author reports that long Markdown artifacts are difficult for him and colleagues to read, and that HTML helps him present and share richer outputs.",
+          "kind": "first-party-practitioner-report",
+          "asOf": "2026-10-21",
+          "status": "unverified",
+          "assessment": "The original essay states this preference and supplies examples of plans, comparisons and review artifacts.",
+          "limits": "No controlled reader study, error rate or team-wide adoption measure is supplied.",
+          "sourceLocation": "Opening; Why use HTML?",
+          "references": [
+            "claude-html"
+          ],
+          "counterevidence": [],
+          "temporalScope": "Original essay published May 20, 2026; source and supporting documentation checked October 21, 2026."
+        },
+        {
+          "id": "the-page-is-part-of-the-proof--html-affordances",
+          "proposition": "HTML can combine structured text, layout, images, SVG, scripts and controls in a browser artifact.",
+          "kind": "documented-format-capability",
+          "asOf": "2026-10-21",
+          "status": "corroborated",
+          "assessment": "The source shows examples and the web platform documents the capabilities.",
+          "limits": "Capability alone does not show improved human comprehension or safe generated behavior.",
+          "sourceLocation": "Information density; Two-way interactions",
+          "references": [
+            "claude-html",
+            "mdn-csp"
+          ],
+          "counterevidence": [],
+          "temporalScope": "Original essay published May 20, 2026; source and supporting documentation checked October 21, 2026."
+        },
+        {
+          "id": "the-page-is-part-of-the-proof--markdown-record",
+          "proposition": "CommonMark defines Markdown as structured plain text that can be converted to HTML; a text source and richer rendered view can coexist.",
+          "kind": "documented-alternative",
+          "asOf": "2026-10-21",
+          "status": "corroborated",
+          "assessment": "The CommonMark specification documents the source/rendering relationship and the author credits Markdown portability and editability.",
+          "limits": "A dual-record workflow can drift if source and rendered output are not bound by a deterministic build.",
+          "sourceLocation": "Opening; Frequently asked questions",
+          "references": [
+            "commonmark",
+            "claude-html"
+          ],
+          "counterevidence": [],
+          "temporalScope": "Original essay published May 20, 2026; source and supporting documentation checked October 21, 2026."
+        },
+        {
+          "id": "the-page-is-part-of-the-proof--engagement-effect",
+          "proposition": "The examples make HTML a plausible way to improve review engagement, but the essay does not measure whether it reduces wrong decisions.",
+          "kind": "editorial-evidence-limit",
+          "asOf": "2026-10-21",
+          "status": "unverified",
+          "assessment": "GhostMesh separates the author’s personal observations from an outcome claim requiring comparative testing.",
+          "limits": "No measured comprehension, error-detection, accessibility or maintenance outcome is presented.",
+          "sourceLocation": "Visual clarity and ease of reading; Staying in the loop",
+          "references": [
+            "claude-html"
+          ],
+          "counterevidence": [],
+          "temporalScope": "Original essay published May 20, 2026; source and supporting documentation checked October 21, 2026."
+        },
+        {
+          "id": "the-page-is-part-of-the-proof--accessibility",
+          "proposition": "Information and relationships conveyed visually should remain programmatically determinable or available in text.",
+          "kind": "accessibility-standard",
+          "asOf": "2026-10-21",
+          "status": "corroborated",
+          "assessment": "W3C WCAG 2.2 success criterion 1.3.1 states this requirement.",
+          "limits": "Passing this requirement for any particular generated page requires actual inspection and assistive-technology testing.",
+          "sourceLocation": "Visual clarity and ease of reading",
+          "references": [
+            "w3c-wcag"
+          ],
+          "counterevidence": [],
+          "temporalScope": "Original essay published May 20, 2026; source and supporting documentation checked October 21, 2026."
+        },
+        {
+          "id": "the-page-is-part-of-the-proof--browser-boundary",
+          "proposition": "Interactive HTML can load scripts and remote resources; a shareable review artifact needs a bounded execution and network policy.",
+          "kind": "documented-risk-and-editorial-inference",
+          "asOf": "2026-10-21",
+          "status": "partially corroborated",
+          "assessment": "MDN documents Content Security Policy controls for resource and script loading; GhostMesh applies them as an artifact review question.",
+          "limits": "No unsafe behavior is asserted for the source examples, which were not audited here.",
+          "sourceLocation": "Two-way interactions; Custom editing interfaces",
+          "references": [
+            "claude-html",
+            "mdn-csp"
+          ],
+          "counterevidence": [],
+          "temporalScope": "Original essay published May 20, 2026; source and supporting documentation checked October 21, 2026."
+        },
+        {
+          "id": "the-page-is-part-of-the-proof--source-to-view",
+          "proposition": "Versioned source, pinned dependencies, accessible semantics and exact export behavior can make a richer page auditable.",
+          "kind": "editorial-inference",
+          "asOf": "2026-10-21",
+          "status": "unverified",
+          "assessment": "This is a proposed GhostMesh operating design drawing on format, accessibility and security documentation.",
+          "limits": "No implementation or outcome comparison was conducted for this candidate Reader.",
+          "sourceLocation": "Use cases; Staying in the loop",
+          "references": [
+            "claude-html",
+            "commonmark",
+            "w3c-wcag",
+            "mdn-csp"
+          ],
+          "counterevidence": [],
+          "temporalScope": "Original essay published May 20, 2026; source and supporting documentation checked October 21, 2026."
+        },
+        {
+          "id": "the-page-is-part-of-the-proof--review-experiment",
+          "proposition": "A matched Markdown-versus-HTML review experiment should measure error detection and accurate exports, not aesthetic preference alone.",
+          "kind": "editorial-proposal",
+          "asOf": "2026-10-21",
+          "status": "unverified",
+          "assessment": "The Reader specifies a controlled comparison with the same content and task rubric in each arm.",
+          "limits": "The experiment has not been performed and no format winner is claimed.",
+          "sourceLocation": "Why use HTML?",
+          "references": [
+            "claude-html"
+          ],
+          "counterevidence": [],
+          "temporalScope": "Original essay published May 20, 2026; source and supporting documentation checked October 21, 2026."
+        }
+      ],
+      "references": [
+        {
+          "id": "claude-html",
+          "title": "Using Claude Code: The unreasonable effectiveness of HTML",
+          "author": "Thariq Shihipar",
+          "publisher": "claude.dev Blog",
+          "url": "https://claude.dev/blog/using-claude-code-the-unreasonable-effectiveness-of-html/",
+          "publicationDate": "2026-05-20",
+          "eventDate": null,
+          "location": "Why use HTML?; Use cases; FAQ; Staying in the loop",
+          "sourceType": "first-party practitioner essay",
+          "independence": "Author experience and examples; no independently measured review outcome.",
+          "evidenceFamily": "claude-dev",
+          "checkedAt": "2026-10-21T04:54:07Z",
+          "datePrecision": "day"
+        },
+        {
+          "id": "commonmark",
+          "title": "CommonMark Spec 0.31.2",
+          "author": "John MacFarlane and CommonMark contributors",
+          "publisher": "CommonMark",
+          "url": "https://spec.commonmark.org/0.31.2/",
+          "publicationDate": "2024-01-28",
+          "eventDate": null,
+          "location": "Introduction and Markdown-to-HTML background",
+          "sourceType": "primary format specification",
+          "independence": "Defines Markdown and its conversion path, not a comparison of workplace review outcomes.",
+          "evidenceFamily": "commonmark",
+          "checkedAt": "2026-10-21T04:54:07Z",
+          "datePrecision": "day"
+        },
+        {
+          "id": "w3c-wcag",
+          "title": "Understanding Success Criterion 1.3.1: Info and Relationships",
+          "author": "W3C WAI",
+          "publisher": "W3C",
+          "url": "https://www.w3.org/WAI/WCAG22/Understanding/info-and-relationships.html",
+          "publicationDate": "unknown",
+          "eventDate": null,
+          "location": "Success criterion and intent",
+          "sourceType": "primary accessibility guidance",
+          "independence": "Explains required semantic relationships; not a test of the source article’s examples.",
+          "evidenceFamily": "w3c",
+          "checkedAt": "2026-10-21T04:54:07Z",
+          "dateNote": "Continuously maintained W3C guidance; a stable original publication date is not established by this page."
+        },
+        {
+          "id": "mdn-csp",
+          "title": "Content Security Policy (CSP)",
+          "author": "MDN contributors",
+          "publisher": "MDN Web Docs",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/CSP",
+          "publicationDate": "unknown",
+          "eventDate": null,
+          "location": "Overview and resource restrictions",
+          "sourceType": "primary web-platform documentation",
+          "independence": "Documents browser controls, not an audit or reported incident involving the source examples.",
+          "evidenceFamily": "mdn",
+          "checkedAt": "2026-10-21T04:54:07Z",
+          "dateNote": "Continuously maintained web documentation; no stable original publication date is asserted for this checked version."
+        }
+      ],
+      "relationships": [
+        {
+          "target": "reader:make-good-work-inspectable",
+          "type": "related topic",
+          "reason": "Both ask whether an agent-produced artifact helps a human inspect work. The earlier Reader emphasizes executable outcome checks; this one tests whether presentation and provenance help a reviewer see the evidence. Neither source measures the other’s results.",
+          "provenance": [
+            "/the-page-is-part-of-the-proof/#surface",
+            "/make-good-work-inspectable/#limits"
+          ],
+          "basis": "curated-editorial-comparison",
+          "direction": "outgoing"
+        },
+        {
+          "target": "reader:the-commit-is-not-the-control",
+          "type": "related topic",
+          "reason": "Both treat a readable change as insufficient without an accountable acceptance path. The source-control Reader focuses on code landing and recovery; this one addresses the page a reviewer sees and the source or diff behind it. The sources do not corroborate one another’s outcome claims.",
+          "provenance": [
+            "/the-page-is-part-of-the-proof/#boundary",
+            "/the-commit-is-not-the-control/#control"
+          ],
+          "basis": "curated-editorial-comparison",
+          "direction": "outgoing"
+        }
+      ],
+      "relationshipDisposition": "Two specific editorial comparisons connect human inspectability and authenticated acceptance. No existing Reader independently tests this author’s HTML-versus-Markdown workflow.",
+      "relationshipReview": {
+        "reviewedAt": "2026-10-21",
+        "reviewedCatalogSize": 28,
+        "decision": "linked",
+        "reviewedTargets": [
+          "reader:make-good-work-inspectable",
+          "reader:the-commit-is-not-the-control"
+        ],
+        "rationale": "Compared the source argument with all 27 published Readers. These two share a concrete inspectability or acceptance question; the rest lack a sufficiently specific relationship. The links are analysis routes, not corroboration."
+      },
+      "review": {
+        "status": "independent-source-copy-and-privacy-reviewed; owner-acceptance-pending",
+        "reviewer": "Independent read-only Codex editorial reviewer",
+        "reviewedSourceHead": "Exact authored article SHA-256 caaa10eecfc327ad4b54468396df5f602d95b93490bc3e3a27706af2021f40b9",
+        "checkedAt": "2026-10-21T04:59:21Z",
+        "scope": "Private exact-page capture, author/date/title, practitioner claim limits, primary counterevidence, accessibility/security boundary, graph links and public-source privacy.",
+        "findings": "Independent source, argument, graph and privacy review found no actionable defect. A targeted follow-up verified two direct original-source links only, without changing attribution or the private-source boundary. Owner qualitative acceptance is still missing."
+      },
+      "revisionHistory": [
+        {
+          "at": "2026-10-21T04:54:07Z",
+          "kind": "new-reader-candidate",
+          "reason": "Owner-requested written-source deconstruction of the Claude Code HTML essay; private source capture and article analysis prepared for independent review."
+        },
+        {
+          "at": "2026-10-21T04:58:22Z",
+          "kind": "independent-editorial-review",
+          "reason": "Read-only independent source, attribution, graph and privacy review found no actionable defect on the exact article and source-map hashes."
+        },
+        {
+          "at": "2026-10-21T04:59:21Z",
+          "kind": "source-map-link-review",
+          "reason": "Independent reviewer confirmed two exact original-source links added to mapped sections; substantive article and privacy conclusions remain valid."
+        }
+      ],
+      "editorialOrder": 24,
+      "orderReason": "Place the HTML artifact reading after inspectability, acceptance and source-control Readers; adjust sequencing if another held Reader publishes first.",
+      "editorialDepth": {
+        "schemaVersion": 1,
+        "receiptPath": "content/editorial-depth/the-page-is-part-of-the-proof.json"
+      },
+      "rank": 24
+    },
     {
       "id": "reader:the-commit-is-not-the-control",
       "slug": "the-commit-is-not-the-control",
@@ -286,13 +587,13 @@
       "relationshipDisposition": "Two substantive editorial comparisons connect agent work inspectability and evaluation infrastructure. They do not corroborate Anthropic’s internal scale or performance reports.",
       "relationshipReview": {
         "reviewedAt": "2026-10-21",
-        "reviewedCatalogSize": 27,
+        "reviewedCatalogSize": 28,
         "decision": "linked",
         "reviewedTargets": [
           "reader:make-good-work-inspectable",
           "reader:the-grader-is-part-of-the-harness"
         ],
-        "rationale": "Compared the Anthropic engineering source with all 26 existing Readers. Two qualified routes concern inspectable agent work and evaluation gates; the others lack a sufficiently specific shared question. No existing Reader independently verifies Scion metrics."
+        "rationale": "Compared the Anthropic engineering source with all 26 existing Readers. Two qualified routes concern inspectable agent work and evaluation gates; the others lack a sufficiently specific shared question. No existing Reader independently verifies Scion metrics. The new HTML-artifact Reader links this analysis as a related topic. A second reverse edge would duplicate that qualified route, and neither source corroborates the other’s results."
       },
       "review": {
         "status": "independent-source-and-copy-reviewed; owner-accepted",
@@ -588,13 +889,13 @@
       "orderReason": "Place the local deployment and privacy-boundary reading after the agent control readings.",
       "relationshipReview": {
         "reviewedAt": "2026-10-21",
-        "reviewedCatalogSize": 27,
+        "reviewedCatalogSize": 28,
         "decision": "linked",
         "reviewedTargets": [
           "reader:the-agent-a-company-owns",
           "reader:the-stop-button-is-outside-the-chat"
         ],
-        "rationale": "Compared this source with all 25 existing Readers. Two qualified routes cover company-owned agent infrastructure and continuing agent authority. No prior Reader independently measures this machine or validates its cost and privacy claims. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged."
+        "rationale": "Compared this source with all 25 existing Readers. Two qualified routes cover company-owned agent infrastructure and continuing agent authority. No prior Reader independently measures this machine or validates its cost and privacy claims. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged. The new HTML-artifact Reader was assessed for its human review-surface question; no specific shared source claim or distinct causal comparison warrants an additional typed edge from this Reader."
       },
       "rank": 22
     },
@@ -987,10 +1288,10 @@
       },
       "relationshipReview": {
         "reviewedAt": "2026-10-21",
-        "reviewedCatalogSize": 27,
+        "reviewedCatalogSize": 28,
         "decision": "none",
         "reviewedTargets": [],
-        "rationale": "The other published Readers do not examine this California voter-list dispute, individualized ballot procedure or conditional DOJ warning. AI evaluation analogies are too distant to admit as local routes. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged."
+        "rationale": "The other published Readers do not examine this California voter-list dispute, individualized ballot procedure or conditional DOJ warning. AI evaluation analogies are too distant to admit as local routes. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged. The new HTML-artifact Reader was assessed for its human review-surface question; no specific shared source claim or distinct causal comparison warrants an additional typed edge from this Reader."
       },
       "rank": 19
     },
@@ -1335,13 +1636,13 @@
       },
       "relationshipReview": {
         "reviewedAt": "2026-10-21",
-        "reviewedCatalogSize": 27,
+        "reviewedCatalogSize": 28,
         "decision": "linked",
         "reviewedTargets": [
           "reader:the-brakes-need-a-test",
           "reader:the-label-the-box-and-the-bargain"
         ],
-        "rationale": "The Gates risk interview supports two qualified routes: Robinson examines release safety process, and Bostrom distinguishes capability from control. Neither source verifies the other's risk magnitude. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged."
+        "rationale": "The Gates risk interview supports two qualified routes: Robinson examines release safety process, and Bostrom distinguishes capability from control. Neither source verifies the other's risk magnitude. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged. The new HTML-artifact Reader was assessed for its human review-surface question; no specific shared source claim or distinct causal comparison warrants an additional typed edge from this Reader."
       },
       "rank": 19
     },
@@ -1588,14 +1889,14 @@
       "orderReason": "Place the operational agent-boundary Reader after the harness-evaluation Reader.",
       "relationshipReview": {
         "reviewedAt": "2026-10-21",
-        "reviewedCatalogSize": 27,
+        "reviewedCatalogSize": 28,
         "decision": "linked",
         "reviewedTargets": [
           "reader:make-good-work-inspectable",
           "reader:the-brakes-need-a-test",
           "reader:the-score-is-not-the-system"
         ],
-        "rationale": "Compared this video with all 24 existing Readers. Inspectable work, testable brakes and reward-versus-outcome analysis support three qualified routes. The earlier Readers do not corroborate these incident reports. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged."
+        "rationale": "Compared this video with all 24 existing Readers. Inspectable work, testable brakes and reward-versus-outcome analysis support three qualified routes. The earlier Readers do not corroborate these incident reports. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged. The new HTML-artifact Reader was assessed for its human review-surface question; no specific shared source claim or distinct causal comparison warrants an additional typed edge from this Reader."
       },
       "rank": 21
     },
@@ -1928,13 +2229,13 @@
       },
       "relationshipReview": {
         "reviewedAt": "2026-10-21",
-        "reviewedCatalogSize": 27,
+        "reviewedCatalogSize": 28,
         "decision": "linked",
         "reviewedTargets": [
           "reader:when-agents-become-the-customer",
           "reader:the-agent-a-company-owns"
         ],
-        "rationale": "The agent-customer and company-agent Readers compare business authority and ownership questions. Neither establishes Muse lead rights or business outcomes. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged."
+        "rationale": "The agent-customer and company-agent Readers compare business authority and ownership questions. Neither establishes Muse lead rights or business outcomes. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged. The new HTML-artifact Reader was assessed for its human review-surface question; no specific shared source claim or distinct causal comparison warrants an additional typed edge from this Reader."
       },
       "rank": 18
     },
@@ -2402,13 +2703,13 @@
       },
       "relationshipReview": {
         "reviewedAt": "2026-10-21",
-        "reviewedCatalogSize": 27,
+        "reviewedCatalogSize": 28,
         "decision": "linked",
         "reviewedTargets": [
           "reader:the-test-must-name-its-target",
           "reader:the-microscope-is-not-a-soul"
         ],
-        "rationale": "The existing routes distinguish AGI labels from functional understanding and digital experience from representation evidence. Neither verifies the interview's exact speech. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged."
+        "rationale": "The existing routes distinguish AGI labels from functional understanding and digital experience from representation evidence. Neither verifies the interview's exact speech. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged. The new HTML-artifact Reader was assessed for its human review-surface question; no specific shared source claim or distinct causal comparison warrants an additional typed edge from this Reader."
       },
       "rank": 19
     },
@@ -2653,14 +2954,14 @@
       "orderReason": "Follow the existing evaluation and research-agent Readers with a focused test of adaptive harness claims.",
       "relationshipReview": {
         "reviewedAt": "2026-10-21",
-        "reviewedCatalogSize": 27,
+        "reviewedCatalogSize": 28,
         "decision": "linked",
         "reviewedTargets": [
           "reader:make-good-work-inspectable",
           "reader:the-experiment-ran-did-the-research-advance",
           "reader:the-score-is-not-the-system"
         ],
-        "rationale": "Compared the new video with all 23 existing Readers. Inspectable work, research evaluation and reward-versus-outcome design offer three substantive comparisons. The earlier Readers do not replicate the two papers. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged."
+        "rationale": "Compared the new video with all 23 existing Readers. Inspectable work, research evaluation and reward-versus-outcome design offer three substantive comparisons. The earlier Readers do not replicate the two papers. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged. The new HTML-artifact Reader was assessed for its human review-surface question; no specific shared source claim or distinct causal comparison warrants an additional typed edge from this Reader."
       },
       "rank": 20
     },
@@ -3088,13 +3389,13 @@
       },
       "relationshipReview": {
         "reviewedAt": "2026-10-21",
-        "reviewedCatalogSize": 27,
+        "reviewedCatalogSize": 28,
         "decision": "linked",
         "reviewedTargets": [
           "reader:the-label-the-box-and-the-bargain",
           "reader:the-threshold-is-a-claim-not-a-test"
         ],
-        "rationale": "Robinson's incident and release-process analysis supports routes to Bostrom's bounded control example and Gates's risk threshold. These are comparison paths, not independent interview corroboration. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged."
+        "rationale": "Robinson's incident and release-process analysis supports routes to Bostrom's bounded control example and Gates's risk threshold. These are comparison paths, not independent interview corroboration. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged. The new HTML-artifact Reader was assessed for its human review-surface question; no specific shared source claim or distinct causal comparison warrants an additional typed edge from this Reader."
       },
       "rank": 19
     },
@@ -3366,12 +3667,12 @@
       "orderReason": "Read after the existing Count Grey Matter interpretability Reader to examine a distinct functional-understanding claim.",
       "relationshipReview": {
         "reviewedAt": "2026-10-21",
-        "reviewedCatalogSize": 27,
+        "reviewedCatalogSize": 28,
         "decision": "linked",
         "reviewedTargets": [
           "reader:the-microscope-is-not-a-soul"
         ],
-        "rationale": "The microscope Reader by the same creator also limits inferences from model internals. Functional understanding and subjective experience remain distinct claims. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged."
+        "rationale": "The microscope Reader by the same creator also limits inferences from model internals. Functional understanding and subjective experience remain distinct claims. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged. The new HTML-artifact Reader was assessed for its human review-surface question; no specific shared source claim or distinct causal comparison warrants an additional typed edge from this Reader."
       },
       "rank": 15
     },
@@ -3617,10 +3918,10 @@
       "orderReason": "Read after the current collection as a research-method comparison with explicit deployment limits.",
       "relationshipReview": {
         "reviewedAt": "2026-10-21",
-        "reviewedCatalogSize": 27,
+        "reviewedCatalogSize": 28,
         "decision": "none",
         "reviewedTargets": [],
-        "rationale": "No other local Reader analyzes NCM or HybridAgents, their parallel-code and latent-reasoning methods, or the same benchmark claims. External studies remain outside this Reader graph. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged."
+        "rationale": "No other local Reader analyzes NCM or HybridAgents, their parallel-code and latent-reasoning methods, or the same benchmark claims. External studies remain outside this Reader graph. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged. The new HTML-artifact Reader was assessed for its human review-surface question; no specific shared source claim or distinct causal comparison warrants an additional typed edge from this Reader."
       },
       "rank": 16
     },
@@ -3914,13 +4215,13 @@
       "orderReason": "Read after the earlier Amap fleet case to examine the broader forecast and its evidence limits.",
       "relationshipReview": {
         "reviewedAt": "2026-10-21",
-        "reviewedCatalogSize": 27,
+        "reviewedCatalogSize": 28,
         "decision": "linked",
         "reviewedTargets": [
           "reader:the-inbox-was-a-boundary",
           "reader:when-agents-become-the-customer"
         ],
-        "rationale": "The Amap inbox Reader shares a source event; the agent-customer Reader offers a separate product forecast. Neither validates broad web-adoption predictions. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged."
+        "rationale": "The Amap inbox Reader shares a source event; the agent-customer Reader offers a separate product forecast. Neither validates broad web-adoption predictions. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged. The new HTML-artifact Reader was assessed for its human review-surface question; no specific shared source claim or distinct causal comparison warrants an additional typed edge from this Reader."
       },
       "rank": 13
     },
@@ -4170,12 +4471,12 @@
       },
       "relationshipReview": {
         "reviewedAt": "2026-10-21",
-        "reviewedCatalogSize": 27,
+        "reviewedCatalogSize": 28,
         "decision": "linked",
         "reviewedTargets": [
           "reader:a-scenario-is-not-a-singularity"
         ],
-        "rationale": "The physics benchmark Reader provides a contrasting bounded task score. It does not assess the two open-ended research contributions studied in this paper. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged."
+        "rationale": "The physics benchmark Reader provides a contrasting bounded task score. It does not assess the two open-ended research contributions studied in this paper. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged. The new HTML-artifact Reader was assessed for its human review-surface question; no specific shared source claim or distinct causal comparison warrants an additional typed edge from this Reader."
       },
       "rank": 17
     },
@@ -4425,12 +4726,12 @@
       "orderReason": "Read after other model-score Readers to test how benchmark evidence is converted into a larger forecast.",
       "relationshipReview": {
         "reviewedAt": "2026-10-21",
-        "reviewedCatalogSize": 27,
+        "reviewedCatalogSize": 28,
         "decision": "linked",
         "reviewedTargets": [
           "reader:the-experiment-ran-did-the-research-advance"
         ],
-        "rationale": "The physics benchmark and research-evaluation paper measure different constructs. Their one link invites comparison without treating a bounded score as research judgment. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged."
+        "rationale": "The physics benchmark and research-evaluation paper measure different constructs. Their one link invites comparison without treating a bounded score as research judgment. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged. The new HTML-artifact Reader was assessed for its human review-surface question; no specific shared source claim or distinct causal comparison warrants an additional typed edge from this Reader."
       },
       "rank": 14
     },
@@ -4716,14 +5017,14 @@
       },
       "relationshipReview": {
         "reviewedAt": "2026-10-21",
-        "reviewedCatalogSize": 27,
+        "reviewedCatalogSize": 28,
         "decision": "linked",
         "reviewedTargets": [
           "reader:ask-for-the-outcome-keep-the-boundary",
           "reader:make-good-work-inspectable",
           "reader:the-funnel-is-not-the-frontier"
         ],
-        "rationale": "The outcome, inspectable-work and AI-use Readers frame the limits of agent-tool demonstrations. None independently verifies this incomplete scan. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged."
+        "rationale": "The outcome, inspectable-work and AI-use Readers frame the limits of agent-tool demonstrations. None independently verifies this incomplete scan. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged. The new HTML-artifact Reader was assessed for its human review-surface question; no specific shared source claim or distinct causal comparison warrants an additional typed edge from this Reader."
       },
       "rank": 9
     },
@@ -5063,14 +5364,14 @@
       },
       "relationshipReview": {
         "reviewedAt": "2026-10-21",
-        "reviewedCatalogSize": 27,
+        "reviewedCatalogSize": 28,
         "decision": "linked",
         "reviewedTargets": [
           "reader:the-inbox-was-a-boundary",
           "reader:autonomy-needs-an-interface",
           "reader:the-agent-a-company-owns"
         ],
-        "rationale": "The credential incident is compared with a hidden mailbox boundary and company-agent permissions. Shared authority questions do not make the events equivalent. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged."
+        "rationale": "The credential incident is compared with a hidden mailbox boundary and company-agent permissions. Shared authority questions do not make the events equivalent. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged. The new HTML-artifact Reader was assessed for its human review-surface question; no specific shared source claim or distinct causal comparison warrants an additional typed edge from this Reader."
       },
       "rank": 10
     },
@@ -5425,14 +5726,14 @@
       },
       "relationshipReview": {
         "reviewedAt": "2026-10-21",
-        "reviewedCatalogSize": 27,
+        "reviewedCatalogSize": 28,
         "decision": "linked",
         "reviewedTargets": [
           "reader:a-challenge-is-not-a-verdict",
           "reader:make-good-work-inspectable",
           "reader:the-funnel-is-not-the-frontier"
         ],
-        "rationale": "The architecture challenge, inspectable-work interview and AI-use funnel all separate ambitious agent work from verified outcomes. The links are editorial comparisons only. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged."
+        "rationale": "The architecture challenge, inspectable-work interview and AI-use funnel all separate ambitious agent work from verified outcomes. The links are editorial comparisons only. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged. The new HTML-artifact Reader was assessed for its human review-surface question; no specific shared source claim or distinct causal comparison warrants an additional typed edge from this Reader."
       },
       "rank": 0
     },
@@ -5806,14 +6107,14 @@
       },
       "relationshipReview": {
         "reviewedAt": "2026-10-21",
-        "reviewedCatalogSize": 27,
+        "reviewedCatalogSize": 28,
         "decision": "linked",
         "reviewedTargets": [
           "reader:a-challenge-is-not-a-verdict",
           "reader:ask-for-the-outcome-keep-the-boundary",
           "reader:the-funnel-is-not-the-frontier"
         ],
-        "rationale": "The linked architecture review, outcome framing and AI-use funnel all ask how to inspect agent work. They do not independently establish this interview's results. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged."
+        "rationale": "The linked architecture review, outcome framing and AI-use funnel all ask how to inspect agent work. They do not independently establish this interview's results. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged. The new HTML-artifact Reader links this analysis as a related topic. A second reverse edge would duplicate that qualified route, and neither source corroborates the other’s results."
       },
       "rank": 1
     },
@@ -6073,14 +6374,14 @@
       },
       "relationshipReview": {
         "reviewedAt": "2026-10-21",
-        "reviewedCatalogSize": 27,
+        "reviewedCatalogSize": 28,
         "decision": "linked",
         "reviewedTargets": [
           "reader:the-agent-a-company-owns",
           "reader:the-inbox-was-a-boundary",
           "reader:the-key-was-the-boundary"
         ],
-        "rationale": "The company-agent interview builds on the same Vercel subject; the inbox and credential Readers compare separate authority boundaries. None verifies the others' incidents. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged."
+        "rationale": "The company-agent interview builds on the same Vercel subject; the inbox and credential Readers compare separate authority boundaries. None verifies the others' incidents. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged. The new HTML-artifact Reader was assessed for its human review-surface question; no specific shared source claim or distinct causal comparison warrants an additional typed edge from this Reader."
       },
       "rank": 6
     },
@@ -6365,14 +6666,14 @@
       },
       "relationshipReview": {
         "reviewedAt": "2026-10-21",
-        "reviewedCatalogSize": 27,
+        "reviewedCatalogSize": 28,
         "decision": "linked",
         "reviewedTargets": [
           "reader:ask-for-the-outcome-keep-the-boundary",
           "reader:make-good-work-inspectable",
           "reader:when-software-becomes-legible"
         ],
-        "rationale": "The three existing routes compare how an AI-assisted choice is challenged, verified and made inspectable. Their briefs support navigation, not proof of a shared observed result. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged."
+        "rationale": "The three existing routes compare how an AI-assisted choice is challenged, verified and made inspectable. Their briefs support navigation, not proof of a shared observed result. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged. The new HTML-artifact Reader was assessed for its human review-surface question; no specific shared source claim or distinct causal comparison warrants an additional typed edge from this Reader."
       },
       "rank": 2
     },
@@ -6657,14 +6958,14 @@
       },
       "relationshipReview": {
         "reviewedAt": "2026-10-21",
-        "reviewedCatalogSize": 27,
+        "reviewedCatalogSize": 28,
         "decision": "linked",
         "reviewedTargets": [
           "reader:a-challenge-is-not-a-verdict",
           "reader:make-good-work-inspectable",
           "reader:when-agents-become-the-customer"
         ],
-        "rationale": "The architecture challenge, inspectable-work interview and agent-service forecast provide distinct routes through software legibility, not corroboration of reverse engineering. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged."
+        "rationale": "The architecture challenge, inspectable-work interview and agent-service forecast provide distinct routes through software legibility, not corroboration of reverse engineering. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged. The new HTML-artifact Reader was assessed for its human review-surface question; no specific shared source claim or distinct causal comparison warrants an additional typed edge from this Reader."
       },
       "rank": 7
     },
@@ -6920,14 +7221,14 @@
       },
       "relationshipReview": {
         "reviewedAt": "2026-10-21",
-        "reviewedCatalogSize": 27,
+        "reviewedCatalogSize": 28,
         "decision": "linked",
         "reviewedTargets": [
           "reader:autonomy-needs-an-interface",
           "reader:make-good-work-inspectable",
           "reader:the-agent-a-company-owns"
         ],
-        "rationale": "The linked founder, inspectable-work and company-agent Readers compare product workflows and authority. Forecasts are kept separate from observed adoption. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged."
+        "rationale": "The linked founder, inspectable-work and company-agent Readers compare product workflows and authority. Forecasts are kept separate from observed adoption. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged. The new HTML-artifact Reader was assessed for its human review-surface question; no specific shared source claim or distinct causal comparison warrants an additional typed edge from this Reader."
       },
       "rank": 8
     },
@@ -7258,12 +7559,12 @@
       },
       "relationshipReview": {
         "reviewedAt": "2026-10-21",
-        "reviewedCatalogSize": 27,
+        "reviewedCatalogSize": 28,
         "decision": "linked",
         "reviewedTargets": [
           "reader:the-microscope-is-not-a-soul"
         ],
-        "rationale": "The microscope Reader helps interpret representation evidence, while its source and this Reader's agent-evaluation incident have separate evidentiary reach. The new harness Reader is a relevant incoming comparison about grader design; no new outgoing route is needed. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged."
+        "rationale": "The microscope Reader helps interpret representation evidence, while its source and this Reader's agent-evaluation incident have separate evidentiary reach. The new harness Reader is a relevant incoming comparison about grader design; no new outgoing route is needed. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged. The new HTML-artifact Reader was assessed for its human review-surface question; no specific shared source claim or distinct causal comparison warrants an additional typed edge from this Reader."
       },
       "rank": 3
     },
@@ -7623,12 +7924,12 @@
       },
       "relationshipReview": {
         "reviewedAt": "2026-10-21",
-        "reviewedCatalogSize": 27,
+        "reviewedCatalogSize": 28,
         "decision": "linked",
         "reviewedTargets": [
           "reader:the-score-is-not-the-system"
         ],
-        "rationale": "The score Reader discusses the same Anthropic representation-steering evidence family. The link does not create independent support for consciousness or experience. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged."
+        "rationale": "The score Reader discusses the same Anthropic representation-steering evidence family. The link does not create independent support for consciousness or experience. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged. The new HTML-artifact Reader was assessed for its human review-surface question; no specific shared source claim or distinct causal comparison warrants an additional typed edge from this Reader."
       },
       "rank": 11
     },
@@ -7904,14 +8205,14 @@
       },
       "relationshipReview": {
         "reviewedAt": "2026-10-21",
-        "reviewedCatalogSize": 27,
+        "reviewedCatalogSize": 28,
         "decision": "linked",
         "reviewedTargets": [
           "reader:the-key-was-the-boundary",
           "reader:autonomy-needs-an-interface",
           "reader:the-agent-a-company-owns"
         ],
-        "rationale": "The hidden mailbox case is compared with a separate credential exposure and two company-agent authority readings. The incidents and their evidence remain distinct. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged."
+        "rationale": "The hidden mailbox case is compared with a separate credential exposure and two company-agent authority readings. The incidents and their evidence remain distinct. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged. The new HTML-artifact Reader was assessed for its human review-surface question; no specific shared source claim or distinct causal comparison warrants an additional typed edge from this Reader."
       },
       "rank": 4
     },
@@ -8217,14 +8518,14 @@
       },
       "relationshipReview": {
         "reviewedAt": "2026-10-21",
-        "reviewedCatalogSize": 27,
+        "reviewedCatalogSize": 28,
         "decision": "linked",
         "reviewedTargets": [
           "reader:ask-for-the-outcome-keep-the-boundary",
           "reader:make-good-work-inspectable",
           "reader:the-scan-never-reached-the-login"
         ],
-        "rationale": "The three routes compare ambition and verification in agent workflows, including a scan that ended without confirmed findings. No shared empirical outcome is claimed. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged."
+        "rationale": "The three routes compare ambition and verification in agent workflows, including a scan that ended without confirmed findings. No shared empirical outcome is claimed. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged. The new HTML-artifact Reader was assessed for its human review-surface question; no specific shared source claim or distinct causal comparison warrants an additional typed edge from this Reader."
       },
       "rank": 12
     },
@@ -8513,14 +8814,14 @@
       },
       "relationshipReview": {
         "reviewedAt": "2026-10-21",
-        "reviewedCatalogSize": 27,
+        "reviewedCatalogSize": 28,
         "decision": "linked",
         "reviewedTargets": [
           "reader:autonomy-needs-an-interface",
           "reader:the-inbox-was-a-boundary",
           "reader:the-key-was-the-boundary"
         ],
-        "rationale": "The Vercel follow-on shares a named company-agent subject, while the inbox and credential Readers compare delegated authority through distinct source events. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged."
+        "rationale": "The Vercel follow-on shares a named company-agent subject, while the inbox and credential Readers compare delegated authority through distinct source events. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged. The new HTML-artifact Reader was assessed for its human review-surface question; no specific shared source claim or distinct causal comparison warrants an additional typed edge from this Reader."
       },
       "rank": 5
     }

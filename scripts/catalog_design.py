@@ -56,6 +56,7 @@ CALLS = {
     'the-stop-button-is-outside-the-chat': ('Test the stop surface', 'Limit agent authority, inspect the real outcome and verify that active work and future access have stopped.'),
     'the-boundary-is-bigger-than-the-box': ('Test the whole boundary', 'Compare a real task locally and in the cloud, then inspect network paths, tool access and total cost.'),
     'the-commit-is-not-the-control': ('Test the acceptance path', 'Measure useful changes safely accepted and reversible, not merges per second alone.'),
+    'the-page-is-part-of-the-proof': ('Test the review surface', 'Ask whether the richer page exposes source, alternatives and export behavior well enough to catch consequential mistakes.'),
 }
 
 

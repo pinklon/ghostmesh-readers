@@ -268,14 +268,14 @@
     "orderReason": "Follow the existing evaluation and research-agent Readers with a focused test of adaptive harness claims.",
     "relationshipReview": {
       "reviewedAt": "2026-10-21",
-      "reviewedCatalogSize": 27,
+      "reviewedCatalogSize": 28,
       "decision": "linked",
       "reviewedTargets": [
         "reader:make-good-work-inspectable",
         "reader:the-experiment-ran-did-the-research-advance",
         "reader:the-score-is-not-the-system"
       ],
-      "rationale": "Compared the new video with all 23 existing Readers. Inspectable work, research evaluation and reward-versus-outcome design offer three substantive comparisons. The earlier Readers do not replicate the two papers. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged."
+      "rationale": "Compared the new video with all 23 existing Readers. Inspectable work, research evaluation and reward-versus-outcome design offer three substantive comparisons. The earlier Readers do not replicate the two papers. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged. The new HTML-artifact Reader was assessed for its human review-surface question; no specific shared source claim or distinct causal comparison warrants an additional typed edge from this Reader."
     }
   },
   "editorial": {
