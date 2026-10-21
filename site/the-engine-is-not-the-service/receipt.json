@@ -332,18 +332,30 @@
         ],
         "basis": "curated-editorial-comparison",
         "direction": "outgoing"
+      },
+      {
+        "target": "reader:the-operator-is-part-of-the-denominator",
+        "type": "related topic",
+        "reason": "Both Readers separate raw accelerator or engine throughput from useful service output. The operator analysis asks how serving software, latency and full cost change the buyer result; DeepInfer publishes an offline engine, not the surrounding service. These distinct sources do not corroborate each other’s performance claims.",
+        "provenance": [
+          "/the-engine-is-not-the-service/#denominator",
+          "/the-operator-is-part-of-the-denominator/#the-service-layer-can-create-or-destroy-value"
+        ],
+        "basis": "curated-editorial-comparison",
+        "direction": "outgoing"
       }
     ],
-    "relationshipDisposition": "Two qualified editorial routes compare performance-to-product interpretation and local control boundaries. Neither corroborates DeepSeek benchmark or production metrics.",
+    "relationshipDisposition": "Three qualified editorial routes connect performance-to-product interpretation, local control boundaries and service economics. They do not corroborate DeepSeek benchmark or production metrics.",
     "relationshipReview": {
       "reviewedAt": "2026-10-21",
-      "reviewedCatalogSize": 28,
+      "reviewedCatalogSize": 33,
       "decision": "linked",
       "reviewedTargets": [
         "reader:the-parallel-result-is-not-the-product",
-        "reader:the-boundary-is-bigger-than-the-box"
+        "reader:the-boundary-is-bigger-than-the-box",
+        "reader:the-operator-is-part-of-the-denominator"
       ],
-      "rationale": "Compared the pinned DeepInfer source with all 27 existing Readers. Two specific routes link performance-to-product interpretation and local service-control boundaries. Other Readers lack a comparably grounded technical question; topic overlap alone does not establish evidence or agreement."
+      "rationale": "Compared the pinned DeepInfer source with all 32 existing Readers. Three specific routes link performance-to-product interpretation, local service-control boundaries and inference service economics. Other topic overlap does not establish independent corroboration or a shared empirical result."
     },
     "review": {
       "status": "independent-source-and-copy-reviewed; owner-acceptance-pending",

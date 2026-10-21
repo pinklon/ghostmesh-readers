@@ -264,14 +264,14 @@
     },
     "relationshipReview": {
       "reviewedAt": "2026-10-21",
-      "reviewedCatalogSize": 28,
+      "reviewedCatalogSize": 33,
       "decision": "linked",
       "reviewedTargets": [
         "reader:autonomy-needs-an-interface",
         "reader:make-good-work-inspectable",
         "reader:the-agent-a-company-owns"
       ],
-      "rationale": "The linked founder, inspectable-work and company-agent Readers compare product workflows and authority. Forecasts are kept separate from observed adoption. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged. The DeepInfer repository Reader was also assessed; no new outgoing route from this Reader has a sufficiently specific source-grounded rationale."
+      "rationale": "The linked founder, inspectable-work and company-agent Readers compare product workflows and authority. Forecasts are kept separate from observed adoption. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged. Reassessed against four distinct AI Engineer video theses; their new outgoing links carry the qualified comparisons, with no new outgoing edge warranted from this existing entry. The newly added DeepInfer source was checked for another outgoing route; none is justified beyond its new Reader-to-Reader routes."
     }
   },
   "editorial": {

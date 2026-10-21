@@ -1,0 +1,262 @@
+{
+  "schema": "ghostmesh-reader-receipt-v2",
+  "createdAt": "2026-10-21T05:38:13Z",
+  "source": {
+    "platform": "YouTube",
+    "url": "https://www.youtube.com/watch?v=7Y4sbZgBdnc",
+    "videoId": "7Y4sbZgBdnc",
+    "title": "Is the Agent Harness Dead?: Jediah Katz, SpaceXAI",
+    "creator": "AI Engineer",
+    "uploadDate": "20261019",
+    "durationSeconds": 1094,
+    "mediaAspect": "16:9"
+  },
+  "sourceInspection": {
+    "method": "Exact publisher video metadata and hash-checked private ReasonPack media and caption aids; selected source cues independently cross-checked in editorial review",
+    "status": "verified-private-pack-and-automatic-caption-aid",
+    "manifestSha256": "f3b0dbab78207c906bd93ba2817995e7e56634dab26fdff2d2afd10dfa869106",
+    "caveat": "Private pack member hashes passed. Automatic captions locate paraphrases; they are not certified exact speech or independent proof of product and benchmark outcomes. Source-title dash punctuation is normalized in the public catalog while exact publisher metadata remains private. The first caption request was rate limited; separate caption and local ASR aids agreed on selected source windows but are both machine outputs.",
+    "publicationBoundary": "No video, audio, full transcript, caption file, private path, signed URL or credential is published.",
+    "separateCaptionSha256": "d963de629efb508c74f0febd17d5dff14c65f0ebef0415ce5c1974cc0ccfad5a",
+    "localAsrSha256": "a698dc1004136fb5200903e395801b07436c10938f50a456258e3d12eeb7e27f"
+  },
+  "reasonPack": {
+    "skill": "reasonpack",
+    "version": "1.0.0",
+    "schema": "ghostmesh-reasoning-pack-v1",
+    "verification": "pass",
+    "manifestSha256": "f3b0dbab78207c906bd93ba2817995e7e56634dab26fdff2d2afd10dfa869106",
+    "publicationBoundary": "No video, audio, full transcript, caption file, private path, signed URL or credential is published."
+  },
+  "custody": {
+    "status": "qualified-private-pack-verified",
+    "note": "Exact video, audio and available automatic-caption pack members passed the closed ReasonPack manifest hashes. The first video's later captions were retained and checked separately."
+  },
+  "overview": "Jediah Katz argues that capable models absorb some hand-built coding harness procedures while durable runtime, trust and efficiency responsibilities remain.",
+  "whyItMatters": "The studies challenge expensive prompt scaffolds but do not test permission correctness or recovery after an uncertain external action.",
+  "ghostMeshTakeaway": "Simplify redundant coding instructions where matched tests allow; keep explicit authorization, durable state and action receipts for consequential work.",
+  "normalization": {
+    "id": "reader:the-harness-keeps-the-receipt",
+    "slug": "the-harness-keeps-the-receipt",
+    "title": "The Harness Keeps the Receipt",
+    "category": "AI & Technology",
+    "tags": [
+      "agents",
+      "harness",
+      "evaluation"
+    ],
+    "entities": [
+      "AI Engineer",
+      "Jediah Katz",
+      "Arena",
+      "Cursor"
+    ],
+    "source": {
+      "platform": "YouTube",
+      "url": "https://www.youtube.com/watch?v=7Y4sbZgBdnc",
+      "videoId": "7Y4sbZgBdnc",
+      "title": "Is the Agent Harness Dead?: Jediah Katz, SpaceXAI",
+      "creator": "AI Engineer",
+      "uploadDate": "20261019",
+      "durationSeconds": 1094,
+      "mediaAspect": "16:9"
+    },
+    "published": "2026-10-21",
+    "updated": "2026-10-21T05:38:13Z",
+    "overview": "Jediah Katz argues that capable models absorb some hand-built coding harness procedures while durable runtime, trust and efficiency responsibilities remain.",
+    "whyItMatters": "The studies challenge expensive prompt scaffolds but do not test permission correctness or recovery after an uncertain external action.",
+    "ghostMeshTakeaway": "Simplify redundant coding instructions where matched tests allow; keep explicit authorization, durable state and action receipts for consequential work.",
+    "verdict": "Worth studying",
+    "architectureImpact": "experiment recommended",
+    "falsification": "Revise the boundary recommendation if a thin harness matches task quality, cost, permission correctness and exact-effect recovery across controlled external-action simulations.",
+    "evidenceState": "partially corroborated",
+    "lastEvidenceChecked": "2026-10-21T05:38:13Z",
+    "freshness": "Exact video metadata and private media/caption aids checked 2026-10-21; cited research and first-party experiment checked the same day. No product outcome or paper result was independently replicated.",
+    "variant": "dossier",
+    "accent": "teal",
+    "claims": [
+      {
+        "id": "the-harness-keeps-the-receipt--bounded-parity",
+        "proposition": "Named coding benchmarks show often similar task success across model-matched harnesses while cost changes materially.",
+        "kind": "study-result",
+        "asOf": "2026-10-21",
+        "status": "partially corroborated",
+        "assessment": "Arena reports 21 model-harness combinations on two public coding benchmarks.",
+        "limits": "Sampled task and model combinations do not establish universal harness parity or external-action safety.",
+        "sourceLocation": "05:00-06:16",
+        "references": [
+          "arena-harness-tax",
+          "minimal-mle-harness"
+        ],
+        "counterevidence": [
+          "same-model-harness"
+        ],
+        "temporalScope": "Video uploaded October 19, 2026; source and linked pages checked 2026-10-21. Results and product settings may change."
+      },
+      {
+        "id": "the-harness-keeps-the-receipt--context-pressure",
+        "proposition": "With tight context, a controlled same-model harness change improved reported coding completion.",
+        "kind": "study-result",
+        "asOf": "2026-10-21",
+        "status": "partially corroborated",
+        "assessment": "The separate paper reports gains under a fixed tight-window cohort and smaller gains or parity elsewhere.",
+        "limits": "This supports context-dependent harness value, not all-purpose superiority.",
+        "sourceLocation": "05:00-06:16",
+        "references": [
+          "same-model-harness"
+        ],
+        "counterevidence": [],
+        "temporalScope": "Video uploaded October 19, 2026; source and linked pages checked 2026-10-21. Results and product settings may change."
+      },
+      {
+        "id": "the-harness-keeps-the-receipt--data-flywheel",
+        "proposition": "The speaker proposes that harness-produced task traces could train future models to internalize procedures.",
+        "kind": "speaker-hypothesis",
+        "asOf": "2026-10-21",
+        "status": "unverified",
+        "assessment": "Private caption aids place the flywheel claim around the publisher's 06:16 chapter.",
+        "limits": "No public training-inclusion chain, causal attribution or rights basis was established for private user tasks.",
+        "sourceLocation": "06:16-07:34",
+        "references": [],
+        "counterevidence": [],
+        "temporalScope": "Video uploaded October 19, 2026; source and linked pages checked 2026-10-21. Results and product settings may change."
+      },
+      {
+        "id": "the-harness-keeps-the-receipt--off-laptop",
+        "proposition": "The speaker predicts most agent work will move off laptops within months.",
+        "kind": "forecast",
+        "asOf": "2026-10-21",
+        "status": "unverified",
+        "assessment": "The explicit prediction appears near 17:18 in the retained source aids.",
+        "limits": "No adoption cohort or outcome measurement supports a deployment mandate.",
+        "sourceLocation": "17:18-18:14",
+        "references": [],
+        "counterevidence": [],
+        "temporalScope": "Video uploaded October 19, 2026; source and linked pages checked 2026-10-21. Results and product settings may change."
+      }
+    ],
+    "references": [
+      {
+        "id": "arena-harness-tax",
+        "title": "HarnessTax: How Much Does the Harness Matter for Coding Agents?",
+        "author": "Arena Team",
+        "publisher": "Arena",
+        "url": "https://arena.ai/blog/coding-agents-harness-tax",
+        "publicationDate": "2026-09-16",
+        "eventDate": null,
+        "location": "Study design and results",
+        "sourceType": "original study",
+        "independence": "Independent comparison of named model-harness pairs on two coding benchmarks; no external-action safety test.",
+        "evidenceFamily": "arena-harness-tax",
+        "checkedAt": "2026-10-21T05:38:13Z",
+        "datePrecision": "day"
+      },
+      {
+        "id": "minimal-mle-harness",
+        "title": "How Much of a Harness Does a Strong Agent Need for Autonomous ML Engineering?",
+        "author": "Kirill Brilliantov and coauthors",
+        "publisher": "arXiv",
+        "url": "https://arxiv.org/abs/2609.40303",
+        "publicationDate": "2026-09-30",
+        "eventDate": null,
+        "location": "Abstract and experimental comparison",
+        "sourceType": "research preprint",
+        "independence": "Direct author report for bounded ML engineering benchmarks, not independent production validation.",
+        "evidenceFamily": "minimal-mle-harness",
+        "checkedAt": "2026-10-21T05:38:13Z",
+        "datePrecision": "day"
+      },
+      {
+        "id": "same-model-harness",
+        "title": "Same Model, Different Harness: Different Coding-Agent Results",
+        "author": "Sydney Lewis",
+        "publisher": "arXiv",
+        "url": "https://arxiv.org/abs/2608.26218",
+        "publicationDate": "2026-08-26",
+        "eventDate": null,
+        "location": "Abstract and tight-context experiment",
+        "sourceType": "research preprint",
+        "independence": "Separate controlled study showing context pressure changes harness value; not a trial of this speaker's product.",
+        "evidenceFamily": "same-model-harness",
+        "checkedAt": "2026-10-21T05:38:13Z",
+        "datePrecision": "day"
+      },
+      {
+        "id": "cursor-scaling",
+        "title": "Scaling long-running autonomous coding",
+        "author": "Wilson Lin",
+        "publisher": "Cursor",
+        "url": "https://cursor.com/blog/scaling-agents",
+        "publicationDate": "2026-01-14",
+        "eventDate": null,
+        "location": "Experiment and coordination lessons",
+        "sourceType": "first-party engineering account",
+        "independence": "Research experiment by the operator, not an independent shipped-product audit.",
+        "evidenceFamily": "cursor-scaling",
+        "checkedAt": "2026-10-21T05:38:13Z",
+        "datePrecision": "day"
+      }
+    ],
+    "relationships": [
+      {
+        "target": "reader:the-grader-is-part-of-the-harness",
+        "type": "related topic",
+        "reason": "Both question what a coding harness contributes. This Reader separates procedure from effect control; the earlier Reader focuses on adaptive graders. Their different sources do not corroborate each other's results.",
+        "provenance": [
+          "/the-harness-keeps-the-receipt/#the-useful-provocation",
+          "/the-grader-is-part-of-the-harness/#grading"
+        ],
+        "basis": "curated-editorial-comparison",
+        "direction": "outgoing"
+      },
+      {
+        "target": "reader:the-stop-button-is-outside-the-chat",
+        "type": "informs architecture",
+        "reason": "A durable action receipt and uncertain-effect reconciliation extend the earlier Reader's destination and stop checks. Neither video measures the other's control design.",
+        "provenance": [
+          "/the-harness-keeps-the-receipt/#the-boundary-that-stays",
+          "/the-stop-button-is-outside-the-chat/#stop-surface"
+        ],
+        "basis": "curated-editorial-comparison",
+        "direction": "outgoing"
+      }
+    ],
+    "relationshipDisposition": "Two qualified, typed editorial relationships to distinct published Reader theses; no shared-source corroboration implied.",
+    "review": {
+      "status": "independent public-copy review accepted for owner qualitative review; release held",
+      "reviewer": "Existing independent read-only Codex editorial reviewer",
+      "reviewedSourceHead": "local public candidate; exact commit assigned after final validation",
+      "checkedAt": "2026-10-21T05:38:13Z",
+      "scope": "Exact authored and generated HTML, catalog claims, references, graph target anchors, source maps, private timing aids and public privacy boundary; targeted recheck after two repairs.",
+      "findings": "No remaining factual, graph, timestamp or private-source blocker. Source-mapped forecast corrected to 17:18; external operational evidence identified as first-party. Automatic captions and first-party performance or financial outcomes remain unreplicated. Owner qualitative acceptance remains pending."
+    },
+    "revisionHistory": [
+      {
+        "at": "2026-10-21T05:38:13Z",
+        "kind": "new-reader-candidate",
+        "reason": "Owner-requested exact-source video deconstruction with private media custody and source-qualified initial analysis."
+      }
+    ],
+    "editorialOrder": 24,
+    "orderReason": "Follows the existing source-control Reader in Tony's four-video requested queue order.",
+    "relationshipReview": {
+      "reviewedAt": "2026-10-21",
+      "reviewedCatalogSize": 33,
+      "decision": "linked",
+      "reviewedTargets": [
+        "reader:the-grader-is-part-of-the-harness",
+        "reader:the-stop-button-is-outside-the-chat"
+      ],
+      "rationale": "Compared the new thesis against all 27 public Readers and its three queue peers. The two selected outgoing links add specific architectural or editorial comparisons without treating a different source as corroboration. The newly added DeepInfer source was checked for another outgoing route; none is justified beyond its new Reader-to-Reader routes."
+    },
+    "editorialDepth": {
+      "schemaVersion": 1,
+      "receiptPath": "content/editorial-depth/the-harness-keeps-the-receipt.json"
+    }
+  },
+  "editorial": {
+    "overview": "Jediah Katz argues that capable models absorb some hand-built coding harness procedures while durable runtime, trust and efficiency responsibilities remain.",
+    "whyItMatters": "The studies challenge expensive prompt scaffolds but do not test permission correctness or recovery after an uncertain external action.",
+    "ghostMeshTakeaway": "Simplify redundant coding instructions where matched tests allow; keep explicit authorization, durable state and action receipts for consequential work."
+  }
+}

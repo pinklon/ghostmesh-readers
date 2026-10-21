@@ -1,0 +1,244 @@
+{
+  "schema": "ghostmesh-reader-receipt-v2",
+  "createdAt": "2026-10-21T05:38:13Z",
+  "source": {
+    "platform": "YouTube",
+    "url": "https://www.youtube.com/watch?v=f_HwzoYrZ7s",
+    "videoId": "f_HwzoYrZ7s",
+    "title": "Why AI Agents Will Need Their Own Bank Accounts: Lincoln Murr, Coinbase",
+    "creator": "AI Engineer",
+    "uploadDate": "20261020",
+    "durationSeconds": 1018,
+    "mediaAspect": "16:9"
+  },
+  "sourceInspection": {
+    "method": "Exact publisher video metadata and hash-checked private ReasonPack media and caption aids; selected source cues independently cross-checked in editorial review",
+    "status": "verified-private-pack-and-automatic-caption-aid",
+    "manifestSha256": "6c5b4bb10c8ede764ec9f4ed0e54e15aae4f0b29d4857a45c93af9280437d29d",
+    "caveat": "Private pack member hashes passed. Automatic captions locate paraphrases; they are not certified exact speech or independent proof of product and benchmark outcomes. Source-title dash punctuation is normalized in the public catalog while exact publisher metadata remains private.",
+    "publicationBoundary": "No video, audio, full transcript, caption file, private path, signed URL or credential is published."
+  },
+  "reasonPack": {
+    "skill": "reasonpack",
+    "version": "1.0.0",
+    "schema": "ghostmesh-reasoning-pack-v1",
+    "verification": "pass",
+    "manifestSha256": "6c5b4bb10c8ede764ec9f4ed0e54e15aae4f0b29d4857a45c93af9280437d29d",
+    "publicationBoundary": "No video, audio, full transcript, caption file, private path, signed URL or credential is published."
+  },
+  "custody": {
+    "status": "qualified-private-pack-verified",
+    "note": "Exact video, audio and available automatic-caption pack members passed the closed ReasonPack manifest hashes. The first video's later captions were retained and checked separately."
+  },
+  "overview": "Lincoln Murr makes the case for agent payments through x402 and sketches a wider agentic-finance economy.",
+  "whyItMatters": "A priced API call creates a real authorization, accounting and failure boundary that a payment protocol or wallet alone cannot govern.",
+  "ghostMeshTakeaway": "Prototype narrow, policy-bound machine purchases only for a real use case; do not infer authority for unrestricted wallets or autonomous investing.",
+  "normalization": {
+    "id": "reader:a-wallet-is-not-a-mandate",
+    "slug": "a-wallet-is-not-a-mandate",
+    "title": "A Wallet Is Not a Mandate",
+    "category": "AI & Technology",
+    "tags": [
+      "agents",
+      "payments",
+      "governance"
+    ],
+    "entities": [
+      "AI Engineer",
+      "Lincoln Murr",
+      "Coinbase",
+      "x402"
+    ],
+    "source": {
+      "platform": "YouTube",
+      "url": "https://www.youtube.com/watch?v=f_HwzoYrZ7s",
+      "videoId": "f_HwzoYrZ7s",
+      "title": "Why AI Agents Will Need Their Own Bank Accounts: Lincoln Murr, Coinbase",
+      "creator": "AI Engineer",
+      "uploadDate": "20261020",
+      "durationSeconds": 1018,
+      "mediaAspect": "16:9"
+    },
+    "published": "2026-10-21",
+    "updated": "2026-10-21T05:38:13Z",
+    "overview": "Lincoln Murr makes the case for agent payments through x402 and sketches a wider agentic-finance economy.",
+    "whyItMatters": "A priced API call creates a real authorization, accounting and failure boundary that a payment protocol or wallet alone cannot govern.",
+    "ghostMeshTakeaway": "Prototype narrow, policy-bound machine purchases only for a real use case; do not infer authority for unrestricted wallets or autonomous investing.",
+    "verdict": "Worth studying",
+    "architectureImpact": "experiment recommended",
+    "falsification": "Revise the need for a delegated payment account if a matched sandbox shows a simpler subscription or prepaid token meets the task at lower total cost and risk.",
+    "evidenceState": "partially corroborated",
+    "lastEvidenceChecked": "2026-10-21T05:38:13Z",
+    "freshness": "Exact video, private media and automatic captions checked 2026-10-21. Coinbase protocol, policy and Advisor pages checked the same day. Adoption numbers and anecdotal trading outcomes were not independently audited.",
+    "variant": "dossier",
+    "accent": "teal",
+    "claims": [
+      {
+        "id": "a-wallet-is-not-a-mandate--x402-flow",
+        "proposition": "The x402 protocol lets a server return a payment challenge and a client retry with signed proof before resource delivery.",
+        "kind": "protocol-description",
+        "asOf": "2026-10-21",
+        "status": "corroborated",
+        "assessment": "Coinbase's developer documentation describes the request, signature, facilitator verification and settlement flow.",
+        "limits": "Protocol mechanics do not by themselves authorize a model's business purchase or guarantee delivered quality.",
+        "sourceLocation": "02:46-04:24",
+        "references": [
+          "coinbase-x402"
+        ],
+        "counterevidence": [],
+        "temporalScope": "Video uploaded October 20, 2026; source and linked pages checked 2026-10-21. Results and product settings may change."
+      },
+      {
+        "id": "a-wallet-is-not-a-mandate--adoption",
+        "proposition": "The speaker presents growing x402 activity as evidence of agent-payment demand.",
+        "kind": "vendor-adoption-claim",
+        "asOf": "2026-10-21",
+        "status": "unverified",
+        "assessment": "Retained caption cues place the adoption argument around the 03:13 publisher chapter.",
+        "limits": "No independent dated denominator for unique users, real businesses or useful agent jobs was established.",
+        "sourceLocation": "03:13-04:24",
+        "references": [],
+        "counterevidence": [],
+        "temporalScope": "Video uploaded October 20, 2026; source and linked pages checked 2026-10-21. Results and product settings may change."
+      },
+      {
+        "id": "a-wallet-is-not-a-mandate--trade-anecdote",
+        "proposition": "The speaker recounts an agent-assisted weekend short-position anecdote.",
+        "kind": "personal-anecdote",
+        "asOf": "2026-10-21",
+        "status": "unverified",
+        "assessment": "Private caption cues locate a first-person account near 08:14.",
+        "limits": "No audited trade ledger, fee accounting, risk-adjusted return, authorization trace or regulator source was qualified.",
+        "sourceLocation": "08:14-09:48",
+        "references": [],
+        "counterevidence": [],
+        "temporalScope": "Video uploaded October 20, 2026; source and linked pages checked 2026-10-21. Results and product settings may change."
+      },
+      {
+        "id": "a-wallet-is-not-a-mandate--advisor-limit",
+        "proposition": "Coinbase describes Advisor as non-discretionary, with trading requiring the user's explicit approval.",
+        "kind": "vendor-product-limitation",
+        "asOf": "2026-10-21",
+        "status": "partially corroborated",
+        "assessment": "The current Coinbase Advisor product page states the user reviews and authorizes every trade.",
+        "limits": "This is a first-party description, not a regulator audit; the named registered entity is Coinbase Advisors, LLC, not the AI model.",
+        "sourceLocation": "11:35-14:21",
+        "references": [
+          "coinbase-advisor"
+        ],
+        "counterevidence": [],
+        "temporalScope": "Video uploaded October 20, 2026; source and linked pages checked 2026-10-21. Results and product settings may change."
+      }
+    ],
+    "references": [
+      {
+        "id": "coinbase-x402",
+        "title": "How x402 works",
+        "author": "Coinbase Developer Platform",
+        "publisher": "Coinbase",
+        "url": "https://docs.cdp.coinbase.com/x402/how-it-works",
+        "publicationDate": "unknown",
+        "eventDate": null,
+        "location": "Payment challenge, signature, verification and settlement flow",
+        "sourceType": "vendor protocol documentation",
+        "independence": "First-party description of protocol operation, not an audit of business authorization or outcome delivery.",
+        "evidenceFamily": "coinbase-x402",
+        "checkedAt": "2026-10-21T05:38:13Z",
+        "datePrecision": "unknown",
+        "dateNote": "No publication date was visible on the source page at the recorded check; treated as undated."
+      },
+      {
+        "id": "coinbase-policy",
+        "title": "CDP Wallet Policies: Don't Be the Next Headline Hack",
+        "author": "Coinbase Developer Platform",
+        "publisher": "Coinbase",
+        "url": "https://www.coinbase.com/developer-platform/discover/launches/policy-engine",
+        "publicationDate": "2025-06-23",
+        "eventDate": null,
+        "location": "Signing-layer recipient and amount controls",
+        "sourceType": "vendor product documentation",
+        "independence": "First-party product controls; policy availability does not prove a deployed customer's rules are safe.",
+        "evidenceFamily": "coinbase-policy",
+        "checkedAt": "2026-10-21T05:38:13Z",
+        "datePrecision": "day"
+      },
+      {
+        "id": "coinbase-advisor",
+        "title": "Coinbase Advisor",
+        "author": "Coinbase",
+        "publisher": "Coinbase",
+        "url": "https://www.coinbase.com/advisor",
+        "publicationDate": "unknown",
+        "eventDate": null,
+        "location": "Non-discretionary FAQ and company registration statement",
+        "sourceType": "vendor product page",
+        "independence": "Product page says trades require user approval and attributes advisory registration to Coinbase Advisors, LLC; not an independent regulator check.",
+        "evidenceFamily": "coinbase-advisor",
+        "checkedAt": "2026-10-21T05:38:13Z",
+        "datePrecision": "unknown",
+        "dateNote": "No publication date was visible on the source page at the recorded check; treated as undated."
+      }
+    ],
+    "relationships": [
+      {
+        "target": "reader:when-agents-become-the-customer",
+        "type": "related topic",
+        "reason": "Both ask who the billing principal is when software buys a service. This Reader focuses on a delegated payment and settlement boundary; the earlier one on service identity and business advantage.",
+        "provenance": [
+          "/a-wallet-is-not-a-mandate/#the-signer-should-know-less-than-the-owner",
+          "/when-agents-become-the-customer/#principal"
+        ],
+        "basis": "curated-editorial-comparison",
+        "direction": "outgoing"
+      },
+      {
+        "target": "reader:the-stop-button-is-outside-the-chat",
+        "type": "informs architecture",
+        "reason": "A purchased resource needs destination readback and a stop path before an uncertain retry, extending the earlier Reader's external-action boundary. Neither source proves the other's results.",
+        "provenance": [
+          "/a-wallet-is-not-a-mandate/#a-paid-response-needs-more-than-a-successful-charge",
+          "/the-stop-button-is-outside-the-chat/#verify-result"
+        ],
+        "basis": "curated-editorial-comparison",
+        "direction": "outgoing"
+      }
+    ],
+    "relationshipDisposition": "Two qualified, typed editorial relationships to distinct published Reader theses; no shared-source corroboration implied.",
+    "review": {
+      "status": "independent public-copy review accepted for owner qualitative review; release held",
+      "reviewer": "Existing independent read-only Codex editorial reviewer",
+      "reviewedSourceHead": "local public candidate; exact commit assigned after final validation",
+      "checkedAt": "2026-10-21T05:38:13Z",
+      "scope": "Exact authored and generated HTML, catalog claims, references, graph target anchors, source maps, private timing aids and public privacy boundary; targeted recheck after two repairs.",
+      "findings": "No remaining factual, graph, timestamp or private-source blocker. Source-mapped forecast corrected to 17:18; external operational evidence identified as first-party. Automatic captions and first-party performance or financial outcomes remain unreplicated. Owner qualitative acceptance remains pending."
+    },
+    "revisionHistory": [
+      {
+        "at": "2026-10-21T05:38:13Z",
+        "kind": "new-reader-candidate",
+        "reason": "Owner-requested exact-source video deconstruction with private media custody and source-qualified initial analysis."
+      }
+    ],
+    "editorialOrder": 27,
+    "orderReason": "Follows the existing source-control Reader in Tony's four-video requested queue order.",
+    "relationshipReview": {
+      "reviewedAt": "2026-10-21",
+      "reviewedCatalogSize": 33,
+      "decision": "linked",
+      "reviewedTargets": [
+        "reader:when-agents-become-the-customer",
+        "reader:the-stop-button-is-outside-the-chat"
+      ],
+      "rationale": "Compared the new thesis against all 27 public Readers and its three queue peers. The two selected outgoing links add specific architectural or editorial comparisons without treating a different source as corroboration. The newly added DeepInfer source was checked for another outgoing route; none is justified beyond its new Reader-to-Reader routes."
+    },
+    "editorialDepth": {
+      "schemaVersion": 1,
+      "receiptPath": "content/editorial-depth/a-wallet-is-not-a-mandate.json"
+    }
+  },
+  "editorial": {
+    "overview": "Lincoln Murr makes the case for agent payments through x402 and sketches a wider agentic-finance economy.",
+    "whyItMatters": "A priced API call creates a real authorization, accounting and failure boundary that a payment protocol or wallet alone cannot govern.",
+    "ghostMeshTakeaway": "Prototype narrow, policy-bound machine purchases only for a real use case; do not infer authority for unrestricted wallets or autonomous investing."
+  }
+}

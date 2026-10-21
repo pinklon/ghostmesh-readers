@@ -49,16 +49,16 @@ def footer(include_email=True):return ('<footer aria-label="GhostMesh destinatio
  '<nav aria-label="Reader footer navigation" class="gm-footer-links"><a href="/">Readers home</a><a href="/readers/">All Readers</a><a href="/map/">Relationship map</a><a href="/knowledge/">Public knowledge</a>'
  '<a href="https://ghostmesh.ai/">GhostMesh.ai ↗</a><a href="https://shareplane.malott.ai/">SharePlane ↗</a><a href="https://malott.ai/">Tony Malott ↗</a>'
  +('<a href="mailto:ghostmesh@malott.ai?subject=GhostMesh%20Reader%20feedback">Contact GhostMesh ✉</a>' if include_email else '')+'</nav></div></footer>')
-def head():return '<script src="/assets/theme.js"></script><script src="/assets/reader-search.js" defer></script><link rel="stylesheet" href="/assets/reader-chrome.css"><link rel="stylesheet" href="/assets/knowledge.css">'
+def head():return '<script src="/assets/theme.js"></script><script src="/assets/reader-search.js" defer></script><link rel="stylesheet" href="/assets/reader-chrome.css"><link rel="stylesheet" href="/assets/knowledge.css"><link rel="stylesheet" href="/assets/reader-refresh.css">'
 def brief(r):
  first={'paper':'What the paper studied','article':'What the article argues','repository':'What the repository contains'}.get(r['source'].get('kind'),'What the video is about')
- return '<section class="gm-brief" id="at-a-glance" aria-label="Reader brief"><span id="brief-title" class="gm-visually-hidden">Reader brief</span>'+''.join('<div><h2>'+h+'</h2><p>'+esc(r[k])+'</p></div>' for k,h in [('overview',first),('whyItMatters','Why you should care'),('ghostMeshTakeaway','What GhostMesh takes away')])+f'<p class="gm-verdict"><strong>GhostMesh verdict: {esc(r["verdict"])}</strong>. Editorial recommendation, not factual verification. Architecture impact: {esc(r["architectureImpact"])}. Proposed only; no adoption implied.</p></section>'
+ return '<section class="gm-brief" id="at-a-glance" aria-labelledby="brief-title"><div class="gm-brief-heading"><p class="gm-kicker">The reading / in three moves</p><h2 id="brief-title">Start with the distinction.</h2></div>'+''.join('<div class="gm-brief-point"><span class="gm-brief-index">0'+str(i)+'</span><div><h3>'+h+'</h3><p>'+esc(r[k])+'</p></div></div>' for i,(k,h) in enumerate([('overview',first),('whyItMatters','Why you should care'),('ghostMeshTakeaway','What GhostMesh takes away')],1))+f'<p class="gm-verdict"><strong>GhostMesh verdict: {esc(r["verdict"])}</strong>. Editorial recommendation, not factual verification. Architecture impact: {esc(r["architectureImpact"])}. Proposed only; no adoption implied.</p></section>'
 def evidence(r):
  refs={x['id']:x for x in r['references']}
  def links(ids):return ', '.join(f'<a href="#ref-{esc(i)}">{esc(refs[i]["publisher"])}: {esc(refs[i]["title"])}</a>' for i in ids) or 'None qualified'
  historical_note=(' Historical ledger wording below remains attributed to the original edition. This register does not retroactively certify it.'
                   if any(c['kind']=='historical-ledger-entry' for c in r['claims']) else '')
- out=f'<section class="gm-evidence" id="external-evidence"><p class="gm-kicker">Claim register / revision {esc(r["updated"][:10])}</p><h2>Corroboration &amp; counterevidence</h2><p>{esc(r["freshness"])}</p><p>Custody proves what was retained, not that a claim is true.{historical_note} Source assertions, vendor documentation, independent measurements and GhostMesh proposals have different evidentiary reach.</p><p><strong>What would change the call?</strong> {esc(r["falsification"])}</p><p><a href="/{r["slug"]}/receipt.json">Public sanitized evidence receipt</a>. Review: {esc(r["review"]["status"])}.</p>'
+ out=f'<section class="gm-evidence" id="external-evidence"><div class="gm-evidence-intro"><p class="gm-kicker">Claim register / revision {esc(r["updated"][:10])}</p><h2>Corroboration &amp; counterevidence</h2><p>{esc(r["freshness"])}</p><p>Custody proves what was retained, not that a claim is true.{historical_note} Source assertions, vendor documentation, independent measurements and GhostMesh proposals have different evidentiary reach.</p><p><strong>What would change the call?</strong> {esc(r["falsification"])}</p><p><a href="/{r["slug"]}/receipt.json">Public sanitized evidence receipt</a>. Review: {esc(r["review"]["status"])}.</p></div><div class="gm-evidence-body"><h3>Claims under inspection</h3><p class="gm-evidence-hint">Open a claim to see its source location, support, counterevidence and limits.</p>'
  if r.get('evidenceReview'):
   note=r['evidenceReview']
   out+=f'<aside class="gm-evidence-reading"><h3>How to read this evidence</h3><p><strong>Source fidelity:</strong> {esc(note["sourceFidelity"])}</p><p><strong>Bounded conclusion:</strong> {esc(note["conclusion"])}</p><p><strong>Evidence type and limit:</strong> {esc(note["evidenceBoundary"])}</p><p><strong>Next check:</strong> {esc(note["nextVerification"])}</p></aside>'
@@ -67,21 +67,21 @@ def evidence(r):
   role='Historical ledger' if c['kind']=='historical-ledger-entry' else ('Advice / interpretation' if c['kind'] in {'speaker-advice','speaker-opinion','speaker-inference','speaker-framing','editorial-inference','framework-example'} else 'Source or factual assertion')
   support_types=', '.join(dict.fromkeys(refs[i]['sourceType'] for i in c['references'])) or 'None qualified'
   counter_types=', '.join(dict.fromkeys(refs[i]['sourceType'] for i in c['counterevidence'])) or 'None qualified'
-  out+=f'<details id="{esc(c["id"])}"><summary><strong>{esc(role)} · {esc(c["status"].capitalize())}</strong>: {esc(c["proposition"])}</summary><p>Claim ID: <code>{esc(c["id"])}</code>. As of {esc(c["asOf"])}. Kind: {esc(c["kind"])}. Mapped source location: {esc(c["sourceLocation"])}</p><p>Supporting evidence type: {esc(support_types)}. Counterevidence type: {esc(counter_types)}. These labels describe the mapped record, not an article-wide verification score.</p><p>{esc(c["assessment"])}</p><p>Limits: {esc(c["limits"])}</p><p>Supporting evidence: {links(c["references"])}</p><p>Counterevidence / constraints: {links(c["counterevidence"])}</p></details>'
+  out+=f'<details id="{esc(c["id"])}"><summary><span class="gm-claim-label">{esc(role)} <span class="gm-claim-status">{esc(c["status"].capitalize())}</span></span><span class="gm-claim-proposition">{esc(c["proposition"])}</span></summary><div class="gm-claim-detail"><p>Claim ID: <code>{esc(c["id"])}</code>. As of {esc(c["asOf"])}. Kind: {esc(c["kind"])}. Mapped source location: {esc(c["sourceLocation"])}</p><p>Supporting evidence type: {esc(support_types)}. Counterevidence type: {esc(counter_types)}. These labels describe the mapped record, not an article-wide verification score.</p><p>{esc(c["assessment"])}</p><p>Limits: {esc(c["limits"])}</p><p>Supporting evidence: {links(c["references"])}</p><p>Counterevidence / constraints: {links(c["counterevidence"])}</p></div></details>'
  out+='</div><h3>External references and independence</h3>'
  if not refs:out+='<p>No new independent reference is qualified for these claims. The original source links remain available for scrutiny. Do not treat a repeated assertion as confirmation.</p>'
  for x in refs.values():
   out+=f'<article id="ref-{esc(x["id"])}"><h4><a href="{esc(x["url"])}">{esc(x["title"])}</a></h4><p>{esc(x["author"])} · {esc(x["publisher"])} · Published {esc(x["publicationDate"])}; last update {esc(x.get("lastUpdated", "not specified"))}. {esc(x.get("dateNote", ""))} Event / measurement: {esc(x["eventDate"] or "Not specified; do not substitute publication date")}. Checked {esc(x["checkedAt"])}.</p><p>Location: {esc(x["location"])}. Type: {esc(x["sourceType"])}. {esc(x["independence"])}</p></article>'
- return out+'</section>'
+ return out+'</div></section>'
 def related(r,byid):
- out='<section class="gm-related" id="related-thinking"><h2>Related thinking</h2><p>'+esc(r['relationshipDisposition'])+'</p><div class="gm-cards">'
+ out='<section class="gm-related" id="related-thinking"><p class="gm-kicker">Continue the inquiry</p><h2>Related thinking</h2><p>'+esc(r['relationshipDisposition'])+'</p><div class="gm-cards">'
  # Every admitted relationship belongs in the navigable page, as well as the receipt.
- for edge in sorted(r['relationships'],key=lambda edge:edge['type']=='related topic'):
-  t=byid[edge['target']];out+=f'<article><p class="gm-kicker">{esc(edge["type"])}</p><h3><a href="/{t["slug"]}/">{esc(t["title"])}</a></h3><p>{esc(edge["reason"])}</p></article>'
+ for index,edge in enumerate(sorted(r['relationships'],key=lambda edge:edge['type']=='related topic'),1):
+  t=byid[edge['target']];out+=f'<article><span class="gm-related-index">{index:02d}</span><div class="gm-related-copy"><p class="gm-kicker">{esc(edge["type"])}</p><h3><a href="/{t["slug"]}/">{esc(t["title"])}</a></h3><p>{esc(edge["reason"])}</p></div><span class="gm-related-arrow" aria-hidden="true">↗</span></article>'
  if r['source'].get('kind')=='paper':
   for ref in r['references']:
    if ref['sourceType']=='independent-different-construct-study':
-    out+=f'<article><p class="gm-kicker">External study / outside the Reader graph</p><h3><a href="{esc(ref["url"])}">{esc(ref["title"])}</a></h3><p>{esc(ref["independence"])}</p></article>'
+    out+=f'<article><span class="gm-related-index">↗</span><div class="gm-related-copy"><p class="gm-kicker">External study / outside the Reader graph</p><h3><a href="{esc(ref["url"])}">{esc(ref["title"])}</a></h3><p>{esc(ref["independence"])}</p></div><span class="gm-related-arrow" aria-hidden="true">↗</span></article>'
  out+='</div>'
  return out+'</section>'
 def relationship_map(readers,byid):
@@ -253,7 +253,7 @@ def validate_media_source(source):
  if source['platform'] not in {'YouTube','Instagram'} or source['mediaAspect'] not in {'16:9','9:16','1:1','unknown'}:
   raise ValueError('Invalid media platform or aspect')
 
-def player_contract(raw,aspect,source_url):
+def player_contract(raw,aspect,source_url,source_title=None):
  if aspect not in {'16:9','9:16','1:1','unknown'}:raise ValueError('Unknown media aspect declaration')
  markers=[name for name in ('video-shell','player','player-ratio') if f'class="{name}"' in raw]
  if aspect=='unknown':
@@ -262,6 +262,9 @@ def player_contract(raw,aspect,source_url):
  if len(markers)!=1:raise ValueError(f'Expected exactly one source player, found {markers}')
  marker=markers[0]
  raw=raw.replace(f'class="{marker}"',f'class="{marker} gm-media-frame" data-gm-aspect="{aspect}"',1)
+ if marker=='player' and source_title and '<div class="launch" id="launch">' in raw:
+  raw=raw.replace('<div class="launch" id="launch">',
+                  '<div class="launch" id="launch"><p class="gm-player-source-title">'+esc(source_title)+'</p>',1)
  if marker=='video-shell':
   if raw.count('class="wrap source-grid"')!=1:raise ValueError('Source panel layout changed')
   raw=raw.replace('class="wrap source-grid"','class="wrap source-grid gm-source-layout"',1)
@@ -294,7 +297,14 @@ def projections():
   elif r['source'].get('kind')=='repository':validate_repository_source(raw,r['source'])
   else:
    validate_media_source(r['source'])
-   raw=player_contract(raw,r['source'].get('mediaAspect'),r['source']['url'])
+   raw=player_contract(raw,r['source'].get('mediaAspect'),r['source']['url'],r['source'].get('title'))
+   if 'class="chapters" aria-label="Publisher chapters"' in raw and 'class="chapter-heading"' not in raw:
+    count=raw.count('class="chapter"')
+    if count:
+     introduction=(f'<div class="gm-chapter-heading"><div><p class="gm-kicker">Watch with a question</p>'
+                   f'<h2>{count} publisher chapters. Choose where to begin.</h2></div>'
+                   '<p>Times and titles come from the source. The analysis below separately tests the claims.</p></div>')
+     raw=raw.replace('<div class="chapters"',introduction+'<div class="chapters"',1)
   raw=raw.replace('</head>',f'<meta name="gm-share-description" content="{esc(r["overview"])}"></head>',1)
   for slot,value in [('HEAD',head()),('CONTROLS',''),('BRIEF',brief(r)),('EVIDENCE',evidence(r)),('RELATED',related(r,byid))]:raw=raw.replace('<!--GM_'+slot+'-->',value)
   old_header=re.search(r'<header(?:\s[^>]*)?>.*?</header>',raw,re.S)
@@ -367,7 +377,8 @@ def projections():
              '<span class="gm-hero-question">DID THE ARGUMENT EARN IT?</span></h1>'
              '<p>Public sources are the starting point. Each Reader traces the source, tests material claims against available evidence, shows counterevidence and marks what remains unverified. You keep the judgment.</p>'
              '<div class="gm-hero-actions"><a class="gm-cta" href="#readers">Read a deconstruction ↗</a>'
-             '<a class="gm-cta gm-cta-secondary" href="#method">See the method ↓</a></div></div>'
+             '<a class="gm-cta gm-cta-secondary" href="#method">See the method ↓</a></div>'
+             '<div class="gm-sharebar gm-site-share" data-gm-share=""><span class="gm-share-label">Pass the reading room along</span><div class="gm-share-actions"><button class="gm-share-button" data-native-share="" type="button">Share site</button><button class="gm-share-button" data-copy-link="" type="button">Copy link</button><span aria-live="polite" class="gm-share-message" data-gm-share-message="" role="status"></span></div></div></div>'
              '<div class="gm-signal">'+signal+'<p>Context, evidence and continuity <span>Conceptual illustration · Human authority</span></p></div></header>'
              '<div class="gm-system-strip" aria-label="Reader principles"><div>01 / SOURCE<strong>Original kept in view</strong></div>'
              '<div>02 / EVIDENCE<strong>Claims open to challenge</strong></div><div>03 / JUDGMENT<strong>Decision stays human</strong></div></div>')
@@ -420,7 +431,7 @@ def projections():
                '<div class="gm-contact-note"><span>CORRECTION / SOURCE / COUNTEREXAMPLE</span><strong>A stronger record can change the conclusion.</strong><p>Point to the Reader, the specific claim, a source link and its date. Say what the source supports or contests. That gives a human editor something checkable to revisit instead of a vague request for agreement.</p></div>'
                '<div class="gm-contact-grid"><a href="mailto:tony@malott.ai?subject=GhostMesh%20Readers%20feedback"><span>HUMAN CONTACT / TONY MALOTT</span><strong>Write to Tony ↗</strong><p>Editorial judgment, correction requests and human decisions.</p></a>'
                '<a href="mailto:ghostmesh@malott.ai?subject=GhostMesh%20Reader%20counterexample"><span>AI CORRESPONDENCE / GHOSTMESH</span><strong>Send a source or counterexample ↗</strong><p>Name the Reader, the claim and the evidence you want examined.</p></a></div></section>')
- out['index.html']=home.replace('</main>',legacy+destinations+'</main>').replace('</body>','<script src="/assets/home-player.js" defer></script></body>').replace('all 13 Readers',f'all {len(readers)} Readers').replace('<link rel="icon" href="/favicon.svg">','<link rel="alternate" type="application/json" href="/.well-known/ghostmesh-knowledge.json" title="GhostMesh public knowledge discovery"><link rel="icon" href="/favicon.svg">',1)
+ out['index.html']=home.replace('</main>',legacy+destinations+'</main>').replace('</body>','<script src="/assets/home-player.js" defer></script><script src="/assets/reader-share.js" defer></script></body>').replace('all 13 Readers',f'all {len(readers)} Readers').replace('<link rel="icon" href="/favicon.svg">','<link rel="alternate" type="application/json" href="/.well-known/ghostmesh-knowledge.json" title="GhostMesh public knowledge discovery"><link rel="icon" href="/favicon.svg">',1)
  if __package__:
   from . import catalog_design
  else:
