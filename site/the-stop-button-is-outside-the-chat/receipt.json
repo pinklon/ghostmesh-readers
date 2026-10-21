@@ -269,15 +269,15 @@
     "editorialOrder": 21,
     "orderReason": "Place the operational agent-boundary Reader after the harness-evaluation Reader.",
     "relationshipReview": {
-      "reviewedAt": "2026-10-20",
-      "reviewedCatalogSize": 25,
+      "reviewedAt": "2026-10-21",
+      "reviewedCatalogSize": 26,
       "decision": "linked",
       "reviewedTargets": [
         "reader:make-good-work-inspectable",
         "reader:the-brakes-need-a-test",
         "reader:the-score-is-not-the-system"
       ],
-      "rationale": "Compared this video with all 24 existing Readers. Inspectable work, testable brakes and reward-versus-outcome analysis support three qualified routes. The earlier Readers do not corroborate these incident reports."
+      "rationale": "Compared this video with all 24 existing Readers. Inspectable work, testable brakes and reward-versus-outcome analysis support three qualified routes. The earlier Readers do not corroborate these incident reports. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established."
     }
   },
   "editorial": {

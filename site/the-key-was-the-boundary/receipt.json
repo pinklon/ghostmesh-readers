@@ -482,15 +482,15 @@
       "nextVerification": "Obtain the issuer disclosure and denominator, plus scoped security-test evidence before quantifying impact or tool efficacy."
     },
     "relationshipReview": {
-      "reviewedAt": "2026-10-20",
-      "reviewedCatalogSize": 25,
+      "reviewedAt": "2026-10-21",
+      "reviewedCatalogSize": 26,
       "decision": "linked",
       "reviewedTargets": [
         "reader:the-inbox-was-a-boundary",
         "reader:autonomy-needs-an-interface",
         "reader:the-agent-a-company-owns"
       ],
-      "rationale": "The credential incident is compared with a hidden mailbox boundary and company-agent permissions. Shared authority questions do not make the events equivalent. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted."
+      "rationale": "The credential incident is compared with a hidden mailbox boundary and company-agent permissions. Shared authority questions do not make the events equivalent. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established."
     }
   }
 }
