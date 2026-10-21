@@ -272,6 +272,13 @@ def projections():
   else:
    validate_media_source(r['source'])
    raw=player_contract(raw,r['source'].get('mediaAspect'),r['source']['url'])
+   if 'class="chapters"' in raw and 'class="chapter-heading"' not in raw:
+    count=raw.count('class="chapter"')
+    if count:
+     introduction=(f'<div class="gm-chapter-heading"><div><p class="gm-kicker">Watch with a question</p>'
+                   f'<h2>{count} publisher chapters. Choose where to begin.</h2></div>'
+                   '<p>Times and titles come from the source. The analysis below separately tests the claims.</p></div>')
+     raw=raw.replace('<div class="chapters"',introduction+'<div class="chapters"',1)
   raw=raw.replace('</head>',f'<meta name="gm-share-description" content="{esc(r["overview"])}"></head>',1)
   for slot,value in [('HEAD',head()),('CONTROLS',''),('BRIEF',brief(r)),('EVIDENCE',evidence(r)),('RELATED',related(r,byid))]:raw=raw.replace('<!--GM_'+slot+'-->',value)
   old_header=re.search(r'<header(?:\s[^>]*)?>.*?</header>',raw,re.S)
