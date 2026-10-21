@@ -21,6 +21,7 @@ class SocialPreviewGate(unittest.TestCase):
         (self.root / "content").mkdir()
         for name in ("catalog.json", "social-approval.json"):
             shutil.copy2(ROOT / "content" / name, self.root / "content" / name)
+        shutil.copytree(ROOT / "content/social-artwork", self.root / "content/social-artwork")
         shutil.copytree(ROOT / "site", self.root / "site")
 
     def tearDown(self):
@@ -53,12 +54,21 @@ class SocialPreviewGate(unittest.TestCase):
                 self.assertIn("Social PNG signature or dimensions", " ".join(check(self.root)))
 
     def test_private_metadata_and_removed_preview_marker_are_rejected(self):
-        image = self.root / "site/social/previews/home.png"
+        image = self.root / "site/social/previews/readers.png"
         original = image.read_bytes()
         image.write_bytes(original + b"/Users/private/source")
         self.assertIn("Private marker", " ".join(check(self.root)))
         image.write_bytes(original.replace(b"PREVIEW ONLY - NOT APPROVED", b"DRAFT ONLY - NOT APPROVED"))
         self.assertIn("Provisional image lacks", " ".join(check(self.root)))
+
+    def test_selected_original_or_preview_swap_is_rejected(self):
+        original = self.root / "content/social-artwork/home-original.png"
+        original.write_bytes(b"substitute")
+        self.assertIn("Selected original artwork changed", " ".join(check(self.root)))
+        shutil.copy2(ROOT / "content/social-artwork/home-original.png", original)
+        image = self.root / "site/social/previews/home.png"
+        image.write_bytes((self.root / "site/social/previews/the-inbox-was-a-boundary.png").read_bytes())
+        self.assertIn("Selected preview art differs", " ".join(check(self.root)))
 
     def test_compressed_private_png_metadata_is_rejected(self):
         image = self.root / "site/social/previews/home.png"

@@ -16,6 +16,7 @@ import zlib
 HOST = "https://youtube.shareplane.malott.ai"
 WIDTH, HEIGHT = 1200, 630
 PREVIEW_PREFIX = "/social/previews/"
+OWNER_SELECTED_PREVIEW_KEYS = frozenset({"home", "the-inbox-was-a-boundary"})
 CATEGORIES = ["AI & Technology", "Society & Politics", "Science", "Business", "Ethics & Culture", "Other"]
 
 
@@ -158,5 +159,12 @@ def preview_png(spec: dict) -> bytes:
 
 
 def asset_outputs(catalog: dict, preview_base: str | None = None) -> dict[str, bytes]:
-    return {spec["image"].lstrip("/"): preview_png(spec)
-            for spec in specs(catalog, preview_base=preview_base).values()}
+    output = {}
+    artwork = Path(__file__).resolve().parents[1] / "content/social-artwork"
+    for spec in specs(catalog, preview_base=preview_base).values():
+        key = Path(spec["image"]).stem
+        output[spec["image"].lstrip("/")] = (
+            (artwork / f"{key}-1200x630.png").read_bytes()
+            if key in OWNER_SELECTED_PREVIEW_KEYS else preview_png(spec)
+        )
+    return output
