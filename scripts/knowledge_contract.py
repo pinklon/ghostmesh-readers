@@ -170,14 +170,12 @@ def sync_reader_nodes(source: dict, catalog: dict, repo: Path = ROOT) -> dict:
         raise ValueError("duplicate Reader node")
     if set(existing) - set(entries):
         raise ValueError("knowledge Reader no longer in public catalog")
-    hashes = {}
     for ident, entry in entries.items():
         path = "site/" + entry["slug"] + "/index.html"
         page = (repo / path).resolve()
         if not page.is_relative_to((repo / "site").resolve()):
             raise ValueError("Reader source path escapes site")
         digest = sha(page.read_bytes())
-        hashes[ident] = digest
         node = existing.get(ident)
         if node is None:
             node = {"id": ident, "type": "Reader", "visibility": "public",
@@ -189,10 +187,8 @@ def sync_reader_nodes(source: dict, catalog: dict, repo: Path = ROOT) -> dict:
             node["label"] = entry["title"]
             node["url"] = catalog["host"] + "/" + entry["slug"] + "/"
             node["source"] = {"path": path, "sha256": digest}
-    for record in (*model["nodes"], *model["relationships"]):
-        provenance = record.get("provenance")
-        if provenance and provenance.get("sourceNodeId") in hashes:
-            provenance["sourceFileSha256"] = hashes[provenance["sourceNodeId"]]
+    # Claim and citation hashes are deliberate admissions. A changed cited page
+    # must fail validation until an editor checks the whole passage and rebinds it.
     return model
 
 

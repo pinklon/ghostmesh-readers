@@ -107,18 +107,26 @@ class KnowledgeContractTests(unittest.TestCase):
             self.assertEqual(register["statusCounts"]["unverified"], 201)
             self.assertEqual(len(graph["relationships"]), 4)  # No automatic citation admission.
             self.assertEqual(generated, run(check=True, repo=repo))
-            cited_page = repo / "site/the-inbox-was-a-boundary/index.html"
-            cited_page.write_text(cited_page.read_text() + " ")
+            uncited_page = repo / "site/projection-fixture/index.html"
+            uncited_page.write_text(uncited_page.read_text() + " ")
             with self.assertRaisesRegex(ValueError, "Reader source inventory or page hashes stale"):
                 run(check=True, repo=repo)
             rehashed = run(repo=repo)
             refreshed_graph = json.loads(rehashed["site/knowledge/v0.1/readers.json"])
-            cited = next(node for node in refreshed_graph["nodes"] if node["id"] ==
-                         "urn:ghostmesh-readers:reader:the-inbox-was-a-boundary")
+            refreshed = next(node for node in refreshed_graph["nodes"] if node["id"] ==
+                             "urn:ghostmesh-readers:reader:projection-fixture")
+            self.assertEqual(refreshed["source"]["sha256"], hashlib.sha256(uncited_page.read_bytes()).hexdigest())
+            self.assertEqual(rehashed, run(check=True, repo=repo))
+            cited_page = repo / "site/the-inbox-was-a-boundary/index.html"
+            cited_page.write_text(cited_page.read_text() + " ")
+            with self.assertRaisesRegex(ValueError, "claim source hash mismatch"):
+                run(repo=repo)
             claim = next(node for node in refreshed_graph["nodes"] if node["id"] ==
                          "urn:ghostmesh-readers:claim:fleet-activity-reported")
-            self.assertEqual(claim["provenance"]["sourceFileSha256"], cited["source"]["sha256"])
-            self.assertEqual(rehashed, run(check=True, repo=repo))
+            source = json.loads((repo / "knowledge/v0.1/readers.source.json").read_text())
+            self.assertEqual(next(node for node in source["nodes"] if node["id"] == claim["id"])
+                             ["provenance"]["sourceFileSha256"], claim["provenance"]["sourceFileSha256"])
+            cited_page.write_text(cited_page.read_text()[:-1])
             (repo / "site/knowledge/index.html").write_text("stale output")
             with self.assertRaisesRegex(ValueError, "stale generated output"):
                 run(check=True, repo=repo)
