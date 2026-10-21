@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "readerId": "reader:unsupervised-is-a-permission",
+  "sourceId": "_4Ph2dhmUFI",
+  "sourceAidSha256": "139fbbf83ee7dcd6ebb30a3970e05378cee50622796bca70712f3bf81f3f9ca9",
+  "points": [
+    {
+      "atSeconds": 245,
+      "sectionId": "name-the-task-before-trusting-the-agent",
+      "claimIds": [
+        "unsupervised-is-a-permission--workflow-graph"
+      ],
+      "cueParaphrase": "The policy and DAG discussion is paraphrased as an intended task boundary, not a verified trace.",
+      "privateAidCheck": "Retained caption cues locate policy setup and the graph discussion near 04:05. The exact publisher chapter and retained timestamped automatic-caption cue were compared; this is not a word-for-word quotation."
+    },
+    {
+      "atSeconds": 331,
+      "sectionId": "the-loop-needs-an-exit-with-authority",
+      "claimIds": [
+        "unsupervised-is-a-permission--loop-exit"
+      ],
+      "cueParaphrase": "The inner-loop source moment is connected to a separate GhostMesh effect-reconciliation design.",
+      "privateAidCheck": "Private caption aids align the loop near 05:31 and quality check near 10:43. The exact publisher chapter and retained timestamped automatic-caption cue were compared; this is not a word-for-word quotation."
+    },
+    {
+      "atSeconds": 643,
+      "sectionId": "evidence-earns-scope-not-certainty",
+      "claimIds": [
+        "unsupervised-is-a-permission--eval-confidence"
+      ],
+      "cueParaphrase": "The video's check and eval argument is limited by sample coverage and tail risk.",
+      "privateAidCheck": "Source cues place the evaluation argument after the 10:43 check discussion. The exact publisher chapter and retained timestamped automatic-caption cue were compared; this is not a word-for-word quotation."
+    },
+    {
+      "atSeconds": 869,
+      "sectionId": "test-the-graduation-path",
+      "claimIds": [
+        "unsupervised-is-a-permission--graduation"
+      ],
+      "cueParaphrase": "The supervision-to-exception proposal is presented as a testable progression, not an earned universal status.",
+      "privateAidCheck": "Publisher chapter at 14:29 and retained cues describe the progression. The exact publisher chapter and retained timestamped automatic-caption cue were compared; this is not a word-for-word quotation."
+    }
+  ]
+}

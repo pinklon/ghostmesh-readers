@@ -1,0 +1,227 @@
+{
+  "schema": "ghostmesh-reader-receipt-v2",
+  "createdAt": "2026-10-21T05:38:13Z",
+  "source": {
+    "platform": "YouTube",
+    "url": "https://www.youtube.com/watch?v=_4Ph2dhmUFI",
+    "videoId": "_4Ph2dhmUFI",
+    "title": "How to Know When an AI Agent Can Work Unsupervised: Evan Kormos, Coinbase",
+    "creator": "AI Engineer",
+    "uploadDate": "20261019",
+    "durationSeconds": 1052,
+    "mediaAspect": "16:9"
+  },
+  "sourceInspection": {
+    "method": "Exact publisher video metadata and hash-checked private ReasonPack media and caption aids; selected source cues independently cross-checked in editorial review",
+    "status": "verified-private-pack-and-automatic-caption-aid",
+    "manifestSha256": "139fbbf83ee7dcd6ebb30a3970e05378cee50622796bca70712f3bf81f3f9ca9",
+    "caveat": "Private pack member hashes passed. Automatic captions locate paraphrases; they are not certified exact speech or independent proof of product and benchmark outcomes. Source-title dash punctuation is normalized in the public catalog while exact publisher metadata remains private.",
+    "publicationBoundary": "No video, audio, full transcript, caption file, private path, signed URL or credential is published."
+  },
+  "reasonPack": {
+    "skill": "reasonpack",
+    "version": "1.0.0",
+    "schema": "ghostmesh-reasoning-pack-v1",
+    "verification": "pass",
+    "manifestSha256": "139fbbf83ee7dcd6ebb30a3970e05378cee50622796bca70712f3bf81f3f9ca9",
+    "publicationBoundary": "No video, audio, full transcript, caption file, private path, signed URL or credential is published."
+  },
+  "custody": {
+    "status": "qualified-private-pack-verified",
+    "note": "Exact video, audio and available automatic-caption pack members passed the closed ReasonPack manifest hashes. The first video's later captions were retained and checked separately."
+  },
+  "overview": "Evan Kormos describes policy, workflow graphs, agent loops, evaluation and exception routes as a path toward less supervision.",
+  "whyItMatters": "An aggregate pass rate cannot license every tool action. Permission needs a versioned workflow, consequence tier and recoverable stop path.",
+  "ghostMeshTakeaway": "Grant autonomy only for the evaluated action tier and policy version; retain independent effect readback, exception handling and operator interruption.",
+  "normalization": {
+    "id": "reader:unsupervised-is-a-permission",
+    "slug": "unsupervised-is-a-permission",
+    "title": "Unsupervised Is a Permission, Not a Personality",
+    "category": "AI & Technology",
+    "tags": [
+      "agents",
+      "evaluation",
+      "autonomy"
+    ],
+    "entities": [
+      "AI Engineer",
+      "Evan Kormos",
+      "Coinbase",
+      "Anthropic",
+      "OpenAI"
+    ],
+    "source": {
+      "platform": "YouTube",
+      "url": "https://www.youtube.com/watch?v=_4Ph2dhmUFI",
+      "videoId": "_4Ph2dhmUFI",
+      "title": "How to Know When an AI Agent Can Work Unsupervised: Evan Kormos, Coinbase",
+      "creator": "AI Engineer",
+      "uploadDate": "20261019",
+      "durationSeconds": 1052,
+      "mediaAspect": "16:9"
+    },
+    "published": "2026-10-21",
+    "updated": "2026-10-21T05:38:13Z",
+    "overview": "Evan Kormos describes policy, workflow graphs, agent loops, evaluation and exception routes as a path toward less supervision.",
+    "whyItMatters": "An aggregate pass rate cannot license every tool action. Permission needs a versioned workflow, consequence tier and recoverable stop path.",
+    "ghostMeshTakeaway": "Grant autonomy only for the evaluated action tier and policy version; retain independent effect readback, exception handling and operator interruption.",
+    "verdict": "Worth studying",
+    "architectureImpact": "experiment recommended",
+    "falsification": "Broaden autonomy only if a versioned, held-out and failure-injected trial shows lower operator work without more unauthorized or duplicate effects at the target severity.",
+    "evidenceState": "unverified",
+    "lastEvidenceChecked": "2026-10-21T05:38:13Z",
+    "freshness": "Exact video, private media and automatic caption cues checked 2026-10-21. Anthropic and OpenAI primary operational research checked the same day; neither audits this Coinbase workflow.",
+    "variant": "dossier",
+    "accent": "teal",
+    "claims": [
+      {
+        "id": "unsupervised-is-a-permission--workflow-graph",
+        "proposition": "The speaker recommends defining a policy and mapping a workflow before assigning agent execution.",
+        "kind": "practitioner-framework",
+        "asOf": "2026-10-21",
+        "status": "unverified",
+        "assessment": "Retained caption cues locate policy setup and the graph discussion near 04:05.",
+        "limits": "A workflow diagram is an intended process, not proof of the actual external effect.",
+        "sourceLocation": "00:00-05:31",
+        "references": [],
+        "counterevidence": [],
+        "temporalScope": "Video uploaded October 19, 2026; source and linked pages checked 2026-10-21. Results and product settings may change."
+      },
+      {
+        "id": "unsupervised-is-a-permission--loop-exit",
+        "proposition": "The video describes an inner agent loop with check and exception paths.",
+        "kind": "practitioner-framework",
+        "asOf": "2026-10-21",
+        "status": "unverified",
+        "assessment": "Private caption aids align the loop near 05:31 and quality check near 10:43.",
+        "limits": "The talk does not publish an audited duplicate-effect, stop-latency or authorization rate.",
+        "sourceLocation": "05:31-10:43",
+        "references": [],
+        "counterevidence": [],
+        "temporalScope": "Video uploaded October 19, 2026; source and linked pages checked 2026-10-21. Results and product settings may change."
+      },
+      {
+        "id": "unsupervised-is-a-permission--eval-confidence",
+        "proposition": "The speaker treats evaluation as evidence for confidence in a bounded agent workflow.",
+        "kind": "practitioner-inference",
+        "asOf": "2026-10-21",
+        "status": "unverified",
+        "assessment": "Source cues place the evaluation argument after the 10:43 check discussion.",
+        "limits": "Held-out evals may miss rare high-severity failures; the cited other-vendor reports concern different systems.",
+        "sourceLocation": "10:43-14:29",
+        "references": [
+          "anthropic-autonomy",
+          "openai-long-horizon"
+        ],
+        "counterevidence": [],
+        "temporalScope": "Video uploaded October 19, 2026; source and linked pages checked 2026-10-21. Results and product settings may change."
+      },
+      {
+        "id": "unsupervised-is-a-permission--graduation",
+        "proposition": "The speaker proposes moving from supervision to sampled review and then exception handling.",
+        "kind": "operating-proposal",
+        "asOf": "2026-10-21",
+        "status": "unverified",
+        "assessment": "Publisher chapter at 14:29 and retained cues describe the progression.",
+        "limits": "No public measured safety threshold or cohort establishes a universal graduation rule.",
+        "sourceLocation": "14:29-17:32",
+        "references": [],
+        "counterevidence": [],
+        "temporalScope": "Video uploaded October 19, 2026; source and linked pages checked 2026-10-21. Results and product settings may change."
+      }
+    ],
+    "references": [
+      {
+        "id": "anthropic-autonomy",
+        "title": "Measuring AI agent autonomy in practice",
+        "author": "Anthropic research team",
+        "publisher": "Anthropic",
+        "url": "https://www.anthropic.com/research/measuring-agent-autonomy",
+        "publicationDate": "2026-02-18",
+        "eventDate": null,
+        "location": "Oversight and user-intervention findings",
+        "sourceType": "original research report",
+        "independence": "Anthropic's own usage study of its product, not a Coinbase workflow evaluation.",
+        "evidenceFamily": "anthropic-autonomy",
+        "checkedAt": "2026-10-21T05:38:13Z",
+        "datePrecision": "day"
+      },
+      {
+        "id": "openai-long-horizon",
+        "title": "Safety and alignment in an era of long-horizon models",
+        "author": "OpenAI",
+        "publisher": "OpenAI",
+        "url": "https://openai.com/index/safety-alignment-long-horizon-models/",
+        "publicationDate": "2026-07-20",
+        "eventDate": null,
+        "location": "Observed failure and monitoring changes",
+        "sourceType": "incident owner report",
+        "independence": "OpenAI's first-party internal-use report, not a failure rate for this video source.",
+        "evidenceFamily": "openai-long-horizon",
+        "checkedAt": "2026-10-21T05:38:13Z",
+        "datePrecision": "day"
+      }
+    ],
+    "relationships": [
+      {
+        "target": "reader:the-stop-button-is-outside-the-chat",
+        "type": "informs architecture",
+        "reason": "This Reader's exception and loop design needs the destination readback and stop control described in the earlier Reader. The relationship is operational, not common incident evidence.",
+        "provenance": [
+          "/unsupervised-is-a-permission/#the-loop-needs-an-exit-with-authority",
+          "/the-stop-button-is-outside-the-chat/#stop-surface"
+        ],
+        "basis": "curated-editorial-comparison",
+        "direction": "outgoing"
+      },
+      {
+        "target": "reader:autonomy-needs-an-interface",
+        "type": "related topic",
+        "reason": "Both require a visible permission surface and accountable owner. This Reader proposes evidence for narrowing the delegation; the earlier one locates authority in an interface.",
+        "provenance": [
+          "/unsupervised-is-a-permission/#evidence-earns-scope-not-certainty",
+          "/autonomy-needs-an-interface/#ownership"
+        ],
+        "basis": "curated-editorial-comparison",
+        "direction": "outgoing"
+      }
+    ],
+    "relationshipDisposition": "Two qualified, typed editorial relationships to distinct published Reader theses; no shared-source corroboration implied.",
+    "review": {
+      "status": "independent public-copy review accepted for owner qualitative review; release held",
+      "reviewer": "Existing independent read-only Codex editorial reviewer",
+      "reviewedSourceHead": "local public candidate; exact commit assigned after final validation",
+      "checkedAt": "2026-10-21T05:38:13Z",
+      "scope": "Exact authored and generated HTML, catalog claims, references, graph target anchors, source maps, private timing aids and public privacy boundary; targeted recheck after two repairs.",
+      "findings": "No remaining factual, graph, timestamp or private-source blocker. Source-mapped forecast corrected to 17:18; external operational evidence identified as first-party. Automatic captions and first-party performance or financial outcomes remain unreplicated. Owner qualitative acceptance remains pending."
+    },
+    "revisionHistory": [
+      {
+        "at": "2026-10-21T05:38:13Z",
+        "kind": "new-reader-candidate",
+        "reason": "Owner-requested exact-source video deconstruction with private media custody and source-qualified initial analysis."
+      }
+    ],
+    "editorialOrder": 26,
+    "orderReason": "Follows the existing source-control Reader in Tony's four-video requested queue order.",
+    "relationshipReview": {
+      "reviewedAt": "2026-10-21",
+      "reviewedCatalogSize": 31,
+      "decision": "linked",
+      "reviewedTargets": [
+        "reader:the-stop-button-is-outside-the-chat",
+        "reader:autonomy-needs-an-interface"
+      ],
+      "rationale": "Compared the new thesis against all 27 public Readers and its three queue peers. The two selected outgoing links add specific architectural or editorial comparisons without treating a different source as corroboration."
+    },
+    "editorialDepth": {
+      "schemaVersion": 1,
+      "receiptPath": "content/editorial-depth/unsupervised-is-a-permission.json"
+    }
+  },
+  "editorial": {
+    "overview": "Evan Kormos describes policy, workflow graphs, agent loops, evaluation and exception routes as a path toward less supervision.",
+    "whyItMatters": "An aggregate pass rate cannot license every tool action. Permission needs a versioned workflow, consequence tier and recoverable stop path.",
+    "ghostMeshTakeaway": "Grant autonomy only for the evaluated action tier and policy version; retain independent effect readback, exception handling and operator interruption."
+  }
+}
