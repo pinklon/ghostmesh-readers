@@ -7,6 +7,7 @@ from __future__ import annotations
 
 from datetime import datetime, timezone
 import hashlib
+import html
 from html.parser import HTMLParser
 import json
 from pathlib import Path
@@ -68,6 +69,19 @@ def binding(reader: dict, authored_html: bytes) -> dict:
         "articleSha256": hashlib.sha256(authored_html).hexdigest(),
         "evidenceRevision": evidence_revision(reader),
     }
+
+
+def assessment_digest(receipt: dict) -> str:
+    """Bind every candidate-authored assessment field, excluding only the later review locator."""
+    return digest({key: value for key, value in receipt.items() if key != "reviewer"})
+
+
+def acceptance_marker(receipt: dict) -> str:
+    return (f"GhostMesh-Editorial-Acceptance: readerId={receipt['readerId']}; "
+            f"sourceId={receipt['sourceId']}; sourceDigest={receipt['sourceDigest']}; "
+            f"sourceAidSha256={receipt['sourceAidSha256']}; sourceMapEvidenceSha256={receipt['sourceMapEvidenceSha256']}; "
+            f"articleSha256={receipt['articleSha256']}; "
+            f"evidenceRevision={receipt['evidenceRevision']}; assessmentSha256={assessment_digest(receipt)}")
 
 
 def _reasoned(value: object) -> bool:
@@ -139,13 +153,13 @@ def _authenticated_review_errors(slug: str, receipt: dict) -> list[str]:
         return [f"{slug}: authenticated editorial review could not be verified ({type(exc).__name__})"]
     author = pull.get("user") or {}
     user = review.get("user") or {}
-    marker = (f"GhostMesh-Editorial-Acceptance: readerId={receipt['readerId']}; "
-              f"sourceAidSha256={receipt['sourceAidSha256']}; articleSha256={receipt['articleSha256']}; "
-              f"evidenceRevision={receipt['evidenceRevision']}")
+    marker = acceptance_marker(receipt)
     if (pull.get("number") != number or review.get("id") != reviewer["reviewId"]
             or review.get("pull_request_url") != base
             or review.get("state") != "APPROVED"
             or user.get("login", "").casefold() != reviewer["login"].casefold()
+            or user.get("type") != "User"
+            or review.get("author_association") not in {"COLLABORATOR", "MEMBER", "OWNER"}
             or author.get("login", "").casefold() != str(receipt["candidateAuthor"]).casefold()
             or user.get("id") == author.get("id")
             or marker not in (review.get("body") or "")):
@@ -166,7 +180,7 @@ def validate_reader(root: Path, reader: dict, *, release: bool = True) -> list[s
     try:
         policy = json.loads(policy_path.read_text())
         if (policy.get("schemaVersion") != 1 or policy.get("baselineCommit") != LEGACY_BASELINE
-                or not isinstance(policy.get("readers"), dict)
+                or not isinstance(policy.get("readers"), dict) or len(policy["readers"]) != 26
                 or digest(policy["readers"]) != LEGACY_BINDINGS_SHA):
             raise ValueError("legacy baseline changed")
         legacy = policy["readers"].get(slug)
@@ -190,7 +204,7 @@ def validate_reader(root: Path, reader: dict, *, release: bool = True) -> list[s
         receipt = json.loads((root / expected_path).read_text())
     except (OSError, ValueError):
         return errors + [f"{slug}: editorial receipt missing or invalid"]
-    required = {"schemaVersion", *actual, "candidateAuthor", "complexity", "sourceMap", "assessment", "independentCorroboration", "reviewer", "decision", "gaps", "decisionRationale", "assessedAt"}
+    required = {"schemaVersion", *actual, "sourceMapEvidenceSha256", "candidateAuthor", "complexity", "sourceMap", "assessment", "independentCorroboration", "reviewer", "decision", "gaps", "decisionRationale", "assessedAt"}
     if not isinstance(receipt, dict) or set(receipt) != required or receipt.get("schemaVersion") != 1:
         return errors + [f"{slug}: editorial receipt schema mismatch"]
     for key, value in actual.items():
@@ -201,6 +215,16 @@ def validate_reader(root: Path, reader: dict, *, release: bool = True) -> list[s
             errors.append(f"{slug}: invalid editorial {key}")
     if not SHA.fullmatch(actual["sourceAidSha256"]):
         errors.append(f"{slug}: exact retained source-aid SHA-256 missing")
+    map_path = root / "content" / "source-maps" / f"{slug}.json"
+    try:
+        map_bytes = map_path.read_bytes()
+        map_evidence = json.loads(map_bytes)
+    except (OSError, ValueError):
+        map_evidence = None
+        map_bytes = b""
+        errors.append(f"{slug}: separate source-map evidence missing or invalid")
+    if not SHA.fullmatch(str(receipt.get("sourceMapEvidenceSha256", ""))) or hashlib.sha256(map_bytes).hexdigest() != receipt.get("sourceMapEvidenceSha256"):
+        errors.append(f"{slug}: separate source-map evidence digest mismatch")
     complexity = receipt["complexity"]
     if not isinstance(complexity, dict) or set(complexity) != {"tier", "factors", "rationale"} or complexity.get("tier") not in {"brief", "extended"} or not isinstance(complexity.get("factors"), list) or not complexity["factors"] or not _reasoned(complexity.get("rationale")):
         errors.append(f"{slug}: complexity disposition missing or superficial")
@@ -229,6 +253,21 @@ def validate_reader(root: Path, reader: dict, *, release: bool = True) -> list[s
     if not isinstance(source_map, list) or not source_map:
         errors.append(f"{slug}: source/claim map missing")
     else:
+        expected_points = [{key: entry.get(key) for key in ("atSeconds", "sectionId", "claimIds")}
+                           for entry in source_map if isinstance(entry, dict)]
+        if (not isinstance(map_evidence, dict) or set(map_evidence) != {"schemaVersion", "readerId", "sourceId", "sourceAidSha256", "points"}
+                or map_evidence.get("schemaVersion") != 1 or map_evidence.get("readerId") != reader["id"]
+                or map_evidence.get("sourceId") != source_id(reader) or map_evidence.get("sourceAidSha256") != actual["sourceAidSha256"]
+                or not isinstance(map_evidence.get("points"), list) or len(map_evidence["points"]) != len(expected_points)):
+            errors.append(f"{slug}: separate source-map identity or coverage mismatch")
+        else:
+            for point, expected in zip(map_evidence["points"], expected_points):
+                if (not isinstance(point, dict) or set(point) != {"atSeconds", "sectionId", "claimIds", "cueParaphrase", "privateAidCheck"}
+                        or any(point.get(key) != value for key, value in expected.items())
+                        or not _reasoned(point.get("cueParaphrase")) or not _reasoned(point.get("privateAidCheck"))
+                        or any(len(point[key]) > 500 or "\n" in point[key] or re.search(r"/Users/|/private/|transcript\\n", point[key], re.I)
+                               for key in ("cueParaphrase", "privateAidCheck") if isinstance(point.get(key), str))):
+                    errors.append(f"{slug}: source-map point lacks separately checked cue and claim grounding")
         claim_ids = {claim["id"] for claim in reader["claims"]}
         anchors = set(re.findall(r'\bid="([^"]+)"', raw.decode("utf-8", "replace")))
         article = raw.decode("utf-8", "replace")
@@ -238,19 +277,27 @@ def validate_reader(root: Path, reader: dict, *, release: bool = True) -> list[s
             if not isinstance(entry, dict) or set(entry) != {"atSeconds", "sectionId", "claimIds", "rationale"}:
                 errors.append(f"{slug}: source map entry schema mismatch");continue
             second = entry["atSeconds"]
+            section = re.search(r'<section\b[^>]*\bid="' + re.escape(str(entry["sectionId"])) + r'"[^>]*>(.*?)</section>', article, re.S)
+            section_html = section.group(1) if section else ""
+            links = [html.unescape(link) for link in re.findall(r'<a\b[^>]*href="([^"]+)"', section_html)]
             if reader["source"].get("kind") == "paper":
                 if second is not None:
                     errors.append(f"{slug}: paper source map must use section locators rather than video time")
             elif not isinstance(second, int) or isinstance(second, bool) or second < 0 or (reader["source"].get("durationSeconds") and second >= reader["source"]["durationSeconds"]):
                 errors.append(f"{slug}: source map timestamp absent from article or source duration")
             elif source_video:
-                section = re.search(r'<section\b[^>]*\bid="' + re.escape(str(entry["sectionId"])) + r'"[^>]*>(.*?)</section>', article, re.S)
-                links = re.findall(r'<a\b[^>]*href="([^"]+)"', section.group(1) if section else "")
-                exact = (f"https://www.youtube.com/watch?v={source_video}&amp;t={second}s",
-                         f"https://www.youtube.com/watch?v={source_video}&t={second}s",
+                exact = (f"https://www.youtube.com/watch?v={source_video}&t={second}s",
                          f"https://youtu.be/{source_video}?t={second}s")
-                if not any(any(link.startswith(prefix) for prefix in exact) for link in links):
+                if not any(link in exact for link in links):
                     errors.append(f"{slug}: source map timestamp absent from exact video in mapped section")
+            if not source_video:
+                source_url = reader["source"].get("url", "")
+                if source_url not in links:
+                    errors.append(f"{slug}: source map lacks original source link in mapped section")
+                if isinstance(second, int) and not isinstance(second, bool):
+                    label = f"{second // 60:02d}:{second % 60:02d}"
+                    if label not in html.unescape(section_html):
+                        errors.append(f"{slug}: non-YouTube source map timestamp absent from mapped section")
             if not isinstance(entry["sectionId"], str) or entry["sectionId"] not in anchors or not _mapped_prose(raw.decode("utf-8", "replace"), entry["sectionId"]) or not isinstance(entry["claimIds"], list) or not entry["claimIds"] or not all(isinstance(x, str) for x in entry["claimIds"]) or not set(entry["claimIds"]) <= claim_ids or not _reasoned(entry["rationale"]):
                 errors.append(f"{slug}: ungrounded source/claim map entry")
             marker = (str(second), str(entry["sectionId"]))

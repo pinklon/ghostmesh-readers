@@ -1,5 +1,6 @@
 """Adversarial contract fixtures; synthetic reviewers here are not real signoff."""
 import copy
+import hashlib
 import json
 from pathlib import Path
 import shutil
@@ -10,7 +11,7 @@ from unittest.mock import patch
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
-from editorial_depth import AREAS, binding, validate_reader
+from editorial_depth import AREAS, acceptance_marker, binding, validate_reader
 
 
 class EditorialDepthGate(unittest.TestCase):
@@ -19,12 +20,14 @@ class EditorialDepthGate(unittest.TestCase):
         self.root = Path(self.tmp.name)
         (self.root / "content/readers").mkdir(parents=True)
         (self.root / "content/editorial-depth").mkdir(parents=True)
+        (self.root / "content/source-maps").mkdir(parents=True)
         shutil.copy2(ROOT / "content/editorial-depth/legacy-policy.json", self.root / "content/editorial-depth/legacy-policy.json")
         catalog = json.loads((ROOT / "content/catalog.json").read_text())
         self.reader = copy.deepcopy(next(r for r in catalog["readers"] if r["slug"] == "the-boundary-is-bigger-than-the-box"))
         self.slug = self.reader["slug"]
         self.article = self.root / "content/readers" / f"{self.slug}.html"
         self.receipt_path = self.root / "content/editorial-depth" / f"{self.slug}.json"
+        self.map_path = self.root / "content/source-maps" / f"{self.slug}.json"
         self.reader["editorialDepth"] = {"schemaVersion": 1, "receiptPath": f"content/editorial-depth/{self.slug}.json"}
         # Representative argument fixture. Only the external human decision can
         # call actual public prose substantively sufficient.
@@ -44,11 +47,9 @@ class EditorialDepthGate(unittest.TestCase):
             return {"number": 99, "user": {"login": "fixture-writer", "id": 1}}
         if url == base + "/reviews/77":
             r = self.receipt
-            marker = (f"GhostMesh-Editorial-Acceptance: readerId={r['readerId']}; "
-                      f"sourceAidSha256={r['sourceAidSha256']}; articleSha256={r['articleSha256']}; "
-                      f"evidenceRevision={r['evidenceRevision']}")
-            return {"id": 77, "pull_request_url": base, "state": "APPROVED",
-                    "user": {"login": "fixture-reviewer", "id": 2}, "body": marker}
+            marker = acceptance_marker(r)
+            return {"id": 77, "pull_request_url": base, "state": "APPROVED", "author_association": "COLLABORATOR",
+                    "user": {"login": "fixture-reviewer", "id": 2, "type": "User"}, "body": marker}
         raise ValueError("unrecognized fixture URL")
 
     def make_receipt(self):
@@ -66,7 +67,19 @@ class EditorialDepthGate(unittest.TestCase):
                   "decision": "accept", "gaps": [],
                   "decisionRationale": "This is a synthetic contract fixture for testing the accepted state, not a qualitative review of a real Reader.",
                   "assessedAt": "2026-10-21T00:00:00Z"}
+        record["sourceMapEvidenceSha256"] = self.write_map(record)
         return record
+
+    def write_map(self, record):
+        points = [{"atSeconds": entry["atSeconds"], "sectionId": entry["sectionId"],
+                   "claimIds": entry["claimIds"],
+                   "cueParaphrase": "The synthetic cue describes only the topic and is not a claim of actual source verification.",
+                   "privateAidCheck": "A separate fixture reviewer would compare this cue against the retained private aid."}
+                  for entry in record["sourceMap"]]
+        data = {"schemaVersion": 1, "readerId": record["readerId"], "sourceId": record["sourceId"],
+                "sourceAidSha256": record["sourceAidSha256"], "points": points}
+        self.map_path.write_text(json.dumps(data))
+        return hashlib.sha256(self.map_path.read_bytes()).hexdigest()
 
     def save_receipt(self):
         self.receipt_path.write_text(json.dumps(self.receipt))
@@ -91,6 +104,7 @@ class EditorialDepthGate(unittest.TestCase):
         self.receipt = self.make_receipt()
         self.receipt["complexity"] = {"tier": "brief", "factors": ["95 second source", "narrow claim"], "rationale": "The short source makes one narrow claim, so a concise critical reading can cover its actual stakes."}
         self.receipt["sourceMap"] = [{"atSeconds": 15, "sectionId": "one", "claimIds": [self.reader["claims"][0]["id"]], "rationale": "The source location and the article identify the narrow assertion and an alternative explanation."}]
+        self.receipt["sourceMapEvidenceSha256"] = self.write_map(self.receipt)
         self.save_receipt()
         self.assertEqual([], validate_reader(self.root, self.reader))
 
@@ -113,6 +127,12 @@ class EditorialDepthGate(unittest.TestCase):
         self.reader["claims"][0]["assessment"] = "Changed after signoff"
         self.assert_rejected("evidenceRevision binding mismatch")
 
+    def test_candidate_cannot_change_acceptance_or_assessment_after_review(self):
+        approved = self.github_record("https://api.github.com/repos/pinklon/ghostmesh-readers/pulls/99/reviews/77")
+        self.receipt["assessment"]["counterargument"]["rationale"] = "A different account of the counterargument was inserted after the submitted editorial review."
+        with patch("editorial_depth._get_json", side_effect=lambda url: approved if url.endswith("/reviews/77") else self.github_record(url)):
+            self.assert_rejected("exact hash marker missing")
+
     def test_vendor_only_refs_cannot_claim_independent_outcome(self):
         self.receipt["independentCorroboration"] = "qualified"
         self.assert_rejected("vendor-only or methodological")
@@ -134,7 +154,8 @@ class EditorialDepthGate(unittest.TestCase):
 
     def test_dismissed_review_or_same_github_actor_fails(self):
         original = self.github_record
-        for changes in ({"state": "DISMISSED"}, {"user": {"login": "fixture-writer", "id": 1}}):
+        for changes in ({"state": "DISMISSED"}, {"user": {"login": "fixture-writer", "id": 1, "type": "User"}},
+                        {"author_association": "NONE"}):
             with self.subTest(changes=changes):
                 with patch("editorial_depth._get_json", side_effect=lambda url: ({**original(url), **changes} if url.endswith("/reviews/77") else original(url))):
                     self.assert_rejected("authenticated independent acceptance")
@@ -152,6 +173,27 @@ class EditorialDepthGate(unittest.TestCase):
     def test_source_link_in_another_section_cannot_ground_map(self):
         self.receipt["sourceMap"][0]["atSeconds"] = 1515
         self.assert_rejected("exact video in mapped section")
+
+    def test_separate_source_map_cannot_drift_after_review(self):
+        data = json.loads(self.map_path.read_text())
+        data["points"][0]["atSeconds"] = 1900
+        self.map_path.write_text(json.dumps(data))
+        self.assert_rejected("separate source-map evidence digest mismatch")
+
+    def test_receipt_cannot_reassign_claim_to_unchecked_cue(self):
+        self.receipt["sourceMap"][0]["claimIds"] = [self.reader["claims"][3]["id"]]
+        self.assert_rejected("source-map point lacks separately checked cue")
+
+    def test_instagram_and_paper_maps_require_original_source_link(self):
+        self.reader["source"] = {"shortcode": "DeUnZhWgPKd", "url": "https://www.instagram.com/reel/DeUnZhWgPKd/", "durationSeconds": 5739}
+        self.receipt = self.make_receipt()
+        self.assert_rejected("lacks original source link")
+        self.reader["source"] = {"kind": "paper", "identity": "doi:example", "url": "https://example.org/paper"}
+        self.receipt = self.make_receipt()
+        for entry in self.receipt["sourceMap"]:
+            entry["atSeconds"] = None
+        self.receipt["sourceMapEvidenceSha256"] = self.write_map(self.receipt)
+        self.assert_rejected("lacks original source link")
 
     def test_empty_or_placeholder_mapped_article_section_fails(self):
         self.article.write_text(self.article.read_text().replace('The speaker describes local inference as one route for keeping sensitive inputs close to their owner.', 'TODO add analysis here'))
