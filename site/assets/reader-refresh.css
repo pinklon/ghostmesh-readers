@@ -71,3 +71,28 @@ main .chapters .chapter button:hover{border-color:var(--gm-accent);color:var(--g
 @media(max-width:800px){.gm-evidence,.gm-chapter-heading{grid-template-columns:1fr}.gm-evidence-intro{position:static}.gm-brief-heading,body[data-variant="essay"] .gm-brief>div.gm-brief-heading{grid-template-columns:1fr}.gm-brief-point>div{grid-template-columns:1fr}.gm-brief .gm-verdict{padding-left:0}}
 @media(max-width:620px){main .chapters .chapter{grid-template-columns:60px minmax(0,1fr);gap:10px 12px;padding:19px 0}main .chapters .chapter>p:last-child,main .chapters .chapter>a,main .chapters .chapter-actions,main .chapters .gm-chapter-actions{grid-column:2;grid-row:auto;flex-direction:row;align-items:center;flex-wrap:wrap}main .chapters .chapter button{min-height:36px}.gm-brief-point,body[data-variant="essay"] .gm-brief>div.gm-brief-point{grid-template-columns:38px minmax(0,1fr)}.gm-sharebar,body[data-reader] .gm-sharebar{align-items:flex-start;flex-wrap:wrap}.gm-share-actions,body[data-reader] .gm-share-actions{margin-left:0;width:100%;flex-wrap:wrap}.gm-evidence{padding-top:34px}}
 @media print{.gm-evidence-intro{position:static}.gm-claim-list details{break-inside:avoid}.gm-sharebar{display:none!important}}
+/* Keep the native-aspect source thumbnail unobscured until a person opts in to playback. */
+.gm-media-frame.player:has(.launch){display:block;aspect-ratio:auto;overflow:visible;background:transparent;border:0}
+.gm-media-frame.player:has(.launch)>img{display:block;position:relative;inset:auto;width:100%;height:auto;aspect-ratio:var(--gm-media-ratio);object-fit:contain;opacity:1;background:#101318;border:1px solid var(--gm-border)}
+.gm-media-frame.player:has(.launch)::after{content:none}
+.gm-media-frame.player .launch{position:relative;z-index:1;display:flex;align-items:center;gap:12px 22px;flex-wrap:wrap;padding:16px 0 0;background:transparent;color:var(--gm-ink)}
+.gm-media-frame.player .launch .eyebrow{width:100%;color:var(--gm-muted)}
+.gm-media-frame.player .launch .gm-player-source-title{order:-1;width:100%;font:750 clamp(17px,2vw,23px)/1.25 system-ui,sans-serif;letter-spacing:-.025em;color:var(--gm-ink);margin:0}
+.gm-media-frame.player .launch button{flex:none}
+.gm-media-frame.player .launch>p:not(.gm-player-source-title){max-width:56ch;margin:0;color:var(--gm-muted);font:400 13px/1.5 system-ui,sans-serif}
+/* Related Readers use compact editorial rows; the relationship rationale remains visible. */
+.gm-related,body[data-reader] .gm-related{width:min(1180px,calc(100% - 40px));max-width:1180px;margin:48px auto;padding:42px 0;background:transparent;border:0;border-top:1px solid var(--gm-border);box-shadow:none;color:var(--gm-ink)}
+.gm-related>.gm-kicker{color:var(--gm-accent);margin:0 0 10px}
+.gm-related>h2{font:750 clamp(30px,3.5vw,45px)/1.08 system-ui,sans-serif;letter-spacing:-.05em;margin:0 0 16px}
+.gm-related>p:not(.gm-kicker){color:var(--gm-muted);font:400 14px/1.55 system-ui,sans-serif;margin:0 0 28px;max-width:80ch}
+.gm-related .gm-cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 32px}
+.gm-related .gm-cards>article{display:grid;grid-template-columns:34px minmax(0,1fr) 20px;gap:12px;padding:20px 0 24px;background:transparent;border:0;border-top:1px solid var(--gm-border);min-width:0}
+.gm-related-index{font:700 11px/1.5 ui-monospace,monospace;letter-spacing:.1em;color:var(--gm-accent);padding-top:2px}
+.gm-related-arrow{color:var(--gm-accent);font-size:20px;line-height:1}
+.gm-related-copy{min-width:0}
+.gm-related-copy .gm-kicker{color:var(--gm-accent);margin:0 0 8px}
+.gm-related .gm-related-copy h3{font:750 clamp(17px,1.75vw,21px)/1.25 system-ui,sans-serif;letter-spacing:-.03em;margin:0 0 8px}
+.gm-related .gm-related-copy h3 a{color:var(--gm-ink);text-decoration:none}
+.gm-related .gm-related-copy h3 a:hover{text-decoration:underline;text-underline-offset:4px;color:var(--gm-accent)}
+.gm-related .gm-related-copy>p:not(.gm-kicker){color:var(--gm-muted);font:400 13px/1.55 system-ui,sans-serif;margin:0;max-width:62ch}
+@media(max-width:760px){.gm-related .gm-cards{grid-template-columns:1fr}.gm-media-frame.player .launch{align-items:flex-start;flex-direction:column;gap:10px;padding-top:14px}.gm-media-frame.player .launch .gm-player-source-title{order:0}.gm-media-frame.player .launch .eyebrow{order:-1}.gm-media-frame.player .launch>p:not(.gm-player-source-title){font-size:12px}}

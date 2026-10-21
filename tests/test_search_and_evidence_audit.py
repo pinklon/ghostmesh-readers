@@ -58,7 +58,7 @@ class SearchAndEvidenceAuditTest(unittest.TestCase):
         knowledge = (ROOT / "site/knowledge/index.html").read_text()
         current_unverified = sum(c["status"] == "unverified"
                                  for reader in catalog["readers"] for c in reader["claims"])
-        self.assertIn(f"<strong>{current_unverified}</strong><span>still labeled unverified", knowledge)
+        self.assertIn(f"<strong>{current_unverified}</strong><span>assessed as unverified, not false", knowledge)
         self.assertIn(f"64 are historical-ledger entries and {material} are material-prose claims", knowledge)
 
 
