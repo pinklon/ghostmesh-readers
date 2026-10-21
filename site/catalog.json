@@ -297,10 +297,10 @@
       "review": {
         "status": "independent-source-and-copy-reviewed; owner-acceptance-pending",
         "reviewer": "Independent read-only Codex editorial reviewer",
-        "reviewedSourceHead": "Exact authored article SHA-256 f4771ea7444471eb9ec927ba8b444cbc4c41b39e2723dd154bd130a3f3096fe1",
-        "checkedAt": "2026-10-21T02:38:46Z",
+        "reviewedSourceHead": "Exact authored article SHA-256 4a5b455ef28b824e75c9dc521767f5813e42ee04ccca3b3f194fde942b0d7462",
+        "checkedAt": "2026-10-21T02:49:48Z",
         "scope": "Original article, private source capture hash and metadata, first-party metrics, alternatives, public claims, relationship links and privacy boundary.",
-        "findings": "One initial attribution overreach corrected: the source-control team reviews its own system changes, not necessarily every companywide merge. Current exact article and public receipt have no remaining findings. Operator telemetry and Scion code were unavailable. Independent recommendation is acceptance for Tony’s separate qualitative decision."
+        "findings": "One initial attribution overreach was corrected. The targeted follow-up verified that only a direct Anthropic source link was added to the measurements paragraph, with no substantive or privacy change. No remaining actionable finding; owner qualitative acceptance is pending."
       },
       "revisionHistory": [
         {
@@ -312,10 +312,19 @@
           "at": "2026-10-21T02:38:46Z",
           "kind": "independent-editorial-review",
           "reason": "Corrected the scope of Anthropic’s human-review statement and obtained no-findings source, argument and privacy review of the exact authored article."
+        },
+        {
+          "at": "2026-10-21T02:49:48Z",
+          "kind": "source-map-link-review",
+          "reason": "Independent reviewer verified the added direct source link in the measurements section; the argument and privacy boundary are unchanged."
         }
       ],
       "editorialOrder": 23,
       "orderReason": "Place the source-control infrastructure reading after the agent control and evaluation readings.",
+      "editorialDepth": {
+        "schemaVersion": 1,
+        "receiptPath": "content/editorial-depth/the-commit-is-not-the-control.json"
+      },
       "rank": 23
     },
     {

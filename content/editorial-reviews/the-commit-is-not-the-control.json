@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "readerId": "reader:the-commit-is-not-the-control",
+  "sourceId": "anthropic-redesigning-source-control-2026",
+  "sourceAidSha256": "b7bc489ef952cc9caba07e1a8b33a96f9aae8302b827dcd6f475ad0bed03a7ca",
+  "articleSha256": "4a5b455ef28b824e75c9dc521767f5813e42ee04ccca3b3f194fde942b0d7462",
+  "evidenceRevision": "822dcaddbd237d21010f314c94cac61723265d14e8efeb32c4b532ff21d557fa",
+  "reviewedAt": "2026-10-21T02:49:48Z",
+  "provenance": {
+    "kind": "codex-task-agent",
+    "reference": "Read-only independent editorial reviewer /root/editorial_review in the sole publisher task; original and targeted follow-up findings retained in that task.",
+    "limits": "The public record names the actual review scope but cannot authenticate a private agent identity; the owner must inspect the findings and decide qualitative acceptance."
+  },
+  "summary": "The independent reviewer checked the original source capture, attribution, alternatives, claim limits, relationships and privacy. One initial review-scope overstatement was corrected.",
+  "findings": [
+    "Initial draft implied human review of every companywide merge. The final article correctly limits the statement to Scion and Antique system changes.",
+    "A targeted follow-up found no new issue after a direct Anthropic source link was added to the measurements section; operator telemetry remains unverified."
+  ],
+  "conclusion": "accept-for-owner-review"
+}
