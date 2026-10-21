@@ -264,10 +264,10 @@
     "orderReason": "Read after the current collection as a research-method comparison with explicit deployment limits.",
     "relationshipReview": {
       "reviewedAt": "2026-10-21",
-      "reviewedCatalogSize": 31,
+      "reviewedCatalogSize": 32,
       "decision": "none",
       "reviewedTargets": [],
-      "rationale": "No other local Reader analyzes NCM or HybridAgents, their parallel-code and latent-reasoning methods, or the same benchmark claims. External studies remain outside this Reader graph. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged. Reassessed against four distinct AI Engineer video theses; their new outgoing links carry the qualified comparisons, with no new outgoing edge warranted from this existing entry."
+      "rationale": "No other local Reader analyzes NCM or HybridAgents, their parallel-code and latent-reasoning methods, or the same benchmark claims. External studies remain outside this Reader graph. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged. Reassessed against four distinct AI Engineer video theses; their new outgoing links carry the qualified comparisons, with no new outgoing edge warranted from this existing entry. Compared the new Orca fleet Reader as a possible target; its three outbound comparisons cover the supported links, and no reciprocal claim of source corroboration is warranted."
     }
   },
   "editorial": {

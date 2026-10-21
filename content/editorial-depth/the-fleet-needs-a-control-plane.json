@@ -1,0 +1,118 @@
+{
+  "schemaVersion": 1,
+  "readerId": "reader:the-fleet-needs-a-control-plane",
+  "sourceId": "MLzSvf2vxHU",
+  "sourceDigest": "fb6168e5b8d0c3963cbffa3eccfdd61a58d1dfb24de45bbb3790395eafc8a0e0",
+  "sourceAidSha256": "dcf40a4b9701d85f2ce26df4ec535c998b551a98522c0c8ef760d40cc42a6d53",
+  "articleSha256": "46e75c4c44960aee3f9a29c3a35eb5a86624b6978f7d84e337abfaf80f6982ff",
+  "evidenceRevision": "d9aea40b53d5cb40f7dbb2cb1f6130f1207bb9117c3106e38e5557eb07e75474",
+  "sourceMapEvidenceSha256": "c468c548e56366f40609245f02a90e49a64b26ac5c889acd39118ce0280895b7",
+  "reviewEvidenceSha256": "d9b19a86a7bccdac32b79a1586ee91192594d1ac9b0ee11ec032af9e30e25da9",
+  "candidateAuthor": "pinklon",
+  "complexity": {
+    "tier": "extended",
+    "factors": [
+      "The source recommends a multi-agent architecture with file, remote, browser and mobile control surfaces.",
+      "The feature and throughput claims have different evidence strength and an operator-cost counterargument."
+    ],
+    "rationale": "Though only 8:29 long, the source makes consequential coordination and authorization claims, warranting an extended original analysis rather than a feature recap."
+  },
+  "sourceMap": [
+    {
+      "atSeconds": 36,
+      "sectionId": "the-bet",
+      "claimIds": [
+        "the-fleet-needs-a-control-plane--fleet-throughput"
+      ],
+      "rationale": "The opening lost-tab problem motivates a multi-agent coordination interface rather than proving an output curve."
+    },
+    {
+      "atSeconds": 94,
+      "sectionId": "where-isolation-ends",
+      "claimIds": [
+        "the-fleet-needs-a-control-plane--worktrees"
+      ],
+      "rationale": "The five-attempt worktree example separates concurrent file paths but leaves shared resources and integration unresolved."
+    },
+    {
+      "atSeconds": 126,
+      "sectionId": "attention-is-the-denominator",
+      "claimIds": [
+        "the-fleet-needs-a-control-plane--terminal-speed"
+      ],
+      "rationale": "The WebGL terminal passage proposes smoother high-output display without a measured comparison."
+    },
+    {
+      "atSeconds": 248,
+      "sectionId": "the-orchestrator-can-be-an-actuator",
+      "claimIds": [
+        "the-fleet-needs-a-control-plane--agent-cli"
+      ],
+      "rationale": "The CLI passage says an agent can drive worktree, snapshot, click and fill operations in the orchestrator."
+    },
+    {
+      "atSeconds": 312,
+      "sectionId": "three-data-planes",
+      "claimIds": [
+        "the-fleet-needs-a-control-plane--mobile-telemetry"
+      ],
+      "rationale": "The mobile segment introduces pairing and remote steering; telemetry is a distinct first-party policy statement."
+    },
+    {
+      "atSeconds": 341,
+      "sectionId": "three-data-planes",
+      "claimIds": [
+        "the-fleet-needs-a-control-plane--agent-count"
+      ],
+      "rationale": "The supported-agent list and general CLI compatibility claim describes launcher breadth, not demonstrated feature parity."
+    }
+  ],
+  "assessment": {
+    "sourceCoverage": {
+      "disposition": "covered",
+      "rationale": "Six source moments and chapter anchors cover Orca’s central worktree, interface, CLI and mobile claims, while clearly separating the later original synthesis."
+    },
+    "supportingArgument": {
+      "disposition": "covered",
+      "rationale": "Unified worktree and diff visibility plausibly reduces navigation and lost-state cost for teams already running multiple agents, and may improve operator judgment."
+    },
+    "evidenceRoles": {
+      "disposition": "covered",
+      "rationale": "The exact video establishes what the speaker argued; a pinned product README and vendor docs describe features, while Git documentation constrains worktree mechanics and no deployment outcome is independently measured."
+    },
+    "counterargument": {
+      "disposition": "covered",
+      "rationale": "A single integrated UI may enforce controls more consistently than scattered terminals and scripts; the Reader grants that possibility while requiring an actual permissions and outcome test."
+    },
+    "tradeoffs": {
+      "disposition": "covered",
+      "rationale": "Concurrent agents reduce file-path collision but can increase semantic integration, shared-service effects and human review load; remote and mobile modes change data custody."
+    },
+    "falsifiability": {
+      "disposition": "covered",
+      "rationale": "A matched three-configuration task suite compares accepted output, reviewer minutes, cost, target errors and recovery after simulated uncertain writes."
+    },
+    "originalSynthesis": {
+      "disposition": "covered",
+      "rationale": "The Reader treats the worktree as a file boundary and the fleet interface as a potential control plane whose value depends on accepted results and accountable effects."
+    },
+    "performance": {
+      "disposition": "covered",
+      "rationale": "The WebGL terminal and multiple-agent throughput claims are labeled unmeasured; a controlled comparison measures latency and accepted task quality."
+    },
+    "economics": {
+      "disposition": "covered",
+      "rationale": "The proposed comparison includes operator time, duplicated attempts, token spend and hosting cost instead of treating agent count as output."
+    },
+    "threatGovernance": {
+      "disposition": "covered",
+      "rationale": "The article identifies agent-operated CLI, prompt content, remote hosts, mobile relay and telemetry as distinct authority or data paths without alleging a breach."
+    }
+  },
+  "independentCorroboration": "none",
+  "ownerDecision": null,
+  "decision": "hold",
+  "gaps": [],
+  "decisionRationale": "Independent reviewer found the current article and source map suitable for owner qualitative review. Tony has not reviewed or accepted these exact article and evidence bytes, so publication remains held.",
+  "assessedAt": "2026-10-21T11:50:25Z"
+}

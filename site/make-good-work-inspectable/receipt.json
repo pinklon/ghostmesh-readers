@@ -557,14 +557,14 @@
     },
     "relationshipReview": {
       "reviewedAt": "2026-10-21",
-      "reviewedCatalogSize": 31,
+      "reviewedCatalogSize": 32,
       "decision": "linked",
       "reviewedTargets": [
         "reader:a-challenge-is-not-a-verdict",
         "reader:ask-for-the-outcome-keep-the-boundary",
         "reader:the-funnel-is-not-the-frontier"
       ],
-      "rationale": "The linked architecture review, outcome framing and AI-use funnel all ask how to inspect agent work. They do not independently establish this interview's results. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged. Reassessed against four distinct AI Engineer video theses; their new outgoing links carry the qualified comparisons, with no new outgoing edge warranted from this existing entry."
+      "rationale": "The linked architecture review, outcome framing and AI-use funnel all ask how to inspect agent work. They do not independently establish this interview's results. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged. Reassessed against four distinct AI Engineer video theses; their new outgoing links carry the qualified comparisons, with no new outgoing edge warranted from this existing entry. Compared the new Orca fleet Reader as a possible target; its three outbound comparisons cover the supported links, and no reciprocal claim of source corroboration is warranted."
     }
   }
 }

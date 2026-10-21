@@ -60,6 +60,7 @@ CALLS = {
     'the-operator-is-part-of-the-denominator': ('Test the service, not the chip', 'Compare accepted task quality, latency tails, isolation and full cost on your workload.'),
     'unsupervised-is-a-permission': ('Grant one action tier', 'Earn autonomy on a versioned workflow with effect readback, exception handling and an operator stop.'),
     'a-wallet-is-not-a-mandate': ('Bound the purchase', 'Test a policy-limited machine payment before considering wider wallet authority or financial action.'),
+    'the-fleet-needs-a-control-plane': ('Test the operator surface', 'Compare accepted work, review time, shared effects and recovery before increasing the agent count.'),
 }
 
 

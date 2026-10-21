@@ -1,0 +1,62 @@
+{
+  "schemaVersion": 1,
+  "readerId": "reader:the-fleet-needs-a-control-plane",
+  "sourceId": "MLzSvf2vxHU",
+  "sourceAidSha256": "dcf40a4b9701d85f2ce26df4ec535c998b551a98522c0c8ef760d40cc42a6d53",
+  "points": [
+    {
+      "atSeconds": 36,
+      "sectionId": "the-bet",
+      "claimIds": [
+        "the-fleet-needs-a-control-plane--fleet-throughput"
+      ],
+      "cueParaphrase": "The opening lost-tab problem motivates a multi-agent coordination interface rather than proving an output curve.",
+      "privateAidCheck": "Retained caption cue at 00:36 describes many tabs and lost comparison state; checked as a paraphrase, not certified speech."
+    },
+    {
+      "atSeconds": 94,
+      "sectionId": "where-isolation-ends",
+      "claimIds": [
+        "the-fleet-needs-a-control-plane--worktrees"
+      ],
+      "cueParaphrase": "The five-attempt worktree example separates concurrent file paths but leaves shared resources and integration unresolved.",
+      "privateAidCheck": "Retained caption and publisher chapter place the worktree isolation assertion at 01:34; Git documentation independently constrains its scope."
+    },
+    {
+      "atSeconds": 126,
+      "sectionId": "attention-is-the-denominator",
+      "claimIds": [
+        "the-fleet-needs-a-control-plane--terminal-speed"
+      ],
+      "cueParaphrase": "The WebGL terminal passage proposes smoother high-output display without a measured comparison.",
+      "privateAidCheck": "Retained caption cue at 02:06 discusses terminal rendering; the project README describes features, not a benchmark."
+    },
+    {
+      "atSeconds": 248,
+      "sectionId": "the-orchestrator-can-be-an-actuator",
+      "claimIds": [
+        "the-fleet-needs-a-control-plane--agent-cli"
+      ],
+      "cueParaphrase": "The CLI passage says an agent can drive worktree, snapshot, click and fill operations in the orchestrator.",
+      "privateAidCheck": "Retained caption cue around 04:08 matches the pinned README feature list; no runtime permissions were inspected."
+    },
+    {
+      "atSeconds": 312,
+      "sectionId": "three-data-planes",
+      "claimIds": [
+        "the-fleet-needs-a-control-plane--mobile-telemetry"
+      ],
+      "cueParaphrase": "The mobile segment introduces pairing and remote steering; telemetry is a distinct first-party policy statement.",
+      "privateAidCheck": "Retained caption cue at 05:12 describes paired mobile monitoring. The first-party telemetry page does not establish relay or provider data flow."
+    },
+    {
+      "atSeconds": 341,
+      "sectionId": "three-data-planes",
+      "claimIds": [
+        "the-fleet-needs-a-control-plane--agent-count"
+      ],
+      "cueParaphrase": "The supported-agent list and general CLI compatibility claim describes launcher breadth, not demonstrated feature parity.",
+      "privateAidCheck": "Retained caption cue at 05:41 begins enumerating supported agents; pinned README lists CLI compatibility without a cross-provider validation."
+    }
+  ]
+}
