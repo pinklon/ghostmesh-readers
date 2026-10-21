@@ -121,7 +121,7 @@ class PaperReaderSourceTests(unittest.TestCase):
         source_rule = schema["$defs"]["reader"]["properties"]["source"]
         self.assertEqual(source_rule["oneOf"], [
             {"$ref": "#/$defs/mediaSource"}, {"$ref": "#/$defs/paperSource"},
-            {"$ref": "#/$defs/articleSource"}
+            {"$ref": "#/$defs/articleSource"}, {"$ref": "#/$defs/repositorySource"}
         ])
         self.assertEqual(schema["$defs"]["paperSource"]["properties"]["kind"], {"const": "paper"})
         self.assertFalse(schema["$defs"]["paperSource"]["additionalProperties"])
@@ -131,7 +131,7 @@ class PaperReaderSourceTests(unittest.TestCase):
 
     def test_media_source_rejects_paper_fields_without_affecting_legacy_records(self):
         catalog = json.loads((ROOT / "content/catalog.json").read_text())
-        media = [r["source"] for r in catalog["readers"] if r["source"].get("kind") not in {"paper", "article"}]
+        media = [r["source"] for r in catalog["readers"] if r["source"].get("kind") not in {"paper", "article", "repository"}]
         for source in media:
             validate_media_source(source)
         for extra in ("identity", "htmlUrl", "pdfUrl", "authors", "publisher", "version", "versionDate"):

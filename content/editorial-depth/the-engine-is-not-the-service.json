@@ -1,0 +1,120 @@
+{
+  "schemaVersion": 1,
+  "readerId": "reader:the-engine-is-not-the-service",
+  "sourceId": "deepseek-ai-deepinfer-774ce244",
+  "sourceDigest": "0623457690a2f9e84d3adff67abc47b92dcc8d92d692e0a2c4908f06d033c5da",
+  "sourceAidSha256": "904289606d33e1d950d19e260c7d921aee462831f2d44dd9d55b1fe767bc2d55",
+  "articleSha256": "4d1e11134a655828b60e42002365ddf73a7e8acda48cf846805381b854dd05c7",
+  "evidenceRevision": "6a62f69aba7f86ae9e146326ded3ca6f61f7c1e8ede4c5afdcfd4ee34078eaf7",
+  "sourceMapEvidenceSha256": "c901cbf96d828e65cc9e0b463fc652e6d783470f162b4c3d9377c08a10d962b3",
+  "reviewEvidenceSha256": "d6654cc4eefa650786302e2023554f72b5dd86f3466cc6598a12856438303f65",
+  "candidateAuthor": "pinklon",
+  "complexity": {
+    "tier": "extended",
+    "factors": [
+      "Nine material claims, including unreplicated operator-scale and quality figures",
+      "Consequential inference-service, data governance and hardware recommendation"
+    ],
+    "rationale": "A performance and infrastructure source needs an extended argument, explicit measurement denominators, competing service designs and a falsifiable deployment test."
+  },
+  "sourceMap": [
+    {
+      "atSeconds": null,
+      "sectionId": "scope",
+      "claimIds": [
+        "the-engine-is-not-the-service--offline-scope",
+        "the-engine-is-not-the-service--missing-service"
+      ],
+      "rationale": "The scope section separates inspectable offline release code from missing serving components and avoids claiming a successful build."
+    },
+    {
+      "atSeconds": null,
+      "sectionId": "architecture",
+      "claimIds": [
+        "the-engine-is-not-the-service--missing-service"
+      ],
+      "rationale": "The architecture section compares the public release boundary with the operator description of internal deployment scale."
+    },
+    {
+      "atSeconds": null,
+      "sectionId": "denominator",
+      "claimIds": [
+        "the-engine-is-not-the-service--benchmark-scale",
+        "the-engine-is-not-the-service--full-acceptance",
+        "the-engine-is-not-the-service--cache-workload"
+      ],
+      "rationale": "The denominator section connects plotted device scale and acceptance accounting to a narrower measurement claim."
+    },
+    {
+      "atSeconds": null,
+      "sectionId": "quality",
+      "claimIds": [
+        "the-engine-is-not-the-service--reference-quality"
+      ],
+      "rationale": "The quality section attributes exact reference scores and names dataset, judging and output limitations."
+    },
+    {
+      "atSeconds": null,
+      "sectionId": "control",
+      "claimIds": [
+        "the-engine-is-not-the-service--operator-scale",
+        "the-engine-is-not-the-service--local-fit"
+      ],
+      "rationale": "The control section labels cluster token volume and revenue illustration as operator claims and asks for local hardware inventory."
+    }
+  ],
+  "assessment": {
+    "sourceCoverage": {
+      "disposition": "covered",
+      "rationale": "Five mapped source sections cover release scope, architecture, performance denominator, reference quality and operator scale. The remaining sections are explicit original analysis or proposed tests."
+    },
+    "supportingArgument": {
+      "disposition": "covered",
+      "rationale": "The code tree, hardware support, parallelism features and documented component results receive their strongest plausible engineering interpretation before the critique."
+    },
+    "evidenceRoles": {
+      "disposition": "covered",
+      "rationale": "Pinned first-party code and docs show what is released and asserted; SGLang and vLLM supply methodology only; no outside performance replication is claimed."
+    },
+    "counterargument": {
+      "disposition": "covered",
+      "rationale": "The essay acknowledges that real code, sweep scripts and narrowly optimized hardware can make DeepInfer valuable for matching workloads, while mature servers are credible comparators."
+    },
+    "tradeoffs": {
+      "disposition": "covered",
+      "rationale": "It examines cache reuse versus real traffic, accepted-token throughput versus latency, offline engine versus missing control planes, narrow accelerators versus deployment effort."
+    },
+    "falsifiability": {
+      "disposition": "covered",
+      "rationale": "The proposed test pins code and model, inventories hardware, compares complete services on matched traces and states outcomes that would change the recommendation."
+    },
+    "originalSynthesis": {
+      "disposition": "covered",
+      "rationale": "GhostMesh distinguishes engine performance, service operation and human outcome ownership; the conclusion does not restate a maintainer benchmark as a universal verdict."
+    },
+    "performance": {
+      "disposition": "covered",
+      "rationale": "The analysis identifies four-versus-64-GPU plots, shared-prefix defaults, full draft-acceptance accounting, omitted TTFT and queue tails, and the need for matched quality."
+    },
+    "economics": {
+      "disposition": "covered",
+      "rationale": "The first-party US$38 per GPU-hour revenue example is not called profit; total service cost, occupancy, operating labor and network cost remain unknown."
+    },
+    "threatGovernance": {
+      "disposition": "covered",
+      "rationale": "The essay identifies KV retention and isolation, model and dependency supply chain, egress, routing authority, recovery and synthetic failure testing without alleging an incident."
+    }
+  },
+  "independentCorroboration": "none",
+  "ownerDecision": null,
+  "decision": "hold",
+  "gaps": [
+    {
+      "type": "risk",
+      "severity": "blocking",
+      "rationale": "The owner has not yet evaluated and accepted this exact article, evidence and independent review through the authenticated PR comment path."
+    }
+  ],
+  "decisionRationale": "Independent source and copy review found no remaining article defect. Release remains held until Tony reviews exact content and records a direct authenticated, hash-bound GitHub acceptance, then separately authorizes the exact release head.",
+  "assessedAt": "2026-10-21T04:36:01Z"
+}

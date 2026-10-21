@@ -27,8 +27,8 @@ class KnowledgeContractTests(unittest.TestCase):
         validate_contract(self.model, self.schema)
         catalog = json.loads((ROOT / "content/catalog.json").read_text())
         self.assertEqual(len([node for node in self.model["nodes"] if node["type"] == "Reader"]), len(catalog["readers"]))
-        self.assertEqual(len(self.model["nodes"]), len(catalog["readers"]) + 6)
-        self.assertEqual(len(self.model["relationships"]), 3)
+        self.assertEqual(len(self.model["nodes"]), len(catalog["readers"]) + 8)
+        self.assertEqual(len(self.model["relationships"]), 4)
         self.assertIn("urn:ghostmesh-readers:reader:the-experiment-ran-did-the-research-advance",
                       {node["id"] for node in self.model["nodes"]})
         self.invalid(lambda m: m["nodes"].__setitem__(

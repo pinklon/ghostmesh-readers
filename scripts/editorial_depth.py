@@ -368,7 +368,7 @@ def validate_reader(root: Path, reader: dict, *, release: bool = True,
             section = re.search(r'<section\b[^>]*\bid="' + re.escape(str(entry["sectionId"])) + r'"[^>]*>(.*?)</section>', article, re.S)
             section_html = section.group(1) if section else ""
             links = [html.unescape(link) for link in re.findall(r'<a\b[^>]*href="([^"]+)"', section_html)]
-            if reader["source"].get("kind") in {"paper", "article"}:
+            if reader["source"].get("kind") in {"paper", "article", "repository"}:
                 if second is not None:
                     errors.append(f"{slug}: written source map must use section locators rather than video time")
             elif not isinstance(second, int) or isinstance(second, bool) or second < 0 or (reader["source"].get("durationSeconds") and second >= reader["source"]["durationSeconds"]):
@@ -380,7 +380,9 @@ def validate_reader(root: Path, reader: dict, *, release: bool = True,
                     errors.append(f"{slug}: source map timestamp absent from exact video in mapped section")
             if not source_video:
                 source_url = reader["source"].get("url", "")
-                if source_url not in links:
+                pinned_files = (f"{reader['source']['repositoryUrl']}/blob/{reader['source']['commit']}/"
+                                if reader["source"].get("kind") == "repository" else None)
+                if source_url not in links and not (pinned_files and any(link.startswith(pinned_files) for link in links)):
                     errors.append(f"{slug}: source map lacks original source link in mapped section")
                 if isinstance(second, int) and not isinstance(second, bool):
                     label = f"{second // 60:02d}:{second % 60:02d}"
@@ -394,7 +396,7 @@ def validate_reader(root: Path, reader: dict, *, release: bool = True,
         if isinstance(complexity, dict) and complexity.get("tier") == "extended" and len({str(e.get("sectionId")) for e in source_map if isinstance(e, dict)}) < 3:
             errors.append(f"{slug}: extended source map misses distinct analytical sections")
         if (isinstance(complexity, dict) and complexity.get("tier") == "extended"
-                and reader["source"].get("kind") not in {"paper", "article"}
+                and reader["source"].get("kind") not in {"paper", "article", "repository"}
                 and len({e.get("atSeconds") for e in source_map if isinstance(e, dict)}) < 3):
             errors.append(f"{slug}: extended source map repeats a single source moment")
     if not isinstance(receipt["candidateAuthor"], str) or not receipt["candidateAuthor"].strip():

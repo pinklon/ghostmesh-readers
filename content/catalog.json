@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "host": "https://youtube.shareplane.malott.ai",
-  "revision": "2026-10-21T02:34:41Z",
+  "revision": "2026-10-21T04:32:14Z",
   "categories": [
     "AI & Technology",
     "Society & Politics",
@@ -406,14 +406,14 @@
       },
       "relationshipReview": {
         "reviewedAt": "2026-10-21",
-        "reviewedCatalogSize": 27,
+        "reviewedCatalogSize": 28,
         "decision": "linked",
         "reviewedTargets": [
           "reader:ask-for-the-outcome-keep-the-boundary",
           "reader:make-good-work-inspectable",
           "reader:when-software-becomes-legible"
         ],
-        "rationale": "The three existing routes compare how an AI-assisted choice is challenged, verified and made inspectable. Their briefs support navigation, not proof of a shared observed result. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged."
+        "rationale": "The three existing routes compare how an AI-assisted choice is challenged, verified and made inspectable. Their briefs support navigation, not proof of a shared observed result. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged. The DeepInfer repository Reader was also assessed; no new outgoing route from this Reader has a sufficiently specific source-grounded rationale."
       }
     },
     {
@@ -911,14 +911,14 @@
       },
       "relationshipReview": {
         "reviewedAt": "2026-10-21",
-        "reviewedCatalogSize": 27,
+        "reviewedCatalogSize": 28,
         "decision": "linked",
         "reviewedTargets": [
           "reader:a-challenge-is-not-a-verdict",
           "reader:make-good-work-inspectable",
           "reader:the-funnel-is-not-the-frontier"
         ],
-        "rationale": "The architecture challenge, inspectable-work interview and AI-use funnel all separate ambitious agent work from verified outcomes. The links are editorial comparisons only. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged."
+        "rationale": "The architecture challenge, inspectable-work interview and AI-use funnel all separate ambitious agent work from verified outcomes. The links are editorial comparisons only. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged. The DeepInfer repository Reader was also assessed; no new outgoing route from this Reader has a sufficiently specific source-grounded rationale."
       }
     },
     {
@@ -1178,14 +1178,14 @@
       },
       "relationshipReview": {
         "reviewedAt": "2026-10-21",
-        "reviewedCatalogSize": 27,
+        "reviewedCatalogSize": 28,
         "decision": "linked",
         "reviewedTargets": [
           "reader:the-agent-a-company-owns",
           "reader:the-inbox-was-a-boundary",
           "reader:the-key-was-the-boundary"
         ],
-        "rationale": "The company-agent interview builds on the same Vercel subject; the inbox and credential Readers compare separate authority boundaries. None verifies the others' incidents. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged."
+        "rationale": "The company-agent interview builds on the same Vercel subject; the inbox and credential Readers compare separate authority boundaries. None verifies the others' incidents. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged. The DeepInfer repository Reader was also assessed; no new outgoing route from this Reader has a sufficiently specific source-grounded rationale."
       }
     },
     {
@@ -1745,14 +1745,14 @@
       },
       "relationshipReview": {
         "reviewedAt": "2026-10-21",
-        "reviewedCatalogSize": 27,
+        "reviewedCatalogSize": 28,
         "decision": "linked",
         "reviewedTargets": [
           "reader:a-challenge-is-not-a-verdict",
           "reader:ask-for-the-outcome-keep-the-boundary",
           "reader:the-funnel-is-not-the-frontier"
         ],
-        "rationale": "The linked architecture review, outcome framing and AI-use funnel all ask how to inspect agent work. They do not independently establish this interview's results. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged."
+        "rationale": "The linked architecture review, outcome framing and AI-use funnel all ask how to inspect agent work. They do not independently establish this interview's results. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged. The DeepInfer repository Reader was also assessed; no new outgoing route from this Reader has a sufficiently specific source-grounded rationale."
       }
     },
     {
@@ -2041,14 +2041,14 @@
       },
       "relationshipReview": {
         "reviewedAt": "2026-10-21",
-        "reviewedCatalogSize": 27,
+        "reviewedCatalogSize": 28,
         "decision": "linked",
         "reviewedTargets": [
           "reader:autonomy-needs-an-interface",
           "reader:the-inbox-was-a-boundary",
           "reader:the-key-was-the-boundary"
         ],
-        "rationale": "The Vercel follow-on shares a named company-agent subject, while the inbox and credential Readers compare delegated authority through distinct source events. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged."
+        "rationale": "The Vercel follow-on shares a named company-agent subject, while the inbox and credential Readers compare delegated authority through distinct source events. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged. The DeepInfer repository Reader was also assessed; no new outgoing route from this Reader has a sufficiently specific source-grounded rationale."
       }
     },
     {
@@ -2354,14 +2354,14 @@
       },
       "relationshipReview": {
         "reviewedAt": "2026-10-21",
-        "reviewedCatalogSize": 27,
+        "reviewedCatalogSize": 28,
         "decision": "linked",
         "reviewedTargets": [
           "reader:ask-for-the-outcome-keep-the-boundary",
           "reader:make-good-work-inspectable",
           "reader:the-scan-never-reached-the-login"
         ],
-        "rationale": "The three routes compare ambition and verification in agent workflows, including a scan that ended without confirmed findings. No shared empirical outcome is claimed. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged."
+        "rationale": "The three routes compare ambition and verification in agent workflows, including a scan that ended without confirmed findings. No shared empirical outcome is claimed. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged. The DeepInfer repository Reader was also assessed; no new outgoing route from this Reader has a sufficiently specific source-grounded rationale."
       }
     },
     {
@@ -2637,14 +2637,14 @@
       },
       "relationshipReview": {
         "reviewedAt": "2026-10-21",
-        "reviewedCatalogSize": 27,
+        "reviewedCatalogSize": 28,
         "decision": "linked",
         "reviewedTargets": [
           "reader:the-key-was-the-boundary",
           "reader:autonomy-needs-an-interface",
           "reader:the-agent-a-company-owns"
         ],
-        "rationale": "The hidden mailbox case is compared with a separate credential exposure and two company-agent authority readings. The incidents and their evidence remain distinct. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged."
+        "rationale": "The hidden mailbox case is compared with a separate credential exposure and two company-agent authority readings. The incidents and their evidence remain distinct. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged. The DeepInfer repository Reader was also assessed; no new outgoing route from this Reader has a sufficiently specific source-grounded rationale."
       }
     },
     {
@@ -3130,14 +3130,14 @@
       },
       "relationshipReview": {
         "reviewedAt": "2026-10-21",
-        "reviewedCatalogSize": 27,
+        "reviewedCatalogSize": 28,
         "decision": "linked",
         "reviewedTargets": [
           "reader:the-inbox-was-a-boundary",
           "reader:autonomy-needs-an-interface",
           "reader:the-agent-a-company-owns"
         ],
-        "rationale": "The credential incident is compared with a hidden mailbox boundary and company-agent permissions. Shared authority questions do not make the events equivalent. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged."
+        "rationale": "The credential incident is compared with a hidden mailbox boundary and company-agent permissions. Shared authority questions do not make the events equivalent. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged. The DeepInfer repository Reader was also assessed; no new outgoing route from this Reader has a sufficiently specific source-grounded rationale."
       }
     },
     {
@@ -3497,12 +3497,12 @@
       },
       "relationshipReview": {
         "reviewedAt": "2026-10-21",
-        "reviewedCatalogSize": 27,
+        "reviewedCatalogSize": 28,
         "decision": "linked",
         "reviewedTargets": [
           "reader:the-score-is-not-the-system"
         ],
-        "rationale": "The score Reader discusses the same Anthropic representation-steering evidence family. The link does not create independent support for consciousness or experience. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged."
+        "rationale": "The score Reader discusses the same Anthropic representation-steering evidence family. The link does not create independent support for consciousness or experience. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged. The DeepInfer repository Reader was also assessed; no new outgoing route from this Reader has a sufficiently specific source-grounded rationale."
       }
     },
     {
@@ -3934,14 +3934,14 @@
       },
       "relationshipReview": {
         "reviewedAt": "2026-10-21",
-        "reviewedCatalogSize": 27,
+        "reviewedCatalogSize": 28,
         "decision": "linked",
         "reviewedTargets": [
           "reader:ask-for-the-outcome-keep-the-boundary",
           "reader:make-good-work-inspectable",
           "reader:the-funnel-is-not-the-frontier"
         ],
-        "rationale": "The outcome, inspectable-work and AI-use Readers frame the limits of agent-tool demonstrations. None independently verifies this incomplete scan. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged."
+        "rationale": "The outcome, inspectable-work and AI-use Readers frame the limits of agent-tool demonstrations. None independently verifies this incomplete scan. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged. The DeepInfer repository Reader was also assessed; no new outgoing route from this Reader has a sufficiently specific source-grounded rationale."
       }
     },
     {
@@ -4272,12 +4272,12 @@
       },
       "relationshipReview": {
         "reviewedAt": "2026-10-21",
-        "reviewedCatalogSize": 27,
+        "reviewedCatalogSize": 28,
         "decision": "linked",
         "reviewedTargets": [
           "reader:the-microscope-is-not-a-soul"
         ],
-        "rationale": "The microscope Reader helps interpret representation evidence, while its source and this Reader's agent-evaluation incident have separate evidentiary reach. The new harness Reader is a relevant incoming comparison about grader design; no new outgoing route is needed. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged."
+        "rationale": "The microscope Reader helps interpret representation evidence, while its source and this Reader's agent-evaluation incident have separate evidentiary reach. The new harness Reader is a relevant incoming comparison about grader design; no new outgoing route is needed. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged. The DeepInfer repository Reader was also assessed; no new outgoing route from this Reader has a sufficiently specific source-grounded rationale."
       }
     },
     {
@@ -4533,14 +4533,14 @@
       },
       "relationshipReview": {
         "reviewedAt": "2026-10-21",
-        "reviewedCatalogSize": 27,
+        "reviewedCatalogSize": 28,
         "decision": "linked",
         "reviewedTargets": [
           "reader:autonomy-needs-an-interface",
           "reader:make-good-work-inspectable",
           "reader:the-agent-a-company-owns"
         ],
-        "rationale": "The linked founder, inspectable-work and company-agent Readers compare product workflows and authority. Forecasts are kept separate from observed adoption. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged."
+        "rationale": "The linked founder, inspectable-work and company-agent Readers compare product workflows and authority. Forecasts are kept separate from observed adoption. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged. The DeepInfer repository Reader was also assessed; no new outgoing route from this Reader has a sufficiently specific source-grounded rationale."
       }
     },
     {
@@ -4825,14 +4825,14 @@
       },
       "relationshipReview": {
         "reviewedAt": "2026-10-21",
-        "reviewedCatalogSize": 27,
+        "reviewedCatalogSize": 28,
         "decision": "linked",
         "reviewedTargets": [
           "reader:a-challenge-is-not-a-verdict",
           "reader:make-good-work-inspectable",
           "reader:when-agents-become-the-customer"
         ],
-        "rationale": "The architecture challenge, inspectable-work interview and agent-service forecast provide distinct routes through software legibility, not corroboration of reverse engineering. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged."
+        "rationale": "The architecture challenge, inspectable-work interview and agent-service forecast provide distinct routes through software legibility, not corroboration of reverse engineering. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged. The DeepInfer repository Reader was also assessed; no new outgoing route from this Reader has a sufficiently specific source-grounded rationale."
       }
     },
     {
@@ -5153,13 +5153,13 @@
       "orderReason": "Read after the earlier Amap fleet case to examine the broader forecast and its evidence limits.",
       "relationshipReview": {
         "reviewedAt": "2026-10-21",
-        "reviewedCatalogSize": 27,
+        "reviewedCatalogSize": 28,
         "decision": "linked",
         "reviewedTargets": [
           "reader:the-inbox-was-a-boundary",
           "reader:when-agents-become-the-customer"
         ],
-        "rationale": "The Amap inbox Reader shares a source event; the agent-customer Reader offers a separate product forecast. Neither validates broad web-adoption predictions. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged."
+        "rationale": "The Amap inbox Reader shares a source event; the agent-customer Reader offers a separate product forecast. Neither validates broad web-adoption predictions. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged. The DeepInfer repository Reader was also assessed; no new outgoing route from this Reader has a sufficiently specific source-grounded rationale."
       }
     },
     {
@@ -5436,12 +5436,12 @@
       "orderReason": "Read after other model-score Readers to test how benchmark evidence is converted into a larger forecast.",
       "relationshipReview": {
         "reviewedAt": "2026-10-21",
-        "reviewedCatalogSize": 27,
+        "reviewedCatalogSize": 28,
         "decision": "linked",
         "reviewedTargets": [
           "reader:the-experiment-ran-did-the-research-advance"
         ],
-        "rationale": "The physics benchmark and research-evaluation paper measure different constructs. Their one link invites comparison without treating a bounded score as research judgment. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged."
+        "rationale": "The physics benchmark and research-evaluation paper measure different constructs. Their one link invites comparison without treating a bounded score as research judgment. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged. The DeepInfer repository Reader was also assessed; no new outgoing route from this Reader has a sufficiently specific source-grounded rationale."
       }
     },
     {
@@ -5737,12 +5737,12 @@
       "orderReason": "Read after the existing Count Grey Matter interpretability Reader to examine a distinct functional-understanding claim.",
       "relationshipReview": {
         "reviewedAt": "2026-10-21",
-        "reviewedCatalogSize": 27,
+        "reviewedCatalogSize": 28,
         "decision": "linked",
         "reviewedTargets": [
           "reader:the-microscope-is-not-a-soul"
         ],
-        "rationale": "The microscope Reader by the same creator also limits inferences from model internals. Functional understanding and subjective experience remain distinct claims. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged."
+        "rationale": "The microscope Reader by the same creator also limits inferences from model internals. Functional understanding and subjective experience remain distinct claims. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged. The DeepInfer repository Reader was also assessed; no new outgoing route from this Reader has a sufficiently specific source-grounded rationale."
       }
     },
     {
@@ -6012,10 +6012,10 @@
       "orderReason": "Read after the current collection as a research-method comparison with explicit deployment limits.",
       "relationshipReview": {
         "reviewedAt": "2026-10-21",
-        "reviewedCatalogSize": 27,
+        "reviewedCatalogSize": 28,
         "decision": "none",
         "reviewedTargets": [],
-        "rationale": "No other local Reader analyzes NCM or HybridAgents, their parallel-code and latent-reasoning methods, or the same benchmark claims. External studies remain outside this Reader graph. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged."
+        "rationale": "No other local Reader analyzes NCM or HybridAgents, their parallel-code and latent-reasoning methods, or the same benchmark claims. External studies remain outside this Reader graph. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged. The new DeepInfer Reader points here for a specific comparative question; no reverse edge is needed because this existing article makes no claim about DeepInfer."
       }
     },
     {
@@ -6285,12 +6285,12 @@
       },
       "relationshipReview": {
         "reviewedAt": "2026-10-21",
-        "reviewedCatalogSize": 27,
+        "reviewedCatalogSize": 28,
         "decision": "linked",
         "reviewedTargets": [
           "reader:a-scenario-is-not-a-singularity"
         ],
-        "rationale": "The physics benchmark Reader provides a contrasting bounded task score. It does not assess the two open-ended research contributions studied in this paper. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged."
+        "rationale": "The physics benchmark Reader provides a contrasting bounded task score. It does not assess the two open-ended research contributions studied in this paper. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged. The DeepInfer repository Reader was also assessed; no new outgoing route from this Reader has a sufficiently specific source-grounded rationale."
       }
     },
     {
@@ -6654,13 +6654,13 @@
       },
       "relationshipReview": {
         "reviewedAt": "2026-10-21",
-        "reviewedCatalogSize": 27,
+        "reviewedCatalogSize": 28,
         "decision": "linked",
         "reviewedTargets": [
           "reader:when-agents-become-the-customer",
           "reader:the-agent-a-company-owns"
         ],
-        "rationale": "The agent-customer and company-agent Readers compare business authority and ownership questions. Neither establishes Muse lead rights or business outcomes. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged."
+        "rationale": "The agent-customer and company-agent Readers compare business authority and ownership questions. Neither establishes Muse lead rights or business outcomes. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged. The DeepInfer repository Reader was also assessed; no new outgoing route from this Reader has a sufficiently specific source-grounded rationale."
       }
     },
     {
@@ -7156,13 +7156,13 @@
       },
       "relationshipReview": {
         "reviewedAt": "2026-10-21",
-        "reviewedCatalogSize": 27,
+        "reviewedCatalogSize": 28,
         "decision": "linked",
         "reviewedTargets": [
           "reader:the-test-must-name-its-target",
           "reader:the-microscope-is-not-a-soul"
         ],
-        "rationale": "The existing routes distinguish AGI labels from functional understanding and digital experience from representation evidence. Neither verifies the interview's exact speech. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged."
+        "rationale": "The existing routes distinguish AGI labels from functional understanding and digital experience from representation evidence. Neither verifies the interview's exact speech. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged. The DeepInfer repository Reader was also assessed; no new outgoing route from this Reader has a sufficiently specific source-grounded rationale."
       }
     },
     {
@@ -7618,10 +7618,10 @@
       },
       "relationshipReview": {
         "reviewedAt": "2026-10-21",
-        "reviewedCatalogSize": 27,
+        "reviewedCatalogSize": 28,
         "decision": "none",
         "reviewedTargets": [],
-        "rationale": "The other published Readers do not examine this California voter-list dispute, individualized ballot procedure or conditional DOJ warning. AI evaluation analogies are too distant to admit as local routes. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged."
+        "rationale": "The other published Readers do not examine this California voter-list dispute, individualized ballot procedure or conditional DOJ warning. AI evaluation analogies are too distant to admit as local routes. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged. The DeepInfer repository Reader was also assessed; no new outgoing route from this Reader has a sufficiently specific source-grounded rationale."
       }
     },
     {
@@ -8173,13 +8173,13 @@
       },
       "relationshipReview": {
         "reviewedAt": "2026-10-21",
-        "reviewedCatalogSize": 27,
+        "reviewedCatalogSize": 28,
         "decision": "linked",
         "reviewedTargets": [
           "reader:the-brakes-need-a-test",
           "reader:the-label-the-box-and-the-bargain"
         ],
-        "rationale": "The Gates risk interview supports two qualified routes: Robinson examines release safety process, and Bostrom distinguishes capability from control. Neither source verifies the other's risk magnitude. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged."
+        "rationale": "The Gates risk interview supports two qualified routes: Robinson examines release safety process, and Bostrom distinguishes capability from control. Neither source verifies the other's risk magnitude. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged. The DeepInfer repository Reader was also assessed; no new outgoing route from this Reader has a sufficiently specific source-grounded rationale."
       }
     },
     {
@@ -8753,13 +8753,13 @@
       },
       "relationshipReview": {
         "reviewedAt": "2026-10-21",
-        "reviewedCatalogSize": 27,
+        "reviewedCatalogSize": 28,
         "decision": "linked",
         "reviewedTargets": [
           "reader:the-label-the-box-and-the-bargain",
           "reader:the-threshold-is-a-claim-not-a-test"
         ],
-        "rationale": "Robinson's incident and release-process analysis supports routes to Bostrom's bounded control example and Gates's risk threshold. These are comparison paths, not independent interview corroboration. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged."
+        "rationale": "Robinson's incident and release-process analysis supports routes to Bostrom's bounded control example and Gates's risk threshold. These are comparison paths, not independent interview corroboration. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged. The DeepInfer repository Reader was also assessed; no new outgoing route from this Reader has a sufficiently specific source-grounded rationale."
       }
     },
     {
@@ -9033,14 +9033,14 @@
       "orderReason": "Follow the existing evaluation and research-agent Readers with a focused test of adaptive harness claims.",
       "relationshipReview": {
         "reviewedAt": "2026-10-21",
-        "reviewedCatalogSize": 27,
+        "reviewedCatalogSize": 28,
         "decision": "linked",
         "reviewedTargets": [
           "reader:make-good-work-inspectable",
           "reader:the-experiment-ran-did-the-research-advance",
           "reader:the-score-is-not-the-system"
         ],
-        "rationale": "Compared the new video with all 23 existing Readers. Inspectable work, research evaluation and reward-versus-outcome design offer three substantive comparisons. The earlier Readers do not replicate the two papers. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged."
+        "rationale": "Compared the new video with all 23 existing Readers. Inspectable work, research evaluation and reward-versus-outcome design offer three substantive comparisons. The earlier Readers do not replicate the two papers. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged. The DeepInfer repository Reader was also assessed; no new outgoing route from this Reader has a sufficiently specific source-grounded rationale."
       }
     },
     {
@@ -9316,14 +9316,14 @@
       "orderReason": "Place the operational agent-boundary Reader after the harness-evaluation Reader.",
       "relationshipReview": {
         "reviewedAt": "2026-10-21",
-        "reviewedCatalogSize": 27,
+        "reviewedCatalogSize": 28,
         "decision": "linked",
         "reviewedTargets": [
           "reader:make-good-work-inspectable",
           "reader:the-brakes-need-a-test",
           "reader:the-score-is-not-the-system"
         ],
-        "rationale": "Compared this video with all 24 existing Readers. Inspectable work, testable brakes and reward-versus-outcome analysis support three qualified routes. The earlier Readers do not corroborate these incident reports. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged."
+        "rationale": "Compared this video with all 24 existing Readers. Inspectable work, testable brakes and reward-versus-outcome analysis support three qualified routes. The earlier Readers do not corroborate these incident reports. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged. The DeepInfer repository Reader was also assessed; no new outgoing route from this Reader has a sufficiently specific source-grounded rationale."
       }
     },
     {
@@ -9615,13 +9615,13 @@
       "orderReason": "Place the local deployment and privacy-boundary reading after the agent control readings.",
       "relationshipReview": {
         "reviewedAt": "2026-10-21",
-        "reviewedCatalogSize": 27,
+        "reviewedCatalogSize": 28,
         "decision": "linked",
         "reviewedTargets": [
           "reader:the-agent-a-company-owns",
           "reader:the-stop-button-is-outside-the-chat"
         ],
-        "rationale": "Compared this source with all 25 existing Readers. Two qualified routes cover company-owned agent infrastructure and continuing agent authority. No prior Reader independently measures this machine or validates its cost and privacy claims. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged."
+        "rationale": "Compared this source with all 25 existing Readers. Two qualified routes cover company-owned agent infrastructure and continuing agent authority. No prior Reader independently measures this machine or validates its cost and privacy claims. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged. The new DeepInfer Reader points here for a specific comparative question; no reverse edge is needed because this existing article makes no claim about DeepInfer."
       }
     },
     {
@@ -9899,13 +9899,13 @@
       "relationshipDisposition": "Two substantive editorial comparisons connect agent work inspectability and evaluation infrastructure. They do not corroborate Anthropic’s internal scale or performance reports.",
       "relationshipReview": {
         "reviewedAt": "2026-10-21",
-        "reviewedCatalogSize": 27,
+        "reviewedCatalogSize": 28,
         "decision": "linked",
         "reviewedTargets": [
           "reader:make-good-work-inspectable",
           "reader:the-grader-is-part-of-the-harness"
         ],
-        "rationale": "Compared the Anthropic engineering source with all 26 existing Readers. Two qualified routes concern inspectable agent work and evaluation gates; the others lack a sufficiently specific shared question. No existing Reader independently verifies Scion metrics."
+        "rationale": "Compared the Anthropic engineering source with all 26 existing Readers. Two qualified routes concern inspectable agent work and evaluation gates; the others lack a sufficiently specific shared question. No existing Reader independently verifies Scion metrics. The DeepInfer repository Reader was also assessed; no new outgoing route from this Reader has a sufficiently specific source-grounded rationale."
       },
       "legacyReceipt": {
         "schema": "ghostmesh-reader-receipt-v2",
@@ -9966,6 +9966,381 @@
       "editorialDepth": {
         "schemaVersion": 1,
         "receiptPath": "content/editorial-depth/the-commit-is-not-the-control.json"
+      }
+    },
+    {
+      "id": "reader:the-engine-is-not-the-service",
+      "slug": "the-engine-is-not-the-service",
+      "title": "The Engine Is Not the Service",
+      "category": "AI & Technology",
+      "tags": [
+        "inference",
+        "serving",
+        "benchmarks",
+        "control planes"
+      ],
+      "entities": [
+        "DeepSeek-AI",
+        "DeepInfer",
+        "DeepSeek-V4.1-Flash",
+        "SGLang",
+        "vLLM",
+        "Hyperion"
+      ],
+      "source": {
+        "kind": "repository",
+        "identity": "deepseek-ai-deepinfer-774ce244",
+        "url": "https://github.com/deepseek-ai/DeepInfer/tree/774ce244b87cc0eb8d4b94ab9f5de2ab22049f01",
+        "repositoryUrl": "https://github.com/deepseek-ai/DeepInfer",
+        "repository": "deepseek-ai/DeepInfer",
+        "commit": "774ce244b87cc0eb8d4b94ab9f5de2ab22049f01",
+        "title": "DeepInfer",
+        "authors": "DeepSeek-AI contributors",
+        "publisher": "DeepSeek-AI",
+        "license": "Apache-2.0",
+        "createdDate": "2026-10-16",
+        "commitDate": "2026-10-20",
+        "dateNote": "GitHub reports repository creation October 16, 2026. The inspected main commit is dated October 20; no release tag date was verified."
+      },
+      "published": "2026-10-21",
+      "updated": "2026-10-21T04:32:14Z",
+      "overview": "DeepSeek opens an offline DeepInfer engine for DeepSeek-V4.1-Flash on specified accelerators; its public release omits service components and its plots use selected steady-state workloads.",
+      "whyItMatters": "The source exposes useful code and methods, but draft-token throughput is not delivered user value, and the private production stack is broader than the open engine.",
+      "ghostMeshTakeaway": "Inventory hardware and workload first, then compare complete services on accepted tokens, first-token and tail latency, quality, privacy, total cost and recovery.",
+      "verdict": "Worth studying",
+      "architectureImpact": "experiment recommended",
+      "falsification": "Revise the recommendation if a complete supported DeepInfer service demonstrates matched quality, useful-token throughput, first-token and tail latency, privacy isolation, sustainable cost and recovery under the actual workload.",
+      "evidenceState": "partially corroborated",
+      "lastEvidenceChecked": "2026-10-21T04:32:14Z",
+      "freshness": "Pinned DeepInfer main commit from October 20, 2026 was privately captured and inspected October 21. Operator benchmark and production claims remain unreplicated; SGLang and vLLM sources provide comparison methods, not head-to-head results.",
+      "variant": "dossier",
+      "accent": "teal",
+      "claims": [
+        {
+          "id": "the-engine-is-not-the-service--offline-scope",
+          "proposition": "The public DeepInfer release supports offline inference for DeepSeek-V4.1-Flash on NVIDIA SM100 or Huawei Ascend 950.",
+          "kind": "first-party-release-scope",
+          "asOf": "2026-10-21",
+          "status": "partially corroborated",
+          "assessment": "The pinned README states the scope and the tree includes runtime and build files. Source inspection confirms code presence, not working execution.",
+          "limits": "No installation, checkpoint execution or accelerator compatibility test was performed.",
+          "sourceLocation": "README: Supported models, hardware and Getting started",
+          "references": [
+            "deepinfer-readme"
+          ],
+          "counterevidence": [],
+          "temporalScope": "DeepInfer pinned October 20, 2026 commit; external methods inspected October 21, 2026."
+        },
+        {
+          "id": "the-engine-is-not-the-service--missing-service",
+          "proposition": "A complete online inference service still needs KV cache, prefill/decode disaggregation and data-parallel replica load balancing not included in the public release.",
+          "kind": "first-party-scope-limit",
+          "asOf": "2026-10-21",
+          "status": "partially corroborated",
+          "assessment": "The maintainer explicitly lists these missing service components while the separate Q&A describes internal production infrastructure.",
+          "limits": "The public tree has related engine functionality; this does not prove the internal service is absent or reproduced.",
+          "sourceLocation": "README: Required for a complete inference service",
+          "references": [
+            "deepinfer-readme",
+            "deepinfer-deployment"
+          ],
+          "counterevidence": [],
+          "temporalScope": "DeepInfer pinned October 20, 2026 commit; external methods inspected October 21, 2026."
+        },
+        {
+          "id": "the-engine-is-not-the-service--benchmark-scale",
+          "proposition": "The published prefill and decode plots use four and 64 SM100 GPUs respectively under selected scale-up conditions.",
+          "kind": "first-party-benchmark-claim",
+          "asOf": "2026-10-21",
+          "status": "unverified",
+          "assessment": "The README labels the GPU counts and points to the sweep script. No benchmark was run by GhostMesh.",
+          "limits": "No matched competitor, percentile distribution, electricity or service cost is established by these plots.",
+          "sourceLocation": "README: Performance benchmarks",
+          "references": [
+            "deepinfer-readme",
+            "deepinfer-examples"
+          ],
+          "counterevidence": [],
+          "temporalScope": "DeepInfer pinned October 20, 2026 commit; external methods inspected October 21, 2026."
+        },
+        {
+          "id": "the-engine-is-not-the-service--full-acceptance",
+          "proposition": "The documented decode throughput calculation credits all draft tokens under full acceptance regardless of actual acceptance.",
+          "kind": "documented-method",
+          "asOf": "2026-10-21",
+          "status": "partially corroborated",
+          "assessment": "The benchmark documentation gives the formula and the plotting method allows an assumed acceptance fraction.",
+          "limits": "An acceptance-adjusted curve is still a modeled output, not measured end-to-end useful tokens or user quality.",
+          "sourceLocation": "examples/README.md: Stage decoupling and metrics; Sweeps",
+          "references": [
+            "deepinfer-examples"
+          ],
+          "counterevidence": [],
+          "temporalScope": "DeepInfer pinned October 20, 2026 commit; external methods inspected October 21, 2026."
+        },
+        {
+          "id": "the-engine-is-not-the-service--cache-workload",
+          "proposition": "The default benchmark uses a shared cached prefix with 32,768-token context, 4,096 uncached tokens, 64 decode requests and nextn five.",
+          "kind": "documented-method",
+          "asOf": "2026-10-21",
+          "status": "partially corroborated",
+          "assessment": "The pinned examples documentation sets these defaults and explains decoupled prefill and decode scheduling.",
+          "limits": "Different tenant, cold-cache, burst and long-tail workloads may change the observed result.",
+          "sourceLocation": "examples/README.md: Benchmark defaults and shared prefix",
+          "references": [
+            "deepinfer-examples"
+          ],
+          "counterevidence": [],
+          "temporalScope": "DeepInfer pinned October 20, 2026 commit; external methods inspected October 21, 2026."
+        },
+        {
+          "id": "the-engine-is-not-the-service--reference-quality",
+          "proposition": "DeepSeek reports reference Pass@1 figures of 99.9% AIME 2026, 93.4% GPQA Diamond and 42.6% HLE-Full for its default V4.1 configuration.",
+          "kind": "first-party-evaluation-claim",
+          "asOf": "2026-10-21",
+          "status": "unverified",
+          "assessment": "The eval README gives sample counts, scoring method and those reference figures. The pinned capture lacks an independent completed output bundle.",
+          "limits": "Datasets are sourced separately, some gated, and default scoring needs a judge service; no quality/speed joint run was performed.",
+          "sourceLocation": "eval/README.md: Reference results, data preparation and scoring",
+          "references": [
+            "deepinfer-eval"
+          ],
+          "counterevidence": [],
+          "temporalScope": "DeepInfer pinned October 20, 2026 commit; external methods inspected October 21, 2026."
+        },
+        {
+          "id": "the-engine-is-not-the-service--operator-scale",
+          "proposition": "DeepSeek describes larger internal E/P/D, KV and replica services, cluster token volume and a revenue-per-GPU-hour illustration.",
+          "kind": "first-party-operational-claim",
+          "asOf": "2026-10-21",
+          "status": "unverified",
+          "assessment": "The deployment Q&A is an operator account of a broader private serving system, distinct from the released offline engine.",
+          "limits": "No independent traffic telemetry, cost accounting or profit evidence is available in the inspected source.",
+          "sourceLocation": "doc/inference_deployment_qa.md: cluster and economics answers",
+          "references": [
+            "deepinfer-deployment"
+          ],
+          "counterevidence": [],
+          "temporalScope": "DeepInfer pinned October 20, 2026 commit; external methods inspected October 21, 2026."
+        },
+        {
+          "id": "the-engine-is-not-the-service--alternative-method",
+          "proposition": "An online service comparison should include queueing, time to first token, inter-token delay, tail latency and quality under the same workload.",
+          "kind": "editorial-test-design",
+          "asOf": "2026-10-21",
+          "status": "unverified",
+          "assessment": "GhostMesh derives this test from the limits of offline charts and primary SGLang and vLLM benchmark guidance.",
+          "limits": "The comparison is proposed, not executed; alternative documentation does not establish performance superiority.",
+          "sourceLocation": "GhostMesh experiment; SGLang and vLLM serving benchmark documentation",
+          "references": [
+            "deepinfer-examples",
+            "sglang-method",
+            "vllm-method"
+          ],
+          "counterevidence": [],
+          "temporalScope": "DeepInfer pinned October 20, 2026 commit; external methods inspected October 21, 2026."
+        },
+        {
+          "id": "the-engine-is-not-the-service--local-fit",
+          "proposition": "DeepInfer adoption on Hyperion requires a verified hardware, model, data and service-control inventory before any installation or deployment recommendation.",
+          "kind": "editorial-inference",
+          "asOf": "2026-10-21",
+          "status": "unverified",
+          "assessment": "This is GhostMesh’s bounded engineering recommendation based on the narrow supported-hardware list and missing service components.",
+          "limits": "The actual Hyperion accelerator inventory and workload were not verified here; no Hyperion or Qwen action was performed.",
+          "sourceLocation": "README: Supported hardware; Required for a complete inference service",
+          "references": [
+            "deepinfer-readme"
+          ],
+          "counterevidence": [],
+          "temporalScope": "DeepInfer pinned October 20, 2026 commit; external methods inspected October 21, 2026."
+        }
+      ],
+      "references": [
+        {
+          "id": "deepinfer-readme",
+          "title": "DeepInfer README",
+          "author": "DeepSeek-AI contributors",
+          "publisher": "DeepSeek-AI",
+          "url": "https://github.com/deepseek-ai/DeepInfer/blob/774ce244b87cc0eb8d4b94ab9f5de2ab22049f01/README.md",
+          "publicationDate": "2026-10-20",
+          "eventDate": null,
+          "location": "README features, supported hardware, missing serving components and plotted benchmark context",
+          "sourceType": "first-party repository documentation",
+          "independence": "Pinned code-source documentation; capabilities are described by maintainer, not independently executed.",
+          "evidenceFamily": "deepseek-repository",
+          "checkedAt": "2026-10-21T04:32:14Z",
+          "datePrecision": "day"
+        },
+        {
+          "id": "deepinfer-examples",
+          "title": "DeepInfer examples and benchmark methodology",
+          "author": "DeepSeek-AI contributors",
+          "publisher": "DeepSeek-AI",
+          "url": "https://github.com/deepseek-ai/DeepInfer/blob/774ce244b87cc0eb8d4b94ab9f5de2ab22049f01/examples/README.md",
+          "publicationDate": "2026-10-20",
+          "eventDate": null,
+          "location": "Benchmark: stage decoupling, shared prefix, defaults, steady-state windows and full-acceptance throughput formula",
+          "sourceType": "first-party benchmark methodology",
+          "independence": "Primary method description and inspected scripts; no measured result independently reproduced.",
+          "evidenceFamily": "deepseek-repository",
+          "checkedAt": "2026-10-21T04:32:14Z",
+          "datePrecision": "day"
+        },
+        {
+          "id": "deepinfer-eval",
+          "title": "DeepInfer evaluation README",
+          "author": "DeepSeek-AI contributors",
+          "publisher": "DeepSeek-AI",
+          "url": "https://github.com/deepseek-ai/DeepInfer/blob/774ce244b87cc0eb8d4b94ab9f5de2ab22049f01/eval/README.md",
+          "publicationDate": "2026-10-20",
+          "eventDate": null,
+          "location": "Evaluation layout, data requirements, judging, reference Pass@1 values",
+          "sourceType": "first-party evaluation methodology",
+          "independence": "Reference scores are maintainer figures; no independently scored output bundle was inspected.",
+          "evidenceFamily": "deepseek-repository",
+          "checkedAt": "2026-10-21T04:32:14Z",
+          "datePrecision": "day"
+        },
+        {
+          "id": "deepinfer-deployment",
+          "title": "DeepInfer inference deployment Q&A",
+          "author": "DeepSeek-AI contributors",
+          "publisher": "DeepSeek-AI",
+          "url": "https://github.com/deepseek-ai/DeepInfer/blob/774ce244b87cc0eb8d4b94ab9f5de2ab22049f01/doc/inference_deployment_qa.md",
+          "publicationDate": "2026-10-20",
+          "eventDate": null,
+          "location": "Production stack, KV storage, deployment scale and operator economics",
+          "sourceType": "first-party production account",
+          "independence": "Describes internal service components beyond the public offline release; no telemetry or ledger independently audited.",
+          "evidenceFamily": "deepseek-repository",
+          "checkedAt": "2026-10-21T04:32:14Z",
+          "datePrecision": "day"
+        },
+        {
+          "id": "sglang-method",
+          "title": "SGLang benchmark and profiling guidance",
+          "author": "SGLang maintainers",
+          "publisher": "SGLang",
+          "url": "https://docs.sglang.io/docs/developer_guide/benchmark_and_profiling",
+          "publicationDate": "unknown",
+          "eventDate": null,
+          "location": "Online serving metrics and benchmark choices",
+          "sourceType": "primary software documentation",
+          "independence": "Methodological alternative only; no matched DeepInfer comparison.",
+          "evidenceFamily": "sglang-project",
+          "checkedAt": "2026-10-21T04:32:14Z",
+          "dateNote": "Continuously edited documentation has no stable original publication date established in this reading."
+        },
+        {
+          "id": "vllm-method",
+          "title": "vLLM benchmarking CLI",
+          "author": "vLLM maintainers",
+          "publisher": "vLLM",
+          "url": "https://docs.vllm.ai/en/latest/benchmarking/cli/",
+          "publicationDate": "unknown",
+          "eventDate": null,
+          "location": "Serving benchmark metrics including time to first token and inter-token latency",
+          "sourceType": "primary software documentation",
+          "independence": "Methodological alternative only; no matched DeepInfer comparison.",
+          "evidenceFamily": "vllm-project",
+          "checkedAt": "2026-10-21T04:32:14Z",
+          "dateNote": "Continuously edited documentation has no stable original publication date established in this reading."
+        }
+      ],
+      "relationships": [
+        {
+          "target": "reader:the-parallel-result-is-not-the-product",
+          "type": "related topic",
+          "reason": "Both Readers challenge a jump from reported model-system speed to a product decision. The earlier analysis concerns parallel-agent performance and outcome evaluation; DeepInfer concerns inference throughput, accepted tokens and service latency. Neither source independently verifies the other.",
+          "provenance": [
+            "/the-engine-is-not-the-service/#denominator",
+            "/the-parallel-result-is-not-the-product/#decision"
+          ],
+          "basis": "curated-editorial-comparison",
+          "direction": "outgoing"
+        },
+        {
+          "target": "reader:the-boundary-is-bigger-than-the-box",
+          "type": "related topic",
+          "reason": "Both Readers test the gap between owning compute and controlling a usable private service. The earlier reading examines local versus cloud trust and cost; this one identifies KV, egress, routing and recovery boundaries for inference. This is an architectural reading route, not corroboration of DeepSeek metrics.",
+          "provenance": [
+            "/the-engine-is-not-the-service/#control",
+            "/the-boundary-is-bigger-than-the-box/#boundary"
+          ],
+          "basis": "curated-editorial-comparison",
+          "direction": "outgoing"
+        }
+      ],
+      "relationshipDisposition": "Two qualified editorial routes compare performance-to-product interpretation and local control boundaries. Neither corroborates DeepSeek benchmark or production metrics.",
+      "relationshipReview": {
+        "reviewedAt": "2026-10-21",
+        "reviewedCatalogSize": 28,
+        "decision": "linked",
+        "reviewedTargets": [
+          "reader:the-parallel-result-is-not-the-product",
+          "reader:the-boundary-is-bigger-than-the-box"
+        ],
+        "rationale": "Compared the pinned DeepInfer source with all 27 existing Readers. Two specific routes link performance-to-product interpretation and local service-control boundaries. Other Readers lack a comparably grounded technical question; topic overlap alone does not establish evidence or agreement."
+      },
+      "legacyReceipt": {
+        "schema": "ghostmesh-reader-receipt-v2",
+        "createdAt": "2026-10-21T04:32:14Z",
+        "source": {
+          "kind": "repository",
+          "identity": "deepseek-ai-deepinfer-774ce244",
+          "url": "https://github.com/deepseek-ai/DeepInfer/tree/774ce244b87cc0eb8d4b94ab9f5de2ab22049f01",
+          "repositoryUrl": "https://github.com/deepseek-ai/DeepInfer",
+          "repository": "deepseek-ai/DeepInfer",
+          "commit": "774ce244b87cc0eb8d4b94ab9f5de2ab22049f01",
+          "title": "DeepInfer",
+          "authors": "DeepSeek-AI contributors",
+          "publisher": "DeepSeek-AI",
+          "license": "Apache-2.0",
+          "createdDate": "2026-10-16",
+          "commitDate": "2026-10-20",
+          "dateNote": "GitHub reports repository creation October 16, 2026. The inspected main commit is dated October 20; no release tag date was verified."
+        },
+        "sourceInspection": {
+          "method": "Pinned public GitHub raw files privately captured and SHA-256 recorded; README, license, Q&A, benchmarks, evaluation instructions and selected runtime modules inspected without execution.",
+          "status": "private-pinned-repository-aid",
+          "captureManifestSha256": "904289606d33e1d950d19e260c7d921aee462831f2d44dd9d55b1fe767bc2d55",
+          "caveat": "No DeepInfer build or benchmark was run; no checkpoint, gated datasets or internal service telemetry was obtained. Code inspection is not a correctness or security audit.",
+          "publicationBoundary": "Only original GhostMesh analysis, short paraphrases, pinned links and sanitized hashes are public. Full captured files remain outside Git."
+        },
+        "custody": {
+          "status": "private-pinned-repository-verified",
+          "note": "Twelve public source files, 124872 bytes in total, were retained outside Git from exact commit 774ce244; the manifest digest binds their individual hashes."
+        },
+        "overview": "DeepSeek opens an offline DeepInfer engine for DeepSeek-V4.1-Flash on specified accelerators; its public release omits service components and its plots use selected steady-state workloads.",
+        "whyItMatters": "The source exposes useful code and methods, but draft-token throughput is not delivered user value, and the private production stack is broader than the open engine.",
+        "ghostMeshTakeaway": "Inventory hardware and workload first, then compare complete services on accepted tokens, first-token and tail latency, quality, privacy, total cost and recovery."
+      },
+      "review": {
+        "status": "independent-source-and-copy-reviewed; owner-acceptance-pending",
+        "reviewer": "Independent read-only Codex editorial reviewer",
+        "reviewedSourceHead": "Exact authored article SHA-256 4d1e11134a655828b60e42002365ddf73a7e8acda48cf846805381b854dd05c7",
+        "checkedAt": "2026-10-21T04:36:01Z",
+        "scope": "Pinned private source capture, benchmark formulas, first-party metrics, catalog claims, source-map points, graph relations, prose depth and public/private boundary.",
+        "findings": "Four catalog citations were corrected to pinned file URLs. Source map was expanded to cover reference scores and operator-scale claims. Focused re-review found no remaining factual, attribution, graph or privacy defect; DeepSeek metrics remain unreplicated."
+      },
+      "revisionHistory": [
+        {
+          "at": "2026-10-21T04:32:14Z",
+          "kind": "new-reader-candidate",
+          "reason": "Owner-requested repository deconstruction with pinned public commit and privately retained exact source aids."
+        },
+        {
+          "at": "2026-10-21T04:36:01Z",
+          "kind": "independent-editorial-review",
+          "reason": "Corrected pinned file citation routes and added quantitative source-map points after independent review; focused re-review found no remaining actionable defect."
+        }
+      ],
+      "editorialOrder": 24,
+      "orderReason": "Place the new inference-engine reading after the existing agent infrastructure and evaluation Readers.",
+      "editorialDepth": {
+        "schemaVersion": 1,
+        "receiptPath": "content/editorial-depth/the-engine-is-not-the-service.json"
       }
     }
   ],

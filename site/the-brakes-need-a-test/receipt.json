@@ -568,13 +568,13 @@
     },
     "relationshipReview": {
       "reviewedAt": "2026-10-21",
-      "reviewedCatalogSize": 27,
+      "reviewedCatalogSize": 28,
       "decision": "linked",
       "reviewedTargets": [
         "reader:the-label-the-box-and-the-bargain",
         "reader:the-threshold-is-a-claim-not-a-test"
       ],
-      "rationale": "Robinson's incident and release-process analysis supports routes to Bostrom's bounded control example and Gates's risk threshold. These are comparison paths, not independent interview corroboration. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged."
+      "rationale": "Robinson's incident and release-process analysis supports routes to Bostrom's bounded control example and Gates's risk threshold. These are comparison paths, not independent interview corroboration. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged. The DeepInfer repository Reader was also assessed; no new outgoing route from this Reader has a sufficiently specific source-grounded rationale."
     }
   },
   "editorial": {

@@ -56,12 +56,13 @@ CALLS = {
     'the-stop-button-is-outside-the-chat': ('Test the stop surface', 'Limit agent authority, inspect the real outcome and verify that active work and future access have stopped.'),
     'the-boundary-is-bigger-than-the-box': ('Test the whole boundary', 'Compare a real task locally and in the cloud, then inspect network paths, tool access and total cost.'),
     'the-commit-is-not-the-control': ('Test the acceptance path', 'Measure useful changes safely accepted and reversible, not merges per second alone.'),
+    'the-engine-is-not-the-service': ('Test the whole service', 'Measure verified useful tokens, first-token latency and recovery under your own workload before choosing a serving stack.'),
 }
 
 
 def _poster(reader):
     source = reader['source']
-    if source.get('kind') == 'article':
+    if source.get('kind') in {'article', 'repository'}:
         return (f'<div class="gm-archive-source-unknown">{_e(source["publisher"])}<br>'
                 f'{_e(source["title"])}</div>')
     if source.get('kind') == 'paper':
@@ -93,7 +94,7 @@ def card(reader, number=None):
     call_label, call = CALLS[slug]
     unverified = sum(claim['status'] == 'unverified' for claim in reader['claims'])
     total = len(reader['claims'])
-    written = reader['source'].get('kind') in {'paper', 'article'}
+    written = reader['source'].get('kind') in {'paper', 'article', 'repository'}
     platform = reader['source']['kind'] if written else reader['source'].get('platform', 'YouTube')
     number = number if number is not None else reader['editorialOrder'] + 1
     search_text = ' '.join([reader['title'], reader['overview'], reader['category'], *reader['tags'], call_label, call])

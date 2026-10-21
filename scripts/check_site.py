@@ -5,7 +5,7 @@ from html.parser import HTMLParser
 from urllib.parse import urlsplit,unquote
 from datetime import datetime,date,timezone
 import json,os,re,sys,xml.etree.ElementTree as ET
-from generate_site import projections,CATEGORIES,validate_text,validate_link_only_source,validate_paper_source,validate_article_source,validate_media_source
+from generate_site import projections,CATEGORIES,validate_text,validate_link_only_source,validate_paper_source,validate_article_source,validate_repository_source,validate_media_source
 from editorial_depth import validate_reader as validate_editorial_depth
 ROOT=Path(__file__).resolve().parents[1];SITE=ROOT/'site'
 VERDICTS={'Essential','Worth studying','Interesting, unproven','Mostly recycled','Misleading','Not worth your time'}
@@ -129,6 +129,11 @@ def check(root=ROOT):
    except ValueError as exc:errors.append(f'{slug}: {exc}')
    require('mediaAspect' not in r['source'] and 'platform' not in r['source'],f'{slug}: article has video-only fields')
    require('gm-media-frame' not in raw and 'data-gm-aspect' not in raw,f'{slug}: article has a fabricated media frame')
+  elif r['source'].get('kind')=='repository':
+   try:validate_repository_source(raw,r['source'])
+   except ValueError as exc:errors.append(f'{slug}: {exc}')
+   require('mediaAspect' not in r['source'] and 'platform' not in r['source'],f'{slug}: repository has video-only fields')
+   require('gm-media-frame' not in raw and 'data-gm-aspect' not in raw,f'{slug}: repository has a fabricated media frame')
   else:
    try:validate_media_source(r['source'])
    except ValueError as exc:errors.append(f'{slug}: {exc}')
