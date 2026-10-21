@@ -59,6 +59,70 @@ class KnowledgeContractTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "published claim text"):
             build_claim_register(changed, self.model)
 
+    def test_new_reader_and_claim_require_regeneration_then_update_all_counts(self):
+        with tempfile.TemporaryDirectory() as folder:
+            repo = Path(folder)
+            catalog = json.loads((ROOT / "content/catalog.json").read_text())
+            for rel in ("knowledge/v0.1/readers.source.json", "knowledge/v0.1/contract.schema.json"):
+                target = repo / rel
+                target.parent.mkdir(parents=True, exist_ok=True)
+                shutil.copyfile(ROOT / rel, target)
+            for node in self.model["nodes"]:
+                if node["type"] == "Reader":
+                    rel = node["source"]["path"]
+                    target = repo / rel
+                    target.parent.mkdir(parents=True, exist_ok=True)
+                    shutil.copyfile(ROOT / rel, target)
+
+            entry = copy.deepcopy(catalog["readers"][0])
+            old_slug = entry["slug"]
+            entry["slug"] = "projection-fixture"
+            entry["id"] = "reader:projection-fixture"
+            entry["title"] = "Projection fixture"
+            entry["overview"] = "A new published Reader used to test automatic knowledge indexing."
+            entry["references"] = []
+            entry["claims"] = [copy.deepcopy(entry["claims"][0])]
+            entry["claims"][0].update({"id": "projection-fixture--claim",
+                                         "proposition": "A fixture claim in the published Reader.",
+                                         "references": [], "counterevidence": [],
+                                         "status": "unverified"})
+            catalog["readers"].append(entry)
+            (repo / "content").mkdir()
+            (repo / "content/catalog.json").write_text(json.dumps(catalog))
+            page = (repo / "site" / old_slug / "index.html").read_text()
+            page = page.replace(catalog["host"] + "/" + old_slug + "/",
+                                catalog["host"] + "/projection-fixture/", 1)
+            page = page.replace("</body>", '<article id="projection-fixture--claim">'
+                                'A fixture claim in the published Reader.</article></body>')
+            target = repo / "site/projection-fixture/index.html"
+            target.parent.mkdir(parents=True)
+            target.write_text(page)
+
+            with self.assertRaisesRegex(ValueError, "Reader source inventory or page hashes stale"):
+                run(check=True, repo=repo)
+            generated = run(repo=repo)
+            register = json.loads(generated["site/knowledge/v0.1/claim-register.json"])
+            graph = json.loads(generated["site/knowledge/v0.1/readers.json"])
+            self.assertEqual((register["readerCount"], register["claimCount"]), (33, 285))
+            self.assertEqual(register["statusCounts"]["unverified"], 201)
+            self.assertEqual(len(graph["relationships"]), 4)  # No automatic citation admission.
+            self.assertEqual(generated, run(check=True, repo=repo))
+            cited_page = repo / "site/the-inbox-was-a-boundary/index.html"
+            cited_page.write_text(cited_page.read_text() + " ")
+            with self.assertRaisesRegex(ValueError, "Reader source inventory or page hashes stale"):
+                run(check=True, repo=repo)
+            rehashed = run(repo=repo)
+            refreshed_graph = json.loads(rehashed["site/knowledge/v0.1/readers.json"])
+            cited = next(node for node in refreshed_graph["nodes"] if node["id"] ==
+                         "urn:ghostmesh-readers:reader:the-inbox-was-a-boundary")
+            claim = next(node for node in refreshed_graph["nodes"] if node["id"] ==
+                         "urn:ghostmesh-readers:claim:fleet-activity-reported")
+            self.assertEqual(claim["provenance"]["sourceFileSha256"], cited["source"]["sha256"])
+            self.assertEqual(rehashed, run(check=True, repo=repo))
+            (repo / "site/knowledge/index.html").write_text("stale output")
+            with self.assertRaisesRegex(ValueError, "stale generated output"):
+                run(check=True, repo=repo)
+
     def test_private_classification_is_denied(self):
         self.invalid(lambda m: m["nodes"][1].__setitem__("visibility", "private"))
         self.invalid(lambda m: m["relationships"][0].__setitem__("visibility", "restricted"))

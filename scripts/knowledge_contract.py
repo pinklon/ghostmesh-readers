@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import argparse
+import copy
 import hashlib
 import html
 from html.parser import HTMLParser
@@ -157,6 +158,42 @@ def deny_leaks(data: bytes, label: str) -> None:
     for marker in DENIED:
         if marker.search(content):
             raise ValueError(f"{label}: private-data marker")
+
+
+def sync_reader_nodes(source: dict, catalog: dict, repo: Path = ROOT) -> dict:
+    """Refresh public Reader identity and page hashes; leave citations editorially admitted."""
+    model = copy.deepcopy(source)
+    entries = {"urn:ghostmesh-readers:reader:" + entry["slug"]: entry
+               for entry in catalog["readers"]}
+    existing = {node["id"]: node for node in model["nodes"] if node["type"] == "Reader"}
+    if len(existing) != sum(node["type"] == "Reader" for node in model["nodes"]):
+        raise ValueError("duplicate Reader node")
+    if set(existing) - set(entries):
+        raise ValueError("knowledge Reader no longer in public catalog")
+    hashes = {}
+    for ident, entry in entries.items():
+        path = "site/" + entry["slug"] + "/index.html"
+        page = (repo / path).resolve()
+        if not page.is_relative_to((repo / "site").resolve()):
+            raise ValueError("Reader source path escapes site")
+        digest = sha(page.read_bytes())
+        hashes[ident] = digest
+        node = existing.get(ident)
+        if node is None:
+            node = {"id": ident, "type": "Reader", "visibility": "public",
+                    "epistemicStatus": "source-editorial", "label": entry["title"],
+                    "url": catalog["host"] + "/" + entry["slug"] + "/",
+                    "source": {"path": path, "sha256": digest}}
+            model["nodes"].append(node)
+        else:
+            node["label"] = entry["title"]
+            node["url"] = catalog["host"] + "/" + entry["slug"] + "/"
+            node["source"] = {"path": path, "sha256": digest}
+    for record in (*model["nodes"], *model["relationships"]):
+        provenance = record.get("provenance")
+        if provenance and provenance.get("sourceNodeId") in hashes:
+            provenance["sourceFileSha256"] = hashes[provenance["sourceNodeId"]]
+    return model
 
 
 def validate_contract(model: dict, schema: dict, repo: Path = ROOT) -> None:
@@ -516,14 +553,20 @@ def outputs(model: dict, schema_bytes: bytes, source_bytes: bytes,
 def run(check: bool = False, repo: Path = ROOT) -> dict[str, bytes]:
     source_bytes = (repo / SOURCE.relative_to(ROOT)).read_bytes()
     schema_bytes = (repo / SCHEMA.relative_to(ROOT)).read_bytes()
-    model = json.loads(source_bytes)
+    catalog = json.loads((repo / "content/catalog.json").read_text(encoding="utf-8"))
+    model = sync_reader_nodes(json.loads(source_bytes), catalog, repo)
+    synced_source = (json.dumps(model, ensure_ascii=False, indent=2) + "\n").encode()
     schema = json.loads(schema_bytes)
     validate_contract(model, schema, repo)
-    catalog = json.loads((repo / "content/catalog.json").read_text(encoding="utf-8"))
     register = build_claim_register(catalog, model, repo)
-    rendered = outputs(model, schema_bytes, source_bytes, catalog, register)
+    rendered = outputs(model, schema_bytes, synced_source, catalog, register)
+    if check and source_bytes != synced_source:
+        raise ValueError("knowledge Reader source inventory or page hashes stale")
     for path, data in rendered.items():
         deny_leaks(data, path)
+    if not check and source_bytes != synced_source:
+        (repo / SOURCE.relative_to(ROOT)).write_bytes(synced_source)
+    for path, data in rendered.items():
         destination = repo / path
         if check:
             if not destination.is_file() or destination.read_bytes() != data:
