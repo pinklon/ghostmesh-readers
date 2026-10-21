@@ -184,6 +184,13 @@ class EditorialDepthGate(unittest.TestCase):
         self.receipt["sourceMap"][0]["claimIds"] = [self.reader["claims"][3]["id"]]
         self.assert_rejected("source-map point lacks separately checked cue")
 
+    def test_public_cue_map_rejects_private_marker_even_with_fresh_digest(self):
+        data = json.loads(self.map_path.read_text())
+        data["points"][0]["privateAidCheck"] += " Synthetic token ghp_ABCDEFGHIJKLMNOPQRSTUVWXYZ123456 must never appear in public source maps."
+        self.map_path.write_text(json.dumps(data))
+        self.receipt["sourceMapEvidenceSha256"] = hashlib.sha256(self.map_path.read_bytes()).hexdigest()
+        self.assert_rejected("contains a private marker")
+
     def test_instagram_and_paper_maps_require_original_source_link(self):
         self.reader["source"] = {"shortcode": "DeUnZhWgPKd", "url": "https://www.instagram.com/reel/DeUnZhWgPKd/", "durationSeconds": 5739}
         self.receipt = self.make_receipt()

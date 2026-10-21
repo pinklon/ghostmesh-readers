@@ -13,6 +13,7 @@ import json
 from pathlib import Path
 import re
 from urllib.request import Request, urlopen
+from knowledge_contract import DENIED as PRIVATE_MARKERS
 
 AREAS = (
     "sourceCoverage", "supportingArgument", "evidenceRoles", "counterargument",
@@ -223,6 +224,8 @@ def validate_reader(root: Path, reader: dict, *, release: bool = True) -> list[s
         map_evidence = None
         map_bytes = b""
         errors.append(f"{slug}: separate source-map evidence missing or invalid")
+    if map_bytes and any(marker.search(map_bytes.decode("utf-8", "replace")) for marker in PRIVATE_MARKERS):
+        errors.append(f"{slug}: separate source-map evidence contains a private marker")
     if not SHA.fullmatch(str(receipt.get("sourceMapEvidenceSha256", ""))) or hashlib.sha256(map_bytes).hexdigest() != receipt.get("sourceMapEvidenceSha256"):
         errors.append(f"{slug}: separate source-map evidence digest mismatch")
     complexity = receipt["complexity"]
