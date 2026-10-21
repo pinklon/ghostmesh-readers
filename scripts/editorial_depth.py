@@ -368,9 +368,9 @@ def validate_reader(root: Path, reader: dict, *, release: bool = True,
             section = re.search(r'<section\b[^>]*\bid="' + re.escape(str(entry["sectionId"])) + r'"[^>]*>(.*?)</section>', article, re.S)
             section_html = section.group(1) if section else ""
             links = [html.unescape(link) for link in re.findall(r'<a\b[^>]*href="([^"]+)"', section_html)]
-            if reader["source"].get("kind") == "paper":
+            if reader["source"].get("kind") in {"paper", "article"}:
                 if second is not None:
-                    errors.append(f"{slug}: paper source map must use section locators rather than video time")
+                    errors.append(f"{slug}: written source map must use section locators rather than video time")
             elif not isinstance(second, int) or isinstance(second, bool) or second < 0 or (reader["source"].get("durationSeconds") and second >= reader["source"]["durationSeconds"]):
                 errors.append(f"{slug}: source map timestamp absent from article or source duration")
             elif source_video:
@@ -393,7 +393,9 @@ def validate_reader(root: Path, reader: dict, *, release: bool = True,
             seen.add(marker)
         if isinstance(complexity, dict) and complexity.get("tier") == "extended" and len({str(e.get("sectionId")) for e in source_map if isinstance(e, dict)}) < 3:
             errors.append(f"{slug}: extended source map misses distinct analytical sections")
-        if isinstance(complexity, dict) and complexity.get("tier") == "extended" and len({e.get("atSeconds") for e in source_map if isinstance(e, dict)}) < 3:
+        if (isinstance(complexity, dict) and complexity.get("tier") == "extended"
+                and reader["source"].get("kind") not in {"paper", "article"}
+                and len({e.get("atSeconds") for e in source_map if isinstance(e, dict)}) < 3):
             errors.append(f"{slug}: extended source map repeats a single source moment")
     if not isinstance(receipt["candidateAuthor"], str) or not receipt["candidateAuthor"].strip():
         errors.append(f"{slug}: accountable candidate author missing")

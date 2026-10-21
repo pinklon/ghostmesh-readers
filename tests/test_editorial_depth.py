@@ -321,6 +321,31 @@ class EditorialDepthGate(unittest.TestCase):
         self.receipt["sourceMapEvidenceSha256"] = self.write_map(self.receipt)
         self.assert_rejected("lacks original source link")
 
+    def test_extended_written_paper_uses_three_grounded_sections_without_fake_times(self):
+        paper = next(r for r in json.loads((ROOT / "content/catalog.json").read_text())["readers"]
+                     if r["source"].get("kind") == "paper")
+        self.reader["source"] = copy.deepcopy(paper["source"])
+        url = self.reader["source"]["url"]
+        self.article.write_text(''.join(
+            f'<section id="{section}"><h2>{section.title()}</h2><p>'
+            f'The source gives a distinct, qualified claim for this part of the argument. '
+            f'<a href="{url}">Original article</a> supports what the operator reports, '
+            f'while independent outcome measurements and recovery tests remain unavailable here.</p></section>'
+            for section in ("pressure", "architecture", "experiment")
+        ))
+        self.receipt = self.make_receipt()
+        self.receipt["sourceMap"] = [
+            {"atSeconds": None, "sectionId": section,
+             "claimIds": [self.reader["claims"][index]["id"]],
+             "rationale": "This written-source section separates the operator assertion from untested outcomes and records its original link."}
+            for index, section in enumerate(("pressure", "architecture", "experiment"))
+        ]
+        self.receipt["sourceMapEvidenceSha256"] = self.write_map(self.receipt)
+        self.save_receipt()
+        self.assertEqual([], validate_reader(self.root, self.reader))
+        self.receipt["sourceMap"][0]["atSeconds"] = 12
+        self.assert_rejected("written source map must use section locators")
+
     def test_empty_or_placeholder_mapped_article_section_fails(self):
         self.article.write_text(self.article.read_text().replace('The speaker describes local inference as one route for keeping sensitive inputs close to their owner.', 'TODO add analysis here'))
         self.receipt = self.make_receipt()
