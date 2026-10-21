@@ -295,12 +295,12 @@
         "rationale": "Compared the Anthropic engineering source with all 26 existing Readers. Two qualified routes concern inspectable agent work and evaluation gates; the others lack a sufficiently specific shared question. No existing Reader independently verifies Scion metrics."
       },
       "review": {
-        "status": "independent-source-and-copy-reviewed; owner-acceptance-pending",
+        "status": "independent-source-and-copy-reviewed; owner-accepted",
         "reviewer": "Independent read-only Codex editorial reviewer",
         "reviewedSourceHead": "Exact authored article SHA-256 4a5b455ef28b824e75c9dc521767f5813e42ee04ccca3b3f194fde942b0d7462",
         "checkedAt": "2026-10-21T02:49:48Z",
         "scope": "Original article, private source capture hash and metadata, first-party metrics, alternatives, public claims, relationship links and privacy boundary.",
-        "findings": "One initial attribution overreach was corrected. The targeted follow-up verified that only a direct Anthropic source link was added to the measurements paragraph, with no substantive or privacy change. No remaining actionable finding; owner qualitative acceptance is pending."
+        "findings": "One initial attribution overreach was corrected. The targeted follow-up verified that only a direct Anthropic source link was added to the measurements paragraph, with no substantive or privacy change. No remaining actionable finding. Owner qualitative acceptance was subsequently recorded in the unedited GitHub PR 52 comment 6307267366. Final production release remains a separate decision."
       },
       "revisionHistory": [
         {

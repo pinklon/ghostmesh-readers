@@ -371,7 +371,7 @@
       "url": "https://youtube.shareplane.malott.ai/the-commit-is-not-the-control/",
       "source": {
         "path": "site/the-commit-is-not-the-control/index.html",
-        "sha256": "5bce38b05658abd1665706317da9c21fbc41050de7d5af2b2f420ce71bba89c5"
+        "sha256": "5bcba39a6ba362d079f9455f1ac319614fe007a6e818f761eae74629898896ab"
       }
     },
     {
@@ -384,7 +384,7 @@
       "provenance": {
         "sourceNodeId": "urn:ghostmesh-readers:reader:the-commit-is-not-the-control",
         "locator": "#volume",
-        "sourceFileSha256": "5bce38b05658abd1665706317da9c21fbc41050de7d5af2b2f420ce71bba89c5",
+        "sourceFileSha256": "5bcba39a6ba362d079f9455f1ac319614fe007a6e818f761eae74629898896ab",
         "quoteSha256": "b1d05a9a858a78403843179429f2d50dc5ff87d56c116f8dd4ae263b26ba8d64"
       }
     },
@@ -438,7 +438,7 @@
       "provenance": {
         "sourceNodeId": "urn:ghostmesh-readers:reader:the-commit-is-not-the-control",
         "locator": "#volume",
-        "sourceFileSha256": "5bce38b05658abd1665706317da9c21fbc41050de7d5af2b2f420ce71bba89c5",
+        "sourceFileSha256": "5bcba39a6ba362d079f9455f1ac319614fe007a6e818f761eae74629898896ab",
         "quoteSha256": "b1d05a9a858a78403843179429f2d50dc5ff87d56c116f8dd4ae263b26ba8d64"
       }
     }
