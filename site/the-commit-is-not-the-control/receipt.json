@@ -1,0 +1,339 @@
+{
+  "schema": "ghostmesh-reader-receipt-v2",
+  "createdAt": "2026-10-21T02:34:41Z",
+  "source": {
+    "kind": "article",
+    "identity": "anthropic-redesigning-source-control-2026",
+    "url": "https://www.anthropic.com/research/redesigning-source-control",
+    "title": "Redesigning source control at Anthropic",
+    "authors": "Nick G. and the Anthropic source control team",
+    "publisher": "Anthropic Engineering",
+    "publicationDate": "2026-10-13",
+    "updatedDate": "2026-10-15",
+    "dateNote": "The page marks publication October 13 and says it was updated October 15 with prior-art detail."
+  },
+  "sourceInspection": {
+    "method": "Exact public Anthropic article HTTP capture retained outside Git; page title, publication and update note inspected against live original and linked primary technical sources.",
+    "status": "private-original-html-aid",
+    "sourceHtmlSha256": "b7bc489ef952cc9caba07e1a8b33a96f9aae8302b827dcd6f475ad0bed03a7ca",
+    "caveat": "Full source HTML is privately retained. Operator metrics, private Scion code and telemetry were not independently verified. This source is a written article; no video, transcript or timestamps exist.",
+    "publicationBoundary": "Only original GhostMesh analysis, short paraphrases, links and sanitized hashes are published; full source capture stays outside Git."
+  },
+  "custody": {
+    "status": "private-original-html-verified",
+    "note": "Exact original URL returned HTTP 200 and a 240719-byte HTML capture; title and October 13 publication with October 15 update were checked on the page."
+  },
+  "overview": "Anthropic reports a jump to more than 30,000 daily monorepo merges and describes Scion, an online source-control service built for sparse agent and CI workloads.",
+  "whyItMatters": "The reported speed gains are striking, but server-side commits and shared caches move integrity, availability, permission and recovery decisions into a central control plane.",
+  "ghostMeshTakeaway": "Measure the entire path from proposed change to accepted, deployable and reversible outcome before replacing Git or treating merge throughput as engineering quality.",
+  "normalization": {
+    "id": "reader:the-commit-is-not-the-control",
+    "slug": "the-commit-is-not-the-control",
+    "title": "The Commit Is Not the Control",
+    "category": "AI & Technology",
+    "tags": [
+      "source control",
+      "coding agents",
+      "review",
+      "infrastructure"
+    ],
+    "entities": [
+      "Anthropic",
+      "Scion",
+      "Git",
+      "GitHub",
+      "Google Piper",
+      "Meta Mononoke"
+    ],
+    "source": {
+      "kind": "article",
+      "identity": "anthropic-redesigning-source-control-2026",
+      "url": "https://www.anthropic.com/research/redesigning-source-control",
+      "title": "Redesigning source control at Anthropic",
+      "authors": "Nick G. and the Anthropic source control team",
+      "publisher": "Anthropic Engineering",
+      "publicationDate": "2026-10-13",
+      "updatedDate": "2026-10-15",
+      "dateNote": "The page marks publication October 13 and says it was updated October 15 with prior-art detail."
+    },
+    "published": "2026-10-21",
+    "updated": "2026-10-21T02:34:41Z",
+    "overview": "Anthropic reports a jump to more than 30,000 daily monorepo merges and describes Scion, an online source-control service built for sparse agent and CI workloads.",
+    "whyItMatters": "The reported speed gains are striking, but server-side commits and shared caches move integrity, availability, permission and recovery decisions into a central control plane.",
+    "ghostMeshTakeaway": "Measure the entire path from proposed change to accepted, deployable and reversible outcome before replacing Git or treating merge throughput as engineering quality.",
+    "verdict": "Worth studying",
+    "architectureImpact": "experiment recommended",
+    "falsification": "Revise the recommendation if matched synthetic workloads show configured Git is the binding constraint and a server-centric alternative meets integrity, permission, review and recovery thresholds at sustainable total cost.",
+    "evidenceState": "partially corroborated",
+    "lastEvidenceChecked": "2026-10-21T02:34:41Z",
+    "freshness": "Anthropic original engineering page published October 13 and updated October 15, 2026, privately captured and checked 2026-10-21. Git, GitHub, Google and Meta primary materials checked the same day. No Scion telemetry or implementation was independently audited.",
+    "variant": "dossier",
+    "accent": "blue",
+    "claims": [
+      {
+        "id": "the-commit-is-not-the-control--write-pressure",
+        "proposition": "Anthropic reports that daily merges grew from about 2,500 in May to more than 30,000 in September 2026.",
+        "kind": "first-party-operational-metric",
+        "asOf": "2026-10-21",
+        "status": "unverified",
+        "assessment": "The operator states both figures and describes accelerated agent work; no underlying event definition or telemetry is public in this source.",
+        "limits": "Growth is not an independent measure of review quality, useful output or a typical organization’s load.",
+        "sourceLocation": "Growing our monorepo",
+        "references": [
+          "anthropic-scion"
+        ],
+        "counterevidence": [],
+        "temporalScope": "Anthropic article published October 13 and updated October 15, 2026; external materials inspected 2026-10-21."
+      },
+      {
+        "id": "the-commit-is-not-the-control--checkout-pressure",
+        "proposition": "Anthropic reports roughly 25 million CI checkouts per day; 600 PB per day is its naive fetch projection, not observed traffic.",
+        "kind": "first-party-operational-metric",
+        "asOf": "2026-10-21",
+        "status": "unverified",
+        "assessment": "The article distinguishes the reported checkout count from what naive full fetching would imply.",
+        "limits": "The measurement method, cache hit rates and actual transmitted bytes are unavailable here.",
+        "sourceLocation": "Growing our monorepo",
+        "references": [
+          "anthropic-scion"
+        ],
+        "counterevidence": [],
+        "temporalScope": "Anthropic article published October 13 and updated October 15, 2026; external materials inspected 2026-10-21."
+      },
+      {
+        "id": "the-commit-is-not-the-control--scion-design",
+        "proposition": "Scion uses server-side changesets, content-addressed blobs, derived metadata and sparse or virtualized working copies.",
+        "kind": "operator-architecture-description",
+        "asOf": "2026-10-21",
+        "status": "partially corroborated",
+        "assessment": "Anthropic describes this design in detail and credits earlier centralized systems; Google Piper and Meta Mononoke demonstrate the broader architectural family.",
+        "limits": "Scion itself is internal. Prior art does not verify the exact code path, integrity properties or production configuration.",
+        "sourceLocation": "Principles for agent-scale source control; Data structures; Scaling Scion",
+        "references": [
+          "anthropic-scion",
+          "google-piper",
+          "meta-mononoke"
+        ],
+        "counterevidence": [],
+        "temporalScope": "Anthropic article published October 13 and updated October 15, 2026; external materials inspected 2026-10-21."
+      },
+      {
+        "id": "the-commit-is-not-the-control--reported-gains",
+        "proposition": "Anthropic reports a 200-times smaller former-mirror CPU/memory footprint, much faster checkouts and a 25 percent CI CPU capacity gain.",
+        "kind": "first-party-performance-claim",
+        "asOf": "2026-10-21",
+        "status": "unverified",
+        "assessment": "The article attributes all three changes to its Scion migration and shows the directional benefit claimed by the operator.",
+        "limits": "No reproducible workload, p95 distribution, dollar cost or matched tuned-Git benchmark appears in the cited record.",
+        "sourceLocation": "Scaling Scion; Observed performance improvements",
+        "references": [
+          "anthropic-scion"
+        ],
+        "counterevidence": [],
+        "temporalScope": "Anthropic article published October 13 and updated October 15, 2026; external materials inspected 2026-10-21."
+      },
+      {
+        "id": "the-commit-is-not-the-control--git-alternatives",
+        "proposition": "Partial clone, promisor remotes, sparse checkout and server maintenance offer Git-based ways to reduce some large-repository costs.",
+        "kind": "documented-alternative",
+        "asOf": "2026-10-21",
+        "status": "partially corroborated",
+        "assessment": "Git’s design documentation describes omitted-object fetches, while GitHub documents its own repacking work; Anthropic says it tried related measures.",
+        "limits": "These features may be insufficient at Anthropic’s scale and do not duplicate Scion’s server-side API or results.",
+        "sourceLocation": "Growing our monorepo; Contributing to the wider ecosystem",
+        "references": [
+          "git-partial",
+          "github-maintenance",
+          "anthropic-scion"
+        ],
+        "counterevidence": [],
+        "temporalScope": "Anthropic article published October 13 and updated October 15, 2026; external materials inspected 2026-10-21."
+      },
+      {
+        "id": "the-commit-is-not-the-control--human-review",
+        "proposition": "Anthropic says the Scion and Antique team reviews each change request for its own systems; the article does not establish human review of every companywide merge.",
+        "kind": "first-party-process-claim",
+        "asOf": "2026-10-21",
+        "status": "unverified",
+        "assessment": "The operator describes intent-focused reviews of source-control system changes, Antique policy expressiveness and post-merge or pre-deploy tests.",
+        "limits": "The separate 30,000-merges-per-day figure is companywide. The source does not say every one of those changes received human review or publish a companywide approval-error rate.",
+        "sourceLocation": "What we learned building Scion",
+        "references": [
+          "anthropic-scion"
+        ],
+        "counterevidence": [],
+        "temporalScope": "Anthropic article published October 13 and updated October 15, 2026; external materials inspected 2026-10-21."
+      },
+      {
+        "id": "the-commit-is-not-the-control--control-shift",
+        "proposition": "An always-online server-centric repository shifts availability, integrity, IAM and recovery questions toward shared services.",
+        "kind": "editorial-inference",
+        "asOf": "2026-10-21",
+        "status": "unverified",
+        "assessment": "This is GhostMesh’s threat-model inference from the source’s online premise, server-side operations, tiered caches and rich IAM description.",
+        "limits": "The article does not report an outage, exploit or actual Scion control failure. These are tests to run, not observed incidents.",
+        "sourceLocation": "Principles; Scaling Scion; What we learned",
+        "references": [
+          "anthropic-scion"
+        ],
+        "counterevidence": [],
+        "temporalScope": "Anthropic article published October 13 and updated October 15, 2026; external materials inspected 2026-10-21."
+      },
+      {
+        "id": "the-commit-is-not-the-control--bounded-test",
+        "proposition": "A migration decision should compare accepted-and-reversible changes, not commits per second, under matched workload and failure drills.",
+        "kind": "editorial-inference",
+        "asOf": "2026-10-21",
+        "status": "unverified",
+        "assessment": "GhostMesh proposes a baseline Git tuning arm, a server-centric arm, exact-change review and recovery measurements.",
+        "limits": "This experiment has not been run, and no universal threshold follows from Anthropic’s first-party case.",
+        "sourceLocation": "Contributing to the wider ecosystem",
+        "references": [
+          "anthropic-scion",
+          "git-partial"
+        ],
+        "counterevidence": [],
+        "temporalScope": "Anthropic article published October 13 and updated October 15, 2026; external materials inspected 2026-10-21."
+      }
+    ],
+    "references": [
+      {
+        "id": "anthropic-scion",
+        "title": "Redesigning source control at Anthropic",
+        "author": "Nick G. and the source control team",
+        "publisher": "Anthropic Engineering",
+        "url": "https://www.anthropic.com/research/redesigning-source-control",
+        "publicationDate": "2026-10-13",
+        "eventDate": "2026-10-15",
+        "location": "Growing our monorepo; Principles; How Scion works; Scaling Scion; What we learned",
+        "sourceType": "first-party engineering report",
+        "independence": "Operator account of internal workload, architecture and outcomes. No independent telemetry, cost ledger or source audit is public in this record.",
+        "evidenceFamily": "anthropic-operator",
+        "checkedAt": "2026-10-21T02:34:41Z",
+        "datePrecision": "day"
+      },
+      {
+        "id": "git-partial",
+        "title": "Partial clone design",
+        "author": "Git contributors",
+        "publisher": "Git documentation",
+        "url": "https://git-scm.com/docs/partial-clone",
+        "publicationDate": "unknown",
+        "eventDate": null,
+        "location": "Design Overview; promisor remotes; non-goals",
+        "sourceType": "primary software documentation",
+        "independence": "Documents Git mechanisms and their online dependency, not a matched benchmark against Scion.",
+        "evidenceFamily": "git-project",
+        "checkedAt": "2026-10-21T02:34:41Z",
+        "dateNote": "The continuously updated Git documentation does not establish a stable original publication date for this inspected version."
+      },
+      {
+        "id": "github-maintenance",
+        "title": "Scaling monorepo maintenance",
+        "author": "Taylor Blau",
+        "publisher": "GitHub Engineering",
+        "url": "https://github.blog/open-source/git/scaling-monorepo-maintenance/",
+        "publicationDate": "2021-04-29",
+        "eventDate": null,
+        "location": "Large-repository repacking and server maintenance",
+        "sourceType": "primary engineering account",
+        "independence": "GitHub reports its own large-repository maintenance work; its workload is not Anthropic’s and no Scion comparison is supplied.",
+        "evidenceFamily": "github-engineering",
+        "checkedAt": "2026-10-21T02:34:41Z",
+        "datePrecision": "day"
+      },
+      {
+        "id": "google-piper",
+        "title": "Why Google Stores Billions of Lines of Code in a Single Repository",
+        "author": "Rachel Potvin and Josh Levenberg",
+        "publisher": "Google Research",
+        "url": "https://research.google/pubs/why-google-stores-billions-of-lines-of-code-in-a-single-repository/",
+        "publicationDate": "2016",
+        "eventDate": null,
+        "location": "Monolithic source repository and organizational tradeoffs",
+        "sourceType": "research paper",
+        "independence": "Independent prior-art account of a centralized monorepo design, not a Scion replication.",
+        "evidenceFamily": "google-research",
+        "checkedAt": "2026-10-21T02:34:41Z",
+        "datePrecision": "year"
+      },
+      {
+        "id": "meta-mononoke",
+        "title": "Mononoke README",
+        "author": "Meta Sapling maintainers",
+        "publisher": "Meta Sapling",
+        "url": "https://github.com/facebook/sapling/blob/main/eden/mononoke/README.md",
+        "publicationDate": "unknown",
+        "eventDate": null,
+        "location": "Server overview and Caveat Emptor",
+        "sourceType": "maintainer documentation",
+        "independence": "Open source prior art for a server, with explicit omissions in the published build; not a measure of Anthropic’s implementation.",
+        "evidenceFamily": "meta-sapling",
+        "checkedAt": "2026-10-21T02:34:41Z",
+        "dateNote": "The continuously edited repository README does not establish a stable original publication date for this inspected version."
+      }
+    ],
+    "relationships": [
+      {
+        "target": "reader:make-good-work-inspectable",
+        "type": "related topic",
+        "reason": "Both examine the gap between agent-produced code and work a human can inspect. The earlier Reader concerns task-level intent and outcome; this one asks whether high-volume source control and acceptance records preserve that inspectability. Neither source verifies the other’s metrics.",
+        "provenance": [
+          "/the-commit-is-not-the-control/#thesis",
+          "/make-good-work-inspectable/#limits"
+        ],
+        "basis": "curated-editorial-comparison",
+        "direction": "outgoing"
+      },
+      {
+        "target": "reader:the-grader-is-part-of-the-harness",
+        "type": "related topic",
+        "reason": "Both treat evaluation infrastructure as part of the outcome. The harness Reader tests whether a grader can certify adaptive work; this Reader asks whether review, CI and recovery can keep pace with faster landing. This is a design comparison, not evidence for Anthropic’s performance figures.",
+        "provenance": [
+          "/the-commit-is-not-the-control/#measurements",
+          "/the-grader-is-part-of-the-harness/#grading"
+        ],
+        "basis": "curated-editorial-comparison",
+        "direction": "outgoing"
+      }
+    ],
+    "relationshipDisposition": "Two substantive editorial comparisons connect agent work inspectability and evaluation infrastructure. They do not corroborate Anthropic’s internal scale or performance reports.",
+    "relationshipReview": {
+      "reviewedAt": "2026-10-21",
+      "reviewedCatalogSize": 27,
+      "decision": "linked",
+      "reviewedTargets": [
+        "reader:make-good-work-inspectable",
+        "reader:the-grader-is-part-of-the-harness"
+      ],
+      "rationale": "Compared the Anthropic engineering source with all 26 existing Readers. Two qualified routes concern inspectable agent work and evaluation gates; the others lack a sufficiently specific shared question. No existing Reader independently verifies Scion metrics."
+    },
+    "review": {
+      "status": "independent-source-and-copy-reviewed; owner-acceptance-pending",
+      "reviewer": "Independent read-only Codex editorial reviewer",
+      "reviewedSourceHead": "Exact authored article SHA-256 f4771ea7444471eb9ec927ba8b444cbc4c41b39e2723dd154bd130a3f3096fe1",
+      "checkedAt": "2026-10-21T02:38:46Z",
+      "scope": "Original article, private source capture hash and metadata, first-party metrics, alternatives, public claims, relationship links and privacy boundary.",
+      "findings": "One initial attribution overreach corrected: the source-control team reviews its own system changes, not necessarily every companywide merge. Current exact article and public receipt have no remaining findings. Operator telemetry and Scion code were unavailable. Independent recommendation is acceptance for Tony’s separate qualitative decision."
+    },
+    "revisionHistory": [
+      {
+        "at": "2026-10-21T02:34:41Z",
+        "kind": "new-reader-candidate",
+        "reason": "Owner-requested deconstruction of Anthropic’s source-control engineering article with private source custody and bounded claim review."
+      },
+      {
+        "at": "2026-10-21T02:38:46Z",
+        "kind": "independent-editorial-review",
+        "reason": "Corrected the scope of Anthropic’s human-review statement and obtained no-findings source, argument and privacy review of the exact authored article."
+      }
+    ],
+    "editorialOrder": 23,
+    "orderReason": "Place the source-control infrastructure reading after the agent control and evaluation readings."
+  },
+  "editorial": {
+    "overview": "Anthropic reports a jump to more than 30,000 daily monorepo merges and describes Scion, an online source-control service built for sparse agent and CI workloads.",
+    "whyItMatters": "The reported speed gains are striking, but server-side commits and shared caches move integrity, availability, permission and recovery decisions into a central control plane.",
+    "ghostMeshTakeaway": "Measure the entire path from proposed change to accepted, deployable and reversible outcome before replacing Git or treating merge throughput as engineering quality."
+  }
+}
