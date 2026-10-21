@@ -23,6 +23,10 @@ OWNER_SELECTED_ORIGINAL_HASHES = {
     "home": "71e54f781a46749952cc8aa754dfdd4294f021b1a7f4d6a1508b2a68c8145def",
     "the-inbox-was-a-boundary": "5086a14f86fcc604dd83bb2d53c614bf9849ebc91bfbabbfc01c56dfd4389ea3",
 }
+OWNER_SELECTED_PREVIEW_HASHES = {
+    "home": "0cdac0d2c22e4165ae639e4802460ee60662703071947abfca13172b21670a56",
+    "the-inbox-was-a-boundary": "7b89cdad4a9851b306cea4c891346d1dddc32cd2af9dd83b66b57e6a878a920e",
+}
 
 
 class Head(HTMLParser):
@@ -141,7 +145,9 @@ def check(root: Path = ROOT, release: bool = False) -> list[str]:
         key = Path(spec["image"]).stem
         if key in OWNER_SELECTED_PREVIEW_KEYS:
             selected = root / "content/social-artwork" / f"{key}-1200x630.png"
-            if not selected.is_file() or payload != selected.read_bytes():
+            if (not selected.is_file()
+                    or hashlib.sha256(selected.read_bytes()).hexdigest() != OWNER_SELECTED_PREVIEW_HASHES[key]
+                    or payload != selected.read_bytes()):
                 errors.append(f"Selected preview art differs from source asset: {spec['image']}")
         elif b"PREVIEW ONLY - NOT APPROVED" not in payload:
             errors.append(f"Provisional image lacks visible-gate marker: {spec['image']}")

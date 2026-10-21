@@ -69,6 +69,9 @@ class SocialPreviewGate(unittest.TestCase):
         image = self.root / "site/social/previews/home.png"
         image.write_bytes((self.root / "site/social/previews/the-inbox-was-a-boundary.png").read_bytes())
         self.assertIn("Selected preview art differs", " ".join(check(self.root)))
+        selected = self.root / "content/social-artwork/home-1200x630.png"
+        selected.write_bytes(image.read_bytes())
+        self.assertIn("Selected preview art differs", " ".join(check(self.root)))
 
     def test_compressed_private_png_metadata_is_rejected(self):
         image = self.root / "site/social/previews/home.png"
