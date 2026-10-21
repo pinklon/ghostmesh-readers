@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "readerId": "reader:the-operator-is-part-of-the-denominator",
+  "sourceId": "3axY1wz2OvA",
+  "sourceAidSha256": "f7282e9535f5cfc3b154b806632984ea33c9a5fb656695f2b927d823ec060a72",
+  "articleSha256": "484f5b2b7a2ab2fe2b7ae90698c924507849bec627ea838404d3f5eaf9478742",
+  "evidenceRevision": "a14ce5c3bb102bcb5563a9799bc150f70df854db12c5f942f8198ab01ef7d764",
+  "reviewedAt": "2026-10-21T05:45:23Z",
+  "provenance": {
+    "kind": "codex-task-agent",
+    "reference": "Read-only independent editorial reviewer /root/editorial_review in the incumbent sole-publisher task; full public-candidate review and targeted recheck retained in that task.",
+    "limits": "CI cannot authenticate a private agent or prove source truth. The reviewer compared private automatic-caption timing aids but did not replicate first-party study, product or financial results."
+  },
+  "summary": "Independent reviewer compared all four exact public HTML pages, catalog claims and graph, source maps, receipts and generated projections with the privately qualified sources; no factual, graph, timestamp or source-privacy blocker remained after two targeted repairs.",
+  "findings": [
+    "A forecast cue initially mapped to 12:07 was corrected to the explicit 17:18 source moment; the article link and source-map hash were rechecked.",
+    "The autonomy Reader's provenance now calls the Anthropic and OpenAI evidence separate first-party reports from other operators, not independent accounts.",
+    "All eight new typed relationship target anchors resolve and retain qualified editorial comparisons rather than cross-source corroboration.",
+    "The public pages use click-to-load 16:9 players and contain no private path, media, full captions or long source-caption overlap; public thumbnail requests occur before click.",
+    "Automatic captions are timing aids; benchmark, operator, product and trading claims remain first-party or unreplicated, and Coinbase regulatory status is company-attributed."
+  ],
+  "conclusion": "accept-for-owner-review"
+}

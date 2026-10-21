@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "host": "https://youtube.shareplane.malott.ai",
-  "revision": "2026-10-21T02:34:41Z",
+  "revision": "2026-10-21T05:38:13Z",
   "categories": [
     "AI & Technology",
     "Society & Politics",
@@ -11,6 +11,617 @@
     "Other"
   ],
   "readers": [
+    {
+      "id": "reader:unsupervised-is-a-permission",
+      "slug": "unsupervised-is-a-permission",
+      "title": "Unsupervised Is a Permission, Not a Personality",
+      "category": "AI & Technology",
+      "tags": [
+        "agents",
+        "evaluation",
+        "autonomy"
+      ],
+      "entities": [
+        "AI Engineer",
+        "Evan Kormos",
+        "Coinbase",
+        "Anthropic",
+        "OpenAI"
+      ],
+      "source": {
+        "platform": "YouTube",
+        "url": "https://www.youtube.com/watch?v=_4Ph2dhmUFI",
+        "videoId": "_4Ph2dhmUFI",
+        "title": "How to Know When an AI Agent Can Work Unsupervised: Evan Kormos, Coinbase",
+        "creator": "AI Engineer",
+        "uploadDate": "20261019",
+        "durationSeconds": 1052,
+        "mediaAspect": "16:9"
+      },
+      "published": "2026-10-21",
+      "updated": "2026-10-21T05:38:13Z",
+      "overview": "Evan Kormos describes policy, workflow graphs, agent loops, evaluation and exception routes as a path toward less supervision.",
+      "whyItMatters": "An aggregate pass rate cannot license every tool action. Permission needs a versioned workflow, consequence tier and recoverable stop path.",
+      "ghostMeshTakeaway": "Grant autonomy only for the evaluated action tier and policy version; retain independent effect readback, exception handling and operator interruption.",
+      "verdict": "Worth studying",
+      "architectureImpact": "experiment recommended",
+      "falsification": "Broaden autonomy only if a versioned, held-out and failure-injected trial shows lower operator work without more unauthorized or duplicate effects at the target severity.",
+      "evidenceState": "unverified",
+      "lastEvidenceChecked": "2026-10-21T05:38:13Z",
+      "freshness": "Exact video, private media and automatic caption cues checked 2026-10-21. Anthropic and OpenAI primary operational research checked the same day; neither audits this Coinbase workflow.",
+      "variant": "dossier",
+      "accent": "teal",
+      "claims": [
+        {
+          "id": "unsupervised-is-a-permission--workflow-graph",
+          "proposition": "The speaker recommends defining a policy and mapping a workflow before assigning agent execution.",
+          "kind": "practitioner-framework",
+          "asOf": "2026-10-21",
+          "status": "unverified",
+          "assessment": "Retained caption cues locate policy setup and the graph discussion near 04:05.",
+          "limits": "A workflow diagram is an intended process, not proof of the actual external effect.",
+          "sourceLocation": "00:00-05:31",
+          "references": [],
+          "counterevidence": [],
+          "temporalScope": "Video uploaded October 19, 2026; source and linked pages checked 2026-10-21. Results and product settings may change."
+        },
+        {
+          "id": "unsupervised-is-a-permission--loop-exit",
+          "proposition": "The video describes an inner agent loop with check and exception paths.",
+          "kind": "practitioner-framework",
+          "asOf": "2026-10-21",
+          "status": "unverified",
+          "assessment": "Private caption aids align the loop near 05:31 and quality check near 10:43.",
+          "limits": "The talk does not publish an audited duplicate-effect, stop-latency or authorization rate.",
+          "sourceLocation": "05:31-10:43",
+          "references": [],
+          "counterevidence": [],
+          "temporalScope": "Video uploaded October 19, 2026; source and linked pages checked 2026-10-21. Results and product settings may change."
+        },
+        {
+          "id": "unsupervised-is-a-permission--eval-confidence",
+          "proposition": "The speaker treats evaluation as evidence for confidence in a bounded agent workflow.",
+          "kind": "practitioner-inference",
+          "asOf": "2026-10-21",
+          "status": "unverified",
+          "assessment": "Source cues place the evaluation argument after the 10:43 check discussion.",
+          "limits": "Held-out evals may miss rare high-severity failures; the cited other-vendor reports concern different systems.",
+          "sourceLocation": "10:43-14:29",
+          "references": [
+            "anthropic-autonomy",
+            "openai-long-horizon"
+          ],
+          "counterevidence": [],
+          "temporalScope": "Video uploaded October 19, 2026; source and linked pages checked 2026-10-21. Results and product settings may change."
+        },
+        {
+          "id": "unsupervised-is-a-permission--graduation",
+          "proposition": "The speaker proposes moving from supervision to sampled review and then exception handling.",
+          "kind": "operating-proposal",
+          "asOf": "2026-10-21",
+          "status": "unverified",
+          "assessment": "Publisher chapter at 14:29 and retained cues describe the progression.",
+          "limits": "No public measured safety threshold or cohort establishes a universal graduation rule.",
+          "sourceLocation": "14:29-17:32",
+          "references": [],
+          "counterevidence": [],
+          "temporalScope": "Video uploaded October 19, 2026; source and linked pages checked 2026-10-21. Results and product settings may change."
+        }
+      ],
+      "references": [
+        {
+          "id": "anthropic-autonomy",
+          "title": "Measuring AI agent autonomy in practice",
+          "author": "Anthropic research team",
+          "publisher": "Anthropic",
+          "url": "https://www.anthropic.com/research/measuring-agent-autonomy",
+          "publicationDate": "2026-02-18",
+          "eventDate": null,
+          "location": "Oversight and user-intervention findings",
+          "sourceType": "original research report",
+          "independence": "Anthropic's own usage study of its product, not a Coinbase workflow evaluation.",
+          "evidenceFamily": "anthropic-autonomy",
+          "checkedAt": "2026-10-21T05:38:13Z",
+          "datePrecision": "day"
+        },
+        {
+          "id": "openai-long-horizon",
+          "title": "Safety and alignment in an era of long-horizon models",
+          "author": "OpenAI",
+          "publisher": "OpenAI",
+          "url": "https://openai.com/index/safety-alignment-long-horizon-models/",
+          "publicationDate": "2026-07-20",
+          "eventDate": null,
+          "location": "Observed failure and monitoring changes",
+          "sourceType": "incident owner report",
+          "independence": "OpenAI's first-party internal-use report, not a failure rate for this video source.",
+          "evidenceFamily": "openai-long-horizon",
+          "checkedAt": "2026-10-21T05:38:13Z",
+          "datePrecision": "day"
+        }
+      ],
+      "relationships": [
+        {
+          "target": "reader:the-stop-button-is-outside-the-chat",
+          "type": "informs architecture",
+          "reason": "This Reader's exception and loop design needs the destination readback and stop control described in the earlier Reader. The relationship is operational, not common incident evidence.",
+          "provenance": [
+            "/unsupervised-is-a-permission/#the-loop-needs-an-exit-with-authority",
+            "/the-stop-button-is-outside-the-chat/#stop-surface"
+          ],
+          "basis": "curated-editorial-comparison",
+          "direction": "outgoing"
+        },
+        {
+          "target": "reader:autonomy-needs-an-interface",
+          "type": "related topic",
+          "reason": "Both require a visible permission surface and accountable owner. This Reader proposes evidence for narrowing the delegation; the earlier one locates authority in an interface.",
+          "provenance": [
+            "/unsupervised-is-a-permission/#evidence-earns-scope-not-certainty",
+            "/autonomy-needs-an-interface/#ownership"
+          ],
+          "basis": "curated-editorial-comparison",
+          "direction": "outgoing"
+        }
+      ],
+      "relationshipDisposition": "Two qualified, typed editorial relationships to distinct published Reader theses; no shared-source corroboration implied.",
+      "review": {
+        "status": "independent public-copy review accepted for owner qualitative review; release held",
+        "reviewer": "Existing independent read-only Codex editorial reviewer",
+        "reviewedSourceHead": "local public candidate; exact commit assigned after final validation",
+        "checkedAt": "2026-10-21T05:38:13Z",
+        "scope": "Exact authored and generated HTML, catalog claims, references, graph target anchors, source maps, private timing aids and public privacy boundary; targeted recheck after two repairs.",
+        "findings": "No remaining factual, graph, timestamp or private-source blocker. Source-mapped forecast corrected to 17:18; external operational evidence identified as first-party. Automatic captions and first-party performance or financial outcomes remain unreplicated. Owner qualitative acceptance remains pending."
+      },
+      "revisionHistory": [
+        {
+          "at": "2026-10-21T05:38:13Z",
+          "kind": "new-reader-candidate",
+          "reason": "Owner-requested exact-source video deconstruction with private media custody and source-qualified initial analysis."
+        }
+      ],
+      "editorialOrder": 26,
+      "orderReason": "Follows the existing source-control Reader in Tony's four-video requested queue order.",
+      "relationshipReview": {
+        "reviewedAt": "2026-10-21",
+        "reviewedCatalogSize": 31,
+        "decision": "linked",
+        "reviewedTargets": [
+          "reader:the-stop-button-is-outside-the-chat",
+          "reader:autonomy-needs-an-interface"
+        ],
+        "rationale": "Compared the new thesis against all 27 public Readers and its three queue peers. The two selected outgoing links add specific architectural or editorial comparisons without treating a different source as corroboration."
+      },
+      "editorialDepth": {
+        "schemaVersion": 1,
+        "receiptPath": "content/editorial-depth/unsupervised-is-a-permission.json"
+      },
+      "rank": 26
+    },
+    {
+      "id": "reader:the-operator-is-part-of-the-denominator",
+      "slug": "the-operator-is-part-of-the-denominator",
+      "title": "The Operator Is Part of the Denominator",
+      "category": "AI & Technology",
+      "tags": [
+        "inference",
+        "GPU",
+        "operations"
+      ],
+      "entities": [
+        "AI Engineer",
+        "Oliver Kennon",
+        "SemiAnalysis",
+        "InferenceX"
+      ],
+      "source": {
+        "platform": "YouTube",
+        "url": "https://www.youtube.com/watch?v=3axY1wz2OvA",
+        "videoId": "3axY1wz2OvA",
+        "title": "Same GPU, 50% More Output: Why the Operator Matters: Oliver Kennon, SemiAnalysis",
+        "creator": "AI Engineer",
+        "uploadDate": "20261020",
+        "durationSeconds": 1062,
+        "mediaAspect": "16:9"
+      },
+      "published": "2026-10-21",
+      "updated": "2026-10-21T05:38:13Z",
+      "overview": "Oliver Kennon argues that software and operations can change the useful output produced by the same GPU, using a SemiAnalysis InferenceX calculator scenario.",
+      "whyItMatters": "The example is useful for procurement but depends on workload, latency, accepted quality, full cost and operating trust that a chip-hour price omits.",
+      "ghostMeshTakeaway": "Compare providers on quality-gated completed tasks, latency tails, isolation and total cost under a pinned workload rather than extrapolating one same-GPU scenario.",
+      "verdict": "Worth studying",
+      "architectureImpact": "experiment recommended",
+      "falsification": "Revise the operator-value call if pinned buyer traffic finds no accepted-task benefit after quality, tail latency, isolation, uptime, staff and occupancy costs are included.",
+      "evidenceState": "partially corroborated",
+      "lastEvidenceChecked": "2026-10-21T05:38:13Z",
+      "freshness": "Exact video and private ReasonPack checked 2026-10-21. SemiAnalysis benchmark method, ClusterMAX summary and security investigation checked the same day; no run artifact or provider deployment was independently reproduced.",
+      "variant": "dossier",
+      "accent": "teal",
+      "claims": [
+        {
+          "id": "the-operator-is-part-of-the-denominator--calculator-scenario",
+          "proposition": "The speaker's B200 calculator scenario gives about 200 versus 300 output tokens per second for two serving stacks under its selected input/output and interactivity assumptions.",
+          "kind": "first-party-scenario",
+          "asOf": "2026-10-21",
+          "status": "unverified",
+          "assessment": "Retained captions specify roughly 8,000 input and 1,000 output tokens, a P50 user target and a P90 scenario.",
+          "limits": "Exact run ID, model, precision, concurrency mix and measured tail definition are not pinned; no GhostMesh replication occurred.",
+          "sourceLocation": "03:23-04:45",
+          "references": [
+            "inferencex-method"
+          ],
+          "counterevidence": [],
+          "temporalScope": "Video uploaded October 20, 2026; source and linked pages checked 2026-10-21. Results and product settings may change."
+        },
+        {
+          "id": "the-operator-is-part-of-the-denominator--task-price",
+          "proposition": "The speaker frames price per successfully completed task at required quality as a buyer metric.",
+          "kind": "economic-framing",
+          "asOf": "2026-10-21",
+          "status": "unverified",
+          "assessment": "Retained source cues place the formulation around 01:46; the public draft extends it to full buyer cost as GhostMesh analysis.",
+          "limits": "Real tasks and acceptance thresholds vary; price is not the same as full cost or value.",
+          "sourceLocation": "01:46-03:23",
+          "references": [],
+          "counterevidence": [],
+          "temporalScope": "Video uploaded October 20, 2026; source and linked pages checked 2026-10-21. Results and product settings may change."
+        },
+        {
+          "id": "the-operator-is-part-of-the-denominator--operator-ratings",
+          "proposition": "SemiAnalysis evaluates managed GPU operators across more than chip capacity.",
+          "kind": "first-party-method",
+          "asOf": "2026-10-21",
+          "status": "partially corroborated",
+          "assessment": "The ClusterMAX 3.0 public summary names compute, network, storage, monitoring, support and security categories.",
+          "limits": "Methods and complete provider details may be gated; findings do not automatically transfer to a buyer's workload.",
+          "sourceLocation": "06:33-07:48",
+          "references": [
+            "clustermax-3",
+            "semi-neocloud-security"
+          ],
+          "counterevidence": [],
+          "temporalScope": "Video uploaded October 20, 2026; source and linked pages checked 2026-10-21. Results and product settings may change."
+        },
+        {
+          "id": "the-operator-is-part-of-the-denominator--compute-futures",
+          "proposition": "The speaker proposes standardized rental-price benchmarks and eventual futures to hedge compute expense.",
+          "kind": "market-proposal",
+          "asOf": "2026-10-21",
+          "status": "unverified",
+          "assessment": "Private caption aids locate the proposal after the 12:41 chapter.",
+          "limits": "No market liquidity, contract settlement, basis-risk performance or suitability was established; this is not trading advice.",
+          "sourceLocation": "12:41-15:54",
+          "references": [],
+          "counterevidence": [],
+          "temporalScope": "Video uploaded October 20, 2026; source and linked pages checked 2026-10-21. Results and product settings may change."
+        }
+      ],
+      "references": [
+        {
+          "id": "inferencex-method",
+          "title": "About InferenceX",
+          "author": "SemiAnalysis",
+          "publisher": "SemiAnalysis",
+          "url": "https://inferencex.semianalysis.com/about",
+          "publicationDate": "unknown",
+          "eventDate": null,
+          "location": "Fixed-sequence and AgentX benchmark methodology",
+          "sourceType": "first-party benchmark method",
+          "independence": "Operator of the benchmark; supports its declared setup, not replication of the video calculator pair.",
+          "evidenceFamily": "inferencex-method",
+          "checkedAt": "2026-10-21T05:38:13Z",
+          "datePrecision": "unknown",
+          "dateNote": "No publication date was visible on the source page at the recorded check; treated as undated."
+        },
+        {
+          "id": "clustermax-3",
+          "title": "ClusterMAX 3.0: The Industry Standard GPU Cloud Rating System Returns",
+          "author": "SemiAnalysis team",
+          "publisher": "SemiAnalysis",
+          "url": "https://newsletter.semianalysis.com/p/clustermax-30-the-industry-standard",
+          "publicationDate": "2026-09-23",
+          "eventDate": null,
+          "location": "Executive summary and evaluation categories",
+          "sourceType": "first-party rating",
+          "independence": "Ratings by the speaker's organization; some detailed evidence is subscription-gated.",
+          "evidenceFamily": "clustermax-3",
+          "checkedAt": "2026-10-21T05:38:13Z",
+          "datePrecision": "day"
+        },
+        {
+          "id": "semi-neocloud-security",
+          "title": "Most Neoclouds Suck At Security",
+          "author": "SemiAnalysis team",
+          "publisher": "SemiAnalysis",
+          "url": "https://newsletter.semianalysis.com/p/most-neoclouds-suck-at-security",
+          "publicationDate": "2026-08-30",
+          "eventDate": null,
+          "location": "Methods and reported testing patterns",
+          "sourceType": "first-party investigation",
+          "independence": "The organization's reported findings, not an audit of any proposed GhostMesh provider.",
+          "evidenceFamily": "semi-neocloud-security",
+          "checkedAt": "2026-10-21T05:38:13Z",
+          "datePrecision": "day"
+        }
+      ],
+      "relationships": [
+        {
+          "target": "reader:the-parallel-result-is-not-the-product",
+          "type": "related topic",
+          "reason": "Both require matching the entire useful workload rather than treating a throughput number as a product result. The earlier Reader's hardware/source setting is distinct from this serving-operator scenario.",
+          "provenance": [
+            "/the-operator-is-part-of-the-denominator/#the-50-percent-scenario-has-conditions",
+            "/the-parallel-result-is-not-the-product/#benchmarks"
+          ],
+          "basis": "curated-editorial-comparison",
+          "direction": "outgoing"
+        },
+        {
+          "target": "reader:the-boundary-is-bigger-than-the-box",
+          "type": "related topic",
+          "reason": "Both compare local or rented inference with service quality, latency, cost and data paths. The sources are separate and neither validates the other's measured performance.",
+          "provenance": [
+            "/the-operator-is-part-of-the-denominator/#the-service-layer-can-create-or-destroy-value",
+            "/the-boundary-is-bigger-than-the-box/#boundary"
+          ],
+          "basis": "curated-editorial-comparison",
+          "direction": "outgoing"
+        }
+      ],
+      "relationshipDisposition": "Two qualified, typed editorial relationships to distinct published Reader theses; no shared-source corroboration implied.",
+      "review": {
+        "status": "independent public-copy review accepted for owner qualitative review; release held",
+        "reviewer": "Existing independent read-only Codex editorial reviewer",
+        "reviewedSourceHead": "local public candidate; exact commit assigned after final validation",
+        "checkedAt": "2026-10-21T05:38:13Z",
+        "scope": "Exact authored and generated HTML, catalog claims, references, graph target anchors, source maps, private timing aids and public privacy boundary; targeted recheck after two repairs.",
+        "findings": "No remaining factual, graph, timestamp or private-source blocker. Source-mapped forecast corrected to 17:18; external operational evidence identified as first-party. Automatic captions and first-party performance or financial outcomes remain unreplicated. Owner qualitative acceptance remains pending."
+      },
+      "revisionHistory": [
+        {
+          "at": "2026-10-21T05:38:13Z",
+          "kind": "new-reader-candidate",
+          "reason": "Owner-requested exact-source video deconstruction with private media custody and source-qualified initial analysis."
+        }
+      ],
+      "editorialOrder": 25,
+      "orderReason": "Follows the existing source-control Reader in Tony's four-video requested queue order.",
+      "relationshipReview": {
+        "reviewedAt": "2026-10-21",
+        "reviewedCatalogSize": 31,
+        "decision": "linked",
+        "reviewedTargets": [
+          "reader:the-parallel-result-is-not-the-product",
+          "reader:the-boundary-is-bigger-than-the-box"
+        ],
+        "rationale": "Compared the new thesis against all 27 public Readers and its three queue peers. The two selected outgoing links add specific architectural or editorial comparisons without treating a different source as corroboration."
+      },
+      "editorialDepth": {
+        "schemaVersion": 1,
+        "receiptPath": "content/editorial-depth/the-operator-is-part-of-the-denominator.json"
+      },
+      "rank": 25
+    },
+    {
+      "id": "reader:the-harness-keeps-the-receipt",
+      "slug": "the-harness-keeps-the-receipt",
+      "title": "The Harness Keeps the Receipt",
+      "category": "AI & Technology",
+      "tags": [
+        "agents",
+        "harness",
+        "evaluation"
+      ],
+      "entities": [
+        "AI Engineer",
+        "Jediah Katz",
+        "Arena",
+        "Cursor"
+      ],
+      "source": {
+        "platform": "YouTube",
+        "url": "https://www.youtube.com/watch?v=7Y4sbZgBdnc",
+        "videoId": "7Y4sbZgBdnc",
+        "title": "Is the Agent Harness Dead?: Jediah Katz, SpaceXAI",
+        "creator": "AI Engineer",
+        "uploadDate": "20261019",
+        "durationSeconds": 1094,
+        "mediaAspect": "16:9"
+      },
+      "published": "2026-10-21",
+      "updated": "2026-10-21T05:38:13Z",
+      "overview": "Jediah Katz argues that capable models absorb some hand-built coding harness procedures while durable runtime, trust and efficiency responsibilities remain.",
+      "whyItMatters": "The studies challenge expensive prompt scaffolds but do not test permission correctness or recovery after an uncertain external action.",
+      "ghostMeshTakeaway": "Simplify redundant coding instructions where matched tests allow; keep explicit authorization, durable state and action receipts for consequential work.",
+      "verdict": "Worth studying",
+      "architectureImpact": "experiment recommended",
+      "falsification": "Revise the boundary recommendation if a thin harness matches task quality, cost, permission correctness and exact-effect recovery across controlled external-action simulations.",
+      "evidenceState": "partially corroborated",
+      "lastEvidenceChecked": "2026-10-21T05:38:13Z",
+      "freshness": "Exact video metadata and private media/caption aids checked 2026-10-21; cited research and first-party experiment checked the same day. No product outcome or paper result was independently replicated.",
+      "variant": "dossier",
+      "accent": "teal",
+      "claims": [
+        {
+          "id": "the-harness-keeps-the-receipt--bounded-parity",
+          "proposition": "Named coding benchmarks show often similar task success across model-matched harnesses while cost changes materially.",
+          "kind": "study-result",
+          "asOf": "2026-10-21",
+          "status": "partially corroborated",
+          "assessment": "Arena reports 21 model-harness combinations on two public coding benchmarks.",
+          "limits": "Sampled task and model combinations do not establish universal harness parity or external-action safety.",
+          "sourceLocation": "05:00-06:16",
+          "references": [
+            "arena-harness-tax",
+            "minimal-mle-harness"
+          ],
+          "counterevidence": [
+            "same-model-harness"
+          ],
+          "temporalScope": "Video uploaded October 19, 2026; source and linked pages checked 2026-10-21. Results and product settings may change."
+        },
+        {
+          "id": "the-harness-keeps-the-receipt--context-pressure",
+          "proposition": "With tight context, a controlled same-model harness change improved reported coding completion.",
+          "kind": "study-result",
+          "asOf": "2026-10-21",
+          "status": "partially corroborated",
+          "assessment": "The separate paper reports gains under a fixed tight-window cohort and smaller gains or parity elsewhere.",
+          "limits": "This supports context-dependent harness value, not all-purpose superiority.",
+          "sourceLocation": "05:00-06:16",
+          "references": [
+            "same-model-harness"
+          ],
+          "counterevidence": [],
+          "temporalScope": "Video uploaded October 19, 2026; source and linked pages checked 2026-10-21. Results and product settings may change."
+        },
+        {
+          "id": "the-harness-keeps-the-receipt--data-flywheel",
+          "proposition": "The speaker proposes that harness-produced task traces could train future models to internalize procedures.",
+          "kind": "speaker-hypothesis",
+          "asOf": "2026-10-21",
+          "status": "unverified",
+          "assessment": "Private caption aids place the flywheel claim around the publisher's 06:16 chapter.",
+          "limits": "No public training-inclusion chain, causal attribution or rights basis was established for private user tasks.",
+          "sourceLocation": "06:16-07:34",
+          "references": [],
+          "counterevidence": [],
+          "temporalScope": "Video uploaded October 19, 2026; source and linked pages checked 2026-10-21. Results and product settings may change."
+        },
+        {
+          "id": "the-harness-keeps-the-receipt--off-laptop",
+          "proposition": "The speaker predicts most agent work will move off laptops within months.",
+          "kind": "forecast",
+          "asOf": "2026-10-21",
+          "status": "unverified",
+          "assessment": "The explicit prediction appears near 17:18 in the retained source aids.",
+          "limits": "No adoption cohort or outcome measurement supports a deployment mandate.",
+          "sourceLocation": "17:18-18:14",
+          "references": [],
+          "counterevidence": [],
+          "temporalScope": "Video uploaded October 19, 2026; source and linked pages checked 2026-10-21. Results and product settings may change."
+        }
+      ],
+      "references": [
+        {
+          "id": "arena-harness-tax",
+          "title": "HarnessTax: How Much Does the Harness Matter for Coding Agents?",
+          "author": "Arena Team",
+          "publisher": "Arena",
+          "url": "https://arena.ai/blog/coding-agents-harness-tax",
+          "publicationDate": "2026-09-16",
+          "eventDate": null,
+          "location": "Study design and results",
+          "sourceType": "original study",
+          "independence": "Independent comparison of named model-harness pairs on two coding benchmarks; no external-action safety test.",
+          "evidenceFamily": "arena-harness-tax",
+          "checkedAt": "2026-10-21T05:38:13Z",
+          "datePrecision": "day"
+        },
+        {
+          "id": "minimal-mle-harness",
+          "title": "How Much of a Harness Does a Strong Agent Need for Autonomous ML Engineering?",
+          "author": "Kirill Brilliantov and coauthors",
+          "publisher": "arXiv",
+          "url": "https://arxiv.org/abs/2609.40303",
+          "publicationDate": "2026-09-30",
+          "eventDate": null,
+          "location": "Abstract and experimental comparison",
+          "sourceType": "research preprint",
+          "independence": "Direct author report for bounded ML engineering benchmarks, not independent production validation.",
+          "evidenceFamily": "minimal-mle-harness",
+          "checkedAt": "2026-10-21T05:38:13Z",
+          "datePrecision": "day"
+        },
+        {
+          "id": "same-model-harness",
+          "title": "Same Model, Different Harness: Different Coding-Agent Results",
+          "author": "Sydney Lewis",
+          "publisher": "arXiv",
+          "url": "https://arxiv.org/abs/2608.26218",
+          "publicationDate": "2026-08-26",
+          "eventDate": null,
+          "location": "Abstract and tight-context experiment",
+          "sourceType": "research preprint",
+          "independence": "Separate controlled study showing context pressure changes harness value; not a trial of this speaker's product.",
+          "evidenceFamily": "same-model-harness",
+          "checkedAt": "2026-10-21T05:38:13Z",
+          "datePrecision": "day"
+        },
+        {
+          "id": "cursor-scaling",
+          "title": "Scaling long-running autonomous coding",
+          "author": "Wilson Lin",
+          "publisher": "Cursor",
+          "url": "https://cursor.com/blog/scaling-agents",
+          "publicationDate": "2026-01-14",
+          "eventDate": null,
+          "location": "Experiment and coordination lessons",
+          "sourceType": "first-party engineering account",
+          "independence": "Research experiment by the operator, not an independent shipped-product audit.",
+          "evidenceFamily": "cursor-scaling",
+          "checkedAt": "2026-10-21T05:38:13Z",
+          "datePrecision": "day"
+        }
+      ],
+      "relationships": [
+        {
+          "target": "reader:the-grader-is-part-of-the-harness",
+          "type": "related topic",
+          "reason": "Both question what a coding harness contributes. This Reader separates procedure from effect control; the earlier Reader focuses on adaptive graders. Their different sources do not corroborate each other's results.",
+          "provenance": [
+            "/the-harness-keeps-the-receipt/#the-useful-provocation",
+            "/the-grader-is-part-of-the-harness/#grading"
+          ],
+          "basis": "curated-editorial-comparison",
+          "direction": "outgoing"
+        },
+        {
+          "target": "reader:the-stop-button-is-outside-the-chat",
+          "type": "informs architecture",
+          "reason": "A durable action receipt and uncertain-effect reconciliation extend the earlier Reader's destination and stop checks. Neither video measures the other's control design.",
+          "provenance": [
+            "/the-harness-keeps-the-receipt/#the-boundary-that-stays",
+            "/the-stop-button-is-outside-the-chat/#stop-surface"
+          ],
+          "basis": "curated-editorial-comparison",
+          "direction": "outgoing"
+        }
+      ],
+      "relationshipDisposition": "Two qualified, typed editorial relationships to distinct published Reader theses; no shared-source corroboration implied.",
+      "review": {
+        "status": "independent public-copy review accepted for owner qualitative review; release held",
+        "reviewer": "Existing independent read-only Codex editorial reviewer",
+        "reviewedSourceHead": "local public candidate; exact commit assigned after final validation",
+        "checkedAt": "2026-10-21T05:38:13Z",
+        "scope": "Exact authored and generated HTML, catalog claims, references, graph target anchors, source maps, private timing aids and public privacy boundary; targeted recheck after two repairs.",
+        "findings": "No remaining factual, graph, timestamp or private-source blocker. Source-mapped forecast corrected to 17:18; external operational evidence identified as first-party. Automatic captions and first-party performance or financial outcomes remain unreplicated. Owner qualitative acceptance remains pending."
+      },
+      "revisionHistory": [
+        {
+          "at": "2026-10-21T05:38:13Z",
+          "kind": "new-reader-candidate",
+          "reason": "Owner-requested exact-source video deconstruction with private media custody and source-qualified initial analysis."
+        }
+      ],
+      "editorialOrder": 24,
+      "orderReason": "Follows the existing source-control Reader in Tony's four-video requested queue order.",
+      "relationshipReview": {
+        "reviewedAt": "2026-10-21",
+        "reviewedCatalogSize": 31,
+        "decision": "linked",
+        "reviewedTargets": [
+          "reader:the-grader-is-part-of-the-harness",
+          "reader:the-stop-button-is-outside-the-chat"
+        ],
+        "rationale": "Compared the new thesis against all 27 public Readers and its three queue peers. The two selected outgoing links add specific architectural or editorial comparisons without treating a different source as corroboration."
+      },
+      "editorialDepth": {
+        "schemaVersion": 1,
+        "receiptPath": "content/editorial-depth/the-harness-keeps-the-receipt.json"
+      },
+      "rank": 24
+    },
     {
       "id": "reader:the-commit-is-not-the-control",
       "slug": "the-commit-is-not-the-control",
@@ -286,13 +897,13 @@
       "relationshipDisposition": "Two substantive editorial comparisons connect agent work inspectability and evaluation infrastructure. They do not corroborate Anthropic’s internal scale or performance reports.",
       "relationshipReview": {
         "reviewedAt": "2026-10-21",
-        "reviewedCatalogSize": 27,
+        "reviewedCatalogSize": 31,
         "decision": "linked",
         "reviewedTargets": [
           "reader:make-good-work-inspectable",
           "reader:the-grader-is-part-of-the-harness"
         ],
-        "rationale": "Compared the Anthropic engineering source with all 26 existing Readers. Two qualified routes concern inspectable agent work and evaluation gates; the others lack a sufficiently specific shared question. No existing Reader independently verifies Scion metrics."
+        "rationale": "Compared the Anthropic engineering source with all 26 existing Readers. Two qualified routes concern inspectable agent work and evaluation gates; the others lack a sufficiently specific shared question. No existing Reader independently verifies Scion metrics. Reassessed against four distinct AI Engineer video theses; their new outgoing links carry the qualified comparisons, with no new outgoing edge warranted from this existing entry."
       },
       "review": {
         "status": "independent-source-and-copy-reviewed; owner-accepted",
@@ -588,15 +1199,219 @@
       "orderReason": "Place the local deployment and privacy-boundary reading after the agent control readings.",
       "relationshipReview": {
         "reviewedAt": "2026-10-21",
-        "reviewedCatalogSize": 27,
+        "reviewedCatalogSize": 31,
         "decision": "linked",
         "reviewedTargets": [
           "reader:the-agent-a-company-owns",
           "reader:the-stop-button-is-outside-the-chat"
         ],
-        "rationale": "Compared this source with all 25 existing Readers. Two qualified routes cover company-owned agent infrastructure and continuing agent authority. No prior Reader independently measures this machine or validates its cost and privacy claims. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged."
+        "rationale": "Compared this source with all 25 existing Readers. Two qualified routes cover company-owned agent infrastructure and continuing agent authority. No prior Reader independently measures this machine or validates its cost and privacy claims. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged. Reassessed against four distinct AI Engineer video theses; their new outgoing links carry the qualified comparisons, with no new outgoing edge warranted from this existing entry."
       },
       "rank": 22
+    },
+    {
+      "id": "reader:a-wallet-is-not-a-mandate",
+      "slug": "a-wallet-is-not-a-mandate",
+      "title": "A Wallet Is Not a Mandate",
+      "category": "AI & Technology",
+      "tags": [
+        "agents",
+        "payments",
+        "governance"
+      ],
+      "entities": [
+        "AI Engineer",
+        "Lincoln Murr",
+        "Coinbase",
+        "x402"
+      ],
+      "source": {
+        "platform": "YouTube",
+        "url": "https://www.youtube.com/watch?v=f_HwzoYrZ7s",
+        "videoId": "f_HwzoYrZ7s",
+        "title": "Why AI Agents Will Need Their Own Bank Accounts: Lincoln Murr, Coinbase",
+        "creator": "AI Engineer",
+        "uploadDate": "20261020",
+        "durationSeconds": 1018,
+        "mediaAspect": "16:9"
+      },
+      "published": "2026-10-21",
+      "updated": "2026-10-21T05:38:13Z",
+      "overview": "Lincoln Murr makes the case for agent payments through x402 and sketches a wider agentic-finance economy.",
+      "whyItMatters": "A priced API call creates a real authorization, accounting and failure boundary that a payment protocol or wallet alone cannot govern.",
+      "ghostMeshTakeaway": "Prototype narrow, policy-bound machine purchases only for a real use case; do not infer authority for unrestricted wallets or autonomous investing.",
+      "verdict": "Worth studying",
+      "architectureImpact": "experiment recommended",
+      "falsification": "Revise the need for a delegated payment account if a matched sandbox shows a simpler subscription or prepaid token meets the task at lower total cost and risk.",
+      "evidenceState": "partially corroborated",
+      "lastEvidenceChecked": "2026-10-21T05:38:13Z",
+      "freshness": "Exact video, private media and automatic captions checked 2026-10-21. Coinbase protocol, policy and Advisor pages checked the same day. Adoption numbers and anecdotal trading outcomes were not independently audited.",
+      "variant": "dossier",
+      "accent": "teal",
+      "claims": [
+        {
+          "id": "a-wallet-is-not-a-mandate--x402-flow",
+          "proposition": "The x402 protocol lets a server return a payment challenge and a client retry with signed proof before resource delivery.",
+          "kind": "protocol-description",
+          "asOf": "2026-10-21",
+          "status": "corroborated",
+          "assessment": "Coinbase's developer documentation describes the request, signature, facilitator verification and settlement flow.",
+          "limits": "Protocol mechanics do not by themselves authorize a model's business purchase or guarantee delivered quality.",
+          "sourceLocation": "02:46-04:24",
+          "references": [
+            "coinbase-x402"
+          ],
+          "counterevidence": [],
+          "temporalScope": "Video uploaded October 20, 2026; source and linked pages checked 2026-10-21. Results and product settings may change."
+        },
+        {
+          "id": "a-wallet-is-not-a-mandate--adoption",
+          "proposition": "The speaker presents growing x402 activity as evidence of agent-payment demand.",
+          "kind": "vendor-adoption-claim",
+          "asOf": "2026-10-21",
+          "status": "unverified",
+          "assessment": "Retained caption cues place the adoption argument around the 03:13 publisher chapter.",
+          "limits": "No independent dated denominator for unique users, real businesses or useful agent jobs was established.",
+          "sourceLocation": "03:13-04:24",
+          "references": [],
+          "counterevidence": [],
+          "temporalScope": "Video uploaded October 20, 2026; source and linked pages checked 2026-10-21. Results and product settings may change."
+        },
+        {
+          "id": "a-wallet-is-not-a-mandate--trade-anecdote",
+          "proposition": "The speaker recounts an agent-assisted weekend short-position anecdote.",
+          "kind": "personal-anecdote",
+          "asOf": "2026-10-21",
+          "status": "unverified",
+          "assessment": "Private caption cues locate a first-person account near 08:14.",
+          "limits": "No audited trade ledger, fee accounting, risk-adjusted return, authorization trace or regulator source was qualified.",
+          "sourceLocation": "08:14-09:48",
+          "references": [],
+          "counterevidence": [],
+          "temporalScope": "Video uploaded October 20, 2026; source and linked pages checked 2026-10-21. Results and product settings may change."
+        },
+        {
+          "id": "a-wallet-is-not-a-mandate--advisor-limit",
+          "proposition": "Coinbase describes Advisor as non-discretionary, with trading requiring the user's explicit approval.",
+          "kind": "vendor-product-limitation",
+          "asOf": "2026-10-21",
+          "status": "partially corroborated",
+          "assessment": "The current Coinbase Advisor product page states the user reviews and authorizes every trade.",
+          "limits": "This is a first-party description, not a regulator audit; the named registered entity is Coinbase Advisors, LLC, not the AI model.",
+          "sourceLocation": "11:35-14:21",
+          "references": [
+            "coinbase-advisor"
+          ],
+          "counterevidence": [],
+          "temporalScope": "Video uploaded October 20, 2026; source and linked pages checked 2026-10-21. Results and product settings may change."
+        }
+      ],
+      "references": [
+        {
+          "id": "coinbase-x402",
+          "title": "How x402 works",
+          "author": "Coinbase Developer Platform",
+          "publisher": "Coinbase",
+          "url": "https://docs.cdp.coinbase.com/x402/how-it-works",
+          "publicationDate": "unknown",
+          "eventDate": null,
+          "location": "Payment challenge, signature, verification and settlement flow",
+          "sourceType": "vendor protocol documentation",
+          "independence": "First-party description of protocol operation, not an audit of business authorization or outcome delivery.",
+          "evidenceFamily": "coinbase-x402",
+          "checkedAt": "2026-10-21T05:38:13Z",
+          "datePrecision": "unknown",
+          "dateNote": "No publication date was visible on the source page at the recorded check; treated as undated."
+        },
+        {
+          "id": "coinbase-policy",
+          "title": "CDP Wallet Policies: Don't Be the Next Headline Hack",
+          "author": "Coinbase Developer Platform",
+          "publisher": "Coinbase",
+          "url": "https://www.coinbase.com/developer-platform/discover/launches/policy-engine",
+          "publicationDate": "2025-06-23",
+          "eventDate": null,
+          "location": "Signing-layer recipient and amount controls",
+          "sourceType": "vendor product documentation",
+          "independence": "First-party product controls; policy availability does not prove a deployed customer's rules are safe.",
+          "evidenceFamily": "coinbase-policy",
+          "checkedAt": "2026-10-21T05:38:13Z",
+          "datePrecision": "day"
+        },
+        {
+          "id": "coinbase-advisor",
+          "title": "Coinbase Advisor",
+          "author": "Coinbase",
+          "publisher": "Coinbase",
+          "url": "https://www.coinbase.com/advisor",
+          "publicationDate": "unknown",
+          "eventDate": null,
+          "location": "Non-discretionary FAQ and company registration statement",
+          "sourceType": "vendor product page",
+          "independence": "Product page says trades require user approval and attributes advisory registration to Coinbase Advisors, LLC; not an independent regulator check.",
+          "evidenceFamily": "coinbase-advisor",
+          "checkedAt": "2026-10-21T05:38:13Z",
+          "datePrecision": "unknown",
+          "dateNote": "No publication date was visible on the source page at the recorded check; treated as undated."
+        }
+      ],
+      "relationships": [
+        {
+          "target": "reader:when-agents-become-the-customer",
+          "type": "related topic",
+          "reason": "Both ask who the billing principal is when software buys a service. This Reader focuses on a delegated payment and settlement boundary; the earlier one on service identity and business advantage.",
+          "provenance": [
+            "/a-wallet-is-not-a-mandate/#the-signer-should-know-less-than-the-owner",
+            "/when-agents-become-the-customer/#principal"
+          ],
+          "basis": "curated-editorial-comparison",
+          "direction": "outgoing"
+        },
+        {
+          "target": "reader:the-stop-button-is-outside-the-chat",
+          "type": "informs architecture",
+          "reason": "A purchased resource needs destination readback and a stop path before an uncertain retry, extending the earlier Reader's external-action boundary. Neither source proves the other's results.",
+          "provenance": [
+            "/a-wallet-is-not-a-mandate/#a-paid-response-needs-more-than-a-successful-charge",
+            "/the-stop-button-is-outside-the-chat/#verify-result"
+          ],
+          "basis": "curated-editorial-comparison",
+          "direction": "outgoing"
+        }
+      ],
+      "relationshipDisposition": "Two qualified, typed editorial relationships to distinct published Reader theses; no shared-source corroboration implied.",
+      "review": {
+        "status": "independent public-copy review accepted for owner qualitative review; release held",
+        "reviewer": "Existing independent read-only Codex editorial reviewer",
+        "reviewedSourceHead": "local public candidate; exact commit assigned after final validation",
+        "checkedAt": "2026-10-21T05:38:13Z",
+        "scope": "Exact authored and generated HTML, catalog claims, references, graph target anchors, source maps, private timing aids and public privacy boundary; targeted recheck after two repairs.",
+        "findings": "No remaining factual, graph, timestamp or private-source blocker. Source-mapped forecast corrected to 17:18; external operational evidence identified as first-party. Automatic captions and first-party performance or financial outcomes remain unreplicated. Owner qualitative acceptance remains pending."
+      },
+      "revisionHistory": [
+        {
+          "at": "2026-10-21T05:38:13Z",
+          "kind": "new-reader-candidate",
+          "reason": "Owner-requested exact-source video deconstruction with private media custody and source-qualified initial analysis."
+        }
+      ],
+      "editorialOrder": 27,
+      "orderReason": "Follows the existing source-control Reader in Tony's four-video requested queue order.",
+      "relationshipReview": {
+        "reviewedAt": "2026-10-21",
+        "reviewedCatalogSize": 31,
+        "decision": "linked",
+        "reviewedTargets": [
+          "reader:when-agents-become-the-customer",
+          "reader:the-stop-button-is-outside-the-chat"
+        ],
+        "rationale": "Compared the new thesis against all 27 public Readers and its three queue peers. The two selected outgoing links add specific architectural or editorial comparisons without treating a different source as corroboration."
+      },
+      "editorialDepth": {
+        "schemaVersion": 1,
+        "receiptPath": "content/editorial-depth/a-wallet-is-not-a-mandate.json"
+      },
+      "rank": 27
     },
     {
       "id": "reader:the-warning-is-not-a-ballot-ruling",
@@ -987,10 +1802,10 @@
       },
       "relationshipReview": {
         "reviewedAt": "2026-10-21",
-        "reviewedCatalogSize": 27,
+        "reviewedCatalogSize": 31,
         "decision": "none",
         "reviewedTargets": [],
-        "rationale": "The other published Readers do not examine this California voter-list dispute, individualized ballot procedure or conditional DOJ warning. AI evaluation analogies are too distant to admit as local routes. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged."
+        "rationale": "The other published Readers do not examine this California voter-list dispute, individualized ballot procedure or conditional DOJ warning. AI evaluation analogies are too distant to admit as local routes. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged. Reassessed against four distinct AI Engineer video theses; their new outgoing links carry the qualified comparisons, with no new outgoing edge warranted from this existing entry."
       },
       "rank": 19
     },
@@ -1335,13 +2150,13 @@
       },
       "relationshipReview": {
         "reviewedAt": "2026-10-21",
-        "reviewedCatalogSize": 27,
+        "reviewedCatalogSize": 31,
         "decision": "linked",
         "reviewedTargets": [
           "reader:the-brakes-need-a-test",
           "reader:the-label-the-box-and-the-bargain"
         ],
-        "rationale": "The Gates risk interview supports two qualified routes: Robinson examines release safety process, and Bostrom distinguishes capability from control. Neither source verifies the other's risk magnitude. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged."
+        "rationale": "The Gates risk interview supports two qualified routes: Robinson examines release safety process, and Bostrom distinguishes capability from control. Neither source verifies the other's risk magnitude. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged. Reassessed against four distinct AI Engineer video theses; their new outgoing links carry the qualified comparisons, with no new outgoing edge warranted from this existing entry."
       },
       "rank": 19
     },
@@ -1588,14 +2403,14 @@
       "orderReason": "Place the operational agent-boundary Reader after the harness-evaluation Reader.",
       "relationshipReview": {
         "reviewedAt": "2026-10-21",
-        "reviewedCatalogSize": 27,
+        "reviewedCatalogSize": 31,
         "decision": "linked",
         "reviewedTargets": [
           "reader:make-good-work-inspectable",
           "reader:the-brakes-need-a-test",
           "reader:the-score-is-not-the-system"
         ],
-        "rationale": "Compared this video with all 24 existing Readers. Inspectable work, testable brakes and reward-versus-outcome analysis support three qualified routes. The earlier Readers do not corroborate these incident reports. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged."
+        "rationale": "Compared this video with all 24 existing Readers. Inspectable work, testable brakes and reward-versus-outcome analysis support three qualified routes. The earlier Readers do not corroborate these incident reports. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged. Reassessed against four distinct AI Engineer video theses; their new outgoing links carry the qualified comparisons, with no new outgoing edge warranted from this existing entry."
       },
       "rank": 21
     },
@@ -1928,13 +2743,13 @@
       },
       "relationshipReview": {
         "reviewedAt": "2026-10-21",
-        "reviewedCatalogSize": 27,
+        "reviewedCatalogSize": 31,
         "decision": "linked",
         "reviewedTargets": [
           "reader:when-agents-become-the-customer",
           "reader:the-agent-a-company-owns"
         ],
-        "rationale": "The agent-customer and company-agent Readers compare business authority and ownership questions. Neither establishes Muse lead rights or business outcomes. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged."
+        "rationale": "The agent-customer and company-agent Readers compare business authority and ownership questions. Neither establishes Muse lead rights or business outcomes. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged. Reassessed against four distinct AI Engineer video theses; their new outgoing links carry the qualified comparisons, with no new outgoing edge warranted from this existing entry."
       },
       "rank": 18
     },
@@ -2402,13 +3217,13 @@
       },
       "relationshipReview": {
         "reviewedAt": "2026-10-21",
-        "reviewedCatalogSize": 27,
+        "reviewedCatalogSize": 31,
         "decision": "linked",
         "reviewedTargets": [
           "reader:the-test-must-name-its-target",
           "reader:the-microscope-is-not-a-soul"
         ],
-        "rationale": "The existing routes distinguish AGI labels from functional understanding and digital experience from representation evidence. Neither verifies the interview's exact speech. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged."
+        "rationale": "The existing routes distinguish AGI labels from functional understanding and digital experience from representation evidence. Neither verifies the interview's exact speech. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged. Reassessed against four distinct AI Engineer video theses; their new outgoing links carry the qualified comparisons, with no new outgoing edge warranted from this existing entry."
       },
       "rank": 19
     },
@@ -2653,14 +3468,14 @@
       "orderReason": "Follow the existing evaluation and research-agent Readers with a focused test of adaptive harness claims.",
       "relationshipReview": {
         "reviewedAt": "2026-10-21",
-        "reviewedCatalogSize": 27,
+        "reviewedCatalogSize": 31,
         "decision": "linked",
         "reviewedTargets": [
           "reader:make-good-work-inspectable",
           "reader:the-experiment-ran-did-the-research-advance",
           "reader:the-score-is-not-the-system"
         ],
-        "rationale": "Compared the new video with all 23 existing Readers. Inspectable work, research evaluation and reward-versus-outcome design offer three substantive comparisons. The earlier Readers do not replicate the two papers. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged."
+        "rationale": "Compared the new video with all 23 existing Readers. Inspectable work, research evaluation and reward-versus-outcome design offer three substantive comparisons. The earlier Readers do not replicate the two papers. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged. Reassessed against four distinct AI Engineer video theses; their new outgoing links carry the qualified comparisons, with no new outgoing edge warranted from this existing entry."
       },
       "rank": 20
     },
@@ -3088,13 +3903,13 @@
       },
       "relationshipReview": {
         "reviewedAt": "2026-10-21",
-        "reviewedCatalogSize": 27,
+        "reviewedCatalogSize": 31,
         "decision": "linked",
         "reviewedTargets": [
           "reader:the-label-the-box-and-the-bargain",
           "reader:the-threshold-is-a-claim-not-a-test"
         ],
-        "rationale": "Robinson's incident and release-process analysis supports routes to Bostrom's bounded control example and Gates's risk threshold. These are comparison paths, not independent interview corroboration. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged."
+        "rationale": "Robinson's incident and release-process analysis supports routes to Bostrom's bounded control example and Gates's risk threshold. These are comparison paths, not independent interview corroboration. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged. Reassessed against four distinct AI Engineer video theses; their new outgoing links carry the qualified comparisons, with no new outgoing edge warranted from this existing entry."
       },
       "rank": 19
     },
@@ -3366,12 +4181,12 @@
       "orderReason": "Read after the existing Count Grey Matter interpretability Reader to examine a distinct functional-understanding claim.",
       "relationshipReview": {
         "reviewedAt": "2026-10-21",
-        "reviewedCatalogSize": 27,
+        "reviewedCatalogSize": 31,
         "decision": "linked",
         "reviewedTargets": [
           "reader:the-microscope-is-not-a-soul"
         ],
-        "rationale": "The microscope Reader by the same creator also limits inferences from model internals. Functional understanding and subjective experience remain distinct claims. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged."
+        "rationale": "The microscope Reader by the same creator also limits inferences from model internals. Functional understanding and subjective experience remain distinct claims. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged. Reassessed against four distinct AI Engineer video theses; their new outgoing links carry the qualified comparisons, with no new outgoing edge warranted from this existing entry."
       },
       "rank": 15
     },
@@ -3617,10 +4432,10 @@
       "orderReason": "Read after the current collection as a research-method comparison with explicit deployment limits.",
       "relationshipReview": {
         "reviewedAt": "2026-10-21",
-        "reviewedCatalogSize": 27,
+        "reviewedCatalogSize": 31,
         "decision": "none",
         "reviewedTargets": [],
-        "rationale": "No other local Reader analyzes NCM or HybridAgents, their parallel-code and latent-reasoning methods, or the same benchmark claims. External studies remain outside this Reader graph. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged."
+        "rationale": "No other local Reader analyzes NCM or HybridAgents, their parallel-code and latent-reasoning methods, or the same benchmark claims. External studies remain outside this Reader graph. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged. Reassessed against four distinct AI Engineer video theses; their new outgoing links carry the qualified comparisons, with no new outgoing edge warranted from this existing entry."
       },
       "rank": 16
     },
@@ -3914,13 +4729,13 @@
       "orderReason": "Read after the earlier Amap fleet case to examine the broader forecast and its evidence limits.",
       "relationshipReview": {
         "reviewedAt": "2026-10-21",
-        "reviewedCatalogSize": 27,
+        "reviewedCatalogSize": 31,
         "decision": "linked",
         "reviewedTargets": [
           "reader:the-inbox-was-a-boundary",
           "reader:when-agents-become-the-customer"
         ],
-        "rationale": "The Amap inbox Reader shares a source event; the agent-customer Reader offers a separate product forecast. Neither validates broad web-adoption predictions. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged."
+        "rationale": "The Amap inbox Reader shares a source event; the agent-customer Reader offers a separate product forecast. Neither validates broad web-adoption predictions. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged. Reassessed against four distinct AI Engineer video theses; their new outgoing links carry the qualified comparisons, with no new outgoing edge warranted from this existing entry."
       },
       "rank": 13
     },
@@ -4170,12 +4985,12 @@
       },
       "relationshipReview": {
         "reviewedAt": "2026-10-21",
-        "reviewedCatalogSize": 27,
+        "reviewedCatalogSize": 31,
         "decision": "linked",
         "reviewedTargets": [
           "reader:a-scenario-is-not-a-singularity"
         ],
-        "rationale": "The physics benchmark Reader provides a contrasting bounded task score. It does not assess the two open-ended research contributions studied in this paper. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged."
+        "rationale": "The physics benchmark Reader provides a contrasting bounded task score. It does not assess the two open-ended research contributions studied in this paper. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged. Reassessed against four distinct AI Engineer video theses; their new outgoing links carry the qualified comparisons, with no new outgoing edge warranted from this existing entry."
       },
       "rank": 17
     },
@@ -4425,12 +5240,12 @@
       "orderReason": "Read after other model-score Readers to test how benchmark evidence is converted into a larger forecast.",
       "relationshipReview": {
         "reviewedAt": "2026-10-21",
-        "reviewedCatalogSize": 27,
+        "reviewedCatalogSize": 31,
         "decision": "linked",
         "reviewedTargets": [
           "reader:the-experiment-ran-did-the-research-advance"
         ],
-        "rationale": "The physics benchmark and research-evaluation paper measure different constructs. Their one link invites comparison without treating a bounded score as research judgment. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged."
+        "rationale": "The physics benchmark and research-evaluation paper measure different constructs. Their one link invites comparison without treating a bounded score as research judgment. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged. Reassessed against four distinct AI Engineer video theses; their new outgoing links carry the qualified comparisons, with no new outgoing edge warranted from this existing entry."
       },
       "rank": 14
     },
@@ -4716,14 +5531,14 @@
       },
       "relationshipReview": {
         "reviewedAt": "2026-10-21",
-        "reviewedCatalogSize": 27,
+        "reviewedCatalogSize": 31,
         "decision": "linked",
         "reviewedTargets": [
           "reader:ask-for-the-outcome-keep-the-boundary",
           "reader:make-good-work-inspectable",
           "reader:the-funnel-is-not-the-frontier"
         ],
-        "rationale": "The outcome, inspectable-work and AI-use Readers frame the limits of agent-tool demonstrations. None independently verifies this incomplete scan. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged."
+        "rationale": "The outcome, inspectable-work and AI-use Readers frame the limits of agent-tool demonstrations. None independently verifies this incomplete scan. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged. Reassessed against four distinct AI Engineer video theses; their new outgoing links carry the qualified comparisons, with no new outgoing edge warranted from this existing entry."
       },
       "rank": 9
     },
@@ -5063,14 +5878,14 @@
       },
       "relationshipReview": {
         "reviewedAt": "2026-10-21",
-        "reviewedCatalogSize": 27,
+        "reviewedCatalogSize": 31,
         "decision": "linked",
         "reviewedTargets": [
           "reader:the-inbox-was-a-boundary",
           "reader:autonomy-needs-an-interface",
           "reader:the-agent-a-company-owns"
         ],
-        "rationale": "The credential incident is compared with a hidden mailbox boundary and company-agent permissions. Shared authority questions do not make the events equivalent. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged."
+        "rationale": "The credential incident is compared with a hidden mailbox boundary and company-agent permissions. Shared authority questions do not make the events equivalent. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged. Reassessed against four distinct AI Engineer video theses; their new outgoing links carry the qualified comparisons, with no new outgoing edge warranted from this existing entry."
       },
       "rank": 10
     },
@@ -5425,14 +6240,14 @@
       },
       "relationshipReview": {
         "reviewedAt": "2026-10-21",
-        "reviewedCatalogSize": 27,
+        "reviewedCatalogSize": 31,
         "decision": "linked",
         "reviewedTargets": [
           "reader:a-challenge-is-not-a-verdict",
           "reader:make-good-work-inspectable",
           "reader:the-funnel-is-not-the-frontier"
         ],
-        "rationale": "The architecture challenge, inspectable-work interview and AI-use funnel all separate ambitious agent work from verified outcomes. The links are editorial comparisons only. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged."
+        "rationale": "The architecture challenge, inspectable-work interview and AI-use funnel all separate ambitious agent work from verified outcomes. The links are editorial comparisons only. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged. Reassessed against four distinct AI Engineer video theses; their new outgoing links carry the qualified comparisons, with no new outgoing edge warranted from this existing entry."
       },
       "rank": 0
     },
@@ -5806,14 +6621,14 @@
       },
       "relationshipReview": {
         "reviewedAt": "2026-10-21",
-        "reviewedCatalogSize": 27,
+        "reviewedCatalogSize": 31,
         "decision": "linked",
         "reviewedTargets": [
           "reader:a-challenge-is-not-a-verdict",
           "reader:ask-for-the-outcome-keep-the-boundary",
           "reader:the-funnel-is-not-the-frontier"
         ],
-        "rationale": "The linked architecture review, outcome framing and AI-use funnel all ask how to inspect agent work. They do not independently establish this interview's results. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged."
+        "rationale": "The linked architecture review, outcome framing and AI-use funnel all ask how to inspect agent work. They do not independently establish this interview's results. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged. Reassessed against four distinct AI Engineer video theses; their new outgoing links carry the qualified comparisons, with no new outgoing edge warranted from this existing entry."
       },
       "rank": 1
     },
@@ -6073,14 +6888,14 @@
       },
       "relationshipReview": {
         "reviewedAt": "2026-10-21",
-        "reviewedCatalogSize": 27,
+        "reviewedCatalogSize": 31,
         "decision": "linked",
         "reviewedTargets": [
           "reader:the-agent-a-company-owns",
           "reader:the-inbox-was-a-boundary",
           "reader:the-key-was-the-boundary"
         ],
-        "rationale": "The company-agent interview builds on the same Vercel subject; the inbox and credential Readers compare separate authority boundaries. None verifies the others' incidents. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged."
+        "rationale": "The company-agent interview builds on the same Vercel subject; the inbox and credential Readers compare separate authority boundaries. None verifies the others' incidents. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged. Reassessed against four distinct AI Engineer video theses; their new outgoing links carry the qualified comparisons, with no new outgoing edge warranted from this existing entry."
       },
       "rank": 6
     },
@@ -6365,14 +7180,14 @@
       },
       "relationshipReview": {
         "reviewedAt": "2026-10-21",
-        "reviewedCatalogSize": 27,
+        "reviewedCatalogSize": 31,
         "decision": "linked",
         "reviewedTargets": [
           "reader:ask-for-the-outcome-keep-the-boundary",
           "reader:make-good-work-inspectable",
           "reader:when-software-becomes-legible"
         ],
-        "rationale": "The three existing routes compare how an AI-assisted choice is challenged, verified and made inspectable. Their briefs support navigation, not proof of a shared observed result. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged."
+        "rationale": "The three existing routes compare how an AI-assisted choice is challenged, verified and made inspectable. Their briefs support navigation, not proof of a shared observed result. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged. Reassessed against four distinct AI Engineer video theses; their new outgoing links carry the qualified comparisons, with no new outgoing edge warranted from this existing entry."
       },
       "rank": 2
     },
@@ -6657,14 +7472,14 @@
       },
       "relationshipReview": {
         "reviewedAt": "2026-10-21",
-        "reviewedCatalogSize": 27,
+        "reviewedCatalogSize": 31,
         "decision": "linked",
         "reviewedTargets": [
           "reader:a-challenge-is-not-a-verdict",
           "reader:make-good-work-inspectable",
           "reader:when-agents-become-the-customer"
         ],
-        "rationale": "The architecture challenge, inspectable-work interview and agent-service forecast provide distinct routes through software legibility, not corroboration of reverse engineering. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged."
+        "rationale": "The architecture challenge, inspectable-work interview and agent-service forecast provide distinct routes through software legibility, not corroboration of reverse engineering. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged. Reassessed against four distinct AI Engineer video theses; their new outgoing links carry the qualified comparisons, with no new outgoing edge warranted from this existing entry."
       },
       "rank": 7
     },
@@ -6920,14 +7735,14 @@
       },
       "relationshipReview": {
         "reviewedAt": "2026-10-21",
-        "reviewedCatalogSize": 27,
+        "reviewedCatalogSize": 31,
         "decision": "linked",
         "reviewedTargets": [
           "reader:autonomy-needs-an-interface",
           "reader:make-good-work-inspectable",
           "reader:the-agent-a-company-owns"
         ],
-        "rationale": "The linked founder, inspectable-work and company-agent Readers compare product workflows and authority. Forecasts are kept separate from observed adoption. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged."
+        "rationale": "The linked founder, inspectable-work and company-agent Readers compare product workflows and authority. Forecasts are kept separate from observed adoption. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged. Reassessed against four distinct AI Engineer video theses; their new outgoing links carry the qualified comparisons, with no new outgoing edge warranted from this existing entry."
       },
       "rank": 8
     },
@@ -7258,12 +8073,12 @@
       },
       "relationshipReview": {
         "reviewedAt": "2026-10-21",
-        "reviewedCatalogSize": 27,
+        "reviewedCatalogSize": 31,
         "decision": "linked",
         "reviewedTargets": [
           "reader:the-microscope-is-not-a-soul"
         ],
-        "rationale": "The microscope Reader helps interpret representation evidence, while its source and this Reader's agent-evaluation incident have separate evidentiary reach. The new harness Reader is a relevant incoming comparison about grader design; no new outgoing route is needed. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged."
+        "rationale": "The microscope Reader helps interpret representation evidence, while its source and this Reader's agent-evaluation incident have separate evidentiary reach. The new harness Reader is a relevant incoming comparison about grader design; no new outgoing route is needed. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged. Reassessed against four distinct AI Engineer video theses; their new outgoing links carry the qualified comparisons, with no new outgoing edge warranted from this existing entry."
       },
       "rank": 3
     },
@@ -7623,12 +8438,12 @@
       },
       "relationshipReview": {
         "reviewedAt": "2026-10-21",
-        "reviewedCatalogSize": 27,
+        "reviewedCatalogSize": 31,
         "decision": "linked",
         "reviewedTargets": [
           "reader:the-score-is-not-the-system"
         ],
-        "rationale": "The score Reader discusses the same Anthropic representation-steering evidence family. The link does not create independent support for consciousness or experience. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged."
+        "rationale": "The score Reader discusses the same Anthropic representation-steering evidence family. The link does not create independent support for consciousness or experience. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged. Reassessed against four distinct AI Engineer video theses; their new outgoing links carry the qualified comparisons, with no new outgoing edge warranted from this existing entry."
       },
       "rank": 11
     },
@@ -7904,14 +8719,14 @@
       },
       "relationshipReview": {
         "reviewedAt": "2026-10-21",
-        "reviewedCatalogSize": 27,
+        "reviewedCatalogSize": 31,
         "decision": "linked",
         "reviewedTargets": [
           "reader:the-key-was-the-boundary",
           "reader:autonomy-needs-an-interface",
           "reader:the-agent-a-company-owns"
         ],
-        "rationale": "The hidden mailbox case is compared with a separate credential exposure and two company-agent authority readings. The incidents and their evidence remain distinct. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged."
+        "rationale": "The hidden mailbox case is compared with a separate credential exposure and two company-agent authority readings. The incidents and their evidence remain distinct. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged. Reassessed against four distinct AI Engineer video theses; their new outgoing links carry the qualified comparisons, with no new outgoing edge warranted from this existing entry."
       },
       "rank": 4
     },
@@ -8217,14 +9032,14 @@
       },
       "relationshipReview": {
         "reviewedAt": "2026-10-21",
-        "reviewedCatalogSize": 27,
+        "reviewedCatalogSize": 31,
         "decision": "linked",
         "reviewedTargets": [
           "reader:ask-for-the-outcome-keep-the-boundary",
           "reader:make-good-work-inspectable",
           "reader:the-scan-never-reached-the-login"
         ],
-        "rationale": "The three routes compare ambition and verification in agent workflows, including a scan that ended without confirmed findings. No shared empirical outcome is claimed. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged."
+        "rationale": "The three routes compare ambition and verification in agent workflows, including a scan that ended without confirmed findings. No shared empirical outcome is claimed. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged. Reassessed against four distinct AI Engineer video theses; their new outgoing links carry the qualified comparisons, with no new outgoing edge warranted from this existing entry."
       },
       "rank": 12
     },
@@ -8513,14 +9328,14 @@
       },
       "relationshipReview": {
         "reviewedAt": "2026-10-21",
-        "reviewedCatalogSize": 27,
+        "reviewedCatalogSize": 31,
         "decision": "linked",
         "reviewedTargets": [
           "reader:autonomy-needs-an-interface",
           "reader:the-inbox-was-a-boundary",
           "reader:the-key-was-the-boundary"
         ],
-        "rationale": "The Vercel follow-on shares a named company-agent subject, while the inbox and credential Readers compare delegated authority through distinct source events. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged."
+        "rationale": "The Vercel follow-on shares a named company-agent subject, while the inbox and credential Readers compare delegated authority through distinct source events. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged. Reassessed against four distinct AI Engineer video theses; their new outgoing links carry the qualified comparisons, with no new outgoing edge warranted from this existing entry."
       },
       "rank": 5
     }
