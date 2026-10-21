@@ -315,7 +315,7 @@
     "orderReason": "Read after the earlier Amap fleet case to examine the broader forecast and its evidence limits.",
     "relationshipReview": {
       "reviewedAt": "2026-10-21",
-      "reviewedCatalogSize": 31,
+      "reviewedCatalogSize": 32,
       "decision": "linked",
       "reviewedTargets": [
         "reader:the-inbox-was-a-boundary",

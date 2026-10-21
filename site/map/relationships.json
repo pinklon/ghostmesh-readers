@@ -3,9 +3,9 @@
   "scope": "Local public editorial reading routes; no independent corroboration or cross-site graph admission.",
   "authority": "catalog-curated-editorial",
   "visibility": "public",
-  "readerCount": 31,
-  "assessmentCount": 31,
-  "relationshipCount": 66,
+  "readerCount": 32,
+  "assessmentCount": 32,
+  "relationshipCount": 68,
   "nodes": [
     {
       "id": "reader:ask-for-the-outcome-keep-the-boundary",
@@ -14,7 +14,7 @@
       "url": "https://youtube.shareplane.malott.ai/ask-for-the-outcome-keep-the-boundary/",
       "review": {
         "reviewedAt": "2026-10-21",
-        "reviewedCatalogSize": 31,
+        "reviewedCatalogSize": 32,
         "decision": "linked",
         "reviewedTargets": [
           "reader:a-challenge-is-not-a-verdict",
@@ -31,7 +31,7 @@
       "url": "https://youtube.shareplane.malott.ai/make-good-work-inspectable/",
       "review": {
         "reviewedAt": "2026-10-21",
-        "reviewedCatalogSize": 31,
+        "reviewedCatalogSize": 32,
         "decision": "linked",
         "reviewedTargets": [
           "reader:a-challenge-is-not-a-verdict",
@@ -48,7 +48,7 @@
       "url": "https://youtube.shareplane.malott.ai/a-challenge-is-not-a-verdict/",
       "review": {
         "reviewedAt": "2026-10-21",
-        "reviewedCatalogSize": 31,
+        "reviewedCatalogSize": 32,
         "decision": "linked",
         "reviewedTargets": [
           "reader:ask-for-the-outcome-keep-the-boundary",
@@ -65,7 +65,7 @@
       "url": "https://youtube.shareplane.malott.ai/the-score-is-not-the-system/",
       "review": {
         "reviewedAt": "2026-10-21",
-        "reviewedCatalogSize": 31,
+        "reviewedCatalogSize": 32,
         "decision": "linked",
         "reviewedTargets": [
           "reader:the-microscope-is-not-a-soul"
@@ -80,7 +80,7 @@
       "url": "https://youtube.shareplane.malott.ai/the-inbox-was-a-boundary/",
       "review": {
         "reviewedAt": "2026-10-21",
-        "reviewedCatalogSize": 31,
+        "reviewedCatalogSize": 32,
         "decision": "linked",
         "reviewedTargets": [
           "reader:the-key-was-the-boundary",
@@ -97,7 +97,7 @@
       "url": "https://youtube.shareplane.malott.ai/the-agent-a-company-owns/",
       "review": {
         "reviewedAt": "2026-10-21",
-        "reviewedCatalogSize": 31,
+        "reviewedCatalogSize": 32,
         "decision": "linked",
         "reviewedTargets": [
           "reader:autonomy-needs-an-interface",
@@ -114,7 +114,7 @@
       "url": "https://youtube.shareplane.malott.ai/autonomy-needs-an-interface/",
       "review": {
         "reviewedAt": "2026-10-21",
-        "reviewedCatalogSize": 31,
+        "reviewedCatalogSize": 32,
         "decision": "linked",
         "reviewedTargets": [
           "reader:the-agent-a-company-owns",
@@ -131,7 +131,7 @@
       "url": "https://youtube.shareplane.malott.ai/when-software-becomes-legible/",
       "review": {
         "reviewedAt": "2026-10-21",
-        "reviewedCatalogSize": 31,
+        "reviewedCatalogSize": 32,
         "decision": "linked",
         "reviewedTargets": [
           "reader:a-challenge-is-not-a-verdict",
@@ -148,7 +148,7 @@
       "url": "https://youtube.shareplane.malott.ai/when-agents-become-the-customer/",
       "review": {
         "reviewedAt": "2026-10-21",
-        "reviewedCatalogSize": 31,
+        "reviewedCatalogSize": 32,
         "decision": "linked",
         "reviewedTargets": [
           "reader:autonomy-needs-an-interface",
@@ -165,7 +165,7 @@
       "url": "https://youtube.shareplane.malott.ai/the-scan-never-reached-the-login/",
       "review": {
         "reviewedAt": "2026-10-21",
-        "reviewedCatalogSize": 31,
+        "reviewedCatalogSize": 32,
         "decision": "linked",
         "reviewedTargets": [
           "reader:ask-for-the-outcome-keep-the-boundary",
@@ -182,7 +182,7 @@
       "url": "https://youtube.shareplane.malott.ai/the-key-was-the-boundary/",
       "review": {
         "reviewedAt": "2026-10-21",
-        "reviewedCatalogSize": 31,
+        "reviewedCatalogSize": 32,
         "decision": "linked",
         "reviewedTargets": [
           "reader:the-inbox-was-a-boundary",
@@ -199,7 +199,7 @@
       "url": "https://youtube.shareplane.malott.ai/the-microscope-is-not-a-soul/",
       "review": {
         "reviewedAt": "2026-10-21",
-        "reviewedCatalogSize": 31,
+        "reviewedCatalogSize": 32,
         "decision": "linked",
         "reviewedTargets": [
           "reader:the-score-is-not-the-system"
@@ -214,7 +214,7 @@
       "url": "https://youtube.shareplane.malott.ai/the-funnel-is-not-the-frontier/",
       "review": {
         "reviewedAt": "2026-10-21",
-        "reviewedCatalogSize": 31,
+        "reviewedCatalogSize": 32,
         "decision": "linked",
         "reviewedTargets": [
           "reader:ask-for-the-outcome-keep-the-boundary",
@@ -231,7 +231,7 @@
       "url": "https://youtube.shareplane.malott.ai/the-fleet-does-not-prove-the-forecast/",
       "review": {
         "reviewedAt": "2026-10-21",
-        "reviewedCatalogSize": 31,
+        "reviewedCatalogSize": 32,
         "decision": "linked",
         "reviewedTargets": [
           "reader:the-inbox-was-a-boundary",
@@ -247,7 +247,7 @@
       "url": "https://youtube.shareplane.malott.ai/a-scenario-is-not-a-singularity/",
       "review": {
         "reviewedAt": "2026-10-21",
-        "reviewedCatalogSize": 31,
+        "reviewedCatalogSize": 32,
         "decision": "linked",
         "reviewedTargets": [
           "reader:the-experiment-ran-did-the-research-advance"
@@ -262,7 +262,7 @@
       "url": "https://youtube.shareplane.malott.ai/the-test-must-name-its-target/",
       "review": {
         "reviewedAt": "2026-10-21",
-        "reviewedCatalogSize": 31,
+        "reviewedCatalogSize": 32,
         "decision": "linked",
         "reviewedTargets": [
           "reader:the-microscope-is-not-a-soul"
@@ -277,7 +277,7 @@
       "url": "https://youtube.shareplane.malott.ai/the-parallel-result-is-not-the-product/",
       "review": {
         "reviewedAt": "2026-10-21",
-        "reviewedCatalogSize": 31,
+        "reviewedCatalogSize": 32,
         "decision": "none",
         "reviewedTargets": [],
         "rationale": "No other local Reader analyzes NCM or HybridAgents, their parallel-code and latent-reasoning methods, or the same benchmark claims. External studies remain outside this Reader graph. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged. Reassessed against four distinct AI Engineer video theses; their new outgoing links carry the qualified comparisons, with no new outgoing edge warranted from this existing entry."
@@ -290,7 +290,7 @@
       "url": "https://youtube.shareplane.malott.ai/the-experiment-ran-did-the-research-advance/",
       "review": {
         "reviewedAt": "2026-10-21",
-        "reviewedCatalogSize": 31,
+        "reviewedCatalogSize": 32,
         "decision": "linked",
         "reviewedTargets": [
           "reader:a-scenario-is-not-a-singularity"
@@ -305,7 +305,7 @@
       "url": "https://youtube.shareplane.malott.ai/the-list-is-the-business-claim/",
       "review": {
         "reviewedAt": "2026-10-21",
-        "reviewedCatalogSize": 31,
+        "reviewedCatalogSize": 32,
         "decision": "linked",
         "reviewedTargets": [
           "reader:when-agents-become-the-customer",
@@ -321,7 +321,7 @@
       "url": "https://youtube.shareplane.malott.ai/the-warning-is-not-a-ballot-ruling/",
       "review": {
         "reviewedAt": "2026-10-21",
-        "reviewedCatalogSize": 31,
+        "reviewedCatalogSize": 32,
         "decision": "none",
         "reviewedTargets": [],
         "rationale": "The other published Readers do not examine this California voter-list dispute, individualized ballot procedure or conditional DOJ warning. AI evaluation analogies are too distant to admit as local routes. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged. Reassessed against four distinct AI Engineer video theses; their new outgoing links carry the qualified comparisons, with no new outgoing edge warranted from this existing entry."
@@ -334,7 +334,7 @@
       "url": "https://youtube.shareplane.malott.ai/the-threshold-is-a-claim-not-a-test/",
       "review": {
         "reviewedAt": "2026-10-21",
-        "reviewedCatalogSize": 31,
+        "reviewedCatalogSize": 32,
         "decision": "linked",
         "reviewedTargets": [
           "reader:the-brakes-need-a-test",
@@ -350,7 +350,7 @@
       "url": "https://youtube.shareplane.malott.ai/the-label-the-box-and-the-bargain/",
       "review": {
         "reviewedAt": "2026-10-21",
-        "reviewedCatalogSize": 31,
+        "reviewedCatalogSize": 32,
         "decision": "linked",
         "reviewedTargets": [
           "reader:the-test-must-name-its-target",
@@ -366,7 +366,7 @@
       "url": "https://youtube.shareplane.malott.ai/the-brakes-need-a-test/",
       "review": {
         "reviewedAt": "2026-10-21",
-        "reviewedCatalogSize": 31,
+        "reviewedCatalogSize": 32,
         "decision": "linked",
         "reviewedTargets": [
           "reader:the-label-the-box-and-the-bargain",
@@ -382,7 +382,7 @@
       "url": "https://youtube.shareplane.malott.ai/the-grader-is-part-of-the-harness/",
       "review": {
         "reviewedAt": "2026-10-21",
-        "reviewedCatalogSize": 31,
+        "reviewedCatalogSize": 32,
         "decision": "linked",
         "reviewedTargets": [
           "reader:make-good-work-inspectable",
@@ -399,7 +399,7 @@
       "url": "https://youtube.shareplane.malott.ai/the-stop-button-is-outside-the-chat/",
       "review": {
         "reviewedAt": "2026-10-21",
-        "reviewedCatalogSize": 31,
+        "reviewedCatalogSize": 32,
         "decision": "linked",
         "reviewedTargets": [
           "reader:make-good-work-inspectable",
@@ -416,7 +416,7 @@
       "url": "https://youtube.shareplane.malott.ai/the-boundary-is-bigger-than-the-box/",
       "review": {
         "reviewedAt": "2026-10-21",
-        "reviewedCatalogSize": 31,
+        "reviewedCatalogSize": 32,
         "decision": "linked",
         "reviewedTargets": [
           "reader:the-agent-a-company-owns",
@@ -432,7 +432,7 @@
       "url": "https://youtube.shareplane.malott.ai/the-commit-is-not-the-control/",
       "review": {
         "reviewedAt": "2026-10-21",
-        "reviewedCatalogSize": 31,
+        "reviewedCatalogSize": 32,
         "decision": "linked",
         "reviewedTargets": [
           "reader:make-good-work-inspectable",
@@ -442,13 +442,29 @@
       }
     },
     {
+      "id": "reader:the-page-is-part-of-the-proof",
+      "slug": "the-page-is-part-of-the-proof",
+      "title": "The Page Is Part of the Proof",
+      "url": "https://youtube.shareplane.malott.ai/the-page-is-part-of-the-proof/",
+      "review": {
+        "reviewedAt": "2026-10-21",
+        "reviewedCatalogSize": 32,
+        "decision": "linked",
+        "reviewedTargets": [
+          "reader:make-good-work-inspectable",
+          "reader:the-commit-is-not-the-control"
+        ],
+        "rationale": "Compared the source argument with all 27 published Readers. These two share a concrete inspectability or acceptance question; the rest lack a sufficiently specific relationship. The links are analysis routes, not corroboration."
+      }
+    },
+    {
       "id": "reader:the-harness-keeps-the-receipt",
       "slug": "the-harness-keeps-the-receipt",
       "title": "The Harness Keeps the Receipt",
       "url": "https://youtube.shareplane.malott.ai/the-harness-keeps-the-receipt/",
       "review": {
         "reviewedAt": "2026-10-21",
-        "reviewedCatalogSize": 31,
+        "reviewedCatalogSize": 32,
         "decision": "linked",
         "reviewedTargets": [
           "reader:the-grader-is-part-of-the-harness",
@@ -464,7 +480,7 @@
       "url": "https://youtube.shareplane.malott.ai/the-operator-is-part-of-the-denominator/",
       "review": {
         "reviewedAt": "2026-10-21",
-        "reviewedCatalogSize": 31,
+        "reviewedCatalogSize": 32,
         "decision": "linked",
         "reviewedTargets": [
           "reader:the-parallel-result-is-not-the-product",
@@ -480,7 +496,7 @@
       "url": "https://youtube.shareplane.malott.ai/unsupervised-is-a-permission/",
       "review": {
         "reviewedAt": "2026-10-21",
-        "reviewedCatalogSize": 31,
+        "reviewedCatalogSize": 32,
         "decision": "linked",
         "reviewedTargets": [
           "reader:the-stop-button-is-outside-the-chat",
@@ -496,7 +512,7 @@
       "url": "https://youtube.shareplane.malott.ai/a-wallet-is-not-a-mandate/",
       "review": {
         "reviewedAt": "2026-10-21",
-        "reviewedCatalogSize": 31,
+        "reviewedCatalogSize": 32,
         "decision": "linked",
         "reviewedTargets": [
           "reader:when-agents-become-the-customer",
@@ -1199,6 +1215,30 @@
       "provenance": [
         "/the-commit-is-not-the-control/#measurements",
         "/the-grader-is-part-of-the-harness/#grading"
+      ],
+      "basis": "curated-editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:the-page-is-part-of-the-proof",
+      "to": "reader:make-good-work-inspectable",
+      "type": "related topic",
+      "reason": "Both ask whether an agent-produced artifact helps a human inspect work. The earlier Reader emphasizes executable outcome checks; this one tests whether presentation and provenance help a reviewer see the evidence. Neither source measures the other’s results.",
+      "provenance": [
+        "/the-page-is-part-of-the-proof/#surface",
+        "/make-good-work-inspectable/#limits"
+      ],
+      "basis": "curated-editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:the-page-is-part-of-the-proof",
+      "to": "reader:the-commit-is-not-the-control",
+      "type": "related topic",
+      "reason": "Both treat a readable change as insufficient without an accountable acceptance path. The source-control Reader focuses on code landing and recovery; this one addresses the page a reviewer sees and the source or diff behind it. The sources do not corroborate one another’s outcome claims.",
+      "provenance": [
+        "/the-page-is-part-of-the-proof/#boundary",
+        "/the-commit-is-not-the-control/#control"
       ],
       "basis": "curated-editorial-comparison",
       "direction": "outgoing"
