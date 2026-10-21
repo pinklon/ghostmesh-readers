@@ -6,6 +6,7 @@ from urllib.parse import urlsplit,unquote
 from datetime import datetime,date,timezone
 import json,re,sys,xml.etree.ElementTree as ET
 from generate_site import projections,CATEGORIES,validate_text,validate_link_only_source,validate_paper_source,validate_media_source
+from editorial_depth import validate_reader as validate_editorial_depth
 ROOT=Path(__file__).resolve().parents[1];SITE=ROOT/'site'
 VERDICTS={'Essential','Worth studying','Interesting, unproven','Mostly recycled','Misleading','Not worth your time'}
 STATES={'corroborated','partially corroborated','contradicted','disputed','unverified'}
@@ -100,6 +101,7 @@ def check(root=ROOT):
   require(re.findall(r'data-start="(\d+)"',raw)==old.get('chapterStarts',[]),'Chapter timestamps drift: '+old['slug'])
  for r in readers:
   slug=r['slug'];p=site/slug/'index.html';raw=p.read_text();a=pages[p]
+  errors.extend(validate_editorial_depth(root,r))
   timestamp(r['updated'],slug+' updated')
   try:date.fromisoformat(r['published'])
   except ValueError:errors.append(slug+': invalid publication date')

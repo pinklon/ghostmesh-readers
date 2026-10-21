@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://youtube.shareplane.malott.ai/editorial-depth.schema.json",
+  "title": "GhostMesh Reader editorial depth receipt v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "readerId", "sourceId", "sourceDigest", "articleSha256", "evidenceRevision", "candidateAuthor", "complexity", "sourceMap", "assessment", "independentCorroboration", "reviewer", "decision", "gaps", "decisionRationale", "assessedAt"],
+  "properties": {
+    "schemaVersion": {"const": 1},
+    "readerId": {"type": "string", "pattern": "^reader:[a-z0-9-]+$"},
+    "sourceId": {"type": "string", "minLength": 1},
+    "sourceDigest": {"$ref": "#/$defs/sha256"},
+    "articleSha256": {"$ref": "#/$defs/sha256"},
+    "evidenceRevision": {"$ref": "#/$defs/sha256"},
+    "candidateAuthor": {"type": "string", "minLength": 1},
+    "complexity": {"type": "object", "additionalProperties": false, "required": ["tier", "factors", "rationale"], "properties": {"tier": {"enum": ["brief", "extended"]}, "factors": {"type": "array", "minItems": 1, "items": {"type": "string"}}, "rationale": {"type": "string", "minLength": 35}}},
+    "sourceMap": {"type": "array", "minItems": 1, "items": {"type": "object", "additionalProperties": false, "required": ["atSeconds", "sectionId", "claimIds", "rationale"], "properties": {"atSeconds": {"type": ["integer", "null"], "minimum": 0}, "sectionId": {"type": "string", "minLength": 1}, "claimIds": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string"}}, "rationale": {"type": "string", "minLength": 35}}}},
+    "assessment": {"type": "object", "additionalProperties": false, "required": ["sourceCoverage", "supportingArgument", "evidenceRoles", "counterargument", "tradeoffs", "falsifiability", "originalSynthesis", "performance", "economics", "threatGovernance"], "properties": {
+      "sourceCoverage": {"$ref": "#/$defs/disposition"},
+      "supportingArgument": {"$ref": "#/$defs/disposition"},
+      "evidenceRoles": {"$ref": "#/$defs/disposition"},
+      "counterargument": {"$ref": "#/$defs/disposition"},
+      "tradeoffs": {"$ref": "#/$defs/disposition"},
+      "falsifiability": {"$ref": "#/$defs/disposition"},
+      "originalSynthesis": {"$ref": "#/$defs/disposition"},
+      "performance": {"$ref": "#/$defs/disposition"},
+      "economics": {"$ref": "#/$defs/disposition"},
+      "threatGovernance": {"$ref": "#/$defs/disposition"}
+    }},
+    "independentCorroboration": {"enum": ["none", "qualified"]},
+    "reviewer": {"type": "object", "additionalProperties": false, "required": ["name", "role", "independentFromAuthor", "evidenceUrl"], "properties": {"name": {"type": "string", "minLength": 1}, "role": {"type": "string", "minLength": 1}, "independentFromAuthor": {"const": true}, "evidenceUrl": {"type": "string", "pattern": "^https://"}}},
+    "decision": {"enum": ["accept", "revise", "hold"]},
+    "gaps": {"type": "array", "items": {"type": "object", "additionalProperties": false, "required": ["type", "severity", "rationale"], "properties": {"type": {"enum": ["source", "claim", "evidence", "counterargument", "scope", "risk", "test", "synthesis"]}, "severity": {"enum": ["blocking", "nonblocking"]}, "rationale": {"type": "string", "minLength": 35}}}},
+    "decisionRationale": {"type": "string", "minLength": 35},
+    "assessedAt": {"type": "string", "format": "date-time"}
+  },
+  "$defs": {
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "disposition": {"type": "object", "additionalProperties": false, "required": ["disposition", "rationale"], "properties": {"disposition": {"enum": ["covered", "gap", "not-applicable"]}, "rationale": {"type": "string", "minLength": 35}}}
+  }
+}
