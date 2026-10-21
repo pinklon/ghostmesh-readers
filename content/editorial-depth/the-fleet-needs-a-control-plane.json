@@ -110,7 +110,10 @@
     }
   },
   "independentCorroboration": "none",
-  "ownerDecision": null,
+  "ownerDecision": {
+    "pullNumber": 57,
+    "commentId": null
+  },
   "decision": "hold",
   "gaps": [],
   "decisionRationale": "Independent reviewer found the current article and source map suitable for owner qualitative review. Tony has not reviewed or accepted these exact article and evidence bytes, so publication remains held.",
