@@ -16,6 +16,11 @@ class PublicationGate(unittest.TestCase):
   self.owner.stop();self.tmp.cleanup()
  def mutate(self,fn):
   p=self.root/'content/catalog.json';d=json.loads(p.read_text());fn(d);p.write_text(json.dumps(d))
+ def structural_errors(self):
+  # Draft Readers deliberately fail the editorial release gate. These two
+  # relationship fixtures test structural validity without granting acceptance.
+  return [error for error in check(self.root)
+          if not error.endswith('editorial release held by qualitative decision or unresolved gap')]
  def rejected(self,term):self.assertTrue(any(term in x for x in check(self.root)),check(self.root))
  def test_source_media_outside_publish_directory(self):
   (self.root/'content/private.vtt').write_text('WEBVTT');self.rejected('Private source media')
@@ -73,7 +78,7 @@ class PublicationGate(unittest.TestCase):
   data=json.loads((self.root/'content/catalog.json').read_text())
   unlinked=[r for r in data['readers'] if not r['relationships']]
   self.assertEqual({'the-warning-is-not-a-ballot-ruling','the-parallel-result-is-not-the-product'},{r['slug'] for r in unlinked})
-  self.assertEqual([],check(self.root))
+  self.assertEqual([],self.structural_errors())
  def test_five_relations_remain_public_and_navigable(self):
   p=self.root/'content/catalog.json';data=json.loads(p.read_text());reader=data['readers'][0]
   existing={edge['target'] for edge in reader['relationships']}
@@ -97,7 +102,7 @@ class PublicationGate(unittest.TestCase):
   shutil.copy2(ROOT/'scripts/social_cards.py',scripts/'social_cards.py')
   result=subprocess.run([sys.executable,str(scripts/'generate_site.py')],capture_output=True,text=True)
   self.assertEqual(0,result.returncode,result.stdout+result.stderr)
-  self.assertEqual([],check(self.root))
+  self.assertEqual([],self.structural_errors())
   slug=reader['slug'];public=json.loads((self.root/'site/catalog.json').read_text())
   self.assertEqual(5,len(next(r for r in public['readers'] if r['id']==reader['id'])['relationships']))
   receipt=json.loads((self.root/'site'/slug/'receipt.json').read_text())

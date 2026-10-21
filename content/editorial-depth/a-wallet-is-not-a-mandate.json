@@ -1,0 +1,106 @@
+{
+  "schemaVersion": 1,
+  "readerId": "reader:a-wallet-is-not-a-mandate",
+  "sourceId": "f_HwzoYrZ7s",
+  "sourceDigest": "968f0fad697ca3fc13e29f8c16641c0a5c8b1c9673ebb1282219e8f455d9770c",
+  "sourceAidSha256": "6c5b4bb10c8ede764ec9f4ed0e54e15aae4f0b29d4857a45c93af9280437d29d",
+  "articleSha256": "d5ff333aa94a13b4e287ba7e50fde1324dde90fff50198e0373e49ae18ab021f",
+  "evidenceRevision": "64aa74e153c21ef3415618f1ee837a81b973fb0f2cc03bf74e0fdc29144897c1",
+  "sourceMapEvidenceSha256": "b68b769a5a026ca49338af426a342c06c7d5b53c37f9e17425b572b5bbbe67a9",
+  "reviewEvidenceSha256": "0c4bde1e1517c3960ace921b8de7cfefcac40d0c247cef8542a3c527d88bbeb2",
+  "candidateAuthor": "pinklon",
+  "complexity": {
+    "tier": "extended",
+    "factors": [
+      "The source makes a consequential architecture or governance recommendation that deserves mapped counterevidence.",
+      "Multiple first-party claims, predictions or anecdotes require explicit evidence roles and a falsifiable test."
+    ],
+    "rationale": "This source supports an extended original argument, bounded claim register and separate effect or cost experiment rather than a short source summary."
+  },
+  "sourceMap": [
+    {
+      "atSeconds": 188,
+      "sectionId": "the-payment-problem-is-real-the-title-jumps-ahead",
+      "claimIds": [
+        "a-wallet-is-not-a-mandate--x402-flow"
+      ],
+      "rationale": "The named x402 protocol begins after the HTTP 402 background; the article separates protocol mechanics from authority."
+    },
+    {
+      "atSeconds": 193,
+      "sectionId": "a-paid-response-needs-more-than-a-successful-charge",
+      "claimIds": [
+        "a-wallet-is-not-a-mandate--adoption",
+        "a-wallet-is-not-a-mandate--x402-flow"
+      ],
+      "rationale": "The adoption chapter motivates a qualified discussion of paid result, reconciliation and unclear demand counts."
+    },
+    {
+      "atSeconds": 494,
+      "sectionId": "a-paid-response-needs-more-than-a-successful-charge",
+      "claimIds": [
+        "a-wallet-is-not-a-mandate--trade-anecdote"
+      ],
+      "rationale": "The first-person weekend trade is marked as an anecdote, not performance evidence."
+    },
+    {
+      "atSeconds": 695,
+      "sectionId": "the-signer-should-know-less-than-the-owner",
+      "claimIds": [
+        "a-wallet-is-not-a-mandate--advisor-limit"
+      ],
+      "rationale": "The financial-product portion is bounded by the current Advisor user-approval statement and separate custody risks."
+    }
+  ],
+  "assessment": {
+    "sourceCoverage": {
+      "disposition": "covered",
+      "rationale": "Four mapped source moments cover the main technical or economic argument, its proposed mechanism, limits and practical decision. Remaining paragraphs are original analysis."
+    },
+    "supportingArgument": {
+      "disposition": "covered",
+      "rationale": "An x402 request can remove a human checkout step for a narrowly priced digital resource with a limited delegated signer."
+    },
+    "evidenceRoles": {
+      "disposition": "covered",
+      "rationale": "Exact video cues establish the speaker's argument; linked primary papers or vendor documents establish only their own methods and claims. No GhostMesh replication is asserted."
+    },
+    "counterargument": {
+      "disposition": "covered",
+      "rationale": "A conventional subscription or prepaid account may be simpler; an anecdotal trade and protocol activity do not validate autonomy or financial returns."
+    },
+    "tradeoffs": {
+      "disposition": "covered",
+      "rationale": "It separates payment transport from key custody, delivery verification, cumulative spending, disputes, price variation and loss exposure."
+    },
+    "falsifiability": {
+      "disposition": "covered",
+      "rationale": "A no-real-assets sandbox compares x402, subscription and prepaid purchase flows under stale prices, revocation and duplicate events."
+    },
+    "originalSynthesis": {
+      "disposition": "covered",
+      "rationale": "A wallet is a delegated payment capability, not a mandate for an agent to hold capital, trade or act as an economic principal."
+    },
+    "performance": {
+      "disposition": "covered",
+      "rationale": "No trading performance or protocol reliability rate is asserted; delivery success and duplicate-charge rates are proposed measures."
+    },
+    "economics": {
+      "disposition": "covered",
+      "rationale": "It includes integration, custody, accounting, fraud and failed-call cost beyond network fees, with no investment recommendation."
+    },
+    "threatGovernance": {
+      "disposition": "covered",
+      "rationale": "It distinguishes Coinbase's non-discretionary Advisor claim from autonomous trading and proposes signer controls and revocation."
+    }
+  },
+  "independentCorroboration": "none",
+  "ownerDecision": {
+    "pullNumber": 56,
+    "commentId": 6314892787
+  },
+  "decision": "accept",
+  "gaps": [],
+  "decisionRationale": "Tony qualitatively accepted the four exact PR 56 preview articles and requested publication in the trusted release conversation. Independent public-copy review accepted this article for owner review. The direct unchanged owner GitHub hash marker is still required before the release gate opens.",
+  "assessedAt": "2026-10-21T11:24:56Z"
+}

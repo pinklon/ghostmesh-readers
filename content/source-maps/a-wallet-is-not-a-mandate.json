@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "readerId": "reader:a-wallet-is-not-a-mandate",
+  "sourceId": "f_HwzoYrZ7s",
+  "sourceAidSha256": "6c5b4bb10c8ede764ec9f4ed0e54e15aae4f0b29d4857a45c93af9280437d29d",
+  "points": [
+    {
+      "atSeconds": 188,
+      "sectionId": "the-payment-problem-is-real-the-title-jumps-ahead",
+      "claimIds": [
+        "a-wallet-is-not-a-mandate--x402-flow"
+      ],
+      "cueParaphrase": "The named x402 protocol begins after the HTTP 402 background; the article separates protocol mechanics from authority.",
+      "privateAidCheck": "Coinbase's developer documentation describes the request, signature, facilitator verification and settlement flow. The exact publisher chapter and retained timestamped automatic-caption cue were compared; this is not a word-for-word quotation."
+    },
+    {
+      "atSeconds": 193,
+      "sectionId": "a-paid-response-needs-more-than-a-successful-charge",
+      "claimIds": [
+        "a-wallet-is-not-a-mandate--adoption",
+        "a-wallet-is-not-a-mandate--x402-flow"
+      ],
+      "cueParaphrase": "The adoption chapter motivates a qualified discussion of paid result, reconciliation and unclear demand counts.",
+      "privateAidCheck": "Retained caption cues place the adoption argument around the 03:13 publisher chapter. The exact publisher chapter and retained timestamped automatic-caption cue were compared; this is not a word-for-word quotation."
+    },
+    {
+      "atSeconds": 494,
+      "sectionId": "a-paid-response-needs-more-than-a-successful-charge",
+      "claimIds": [
+        "a-wallet-is-not-a-mandate--trade-anecdote"
+      ],
+      "cueParaphrase": "The first-person weekend trade is marked as an anecdote, not performance evidence.",
+      "privateAidCheck": "Private caption cues locate a first-person account near 08:14. The exact publisher chapter and retained timestamped automatic-caption cue were compared; this is not a word-for-word quotation."
+    },
+    {
+      "atSeconds": 695,
+      "sectionId": "the-signer-should-know-less-than-the-owner",
+      "claimIds": [
+        "a-wallet-is-not-a-mandate--advisor-limit"
+      ],
+      "cueParaphrase": "The financial-product portion is bounded by the current Advisor user-approval statement and separate custody risks.",
+      "privateAidCheck": "The current Coinbase Advisor product page states the user reviews and authorizes every trade. The exact publisher chapter and retained timestamped automatic-caption cue were compared; this is not a word-for-word quotation."
+    }
+  ]
+}

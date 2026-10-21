@@ -1,0 +1,334 @@
+{
+  "schema": "ghostmesh-reader-receipt-v2",
+  "createdAt": "2026-10-21T04:54:07Z",
+  "source": {
+    "kind": "article",
+    "identity": "claude-code-html-artifacts-2026",
+    "url": "https://claude.dev/blog/using-claude-code-the-unreasonable-effectiveness-of-html/",
+    "title": "Using Claude Code: The unreasonable effectiveness of HTML",
+    "authors": "Thariq Shihipar",
+    "publisher": "claude.dev Blog",
+    "publicationDate": "2026-05-20",
+    "updatedDate": "2026-05-20",
+    "dateNote": "The page identifies May 20, 2026 as publication date; no separate updated date is stated, so the publication date is repeated for the required field."
+  },
+  "sourceInspection": {
+    "method": "Exact public claude.dev article captured as private HTML and checked against live page title, author, publication date and section argument; primary format, accessibility and browser-security documentation inspected separately.",
+    "status": "private-original-html-aid",
+    "sourceHtmlSha256": "d968ac98c9c514d3861698860fbe3d43c323f9122bbc5d933754fced89449cd9",
+    "caveat": "Full original HTML stays private. Practitioner experiences and linked examples were not independently measured; written source has no player, transcript or timestamp map.",
+    "publicationBoundary": "Only original GhostMesh analysis, short paraphrases, links and sanitized hashes are public; exact source capture remains outside Git."
+  },
+  "custody": {
+    "status": "private-original-html-verified",
+    "note": "Canonical URL returned an exact 107211-byte private HTML capture on October 21, 2026; page identifies Thariq Shihipar and May 20, 2026."
+  },
+  "overview": "Thariq Shihipar argues that HTML artifacts make agent-generated plans, comparisons and editing tools easier to inspect and share than long Markdown files.",
+  "whyItMatters": "A richer presentation can improve a human review surface, but it also adds execution, accessibility, provenance and versioning questions that a plain document may avoid.",
+  "ghostMeshTakeaway": "Choose the smallest review surface that exposes the evidence and decision; bind a richer page to inspectable source, behavior and accessible structure.",
+  "normalization": {
+    "id": "reader:the-page-is-part-of-the-proof",
+    "slug": "the-page-is-part-of-the-proof",
+    "title": "The Page Is Part of the Proof",
+    "category": "AI & Technology",
+    "tags": [
+      "coding agents",
+      "HTML",
+      "Markdown",
+      "human review",
+      "accessibility"
+    ],
+    "entities": [
+      "Claude Code",
+      "HTML",
+      "Markdown",
+      "CommonMark",
+      "W3C"
+    ],
+    "source": {
+      "kind": "article",
+      "identity": "claude-code-html-artifacts-2026",
+      "url": "https://claude.dev/blog/using-claude-code-the-unreasonable-effectiveness-of-html/",
+      "title": "Using Claude Code: The unreasonable effectiveness of HTML",
+      "authors": "Thariq Shihipar",
+      "publisher": "claude.dev Blog",
+      "publicationDate": "2026-05-20",
+      "updatedDate": "2026-05-20",
+      "dateNote": "The page identifies May 20, 2026 as publication date; no separate updated date is stated, so the publication date is repeated for the required field."
+    },
+    "published": "2026-10-21",
+    "updated": "2026-10-21T04:54:07Z",
+    "overview": "Thariq Shihipar argues that HTML artifacts make agent-generated plans, comparisons and editing tools easier to inspect and share than long Markdown files.",
+    "whyItMatters": "A richer presentation can improve a human review surface, but it also adds execution, accessibility, provenance and versioning questions that a plain document may avoid.",
+    "ghostMeshTakeaway": "Choose the smallest review surface that exposes the evidence and decision; bind a richer page to inspectable source, behavior and accessible structure.",
+    "verdict": "Worth studying",
+    "architectureImpact": "experiment recommended",
+    "falsification": "Revise the recommendation if a matched task study shows that a richer HTML artifact improves error detection and accurate decisions without unacceptable security, accessibility or provenance costs.",
+    "evidenceState": "partially corroborated",
+    "lastEvidenceChecked": "2026-10-21T04:54:07Z",
+    "freshness": "Original essay published May 20, 2026 and privately captured October 21. CommonMark, W3C and MDN primary documentation checked the same day. No controlled review-outcome study or audit of the author’s examples was available.",
+    "variant": "dossier",
+    "accent": "teal",
+    "claims": [
+      {
+        "id": "the-page-is-part-of-the-proof--readability",
+        "proposition": "The author reports that long Markdown artifacts are difficult for him and colleagues to read, and that HTML helps him present and share richer outputs.",
+        "kind": "first-party-practitioner-report",
+        "asOf": "2026-10-21",
+        "status": "unverified",
+        "assessment": "The original essay states this preference and supplies examples of plans, comparisons and review artifacts.",
+        "limits": "No controlled reader study, error rate or team-wide adoption measure is supplied.",
+        "sourceLocation": "Opening; Why use HTML?",
+        "references": [
+          "claude-html"
+        ],
+        "counterevidence": [],
+        "temporalScope": "Original essay published May 20, 2026; source and supporting documentation checked October 21, 2026."
+      },
+      {
+        "id": "the-page-is-part-of-the-proof--html-affordances",
+        "proposition": "HTML can combine structured text, layout, images, SVG, scripts and controls in a browser artifact.",
+        "kind": "documented-format-capability",
+        "asOf": "2026-10-21",
+        "status": "corroborated",
+        "assessment": "The source shows examples and the web platform documents the capabilities.",
+        "limits": "Capability alone does not show improved human comprehension or safe generated behavior.",
+        "sourceLocation": "Information density; Two-way interactions",
+        "references": [
+          "claude-html",
+          "mdn-csp"
+        ],
+        "counterevidence": [],
+        "temporalScope": "Original essay published May 20, 2026; source and supporting documentation checked October 21, 2026."
+      },
+      {
+        "id": "the-page-is-part-of-the-proof--markdown-record",
+        "proposition": "CommonMark defines Markdown as structured plain text that can be converted to HTML; a text source and richer rendered view can coexist.",
+        "kind": "documented-alternative",
+        "asOf": "2026-10-21",
+        "status": "corroborated",
+        "assessment": "The CommonMark specification documents the source/rendering relationship and the author credits Markdown portability and editability.",
+        "limits": "A dual-record workflow can drift if source and rendered output are not bound by a deterministic build.",
+        "sourceLocation": "Opening; Frequently asked questions",
+        "references": [
+          "commonmark",
+          "claude-html"
+        ],
+        "counterevidence": [],
+        "temporalScope": "Original essay published May 20, 2026; source and supporting documentation checked October 21, 2026."
+      },
+      {
+        "id": "the-page-is-part-of-the-proof--engagement-effect",
+        "proposition": "The examples make HTML a plausible way to improve review engagement, but the essay does not measure whether it reduces wrong decisions.",
+        "kind": "editorial-evidence-limit",
+        "asOf": "2026-10-21",
+        "status": "unverified",
+        "assessment": "GhostMesh separates the author’s personal observations from an outcome claim requiring comparative testing.",
+        "limits": "No measured comprehension, error-detection, accessibility or maintenance outcome is presented.",
+        "sourceLocation": "Visual clarity and ease of reading; Staying in the loop",
+        "references": [
+          "claude-html"
+        ],
+        "counterevidence": [],
+        "temporalScope": "Original essay published May 20, 2026; source and supporting documentation checked October 21, 2026."
+      },
+      {
+        "id": "the-page-is-part-of-the-proof--accessibility",
+        "proposition": "Information and relationships conveyed visually should remain programmatically determinable or available in text.",
+        "kind": "accessibility-standard",
+        "asOf": "2026-10-21",
+        "status": "corroborated",
+        "assessment": "W3C WCAG 2.2 success criterion 1.3.1 states this requirement.",
+        "limits": "Passing this requirement for any particular generated page requires actual inspection and assistive-technology testing.",
+        "sourceLocation": "Visual clarity and ease of reading",
+        "references": [
+          "w3c-wcag"
+        ],
+        "counterevidence": [],
+        "temporalScope": "Original essay published May 20, 2026; source and supporting documentation checked October 21, 2026."
+      },
+      {
+        "id": "the-page-is-part-of-the-proof--browser-boundary",
+        "proposition": "Interactive HTML can load scripts and remote resources; a shareable review artifact needs a bounded execution and network policy.",
+        "kind": "documented-risk-and-editorial-inference",
+        "asOf": "2026-10-21",
+        "status": "partially corroborated",
+        "assessment": "MDN documents Content Security Policy controls for resource and script loading; GhostMesh applies them as an artifact review question.",
+        "limits": "No unsafe behavior is asserted for the source examples, which were not audited here.",
+        "sourceLocation": "Two-way interactions; Custom editing interfaces",
+        "references": [
+          "claude-html",
+          "mdn-csp"
+        ],
+        "counterevidence": [],
+        "temporalScope": "Original essay published May 20, 2026; source and supporting documentation checked October 21, 2026."
+      },
+      {
+        "id": "the-page-is-part-of-the-proof--source-to-view",
+        "proposition": "Versioned source, pinned dependencies, accessible semantics and exact export behavior can make a richer page auditable.",
+        "kind": "editorial-inference",
+        "asOf": "2026-10-21",
+        "status": "unverified",
+        "assessment": "This is a proposed GhostMesh operating design drawing on format, accessibility and security documentation.",
+        "limits": "No implementation or outcome comparison was conducted for this candidate Reader.",
+        "sourceLocation": "Use cases; Staying in the loop",
+        "references": [
+          "claude-html",
+          "commonmark",
+          "w3c-wcag",
+          "mdn-csp"
+        ],
+        "counterevidence": [],
+        "temporalScope": "Original essay published May 20, 2026; source and supporting documentation checked October 21, 2026."
+      },
+      {
+        "id": "the-page-is-part-of-the-proof--review-experiment",
+        "proposition": "A matched Markdown-versus-HTML review experiment should measure error detection and accurate exports, not aesthetic preference alone.",
+        "kind": "editorial-proposal",
+        "asOf": "2026-10-21",
+        "status": "unverified",
+        "assessment": "The Reader specifies a controlled comparison with the same content and task rubric in each arm.",
+        "limits": "The experiment has not been performed and no format winner is claimed.",
+        "sourceLocation": "Why use HTML?",
+        "references": [
+          "claude-html"
+        ],
+        "counterevidence": [],
+        "temporalScope": "Original essay published May 20, 2026; source and supporting documentation checked October 21, 2026."
+      }
+    ],
+    "references": [
+      {
+        "id": "claude-html",
+        "title": "Using Claude Code: The unreasonable effectiveness of HTML",
+        "author": "Thariq Shihipar",
+        "publisher": "claude.dev Blog",
+        "url": "https://claude.dev/blog/using-claude-code-the-unreasonable-effectiveness-of-html/",
+        "publicationDate": "2026-05-20",
+        "eventDate": null,
+        "location": "Why use HTML?; Use cases; FAQ; Staying in the loop",
+        "sourceType": "first-party practitioner essay",
+        "independence": "Author experience and examples; no independently measured review outcome.",
+        "evidenceFamily": "claude-dev",
+        "checkedAt": "2026-10-21T04:54:07Z",
+        "datePrecision": "day"
+      },
+      {
+        "id": "commonmark",
+        "title": "CommonMark Spec 0.31.2",
+        "author": "John MacFarlane and CommonMark contributors",
+        "publisher": "CommonMark",
+        "url": "https://spec.commonmark.org/0.31.2/",
+        "publicationDate": "2024-01-28",
+        "eventDate": null,
+        "location": "Introduction and Markdown-to-HTML background",
+        "sourceType": "primary format specification",
+        "independence": "Defines Markdown and its conversion path, not a comparison of workplace review outcomes.",
+        "evidenceFamily": "commonmark",
+        "checkedAt": "2026-10-21T04:54:07Z",
+        "datePrecision": "day"
+      },
+      {
+        "id": "w3c-wcag",
+        "title": "Understanding Success Criterion 1.3.1: Info and Relationships",
+        "author": "W3C WAI",
+        "publisher": "W3C",
+        "url": "https://www.w3.org/WAI/WCAG22/Understanding/info-and-relationships.html",
+        "publicationDate": "unknown",
+        "eventDate": null,
+        "location": "Success criterion and intent",
+        "sourceType": "primary accessibility guidance",
+        "independence": "Explains required semantic relationships; not a test of the source article’s examples.",
+        "evidenceFamily": "w3c",
+        "checkedAt": "2026-10-21T04:54:07Z",
+        "dateNote": "Continuously maintained W3C guidance; a stable original publication date is not established by this page."
+      },
+      {
+        "id": "mdn-csp",
+        "title": "Content Security Policy (CSP)",
+        "author": "MDN contributors",
+        "publisher": "MDN Web Docs",
+        "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/CSP",
+        "publicationDate": "unknown",
+        "eventDate": null,
+        "location": "Overview and resource restrictions",
+        "sourceType": "primary web-platform documentation",
+        "independence": "Documents browser controls, not an audit or reported incident involving the source examples.",
+        "evidenceFamily": "mdn",
+        "checkedAt": "2026-10-21T04:54:07Z",
+        "dateNote": "Continuously maintained web documentation; no stable original publication date is asserted for this checked version."
+      }
+    ],
+    "relationships": [
+      {
+        "target": "reader:make-good-work-inspectable",
+        "type": "related topic",
+        "reason": "Both ask whether an agent-produced artifact helps a human inspect work. The earlier Reader emphasizes executable outcome checks; this one tests whether presentation and provenance help a reviewer see the evidence. Neither source measures the other’s results.",
+        "provenance": [
+          "/the-page-is-part-of-the-proof/#surface",
+          "/make-good-work-inspectable/#limits"
+        ],
+        "basis": "curated-editorial-comparison",
+        "direction": "outgoing"
+      },
+      {
+        "target": "reader:the-commit-is-not-the-control",
+        "type": "related topic",
+        "reason": "Both treat a readable change as insufficient without an accountable acceptance path. The source-control Reader focuses on code landing and recovery; this one addresses the page a reviewer sees and the source or diff behind it. The sources do not corroborate one another’s outcome claims.",
+        "provenance": [
+          "/the-page-is-part-of-the-proof/#boundary",
+          "/the-commit-is-not-the-control/#control"
+        ],
+        "basis": "curated-editorial-comparison",
+        "direction": "outgoing"
+      }
+    ],
+    "relationshipDisposition": "Two specific editorial comparisons connect human inspectability and authenticated acceptance. No existing Reader independently tests this author’s HTML-versus-Markdown workflow.",
+    "relationshipReview": {
+      "reviewedAt": "2026-10-21",
+      "reviewedCatalogSize": 32,
+      "decision": "linked",
+      "reviewedTargets": [
+        "reader:make-good-work-inspectable",
+        "reader:the-commit-is-not-the-control"
+      ],
+      "rationale": "Compared the source argument with all 27 published Readers. These two share a concrete inspectability or acceptance question; the rest lack a sufficiently specific relationship. The links are analysis routes, not corroboration."
+    },
+    "review": {
+      "status": "independent-source-copy-and-privacy-reviewed; owner-acceptance-pending",
+      "reviewer": "Independent read-only Codex editorial reviewer",
+      "reviewedSourceHead": "Exact authored article SHA-256 caaa10eecfc327ad4b54468396df5f602d95b93490bc3e3a27706af2021f40b9",
+      "checkedAt": "2026-10-21T04:59:21Z",
+      "scope": "Private exact-page capture, author/date/title, practitioner claim limits, primary counterevidence, accessibility/security boundary, graph links and public-source privacy.",
+      "findings": "Independent source, argument, graph and privacy review found no actionable defect. A targeted follow-up verified two direct original-source links only, without changing attribution or the private-source boundary. Owner qualitative acceptance is still missing."
+    },
+    "revisionHistory": [
+      {
+        "at": "2026-10-21T04:54:07Z",
+        "kind": "new-reader-candidate",
+        "reason": "Owner-requested written-source deconstruction of the Claude Code HTML essay; private source capture and article analysis prepared for independent review."
+      },
+      {
+        "at": "2026-10-21T04:58:22Z",
+        "kind": "independent-editorial-review",
+        "reason": "Read-only independent source, attribution, graph and privacy review found no actionable defect on the exact article and source-map hashes."
+      },
+      {
+        "at": "2026-10-21T04:59:21Z",
+        "kind": "source-map-link-review",
+        "reason": "Independent reviewer confirmed two exact original-source links added to mapped sections; substantive article and privacy conclusions remain valid."
+      }
+    ],
+    "editorialOrder": 24,
+    "orderReason": "Place the HTML artifact reading after inspectability, acceptance and source-control Readers; adjust sequencing if another held Reader publishes first.",
+    "editorialDepth": {
+      "schemaVersion": 1,
+      "receiptPath": "content/editorial-depth/the-page-is-part-of-the-proof.json"
+    }
+  },
+  "editorial": {
+    "overview": "Thariq Shihipar argues that HTML artifacts make agent-generated plans, comparisons and editing tools easier to inspect and share than long Markdown files.",
+    "whyItMatters": "A richer presentation can improve a human review surface, but it also adds execution, accessibility, provenance and versioning questions that a plain document may avoid.",
+    "ghostMeshTakeaway": "Choose the smallest review surface that exposes the evidence and decision; bind a richer page to inspectable source, behavior and accessible structure."
+  }
+}

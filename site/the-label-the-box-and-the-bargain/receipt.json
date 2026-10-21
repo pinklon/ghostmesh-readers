@@ -490,13 +490,13 @@
     },
     "relationshipReview": {
       "reviewedAt": "2026-10-21",
-      "reviewedCatalogSize": 27,
+      "reviewedCatalogSize": 32,
       "decision": "linked",
       "reviewedTargets": [
         "reader:the-test-must-name-its-target",
         "reader:the-microscope-is-not-a-soul"
       ],
-      "rationale": "The existing routes distinguish AGI labels from functional understanding and digital experience from representation evidence. Neither verifies the interview's exact speech. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged."
+      "rationale": "The existing routes distinguish AGI labels from functional understanding and digital experience from representation evidence. Neither verifies the interview's exact speech. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged. Reassessed against four distinct AI Engineer video theses; their new outgoing links carry the qualified comparisons, with no new outgoing edge warranted from this existing entry."
     }
   },
   "editorial": {

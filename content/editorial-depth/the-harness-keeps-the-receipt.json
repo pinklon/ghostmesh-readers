@@ -1,0 +1,106 @@
+{
+  "schemaVersion": 1,
+  "readerId": "reader:the-harness-keeps-the-receipt",
+  "sourceId": "7Y4sbZgBdnc",
+  "sourceDigest": "5ed95aa0aff84371829d8f2f01f62f26c03d3d04150e8049df1ae287340ad59e",
+  "sourceAidSha256": "f3b0dbab78207c906bd93ba2817995e7e56634dab26fdff2d2afd10dfa869106",
+  "articleSha256": "e272e9800b29e27b424da73cf501e24164a558f81a6638600abec128b4d07c9f",
+  "evidenceRevision": "c2ba419888c4b98697a75f9af8192d96cb4281a019cb73f05c948374c5eb6e75",
+  "sourceMapEvidenceSha256": "ed0b3762bd51f9dfd0ab273f2f57bd82c68b42a5383c93c55e34f826bfae85e5",
+  "reviewEvidenceSha256": "59412ba7f45d5a90b96cb53698cdacf8e7a54ecea817e53ad963deda26fa5ae3",
+  "candidateAuthor": "pinklon",
+  "complexity": {
+    "tier": "extended",
+    "factors": [
+      "The source makes a consequential architecture or governance recommendation that deserves mapped counterevidence.",
+      "Multiple first-party claims, predictions or anecdotes require explicit evidence roles and a falsifiable test."
+    ],
+    "rationale": "This source supports an extended original argument, bounded claim register and separate effect or cost experiment rather than a short source summary."
+  },
+  "sourceMap": [
+    {
+      "atSeconds": 69,
+      "sectionId": "the-useful-provocation",
+      "claimIds": [
+        "the-harness-keeps-the-receipt--bounded-parity"
+      ],
+      "rationale": "The opening distinction between prompt/context advice and runtime responsibility frames the later benchmark comparison."
+    },
+    {
+      "atSeconds": 300,
+      "sectionId": "what-the-benchmark-evidence-actually-says",
+      "claimIds": [
+        "the-harness-keeps-the-receipt--bounded-parity",
+        "the-harness-keeps-the-receipt--context-pressure"
+      ],
+      "rationale": "The research chapter motivates a bounded comparison of coding score, context pressure and cost."
+    },
+    {
+      "atSeconds": 376,
+      "sectionId": "a-flywheel-remains-a-hypothesis",
+      "claimIds": [
+        "the-harness-keeps-the-receipt--data-flywheel"
+      ],
+      "rationale": "The speaker's data-flywheel proposal is treated as a hypothesis without a proven training-data path."
+    },
+    {
+      "atSeconds": 1038,
+      "sectionId": "the-boundary-that-stays",
+      "claimIds": [
+        "the-harness-keeps-the-receipt--off-laptop"
+      ],
+      "rationale": "The speaker presents an off-laptop forecast near 17:18; this article treats it as a prediction rather than measured adoption."
+    }
+  ],
+  "assessment": {
+    "sourceCoverage": {
+      "disposition": "covered",
+      "rationale": "Four mapped source moments cover the main technical or economic argument, its proposed mechanism, limits and practical decision. Remaining paragraphs are original analysis."
+    },
+    "supportingArgument": {
+      "disposition": "covered",
+      "rationale": "Strong models can make elaborate coding instructions unnecessary on reversible tasks; the Arena and minimal-MLE studies deserve that narrow reading."
+    },
+    "evidenceRoles": {
+      "disposition": "covered",
+      "rationale": "Exact video cues establish the speaker's argument; linked primary papers or vendor documents establish only their own methods and claims. No GhostMesh replication is asserted."
+    },
+    "counterargument": {
+      "disposition": "covered",
+      "rationale": "The same-model tight-context study finds meaningful harness effects, and benchmark parity says nothing about uncertain writes or authorization."
+    },
+    "tradeoffs": {
+      "disposition": "covered",
+      "rationale": "A thinner coding loop can lower token spend; a persistent remote runtime can improve continuity while increasing custody and stale-authority exposure."
+    },
+    "falsifiability": {
+      "disposition": "covered",
+      "rationale": "Matched local and remote harness trials would compare accepted work, permission correctness, duplicate effects after timeouts and recovery effort."
+    },
+    "originalSynthesis": {
+      "disposition": "covered",
+      "rationale": "The Reader separates model-learned task procedure from durable consent, action receipt and reconciliation duties at the external-effect boundary."
+    },
+    "performance": {
+      "disposition": "covered",
+      "rationale": "It compares bounded coding scores and context pressure while refusing to project them onto transaction correctness or long-running product quality."
+    },
+    "economics": {
+      "disposition": "covered",
+      "rationale": "Arena's cost spread and the proposed matched spend cap place prompt scaffolding, hosting and review labor in one decision frame."
+    },
+    "threatGovernance": {
+      "disposition": "covered",
+      "rationale": "It names scoped tools, custody, policy expiry, exact-effect readback and uncertainty reconciliation without alleging a specific breach."
+    }
+  },
+  "independentCorroboration": "none",
+  "ownerDecision": {
+    "pullNumber": 56,
+    "commentId": 6314884286
+  },
+  "decision": "accept",
+  "gaps": [],
+  "decisionRationale": "Tony qualitatively accepted the four exact PR 56 preview articles and requested publication in the trusted release conversation. Independent public-copy review accepted this article for owner review. The direct unchanged owner GitHub hash marker is still required before the release gate opens.",
+  "assessedAt": "2026-10-21T11:24:56Z"
+}

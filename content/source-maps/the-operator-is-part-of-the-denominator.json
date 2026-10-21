@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "readerId": "reader:the-operator-is-part-of-the-denominator",
+  "sourceId": "3axY1wz2OvA",
+  "sourceAidSha256": "f7282e9535f5cfc3b154b806632984ea33c9a5fb656695f2b927d823ec060a72",
+  "points": [
+    {
+      "atSeconds": 106,
+      "sectionId": "the-useful-unit-is-a-successful-task",
+      "claimIds": [
+        "the-operator-is-part-of-the-denominator--task-price"
+      ],
+      "cueParaphrase": "The buyer-metric discussion distinguishes input chip hours from a priced, accepted task.",
+      "privateAidCheck": "Retained source cues place the formulation around 01:46; the public draft extends it to full buyer cost as GhostMesh analysis. The exact publisher chapter and retained timestamped automatic-caption cue were compared; this is not a word-for-word quotation."
+    },
+    {
+      "atSeconds": 203,
+      "sectionId": "the-50-percent-scenario-has-conditions",
+      "claimIds": [
+        "the-operator-is-part-of-the-denominator--calculator-scenario"
+      ],
+      "cueParaphrase": "The exact-speaker calculator example is presented with its selected B200 and interactivity assumptions.",
+      "privateAidCheck": "Retained captions specify roughly 8,000 input and 1,000 output tokens, a P50 user target and a P90 scenario. The exact publisher chapter and retained timestamped automatic-caption cue were compared; this is not a word-for-word quotation."
+    },
+    {
+      "atSeconds": 393,
+      "sectionId": "the-service-layer-can-create-or-destroy-value",
+      "claimIds": [
+        "the-operator-is-part-of-the-denominator--operator-ratings"
+      ],
+      "cueParaphrase": "The ClusterMAX chapter motivates operator criteria beyond raw GPU throughput.",
+      "privateAidCheck": "The ClusterMAX 3.0 public summary names compute, network, storage, monitoring, support and security categories. The exact publisher chapter and retained timestamped automatic-caption cue were compared; this is not a word-for-word quotation."
+    },
+    {
+      "atSeconds": 761,
+      "sectionId": "markets-cannot-hedge-an-unusable-service",
+      "claimIds": [
+        "the-operator-is-part-of-the-denominator--compute-futures"
+      ],
+      "cueParaphrase": "The proposed price index and hedge are treated as a speculative market mechanism, not service insurance.",
+      "privateAidCheck": "Private caption aids locate the proposal after the 12:41 chapter. The exact publisher chapter and retained timestamped automatic-caption cue were compared; this is not a word-for-word quotation."
+    }
+  ]
+}
