@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://youtube.shareplane.malott.ai/editorial-review.schema.json",
+  "title": "GhostMesh retained qualitative findings v1",
+  "description": "A public-safe record of an independent review. Candidate-authored metadata is bound to the owner's decision, but this schema does not authenticate the reviewer.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "readerId", "sourceId", "sourceAidSha256", "articleSha256", "evidenceRevision", "reviewedAt", "provenance", "summary", "findings", "conclusion"],
+  "properties": {
+    "schemaVersion": {"const": 1},
+    "readerId": {"type": "string", "pattern": "^reader:[a-z0-9-]+$"},
+    "sourceId": {"type": "string", "minLength": 1},
+    "sourceAidSha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "articleSha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "evidenceRevision": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "reviewedAt": {"type": "string", "format": "date-time"},
+    "provenance": {"type": "object", "additionalProperties": false, "required": ["kind", "reference", "limits"], "properties": {
+      "kind": {"enum": ["codex-task-agent", "external-human-report"]},
+      "reference": {"type": "string", "minLength": 35},
+      "limits": {"type": "string", "minLength": 35}
+    }},
+    "summary": {"type": "string", "minLength": 35},
+    "findings": {"type": "array", "items": {"type": "string", "minLength": 35}},
+    "conclusion": {"enum": ["accept-for-owner-review", "revise", "hold"]}
+  }
+}
