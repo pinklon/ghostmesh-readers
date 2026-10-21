@@ -122,10 +122,15 @@ def validate_events(source, catalog, scout):
 
 
 def scout_body(scout):
-    intro = ('<section class="gm-scout-intro"><p class="gm-kicker">GhostMesh / Scout</p><h1>Watch what might be useful. Keep the evidence in view.</h1>'
-             '<p>Scout discovers tools and ideas, then records a first-pass review for GhostMesh and for everyday users. A discovery is not an adoption decision or a product test.</p>'
-             '<p>Ratings are editorial judgments linked to public sources. “Source inspected” means the source was read, not run. Execution and independent measurement are named only when actually done.</p>'
-             '<p><a class="gm-scout-subscribe" href="/feed.xml">Subscribe to Readers and Scout updates via RSS ↗</a></p></section>')
+    intro = ('<section class="gm-scout-intro"><div class="gm-scout-intro-copy"><p class="gm-kicker">GhostMesh / Scout</p>'
+             '<h1>Watch what might be useful. Keep the evidence in view.</h1>'
+             '<p class="gm-scout-lede">Scout discovers tools and ideas, then records a first-pass review for GhostMesh and for everyday users. A discovery is not an adoption decision or a product test.</p>'
+             '<p class="gm-scout-method">Ratings are editorial judgments linked to public sources. “Source inspected” means the source was read, not run. Execution and independent measurement are named only when actually done.</p></div>'
+             '<aside class="gm-scout-follow" aria-labelledby="follow-scout-title"><div class="gm-scout-follow-top">'
+             '<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="5" cy="19" r="2"/><path d="M3 11a10 10 0 0 1 10 10M3 3a18 18 0 0 1 18 18"/></svg>'
+             '<p class="gm-kicker">One public feed / no account</p></div><h2 id="follow-scout-title">Follow Scout.</h2>'
+             '<p>New Readers, meaningful Reader updates and published Scout reviews, together in one RSS feed.</p>'
+             '<a class="gm-scout-subscribe" href="/feed.xml">Get the RSS feed <span aria-hidden="true">↗</span></a></aside></section>')
     if not scout['reviews']:
         return intro + '<section class="gm-scout-empty" aria-labelledby="scout-findings"><h2 id="scout-findings">Public reviews are being prepared.</h2><p>No Scout candidate review has been approved for this page yet. The private discovery watchlist is not a set of completed evaluations.</p></section>'
     names = {'ghostmeshFit': 'GhostMesh fit', 'everydayUse': 'Everyday usefulness', 'evidenceStrength': 'Evidence strength', 'adoptionEffort': 'Adoption effort'}

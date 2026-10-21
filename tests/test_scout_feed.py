@@ -30,6 +30,10 @@ class ScoutFeedTests(unittest.TestCase):
         html = (ROOT / 'site/scout/index.html').read_text()
         self.assertIn('No Scout candidate review has been approved', html)
         self.assertIn('href="/feed.xml"', html)
+        self.assertIn('aria-labelledby="follow-scout-title"', html)
+        self.assertIn('New Readers, meaningful Reader updates and published Scout reviews', html)
+        self.assertIn('class="gm-scout-subscribe" href="/feed.xml"', html)
+        self.assertIn('grid-template-columns:1fr;gap:28px', (ROOT / 'site/assets/scout.css').read_text())
         self.assertNotIn('Cloudflare security-audit-skill', html)
         self.assertEqual(validate_scout(source), source)
 
