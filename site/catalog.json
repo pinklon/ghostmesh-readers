@@ -39,16 +39,16 @@
         "mediaAspect": "16:9"
       },
       "published": "2026-10-21",
-      "updated": "2026-10-21T00:44:00Z",
-      "overview": "David Ondrej interviews Osmantic founder Ahmad Osman about running open models on a local RTX Spark machine, with ODS as the software layer.",
-      "whyItMatters": "Local inference can change where sensitive prompts and files are processed. The episode also makes large speed, cost and privacy claims that require a defined workload and network boundary.",
-      "ghostMeshTakeaway": "Test the exact task on the intended machine, inspect network paths and agent permissions, then compare quality, latency and total cost with the cloud option it would replace.",
-      "verdict": "Worth studying",
+      "updated": "2026-10-21T01:03:00Z",
+      "overview": "David Ondrej interviews Osmantic founder Ahmad Osman about a local RTX Spark and ODS stack. The revision tests the difference between owning compute and governing the complete AI outcome.",
+      "whyItMatters": "A local model can narrow one inference data path, while software updates, model quality, agents, network features, recovery and utilization still determine the actual result.",
+      "ghostMeshTakeaway": "Hardware ownership is not outcome ownership. Pin the stack, compare accepted work across local, cloud and hybrid routes, and verify agent authority, egress, cost and recovery before replacing a workflow.",
+      "verdict": "Interesting, unproven",
       "architectureImpact": "experiment recommended",
-      "falsification": "Revise the recommendation if a reproducible, matched-workload test shows the local setup cannot meet task quality or cost requirements, or if network and tool audits show that the intended private data still leaves the owner-controlled boundary.",
+      "falsification": "Revise the local recommendation if a predeclared matched workload misses quality, privacy, recovery or cost thresholds; revise the cloud recommendation if a controlled hosted route cannot meet the same requirements. The experiment is proposed, not reported.",
       "evidenceState": "partially corroborated",
-      "lastEvidenceChecked": "2026-10-21T00:44:00Z",
-      "freshness": "Exact video metadata and full timestamped auto-generated transcript inspected 2026-10-21. ODS maintainer documentation, NVIDIA hardware announcement and OpenAI business-data policy checked the same day. No hardware, network or price benchmark was independently run.",
+      "lastEvidenceChecked": "2026-10-21T01:03:00Z",
+      "freshness": "Exact video identity and private timestamped auto-generated captions inspected 2026-10-21. ODS maintainer documentation, NVIDIA specifications, MLPerf Client methodology, Docker privilege guidance, OWASP agentic threat guidance and OpenAI business-data policy checked the same day. No independent machine, network, price or recovery test was run.",
       "variant": "dossier",
       "accent": "teal",
       "claims": [
@@ -74,13 +74,13 @@
           "kind": "speaker-benchmark-claim",
           "asOf": "2026-10-21",
           "status": "unverified",
-          "assessment": "The auto-generated captions map the reported throughput to a demonstration, but do not include a comparable model, quantization, prompt, batch size, inference engine, latency definition or repeatable run log.",
-          "limits": "A single narrated number cannot establish cloud superiority, workload quality or general performance. Captioned model names may be misheard.",
+          "assessment": "The interview reports roughly 70-plus decoded output tokens per second and a favorable experience against cloud coding. MLPerf Client distinguishes TTFT, output rate, end-to-end agent time and accuracy, showing why those claims require separate measurements.",
+          "limits": "No exact model digest, quantization, engine, prompt mix, context, TTFT, concurrent load, repeated outputs, quality rubric or matched hosted run is published. Captioned model names may be wrong.",
           "sourceLocation": "19:15-27:15 and 1:24:45-1:25:35",
-          "references": [],
-          "counterevidence": [
-            "nvidia-spark"
+          "references": [
+            "mlperf-client"
           ],
+          "counterevidence": [],
           "temporalScope": "Video uploaded 2026-10-20; external pages checked 2026-10-21. Product versions and provider terms may change."
         },
         {
@@ -120,13 +120,13 @@
           "kind": "speaker-estimate",
           "asOf": "2026-10-21",
           "status": "unverified",
-          "assessment": "The interview offers a concrete local workflow and a broad estimate, but no representative task set, failure rate, electricity cost, maintenance cost, purchase bill or cloud comparator.",
-          "limits": "This is not a finding that local hardware is poor value. It is a limit on treating the headline and percentage as measured results.",
+          "assessment": "The $7,000 title is a scenario frame and roughly 95 percent task coverage is a speaker estimate. The article models capital allocation at assumed 36-month life and several task volumes; those figures are arithmetic illustrations only.",
+          "limits": "No itemized actual purchase, measured watts, utilization, accepted-task count, maintenance hours, hosted comparator or break-even result was established. The task mix and quality threshold for 95 percent are absent.",
           "sourceLocation": "34:00-49:05 and 1:23:50-1:25:25",
-          "references": [],
-          "counterevidence": [
-            "nvidia-spark"
+          "references": [
+            "mlperf-client"
           ],
+          "counterevidence": [],
           "temporalScope": "Video uploaded 2026-10-20; external pages checked 2026-10-21. Product versions and provider terms may change."
         },
         {
@@ -139,7 +139,8 @@
           "limits": "The project may publish a signed release later. This status does not prove the demonstrated installation is unsafe or unusable.",
           "sourceLocation": "20:03-20:30 and 55:30-56:20",
           "references": [
-            "ods-readme"
+            "ods-readme",
+            "ods-quickstart"
           ],
           "counterevidence": [],
           "temporalScope": "Video uploaded 2026-10-20; external pages checked 2026-10-21. Product versions and provider terms may change."
@@ -150,12 +151,61 @@
           "kind": "editorial-inference",
           "asOf": "2026-10-21",
           "status": "unverified",
-          "assessment": "This is GhostMesh guidance derived from the gap between the video demo, maintainer network disclosures and unmeasured comparisons.",
-          "limits": "No cited source evaluates this exact checklist or guarantees a given deployment. The recommendation is a test design, not a measured product conclusion.",
+          "assessment": "GhostMesh proposes a prespecified local/cloud/hybrid task comparison plus boundary and restore drills. MLPerf Client supplies metric distinctions; OWASP supplies general agent-threat categories.",
+          "limits": "No experiment in this article has yet produced a product result. The test design is guidance, not a certified audit or a claim that one architecture wins.",
           "sourceLocation": "19:15-27:15, 1:10:30-1:16:10 and 1:34:15-1:35:38",
           "references": [
+            "mlperf-client",
+            "owasp-agentic",
+            "ods-faq"
+          ],
+          "counterevidence": [],
+          "temporalScope": "Video uploaded 2026-10-20; external pages checked 2026-10-21. Product versions and provider terms may change."
+        },
+        {
+          "id": "the-boundary-is-bigger-than-the-box--agent-authority",
+          "proposition": "Local model inference does not by itself bound an agent's file, repository, credential or network authority.",
+          "kind": "editorial-inference",
+          "asOf": "2026-10-21",
+          "status": "partially corroborated",
+          "assessment": "The episode demonstrates or discusses agents and repositories. ODS documents network-capable tools; OWASP describes general agent tool and data risks.",
+          "limits": "This is a general threat model, not evidence of an ODS exploit. The episode installation's privileges and logs were not audited.",
+          "sourceLocation": "56:20-1:05:00 and 1:24:45-1:29:00",
+          "references": [
             "ods-faq",
-            "nvidia-spark"
+            "owasp-agentic"
+          ],
+          "counterevidence": [],
+          "temporalScope": "Video uploaded 2026-10-20; external pages checked 2026-10-21. Product versions and provider terms may change."
+        },
+        {
+          "id": "the-boundary-is-bigger-than-the-box--installer-control",
+          "proposition": "An ODS installation involves a moving pre-release software and dependency chain that an owner must pin and recover.",
+          "kind": "release-status",
+          "asOf": "2026-10-21",
+          "status": "partially corroborated",
+          "assessment": "ODS README and Quickstart describe main-branch installers, container and model downloads, Windows WSL/Docker setup and pre-release status. Docker separately warns about docker-group privilege on Linux.",
+          "limits": "The Linux warning is not automatically the demonstrated Windows permission state. No specific install, supply-chain compromise, rollback or restore was tested.",
+          "sourceLocation": "20:03-20:30 and 49:00-56:20",
+          "references": [
+            "ods-readme",
+            "ods-quickstart",
+            "docker-linux"
+          ],
+          "counterevidence": [],
+          "temporalScope": "Video uploaded 2026-10-20; external pages checked 2026-10-21. Product versions and provider terms may change."
+        },
+        {
+          "id": "the-boundary-is-bigger-than-the-box--hybrid-countercase",
+          "proposition": "The interview itself allows hybrid and frontier-model use, so an all-local replacement claim is stronger than the demonstrated argument.",
+          "kind": "speaker-inference",
+          "asOf": "2026-10-21",
+          "status": "unverified",
+          "assessment": "The caption aid locates discussion of hybrid work, frontier advantages and proposed selective cloud context. ODS documents optional cloud pathways.",
+          "limits": "No shipped enterprise masking feature or measured hybrid routing policy was verified. The percentage of work best handled locally remains undefined.",
+          "sourceLocation": "34:00-39:00, 1:15:00-1:17:30 and 1:24:45-1:25:35",
+          "references": [
+            "ods-faq"
           ],
           "counterevidence": [],
           "temporalScope": "Video uploaded 2026-10-20; external pages checked 2026-10-21. Product versions and provider terms may change."
@@ -221,6 +271,66 @@
           "independence": "Published provider policy is a counterexample to a universal training claim, not an independent audit of every deployment.",
           "evidenceFamily": "openai-policy",
           "checkedAt": "2026-10-21T00:44:00Z"
+        },
+        {
+          "id": "ods-quickstart",
+          "title": "ODS Quickstart",
+          "author": "Osmantic maintainers",
+          "publisher": "Osmantic",
+          "url": "https://github.com/Osmantic/ODS/blob/main/ods/QUICKSTART.md",
+          "publicationDate": "unknown",
+          "dateNote": "Living online guidance; version inspected on the checked date.",
+          "eventDate": null,
+          "location": "Installer bootstrap and Windows/WSL/Docker setup",
+          "sourceType": "maintainer documentation",
+          "independence": "Maintainer account of intended install path, not an audited install.",
+          "evidenceFamily": "ods-maintainer",
+          "checkedAt": "2026-10-21T01:03:00Z"
+        },
+        {
+          "id": "mlperf-client",
+          "title": "MLPerf Client Benchmark",
+          "author": "MLCommons",
+          "publisher": "MLCommons",
+          "url": "https://mlcommons.org/benchmarks/client/",
+          "publicationDate": "unknown",
+          "dateNote": "Living online guidance; version inspected on the checked date.",
+          "eventDate": null,
+          "location": "Time to first token, output rate, agentic end-to-end duration and accuracy gates",
+          "sourceType": "benchmark methodology",
+          "independence": "Independent methodology, not a measured result for the episode machine.",
+          "evidenceFamily": "mlcommons-method",
+          "checkedAt": "2026-10-21T01:03:00Z"
+        },
+        {
+          "id": "docker-linux",
+          "title": "Docker Engine Linux post-installation steps",
+          "author": "Docker",
+          "publisher": "Docker",
+          "url": "https://docs.docker.com/engine/install/linux-postinstall/",
+          "publicationDate": "unknown",
+          "dateNote": "Living online guidance; version inspected on the checked date.",
+          "eventDate": null,
+          "location": "Linux docker-group privilege warning",
+          "sourceType": "platform documentation",
+          "independence": "Official Linux guidance; demonstrated Windows configuration was not audited.",
+          "evidenceFamily": "docker-docs",
+          "checkedAt": "2026-10-21T01:03:00Z"
+        },
+        {
+          "id": "owasp-agentic",
+          "title": "Agentic AI: Threats and Mitigations",
+          "author": "OWASP Agentic Security Initiative",
+          "publisher": "OWASP",
+          "url": "https://genai.owasp.org/resource/agentic-ai-threats-and-mitigations/",
+          "publicationDate": "unknown",
+          "dateNote": "Living online guidance; version inspected on the checked date.",
+          "eventDate": null,
+          "location": "General agent tool and data-threat classes",
+          "sourceType": "security guidance",
+          "independence": "Independent threat taxonomy, not an ODS incident or installation assessment.",
+          "evidenceFamily": "owasp-guidance",
+          "checkedAt": "2026-10-21T01:03:00Z"
         }
       ],
       "relationships": [
@@ -249,12 +359,12 @@
       ],
       "relationshipDisposition": "Two supported editorial comparisons connect owner-controlled infrastructure and agent authority. Neither target corroborates the episode’s throughput, pricing or privacy assertions.",
       "review": {
-        "status": "independent-public-copy-reviewed; source-limited",
-        "reviewer": "Independent read-only Codex editorial reviewer",
-        "reviewedSourceHead": "base 7b4e8601a2e735aa00b6d19954cdb978f370bdb4; exact article SHA-256 79087ab00c87a66e4b06c9859334d5e235f3c078b935a932353145b37680e38b",
-        "checkedAt": "2026-10-21T00:48:00Z",
-        "scope": "Exact article, source attribution, claim limits, relationship rationale, public receipt and privacy boundary.",
-        "findings": "Two findings corrected before final review: cloud-training attribution and UTC review-date chronology. Final independent review found no remaining finding. Article SHA-256 79087ab00c87a66e4b06c9859334d5e235f3c078b935a932353145b37680e38b; pre-review-metadata receipt SHA-256 91eaf9ad136039e6711706e2ccb451fce68f6c16dc938e55326dd7588f69192a. No media or full captions in public tree."
+        "status": "revised-candidate-independent-and-owner-editorial-review-pending",
+        "reviewer": "pending",
+        "reviewedSourceHead": "Prior PR 47 factual/privacy review applied only to old article SHA-256 79087ab00c87a66e4b06c9859334d5e235f3c078b935a932353145b37680e38b.",
+        "checkedAt": "2026-10-21T01:03:00Z",
+        "scope": "Revised article, claim ledger, public receipt, privacy and editorial depth require fresh exact-byte review and Tony qualitative acceptance.",
+        "findings": "Tony rejected the depth of the prior live version. This revision is a draft; no independent revised-copy result or owner acceptance is claimed."
       },
       "revisionHistory": [
         {
@@ -266,6 +376,11 @@
           "at": "2026-10-21T00:48:00Z",
           "kind": "independent-editorial-review",
           "reason": "Corrected source attribution and assessment date, then obtained no-findings independent public-copy and privacy review."
+        },
+        {
+          "at": "2026-10-21T01:03:00Z",
+          "kind": "editorial-depth-revision-draft",
+          "reason": "Follow-up to issue 46 owner depth escalation. Prior PR 47 remains historical and production unchanged until Tony accepts exact revised content."
         }
       ],
       "editorialOrder": 22,
@@ -278,7 +393,7 @@
           "reader:the-agent-a-company-owns",
           "reader:the-stop-button-is-outside-the-chat"
         ],
-        "rationale": "Compared this source with all 25 existing Readers. Two qualified routes cover company-owned agent infrastructure and continuing agent authority. No prior Reader independently measures this machine or validates its cost and privacy claims."
+        "rationale": "Reassessed all 25 other Readers for this deeper source reading. Existing two qualified routes still cover infrastructure ownership and agent authority. The expanded performance, cost and supply-chain analysis supplies no independent corroboration or distinct supported cross-Reader route."
       },
       "rank": 22
     },
