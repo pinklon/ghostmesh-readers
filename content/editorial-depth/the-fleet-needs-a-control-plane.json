@@ -114,8 +114,8 @@
     "pullNumber": 57,
     "commentId": null
   },
-  "decision": "hold",
+  "decision": "accept",
   "gaps": [],
-  "decisionRationale": "Independent reviewer found the current article and source map suitable for owner qualitative review. Tony has not reviewed or accepted these exact article and evidence bytes, so publication remains held.",
+  "decisionRationale": "A real independent read-only editorial reviewer accepted the exact current article, mapped source cues, graph and privacy boundary for owner review after one corrected timestamp. Tony has not yet accepted these exact bytes; the direct authenticated owner GitHub marker and later release decision remain pending.",
   "assessedAt": "2026-10-21T11:50:25Z"
 }
