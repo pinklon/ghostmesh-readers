@@ -19,6 +19,27 @@ class Tags(HTMLParser):
 
 
 class VisualContractTest(unittest.TestCase):
+    def test_player_and_related_projection_preserve_mobile_review_surface(self):
+        catalog = json.loads((ROOT / 'content/catalog.json').read_text())
+        by_id = {reader['id']: reader for reader in catalog['readers']}
+        css = (ROOT / 'site/assets/reader-refresh.css').read_text()
+        self.assertIn('.gm-media-frame.player:has(.launch)>img', css)
+        self.assertIn('aspect-ratio:var(--gm-media-ratio);object-fit:contain;opacity:1', css)
+        self.assertIn('@media(max-width:760px){.gm-related .gm-cards{grid-template-columns:1fr}', css)
+        for reader in catalog['readers']:
+            with self.subTest(slug=reader['slug']):
+                page = (ROOT / 'site' / reader['slug'] / 'index.html').read_text()
+                if 'class="player gm-media-frame"' in page:
+                    self.assertIn('id="launch"', page)
+                    self.assertIn(f'data-gm-aspect="{reader["source"]["mediaAspect"]}"', page)
+                    self.assertNotIn('<iframe', page)
+                    if reader['source'].get('title'):
+                        self.assertIn(html.escape(reader['source']['title']), page)
+                for edge in reader['relationships']:
+                    target = by_id[edge['target']]
+                    self.assertIn(f'<a href="/{target["slug"]}/">', page)
+                    self.assertIn(html.escape(edge['reason']), page)
+
     def test_approved_home_hero_and_distinct_destinations(self):
         home = (ROOT / 'site/index.html').read_text()
         self.assertIn('THE ALGORITHM GOT YOUR ATTENTION.</span> <span class="gm-hero-question">DID THE ARGUMENT EARN IT?', home)

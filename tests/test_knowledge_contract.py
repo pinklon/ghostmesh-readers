@@ -8,7 +8,7 @@ import unittest
 
 from sys import path as sys_path
 sys_path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
-from knowledge_contract import ROOT, SCHEMA, SOURCE, run, validate_contract
+from knowledge_contract import ROOT, SCHEMA, SOURCE, build_claim_register, run, validate_contract
 
 
 class KnowledgeContractTests(unittest.TestCase):
@@ -37,6 +37,27 @@ class KnowledgeContractTests(unittest.TestCase):
             slice(None), [node for node in m["nodes"] if node["id"] !=
                           "urn:ghostmesh-readers:reader:the-experiment-ran-did-the-research-advance"]),
             "Reader inventory")
+
+    def test_full_public_claim_register_reconciles_with_catalog_and_published_anchors(self):
+        catalog = json.loads((ROOT / "content/catalog.json").read_text())
+        register = build_claim_register(catalog, self.model)
+        source_claims = [claim for reader in catalog["readers"] for claim in reader["claims"]]
+        self.assertEqual(register["readerCount"], len(catalog["readers"]))
+        self.assertEqual(register["claimCount"], len(source_claims))
+        self.assertEqual({item["id"] for item in register["claims"]},
+                         {claim["id"] for claim in source_claims})
+        self.assertEqual(register["statusCounts"]["unverified"],
+                         sum(claim["status"] == "unverified" for claim in source_claims))
+        self.assertEqual(sum(register["statusCounts"].values()), len(source_claims))
+        self.assertLess(len(self.model["relationships"]), len(source_claims))  # A distinct narrow graph.
+        public = json.loads((ROOT / "site/knowledge/v0.1/claim-register.json").read_text())
+        self.assertEqual(public, register)
+        for item in register["claims"]:
+            self.assertTrue(item["claimUrl"].endswith('/'+item["readerSlug"]+'/#'+item["id"]))
+        changed = copy.deepcopy(catalog)
+        changed["readers"][0]["claims"][0]["proposition"] = "An invented public claim"
+        with self.assertRaisesRegex(ValueError, "published claim text"):
+            build_claim_register(changed, self.model)
 
     def test_private_classification_is_denied(self):
         self.invalid(lambda m: m["nodes"][1].__setitem__("visibility", "private"))

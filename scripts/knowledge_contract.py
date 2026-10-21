@@ -247,7 +247,49 @@ def validate_contract(model: dict, schema: dict, repo: Path = ROOT) -> None:
             raise ValueError("citation target absent from claim source anchor")
 
 
-def render_html(model: dict) -> bytes:
+def build_claim_register(catalog: dict, model: dict, repo: Path = ROOT) -> dict:
+    """Index every already-public editorial claim without admitting new graph citations."""
+    readers = {n["id"].removeprefix("urn:ghostmesh-readers:reader:"): n
+               for n in model["nodes"] if n["type"] == "Reader"}
+    records = []
+    for entry in catalog["readers"]:
+        slug = entry["slug"]
+        reader = readers[slug]
+        parsed = TextAndIds()
+        parsed.feed((repo / reader["source"]["path"]).read_text(encoding="utf-8"))
+        references = {ref["id"]: ref for ref in entry["references"]}
+        for claim in entry["claims"]:
+            ident = claim["id"]
+            if ident not in parsed.ids or claim["proposition"] not in " ".join(parsed.by_id[ident]):
+                raise ValueError(f"{slug}/{ident}: published claim text or anchor differs from catalog")
+            def mapped(ids: list[str]) -> list[dict]:
+                result = []
+                for ref_id in ids:
+                    ref = references[ref_id]
+                    anchor = "ref-" + ref_id
+                    if anchor not in parsed.ids or ref["url"] not in parsed.links_by_id[anchor]:
+                        raise ValueError(f"{slug}/{ident}: published reference differs from catalog")
+                    result.append({key: ref[key] for key in ("id", "title", "url", "sourceType", "independence")})
+                return result
+            records.append({
+                "readerSlug": slug, "readerTitle": entry["title"],
+                "readerSha256": reader["source"]["sha256"], "id": ident,
+                "claimUrl": f'{catalog["host"]}/{slug}/#{ident}',
+                "proposition": claim["proposition"], "kind": claim["kind"],
+                "status": claim["status"], "asOf": claim["asOf"],
+                "sourceLocation": claim["sourceLocation"],
+                "assessment": claim["assessment"], "limits": claim["limits"],
+                "supportingReferences": mapped(claim["references"]),
+                "counterevidence": mapped(claim["counterevidence"]),
+            })
+    statuses = {status: sum(r["status"] == status for r in records)
+                for status in ("corroborated", "partially corroborated", "contradicted", "disputed", "unverified")}
+    return {"contractVersion": model["contractVersion"], "projection": "published-editorial-claim-register",
+            "scope": "Catalog assessments and links to exact published Reader anchors; reference links are not automatic corroboration or admitted v0.1 graph citations.",
+            "readerCount": len(readers), "claimCount": len(records), "statusCounts": statuses, "claims": records}
+
+
+def render_html(model: dict, catalog: dict, register: dict) -> bytes:
     """Render an explorable human view without broadening the source-only contract."""
     from generate_site import page
 
@@ -255,7 +297,6 @@ def render_html(model: dict) -> bytes:
     claims = [n for n in model["nodes"] if n["type"] == "Claim"]
     citations = model["relationships"]
     by_id = {n["id"]: n for n in model["nodes"]}
-    catalog = json.loads((ROOT / "content/catalog.json").read_text(encoding="utf-8"))
     catalog_by_slug = {entry["slug"]: entry for entry in catalog["readers"]}
     catalog_claims = [claim for reader in catalog["readers"] for claim in reader["claims"]]
     unverified = sum(claim["status"] == "unverified" for claim in catalog_claims)
@@ -265,6 +306,13 @@ def render_html(model: dict) -> bytes:
     for claim in claims:
         claims_by_reader[claim["provenance"]["sourceNodeId"]].append(claim)
     source_count = sum(bool(items) for items in claims_by_reader.values())
+    register_by_slug: dict[str, list[dict]] = {reader["slug"]: [] for reader in catalog["readers"]}
+    for record in register["claims"]:
+        register_by_slug[record["readerSlug"]].append(record)
+    support_count = sum(bool(record["supportingReferences"]) for record in register["claims"])
+    counter_count = sum(bool(record["counterevidence"]) for record in register["claims"])
+    unverified_with_refs = sum(record["status"] == "unverified" and bool(record["supportingReferences"])
+                               for record in register["claims"])
     rows = []
     for number, reader in enumerate(readers, 1):
         entry = catalog_by_slug[reader["id"].removeprefix("urn:ghostmesh-readers:reader:")]
@@ -294,6 +342,19 @@ def render_html(model: dict) -> bytes:
         trace = (f'<details class="kx-record-trace"><summary>Inspect {len(claim_items)} exact '
                  f'citation{"s" if len(claim_items) != 1 else ""} in this projection</summary>'
                  f'<ol>{"".join(claim_items)}</ol></details>' if claim_items else '')
+        register_items = register_by_slug[entry["slug"]]
+        def roles(references: list[dict]) -> str:
+            return html.escape(", ".join(dict.fromkeys(ref["sourceType"] for ref in references)) or "none mapped")
+        register_trace = ('<details class="kx-register-trace"><summary>Browse '
+                          f'{len(register_items)} published claim assessments</summary><ol>' + ''.join(
+                          '<li><span class="kx-register-status">'+html.escape(item["status"])+
+                          '</span> <a href="'+html.escape(local_url+'#'+item["id"], quote=True)+'">'+
+                          html.escape(item["proposition"])+
+                          '</a><small>Claim role: '+html.escape(item["kind"])+
+                          ' · Support roles: '+roles(item["supportingReferences"])+
+                          ' · Counter roles: '+roles(item["counterevidence"])+
+                          '</small></li>'
+                          for item in register_items) + '</ol></details>')
         rows.append(
             f'<article class="kx-record" data-knowledge-id="{html.escape(reader["id"], quote=True)}" '
             f'data-trace="{"yes" if claim_items else "no"}">'
@@ -301,7 +362,7 @@ def render_html(model: dict) -> bytes:
             '<div class="kx-record-body">'
             f'<h3><a href="{html.escape(local_url, quote=True)}">{html.escape(reader["label"])}</a></h3>'
             f'<p class="kx-record-overview">{html.escape(entry["overview"])}</p>'
-            f'{trace}</div>'
+            f'{register_trace}{trace}</div>'
             '<span class="kx-record-arrow" aria-hidden="true">↗</span></article>'
         )
     example = ''
@@ -312,7 +373,7 @@ def render_html(model: dict) -> bytes:
                    f'<span>Trace an admitted citation</span><strong>{html.escape(first["label"])}</strong>'
                    f'<small>Open the exact statement in {html.escape(source["label"])} <span aria-hidden="true">↗</span></small></a>')
     body = (
-        '<header class="kx-hero"><p class="gm-kicker">PUBLIC KNOWLEDGE / VERSION 0.1</p>'
+        '<header class="kx-hero"><p class="gm-kicker">PUBLIC KNOWLEDGE / CONTRACT VERSION 0.1</p>'
         '<h1>Follow a claim<br>to its source.</h1>'
         '<p class="kx-hero-intro">This index identifies published Readers and the exact citations admitted to the public knowledge record. '
         'A source link tells you where a statement came from; it does not establish whether it is true.</p>'
@@ -320,15 +381,24 @@ def render_html(model: dict) -> bytes:
         '<a href="#how-to-read">Understand the limits ↗</a></div></header>'
         '<section class="kx-overview" aria-label="Knowledge record summary">'
         f'<div class="kx-overview-numbers"><p><strong>{len(readers)}</strong><span>published Reader source records</span></p>'
-        f'<p><strong>{len(claims)}</strong><span>claim citations admitted in this v0.1 projection</span></p>'
-        f'<p><strong>{len(catalog_claims)}</strong><span>separate Reader claim-register entries</span></p>'
-        f'<p><strong>{unverified}</strong><span>still labeled unverified in that register</span></p></div>'
+        f'<p><strong>{len(claims)}</strong><span>exact-passage citations in the narrow v0.1 graph</span></p>'
+        f'<p><strong>{len(catalog_claims)}</strong><span>published claim assessments indexed below</span></p>'
+        f'<p><strong>{unverified}</strong><span>assessed as unverified, not false</span></p></div>'
         f'{example}</section>'
         '<section class="kx-reading-note" id="how-to-read"><div><p class="gm-kicker">READ THE RECORD</p>'
         '<h2>Attribution is the beginning of an inquiry.</h2></div>'
-        '<div><p>A projected citation binds a statement to an exact passage in a published Reader and, where listed, '
+        '<div><p>Version 0.1 names the source-only data contract, not the maturity or truth of the Readers. '
+        'The four exact-passage citations are a deliberately narrow machine graph; they are not the denominator of public evidence. '
+        f'All {len(catalog_claims)} published editorial claim assessments are indexed below and in the separate claim-register JSON. '
+        f'{support_count} have a mapped supporting reference and {counter_count} have a mapped counterreference. '
+        'A reference can be an original source, vendor account, independent study or other named role; a link is not an independent replication.</p>'
+        '<p>Status and claim-role labels are the Readers’ dated editorial assessments, not new measurements by this index. '
+        'A speaker report, an independent observation and a GhostMesh proposal carry different authority even when they share a topic. '
+        'Inspect each claim’s mapped references, counterevidence and limits before treating a status as a settled conclusion.</p>'
+        '<p>A projected graph citation binds a statement to an exact passage in a published Reader and, where listed, '
         'to the external source named there. Its authority is source-declared. It is not independent verification.</p>'
         f'<p>Of the {unverified} unverified register entries, {historical} are historical-ledger entries and {material} are material-prose claims. '
+        f'{unverified_with_refs} still have mapped supporting references, which do not establish their full propositions. '
         'Unverified means the current public record does not establish the full proposition; it does not mean the statement is false. '
         'A source-fidelity check is different from independent corroboration.</p>'
         '<p>For dated corroboration, counterevidence and the editorial judgment, open the full Reader and its handling receipt. '
@@ -336,8 +406,10 @@ def render_html(model: dict) -> bytes:
         '</div></section>'
         '<section class="kx-directory" id="knowledge-records" aria-label="Public Reader source records">'
         '<div class="kx-directory-head"><div><p class="gm-kicker">SOURCE DIRECTORY</p><h2>Explore the published record.</h2>'
-        '<p>Search Reader titles, published summaries and admitted statements. The full claim register lives in each Reader.</p></div>'
-        f'<p class="kx-directory-scope">{source_count} of {len(readers)} Readers currently carry an exact citation in v0.1.</p></div>'
+        '<p>Open each record to browse its published claim assessments, evidence limits and the smaller exact-citation graph. '
+        'The full reasoning and counterevidence remain in each Reader.</p></div>'
+        f'<p class="kx-directory-scope">All {len(readers)} Readers have claim assessments; '
+        f'{source_count} have an admitted exact citation in the narrow v0.1 graph.</p></div>'
         '<form class="kx-tools" data-knowledge-tools hidden role="search">'
         '<label for="kx-search">Find a Reader or statement</label><input id="kx-search" type="search" autocomplete="off" '
         'placeholder="Search this source directory" data-knowledge-query>'
@@ -349,9 +421,11 @@ def render_html(model: dict) -> bytes:
         '<div class="kx-records">' + "".join(rows) + '</div>'
         '<p class="kx-empty" data-knowledge-empty hidden>No records match those filters. Clear the search to see every Reader.</p>'
         '</section>'
-        '<footer class="kx-data-footer"><div><p class="gm-kicker">OPEN FORMATS</p><h2>Use the source-only data.</h2>'
-        '<p>The versioned exports retain identity, provenance and source-only status. They contain no raw third-party media or transcripts.</p></div>'
-        '<nav aria-label="Knowledge data downloads"><a href="/knowledge/v0.1/readers.json">JSON ↗</a>'
+        '<footer class="kx-data-footer"><div><p class="gm-kicker">OPEN FORMATS</p><h2>Inspect the public data.</h2>'
+        '<p>The narrow citation graph and the separate editorial claim register retain their distinct evidence roles. '
+        'Neither export contains raw third-party media or transcripts.</p></div>'
+        '<nav aria-label="Knowledge data downloads"><a href="/knowledge/v0.1/claim-register.json">All published claim assessments ↗</a>'
+        '<a href="/knowledge/v0.1/readers.json">Narrow citation graph JSON ↗</a>'
         '<a href="/knowledge/v0.1/readers.jsonld">JSON-LD ↗</a>'
         '<a href="/knowledge/v0.1/contract.schema.json">Schema ↗</a>'
         '<a href="/knowledge/v0.1/publication-manifest.json">Publication manifest ↗</a></nav>'
@@ -407,12 +481,14 @@ def render_jsonld(model: dict) -> bytes:
                     "@graph": graph})
 
 
-def outputs(model: dict, schema_bytes: bytes, source_bytes: bytes) -> dict[str, bytes]:
+def outputs(model: dict, schema_bytes: bytes, source_bytes: bytes,
+            catalog: dict, register: dict) -> dict[str, bytes]:
     rendered = {
         "site/knowledge/v0.1/contract.schema.json": schema_bytes,
         "site/knowledge/v0.1/readers.json": encoded(model),
         "site/knowledge/v0.1/readers.jsonld": render_jsonld(model),
-        "site/knowledge/index.html": render_html(model),
+        "site/knowledge/v0.1/claim-register.json": encoded(register),
+        "site/knowledge/index.html": render_html(model, catalog, register),
         "site/.well-known/ghostmesh-knowledge.json": encoded({
             "contractVersion": "0.1.0", "publicationMode": "source-only",
             "human": f"{HOST}/knowledge/", "json": f"{HOST}/knowledge/v0.1/readers.json",
@@ -443,7 +519,9 @@ def run(check: bool = False, repo: Path = ROOT) -> dict[str, bytes]:
     model = json.loads(source_bytes)
     schema = json.loads(schema_bytes)
     validate_contract(model, schema, repo)
-    rendered = outputs(model, schema_bytes, source_bytes)
+    catalog = json.loads((repo / "content/catalog.json").read_text(encoding="utf-8"))
+    register = build_claim_register(catalog, model, repo)
+    rendered = outputs(model, schema_bytes, source_bytes, catalog, register)
     for path, data in rendered.items():
         deny_leaks(data, path)
         destination = repo / path

@@ -74,14 +74,14 @@ def evidence(r):
   out+=f'<article id="ref-{esc(x["id"])}"><h4><a href="{esc(x["url"])}">{esc(x["title"])}</a></h4><p>{esc(x["author"])} · {esc(x["publisher"])} · Published {esc(x["publicationDate"])}; last update {esc(x.get("lastUpdated", "not specified"))}. {esc(x.get("dateNote", ""))} Event / measurement: {esc(x["eventDate"] or "Not specified; do not substitute publication date")}. Checked {esc(x["checkedAt"])}.</p><p>Location: {esc(x["location"])}. Type: {esc(x["sourceType"])}. {esc(x["independence"])}</p></article>'
  return out+'</div></section>'
 def related(r,byid):
- out='<section class="gm-related" id="related-thinking"><h2>Related thinking</h2><p>'+esc(r['relationshipDisposition'])+'</p><div class="gm-cards">'
+ out='<section class="gm-related" id="related-thinking"><p class="gm-kicker">Continue the inquiry</p><h2>Related thinking</h2><p>'+esc(r['relationshipDisposition'])+'</p><div class="gm-cards">'
  # Every admitted relationship belongs in the navigable page, as well as the receipt.
- for edge in sorted(r['relationships'],key=lambda edge:edge['type']=='related topic'):
-  t=byid[edge['target']];out+=f'<article><p class="gm-kicker">{esc(edge["type"])}</p><h3><a href="/{t["slug"]}/">{esc(t["title"])}</a></h3><p>{esc(edge["reason"])}</p></article>'
+ for index,edge in enumerate(sorted(r['relationships'],key=lambda edge:edge['type']=='related topic'),1):
+  t=byid[edge['target']];out+=f'<article><span class="gm-related-index">{index:02d}</span><div class="gm-related-copy"><p class="gm-kicker">{esc(edge["type"])}</p><h3><a href="/{t["slug"]}/">{esc(t["title"])}</a></h3><p>{esc(edge["reason"])}</p></div><span class="gm-related-arrow" aria-hidden="true">↗</span></article>'
  if r['source'].get('kind')=='paper':
   for ref in r['references']:
    if ref['sourceType']=='independent-different-construct-study':
-    out+=f'<article><p class="gm-kicker">External study / outside the Reader graph</p><h3><a href="{esc(ref["url"])}">{esc(ref["title"])}</a></h3><p>{esc(ref["independence"])}</p></article>'
+    out+=f'<article><span class="gm-related-index">↗</span><div class="gm-related-copy"><p class="gm-kicker">External study / outside the Reader graph</p><h3><a href="{esc(ref["url"])}">{esc(ref["title"])}</a></h3><p>{esc(ref["independence"])}</p></div><span class="gm-related-arrow" aria-hidden="true">↗</span></article>'
  out+='</div>'
  return out+'</section>'
 def relationship_map(readers,byid):
@@ -231,7 +231,7 @@ def validate_media_source(source):
  if source['platform'] not in {'YouTube','Instagram'} or source['mediaAspect'] not in {'16:9','9:16','1:1','unknown'}:
   raise ValueError('Invalid media platform or aspect')
 
-def player_contract(raw,aspect,source_url):
+def player_contract(raw,aspect,source_url,source_title=None):
  if aspect not in {'16:9','9:16','1:1','unknown'}:raise ValueError('Unknown media aspect declaration')
  markers=[name for name in ('video-shell','player','player-ratio') if f'class="{name}"' in raw]
  if aspect=='unknown':
@@ -240,6 +240,9 @@ def player_contract(raw,aspect,source_url):
  if len(markers)!=1:raise ValueError(f'Expected exactly one source player, found {markers}')
  marker=markers[0]
  raw=raw.replace(f'class="{marker}"',f'class="{marker} gm-media-frame" data-gm-aspect="{aspect}"',1)
+ if marker=='player' and source_title and '<div class="launch" id="launch">' in raw:
+  raw=raw.replace('<div class="launch" id="launch">',
+                  '<div class="launch" id="launch"><p class="gm-player-source-title">'+esc(source_title)+'</p>',1)
  if marker=='video-shell':
   if raw.count('class="wrap source-grid"')!=1:raise ValueError('Source panel layout changed')
   raw=raw.replace('class="wrap source-grid"','class="wrap source-grid gm-source-layout"',1)
@@ -271,7 +274,7 @@ def projections():
   elif r['source'].get('kind')=='article':validate_article_source(raw,r['source'])
   else:
    validate_media_source(r['source'])
-   raw=player_contract(raw,r['source'].get('mediaAspect'),r['source']['url'])
+   raw=player_contract(raw,r['source'].get('mediaAspect'),r['source']['url'],r['source'].get('title'))
    if 'class="chapters" aria-label="Publisher chapters"' in raw and 'class="chapter-heading"' not in raw:
     count=raw.count('class="chapter"')
     if count:
