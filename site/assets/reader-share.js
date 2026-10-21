@@ -65,7 +65,8 @@
           const url=new URL(frame.src);
           url.searchParams.set('start',String(start));
           frame.src=url.toString();
-          player.scrollIntoView({behavior:'smooth',block:'center'});
+          const reduceMotion=window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
+          player.scrollIntoView({behavior:reduceMotion?'auto':'smooth',block:'center'});
         }else window.open(source.href,'_blank','noopener,noreferrer');
       });
       source.textContent='YouTube ↗';

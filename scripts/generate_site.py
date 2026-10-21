@@ -272,7 +272,7 @@ def projections():
   else:
    validate_media_source(r['source'])
    raw=player_contract(raw,r['source'].get('mediaAspect'),r['source']['url'])
-   if 'class="chapters"' in raw and 'class="chapter-heading"' not in raw:
+   if 'class="chapters" aria-label="Publisher chapters"' in raw and 'class="chapter-heading"' not in raw:
     count=raw.count('class="chapter"')
     if count:
      introduction=(f'<div class="gm-chapter-heading"><div><p class="gm-kicker">Watch with a question</p>'
