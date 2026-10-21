@@ -1,0 +1,105 @@
+{
+  "schemaVersion": 1,
+  "readerId": "reader:the-operator-is-part-of-the-denominator",
+  "sourceId": "3axY1wz2OvA",
+  "sourceDigest": "06f43b6657574f0183d8d4a934d14b07813a387ad6fe9781c08aecdd72588663",
+  "sourceAidSha256": "f7282e9535f5cfc3b154b806632984ea33c9a5fb656695f2b927d823ec060a72",
+  "articleSha256": "484f5b2b7a2ab2fe2b7ae90698c924507849bec627ea838404d3f5eaf9478742",
+  "evidenceRevision": "a14ce5c3bb102bcb5563a9799bc150f70df854db12c5f942f8198ab01ef7d764",
+  "sourceMapEvidenceSha256": "4a91c1faee6c2624e9ad916d1d590da0367abd6f1887d00a1de0addc1d764f9c",
+  "reviewEvidenceSha256": "3288818e2cbb96155334f0afbb8df3ed271beba50f6d2345d142f0efdfe65232",
+  "candidateAuthor": "pinklon",
+  "complexity": {
+    "tier": "extended",
+    "factors": [
+      "The source makes a consequential architecture or governance recommendation that deserves mapped counterevidence.",
+      "Multiple first-party claims, predictions or anecdotes require explicit evidence roles and a falsifiable test."
+    ],
+    "rationale": "This source supports an extended original argument, bounded claim register and separate effect or cost experiment rather than a short source summary."
+  },
+  "sourceMap": [
+    {
+      "atSeconds": 106,
+      "sectionId": "the-useful-unit-is-a-successful-task",
+      "claimIds": [
+        "the-operator-is-part-of-the-denominator--task-price"
+      ],
+      "rationale": "The buyer-metric discussion distinguishes input chip hours from a priced, accepted task."
+    },
+    {
+      "atSeconds": 203,
+      "sectionId": "the-50-percent-scenario-has-conditions",
+      "claimIds": [
+        "the-operator-is-part-of-the-denominator--calculator-scenario"
+      ],
+      "rationale": "The exact-speaker calculator example is presented with its selected B200 and interactivity assumptions."
+    },
+    {
+      "atSeconds": 393,
+      "sectionId": "the-service-layer-can-create-or-destroy-value",
+      "claimIds": [
+        "the-operator-is-part-of-the-denominator--operator-ratings"
+      ],
+      "rationale": "The ClusterMAX chapter motivates operator criteria beyond raw GPU throughput."
+    },
+    {
+      "atSeconds": 761,
+      "sectionId": "markets-cannot-hedge-an-unusable-service",
+      "claimIds": [
+        "the-operator-is-part-of-the-denominator--compute-futures"
+      ],
+      "rationale": "The proposed price index and hedge are treated as a speculative market mechanism, not service insurance."
+    }
+  ],
+  "assessment": {
+    "sourceCoverage": {
+      "disposition": "covered",
+      "rationale": "Four mapped source moments cover the main technical or economic argument, its proposed mechanism, limits and practical decision. Remaining paragraphs are original analysis."
+    },
+    "supportingArgument": {
+      "disposition": "covered",
+      "rationale": "The 200-versus-300-token calculator example usefully demonstrates that serving software can change output on the same class of GPU."
+    },
+    "evidenceRoles": {
+      "disposition": "covered",
+      "rationale": "Exact video cues establish the speaker's argument; linked primary papers or vendor documents establish only their own methods and claims. No GhostMesh replication is asserted."
+    },
+    "counterargument": {
+      "disposition": "covered",
+      "rationale": "A skilled buyer on bare metal may beat a managed premium, and a fixed replay need not predict quality, latency tails or occupancy on real traffic."
+    },
+    "tradeoffs": {
+      "disposition": "covered",
+      "rationale": "It weighs throughput against first-token and tail latency, isolation, operator labor, availability and workload portability."
+    },
+    "falsifiability": {
+      "disposition": "covered",
+      "rationale": "A pinned model and buyer traffic trial would report quality-gated tasks, P50/P95 latency, concurrency, failures, occupancy and total costs."
+    },
+    "originalSynthesis": {
+      "disposition": "covered",
+      "rationale": "The operator becomes part of the accepted-task denominator; raw chip-hours and output-token rate remain insufficient purchase units."
+    },
+    "performance": {
+      "disposition": "covered",
+      "rationale": "The 50 percent first-party scenario is bounded by stated B200 input/output and interactivity assumptions; exact run artifact is missing."
+    },
+    "economics": {
+      "disposition": "covered",
+      "rationale": "The draft distinguishes rental price, provider revenue, buyer full cost, utilization and speculative futures basis risk without advice."
+    },
+    "threatGovernance": {
+      "disposition": "covered",
+      "rationale": "It discusses data custody, tenant isolation, monitoring exposure and incident response as procurement checks, not allegations about a named buyer."
+    }
+  },
+  "independentCorroboration": "none",
+  "ownerDecision": {
+    "pullNumber": 56,
+    "commentId": 6314887545
+  },
+  "decision": "accept",
+  "gaps": [],
+  "decisionRationale": "Tony qualitatively accepted the four exact PR 56 preview articles and requested publication in the trusted release conversation. Independent public-copy review accepted this article for owner review. The direct unchanged owner GitHub hash marker is still required before the release gate opens.",
+  "assessedAt": "2026-10-21T11:24:56Z"
+}

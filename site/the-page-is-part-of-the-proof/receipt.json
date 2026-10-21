@@ -286,7 +286,7 @@
     "relationshipDisposition": "Two specific editorial comparisons connect human inspectability and authenticated acceptance. No existing Reader independently tests this author’s HTML-versus-Markdown workflow.",
     "relationshipReview": {
       "reviewedAt": "2026-10-21",
-      "reviewedCatalogSize": 28,
+      "reviewedCatalogSize": 32,
       "decision": "linked",
       "reviewedTargets": [
         "reader:make-good-work-inspectable",

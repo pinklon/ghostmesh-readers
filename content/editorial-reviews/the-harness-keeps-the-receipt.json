@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "readerId": "reader:the-harness-keeps-the-receipt",
+  "sourceId": "7Y4sbZgBdnc",
+  "sourceAidSha256": "f3b0dbab78207c906bd93ba2817995e7e56634dab26fdff2d2afd10dfa869106",
+  "articleSha256": "e272e9800b29e27b424da73cf501e24164a558f81a6638600abec128b4d07c9f",
+  "evidenceRevision": "c2ba419888c4b98697a75f9af8192d96cb4281a019cb73f05c948374c5eb6e75",
+  "reviewedAt": "2026-10-21T05:45:23Z",
+  "provenance": {
+    "kind": "codex-task-agent",
+    "reference": "Read-only independent editorial reviewer /root/editorial_review in the incumbent sole-publisher task; full public-candidate review and targeted recheck retained in that task.",
+    "limits": "CI cannot authenticate a private agent or prove source truth. The reviewer compared private automatic-caption timing aids but did not replicate first-party study, product or financial results."
+  },
+  "summary": "Independent reviewer compared all four exact public HTML pages, catalog claims and graph, source maps, receipts and generated projections with the privately qualified sources; no factual, graph, timestamp or source-privacy blocker remained after two targeted repairs.",
+  "findings": [
+    "A forecast cue initially mapped to 12:07 was corrected to the explicit 17:18 source moment; the article link and source-map hash were rechecked.",
+    "The autonomy Reader's provenance now calls the Anthropic and OpenAI evidence separate first-party reports from other operators, not independent accounts.",
+    "All eight new typed relationship target anchors resolve and retain qualified editorial comparisons rather than cross-source corroboration.",
+    "The public pages use click-to-load 16:9 players and contain no private path, media, full captions or long source-caption overlap; public thumbnail requests occur before click.",
+    "Automatic captions are timing aids; benchmark, operator, product and trading claims remain first-party or unreplicated, and Coinbase regulatory status is company-attributed."
+  ],
+  "conclusion": "accept-for-owner-review"
+}

@@ -1,0 +1,105 @@
+{
+  "schemaVersion": 1,
+  "readerId": "reader:unsupervised-is-a-permission",
+  "sourceId": "_4Ph2dhmUFI",
+  "sourceDigest": "dc38d0ed57beeb802bd7ddcccc7a9566f2d96ad50891a7b9985c49cdc404d69d",
+  "sourceAidSha256": "139fbbf83ee7dcd6ebb30a3970e05378cee50622796bca70712f3bf81f3f9ca9",
+  "articleSha256": "f5600ef857c92f30a017adb06b8179ba493340d3e8c37ccfdddbf85682e70607",
+  "evidenceRevision": "c992f91d95c9c93ff0c452d37ee5f81f0e0b9d0d16e12290bd4428961d3032ae",
+  "sourceMapEvidenceSha256": "ed9b31a539de72796799f9443ccfd07e0f79729500c028db02bd139c6f4896b3",
+  "reviewEvidenceSha256": "878f9e60dad9251d7107ff9b381004f9a49510dd83e7b2331dac110508bd6e2d",
+  "candidateAuthor": "pinklon",
+  "complexity": {
+    "tier": "extended",
+    "factors": [
+      "The source makes a consequential architecture or governance recommendation that deserves mapped counterevidence.",
+      "Multiple first-party claims, predictions or anecdotes require explicit evidence roles and a falsifiable test."
+    ],
+    "rationale": "This source supports an extended original argument, bounded claim register and separate effect or cost experiment rather than a short source summary."
+  },
+  "sourceMap": [
+    {
+      "atSeconds": 245,
+      "sectionId": "name-the-task-before-trusting-the-agent",
+      "claimIds": [
+        "unsupervised-is-a-permission--workflow-graph"
+      ],
+      "rationale": "The policy and DAG discussion is paraphrased as an intended task boundary, not a verified trace."
+    },
+    {
+      "atSeconds": 331,
+      "sectionId": "the-loop-needs-an-exit-with-authority",
+      "claimIds": [
+        "unsupervised-is-a-permission--loop-exit"
+      ],
+      "rationale": "The inner-loop source moment is connected to a separate GhostMesh effect-reconciliation design."
+    },
+    {
+      "atSeconds": 643,
+      "sectionId": "evidence-earns-scope-not-certainty",
+      "claimIds": [
+        "unsupervised-is-a-permission--eval-confidence"
+      ],
+      "rationale": "The video's check and eval argument is limited by sample coverage and tail risk."
+    },
+    {
+      "atSeconds": 869,
+      "sectionId": "test-the-graduation-path",
+      "claimIds": [
+        "unsupervised-is-a-permission--graduation"
+      ],
+      "rationale": "The supervision-to-exception proposal is presented as a testable progression, not an earned universal status."
+    }
+  ],
+  "assessment": {
+    "sourceCoverage": {
+      "disposition": "covered",
+      "rationale": "Four mapped source moments cover the main technical or economic argument, its proposed mechanism, limits and practical decision. Remaining paragraphs are original analysis."
+    },
+    "supportingArgument": {
+      "disposition": "covered",
+      "rationale": "A named policy, workflow DAG, feedback check and exception route are a strong basis for simplifying supervision on routine bounded tasks."
+    },
+    "evidenceRoles": {
+      "disposition": "covered",
+      "rationale": "Exact video cues establish the speaker's argument; linked primary papers or vendor documents establish only their own methods and claims. No GhostMesh replication is asserted."
+    },
+    "counterargument": {
+      "disposition": "covered",
+      "rationale": "Aggregate confidence can conceal tail risk, changed tools, prompt injection and committed writes hidden by a failed tool response."
+    },
+    "tradeoffs": {
+      "disposition": "covered",
+      "rationale": "The draft compares fewer individual approvals with more monitoring, interruption and reconciliation burden across consequence tiers."
+    },
+    "falsifiability": {
+      "disposition": "covered",
+      "rationale": "Versioned supervised and delegated cohorts would face injected failures and report unauthorized effects, missed escalations and recovery time."
+    },
+    "originalSynthesis": {
+      "disposition": "covered",
+      "rationale": "Autonomy is an earned, revocable permission for a particular path rather than a global property assigned to the agent."
+    },
+    "performance": {
+      "disposition": "covered",
+      "rationale": "No public Coinbase workflow score is invented; suggested success, error and operator-workload measures remain a proposed trial."
+    },
+    "economics": {
+      "disposition": "covered",
+      "rationale": "It considers loop budget, false alarms and human workload rather than claiming measured Coinbase cost savings."
+    },
+    "threatGovernance": {
+      "disposition": "covered",
+      "rationale": "It specifies policy version, bounded tools, idempotency, hard stop, destination readback and severity-weighted review."
+    }
+  },
+  "independentCorroboration": "none",
+  "ownerDecision": {
+    "pullNumber": 56,
+    "commentId": 6314890601
+  },
+  "decision": "accept",
+  "gaps": [],
+  "decisionRationale": "Tony qualitatively accepted the four exact PR 56 preview articles and requested publication in the trusted release conversation. Independent public-copy review accepted this article for owner review. The direct unchanged owner GitHub hash marker is still required before the release gate opens.",
+  "assessedAt": "2026-10-21T11:24:56Z"
+}

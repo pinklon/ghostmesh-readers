@@ -97,9 +97,12 @@
     }
   },
   "independentCorroboration": "none",
-  "ownerDecision": null,
-  "decision": "hold",
+  "ownerDecision": {
+    "pullNumber": 55,
+    "commentId": 6315975302
+  },
+  "decision": "accept",
   "gaps": [],
-  "decisionRationale": "Independent review and targeted source-link follow-up found no actionable defect on the exact article and source-map hashes. Tony has not qualitatively accepted these bytes; authenticated acceptance and a separate production decision are still required.",
-  "assessedAt": "2026-10-21T04:59:21Z"
+  "decisionRationale": "Tony qualitatively accepted the exact previewed article after independent source and copy review found no remaining defect. The direct authenticated GitHub acceptance marker and a separate exact-head production release decision are still pending.",
+  "assessedAt": "2026-10-21T05:10:39Z"
 }

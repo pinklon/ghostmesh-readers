@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "readerId": "reader:a-wallet-is-not-a-mandate",
+  "sourceId": "f_HwzoYrZ7s",
+  "sourceAidSha256": "6c5b4bb10c8ede764ec9f4ed0e54e15aae4f0b29d4857a45c93af9280437d29d",
+  "articleSha256": "d5ff333aa94a13b4e287ba7e50fde1324dde90fff50198e0373e49ae18ab021f",
+  "evidenceRevision": "64aa74e153c21ef3415618f1ee837a81b973fb0f2cc03bf74e0fdc29144897c1",
+  "reviewedAt": "2026-10-21T05:45:23Z",
+  "provenance": {
+    "kind": "codex-task-agent",
+    "reference": "Read-only independent editorial reviewer /root/editorial_review in the incumbent sole-publisher task; full public-candidate review and targeted recheck retained in that task.",
+    "limits": "CI cannot authenticate a private agent or prove source truth. The reviewer compared private automatic-caption timing aids but did not replicate first-party study, product or financial results."
+  },
+  "summary": "Independent reviewer compared all four exact public HTML pages, catalog claims and graph, source maps, receipts and generated projections with the privately qualified sources; no factual, graph, timestamp or source-privacy blocker remained after two targeted repairs.",
+  "findings": [
+    "A forecast cue initially mapped to 12:07 was corrected to the explicit 17:18 source moment; the article link and source-map hash were rechecked.",
+    "The autonomy Reader's provenance now calls the Anthropic and OpenAI evidence separate first-party reports from other operators, not independent accounts.",
+    "All eight new typed relationship target anchors resolve and retain qualified editorial comparisons rather than cross-source corroboration.",
+    "The public pages use click-to-load 16:9 players and contain no private path, media, full captions or long source-caption overlap; public thumbnail requests occur before click.",
+    "Automatic captions are timing aids; benchmark, operator, product and trading claims remain first-party or unreplicated, and Coinbase regulatory status is company-attributed."
+  ],
+  "conclusion": "accept-for-owner-review"
+}

@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "readerId": "reader:the-harness-keeps-the-receipt",
+  "sourceId": "7Y4sbZgBdnc",
+  "sourceAidSha256": "f3b0dbab78207c906bd93ba2817995e7e56634dab26fdff2d2afd10dfa869106",
+  "points": [
+    {
+      "atSeconds": 69,
+      "sectionId": "the-useful-provocation",
+      "claimIds": [
+        "the-harness-keeps-the-receipt--bounded-parity"
+      ],
+      "cueParaphrase": "The opening distinction between prompt/context advice and runtime responsibility frames the later benchmark comparison.",
+      "privateAidCheck": "Arena reports 21 model-harness combinations on two public coding benchmarks. The exact publisher chapter and retained timestamped automatic-caption cue were compared; this is not a word-for-word quotation."
+    },
+    {
+      "atSeconds": 300,
+      "sectionId": "what-the-benchmark-evidence-actually-says",
+      "claimIds": [
+        "the-harness-keeps-the-receipt--bounded-parity",
+        "the-harness-keeps-the-receipt--context-pressure"
+      ],
+      "cueParaphrase": "The research chapter motivates a bounded comparison of coding score, context pressure and cost.",
+      "privateAidCheck": "Arena reports 21 model-harness combinations on two public coding benchmarks. The exact publisher chapter and retained timestamped automatic-caption cue were compared; this is not a word-for-word quotation."
+    },
+    {
+      "atSeconds": 376,
+      "sectionId": "a-flywheel-remains-a-hypothesis",
+      "claimIds": [
+        "the-harness-keeps-the-receipt--data-flywheel"
+      ],
+      "cueParaphrase": "The speaker's data-flywheel proposal is treated as a hypothesis without a proven training-data path.",
+      "privateAidCheck": "Private caption aids place the flywheel claim around the publisher's 06:16 chapter. The exact publisher chapter and retained timestamped automatic-caption cue were compared; this is not a word-for-word quotation."
+    },
+    {
+      "atSeconds": 1038,
+      "sectionId": "the-boundary-that-stays",
+      "claimIds": [
+        "the-harness-keeps-the-receipt--off-laptop"
+      ],
+      "cueParaphrase": "The speaker presents an off-laptop forecast near 17:18; this article treats it as a prediction rather than measured adoption.",
+      "privateAidCheck": "The explicit prediction appears near 17:18 in the retained source aids. The exact publisher chapter and retained timestamped automatic-caption cue were compared; this is not a word-for-word quotation."
+    }
+  ]
+}
