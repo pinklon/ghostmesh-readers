@@ -3,7 +3,7 @@
   "reviews": [
     {
       "id": "cloudflare-security-audit-skill",
-      "title": "Cloudflare security-audit-skill: borrow the evidence discipline",
+      "title": "Cloudflare security-audit-skill",
       "sourceUrl": "https://github.com/cloudflare/security-audit-skill/tree/c1c8a8c1471069fb0e188eeaff69b8e8db6564a8",
       "reviewedOn": "2026-10-22",
       "method": "source-inspected",
@@ -42,11 +42,13 @@
             "https://github.com/cloudflare/security-audit-skill/blob/c1c8a8c1471069fb0e188eeaff69b8e8db6564a8/LICENSE"
           ]
         }
-      }
+      },
+      "identity": "Cloudflare-maintained coding-agent audit skill for developers and security reviewers; it separates confirmed failures, unresolved leads and rejected candidates.",
+      "scope": "Pinned c1c8a8c: README, findings-validator source and part of the report schema inspected. The skill, validator and audit workflow were not run."
     },
     {
       "id": "graphify-labs-graphify",
-      "title": "Graphify: a code map must beat the search it replaces",
+      "title": "Graphify",
       "sourceUrl": "https://github.com/Graphify-Labs/graphify/tree/847a93f3cab5e2c82ea9170014b21cd2c52a4417",
       "reviewedOn": "2026-10-22",
       "method": "metadata-reviewed",
@@ -85,11 +87,13 @@
             "https://github.com/Graphify-Labs/graphify/blob/847a93f3cab5e2c82ea9170014b21cd2c52a4417/LICENSE"
           ]
         }
-      }
+      },
+      "identity": "Graphify-Labs code-mapping tool for developers and coding assistants; it documents a local graph of cross-file relationships and optional semantic mapping beyond code.",
+      "scope": "Pinned 847a93f: README, security policy and license reviewed. Parser and query code were not inspected; no graph was built or measured."
     },
     {
       "id": "nvidia-openshell",
-      "title": "NVIDIA OpenShell: containment is not operational readiness",
+      "title": "NVIDIA OpenShell",
       "sourceUrl": "https://github.com/NVIDIA/OpenShell/tree/029fda684da8efc4772a526288038705ee9d148d",
       "reviewedOn": "2026-10-22",
       "method": "metadata-reviewed",
@@ -127,7 +131,9 @@
             "https://github.com/NVIDIA/OpenShell/blob/029fda684da8efc4772a526288038705ee9d148d/LICENSE"
           ]
         }
-      }
+      },
+      "identity": "NVIDIA agent runtime for teams operating autonomous agents; it documents policy-constrained file, network and credential access through gateways and sandboxes.",
+      "scope": "Pinned 029fda6: README, security policy and license reviewed. Enforcement code and runtime behavior were not inspected or tested."
     }
   ]
 }

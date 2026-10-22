@@ -43,7 +43,7 @@ def validate_scout(source):
         raise ValueError('Scout public source schema')
     seen = set()
     for review in source['reviews']:
-        required = {'id', 'title', 'sourceUrl', 'reviewedOn', 'method', 'confidence', 'summary', 'unknowns', 'ratings'}
+        required = {'id', 'title', 'sourceUrl', 'reviewedOn', 'method', 'confidence', 'identity', 'scope', 'summary', 'unknowns', 'ratings'}
         if not isinstance(review, dict) or set(review) != required:
             raise ValueError('Scout review fields')
         ident = _text(review['id'], 'Scout ID')
@@ -51,6 +51,8 @@ def validate_scout(source):
             raise ValueError('Scout review ID duplicate or invalid')
         seen.add(ident)
         _text(review['title'], 'Scout title')
+        _text(review['identity'], 'Scout identity')
+        _text(review['scope'], 'Scout review scope')
         _text(review['summary'], 'Scout summary')
         _url(review['sourceUrl'], 'Scout source')
         _day(review['reviewedOn'], 'Scout review date')
@@ -157,12 +159,14 @@ def scout_report_html(raw):
             rendered.append('<h3 id="' + ident + '">' + escape(title) + '</h3>')
         else:
             kind = (' class="gm-scout-report-meta"' if block.startswith('GhostMesh Scout |')
-                    else ' class="gm-scout-report-call"' if block.startswith('**Recommendation:') else '')
+                    else ' class="gm-scout-report-call"' if block.startswith('**Recommendation:')
+                    else ' class="gm-scout-report-identity"' if block.startswith('**What it is.')
+                    else ' class="gm-scout-report-scope"' if block.startswith('**What we inspected.') else '')
             rendered.append('<p' + kind + '>' + _report_inline(block) + '</p>')
     toc = ''.join('<a href="#' + ident + '">' + escape(title) + '</a>' for ident, title in headings)
     return ('<section class="gm-scout-report" aria-labelledby="first-scout-title">'
             '<div class="gm-scout-report-layout"><aside class="gm-scout-report-rail" aria-label="In this report">'
-            '<p class="gm-kicker">FIRST LOOK / THREE QUESTIONS</p><nav aria-label="Report sections">' + toc +
+            '<p class="gm-kicker">FIRST LOOK / THREE PROJECTS</p><nav aria-label="Report sections">' + toc +
             '</nav><p>Read the source. Test the recommendation. Keep unknowns visible.</p></aside>'
             '<article class="gm-scout-report-copy">' + ''.join(rendered) + '</article></div></section>')
 
@@ -190,8 +194,10 @@ def scout_body(scout, report_html=''):
             links = ' '.join(f'<a href="{escape(url, quote=True)}">Source {i + 1} ↗</a>' for i, url in enumerate(item['evidenceUrls']))
             ratings.append(f'<div><dt>{names[key]}</dt><dd><strong>{escape(item["value"])}</strong> {escape(item["rationale"])} <span>{links}</span></dd></div>')
         recommendation = review['summary'].split('. ', 1)[0] + '.'
-        cards.append(f'<article id="{escape(review["id"])}" class="gm-scout-card"><p class="gm-kicker">Reviewed {escape(review["reviewedOn"])} · {escape(review["method"].replace("-", " "))} · confidence {escape(review["confidence"])}</p><h3><a href="{escape(review["sourceUrl"], quote=True)}">{escape(review["title"])}</a></h3><p class="gm-scout-recommendation">{escape(recommendation)}</p><details><summary>Full assessment and source-linked ratings</summary><p>{escape(review["summary"])}</p><dl>{"".join(ratings)}</dl><p><strong>Still unknown:</strong> {escape(review["unknowns"])}</p></details></article>')
-    return intro + report_html + '<section class="gm-scout-reviews" aria-labelledby="scout-findings"><p class="gm-kicker">ASSESSMENT RECORD</p><h2 id="scout-findings">Source-linked scorecards</h2><p class="gm-scout-card-intro">These editorial ratings retain their source links and limits. Expand a record for the full assessment and rationale.</p>' + ''.join(cards) + '</section>'
+        analysis = 'report-' + re.sub(r'[^a-z0-9]+', '-', review['title'].lower()).strip('-')
+        analysis_link = f'<a class="gm-scout-analysis-link" href="#{analysis}">Read the analysis ↑</a>' if f'id="{analysis}"' in report_html else ''
+        cards.append(f'<article id="{escape(review["id"])}" class="gm-scout-card"><p class="gm-kicker">Reviewed {escape(review["reviewedOn"])} · {escape(review["method"].replace("-", " "))} · confidence {escape(review["confidence"])}</p><h3><a href="{escape(review["sourceUrl"], quote=True)}">{escape(review["title"])}</a></h3><p class="gm-scout-identity">{escape(review["identity"])}</p><p class="gm-scout-scope"><strong>Review boundary</strong> {escape(review["scope"])}</p><p class="gm-scout-recommendation">{escape(recommendation)}</p>{analysis_link}<details><summary>Ratings, rationale and limits</summary><dl>{"".join(ratings)}</dl><p><strong>Still unknown:</strong> {escape(review["unknowns"])}</p></details></article>')
+    return intro + report_html + '<section class="gm-scout-reviews" aria-labelledby="scout-findings"><p class="gm-kicker">ASSESSMENT RECORD</p><h2 id="scout-findings">Source-linked scorecards</h2><p class="gm-scout-card-intro">The argument lives in the report above. These records keep the source links, review boundary, ratings and unresolved questions together.</p>' + ''.join(cards) + '</section>'
 
 
 def feed_xml(events, host):

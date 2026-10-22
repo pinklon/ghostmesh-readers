@@ -21,6 +21,8 @@ class ScoutFeedTests(unittest.TestCase):
                   'evidenceUrls': ['https://example.org/source?a=1&b=2']}
         return {'id': 'fixture-tool', 'title': 'Tool <fixture>', 'sourceUrl': 'https://example.org/tool',
                 'reviewedOn': '2026-10-21', 'method': 'source-inspected', 'confidence': 'low',
+                'identity': 'A developer tool <fixture> for code review.',
+                'scope': 'Read its public source; no execution.',
                 'summary': 'A bounded review <not a runtime test>.', 'unknowns': 'Runtime behavior remains unknown.',
                 'ratings': {name: copy.deepcopy(rating) for name in
                             ('ghostmeshFit', 'everydayUse', 'evidenceStrength', 'adoptionEffort')}}
@@ -28,13 +30,13 @@ class ScoutFeedTests(unittest.TestCase):
     def test_first_report_preview_binds_reviewed_sources_without_release_event(self):
         card_bytes = (ROOT / 'content/scout-public.json').read_bytes()
         source = json.loads(card_bytes)
-        self.assertEqual(hashlib.sha256(card_bytes).hexdigest(), '4c284b9ca4474b4c1a51ddd8294484244a5e7d8f66508fdb9730e99ceb1ece09')
+        self.assertEqual(hashlib.sha256(card_bytes).hexdigest(), 'a8d75dd8b1470f421277aff83c885299b7d1e8d4be8e251297bf3a179ca5893e')
         self.assertEqual([r['id'] for r in source['reviews']],
                          ['cloudflare-security-audit-skill', 'graphify-labs-graphify', 'nvidia-openshell'])
         self.assertEqual([r['method'] for r in source['reviews']],
                          ['source-inspected', 'metadata-reviewed', 'metadata-reviewed'])
         report = (ROOT / 'content/scout-first-report.md').read_bytes()
-        self.assertEqual(hashlib.sha256(report).hexdigest(), '58c910d0f620e5b213d340b3fd1b08d1598b9f52d6371834db0481fb3bc7a260')
+        self.assertEqual(hashlib.sha256(report).hexdigest(), 'cbd35c1fd13707a869b1f8834b6a131776415696c83cc2405fd9181a73adfcfd')
         html = (ROOT / 'site/scout/index.html').read_text()
         self.assertIn('Borrow the discipline. Make the machinery earn its place.', html)
         self.assertLess(html.index('id="cloudflare-security-audit-skill"'),
@@ -42,7 +44,16 @@ class ScoutFeedTests(unittest.TestCase):
         self.assertLess(html.index('id="graphify-labs-graphify"'),
                         html.index('id="nvidia-openshell"'))
         self.assertEqual(html.count('class="gm-scout-card"'), 3)
-        self.assertIn('Full assessment and source-linked ratings', html)
+        self.assertIn('Ratings, rationale and limits', html)
+        self.assertIn('FIRST LOOK / THREE PROJECTS', html)
+        for review in source['reviews']:
+            card = html.split('id="' + review['id'] + '"', 1)[1].split('</article>', 1)[0]
+            self.assertLess(card.index('gm-scout-identity'), card.index('gm-scout-recommendation'))
+            self.assertLess(card.index('gm-scout-scope'), card.index('gm-scout-recommendation'))
+            self.assertNotIn(review['summary'], card)
+            analysis = 'report-' + review['title'].lower().replace(' ', '-')
+            self.assertIn('href="#' + analysis + '"', card)
+            self.assertIn('id="' + analysis + '"', html)
         self.assertIn('No candidate was installed or executed', html)
         self.assertNotIn('Three independently identified repositories, reviewed at the linked revisions.', html)
         self.assertIn('href="/feed.xml"', html)
@@ -71,6 +82,8 @@ class ScoutFeedTests(unittest.TestCase):
         self.assertNotIn('Tool <fixture>', html)
         self.assertIn('a=1&amp;b=2', html)
         self.assertIn('source inspected', html)
+        self.assertIn('A developer tool &lt;fixture&gt;', html)
+        self.assertIn('Read its public source; no execution.', html)
         bad = copy.deepcopy(source)
         bad['reviews'][0]['ratings']['everydayUse']['evidenceUrls'] = []
         with self.assertRaisesRegex(ValueError, 'source links required'):
