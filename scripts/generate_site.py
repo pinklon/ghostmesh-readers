@@ -5,7 +5,8 @@ from html import escape
 from html.parser import HTMLParser
 from datetime import date
 import json,re,sys
-from scout_feed import validate_scout,validate_events,scout_body,feed_xml
+from scout_feed import validate_scout,validate_events,feed_xml
+from scout_pages import validate_editions,home as scout_home,review_page,edition_page,archive_page,method_page,review_url,edition_url
 ROOT=Path(__file__).resolve().parents[1]; SITE=ROOT/'site'
 CATEGORIES=['AI & Technology','Society & Politics','Science','Business','Ethics & Culture','Other']
 READER_COUNT=0
@@ -252,6 +253,7 @@ def projections():
  global READER_COUNT
  data=json.loads((ROOT/'content/catalog.json').read_text());validate_text(data)
  scout=validate_scout(json.loads((ROOT/'content/scout-public.json').read_text()))
+ editions=validate_editions(json.loads((ROOT/'content/scout-editions.json').read_text()),scout)['editions']
  release_events=validate_events(json.loads((ROOT/'content/public-release-events.json').read_text()),data,scout)
  readers=sorted(data['readers'],key=lambda r:(r['published'],r['slug']),reverse=True)
  READER_COUNT=len(readers)
@@ -426,9 +428,20 @@ def projections():
  else:
   from map_design import relationship_graph
  out['map/relationships.json']=dump(relationship_graph(readers,byid,data['host']))
- out['scout/index.html']=page('Scout','/scout/',scout_body(scout)).replace('</head>','<link rel="stylesheet" href="/assets/scout.css"></head>')
+ def scout_page(title,url,body):
+  return page(title,url,body).replace('</head>','<link rel="stylesheet" href="/assets/scout.css"></head>')
+ latest=max(editions,key=lambda edition:(edition['reviewedOn'],edition['id']))
+ out['scout/index.html']=scout_page('Scout','/scout/',scout_home(scout,latest))
+ out['scout/archive/index.html']=scout_page('Scout review library','/scout/archive/',archive_page(scout))
+ out['scout/method/index.html']=scout_page('How Scout works','/scout/method/',method_page((ROOT/'content/scout/method.md').read_text()))
+ for edition in editions:
+  url=edition_url(edition)
+  out[url.strip('/')+'/index.html']=scout_page(edition['title'],url,edition_page(edition,scout,(ROOT/'content/scout/editions'/f'{edition["id"]}.md').read_text()))
+ for review in scout['reviews']:
+  url=review_url(review)
+  out[url.strip('/')+'/index.html']=scout_page(review['title'],url,review_page(review,(ROOT/'content/scout/reviews'/f'{review["id"]}.md').read_text()))
  out['feed.xml']=feed_xml(release_events,data['host'])
- urls=['/','/readers/','/map/','/knowledge/','/scout/']+['/'+r['slug']+'/' for r in readers]+[f'/readers/categories/{i}/' for i in range(len(CATEGORIES))]
+ urls=['/','/readers/','/map/','/knowledge/','/scout/','/scout/archive/','/scout/method/']+[edition_url(edition) for edition in editions]+[review_url(review) for review in scout['reviews']]+['/'+r['slug']+'/' for r in readers]+[f'/readers/categories/{i}/' for i in range(len(CATEGORIES))]
  out['sitemap.xml']='<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'+''.join('<url><loc>'+data['host']+u+'</loc></url>' for u in sorted(urls))+'</urlset>\n'
  out['404.html']=page('Page not found','/404.html','<h1>That page is not here.</h1><p><a href="/readers/">Browse the complete Reader library</a> or return to the <a href="/">homepage</a>.</p>')
  return out
