@@ -121,7 +121,53 @@ def validate_events(source, catalog, scout):
     return source
 
 
-def scout_body(scout):
+def _report_inline(value):
+    """Render only the bold text and HTTPS links used by the authored report."""
+    pattern = re.compile(r'\*\*([^*]+)\*\*|\[([^\]]+)\]\((https://[^)\s]+)\)')
+    out = []
+    end = 0
+    for match in pattern.finditer(value):
+        out.append(escape(value[end:match.start()]))
+        if match.group(1) is not None:
+            out.append('<strong>' + escape(match.group(1)) + '</strong>')
+        else:
+            out.append('<a href="' + escape(_url(match.group(3), 'Report source'), quote=True) + '">' + escape(match.group(2)) + '</a>')
+        end = match.end()
+    out.append(escape(value[end:]))
+    return ''.join(out)
+
+
+def scout_report_html(raw):
+    """Render the reviewed, public Markdown without a dependency or raw HTML."""
+    _text(raw, 'Scout report')
+    blocks = [block.strip() for block in raw.split('\n\n') if block.strip()]
+    if not blocks or not blocks[0].startswith('# '):
+        raise ValueError('Scout report title required')
+    rendered = []
+    headings = []
+    for block in blocks:
+        if '\n' in block:
+            raise ValueError('Scout report blocks must be paragraphs')
+        if block.startswith('# '):
+            rendered.append('<h2 id="first-scout-title">' + escape(block[2:]) + '</h2>')
+        elif block.startswith('## '):
+            title = block[3:]
+            ident = 'report-' + re.sub(r'[^a-z0-9]+', '-', title.lower()).strip('-')
+            headings.append((ident, title))
+            rendered.append('<h3 id="' + ident + '">' + escape(title) + '</h3>')
+        else:
+            kind = (' class="gm-scout-report-meta"' if block.startswith('GhostMesh Scout |')
+                    else ' class="gm-scout-report-call"' if block.startswith('**Recommendation:') else '')
+            rendered.append('<p' + kind + '>' + _report_inline(block) + '</p>')
+    toc = ''.join('<a href="#' + ident + '">' + escape(title) + '</a>' for ident, title in headings)
+    return ('<section class="gm-scout-report" aria-labelledby="first-scout-title">'
+            '<div class="gm-scout-report-layout"><aside class="gm-scout-report-rail" aria-label="In this report">'
+            '<p class="gm-kicker">FIRST LOOK / THREE QUESTIONS</p><nav aria-label="Report sections">' + toc +
+            '</nav><p>Read the source. Test the recommendation. Keep unknowns visible.</p></aside>'
+            '<article class="gm-scout-report-copy">' + ''.join(rendered) + '</article></div></section>')
+
+
+def scout_body(scout, report_html=''):
     intro = ('<section class="gm-scout-intro"><div class="gm-scout-intro-copy"><p class="gm-kicker">GhostMesh / Scout</p>'
              '<h1>Watch what might be useful. Keep the evidence in view.</h1>'
              '<p class="gm-scout-lede">Scout discovers tools and ideas, then records a first-pass review for GhostMesh and for everyday users. A discovery is not an adoption decision or a product test.</p>'
@@ -132,17 +178,20 @@ def scout_body(scout):
              '<p>New Readers, meaningful Reader updates and published Scout reviews, together in one RSS feed.</p>'
              '<a class="gm-scout-subscribe" href="/feed.xml">Get the RSS feed <span aria-hidden="true">↗</span></a></aside></section>')
     if not scout['reviews']:
+        if report_html:
+            raise ValueError('A Scout report requires reviewed cards')
         return intro + '<section class="gm-scout-empty" aria-labelledby="scout-findings"><h2 id="scout-findings">Public reviews are being prepared.</h2><p>No Scout candidate review has been approved for this page yet. The private discovery watchlist is not a set of completed evaluations.</p></section>'
     names = {'ghostmeshFit': 'GhostMesh fit', 'everydayUse': 'Everyday usefulness', 'evidenceStrength': 'Evidence strength', 'adoptionEffort': 'Adoption effort'}
     cards = []
-    for review in sorted(scout['reviews'], key=lambda r: (r['reviewedOn'], r['id']), reverse=True):
+    for review in sorted(scout['reviews'], key=lambda r: r['reviewedOn'], reverse=True):
         ratings = []
         for key in DIMENSIONS:
             item = review['ratings'][key]
             links = ' '.join(f'<a href="{escape(url, quote=True)}">Source {i + 1} ↗</a>' for i, url in enumerate(item['evidenceUrls']))
             ratings.append(f'<div><dt>{names[key]}</dt><dd><strong>{escape(item["value"])}</strong> {escape(item["rationale"])} <span>{links}</span></dd></div>')
-        cards.append(f'<article id="{escape(review["id"])}" class="gm-scout-card"><p class="gm-kicker">Reviewed {escape(review["reviewedOn"])} · {escape(review["method"].replace("-", " "))} · confidence {escape(review["confidence"])}</p><h3><a href="{escape(review["sourceUrl"], quote=True)}">{escape(review["title"])}</a></h3><p>{escape(review["summary"])}</p><dl>{"".join(ratings)}</dl><p><strong>Still unknown:</strong> {escape(review["unknowns"])}</p></article>')
-    return intro + '<section class="gm-scout-reviews" aria-labelledby="scout-findings"><h2 id="scout-findings">Reviewed findings</h2>' + ''.join(cards) + '</section>'
+        recommendation = review['summary'].split('. ', 1)[0] + '.'
+        cards.append(f'<article id="{escape(review["id"])}" class="gm-scout-card"><p class="gm-kicker">Reviewed {escape(review["reviewedOn"])} · {escape(review["method"].replace("-", " "))} · confidence {escape(review["confidence"])}</p><h3><a href="{escape(review["sourceUrl"], quote=True)}">{escape(review["title"])}</a></h3><p class="gm-scout-recommendation">{escape(recommendation)}</p><details><summary>Full assessment and source-linked ratings</summary><p>{escape(review["summary"])}</p><dl>{"".join(ratings)}</dl><p><strong>Still unknown:</strong> {escape(review["unknowns"])}</p></details></article>')
+    return intro + report_html + '<section class="gm-scout-reviews" aria-labelledby="scout-findings"><p class="gm-kicker">ASSESSMENT RECORD</p><h2 id="scout-findings">Source-linked scorecards</h2><p class="gm-scout-card-intro">These editorial ratings retain their source links and limits. Expand a record for the full assessment and rationale.</p>' + ''.join(cards) + '</section>'
 
 
 def feed_xml(events, host):

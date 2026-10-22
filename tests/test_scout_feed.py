@@ -1,4 +1,5 @@
 import copy
+import hashlib
 import json
 import sys
 import unittest
@@ -7,7 +8,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'scripts'))
-from scout_feed import feed_xml, scout_body, validate_events, validate_scout
+from scout_feed import feed_xml, scout_body, scout_report_html, validate_events, validate_scout
 
 
 class ScoutFeedTests(unittest.TestCase):
@@ -24,18 +25,43 @@ class ScoutFeedTests(unittest.TestCase):
                 'ratings': {name: copy.deepcopy(rating) for name in
                             ('ghostmeshFit', 'everydayUse', 'evidenceStrength', 'adoptionEffort')}}
 
-    def test_initial_public_page_is_honest_and_no_private_watchlist_is_ingested(self):
-        source = json.loads((ROOT / 'content/scout-public.json').read_text())
-        self.assertEqual(source['reviews'], [])
+    def test_first_report_preview_binds_reviewed_sources_without_release_event(self):
+        card_bytes = (ROOT / 'content/scout-public.json').read_bytes()
+        source = json.loads(card_bytes)
+        self.assertEqual(hashlib.sha256(card_bytes).hexdigest(), '4c284b9ca4474b4c1a51ddd8294484244a5e7d8f66508fdb9730e99ceb1ece09')
+        self.assertEqual([r['id'] for r in source['reviews']],
+                         ['cloudflare-security-audit-skill', 'graphify-labs-graphify', 'nvidia-openshell'])
+        self.assertEqual([r['method'] for r in source['reviews']],
+                         ['source-inspected', 'metadata-reviewed', 'metadata-reviewed'])
+        report = (ROOT / 'content/scout-first-report.md').read_bytes()
+        self.assertEqual(hashlib.sha256(report).hexdigest(), '58c910d0f620e5b213d340b3fd1b08d1598b9f52d6371834db0481fb3bc7a260')
         html = (ROOT / 'site/scout/index.html').read_text()
-        self.assertIn('No Scout candidate review has been approved', html)
+        self.assertIn('Borrow the discipline. Make the machinery earn its place.', html)
+        self.assertLess(html.index('id="cloudflare-security-audit-skill"'),
+                        html.index('id="graphify-labs-graphify"'))
+        self.assertLess(html.index('id="graphify-labs-graphify"'),
+                        html.index('id="nvidia-openshell"'))
+        self.assertEqual(html.count('class="gm-scout-card"'), 3)
+        self.assertIn('Full assessment and source-linked ratings', html)
+        self.assertIn('No candidate was installed or executed', html)
+        self.assertNotIn('Three independently identified repositories, reviewed at the linked revisions.', html)
         self.assertIn('href="/feed.xml"', html)
         self.assertIn('aria-labelledby="follow-scout-title"', html)
         self.assertIn('New Readers, meaningful Reader updates and published Scout reviews', html)
         self.assertIn('class="gm-scout-subscribe" href="/feed.xml"', html)
         self.assertIn('grid-template-columns:1fr;gap:28px', (ROOT / 'site/assets/scout.css').read_text())
-        self.assertNotIn('Cloudflare security-audit-skill', html)
+        self.assertNotIn('/Users/', html)
+        self.assertNotIn('private scout artifact', html.lower())
         self.assertEqual(validate_scout(source), source)
+        self.assertEqual(json.loads((ROOT / 'content/public-release-events.json').read_text())['events'], [])
+
+    def test_report_renderer_escapes_html_and_rejects_missing_cards(self):
+        rendered = scout_report_html('# Title\n\n## Example\n\n**Recommendation:** [Read](https://example.org/?a=1&b=2) <script>')
+        self.assertIn('href="https://example.org/?a=1&amp;b=2"', rendered)
+        self.assertIn('&lt;script&gt;', rendered)
+        self.assertNotIn('<script>', rendered)
+        with self.assertRaisesRegex(ValueError, 'requires reviewed cards'):
+            scout_body({'reviews': []}, rendered)
 
     def test_review_requires_source_linked_rationale_and_escapes_markup(self):
         source = {'schema': 'ghostmesh-public-scout-v1', 'reviews': [self.review()]}
