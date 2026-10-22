@@ -8,7 +8,8 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'scripts'))
-from scout_feed import feed_xml, scout_body, scout_report_html, validate_events, validate_scout
+from scout_feed import feed_xml, validate_events, validate_scout
+from scout_pages import validate_editions, prose_html, review_page, archive_page
 
 
 class ScoutFeedTests(unittest.TestCase):
@@ -24,60 +25,89 @@ class ScoutFeedTests(unittest.TestCase):
                 'identity': 'A developer tool <fixture> for code review.',
                 'scope': 'Read its public source; no execution.',
                 'summary': 'A bounded review <not a runtime test>.', 'unknowns': 'Runtime behavior remains unknown.',
+                'sourceType': 'repository', 'topic': 'code-review', 'audience': 'Developers',
+                'recommendation': 'watch', 'selectionRationale': 'Compare its evidence rules.',
+                'discovery': {'route': 'explicit-research-priority',
+                              'evidenceUrl': 'https://example.org/priority',
+                              'retainedHistoryUrl': 'https://example.org/history',
+                              'firstRetainedObservation': '2026-10-21T14:30:55+00:00',
+                              'originalDiscovery': 'not-recorded'}, 'priorReviews': [],
                 'ratings': {name: copy.deepcopy(rating) for name in
                             ('ghostmeshFit', 'everydayUse', 'evidenceStrength', 'adoptionEffort')}}
 
     def test_first_report_preview_binds_reviewed_sources_without_release_event(self):
         card_bytes = (ROOT / 'content/scout-public.json').read_bytes()
         source = json.loads(card_bytes)
-        self.assertEqual(hashlib.sha256(card_bytes).hexdigest(), 'a8d75dd8b1470f421277aff83c885299b7d1e8d4be8e251297bf3a179ca5893e')
+        self.assertEqual(hashlib.sha256(card_bytes).hexdigest(), '5f8f5ec602f097f4b0fca7d76fc55167d344301c03fbf8fcfb07125f361ec0b9')
         self.assertEqual([r['id'] for r in source['reviews']],
                          ['cloudflare-security-audit-skill', 'graphify-labs-graphify', 'nvidia-openshell'])
         self.assertEqual([r['method'] for r in source['reviews']],
                          ['source-inspected', 'metadata-reviewed', 'metadata-reviewed'])
-        report = (ROOT / 'content/scout-first-report.md').read_bytes()
-        self.assertEqual(hashlib.sha256(report).hexdigest(), 'cbd35c1fd13707a869b1f8834b6a131776415696c83cc2405fd9181a73adfcfd')
+        editions = validate_editions(json.loads((ROOT / 'content/scout-editions.json').read_text()), source)
+        self.assertEqual(editions['editions'][0]['reviewIds'], [r['id'] for r in source['reviews']])
         html = (ROOT / 'site/scout/index.html').read_text()
         self.assertIn('Borrow the discipline. Make the machinery earn its place.', html)
-        self.assertLess(html.index('id="cloudflare-security-audit-skill"'),
-                        html.index('id="graphify-labs-graphify"'))
-        self.assertLess(html.index('id="graphify-labs-graphify"'),
-                        html.index('id="nvidia-openshell"'))
-        self.assertEqual(html.count('class="gm-scout-card"'), 3)
-        self.assertIn('Ratings, rationale and limits', html)
-        self.assertIn('FIRST LOOK / THREE PROJECTS', html)
-        for review in source['reviews']:
-            card = html.split('id="' + review['id'] + '"', 1)[1].split('</article>', 1)[0]
-            self.assertLess(card.index('gm-scout-identity'), card.index('gm-scout-recommendation'))
-            self.assertLess(card.index('gm-scout-scope'), card.index('gm-scout-recommendation'))
-            self.assertNotIn(review['summary'], card)
-            analysis = 'report-' + review['title'].lower().replace(' ', '-')
-            self.assertIn('href="#' + analysis + '"', card)
-            self.assertIn('id="' + analysis + '"', html)
-        self.assertIn('No candidate was installed or executed', html)
-        self.assertNotIn('Three independently identified repositories, reviewed at the linked revisions.', html)
+        self.assertEqual(html.count('class="gm-scout-feature"'), 3)
+        self.assertIn('href="/scout/archive/"', html)
+        self.assertIn('href="/scout/method/"', html)
+        self.assertNotIn('Ratings with their limits', html)
         self.assertIn('href="/feed.xml"', html)
-        self.assertIn('aria-labelledby="follow-scout-title"', html)
-        self.assertIn('New Readers, meaningful Reader updates and published Scout reviews', html)
-        self.assertIn('class="gm-scout-subscribe" href="/feed.xml"', html)
-        self.assertIn('grid-template-columns:1fr;gap:28px', (ROOT / 'site/assets/scout.css').read_text())
-        self.assertNotIn('/Users/', html)
-        self.assertNotIn('private scout artifact', html.lower())
+        for review in source['reviews']:
+            path = ROOT / 'site/scout/reviews' / review['id'] / 'index.html'
+            detail = path.read_text()
+            self.assertIn(review['title'], detail)
+            self.assertLess(detail.index('01 / What it is'), detail.index('03 / Our provisional call'))
+            self.assertIn('original discovery circumstances were not recorded', detail)
+            self.assertIn('Current editorial rationale', detail)
+            self.assertIn('Ratings with their limits', detail)
+            self.assertIn('No earlier Scout review record.', detail)
+            self.assertIn(review['sourceUrl'], detail)
+            self.assertNotIn('/Users/', detail)
+            self.assertNotIn('pinklon/skills', detail)
+        edition = (ROOT / 'site/scout/editions/2026-10-22-first-look/index.html').read_text()
+        self.assertIn('What would change our recommendations?', edition)
+        self.assertEqual(edition.count('class="gm-scout-prose-identity"'), 0)
+        archive = (ROOT / 'site/scout/archive/index.html').read_text()
+        self.assertEqual(archive.count('class="gm-scout-archive-card"'), 3)
+        self.assertIn('id="scout-query"', archive)
+        self.assertIn('id="scout-topic"', archive)
+        self.assertIn('id="scout-call"', archive)
+        self.assertIn('scout-archive.js', archive)
+        method = (ROOT / 'site/scout/method/index.html').read_text()
+        self.assertIn('explicit priorities', method)
+        self.assertIn('not retained', method)
+        self.assertNotIn('pinklon/skills', method)
         self.assertEqual(validate_scout(source), source)
         self.assertEqual(json.loads((ROOT / 'content/public-release-events.json').read_text())['events'], [])
 
     def test_report_renderer_escapes_html_and_rejects_missing_cards(self):
-        rendered = scout_report_html('# Title\n\n## Example\n\n**Recommendation:** [Read](https://example.org/?a=1&b=2) <script>')
+        rendered = prose_html('# Title\n\n## Example\n\n**Recommendation:** [Read](https://example.org/?a=1&b=2) <script>')
         self.assertIn('href="https://example.org/?a=1&amp;b=2"', rendered)
         self.assertIn('&lt;script&gt;', rendered)
         self.assertNotIn('<script>', rendered)
-        with self.assertRaisesRegex(ValueError, 'requires reviewed cards'):
-            scout_body({'reviews': []}, rendered)
+        with self.assertRaisesRegex(ValueError, 'title required'):
+            prose_html('No title')
+
+    def test_editions_and_discovery_fail_closed(self):
+        scout = validate_scout(json.loads((ROOT / 'content/scout-public.json').read_text()))
+        editions = json.loads((ROOT / 'content/scout-editions.json').read_text())
+        invalid = copy.deepcopy(editions)
+        invalid['editions'][0]['reviewIds'].append('missing-review')
+        with self.assertRaisesRegex(ValueError, 'edition reviews'):
+            validate_editions(invalid, scout)
+        invalid = copy.deepcopy(scout)
+        invalid['reviews'][0]['discovery']['route'] = 'popular-winner'
+        with self.assertRaisesRegex(ValueError, 'discovery provenance'):
+            validate_scout(invalid)
+        invalid = copy.deepcopy(scout)
+        invalid['reviews'][0]['recommendation'] = 'adopt-now'
+        with self.assertRaisesRegex(ValueError, 'classification'):
+            validate_scout(invalid)
 
     def test_review_requires_source_linked_rationale_and_escapes_markup(self):
         source = {'schema': 'ghostmesh-public-scout-v1', 'reviews': [self.review()]}
         validate_scout(source)
-        html = scout_body(source)
+        html = review_page(self.review(), '# Fixture\n\nA public analysis.')
         self.assertIn('Tool &lt;fixture&gt;', html)
         self.assertNotIn('Tool <fixture>', html)
         self.assertIn('a=1&amp;b=2', html)
@@ -145,7 +175,7 @@ class ScoutFeedTests(unittest.TestCase):
         scout = {'schema': 'ghostmesh-public-scout-v1', 'reviews': [self.review()]}
         host = self.catalog['host']
         first = {'id': 'scout:fixture-tool:first-review', 'kind': 'new-scout-review',
-                 'subjectId': 'fixture-tool', 'url': host + '/scout/#fixture-tool',
+                 'subjectId': 'fixture-tool', 'url': host + '/scout/reviews/fixture-tool/',
                  'title': 'First review', 'summary': 'A bounded public assessment.',
                  'publicDate': '2026-10-20'}
         source = {'schema': 'ghostmesh-public-release-events-v1', 'events': [first]}

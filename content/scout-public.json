@@ -44,7 +44,20 @@
         }
       },
       "identity": "Cloudflare-maintained coding-agent audit skill for developers and security reviewers; it separates confirmed failures, unresolved leads and rejected candidates.",
-      "scope": "Pinned c1c8a8c: README, findings-validator source and part of the report schema inspected. The skill, validator and audit workflow were not run."
+      "scope": "Pinned c1c8a8c: README, findings-validator source and part of the report schema inspected. The skill, validator and audit workflow were not run.",
+      "sourceType": "repository",
+      "topic": "security-review",
+      "audience": "Developers and security reviewers",
+      "recommendation": "adapt",
+      "discovery": {
+        "route": "explicit-research-priority",
+        "evidenceUrl": "https://youtube.shareplane.malott.ai/scout/method/#section-how-a-candidate-enters-view",
+        "firstRetainedObservation": "2026-10-21T14:30:55.362201+00:00",
+        "retainedHistoryUrl": "https://youtube.shareplane.malott.ai/scout/method/#section-how-a-candidate-enters-view",
+        "originalDiscovery": "not-recorded"
+      },
+      "selectionRationale": "Its separation of demonstrated failures from unresolved leads speaks to GhostMesh evidence and review receipts.",
+      "priorReviews": []
     },
     {
       "id": "graphify-labs-graphify",
@@ -89,7 +102,20 @@
         }
       },
       "identity": "Graphify-Labs code-mapping tool for developers and coding assistants; it documents a local graph of cross-file relationships and optional semantic mapping beyond code.",
-      "scope": "Pinned 847a93f: README, security policy and license reviewed. Parser and query code were not inspected; no graph was built or measured."
+      "scope": "Pinned 847a93f: README, security policy and license reviewed. Parser and query code were not inspected; no graph was built or measured.",
+      "sourceType": "repository",
+      "topic": "code-navigation",
+      "audience": "Developers and coding assistants",
+      "recommendation": "experiment",
+      "discovery": {
+        "route": "explicit-research-priority",
+        "evidenceUrl": "https://youtube.shareplane.malott.ai/scout/method/#section-how-a-candidate-enters-view",
+        "firstRetainedObservation": "2026-10-21T14:30:55.362201+00:00",
+        "retainedHistoryUrl": "https://youtube.shareplane.malott.ai/scout/method/#section-how-a-candidate-enters-view",
+        "originalDiscovery": "not-recorded"
+      },
+      "selectionRationale": "Repeated cross-file investigation makes a derived code map worth comparing against direct source search.",
+      "priorReviews": []
     },
     {
       "id": "nvidia-openshell",
@@ -133,7 +159,20 @@
         }
       },
       "identity": "NVIDIA agent runtime for teams operating autonomous agents; it documents policy-constrained file, network and credential access through gateways and sandboxes.",
-      "scope": "Pinned 029fda6: README, security policy and license reviewed. Enforcement code and runtime behavior were not inspected or tested."
+      "scope": "Pinned 029fda6: README, security policy and license reviewed. Enforcement code and runtime behavior were not inspected or tested.",
+      "sourceType": "repository",
+      "topic": "agent-containment",
+      "audience": "Teams operating autonomous agents",
+      "recommendation": "watch",
+      "discovery": {
+        "route": "explicit-research-priority",
+        "evidenceUrl": "https://youtube.shareplane.malott.ai/scout/method/#section-how-a-candidate-enters-view",
+        "firstRetainedObservation": "2026-10-21T14:30:55.362201+00:00",
+        "retainedHistoryUrl": "https://youtube.shareplane.malott.ai/scout/method/#section-how-a-candidate-enters-view",
+        "originalDiscovery": "not-recorded"
+      },
+      "selectionRationale": "Agent containment raises a concrete comparison with existing authority, credential and recovery boundaries.",
+      "priorReviews": []
     }
   ]
 }

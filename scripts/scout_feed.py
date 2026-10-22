@@ -43,7 +43,7 @@ def validate_scout(source):
         raise ValueError('Scout public source schema')
     seen = set()
     for review in source['reviews']:
-        required = {'id', 'title', 'sourceUrl', 'reviewedOn', 'method', 'confidence', 'identity', 'scope', 'summary', 'unknowns', 'ratings'}
+        required = {'id', 'title', 'sourceUrl', 'reviewedOn', 'method', 'confidence', 'identity', 'scope', 'summary', 'unknowns', 'ratings', 'sourceType', 'topic', 'audience', 'recommendation', 'discovery', 'selectionRationale', 'priorReviews'}
         if not isinstance(review, dict) or set(review) != required:
             raise ValueError('Scout review fields')
         ident = _text(review['id'], 'Scout ID')
@@ -54,6 +54,26 @@ def validate_scout(source):
         _text(review['identity'], 'Scout identity')
         _text(review['scope'], 'Scout review scope')
         _text(review['summary'], 'Scout summary')
+        for field in ('topic', 'audience', 'selectionRationale'):
+            _text(review[field], 'Scout ' + field)
+        if review['sourceType'] != 'repository' or review['recommendation'] not in {'adapt', 'experiment', 'watch'} or not re.fullmatch(r'[a-z]+(?:-[a-z]+)*', review['topic']):
+            raise ValueError('Scout classification')
+        discovery = review['discovery']
+        if not isinstance(discovery, dict) or set(discovery) != {'route', 'evidenceUrl', 'retainedHistoryUrl', 'firstRetainedObservation', 'originalDiscovery'} or discovery['route'] != 'explicit-research-priority' or discovery['originalDiscovery'] != 'not-recorded':
+            raise ValueError('Scout discovery provenance')
+        _url(discovery['evidenceUrl'], 'Scout priority record')
+        _url(discovery['retainedHistoryUrl'], 'Scout retained history')
+        stamp = datetime.fromisoformat(_text(discovery['firstRetainedObservation'], 'Scout retained observation'))
+        if stamp.tzinfo is None or stamp > datetime.now(timezone.utc):
+            raise ValueError('Scout retained observation timestamp')
+        if not isinstance(review['priorReviews'], list):
+            raise ValueError('Scout review history')
+        for prior in review['priorReviews']:
+            if not isinstance(prior, dict) or set(prior) != {'reviewedOn', 'recommendation', 'summary', 'url'} or prior['recommendation'] not in {'adapt', 'experiment', 'watch'}:
+                raise ValueError('Scout prior review fields')
+            _day(prior['reviewedOn'], 'Scout prior review date')
+            _text(prior['summary'], 'Scout prior review summary')
+            _url(prior['url'], 'Scout prior review URL')
         _url(review['sourceUrl'], 'Scout source')
         _day(review['reviewedOn'], 'Scout review date')
         if review['method'] not in METHODS or review['confidence'] not in {'high', 'medium', 'low'}:
@@ -103,7 +123,7 @@ def validate_events(source, catalog, scout):
         if prefix == 'reader':
             if subject not in readers or event['url'] != host + '/' + readers[subject]['slug'] + '/':
                 raise ValueError('Release event Reader identity')
-        elif subject not in reviews or event['url'] != host + '/scout/#' + subject:
+        elif subject not in reviews or event['url'] != host + '/scout/reviews/' + subject + '/':
             raise ValueError('Release event Scout identity')
         if kind in {'new-reader', 'new-scout-review'}:
             if identity in first_releases:
