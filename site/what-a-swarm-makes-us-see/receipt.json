@@ -411,12 +411,12 @@
       "rationale": "Compared the film's visual and mathematical thesis with all 32 current Readers. This one route clarifies simulation-evidence limits without treating unrelated videos, agent fleets or singularity forecasts as independent corroboration."
     },
     "review": {
-      "status": "source-grounded public candidate; independent qualitative review pending and release held",
-      "reviewer": "pending independent reviewer",
-      "reviewedSourceHead": "none yet",
-      "checkedAt": "2026-10-22T12:40:48Z",
-      "scope": "Candidate compared against the private sampled visual map and public primary references; independent review has not yet occurred.",
-      "findings": "Audio and transcript omitted under the source-specific exception; visual gaps and unverified production and perception claims remain explicit."
+      "status": "independent editorial review accepted; owner-accepted; production-published",
+      "reviewer": "Independent read-only Codex editorial reviewer",
+      "reviewedSourceHead": "Exact authored article SHA-256 fb8080b1d8682257013b6dd47f1aa9aae8d50facea1f6cbeb3ca6ad9a2bed29a",
+      "checkedAt": "2026-10-22T12:59:53Z",
+      "scope": "Factual and claim framing, mathematical scope, perceptual qualification and proportionate depth; private frames, audio and full deposit set were outside this independent review.",
+      "findings": "No blocking factual or editorial finding. Sampled visual coverage is separately qualified in the private operator receipt. Tony accepted the exact editorial marker in unedited PR 63 comment 6341578079; PR 63 merged as acb38a9a9975cae47b7b4d4cc138e975af59812d and Netlify production published it."
     },
     "revisionHistory": [
       {
