@@ -7,6 +7,7 @@ from datetime import datetime,date,timezone
 import json,os,re,sys,xml.etree.ElementTree as ET
 from generate_site import projections,CATEGORIES,validate_text,validate_link_only_source,validate_paper_source,validate_article_source,validate_media_source
 from editorial_depth import validate_reader as validate_editorial_depth
+from scout_feed import validate_scout,validate_events
 ROOT=Path(__file__).resolve().parents[1];SITE=ROOT/'site'
 VERDICTS={'Essential','Worth studying','Interesting, unproven','Mostly recycled','Misleading','Not worth your time'}
 STATES={'corroborated','partially corroborated','contradicted','disputed','unverified'}
@@ -75,6 +76,10 @@ def check(root=ROOT):
   if not ok:errors.append(msg)
  try:data=json.loads((root/'content/catalog.json').read_text());validate_text(data)
  except (ValueError,KeyError) as e:return ['Catalog: '+str(e)]
+ try:
+  scout=validate_scout(json.loads((root/'content/scout-public.json').read_text()))
+  validate_events(json.loads((root/'content/public-release-events.json').read_text()),data,scout)
+ except (ValueError,KeyError,TypeError,FileNotFoundError) as e:return ['Scout/feed source: '+str(e)]
  def timestamp(value, label):
   try:
    parsed=datetime.fromisoformat(value.replace('Z','+00:00'))
@@ -210,7 +215,9 @@ def check(root=ROOT):
  home=(site/'index.html').read_text();require(len(re.findall(r'class="[^"]*\bgm-card\b[^"]*"',home))==7,'Homepage must have one feature and six cards')
  library=(site/'readers/index.html').read_text();require(len(re.findall(r'class="[^\"]*\bgm-card\b[^\"]*"',library))==len(readers),'Non-JS archive incomplete')
  sitemap=ET.parse(site/'sitemap.xml');urls=[x.text for x in sitemap.getroot().iter() if x.tag.endswith('loc')]
- expected={data['host']+'/',data['host']+'/readers/',data['host']+'/map/',data['host']+'/knowledge/'}|{data['host']+'/'+s+'/' for s in slugs}|{data['host']+f'/readers/categories/{i}/' for i in range(6)}
+ try:ET.parse(site/'feed.xml')
+ except ET.ParseError:errors.append('Invalid RSS XML')
+ expected={data['host']+'/',data['host']+'/readers/',data['host']+'/map/',data['host']+'/knowledge/',data['host']+'/scout/'}|{data['host']+'/'+s+'/' for s in slugs}|{data['host']+f'/readers/categories/{i}/' for i in range(6)}
  require(set(urls)==expected and len(urls)==len(expected),'Sitemap drift')
  if root==ROOT:
   for rel,content in projections().items():require((site/rel).read_text()==content,'Generated drift: '+rel)

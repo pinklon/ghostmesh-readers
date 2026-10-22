@@ -1,0 +1,27 @@
+.gm-scout-intro,.gm-scout-reviews,.gm-scout-empty{max-width:1120px;margin:0 auto;padding:clamp(28px,4vw,56px) clamp(20px,4vw,44px)}
+.gm-scout-intro{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(270px,.85fr);gap:clamp(26px,6vw,78px);align-items:center}
+.gm-scout-intro-copy,.gm-scout-follow{min-width:0}
+.gm-scout-intro .gm-kicker{margin:0;color:var(--gm-accent)}
+.gm-scout-intro h1{font-size:clamp(2.65rem,5.7vw,5.1rem);line-height:1.03;letter-spacing:-.05em;max-width:13ch;margin:12px 0 20px}
+.gm-scout-lede{max-width:49ch;font-size:clamp(1.05rem,1.6vw,1.25rem);line-height:1.55;margin:0}
+.gm-scout-method{max-width:62ch;border-left:2px solid var(--gm-accent);padding-left:16px;margin:22px 0 0;color:var(--gm-muted);font-size:.89rem;line-height:1.6}
+.gm-scout-follow{background:var(--gm-paper);border-top:3px solid var(--gm-accent);border-bottom:1px solid var(--gm-border);padding:24px 26px 26px}
+.gm-scout-follow-top{display:flex;align-items:center;gap:11px;color:var(--gm-accent)}
+.gm-scout-follow-top svg{flex:none}
+.gm-scout-follow-top .gm-kicker{font-size:.68rem;letter-spacing:.12em}
+.gm-scout-follow h2{font:750 clamp(1.65rem,2.6vw,2.2rem)/1.15 system-ui,sans-serif;letter-spacing:-.04em;margin:20px 0 10px}
+.gm-scout-follow>p{font-size:.88rem;line-height:1.6;color:var(--gm-muted);margin:0 0 22px}
+.gm-scout-subscribe{display:inline-flex;align-items:center;justify-content:space-between;gap:25px;min-height:44px;padding:10px 14px;background:var(--gm-accent);color:var(--gm-bg)!important;border-radius:4px;text-decoration:none;font-size:.85rem;font-weight:750}
+.gm-scout-subscribe:hover{filter:brightness(1.13);text-decoration:none}
+.gm-scout-subscribe span{font-size:1.1em}
+.gm-scout-empty,.gm-scout-reviews{border-top:1px solid currentColor}
+.gm-scout-empty h2,.gm-scout-reviews h2{font-size:clamp(1.7rem,3vw,2.7rem);letter-spacing:-.035em}
+.gm-scout-card{padding:30px 0;border-top:1px solid currentColor}
+.gm-scout-card h3{font-size:clamp(1.5rem,3vw,2.4rem);margin:.35em 0}
+.gm-scout-card dl{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:24px 0}
+.gm-scout-card dl>div{border-top:2px solid currentColor;padding:15px 0}
+.gm-scout-card dt{font:700 .75rem/1.4 ui-monospace,monospace;text-transform:uppercase;letter-spacing:.08em}
+.gm-scout-card dd{margin:10px 0 0;line-height:1.65}
+.gm-scout-card dd strong{display:block;text-transform:capitalize}
+.gm-scout-card dd span{display:block;margin-top:8px}
+@media(max-width:720px){.gm-scout-intro{grid-template-columns:1fr;gap:28px}.gm-scout-intro h1{max-width:18ch}.gm-scout-follow{padding:20px 22px}.gm-scout-card dl{grid-template-columns:1fr}}
