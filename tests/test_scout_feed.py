@@ -28,8 +28,8 @@ class ScoutFeedTests(unittest.TestCase):
                 'sourceType': 'repository', 'topic': 'code-review', 'audience': 'Developers',
                 'recommendation': 'watch', 'selectionRationale': 'Compare its evidence rules.',
                 'discovery': {'route': 'explicit-research-priority',
-                              'evidenceUrl': 'https://example.org/priority',
-                              'retainedHistoryUrl': 'https://example.org/history',
+                              'evidenceUrl': 'https://youtube.shareplane.malott.ai/scout/method/#priority',
+                              'retainedHistoryUrl': 'https://youtube.shareplane.malott.ai/scout/method/#history',
                               'firstRetainedObservation': '2026-10-21T14:30:55+00:00',
                               'originalDiscovery': 'not-recorded'}, 'priorReviews': [],
                 'ratings': {name: copy.deepcopy(rating) for name in
@@ -59,6 +59,7 @@ class ScoutFeedTests(unittest.TestCase):
             self.assertLess(detail.index('01 / What it is'), detail.index('03 / Our provisional call'))
             self.assertIn('original discovery circumstances were not recorded', detail)
             self.assertIn('Current editorial rationale', detail)
+            self.assertIn('href="/scout/method/#section-how-a-candidate-enters-view"', detail)
             self.assertIn('Ratings with their limits', detail)
             self.assertIn('No earlier Scout review record.', detail)
             self.assertIn(review['sourceUrl'], detail)

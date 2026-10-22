@@ -10,6 +10,7 @@ DIMENSIONS = ('ghostmeshFit', 'everydayUse', 'evidenceStrength', 'adoptionEffort
 RATINGS = {'high', 'mixed', 'low', 'unknown'}
 METHODS = {'metadata-reviewed', 'source-inspected', 'executed', 'independently-measured'}
 KINDS = {'new-reader', 'material-reader-update', 'new-scout-review', 'material-scout-update'}
+SCOUT_PUBLIC_HOST = 'https://youtube.shareplane.malott.ai'
 PRIVATE = re.compile(r'/Users/|/srv/ghostmesh/|/private/var/|gh[pousr]_[A-Za-z0-9]{20,}|(?:X-Amz-Signature|access_token|client_secret)=', re.I)
 INVALID_XML = re.compile('[\x00-\x08\x0b\x0c\x0e-\x1f\ud800-\udfff\ufffe\uffff]')
 
@@ -61,8 +62,8 @@ def validate_scout(source):
         discovery = review['discovery']
         if not isinstance(discovery, dict) or set(discovery) != {'route', 'evidenceUrl', 'retainedHistoryUrl', 'firstRetainedObservation', 'originalDiscovery'} or discovery['route'] != 'explicit-research-priority' or discovery['originalDiscovery'] != 'not-recorded':
             raise ValueError('Scout discovery provenance')
-        _url(discovery['evidenceUrl'], 'Scout priority record')
-        _url(discovery['retainedHistoryUrl'], 'Scout retained history')
+        _url(discovery['evidenceUrl'], 'Scout priority record', SCOUT_PUBLIC_HOST)
+        _url(discovery['retainedHistoryUrl'], 'Scout retained history', SCOUT_PUBLIC_HOST)
         stamp = datetime.fromisoformat(_text(discovery['firstRetainedObservation'], 'Scout retained observation'))
         if stamp.tzinfo is None or stamp > datetime.now(timezone.utc):
             raise ValueError('Scout retained observation timestamp')
