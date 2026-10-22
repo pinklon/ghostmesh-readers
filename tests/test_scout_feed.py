@@ -35,7 +35,7 @@ class ScoutFeedTests(unittest.TestCase):
                 'ratings': {name: copy.deepcopy(rating) for name in
                             ('ghostmeshFit', 'everydayUse', 'evidenceStrength', 'adoptionEffort')}}
 
-    def test_first_report_preview_binds_reviewed_sources_without_release_event(self):
+    def test_first_report_binds_reviewed_sources_and_release_events(self):
         card_bytes = (ROOT / 'content/scout-public.json').read_bytes()
         source = json.loads(card_bytes)
         self.assertEqual(hashlib.sha256(card_bytes).hexdigest(), '5f8f5ec602f097f4b0fca7d76fc55167d344301c03fbf8fcfb07125f361ec0b9')
@@ -79,7 +79,12 @@ class ScoutFeedTests(unittest.TestCase):
         self.assertIn('not retained', method)
         self.assertNotIn('pinklon/skills', method)
         self.assertEqual(validate_scout(source), source)
-        self.assertEqual(json.loads((ROOT / 'content/public-release-events.json').read_text())['events'], [])
+        events = json.loads((ROOT / 'content/public-release-events.json').read_text())
+        self.assertEqual(validate_events(events, self.catalog, source), events)
+        self.assertEqual([event['subjectId'] for event in events['events']], [review['id'] for review in source['reviews']])
+        self.assertEqual({event['kind'] for event in events['events']}, {'new-scout-review'})
+        self.assertEqual({event['publicDate'] for event in events['events']}, {'2026-10-22'})
+        self.assertTrue(all('releasedAt' not in event for event in events['events']))
 
     def test_report_renderer_escapes_html_and_rejects_missing_cards(self):
         rendered = prose_html('# Title\n\n## Example\n\n**Recommendation:** [Read](https://example.org/?a=1&b=2) <script>')
@@ -192,7 +197,13 @@ class ScoutFeedTests(unittest.TestCase):
             self.assertIn('href="/scout/"', page)
             self.assertIn('type="application/rss+xml"', page)
         self.assertIn(self.catalog['host'] + '/scout/', (site / 'sitemap.xml').read_text())
-        self.assertEqual(ET.parse(site / 'feed.xml').getroot().findall('./channel/item'), [])
+        items = ET.parse(site / 'feed.xml').getroot().findall('./channel/item')
+        self.assertEqual(len(items), 3)
+        self.assertEqual(len({item.findtext('guid') for item in items}), 3)
+        self.assertEqual(sum(item.find('pubDate') is not None for item in items), 0)
+        self.assertEqual({item.findtext('link') for item in items},
+                         {self.catalog['host'] + '/scout/reviews/' + review['id'] + '/'
+                          for review in json.loads((ROOT / 'content/scout-public.json').read_text())['reviews']})
         self.assertIn('Content-Type: application/rss+xml', (site / '_headers').read_text())
 
 
