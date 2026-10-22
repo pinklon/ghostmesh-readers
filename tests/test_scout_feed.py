@@ -81,8 +81,10 @@ class ScoutFeedTests(unittest.TestCase):
         self.assertEqual(validate_scout(source), source)
         events = json.loads((ROOT / 'content/public-release-events.json').read_text())
         self.assertEqual(validate_events(events, self.catalog, source), events)
-        self.assertEqual([event['subjectId'] for event in events['events']], [review['id'] for review in source['reviews']])
-        self.assertEqual({event['kind'] for event in events['events']}, {'new-scout-review'})
+        self.assertEqual([event['subjectId'] for event in events['events'] if event['kind'] == 'new-scout-review'],
+                         [review['id'] for review in source['reviews']])
+        self.assertEqual(sum(event['kind'] == 'new-reader' and event['subjectId'] == 'reader:what-a-swarm-makes-us-see'
+                             for event in events['events']), 1)
         self.assertEqual({event['publicDate'] for event in events['events']}, {'2026-10-22'})
         self.assertTrue(all('releasedAt' not in event for event in events['events']))
 
@@ -198,12 +200,11 @@ class ScoutFeedTests(unittest.TestCase):
             self.assertIn('type="application/rss+xml"', page)
         self.assertIn(self.catalog['host'] + '/scout/', (site / 'sitemap.xml').read_text())
         items = ET.parse(site / 'feed.xml').getroot().findall('./channel/item')
-        self.assertEqual(len(items), 3)
-        self.assertEqual(len({item.findtext('guid') for item in items}), 3)
+        events = json.loads((ROOT / 'content/public-release-events.json').read_text())['events']
+        self.assertEqual(len(items), len(events))
+        self.assertEqual(len({item.findtext('guid') for item in items}), len(events))
         self.assertEqual(sum(item.find('pubDate') is not None for item in items), 0)
-        self.assertEqual({item.findtext('link') for item in items},
-                         {self.catalog['host'] + '/scout/reviews/' + review['id'] + '/'
-                          for review in json.loads((ROOT / 'content/scout-public.json').read_text())['reviews']})
+        self.assertEqual({item.findtext('link') for item in items}, {event['url'] for event in events})
         self.assertIn('Content-Type: application/rss+xml', (site / '_headers').read_text())
 
 
