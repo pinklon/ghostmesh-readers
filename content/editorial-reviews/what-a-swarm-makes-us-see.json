@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "readerId": "reader:what-a-swarm-makes-us-see",
+  "sourceId": "TW8F34-ExvI",
+  "sourceAidSha256": "4668e788ec0a8edac7fefbf009582065a4fd2a101340ee58a60e327b2fc86f61",
+  "articleSha256": "fb8080b1d8682257013b6dd47f1aa9aae8d50facea1f6cbeb3ca6ad9a2bed29a",
+  "evidenceRevision": "7cdae9d2a960c92dabc81f28f655fa11bc9a2ef3eca0c089e5b41190bc81755f",
+  "reviewedAt": "2026-10-22T12:46:37Z",
+  "provenance": {
+    "kind": "codex-task-agent",
+    "reference": "Sole candidate author's preliminary factual and privacy self-check; independent editorial review has not yet been received.",
+    "limits": "This is not independent qualitative acceptance. The source operator inspected sparse video frames, not audio or every intervening scene; author deposit and outside studies do not audit the film."
+  },
+  "summary": "The draft was cross-checked against the visual-only map and primary references for obvious unsupported claims. It remains held for an independent editor's substantive review and owner decision.",
+  "findings": [
+    "Visual waypoint language says sampled frame rather than verified chapter or continuous scene; the black ending coverage stops before the final stream frame.",
+    "The priority-state result is described as a prescribed finite-history endpoint characterization, not a general live distributed swarm protocol.",
+    "Creator music, procedural-production and agent-count statements remain attributed and unverified because audio and render code were not inspected.",
+    "Independent editorial challenge of mathematical scope, perceptual claims, article depth and privacy has not yet occurred; this self-check cannot satisfy that gate."
+  ],
+  "conclusion": "hold"
+}

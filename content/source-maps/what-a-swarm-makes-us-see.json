@@ -1,0 +1,91 @@
+{
+  "schemaVersion": 1,
+  "readerId": "reader:what-a-swarm-makes-us-see",
+  "sourceId": "TW8F34-ExvI",
+  "sourceAidSha256": "4668e788ec0a8edac7fefbf009582065a4fd2a101340ee58a60e327b2fc86f61",
+  "points": [
+    {
+      "atSeconds": 0,
+      "sectionId": "look",
+      "claimIds": [
+        "what-a-swarm-makes-us-see--sampled-visual-sequence"
+      ],
+      "cueParaphrase": "The first sampled frame has sparse blue and violet luminous objects in a wide dark field; no trajectories can be inferred.",
+      "privateAidCheck": "The retained visual map describes the exact 00:00 decoded frame and distinguishes frame appearance from movement between samples."
+    },
+    {
+      "atSeconds": 280,
+      "sectionId": "look",
+      "claimIds": [
+        "what-a-swarm-makes-us-see--sampled-visual-sequence",
+        "what-a-swarm-makes-us-see--creator-computational-method"
+      ],
+      "cueParaphrase": "A later sampled frame has denser cyan and pink points; the creator separately asserts simulated drone dynamics.",
+      "privateAidCheck": "The sampled 04:40 frame supports denser visible points, while agent count and code mechanism remain unverified creator claims."
+    },
+    {
+      "atSeconds": 560,
+      "sectionId": "geometry",
+      "claimIds": [
+        "what-a-swarm-makes-us-see--sampled-visual-sequence"
+      ],
+      "cueParaphrase": "Rows of small cross-like points appear against a dark field in the sampled 09:20 image.",
+      "privateAidCheck": "The private frame map records the row appearance at 09:20 but no measured regularity or continuous motion."
+    },
+    {
+      "atSeconds": 680,
+      "sectionId": "geometry",
+      "claimIds": [
+        "what-a-swarm-makes-us-see--sampled-visual-sequence"
+      ],
+      "cueParaphrase": "Concentric point arrangements surround a darker center in the sampled 11:20 image.",
+      "privateAidCheck": "The private frame map supports the visible arrangement, not an orbit, physical attractor or mathematical cause."
+    },
+    {
+      "atSeconds": 1000,
+      "sectionId": "geometry",
+      "claimIds": [
+        "what-a-swarm-makes-us-see--sampled-visual-sequence"
+      ],
+      "cueParaphrase": "White dotted cube-like geometry is present in the sampled 16:40 image with sparse colored objects.",
+      "privateAidCheck": "The private map identifies a wireframe-like appearance; simulation semantics and transitions are not observed."
+    },
+    {
+      "atSeconds": 780,
+      "sectionId": "priority",
+      "claimIds": [
+        "what-a-swarm-makes-us-see--finite-endpoint-scope",
+        "what-a-swarm-makes-us-see--delay-membership-separation"
+      ],
+      "cueParaphrase": "The 13:00 sampled frame returns to point clouds while the priority-state explanation comes from creator text and cited papers.",
+      "privateAidCheck": "The private frame map only grounds the image. The finite-history theorem and delay-scope claims are checked separately in primary research records."
+    },
+    {
+      "atSeconds": 1100,
+      "sectionId": "control",
+      "claimIds": [
+        "what-a-swarm-makes-us-see--visual-rim-not-physics"
+      ],
+      "cueParaphrase": "Colored points circle a small dark center in the sampled overhead-looking 18:20 image.",
+      "privateAidCheck": "The private 18:20 sample supports a circular motif; no gravitational or decentralized control property follows."
+    },
+    {
+      "atSeconds": 1500,
+      "sectionId": "control",
+      "claimIds": [
+        "what-a-swarm-makes-us-see--visual-rim-not-physics"
+      ],
+      "cueParaphrase": "A white-rimmed dark circle appears at the sampled 25:00 moment against a dotted field.",
+      "privateAidCheck": "The private 25:00 frame supports the high-contrast ring only; intervening motion and physics are not established."
+    },
+    {
+      "atSeconds": 1680,
+      "sectionId": "perception",
+      "claimIds": [
+        "what-a-swarm-makes-us-see--vection-hypothesis"
+      ],
+      "cueParaphrase": "The sampled 28:00 image has a bright rim and broad dotted plane that may cue apparent depth for a viewer.",
+      "privateAidCheck": "The image cue is private-frame evidence; vection is only a qualified general mechanism from outside studies, not a film-specific observation."
+    }
+  ]
+}

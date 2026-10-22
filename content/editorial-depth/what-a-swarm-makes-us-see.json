@@ -1,0 +1,161 @@
+{
+  "schemaVersion": 1,
+  "readerId": "reader:what-a-swarm-makes-us-see",
+  "sourceId": "TW8F34-ExvI",
+  "sourceDigest": "f9b5be6f603828f8eb12b1548ef0ff5a6f0da1a47d10ffce3ee2361fc69a975c",
+  "sourceAidSha256": "4668e788ec0a8edac7fefbf009582065a4fd2a101340ee58a60e327b2fc86f61",
+  "articleSha256": "fb8080b1d8682257013b6dd47f1aa9aae8d50facea1f6cbeb3ca6ad9a2bed29a",
+  "evidenceRevision": "7cdae9d2a960c92dabc81f28f655fa11bc9a2ef3eca0c089e5b41190bc81755f",
+  "sourceMapEvidenceSha256": "2420e333b49fcf420124a94982572ef25017fae401bc21bad26215ef3ec0287e",
+  "reviewEvidenceSha256": "6c49a8ccf0976e050a262990278a547d3d9806e6ef7a0e1c24cec32e34d6930d",
+  "candidateAuthor": "pinklon",
+  "complexity": {
+    "tier": "extended",
+    "factors": [
+      "Audiovisual work without narration or captions",
+      "Twenty-eight minute source with sparse visual coverage",
+      "Multi-agent mathematics and perceptual interpretation require distinct evidence roles"
+    ],
+    "rationale": "The length, visual-only intake and consequential difference between a mathematical model and an artistic rendering require extended analysis despite the absence of spoken claims."
+  },
+  "sourceMap": [
+    {
+      "atSeconds": 0,
+      "sectionId": "look",
+      "claimIds": [
+        "what-a-swarm-makes-us-see--sampled-visual-sequence"
+      ],
+      "rationale": "This exact sampled visual cue supports the article's bounded observation; research and creator assertions are separately attributed, not inferred from the frame."
+    },
+    {
+      "atSeconds": 280,
+      "sectionId": "look",
+      "claimIds": [
+        "what-a-swarm-makes-us-see--sampled-visual-sequence",
+        "what-a-swarm-makes-us-see--creator-computational-method"
+      ],
+      "rationale": "This exact sampled visual cue supports the article's bounded observation; research and creator assertions are separately attributed, not inferred from the frame."
+    },
+    {
+      "atSeconds": 560,
+      "sectionId": "geometry",
+      "claimIds": [
+        "what-a-swarm-makes-us-see--sampled-visual-sequence"
+      ],
+      "rationale": "This exact sampled visual cue supports the article's bounded observation; research and creator assertions are separately attributed, not inferred from the frame."
+    },
+    {
+      "atSeconds": 680,
+      "sectionId": "geometry",
+      "claimIds": [
+        "what-a-swarm-makes-us-see--sampled-visual-sequence"
+      ],
+      "rationale": "This exact sampled visual cue supports the article's bounded observation; research and creator assertions are separately attributed, not inferred from the frame."
+    },
+    {
+      "atSeconds": 1000,
+      "sectionId": "geometry",
+      "claimIds": [
+        "what-a-swarm-makes-us-see--sampled-visual-sequence"
+      ],
+      "rationale": "This exact sampled visual cue supports the article's bounded observation; research and creator assertions are separately attributed, not inferred from the frame."
+    },
+    {
+      "atSeconds": 780,
+      "sectionId": "priority",
+      "claimIds": [
+        "what-a-swarm-makes-us-see--finite-endpoint-scope",
+        "what-a-swarm-makes-us-see--delay-membership-separation"
+      ],
+      "rationale": "This exact sampled visual cue supports the article's bounded observation; research and creator assertions are separately attributed, not inferred from the frame."
+    },
+    {
+      "atSeconds": 1100,
+      "sectionId": "control",
+      "claimIds": [
+        "what-a-swarm-makes-us-see--visual-rim-not-physics"
+      ],
+      "rationale": "This exact sampled visual cue supports the article's bounded observation; research and creator assertions are separately attributed, not inferred from the frame."
+    },
+    {
+      "atSeconds": 1500,
+      "sectionId": "control",
+      "claimIds": [
+        "what-a-swarm-makes-us-see--visual-rim-not-physics"
+      ],
+      "rationale": "This exact sampled visual cue supports the article's bounded observation; research and creator assertions are separately attributed, not inferred from the frame."
+    },
+    {
+      "atSeconds": 1680,
+      "sectionId": "perception",
+      "claimIds": [
+        "what-a-swarm-makes-us-see--vection-hypothesis"
+      ],
+      "rationale": "This exact sampled visual cue supports the article's bounded observation; research and creator assertions are separately attributed, not inferred from the frame."
+    }
+  ],
+  "assessment": {
+    "sourceCoverage": {
+      "disposition": "covered",
+      "rationale": "The article discloses eighty-six regularly spaced visual samples and four ending checks, with gaps, uninspected audio and absent transcript stated prominently."
+    },
+    "supportingArgument": {
+      "disposition": "covered",
+      "rationale": "The piece explains why visual coordination and shared purpose are different propositions, while acknowledging the work as an intentionally composed film."
+    },
+    "evidenceRoles": {
+      "disposition": "covered",
+      "rationale": "Observed frames, creator production claims, author-deposited mathematics, separate studies and proposed GhostMesh tests are named as different evidence roles."
+    },
+    "counterargument": {
+      "disposition": "covered",
+      "rationale": "The strongest counterpoint is that a film is an artwork, so it need not prove a deployed protocol; the critique applies when operational conclusions are borrowed from it."
+    },
+    "tradeoffs": {
+      "disposition": "covered",
+      "rationale": "A sparse visual inspection supports responsible descriptive writing and a private media boundary, but it sacrifices continuous trajectory and sound analysis."
+    },
+    "falsifiability": {
+      "disposition": "covered",
+      "rationale": "A pinned code and render trace, controlled membership and delay tests, and a consented film-specific perception study would separate model, image and response."
+    },
+    "originalSynthesis": {
+      "disposition": "covered",
+      "rationale": "The GhostMesh synthesis is that agreement is a state update rule while collective purpose is an interpretation shaped by production and viewing conditions."
+    },
+    "performance": {
+      "disposition": "not-applicable",
+      "rationale": "The article makes no throughput or efficiency recommendation; its technical concern is semantic and control correctness under specified state transitions."
+    },
+    "economics": {
+      "disposition": "not-applicable",
+      "rationale": "No price, market or operating-cost claim is evaluated for this audiovisual artwork; no economic recommendation follows from the frames."
+    },
+    "threatGovernance": {
+      "disposition": "covered",
+      "rationale": "The piece names membership, message delay, lost effects and recovery boundaries before translating a simulated trajectory into an operational claim."
+    }
+  },
+  "independentCorroboration": "none",
+  "ownerDecision": null,
+  "decision": "hold",
+  "gaps": [
+    {
+      "type": "scope",
+      "severity": "blocking",
+      "rationale": "An actual independent qualitative source, mathematics, visual-fidelity and privacy review is required before owner acceptance or release."
+    },
+    {
+      "type": "source",
+      "severity": "nonblocking",
+      "rationale": "The source-specific visual-only exception leaves audio and intervals between sampled frames unobserved; the article states those limits instead of filling them in."
+    },
+    {
+      "type": "claim",
+      "severity": "nonblocking",
+      "rationale": "Creator assertions about agent count, production tools and soundtrack timing remain unverified pending project-source or qualified audio evidence."
+    }
+  ],
+  "decisionRationale": "Hold this source-grounded draft as a preview candidate until an independent reviewer challenges the article and Tony decides whether its exact content is acceptable.",
+  "assessedAt": "2026-10-22T12:46:37Z"
+}
