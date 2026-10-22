@@ -285,14 +285,14 @@
     ],
     "relationshipDisposition": "Two specific editorial comparisons connect human inspectability and authenticated acceptance. No existing Reader independently tests this author’s HTML-versus-Markdown workflow.",
     "relationshipReview": {
-      "reviewedAt": "2026-10-21",
-      "reviewedCatalogSize": 32,
+      "reviewedAt": "2026-10-22",
+      "reviewedCatalogSize": 33,
       "decision": "linked",
       "reviewedTargets": [
         "reader:make-good-work-inspectable",
         "reader:the-commit-is-not-the-control"
       ],
-      "rationale": "Compared the source argument with all 27 published Readers. These two share a concrete inspectability or acceptance question; the rest lack a sufficiently specific relationship. The links are analysis routes, not corroboration."
+      "rationale": "Compared the source argument with all 27 published Readers. These two share a concrete inspectability or acceptance question; the rest lack a sufficiently specific relationship. The links are analysis routes, not corroboration. The HORTRAME visual swarm Reader was assessed as a new catalog neighbor; no additional outgoing route is justified by its distinct film and mathematics source."
     },
     "review": {
       "status": "independent-source-copy-and-privacy-reviewed; owner-acceptance-pending",

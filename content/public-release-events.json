@@ -27,6 +27,15 @@
       "title": "Scout review: NVIDIA OpenShell",
       "summary": "First-look documentation review: watch before any agent runtime replacement. No enforcement or recovery path was tested.",
       "publicDate": "2026-10-22"
+    },
+    {
+      "id": "reader:what-a-swarm-makes-us-see:first-public-release",
+      "kind": "new-reader",
+      "subjectId": "reader:what-a-swarm-makes-us-see",
+      "url": "https://youtube.shareplane.malott.ai/what-a-swarm-makes-us-see/",
+      "title": "What a Swarm Makes Us See",
+      "summary": "A visual-only reading of HORTRAME’s simulation artwork, its multi-agent mathematical inspirations and the limits of what sampled frames can establish.",
+      "publicDate": "2026-10-22"
     }
   ]
 }
