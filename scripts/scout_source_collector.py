@@ -10,7 +10,7 @@ from urllib.parse import urlsplit
 from scout_evidence_intake import build_packet, MAX_BYTES
 from scout_html_extract import extract
 
-HOSTS = {"arxiv.org", "www.arxiv.org", "raw.githubusercontent.com"}
+HOSTS = {"arxiv.org", "www.arxiv.org", "raw.githubusercontent.com", "huggingface.co", "simonwillison.net"}
 MAX_REDIRECTS = 0
 
 class NoRedirect(urllib.request.HTTPRedirectHandler):
