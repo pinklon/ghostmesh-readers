@@ -10,7 +10,8 @@ def data():
 class IntegratedRunTests(unittest.TestCase):
  def test_build_complete_offline(self):
   a,b=data();o=build_run(a,b)
-  self.assertEqual(len(o),7)
+  self.assertEqual(len(o),12)
+  self.assertIn(b"History begins with this collection",o["workspace.html"])
   self.assertIn(b"Complete methodology and limitations",o["methodology.html"])
   self.assertIn(b"methodology.html",o["index.html"])
   self.assertIn(b"noindex,nofollow",o["index.html"])
@@ -38,7 +39,7 @@ class IntegratedRunTests(unittest.TestCase):
   views={x:"<!doctype html><html><head><meta name=\"robots\" content=\"noindex,nofollow\"></head><body>"+x+"</body></html>" for x in names}
   outputs=build_run(a,b,historical_views=views)
   self.assertEqual(len(outputs),12)
-  self.assertIn(b"PINNED",outputs["workspace.html"].upper())
+  self.assertIn(b"No panels depend on historical HTML files",outputs["workspace.html"])
   self.assertIn(b"methodology.html",outputs["workspace.html"])
   with tempfile.TemporaryDirectory() as tmp:
    receipt=commit_run(outputs,Path(tmp),"allviews")
@@ -63,6 +64,14 @@ class IntegratedRunTests(unittest.TestCase):
  def test_historical_views_must_be_complete(self):
   a,b=data()
   with self.assertRaises(ValueError):build_run(a,b,historical_views={"history":"some html"})
+ def test_run_without_legacy_view_files(self):
+  a,b=data();out=build_run(a,b)
+  self.assertIn("workspace.html",out)
+  self.assertIn("decision_audit.json",out)
+  with tempfile.TemporaryDirectory() as root:
+   receipt=commit_run(out,Path(root),"one-command")
+   self.assertEqual(receipt["workspace_view_status"]["history"],"AWAITING_PRIOR_SNAPSHOT")
+   self.assertEqual(receipt["workspace_view_status"]["remaining_views"],"NONE")
  def test_previous_snapshot(self):
   a,b=data();o=build_run(a,b,a)
   x=json.loads(o["reconciliation.json"])
