@@ -9,6 +9,7 @@ import argparse
 import hashlib
 import json
 import os
+import stat
 import tempfile
 from datetime import datetime,timezone
 from pathlib import Path
@@ -33,6 +34,7 @@ def _json_bytes(obj):
 
 def _write(path,content):
     with path.open("xb") as f:
+        os.fchmod(f.fileno(),0o600)
         f.write(content)
 
 def build_run(intake,watch_catalog,previous=None,historical_views=None):
@@ -117,7 +119,10 @@ def commit_run(outputs,root,run_id,prior=None):
     root=Path(root)
     final=root/run_id
     if final.exists():raise FileExistsError("Run already exists; refusing overwrite")
-    root.mkdir(parents=True,exist_ok=True)
+    if root.is_symlink():raise ValueError("Refusing symlinked run root")
+    root.mkdir(parents=True,exist_ok=True,mode=0o700)
+    if stat.S_IMODE(root.stat().st_mode) & 0o077:
+        raise PermissionError("Run root must be private (0700)")
     work=Path(tempfile.mkdtemp(prefix=".scout-staging-",dir=root))
     try:
         digests={}
