@@ -10,7 +10,9 @@ def data():
 class IntegratedRunTests(unittest.TestCase):
  def test_build_complete_offline(self):
   a,b=data();o=build_run(a,b)
-  self.assertEqual(len(o),5)
+  self.assertEqual(len(o),7)
+  self.assertIn(b"Complete methodology and limitations",o["methodology.html"])
+  self.assertIn(b"methodology.html",o["index.html"])
   self.assertIn(b"noindex,nofollow",o["index.html"])
   self.assertEqual(json.loads(o["intake.json"])["sampled_leads"][0]["url"],a["sampled_leads"][0]["url"])
  def test_manifest_hashes_and_no_overwrite(self):
