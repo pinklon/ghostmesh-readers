@@ -39,14 +39,14 @@ def trial(target, seed, guidance=False):
             candidate=tape[proposals_read]
             proposals_read+=1
             if candidate in tested:continue
-            if guidance and not (low<=candidate<=high):continue
+            if guidance and target not in tested and not (low<=candidate<=high):continue
             guess=candidate
             break
         if guess is None:raise ValueError("Candidate stream exhausted")
         tested.add(guess)
         score,direction=evaluate(target,guess)
         scores.append(score);candidates.append(guess)
-        if guidance and direction!="correct":
+        if guidance and direction!="correct" and target not in tested:
             hint_count+=1
             if direction=="too_low":low=max(low,guess+1)
             else:high=min(high,guess-1)
