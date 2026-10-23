@@ -47,7 +47,8 @@ def make_packet(intake, triage, outside):
         # Equal information budget. Capture metadata, not source's unbounded body.
         desc=" ".join(str(raw.get("description") or "").split())[:360]
         cards.append({"review_id":entry["review_id"],"sequence":idx,
-                      "title":raw["title"][:180],"source_excerpt":desc or "NO_SOURCE_SUMMARY_PROVIDED",
+                      "title":raw["title"][:180],"source_url":entry["url"],
+                      "source_excerpt":desc or "NO_SOURCE_SUMMARY_PROVIDED",
                       "evidence_depth":"SOURCE_METADATA_ONLY",
                       "review_fields":{"ghostmesh_relevance":None,"novelty":None,
                                        "surprise":None,"best_objection":None,
@@ -63,7 +64,7 @@ def make_packet(intake, triage, outside):
          "label_policy":"Only an independent reviewer may fill judgments; no automated positive or negative ground truth.",
          "missing_evidence":"ABSTAIN and record why; do not reward polished titles."},
        "limitations":["Labels and source cohort mapping are withheld from the reviewer packet",
-                      "Source headline and text may themselves reveal a source",
+                      "Source URLs, headlines and text may reveal an origin; cohort assignments and prior verdicts remain hidden",
                       "Equal metadata excerpts do not guarantee equal underlying source quality",
                       "This is a review-ready instrument, not an independent review outcome"],
        "publication_authorized":False,"outreach_authorized":False}
