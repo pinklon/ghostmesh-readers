@@ -59,7 +59,7 @@ def extract(html: str) -> dict:
     article_text = " ".join(parser.article_parts)
     body_text = " ".join(parser.body_parts)
     # Prefer substantive page text over generic short metadata descriptions.
-    body = abstract or next((part for part in (main_text, article_text, body_text) if len(part.split()) >= 35), "") or description
+    body = abstract or next((part for part in (main_text, article_text, body_text) if len(part.split()) >= 35), "") or description or main_text or article_text or body_text
     body = re.sub(r"\s+", " ", body).strip()
     if not body:
         return {"title": title, "excerpt": None, "extraction_status": "INSUFFICIENT"}
