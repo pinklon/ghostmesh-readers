@@ -30,6 +30,29 @@ GAPS = {
 def tokens(text: str) -> str:
     return " " + re.sub(r"[^a-z0-9]+"," ",text.lower()) + " "
 
+LOW_SIGNAL_TITLE_PATTERNS=(
+    "steps on how to", "how to not", "you won't believe", "top 10",
+    "winning literary awards",
+)
+def quality_screen(lead:dict)->dict:
+    """Explicit reading-queue caution, not truth or contributor ranking.
+
+    Preserves every lead and never infers engagement, identity or originality.
+    """
+    title=(lead.get("title") or "").casefold()
+    description=(lead.get("description") or "").casefold()
+    source=lead.get("source")
+    flags=[]
+    if source=="dev-community" and any(phrase in title for phrase in LOW_SIGNAL_TITLE_PATTERNS):
+        flags.append("BROAD_OR_SENSATIONAL_HEADLINE")
+    if source in {"dev-community","planet-python"} and not description.strip():
+        flags.append("NO_USEFUL_SUMMARY")
+    if len(title.strip())<12:
+        flags.append("TOO_LITTLE_TITLE_CONTEXT")
+    return {"quality_review":"CAUTION" if flags else "NORMAL_UNVERIFIED",
+            "flags":flags,"source_checked":False,"originality":"NOT_ASSESSED",
+            "identity_verified":False}
+
 def classify(lead: dict) -> dict:
     title=lead.get("title") or ""
     desc=lead.get("description") or ""
@@ -47,6 +70,7 @@ def classify(lead: dict) -> dict:
         identity={"type":"source_feed_identity","value":"simonwillison.net","verified_person":False}
     return {"url":lead["url"],"title":title,"source":lead["source"],
             "topics":tags,"identity":identity,
+            "signal_quality":quality_screen(lead),
             "ghostmesh_questions":[GAPS[t] for t in tags],
             "relevance_status":"KEYWORD_CANDIDATE" if tags else "UNKNOWN",
             "evidence_status":"SOURCE_METADATA_ONLY",
