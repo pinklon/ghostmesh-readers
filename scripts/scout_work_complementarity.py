@@ -59,7 +59,13 @@ def screen(people,feed):
                   "strongest_objection":"Abstract relevance is not originality, implementation validation or collaborator fit" if hits else None,
                   "proposed_next_step":"Read source and find disconfirming evidence" if hits else None,
                   "collaboration_merit":"NOT_EVALUATED","identity_verified":False,"contact_authorized":False})
- work_index={}\n for x in results:\n  if x["state"]=="METADATA_REVIEW_CANDIDATE":\n   item=work_index.setdefault(x["work_url"],{"work_url":x["work_url"],"title":x["work_title"],"topics":x["topics"],"attribution_count":0,"review_state":"SOURCE_REVIEW_REQUIRED"})\n   item["attribution_count"]+=1\n return {"schema":"scout-work-complementarity-v0","screened":len(results),\n         "matched_works":len(work_index),"work_review_queue":list(work_index.values()),
+ work_index={}
+ for x in results:
+  if x["state"]=="METADATA_REVIEW_CANDIDATE":
+   item=work_index.setdefault(x["work_url"],{"work_url":x["work_url"],"title":x["work_title"],"topics":x["topics"],"attribution_count":0,"review_state":"SOURCE_REVIEW_REQUIRED"})
+   item["attribution_count"]+=1
+ return {"schema":"scout-work-complementarity-v0","screened":len(results),
+         "matched_works":len(work_index),"work_review_queue":list(work_index.values()),
          "metadata_candidates":sum(x["state"]=="METADATA_REVIEW_CANDIDATE" for x in results),
          "results":results,
          "limits":["Topic match derives from titles and abstracts only",
