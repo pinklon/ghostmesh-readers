@@ -8,10 +8,10 @@ import argparse
 from html import escape
 from pathlib import Path
 
-SECTIONS=(("Discover","discovery"),("Relationships","relationships"),("History & revisions","history"),("Claim impact","claims"),("People & builders","people"),("Decision replay","replay"),("Connection theses","theses"),("Public trails","trails"),("Capability differences","differences"))
+SECTIONS=(("Discover","discovery"),("Relationships","relationships"),("History & revisions","history"),("Claim impact","claims"),("People & builders","people"),("Decision replay","replay"),("Connection theses","theses"),("Public trails","trails"),("Capability differences","differences"),("Source reviews","reviews"))
 
 def build(files:dict[str,str])->str:
-    if set(files)!={key for _,key in SECTIONS}: raise ValueError("Nine private views required")
+    if set(files)!={key for _,key in SECTIONS}: raise ValueError("Ten private views required")
     for key,text in files.items():
         if not text.lstrip().lower().startswith("<!doctype html>") or "</html>" not in text.lower():
             raise ValueError("Invalid HTML view "+key)
