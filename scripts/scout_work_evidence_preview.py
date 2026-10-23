@@ -24,11 +24,11 @@ def render(people_html:str,annotation:dict,ablation:dict)->str:
     for k in ("ledger","no_ledger"):
         if k not in s:raise ValueError("Incomplete paired trial")
     e=lambda x:escape(str(x),quote=True)
-    panel="""<section style="border-top:3px solid var(--accent);padding-top:24px;margin:48px 0" id="work-evidence">
+    panel=f"""<section style="border-top:3px solid var(--accent);padding-top:24px;margin:48px 0" id="work-evidence">
 <p class="kicker">Selected work / Evidence and counterevidence</p>
 <h2 style="font-size:clamp(26px,4vw,42px);letter-spacing:-.05em">SpecEvo-inspired experiment</h2>
-<p><strong>Paper:</strong> <a href=""""+e(annotation["source_work"])+"""" rel="noopener noreferrer">"""+e(annotation["work_title"])+""" ↗</a></p>
-<p><strong>Research status:</strong> """+e(annotation["disposition"])+""". This is a provisional work-level assessment, not a judgment of its authors.</p>
+<p><strong>Paper:</strong> <a href="{e(annotation['source_work'])}" rel="noopener noreferrer">{e(annotation['work_title'])} ↗</a></p>
+<p><strong>Research status:</strong> {e(annotation['disposition'])}. This is a provisional work-level assessment, not a judgment of its authors.</p>
 <p><strong>Controlled ablation:</strong> 144 paired synthetic trials for each arm; identical proposal tapes and evaluation budgets.</p>
 <table style="width:100%;border-collapse:collapse;text-align:left"><thead><tr><th>Policy</th><th>Mean best reward</th><th>Exact solutions</th><th>Duplicate evaluations</th><th>Proposals examined</th></tr></thead><tbody>
 """
