@@ -61,11 +61,20 @@ def build_run(intake,watch_catalog,previous=None,historical_views=None):
             "edition.json":_json_bytes(result_edition),
             "reconciliation.json":_json_bytes(result_reconcile),
             "index.html":html.encode("utf-8")}
+    # All nine panels are generated from the run; old preview files are not required.
+    # Retain the optional manifest argument for compatibility, but never display
+    # its historical content as current evidence.
     if historical_views is not None:
         expected={key for _,key in SECTIONS if key!="discovery"}
         if set(historical_views)!=expected:
-            raise ValueError("All eight historical view inputs required")
-        views={"discovery":html,**historical_views}
+            raise ValueError("An optional historical manifest must be complete")
+    views={"discovery":html}
+    views["history"]=("<!doctype html><html><head><meta name=\"robots\" "
+        "content=\"noindex,nofollow,noarchive\"></head><body><main>"
+        "<h1>History begins with this collection</h1>"
+        "<p>No earlier source snapshot was supplied. This is not a revision history.</p>"
+        "</main></body></html>")
+    if True:
         # Relationships are derived from this run, not copied from a prior snapshot.
         relations=build_relations(intake,result_triage,result_reconcile)
         views["relationships"]=render_relationships(relations)
@@ -92,9 +101,9 @@ def build_run(intake,watch_catalog,previous=None,historical_views=None):
         outputs["decision_audit.json"]=_json_bytes(audit)
         workspace=build_workspace(views)
         refreshed=["Discovery","Relationships","Claims (unverified queue)","Public work (observed links)","People (unverified handles)","Connection questions (unassessed)","Selection decisions (metadata only)","Capability questions (not measured)"]+ (["History"] if "history.json" in outputs else [])
-        pinned=[label for label,key in SECTIONS if key not in ({"discovery","relationships","history","claims","trails","people","theses","replay","differences"} if "history.json" in outputs else {"discovery","relationships","claims","trails","people","theses","replay","differences"})]
+        pinned=[]
         from html import escape
-        note="Current-run: "+", ".join(refreshed)+". Pinned historical research: "+", ".join(pinned)+". "
+        note="Run-bound: "+", ".join(refreshed)+". "+("History rebuilt from two snapshots. " if "history.json" in outputs else "History awaiting an earlier snapshot. ")+"No panels depend on historical HTML files. "
         banner="<div role=\"status\" style=\"padding:12px 24px;background:#292126;color:#ffe1e5;border-bottom:1px solid #e83b52\">"+escape(note)+"<a style=\"color:#ffc4d0\" href=\"methodology.html\">How Scout collects signals ↗</a></div>"
         workspace=workspace.replace("</header>", "</header>"+banner,1)
         outputs["workspace.html"]=workspace.encode("utf-8")
@@ -130,7 +139,7 @@ def commit_run(outputs,root,run_id,prior=None):
            "source_snapshot_origin":"ONE_SHOT_PUBLIC_COLLECTION_OR_EXPLICIT_OFFLINE_INPUT",
            "previous_snapshot_provided":prior is not None,
            "workspace_view_status":{"discovery":"CURRENT_RUN","relationships":"CURRENT_RUN" if "relations.json" in outputs else "NOT_INCLUDED",
-               "history":"TWO_SNAPSHOT_REBUILT" if "history.json" in outputs else "PINNED_HISTORICAL" if "workspace.html" in outputs else "NOT_INCLUDED",
+               "history":"TWO_SNAPSHOT_REBUILT" if "history.json" in outputs else "AWAITING_PRIOR_SNAPSHOT",
                "claims":"UNVERIFIED_CURRENT_RUN_QUEUE" if "evidence_queues.json" in outputs else "NOT_INCLUDED",
                "trails":"OBSERVED_LINKS_NOT_EXPANDED" if "evidence_queues.json" in outputs else "NOT_INCLUDED",
                "people":"UNVERIFIED_CURRENT_RUN_HANDLES" if "builder_questions.json" in outputs else "NOT_INCLUDED",
@@ -160,7 +169,7 @@ def main():
     p.add_argument("--offline-intake",type=Path,help="Use frozen captured data; no network")
     p.add_argument("--previous",type=Path,help="Previous intact intake.json, read only")
     p.add_argument("--cap",type=int,default=8)
-    p.add_argument("--views-manifest",type=Path,help="JSON object of eight historical view HTML file paths; snapshots are NOT regenerated")
+    p.add_argument("--views-manifest",type=Path,help="Deprecated optional legacy manifest; ignored by generated panels")
     a=p.parse_args()
     if (a.run_root/a.run_id).exists():raise SystemExit("Existing run ID; no overwrite")
     load=lambda path:json.loads(path.read_text(encoding="utf-8"))
