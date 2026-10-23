@@ -219,7 +219,7 @@ def check(root=ROOT):
  sitemap=ET.parse(site/'sitemap.xml');urls=[x.text for x in sitemap.getroot().iter() if x.tag.endswith('loc')]
  try:ET.parse(site/'feed.xml')
  except ET.ParseError:errors.append('Invalid RSS XML')
- expected={data['host']+'/',data['host']+'/readers/',data['host']+'/map/',data['host']+'/knowledge/',data['host']+'/scout/',data['host']+'/scout/archive/',data['host']+'/scout/method/'}|{data['host']+review_url(review) for review in scout['reviews']}|{data['host']+edition_url(edition) for edition in editions}|{data['host']+'/'+s+'/' for s in slugs}|{data['host']+f'/readers/categories/{i}/' for i in range(6)}
+ expected={data['host']+'/',data['host']+'/readers/',data['host']+'/map/',data['host']+'/knowledge/',data['host']+'/scout/',data['host']+'/scout/archive/',data['host']+'/scout/method/',data['host']+'/scout/essays/',data['host']+'/scout/essays/the-signal-is-not-the-finding/',data['host']+'/scout/essays/follow-the-work/',data['host']+'/scout/essays/five-ideas-outside-the-filter/'}|{data['host']+review_url(review) for review in scout['reviews']}|{data['host']+edition_url(edition) for edition in editions}|{data['host']+'/'+s+'/' for s in slugs}|{data['host']+f'/readers/categories/{i}/' for i in range(6)}
  require(set(urls)==expected and len(urls)==len(expected),'Sitemap drift')
  if root==ROOT:
   for rel,content in projections().items():require((site/rel).read_text()==content,'Generated drift: '+rel)
