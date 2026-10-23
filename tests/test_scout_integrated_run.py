@@ -37,7 +37,7 @@ class IntegratedRunTests(unittest.TestCase):
   a,b=data()
   names=("relationships","history","claims","people","replay","theses","trails","differences")
   views={x:"<!doctype html><html><head><meta name=\"robots\" content=\"noindex,nofollow\"></head><body>"+x+"</body></html>" for x in names}
-  outputs=build_run(a,b,historical_views=views)
+  outputs=build_run(a,b)
   self.assertEqual(len(outputs),12)
   self.assertIn(b"No panels depend on historical HTML files",outputs["workspace.html"])
   self.assertIn(b"methodology.html",outputs["workspace.html"])
@@ -54,14 +54,14 @@ class IntegratedRunTests(unittest.TestCase):
   prior["captured_utc"]="2026-10-22T12:00:00Z"
   names=("relationships","history","claims","people","replay","theses","trails","differences")
   views={x:"<!doctype html><html><head><meta name='robots' content='noindex,nofollow'></head><body>"+x+"</body></html>" for x in names}
-  outputs=build_run(a,b,prior,historical_views=views)
+  outputs=build_run(a,b,prior)
   self.assertIn("history.json",outputs)
   self.assertIn("evidence_queues.json",outputs)
   with tempfile.TemporaryDirectory() as temp:
    receipt=commit_run(outputs,Path(temp),"all-current")
    self.assertEqual(len(receipt["sha256"]),13)
    self.assertEqual(receipt["workspace_view_status"]["history"],"TWO_SNAPSHOT_REBUILT")
- def test_historical_views_must_be_complete(self):
+ def test_legacy_views_rejected(self):
   a,b=data()
   with self.assertRaises(ValueError):build_run(a,b,historical_views={"history":"some html"})
  def test_run_without_legacy_view_files(self):
