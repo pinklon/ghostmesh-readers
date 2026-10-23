@@ -29,8 +29,7 @@ from scout_run_builder_questions import build as build_builder_questions, render
 from scout_run_decisions import build as build_decisions, render as render_decisions
 
 def _json_bytes(obj):
-    return (json.dumps(obj,indent=2,ensure_ascii=False,sort_keys=True)+"
-").encode("utf-8")
+    return (json.dumps(obj,indent=2,ensure_ascii=False,sort_keys=True)+"\n").encode("utf-8")
 
 def _write(path,content):
     with path.open("xb") as f:
@@ -62,7 +61,7 @@ def build_run(intake,watch_catalog,previous=None,historical_views=None):
             "edition.json":_json_bytes(result_edition),
             "reconciliation.json":_json_bytes(result_reconcile),
             "index.html":html.encode("utf-8")}
-    # All ten panels are generated from the run; old preview files are not required.
+    # All nine panels are generated from the run; old preview files are not required.
     # Reject old preview inputs to avoid accidentally treating them as current.
     if historical_views is not None:
         raise ValueError("Legacy HTML inputs are no longer accepted; all panels are generated")
@@ -96,13 +95,11 @@ def build_run(intake,watch_catalog,previous=None,historical_views=None):
     views["replay"]=render_decisions(audit,"replay")
     views["differences"]=render_decisions(audit,"differences")
     outputs["decision_audit.json"]=_json_bytes(audit)
-    # Source-deep review requires separate primary-source inspections. A normal
-    # one-shot intake cannot manufacture that evidence from feed metadata.
-    views["reviews"]=("<!doctype html><html><head><meta name=\\"robots\\" "+
-        "content=\\"noindex,nofollow,noarchive\\"></head><body><main>"+
-        "<h1>Source reviews require separate inspection</h1>"+
-        "<p>This collection contains public metadata, not independently read primary sources. "+
-        "No deep-review conclusions are available in this run.</p>"+
+    # Metadata-only integrated runs must not fabricate primary-source reviews.
+    views["reviews"]=("<!doctype html><html><head><meta name='robots' "
+        "content='noindex,nofollow,noarchive'></head><body><main>"
+        "<h1>Source reviews need separate inspection</h1>"
+        "<p>This run has not inspected primary sources for deep comparisons.</p>"
         "</main></body></html>")
     workspace=build_workspace(views)
     refreshed=["Discovery","Relationships","Claims (unverified queue)","Public work (observed links)","People (unverified handles)","Connection questions (unassessed)","Selection decisions (metadata only)","Capability questions (not measured)"]+ (["History"] if "history.json" in outputs else [])
