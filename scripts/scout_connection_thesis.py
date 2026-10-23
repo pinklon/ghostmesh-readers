@@ -29,7 +29,9 @@ def validate(item: dict) -> list[str]:
         errors.append("outreach must remain disabled in research prototype")
     if not isinstance(item["source_url"], str) or not item["source_url"].startswith("https://"):
         errors.append("source_url must be HTTPS")
-    if (item["recommendation"] == "CONSIDER_INTRODUCTION"\n            and isinstance(item["proposed_experiment"], str)\n            and item["proposed_experiment"].strip().lower() in {"none", "unknown", "n/a"}):
+    if (item["recommendation"] == "CONSIDER_INTRODUCTION"
+            and isinstance(item["proposed_experiment"], str)
+            and item["proposed_experiment"].strip().lower() in {"none", "unknown", "n/a"}):
         errors.append("introduction requires a specific experiment")
     return errors
 
