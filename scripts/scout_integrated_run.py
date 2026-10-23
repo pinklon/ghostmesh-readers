@@ -29,7 +29,8 @@ from scout_run_builder_questions import build as build_builder_questions, render
 from scout_run_decisions import build as build_decisions, render as render_decisions
 
 def _json_bytes(obj):
-    return (json.dumps(obj,indent=2,ensure_ascii=False,sort_keys=True)+"\n").encode("utf-8")
+    return (json.dumps(obj,indent=2,ensure_ascii=False,sort_keys=True)+"
+").encode("utf-8")
 
 def _write(path,content):
     with path.open("xb") as f:
@@ -95,7 +96,15 @@ def build_run(intake,watch_catalog,previous=None,historical_views=None):
     views["replay"]=render_decisions(audit,"replay")
     views["differences"]=render_decisions(audit,"differences")
     outputs["decision_audit.json"]=_json_bytes(audit)
-    # Source-deep review requires separate primary-source inspections. A normal\n    # one-shot intake cannot manufacture that evidence from feed metadata.\n    views["reviews"]=("<!doctype html><html><head><meta name=\\"robots\\" "+\n        "content=\\"noindex,nofollow,noarchive\\"></head><body><main>"+\n        "<h1>Source reviews require separate inspection</h1>"+\n        "<p>This collection contains public metadata, not independently read primary sources. "+\n        "No deep-review conclusions are available in this run.</p>"+\n        "</main></body></html>")\n    workspace=build_workspace(views)
+    # Source-deep review requires separate primary-source inspections. A normal
+    # one-shot intake cannot manufacture that evidence from feed metadata.
+    views["reviews"]=("<!doctype html><html><head><meta name=\\"robots\\" "+
+        "content=\\"noindex,nofollow,noarchive\\"></head><body><main>"+
+        "<h1>Source reviews require separate inspection</h1>"+
+        "<p>This collection contains public metadata, not independently read primary sources. "+
+        "No deep-review conclusions are available in this run.</p>"+
+        "</main></body></html>")
+    workspace=build_workspace(views)
     refreshed=["Discovery","Relationships","Claims (unverified queue)","Public work (observed links)","People (unverified handles)","Connection questions (unassessed)","Selection decisions (metadata only)","Capability questions (not measured)"]+ (["History"] if "history.json" in outputs else [])
     pinned=[]
     from html import escape
@@ -141,7 +150,8 @@ def commit_run(outputs,root,run_id,prior=None):
                "people":"UNVERIFIED_CURRENT_RUN_HANDLES" if "builder_questions.json" in outputs else "NOT_INCLUDED",
                "theses":"UNASSESSED_CURRENT_RUN_QUESTIONS" if "builder_questions.json" in outputs else "NOT_INCLUDED",
                "replay":"CURRENT_RUN_SELECTION_RECEIPTS" if "decision_audit.json" in outputs else "NOT_INCLUDED",
-               "differences":"NOT_MEASURED_CURRENT_RUN_QUESTIONS" if "decision_audit.json" in outputs else "NOT_INCLUDED",\n               "reviews":"REQUIRES_SEPARATE_PRIMARY_SOURCE_REVIEW",
+               "differences":"NOT_MEASURED_CURRENT_RUN_QUESTIONS" if "decision_audit.json" in outputs else "NOT_INCLUDED",
+               "reviews":"REQUIRES_SEPARATE_PRIMARY_SOURCE_REVIEW",
                "remaining_views":"NONE" if "decision_audit.json" in outputs else "PINNED_HISTORICAL" if "workspace.html" in outputs else "NOT_INCLUDED"},
            "methodology":"methodology.html",
            "methodology_source":"methodology.md",
