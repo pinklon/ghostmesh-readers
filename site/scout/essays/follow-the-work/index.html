@@ -1,0 +1,87 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow,noarchive"><link rel="canonical" href="https://youtube.shareplane.malott.ai/scout/essays/follow-the-work/"><meta name="description" content="Twelve public collection streams, two discovery lanes and a practical ladder of evidence."><title>Follow the Work, Not the Follower Count | GhostMesh Scout Essays</title><link rel="icon" href="/favicon.svg"><link rel="stylesheet" href="/assets/scout-essays.css"></head><body><header class="bar"><a class="brand" href="/">GHOST<em>MESH</em> / READERS</a><nav aria-label="Main"><a href="/scout/">Scout</a><a href="/scout/essays/">Scout Essays</a><a href="/readers/">Readers</a><a href="/map/">Knowledge Map</a></nav></header><section class="hero"><p class="eyebrow">GhostMesh / Scout / Editorial review candidate</p><h1>Follow the Work, Not the Follower Count</h1><p class="lede">Twelve public collection streams, two discovery lanes and a practical ladder of evidence.</p></section><main id="main"><article class="article"><h1>Follow the Work, Not the Follower Count</h1>
+<p><em>How to create a useful discovery system without pretending that an RSS feed is intelligence, a repository is a credential, or a reviewer is a fact-checking oracle.</em></p>
+<p>Every monitoring system inherits the blind spots of its input. That fact tends to disappear behind polished interfaces. A dashboard says “12 sources.” What does that mean? Twelve independently investigated works? Twelve editorial institutions? Twelve API calls? Twelve streams that may point to the same underlying announcement?</p>
+<p>In Scout's current public-data collector, it means <strong>12 retrieval streams</strong>. Some are feeds from institutions or individuals; two are distinct GitHub repository searches; others draw from research listings, aggregators, or technical discussion platforms. A stream is an acquisition path, not an independent witness. It is important to state this because duplicate coverage is so easy to mistake for corroboration.</p>
+<p>Scout's research method is built around the unglamorous task of keeping these categories apart.</p>
+<h2>Twelve windows, not the whole world</h2>
+<p>The pilot samples public material from Simon Willison's feed, Hugging Face, Cloudflare, Lobsters, GitHub Engineering, arXiv's AI and machine-learning categories, Planet Python, public GitHub searches for agent memory and agent authorization, DEV Community's AI tag, and Hacker News.</p>
+<p>Each source makes a choice about what becomes visible. Research categories are not random samples of scientific progress. Vendor blogs emphasize work useful to the vendor. Hacker News ranks attention, not truth. GitHub repository searches depend on specific terms and ranking. RSS feeds may syndicate the same article twice.</p>
+<p>That is why Scout records the input route, source URL, retrieval time and errors alongside each lead. <strong>Coverage is documented instead of assumed.</strong></p>
+<p>In its small commissioning pilot, Scout fetched 36 leads from all twelve streams during a capped run. That number says the acquisition mechanism worked in that sample. It says nothing about how many valuable ideas existed in the wider ecosystem.</p>
+<p>There is an even sharper boundary around authenticated platforms. The present public collector does not secretly ingest an owner's X, Instagram, Reddit, YouTube or Bluesky account. It does not evade login walls or purchase engagement data. Other GhostMesh systems may analyze user-supplied videos; that activity should not be credited to Scout's public-feed coverage.</p>
+<h2>The first transformation: a lead</h2>
+<p>The collection stage normalizes public titles, descriptions, dates and HTTPS links. That is useful work, but the output is called an <strong>unreviewed lead</strong> for a reason.</p>
+<p>A title can exaggerate. A description can summarize the wrong paper. A repository can be a wrapper around somebody else's code. Source content can contain adversarial instructions aimed at automated agents. Scout treats these strings as data rather than operational commands.</p>
+<p>Normalization also requires restraint. Removing marketing-tracking parameters can make repeated observations easier to recognize, but merging two URLs is not proof that their underlying works are identical. A source that disappears between capped feed snapshots may simply have slipped below the sampling window. A changed title is not proof the study changed. For work with identifiable revisions, a properly pinned source version and, where permitted, captured content hashes enable stronger comparisons. Where those witnesses are absent, the conclusion stays absent.</p>
+<p>The categories look fussy until one asks an ordinary question: <em>What exactly changed since the last time I saw this?</em> Scout should be able to answer without inventing a history.</p>
+<h2>Familiar relevance and unfamiliar possibility</h2>
+<p>A research system inevitably begins with some vocabulary. Scout currently recognizes topics including authority boundaries, continuity, provenance, evaluation, model infrastructure, interoperability and human–AI collaboration. Keyword matches create an initial reading lane.</p>
+<p>Then it creates a second one.</p>
+<p>Outside-vocabulary leads are not discarded as noise. A bounded, deterministic selection reserves attention for unmatched URLs across different public-source streams. The mechanism is deliberately less dependent on engagement metrics and rankings. That does not make these leads high quality; it makes them <strong>visible for possible examination</strong>.</p>
+<p>The distinction is crucial. If the declared dictionary does not mention a concept, the system is not entitled to decide that concept cannot matter. An outsider lane protects a limited amount of research curiosity without turning the system into a bottomless browsing machine.</p>
+<h2>Evidence levels must be legible</h2>
+<p>The first review question is not “Is this interesting?” It is “What did anyone actually inspect?”</p>
+<p>Here is a useful progression:</p>
+<table>
+<thead>
+<tr>
+<th>Evidence reached</th>
+<th>What it permits</th>
+<th>What it does not establish</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Feed title or excerpt</td>
+<td>A reading question</td>
+<td>Source claim validity</td>
+</tr>
+<tr>
+<td>Original abstract or README</td>
+<td>A bounded account of author-stated claims</td>
+<td>Technical reproducibility</td>
+</tr>
+<tr>
+<td>Original paper, implementation or article examined</td>
+<td>A reasoned source critique</td>
+<td>Independent empirical replication</td>
+</tr>
+<tr>
+<td>Isolated execution</td>
+<td>Observed behavior under stated conditions</td>
+<td>General reliability or production suitability</td>
+</tr>
+<tr>
+<td>Independent comparison against GhostMesh baseline</td>
+<td>Evidence of a contextual benefit or deficit</td>
+<td>Universal superiority</td>
+</tr>
+<tr>
+<td>Owner editorial and adoption decision</td>
+<td>Authorized next action within its scope</td>
+<td>That every underlying research claim is true</td>
+</tr>
+</tbody>
+</table>
+<p>These steps are not all completed for every lead. Their purpose is to stop a UI from turning “we read the abstract” into “we evaluated the method.”</p>
+<p>Scout's current ten-panel private workspace deliberately uses labels such as <strong>UNVERIFIED</strong>, <strong>NOT ASSESSED</strong>, and <strong>NOT MEASURED</strong>. Those labels are progress information. They are also guardrails against false confidence.</p>
+<h2>What an eventual connection thesis should look like</h2>
+<p>A useful Scout connection is not “these authors work on agents too.” It is closer to:</p>
+<blockquote>
+<p>This paper proposes a way of selecting evidence tasks during harness evolution. GhostMesh has an identifiable question about evaluation coverage. We have examined the paper's reported procedure, but not independently reproduced its gains. The smallest discriminating test is to compare the proposed selection method against our existing harness on the same frozen tasks and budget.</p>
+</blockquote>
+<p>That is a testable relationship between an outside idea and an actual local problem. It can be revised when a source changes, when a baseline is measured, or when an experiment fails. It also leaves room for the entirely respectable conclusion <strong>no connection justified</strong>.</p>
+<p>The same discipline applies to people. A public GitHub handle is an account attribution. A repeated paper byline is a string that may refer to a namesake. Neither is automatic proof of identity, expertise, affiliation, or consent to outreach.</p>
+<h2>Receipts, not ceremony</h2>
+<p>Scout's private runs include source observations, analysis views and manifests whose saved-file digests can be checked later. Collection failures and limitations are recorded. An earlier run may be replayed against the next snapshot without silently rewriting either.</p>
+<p>That infrastructure should remain proportionate to its job. A source-reading assistant should not require an elaborate deployment ritual for every low-risk editorial question. But decisions worth remembering need enough provenance to survive the next enthusiastic model answer.</p>
+<p>That is the practical compromise: lightweight acquisition, explicit evidence grades, reproducible snapshots, and human control over any consequential action.</p>
+<p><strong>Scout will be credible not because it finds the most, but because it shows exactly how little or how much was actually established.</strong></p>
+<h3>Source notes</h3>
+<ul>
+<li><a href="https://github.com/pinklon/ghostmesh-readers/blob/research/scout-connection-thesis-v0/research/SCOUT-METHODOLOGY.md">Scout methodology and collection-stream disclosure</a>, October 23, 2026.</li>
+<li><a href="https://export.arxiv.org/rss/cs.AI">arXiv AI</a> and <a href="https://export.arxiv.org/rss/cs.LG">ML</a> listings, two of the documented research inputs.</li>
+<li><a href="https://github.com/search?q=agent+authorization&amp;type=repositories">GitHub public repositories</a>, an example of topic- and query-limited discovery.</li>
+<li><a href="https://news.ycombinator.com/">Hacker News</a> and <a href="https://lobste.rs/">Lobsters</a>, discussion streams with different community selection pressures.</li>
+</ul>
+<p><em>Not published. No private intake records, person lists, source packets, credentials, archive locations, or account access details included.</em></p></article></main><footer><p>GhostMesh Scout · Original analysis · Review draft, not a public release · The research workspace is private.</p><p><a href="/scout/">Scout reviews</a> · <a href="/scout/essays/">Essay series</a> · <a href="/">Readers home</a></p></footer></body></html>
