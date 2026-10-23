@@ -32,6 +32,21 @@ class IntegratedRunTests(unittest.TestCase):
  def test_reject_incomplete(self):
   with tempfile.TemporaryDirectory() as tmp:
    with self.assertRaises(ValueError):commit_run({"index.html":b"test"},Path(tmp),"bad")
+ def test_full_workspace_marks_historical_views(self):
+  a,b=data()
+  names=("relationships","history","claims","people","replay","theses","trails","differences")
+  views={x:"<!doctype html><html><head><meta name=\"robots\" content=\"noindex,nofollow\"></head><body>"+x+"</body></html>" for x in names}
+  outputs=build_run(a,b,historical_views=views)
+  self.assertEqual(len(outputs),8)
+  self.assertIn(b"PINNED",outputs["workspace.html"].upper())
+  self.assertIn(b"methodology.html",outputs["workspace.html"])
+  with tempfile.TemporaryDirectory() as tmp:
+   receipt=commit_run(outputs,Path(tmp),"allviews")
+   self.assertEqual(receipt["workspace_view_status"]["discovery"],"CURRENT_RUN")
+   self.assertEqual(len(receipt["sha256"]),8)
+ def test_historical_views_must_be_complete(self):
+  a,b=data()
+  with self.assertRaises(ValueError):build_run(a,b,historical_views={"history":"some html"})
  def test_previous_snapshot(self):
   a,b=data();o=build_run(a,b,a)
   x=json.loads(o["reconciliation.json"])
