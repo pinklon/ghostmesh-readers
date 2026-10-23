@@ -38,7 +38,7 @@ def compare(old: bytes, new: bytes, old_revision: str, new_revision: str, source
     bounded_new=[line[:MAX_LINE_CHARS] for line in latter[:MAX_LINES]]
     diff=list(difflib.unified_diff(bounded_old,bounded_new,fromfile=old_revision,tofile=new_revision,lineterm=""))
     shown=diff[:MAX_DIFF_LINES]
-    truncated=(len(former)>MAX_LINES or len(latter)>MAX_LINES or
+    truncated=(not identical) and (len(former)>MAX_LINES or len(latter)>MAX_LINES or
                any(len(s)>MAX_LINE_CHARS for s in former+ latter) or len(diff)>MAX_DIFF_LINES)
     return {
       "schema":"scout-content-diff-v0","source_url":source_url,
