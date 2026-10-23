@@ -25,6 +25,7 @@ from scout_relationship_preview import render as render_relationships
 from scout_source_history import build as build_history
 from scout_history_preview import render as render_history
 from scout_run_evidence_queues import build as build_queues, render as render_queue
+from scout_run_builder_questions import build as build_builder_questions, render as render_builder_questions
 
 def _json_bytes(obj):
     return (json.dumps(obj,indent=2,ensure_ascii=False,sort_keys=True)+"\n").encode("utf-8")
@@ -80,9 +81,13 @@ def build_run(intake,watch_catalog,previous=None,historical_views=None):
         views["claims"]=render_queue(queues,"claims")
         views["trails"]=render_queue(queues,"works")
         outputs["evidence_queues.json"]=_json_bytes(queues)
+        builder_questions=build_builder_questions(intake,result_triage)
+        views["people"]=render_builder_questions(builder_questions,"people")
+        views["theses"]=render_builder_questions(builder_questions,"questions")
+        outputs["builder_questions.json"]=_json_bytes(builder_questions)
         workspace=build_workspace(views)
-        refreshed=["Discovery","Relationships","Claims (unverified queue)","Public work (observed links)"]+ (["History"] if "history.json" in outputs else [])
-        pinned=[label for label,key in SECTIONS if key not in ({"discovery","relationships","history","claims","trails"} if "history.json" in outputs else {"discovery","relationships","claims","trails"})]
+        refreshed=["Discovery","Relationships","Claims (unverified queue)","Public work (observed links)","People (unverified handles)","Connection questions (unassessed)"]+ (["History"] if "history.json" in outputs else [])
+        pinned=[label for label,key in SECTIONS if key not in ({"discovery","relationships","history","claims","trails","people","theses"} if "history.json" in outputs else {"discovery","relationships","claims","trails","people","theses"})]
         from html import escape
         note="Current-run: "+", ".join(refreshed)+". Pinned historical research: "+", ".join(pinned)+". "
         banner="<div role=\"status\" style=\"padding:12px 24px;background:#292126;color:#ffe1e5;border-bottom:1px solid #e83b52\">"+escape(note)+"<a style=\"color:#ffc4d0\" href=\"methodology.html\">How Scout collects signals ↗</a></div>"
@@ -101,11 +106,11 @@ def commit_run(outputs,root,run_id,prior=None):
     try:
         digests={}
         for filename,blob in outputs.items():
-            if filename not in {"intake.json","triage.json","edition.json","reconciliation.json","index.html","methodology.md","methodology.html","workspace.html","relations.json","history.json","evidence_queues.json"}:
+            if filename not in {"intake.json","triage.json","edition.json","reconciliation.json","index.html","methodology.md","methodology.html","workspace.html","relations.json","history.json","evidence_queues.json","builder_questions.json"}:
                 raise ValueError("Unexpected generated output")
             _write(work/filename,blob)
             digests[filename]=hashlib.sha256(blob).hexdigest()
-        if set(digests) not in ({"intake.json","triage.json","edition.json","reconciliation.json","index.html","methodology.md","methodology.html"}, {"intake.json","triage.json","edition.json","reconciliation.json","index.html","methodology.md","methodology.html","workspace.html","relations.json","evidence_queues.json"}, {"intake.json","triage.json","edition.json","reconciliation.json","index.html","methodology.md","methodology.html","workspace.html","relations.json","history.json","evidence_queues.json"}):raise ValueError("Incomplete run outputs")
+        if set(digests) not in ({"intake.json","triage.json","edition.json","reconciliation.json","index.html","methodology.md","methodology.html"}, {"intake.json","triage.json","edition.json","reconciliation.json","index.html","methodology.md","methodology.html","workspace.html","relations.json","evidence_queues.json","builder_questions.json"}, {"intake.json","triage.json","edition.json","reconciliation.json","index.html","methodology.md","methodology.html","workspace.html","relations.json","history.json","evidence_queues.json"}):raise ValueError("Incomplete run outputs")
         intake=json.loads(outputs["intake.json"])
         review=json.loads(outputs["edition.json"])
         receipt={"schema":"scout-integrated-run-v0","run_id":run_id,
@@ -117,6 +122,8 @@ def commit_run(outputs,root,run_id,prior=None):
                "history":"TWO_SNAPSHOT_REBUILT" if "history.json" in outputs else "PINNED_HISTORICAL" if "workspace.html" in outputs else "NOT_INCLUDED",
                "claims":"UNVERIFIED_CURRENT_RUN_QUEUE" if "evidence_queues.json" in outputs else "NOT_INCLUDED",
                "trails":"OBSERVED_LINKS_NOT_EXPANDED" if "evidence_queues.json" in outputs else "NOT_INCLUDED",
+               "people":"UNVERIFIED_CURRENT_RUN_HANDLES" if "builder_questions.json" in outputs else "NOT_INCLUDED",
+               "theses":"UNASSESSED_CURRENT_RUN_QUESTIONS" if "builder_questions.json" in outputs else "NOT_INCLUDED",
                "remaining_views":"PINNED_HISTORICAL" if "workspace.html" in outputs else "NOT_INCLUDED"},
            "methodology":"methodology.html",
            "methodology_source":"methodology.md",
