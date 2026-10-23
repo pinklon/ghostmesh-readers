@@ -17,7 +17,7 @@ class NoRedirect(urllib.request.HTTPRedirectHandler):
     def redirect_request(self, req, fp, code, msg, headers, newurl):
         return None
 
-def collect(url: str, opener=None) -> dict:
+def collect(url: str, opener=None, snapshot_callback=None) -> dict:
     parts = urlsplit(url)
     if parts.scheme != "https" or parts.hostname not in HOSTS or parts.port not in (None, 443):
         raise ValueError("URL outside allowed public-source hosts")
@@ -40,6 +40,8 @@ def collect(url: str, opener=None) -> dict:
     else:
         packet["substantive_text"] = {"title": "", "excerpt": payload.decode("utf-8", errors="replace")[:4000], "extraction_status": "EXTRACTED_UNVERIFIED"}
     packet["retrieval"] = {"http_status": 200, "content_type": kind}
+    if snapshot_callback is not None:
+        snapshot_callback(payload)
     return packet
 
 def main() -> None:
