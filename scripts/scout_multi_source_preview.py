@@ -78,6 +78,7 @@ def render(intake: dict, triage: dict, edition: dict, reconcile: dict) -> str:
         url=lead["url"]; candidate=curated.get(url); side=triage_by_url.get(url,{})
         scope=candidate.get("queue","BACKGROUND_WATCH") if candidate else "UNMATCHED"
         topics=side.get("topics",[])
+        quality=side.get("signal_quality",{})
         title=lead.get("title","Untitled")
         search=(title+" "+lead.get("description","")+" "+" ".join(topics)+" "+lead["source"]).lower()
         h.extend(["<article class='gm-item' data-lane='",e(lead["lane"] ),"' data-scope='",e(scope),"' data-search='",e(search),"'>",
@@ -86,6 +87,9 @@ def render(intake: dict, triage: dict, edition: dict, reconcile: dict) -> str:
                   "<p>",e(lead.get("description","")),"</p>"])
         for t in topics:
             h.extend(["<span class='gm-label'>",e(t.replace("-"," ")),"</span>"])
+        if quality.get("flags"):
+            h.extend(["<p><strong>Reading caution:</strong> ",e(", ".join(quality["flags"])),
+                      ". Unreviewed source kept visible, not rejected.</p>"])
         if candidate:
             h.extend(["<p><strong>Queue:</strong> ",e(scope.replace("_"," ").title()),". GhostMesh relevance not yet independently verified.</p>"])
         h.append("</div></article>")
