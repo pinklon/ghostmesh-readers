@@ -37,13 +37,13 @@ class IntegratedRunTests(unittest.TestCase):
   names=("relationships","history","claims","people","replay","theses","trails","differences")
   views={x:"<!doctype html><html><head><meta name=\"robots\" content=\"noindex,nofollow\"></head><body>"+x+"</body></html>" for x in names}
   outputs=build_run(a,b,historical_views=views)
-  self.assertEqual(len(outputs),11)
+  self.assertEqual(len(outputs),12)
   self.assertIn(b"PINNED",outputs["workspace.html"].upper())
   self.assertIn(b"methodology.html",outputs["workspace.html"])
   with tempfile.TemporaryDirectory() as tmp:
    receipt=commit_run(outputs,Path(tmp),"allviews")
    self.assertEqual(receipt["workspace_view_status"]["discovery"],"CURRENT_RUN")
-   self.assertEqual(len(receipt["sha256"]),11)
+   self.assertEqual(len(receipt["sha256"]),12)
    self.assertEqual(receipt["workspace_view_status"]["claims"],"UNVERIFIED_CURRENT_RUN_QUEUE")
    self.assertEqual(receipt["workspace_view_status"]["trails"],"OBSERVED_LINKS_NOT_EXPANDED")
    self.assertEqual(receipt["workspace_view_status"]["relationships"],"CURRENT_RUN")
@@ -58,7 +58,7 @@ class IntegratedRunTests(unittest.TestCase):
   self.assertIn("evidence_queues.json",outputs)
   with tempfile.TemporaryDirectory() as temp:
    receipt=commit_run(outputs,Path(temp),"all-current")
-   self.assertEqual(len(receipt["sha256"]),12)
+   self.assertEqual(len(receipt["sha256"]),13)
    self.assertEqual(receipt["workspace_view_status"]["history"],"TWO_SNAPSHOT_REBUILT")
  def test_historical_views_must_be_complete(self):
   a,b=data()
