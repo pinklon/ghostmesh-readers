@@ -21,7 +21,7 @@ class ScoutConnectionTests(unittest.TestCase):
         self.assertTrue(validate(dict(self.good, source_url="http://example.org")))
     def test_reject_empty_thesis(self):
         self.assertTrue(validate(dict(self.good, connection_thesis=" ")))
-    def test_no_invented_accuracy(self):
+    def test_malformed_recommendation_type(self):\n        self.assertIn("invalid recommendation", validate(dict(self.good, recommendation=[])))\n    def test_malformed_experiment_type(self):\n        self.assertTrue(validate(dict(self.good, recommendation="CONSIDER_INTRODUCTION", proposed_experiment=[])))\n    def test_no_invented_accuracy(self):
         self.assertIsNone(compare([self.good])["measured_accuracy"])
     def test_no_vacuous_introduction(self):
         x = dict(self.good, recommendation="CONSIDER_INTRODUCTION", proposed_experiment="unknown")
