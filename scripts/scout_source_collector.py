@@ -8,6 +8,7 @@ import urllib.request
 from pathlib import Path
 from urllib.parse import urlsplit
 from scout_evidence_intake import build_packet, MAX_BYTES
+from scout_html_extract import extract
 
 HOSTS = {"arxiv.org", "www.arxiv.org", "raw.githubusercontent.com"}
 MAX_REDIRECTS = 0
@@ -34,6 +35,10 @@ def collect(url: str, opener=None) -> dict:
         payload = response.read(MAX_BYTES + 1)
     packet = build_packet(url, payload)
     packet["source_capture"] = "HTTPS GET of allowlisted host; no redirects; content not independently authenticated"
+    if kind == "text/html":
+        packet["substantive_text"] = extract(payload.decode("utf-8", errors="replace"))
+    else:
+        packet["substantive_text"] = {"title": "", "excerpt": payload.decode("utf-8", errors="replace")[:4000], "extraction_status": "EXTRACTED_UNVERIFIED"}
     packet["retrieval"] = {"http_status": 200, "content_type": kind}
     return packet
 
