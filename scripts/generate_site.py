@@ -441,7 +441,7 @@ def projections():
   url=review_url(review)
   out[url.strip('/')+'/index.html']=scout_page(review['title'],url,review_page(review,(ROOT/'content/scout/reviews'/f'{review["id"]}.md').read_text()))
  out['feed.xml']=feed_xml(release_events,data['host'])
- urls=['/','/readers/','/map/','/knowledge/','/scout/','/scout/archive/','/scout/method/','/scout/essays/','/scout/essays/the-signal-is-not-the-finding/','/scout/essays/follow-the-work/','/scout/essays/five-ideas-outside-the-filter/']+[edition_url(edition) for edition in editions]+[review_url(review) for review in scout['reviews']]+['/'+r['slug']+'/' for r in readers]+[f'/readers/categories/{i}/' for i in range(len(CATEGORIES))]
+ urls=['/','/readers/','/map/','/knowledge/','/scout/','/scout/archive/','/scout/method/','/scout/essays/','/scout/essays/the-signal-is-not-the-finding/','/scout/essays/follow-the-work/','/scout/essays/five-ideas-outside-the-filter/','/scout/essays/a-faster-review-button-is-not-a-better-decision','/scout/essays/the-plateau-that-lied','/scout/essays/latent-states-are-not-an-agent-api']+[edition_url(edition) for edition in editions]+[review_url(review) for review in scout['reviews']]+['/'+r['slug']+'/' for r in readers]+[f'/readers/categories/{i}/' for i in range(len(CATEGORIES))]
  out['sitemap.xml']='<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'+''.join('<url><loc>'+data['host']+u+'</loc></url>' for u in sorted(urls))+'</urlset>\n'
  out['404.html']=page('Page not found','/404.html','<h1>That page is not here.</h1><p><a href="/readers/">Browse the complete Reader library</a> or return to the <a href="/">homepage</a>.</p>')
  return out
