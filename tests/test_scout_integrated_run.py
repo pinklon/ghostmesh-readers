@@ -72,6 +72,19 @@ class IntegratedRunTests(unittest.TestCase):
    receipt=commit_run(out,Path(root),"one-command")
    self.assertEqual(receipt["workspace_view_status"]["history"],"AWAITING_PRIOR_SNAPSHOT")
    self.assertEqual(receipt["workspace_view_status"]["remaining_views"],"NONE")
+ def test_run_outputs_owner_only(self):
+  import stat
+  a,b=data()
+  with tempfile.TemporaryDirectory() as root:
+   commit_run(build_run(a,b),Path(root),"permissions")
+   f=Path(root)/"permissions"/"intake.json"
+   self.assertEqual(stat.S_IMODE(f.stat().st_mode),0o600)
+ def test_reject_permissive_run_root(self):
+  import os
+  a,b=data()
+  with tempfile.TemporaryDirectory() as tmp:
+   root=Path(tmp)/"shared";root.mkdir(mode=0o755)
+   with self.assertRaises(PermissionError):commit_run(build_run(a,b),root,"unsafe")
  def test_previous_snapshot(self):
   a,b=data();o=build_run(a,b,a)
   x=json.loads(o["reconciliation.json"])
