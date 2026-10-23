@@ -62,6 +62,12 @@ def reconcile(current: dict, previous: dict | None = None) -> dict:
             "cross_source":len(sources)>1,
             "assessment":"UNREVIEWED","trend":"NOT_MEASURED","relevance":"UNKNOWN",
             "outreach_authorized":False})
+    # Shared ledger is imported inside the function to keep URL normalization
+    # reusable without changing the collector or existing public APIs.
+    from scout_ingestion_ledger import record_ledger
+    historical=record_ledger(previous.get("sampled_leads",[])) if previous else None
+    intake_ledger=record_ledger(current.get("sampled_leads",[]),
+        historical["seen_keys"] if historical else ())
     gone=sorted(set(prev)-set(curr))
     # A source disappearing from a top-N snapshot does not mean it was removed from the internet.
     return {"schema":"scout-reconciliation-v0",
@@ -75,10 +81,15 @@ def reconcile(current: dict, previous: dict | None = None) -> dict:
         "missing_from_current_sample":len(gone),
         "absent_sample_urls":gone[:30],
         "leads":unique,
+        "ingestion_receipts":intake_ledger["receipts"],
+        "ingestion_summary":{"accepted":intake_ledger["accepted"],
+                             "duplicate_revisions":intake_ledger["duplicates"],
+                             "unverified_reobservations":intake_ledger["unverified_reobservations"]},
         "limits":["Only compared sampled top-N retrievals; missing is not deleted",
                   "Metadata changes are not evidence of substantive changes",
                   "No measured velocity, virality, importance, or verified content",
-                  "Same-topic different-URL items are not automatically merged"],
+                  "Same-topic different-URL items are not automatically merged",
+                  "Unversioned repeats do not prove unchanged bytes; author labels remain unresolved"],
         "publication_authorized":False,"outreach_authorized":False}
 
 def main():
