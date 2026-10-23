@@ -31,7 +31,7 @@ CSS = BASE_CSS + """
 .gm-health div{border-top:1px solid var(--gm-border);padding:12px 0;color:var(--gm-muted);font-size:13px}
 @media(max-width:700px){.gm-stats{grid-template-columns:repeat(2,1fr)}.gm-stat:nth-child(3){border-left:0;padding-left:0}.gm-item{grid-template-columns:1fr;gap:5px}.gm-health{grid-template-columns:1fr}}
 """
-LANES = ("attention","community","builder","research","engineering","code")
+LANES = ("attention","community","creator","builder","research","engineering","code")
 def render(intake: dict, triage: dict, edition: dict, reconcile: dict) -> str:
     if (intake.get("schema") != "scout-multisource-intake-v0"
         or triage.get("schema") != "scout-relevance-triage-v0"
