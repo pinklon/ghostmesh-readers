@@ -20,6 +20,10 @@ from scout_signal_reconcile import reconcile
 from scout_multi_source_preview import render
 from scout_methodology_page import render_methodology, canonical_document
 from scout_workspace import build as build_workspace, SECTIONS
+from scout_relations import build as build_relations
+from scout_relationship_preview import render as render_relationships
+from scout_source_history import build as build_history
+from scout_history_preview import render as render_history
 
 def _json_bytes(obj):
     return (json.dumps(obj,indent=2,ensure_ascii=False,sort_keys=True)+"\n").encode("utf-8")
@@ -59,9 +63,24 @@ def build_run(intake,watch_catalog,previous=None,historical_views=None):
         if set(historical_views)!=expected:
             raise ValueError("All eight historical view inputs required")
         views={"discovery":html,**historical_views}
+        # Relationships are derived from this run, not copied from a prior snapshot.
+        relations=build_relations(intake,result_triage,result_reconcile)
+        views["relationships"]=render_relationships(relations)
+        outputs["relations.json"]=_json_bytes(relations)
+        # History needs at least two chronological snapshots. If unavailable,
+        # keep the previous view labeled historical rather than invent one.
+        if previous is not None:
+            previous_triage=triage(previous)
+            if previous["captured_utc"]<intake["captured_utc"]:
+                source_history=build_history([(previous,previous_triage),(intake,result_triage)])
+                views["history"]=render_history(source_history,relations)
+                outputs["history.json"]=_json_bytes(source_history)
         workspace=build_workspace(views)
-        # The eight historical views are clearly marked as retained research snapshots.
-        banner="<div role=\"status\" style=\"padding:12px 24px;background:#292126;color:#ffe1e5;border-bottom:1px solid #e83b52\">Live-run Discovery; the other eight views are pinned historical research snapshots and are not regenerated from this collection. <a style=\"color:#ffc4d0\" href=\"methodology.html\">How Scout collects signals ↗</a></div>"
+        refreshed=["Discovery","Relationships"]+ (["History"] if "history.json" in outputs else [])
+        pinned=[label for label,key in SECTIONS if key not in ({"discovery","relationships","history"} if "history.json" in outputs else {"discovery","relationships"})]
+        from html import escape
+        note="Current-run: "+", ".join(refreshed)+". Pinned historical research: "+", ".join(pinned)+". "
+        banner="<div role=\"status\" style=\"padding:12px 24px;background:#292126;color:#ffe1e5;border-bottom:1px solid #e83b52\">"+escape(note)+"<a style=\"color:#ffc4d0\" href=\"methodology.html\">How Scout collects signals ↗</a></div>"
         workspace=workspace.replace("</header>", "</header>"+banner,1)
         outputs["workspace.html"]=workspace.encode("utf-8")
     return outputs
@@ -77,11 +96,11 @@ def commit_run(outputs,root,run_id,prior=None):
     try:
         digests={}
         for filename,blob in outputs.items():
-            if filename not in {"intake.json","triage.json","edition.json","reconciliation.json","index.html","methodology.md","methodology.html","workspace.html"}:
+            if filename not in {"intake.json","triage.json","edition.json","reconciliation.json","index.html","methodology.md","methodology.html","workspace.html","relations.json","history.json"}:
                 raise ValueError("Unexpected generated output")
             _write(work/filename,blob)
             digests[filename]=hashlib.sha256(blob).hexdigest()
-        if len(digests) not in (7,8) or ("workspace.html" in outputs and len(digests)!=8):raise ValueError("Incomplete run outputs")
+        if set(digests) not in ({"intake.json","triage.json","edition.json","reconciliation.json","index.html","methodology.md","methodology.html"}, {"intake.json","triage.json","edition.json","reconciliation.json","index.html","methodology.md","methodology.html","workspace.html","relations.json"}, {"intake.json","triage.json","edition.json","reconciliation.json","index.html","methodology.md","methodology.html","workspace.html","relations.json","history.json"}):raise ValueError("Incomplete run outputs")
         intake=json.loads(outputs["intake.json"])
         review=json.loads(outputs["edition.json"])
         receipt={"schema":"scout-integrated-run-v0","run_id":run_id,
@@ -89,7 +108,9 @@ def commit_run(outputs,root,run_id,prior=None):
            "leads":len(intake["sampled_leads"]),"candidate_count":review["candidate_count"],
            "source_snapshot_origin":"ONE_SHOT_PUBLIC_COLLECTION_OR_EXPLICIT_OFFLINE_INPUT",
            "previous_snapshot_provided":prior is not None,
-           "workspace_view_status":{"discovery":"CURRENT_RUN","other_eight":"PINNED_HISTORICAL" if "workspace.html" in outputs else "NOT_INCLUDED"},
+           "workspace_view_status":{"discovery":"CURRENT_RUN","relationships":"CURRENT_RUN" if "relations.json" in outputs else "NOT_INCLUDED",
+               "history":"TWO_SNAPSHOT_REBUILT" if "history.json" in outputs else "PINNED_HISTORICAL" if "workspace.html" in outputs else "NOT_INCLUDED",
+               "remaining_views":"PINNED_HISTORICAL" if "workspace.html" in outputs else "NOT_INCLUDED"},
            "methodology":"methodology.html",
            "methodology_source":"methodology.md",
            "sha256":digests,
