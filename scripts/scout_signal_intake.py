@@ -12,7 +12,7 @@ import urllib.parse
 import urllib.request
 import xml.etree.ElementTree as ET
 
-MAX_BYTES=450_000
+MAX_BYTES=2_500_000
 UA="GhostMesh-Scout/0.1 (+research-only; no contact or posting)"
 FEEDS={
  "independent-builder":("https://simonwillison.net/atom/everything/","builder"),
