@@ -20,11 +20,14 @@ FEEDS={
  "cloudflare":("https://blog.cloudflare.com/rss/","engineering"),
  "lobsters":("https://lobste.rs/rss","community"),
  "github-engineering":("https://github.blog/feed/","engineering"),
- "arxiv-ai":("https://export.arxiv.org/rss/cs.AI","research")
+ "arxiv-ai":("https://export.arxiv.org/rss/cs.AI","research"),
+ "arxiv-ml":("https://export.arxiv.org/rss/cs.LG","research"),
+ "planet-python":("https://planetpython.org/rss20.xml","community")
 }
 GITHUB_QUERIES=("agent memory","agent authorization")
 HN_URL="https://hacker-news.firebaseio.com/v0/topstories.json"
 API_GITHUB="https://api.github.com/search/repositories"
+DEV_URL="https://dev.to/api/articles?tag=ai&per_page=10"
 def fetch(url: str) -> bytes:
     req=urllib.request.Request(url,headers={"User-Agent":UA,"Accept":"application/rss+xml, application/atom+xml, application/json, application/xml"})
     with urllib.request.urlopen(req,timeout=8) as response:
@@ -76,6 +79,26 @@ def github_items(query,payload,limit=7):
         if item: result.append(item)
     return result
 
+def devto_items(payload,limit=8):
+    """DEV's public article list; no author identity claim or engagement ranking."""
+    data=json.loads(payload)
+    if not isinstance(data,list):raise ValueError("Unexpected DEV article payload")
+    result=[]
+    for entry in data[:limit]:
+        if not isinstance(entry,dict):continue
+        article_url=entry.get("canonical_url") or entry.get("url")
+        # Display link to DEV's canonical article, not arbitrary external URLs.
+        url=entry.get("url","")
+        p=urllib.parse.urlsplit(url or "")
+        if p.scheme!="https" or p.hostname!="dev.to":continue
+        author=entry.get("user") or {}
+        name=author.get("username") if isinstance(author,dict) else None
+        item=normalize("dev-community","creator",entry.get("title"),url,
+            entry.get("description"),entry.get("published_at"),
+            {"author_handle_unverified":str(name or "")[:80],"metric_scope":"No engagement trajectory inferred"})
+        if item:result.append(item)
+    return result
+
 def hn_items(ids_payload,item_fetcher=fetch,limit=8):
     result=[]
     for story_id in json.loads(ids_payload)[:limit*2]:
@@ -113,6 +136,13 @@ def run(transport=fetch,cap=8):
         except Exception as error:
             diagnostics.append({"source":name,"state":"ERROR","error_type":type(error).__name__})
     try:
+        dev_url="https://dev.to/api/articles?"+urllib.parse.urlencode({"tag":"ai","per_page":cap})
+        found=devto_items(transport(dev_url),cap)
+        entries+=found
+        diagnostics.append({"source":"dev-community","state":"FETCHED","items":len(found)})
+    except Exception as error:
+        diagnostics.append({"source":"dev-community","state":"ERROR","error_type":type(error).__name__})
+    try:
         found=hn_items(transport(HN_URL),transport,cap)
         entries+=found
         diagnostics.append({"source":"hacker-news","state":"FETCHED","items":len(found)})
@@ -127,7 +157,8 @@ def run(transport=fetch,cap=8):
             "sampled_leads":unique,"diagnostics":diagnostics,
             "measurement_limits":["One-time feed snapshot, not independently measured virality",
                                   "Source metadata not checked against individual article bodies",
-                                  "No social platform coverage claimed for Reddit, X, YouTube, Instagram or Bluesky",
+                                  "DEV public author handles are attribution metadata, not verified people or relationships",
+                                  "Reddit, X, YouTube, Instagram and Bluesky not connected",
                                   "Search terms are topic biased; not a representative discovery sample"],
             "publication_authorized":False,"outreach_authorized":False}
 
