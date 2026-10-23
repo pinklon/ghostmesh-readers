@@ -62,51 +62,47 @@ def build_run(intake,watch_catalog,previous=None,historical_views=None):
             "reconciliation.json":_json_bytes(result_reconcile),
             "index.html":html.encode("utf-8")}
     # All nine panels are generated from the run; old preview files are not required.
-    # Retain the optional manifest argument for compatibility, but never display
-    # its historical content as current evidence.
+    # Reject old preview inputs to avoid accidentally treating them as current.
     if historical_views is not None:
-        expected={key for _,key in SECTIONS if key!="discovery"}
-        if set(historical_views)!=expected:
-            raise ValueError("An optional historical manifest must be complete")
+        raise ValueError("Legacy HTML inputs are no longer accepted; all panels are generated")
     views={"discovery":html}
     views["history"]=("<!doctype html><html><head><meta name=\"robots\" "
         "content=\"noindex,nofollow,noarchive\"></head><body><main>"
         "<h1>History begins with this collection</h1>"
         "<p>No earlier source snapshot was supplied. This is not a revision history.</p>"
         "</main></body></html>")
-    if True:
-        # Relationships are derived from this run, not copied from a prior snapshot.
-        relations=build_relations(intake,result_triage,result_reconcile)
-        views["relationships"]=render_relationships(relations)
-        outputs["relations.json"]=_json_bytes(relations)
-        # History needs at least two chronological snapshots. If unavailable,
-        # keep the previous view labeled historical rather than invent one.
-        if previous is not None:
-            previous_triage=triage(previous)
-            if previous["captured_utc"]<intake["captured_utc"]:
-                source_history=build_history([(previous,previous_triage),(intake,result_triage)])
-                views["history"]=render_history(source_history,relations)
-                outputs["history.json"]=_json_bytes(source_history)
-        queues=build_queues(intake,result_triage)
-        views["claims"]=render_queue(queues,"claims")
-        views["trails"]=render_queue(queues,"works")
-        outputs["evidence_queues.json"]=_json_bytes(queues)
-        builder_questions=build_builder_questions(intake,result_triage)
-        views["people"]=render_builder_questions(builder_questions,"people")
-        views["theses"]=render_builder_questions(builder_questions,"questions")
-        outputs["builder_questions.json"]=_json_bytes(builder_questions)
-        audit=build_decisions(intake,result_triage,result_edition,result_reconcile)
-        views["replay"]=render_decisions(audit,"replay")
-        views["differences"]=render_decisions(audit,"differences")
-        outputs["decision_audit.json"]=_json_bytes(audit)
-        workspace=build_workspace(views)
-        refreshed=["Discovery","Relationships","Claims (unverified queue)","Public work (observed links)","People (unverified handles)","Connection questions (unassessed)","Selection decisions (metadata only)","Capability questions (not measured)"]+ (["History"] if "history.json" in outputs else [])
-        pinned=[]
-        from html import escape
-        note="Run-bound: "+", ".join(refreshed)+". "+("History rebuilt from two snapshots. " if "history.json" in outputs else "History awaiting an earlier snapshot. ")+"No panels depend on historical HTML files. "
-        banner="<div role=\"status\" style=\"padding:12px 24px;background:#292126;color:#ffe1e5;border-bottom:1px solid #e83b52\">"+escape(note)+"<a style=\"color:#ffc4d0\" href=\"methodology.html\">How Scout collects signals ↗</a></div>"
-        workspace=workspace.replace("</header>", "</header>"+banner,1)
-        outputs["workspace.html"]=workspace.encode("utf-8")
+    # Relationships are derived from this run, not copied from a prior snapshot.
+    relations=build_relations(intake,result_triage,result_reconcile)
+    views["relationships"]=render_relationships(relations)
+    outputs["relations.json"]=_json_bytes(relations)
+    # History needs at least two chronological snapshots. If unavailable,
+    # keep the previous view labeled historical rather than invent one.
+    if previous is not None:
+        previous_triage=triage(previous)
+        if previous["captured_utc"]<intake["captured_utc"]:
+            source_history=build_history([(previous,previous_triage),(intake,result_triage)])
+            views["history"]=render_history(source_history,relations)
+            outputs["history.json"]=_json_bytes(source_history)
+    queues=build_queues(intake,result_triage)
+    views["claims"]=render_queue(queues,"claims")
+    views["trails"]=render_queue(queues,"works")
+    outputs["evidence_queues.json"]=_json_bytes(queues)
+    builder_questions=build_builder_questions(intake,result_triage)
+    views["people"]=render_builder_questions(builder_questions,"people")
+    views["theses"]=render_builder_questions(builder_questions,"questions")
+    outputs["builder_questions.json"]=_json_bytes(builder_questions)
+    audit=build_decisions(intake,result_triage,result_edition,result_reconcile)
+    views["replay"]=render_decisions(audit,"replay")
+    views["differences"]=render_decisions(audit,"differences")
+    outputs["decision_audit.json"]=_json_bytes(audit)
+    workspace=build_workspace(views)
+    refreshed=["Discovery","Relationships","Claims (unverified queue)","Public work (observed links)","People (unverified handles)","Connection questions (unassessed)","Selection decisions (metadata only)","Capability questions (not measured)"]+ (["History"] if "history.json" in outputs else [])
+    pinned=[]
+    from html import escape
+    note="Run-bound: "+", ".join(refreshed)+". "+("History rebuilt from two snapshots. " if "history.json" in outputs else "History awaiting an earlier snapshot. ")+"No panels depend on historical HTML files. "
+    banner="<div role=\"status\" style=\"padding:12px 24px;background:#292126;color:#ffe1e5;border-bottom:1px solid #e83b52\">"+escape(note)+"<a style=\"color:#ffc4d0\" href=\"methodology.html\">How Scout collects signals ↗</a></div>"
+    workspace=workspace.replace("</header>", "</header>"+banner,1)
+    outputs["workspace.html"]=workspace.encode("utf-8")
     return outputs
 
 def commit_run(outputs,root,run_id,prior=None):
@@ -169,19 +165,12 @@ def main():
     p.add_argument("--offline-intake",type=Path,help="Use frozen captured data; no network")
     p.add_argument("--previous",type=Path,help="Previous intact intake.json, read only")
     p.add_argument("--cap",type=int,default=8)
-    p.add_argument("--views-manifest",type=Path,help="Deprecated optional legacy manifest; ignored by generated panels")
     a=p.parse_args()
     if (a.run_root/a.run_id).exists():raise SystemExit("Existing run ID; no overwrite")
     load=lambda path:json.loads(path.read_text(encoding="utf-8"))
     intake=load(a.offline_intake) if a.offline_intake else collect(cap=a.cap)
     previous=load(a.previous) if a.previous else None
-    historical=None
-    if a.views_manifest:
-        manifest=load(a.views_manifest)
-        if not isinstance(manifest,dict) or set(manifest)!={k for _,k in SECTIONS if k!="discovery"}:
-            raise SystemExit("Expected manifest of eight named historical views")
-        historical={key:Path(path).read_text(encoding="utf-8") for key,path in manifest.items()}
-    outputs=build_run(intake,load(a.catalog),previous,historical)
+    outputs=build_run(intake,load(a.catalog),previous)
     receipt=commit_run(outputs,a.run_root,a.run_id,a.previous)
     print(json.dumps({"run_dir":str(a.run_root/a.run_id),"leads":receipt["leads"],
                       "candidate_count":receipt["candidate_count"],"files":sorted(outputs)},indent=2))
