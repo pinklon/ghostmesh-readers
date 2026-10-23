@@ -20,7 +20,7 @@ This journal records two bounded research families documented in the public Scou
 | Four-step decision probe | Stop, continue or observe four more steps in fixed synthetic trajectories | The probe did not beat the best alternative in any tested regime under those toy utilities | That bounded extra computation never helps on real work |
 | Observable-feedback classification | 1,728 synthetic final-trial receipts classified into 716 STOP, 561 FALLBACK and 451 REQUEST_ESCALATION_REVIEW recommendations | The rule can classify visible receipt patterns without consulting a hidden hindsight field | That taking its recommended actions improves outcomes |
 
-These numbers come from the existing public essays and their cited research descriptions. This draft has **not** independently rerun the original fixtures or reconciled all raw receipts. We should not describe the table as a fresh experimental replication.
+These figures originated in the existing public essays and their research descriptions. On October 23, 2026, we replayed the original three deterministic Python benchmark functions in a read-only process; their computed summaries matched the retained reported values. The [source-pinned replay receipt](https://github.com/pinklon/ghostmesh-readers/pull/75/files) records exact code identifiers and comparisons. This is an exact-source replay, **not** an independently implemented replication, validation of the experimental design, or a live workload benchmark. The original raw-result archive hashes remain unreconciled.
 
 ## Discovery beyond the dictionary
 
@@ -50,11 +50,11 @@ Those are counterexamples, not operational recommendations. The trajectories and
 
 The later receipt-only classifier recommended 716 stops, 561 fallbacks and 451 escalation reviews across 1,728 final-trial receipts. That is a distribution of recommendations. No one should quietly convert it into a success rate. The actions were not executed as part of that audit.
 
-## The missing replication package
+## A replay is not a complete replication package
 
 For the outside-vocabulary work, a proper public companion would include a redacted, frozen list of source identifiers, source-role labels, the selection algorithm, the exact predeclared dictionary, review rubric, reviewer independence statement and complete counts including abstentions. Private intake packets and contact information must remain private.
 
-For the stopping study, it would include the synthetic generator version, seeds, full parameter choices, stop-rule definitions, utility weights, executable test script, raw per-trial results and a one-command reproduction procedure. It must label which outcomes were simulated and which came from any later real task. We do not yet have a verified, public-safe reproduction bundle in this publication lane.
+For the stopping study, it would include the synthetic generator version, seeds, full parameter choices, stop-rule definitions, utility weights, executable test script, raw per-trial results and a one-command reproduction procedure. It must label which outcomes were simulated and which came from any later real task. A source-pinned, read-only replay receipt is now recorded in this publication lane, but a verified public-safe one-command reproduction bundle and full raw per-trial archive are still missing.
 
 That gap is worth closing. Source prose with impressive decimals is still source prose. A small runnable fixture can make it inspectable.
 
@@ -83,4 +83,4 @@ Our next job is to make one experiment reproducible enough that a skeptical read
 - [The Plateau That Lied](https://youtube.shareplane.malott.ai/scout/essays/the-plateau-that-lied/). Source for the deterministic search fixtures, adversarial stop policies and reported synthetic values.
 - [Follow the Work, Not the Follower Count](https://youtube.shareplane.malott.ai/scout/essays/follow-the-work/). The broader twelve-stream acquisition pilot and evidence ladder.
 
-**Editorial status:** Source-backed draft for Tony and segfault review. Raw fixture reproduction, current private inventory and any new participant disclosures remain unverified. Not approved for publication.
+**Editorial status:** Source-backed draft for Tony and segfault review. Same-source deterministic replay passed for three synthetic benchmark programs; independent replication, complete raw-result archive reconciliation, current private inventory and any new participant disclosures remain unverified. Not approved for publication.
