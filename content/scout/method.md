@@ -20,6 +20,8 @@ There is no single magical Scout feed. The repository currently documents severa
 
 Each lane has a different job. Combining them into one impressive-sounding total would erase the meaning of the numbers.
 
+The first edition's explicit priorities were documented as current editorial rationale, but original discovery circumstances were not retained. That absence is a limitation, not a license to reconstruct a convenient history.
+
 ## Collection is a receipt, not a verdict
 
 A useful intake record identifies the original source URL, the time it was retrieved, and what kind of evidence actually arrived. Was it a feed title, an excerpt, a README, release notes, source code, a paper, or an executable artifact? Those distinctions are fundamental.
