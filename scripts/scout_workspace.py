@@ -8,10 +8,10 @@ import argparse
 from html import escape
 from pathlib import Path
 
-SECTIONS=(("Discover","discovery"),("Relationships","relationships"),("History & revisions","history"))
+SECTIONS=(("Discover","discovery"),("Relationships","relationships"),("History & revisions","history"),("Claim impact","claims"))
 
 def build(files:dict[str,str])->str:
-    if set(files)!={key for _,key in SECTIONS}: raise ValueError("Three private views required")
+    if set(files)!={key for _,key in SECTIONS}: raise ValueError("Four private views required")
     for key,text in files.items():
         if not text.lstrip().lower().startswith("<!doctype html>") or "</html>" not in text.lower():
             raise ValueError("Invalid HTML view "+key)
@@ -25,7 +25,7 @@ def build(files:dict[str,str])->str:
         frames.append(f'<section role="tabpanel" id="panel-{key}" aria-labelledby="tab-{key}" {"hidden" if i else ""}><iframe title="{escape(label)}" sandbox="allow-scripts allow-popups" referrerpolicy="no-referrer" loading="lazy" srcdoc="{escape(files[key],quote=True)}"></iframe></section>')
     return '''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow,noarchive"><title>GhostMesh Scout | Private Workspace</title>
 <style>:root{color-scheme:dark;font-family:system-ui,-apple-system,sans-serif}*{box-sizing:border-box}body{margin:0;background:#101215;color:#eee}header{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;padding:18px max(22px,calc((100vw - 1200px)/2));border-bottom:1px solid #45474c}header strong{letter-spacing:.14em}header em{font-style:normal;color:#e83b52}header small{display:block;color:#a5aab4;font:700 10px ui-monospace,monospace;letter-spacing:.14em}nav{display:flex;flex-wrap:wrap;gap:9px;padding:12px max(22px,calc((100vw - 1200px)/2));border-bottom:1px solid #45474c}button{cursor:pointer;border:1px solid #45474c;padding:11px 15px;background:transparent;color:#e5e8ed;font-weight:700}button[aria-selected=true]{border-color:#e83b52;border-bottom:3px solid #e83b52}button:focus-visible{outline:2px solid #ed5364;outline-offset:3px}section[hidden]{display:none}iframe{border:0;width:100%;height:calc(100vh - 157px);min-height:600px;display:block}footer{padding:12px 22px;color:#b3b8c0;font-size:12px;border-top:1px solid #45474c}</style></head>
-<body><header><div><strong>GHOST<em>MESH</em> / SCOUT</strong><small>PRIVATE INTELLIGENCE WORKSPACE</small></div><small>Discovery → Connections → Change evidence</small></header><nav role="tablist" aria-label="Scout views">'''+tabs+'''</nav><main>'''+''.join(frames)+'''</main><footer>Research only · Source evidence is not verified scientific truth · No outreach or publication authority</footer><script>
+<body><header><div><strong>GHOST<em>MESH</em> / SCOUT</strong><small>PRIVATE INTELLIGENCE WORKSPACE</small></div><small>Discovery → Connections → History → Claim impact</small></header><nav role="tablist" aria-label="Scout views">'''+tabs+'''</nav><main>'''+''.join(frames)+'''</main><footer>Research only · Source evidence is not verified scientific truth · No outreach or publication authority</footer><script>
 const buttons=[...document.querySelectorAll('[role=tab]')];function selectTab(button){for(const b of buttons){let active=b===button;b.setAttribute('aria-selected',active?'true':'false');b.tabIndex=active?0:-1;document.getElementById('panel-'+b.dataset.view).hidden=!active;}button.focus();}
 for(const b of buttons){b.addEventListener('click',()=>selectTab(b));b.addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key==='ArrowLeft'){e.preventDefault();let i=buttons.indexOf(b),dir=e.key==='ArrowRight'?1:-1;selectTab(buttons[(i+dir+buttons.length)%buttons.length]);}});}
 </script></body></html>'''
