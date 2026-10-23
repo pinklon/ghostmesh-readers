@@ -24,6 +24,7 @@ from scout_relations import build as build_relations
 from scout_relationship_preview import render as render_relationships
 from scout_source_history import build as build_history
 from scout_history_preview import render as render_history
+from scout_run_evidence_queues import build as build_queues, render as render_queue
 
 def _json_bytes(obj):
     return (json.dumps(obj,indent=2,ensure_ascii=False,sort_keys=True)+"\n").encode("utf-8")
@@ -75,9 +76,13 @@ def build_run(intake,watch_catalog,previous=None,historical_views=None):
                 source_history=build_history([(previous,previous_triage),(intake,result_triage)])
                 views["history"]=render_history(source_history,relations)
                 outputs["history.json"]=_json_bytes(source_history)
+        queues=build_queues(intake,result_triage)
+        views["claims"]=render_queue(queues,"claims")
+        views["trails"]=render_queue(queues,"works")
+        outputs["evidence_queues.json"]=_json_bytes(queues)
         workspace=build_workspace(views)
-        refreshed=["Discovery","Relationships"]+ (["History"] if "history.json" in outputs else [])
-        pinned=[label for label,key in SECTIONS if key not in ({"discovery","relationships","history"} if "history.json" in outputs else {"discovery","relationships"})]
+        refreshed=["Discovery","Relationships","Claims (unverified queue)","Public work (observed links)"]+ (["History"] if "history.json" in outputs else [])
+        pinned=[label for label,key in SECTIONS if key not in ({"discovery","relationships","history","claims","trails"} if "history.json" in outputs else {"discovery","relationships","claims","trails"})]
         from html import escape
         note="Current-run: "+", ".join(refreshed)+". Pinned historical research: "+", ".join(pinned)+". "
         banner="<div role=\"status\" style=\"padding:12px 24px;background:#292126;color:#ffe1e5;border-bottom:1px solid #e83b52\">"+escape(note)+"<a style=\"color:#ffc4d0\" href=\"methodology.html\">How Scout collects signals ↗</a></div>"
@@ -96,11 +101,11 @@ def commit_run(outputs,root,run_id,prior=None):
     try:
         digests={}
         for filename,blob in outputs.items():
-            if filename not in {"intake.json","triage.json","edition.json","reconciliation.json","index.html","methodology.md","methodology.html","workspace.html","relations.json","history.json"}:
+            if filename not in {"intake.json","triage.json","edition.json","reconciliation.json","index.html","methodology.md","methodology.html","workspace.html","relations.json","history.json","evidence_queues.json"}:
                 raise ValueError("Unexpected generated output")
             _write(work/filename,blob)
             digests[filename]=hashlib.sha256(blob).hexdigest()
-        if set(digests) not in ({"intake.json","triage.json","edition.json","reconciliation.json","index.html","methodology.md","methodology.html"}, {"intake.json","triage.json","edition.json","reconciliation.json","index.html","methodology.md","methodology.html","workspace.html","relations.json"}, {"intake.json","triage.json","edition.json","reconciliation.json","index.html","methodology.md","methodology.html","workspace.html","relations.json","history.json"}):raise ValueError("Incomplete run outputs")
+        if set(digests) not in ({"intake.json","triage.json","edition.json","reconciliation.json","index.html","methodology.md","methodology.html"}, {"intake.json","triage.json","edition.json","reconciliation.json","index.html","methodology.md","methodology.html","workspace.html","relations.json","evidence_queues.json"}, {"intake.json","triage.json","edition.json","reconciliation.json","index.html","methodology.md","methodology.html","workspace.html","relations.json","history.json"}):raise ValueError("Incomplete run outputs")
         intake=json.loads(outputs["intake.json"])
         review=json.loads(outputs["edition.json"])
         receipt={"schema":"scout-integrated-run-v0","run_id":run_id,
@@ -110,6 +115,8 @@ def commit_run(outputs,root,run_id,prior=None):
            "previous_snapshot_provided":prior is not None,
            "workspace_view_status":{"discovery":"CURRENT_RUN","relationships":"CURRENT_RUN" if "relations.json" in outputs else "NOT_INCLUDED",
                "history":"TWO_SNAPSHOT_REBUILT" if "history.json" in outputs else "PINNED_HISTORICAL" if "workspace.html" in outputs else "NOT_INCLUDED",
+               "claims":"UNVERIFIED_CURRENT_RUN_QUEUE" if "evidence_queues.json" in outputs else "NOT_INCLUDED",
+               "trails":"OBSERVED_LINKS_NOT_EXPANDED" if "evidence_queues.json" in outputs else "NOT_INCLUDED",
                "remaining_views":"PINNED_HISTORICAL" if "workspace.html" in outputs else "NOT_INCLUDED"},
            "methodology":"methodology.html",
            "methodology_source":"methodology.md",
