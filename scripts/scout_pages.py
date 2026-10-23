@@ -68,7 +68,7 @@ def prose_html(raw, drop_title=False):
 
 def nav():
     return ('<nav class="gm-scout-local-nav" aria-label="Scout navigation">'
-            '<a href="/scout/">Latest</a><a href="/scout/essays/">Scout research essays</a><a href="/scout/archive/">Review library</a>'
+            '<a href="/scout/">Latest</a><a href="/scout/research/">Research Library</a><a href="/scout/essays/">Scout research essays</a><a href="/scout/archive/">Review library</a>'
             '<a href="/scout/method/">How Scout works</a></nav>')
 
 
@@ -90,7 +90,7 @@ def home(scout, edition):
         '<h1>Notice the signal. Keep the evidence in view.</h1><p>Scout reviews public tools and ideas through two lenses: what GhostMesh might learn, and what an everyday user could actually use. Each finding names its source, scope and unknowns.</p>'
         '</div><aside><p class="gm-kicker">Follow the public record</p><h2>One feed. No account.</h2><p>New Readers, material updates and published Scout reviews appear in the same RSS feed.</p><a class="gm-scout-subscribe" href="/feed.xml">Get the RSS feed ↗</a></aside></section>'
         '<section class="gm-scout-home-edition"><div class="gm-scout-section-heading"><div><p class="gm-kicker">Current edition / reviewed ' + escape(edition['reviewedOn']) + '</p><h2>' + escape(edition['title']) + '</h2></div><a href="' + edition_url(edition) + '">Read the edition ↗</a></div><p class="gm-scout-edition-lede">' + escape(edition['summary']) + '</p><div class="gm-scout-feature-list">' + cards + '</div></section>'
-        '<section class="gm-scout-home-next"><div><p class="gm-kicker">Original Scout research</p><h2>Why the signal is not the finding.</h2><p>Read the field guide to Scout, its selection methods and the experiment that found promising work outside familiar keywords. Private research runs remain private.</p><a href="/scout/essays/">Explore the Scout research essays ↗</a></div></section>'
+        '<section class="gm-scout-home-next"><div><p class="gm-kicker">Original Scout research</p><h2>Why the signal is not the finding.</h2><p>Read the field guide to Scout, its selection methods and the experiment that found promising work outside familiar keywords. Private research runs remain private.</p><a href="/scout/research/">Explore the complete public Research Library ↗</a></div></section>'
         '<section class="gm-scout-home-next"><div><p class="gm-kicker">The complete record</p><h2>Find a review after it leaves the front page.</h2><p>Browse by topic, source type or recommendation. Each review keeps a permanent URL and dated reassessment history.</p><a href="/scout/archive/">Browse the review library ↗</a></div><div><p class="gm-kicker">How we work</p><h2>Discovery is a lead, not a verdict.</h2><p>Read how candidates enter view, why an editor brings one forward and what the inspection actually established.</p><a href="/scout/method/">How Scout works ↗</a></div></section>')
 
 
