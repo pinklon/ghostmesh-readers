@@ -1,0 +1,59 @@
+{
+  "schema": "scout-watch-catalog-v0",
+  "status": "curated-research-hypotheses-not-account-verification",
+  "watches": [
+    {
+      "id": "karpathy",
+      "label": "Andrej Karpathy",
+      "kind": "named-researcher",
+      "keywords": [
+        "karpathy"
+      ],
+      "why": "agent education and model engineering",
+      "source_identity_verified": false
+    },
+    {
+      "id": "simon-willison",
+      "label": "Simon Willison",
+      "kind": "public-feed",
+      "source_host": "simonwillison.net",
+      "why": "independent software and LLM field notes",
+      "source_identity_verified": false
+    },
+    {
+      "id": "hugging-face",
+      "label": "Hugging Face research",
+      "kind": "publisher-feed",
+      "source_host": "huggingface.co",
+      "why": "open model and evaluation developments",
+      "source_identity_verified": false
+    },
+    {
+      "id": "guillaume-hortrame",
+      "label": "Guillaume / HORTRAME",
+      "kind": "named-collaboration-watch",
+      "keywords": [
+        "hortrame",
+        "guillaume bolduc"
+      ],
+      "why": "cross-disciplinary swarm research and existing collaboration; public content only",
+      "source_identity_verified": false
+    },
+    {
+      "id": "independent-agent-systems",
+      "label": "Independent agent systems",
+      "kind": "topic-watch",
+      "keywords": [
+        "agent memory",
+        "agent authorization",
+        "agent interoperability",
+        "durable agent",
+        "multi-agent"
+      ],
+      "why": "execution, continuity and epistemic diversity, not just popularity",
+      "source_identity_verified": false
+    }
+  ],
+  "outreach_authorized": false,
+  "publication_authorized": false
+}
