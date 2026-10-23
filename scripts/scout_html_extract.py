@@ -1,67 +1,56 @@
-"""Deterministic, offline extraction of public HTML research evidence."""
+"""Deterministic offline extraction of substantive text from public HTML."""
 from __future__ import annotations
 from html.parser import HTMLParser
 import re
+
+SKIP = {"script", "style", "nav", "footer", "header"}
 
 class Extractor(HTMLParser):
     def __init__(self):
         super().__init__(convert_charrefs=True)
         self.meta = {}
-        self.depth = 0
-        self.skip = 0
-        self.capture = []
-        self.abstract = []
-        self.in_abstract = 0
-        self.in_main = 0
+        self.stack = []
+        self.abstract_parts = []
+        self.main_parts = []
 
     def handle_starttag(self, tag, attrs):
-        a = dict(attrs)
+        attrs = dict(attrs)
         if tag == "meta":
-            key = a.get("name") or a.get("property")
+            key = attrs.get("name") or attrs.get("property")
             if key in {"citation_title", "citation_abstract", "description", "og:description"}:
-                self.meta[key] = a.get("content", "")
-        if tag in {"script", "style", "nav", "footer", "header"}:
-            self.skip += 1
-        if tag == "main":
-            self.in_main += 1
-        if tag in {"blockquote", "div", "section"} and "abstract" in a.get("class", "").split():
-            self.in_abstract += 1
-        self.capture.append((tag, bool(self.in_abstract), bool(self.in_main)))
+                self.meta[key] = attrs.get("content", "")
+        is_abstract = tag in {"blockquote", "div", "section"} and "abstract" in attrs.get("class", "").split()
+        self.stack.append((tag, is_abstract))
+
+    def handle_startendtag(self, tag, attrs):
+        self.handle_starttag(tag, attrs)
+        self.handle_endtag(tag)
 
     def handle_endtag(self, tag):
-        if self.capture:
-            # Pop through the matching open tag, including malformed nesting.
-            pos = next((i for i in range(len(self.capture)-1, -1, -1)
-                        if self.capture[i][0] == tag), None)
-            if pos is not None:
-                if any(t in {"script", "style", "nav", "footer", "header"} for t, _, _ in self.capture[pos:]):
-                    self.skip = max(0, self.skip - sum(t in {"script", "style", "nav", "footer", "header"} for t, _, _ in self.capture[pos:]))
-                if any(t == "main" for t, _, _ in self.capture[pos:]):
-                    self.in_main = max(0, self.in_main - sum(t == "main" for t, _, _ in self.capture[pos:]))
-                self.in_abstract = max(0, self.in_abstract - sum(a for _, a, _ in self.capture[pos:] if a) )
-                self.capture = self.capture[:pos]
+        for index in range(len(self.stack) - 1, -1, -1):
+            if self.stack[index][0] == tag:
+                self.stack = self.stack[:index]
+                return
 
     def handle_data(self, data):
-        if self.skip:
+        if any(tag in SKIP for tag, _ in self.stack):
             return
-        clean = " ".join(data.split())
-        if not clean:
+        text = " ".join(data.split())
+        if not text:
             return
-        if self.in_abstract:
-            self.abstract.append(clean)
-        elif self.in_main:
-            self.depth += 1
-            self.capture_text.append(clean) if hasattr(self, "capture_text") else setattr(self, "capture_text", [clean])
+        if any(is_abstract for _, is_abstract in self.stack):
+            self.abstract_parts.append(text)
+        elif any(tag == "main" for tag, _ in self.stack):
+            self.main_parts.append(text)
 
 def extract(html: str) -> dict:
     parser = Extractor()
     parser.feed(html)
     title = parser.meta.get("citation_title", "")
-    abstract = parser.meta.get("citation_abstract") or " ".join(parser.abstract)
+    abstract = parser.meta.get("citation_abstract") or " ".join(parser.abstract_parts)
     description = parser.meta.get("description") or parser.meta.get("og:description") or ""
-    main = " ".join(getattr(parser, "capture_text", []))
-    body = abstract or description or main
-    body = re.sub(r"\\s+", " ", body).strip()
+    body = abstract or description or " ".join(parser.main_parts)
+    body = re.sub(r"\s+", " ", body).strip()
     if not body:
         return {"title": title, "excerpt": None, "extraction_status": "INSUFFICIENT"}
     return {"title": title, "excerpt": body[:4000], "extraction_status": "EXTRACTED_UNVERIFIED"}
