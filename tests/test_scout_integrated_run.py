@@ -47,6 +47,19 @@ class IntegratedRunTests(unittest.TestCase):
    self.assertEqual(receipt["workspace_view_status"]["claims"],"UNVERIFIED_CURRENT_RUN_QUEUE")
    self.assertEqual(receipt["workspace_view_status"]["trails"],"OBSERVED_LINKS_NOT_EXPANDED")
    self.assertEqual(receipt["workspace_view_status"]["relationships"],"CURRENT_RUN")
+ def test_full_workspace_with_two_snapshots_and_evidence_queues(self):
+  a,b=data()
+  prior=json.loads(json.dumps(a))
+  prior["captured_utc"]="2026-10-22T12:00:00Z"
+  names=("relationships","history","claims","people","replay","theses","trails","differences")
+  views={x:"<!doctype html><html><head><meta name=\\"robots\\" content=\\"noindex,nofollow\\"></head><body>"+x+"</body></html>" for x in names}
+  outputs=build_run(a,b,prior,historical_views=views)
+  self.assertIn("history.json",outputs)
+  self.assertIn("evidence_queues.json",outputs)
+  with tempfile.TemporaryDirectory() as temp:
+   receipt=commit_run(outputs,Path(temp),"all-current")
+   self.assertEqual(len(receipt["sha256"]),11)
+   self.assertEqual(receipt["workspace_view_status"]["history"],"TWO_SNAPSHOT_REBUILT")
  def test_historical_views_must_be_complete(self):
   a,b=data()
   with self.assertRaises(ValueError):build_run(a,b,historical_views={"history":"some html"})
