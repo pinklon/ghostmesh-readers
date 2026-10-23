@@ -1,0 +1,37 @@
+import sys,tempfile,unittest,json,hashlib
+from pathlib import Path
+sys.path.insert(0,str(Path(__file__).resolve().parents[1]/"scripts"))
+from scout_integrated_run import build_run,commit_run
+def data():
+ lead={"id":"x","source":"fixture","lane":"community","title":"Independent project","url":"https://example.org/study","description":"Evidence and provenance for agents","published":"","metrics":{},"status":"UNREVIEWED_LEAD","ghostmesh_relevance":"UNKNOWN","outreach_authorized":False}
+ intake={"schema":"scout-multisource-intake-v0","sampled_leads":[lead],"diagnostics":[],"captured_utc":"2026-10-23T12:00:00Z","publication_authorized":False,"outreach_authorized":False}
+ catalog={"schema":"scout-watch-catalog-v0","watches":[],"publication_authorized":False,"outreach_authorized":False}
+ return intake,catalog
+class IntegratedRunTests(unittest.TestCase):
+ def test_build_complete_offline(self):
+  a,b=data();o=build_run(a,b)
+  self.assertEqual(len(o),5)
+  self.assertIn(b"noindex,nofollow",o["index.html"])
+  self.assertEqual(json.loads(o["intake.json"])["sampled_leads"][0]["url"],a["sampled_leads"][0]["url"])
+ def test_manifest_hashes_and_no_overwrite(self):
+  a,b=data();o=build_run(a,b)
+  with tempfile.TemporaryDirectory() as tmp:
+   m=commit_run(o,Path(tmp),"trial1")
+   self.assertEqual(m["sha256"]["index.html"],hashlib.sha256(o["index.html"]).hexdigest())
+   self.assertTrue((Path(tmp)/"trial1"/"manifest.json").exists())
+   with self.assertRaises(FileExistsError):commit_run(o,Path(tmp),"trial1")
+ def test_reject_unauthorized(self):
+  a,b=data();a["publication_authorized"]=True
+  with self.assertRaises(ValueError):build_run(a,b)
+ def test_reject_unsafe_id(self):
+  a,b=data()
+  with tempfile.TemporaryDirectory() as tmp:
+   with self.assertRaises(ValueError):commit_run(build_run(a,b),Path(tmp),"../bad")
+ def test_reject_incomplete(self):
+  with tempfile.TemporaryDirectory() as tmp:
+   with self.assertRaises(ValueError):commit_run({"index.html":b"test"},Path(tmp),"bad")
+ def test_previous_snapshot(self):
+  a,b=data();o=build_run(a,b,a)
+  x=json.loads(o["reconciliation.json"])
+  self.assertEqual(x["new_to_sample"],0)
+if __name__=="__main__":unittest.main()
