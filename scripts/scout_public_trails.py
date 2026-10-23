@@ -95,11 +95,13 @@ def collect(entries,transport=None,max_per_kind=3):
 
 def main():
     p=argparse.ArgumentParser(description=__doc__)
+    p.add_argument("--max-per-kind",type=int,default=3)
     p.add_argument("--source",type=Path,required=True)
     p.add_argument("--out",type=Path,required=True)
     a=p.parse_args()
     if a.out.exists():raise SystemExit("Refuse overwrite")
-    report=collect(json.loads(a.source.read_text(encoding="utf-8")))
+    if not 1<=a.max_per_kind<=12:raise SystemExit("max-per-kind must be 1..12")
+    report=collect(json.loads(a.source.read_text(encoding="utf-8")),max_per_kind=a.max_per_kind)
     a.out.write_text(json.dumps(report,indent=2,ensure_ascii=False)+"\n",encoding="utf-8")
     print(json.dumps({"trails":len(report["trails"]),"coverage":report["coverage"]},indent=2))
 if __name__=="__main__":main()
