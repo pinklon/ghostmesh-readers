@@ -19,6 +19,7 @@ from scout_private_edition import edition
 from scout_signal_reconcile import reconcile
 from scout_multi_source_preview import render
 from scout_methodology_page import render_methodology, canonical_document
+from scout_workspace import build as build_workspace, SECTIONS
 
 def _json_bytes(obj):
     return (json.dumps(obj,indent=2,ensure_ascii=False,sort_keys=True)+"\n").encode("utf-8")
@@ -27,7 +28,7 @@ def _write(path,content):
     with path.open("xb") as f:
         f.write(content)
 
-def build_run(intake,watch_catalog,previous=None):
+def build_run(intake,watch_catalog,previous=None,historical_views=None):
     if intake.get("schema")!="scout-multisource-intake-v0":
         raise ValueError("Invalid intake")
     if not isinstance(intake.get("sampled_leads"),list):
@@ -46,13 +47,24 @@ def build_run(intake,watch_catalog,previous=None):
     explanation=canonical_document()
     method_html=render_methodology(intake,explanation)
     html=html.replace("</main>", "<section class=\"gm-wide\"><h2>How signals enter Scout</h2><p>Read our sources, selection method, evidence limits and how to challenge a conclusion. <a href=\"methodology.html\" rel=\"noopener noreferrer\">Full methodology ↗</a></p></section></main>",1)
-    return {"methodology.md":explanation.encode("utf-8"),
+    outputs={"methodology.md":explanation.encode("utf-8"),
             "methodology.html":method_html.encode("utf-8"),
             "intake.json":_json_bytes(intake),
             "triage.json":_json_bytes(result_triage),
             "edition.json":_json_bytes(result_edition),
             "reconciliation.json":_json_bytes(result_reconcile),
             "index.html":html.encode("utf-8")}
+    if historical_views is not None:
+        expected={key for _,key in SECTIONS if key!="discovery"}
+        if set(historical_views)!=expected:
+            raise ValueError("All eight historical view inputs required")
+        views={"discovery":html,**historical_views}
+        workspace=build_workspace(views)
+        # The eight historical views are clearly marked as retained research snapshots.
+        banner="<div role=\"status\" style=\"padding:12px 24px;background:#292126;color:#ffe1e5;border-bottom:1px solid #e83b52\">Live-run Discovery; the other eight views are pinned historical research snapshots and are not regenerated from this collection. <a style=\"color:#ffc4d0\" href=\"methodology.html\">How Scout collects signals ↗</a></div>"
+        workspace=workspace.replace("</header>", "</header>"+banner,1)
+        outputs["workspace.html"]=workspace.encode("utf-8")
+    return outputs
 
 def commit_run(outputs,root,run_id,prior=None):
     if not run_id or not all(c.isascii() and (c.isalnum() or c in "-_") for c in run_id) or len(run_id)>64:
@@ -65,11 +77,11 @@ def commit_run(outputs,root,run_id,prior=None):
     try:
         digests={}
         for filename,blob in outputs.items():
-            if filename not in {"intake.json","triage.json","edition.json","reconciliation.json","index.html","methodology.md","methodology.html"}:
+            if filename not in {"intake.json","triage.json","edition.json","reconciliation.json","index.html","methodology.md","methodology.html","workspace.html"}:
                 raise ValueError("Unexpected generated output")
             _write(work/filename,blob)
             digests[filename]=hashlib.sha256(blob).hexdigest()
-        if len(digests)!=7:raise ValueError("Incomplete run outputs")
+        if len(digests) not in (7,8) or ("workspace.html" in outputs and len(digests)!=8):raise ValueError("Incomplete run outputs")
         intake=json.loads(outputs["intake.json"])
         review=json.loads(outputs["edition.json"])
         receipt={"schema":"scout-integrated-run-v0","run_id":run_id,
@@ -77,6 +89,7 @@ def commit_run(outputs,root,run_id,prior=None):
            "leads":len(intake["sampled_leads"]),"candidate_count":review["candidate_count"],
            "source_snapshot_origin":"ONE_SHOT_PUBLIC_COLLECTION_OR_EXPLICIT_OFFLINE_INPUT",
            "previous_snapshot_provided":prior is not None,
+           "workspace_view_status":{"discovery":"CURRENT_RUN","other_eight":"PINNED_HISTORICAL" if "workspace.html" in outputs else "NOT_INCLUDED"},
            "methodology":"methodology.html",
            "methodology_source":"methodology.md",
            "sha256":digests,
@@ -99,12 +112,19 @@ def main():
     p.add_argument("--offline-intake",type=Path,help="Use frozen captured data; no network")
     p.add_argument("--previous",type=Path,help="Previous intact intake.json, read only")
     p.add_argument("--cap",type=int,default=8)
+    p.add_argument("--views-manifest",type=Path,help="JSON object of eight historical view HTML file paths; snapshots are NOT regenerated")
     a=p.parse_args()
     if (a.run_root/a.run_id).exists():raise SystemExit("Existing run ID; no overwrite")
     load=lambda path:json.loads(path.read_text(encoding="utf-8"))
     intake=load(a.offline_intake) if a.offline_intake else collect(cap=a.cap)
     previous=load(a.previous) if a.previous else None
-    outputs=build_run(intake,load(a.catalog),previous)
+    historical=None
+    if a.views_manifest:
+        manifest=load(a.views_manifest)
+        if not isinstance(manifest,dict) or set(manifest)!={k for _,k in SECTIONS if k!="discovery"}:
+            raise SystemExit("Expected manifest of eight named historical views")
+        historical={key:Path(path).read_text(encoding="utf-8") for key,path in manifest.items()}
+    outputs=build_run(intake,load(a.catalog),previous,historical)
     receipt=commit_run(outputs,a.run_root,a.run_id,a.previous)
     print(json.dumps({"run_dir":str(a.run_root/a.run_id),"leads":receipt["leads"],
                       "candidate_count":receipt["candidate_count"],"files":sorted(outputs)},indent=2))
