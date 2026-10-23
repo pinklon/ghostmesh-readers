@@ -26,6 +26,7 @@ from scout_source_history import build as build_history
 from scout_history_preview import render as render_history
 from scout_run_evidence_queues import build as build_queues, render as render_queue
 from scout_run_builder_questions import build as build_builder_questions, render as render_builder_questions
+from scout_run_decisions import build as build_decisions, render as render_decisions
 
 def _json_bytes(obj):
     return (json.dumps(obj,indent=2,ensure_ascii=False,sort_keys=True)+"\n").encode("utf-8")
@@ -85,9 +86,13 @@ def build_run(intake,watch_catalog,previous=None,historical_views=None):
         views["people"]=render_builder_questions(builder_questions,"people")
         views["theses"]=render_builder_questions(builder_questions,"questions")
         outputs["builder_questions.json"]=_json_bytes(builder_questions)
+        audit=build_decisions(intake,result_triage,result_edition,result_reconcile)
+        views["replay"]=render_decisions(audit,"replay")
+        views["differences"]=render_decisions(audit,"differences")
+        outputs["decision_audit.json"]=_json_bytes(audit)
         workspace=build_workspace(views)
-        refreshed=["Discovery","Relationships","Claims (unverified queue)","Public work (observed links)","People (unverified handles)","Connection questions (unassessed)"]+ (["History"] if "history.json" in outputs else [])
-        pinned=[label for label,key in SECTIONS if key not in ({"discovery","relationships","history","claims","trails","people","theses"} if "history.json" in outputs else {"discovery","relationships","claims","trails","people","theses"})]
+        refreshed=["Discovery","Relationships","Claims (unverified queue)","Public work (observed links)","People (unverified handles)","Connection questions (unassessed)","Selection decisions (metadata only)","Capability questions (not measured)"]+ (["History"] if "history.json" in outputs else [])
+        pinned=[label for label,key in SECTIONS if key not in ({"discovery","relationships","history","claims","trails","people","theses","replay","differences"} if "history.json" in outputs else {"discovery","relationships","claims","trails","people","theses","replay","differences"})]
         from html import escape
         note="Current-run: "+", ".join(refreshed)+". Pinned historical research: "+", ".join(pinned)+". "
         banner="<div role=\"status\" style=\"padding:12px 24px;background:#292126;color:#ffe1e5;border-bottom:1px solid #e83b52\">"+escape(note)+"<a style=\"color:#ffc4d0\" href=\"methodology.html\">How Scout collects signals ↗</a></div>"
@@ -106,7 +111,7 @@ def commit_run(outputs,root,run_id,prior=None):
     try:
         digests={}
         for filename,blob in outputs.items():
-            if filename not in {"intake.json","triage.json","edition.json","reconciliation.json","index.html","methodology.md","methodology.html","workspace.html","relations.json","history.json","evidence_queues.json","builder_questions.json"}:
+            if filename not in {"intake.json","triage.json","edition.json","reconciliation.json","index.html","methodology.md","methodology.html","workspace.html","relations.json","history.json","evidence_queues.json","builder_questions.json","decision_audit.json"}:
                 raise ValueError("Unexpected generated output")
             _write(work/filename,blob)
             digests[filename]=hashlib.sha256(blob).hexdigest()
@@ -124,7 +129,9 @@ def commit_run(outputs,root,run_id,prior=None):
                "trails":"OBSERVED_LINKS_NOT_EXPANDED" if "evidence_queues.json" in outputs else "NOT_INCLUDED",
                "people":"UNVERIFIED_CURRENT_RUN_HANDLES" if "builder_questions.json" in outputs else "NOT_INCLUDED",
                "theses":"UNASSESSED_CURRENT_RUN_QUESTIONS" if "builder_questions.json" in outputs else "NOT_INCLUDED",
-               "remaining_views":"PINNED_HISTORICAL" if "workspace.html" in outputs else "NOT_INCLUDED"},
+               "replay":"CURRENT_RUN_SELECTION_RECEIPTS" if "decision_audit.json" in outputs else "NOT_INCLUDED",
+               "differences":"NOT_MEASURED_CURRENT_RUN_QUESTIONS" if "decision_audit.json" in outputs else "NOT_INCLUDED",
+               "remaining_views":"NONE" if "decision_audit.json" in outputs else "PINNED_HISTORICAL" if "workspace.html" in outputs else "NOT_INCLUDED"},
            "methodology":"methodology.html",
            "methodology_source":"methodology.md",
            "sha256":digests,
