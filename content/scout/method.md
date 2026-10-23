@@ -6,7 +6,7 @@ That separation is the beginning of GhostMesh Scout.
 
 We are trying to build a research habit that survives the people, models, platforms, and prevailing fashions involved in it. The work should remain inspectable when the headlines have moved on. When we say that something looks promising, a reader should be able to ask: **Promising on what evidence, against which alternative, in what environment, and as of when?** If our answer is vague, the work is unfinished.
 
-This is an account of the research mechanics we have documented so far, including their limits. It is also a map of what we have *not* yet proved.
+This is an account of the research mechanics we have documented so far, including their limits. It is also a map of what we have not yet proved.
 
 ## More than one intake lane
 
@@ -32,7 +32,7 @@ For a public analysis, the reader should be able to follow the citations back to
 
 ## Search outside our own vocabulary
 
-Our current tastes are a bias. If a research assistant is rewarded for finding familiar terms like *agent memory*, *governance*, and *semantic continuity*, it may become extremely competent at confirming our existing agenda.
+Our current tastes are a bias. If a research assistant is rewarded for finding familiar terms like agent memory, governance, and semantic continuity, it may become extremely competent at confirming our existing agenda.
 
 The broader pilot therefore distinguished a familiar-vocabulary relevance lane from a deterministic outside-vocabulary sample. The second lane was meant to surface work that our normal language might never retrieve. It was not randomness for entertainment; it was a direct challenge to the filter itself.
 
@@ -58,7 +58,7 @@ Scout makes different judgments at different levels of contact with an idea. The
 
 This is a reasoning framework, not a claim that every Scout candidate climbed every rung. The first edition's public source reviews are source reviews. They are **not** reports of live reproduction merely because the projects are technically interesting.
 
-A report must show its current evidence rung. When evidence is missing, the correct vocabulary is *unverified*, *not run*, or *unknown*. Strong prose cannot fill that gap.
+A report must show its current evidence rung. When evidence is missing, the correct vocabulary is unverified, not run, or unknown. Strong prose cannot fill that gap.
 
 ## Fit is not fame
 
@@ -84,7 +84,17 @@ A genuinely useful failed test can be more informative than a polished demo that
 
 Our intended publication trail has several distinct layers:
 
-- **Analysis:** the argument, its thesis, and why it matters. - **Claim register:** material claims, source dates, cited evidence, and current qualification. - **Counterevidence and limits:** observations or alternative accounts that could weaken the thesis. - **Method receipt:** collection source, retrieval date, selection logic, test boundary, and public-safe identifiers. - **Relationships:** other investigations that support, contradict, or extend the work. - **Release event:** the date a particular public work was actually approved and made available.
+**Analysis:** the argument, thesis and relevance.
+
+**Claim register:** material claims, evidence dates and qualification.
+
+**Counterevidence and limits:** alternatives that could weaken the thesis.
+
+**Method receipt:** source, retrieval time, selection method, test boundary and public-safe identifiers.
+
+**Relationships:** investigations that support, challenge or extend the work.
+
+**Release event:** the date a reviewed work was actually authorized and made public.
 
 The site should not publicly expose internal credentials, private Slack conversations, unreleased research packets, complete copyrighted transcripts, or production control details. The legitimate desire to be an open book is not a waiver of other people's privacy or the mesh's security.
 
@@ -94,7 +104,7 @@ This is where the research discipline meets the continuity discipline: the publi
 
 ## A status ledger instead of a mythology
 
-As of this draft's source inspection, the responsible descriptions are:
+As of the October 23, 2026 source inspection, the responsible descriptions are:
 
 **First-look GitHub reviews:** three documented source investigations. General local reproduction is not claimed.
 
@@ -132,4 +142,4 @@ Scout's job is not to manufacture confidence. It is to make discovery, doubt, ex
 
 The first-look investigations are in the [public review archive](https://youtube.shareplane.malott.ai/scout/archive/). For the broader pilot and evidence ladder, see [Follow the Work, Not the Follower Count](https://youtube.shareplane.malott.ai/scout/essays/follow-the-work/). The cohort and stopping-rule limitations are treated in [Five Ideas Outside the Filter](https://youtube.shareplane.malott.ai/scout/essays/five-ideas-outside-the-filter/) and [The Plateau That Lied](https://youtube.shareplane.malott.ai/scout/essays/the-plateau-that-lied/).
 
-The [source-backed research inventory](https://github.com/pinklon/ghostmesh-readers/blob/docs/scout-evidence-inventory-20261023/docs/SCOUT_RESEARCH_INVENTORY_2026-10-23.md) distinguishes historical pilots, configurations, and unverified runtime claims. Provider-watch output, the relationship between the fourteen-case and twenty-one-item cohorts, and the private packet count remain open verification items. They must not be silently promoted into findings. 
+The [source-backed research inventory](https://github.com/pinklon/ghostmesh-readers/blob/feat/scout-methodology-release-20261023/docs/SCOUT_RESEARCH_INVENTORY_2026-10-23.md) distinguishes historical pilots, configurations, and unverified runtime claims. Provider-watch output, the relationship between the fourteen-case and twenty-one-item cohorts, and the private packet count remain open verification items. They must not be silently promoted into findings. 
