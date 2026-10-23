@@ -18,6 +18,7 @@ from scout_relevance_triage import triage
 from scout_private_edition import edition
 from scout_signal_reconcile import reconcile
 from scout_multi_source_preview import render
+from scout_methodology_page import render_methodology, canonical_document
 
 def _json_bytes(obj):
     return (json.dumps(obj,indent=2,ensure_ascii=False,sort_keys=True)+"\n").encode("utf-8")
@@ -42,7 +43,12 @@ def build_run(intake,watch_catalog,previous=None):
     html=render(intake,result_triage,result_edition,result_reconcile)
     if "noindex,nofollow" not in html or "</html>" not in html:
         raise ValueError("Private workspace rendering failed")
-    return {"intake.json":_json_bytes(intake),
+    explanation=canonical_document()
+    method_html=render_methodology(intake,explanation)
+    html=html.replace("</main>", "<section class=\"gm-wide\"><h2>How signals enter Scout</h2><p>Read our sources, selection method, evidence limits and how to challenge a conclusion. <a href=\"methodology.html\" rel=\"noopener noreferrer\">Full methodology ↗</a></p></section></main>",1)
+    return {"methodology.md":explanation.encode("utf-8"),
+            "methodology.html":method_html.encode("utf-8"),
+            "intake.json":_json_bytes(intake),
             "triage.json":_json_bytes(result_triage),
             "edition.json":_json_bytes(result_edition),
             "reconciliation.json":_json_bytes(result_reconcile),
@@ -59,11 +65,11 @@ def commit_run(outputs,root,run_id,prior=None):
     try:
         digests={}
         for filename,blob in outputs.items():
-            if filename not in {"intake.json","triage.json","edition.json","reconciliation.json","index.html"}:
+            if filename not in {"intake.json","triage.json","edition.json","reconciliation.json","index.html","methodology.md","methodology.html"}:
                 raise ValueError("Unexpected generated output")
             _write(work/filename,blob)
             digests[filename]=hashlib.sha256(blob).hexdigest()
-        if len(digests)!=5:raise ValueError("Incomplete run outputs")
+        if len(digests)!=7:raise ValueError("Incomplete run outputs")
         intake=json.loads(outputs["intake.json"])
         review=json.loads(outputs["edition.json"])
         receipt={"schema":"scout-integrated-run-v0","run_id":run_id,
@@ -71,6 +77,8 @@ def commit_run(outputs,root,run_id,prior=None):
            "leads":len(intake["sampled_leads"]),"candidate_count":review["candidate_count"],
            "source_snapshot_origin":"ONE_SHOT_PUBLIC_COLLECTION_OR_EXPLICIT_OFFLINE_INPUT",
            "previous_snapshot_provided":prior is not None,
+           "methodology":"methodology.html",
+           "methodology_source":"methodology.md",
            "sha256":digests,
            "limitations":["Metadata only unless a separate content inspection is completed",
                           "No historical identity or trend inference","Not a production or continuously updated service"],
