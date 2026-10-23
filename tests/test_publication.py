@@ -101,6 +101,7 @@ class PublicationGate(unittest.TestCase):
   shutil.copy2(ROOT/'scripts/catalog_design.py',scripts/'catalog_design.py')
   shutil.copy2(ROOT/'scripts/scout_feed.py',scripts/'scout_feed.py')
   shutil.copy2(ROOT/'scripts/scout_pages.py',scripts/'scout_pages.py')
+  shutil.copy2(ROOT/'scripts/scout_research.py',scripts/'scout_research.py')
   result=subprocess.run([sys.executable,str(scripts/'generate_site.py')],capture_output=True,text=True)
   self.assertEqual(0,result.returncode,result.stdout+result.stderr)
   self.assertEqual([],self.structural_errors())
