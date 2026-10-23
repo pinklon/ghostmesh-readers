@@ -23,10 +23,8 @@ jobs:
       - name: Test offline observation contract
         run: python3 -m unittest discover -s tests -p 'test_scout_provider_watch.py'
       - name: Collect public provider observations
-        if: github.event_name != 'pull_request'
         run: python3 scripts/scout_provider_watch.py --output scout-provider-observations.json
       - name: Retain review-only observations
-        if: github.event_name != 'pull_request'
         uses: actions/upload-artifact@v4
         with:
           name: scout-provider-observations-${{ github.run_id }}
