@@ -23,13 +23,13 @@ def validate(item: dict) -> list[str]:
     for field in REQUIRED:
         if field != "outreach_authorized" and (not isinstance(item[field], str) or not item[field].strip()):
             errors.append(f"{field} must be nonempty text")
-    if item["recommendation"] not in ALLOWED:
+    if not isinstance(item["recommendation"], str) or item["recommendation"] not in ALLOWED:
         errors.append("invalid recommendation")
     if item["outreach_authorized"] is not False:
         errors.append("outreach must remain disabled in research prototype")
     if not isinstance(item["source_url"], str) or not item["source_url"].startswith("https://"):
         errors.append("source_url must be HTTPS")
-    if item["recommendation"] == "CONSIDER_INTRODUCTION" and item["proposed_experiment"].strip().lower() in {"none", "unknown", "n/a"}:
+    if (item["recommendation"] == "CONSIDER_INTRODUCTION"\n            and isinstance(item["proposed_experiment"], str)\n            and item["proposed_experiment"].strip().lower() in {"none", "unknown", "n/a"}):
         errors.append("introduction requires a specific experiment")
     return errors
 
