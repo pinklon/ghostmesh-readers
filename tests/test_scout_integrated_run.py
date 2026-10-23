@@ -37,13 +37,14 @@ class IntegratedRunTests(unittest.TestCase):
   names=("relationships","history","claims","people","replay","theses","trails","differences")
   views={x:"<!doctype html><html><head><meta name=\"robots\" content=\"noindex,nofollow\"></head><body>"+x+"</body></html>" for x in names}
   outputs=build_run(a,b,historical_views=views)
-  self.assertEqual(len(outputs),8)
+  self.assertEqual(len(outputs),9)
   self.assertIn(b"PINNED",outputs["workspace.html"].upper())
   self.assertIn(b"methodology.html",outputs["workspace.html"])
   with tempfile.TemporaryDirectory() as tmp:
    receipt=commit_run(outputs,Path(tmp),"allviews")
    self.assertEqual(receipt["workspace_view_status"]["discovery"],"CURRENT_RUN")
-   self.assertEqual(len(receipt["sha256"]),8)
+   self.assertEqual(len(receipt["sha256"]),9)
+   self.assertEqual(receipt["workspace_view_status"]["relationships"],"CURRENT_RUN")
  def test_historical_views_must_be_complete(self):
   a,b=data()
   with self.assertRaises(ValueError):build_run(a,b,historical_views={"history":"some html"})
