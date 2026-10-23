@@ -29,7 +29,7 @@ CSS = BASE_CSS + """
 .gm-empty{padding:26px 0;color:var(--gm-muted)}.gm-section{margin-top:56px;padding-top:18px;border-top:2px solid var(--gm-accent)}
 .gm-health{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
 .gm-health div{border-top:1px solid var(--gm-border);padding:12px 0;color:var(--gm-muted);font-size:13px}
-@media(max-width:700px){.gm-stats{grid-template-columns:repeat(2,1fr)}.gm-stat:nth-child(3){border-left:0;padding-left:0}.gm-item{grid-template-columns:1fr;gap:5px}.gm-health{grid-template-columns:1fr}}
+@media(max-width:700px){.gm-hero>*{min-width:0}.gm-summary small{overflow-wrap:anywhere}.gm-site-nav{max-width:100%;overflow-x:auto}.gm-stats{grid-template-columns:repeat(2,1fr)}.gm-stat:nth-child(3){border-left:0;padding-left:0}.gm-item{grid-template-columns:1fr;gap:5px}.gm-health{grid-template-columns:1fr}}
 """
 LANES = ("attention","community","creator","builder","research","engineering","code")
 def render(intake: dict, triage: dict, edition: dict, reconcile: dict) -> str:
