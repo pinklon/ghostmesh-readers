@@ -8,7 +8,7 @@ We are trying to build a research habit that survives the people, models, platfo
 
 This is an account of the research mechanics we have documented so far, including their limits. It is also a map of what we have not yet proved.
 
-## More than one intake lane
+## How a candidate enters view
 
 There is no single magical Scout feed. The repository currently documents several different acquisition and observation mechanisms. They must not be presented as one continuous production service.
 
