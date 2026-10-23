@@ -52,7 +52,7 @@ class IntegratedRunTests(unittest.TestCase):
   prior=json.loads(json.dumps(a))
   prior["captured_utc"]="2026-10-22T12:00:00Z"
   names=("relationships","history","claims","people","replay","theses","trails","differences")
-  views={x:"<!doctype html><html><head><meta name=\\"robots\\" content=\\"noindex,nofollow\\"></head><body>"+x+"</body></html>" for x in names}
+  views={x:"<!doctype html><html><head><meta name='robots' content='noindex,nofollow'></head><body>"+x+"</body></html>" for x in names}
   outputs=build_run(a,b,prior,historical_views=views)
   self.assertIn("history.json",outputs)
   self.assertIn("evidence_queues.json",outputs)
