@@ -110,7 +110,7 @@ def commit_run(outputs,root,run_id,prior=None):
                 raise ValueError("Unexpected generated output")
             _write(work/filename,blob)
             digests[filename]=hashlib.sha256(blob).hexdigest()
-        if set(digests) not in ({"intake.json","triage.json","edition.json","reconciliation.json","index.html","methodology.md","methodology.html"}, {"intake.json","triage.json","edition.json","reconciliation.json","index.html","methodology.md","methodology.html","workspace.html","relations.json","evidence_queues.json","builder_questions.json"}, {"intake.json","triage.json","edition.json","reconciliation.json","index.html","methodology.md","methodology.html","workspace.html","relations.json","history.json","evidence_queues.json"}):raise ValueError("Incomplete run outputs")
+        if set(digests) not in ({"intake.json","triage.json","edition.json","reconciliation.json","index.html","methodology.md","methodology.html"}, {"intake.json","triage.json","edition.json","reconciliation.json","index.html","methodology.md","methodology.html","workspace.html","relations.json","evidence_queues.json","builder_questions.json"}, {"intake.json","triage.json","edition.json","reconciliation.json","index.html","methodology.md","methodology.html","workspace.html","relations.json","history.json","evidence_queues.json","builder_questions.json"}):raise ValueError("Incomplete run outputs")
         intake=json.loads(outputs["intake.json"])
         review=json.loads(outputs["edition.json"])
         receipt={"schema":"scout-integrated-run-v0","run_id":run_id,
