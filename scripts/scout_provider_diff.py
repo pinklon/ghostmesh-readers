@@ -4,6 +4,7 @@
 Produces review-only candidates. It never asserts a capability launch or publishes.
 """
 import argparse
+from collections import Counter
 from hashlib import sha256
 import json
 from pathlib import Path
@@ -42,6 +43,20 @@ def index_entries(observation):
     return entries
 
 
+def heading_window(observation):
+    """Validate a bounded HTML heading window; it has no feature identity."""
+    records = observation.get("entries")
+    if not isinstance(records, list) or not records:
+        return None
+    headings = []
+    for entry in records:
+        if (not isinstance(entry, dict) or entry.get("level") not in {"h1", "h2", "h3"}
+                or not isinstance(entry.get("text"), str) or not entry["text"].strip()):
+            return None
+        headings.append((entry["level"], entry["text"].strip()))
+    return headings
+
+
 def validate(snapshot):
     if not isinstance(snapshot, dict) or snapshot.get("schema") != SCHEMA:
         raise ValueError("Unsupported observation snapshot")
@@ -64,6 +79,31 @@ def compare(previous, current):
             source_health.append({"id": source_id, "status": "UNKNOWN",
                                   "previous_status": old.get("status") if old else "missing",
                                   "current_status": new.get("status") if new else "missing"})
+            continue
+        old_headings, new_headings = heading_window(old), heading_window(new)
+        if old_headings is not None or new_headings is not None:
+            source_url = new.get("source_url")
+            if (old_headings is None or new_headings is None
+                    or old.get("source_url") != source_url
+                    or not isinstance(source_url, str)
+                    or urlsplit(source_url).scheme != "https"):
+                source_health.append({"id": source_id, "status": "UNKNOWN",
+                                      "reason": "unsupported-or-changed-heading-source"})
+                continue
+            source_health.append({"id": source_id, "status": "heading-only",
+                                  "reason": "no-feature-identity"})
+            if old_headings != new_headings:
+                old_counts, new_counts = Counter(old_headings), Counter(new_headings)
+                key = sha256((source_id + "\n" + source_url + "\n" +
+                              json.dumps(new_headings, ensure_ascii=False)).encode("utf-8")).hexdigest()[:24]
+                candidates.append({"id": key, "source_id": source_id,
+                                   "provider": new.get("provider", ""),
+                                   "kind": "source-heading-window-change",
+                                   "source_url": source_url,
+                                   "added_headings": [text for (_, text) in (new_counts - old_counts).elements()],
+                                   "removed_headings": [text for (_, text) in (old_counts - new_counts).elements()],
+                                   "evidence_class": "unreviewed-provider-observation",
+                                   "editorial_status": "NOT_APPROVED"})
             continue
         old_entries, new_entries = index_entries(old), index_entries(new)
         if old_entries is None or new_entries is None:
@@ -103,7 +143,7 @@ def unknown_baseline(current):
             "current_observed_at": current.get("observed_at"),
             "publication_status": "NOT_APPROVED",
             "source_health": [{"id": source_id, "status": "UNKNOWN",
-                               "reason": "no-prior-scheduled-snapshot"}
+                               "reason": "no-prior-main-snapshot"}
                               for source_id in sorted(sources)],
             "candidates": []}
 

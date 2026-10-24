@@ -20,7 +20,7 @@ class ProviderDiffTests(unittest.TestCase):
                                              "url": "https://openai.com/index/decisions-api/"}]))
         self.assertEqual(result["candidates"], [])
         self.assertEqual(result["source_health"], [{"id": "openai-news", "status": "UNKNOWN",
-                                                    "reason": "no-prior-scheduled-snapshot"}])
+                                                    "reason": "no-prior-main-snapshot"}])
         self.assertEqual(result["publication_status"], "NOT_APPROVED")
 
     def test_new_entry_and_duplicate_url(self):
@@ -64,7 +64,7 @@ class ProviderDiffTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             compare({"schema": "bad", "observations": []}, snapshot([]))
 
-    def test_all_six_sources_fail_closed_for_unsupported_html_headings(self):
+    def test_all_six_sources_keep_html_changes_separate_from_rss_releases(self):
         registry = json.loads((Path(__file__).resolve().parents[1] /
                                'content/scout/provider-sources.json').read_text())['sources']
         self.assertEqual(len(registry), 6)
@@ -74,12 +74,12 @@ class ProviderDiffTests(unittest.TestCase):
             entries = (parse_html(b'<h2>Earlier heading</h2>') if source['format'] == 'html'
                        else [{"title": "Earlier release", "url": source['url']}])
             observations.append({"id": source['id'], "provider": source['provider'],
-                                 "status": "observed", "entries": entries})
+                                 "source_url": source['url'], "status": "observed", "entries": entries})
         previous = {"schema": SCHEMA, "observations": observations}
         unchanged = compare(previous, previous)
         self.assertEqual(unchanged['candidates'], [])
         health = {item['id']: item['status'] for item in unchanged['source_health']}
-        self.assertEqual({health[source['id']] for source in registry if source['format'] == 'html'}, {'UNKNOWN'})
+        self.assertEqual({health[source['id']] for source in registry if source['format'] == 'html'}, {'heading-only'})
         self.assertEqual({health[source['id']] for source in registry if source['format'] == 'rss'}, {'comparable'})
 
         for source in registry:
@@ -91,8 +91,11 @@ class ProviderDiffTests(unittest.TestCase):
                 result = compare(previous, changed)
                 changed_health = next(item for item in result['source_health'] if item['id'] == source['id'])
                 if source['format'] == 'html':
-                    self.assertEqual(changed_health['status'], 'UNKNOWN')
-                    self.assertEqual(result['candidates'], [])
+                    self.assertEqual(changed_health['status'], 'heading-only')
+                    self.assertEqual([(item['source_id'], item['kind'], item['editorial_status'])
+                                      for item in result['candidates']],
+                                     [(source['id'], 'source-heading-window-change', 'NOT_APPROVED')])
+                    self.assertNotIn('title', result['candidates'][0])
                 else:
                     self.assertEqual(changed_health['status'], 'comparable')
                     self.assertEqual([(item['source_id'], item['kind']) for item in result['candidates']],
@@ -111,9 +114,23 @@ class ProviderDiffTests(unittest.TestCase):
         openai['entries'][0]['title'] = 'New OpenAI release'
         result = compare(previous, mixed)
         self.assertEqual([(item['source_id'], item['kind']) for item in result['candidates']],
-                         [('openai-news', 'changed-entry-title')])
+                         [('google-gemini', 'source-heading-window-change'),
+                          ('openai-news', 'changed-entry-title')])
         self.assertEqual(next(item for item in result['source_health'] if item['id'] == 'google-gemini')['status'],
-                         'UNKNOWN')
+                         'heading-only')
+
+    def test_heading_reorder_is_not_misreported_as_new_feature(self):
+        old = snapshot([{"level": "h2", "text": "October 22"},
+                        {"level": "h2", "text": "October 21"}])
+        new = snapshot([{"level": "h2", "text": "October 21"},
+                        {"level": "h2", "text": "October 22"}])
+        old['observations'][0]['source_url'] = 'https://example.com/releases'
+        new['observations'][0]['source_url'] = 'https://example.com/releases'
+        candidate = compare(old, new)['candidates'][0]
+        self.assertEqual(candidate['kind'], 'source-heading-window-change')
+        self.assertEqual(candidate['added_headings'], [])
+        self.assertEqual(candidate['removed_headings'], [])
+        self.assertNotIn('release_status', candidate)
 
 
 if __name__ == "__main__":

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Locate the last retained successful scheduled Scout observation artifact.
+"""Locate the last retained successful main-branch Scout observation artifact.
 
 Only Actions metadata is read here. Snapshot bytes stay in Actions artifacts.
 """
@@ -15,11 +15,13 @@ WORKFLOW = "scout-provider-watch.yml"
 
 
 def select_artifact(runs, artifacts_for_run, current_run_id):
-    """Choose a complete, nonexpired snapshot from an earlier scheduled run."""
+    """Choose a complete, nonexpired snapshot from an earlier main observation."""
     for run in sorted(runs, key=lambda item: item.get("created_at", ""), reverse=True):
         run_id = run.get("id")
         if (not isinstance(run_id, int) or run_id >= current_run_id
-                or run.get("event") != "schedule" or run.get("conclusion") != "success"):
+                or run.get("head_branch") != "main"
+                or run.get("event") not in {"schedule", "workflow_dispatch"}
+                or run.get("conclusion") != "success"):
             continue
         expected = f"scout-provider-observations-{run_id}"
         matches = [item for item in artifacts_for_run(run_id)
@@ -46,7 +48,7 @@ def api_json(path, token):
 
 def find_previous(repository, token, current_run_id):
     runs = api_json(f"/repos/{repository}/actions/workflows/{WORKFLOW}/runs"
-                    "?event=schedule&status=success&branch=main&per_page=100", token)["workflow_runs"]
+                    "?status=success&branch=main&per_page=100", token)["workflow_runs"]
     return select_artifact(
         runs,
         lambda run_id: api_json(f"/repos/{repository}/actions/runs/{run_id}/artifacts"
@@ -68,8 +70,8 @@ def main():
     with open(args.output, "a", encoding="utf-8") as output:
         output.write(f"artifact_id={selected['artifact_id'] if selected else ''}\n")
         output.write(f"previous_run_id={selected['run_id'] if selected else ''}\n")
-    print("Previous scheduled snapshot: found" if selected else
-          "Previous scheduled snapshot: unavailable; baseline stays UNKNOWN")
+    print("Previous main-branch snapshot: found" if selected else
+          "Previous main-branch snapshot: unavailable; baseline stays UNKNOWN")
 
 
 if __name__ == "__main__":
