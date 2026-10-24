@@ -74,18 +74,37 @@ class ProviderDiffTests(unittest.TestCase):
         self.assertEqual({health[source['id']] for source in registry if source['format'] == 'html'}, {'UNKNOWN'})
         self.assertEqual({health[source['id']] for source in registry if source['format'] == 'rss'}, {'comparable'})
 
-        changed = copy.deepcopy(previous)
-        google = next(item for item in changed['observations'] if item['id'] == 'google-gemini')
-        google['entries'] = parse_html(b'<h2>New Gemini release</h2>')
-        result = compare(previous, changed)
-        self.assertEqual(result['candidates'], [])
-        self.assertEqual(next(item for item in result['source_health'] if item['id'] == 'google-gemini')['status'],
-                         'UNKNOWN')
+        for source in registry:
+            with self.subTest(source=source['id']):
+                changed = copy.deepcopy(previous)
+                target = next(item for item in changed['observations'] if item['id'] == source['id'])
+                target['entries'] = (parse_html(b'<h2>Changed heading</h2>') if source['format'] == 'html'
+                                     else [{"title": "Changed release", "url": source['url']}])
+                result = compare(previous, changed)
+                changed_health = next(item for item in result['source_health'] if item['id'] == source['id'])
+                if source['format'] == 'html':
+                    self.assertEqual(changed_health['status'], 'UNKNOWN')
+                    self.assertEqual(result['candidates'], [])
+                else:
+                    self.assertEqual(changed_health['status'], 'comparable')
+                    self.assertEqual([(item['source_id'], item['kind']) for item in result['candidates']],
+                                     [(source['id'], 'changed-entry-title')])
 
-        google['entries'] = []
-        empty = compare(previous, changed)
-        self.assertEqual(empty['candidates'], [])
-        self.assertEqual(next(item for item in empty['source_health'] if item['id'] == 'google-gemini')['status'],
+                target['entries'] = []
+                empty = compare(previous, changed)
+                self.assertEqual(empty['candidates'], [])
+                self.assertEqual(next(item for item in empty['source_health'] if item['id'] == source['id'])['status'],
+                                 'UNKNOWN')
+
+        mixed = copy.deepcopy(previous)
+        google = next(item for item in mixed['observations'] if item['id'] == 'google-gemini')
+        google['entries'] = parse_html(b'<h2>New Gemini release</h2>')
+        openai = next(item for item in mixed['observations'] if item['id'] == 'openai-news')
+        openai['entries'][0]['title'] = 'New OpenAI release'
+        result = compare(previous, mixed)
+        self.assertEqual([(item['source_id'], item['kind']) for item in result['candidates']],
+                         [('openai-news', 'changed-entry-title')])
+        self.assertEqual(next(item for item in result['source_health'] if item['id'] == 'google-gemini')['status'],
                          'UNKNOWN')
 
 
