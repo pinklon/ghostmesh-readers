@@ -1,9 +1,12 @@
+import copy
+import json
 import sys
 from pathlib import Path
 import unittest
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
 from scout_provider_diff import compare, SCHEMA
+from scout_provider_watch import parse_html
 
 
 def snapshot(entries, status="observed", when="2026-10-22T00:00:00Z"):
@@ -13,8 +16,9 @@ def snapshot(entries, status="observed", when="2026-10-22T00:00:00Z"):
 
 class ProviderDiffTests(unittest.TestCase):
     def test_new_entry_and_duplicate_url(self):
-        first = snapshot([])
-        second = snapshot([{"title": "Agents API", "url": "https://openai.com/index/devday-2026-recap/"},
+        baseline = {"title": "Earlier release", "url": "https://openai.com/index/earlier-release/"}
+        first = snapshot([baseline])
+        second = snapshot([baseline, {"title": "Agents API", "url": "https://openai.com/index/devday-2026-recap/"},
                            {"title": "Agents API repost", "url": "https://openai.com/index/devday-2026-recap"}])
         result = compare(first, second)
         self.assertEqual(len(result["candidates"]), 1)
@@ -24,6 +28,12 @@ class ProviderDiffTests(unittest.TestCase):
     def test_unknown_source_is_not_zero_releases(self):
         result = compare(snapshot([{"title": "Decisions", "url": "https://openai.com/index/decisions-api/"}]),
                          snapshot([], status="unknown"))
+        self.assertEqual(result["candidates"], [])
+        self.assertEqual(result["source_health"][0]["status"], "UNKNOWN")
+
+    def test_one_unsupported_entry_does_not_make_a_source_comparable(self):
+        good = {"title": "Earlier release", "url": "https://example.com/earlier"}
+        result = compare(snapshot([good]), snapshot([good, {"level": "h2", "text": "New heading"}]))
         self.assertEqual(result["candidates"], [])
         self.assertEqual(result["source_health"][0]["status"], "UNKNOWN")
 
@@ -41,9 +51,42 @@ class ProviderDiffTests(unittest.TestCase):
         self.assertEqual(compare(old, new)["candidates"], [])
 
     def test_missing_source_and_bad_schema(self):
-        self.assertEqual(compare(snapshot([]), {"schema": SCHEMA, "observations": []})["source_health"][0]["status"], "UNKNOWN")
+        self.assertEqual(compare(snapshot([{"title": "Earlier", "url": "https://example.com/earlier"}]),
+                                 {"schema": SCHEMA, "observations": []})["source_health"][0]["status"], "UNKNOWN")
         with self.assertRaises(ValueError):
             compare({"schema": "bad", "observations": []}, snapshot([]))
+
+    def test_all_six_sources_fail_closed_for_unsupported_html_headings(self):
+        registry = json.loads((Path(__file__).resolve().parents[1] /
+                               'content/scout/provider-sources.json').read_text())['sources']
+        self.assertEqual(len(registry), 6)
+        self.assertEqual(sum(source['format'] == 'html' for source in registry), 4)
+        observations = []
+        for source in registry:
+            entries = (parse_html(b'<h2>Earlier heading</h2>') if source['format'] == 'html'
+                       else [{"title": "Earlier release", "url": source['url']}])
+            observations.append({"id": source['id'], "provider": source['provider'],
+                                 "status": "observed", "entries": entries})
+        previous = {"schema": SCHEMA, "observations": observations}
+        unchanged = compare(previous, previous)
+        self.assertEqual(unchanged['candidates'], [])
+        health = {item['id']: item['status'] for item in unchanged['source_health']}
+        self.assertEqual({health[source['id']] for source in registry if source['format'] == 'html'}, {'UNKNOWN'})
+        self.assertEqual({health[source['id']] for source in registry if source['format'] == 'rss'}, {'comparable'})
+
+        changed = copy.deepcopy(previous)
+        google = next(item for item in changed['observations'] if item['id'] == 'google-gemini')
+        google['entries'] = parse_html(b'<h2>New Gemini release</h2>')
+        result = compare(previous, changed)
+        self.assertEqual(result['candidates'], [])
+        self.assertEqual(next(item for item in result['source_health'] if item['id'] == 'google-gemini')['status'],
+                         'UNKNOWN')
+
+        google['entries'] = []
+        empty = compare(previous, changed)
+        self.assertEqual(empty['candidates'], [])
+        self.assertEqual(next(item for item in empty['source_health'] if item['id'] == 'google-gemini')['status'],
+                         'UNKNOWN')
 
 
 if __name__ == "__main__":
