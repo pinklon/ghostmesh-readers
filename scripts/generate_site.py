@@ -8,6 +8,7 @@ import json,re,sys
 from scout_feed import validate_scout,validate_events,feed_xml
 from scout_pages import validate_editions,home as scout_home,review_page,edition_page,archive_page,method_page,review_url,edition_url
 from scout_research import validate_research, research_page
+from social_cards import approval as social_approval, specs as social_specs, inject as inject_social
 ROOT=Path(__file__).resolve().parents[1]; SITE=ROOT/'site'
 CATEGORIES=['AI & Technology','Society & Politics','Science','Business','Ethics & Culture','Other']
 READER_COUNT=0
@@ -470,6 +471,10 @@ def projections():
  urls=['/','/readers/','/map/','/knowledge/','/scout/','/scout/archive/','/scout/research/','/scout/method/','/scout/essays/']+[record['url'] for record in research['records']]+[edition_url(edition) for edition in editions]+['/'+r['slug']+'/' for r in readers]+[f'/readers/categories/{i}/' for i in range(len(CATEGORIES))]
  out['sitemap.xml']='<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'+''.join('<url><loc>'+data['host']+u+'</loc></url>' for u in sorted(urls))+'</urlset>\n'
  out['404.html']=page('Page not found','/404.html','<h1>That page is not here.</h1><p><a href="/readers/">Browse the complete Reader library</a> or return to the <a href="/">homepage</a>.</p>')
+ social_approval(ROOT)
+ for route,spec in social_specs(data).items():
+  key='index.html' if route=='/' else route.strip('/')+'/index.html'
+  out[key]=inject_social(out[key],spec)
  return out
 if __name__=='__main__':
  outputs=projections();bad=[]
