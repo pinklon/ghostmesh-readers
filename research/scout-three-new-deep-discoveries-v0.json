@@ -1,0 +1,54 @@
+{
+  "schema": "scout-new-discovery-deep-review-v0",
+  "status": "PUBLIC_SOURCE_AND_REPOSITORY_README_REVIEW_NO_EXECUTION",
+  "review_date": "2026-10-23",
+  "publication_authorized": false,
+  "outreach_authorized": false,
+  "cases": [
+    {
+      "id": "ai-mindmeld",
+      "title": "AI Mindmeld: specialist representations as latent inputs",
+      "article": "https://arxiv.org/abs/2610.30215v1",
+      "repo": "https://github.com/PolymathicAI/AI-Mindmeld",
+      "source_claim": "Connector training maps frozen protein and molecule specialist embeddings into Gemma/Kimi internal states. README provides training, evaluation, inference code and public library; results are author-reported.",
+      "ghostmesh_existing": "GhostMesh plans multiple interchangeable inference backends and source-grounded tool communication; no qualified latent specialist interface.",
+      "surprise": "A specialist may convey features an LLM would never formulate as a text query.",
+      "transfer": "Future specialist-model experiments with an inspectable text-baseline and frozen-model isolated connector; no direct benefit to Scout web discovery.",
+      "counterevidence": "Learned connectors depend on specialist/backbone/extraction recipe, require training resources and complicate provenance; authors themselves flag reasoning failures.",
+      "test": "Produce an architecture and cost feasibility sheet for a single actual specialist task; benchmark text-only baseline first. No installs.",
+      "disposition": "FOLLOW_SPECIALIST_RESEARCH",
+      "identity_status": "UNVERIFIED",
+      "runtime_status": "NOT_RUN"
+    },
+    {
+      "id": "outside-bubble-digest",
+      "title": "devto-digest: deliberately search outside the interest bubble",
+      "article": "https://dev.to/thomasbnt/stuck-in-the-same-devto-topics-an-open-model-fixed-it-4mbc",
+      "repo": "https://github.com/thomasbnt/your-devto-digest",
+      "source_claim": "A daily candidate pool feeds two sections, familiar followed tags and outside-followed-tag discovery; articles are rechecked before a weekly email. The repo describes editorial blurbs and escaping untrusted source content.",
+      "ghostmesh_existing": "Scout discovers via tracked topics and sources with metadata relevance and source revision receipts.",
+      "surprise": "The deliberate outside-interest cohort creates discovery opportunities that topic relevance ranking tends to erase.",
+      "transfer": "Add an opt-in private 'outside current interests' sample with no popularity threshold and without filtering unconventional sources out.",
+      "counterevidence": "DEV engagement scoring rewards popularity, not originality; personalized follows require private API access, and their user-specific preferences cannot be inferred from public data.",
+      "test": "On a frozen 59-lead Scout snapshot, partition source/topic familiarity versus outside-bubble candidates, retain low-scoring examples and assess actual surprise with human review.",
+      "disposition": "INVESTIGATE_DISCOVERY_DESIGN",
+      "identity_status": "UNVERIFIED",
+      "runtime_status": "NOT_RUN"
+    },
+    {
+      "id": "unpile",
+      "title": "Unpile: local attention triage with explicit lost-value metrics",
+      "article": "https://dev.to/sarvar_04/i-let-an-open-model-delete-1242-of-my-saved-articles-on-purpose-i-feel-lighter-l7f",
+      "repo": "https://github.com/simplynadaf/unpile-read-later-triage",
+      "source_claim": "README describes on-device TabPFN keep/skim/drop prediction, local Gemma writing, deterministic fallback, and held-out scoring that tracks desirable articles mistakenly dropped.",
+      "ghostmesh_existing": "Scout keeps unreviewed sources and uses keyword triage, but its rank quality and false-negative costs are not calibrated.",
+      "surprise": "Measuring interesting discoveries lost by a filter may matter more than optimizing the number shown in the reading queue.",
+      "transfer": "Shadow-score existing Scout leads without removing any, record human keep/discard labels and count missed surprising items before any automated suppression.",
+      "counterevidence": "Article examples and efficiency metrics are author-reported, and predicting personal read-later behavior differs from discovering breakthrough ideas; dropping sources would be unacceptable before calibration.",
+      "test": "Use a frozen, consented subset of 40 source leads, compare metadata-only review against shadow triage, explicitly count false negatives and retain every original record.",
+      "disposition": "INVESTIGATE_SHADOW_TRIAGE",
+      "identity_status": "UNVERIFIED",
+      "runtime_status": "NOT_RUN"
+    }
+  ]
+}

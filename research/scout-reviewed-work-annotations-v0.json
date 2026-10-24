@@ -1,0 +1,12 @@
+{
+  "schema": "scout-reviewed-work-annotations-v0",
+  "source_work": "https://arxiv.org/abs/2610.28706",
+  "status": "RESEARCH_DRAFT",
+  "work_title": "SpecEvo: Speculative Evolution with Large Language Models for Cost-Efficient Scientific Discovery",
+  "disposition": "INVESTIGATE",
+  "observed_pilot": "Mixed outcomes in 12 synthetic tasks x 12 seeds: failure-aware achieved 75 exact solutions vs random 20, but random had higher mean best reward (0.964286 vs 0.956680).",
+  "evidence_path": "research/scout-specevo-experiment-result-v0.md",
+  "person_verdict": "NOT_EVALUATED",
+  "contact_authorized": false,
+  "publication_authorized": false
+}
