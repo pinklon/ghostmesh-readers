@@ -5,7 +5,7 @@ from pathlib import Path
 import unittest
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
-from scout_provider_diff import compare, SCHEMA
+from scout_provider_diff import compare, unknown_baseline, SCHEMA
 from scout_provider_watch import parse_html
 
 
@@ -15,6 +15,14 @@ def snapshot(entries, status="observed", when="2026-10-22T00:00:00Z"):
 
 
 class ProviderDiffTests(unittest.TestCase):
+    def test_first_snapshot_is_unknown_not_six_new_launches(self):
+        result = unknown_baseline(snapshot([{"title": "Decisions GA",
+                                             "url": "https://openai.com/index/decisions-api/"}]))
+        self.assertEqual(result["candidates"], [])
+        self.assertEqual(result["source_health"], [{"id": "openai-news", "status": "UNKNOWN",
+                                                    "reason": "no-prior-scheduled-snapshot"}])
+        self.assertEqual(result["publication_status"], "NOT_APPROVED")
+
     def test_new_entry_and_duplicate_url(self):
         baseline = {"title": "Earlier release", "url": "https://openai.com/index/earlier-release/"}
         first = snapshot([baseline])
