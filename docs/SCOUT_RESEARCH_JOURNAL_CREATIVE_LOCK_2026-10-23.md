@@ -5,6 +5,7 @@ Approval: Tony Malott in the segfault conversation, October 23, 2026 Pacific.
 Repository: pinklon/ghostmesh-readers
 Draft PR: https://github.com/pinklon/ghostmesh-readers/pull/75
 Owner release authorization: NOT GIVEN
+Editorial amendment: Tony approved replacing preview-only draft labels with neutral Research Journal and dated evidence-status language, October 23, 2026 Pacific. The numerical claims, limitations, tables and source trail are unchanged.
 
 ## Authority and identity
 
@@ -12,7 +13,7 @@ Owner release authorization: NOT GIVEN
 - Title: The Research Journal: What Scout Actually Tested.
 - Subtitle/lead: Preserve the source draft's existing introductory emphasis, with no substituted claim.
 - Slug and candidate route: /scout/research-journal/.
-- Source of locked public copy: `content/scout/publication-drafts/08-the-research-journal.md` at Git blob `25a99cbae18569d23c891c35cbe445a41247c092`.
+- Source of locked public copy: `content/scout/publication-drafts/08-the-research-journal.md` at Git blob `0bb35d101336853c749db06e74b554838ece83da`.
 - Full source copy, section order, numerical tables and qualifications must be preserved without compression.
 - Page target: `site/scout/research-journal/index.html`.
 - This lock is not permission to add a publication event, change the nine-work published register or deploy production.
