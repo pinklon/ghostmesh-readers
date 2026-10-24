@@ -108,7 +108,7 @@
   "independentCorroboration": "none",
   "ownerDecision": {
     "pullNumber": 54,
-    "commentId": null
+    "commentId": 6379501764
   },
   "decision": "accept",
   "gaps": [],
