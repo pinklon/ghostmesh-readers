@@ -348,14 +348,14 @@
     "relationshipDisposition": "Three qualified editorial routes connect performance-to-product interpretation, local control boundaries and service economics. They do not corroborate DeepSeek benchmark or production metrics.",
     "relationshipReview": {
       "reviewedAt": "2026-10-24",
-      "reviewedCatalogSize": 34,
+      "reviewedCatalogSize": 35,
       "decision": "linked",
       "reviewedTargets": [
         "reader:the-parallel-result-is-not-the-product",
         "reader:the-boundary-is-bigger-than-the-box",
         "reader:the-operator-is-part-of-the-denominator"
       ],
-      "rationale": "Compared the pinned DeepInfer source with all 32 existing Readers. Three specific routes link performance-to-product interpretation, local service-control boundaries and inference service economics. Other topic overlap does not establish independent corroboration or a shared empirical result. The later HORTRAME film was also compared; its visual swarm and mathematical references do not establish a further serving relationship."
+      "rationale": "Compared the pinned DeepInfer source with all 32 existing Readers. Three specific routes link performance-to-product interpretation, local service-control boundaries and inference service economics. Other topic overlap does not establish independent corroboration or a shared empirical result. The later HORTRAME film was also compared; its visual swarm and mathematical references do not establish a further serving relationship. The Orca fleet Reader was also assessed; its orchestration and recovery claims do not independently test DeepInfer serving results or warrant a further outgoing route."
     },
     "review": {
       "status": "independent-source-and-copy-reviewed; owner-acceptance-pending",

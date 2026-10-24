@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "readerId": "reader:the-fleet-needs-a-control-plane",
+  "sourceId": "MLzSvf2vxHU",
+  "sourceAidSha256": "dcf40a4b9701d85f2ce26df4ec535c998b551a98522c0c8ef760d40cc42a6d53",
+  "articleSha256": "46e75c4c44960aee3f9a29c3a35eb5a86624b6978f7d84e337abfaf80f6982ff",
+  "evidenceRevision": "d9aea40b53d5cb40f7dbb2cb1f6130f1207bb9117c3106e38e5557eb07e75474",
+  "reviewedAt": "2026-10-21T11:50:25Z",
+  "provenance": {
+    "kind": "codex-task-agent",
+    "reference": "Existing independent read-only Codex editorial reviewer /root/editorial_review in the incumbent single-publisher task; final report and targeted cue correction retained in task history.",
+    "limits": "The reviewer compared private machine-caption timing aids, pinned documentation and public copy, but did not run Orca, audit its code or inspect a real mobile or remote deployment. CI does not authenticate private agent identity."
+  },
+  "summary": "Independent review found the new Reader substantially deeper than the prior short batch: it separates file isolation, shared effects and operator attention; acknowledges the strongest Orca case and proposes a matched falsifiable comparison.",
+  "findings": [
+    "Initial source map attached supported-agent breadth to the 05:12 mobile segment. The publisher split that cue, mapping mobile at 05:12 and agent breadth at 05:41; the reviewer rechecked current bytes against private captions and the article.",
+    "The pinned Orca README, Git worktree manual and Orca worktree, CLI and telemetry docs support attributed mechanics, while performance, safety, relay and throughput remain unmeasured.",
+    "All three graph target Reader IDs and section fragments resolve, with editorial comparisons rather than claims of source corroboration.",
+    "The authored video embed is opt-in at native 16:9, and public article, source map and receipt exclude private media, captions and filesystem paths."
+  ],
+  "conclusion": "accept-for-owner-review"
+}
