@@ -20,7 +20,7 @@ class ProviderDiffTests(unittest.TestCase):
                                              "url": "https://openai.com/index/decisions-api/"}]))
         self.assertEqual(result["candidates"], [])
         self.assertEqual(result["source_health"], [{"id": "openai-news", "status": "UNKNOWN",
-                                                    "reason": "no-prior-scheduled-snapshot"}])
+                                                    "reason": "no-prior-main-snapshot"}])
         self.assertEqual(result["publication_status"], "NOT_APPROVED")
 
     def test_new_entry_and_duplicate_url(self):

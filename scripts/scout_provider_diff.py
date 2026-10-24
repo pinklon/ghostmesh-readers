@@ -143,7 +143,7 @@ def unknown_baseline(current):
             "current_observed_at": current.get("observed_at"),
             "publication_status": "NOT_APPROVED",
             "source_health": [{"id": source_id, "status": "UNKNOWN",
-                               "reason": "no-prior-scheduled-snapshot"}
+                               "reason": "no-prior-main-snapshot"}
                               for source_id in sorted(sources)],
             "candidates": []}
 

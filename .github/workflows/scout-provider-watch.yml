@@ -38,7 +38,7 @@ jobs:
           path: scout-provider-observations.json
           retention-days: 30
           if-no-files-found: error
-      - name: Find previous scheduled observation
+      - name: Find previous main observation
         if: github.event_name != 'pull_request'
         id: previous
         env:
