@@ -5,6 +5,9 @@ from html import escape
 from html.parser import HTMLParser
 from datetime import date
 import json,re,sys
+from scout_feed import validate_scout,validate_events,feed_xml
+from scout_pages import validate_editions,home as scout_home,review_page,edition_page,archive_page,method_page,review_url,edition_url
+from scout_research import validate_research, research_page
 ROOT=Path(__file__).resolve().parents[1]; SITE=ROOT/'site'
 CATEGORIES=['AI & Technology','Society & Politics','Science','Business','Ethics & Culture','Other']
 READER_COUNT=0
@@ -32,7 +35,7 @@ class PublicArticleText(HTMLParser):
 def controls():return ('<header class="gm-site-header"><div class="gm-site-header-inner">'
  '<a class="gm-site-brand" href="/" aria-label="GhostMesh Readers home"><img src="/brand/ghostmesh-mark.svg" width="45" height="34" alt=""><strong>GHOST<em>MESH</em></strong><span>READERS</span></a>'
  '<p class="gm-site-tagline">Context endures. Possibility evolves.</p>'
- '<nav class="gm-site-nav" aria-label="Main navigation"><a href="/">Home</a><a href="/readers/">Readers</a><a href="/map/">Map</a><a href="/knowledge/">Knowledge</a><a href="/#about">About</a></nav>'
+ '<nav class="gm-site-nav" aria-label="Main navigation"><a href="/">Home</a><a href="/readers/">Readers</a><a href="/map/">Map</a><a href="/knowledge/">Knowledge</a><a href="/scout/">Scout</a><a href="/#about">About</a></nav>'
  '<div class="gm-header-actions"><a class="gm-search-control" href="/readers/#search" aria-label="Search Reader articles; without JavaScript, browse the Reader archive" data-reader-search-open title="Search Reader articles">'
  '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 5 5"/></svg></a>'
  '<button class="gm-theme-control" id="theme-toggle" data-theme-toggle type="button" aria-label="Light appearance" aria-pressed="false" hidden>'
@@ -46,10 +49,10 @@ def controls():return ('<header class="gm-site-header"><div class="gm-site-heade
 def footer(include_email=True):return ('<footer aria-label="GhostMesh destinations" class="gm-reader-footer gm-site-footer"><div class="gm-reader-footer-inner">'
  '<div><a class="gm-footer-brand" href="/"><img alt="" class="gm-logo-mark" height="34" src="/brand/ghostmesh-mark.svg" width="45"><strong>GHOST<em>MESH</em></strong></a>'
  '<p class="gm-reader-footer-note">Read the source. Examine the evidence. Challenge the interpretation.<br>GhostMesh editorial · © 2026 GhostMesh / Tony Malott.</p></div>'
- '<nav aria-label="Reader footer navigation" class="gm-footer-links"><a href="/">Readers home</a><a href="/readers/">All Readers</a><a href="/map/">Relationship map</a><a href="/knowledge/">Public knowledge</a>'
+ '<nav aria-label="Reader footer navigation" class="gm-footer-links"><a href="/">Readers home</a><a href="/readers/">All Readers</a><a href="/map/">Relationship map</a><a href="/knowledge/">Public knowledge</a><a href="/scout/">Scout</a><a href="/feed.xml">Subscribe via RSS</a>'
  '<a href="https://ghostmesh.ai/">GhostMesh.ai ↗</a><a href="https://shareplane.malott.ai/">SharePlane ↗</a><a href="https://malott.ai/">Tony Malott ↗</a>'
  +('<a href="mailto:ghostmesh@malott.ai?subject=GhostMesh%20Reader%20feedback">Contact GhostMesh ✉</a>' if include_email else '')+'</nav></div></footer>')
-def head():return '<script src="/assets/theme.js"></script><script src="/assets/reader-search.js" defer></script><link rel="stylesheet" href="/assets/reader-chrome.css"><link rel="stylesheet" href="/assets/knowledge.css"><link rel="stylesheet" href="/assets/reader-refresh.css">'
+def head():return '<link rel="alternate" type="application/rss+xml" title="GhostMesh Readers and Scout" href="/feed.xml"><script src="/assets/theme.js"></script><script src="/assets/reader-search.js" defer></script><link rel="stylesheet" href="/assets/reader-chrome.css"><link rel="stylesheet" href="/assets/knowledge.css"><link rel="stylesheet" href="/assets/reader-refresh.css">'
 def brief(r):
  first={'paper':'What the paper studied','article':'What the article argues','repository':'What the repository contains'}.get(r['source'].get('kind'),'What the video is about')
  return '<section class="gm-brief" id="at-a-glance" aria-labelledby="brief-title"><div class="gm-brief-heading"><p class="gm-kicker">The reading / in three moves</p><h2 id="brief-title">Start with the distinction.</h2></div>'+''.join('<div class="gm-brief-point"><span class="gm-brief-index">0'+str(i)+'</span><div><h3>'+h+'</h3><p>'+esc(r[k])+'</p></div></div>' for i,(k,h) in enumerate([('overview',first),('whyItMatters','Why you should care'),('ghostMeshTakeaway','What GhostMesh takes away')],1))+f'<p class="gm-verdict"><strong>GhostMesh verdict: {esc(r["verdict"])}</strong>. Editorial recommendation, not factual verification. Architecture impact: {esc(r["architectureImpact"])}. Proposed only; no adoption implied.</p></section>'
@@ -272,6 +275,10 @@ def player_contract(raw,aspect,source_url,source_title=None):
 def projections():
  global READER_COUNT
  data=json.loads((ROOT/'content/catalog.json').read_text());validate_text(data)
+ scout=validate_scout(json.loads((ROOT/'content/scout-public.json').read_text()))
+ editions=validate_editions(json.loads((ROOT/'content/scout-editions.json').read_text()),scout)['editions']
+ release_events=validate_events(json.loads((ROOT/'content/public-release-events.json').read_text()),data,scout)
+ research=validate_research(json.loads((ROOT/'content/scout-research.json').read_text()),scout,release_events,ROOT)
  readers=sorted(data['readers'],key=lambda r:(r['published'],r['slug']),reverse=True)
  READER_COUNT=len(readers)
  for r in readers:r['rank']=r['editorialOrder']
@@ -446,7 +453,21 @@ def projections():
  else:
   from map_design import relationship_graph
  out['map/relationships.json']=dump(relationship_graph(readers,byid,data['host']))
- urls=['/','/readers/','/map/','/knowledge/']+['/'+r['slug']+'/' for r in readers]+[f'/readers/categories/{i}/' for i in range(len(CATEGORIES))]
+ def scout_page(title,url,body):
+  return page(title,url,body).replace('</head>','<link rel="stylesheet" href="/assets/scout.css"></head>')
+ latest=max(editions,key=lambda edition:(edition['reviewedOn'],edition['id']))
+ out['scout/index.html']=scout_page('Scout','/scout/',scout_home(scout,latest,research))
+ out['scout/archive/index.html']=scout_page('Scout review library','/scout/archive/',archive_page(scout))
+ out['scout/research/index.html']=scout_page('Scout Research Library','/scout/research/',research_page(research))
+ out['scout/method/index.html']=scout_page('How Scout works','/scout/method/',method_page((ROOT/'content/scout/method.md').read_text()))
+ for edition in editions:
+  url=edition_url(edition)
+  out[url.strip('/')+'/index.html']=scout_page(edition['title'],url,edition_page(edition,scout,(ROOT/'content/scout/editions'/f'{edition["id"]}.md').read_text()))
+ for review in scout['reviews']:
+  url=review_url(review)
+  out[url.strip('/')+'/index.html']=scout_page(review['title'],url,review_page(review,(ROOT/'content/scout/reviews'/f'{review["id"]}.md').read_text()))
+ out['feed.xml']=feed_xml(release_events,data['host'])
+ urls=['/','/readers/','/map/','/knowledge/','/scout/','/scout/archive/','/scout/research/','/scout/method/','/scout/essays/']+[record['url'] for record in research['records']]+[edition_url(edition) for edition in editions]+['/'+r['slug']+'/' for r in readers]+[f'/readers/categories/{i}/' for i in range(len(CATEGORIES))]
  out['sitemap.xml']='<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'+''.join('<url><loc>'+data['host']+u+'</loc></url>' for u in sorted(urls))+'</urlset>\n'
  out['404.html']=page('Page not found','/404.html','<h1>That page is not here.</h1><p><a href="/readers/">Browse the complete Reader library</a> or return to the <a href="/">homepage</a>.</p>')
  return out

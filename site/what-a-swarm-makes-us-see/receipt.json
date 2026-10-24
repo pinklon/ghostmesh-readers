@@ -1,0 +1,440 @@
+{
+  "schema": "ghostmesh-reader-receipt-v2",
+  "createdAt": "2026-10-22T12:40:48Z",
+  "source": {
+    "platform": "YouTube",
+    "url": "https://www.youtube.com/watch?v=TW8F34-ExvI",
+    "videoId": "TW8F34-ExvI",
+    "title": "Emerging through the Singularity",
+    "creator": "HORTRAME",
+    "uploadDate": "20261018",
+    "durationSeconds": 1719,
+    "mediaAspect": "16:9"
+  },
+  "sourceInspection": {
+    "method": "Original page and one private hash-identified visual capture; eighty-six frames at twenty-second spacing plus four ending checks",
+    "status": "partial-sampled-visual-capture",
+    "visualMapSha256": "4668e788ec0a8edac7fefbf009582065a4fd2a101340ee58a60e327b2fc86f61",
+    "caveat": "Audio content was not inspected; no captions or transcript were available. Visual gaps and the uninspected final 4.38 seconds are explicit.",
+    "publicationBoundary": "Only original analysis, public primary-source links, sampled visual cue paraphrases and a sanitized receipt are published; no media, stills, audio or private scene map."
+  },
+  "custody": {
+    "status": "private-hash-identified-partial-visual-capture",
+    "mediaSha256": "c298a8cdbbf4c0b5dc7ba43f728e564a4488d553ff972566730245e30aea89a6",
+    "durationSeconds": 1719.46,
+    "sampling": "Sparse full-timeline still samples, not continuous visual observation",
+    "privacy": "Original media, derived frames, contact sheets and private scene map remain outside public Git.",
+    "note": "Hash-identified private video and sparse sampled stills were retained outside public Git; audio and intervening motion remain uninspected."
+  },
+  "claimReview": "Creator production assertions, observed sampled frames, model-specific mathematical results and perceptual hypotheses retain separate evidentiary roles.",
+  "normalization": {
+    "id": "reader:what-a-swarm-makes-us-see",
+    "slug": "what-a-swarm-makes-us-see",
+    "title": "What a Swarm Makes Us See",
+    "category": "Science",
+    "tags": [
+      "swarm",
+      "simulation",
+      "audiovisual art",
+      "perception"
+    ],
+    "entities": [
+      "HORTRAME",
+      "Guillaume Bolduc",
+      "Maude Blondin"
+    ],
+    "source": {
+      "platform": "YouTube",
+      "url": "https://www.youtube.com/watch?v=TW8F34-ExvI",
+      "videoId": "TW8F34-ExvI",
+      "title": "Emerging through the Singularity",
+      "creator": "HORTRAME",
+      "uploadDate": "20261018",
+      "durationSeconds": 1719,
+      "mediaAspect": "16:9"
+    },
+    "published": "2026-10-22",
+    "updated": "2026-10-22T12:40:48Z",
+    "overview": "HORTRAME's audiovisual swarm film turns computed-looking formations into an immersive story; a sparse visual capture and source papers support a careful separation of image, mathematical model and viewer inference.",
+    "whyItMatters": "Simulated coordination can be visually persuasive even when its implementation, operational failure cases and perceptual effects remain unmeasured.",
+    "ghostMeshTakeaway": "Keep the artwork's wonder while tracing any operational claim back to versioned state rules, source coverage and a test that can fail.",
+    "verdict": "Worth studying",
+    "architectureImpact": "experiment recommended",
+    "falsification": "Revisit the separation if a pinned render and code trace prove the advertised model and matched tests establish behavior under changing membership, realistic delay and recovery; evaluate perceptual effects only in a consented film-specific study.",
+    "evidenceState": "partially corroborated",
+    "lastEvidenceChecked": "2026-10-22T12:40:48Z",
+    "freshness": "Original YouTube page, six author-deposited Zenodo records and cited primary research checked October 22, 2026. Private visual inspection sampled 86 frames every twenty seconds and four ending frames; audio, continuous motion and film-specific viewer effects were not inspected.",
+    "variant": "dossier",
+    "accent": "violet",
+    "claims": [
+      {
+        "id": "what-a-swarm-makes-us-see--sampled-visual-sequence",
+        "proposition": "The inspected samples show point fields, repeated multi-lobed forms, rows, concentric arrangements, a dotted wireframe and a final bright-rimmed circle.",
+        "kind": "visual observation",
+        "asOf": "2026-10-22",
+        "status": "partially corroborated",
+        "assessment": "A hash-bound private map describes 86 frames spaced twenty seconds apart and four ending checks.",
+        "limits": "This is sparse sampled visual coverage, not a continuous shot or motion trace; counts and scene boundaries are approximate.",
+        "sourceLocation": "00:00-28:35 sampled frames",
+        "references": [
+          "hortrame-film"
+        ],
+        "counterevidence": []
+      },
+      {
+        "id": "what-a-swarm-makes-us-see--creator-computational-method",
+        "proposition": "HORTRAME says the film uses thousands of simulated drones and computed priority-state, formation and light dynamics.",
+        "kind": "creator production claim",
+        "asOf": "2026-10-22",
+        "status": "unverified",
+        "assessment": "The description states the method, and the visual field is compatible with simulation, but the render-to-code binding was not audited.",
+        "limits": "A film cannot expose exact agent count, update equations, parameter values or code provenance by appearance alone.",
+        "sourceLocation": "Creator description and 04:40 sampled frame",
+        "references": [
+          "hortrame-film"
+        ],
+        "counterevidence": [
+          "bolduc-v07"
+        ]
+      },
+      {
+        "id": "what-a-swarm-makes-us-see--finite-endpoint-scope",
+        "proposition": "Bolduc v07 characterizes a prescribed join-mix-depart endpoint and rejects unrestricted preservation of the original population mean.",
+        "kind": "preprint mathematical claim",
+        "asOf": "2026-10-22",
+        "status": "partially corroborated",
+        "assessment": "The author-deposited manuscript states assumptions, an offline formula and a counterexample; its scope can be checked in the public text.",
+        "limits": "GhostMesh did not independently certify every proof, reproduce the code, or show that the film uses the proved model.",
+        "sourceLocation": "Bolduc preprint theorem 4.1; 13:00 sampled frame",
+        "references": [
+          "bolduc-v07",
+          "bolduc-fixed-epoch"
+        ],
+        "counterevidence": []
+      },
+      {
+        "id": "what-a-swarm-makes-us-see--delay-membership-separation",
+        "proposition": "The cited delay analysis concerns fixed membership and does not establish a combined delayed, changing-membership film implementation.",
+        "kind": "source-scope comparison",
+        "asOf": "2026-10-22",
+        "status": "corroborated",
+        "assessment": "The arXiv delay abstract and Bolduc v07 scope statements keep these model obligations separate.",
+        "limits": "This is a documentary scope finding, not a negative test of HORTRAME's software or an assertion that no implementation could exist.",
+        "sourceLocation": "Cited source scope; 18:20 sampled frame",
+        "references": [
+          "naderi-delay",
+          "bolduc-v07",
+          "blondin-hale"
+        ],
+        "counterevidence": []
+      },
+      {
+        "id": "what-a-swarm-makes-us-see--visual-rim-not-physics",
+        "proposition": "The bright-rimmed dark circle and circular point field are visual motifs, not evidence of a physical singularity or robotic rendezvous.",
+        "kind": "visual interpretation",
+        "asOf": "2026-10-22",
+        "status": "partially corroborated",
+        "assessment": "The sampled private frames show the motif, and the creator calls the cosmic setting artistic.",
+        "limits": "The gaps between stills do not establish continuous trajectories or the mechanism behind the rendering.",
+        "sourceLocation": "18:20 and 25:00 sampled frames",
+        "references": [
+          "hortrame-film",
+          "bolduc-v07"
+        ],
+        "counterevidence": []
+      },
+      {
+        "id": "what-a-swarm-makes-us-see--oscillator-production",
+        "proposition": "The creator says pulse-coupled oscillators inform the light rhythm and a signal-processing project informs the score.",
+        "kind": "creator production claim",
+        "asOf": "2026-10-22",
+        "status": "unverified",
+        "assessment": "Mirollo and Strogatz's idealized model exists, but no film-specific timing or audio analysis was performed.",
+        "limits": "Audio was uninspected; no soundtrack synchronization, entrainment or viewer effect is established.",
+        "sourceLocation": "Creator description; no verified soundtrack timestamp",
+        "references": [
+          "hortrame-film",
+          "mirollo-strogatz"
+        ],
+        "counterevidence": []
+      },
+      {
+        "id": "what-a-swarm-makes-us-see--vection-hypothesis",
+        "proposition": "Optic-flow and viewpoint cues could contribute to visual self-motion impressions for some viewers, without establishing this film's effect.",
+        "kind": "perceptual hypothesis",
+        "asOf": "2026-10-22",
+        "status": "partially corroborated",
+        "assessment": "Independent visual-display studies support vection under studied stimuli; a separate VR experiment limits any broad beat-alignment story.",
+        "limits": "No viewer study of this film, display-condition control, medical outcome or hypnosis measure exists in this Reader.",
+        "sourceLocation": "28:00 sampled frame and separate perceptual literature",
+        "references": [
+          "vection-review",
+          "palmisano-vection"
+        ],
+        "counterevidence": [
+          "vr-music-vection"
+        ]
+      },
+      {
+        "id": "what-a-swarm-makes-us-see--generative-method-boundary",
+        "proposition": "HORTRAME says the film's image, video and music were computationally produced without generative AI image, video or music models.",
+        "kind": "creator production claim",
+        "asOf": "2026-10-22",
+        "status": "unverified",
+        "assessment": "The creator distinguishes procedural simulation and algorithmic score from generative AI tooling.",
+        "limits": "No project files, render pipeline or model-use audit was obtained; procedural generation is still a form of computation.",
+        "sourceLocation": "Creator description; film-wide",
+        "references": [
+          "hortrame-film"
+        ],
+        "counterevidence": []
+      }
+    ],
+    "references": [
+      {
+        "id": "hortrame-film",
+        "title": "Emerging through the Singularity",
+        "author": "HORTRAME",
+        "publisher": "YouTube",
+        "url": "https://www.youtube.com/watch?v=TW8F34-ExvI",
+        "publicationDate": "2026-10-18",
+        "eventDate": null,
+        "location": "Creator description and original film",
+        "sourceType": "original audiovisual source",
+        "independence": "Creator account; production claims not independently audited",
+        "evidenceFamily": "hortrame-film",
+        "checkedAt": "2026-10-22T12:40:48Z",
+        "datePrecision": "day"
+      },
+      {
+        "id": "bolduc-v07",
+        "title": "Priority-State Dynamics in Open Multi-Agent Systems: Dynamic Membership and History-Dependent Consensus Endpoints",
+        "author": "Guillaume Bolduc",
+        "publisher": "Zenodo",
+        "url": "https://zenodo.org/records/23204324",
+        "publicationDate": "2026-09-03",
+        "eventDate": null,
+        "location": "Abstract, scope, theorem 4.1 and implementation limits",
+        "sourceType": "research preprint",
+        "independence": "Author-deposited mathematical argument; no independent peer review established",
+        "evidenceFamily": "bolduc-priority-state",
+        "checkedAt": "2026-10-22T12:40:48Z",
+        "datePrecision": "day"
+      },
+      {
+        "id": "bolduc-historical-memory",
+        "title": "Exact Restoration and Historical Memory in Delayed Priority Networks with Three-Dimensional Motion",
+        "author": "Guillaume Bolduc",
+        "publisher": "Zenodo",
+        "url": "https://zenodo.org/records/23202024",
+        "publicationDate": "2026-10-03",
+        "eventDate": null,
+        "location": "Deposit title and abstract",
+        "sourceType": "research preprint",
+        "independence": "Author-deposited companion, not independent corroboration of film behavior",
+        "evidenceFamily": "bolduc-historical-memory",
+        "checkedAt": "2026-10-22T12:40:48Z",
+        "datePrecision": "day"
+      },
+      {
+        "id": "bolduc-fixed-epoch",
+        "title": "Admissibility, Mean, and Spectral Contraction of the Fixed-Epoch Averaging Matrix",
+        "author": "Guillaume Bolduc",
+        "publisher": "Zenodo",
+        "url": "https://zenodo.org/records/23204326",
+        "publicationDate": "2026-09-11",
+        "eventDate": null,
+        "location": "Deposit title and abstract",
+        "sourceType": "research preprint",
+        "independence": "Author-deposited supporting work, not a film or runtime audit",
+        "evidenceFamily": "bolduc-fixed-epoch",
+        "checkedAt": "2026-10-22T12:40:48Z",
+        "datePrecision": "day"
+      },
+      {
+        "id": "bolduc-disturbance",
+        "title": "Translation-Equivariant Disturbance Recovery in Delayed Open Priority Networks",
+        "author": "Guillaume Bolduc",
+        "publisher": "Zenodo",
+        "url": "https://zenodo.org/records/23202026",
+        "publicationDate": "2026-10-06",
+        "eventDate": null,
+        "location": "Deposit title and abstract",
+        "sourceType": "research preprint",
+        "independence": "Author-deposited companion, not independent outcome evidence",
+        "evidenceFamily": "bolduc-disturbance",
+        "checkedAt": "2026-10-22T12:40:48Z",
+        "datePrecision": "day"
+      },
+      {
+        "id": "bolduc-shield",
+        "title": "A Common-Mode Shield for Live Admission in Delayed Open Priority Networks",
+        "author": "Guillaume Bolduc",
+        "publisher": "Zenodo",
+        "url": "https://zenodo.org/records/23202030",
+        "publicationDate": "2026-10-03",
+        "eventDate": null,
+        "location": "Deposit title and abstract",
+        "sourceType": "research preprint",
+        "independence": "Author-deposited companion, not independent outcome evidence",
+        "evidenceFamily": "bolduc-shield",
+        "checkedAt": "2026-10-22T12:40:48Z",
+        "datePrecision": "day"
+      },
+      {
+        "id": "bolduc-latch",
+        "title": "A Sampled Common-Translation Latch for Nominal Double Integrators",
+        "author": "Guillaume Bolduc",
+        "publisher": "Zenodo",
+        "url": "https://zenodo.org/records/23202028",
+        "publicationDate": "2026-10-06",
+        "eventDate": null,
+        "location": "Deposit title and abstract",
+        "sourceType": "research preprint",
+        "independence": "Author-deposited companion, not independent outcome evidence",
+        "evidenceFamily": "bolduc-latch",
+        "checkedAt": "2026-10-22T12:40:48Z",
+        "datePrecision": "day"
+      },
+      {
+        "id": "blondin-hale",
+        "title": "An Algorithm for Multi-Objective Multi-Agent Optimization",
+        "author": "Maude J. Blondin and Matthew Hale",
+        "publisher": "arXiv",
+        "url": "https://arxiv.org/abs/2003.01745",
+        "publicationDate": "2020-03-03",
+        "eventDate": null,
+        "location": "Model and convergence claims",
+        "sourceType": "research preprint",
+        "independence": "Independent mathematical model; does not validate this film",
+        "evidenceFamily": "blondin-hale",
+        "checkedAt": "2026-10-22T12:40:48Z",
+        "datePrecision": "day"
+      },
+      {
+        "id": "naderi-delay",
+        "title": "Consensus in Multi-Agent Systems with Uniform and Nonuniform Communication Delays",
+        "author": "Shokoufeh Naderi, Maude Blondin and Sébastien Roy",
+        "publisher": "arXiv",
+        "url": "https://arxiv.org/abs/2603.16523",
+        "publicationDate": "2026-03-17",
+        "eventDate": null,
+        "location": "Authors, assumptions and abstract",
+        "sourceType": "research preprint",
+        "independence": "Separate fixed-membership delay analysis and reported QBot3 tests",
+        "evidenceFamily": "naderi-delay",
+        "checkedAt": "2026-10-22T12:40:48Z",
+        "datePrecision": "day"
+      },
+      {
+        "id": "mirollo-strogatz",
+        "title": "Synchronization of Pulse-Coupled Biological Oscillators",
+        "author": "Renato E. Mirollo and Steven H. Strogatz",
+        "publisher": "SIAM Journal on Applied Mathematics",
+        "url": "https://doi.org/10.1137/0150098",
+        "publicationDate": "1990",
+        "eventDate": null,
+        "location": "Abstract and model scope",
+        "sourceType": "historical research paper",
+        "independence": "Independent idealized oscillator result; film timing not audited",
+        "evidenceFamily": "mirollo-strogatz",
+        "checkedAt": "2026-10-22T12:40:48Z",
+        "datePrecision": "year"
+      },
+      {
+        "id": "vection-review",
+        "title": "Visual Perception of Self-Motion",
+        "author": "Li Li",
+        "publisher": "Annual Review of Vision Science",
+        "url": "https://www.annualreviews.org/content/journals/10.1146/annurev-vision-121423-013200",
+        "publicationDate": "2025-08-01",
+        "eventDate": null,
+        "location": "Review of visual self-motion and optic flow",
+        "sourceType": "research review",
+        "independence": "General perceptual literature, not a film-specific measurement",
+        "evidenceFamily": "vection-review",
+        "checkedAt": "2026-10-22T12:40:48Z",
+        "datePrecision": "day"
+      },
+      {
+        "id": "palmisano-vection",
+        "title": "The search for instantaneous vection: An oscillating visual prime reduces vection onset latency",
+        "author": "Stephen Palmisano and Bernhard E. Riecke",
+        "publisher": "PLOS ONE",
+        "url": "https://doi.org/10.1371/journal.pone.0195886",
+        "publicationDate": "2018-05-23",
+        "eventDate": null,
+        "location": "Experimental stimuli and vection onset findings",
+        "sourceType": "original study",
+        "independence": "Independent controlled visual-display study, not a film-specific test",
+        "evidenceFamily": "palmisano-vection",
+        "checkedAt": "2026-10-22T12:40:48Z",
+        "datePrecision": "day"
+      },
+      {
+        "id": "vr-music-vection",
+        "title": "Cross-modal synchrony between music and visual motion modulates vection, urge to move, and comfort in VR",
+        "author": "Van Kerrebroeck and coauthors",
+        "publisher": "Virtual Reality via PubMed",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/41867666/",
+        "publicationDate": "2026",
+        "eventDate": null,
+        "location": "Abstract and brief VR-trial findings",
+        "sourceType": "original study",
+        "independence": "Independent VR stimuli; neither this film nor a universal viewer response tested",
+        "evidenceFamily": "vr-music-vection",
+        "checkedAt": "2026-10-22T12:40:48Z",
+        "datePrecision": "year"
+      }
+    ],
+    "relationships": [
+      {
+        "target": "reader:the-score-is-not-the-system",
+        "type": "related topic",
+        "reason": "Both Readers question the jump from an agent simulation or observed behavior to a broader story about system capability. The earlier Reader concerns reward pressure and reported agent play, while this one concerns a visual swarm artwork; their sources do not corroborate each other.",
+        "provenance": [
+          "/what-a-swarm-makes-us-see/#control",
+          "/the-score-is-not-the-system/#evidence"
+        ],
+        "basis": "curated-editorial-comparison",
+        "direction": "outgoing"
+      }
+    ],
+    "relationshipDisposition": "One qualified thematic route to a different simulation-evidence critique. Similar words such as singularity or swarm do not establish a shared claim or corroboration.",
+    "relationshipReview": {
+      "reviewedAt": "2026-10-24",
+      "reviewedCatalogSize": 34,
+      "decision": "linked",
+      "reviewedTargets": [
+        "reader:the-score-is-not-the-system"
+      ],
+      "rationale": "Compared the film's visual and mathematical thesis with all 32 current Readers. This one route clarifies simulation-evidence limits without treating unrelated videos, agent fleets or singularity forecasts as independent corroboration. The pinned DeepInfer repository addresses inference serving, not the film’s sampled visual swarm or its cited mathematics; no new outgoing route is supported."
+    },
+    "review": {
+      "status": "independent editorial review accepted; owner-accepted; production-published",
+      "reviewer": "Independent read-only Codex editorial reviewer",
+      "reviewedSourceHead": "Exact authored article SHA-256 fb8080b1d8682257013b6dd47f1aa9aae8d50facea1f6cbeb3ca6ad9a2bed29a",
+      "checkedAt": "2026-10-22T12:59:53Z",
+      "scope": "Factual and claim framing, mathematical scope, perceptual qualification and proportionate depth; private frames, audio and full deposit set were outside this independent review.",
+      "findings": "No blocking factual or editorial finding. Sampled visual coverage is separately qualified in the private operator receipt. Tony accepted the exact editorial marker in unedited PR 63 comment 6341578079; PR 63 merged as acb38a9a9975cae47b7b4d4cc138e975af59812d and Netlify production published it."
+    },
+    "revisionHistory": [
+      {
+        "at": "2026-10-22T12:40:48Z",
+        "kind": "new-reader-candidate",
+        "reason": "Owner-requested audiovisual deconstruction from partial visual custody and bounded primary-source research."
+      }
+    ],
+    "editorialOrder": 28,
+    "orderReason": "New owner-requested HORTRAME film after the existing 32-Reader production catalog.",
+    "editorialDepth": {
+      "schemaVersion": 1,
+      "receiptPath": "content/editorial-depth/what-a-swarm-makes-us-see.json"
+    }
+  },
+  "editorial": {
+    "overview": "HORTRAME's audiovisual swarm film turns computed-looking formations into an immersive story; a sparse visual capture and source papers support a careful separation of image, mathematical model and viewer inference.",
+    "whyItMatters": "Simulated coordination can be visually persuasive even when its implementation, operational failure cases and perceptual effects remain unmeasured.",
+    "ghostMeshTakeaway": "Keep the artwork's wonder while tracing any operational claim back to versioned state rules, source coverage and a test that can fail."
+  }
+}

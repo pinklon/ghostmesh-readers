@@ -1,0 +1,33 @@
+name: Scout Provider Release Watch
+on:
+  schedule:
+    - cron: '17 15 * * *'
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - 'scripts/scout_provider_watch.py'
+      - 'tests/test_scout_provider_watch.py'
+      - 'content/scout/provider-sources.json'
+      - '.github/workflows/scout-provider-watch.yml'
+permissions:
+  contents: read
+jobs:
+  observe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Test offline observation contract
+        run: python3 -m unittest discover -s tests -p 'test_scout_provider_watch.py'
+      - name: Collect public provider observations
+        run: python3 scripts/scout_provider_watch.py --output scout-provider-observations.json
+      - name: Retain review-only observations
+        uses: actions/upload-artifact@v4
+        with:
+          name: scout-provider-observations-${{ github.run_id }}
+          path: scout-provider-observations.json
+          retention-days: 30
+          if-no-files-found: error

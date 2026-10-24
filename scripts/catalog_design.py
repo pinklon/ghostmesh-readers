@@ -62,6 +62,7 @@ CALLS = {
     'the-operator-is-part-of-the-denominator': ('Test the service, not the chip', 'Compare accepted task quality, latency tails, isolation and full cost on your workload.'),
     'unsupervised-is-a-permission': ('Grant one action tier', 'Earn autonomy on a versioned workflow with effect readback, exception handling and an operator stop.'),
     'a-wallet-is-not-a-mandate': ('Bound the purchase', 'Test a policy-limited machine payment before considering wider wallet authority or financial action.'),
+    'what-a-swarm-makes-us-see': ('Inspect the visual evidence', 'Compare sampled frames with the creator’s mathematical account; neither establishes continuous convergence or a measured perceptual effect.'),
 }
 
 

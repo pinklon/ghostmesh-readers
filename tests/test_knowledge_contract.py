@@ -86,10 +86,6 @@ class KnowledgeContractTests(unittest.TestCase):
                                          "proposition": "A fixture claim in the published Reader.",
                                          "references": [], "counterevidence": [],
                                          "status": "unverified"})
-            prior_readers = len(catalog["readers"])
-            prior_claims = sum(len(reader["claims"]) for reader in catalog["readers"])
-            prior_unverified = sum(claim["status"] == "unverified"
-                                   for reader in catalog["readers"] for claim in reader["claims"])
             catalog["readers"].append(entry)
             (repo / "content").mkdir()
             (repo / "content/catalog.json").write_text(json.dumps(catalog))
@@ -107,11 +103,11 @@ class KnowledgeContractTests(unittest.TestCase):
             generated = run(repo=repo)
             register = json.loads(generated["site/knowledge/v0.1/claim-register.json"])
             graph = json.loads(generated["site/knowledge/v0.1/readers.json"])
-            self.assertEqual((register["readerCount"], register["claimCount"]),
-                             (prior_readers + 1, prior_claims + 1))
-            self.assertEqual(register["statusCounts"]["unverified"], prior_unverified + 1)
-            self.assertEqual(len(graph["relationships"]),
-                             len(self.model["relationships"]))  # No automatic citation admission.
+            self.assertEqual(register["readerCount"], len(catalog["readers"]))
+            self.assertEqual(register["claimCount"], sum(len(r["claims"]) for r in catalog["readers"]))
+            self.assertEqual(register["statusCounts"]["unverified"],
+                             sum(c["status"] == "unverified" for r in catalog["readers"] for c in r["claims"]))
+            self.assertEqual(len(graph["relationships"]), len(self.model["relationships"]))  # No automatic citation admission.
             self.assertEqual(generated, run(check=True, repo=repo))
             uncited_page = repo / "site/projection-fixture/index.html"
             uncited_page.write_text(uncited_page.read_text() + " ")
