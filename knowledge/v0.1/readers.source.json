@@ -11,7 +11,7 @@
       "url": "https://youtube.shareplane.malott.ai/the-inbox-was-a-boundary/",
       "source": {
         "path": "site/the-inbox-was-a-boundary/index.html",
-        "sha256": "1b06285bf592203ebaf08ca058bd8471019f97bf96f5eefa43ae2b08909e69ee"
+        "sha256": "b04b0a2844f28d469e5f6a991595054303849cd13f5b41cdd1b8b4a08e01f9c0"
       }
     },
     {
@@ -24,7 +24,7 @@
       "provenance": {
         "sourceNodeId": "urn:ghostmesh-readers:reader:the-inbox-was-a-boundary",
         "locator": "#fleet-activity-source",
-        "sourceFileSha256": "1b06285bf592203ebaf08ca058bd8471019f97bf96f5eefa43ae2b08909e69ee",
+        "sourceFileSha256": "b04b0a2844f28d469e5f6a991595054303849cd13f5b41cdd1b8b4a08e01f9c0",
         "quoteSha256": "846ff5ff13d32b94826d855429ca96ab02c922f5bf353fe426d6df57dfd28743"
       }
     },
@@ -504,7 +504,7 @@
       "provenance": {
         "sourceNodeId": "urn:ghostmesh-readers:reader:the-engine-is-not-the-service",
         "locator": "#scope",
-        "sourceFileSha256": "55debcc7bdec82c4f40d97b671be567d12975c86011e04b53fec039b47bcb7f0",
+        "sourceFileSha256": "7561544a7a413bfe4f1b9cb366abfda8cb3c837e14e2c6fe6f06f606798ff6d1",
         "quoteSha256": "bfa05fcb520298ba0530f1f3dad1dc0affbc814532745a4fe296f4903ff2259c"
       }
     },
@@ -517,7 +517,7 @@
       "url": "https://youtube.shareplane.malott.ai/the-engine-is-not-the-service/",
       "source": {
         "path": "site/the-engine-is-not-the-service/index.html",
-        "sha256": "55debcc7bdec82c4f40d97b671be567d12975c86011e04b53fec039b47bcb7f0"
+        "sha256": "7561544a7a413bfe4f1b9cb366abfda8cb3c837e14e2c6fe6f06f606798ff6d1"
       }
     },
     {
@@ -554,7 +554,7 @@
       "provenance": {
         "sourceNodeId": "urn:ghostmesh-readers:reader:the-inbox-was-a-boundary",
         "locator": "#fleet-activity-source",
-        "sourceFileSha256": "1b06285bf592203ebaf08ca058bd8471019f97bf96f5eefa43ae2b08909e69ee",
+        "sourceFileSha256": "b04b0a2844f28d469e5f6a991595054303849cd13f5b41cdd1b8b4a08e01f9c0",
         "quoteSha256": "846ff5ff13d32b94826d855429ca96ab02c922f5bf353fe426d6df57dfd28743"
       }
     },
@@ -610,7 +610,7 @@
       "provenance": {
         "sourceNodeId": "urn:ghostmesh-readers:reader:the-engine-is-not-the-service",
         "locator": "#scope",
-        "sourceFileSha256": "55debcc7bdec82c4f40d97b671be567d12975c86011e04b53fec039b47bcb7f0",
+        "sourceFileSha256": "7561544a7a413bfe4f1b9cb366abfda8cb3c837e14e2c6fe6f06f606798ff6d1",
         "quoteSha256": "bfa05fcb520298ba0530f1f3dad1dc0affbc814532745a4fe296f4903ff2259c"
       }
     }
