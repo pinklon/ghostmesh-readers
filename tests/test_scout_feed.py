@@ -89,7 +89,12 @@ class ScoutFeedTests(unittest.TestCase):
         wsj_events = [event for event in events['events'] if event['id'] == wsj_id]
         self.assertEqual(len(wsj_events), 1)
         self.assertEqual(wsj_events[0]['releasedAt'], '2026-10-24T14:24:37.701Z')
-        earlier = [event for event in events['events'] if event['id'] != wsj_id]
+        orca_id = 'reader:the-fleet-needs-a-control-plane:first-public-release'
+        orca_events = [event for event in events['events'] if event['id'] == orca_id]
+        self.assertEqual(len(orca_events), 1)
+        self.assertEqual(orca_events[0]['publicDate'], '2026-10-24')
+        self.assertNotIn('releasedAt', orca_events[0])
+        earlier = [event for event in events['events'] if event['id'] not in {wsj_id, orca_id}]
         self.assertEqual({event['publicDate'] for event in earlier}, {'2026-10-22', '2026-10-23'})
         self.assertTrue(all('releasedAt' not in event for event in earlier))
 

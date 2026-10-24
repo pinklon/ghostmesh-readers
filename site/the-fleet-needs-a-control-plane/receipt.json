@@ -1,0 +1,327 @@
+{
+  "schema": "ghostmesh-reader-receipt-v2",
+  "createdAt": "2026-10-21T11:47:15Z",
+  "source": {
+    "platform": "YouTube",
+    "url": "https://www.youtube.com/watch?v=MLzSvf2vxHU",
+    "videoId": "MLzSvf2vxHU",
+    "title": "Stablyai/orca: Orca is the place for working with a fleet of agents | Run Any Coding Agent Now!",
+    "creator": "Signal Coders",
+    "uploadDate": "20261021",
+    "durationSeconds": 509,
+    "mediaAspect": "16:9"
+  },
+  "sourceInspection": {
+    "method": "Exact publisher metadata, verified private ReasonPack video/audio and separately fetched hash-checked original-English automatic captions; selected cues mapped against the source",
+    "status": "verified-private-pack-and-separate-automatic-caption-aid",
+    "manifestSha256": "dcf40a4b9701d85f2ce26df4ec535c998b551a98522c0c8ef760d40cc42a6d53",
+    "captionSha256": "2ec2338a38ca2ddee7f570a4db741c4f1bfd49d8fdc7eb5dc887075e05a0a037",
+    "caveat": "ReasonPack transcript fetch hit HTTP 429 after a separate original-English automatic-caption retrieval succeeded. Machine captions are timing aids, not certified speech or independent product validation. Source upload date is October 21 despite an October 20 opening reference. The publisher title uses a dash; its public catalog copy uses a colon to meet site typography rules.",
+    "publicationBoundary": "No video, audio, full transcript, caption file, private path, signed URL or credential is published."
+  },
+  "reasonPack": {
+    "skill": "reasonpack",
+    "version": "1.0.0",
+    "schema": "reasonpack/1.0",
+    "verification": "pass",
+    "manifestSha256": "dcf40a4b9701d85f2ce26df4ec535c998b551a98522c0c8ef760d40cc42a6d53",
+    "publicationBoundary": "No video, audio, full transcript, caption file, private path, signed URL or credential is published."
+  },
+  "custody": {
+    "status": "qualified-private-pack-verified",
+    "note": "Pack video, audio, metadata and ReasonPack records passed SHA256SUMS; the separate automatic-caption aid was checked by SHA-256. Pack transcript retrieval was rate-limited."
+  },
+  "overview": "Signal Coders presents Orca as an interface for parallel coding agents, built around Git worktrees, review tools, remote execution and agent-operable orchestration.",
+  "whyItMatters": "An interface can reduce lost state while shared services, operator attention, delegated actions and integration remain separate coordination boundaries.",
+  "ghostMeshTakeaway": "Pilot Orca on reversible multi-agent tasks; measure accepted work and recovery, and scope any agent-driven orchestration or external effect.",
+  "normalization": {
+    "id": "reader:the-fleet-needs-a-control-plane",
+    "slug": "the-fleet-needs-a-control-plane",
+    "title": "The Fleet Needs a Control Plane",
+    "category": "AI & Technology",
+    "tags": [
+      "agents",
+      "worktrees",
+      "governance"
+    ],
+    "entities": [
+      "Signal Coders",
+      "Stably AI",
+      "Orca",
+      "Git"
+    ],
+    "source": {
+      "platform": "YouTube",
+      "url": "https://www.youtube.com/watch?v=MLzSvf2vxHU",
+      "videoId": "MLzSvf2vxHU",
+      "title": "Stablyai/orca: Orca is the place for working with a fleet of agents | Run Any Coding Agent Now!",
+      "creator": "Signal Coders",
+      "uploadDate": "20261021",
+      "durationSeconds": 509,
+      "mediaAspect": "16:9"
+    },
+    "published": "2026-10-21",
+    "updated": "2026-10-21T11:47:15Z",
+    "overview": "Signal Coders presents Orca as an interface for parallel coding agents, built around Git worktrees, review tools, remote execution and agent-operable orchestration.",
+    "whyItMatters": "An interface can reduce lost state while shared services, operator attention, delegated actions and integration remain separate coordination boundaries.",
+    "ghostMeshTakeaway": "Pilot Orca on reversible multi-agent tasks; measure accepted work and recovery, and scope any agent-driven orchestration or external effect.",
+    "verdict": "Worth studying",
+    "architectureImpact": "experiment recommended",
+    "falsification": "Reverse the recommendation if matched tasks show Orca does not improve accepted work per operator hour, or its effectful-action recovery is worse than a simpler native-worktree workflow.",
+    "evidenceState": "partially corroborated",
+    "lastEvidenceChecked": "2026-10-21T11:47:15Z",
+    "freshness": "Exact October 21 video, private media and automatic captions checked the same day. Git mechanics and a pinned Orca README were inspected; Orca was not installed, benchmarked or audited.",
+    "variant": "dossier",
+    "accent": "teal",
+    "claims": [
+      {
+        "id": "the-fleet-needs-a-control-plane--worktrees",
+        "proposition": "Separate Git worktrees isolate checkout files and HEAD state for parallel attempts.",
+        "kind": "software-mechanics",
+        "asOf": "2026-10-21",
+        "status": "corroborated",
+        "assessment": "Git documents separate working trees and worktree-specific HEAD; Orca documents a branch and terminal per task.",
+        "limits": "Shared refs, optionally shared ignored paths, test services and later integration are outside this file-path boundary.",
+        "sourceLocation": "00:58-02:04",
+        "references": [
+          "git-worktree",
+          "orca-worktrees"
+        ],
+        "counterevidence": [],
+        "temporalScope": "Video uploaded October 21, 2026; linked sources checked October 21. Pinned README may differ from source upload-time state or later releases."
+      },
+      {
+        "id": "the-fleet-needs-a-control-plane--fleet-throughput",
+        "proposition": "A unified worktree-aware UI improves accepted multi-agent output enough to outweigh review and coordination cost.",
+        "kind": "productivity-inference",
+        "asOf": "2026-10-21",
+        "status": "unverified",
+        "assessment": "The source argues from interface design and operator friction, without a matched accepted-work study.",
+        "limits": "No measured denominator for reviewer minutes, integration failures, task quality or break-even agent count is supplied.",
+        "sourceLocation": "00:36-00:58; 07:35-08:29",
+        "references": [],
+        "counterevidence": [
+          "git-worktree"
+        ],
+        "temporalScope": "Video uploaded October 21, 2026; linked sources checked October 21. Pinned README may differ from source upload-time state or later releases."
+      },
+      {
+        "id": "the-fleet-needs-a-control-plane--terminal-speed",
+        "proposition": "WebGL terminal rendering makes high-volume agent output materially more usable.",
+        "kind": "product-performance-claim",
+        "asOf": "2026-10-21",
+        "status": "unverified",
+        "assessment": "The README documents WebGL-based terminal features; the film offers plausible performance reasoning.",
+        "limits": "No controlled terminal benchmark, accessibility comparison or workstation specification was qualified.",
+        "sourceLocation": "02:06-02:42",
+        "references": [
+          "orca-readme"
+        ],
+        "counterevidence": [],
+        "temporalScope": "Video uploaded October 21, 2026; linked sources checked October 21. Pinned README may differ from source upload-time state or later releases."
+      },
+      {
+        "id": "the-fleet-needs-a-control-plane--agent-cli",
+        "proposition": "Agents can invoke Orca orchestration and UI verbs such as worktree creation, snapshot, click and fill.",
+        "kind": "vendor-feature-claim",
+        "asOf": "2026-10-21",
+        "status": "partially corroborated",
+        "assessment": "The pinned README lists these capabilities and the vendor CLI docs describe the surface.",
+        "limits": "Documentation does not establish default authorization, target selection or readback behavior in a specific installation.",
+        "sourceLocation": "04:08-04:41",
+        "references": [
+          "orca-readme",
+          "orca-cli"
+        ],
+        "counterevidence": [],
+        "temporalScope": "Video uploaded October 21, 2026; linked sources checked October 21. Pinned README may differ from source upload-time state or later releases."
+      },
+      {
+        "id": "the-fleet-needs-a-control-plane--mobile-telemetry",
+        "proposition": "The mobile companion and relay are documented; packaged-app telemetry is described as anonymous usage events with opt-out.",
+        "kind": "vendor-data-flow-claim",
+        "asOf": "2026-10-21",
+        "status": "partially corroborated",
+        "assessment": "The README links the companion and relay source; vendor telemetry docs state event categories and exclusions.",
+        "limits": "Telemetry statement does not audit relay, agent providers, remote SSH traffic or individual deployments.",
+        "sourceLocation": "05:12-05:41",
+        "references": [
+          "orca-readme",
+          "orca-telemetry"
+        ],
+        "counterevidence": [],
+        "temporalScope": "Video uploaded October 21, 2026; linked sources checked October 21. Pinned README may differ from source upload-time state or later releases."
+      },
+      {
+        "id": "the-fleet-needs-a-control-plane--agent-count",
+        "proposition": "Compatibility with many CLI agents implies equivalent coordination, review or recovery behavior.",
+        "kind": "compatibility-inference",
+        "asOf": "2026-10-21",
+        "status": "unverified",
+        "assessment": "The README lists numerous CLI agents and states that terminal agents can run in Orca.",
+        "limits": "Launch compatibility is narrower than measured integration quality or parity across providers.",
+        "sourceLocation": "05:41-06:24",
+        "references": [
+          "orca-readme"
+        ],
+        "counterevidence": [],
+        "temporalScope": "Video uploaded October 21, 2026; linked sources checked October 21. Pinned README may differ from source upload-time state or later releases."
+      }
+    ],
+    "references": [
+      {
+        "id": "git-worktree",
+        "title": "git-worktree Documentation",
+        "author": "Git project",
+        "publisher": "Git",
+        "url": "https://git-scm.com/docs/git-worktree",
+        "publicationDate": "unknown",
+        "eventDate": null,
+        "location": "Description, worktree-specific HEAD and shared refs",
+        "sourceType": "primary software documentation",
+        "independence": "Independent of Orca; defines Git mechanics, not Orca deployment outcomes.",
+        "evidenceFamily": "git-manual",
+        "checkedAt": "2026-10-21T11:47:15Z",
+        "datePrecision": "unknown",
+        "dateNote": "No reliable publication date was visible at the recorded source check; treated as undated."
+      },
+      {
+        "id": "orca-readme",
+        "title": "Orca README at 5dd5294",
+        "author": "Stably AI",
+        "publisher": "Stably AI",
+        "url": "https://github.com/stablyai/orca/blob/5dd52942944838c2533116b0e04d2d5d0d06fa60/README.md",
+        "publicationDate": "unknown",
+        "eventDate": null,
+        "location": "Features, CLI, platforms and mobile relay source link",
+        "sourceType": "vendor repository documentation",
+        "independence": "Pinned first-party product description; not an installed audit or performance measurement.",
+        "evidenceFamily": "orca-product",
+        "checkedAt": "2026-10-21T11:47:15Z",
+        "datePrecision": "unknown",
+        "dateNote": "No reliable publication date was visible at the recorded source check; treated as undated."
+      },
+      {
+        "id": "orca-worktrees",
+        "title": "Worktrees",
+        "author": "Stably AI",
+        "publisher": "Orca Docs",
+        "url": "https://www.onorca.dev/docs/model/worktrees",
+        "publicationDate": "unknown",
+        "eventDate": null,
+        "location": "Worktree model and shared ignored paths",
+        "sourceType": "vendor product documentation",
+        "independence": "First-party configuration description; not a guarantee of isolation for other resources.",
+        "evidenceFamily": "orca-product",
+        "checkedAt": "2026-10-21T11:47:15Z",
+        "datePrecision": "unknown",
+        "dateNote": "No reliable publication date was visible at the recorded source check; treated as undated."
+      },
+      {
+        "id": "orca-cli",
+        "title": "Orca CLI overview",
+        "author": "Stably AI",
+        "publisher": "Orca Docs",
+        "url": "https://www.onorca.dev/docs/cli/overview",
+        "publicationDate": "unknown",
+        "eventDate": null,
+        "location": "Agent-operable orchestration surface",
+        "sourceType": "vendor product documentation",
+        "independence": "Describes a feature family but does not certify a running permission policy.",
+        "evidenceFamily": "orca-product",
+        "checkedAt": "2026-10-21T11:47:15Z",
+        "datePrecision": "unknown",
+        "dateNote": "No reliable publication date was visible at the recorded source check; treated as undated."
+      },
+      {
+        "id": "orca-telemetry",
+        "title": "Privacy & Telemetry",
+        "author": "Stably AI",
+        "publisher": "Orca Docs",
+        "url": "https://www.onorca.dev/docs/telemetry",
+        "publicationDate": "unknown",
+        "eventDate": null,
+        "location": "Product event categories, opt-out and stated exclusions",
+        "sourceType": "vendor privacy statement",
+        "independence": "First-party assertion about telemetry, not an independent relay or deployment audit.",
+        "evidenceFamily": "orca-product",
+        "checkedAt": "2026-10-21T11:47:15Z",
+        "datePrecision": "unknown",
+        "dateNote": "No reliable publication date was visible at the recorded source check; treated as undated."
+      }
+    ],
+    "relationships": [
+      {
+        "target": "reader:the-parallel-result-is-not-the-product",
+        "type": "extends",
+        "reason": "Both distinguish parallel candidate generation from accepted integrated output. This Reader adds worktree isolation, review-time accounting and shared external-effect boundaries without treating the other source as corroboration.",
+        "provenance": [
+          "/the-fleet-needs-a-control-plane/#attention-is-the-denominator",
+          "/the-parallel-result-is-not-the-product/#decision"
+        ],
+        "basis": "curated-editorial-comparison",
+        "direction": "outgoing"
+      },
+      {
+        "target": "reader:the-stop-button-is-outside-the-chat",
+        "type": "informs architecture",
+        "reason": "Agent-operable CLI and browser actions require scoped grants and readback after uncertain writes, extending the earlier stop and verification argument to an orchestrator surface.",
+        "provenance": [
+          "/the-fleet-needs-a-control-plane/#the-orchestrator-can-be-an-actuator",
+          "/the-stop-button-is-outside-the-chat/#verify-result"
+        ],
+        "basis": "curated-editorial-comparison",
+        "direction": "outgoing"
+      },
+      {
+        "target": "reader:the-inbox-was-a-boundary",
+        "type": "related topic",
+        "reason": "The unified agent inbox can reduce lost state, while the earlier Reader asks when an inbox also becomes an authority and attention boundary. The shared topic is editorial, not empirical corroboration.",
+        "provenance": [
+          "/the-fleet-needs-a-control-plane/#three-data-planes",
+          "/the-inbox-was-a-boundary/#governance"
+        ],
+        "basis": "curated-editorial-comparison",
+        "direction": "outgoing"
+      }
+    ],
+    "relationshipDisposition": "Three qualified editorial links connect parallel-result quality, action readback and agent-inbox governance; none is presented as source corroboration.",
+    "review": {
+      "status": "independent source, editorial depth, graph and privacy review clear for owner qualitative review; release held",
+      "reviewer": "Existing independent read-only Codex editorial reviewer",
+      "reviewedSourceHead": "local public candidate; exact commit assigned after final validation",
+      "checkedAt": "2026-10-21T11:50:25Z",
+      "scope": "Authored Orca Reader, all six catalog claims, pinned primary product and Git sources, five mapped source moments, private caption timing aids, graph anchors, player and public/private boundary.",
+      "findings": "Reviewer corrected a mobile/agent-list cue split, then found no remaining factual, attribution, graph-anchor, embed or privacy blocker. Orca was not installed, benchmarked or audited. Owner qualitative acceptance and exact release remain pending."
+    },
+    "revisionHistory": [
+      {
+        "at": "2026-10-21T11:47:15Z",
+        "kind": "new-reader-candidate",
+        "reason": "Owner-requested deeper Orca deconstruction from exact private video and qualified primary documentation."
+      }
+    ],
+    "editorialOrder": 28,
+    "orderReason": "Follows the four-video PR 56 batch in owner-requested source order.",
+    "relationshipReview": {
+      "reviewedAt": "2026-10-24",
+      "reviewedCatalogSize": 36,
+      "decision": "linked",
+      "reviewedTargets": [
+        "reader:the-parallel-result-is-not-the-product",
+        "reader:the-stop-button-is-outside-the-chat",
+        "reader:the-inbox-was-a-boundary"
+      ],
+      "rationale": "Compared the Orca thesis against all 31 published Readers. These three links offer distinct comparisons on accepted parallel output, external-action readback and inbox governance; no other Reader was treated as evidence for Orca outcomes. The later HTML and HORTRAME Readers were also checked; neither independently corroborates Orca outcomes or warrants a further typed route. The newly published DeepInfer Reader was also checked; its model-serving performance claims do not establish an Orca fleet-control result or a distinct additional route. The WSJ Hassabis profile was reviewed as a distinct forecast-and-authority source; its AGI and oversight claims do not corroborate a fleet-control outcome or warrant another typed link."
+    },
+    "editorialDepth": {
+      "schemaVersion": 1,
+      "receiptPath": "content/editorial-depth/the-fleet-needs-a-control-plane.json"
+    }
+  },
+  "editorial": {
+    "overview": "Signal Coders presents Orca as an interface for parallel coding agents, built around Git worktrees, review tools, remote execution and agent-operable orchestration.",
+    "whyItMatters": "An interface can reduce lost state while shared services, operator attention, delegated actions and integration remain separate coordination boundaries.",
+    "ghostMeshTakeaway": "Pilot Orca on reversible multi-agent tasks; measure accepted work and recovery, and scope any agent-driven orchestration or external effect."
+  }
+}

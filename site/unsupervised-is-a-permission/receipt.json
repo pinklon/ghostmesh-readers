@@ -206,13 +206,13 @@
     "orderReason": "Follows the existing source-control Reader in Tony's four-video requested queue order.",
     "relationshipReview": {
       "reviewedAt": "2026-10-24",
-      "reviewedCatalogSize": 35,
+      "reviewedCatalogSize": 36,
       "decision": "linked",
       "reviewedTargets": [
         "reader:the-stop-button-is-outside-the-chat",
         "reader:autonomy-needs-an-interface"
       ],
-      "rationale": "Compared the new thesis against all 27 public Readers and its three queue peers. The two selected outgoing links add specific architectural or editorial comparisons without treating a different source as corroboration. The HORTRAME visual swarm Reader was assessed as a new catalog neighbor; no additional outgoing route is justified by its distinct film and mathematics source. The newly added DeepInfer source was checked for another outgoing route; none is justified beyond its new Reader-to-Reader routes. The new Hassabis profile was compared for a specific shared claim; no further typed relation is admitted on thematic overlap alone."
+      "rationale": "Compared the new thesis against all 27 public Readers and its three queue peers. The two selected outgoing links add specific architectural or editorial comparisons without treating a different source as corroboration. The HORTRAME visual swarm Reader was assessed as a new catalog neighbor; no additional outgoing route is justified by its distinct film and mathematics source. The newly added DeepInfer source was checked for another outgoing route; none is justified beyond its new Reader-to-Reader routes. The new Hassabis profile was compared for a specific shared claim; no further typed relation is admitted on thematic overlap alone. Compared the new Orca fleet Reader as a possible target; its three outbound comparisons cover the supported links, and no reciprocal claim of source corroboration is warranted."
     },
     "editorialDepth": {
       "schemaVersion": 1,
