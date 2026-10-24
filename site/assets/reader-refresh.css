@@ -96,6 +96,6 @@ main .chapters .chapter button:hover{border-color:var(--gm-accent);color:var(--g
 .gm-related .gm-related-copy h3 a:hover{text-decoration:underline;text-underline-offset:4px;color:var(--gm-accent)}
 .gm-related .gm-related-copy>p:not(.gm-kicker){color:var(--gm-muted);font:400 13px/1.55 system-ui,sans-serif;margin:0;max-width:62ch}
 @media(max-width:760px){.gm-related .gm-cards{grid-template-columns:1fr}.gm-media-frame.player .launch{align-items:flex-start;flex-direction:column;gap:10px;padding-top:14px}.gm-media-frame.player .launch .gm-player-source-title{order:0}.gm-media-frame.player .launch .eyebrow{order:-1}.gm-media-frame.player .launch>p:not(.gm-player-source-title){font-size:12px}}
-/* DeepInfer's authored page is dark in every appearance mode; match shared chrome to it. */
-body.infer-reader{--gm-bg:#0e151b;--gm-paper:#172225;--gm-ink:#f0f4f4;--gm-muted:#cad8d7;--gm-border:#718487;--gm-accent:#91dcca;--gm-soft:#24363a}
-body.infer-reader .gm-share-button:focus-visible,body.infer-reader .gm-share-email:focus-visible{outline-color:var(--gm-accent)}
+/* DeepInfer's authored palette also drives the generated Reader chrome. */
+body.infer-reader{--gm-bg:var(--infer-bg);--gm-paper:var(--infer-panel);--gm-ink:var(--infer-ink);--gm-muted:var(--infer-muted);--gm-border:var(--infer-shared-border);--gm-accent:var(--infer-accent);--gm-soft:var(--infer-soft)}
+body.infer-reader .gm-share-button:focus-visible,body.infer-reader .gm-share-email:focus-visible{outline-color:var(--infer-accent)}
