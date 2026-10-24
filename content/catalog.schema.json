@@ -19,7 +19,7 @@
       "properties": {
         "id": {"type": "string", "pattern": "^reader:[a-z0-9-]+$"},
         "slug": {"type": "string", "pattern": "^[a-z0-9-]+$"},
-        "source": {"oneOf": [{"$ref": "#/$defs/mediaSource"}, {"$ref": "#/$defs/paperSource"}, {"$ref": "#/$defs/articleSource"}]},
+        "source": {"oneOf": [{"$ref": "#/$defs/mediaSource"}, {"$ref": "#/$defs/paperSource"}, {"$ref": "#/$defs/articleSource"}, {"$ref": "#/$defs/repositorySource"}]},
         "verdict": {"enum": ["Essential", "Worth studying", "Interesting, unproven", "Mostly recycled", "Misleading", "Not worth your time"]},
         "claims": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/claim"}},
         "references": {"type": "array", "items": {"$ref": "#/$defs/reference"}},
@@ -83,6 +83,26 @@
         "publisher": {"type": "string", "minLength": 1},
         "publicationDate": {"type": "string", "format": "date"},
         "updatedDate": {"type": "string", "format": "date"},
+        "dateNote": {"type": "string", "minLength": 1}
+      }
+    },
+    "repositorySource": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind", "identity", "url", "repositoryUrl", "repository", "commit", "title", "authors", "publisher", "license", "createdDate", "commitDate", "dateNote"],
+      "properties": {
+        "kind": {"const": "repository"},
+        "identity": {"type": "string", "pattern": "^[a-z0-9][a-z0-9-]{5,}$"},
+        "url": {"type": "string", "format": "uri"},
+        "repositoryUrl": {"type": "string", "format": "uri"},
+        "repository": {"type": "string", "pattern": "^[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+$"},
+        "commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+        "title": {"type": "string", "minLength": 1},
+        "authors": {"type": "string", "minLength": 1},
+        "publisher": {"type": "string", "minLength": 1},
+        "license": {"type": "string", "minLength": 1},
+        "createdDate": {"type": "string", "format": "date"},
+        "commitDate": {"type": "string", "format": "date"},
         "dateNote": {"type": "string", "minLength": 1}
       }
     },
