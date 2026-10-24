@@ -107,7 +107,7 @@ class KnowledgeContractTests(unittest.TestCase):
             self.assertEqual(register["claimCount"], sum(len(r["claims"]) for r in catalog["readers"]))
             self.assertEqual(register["statusCounts"]["unverified"],
                              sum(c["status"] == "unverified" for r in catalog["readers"] for c in r["claims"]))
-            self.assertEqual(len(graph["relationships"]), 4)  # No automatic citation admission.
+            self.assertEqual(len(graph["relationships"]), len(self.model["relationships"]))  # No automatic citation admission.
             self.assertEqual(generated, run(check=True, repo=repo))
             uncited_page = repo / "site/projection-fixture/index.html"
             uncited_page.write_text(uncited_page.read_text() + " ")

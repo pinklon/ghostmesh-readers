@@ -86,11 +86,11 @@ class VisualContractTest(unittest.TestCase):
         by_id = {reader['id']: reader for reader in catalog['readers']}
         recent = sorted(catalog['readers'], key=lambda reader: (reader['published'], reader['slug']), reverse=True)
         selected = [by_id[catalog['featuredId']]] + [reader for reader in recent if reader['id'] != catalog['featuredId']][:6]
-        written_count = sum(reader['source'].get('kind') in {'paper', 'article'} for reader in selected)
+        written_count = sum(reader['source'].get('kind') in {'paper', 'article', 'repository'} for reader in selected)
         self.assertEqual(len(panels), len(selected) - written_count)
         self.assertCountEqual([a.get('data-source-platform') for a in panels],
                               [reader['source']['platform'] for reader in selected
-                               if reader['source'].get('kind') not in {'paper', 'article'}])
+                               if reader['source'].get('kind') not in {'paper', 'article', 'repository'}])
         self.assertEqual(home.count('class="gm-home-visual gm-home-paper"'), written_count)
         self.assertEqual(sum(tag == 'iframe' for tag, _ in parsed.tags), 0)
         self.assertEqual(home.count('class="gm-home-open"'), 7)
@@ -153,7 +153,7 @@ class VisualContractTest(unittest.TestCase):
         parsed = Tags()
         parsed.feed(archive)
         frames = [a for _, a in parsed.tags if 'gm-library-frame' in a.get('class', '').split()]
-        media = [r for r in catalog['readers'] if r['source'].get('kind') not in {'paper', 'article'}]
+        media = [r for r in catalog['readers'] if r['source'].get('kind') not in {'paper', 'article', 'repository'}]
         self.assertEqual(len(frames), len(media))
         self.assertCountEqual([a['data-gm-aspect'] for a in frames],
                               [r['source']['mediaAspect'] for r in media])
