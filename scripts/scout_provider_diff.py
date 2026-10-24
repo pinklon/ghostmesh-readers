@@ -96,14 +96,27 @@ def compare(previous, current):
             "source_health": source_health, "candidates": candidates}
 
 
+def unknown_baseline(current):
+    """A first snapshot cannot establish that any observed entry is new."""
+    sources = validate(current)
+    return {"schema": OUTPUT_SCHEMA, "previous_observed_at": None,
+            "current_observed_at": current.get("observed_at"),
+            "publication_status": "NOT_APPROVED",
+            "source_health": [{"id": source_id, "status": "UNKNOWN",
+                               "reason": "no-prior-scheduled-snapshot"}
+                              for source_id in sorted(sources)],
+            "candidates": []}
+
+
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--previous", type=Path, required=True)
+    parser.add_argument("--previous", type=Path)
     parser.add_argument("--current", type=Path, required=True)
     parser.add_argument("--output", type=Path, required=True)
     args = parser.parse_args()
-    result = compare(json.loads(args.previous.read_text(encoding="utf-8")),
-                     json.loads(args.current.read_text(encoding="utf-8")))
+    current = json.loads(args.current.read_text(encoding="utf-8"))
+    result = (compare(json.loads(args.previous.read_text(encoding="utf-8")), current)
+              if args.previous else unknown_baseline(current))
     args.output.write_text(json.dumps(result, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     print(f"Review-only candidates: {len(result['candidates'])}; no content published.")
 

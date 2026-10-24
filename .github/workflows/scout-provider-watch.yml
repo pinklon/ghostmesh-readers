@@ -6,11 +6,16 @@ on:
   pull_request:
     paths:
       - 'scripts/scout_provider_watch.py'
+      - 'scripts/scout_provider_diff.py'
+      - 'scripts/scout_provider_history.py'
       - 'tests/test_scout_provider_watch.py'
+      - 'tests/test_scout_provider_diff.py'
+      - 'tests/test_scout_provider_history.py'
       - 'content/scout/provider-sources.json'
       - '.github/workflows/scout-provider-watch.yml'
 permissions:
   contents: read
+  actions: read
 jobs:
   observe:
     runs-on: ubuntu-latest
@@ -21,13 +26,54 @@ jobs:
         with:
           python-version: '3.12'
       - name: Test offline observation contract
-        run: python3 -m unittest discover -s tests -p 'test_scout_provider_watch.py'
+        run: python3 -m unittest discover -s tests -p 'test_scout_provider*.py'
       - name: Collect public provider observations
+        if: github.event_name != 'pull_request'
         run: python3 scripts/scout_provider_watch.py --output scout-provider-observations.json
       - name: Retain review-only observations
+        if: github.event_name != 'pull_request'
         uses: actions/upload-artifact@v4
         with:
           name: scout-provider-observations-${{ github.run_id }}
           path: scout-provider-observations.json
+          retention-days: 30
+          if-no-files-found: error
+      - name: Find previous scheduled observation
+        if: github.event_name != 'pull_request'
+        id: previous
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python3 scripts/scout_provider_history.py --output "$GITHUB_OUTPUT"
+      - name: Download previous retained observation
+        if: github.event_name != 'pull_request' && steps.previous.outputs.artifact_id != ''
+        uses: actions/download-artifact@v4
+        with:
+          artifact-ids: ${{ steps.previous.outputs.artifact_id }}
+          path: previous-snapshot
+          merge-multiple: true
+          github-token: ${{ github.token }}
+          repository: ${{ github.repository }}
+          run-id: ${{ steps.previous.outputs.previous_run_id }}
+      - name: Compare review-only observations
+        if: github.event_name != 'pull_request'
+        env:
+          PREVIOUS_RUN_ID: ${{ steps.previous.outputs.previous_run_id }}
+        run: |
+          if [ -n "$PREVIOUS_RUN_ID" ]; then
+            python3 scripts/scout_provider_diff.py \
+              --previous previous-snapshot/scout-provider-observations.json \
+              --current scout-provider-observations.json \
+              --output scout-provider-candidates.json
+          else
+            python3 scripts/scout_provider_diff.py \
+              --current scout-provider-observations.json \
+              --output scout-provider-candidates.json
+          fi
+      - name: Retain review-only candidates
+        if: github.event_name != 'pull_request'
+        uses: actions/upload-artifact@v4
+        with:
+          name: scout-provider-candidates-${{ github.run_id }}
+          path: scout-provider-candidates.json
           retention-days: 30
           if-no-files-found: error
