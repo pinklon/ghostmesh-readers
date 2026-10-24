@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 1,
+  "readerId": "reader:the-missing-step-is-not-more-intelligence",
+  "sourceId": "wsj-hassabis-cohen-2026",
+  "sourceAidSha256": "4c578a9981549a08852d1f43a9158a5786c2c26c850b50218856d52c2112aace",
+  "points": [
+    {
+      "atSeconds": null,
+      "sectionId": "achievement",
+      "claimIds": [
+        "the-missing-step-is-not-more-intelligence--alphafold-achievement"
+      ],
+      "cueParaphrase": "The profile treats AlphaFold as a major scientific achievement; the Reader preserves that contribution while narrowing the inference to protein-structure tasks.",
+      "privateAidCheck": "The private source-access note records the credited WSJ partner edition and the separately checked EMBL-EBI accuracy discussion. It does not retain original HTML or reproduce experiments."
+    },
+    {
+      "atSeconds": null,
+      "sectionId": "timeline",
+      "claimIds": [
+        "the-missing-step-is-not-more-intelligence--agi-forecast",
+        "the-missing-step-is-not-more-intelligence--einstein-test"
+      ],
+      "cueParaphrase": "The reported two-to-three-year forecast and 1901-to-1905 Einstein challenge are forward-looking evaluation claims, not a measured engineering schedule.",
+      "privateAidCheck": "The accessible partner edition supplies both attributed interview points; the Google cognitive-framework page supplies a separate first-party account of current measurement gaps and proposed held-out baselines."
+    },
+    {
+      "atSeconds": null,
+      "sectionId": "drug-outcomes",
+      "claimIds": [
+        "the-missing-step-is-not-more-intelligence--drug-discovery"
+      ],
+      "cueParaphrase": "The profile links AI drug discovery to future benefit; Isomorphic reports intermediate model, design and experimental work without established patient outcomes.",
+      "privateAidCheck": "The private access note records the partner profile and Isomorphic September company update as distinct sources; neither is a clinical-outcome audit."
+    },
+    {
+      "atSeconds": null,
+      "sectionId": "oversight",
+      "claimIds": [
+        "the-missing-step-is-not-more-intelligence--published-safety-framework",
+        "the-missing-step-is-not-more-intelligence--industry-oversight"
+      ],
+      "cueParaphrase": "The profile reports a proposed industry-funded oversight body while DeepMind separately publishes its own frontier-safety framework.",
+      "privateAidCheck": "The partner edition establishes the proposal attribution; the first-party DeepMind framework documents process elements, not independent enforcement or legal establishment."
+    },
+    {
+      "atSeconds": null,
+      "sectionId": "ghostmesh-take",
+      "claimIds": [
+        "the-missing-step-is-not-more-intelligence--authority-outcome-boundary"
+      ],
+      "cueParaphrase": "GhostMesh separates evidence of model capability, evidence of beneficial outcomes and authority to release or stop a system.",
+      "privateAidCheck": "This is original GhostMesh synthesis in the locked draft, not a witnessed claim of the profile or an independently tested GhostMesh deployment result."
+    }
+  ]
+}

@@ -305,14 +305,14 @@
     "orderReason": "Follows the four-video PR 56 batch in owner-requested source order.",
     "relationshipReview": {
       "reviewedAt": "2026-10-24",
-      "reviewedCatalogSize": 35,
+      "reviewedCatalogSize": 36,
       "decision": "linked",
       "reviewedTargets": [
         "reader:the-parallel-result-is-not-the-product",
         "reader:the-stop-button-is-outside-the-chat",
         "reader:the-inbox-was-a-boundary"
       ],
-      "rationale": "Compared the Orca thesis against all 31 published Readers. These three links offer distinct comparisons on accepted parallel output, external-action readback and inbox governance; no other Reader was treated as evidence for Orca outcomes. The later HTML and HORTRAME Readers were also checked; neither independently corroborates Orca outcomes or warrants a further typed route. The newly published DeepInfer Reader was also checked; its model-serving performance claims do not establish an Orca fleet-control result or a distinct additional route."
+      "rationale": "Compared the Orca thesis against all 31 published Readers. These three links offer distinct comparisons on accepted parallel output, external-action readback and inbox governance; no other Reader was treated as evidence for Orca outcomes. The later HTML and HORTRAME Readers were also checked; neither independently corroborates Orca outcomes or warrants a further typed route. The newly published DeepInfer Reader was also checked; its model-serving performance claims do not establish an Orca fleet-control result or a distinct additional route. The WSJ Hassabis profile was reviewed as a distinct forecast-and-authority source; its AGI and oversight claims do not corroborate a fleet-control outcome or warrant another typed link."
     },
     "editorialDepth": {
       "schemaVersion": 1,

@@ -85,8 +85,13 @@ class ScoutFeedTests(unittest.TestCase):
                          [review['id'] for review in source['reviews']])
         self.assertEqual(sum(event['kind'] == 'new-reader' and event['subjectId'] == 'reader:what-a-swarm-makes-us-see'
                              for event in events['events']), 1)
-        self.assertEqual({event['publicDate'] for event in events['events']}, {'2026-10-22', '2026-10-23'})
-        self.assertTrue(all('releasedAt' not in event for event in events['events']))
+        wsj_id = 'reader:the-missing-step-is-not-more-intelligence:first-public-release'
+        wsj_events = [event for event in events['events'] if event['id'] == wsj_id]
+        self.assertEqual(len(wsj_events), 1)
+        self.assertEqual(wsj_events[0]['releasedAt'], '2026-10-24T14:24:37.701Z')
+        earlier = [event for event in events['events'] if event['id'] != wsj_id]
+        self.assertEqual({event['publicDate'] for event in earlier}, {'2026-10-22', '2026-10-23'})
+        self.assertTrue(all('releasedAt' not in event for event in earlier))
 
     def test_report_renderer_escapes_html_and_rejects_missing_cards(self):
         rendered = prose_html('# Title\n\n## Example\n\n**Recommendation:** [Read](https://example.org/?a=1&b=2) <script>')
@@ -203,7 +208,12 @@ class ScoutFeedTests(unittest.TestCase):
         events = json.loads((ROOT / 'content/public-release-events.json').read_text())['events']
         self.assertEqual(len(items), len(events))
         self.assertEqual(len({item.findtext('guid') for item in items}), len(events))
-        self.assertEqual(sum(item.find('pubDate') is not None for item in items), 0)
+        self.assertEqual(sum(item.find('pubDate') is not None for item in items),
+                         sum('releasedAt' in event for event in events))
+        wsj_guid = 'urn:ghostmesh-readers:release:reader:the-missing-step-is-not-more-intelligence:first-public-release'
+        wsj_items = [item for item in items if item.findtext('guid') == wsj_guid]
+        self.assertEqual(len(wsj_items), 1)
+        self.assertEqual(wsj_items[0].findtext('pubDate'), 'Sat, 24 Oct 2026 14:24:37 +0000')
         self.assertEqual({item.findtext('link') for item in items}, {event['url'] for event in events})
         self.assertIn('Content-Type: application/rss+xml', (site / '_headers').read_text())
 

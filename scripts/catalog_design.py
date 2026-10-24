@@ -57,6 +57,7 @@ CALLS = {
     'the-boundary-is-bigger-than-the-box': ('Test the whole boundary', 'Compare a real task locally and in the cloud, then inspect network paths, tool access and total cost.'),
     'the-commit-is-not-the-control': ('Test the acceptance path', 'Measure useful changes safely accepted and reversible, not merges per second alone.'),
     'the-engine-is-not-the-service': ('Test the whole service', 'Measure verified useful tokens, first-token latency and recovery under your own workload before choosing a serving stack.'),
+    'the-missing-step-is-not-more-intelligence': ('Separate the evidence', 'Credit the bounded scientific achievement; ask separately for a tested AGI forecast, patient outcome and binding deployment authority.'),
     'the-page-is-part-of-the-proof': ('Test the review surface', 'Ask whether the richer page exposes source, alternatives and export behavior well enough to catch consequential mistakes.'),
     'the-harness-keeps-the-receipt': ('Thin the scaffold, keep the boundary', 'Compare coding quality and cost, then verify authority and exact effects before simplifying a consequential workflow.'),
     'the-operator-is-part-of-the-denominator': ('Test the service, not the chip', 'Compare accepted task quality, latency tails, isolation and full cost on your workload.'),
