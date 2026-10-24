@@ -17,7 +17,7 @@ RELATIONS={'examines same claim','extends','challenges','responds to','shares en
 # This static site publishes only reviewed text assets. New asset formats require
 # an explicit policy change, so an unfamiliar capture container fails closed.
 PUBLIC_TEXT_EXTENSIONS={'.html','.json','.jsonld','.js','.css','.svg','.xml','.webmanifest'}
-PUBLIC_TEXT_PATHS={'robots.txt','_headers','llms.txt'}
+PUBLIC_TEXT_PATHS={'robots.txt','_headers','llms.txt','social/previews/home.png','social/previews/the-inbox-was-a-boundary.png'}
 SOURCE_EXTENSIONS=set('.vtt .srt .sbv .ass .ssa .sub .ttml .dfxp .scc .sami .smi .lrc .srv1 .srv2 .srv3 .json3 .mkv .mka .mks .mp4 .m4a .m4v .mp3 .webm .wav .wave .mov .qt .ogg .ogv .oga .opus .flac .aac .aiff .aif .avi .wmv .wma .asf .flv .f4v .mpeg .mpg .mpe .m2v .ts .mts .m2ts .3gp .3g2 .vob .amr .ape .ac3 .aax'.split())
 def capture_signature(data):
  return (data.startswith((b'\x1a\x45\xdf\xa3',b'OggS',b'fLaC',b'ID3',b'FLV',b'#!AMR',b'WEBVTT'))
@@ -213,6 +213,8 @@ def check(root=ROOT, *, local_only=False):
    require(p.suffix.lower() in PUBLIC_TEXT_EXTENSIONS or p.relative_to(site).as_posix() in PUBLIC_TEXT_PATHS,f'Unapproved public file type: {p.relative_to(site)}')
    payload=p.read_bytes()
    require(not capture_signature(payload),f'Private source capture signature: {p.relative_to(site)}')
+   if p.suffix.lower()=='.png':
+    continue
    try:payload.decode('utf-8')
    except UnicodeDecodeError:
     errors.append(f'Non-text public asset: {p.relative_to(site)}');continue
