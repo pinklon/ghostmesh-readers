@@ -23,9 +23,10 @@ async function deepInferColors(page) {
       }
       throw new Error('Missing opaque background');
     };
-    const selectors = ['h1', '.deck', '.source-panel p', '.source-panel a', '.story p', '.pull', '.matrix th', '.limits h3', '.endnote', '.gm-brief .gm-brief-point p', '.gm-evidence-intro p:not(.gm-kicker)', '.gm-claim-proposition', '.gm-share-label', '.gm-share-button', '.gm-share-email'];
+    const selectors = ['h1', '.deck', '.source-panel p', '.source-panel a', '.source-panel aside', '.story p', '.pull', '.matrix th', '.endnote', '.gm-brief .gm-brief-point p', '.gm-evidence-intro p:not(.gm-kicker)', '.gm-claim-proposition', '.gm-share-label', '.gm-share-button', '.gm-share-email'];
     const colors = Object.fromEntries(selectors.map(selector => {
       const element = document.querySelector(selector);
+      if (!element) throw new Error(`DeepInfer theme target missing: ${selector}`);
       const foreground = getComputedStyle(element).color;
       const backdrop = background(element);
       const a = luminance(foreground), b = luminance(backdrop);
