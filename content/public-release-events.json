@@ -2,6 +2,16 @@
   "schema": "ghostmesh-public-release-events-v1",
   "events": [
     {
+      "id": "reader:the-missing-step-is-not-more-intelligence:first-public-release",
+      "kind": "new-reader",
+      "subjectId": "reader:the-missing-step-is-not-more-intelligence",
+      "url": "https://youtube.shareplane.malott.ai/the-missing-step-is-not-more-intelligence/",
+      "title": "The Missing Step Is Not More Intelligence",
+      "summary": "A reading of Ben Cohen's Demis Hassabis profile that separates AI capability evidence, real-world outcomes and authority over deployment.",
+      "publicDate": "2026-10-24",
+      "releasedAt": "2026-10-24T14:24:37.701Z"
+    },
+    {
       "id": "scout:research-journal:first-public-release",
       "kind": "new-scout-research",
       "subjectId": "research-journal",
