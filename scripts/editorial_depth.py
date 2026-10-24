@@ -15,7 +15,7 @@ import json
 import os
 from pathlib import Path
 import re
-from urllib.parse import quote
+from urllib.parse import quote, urlsplit
 from urllib.request import Request, urlopen
 from knowledge_contract import DENIED as PRIVATE_MARKERS
 
@@ -137,9 +137,16 @@ def _mapped_prose(raw: str, anchor: str) -> bool:
 
 def _get_json(url: str) -> dict:
     headers = {"Accept": "application/vnd.github+json", "User-Agent": "ghostmesh-editorial-gate"}
-    # The existing Actions token has contents: read only. PRs and comments are
-    # public reads; never send that token to endpoints outside its permission.
-    if ("/contents/" in url or "/git/blobs/" in url) and os.environ.get("GITHUB_TOKEN"):
+    # CI's existing read-only token authenticates this repository's owner
+    # receipt checks. Never forward it to another host or repository.
+    target = urlsplit(url)
+    prefix = "/repos/pinklon/ghostmesh-readers/"
+    route = target.path[len(prefix):] if target.path.startswith(prefix) else ""
+    allowed = (route.startswith("contents/") or route.startswith("git/blobs/")
+               or re.fullmatch(r"pulls/[0-9]+", route) is not None
+               or re.fullmatch(r"issues/comments/[0-9]+", route) is not None)
+    if (target.scheme == "https" and target.netloc == "api.github.com"
+            and allowed and os.environ.get("GITHUB_TOKEN")):
         headers["Authorization"] = f"Bearer {os.environ['GITHUB_TOKEN']}"
     request = Request(url, headers=headers)
     with urlopen(request, timeout=8) as response:

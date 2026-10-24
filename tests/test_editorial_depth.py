@@ -19,7 +19,7 @@ from editorial_depth import AREAS, _get_json, acceptance_marker, binding, valida
 
 
 class EditorialDepthGate(unittest.TestCase):
-    def test_existing_contents_token_is_not_sent_to_public_pr_or_comment_reads(self):
+    def test_read_only_token_is_scoped_to_approved_repo_api_reads(self):
         seen = []
         def response(request, timeout):
             seen.append((request.full_url, request.has_header("Authorization")))
@@ -29,7 +29,12 @@ class EditorialDepthGate(unittest.TestCase):
             with patch("editorial_depth.urlopen", side_effect=response):
                 for path in ("/pulls/99", "/issues/comments/77", "/contents/content/catalog.json?ref=" + "a" * 40):
                     _get_json(base + path)
-        self.assertEqual([False, False, True], [authorized for _, authorized in seen])
+                for url in ("https://api.github.com/repos/other/project/pulls/99",
+                            "https://other.example/repos/pinklon/ghostmesh-readers/pulls/99",
+                            base + "/actions/secrets", "http://api.github.com/repos/pinklon/ghostmesh-readers/pulls/99"):
+                    _get_json(url)
+        self.assertEqual([True, True, True, False, False, False, False],
+                         [authorized for _, authorized in seen])
 
     def setUp(self):
         self.tmp = tempfile.TemporaryDirectory()
