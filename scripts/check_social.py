@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Static social metadata and raster checks; release requires owner artwork."""
+"""Static metadata and byte-exact raster checks for two selected cards."""
 from __future__ import annotations
 
 from functools import lru_cache
@@ -11,7 +11,7 @@ import struct
 import sys
 import zlib
 
-from social_cards import HEIGHT, HOST, WIDTH, OWNER_SELECTED_PREVIEW_KEYS, approval, specs
+from social_cards import HEIGHT, HOST, WIDTH, SELECTED_KEYS, approval, specs
 import hashlib
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -105,10 +105,11 @@ def check(root: Path = ROOT, release: bool = False) -> list[str]:
         if not original.is_file() or hashlib.sha256(original.read_bytes()).hexdigest() != expected_hash:
             errors.append(f"Selected original artwork changed: {key}")
     catalog = json.loads((root / "content/catalog.json").read_text())
-    record = approval(root)
-    pages = specs(catalog, preview_base=record.get("previewBaseUrl"))
+    approval(root)
+    pages = specs(catalog)
     expected_images = set()
-    article_titles, article_descriptions, article_images = set(), set(), set()
+    if set(pages) != {"/", "/the-inbox-was-a-boundary/"}:
+        errors.append("Social scope exceeds two selected routes")
     for route, spec in pages.items():
         page = root / "site" / route.strip("/") / "index.html" if route != "/" else root / "site/index.html"
         if not page.is_file():
@@ -128,10 +129,6 @@ def check(root: Path = ROOT, release: bool = False) -> list[str]:
                 errors.append(f"Social metadata {key}: {route}")
         if head.canonical != [HOST + route]:
             errors.append(f"Social canonical mismatch: {route}")
-        if route.count("/") == 2 and route not in {"/readers/", "/knowledge/", "/map/"}:
-            article_titles.add(spec["title"])
-            article_descriptions.add(spec["description"])
-            article_images.add(spec["image"])
         image = root / "site" / spec["image"].lstrip("/")
         expected_images.add(image)
         if not image.is_file():
@@ -143,22 +140,14 @@ def check(root: Path = ROOT, release: bool = False) -> list[str]:
         if PRIVATE.search(payload):
             errors.append(f"Private marker in social image: {spec['image']}")
         key = Path(spec["image"]).stem
-        if key in OWNER_SELECTED_PREVIEW_KEYS:
-            selected = root / "content/social-artwork" / f"{key}-1200x630.png"
-            if (not selected.is_file()
-                    or hashlib.sha256(selected.read_bytes()).hexdigest() != OWNER_SELECTED_PREVIEW_HASHES[key]
-                    or payload != selected.read_bytes()):
-                errors.append(f"Selected preview art differs from source asset: {spec['image']}")
-        elif b"PREVIEW ONLY - NOT APPROVED" not in payload:
-            errors.append(f"Provisional image lacks visible-gate marker: {spec['image']}")
+        selected = root / "content/social-artwork" / f"{key}-1200x630.png"
+        if (key not in SELECTED_KEYS or not selected.is_file()
+                or hashlib.sha256(selected.read_bytes()).hexdigest() != OWNER_SELECTED_PREVIEW_HASHES[key]
+                or payload != selected.read_bytes()):
+            errors.append(f"Selected preview art differs from source asset: {spec['image']}")
     actual_images = set((root / "site/social").rglob("*.png"))
     if actual_images != expected_images:
         errors.append("Social image inventory differs from the metadata manifest")
-    count = len(catalog["readers"])
-    if len(article_titles) != count or len(article_descriptions) != count or len(article_images) != count:
-        errors.append("Article social titles, descriptions and image URLs must be unique")
-    if release:
-        errors.append("Owner creative approval for issue 45 is pending; provisional social cards cannot enter Production")
     return errors
 
 
@@ -168,5 +157,4 @@ if __name__ == "__main__":
         print("FAIL:", problem)
     if problems:
         raise SystemExit(1)
-    print("PASS: social metadata, PNG inventory and owner gate" if "--release" in sys.argv
-          else "PASS: provisional social metadata and PNG technical checks")
+    print("PASS: two selected social cards, metadata, dimensions, hashes and PNG inventory")

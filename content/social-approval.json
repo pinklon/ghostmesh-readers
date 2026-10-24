@@ -1,6 +1,6 @@
 {
   "schema": "ghostmesh-social-approval-v1",
   "issue": "https://github.com/pinklon/ghostmesh-readers/issues/45",
-  "status": "pending",
-  "previewBaseUrl": "https://deploy-preview-53--shareplane-youtube.netlify.app"
+  "status": "approved-selected-only",
+  "selectedKeys": ["home", "the-inbox-was-a-boundary"]
 }

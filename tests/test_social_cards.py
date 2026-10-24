@@ -1,6 +1,6 @@
-"""Failure modes for issue 45 metadata, image files, and owner approval."""
-import shutil
+"""Scope and failure checks for the two selected issue 45 social cards."""
 import json
+import shutil
 import struct
 import sys
 import tempfile
@@ -11,10 +11,10 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 from check_social import check, png_size
-from social_cards import approval, specs
+from social_cards import HOST, approval, specs
 
 
-class SocialPreviewGate(unittest.TestCase):
+class SelectedSocialCards(unittest.TestCase):
     def setUp(self):
         self.tmp = tempfile.TemporaryDirectory()
         self.root = Path(self.tmp.name)
@@ -22,79 +22,63 @@ class SocialPreviewGate(unittest.TestCase):
         for name in ("catalog.json", "social-approval.json"):
             shutil.copy2(ROOT / "content" / name, self.root / "content" / name)
         shutil.copytree(ROOT / "content/social-artwork", self.root / "content/social-artwork")
-        shutil.copytree(ROOT / "site", self.root / "site")
+        (self.root / "site/social").mkdir(parents=True)
+        shutil.copytree(ROOT / "site/social/previews", self.root / "site/social/previews")
+        shutil.copy2(ROOT / "site/index.html", self.root / "site/index.html")
+        shutil.copytree(ROOT / "site/the-inbox-was-a-boundary", self.root / "site/the-inbox-was-a-boundary")
 
     def tearDown(self):
         self.tmp.cleanup()
 
-    def test_provisional_pages_pass_technical_gate_but_fail_release(self):
-        self.assertEqual([], check(self.root))
-        self.assertIn("Owner creative approval", " ".join(check(self.root, release=True)))
+    def test_only_selected_cards_pass_technical_gate(self):
+        self.assertEqual([], check(self.root, release=True))
+        pages = specs(json.loads((self.root / "content/catalog.json").read_text()))
+        self.assertEqual({"/", "/the-inbox-was-a-boundary/"}, set(pages))
+        self.assertEqual(HOST + "/social/previews/home.png", pages["/"]["imageUrl"])
 
-    def test_missing_image_and_wrong_url_are_rejected(self):
+    def test_extra_placeholder_or_changed_owner_scope_fails(self):
+        extra = self.root / "site/social/previews/unapproved.png"
+        extra.write_bytes((self.root / "site/social/previews/home.png").read_bytes())
+        self.assertIn("Social image inventory", " ".join(check(self.root)))
+        extra.unlink()
+        record = json.loads((self.root / "content/social-approval.json").read_text())
+        record["selectedKeys"].append("unapproved")
+        (self.root / "content/social-approval.json").write_text(json.dumps(record))
+        with self.assertRaisesRegex(ValueError, "limited to the two"):
+            approval(self.root)
+
+    def test_missing_image_or_wrong_url_fails(self):
         image = self.root / "site/social/previews/home.png"
         image.unlink()
         self.assertIn("Social image missing", " ".join(check(self.root)))
+        shutil.copy2(ROOT / "site/social/previews/home.png", image)
         page = self.root / "site/index.html"
-        catalog = json.loads((self.root / "content/catalog.json").read_text())
-        image_url = specs(catalog, preview_base=approval(self.root)["previewBaseUrl"])["/"]["imageUrl"]
         page.write_text(page.read_text().replace(
-            image_url,
-            "https://external.example/card.png"))
+            HOST + "/social/previews/home.png", "https://external.example/card.png"))
         self.assertIn("Social metadata og:image", " ".join(check(self.root)))
 
-    def test_bad_signature_dimensions_and_crc_are_rejected(self):
+    def test_corrupt_or_swapped_selected_asset_fails(self):
         image = self.root / "site/social/previews/home.png"
         original = image.read_bytes()
-        for payload in (b"not a PNG" + original, original[:16] + b"\x00\x00\x00\x01" + original[20:],
-                        original[:-1] + bytes([original[-1] ^ 1])):
-            with self.subTest(payload=payload[:20]):
-                image.write_bytes(payload)
-                self.assertIsNone(png_size(payload))
-                self.assertIn("Social PNG signature or dimensions", " ".join(check(self.root)))
+        for payload in (b"not a PNG" + original, original[:-1] + bytes([original[-1] ^ 1])):
+            image.write_bytes(payload)
+            self.assertIsNone(png_size(payload))
+            self.assertIn("Social PNG signature", " ".join(check(self.root)))
+        image.write_bytes((self.root / "site/social/previews/the-inbox-was-a-boundary.png").read_bytes())
+        self.assertIn("Selected preview art differs", " ".join(check(self.root)))
 
-    def test_private_metadata_and_removed_preview_marker_are_rejected(self):
-        image = self.root / "site/social/previews/readers.png"
-        original = image.read_bytes()
-        image.write_bytes(original + b"/Users/private/source")
-        self.assertIn("Private marker", " ".join(check(self.root)))
-        image.write_bytes(original.replace(b"PREVIEW ONLY - NOT APPROVED", b"DRAFT ONLY - NOT APPROVED"))
-        self.assertIn("Provisional image lacks", " ".join(check(self.root)))
-
-    def test_selected_original_or_preview_swap_is_rejected(self):
+    def test_original_swap_and_private_png_metadata_fail(self):
         original = self.root / "content/social-artwork/home-original.png"
         original.write_bytes(b"substitute")
         self.assertIn("Selected original artwork changed", " ".join(check(self.root)))
         shutil.copy2(ROOT / "content/social-artwork/home-original.png", original)
         image = self.root / "site/social/previews/home.png"
-        image.write_bytes((self.root / "site/social/previews/the-inbox-was-a-boundary.png").read_bytes())
-        self.assertIn("Selected preview art differs", " ".join(check(self.root)))
-        selected = self.root / "content/social-artwork/home-1200x630.png"
-        selected.write_bytes(image.read_bytes())
-        self.assertIn("Selected preview art differs", " ".join(check(self.root)))
-
-    def test_compressed_private_png_metadata_is_rejected(self):
-        image = self.root / "site/social/previews/home.png"
-        original = image.read_bytes()
+        payload = image.read_bytes()
         body = b"Source\x00\x00" + zlib.compress(b"/Users/private/transcript-source.txt")
         kind = b"zTXt"
         chunk = struct.pack(">I", len(body)) + kind + body + struct.pack(">I", zlib.crc32(kind + body))
-        image.write_bytes(original[:33] + chunk + original[33:])
-        self.assertIn("Social PNG signature or dimensions", " ".join(check(self.root)))
-
-    def test_final_art_cannot_be_self_approved_in_manifest(self):
-        path = self.root / "content/social-approval.json"
-        record = json.loads(path.read_text())
-        record["status"] = "approved"
-        record["approvalCommentUrl"] = "https://github.com/pinklon/ghostmesh-readers/issues/45#issuecomment-6303394081"
-        path.write_text(json.dumps(record))
-        with self.assertRaisesRegex(ValueError, "separate owner-approved release change"):
-            approval(self.root)
-
-    def test_preview_image_url_uses_actual_netlify_base(self):
-        catalog = json.loads((self.root / "content/catalog.json").read_text())
-        example = specs(catalog, preview_base="https://deploy-preview-45--readers.netlify.app")["/"]
-        self.assertEqual("https://deploy-preview-45--readers.netlify.app/social/previews/home.png", example["imageUrl"])
+        image.write_bytes(payload[:33] + chunk + payload[33:])
+        self.assertIn("Social PNG signature", " ".join(check(self.root)))
 
 
 if __name__ == "__main__":

@@ -11,7 +11,7 @@
       "url": "https://youtube.shareplane.malott.ai/the-inbox-was-a-boundary/",
       "source": {
         "path": "site/the-inbox-was-a-boundary/index.html",
-        "sha256": "7fd81d5fb832da7218bd3d07f873084ef9c90937ee09f13aa7947b8247ae4201"
+        "sha256": "10702b296b4efdf61c1338ea16d24fd485dedb350190ba3bdacc829335a19f67"
       }
     },
     {
@@ -24,7 +24,7 @@
       "provenance": {
         "sourceNodeId": "urn:ghostmesh-readers:reader:the-inbox-was-a-boundary",
         "locator": "#fleet-activity-source",
-        "sourceFileSha256": "7fd81d5fb832da7218bd3d07f873084ef9c90937ee09f13aa7947b8247ae4201",
+        "sourceFileSha256": "10702b296b4efdf61c1338ea16d24fd485dedb350190ba3bdacc829335a19f67",
         "quoteSha256": "846ff5ff13d32b94826d855429ca96ab02c922f5bf353fe426d6df57dfd28743"
       }
     },
@@ -542,7 +542,7 @@
       "provenance": {
         "sourceNodeId": "urn:ghostmesh-readers:reader:the-inbox-was-a-boundary",
         "locator": "#fleet-activity-source",
-        "sourceFileSha256": "7fd81d5fb832da7218bd3d07f873084ef9c90937ee09f13aa7947b8247ae4201",
+        "sourceFileSha256": "10702b296b4efdf61c1338ea16d24fd485dedb350190ba3bdacc829335a19f67",
         "quoteSha256": "846ff5ff13d32b94826d855429ca96ab02c922f5bf353fe426d6df57dfd28743"
       }
     },

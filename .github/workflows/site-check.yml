@@ -21,6 +21,6 @@ jobs:
           GITHUB_TOKEN: ${{ github.token }}
       - run: python3 scripts/knowledge_contract.py --check
       - run: python3 -m unittest discover -s tests -p 'test_*.py'
-      # Draft preview cards pass technical checks, but the production gate
-      # stays closed until Tony approves exact artwork under issue #45.
+      # Only the two owner-selected issue 45 cards may enter this release.
+      # The normal PR and exact-head publication decisions remain separate.
       - run: python3 scripts/check_social.py --release
