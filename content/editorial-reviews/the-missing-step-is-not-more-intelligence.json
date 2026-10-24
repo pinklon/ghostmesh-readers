@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "readerId": "reader:the-missing-step-is-not-more-intelligence",
+  "sourceId": "wsj-hassabis-cohen-2026",
+  "sourceAidSha256": "4c578a9981549a08852d1f43a9158a5786c2c26c850b50218856d52c2112aace",
+  "articleSha256": "7620a6de8cc44db4ddbb35dc12a8a1ad7d93c8a988f8fc2d4fc7c19d2af3aa61",
+  "evidenceRevision": "1b2b852e3649721600fb66134ad9bd4f97a9f0a2b6757923e7e629c8e53ea0fb",
+  "reviewedAt": "2026-10-24T12:25:56Z",
+  "provenance": {
+    "kind": "codex-task-agent",
+    "reference": "Independent read-only Codex editorial review of the exact authored article and mapped public evidence in the incumbent single-publisher task; a focused pass checked the final share and source-shell bytes.",
+    "limits": "The complete original WSJ HTML was not available for independent comparison; a credited readable partner edition supported the reported interview points. The reviewer did not reproduce AlphaFold experiments, test an AGI forecast, verify patient benefit or inspect a hosted Netlify preview. Private source-aid binding identifies a limited access note, not a retained full source copy."
+  },
+  "summary": "The article preserves all 22 owner-supplied substantive blocks, qualifies profile reporting and company claims, and separates capability, outcome and authority evidence without republishing the WSJ text.",
+  "findings": [
+    "The current authored article matches all 22 locked GhostMesh prose blocks in order. Only delivery and private draft labels were omitted; the public source panel and share controls are separate scaffolding.",
+    "The accessible WSJ preview confirms title and byline. A credited partner edition supports the reported two-to-three-year AGI forecast, Einstein challenge, drug-discovery discussion and proposed oversight body; the complete original WSJ HTML was not independently compared.",
+    "EMBL-EBI supports a narrower high-confidence AlphaFold2 achievement with limits. The Google cognitive framework, Isomorphic update and DeepMind safety document support bounded methodological or first-party process statements, not verified AGI timing, clinical patient benefit or independently binding oversight.",
+    "Seven catalog claims keep reported predictions, first-party progress, published process and GhostMesh inference distinct. The five-point written-source map has section locators and supporting source links; no video timestamps or fabricated source dialogue appear.",
+    "No substantial source passage, private access note, local path, raw transcript or personal reaction is included in the public Reader. Local screenshots checked light-mobile and dark-desktop readability; full hosted preview and owner content acceptance remain pending.",
+    "A focused final pass verified one exact original WSJ profile link in each of the five mapped article sections. Removing only those five anchors restores the prior reviewed article bytes; all 22 locked prose blocks and earlier findings remain unchanged."
+  ],
+  "conclusion": "accept-for-owner-review"
+}

@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 1,
+  "readerId": "reader:the-missing-step-is-not-more-intelligence",
+  "sourceId": "wsj-hassabis-cohen-2026",
+  "sourceDigest": "a0d70b458efbaa27e43a77033c2006d68522eff11e1d0ee603a95ae2eb87ed47",
+  "sourceAidSha256": "4c578a9981549a08852d1f43a9158a5786c2c26c850b50218856d52c2112aace",
+  "articleSha256": "7620a6de8cc44db4ddbb35dc12a8a1ad7d93c8a988f8fc2d4fc7c19d2af3aa61",
+  "evidenceRevision": "1b2b852e3649721600fb66134ad9bd4f97a9f0a2b6757923e7e629c8e53ea0fb",
+  "sourceMapEvidenceSha256": "26131c2f8e49d06ba793ef99313c024861b15c7ae6ee3420529de8fd563d5b1f",
+  "reviewEvidenceSha256": "13da09c6fefdc32d1d3581a67e17820126fa4de3b344cd17772d5b051d231f47",
+  "candidateAuthor": "pinklon",
+  "complexity": {
+    "tier": "extended",
+    "factors": [
+      "Five distinct substantive arguments across science, AGI evaluation, medicine and oversight",
+      "Seven material claims and consequential distinctions between capability, outcome and authority"
+    ],
+    "rationale": "The profile crosses scientific, clinical and governance domains, so the Reader requires substantial source mapping, serious counterargument and explicit evidence limits."
+  },
+  "sourceMap": [
+    {
+      "atSeconds": null,
+      "sectionId": "achievement",
+      "claimIds": [
+        "the-missing-step-is-not-more-intelligence--alphafold-achievement"
+      ],
+      "rationale": "This section retains the genuine AlphaFold2 success while limiting it to structure prediction rather than a general-intelligence forecast."
+    },
+    {
+      "atSeconds": null,
+      "sectionId": "timeline",
+      "claimIds": [
+        "the-missing-step-is-not-more-intelligence--agi-forecast",
+        "the-missing-step-is-not-more-intelligence--einstein-test"
+      ],
+      "rationale": "This section separates a reported two-to-three-year prediction and proposed Einstein benchmark from independently measured progress."
+    },
+    {
+      "atSeconds": null,
+      "sectionId": "drug-outcomes",
+      "claimIds": [
+        "the-missing-step-is-not-more-intelligence--drug-discovery"
+      ],
+      "rationale": "This section compares first-party intermediate research reports with the missing prospective patient-outcome evidence."
+    },
+    {
+      "atSeconds": null,
+      "sectionId": "oversight",
+      "claimIds": [
+        "the-missing-step-is-not-more-intelligence--published-safety-framework",
+        "the-missing-step-is-not-more-intelligence--industry-oversight"
+      ],
+      "rationale": "This section contrasts a reported industry-funded oversight proposal with a documented but first-party safety framework."
+    },
+    {
+      "atSeconds": null,
+      "sectionId": "ghostmesh-take",
+      "claimIds": [
+        "the-missing-step-is-not-more-intelligence--authority-outcome-boundary"
+      ],
+      "rationale": "This section states the original GhostMesh distinction between capability evidence, outcome evidence and binding deployment authority."
+    }
+  ],
+  "assessment": {
+    "sourceCoverage": {
+      "disposition": "covered",
+      "rationale": "Five distinct sections map the partner-reported profile themes and separate primary materials. No video time or unobserved original WSJ passage is invented."
+    },
+    "supportingArgument": {
+      "disposition": "covered",
+      "rationale": "The profile’s strongest scientific achievement, forecast, originality challenge, drug-development ambition and governance proposal are represented with attribution."
+    },
+    "evidenceRoles": {
+      "disposition": "covered",
+      "rationale": "Reported interview predictions, first-party company statements, independent scientific explanation, proposals and GhostMesh inference are labeled separately."
+    },
+    "counterargument": {
+      "disposition": "covered",
+      "rationale": "The Reader grants AlphaFold its bounded scientific success and acknowledges DeepMind’s published safety process before testing broader inferences."
+    },
+    "tradeoffs": {
+      "disposition": "covered",
+      "rationale": "The essay considers scientific optimism alongside measurement boundaries, clinical handoffs and who may make deployment refusals binding."
+    },
+    "falsifiability": {
+      "disposition": "covered",
+      "rationale": "The analysis names forecast definitions, contamination controls, patient-outcome baselines and enforceable oversight evidence that could change its judgment."
+    },
+    "originalSynthesis": {
+      "disposition": "covered",
+      "rationale": "The original GhostMesh thesis separates a model’s capability, verified mission outcome and authorized release, including handoff and recovery requirements."
+    },
+    "performance": {
+      "disposition": "covered",
+      "rationale": "AlphaFold2 accuracy is discussed only in high-confidence regions and AGI evaluation is framed as a measurement challenge rather than a benchmark result."
+    },
+    "economics": {
+      "disposition": "not-applicable",
+      "rationale": "This profile and locked analysis do not make a cost or efficiency claim. No unreported economic estimate is inferred from company ambitions."
+    },
+    "threatGovernance": {
+      "disposition": "covered",
+      "rationale": "The Reader identifies evaluation authority, funding, evidence access, publication of adverse findings and deployment-stop power as distinct control questions."
+    }
+  },
+  "independentCorroboration": "none",
+  "ownerDecision": {
+    "pullNumber": null,
+    "commentId": null
+  },
+  "decision": "hold",
+  "gaps": [
+    {
+      "type": "source",
+      "severity": "nonblocking",
+      "rationale": "The complete original WSJ HTML was not independently compared with the credited readable partner edition; exact original-only wording should remain outside claims until accessible."
+    }
+  ],
+  "decisionRationale": "The independent bounded source and copy review, including its final five-link check, found no blocking factual or privacy defect in the exact authored article. Tony has not yet reviewed this candidate in a hosted preview or posted a direct GitHub hash marker, so release remains held.",
+  "assessedAt": "2026-10-24T12:25:56Z"
+}
