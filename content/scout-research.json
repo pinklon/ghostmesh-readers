@@ -3,6 +3,22 @@
   "note": "Only approved public works. Historic essays predate the explicit release-event register; null is an honest legacy exception, not a fabricated publication event.",
   "records": [
     {
+      "id": "journal:research-journal",
+      "slug": "research-journal",
+      "type": "journal",
+      "status": "published",
+      "title": "The Research Journal: What Scout Actually Tested",
+      "url": "/scout/research-journal/",
+      "sourcePath": "site/scout/research-journal/index.html",
+      "provenance": "Public GhostMesh synthesis of the existing Scout research essays, with a source-pinned same-implementation replay receipt in PR #75.",
+      "evidenceLimits": "Synthesizes earlier editorial evidence and synthetic tests. Same-source deterministic replay passed; independent replication, raw archive reconciliation, and real-workload validation remain unverified.",
+      "summary": "An open ledger of Scout's outside-vocabulary comparisons, synthetic stopping tests, failures, caveats and reproducibility gaps.",
+      "topics": ["research"],
+      "reviewedOn": "2026-10-23",
+      "releaseEventId": "scout:research-journal:first-public-release",
+      "relatedIds": ["essay:five-ideas-outside-the-filter", "essay:the-plateau-that-lied"]
+    },
+    {
       "id": "cloudflare-security-audit-skill",
       "slug": "cloudflare-security-audit-skill",
       "type": "investigation",

@@ -18,22 +18,28 @@ class ScoutResearchTests(unittest.TestCase):
     def validate(self, source):
         return validate_research(source, self.scout, self.events, ROOT)
 
-    def test_nine_approved_public_works_are_reachable(self):
+    def test_nine_original_works_and_synthesis_journal_are_reachable(self):
         self.validate(self.source)
         records = self.source['records']
-        self.assertEqual(len(records), 9)
+        self.assertEqual(len(records), 10)
         self.assertEqual(sum(item['type'] == 'investigation' for item in records), 3)
         self.assertEqual(sum(item['type'] == 'essay' for item in records), 6)
+        self.assertEqual(sum(item['type'] == 'journal' for item in records), 1)
         rendered = (ROOT/'site/scout/research/index.html').read_text()
-        self.assertEqual(rendered.count('data-research-card'), 9)
+        self.assertEqual(rendered.count('data-research-card'), 10)
         for item in records:
             self.assertIn('href="' + item['url'] + '"', rendered)
             self.assertTrue((ROOT/'site'/item['url'].strip('/')/'index.html').is_file())
         self.assertIn('scout-research.js', rendered)
+        journal = next(item for item in records if item['type'] == 'journal')
+        self.assertIn('href="' + journal['url'] + '"', (ROOT/'site/scout/index.html').read_text())
+        self.assertIn(journal['url'], (ROOT/'site/sitemap.xml').read_text())
+        self.assertIn('Research Journal', (ROOT/'site/scout/method/index.html').read_text())
+        self.assertIn(journal['url'], (ROOT/'site/feed.xml').read_text())
 
     def test_future_tranche_and_private_status_fail_closed(self):
         source = copy.deepcopy(self.source)
-        future = copy.deepcopy(source['records'][3])
+        future = copy.deepcopy(next(item for item in source['records'] if item['type'] == 'essay'))
         future.update(id='essay:synthetic-next-tranche', slug='synthetic-next-tranche',
                       url='/scout/essays/synthetic-next-tranche/',
                       sourcePath='site/scout/essays/synthetic-next-tranche/index.html')
@@ -44,7 +50,7 @@ class ScoutResearchTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, 'fields/status'):
             self.validate(source)
         future['status'] = 'published'
-        future['url'] = source['records'][3]['url']
+        future['url'] = next(item['url'] for item in source['records'] if item['type'] == 'essay')
         with self.assertRaisesRegex(ValueError, 'identity'):
             self.validate(source)
 

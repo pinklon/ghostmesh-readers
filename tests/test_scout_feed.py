@@ -85,7 +85,7 @@ class ScoutFeedTests(unittest.TestCase):
                          [review['id'] for review in source['reviews']])
         self.assertEqual(sum(event['kind'] == 'new-reader' and event['subjectId'] == 'reader:what-a-swarm-makes-us-see'
                              for event in events['events']), 1)
-        self.assertEqual({event['publicDate'] for event in events['events']}, {'2026-10-22'})
+        self.assertEqual({event['publicDate'] for event in events['events']}, {'2026-10-22', '2026-10-23'})
         self.assertTrue(all('releasedAt' not in event for event in events['events']))
 
     def test_report_renderer_escapes_html_and_rejects_missing_cards(self):

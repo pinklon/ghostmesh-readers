@@ -433,7 +433,7 @@ def projections():
  def scout_page(title,url,body):
   return page(title,url,body).replace('</head>','<link rel="stylesheet" href="/assets/scout.css"></head>')
  latest=max(editions,key=lambda edition:(edition['reviewedOn'],edition['id']))
- out['scout/index.html']=scout_page('Scout','/scout/',scout_home(scout,latest))
+ out['scout/index.html']=scout_page('Scout','/scout/',scout_home(scout,latest,research))
  out['scout/archive/index.html']=scout_page('Scout review library','/scout/archive/',archive_page(scout))
  out['scout/research/index.html']=scout_page('Scout Research Library','/scout/research/',research_page(research))
  out['scout/method/index.html']=scout_page('How Scout works','/scout/method/',method_page((ROOT/'content/scout/method.md').read_text()))
