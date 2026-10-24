@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "readerId": "reader:the-page-is-part-of-the-proof",
+  "sourceId": "claude-code-html-artifacts-2026",
+  "sourceAidSha256": "d968ac98c9c514d3861698860fbe3d43c323f9122bbc5d933754fced89449cd9",
+  "articleSha256": "caaa10eecfc327ad4b54468396df5f602d95b93490bc3e3a27706af2021f40b9",
+  "evidenceRevision": "1fcedfa85a50543a497168c9e11d0134fa25115c026bec763ca931c6421a7c56",
+  "reviewedAt": "2026-10-21T04:59:21Z",
+  "provenance": {
+    "kind": "codex-task-agent",
+    "reference": "Read-only independent editorial reviewer /root/editorial_review in the incumbent single-publisher task; final scoped review returned on October 21, 2026.",
+    "limits": "The source record reports the actual review scope but cannot authenticate private-agent identity; Tony must inspect the findings and make his own qualitative decision."
+  },
+  "summary": "The reviewer checked the exact private capture, article claims, counterargument, primary documentation, relationship links and privacy. A targeted follow-up verified two original-source links on the final article hash without changing the argument. No actionable finding remained.",
+  "findings": [
+    "The deterministic map required original-source links in two mapped sections; the final article adds only those exact links, and targeted independent review confirmed both statements appear in the source."
+  ],
+  "conclusion": "accept-for-owner-review"
+}

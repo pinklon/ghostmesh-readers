@@ -5,6 +5,12 @@ from unittest.mock import patch
 ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT/'scripts'))
 from check_site import check
 class PublicationGate(unittest.TestCase):
+ def test_local_cli_cannot_masquerade_as_release_in_ci(self):
+  import os
+  with patch.dict(os.environ, {'GITHUB_ACTIONS':'true'}):
+   result=subprocess.run([sys.executable,'-B',str(ROOT/'scripts/check_site.py'),'--local'],capture_output=True,text=True,env=os.environ.copy())
+  self.assertEqual(2,result.returncode)
+  self.assertIn('cannot qualify a GitHub Actions release gate',result.stdout)
  def setUp(self):
   self.tmp=tempfile.TemporaryDirectory();self.root=Path(self.tmp.name)
   for name in ['site','content','docs']:shutil.copytree(ROOT/name,self.root/name)
@@ -99,6 +105,9 @@ class PublicationGate(unittest.TestCase):
   scripts=self.root/'scripts';scripts.mkdir();shutil.copy2(ROOT/'scripts/generate_site.py',scripts/'generate_site.py')
   shutil.copy2(ROOT/'scripts/map_design.py',scripts/'map_design.py')
   shutil.copy2(ROOT/'scripts/catalog_design.py',scripts/'catalog_design.py')
+  shutil.copy2(ROOT/'scripts/scout_feed.py',scripts/'scout_feed.py')
+  shutil.copy2(ROOT/'scripts/scout_pages.py',scripts/'scout_pages.py')
+  shutil.copy2(ROOT/'scripts/scout_research.py',scripts/'scout_research.py')
   result=subprocess.run([sys.executable,str(scripts/'generate_site.py')],capture_output=True,text=True)
   self.assertEqual(0,result.returncode,result.stdout+result.stderr)
   self.assertEqual([],self.structural_errors())

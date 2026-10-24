@@ -1,0 +1,41 @@
+{
+  "schema": "ghostmesh-scout-provider-sources-v1",
+  "sources": [
+    {
+      "id": "openai-news",
+      "provider": "OpenAI",
+      "format": "rss",
+      "url": "https://openai.com/news/rss.xml"
+    },
+    {
+      "id": "anthropic-platform",
+      "provider": "Anthropic",
+      "format": "html",
+      "url": "https://platform.claude.com/docs/en/release-notes/overview"
+    },
+    {
+      "id": "anthropic-claude",
+      "provider": "Anthropic",
+      "format": "html",
+      "url": "https://support.claude.com/en/articles/12138966-release-notes"
+    },
+    {
+      "id": "google-gemini",
+      "provider": "Google",
+      "format": "html",
+      "url": "https://ai.google.dev/gemini-api/docs/changelog"
+    },
+    {
+      "id": "microsoft-copilot",
+      "provider": "Microsoft",
+      "format": "html",
+      "url": "https://learn.microsoft.com/en-us/microsoft-365-copilot/release-notes"
+    },
+    {
+      "id": "github-changelog",
+      "provider": "GitHub",
+      "format": "rss",
+      "url": "https://github.blog/changelog/feed/"
+    }
+  ]
+}

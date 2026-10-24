@@ -304,15 +304,15 @@
     "editorialOrder": 28,
     "orderReason": "Follows the four-video PR 56 batch in owner-requested source order.",
     "relationshipReview": {
-      "reviewedAt": "2026-10-21",
-      "reviewedCatalogSize": 32,
+      "reviewedAt": "2026-10-24",
+      "reviewedCatalogSize": 34,
       "decision": "linked",
       "reviewedTargets": [
         "reader:the-parallel-result-is-not-the-product",
         "reader:the-stop-button-is-outside-the-chat",
         "reader:the-inbox-was-a-boundary"
       ],
-      "rationale": "Compared the Orca thesis against all 31 published Readers. These three links offer distinct comparisons on accepted parallel output, external-action readback and inbox governance; no other Reader was treated as evidence for Orca outcomes."
+      "rationale": "Compared the Orca thesis against all 31 published Readers. These three links offer distinct comparisons on accepted parallel output, external-action readback and inbox governance; no other Reader was treated as evidence for Orca outcomes. The later HTML and HORTRAME Readers were also checked; neither independently corroborates Orca outcomes or warrants a further typed route."
     },
     "editorialDepth": {
       "schemaVersion": 1,

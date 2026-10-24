@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "readerId": "reader:the-page-is-part-of-the-proof",
+  "sourceId": "claude-code-html-artifacts-2026",
+  "sourceAidSha256": "d968ac98c9c514d3861698860fbe3d43c323f9122bbc5d933754fced89449cd9",
+  "points": [
+    {
+      "atSeconds": null,
+      "sectionId": "surface",
+      "claimIds": ["the-page-is-part-of-the-proof--readability", "the-page-is-part-of-the-proof--engagement-effect"],
+      "cueParaphrase": "The author reports difficulty reading long Markdown plans and offers visually organized HTML comparisons and reviews, without a controlled outcome study.",
+      "privateAidCheck": "The retained original page was checked at the opening and visual-clarity sections; its examples and personal language support attribution, while no measured error rate appears."
+    },
+    {
+      "atSeconds": null,
+      "sectionId": "agency",
+      "claimIds": ["the-page-is-part-of-the-proof--markdown-record", "the-page-is-part-of-the-proof--source-to-view"],
+      "cueParaphrase": "The author credits Markdown's plain-text advantages yet prefers HTML for many generated artifacts; the text-source and rendered-view combination is GhostMesh analysis.",
+      "privateAidCheck": "The retained original page was checked at its opening and FAQ; CommonMark was separately checked for the Markdown-to-HTML relationship. No universal format verdict is attributed to the author."
+    },
+    {
+      "atSeconds": null,
+      "sectionId": "boundary",
+      "claimIds": ["the-page-is-part-of-the-proof--browser-boundary", "the-page-is-part-of-the-proof--html-affordances"],
+      "cueParaphrase": "The essay presents interactive editors and Claude Code context ingestion; security and provenance consequences are explicitly GhostMesh inferences rather than reported incidents.",
+      "privateAidCheck": "The retained page was checked at two-way interactions, data ingestion and custom editing interfaces; MDN documentation was checked for browser resource controls. No source example was security-audited."
+    },
+    {
+      "atSeconds": null,
+      "sectionId": "capability",
+      "claimIds": ["the-page-is-part-of-the-proof--accessibility"],
+      "cueParaphrase": "The source advocates visual richness; the Reader adds W3C's requirement that visual relationships remain available to assistive technologies.",
+      "privateAidCheck": "The retained page's examples were checked for the author's visual argument; W3C guidance was read separately. The article does not claim to have tested example accessibility."
+    }
+  ]
+}

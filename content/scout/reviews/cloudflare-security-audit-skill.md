@@ -1,0 +1,15 @@
+# Cloudflare security-audit-skill
+
+**What it is.** Cloudflare’s security-audit-skill is an open-source coding-agent workflow for developers and security reviewers auditing a repository. It organizes reconnaissance, candidate validation and findings into distinct verdicts. Its problem is the plausible but unsupported vulnerability report: a lead should not acquire the status or severity of a confirmed failure merely because an agent wrote it convincingly. [Project and intended workflow](https://github.com/cloudflare/security-audit-skill/blob/c1c8a8c1471069fb0e188eeaff69b8e8db6564a8/README.md).
+
+**What we inspected.** At revision c1c8a8c, we read the [README](https://github.com/cloudflare/security-audit-skill/blob/c1c8a8c1471069fb0e188eeaff69b8e8db6564a8/README.md), [findings-validator source](https://github.com/cloudflare/security-audit-skill/blob/c1c8a8c1471069fb0e188eeaff69b8e8db6564a8/skills/security-audit/validate-findings.cjs) and part of the [report schema](https://github.com/cloudflare/security-audit-skill/blob/c1c8a8c1471069fb0e188eeaff69b8e8db6564a8/skills/security-audit/report-schema.json). We did not install the skill, run its validator or conduct an audit. The validator source contains checks rejecting severity on unresolved findings and preventing a confirmed severity from exceeding its stated impact. That is a concrete implementation detail, not proof that supplied evidence is true.
+
+**Recommendation: ADAPT the evidence discipline, not the whole audit apparatus.**
+
+**GhostMesh fit and incumbent comparison.** GhostMesh already uses source review and receipts; adding another review system would duplicate machinery unless it reduces missed defects, false alarms or reviewer effort. The smallest useful comparison is to classify one existing review’s findings with these rules and record what changes, without installing the skill or launching its full workflow.
+
+**Everyday usefulness.** For an everyday user, the benefit is mostly indirect: a clearer distinction between a demonstrated problem and an alarming hypothesis. This is not a consumer security app or a substitute for expert investigation.
+
+**Risk, license and effort.** The repository’s MIT license permits reuse subject to its terms. Full use introduces a tool-using coding agent, Node.js validators and independently enforced sandbox requirements for target-controlled execution. The narrow method adaptation is small; the cost and benefit of the complete workflow remain unmeasured. [License](https://github.com/cloudflare/security-audit-skill/blob/c1c8a8c1471069fb0e188eeaff69b8e8db6564a8/LICENSE), [requirements](https://github.com/cloudflare/security-audit-skill/blob/c1c8a8c1471069fb0e188eeaff69b8e8db6564a8/README.md).
+
+**Still unknown.** No validator tests or audits were run by GhostMesh. We did not establish false-positive rate, missed-finding rate, reviewer-time savings, sandbox enforcement or maintenance responsiveness. Structured evidence fields cannot independently prove an exploit or make agent-written evidence trustworthy. This is not authorization to execute target code or adopt the complete harness.

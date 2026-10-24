@@ -56,11 +56,13 @@ CALLS = {
     'the-stop-button-is-outside-the-chat': ('Test the stop surface', 'Limit agent authority, inspect the real outcome and verify that active work and future access have stopped.'),
     'the-boundary-is-bigger-than-the-box': ('Test the whole boundary', 'Compare a real task locally and in the cloud, then inspect network paths, tool access and total cost.'),
     'the-commit-is-not-the-control': ('Test the acceptance path', 'Measure useful changes safely accepted and reversible, not merges per second alone.'),
+    'the-page-is-part-of-the-proof': ('Test the review surface', 'Ask whether the richer page exposes source, alternatives and export behavior well enough to catch consequential mistakes.'),
     'the-harness-keeps-the-receipt': ('Thin the scaffold, keep the boundary', 'Compare coding quality and cost, then verify authority and exact effects before simplifying a consequential workflow.'),
     'the-operator-is-part-of-the-denominator': ('Test the service, not the chip', 'Compare accepted task quality, latency tails, isolation and full cost on your workload.'),
     'unsupervised-is-a-permission': ('Grant one action tier', 'Earn autonomy on a versioned workflow with effect readback, exception handling and an operator stop.'),
     'a-wallet-is-not-a-mandate': ('Bound the purchase', 'Test a policy-limited machine payment before considering wider wallet authority or financial action.'),
     'the-fleet-needs-a-control-plane': ('Test the operator surface', 'Compare accepted work, review time, shared effects and recovery before increasing the agent count.'),
+    'what-a-swarm-makes-us-see': ('Inspect the visual evidence', 'Compare sampled frames with the creator’s mathematical account; neither establishes continuous convergence or a measured perceptual effect.'),
 }
 
 
