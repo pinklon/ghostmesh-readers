@@ -25,14 +25,19 @@ def entry_key(source_id, entry):
 
 
 def index_entries(observation):
+    """Return None when an observed source has no comparable entry identity."""
     entries = {}
-    if observation.get("status") != "observed":
-        return entries
-    for entry in observation.get("entries", []):
-        if not isinstance(entry, dict) or not isinstance(entry.get("title"), str):
-            continue
+    records = observation.get("entries")
+    if not isinstance(records, list) or not records:
+        return None
+    for entry in records:
+        if (not isinstance(entry, dict) or not isinstance(entry.get("title"), str)
+                or not entry["title"].strip() or not isinstance(entry.get("url"), str)):
+            return None
         key = entry_key(observation["id"], entry)
-        if key and key not in entries:
+        if key is None:
+            return None
+        if key not in entries:
             entries[key] = entry
     return entries
 
@@ -60,8 +65,14 @@ def compare(previous, current):
                                   "previous_status": old.get("status") if old else "missing",
                                   "current_status": new.get("status") if new else "missing"})
             continue
-        source_health.append({"id": source_id, "status": "comparable"})
         old_entries, new_entries = index_entries(old), index_entries(new)
+        if old_entries is None or new_entries is None:
+            source_health.append({"id": source_id, "status": "UNKNOWN",
+                                  "previous_status": old["status"],
+                                  "current_status": new["status"],
+                                  "reason": "unsupported-or-empty-entry-shape"})
+            continue
+        source_health.append({"id": source_id, "status": "comparable"})
         for key in sorted(new_entries.keys() - old_entries.keys()):
             entry = new_entries[key]
             candidates.append({"id": key, "source_id": source_id,
