@@ -63,6 +63,41 @@ At step ten, the probe observed four more synthetic evaluations and charged an a
 
 All values matched the retained research description. The probe did not outperform the better of stopping and continuing in these four designed regimes.
 
+## Reviewer reproduction recipe
+
+The historical research tip is pinned to commit `d46047390869ff372aa6239053ef882bd1b60a65` (open draft PR #65). At that commit, the three script blobs above match exactly. On an isolated local machine with Git and Python 3, run these commands in a disposable checkout:
+
+```bash
+git clone https://github.com/pinklon/ghostmesh-readers.git
+cd ghostmesh-readers
+git checkout --detach d46047390869ff372aa6239053ef882bd1b60a65
+git hash-object scripts/scout_speculative_search_pilot.py scripts/scout_heldout_stop_stress.py scripts/scout_three_way_extra_work.py
+python3 -B -c '
+import sys
+sys.path.insert(0, "scripts")
+from scout_speculative_search_pilot import benchmark as search
+from scout_heldout_stop_stress import benchmark as stopping
+from scout_three_way_extra_work import benchmark as probe
+s, h, p = search(), stopping(), probe()
+assert len(s["rows"]) == 432 and s["strategies"]["failure_aware"]["exact_matches"] == 75
+assert s["strategies"]["failure_aware"]["duplicate_evaluations"] == 0
+assert len(h["rows"]) == 240
+assert next(x for x in h["summary"] if x["regime"] == "late_breakthrough" and x["rule"] == "stop_on_plateau")["mean_net_vs_continue"] == -.096300
+assert len(p["rows"]) == 240
+assert next(x for x in p["summary"] if x["regime"] == "late_breakthrough" and x["action"] == "probe_then_decide")["mean_utility_delta_vs_continue"] == -.119110
+print("PASS: three pinned synthetic benchmark summaries")
+'
+```
+
+The `git hash-object` output must be, in path order:
+```text
+265d75d392b79e986c2afe957982f275ea833f91
+c807e3b5d92efe7800d22d533b92c6608bb8a046
+2753367dcedf3d3b17f3f9151a3c2e1d7766c3a9
+```
+
+The commands above are a proposed reviewer recipe, **not** a separately witnessed clean-clone execution. They import only standard-library Python modules, call deterministic `benchmark()` functions, avoid the scripts' file-writing `--out` modes, and neither contact a model nor access installed GhostMesh services. Git cloning requires network access and writes only to the reviewer's chosen checkout. Review the pinned source before executing it. Run from a disposable directory because the clone step creates a new folder.
+
 ## Qualification boundary
 
 PASS: deterministic recomputation of the original fixture summaries and correspondence with retained public editorial values.
