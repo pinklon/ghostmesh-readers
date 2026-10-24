@@ -8,7 +8,39 @@
 <meta property="og:type" content="article"><meta property="og:title" content="The Engine Is Not the Service"><meta property="og:description" content="DeepInfer's kernels are a serious engineering contribution. The service boundary remains the test."><meta property="og:url" content="https://youtube.shareplane.malott.ai/the-engine-is-not-the-service/">
 <link rel="alternate" type="application/rss+xml" title="GhostMesh Readers and Scout" href="/feed.xml"><script src="/assets/theme.js"></script><script src="/assets/reader-search.js" defer></script><link rel="stylesheet" href="/assets/reader-chrome.css"><link rel="stylesheet" href="/assets/knowledge.css"><link rel="stylesheet" href="/assets/reader-refresh.css">
 <style>
-.infer-reader{background:#0e151b;color:#f0f4f4;font:16px/1.75 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}.infer-reader *{box-sizing:border-box}.infer-reader main{max-width:1130px;margin:auto;padding:32px 22px 76px}.infer-reader a{color:#b1eddd;text-underline-offset:3px}.infer-reader a:focus-visible{outline:3px solid #f2ba78;outline-offset:3px}.infer-reader .kicker{color:#91dcca;font:700 11px/1.5 ui-monospace,monospace;letter-spacing:.14em;text-transform:uppercase}.infer-reader h1{font-size:clamp(44px,7vw,86px);line-height:1.04;letter-spacing:-.055em;margin:15px 0 22px;max-width:930px}.infer-reader .deck{font-size:clamp(19px,2.1vw,25px);line-height:1.5;color:#cad8d7;max-width:850px}.infer-reader .hero{border-bottom:1px solid #526363;padding:28px 0 44px}.infer-reader .source-panel{display:grid;grid-template-columns:1.3fr .7fr;gap:30px;margin:37px 0;padding:28px;border:1px solid #526363;background:#172225}.infer-reader .source-panel h2{margin:5px 0 12px;font-size:26px}.infer-reader .source-panel p{margin:0 0 14px;color:#d1dddd}.infer-reader .source-panel aside{border-left:2px solid #91dcca;padding-left:20px;color:#d1dddd}.infer-reader .story{max-width:830px;margin:55px auto}.infer-reader .story section{border-top:1px solid #526363;padding-top:30px;margin:43px 0}.infer-reader .story h2{font-size:clamp(27px,3.1vw,42px);line-height:1.18;letter-spacing:-.035em;margin:8px 0 20px}.infer-reader .story p,.infer-reader .story li{color:#d1dddd}.infer-reader .story p{margin:0 0 20px}.infer-reader .story ul,.infer-reader .story ol{padding-left:24px}.infer-reader .story li{margin:0 0 12px}.infer-reader .pull{font-size:clamp(22px,2.5vw,32px);line-height:1.35;color:#fff;border-left:3px solid #91dcca;padding:2px 0 2px 23px;margin:30px 0}.infer-reader .matrix{width:100%;border-collapse:collapse;margin:24px 0}.infer-reader .matrix th,.infer-reader .matrix td{border-bottom:1px solid #526363;text-align:left;vertical-align:top;padding:12px}.infer-reader .matrix th{color:#fff}.infer-reader .limits{background:#18282a;border:1px solid #526363;padding:24px;margin:28px 0}.infer-reader .limits h3{margin:0 0 10px}.infer-reader .endnote{border-top:1px solid #526363;padding-top:24px;font-size:14px;color:#cedbd9}@media(max-width:700px){.infer-reader .source-panel{grid-template-columns:1fr}.infer-reader .source-panel aside{border-left:0;border-top:2px solid #91dcca;padding:17px 0 0}.infer-reader .matrix{display:block;overflow-x:auto}}
+.infer-reader{--infer-bg:#0e151b;--infer-ink:#f0f4f4;--infer-muted:#d1dddd;--infer-deck:#cad8d7;--infer-link:#b1eddd;--infer-accent:#91dcca;--infer-border:#526363;--infer-panel:#172225;--infer-limits:#18282a;--infer-bright:#fff;--infer-focus:#f2ba78;--infer-endnote:#cedbd9;--infer-shared-border:#718487;--infer-soft:#24363a}
+html[data-theme="light"] .infer-reader{--infer-bg:#f7f9f8;--infer-ink:#1e2a2d;--infer-muted:#405058;--infer-deck:#3c4d53;--infer-link:#075c58;--infer-accent:#126864;--infer-border:#74898d;--infer-panel:#e7efed;--infer-limits:#e3eeeb;--infer-bright:#183036;--infer-focus:#8f401f;--infer-endnote:#46575d;--infer-shared-border:#74898d;--infer-soft:#d6e7e3}
+.infer-reader{background:var(--infer-bg);color:var(--infer-ink);font:16px/1.75 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+.infer-reader *{box-sizing:border-box}
+.infer-reader main{max-width:1130px;margin:auto;padding:32px 22px 76px}
+.infer-reader a{color:var(--infer-link);text-underline-offset:3px}
+.infer-reader a:focus-visible{outline:3px solid var(--infer-focus);outline-offset:3px}
+.infer-reader .kicker{color:var(--infer-accent);font:700 11px/1.5 ui-monospace,monospace;letter-spacing:.14em;text-transform:uppercase}
+.infer-reader h1{font-size:clamp(44px,7vw,86px);line-height:1.04;letter-spacing:-.055em;margin:15px 0 22px;max-width:930px}
+.infer-reader .deck{font-size:clamp(19px,2.1vw,25px);line-height:1.5;color:var(--infer-deck);max-width:850px}
+.infer-reader .hero{border-bottom:1px solid var(--infer-border);padding:28px 0 44px}
+.infer-reader .source-panel{display:grid;grid-template-columns:1.3fr .7fr;gap:30px;margin:37px 0;padding:28px;border:1px solid var(--infer-border);background:var(--infer-panel)}
+.infer-reader .source-panel h2{margin:5px 0 12px;font-size:26px}
+.infer-reader .source-panel p{margin:0 0 14px;color:var(--infer-muted)}
+.infer-reader .source-panel aside{border-left:2px solid var(--infer-accent);padding-left:20px;color:var(--infer-muted)}
+.infer-reader .story{max-width:830px;margin:55px auto}
+.infer-reader .story section{border-top:1px solid var(--infer-border);padding-top:30px;margin:43px 0}
+.infer-reader .story h2{font-size:clamp(27px,3.1vw,42px);line-height:1.18;letter-spacing:-.035em;margin:8px 0 20px}
+.infer-reader .story p,.infer-reader .story li{color:var(--infer-muted)}
+.infer-reader .story p{margin:0 0 20px}
+.infer-reader .story ul,.infer-reader .story ol{padding-left:24px}
+.infer-reader .story li{margin:0 0 12px}
+.infer-reader .pull{font-size:clamp(22px,2.5vw,32px);line-height:1.35;color:var(--infer-bright);border-left:3px solid var(--infer-accent);padding:2px 0 2px 23px;margin:30px 0}
+.infer-reader .matrix{width:100%;border-collapse:collapse;margin:24px 0}
+.infer-reader .matrix th,.infer-reader .matrix td{border-bottom:1px solid var(--infer-border);text-align:left;vertical-align:top;padding:12px}
+.infer-reader .matrix th{color:var(--infer-bright)}
+.infer-reader .limits{background:var(--infer-limits);border:1px solid var(--infer-border);padding:24px;margin:28px 0}
+.infer-reader .limits h3{margin:0 0 10px}
+.infer-reader .endnote{border-top:1px solid var(--infer-border);padding-top:24px;font-size:14px;color:var(--infer-endnote)}
+@media(max-width:700px){.infer-reader .source-panel{grid-template-columns:1fr}
+.infer-reader .source-panel aside{border-left:0;border-top:2px solid var(--infer-accent);padding:17px 0 0}
+.infer-reader .matrix{display:block;overflow-x:auto}
+}
 </style>
 <meta name="gm-share-description" content="DeepSeek opens an offline DeepInfer engine for DeepSeek-V4.1-Flash on specified accelerators; its public release omits service components and its plots use selected steady-state workloads."></head>
 <body class="infer-reader" data-reader="the-engine-is-not-the-service">

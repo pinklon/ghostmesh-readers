@@ -4,7 +4,36 @@ const assert = require('node:assert/strict');
 const base = 'http://127.0.0.1:8765';
 const readerCount = require('../content/catalog.json').readers.length;
 const relationshipCount = require('../content/catalog.json').readers.reduce((count, reader) => count + reader.relationships.length, 0);
-const routes = ['/', '/readers/', '/knowledge/', '/map/', '/ask-for-the-outcome-keep-the-boundary/', '/a-challenge-is-not-a-verdict/'];
+const routes = ['/', '/readers/', '/knowledge/', '/map/', '/ask-for-the-outcome-keep-the-boundary/', '/a-challenge-is-not-a-verdict/', '/the-engine-is-not-the-service/'];
+
+async function deepInferColors(page) {
+  return page.evaluate(() => {
+    const rgb = value => value.match(/[\d.]+/g).slice(0, 3).map(Number);
+    const luminance = value => {
+      const [r, g, b] = rgb(value).map(channel => {
+        const n = channel / 255;
+        return n <= 0.04045 ? n / 12.92 : ((n + 0.055) / 1.055) ** 2.4;
+      });
+      return 0.2126 * r + 0.7152 * g + 0.0722 * b;
+    };
+    const background = element => {
+      for (let node = element; node; node = node.parentElement) {
+        const color = getComputedStyle(node).backgroundColor;
+        if (color !== 'rgba(0, 0, 0, 0)' && color !== 'transparent') return color;
+      }
+      throw new Error('Missing opaque background');
+    };
+    const selectors = ['h1', '.deck', '.source-panel p', '.source-panel a', '.story p', '.pull', '.matrix th', '.limits h3', '.endnote', '.gm-brief .gm-brief-point p', '.gm-evidence-intro p:not(.gm-kicker)', '.gm-claim-proposition', '.gm-share-label', '.gm-share-button', '.gm-share-email'];
+    const colors = Object.fromEntries(selectors.map(selector => {
+      const element = document.querySelector(selector);
+      const foreground = getComputedStyle(element).color;
+      const backdrop = background(element);
+      const a = luminance(foreground), b = luminance(backdrop);
+      return [selector, { foreground, backdrop, contrast: (Math.max(a, b) + 0.05) / (Math.min(a, b) + 0.05) }];
+    }));
+    return { body: getComputedStyle(document.body).color, background: background(document.body), colors };
+  });
+}
 
 (async () => {
   const browser = await chromium.launch({ headless: true, channel: 'chrome' });
@@ -89,6 +118,18 @@ const routes = ['/', '/readers/', '/knowledge/', '/map/', '/ask-for-the-outcome-
           const shared = await page.evaluate(() => window.__gmShared);
           assert.equal(shared.url, await page.locator('link[rel="canonical"]').getAttribute('href'));
           assert.equal(shared.text, await page.locator('meta[name="gm-share-description"]').getAttribute('content'));
+        }
+        if (route === '/the-engine-is-not-the-service/') {
+          const before = await deepInferColors(page);
+          for (const [selector, sample] of Object.entries(before.colors))
+            assert(sample.contrast >= 4.5, `${route} ${width} ${theme} ${selector}: ${sample.contrast}`);
+          await toggle.click();
+          const after = await deepInferColors(page);
+          assert.notEqual(after.body, before.body, 'DeepInfer theme toggle must change computed foreground');
+          assert.notEqual(after.background, before.background, 'DeepInfer theme toggle must change computed background');
+          for (const [selector, sample] of Object.entries(after.colors))
+            assert(sample.contrast >= 4.5, `${route} ${width} toggled ${selector}: ${sample.contrast}`);
+          await toggle.click();
         }
         cases++;
       }
