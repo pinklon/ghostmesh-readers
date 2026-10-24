@@ -9,7 +9,7 @@ import re
 DIMENSIONS = ('ghostmeshFit', 'everydayUse', 'evidenceStrength', 'adoptionEffort')
 RATINGS = {'high', 'mixed', 'low', 'unknown'}
 METHODS = {'metadata-reviewed', 'source-inspected', 'executed', 'independently-measured'}
-KINDS = {'new-reader', 'material-reader-update', 'new-scout-review', 'material-scout-update'}
+KINDS = {'new-reader', 'material-reader-update', 'new-scout-review', 'material-scout-update', 'new-scout-research'}
 SCOUT_PUBLIC_HOST = 'https://youtube.shareplane.malott.ai'
 PRIVATE = re.compile(r'/Users/|/srv/ghostmesh/|/private/var/|gh[pousr]_[A-Za-z0-9]{20,}|(?:X-Amz-Signature|access_token|client_secret)=', re.I)
 INVALID_XML = re.compile('[\x00-\x08\x0b\x0c\x0e-\x1f\ud800-\udfff\ufffe\uffff]')
@@ -124,9 +124,12 @@ def validate_events(source, catalog, scout):
         if prefix == 'reader':
             if subject not in readers or event['url'] != host + '/' + readers[subject]['slug'] + '/':
                 raise ValueError('Release event Reader identity')
+        elif kind == 'new-scout-research':
+            if event['url'] != host + '/scout/' + subject + '/':
+                raise ValueError('Release event Scout research identity')
         elif subject not in reviews or event['url'] != host + '/scout/reviews/' + subject + '/':
             raise ValueError('Release event Scout identity')
-        if kind in {'new-reader', 'new-scout-review'}:
+        if kind in {'new-reader', 'new-scout-review', 'new-scout-research'}:
             if identity in first_releases:
                 raise ValueError('Duplicate first public release for subject')
             first_releases.add(identity)

@@ -2,6 +2,15 @@
   "schema": "ghostmesh-public-release-events-v1",
   "events": [
     {
+      "id": "scout:research-journal:first-public-release",
+      "kind": "new-scout-research",
+      "subjectId": "research-journal",
+      "url": "https://youtube.shareplane.malott.ai/scout/research-journal/",
+      "title": "The Research Journal: What Scout Actually Tested",
+      "summary": "Scout's public evidence ledger distinguishes editorial comparisons and reproducible synthetic tests from independent validation and real-workload outcomes.",
+      "publicDate": "2026-10-23"
+    },
+    {
       "id": "scout:cloudflare-security-audit-skill:first-public-review",
       "kind": "new-scout-review",
       "subjectId": "cloudflare-security-audit-skill",

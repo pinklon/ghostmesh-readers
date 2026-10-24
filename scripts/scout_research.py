@@ -4,7 +4,7 @@ from html import escape
 from pathlib import Path
 import re
 
-TYPES = {'investigation', 'essay', 'experiment', 'counterexample', 'method'}
+TYPES = {'investigation', 'essay', 'experiment', 'counterexample', 'method', 'journal'}
 HOST = 'https://youtube.shareplane.malott.ai'
 
 
@@ -25,14 +25,17 @@ def validate_research(source, scout, events, root):
                 or ident in ids or url in urls):
             raise ValueError('Duplicate or invalid Scout research identity')
         ids.add(ident); urls.add(url)
-        expected = '/scout/reviews/' + slug + '/' if item['type'] == 'investigation' else '/scout/essays/' + slug + '/'
+        expected = ('/scout/reviews/' + slug + '/' if item['type'] == 'investigation' else
+                    '/scout/research-journal/' if item['type'] == 'journal' else '/scout/essays/' + slug + '/')
         if url != expected or not url.endswith('/'):
             raise ValueError('Scout research canonical URL')
         path = item['sourcePath']
         if (not isinstance(path, str) or path.startswith('/') or '..' in Path(path).parts
-                or '\\' in path or not path.startswith(('site/scout/essays/', 'content/scout/reviews/'))
+                or '\\' in path or not path.startswith(('site/scout/essays/', 'content/scout/reviews/', 'site/scout/research-journal/'))
                 or not (root/path).is_file()):
             raise ValueError('Scout research source path')
+        if item['type'] == 'journal' and path != 'site/scout/research-journal/index.html':
+            raise ValueError('Scout journal source path')
         for key in ('title', 'provenance', 'evidenceLimits', 'summary'):
             value = item[key]
             if not isinstance(value, str) or not value.strip() or '—' in value or any(x in value for x in ('/Users/', '/home/', 'token=', 'Bearer ')):
@@ -49,8 +52,10 @@ def validate_research(source, scout, events, root):
             event = release_events.get(item['releaseEventId'])
             if not event or event['subjectId'] != slug or event['url'] != HOST + url:
                 raise ValueError('Scout research release event mismatch')
-        elif item['releaseEventId'] is not None and item['releaseEventId'] not in release_events:
-            raise ValueError('Scout research unknown release event')
+        elif item['releaseEventId'] is not None:
+            event = release_events.get(item['releaseEventId'])
+            if not event or event['kind'] != 'new-scout-research' or event['subjectId'] != slug or event['url'] != HOST + url:
+                raise ValueError('Scout research release event mismatch')
         if not isinstance(item['relatedIds'], list) or len(set(item['relatedIds'])) != len(item['relatedIds']):
             raise ValueError('Scout research relationships')
     for item in source['records']:
@@ -71,7 +76,8 @@ def research_page(source):
         searchable = ' '.join([item['title'], item['summary'], item['provenance'], ' '.join(item['topics'])])
         related = ''.join('<li><a href="' + escape(next(r['url'] for r in records if r['id'] == rid), quote=True) + '">' + escape(next(r['title'] for r in records if r['id'] == rid)) + '</a></li>' for rid in item['relatedIds'])
         cards.append('<article class="gm-scout-archive-card" data-research-card data-type="' + escape(item['type']) + '" data-topic="' + escape(' '.join(item['topics'])) + '" data-search="' + escape(searchable, quote=True) + '"><p class="gm-kicker">' + escape(item['type'].title()) + ' / ' + escape(', '.join(item['topics'])) + '</p><h2><a href="' + escape(item['url'], quote=True) + '">' + escape(item['title']) + '</a></h2><p>' + escape(item['summary']) + '</p><p><strong>Evidence boundary:</strong> ' + escape(item['evidenceLimits']) + '</p>' + ('<p>Reviewed ' + escape(item['reviewedOn']) + '</p>' if item['reviewedOn'] else '<p>Historical essay / release date not asserted</p>') + ('<details><summary>Approved related work</summary><ul>' + related + '</ul></details>' if related else '') + '</article>')
-    return ('<nav class="gm-scout-local-nav" aria-label="Scout navigation"><a href="/scout/">Latest</a><a href="/scout/research/">Research Library</a><a href="/scout/method/">How Scout works</a></nav>'
+    from scout_pages import nav
+    return (nav() +
             '<section class="gm-scout-archive"><header><p class="gm-kicker">GhostMesh / Scout / Public research</p><h1>The work behind the signal.</h1><p>One public record for reviewed source investigations and original essays. Read the evidence, challenge the interpretation and keep the unknowns visible. Private collection, tentative leads and internal experiments are not published here.</p></header>'
             '<form id="scout-research-filters" class="gm-scout-filters" role="search"><label>Search research<input id="research-query" type="search" placeholder="An idea, source or method"></label><label>Type<select id="research-type"><option value="">All types</option>' + options(types) + '</select></label><label>Topic<select id="research-topic"><option value="">All topics</option>' + options(topics) + '</select></label><button type="reset">Clear filters</button></form>'
             '<p id="research-count" role="status" aria-live="polite">' + str(len(cards)) + ' public works.</p><div id="research-results">' + ''.join(cards) + '</div></section><script src="/assets/scout-research.js" defer></script>')
