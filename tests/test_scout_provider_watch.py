@@ -1,4 +1,5 @@
 import sys
+from io import BytesIO
 from pathlib import Path
 import unittest
 from unittest.mock import patch
@@ -39,6 +40,25 @@ class ProviderWatchTests(unittest.TestCase):
         data = b"<script><h1>secret</h1></script><h1>New release</h1><h2>Generally available</h2>"
         self.assertEqual([x["text"] for x in watch.parse_html(data)],
                          ["New release", "Generally available"])
+
+    def test_large_official_page_is_bounded_and_observed(self):
+        source = {"id": "anthropic-platform", "provider": "Anthropic", "format": "html",
+                  "url": "https://platform.claude.com/docs/en/release-notes/overview"}
+
+        class Response(BytesIO):
+            def geturl(self):
+                return source["url"]
+
+        page = b"<h2>October 22, 2026</h2>" + b" " * 1_270_000
+        with patch.object(watch, "urlopen", return_value=Response(page)):
+            result = watch.observe(source, "2026-10-24T00:00:00Z")
+        self.assertEqual(result["status"], "observed")
+        self.assertEqual(result["entries"][0]["text"], "October 22, 2026")
+
+        with patch.object(watch, "urlopen", return_value=Response(page + b" " * 800_000)):
+            result = watch.observe(source, "2026-10-24T00:00:00Z")
+        self.assertEqual(result["status"], "unknown")
+        self.assertEqual(result["error_type"], "ValueError")
 
 
 if __name__ == "__main__":

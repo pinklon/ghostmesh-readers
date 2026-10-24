@@ -13,7 +13,7 @@ from xml.etree import ElementTree as ET
 
 ROOT = Path(__file__).resolve().parents[1]
 REGISTRY = ROOT / "content/scout/provider-sources.json"
-MAX_BYTES = 1_000_000
+MAX_BYTES = 2_000_000
 MAX_ENTRIES = 12
 ALLOWED_HOSTS = {
     "openai.com", "platform.claude.com", "support.claude.com",
