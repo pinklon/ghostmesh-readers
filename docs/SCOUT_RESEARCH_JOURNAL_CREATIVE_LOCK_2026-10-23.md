@@ -4,7 +4,7 @@ Status: OWNER APPROVED FOR DRAFT IMPLEMENTATION AND PREVIEW ONLY
 Approval: Tony Malott in the segfault conversation, October 23, 2026 Pacific.
 Repository: pinklon/ghostmesh-readers
 Draft PR: https://github.com/pinklon/ghostmesh-readers/pull/75
-Owner release authorization: NOT GIVEN
+Owner release authorization: Exact-head merge still requires the new post-amendment SHA; preparation of indexable release candidate approved October 23, 2026 Pacific.
 Editorial amendment: Tony approved replacing preview-only draft labels with neutral Research Journal and dated evidence-status language, October 23, 2026 Pacific. The numerical claims, limitations, tables and source trail are unchanged.
 
 ## Authority and identity
@@ -33,7 +33,7 @@ Editorial amendment: Tony approved replacing preview-only draft labels with neut
 - Reuse the canonical existing `/scout/method/` page wrapper, navigation, typography, GhostMesh mark, dark/light support and footer.
 - Render every Markdown paragraph, heading, table, list and cited link into accessible static HTML.
 - For tables, allow horizontal scrolling on narrow screens without clipping surrounding content.
-- Provide page title, description and canonical candidate path. Mark draft preview `noindex` until a separate publication transaction replaces it.
+- Provide page title, description and canonical candidate path. Owner approved removal of the preview-only `noindex,nofollow` tag for the production candidate on October 23, 2026 Pacific; final merge remains exact-head gated.
 - No generated imagery, external runtime, novel JS, analytics or new dependencies.
 - No registry or release-event mutation. Draft page is not a tenth published research work.
 - Protect all existing routes and the canonical nine-work public count.
