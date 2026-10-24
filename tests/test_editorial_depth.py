@@ -19,7 +19,7 @@ from editorial_depth import AREAS, _get_json, acceptance_marker, binding, valida
 
 
 class EditorialDepthGate(unittest.TestCase):
-    def test_existing_contents_token_is_not_sent_to_public_pr_or_comment_reads(self):
+    def test_read_only_token_is_scoped_to_approved_repo_api_reads(self):
         seen = []
         def response(request, timeout):
             seen.append((request.full_url, request.has_header("Authorization")))
@@ -29,7 +29,12 @@ class EditorialDepthGate(unittest.TestCase):
             with patch("editorial_depth.urlopen", side_effect=response):
                 for path in ("/pulls/99", "/issues/comments/77", "/contents/content/catalog.json?ref=" + "a" * 40):
                     _get_json(base + path)
-        self.assertEqual([False, False, True], [authorized for _, authorized in seen])
+                for url in ("https://api.github.com/repos/other/project/pulls/99",
+                            "https://other.example/repos/pinklon/ghostmesh-readers/pulls/99",
+                            base + "/actions/secrets", "http://api.github.com/repos/pinklon/ghostmesh-readers/pulls/99"):
+                    _get_json(url)
+        self.assertEqual([True, True, True, False, False, False, False],
+                         [authorized for _, authorized in seen])
 
     def setUp(self):
         self.tmp = tempfile.TemporaryDirectory()
@@ -132,6 +137,12 @@ class EditorialDepthGate(unittest.TestCase):
 
     def test_long_form_fixture_with_owner_acceptance_after_retained_findings_is_admitted(self):
         self.assertEqual([], validate_reader(self.root, self.reader))
+
+    def test_local_only_skips_remote_owner_lookup_but_default_still_requires_it(self):
+        with patch("editorial_depth._authenticated_owner_decision_errors", side_effect=RuntimeError("remote invoked")):
+            self.assertEqual([], validate_reader(self.root, self.reader, verify_owner_remote=False))
+            with self.assertRaisesRegex(RuntimeError, "remote invoked"):
+                validate_reader(self.root, self.reader)
 
     def test_schema_complete_but_reviewer_rejected_superficial_argument_is_held(self):
         self.receipt["decision"] = "revise"

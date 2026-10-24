@@ -15,7 +15,7 @@ import json
 import os
 from pathlib import Path
 import re
-from urllib.parse import quote
+from urllib.parse import quote, urlsplit
 from urllib.request import Request, urlopen
 from knowledge_contract import DENIED as PRIVATE_MARKERS
 
@@ -137,9 +137,16 @@ def _mapped_prose(raw: str, anchor: str) -> bool:
 
 def _get_json(url: str) -> dict:
     headers = {"Accept": "application/vnd.github+json", "User-Agent": "ghostmesh-editorial-gate"}
-    # The existing Actions token has contents: read only. PRs and comments are
-    # public reads; never send that token to endpoints outside its permission.
-    if ("/contents/" in url or "/git/blobs/" in url) and os.environ.get("GITHUB_TOKEN"):
+    # CI's existing read-only token authenticates this repository's owner
+    # receipt checks. Never forward it to another host or repository.
+    target = urlsplit(url)
+    prefix = "/repos/pinklon/ghostmesh-readers/"
+    route = target.path[len(prefix):] if target.path.startswith(prefix) else ""
+    allowed = (route.startswith("contents/") or route.startswith("git/blobs/")
+               or re.fullmatch(r"pulls/[0-9]+", route) is not None
+               or re.fullmatch(r"issues/comments/[0-9]+", route) is not None)
+    if (target.scheme == "https" and target.netloc == "api.github.com"
+            and allowed and os.environ.get("GITHUB_TOKEN")):
         headers["Authorization"] = f"Bearer {os.environ['GITHUB_TOKEN']}"
     request = Request(url, headers=headers)
     with urlopen(request, timeout=8) as response:
@@ -222,7 +229,8 @@ def _authenticated_owner_decision_errors(root: Path, reader: dict, receipt: dict
 
 
 def validate_reader(root: Path, reader: dict, *, release: bool = True,
-                    event_pr: int | None = None, require_merged: bool = False) -> list[str]:
+                    event_pr: int | None = None, require_merged: bool = False,
+                    verify_owner_remote: bool = True) -> list[str]:
     """Validate one candidate or an unchanged, explicitly listed historical page."""
     slug = reader["slug"]
     article_path = root / "content" / "readers" / f"{slug}.html"
@@ -368,7 +376,7 @@ def validate_reader(root: Path, reader: dict, *, release: bool = True,
             section = re.search(r'<section\b[^>]*\bid="' + re.escape(str(entry["sectionId"])) + r'"[^>]*>(.*?)</section>', article, re.S)
             section_html = section.group(1) if section else ""
             links = [html.unescape(link) for link in re.findall(r'<a\b[^>]*href="([^"]+)"', section_html)]
-            if reader["source"].get("kind") in {"paper", "article"}:
+            if reader["source"].get("kind") in {"paper", "article", "repository"}:
                 if second is not None:
                     errors.append(f"{slug}: written source map must use section locators rather than video time")
             elif not isinstance(second, int) or isinstance(second, bool) or second < 0 or (reader["source"].get("durationSeconds") and second >= reader["source"]["durationSeconds"]):
@@ -380,7 +388,9 @@ def validate_reader(root: Path, reader: dict, *, release: bool = True,
                     errors.append(f"{slug}: source map timestamp absent from exact video in mapped section")
             if not source_video:
                 source_url = reader["source"].get("url", "")
-                if source_url not in links:
+                pinned_files = (f"{reader['source']['repositoryUrl']}/blob/{reader['source']['commit']}/"
+                                if reader["source"].get("kind") == "repository" else None)
+                if source_url not in links and not (pinned_files and any(link.startswith(pinned_files) for link in links)):
                     errors.append(f"{slug}: source map lacks original source link in mapped section")
                 if isinstance(second, int) and not isinstance(second, bool):
                     label = f"{second // 60:02d}:{second % 60:02d}"
@@ -394,7 +404,7 @@ def validate_reader(root: Path, reader: dict, *, release: bool = True,
         if isinstance(complexity, dict) and complexity.get("tier") == "extended" and len({str(e.get("sectionId")) for e in source_map if isinstance(e, dict)}) < 3:
             errors.append(f"{slug}: extended source map misses distinct analytical sections")
         if (isinstance(complexity, dict) and complexity.get("tier") == "extended"
-                and reader["source"].get("kind") not in {"paper", "article"}
+                and reader["source"].get("kind") not in {"paper", "article", "repository"}
                 and len({e.get("atSeconds") for e in source_map if isinstance(e, dict)}) < 3):
             errors.append(f"{slug}: extended source map repeats a single source moment")
     if not isinstance(receipt["candidateAuthor"], str) or not receipt["candidateAuthor"].strip():
@@ -402,8 +412,9 @@ def validate_reader(root: Path, reader: dict, *, release: bool = True,
     if release and receipt.get("decision") == "accept" and not any("binding mismatch" in error for error in errors):
         if not isinstance(review_evidence, dict) or review_evidence.get("conclusion") != "accept-for-owner-review":
             errors.append(f"{slug}: retained qualitative findings do not support owner acceptance")
-        errors.extend(_authenticated_owner_decision_errors(root, reader, receipt, review_evidence,
-                                                           event_pr=event_pr, require_merged=require_merged))
+        if verify_owner_remote:
+            errors.extend(_authenticated_owner_decision_errors(root, reader, receipt, review_evidence,
+                                                               event_pr=event_pr, require_merged=require_merged))
     gaps = receipt["gaps"]
     if not isinstance(gaps, list) or any(not isinstance(g, dict) or set(g) != {"type", "severity", "rationale"} or g.get("type") not in GAP_TYPES or g.get("severity") not in {"blocking", "nonblocking"} or not _reasoned(g.get("rationale")) for g in gaps):
         errors.append(f"{slug}: typed editorial gaps invalid")

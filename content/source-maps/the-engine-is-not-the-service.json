@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "readerId": "reader:the-engine-is-not-the-service",
+  "sourceId": "deepseek-ai-deepinfer-774ce244",
+  "sourceAidSha256": "904289606d33e1d950d19e260c7d921aee462831f2d44dd9d55b1fe767bc2d55",
+  "points": [
+    {
+      "atSeconds": null,
+      "sectionId": "scope",
+      "claimIds": [
+        "the-engine-is-not-the-service--offline-scope",
+        "the-engine-is-not-the-service--missing-service"
+      ],
+      "cueParaphrase": "The pinned README limits public support to offline V4.1-Flash on named accelerators and separately lists components absent from a complete online service.",
+      "privateAidCheck": "The retained README and LICENSE were inspected at the pinned commit; build and runtime files were read without running a build or inference."
+    },
+    {
+      "atSeconds": null,
+      "sectionId": "architecture",
+      "claimIds": [
+        "the-engine-is-not-the-service--missing-service"
+      ],
+      "cueParaphrase": "The README distinguishes the released engine from missing serving components, while the Q&A describes a larger internal deployment and operator-reported cluster economics.",
+      "privateAidCheck": "The retained README and deployment Q&A were compared; the editor must keep the internal production description separate from public code and avoid treating revenue as profit."
+    },
+    {
+      "atSeconds": null,
+      "sectionId": "denominator",
+      "claimIds": [
+        "the-engine-is-not-the-service--benchmark-scale",
+        "the-engine-is-not-the-service--full-acceptance",
+        "the-engine-is-not-the-service--cache-workload"
+      ],
+      "cueParaphrase": "The benchmark documentation explains four-versus-64 accelerator chart settings, shared-prefix defaults, and full draft-acceptance throughput accounting.",
+      "privateAidCheck": "The retained examples README and sweep scripts were checked for default request mix, formula, warmup, measurement and assumed acceptance; no benchmark was executed."
+    },
+    {
+      "atSeconds": null,
+      "sectionId": "quality",
+      "claimIds": [
+        "the-engine-is-not-the-service--reference-quality"
+      ],
+      "cueParaphrase": "The eval README reports first-party AIME 2026, GPQA Diamond and HLE-Full reference Pass@1 values and explains dataset, sampling and judge requirements.",
+      "privateAidCheck": "The pinned eval README was checked for the reported 99.9%, 93.4% and 42.6% figures, scoring modes and separate data acquisition. No raw run or external replication was available."
+    },
+    {
+      "atSeconds": null,
+      "sectionId": "control",
+      "claimIds": [
+        "the-engine-is-not-the-service--operator-scale",
+        "the-engine-is-not-the-service--local-fit"
+      ],
+      "cueParaphrase": "The operator Q&A describes a broader internal E/P/D service, long-lived KV policies, reported cluster token volume and a revenue illustration; the README narrows public hardware support.",
+      "privateAidCheck": "The retained Q&A was checked for 155 trillion tokens per day and US$38 per GPU-hour illustration. No telemetry, cost ledger, profit or Hyperion inventory was verified."
+    }
+  ]
+}

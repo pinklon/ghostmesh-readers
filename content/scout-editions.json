@@ -1,0 +1,16 @@
+{
+  "schema": "ghostmesh-public-scout-editions-v1",
+  "editions": [
+    {
+      "id": "2026-10-22-first-look",
+      "title": "Borrow the discipline. Make the machinery earn its place.",
+      "reviewedOn": "2026-10-22",
+      "summary": "Three deliberately selected repositories address evidence discipline, code navigation and agent containment. None has earned a production adoption recommendation.",
+      "reviewIds": [
+        "cloudflare-security-audit-skill",
+        "graphify-labs-graphify",
+        "nvidia-openshell"
+      ]
+    }
+  ]
+}

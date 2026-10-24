@@ -16,7 +16,7 @@ async function main() {
       await context.route('**/*', route => route.request().url().startsWith(base) ? route.continue() : route.abort());
       const page = await context.newPage();
       for (const reader of readers) {
-        if (reader.source.kind === 'paper' || reader.source.kind === 'article') continue;
+        if (reader.source.kind === 'paper' || reader.source.kind === 'article' || reader.source.kind === 'repository') continue;
         const response = await page.goto(`${base}/${reader.slug}/`, { waitUntil: 'domcontentloaded' });
         assert.equal(response.status(), 200, `${reader.slug}: route`);
         const frame = page.locator('.gm-media-frame');

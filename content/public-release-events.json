@@ -1,0 +1,50 @@
+{
+  "schema": "ghostmesh-public-release-events-v1",
+  "events": [
+    {
+      "id": "scout:research-journal:first-public-release",
+      "kind": "new-scout-research",
+      "subjectId": "research-journal",
+      "url": "https://youtube.shareplane.malott.ai/scout/research-journal/",
+      "title": "The Research Journal: What Scout Actually Tested",
+      "summary": "Scout's public evidence ledger distinguishes editorial comparisons and reproducible synthetic tests from independent validation and real-workload outcomes.",
+      "publicDate": "2026-10-23"
+    },
+    {
+      "id": "scout:cloudflare-security-audit-skill:first-public-review",
+      "kind": "new-scout-review",
+      "subjectId": "cloudflare-security-audit-skill",
+      "url": "https://youtube.shareplane.malott.ai/scout/reviews/cloudflare-security-audit-skill/",
+      "title": "Scout review: Cloudflare security-audit-skill",
+      "summary": "First-look review: adapt its evidence discipline, not its whole audit apparatus. Validator source was inspected; no audit was run.",
+      "publicDate": "2026-10-22"
+    },
+    {
+      "id": "scout:graphify-labs-graphify:first-public-review",
+      "kind": "new-scout-review",
+      "subjectId": "graphify-labs-graphify",
+      "url": "https://youtube.shareplane.malott.ai/scout/reviews/graphify-labs-graphify/",
+      "title": "Scout review: Graphify",
+      "summary": "First-look documentation review: compare code mapping with ordinary repository search before considering integration. Graphify was not executed.",
+      "publicDate": "2026-10-22"
+    },
+    {
+      "id": "scout:nvidia-openshell:first-public-review",
+      "kind": "new-scout-review",
+      "subjectId": "nvidia-openshell",
+      "url": "https://youtube.shareplane.malott.ai/scout/reviews/nvidia-openshell/",
+      "title": "Scout review: NVIDIA OpenShell",
+      "summary": "First-look documentation review: watch before any agent runtime replacement. No enforcement or recovery path was tested.",
+      "publicDate": "2026-10-22"
+    },
+    {
+      "id": "reader:what-a-swarm-makes-us-see:first-public-release",
+      "kind": "new-reader",
+      "subjectId": "reader:what-a-swarm-makes-us-see",
+      "url": "https://youtube.shareplane.malott.ai/what-a-swarm-makes-us-see/",
+      "title": "What a Swarm Makes Us See",
+      "summary": "A visual-only reading of HORTRAME’s simulation artwork, its multi-agent mathematical inspirations and the limits of what sampled frames can establish.",
+      "publicDate": "2026-10-22"
+    }
+  ]
+}

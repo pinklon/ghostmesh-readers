@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "host": "https://youtube.shareplane.malott.ai",
-  "revision": "2026-10-21T05:38:13Z",
+  "revision": "2026-10-24T03:24:25Z",
   "categories": [
     "AI & Technology",
     "Society & Politics",
@@ -11,6 +11,412 @@
     "Other"
   ],
   "readers": [
+    {
+      "id": "reader:what-a-swarm-makes-us-see",
+      "slug": "what-a-swarm-makes-us-see",
+      "title": "What a Swarm Makes Us See",
+      "category": "Science",
+      "tags": [
+        "swarm",
+        "simulation",
+        "audiovisual art",
+        "perception"
+      ],
+      "entities": [
+        "HORTRAME",
+        "Guillaume Bolduc",
+        "Maude Blondin"
+      ],
+      "source": {
+        "platform": "YouTube",
+        "url": "https://www.youtube.com/watch?v=TW8F34-ExvI",
+        "videoId": "TW8F34-ExvI",
+        "title": "Emerging through the Singularity",
+        "creator": "HORTRAME",
+        "uploadDate": "20261018",
+        "durationSeconds": 1719,
+        "mediaAspect": "16:9"
+      },
+      "published": "2026-10-22",
+      "updated": "2026-10-22T12:40:48Z",
+      "overview": "HORTRAME's audiovisual swarm film turns computed-looking formations into an immersive story; a sparse visual capture and source papers support a careful separation of image, mathematical model and viewer inference.",
+      "whyItMatters": "Simulated coordination can be visually persuasive even when its implementation, operational failure cases and perceptual effects remain unmeasured.",
+      "ghostMeshTakeaway": "Keep the artwork's wonder while tracing any operational claim back to versioned state rules, source coverage and a test that can fail.",
+      "verdict": "Worth studying",
+      "architectureImpact": "experiment recommended",
+      "falsification": "Revisit the separation if a pinned render and code trace prove the advertised model and matched tests establish behavior under changing membership, realistic delay and recovery; evaluate perceptual effects only in a consented film-specific study.",
+      "evidenceState": "partially corroborated",
+      "lastEvidenceChecked": "2026-10-22T12:40:48Z",
+      "freshness": "Original YouTube page, six author-deposited Zenodo records and cited primary research checked October 22, 2026. Private visual inspection sampled 86 frames every twenty seconds and four ending frames; audio, continuous motion and film-specific viewer effects were not inspected.",
+      "variant": "dossier",
+      "accent": "violet",
+      "claims": [
+        {
+          "id": "what-a-swarm-makes-us-see--sampled-visual-sequence",
+          "proposition": "The inspected samples show point fields, repeated multi-lobed forms, rows, concentric arrangements, a dotted wireframe and a final bright-rimmed circle.",
+          "kind": "visual observation",
+          "asOf": "2026-10-22",
+          "status": "partially corroborated",
+          "assessment": "A hash-bound private map describes 86 frames spaced twenty seconds apart and four ending checks.",
+          "limits": "This is sparse sampled visual coverage, not a continuous shot or motion trace; counts and scene boundaries are approximate.",
+          "sourceLocation": "00:00-28:35 sampled frames",
+          "references": [
+            "hortrame-film"
+          ],
+          "counterevidence": []
+        },
+        {
+          "id": "what-a-swarm-makes-us-see--creator-computational-method",
+          "proposition": "HORTRAME says the film uses thousands of simulated drones and computed priority-state, formation and light dynamics.",
+          "kind": "creator production claim",
+          "asOf": "2026-10-22",
+          "status": "unverified",
+          "assessment": "The description states the method, and the visual field is compatible with simulation, but the render-to-code binding was not audited.",
+          "limits": "A film cannot expose exact agent count, update equations, parameter values or code provenance by appearance alone.",
+          "sourceLocation": "Creator description and 04:40 sampled frame",
+          "references": [
+            "hortrame-film"
+          ],
+          "counterevidence": [
+            "bolduc-v07"
+          ]
+        },
+        {
+          "id": "what-a-swarm-makes-us-see--finite-endpoint-scope",
+          "proposition": "Bolduc v07 characterizes a prescribed join-mix-depart endpoint and rejects unrestricted preservation of the original population mean.",
+          "kind": "preprint mathematical claim",
+          "asOf": "2026-10-22",
+          "status": "partially corroborated",
+          "assessment": "The author-deposited manuscript states assumptions, an offline formula and a counterexample; its scope can be checked in the public text.",
+          "limits": "GhostMesh did not independently certify every proof, reproduce the code, or show that the film uses the proved model.",
+          "sourceLocation": "Bolduc preprint theorem 4.1; 13:00 sampled frame",
+          "references": [
+            "bolduc-v07",
+            "bolduc-fixed-epoch"
+          ],
+          "counterevidence": []
+        },
+        {
+          "id": "what-a-swarm-makes-us-see--delay-membership-separation",
+          "proposition": "The cited delay analysis concerns fixed membership and does not establish a combined delayed, changing-membership film implementation.",
+          "kind": "source-scope comparison",
+          "asOf": "2026-10-22",
+          "status": "corroborated",
+          "assessment": "The arXiv delay abstract and Bolduc v07 scope statements keep these model obligations separate.",
+          "limits": "This is a documentary scope finding, not a negative test of HORTRAME's software or an assertion that no implementation could exist.",
+          "sourceLocation": "Cited source scope; 18:20 sampled frame",
+          "references": [
+            "naderi-delay",
+            "bolduc-v07",
+            "blondin-hale"
+          ],
+          "counterevidence": []
+        },
+        {
+          "id": "what-a-swarm-makes-us-see--visual-rim-not-physics",
+          "proposition": "The bright-rimmed dark circle and circular point field are visual motifs, not evidence of a physical singularity or robotic rendezvous.",
+          "kind": "visual interpretation",
+          "asOf": "2026-10-22",
+          "status": "partially corroborated",
+          "assessment": "The sampled private frames show the motif, and the creator calls the cosmic setting artistic.",
+          "limits": "The gaps between stills do not establish continuous trajectories or the mechanism behind the rendering.",
+          "sourceLocation": "18:20 and 25:00 sampled frames",
+          "references": [
+            "hortrame-film",
+            "bolduc-v07"
+          ],
+          "counterevidence": []
+        },
+        {
+          "id": "what-a-swarm-makes-us-see--oscillator-production",
+          "proposition": "The creator says pulse-coupled oscillators inform the light rhythm and a signal-processing project informs the score.",
+          "kind": "creator production claim",
+          "asOf": "2026-10-22",
+          "status": "unverified",
+          "assessment": "Mirollo and Strogatz's idealized model exists, but no film-specific timing or audio analysis was performed.",
+          "limits": "Audio was uninspected; no soundtrack synchronization, entrainment or viewer effect is established.",
+          "sourceLocation": "Creator description; no verified soundtrack timestamp",
+          "references": [
+            "hortrame-film",
+            "mirollo-strogatz"
+          ],
+          "counterevidence": []
+        },
+        {
+          "id": "what-a-swarm-makes-us-see--vection-hypothesis",
+          "proposition": "Optic-flow and viewpoint cues could contribute to visual self-motion impressions for some viewers, without establishing this film's effect.",
+          "kind": "perceptual hypothesis",
+          "asOf": "2026-10-22",
+          "status": "partially corroborated",
+          "assessment": "Independent visual-display studies support vection under studied stimuli; a separate VR experiment limits any broad beat-alignment story.",
+          "limits": "No viewer study of this film, display-condition control, medical outcome or hypnosis measure exists in this Reader.",
+          "sourceLocation": "28:00 sampled frame and separate perceptual literature",
+          "references": [
+            "vection-review",
+            "palmisano-vection"
+          ],
+          "counterevidence": [
+            "vr-music-vection"
+          ]
+        },
+        {
+          "id": "what-a-swarm-makes-us-see--generative-method-boundary",
+          "proposition": "HORTRAME says the film's image, video and music were computationally produced without generative AI image, video or music models.",
+          "kind": "creator production claim",
+          "asOf": "2026-10-22",
+          "status": "unverified",
+          "assessment": "The creator distinguishes procedural simulation and algorithmic score from generative AI tooling.",
+          "limits": "No project files, render pipeline or model-use audit was obtained; procedural generation is still a form of computation.",
+          "sourceLocation": "Creator description; film-wide",
+          "references": [
+            "hortrame-film"
+          ],
+          "counterevidence": []
+        }
+      ],
+      "references": [
+        {
+          "id": "hortrame-film",
+          "title": "Emerging through the Singularity",
+          "author": "HORTRAME",
+          "publisher": "YouTube",
+          "url": "https://www.youtube.com/watch?v=TW8F34-ExvI",
+          "publicationDate": "2026-10-18",
+          "eventDate": null,
+          "location": "Creator description and original film",
+          "sourceType": "original audiovisual source",
+          "independence": "Creator account; production claims not independently audited",
+          "evidenceFamily": "hortrame-film",
+          "checkedAt": "2026-10-22T12:40:48Z",
+          "datePrecision": "day"
+        },
+        {
+          "id": "bolduc-v07",
+          "title": "Priority-State Dynamics in Open Multi-Agent Systems: Dynamic Membership and History-Dependent Consensus Endpoints",
+          "author": "Guillaume Bolduc",
+          "publisher": "Zenodo",
+          "url": "https://zenodo.org/records/23204324",
+          "publicationDate": "2026-09-03",
+          "eventDate": null,
+          "location": "Abstract, scope, theorem 4.1 and implementation limits",
+          "sourceType": "research preprint",
+          "independence": "Author-deposited mathematical argument; no independent peer review established",
+          "evidenceFamily": "bolduc-priority-state",
+          "checkedAt": "2026-10-22T12:40:48Z",
+          "datePrecision": "day"
+        },
+        {
+          "id": "bolduc-historical-memory",
+          "title": "Exact Restoration and Historical Memory in Delayed Priority Networks with Three-Dimensional Motion",
+          "author": "Guillaume Bolduc",
+          "publisher": "Zenodo",
+          "url": "https://zenodo.org/records/23202024",
+          "publicationDate": "2026-10-03",
+          "eventDate": null,
+          "location": "Deposit title and abstract",
+          "sourceType": "research preprint",
+          "independence": "Author-deposited companion, not independent corroboration of film behavior",
+          "evidenceFamily": "bolduc-historical-memory",
+          "checkedAt": "2026-10-22T12:40:48Z",
+          "datePrecision": "day"
+        },
+        {
+          "id": "bolduc-fixed-epoch",
+          "title": "Admissibility, Mean, and Spectral Contraction of the Fixed-Epoch Averaging Matrix",
+          "author": "Guillaume Bolduc",
+          "publisher": "Zenodo",
+          "url": "https://zenodo.org/records/23204326",
+          "publicationDate": "2026-09-11",
+          "eventDate": null,
+          "location": "Deposit title and abstract",
+          "sourceType": "research preprint",
+          "independence": "Author-deposited supporting work, not a film or runtime audit",
+          "evidenceFamily": "bolduc-fixed-epoch",
+          "checkedAt": "2026-10-22T12:40:48Z",
+          "datePrecision": "day"
+        },
+        {
+          "id": "bolduc-disturbance",
+          "title": "Translation-Equivariant Disturbance Recovery in Delayed Open Priority Networks",
+          "author": "Guillaume Bolduc",
+          "publisher": "Zenodo",
+          "url": "https://zenodo.org/records/23202026",
+          "publicationDate": "2026-10-06",
+          "eventDate": null,
+          "location": "Deposit title and abstract",
+          "sourceType": "research preprint",
+          "independence": "Author-deposited companion, not independent outcome evidence",
+          "evidenceFamily": "bolduc-disturbance",
+          "checkedAt": "2026-10-22T12:40:48Z",
+          "datePrecision": "day"
+        },
+        {
+          "id": "bolduc-shield",
+          "title": "A Common-Mode Shield for Live Admission in Delayed Open Priority Networks",
+          "author": "Guillaume Bolduc",
+          "publisher": "Zenodo",
+          "url": "https://zenodo.org/records/23202030",
+          "publicationDate": "2026-10-03",
+          "eventDate": null,
+          "location": "Deposit title and abstract",
+          "sourceType": "research preprint",
+          "independence": "Author-deposited companion, not independent outcome evidence",
+          "evidenceFamily": "bolduc-shield",
+          "checkedAt": "2026-10-22T12:40:48Z",
+          "datePrecision": "day"
+        },
+        {
+          "id": "bolduc-latch",
+          "title": "A Sampled Common-Translation Latch for Nominal Double Integrators",
+          "author": "Guillaume Bolduc",
+          "publisher": "Zenodo",
+          "url": "https://zenodo.org/records/23202028",
+          "publicationDate": "2026-10-06",
+          "eventDate": null,
+          "location": "Deposit title and abstract",
+          "sourceType": "research preprint",
+          "independence": "Author-deposited companion, not independent outcome evidence",
+          "evidenceFamily": "bolduc-latch",
+          "checkedAt": "2026-10-22T12:40:48Z",
+          "datePrecision": "day"
+        },
+        {
+          "id": "blondin-hale",
+          "title": "An Algorithm for Multi-Objective Multi-Agent Optimization",
+          "author": "Maude J. Blondin and Matthew Hale",
+          "publisher": "arXiv",
+          "url": "https://arxiv.org/abs/2003.01745",
+          "publicationDate": "2020-03-03",
+          "eventDate": null,
+          "location": "Model and convergence claims",
+          "sourceType": "research preprint",
+          "independence": "Independent mathematical model; does not validate this film",
+          "evidenceFamily": "blondin-hale",
+          "checkedAt": "2026-10-22T12:40:48Z",
+          "datePrecision": "day"
+        },
+        {
+          "id": "naderi-delay",
+          "title": "Consensus in Multi-Agent Systems with Uniform and Nonuniform Communication Delays",
+          "author": "Shokoufeh Naderi, Maude Blondin and Sébastien Roy",
+          "publisher": "arXiv",
+          "url": "https://arxiv.org/abs/2603.16523",
+          "publicationDate": "2026-03-17",
+          "eventDate": null,
+          "location": "Authors, assumptions and abstract",
+          "sourceType": "research preprint",
+          "independence": "Separate fixed-membership delay analysis and reported QBot3 tests",
+          "evidenceFamily": "naderi-delay",
+          "checkedAt": "2026-10-22T12:40:48Z",
+          "datePrecision": "day"
+        },
+        {
+          "id": "mirollo-strogatz",
+          "title": "Synchronization of Pulse-Coupled Biological Oscillators",
+          "author": "Renato E. Mirollo and Steven H. Strogatz",
+          "publisher": "SIAM Journal on Applied Mathematics",
+          "url": "https://doi.org/10.1137/0150098",
+          "publicationDate": "1990",
+          "eventDate": null,
+          "location": "Abstract and model scope",
+          "sourceType": "historical research paper",
+          "independence": "Independent idealized oscillator result; film timing not audited",
+          "evidenceFamily": "mirollo-strogatz",
+          "checkedAt": "2026-10-22T12:40:48Z",
+          "datePrecision": "year"
+        },
+        {
+          "id": "vection-review",
+          "title": "Visual Perception of Self-Motion",
+          "author": "Li Li",
+          "publisher": "Annual Review of Vision Science",
+          "url": "https://www.annualreviews.org/content/journals/10.1146/annurev-vision-121423-013200",
+          "publicationDate": "2025-08-01",
+          "eventDate": null,
+          "location": "Review of visual self-motion and optic flow",
+          "sourceType": "research review",
+          "independence": "General perceptual literature, not a film-specific measurement",
+          "evidenceFamily": "vection-review",
+          "checkedAt": "2026-10-22T12:40:48Z",
+          "datePrecision": "day"
+        },
+        {
+          "id": "palmisano-vection",
+          "title": "The search for instantaneous vection: An oscillating visual prime reduces vection onset latency",
+          "author": "Stephen Palmisano and Bernhard E. Riecke",
+          "publisher": "PLOS ONE",
+          "url": "https://doi.org/10.1371/journal.pone.0195886",
+          "publicationDate": "2018-05-23",
+          "eventDate": null,
+          "location": "Experimental stimuli and vection onset findings",
+          "sourceType": "original study",
+          "independence": "Independent controlled visual-display study, not a film-specific test",
+          "evidenceFamily": "palmisano-vection",
+          "checkedAt": "2026-10-22T12:40:48Z",
+          "datePrecision": "day"
+        },
+        {
+          "id": "vr-music-vection",
+          "title": "Cross-modal synchrony between music and visual motion modulates vection, urge to move, and comfort in VR",
+          "author": "Van Kerrebroeck and coauthors",
+          "publisher": "Virtual Reality via PubMed",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/41867666/",
+          "publicationDate": "2026",
+          "eventDate": null,
+          "location": "Abstract and brief VR-trial findings",
+          "sourceType": "original study",
+          "independence": "Independent VR stimuli; neither this film nor a universal viewer response tested",
+          "evidenceFamily": "vr-music-vection",
+          "checkedAt": "2026-10-22T12:40:48Z",
+          "datePrecision": "year"
+        }
+      ],
+      "relationships": [
+        {
+          "target": "reader:the-score-is-not-the-system",
+          "type": "related topic",
+          "reason": "Both Readers question the jump from an agent simulation or observed behavior to a broader story about system capability. The earlier Reader concerns reward pressure and reported agent play, while this one concerns a visual swarm artwork; their sources do not corroborate each other.",
+          "provenance": [
+            "/what-a-swarm-makes-us-see/#control",
+            "/the-score-is-not-the-system/#evidence"
+          ],
+          "basis": "curated-editorial-comparison",
+          "direction": "outgoing"
+        }
+      ],
+      "relationshipDisposition": "One qualified thematic route to a different simulation-evidence critique. Similar words such as singularity or swarm do not establish a shared claim or corroboration.",
+      "relationshipReview": {
+        "reviewedAt": "2026-10-24",
+        "reviewedCatalogSize": 34,
+        "decision": "linked",
+        "reviewedTargets": [
+          "reader:the-score-is-not-the-system"
+        ],
+        "rationale": "Compared the film's visual and mathematical thesis with all 32 current Readers. This one route clarifies simulation-evidence limits without treating unrelated videos, agent fleets or singularity forecasts as independent corroboration. The pinned DeepInfer repository addresses inference serving, not the film’s sampled visual swarm or its cited mathematics; no new outgoing route is supported."
+      },
+      "review": {
+        "status": "independent editorial review accepted; owner-accepted; production-published",
+        "reviewer": "Independent read-only Codex editorial reviewer",
+        "reviewedSourceHead": "Exact authored article SHA-256 fb8080b1d8682257013b6dd47f1aa9aae8d50facea1f6cbeb3ca6ad9a2bed29a",
+        "checkedAt": "2026-10-22T12:59:53Z",
+        "scope": "Factual and claim framing, mathematical scope, perceptual qualification and proportionate depth; private frames, audio and full deposit set were outside this independent review.",
+        "findings": "No blocking factual or editorial finding. Sampled visual coverage is separately qualified in the private operator receipt. Tony accepted the exact editorial marker in unedited PR 63 comment 6341578079; PR 63 merged as acb38a9a9975cae47b7b4d4cc138e975af59812d and Netlify production published it."
+      },
+      "revisionHistory": [
+        {
+          "at": "2026-10-22T12:40:48Z",
+          "kind": "new-reader-candidate",
+          "reason": "Owner-requested audiovisual deconstruction from partial visual custody and bounded primary-source research."
+        }
+      ],
+      "editorialOrder": 28,
+      "orderReason": "New owner-requested HORTRAME film after the existing 32-Reader production catalog.",
+      "editorialDepth": {
+        "schemaVersion": 1,
+        "receiptPath": "content/editorial-depth/what-a-swarm-makes-us-see.json"
+      },
+      "rank": 28
+    },
     {
       "id": "reader:unsupervised-is-a-permission",
       "slug": "unsupervised-is-a-permission",
@@ -183,14 +589,14 @@
       "editorialOrder": 26,
       "orderReason": "Follows the existing source-control Reader in Tony's four-video requested queue order.",
       "relationshipReview": {
-        "reviewedAt": "2026-10-21",
-        "reviewedCatalogSize": 32,
+        "reviewedAt": "2026-10-24",
+        "reviewedCatalogSize": 34,
         "decision": "linked",
         "reviewedTargets": [
           "reader:the-stop-button-is-outside-the-chat",
           "reader:autonomy-needs-an-interface"
         ],
-        "rationale": "Compared the new thesis against all 27 public Readers and its three queue peers. The two selected outgoing links add specific architectural or editorial comparisons without treating a different source as corroboration."
+        "rationale": "Compared the new thesis against all 27 public Readers and its three queue peers. The two selected outgoing links add specific architectural or editorial comparisons without treating a different source as corroboration. The HORTRAME visual swarm Reader was assessed as a new catalog neighbor; no additional outgoing route is justified by its distinct film and mathematics source. The newly added DeepInfer source was checked for another outgoing route; none is justified beyond its new Reader-to-Reader routes."
       },
       "editorialDepth": {
         "schemaVersion": 1,
@@ -457,14 +863,14 @@
       ],
       "relationshipDisposition": "Two specific editorial comparisons connect human inspectability and authenticated acceptance. No existing Reader independently tests this author’s HTML-versus-Markdown workflow.",
       "relationshipReview": {
-        "reviewedAt": "2026-10-21",
-        "reviewedCatalogSize": 32,
+        "reviewedAt": "2026-10-24",
+        "reviewedCatalogSize": 34,
         "decision": "linked",
         "reviewedTargets": [
           "reader:make-good-work-inspectable",
           "reader:the-commit-is-not-the-control"
         ],
-        "rationale": "Compared the source argument with all 27 published Readers. These two share a concrete inspectability or acceptance question; the rest lack a sufficiently specific relationship. The links are analysis routes, not corroboration."
+        "rationale": "Compared the source argument with all 27 published Readers. These two share a concrete inspectability or acceptance question; the rest lack a sufficiently specific relationship. The links are analysis routes, not corroboration. The HORTRAME visual swarm Reader was assessed as a new catalog neighbor; no additional outgoing route is justified by its distinct film and mathematics source. The newly added DeepInfer source was checked for another outgoing route; none is justified beyond its new Reader-to-Reader routes."
       },
       "review": {
         "status": "independent-source-copy-and-privacy-reviewed; owner-acceptance-pending",
@@ -688,14 +1094,14 @@
       "editorialOrder": 25,
       "orderReason": "Follows the existing source-control Reader in Tony's four-video requested queue order.",
       "relationshipReview": {
-        "reviewedAt": "2026-10-21",
-        "reviewedCatalogSize": 32,
+        "reviewedAt": "2026-10-24",
+        "reviewedCatalogSize": 34,
         "decision": "linked",
         "reviewedTargets": [
           "reader:the-parallel-result-is-not-the-product",
           "reader:the-boundary-is-bigger-than-the-box"
         ],
-        "rationale": "Compared the new thesis against all 27 public Readers and its three queue peers. The two selected outgoing links add specific architectural or editorial comparisons without treating a different source as corroboration."
+        "rationale": "Compared the new thesis against all 27 public Readers and its three queue peers. The two selected outgoing links add specific architectural or editorial comparisons without treating a different source as corroboration. The HORTRAME visual swarm Reader was assessed as a new catalog neighbor; no additional outgoing route is justified by its distinct film and mathematics source. The newly added DeepInfer source was checked for another outgoing route; none is justified beyond its new Reader-to-Reader routes."
       },
       "editorialDepth": {
         "schemaVersion": 1,
@@ -908,18 +1314,373 @@
       "editorialOrder": 24,
       "orderReason": "Follows the existing source-control Reader in Tony's four-video requested queue order.",
       "relationshipReview": {
-        "reviewedAt": "2026-10-21",
-        "reviewedCatalogSize": 32,
+        "reviewedAt": "2026-10-24",
+        "reviewedCatalogSize": 34,
         "decision": "linked",
         "reviewedTargets": [
           "reader:the-grader-is-part-of-the-harness",
           "reader:the-stop-button-is-outside-the-chat"
         ],
-        "rationale": "Compared the new thesis against all 27 public Readers and its three queue peers. The two selected outgoing links add specific architectural or editorial comparisons without treating a different source as corroboration."
+        "rationale": "Compared the new thesis against all 27 public Readers and its three queue peers. The two selected outgoing links add specific architectural or editorial comparisons without treating a different source as corroboration. The HORTRAME visual swarm Reader was assessed as a new catalog neighbor; no additional outgoing route is justified by its distinct film and mathematics source. The newly added DeepInfer source was checked for another outgoing route; none is justified beyond its new Reader-to-Reader routes."
       },
       "editorialDepth": {
         "schemaVersion": 1,
         "receiptPath": "content/editorial-depth/the-harness-keeps-the-receipt.json"
+      },
+      "rank": 24
+    },
+    {
+      "id": "reader:the-engine-is-not-the-service",
+      "slug": "the-engine-is-not-the-service",
+      "title": "The Engine Is Not the Service",
+      "category": "AI & Technology",
+      "tags": [
+        "inference",
+        "serving",
+        "benchmarks",
+        "control planes"
+      ],
+      "entities": [
+        "DeepSeek-AI",
+        "DeepInfer",
+        "DeepSeek-V4.1-Flash",
+        "SGLang",
+        "vLLM",
+        "Hyperion"
+      ],
+      "source": {
+        "kind": "repository",
+        "identity": "deepseek-ai-deepinfer-774ce244",
+        "url": "https://github.com/deepseek-ai/DeepInfer/tree/774ce244b87cc0eb8d4b94ab9f5de2ab22049f01",
+        "repositoryUrl": "https://github.com/deepseek-ai/DeepInfer",
+        "repository": "deepseek-ai/DeepInfer",
+        "commit": "774ce244b87cc0eb8d4b94ab9f5de2ab22049f01",
+        "title": "DeepInfer",
+        "authors": "DeepSeek-AI contributors",
+        "publisher": "DeepSeek-AI",
+        "license": "Apache-2.0",
+        "createdDate": "2026-10-16",
+        "commitDate": "2026-10-20",
+        "dateNote": "GitHub reports repository creation October 16, 2026. The inspected main commit is dated October 20; no release tag date was verified."
+      },
+      "published": "2026-10-21",
+      "updated": "2026-10-21T04:32:14Z",
+      "overview": "DeepSeek opens an offline DeepInfer engine for DeepSeek-V4.1-Flash on specified accelerators; its public release omits service components and its plots use selected steady-state workloads.",
+      "whyItMatters": "The source exposes useful code and methods, but draft-token throughput is not delivered user value, and the private production stack is broader than the open engine.",
+      "ghostMeshTakeaway": "Inventory hardware and workload first, then compare complete services on accepted tokens, first-token and tail latency, quality, privacy, total cost and recovery.",
+      "verdict": "Worth studying",
+      "architectureImpact": "experiment recommended",
+      "falsification": "Revise the recommendation if a complete supported DeepInfer service demonstrates matched quality, useful-token throughput, first-token and tail latency, privacy isolation, sustainable cost and recovery under the actual workload.",
+      "evidenceState": "partially corroborated",
+      "lastEvidenceChecked": "2026-10-21T04:32:14Z",
+      "freshness": "Pinned DeepInfer main commit from October 20, 2026 was privately captured and inspected October 21. Operator benchmark and production claims remain unreplicated; SGLang and vLLM sources provide comparison methods, not head-to-head results.",
+      "variant": "dossier",
+      "accent": "teal",
+      "claims": [
+        {
+          "id": "the-engine-is-not-the-service--offline-scope",
+          "proposition": "The public DeepInfer release supports offline inference for DeepSeek-V4.1-Flash on NVIDIA SM100 or Huawei Ascend 950.",
+          "kind": "first-party-release-scope",
+          "asOf": "2026-10-21",
+          "status": "partially corroborated",
+          "assessment": "The pinned README states the scope and the tree includes runtime and build files. Source inspection confirms code presence, not working execution.",
+          "limits": "No installation, checkpoint execution or accelerator compatibility test was performed.",
+          "sourceLocation": "README: Supported models, hardware and Getting started",
+          "references": [
+            "deepinfer-readme"
+          ],
+          "counterevidence": [],
+          "temporalScope": "DeepInfer pinned October 20, 2026 commit; external methods inspected October 21, 2026."
+        },
+        {
+          "id": "the-engine-is-not-the-service--missing-service",
+          "proposition": "A complete online inference service still needs KV cache, prefill/decode disaggregation and data-parallel replica load balancing not included in the public release.",
+          "kind": "first-party-scope-limit",
+          "asOf": "2026-10-21",
+          "status": "partially corroborated",
+          "assessment": "The maintainer explicitly lists these missing service components while the separate Q&A describes internal production infrastructure.",
+          "limits": "The public tree has related engine functionality; this does not prove the internal service is absent or reproduced.",
+          "sourceLocation": "README: Required for a complete inference service",
+          "references": [
+            "deepinfer-readme",
+            "deepinfer-deployment"
+          ],
+          "counterevidence": [],
+          "temporalScope": "DeepInfer pinned October 20, 2026 commit; external methods inspected October 21, 2026."
+        },
+        {
+          "id": "the-engine-is-not-the-service--benchmark-scale",
+          "proposition": "The published prefill and decode plots use four and 64 SM100 GPUs respectively under selected scale-up conditions.",
+          "kind": "first-party-benchmark-claim",
+          "asOf": "2026-10-21",
+          "status": "unverified",
+          "assessment": "The README labels the GPU counts and points to the sweep script. No benchmark was run by GhostMesh.",
+          "limits": "No matched competitor, percentile distribution, electricity or service cost is established by these plots.",
+          "sourceLocation": "README: Performance benchmarks",
+          "references": [
+            "deepinfer-readme",
+            "deepinfer-examples"
+          ],
+          "counterevidence": [],
+          "temporalScope": "DeepInfer pinned October 20, 2026 commit; external methods inspected October 21, 2026."
+        },
+        {
+          "id": "the-engine-is-not-the-service--full-acceptance",
+          "proposition": "The documented decode throughput calculation credits all draft tokens under full acceptance regardless of actual acceptance.",
+          "kind": "documented-method",
+          "asOf": "2026-10-21",
+          "status": "partially corroborated",
+          "assessment": "The benchmark documentation gives the formula and the plotting method allows an assumed acceptance fraction.",
+          "limits": "An acceptance-adjusted curve is still a modeled output, not measured end-to-end useful tokens or user quality.",
+          "sourceLocation": "examples/README.md: Stage decoupling and metrics; Sweeps",
+          "references": [
+            "deepinfer-examples"
+          ],
+          "counterevidence": [],
+          "temporalScope": "DeepInfer pinned October 20, 2026 commit; external methods inspected October 21, 2026."
+        },
+        {
+          "id": "the-engine-is-not-the-service--cache-workload",
+          "proposition": "The default benchmark uses a shared cached prefix with 32,768-token context, 4,096 uncached tokens, 64 decode requests and nextn five.",
+          "kind": "documented-method",
+          "asOf": "2026-10-21",
+          "status": "partially corroborated",
+          "assessment": "The pinned examples documentation sets these defaults and explains decoupled prefill and decode scheduling.",
+          "limits": "Different tenant, cold-cache, burst and long-tail workloads may change the observed result.",
+          "sourceLocation": "examples/README.md: Benchmark defaults and shared prefix",
+          "references": [
+            "deepinfer-examples"
+          ],
+          "counterevidence": [],
+          "temporalScope": "DeepInfer pinned October 20, 2026 commit; external methods inspected October 21, 2026."
+        },
+        {
+          "id": "the-engine-is-not-the-service--reference-quality",
+          "proposition": "DeepSeek reports reference Pass@1 figures of 99.9% AIME 2026, 93.4% GPQA Diamond and 42.6% HLE-Full for its default V4.1 configuration.",
+          "kind": "first-party-evaluation-claim",
+          "asOf": "2026-10-21",
+          "status": "unverified",
+          "assessment": "The eval README gives sample counts, scoring method and those reference figures. The pinned capture lacks an independent completed output bundle.",
+          "limits": "Datasets are sourced separately, some gated, and default scoring needs a judge service; no quality/speed joint run was performed.",
+          "sourceLocation": "eval/README.md: Reference results, data preparation and scoring",
+          "references": [
+            "deepinfer-eval"
+          ],
+          "counterevidence": [],
+          "temporalScope": "DeepInfer pinned October 20, 2026 commit; external methods inspected October 21, 2026."
+        },
+        {
+          "id": "the-engine-is-not-the-service--operator-scale",
+          "proposition": "DeepSeek describes larger internal E/P/D, KV and replica services, cluster token volume and a revenue-per-GPU-hour illustration.",
+          "kind": "first-party-operational-claim",
+          "asOf": "2026-10-21",
+          "status": "unverified",
+          "assessment": "The deployment Q&A is an operator account of a broader private serving system, distinct from the released offline engine.",
+          "limits": "No independent traffic telemetry, cost accounting or profit evidence is available in the inspected source.",
+          "sourceLocation": "doc/inference_deployment_qa.md: cluster and economics answers",
+          "references": [
+            "deepinfer-deployment"
+          ],
+          "counterevidence": [],
+          "temporalScope": "DeepInfer pinned October 20, 2026 commit; external methods inspected October 21, 2026."
+        },
+        {
+          "id": "the-engine-is-not-the-service--alternative-method",
+          "proposition": "An online service comparison should include queueing, time to first token, inter-token delay, tail latency and quality under the same workload.",
+          "kind": "editorial-test-design",
+          "asOf": "2026-10-21",
+          "status": "unverified",
+          "assessment": "GhostMesh derives this test from the limits of offline charts and primary SGLang and vLLM benchmark guidance.",
+          "limits": "The comparison is proposed, not executed; alternative documentation does not establish performance superiority.",
+          "sourceLocation": "GhostMesh experiment; SGLang and vLLM serving benchmark documentation",
+          "references": [
+            "deepinfer-examples",
+            "sglang-method",
+            "vllm-method"
+          ],
+          "counterevidence": [],
+          "temporalScope": "DeepInfer pinned October 20, 2026 commit; external methods inspected October 21, 2026."
+        },
+        {
+          "id": "the-engine-is-not-the-service--local-fit",
+          "proposition": "DeepInfer adoption on Hyperion requires a verified hardware, model, data and service-control inventory before any installation or deployment recommendation.",
+          "kind": "editorial-inference",
+          "asOf": "2026-10-21",
+          "status": "unverified",
+          "assessment": "This is GhostMesh’s bounded engineering recommendation based on the narrow supported-hardware list and missing service components.",
+          "limits": "The actual Hyperion accelerator inventory and workload were not verified here; no Hyperion or Qwen action was performed.",
+          "sourceLocation": "README: Supported hardware; Required for a complete inference service",
+          "references": [
+            "deepinfer-readme"
+          ],
+          "counterevidence": [],
+          "temporalScope": "DeepInfer pinned October 20, 2026 commit; external methods inspected October 21, 2026."
+        }
+      ],
+      "references": [
+        {
+          "id": "deepinfer-readme",
+          "title": "DeepInfer README",
+          "author": "DeepSeek-AI contributors",
+          "publisher": "DeepSeek-AI",
+          "url": "https://github.com/deepseek-ai/DeepInfer/blob/774ce244b87cc0eb8d4b94ab9f5de2ab22049f01/README.md",
+          "publicationDate": "2026-10-20",
+          "eventDate": null,
+          "location": "README features, supported hardware, missing serving components and plotted benchmark context",
+          "sourceType": "first-party repository documentation",
+          "independence": "Pinned code-source documentation; capabilities are described by maintainer, not independently executed.",
+          "evidenceFamily": "deepseek-repository",
+          "checkedAt": "2026-10-21T04:32:14Z",
+          "datePrecision": "day"
+        },
+        {
+          "id": "deepinfer-examples",
+          "title": "DeepInfer examples and benchmark methodology",
+          "author": "DeepSeek-AI contributors",
+          "publisher": "DeepSeek-AI",
+          "url": "https://github.com/deepseek-ai/DeepInfer/blob/774ce244b87cc0eb8d4b94ab9f5de2ab22049f01/examples/README.md",
+          "publicationDate": "2026-10-20",
+          "eventDate": null,
+          "location": "Benchmark: stage decoupling, shared prefix, defaults, steady-state windows and full-acceptance throughput formula",
+          "sourceType": "first-party benchmark methodology",
+          "independence": "Primary method description and inspected scripts; no measured result independently reproduced.",
+          "evidenceFamily": "deepseek-repository",
+          "checkedAt": "2026-10-21T04:32:14Z",
+          "datePrecision": "day"
+        },
+        {
+          "id": "deepinfer-eval",
+          "title": "DeepInfer evaluation README",
+          "author": "DeepSeek-AI contributors",
+          "publisher": "DeepSeek-AI",
+          "url": "https://github.com/deepseek-ai/DeepInfer/blob/774ce244b87cc0eb8d4b94ab9f5de2ab22049f01/eval/README.md",
+          "publicationDate": "2026-10-20",
+          "eventDate": null,
+          "location": "Evaluation layout, data requirements, judging, reference Pass@1 values",
+          "sourceType": "first-party evaluation methodology",
+          "independence": "Reference scores are maintainer figures; no independently scored output bundle was inspected.",
+          "evidenceFamily": "deepseek-repository",
+          "checkedAt": "2026-10-21T04:32:14Z",
+          "datePrecision": "day"
+        },
+        {
+          "id": "deepinfer-deployment",
+          "title": "DeepInfer inference deployment Q&A",
+          "author": "DeepSeek-AI contributors",
+          "publisher": "DeepSeek-AI",
+          "url": "https://github.com/deepseek-ai/DeepInfer/blob/774ce244b87cc0eb8d4b94ab9f5de2ab22049f01/doc/inference_deployment_qa.md",
+          "publicationDate": "2026-10-20",
+          "eventDate": null,
+          "location": "Production stack, KV storage, deployment scale and operator economics",
+          "sourceType": "first-party production account",
+          "independence": "Describes internal service components beyond the public offline release; no telemetry or ledger independently audited.",
+          "evidenceFamily": "deepseek-repository",
+          "checkedAt": "2026-10-21T04:32:14Z",
+          "datePrecision": "day"
+        },
+        {
+          "id": "sglang-method",
+          "title": "SGLang benchmark and profiling guidance",
+          "author": "SGLang maintainers",
+          "publisher": "SGLang",
+          "url": "https://docs.sglang.io/docs/developer_guide/benchmark_and_profiling",
+          "publicationDate": "unknown",
+          "eventDate": null,
+          "location": "Online serving metrics and benchmark choices",
+          "sourceType": "primary software documentation",
+          "independence": "Methodological alternative only; no matched DeepInfer comparison.",
+          "evidenceFamily": "sglang-project",
+          "checkedAt": "2026-10-21T04:32:14Z",
+          "dateNote": "Continuously edited documentation has no stable original publication date established in this reading."
+        },
+        {
+          "id": "vllm-method",
+          "title": "vLLM benchmarking CLI",
+          "author": "vLLM maintainers",
+          "publisher": "vLLM",
+          "url": "https://docs.vllm.ai/en/latest/benchmarking/cli/",
+          "publicationDate": "unknown",
+          "eventDate": null,
+          "location": "Serving benchmark metrics including time to first token and inter-token latency",
+          "sourceType": "primary software documentation",
+          "independence": "Methodological alternative only; no matched DeepInfer comparison.",
+          "evidenceFamily": "vllm-project",
+          "checkedAt": "2026-10-21T04:32:14Z",
+          "dateNote": "Continuously edited documentation has no stable original publication date established in this reading."
+        }
+      ],
+      "relationships": [
+        {
+          "target": "reader:the-parallel-result-is-not-the-product",
+          "type": "related topic",
+          "reason": "Both Readers challenge a jump from reported model-system speed to a product decision. The earlier analysis concerns parallel-agent performance and outcome evaluation; DeepInfer concerns inference throughput, accepted tokens and service latency. Neither source independently verifies the other.",
+          "provenance": [
+            "/the-engine-is-not-the-service/#denominator",
+            "/the-parallel-result-is-not-the-product/#decision"
+          ],
+          "basis": "curated-editorial-comparison",
+          "direction": "outgoing"
+        },
+        {
+          "target": "reader:the-boundary-is-bigger-than-the-box",
+          "type": "related topic",
+          "reason": "Both Readers test the gap between owning compute and controlling a usable private service. The earlier reading examines local versus cloud trust and cost; this one identifies KV, egress, routing and recovery boundaries for inference. This is an architectural reading route, not corroboration of DeepSeek metrics.",
+          "provenance": [
+            "/the-engine-is-not-the-service/#control",
+            "/the-boundary-is-bigger-than-the-box/#boundary"
+          ],
+          "basis": "curated-editorial-comparison",
+          "direction": "outgoing"
+        },
+        {
+          "target": "reader:the-operator-is-part-of-the-denominator",
+          "type": "related topic",
+          "reason": "Both Readers separate raw accelerator or engine throughput from useful service output. The operator analysis asks how serving software, latency and full cost change the buyer result; DeepInfer publishes an offline engine, not the surrounding service. These distinct sources do not corroborate each other’s performance claims.",
+          "provenance": [
+            "/the-engine-is-not-the-service/#denominator",
+            "/the-operator-is-part-of-the-denominator/#the-service-layer-can-create-or-destroy-value"
+          ],
+          "basis": "curated-editorial-comparison",
+          "direction": "outgoing"
+        }
+      ],
+      "relationshipDisposition": "Three qualified editorial routes connect performance-to-product interpretation, local control boundaries and service economics. They do not corroborate DeepSeek benchmark or production metrics.",
+      "relationshipReview": {
+        "reviewedAt": "2026-10-24",
+        "reviewedCatalogSize": 34,
+        "decision": "linked",
+        "reviewedTargets": [
+          "reader:the-parallel-result-is-not-the-product",
+          "reader:the-boundary-is-bigger-than-the-box",
+          "reader:the-operator-is-part-of-the-denominator"
+        ],
+        "rationale": "Compared the pinned DeepInfer source with all 32 existing Readers. Three specific routes link performance-to-product interpretation, local service-control boundaries and inference service economics. Other topic overlap does not establish independent corroboration or a shared empirical result. The later HORTRAME film was also compared; its visual swarm and mathematical references do not establish a further serving relationship."
+      },
+      "review": {
+        "status": "independent-source-and-copy-reviewed; owner-acceptance-pending",
+        "reviewer": "Independent read-only Codex editorial reviewer",
+        "reviewedSourceHead": "Exact authored article SHA-256 4d1e11134a655828b60e42002365ddf73a7e8acda48cf846805381b854dd05c7",
+        "checkedAt": "2026-10-21T04:36:01Z",
+        "scope": "Pinned private source capture, benchmark formulas, first-party metrics, catalog claims, source-map points, graph relations, prose depth and public/private boundary.",
+        "findings": "Four catalog citations were corrected to pinned file URLs. Source map was expanded to cover reference scores and operator-scale claims. Focused re-review found no remaining factual, attribution, graph or privacy defect; DeepSeek metrics remain unreplicated."
+      },
+      "revisionHistory": [
+        {
+          "at": "2026-10-21T04:32:14Z",
+          "kind": "new-reader-candidate",
+          "reason": "Owner-requested repository deconstruction with pinned public commit and privately retained exact source aids."
+        },
+        {
+          "at": "2026-10-21T04:36:01Z",
+          "kind": "independent-editorial-review",
+          "reason": "Corrected pinned file citation routes and added quantitative source-map points after independent review; focused re-review found no remaining actionable defect."
+        }
+      ],
+      "editorialOrder": 24,
+      "orderReason": "Place the new inference-engine reading after the existing agent infrastructure and evaluation Readers.",
+      "editorialDepth": {
+        "schemaVersion": 1,
+        "receiptPath": "content/editorial-depth/the-engine-is-not-the-service.json"
       },
       "rank": 24
     },
@@ -1197,14 +1958,14 @@
       ],
       "relationshipDisposition": "Two substantive editorial comparisons connect agent work inspectability and evaluation infrastructure. They do not corroborate Anthropic’s internal scale or performance reports.",
       "relationshipReview": {
-        "reviewedAt": "2026-10-21",
-        "reviewedCatalogSize": 32,
+        "reviewedAt": "2026-10-24",
+        "reviewedCatalogSize": 34,
         "decision": "linked",
         "reviewedTargets": [
           "reader:make-good-work-inspectable",
           "reader:the-grader-is-part-of-the-harness"
         ],
-        "rationale": "Compared the Anthropic engineering source with all 26 existing Readers. Two qualified routes concern inspectable agent work and evaluation gates; the others lack a sufficiently specific shared question. No existing Reader independently verifies Scion metrics. Reassessed against four distinct AI Engineer video theses; their new outgoing links carry the qualified comparisons, with no new outgoing edge warranted from this existing entry."
+        "rationale": "Compared the Anthropic engineering source with all 26 existing Readers. Two qualified routes concern inspectable agent work and evaluation gates; the others lack a sufficiently specific shared question. No existing Reader independently verifies Scion metrics. Reassessed against four distinct AI Engineer video theses; their new outgoing links carry the qualified comparisons, with no new outgoing edge warranted from this existing entry. The HORTRAME visual swarm Reader was assessed as a new catalog neighbor; no additional outgoing route is justified by its distinct film and mathematics source. The newly added DeepInfer source was checked for another outgoing route; none is justified beyond its new Reader-to-Reader routes."
       },
       "review": {
         "status": "independent-source-and-copy-reviewed; owner-accepted",
@@ -1499,14 +2260,14 @@
       "editorialOrder": 22,
       "orderReason": "Place the local deployment and privacy-boundary reading after the agent control readings.",
       "relationshipReview": {
-        "reviewedAt": "2026-10-21",
-        "reviewedCatalogSize": 32,
+        "reviewedAt": "2026-10-24",
+        "reviewedCatalogSize": 34,
         "decision": "linked",
         "reviewedTargets": [
           "reader:the-agent-a-company-owns",
           "reader:the-stop-button-is-outside-the-chat"
         ],
-        "rationale": "Compared this source with all 25 existing Readers. Two qualified routes cover company-owned agent infrastructure and continuing agent authority. No prior Reader independently measures this machine or validates its cost and privacy claims. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged. Reassessed against four distinct AI Engineer video theses; their new outgoing links carry the qualified comparisons, with no new outgoing edge warranted from this existing entry."
+        "rationale": "Compared this source with all 25 existing Readers. Two qualified routes cover company-owned agent infrastructure and continuing agent authority. No prior Reader independently measures this machine or validates its cost and privacy claims. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged. Reassessed against four distinct AI Engineer video theses; their new outgoing links carry the qualified comparisons, with no new outgoing edge warranted from this existing entry. The HORTRAME visual swarm Reader was assessed as a new catalog neighbor; no additional outgoing route is justified by its distinct film and mathematics source. The newly added DeepInfer source was checked for another outgoing route; none is justified beyond its new Reader-to-Reader routes."
       },
       "rank": 22
     },
@@ -1699,14 +2460,14 @@
       "editorialOrder": 27,
       "orderReason": "Follows the existing source-control Reader in Tony's four-video requested queue order.",
       "relationshipReview": {
-        "reviewedAt": "2026-10-21",
-        "reviewedCatalogSize": 32,
+        "reviewedAt": "2026-10-24",
+        "reviewedCatalogSize": 34,
         "decision": "linked",
         "reviewedTargets": [
           "reader:when-agents-become-the-customer",
           "reader:the-stop-button-is-outside-the-chat"
         ],
-        "rationale": "Compared the new thesis against all 27 public Readers and its three queue peers. The two selected outgoing links add specific architectural or editorial comparisons without treating a different source as corroboration."
+        "rationale": "Compared the new thesis against all 27 public Readers and its three queue peers. The two selected outgoing links add specific architectural or editorial comparisons without treating a different source as corroboration. The HORTRAME visual swarm Reader was assessed as a new catalog neighbor; no additional outgoing route is justified by its distinct film and mathematics source. The newly added DeepInfer source was checked for another outgoing route; none is justified beyond its new Reader-to-Reader routes."
       },
       "editorialDepth": {
         "schemaVersion": 1,
@@ -2102,11 +2863,11 @@
         "nextVerification": "Check original audio or visuals before adding exact quotations or frame claims; inspect the current docket before asserting a court outcome."
       },
       "relationshipReview": {
-        "reviewedAt": "2026-10-21",
-        "reviewedCatalogSize": 32,
+        "reviewedAt": "2026-10-24",
+        "reviewedCatalogSize": 34,
         "decision": "none",
         "reviewedTargets": [],
-        "rationale": "The other published Readers do not examine this California voter-list dispute, individualized ballot procedure or conditional DOJ warning. AI evaluation analogies are too distant to admit as local routes. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged. Reassessed against four distinct AI Engineer video theses; their new outgoing links carry the qualified comparisons, with no new outgoing edge warranted from this existing entry."
+        "rationale": "The other published Readers do not examine this California voter-list dispute, individualized ballot procedure or conditional DOJ warning. AI evaluation analogies are too distant to admit as local routes. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged. Reassessed against four distinct AI Engineer video theses; their new outgoing links carry the qualified comparisons, with no new outgoing edge warranted from this existing entry. The HORTRAME visual swarm Reader was assessed as a new catalog neighbor; no additional outgoing route is justified by its distinct film and mathematics source. The newly added DeepInfer source was checked for another outgoing route; none is justified beyond its new Reader-to-Reader routes."
       },
       "rank": 19
     },
@@ -2450,14 +3211,14 @@
         "nextVerification": "Check any retained exact or ambiguous speech against original audio before attributing it; keep capability, actor uplift and outcomes as separate tests."
       },
       "relationshipReview": {
-        "reviewedAt": "2026-10-21",
-        "reviewedCatalogSize": 32,
+        "reviewedAt": "2026-10-24",
+        "reviewedCatalogSize": 34,
         "decision": "linked",
         "reviewedTargets": [
           "reader:the-brakes-need-a-test",
           "reader:the-label-the-box-and-the-bargain"
         ],
-        "rationale": "The Gates risk interview supports two qualified routes: Robinson examines release safety process, and Bostrom distinguishes capability from control. Neither source verifies the other's risk magnitude. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged. Reassessed against four distinct AI Engineer video theses; their new outgoing links carry the qualified comparisons, with no new outgoing edge warranted from this existing entry."
+        "rationale": "The Gates risk interview supports two qualified routes: Robinson examines release safety process, and Bostrom distinguishes capability from control. Neither source verifies the other's risk magnitude. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged. Reassessed against four distinct AI Engineer video theses; their new outgoing links carry the qualified comparisons, with no new outgoing edge warranted from this existing entry. The HORTRAME visual swarm Reader was assessed as a new catalog neighbor; no additional outgoing route is justified by its distinct film and mathematics source. The newly added DeepInfer source was checked for another outgoing route; none is justified beyond its new Reader-to-Reader routes."
       },
       "rank": 19
     },
@@ -2703,15 +3464,15 @@
       "editorialOrder": 21,
       "orderReason": "Place the operational agent-boundary Reader after the harness-evaluation Reader.",
       "relationshipReview": {
-        "reviewedAt": "2026-10-21",
-        "reviewedCatalogSize": 32,
+        "reviewedAt": "2026-10-24",
+        "reviewedCatalogSize": 34,
         "decision": "linked",
         "reviewedTargets": [
           "reader:make-good-work-inspectable",
           "reader:the-brakes-need-a-test",
           "reader:the-score-is-not-the-system"
         ],
-        "rationale": "Compared this video with all 24 existing Readers. Inspectable work, testable brakes and reward-versus-outcome analysis support three qualified routes. The earlier Readers do not corroborate these incident reports. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged. Reassessed against four distinct AI Engineer video theses; their new outgoing links carry the qualified comparisons, with no new outgoing edge warranted from this existing entry."
+        "rationale": "Compared this video with all 24 existing Readers. Inspectable work, testable brakes and reward-versus-outcome analysis support three qualified routes. The earlier Readers do not corroborate these incident reports. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged. Reassessed against four distinct AI Engineer video theses; their new outgoing links carry the qualified comparisons, with no new outgoing edge warranted from this existing entry. The HORTRAME visual swarm Reader was assessed as a new catalog neighbor; no additional outgoing route is justified by its distinct film and mathematics source. The newly added DeepInfer source was checked for another outgoing route; none is justified beyond its new Reader-to-Reader routes."
       },
       "rank": 21
     },
@@ -3043,14 +3804,14 @@
         "nextVerification": "Recheck mutable product terms and platform permissions before treating them as current; retain source media privately. This edition's limited source custody is disclosed above."
       },
       "relationshipReview": {
-        "reviewedAt": "2026-10-21",
-        "reviewedCatalogSize": 32,
+        "reviewedAt": "2026-10-24",
+        "reviewedCatalogSize": 34,
         "decision": "linked",
         "reviewedTargets": [
           "reader:when-agents-become-the-customer",
           "reader:the-agent-a-company-owns"
         ],
-        "rationale": "The agent-customer and company-agent Readers compare business authority and ownership questions. Neither establishes Muse lead rights or business outcomes. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged. Reassessed against four distinct AI Engineer video theses; their new outgoing links carry the qualified comparisons, with no new outgoing edge warranted from this existing entry."
+        "rationale": "The agent-customer and company-agent Readers compare business authority and ownership questions. Neither establishes Muse lead rights or business outcomes. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged. Reassessed against four distinct AI Engineer video theses; their new outgoing links carry the qualified comparisons, with no new outgoing edge warranted from this existing entry. The HORTRAME visual swarm Reader was assessed as a new catalog neighbor; no additional outgoing route is justified by its distinct film and mathematics source. The newly added DeepInfer source was checked for another outgoing route; none is justified beyond its new Reader-to-Reader routes."
       },
       "rank": 18
     },
@@ -3517,14 +4278,14 @@
         "nextVerification": "For disputed passages, compare original audio before asserting exact wording or speaker identity; keep partial private custody documented and recheck mutable outside evidence."
       },
       "relationshipReview": {
-        "reviewedAt": "2026-10-21",
-        "reviewedCatalogSize": 32,
+        "reviewedAt": "2026-10-24",
+        "reviewedCatalogSize": 34,
         "decision": "linked",
         "reviewedTargets": [
           "reader:the-test-must-name-its-target",
           "reader:the-microscope-is-not-a-soul"
         ],
-        "rationale": "The existing routes distinguish AGI labels from functional understanding and digital experience from representation evidence. Neither verifies the interview's exact speech. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged. Reassessed against four distinct AI Engineer video theses; their new outgoing links carry the qualified comparisons, with no new outgoing edge warranted from this existing entry."
+        "rationale": "The existing routes distinguish AGI labels from functional understanding and digital experience from representation evidence. Neither verifies the interview's exact speech. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged. Reassessed against four distinct AI Engineer video theses; their new outgoing links carry the qualified comparisons, with no new outgoing edge warranted from this existing entry. The HORTRAME visual swarm Reader was assessed as a new catalog neighbor; no additional outgoing route is justified by its distinct film and mathematics source. The newly added DeepInfer source was checked for another outgoing route; none is justified beyond its new Reader-to-Reader routes."
       },
       "rank": 19
     },
@@ -3768,15 +4529,15 @@
       "editorialOrder": 20,
       "orderReason": "Follow the existing evaluation and research-agent Readers with a focused test of adaptive harness claims.",
       "relationshipReview": {
-        "reviewedAt": "2026-10-21",
-        "reviewedCatalogSize": 32,
+        "reviewedAt": "2026-10-24",
+        "reviewedCatalogSize": 34,
         "decision": "linked",
         "reviewedTargets": [
           "reader:make-good-work-inspectable",
           "reader:the-experiment-ran-did-the-research-advance",
           "reader:the-score-is-not-the-system"
         ],
-        "rationale": "Compared the new video with all 23 existing Readers. Inspectable work, research evaluation and reward-versus-outcome design offer three substantive comparisons. The earlier Readers do not replicate the two papers. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged. Reassessed against four distinct AI Engineer video theses; their new outgoing links carry the qualified comparisons, with no new outgoing edge warranted from this existing entry."
+        "rationale": "Compared the new video with all 23 existing Readers. Inspectable work, research evaluation and reward-versus-outcome design offer three substantive comparisons. The earlier Readers do not replicate the two papers. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged. Reassessed against four distinct AI Engineer video theses; their new outgoing links carry the qualified comparisons, with no new outgoing edge warranted from this existing entry. The HORTRAME visual swarm Reader was assessed as a new catalog neighbor; no additional outgoing route is justified by its distinct film and mathematics source. The newly added DeepInfer source was checked for another outgoing route; none is justified beyond its new Reader-to-Reader routes."
       },
       "rank": 20
     },
@@ -4203,14 +4964,14 @@
         "nextVerification": "Verify targeted original audio before attributing contested wording, speakers or numbers; inspect source visuals before making a visual claim."
       },
       "relationshipReview": {
-        "reviewedAt": "2026-10-21",
-        "reviewedCatalogSize": 32,
+        "reviewedAt": "2026-10-24",
+        "reviewedCatalogSize": 34,
         "decision": "linked",
         "reviewedTargets": [
           "reader:the-label-the-box-and-the-bargain",
           "reader:the-threshold-is-a-claim-not-a-test"
         ],
-        "rationale": "Robinson's incident and release-process analysis supports routes to Bostrom's bounded control example and Gates's risk threshold. These are comparison paths, not independent interview corroboration. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged. Reassessed against four distinct AI Engineer video theses; their new outgoing links carry the qualified comparisons, with no new outgoing edge warranted from this existing entry."
+        "rationale": "Robinson's incident and release-process analysis supports routes to Bostrom's bounded control example and Gates's risk threshold. These are comparison paths, not independent interview corroboration. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged. Reassessed against four distinct AI Engineer video theses; their new outgoing links carry the qualified comparisons, with no new outgoing edge warranted from this existing entry. The HORTRAME visual swarm Reader was assessed as a new catalog neighbor; no additional outgoing route is justified by its distinct film and mathematics source. The newly added DeepInfer source was checked for another outgoing route; none is justified beyond its new Reader-to-Reader routes."
       },
       "rank": 19
     },
@@ -4481,13 +5242,13 @@
       "editorialOrder": 15,
       "orderReason": "Read after the existing Count Grey Matter interpretability Reader to examine a distinct functional-understanding claim.",
       "relationshipReview": {
-        "reviewedAt": "2026-10-21",
-        "reviewedCatalogSize": 32,
+        "reviewedAt": "2026-10-24",
+        "reviewedCatalogSize": 34,
         "decision": "linked",
         "reviewedTargets": [
           "reader:the-microscope-is-not-a-soul"
         ],
-        "rationale": "The microscope Reader by the same creator also limits inferences from model internals. Functional understanding and subjective experience remain distinct claims. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged. Reassessed against four distinct AI Engineer video theses; their new outgoing links carry the qualified comparisons, with no new outgoing edge warranted from this existing entry."
+        "rationale": "The microscope Reader by the same creator also limits inferences from model internals. Functional understanding and subjective experience remain distinct claims. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged. Reassessed against four distinct AI Engineer video theses; their new outgoing links carry the qualified comparisons, with no new outgoing edge warranted from this existing entry. The HORTRAME visual swarm Reader was assessed as a new catalog neighbor; no additional outgoing route is justified by its distinct film and mathematics source. The newly added DeepInfer source was checked for another outgoing route; none is justified beyond its new Reader-to-Reader routes."
       },
       "rank": 15
     },
@@ -4732,11 +5493,11 @@
       "editorialOrder": 16,
       "orderReason": "Read after the current collection as a research-method comparison with explicit deployment limits.",
       "relationshipReview": {
-        "reviewedAt": "2026-10-21",
-        "reviewedCatalogSize": 32,
+        "reviewedAt": "2026-10-24",
+        "reviewedCatalogSize": 34,
         "decision": "none",
         "reviewedTargets": [],
-        "rationale": "No other local Reader analyzes NCM or HybridAgents, their parallel-code and latent-reasoning methods, or the same benchmark claims. External studies remain outside this Reader graph. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged. Reassessed against four distinct AI Engineer video theses; their new outgoing links carry the qualified comparisons, with no new outgoing edge warranted from this existing entry."
+        "rationale": "No other local Reader analyzes NCM or HybridAgents, their parallel-code and latent-reasoning methods, or the same benchmark claims. External studies remain outside this Reader graph. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged. Reassessed against four distinct AI Engineer video theses; their new outgoing links carry the qualified comparisons, with no new outgoing edge warranted from this existing entry. The HORTRAME visual swarm Reader was assessed as a new catalog neighbor; no additional outgoing route is justified by its distinct film and mathematics source. The newly added DeepInfer source was checked for another outgoing route; none is justified beyond its new Reader-to-Reader routes."
       },
       "rank": 16
     },
@@ -5029,14 +5790,14 @@
       "editorialOrder": 13,
       "orderReason": "Read after the earlier Amap fleet case to examine the broader forecast and its evidence limits.",
       "relationshipReview": {
-        "reviewedAt": "2026-10-21",
-        "reviewedCatalogSize": 32,
+        "reviewedAt": "2026-10-24",
+        "reviewedCatalogSize": 34,
         "decision": "linked",
         "reviewedTargets": [
           "reader:the-inbox-was-a-boundary",
           "reader:when-agents-become-the-customer"
         ],
-        "rationale": "The Amap inbox Reader shares a source event; the agent-customer Reader offers a separate product forecast. Neither validates broad web-adoption predictions. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged. Reassessed against four distinct AI Engineer video theses; their new outgoing links carry the qualified comparisons, with no new outgoing edge warranted from this existing entry."
+        "rationale": "The Amap inbox Reader shares a source event; the agent-customer Reader offers a separate product forecast. Neither validates broad web-adoption predictions. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged. Reassessed against four distinct AI Engineer video theses; their new outgoing links carry the qualified comparisons, with no new outgoing edge warranted from this existing entry. The HORTRAME visual swarm Reader was assessed as a new catalog neighbor; no additional outgoing route is justified by its distinct film and mathematics source. The newly added DeepInfer source was checked for another outgoing route; none is justified beyond its new Reader-to-Reader routes."
       },
       "rank": 13
     },
@@ -5285,13 +6046,13 @@
         "nextVerification": "Broader blind, resource-matched evaluation and independent experiment/log review would sharpen the claim."
       },
       "relationshipReview": {
-        "reviewedAt": "2026-10-21",
-        "reviewedCatalogSize": 32,
+        "reviewedAt": "2026-10-24",
+        "reviewedCatalogSize": 34,
         "decision": "linked",
         "reviewedTargets": [
           "reader:a-scenario-is-not-a-singularity"
         ],
-        "rationale": "The physics benchmark Reader provides a contrasting bounded task score. It does not assess the two open-ended research contributions studied in this paper. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged. Reassessed against four distinct AI Engineer video theses; their new outgoing links carry the qualified comparisons, with no new outgoing edge warranted from this existing entry."
+        "rationale": "The physics benchmark Reader provides a contrasting bounded task score. It does not assess the two open-ended research contributions studied in this paper. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged. Reassessed against four distinct AI Engineer video theses; their new outgoing links carry the qualified comparisons, with no new outgoing edge warranted from this existing entry. The HORTRAME visual swarm Reader was assessed as a new catalog neighbor; no additional outgoing route is justified by its distinct film and mathematics source. The newly added DeepInfer source was checked for another outgoing route; none is justified beyond its new Reader-to-Reader routes."
       },
       "rank": 17
     },
@@ -5540,13 +6301,13 @@
       "editorialOrder": 14,
       "orderReason": "Read after other model-score Readers to test how benchmark evidence is converted into a larger forecast.",
       "relationshipReview": {
-        "reviewedAt": "2026-10-21",
-        "reviewedCatalogSize": 32,
+        "reviewedAt": "2026-10-24",
+        "reviewedCatalogSize": 34,
         "decision": "linked",
         "reviewedTargets": [
           "reader:the-experiment-ran-did-the-research-advance"
         ],
-        "rationale": "The physics benchmark and research-evaluation paper measure different constructs. Their one link invites comparison without treating a bounded score as research judgment. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged. Reassessed against four distinct AI Engineer video theses; their new outgoing links carry the qualified comparisons, with no new outgoing edge warranted from this existing entry."
+        "rationale": "The physics benchmark and research-evaluation paper measure different constructs. Their one link invites comparison without treating a bounded score as research judgment. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged. Reassessed against four distinct AI Engineer video theses; their new outgoing links carry the qualified comparisons, with no new outgoing edge warranted from this existing entry. The HORTRAME visual swarm Reader was assessed as a new catalog neighbor; no additional outgoing route is justified by its distinct film and mathematics source. The newly added DeepInfer source was checked for another outgoing route; none is justified beyond its new Reader-to-Reader routes."
       },
       "rank": 14
     },
@@ -5831,15 +6592,15 @@
         "nextVerification": "Complete a permitted authenticated run with scope, tool logs and a defined ground-truth target."
       },
       "relationshipReview": {
-        "reviewedAt": "2026-10-21",
-        "reviewedCatalogSize": 32,
+        "reviewedAt": "2026-10-24",
+        "reviewedCatalogSize": 34,
         "decision": "linked",
         "reviewedTargets": [
           "reader:ask-for-the-outcome-keep-the-boundary",
           "reader:make-good-work-inspectable",
           "reader:the-funnel-is-not-the-frontier"
         ],
-        "rationale": "The outcome, inspectable-work and AI-use Readers frame the limits of agent-tool demonstrations. None independently verifies this incomplete scan. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged. Reassessed against four distinct AI Engineer video theses; their new outgoing links carry the qualified comparisons, with no new outgoing edge warranted from this existing entry."
+        "rationale": "The outcome, inspectable-work and AI-use Readers frame the limits of agent-tool demonstrations. None independently verifies this incomplete scan. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged. Reassessed against four distinct AI Engineer video theses; their new outgoing links carry the qualified comparisons, with no new outgoing edge warranted from this existing entry. The HORTRAME visual swarm Reader was assessed as a new catalog neighbor; no additional outgoing route is justified by its distinct film and mathematics source. The newly added DeepInfer source was checked for another outgoing route; none is justified beyond its new Reader-to-Reader routes."
       },
       "rank": 9
     },
@@ -6178,15 +6939,15 @@
         "nextVerification": "Obtain the issuer disclosure and denominator, plus scoped security-test evidence before quantifying impact or tool efficacy."
       },
       "relationshipReview": {
-        "reviewedAt": "2026-10-21",
-        "reviewedCatalogSize": 32,
+        "reviewedAt": "2026-10-24",
+        "reviewedCatalogSize": 34,
         "decision": "linked",
         "reviewedTargets": [
           "reader:the-inbox-was-a-boundary",
           "reader:autonomy-needs-an-interface",
           "reader:the-agent-a-company-owns"
         ],
-        "rationale": "The credential incident is compared with a hidden mailbox boundary and company-agent permissions. Shared authority questions do not make the events equivalent. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged. Reassessed against four distinct AI Engineer video theses; their new outgoing links carry the qualified comparisons, with no new outgoing edge warranted from this existing entry."
+        "rationale": "The credential incident is compared with a hidden mailbox boundary and company-agent permissions. Shared authority questions do not make the events equivalent. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged. Reassessed against four distinct AI Engineer video theses; their new outgoing links carry the qualified comparisons, with no new outgoing edge warranted from this existing entry. The HORTRAME visual swarm Reader was assessed as a new catalog neighbor; no additional outgoing route is justified by its distinct film and mathematics source. The newly added DeepInfer source was checked for another outgoing route; none is justified beyond its new Reader-to-Reader routes."
       },
       "rank": 10
     },
@@ -6540,15 +7301,15 @@
         "nextVerification": "Obtain a measured denominator, controlled comparison and outcome definition before asserting a percentile."
       },
       "relationshipReview": {
-        "reviewedAt": "2026-10-21",
-        "reviewedCatalogSize": 32,
+        "reviewedAt": "2026-10-24",
+        "reviewedCatalogSize": 34,
         "decision": "linked",
         "reviewedTargets": [
           "reader:a-challenge-is-not-a-verdict",
           "reader:make-good-work-inspectable",
           "reader:the-funnel-is-not-the-frontier"
         ],
-        "rationale": "The architecture challenge, inspectable-work interview and AI-use funnel all separate ambitious agent work from verified outcomes. The links are editorial comparisons only. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged. Reassessed against four distinct AI Engineer video theses; their new outgoing links carry the qualified comparisons, with no new outgoing edge warranted from this existing entry."
+        "rationale": "The architecture challenge, inspectable-work interview and AI-use funnel all separate ambitious agent work from verified outcomes. The links are editorial comparisons only. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged. Reassessed against four distinct AI Engineer video theses; their new outgoing links carry the qualified comparisons, with no new outgoing edge warranted from this existing entry. The HORTRAME visual swarm Reader was assessed as a new catalog neighbor; no additional outgoing route is justified by its distinct film and mathematics source. The newly added DeepInfer source was checked for another outgoing route; none is justified beyond its new Reader-to-Reader routes."
       },
       "rank": 0
     },
@@ -6921,15 +7682,15 @@
         "nextVerification": "Compare inspectability and correction outcomes in a defined team and workflow."
       },
       "relationshipReview": {
-        "reviewedAt": "2026-10-21",
-        "reviewedCatalogSize": 32,
+        "reviewedAt": "2026-10-24",
+        "reviewedCatalogSize": 34,
         "decision": "linked",
         "reviewedTargets": [
           "reader:a-challenge-is-not-a-verdict",
           "reader:ask-for-the-outcome-keep-the-boundary",
           "reader:the-funnel-is-not-the-frontier"
         ],
-        "rationale": "The linked architecture review, outcome framing and AI-use funnel all ask how to inspect agent work. They do not independently establish this interview's results. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged. Reassessed against four distinct AI Engineer video theses; their new outgoing links carry the qualified comparisons, with no new outgoing edge warranted from this existing entry."
+        "rationale": "The linked architecture review, outcome framing and AI-use funnel all ask how to inspect agent work. They do not independently establish this interview's results. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged. Reassessed against four distinct AI Engineer video theses; their new outgoing links carry the qualified comparisons, with no new outgoing edge warranted from this existing entry. The HORTRAME visual swarm Reader was assessed as a new catalog neighbor; no additional outgoing route is justified by its distinct film and mathematics source. The newly added DeepInfer source was checked for another outgoing route; none is justified beyond its new Reader-to-Reader routes."
       },
       "rank": 1
     },
@@ -7188,15 +7949,15 @@
         "nextVerification": "Run reproducible permission, recovery and operator-control checks on a versioned build."
       },
       "relationshipReview": {
-        "reviewedAt": "2026-10-21",
-        "reviewedCatalogSize": 32,
+        "reviewedAt": "2026-10-24",
+        "reviewedCatalogSize": 34,
         "decision": "linked",
         "reviewedTargets": [
           "reader:the-agent-a-company-owns",
           "reader:the-inbox-was-a-boundary",
           "reader:the-key-was-the-boundary"
         ],
-        "rationale": "The company-agent interview builds on the same Vercel subject; the inbox and credential Readers compare separate authority boundaries. None verifies the others' incidents. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged. Reassessed against four distinct AI Engineer video theses; their new outgoing links carry the qualified comparisons, with no new outgoing edge warranted from this existing entry."
+        "rationale": "The company-agent interview builds on the same Vercel subject; the inbox and credential Readers compare separate authority boundaries. None verifies the others' incidents. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged. Reassessed against four distinct AI Engineer video theses; their new outgoing links carry the qualified comparisons, with no new outgoing edge warranted from this existing entry. The HORTRAME visual swarm Reader was assessed as a new catalog neighbor; no additional outgoing route is justified by its distinct film and mathematics source. The newly added DeepInfer source was checked for another outgoing route; none is justified beyond its new Reader-to-Reader routes."
       },
       "rank": 6
     },
@@ -7480,15 +8241,15 @@
         "nextVerification": "Reproduce a defined workload and compare measured outcomes with and without the proposed interface."
       },
       "relationshipReview": {
-        "reviewedAt": "2026-10-21",
-        "reviewedCatalogSize": 32,
+        "reviewedAt": "2026-10-24",
+        "reviewedCatalogSize": 34,
         "decision": "linked",
         "reviewedTargets": [
           "reader:ask-for-the-outcome-keep-the-boundary",
           "reader:make-good-work-inspectable",
           "reader:when-software-becomes-legible"
         ],
-        "rationale": "The three existing routes compare how an AI-assisted choice is challenged, verified and made inspectable. Their briefs support navigation, not proof of a shared observed result. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged. Reassessed against four distinct AI Engineer video theses; their new outgoing links carry the qualified comparisons, with no new outgoing edge warranted from this existing entry."
+        "rationale": "The three existing routes compare how an AI-assisted choice is challenged, verified and made inspectable. Their briefs support navigation, not proof of a shared observed result. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged. Reassessed against four distinct AI Engineer video theses; their new outgoing links carry the qualified comparisons, with no new outgoing edge warranted from this existing entry. The HORTRAME visual swarm Reader was assessed as a new catalog neighbor; no additional outgoing route is justified by its distinct film and mathematics source. The newly added DeepInfer source was checked for another outgoing route; none is justified beyond its new Reader-to-Reader routes."
       },
       "rank": 2
     },
@@ -7772,15 +8533,15 @@
         "nextVerification": "Reproduce a versioned task and measure comprehension, execution and correction outcomes."
       },
       "relationshipReview": {
-        "reviewedAt": "2026-10-21",
-        "reviewedCatalogSize": 32,
+        "reviewedAt": "2026-10-24",
+        "reviewedCatalogSize": 34,
         "decision": "linked",
         "reviewedTargets": [
           "reader:a-challenge-is-not-a-verdict",
           "reader:make-good-work-inspectable",
           "reader:when-agents-become-the-customer"
         ],
-        "rationale": "The architecture challenge, inspectable-work interview and agent-service forecast provide distinct routes through software legibility, not corroboration of reverse engineering. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged. Reassessed against four distinct AI Engineer video theses; their new outgoing links carry the qualified comparisons, with no new outgoing edge warranted from this existing entry."
+        "rationale": "The architecture challenge, inspectable-work interview and agent-service forecast provide distinct routes through software legibility, not corroboration of reverse engineering. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged. Reassessed against four distinct AI Engineer video theses; their new outgoing links carry the qualified comparisons, with no new outgoing edge warranted from this existing entry. The HORTRAME visual swarm Reader was assessed as a new catalog neighbor; no additional outgoing route is justified by its distinct film and mathematics source. The newly added DeepInfer source was checked for another outgoing route; none is justified beyond its new Reader-to-Reader routes."
       },
       "rank": 7
     },
@@ -8035,15 +8796,15 @@
         "nextVerification": "Check closing/integration status and audited volume; test caller identity, billing and tenant isolation."
       },
       "relationshipReview": {
-        "reviewedAt": "2026-10-21",
-        "reviewedCatalogSize": 32,
+        "reviewedAt": "2026-10-24",
+        "reviewedCatalogSize": 34,
         "decision": "linked",
         "reviewedTargets": [
           "reader:autonomy-needs-an-interface",
           "reader:make-good-work-inspectable",
           "reader:the-agent-a-company-owns"
         ],
-        "rationale": "The linked founder, inspectable-work and company-agent Readers compare product workflows and authority. Forecasts are kept separate from observed adoption. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged. Reassessed against four distinct AI Engineer video theses; their new outgoing links carry the qualified comparisons, with no new outgoing edge warranted from this existing entry."
+        "rationale": "The linked founder, inspectable-work and company-agent Readers compare product workflows and authority. Forecasts are kept separate from observed adoption. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged. Reassessed against four distinct AI Engineer video theses; their new outgoing links carry the qualified comparisons, with no new outgoing edge warranted from this existing entry. The HORTRAME visual swarm Reader was assessed as a new catalog neighbor; no additional outgoing route is justified by its distinct film and mathematics source. The newly added DeepInfer source was checked for another outgoing route; none is justified beyond its new Reader-to-Reader routes."
       },
       "rank": 8
     },
@@ -8373,13 +9134,13 @@
         "nextVerification": "Bind 36 percent and 0.4 percent awareness figures to a primary system-card table and threshold; replicate the simulation with independent controls."
       },
       "relationshipReview": {
-        "reviewedAt": "2026-10-21",
-        "reviewedCatalogSize": 32,
+        "reviewedAt": "2026-10-24",
+        "reviewedCatalogSize": 34,
         "decision": "linked",
         "reviewedTargets": [
           "reader:the-microscope-is-not-a-soul"
         ],
-        "rationale": "The microscope Reader helps interpret representation evidence, while its source and this Reader's agent-evaluation incident have separate evidentiary reach. The new harness Reader is a relevant incoming comparison about grader design; no new outgoing route is needed. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged. Reassessed against four distinct AI Engineer video theses; their new outgoing links carry the qualified comparisons, with no new outgoing edge warranted from this existing entry."
+        "rationale": "The microscope Reader helps interpret representation evidence, while its source and this Reader's agent-evaluation incident have separate evidentiary reach. The new harness Reader is a relevant incoming comparison about grader design; no new outgoing route is needed. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged. Reassessed against four distinct AI Engineer video theses; their new outgoing links carry the qualified comparisons, with no new outgoing edge warranted from this existing entry. The HORTRAME visual swarm Reader was assessed as a new catalog neighbor; no additional outgoing route is justified by its distinct film and mathematics source. The newly added DeepInfer source was checked for another outgoing route; none is justified beyond its new Reader-to-Reader routes."
       },
       "rank": 3
     },
@@ -8738,13 +9499,13 @@
         "nextVerification": "Check the effective policy text and independent deployment data before extending these conclusions."
       },
       "relationshipReview": {
-        "reviewedAt": "2026-10-21",
-        "reviewedCatalogSize": 32,
+        "reviewedAt": "2026-10-24",
+        "reviewedCatalogSize": 34,
         "decision": "linked",
         "reviewedTargets": [
           "reader:the-score-is-not-the-system"
         ],
-        "rationale": "The score Reader discusses the same Anthropic representation-steering evidence family. The link does not create independent support for consciousness or experience. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged. Reassessed against four distinct AI Engineer video theses; their new outgoing links carry the qualified comparisons, with no new outgoing edge warranted from this existing entry."
+        "rationale": "The score Reader discusses the same Anthropic representation-steering evidence family. The link does not create independent support for consciousness or experience. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged. Reassessed against four distinct AI Engineer video theses; their new outgoing links carry the qualified comparisons, with no new outgoing edge warranted from this existing entry. The HORTRAME visual swarm Reader was assessed as a new catalog neighbor; no additional outgoing route is justified by its distinct film and mathematics source. The newly added DeepInfer source was checked for another outgoing route; none is justified beyond its new Reader-to-Reader routes."
       },
       "rank": 11
     },
@@ -9019,15 +9780,15 @@
         "nextVerification": "Seek source logs or a second investigation for operator and coordination claims."
       },
       "relationshipReview": {
-        "reviewedAt": "2026-10-21",
-        "reviewedCatalogSize": 32,
+        "reviewedAt": "2026-10-24",
+        "reviewedCatalogSize": 34,
         "decision": "linked",
         "reviewedTargets": [
           "reader:the-key-was-the-boundary",
           "reader:autonomy-needs-an-interface",
           "reader:the-agent-a-company-owns"
         ],
-        "rationale": "The hidden mailbox case is compared with a separate credential exposure and two company-agent authority readings. The incidents and their evidence remain distinct. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged. Reassessed against four distinct AI Engineer video theses; their new outgoing links carry the qualified comparisons, with no new outgoing edge warranted from this existing entry."
+        "rationale": "The hidden mailbox case is compared with a separate credential exposure and two company-agent authority readings. The incidents and their evidence remain distinct. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged. Reassessed against four distinct AI Engineer video theses; their new outgoing links carry the qualified comparisons, with no new outgoing edge warranted from this existing entry. The HORTRAME visual swarm Reader was assessed as a new catalog neighbor; no additional outgoing route is justified by its distinct film and mathematics source. The newly added DeepInfer source was checked for another outgoing route; none is justified beyond its new Reader-to-Reader routes."
       },
       "rank": 4
     },
@@ -9332,15 +10093,15 @@
         "nextVerification": "Trace the population sampling frame and denominator to primary tables."
       },
       "relationshipReview": {
-        "reviewedAt": "2026-10-21",
-        "reviewedCatalogSize": 32,
+        "reviewedAt": "2026-10-24",
+        "reviewedCatalogSize": 34,
         "decision": "linked",
         "reviewedTargets": [
           "reader:ask-for-the-outcome-keep-the-boundary",
           "reader:make-good-work-inspectable",
           "reader:the-scan-never-reached-the-login"
         ],
-        "rationale": "The three routes compare ambition and verification in agent workflows, including a scan that ended without confirmed findings. No shared empirical outcome is claimed. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged. Reassessed against four distinct AI Engineer video theses; their new outgoing links carry the qualified comparisons, with no new outgoing edge warranted from this existing entry."
+        "rationale": "The three routes compare ambition and verification in agent workflows, including a scan that ended without confirmed findings. No shared empirical outcome is claimed. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged. Reassessed against four distinct AI Engineer video theses; their new outgoing links carry the qualified comparisons, with no new outgoing edge warranted from this existing entry. The HORTRAME visual swarm Reader was assessed as a new catalog neighbor; no additional outgoing route is justified by its distinct film and mathematics source. The newly added DeepInfer source was checked for another outgoing route; none is justified beyond its new Reader-to-Reader routes."
       },
       "rank": 12
     },
@@ -9628,15 +10389,15 @@
         "nextVerification": "Test identity-scoped memory, permissions, replay and external operation against a pinned implementation."
       },
       "relationshipReview": {
-        "reviewedAt": "2026-10-21",
-        "reviewedCatalogSize": 32,
+        "reviewedAt": "2026-10-24",
+        "reviewedCatalogSize": 34,
         "decision": "linked",
         "reviewedTargets": [
           "reader:autonomy-needs-an-interface",
           "reader:the-inbox-was-a-boundary",
           "reader:the-key-was-the-boundary"
         ],
-        "rationale": "The Vercel follow-on shares a named company-agent subject, while the inbox and credential Readers compare delegated authority through distinct source events. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged. Reassessed against four distinct AI Engineer video theses; their new outgoing links carry the qualified comparisons, with no new outgoing edge warranted from this existing entry."
+        "rationale": "The Vercel follow-on shares a named company-agent subject, while the inbox and credential Readers compare delegated authority through distinct source events. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged. Reassessed against four distinct AI Engineer video theses; their new outgoing links carry the qualified comparisons, with no new outgoing edge warranted from this existing entry. The HORTRAME visual swarm Reader was assessed as a new catalog neighbor; no additional outgoing route is justified by its distinct film and mathematics source. The newly added DeepInfer source was checked for another outgoing route; none is justified beyond its new Reader-to-Reader routes."
       },
       "rank": 5
     }

@@ -5,7 +5,9 @@ from html import escape
 from html.parser import HTMLParser
 from datetime import date
 import json,re,sys
-import social_cards
+from scout_feed import validate_scout,validate_events,feed_xml
+from scout_pages import validate_editions,home as scout_home,review_page,edition_page,archive_page,method_page,review_url,edition_url
+from scout_research import validate_research, research_page
 ROOT=Path(__file__).resolve().parents[1]; SITE=ROOT/'site'
 CATEGORIES=['AI & Technology','Society & Politics','Science','Business','Ethics & Culture','Other']
 READER_COUNT=0
@@ -33,7 +35,7 @@ class PublicArticleText(HTMLParser):
 def controls():return ('<header class="gm-site-header"><div class="gm-site-header-inner">'
  '<a class="gm-site-brand" href="/" aria-label="GhostMesh Readers home"><img src="/brand/ghostmesh-mark.svg" width="45" height="34" alt=""><strong>GHOST<em>MESH</em></strong><span>READERS</span></a>'
  '<p class="gm-site-tagline">Context endures. Possibility evolves.</p>'
- '<nav class="gm-site-nav" aria-label="Main navigation"><a href="/">Home</a><a href="/readers/">Readers</a><a href="/map/">Map</a><a href="/knowledge/">Knowledge</a><a href="/#about">About</a></nav>'
+ '<nav class="gm-site-nav" aria-label="Main navigation"><a href="/">Home</a><a href="/readers/">Readers</a><a href="/map/">Map</a><a href="/knowledge/">Knowledge</a><a href="/scout/">Scout</a><a href="/#about">About</a></nav>'
  '<div class="gm-header-actions"><a class="gm-search-control" href="/readers/#search" aria-label="Search Reader articles; without JavaScript, browse the Reader archive" data-reader-search-open title="Search Reader articles">'
  '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 5 5"/></svg></a>'
  '<button class="gm-theme-control" id="theme-toggle" data-theme-toggle type="button" aria-label="Light appearance" aria-pressed="false" hidden>'
@@ -47,12 +49,12 @@ def controls():return ('<header class="gm-site-header"><div class="gm-site-heade
 def footer(include_email=True):return ('<footer aria-label="GhostMesh destinations" class="gm-reader-footer gm-site-footer"><div class="gm-reader-footer-inner">'
  '<div><a class="gm-footer-brand" href="/"><img alt="" class="gm-logo-mark" height="34" src="/brand/ghostmesh-mark.svg" width="45"><strong>GHOST<em>MESH</em></strong></a>'
  '<p class="gm-reader-footer-note">Read the source. Examine the evidence. Challenge the interpretation.<br>GhostMesh editorial · © 2026 GhostMesh / Tony Malott.</p></div>'
- '<nav aria-label="Reader footer navigation" class="gm-footer-links"><a href="/">Readers home</a><a href="/readers/">All Readers</a><a href="/map/">Relationship map</a><a href="/knowledge/">Public knowledge</a>'
+ '<nav aria-label="Reader footer navigation" class="gm-footer-links"><a href="/">Readers home</a><a href="/readers/">All Readers</a><a href="/map/">Relationship map</a><a href="/knowledge/">Public knowledge</a><a href="/scout/">Scout</a><a href="/feed.xml">Subscribe via RSS</a>'
  '<a href="https://ghostmesh.ai/">GhostMesh.ai ↗</a><a href="https://shareplane.malott.ai/">SharePlane ↗</a><a href="https://malott.ai/">Tony Malott ↗</a>'
  +('<a href="mailto:ghostmesh@malott.ai?subject=GhostMesh%20Reader%20feedback">Contact GhostMesh ✉</a>' if include_email else '')+'</nav></div></footer>')
-def head():return '<script src="/assets/theme.js"></script><script src="/assets/reader-search.js" defer></script><link rel="stylesheet" href="/assets/reader-chrome.css"><link rel="stylesheet" href="/assets/knowledge.css"><link rel="stylesheet" href="/assets/reader-refresh.css">'
+def head():return '<link rel="alternate" type="application/rss+xml" title="GhostMesh Readers and Scout" href="/feed.xml"><script src="/assets/theme.js"></script><script src="/assets/reader-search.js" defer></script><link rel="stylesheet" href="/assets/reader-chrome.css"><link rel="stylesheet" href="/assets/knowledge.css"><link rel="stylesheet" href="/assets/reader-refresh.css">'
 def brief(r):
- first={'paper':'What the paper studied','article':'What the article argues'}.get(r['source'].get('kind'),'What the video is about')
+ first={'paper':'What the paper studied','article':'What the article argues','repository':'What the repository contains'}.get(r['source'].get('kind'),'What the video is about')
  return '<section class="gm-brief" id="at-a-glance" aria-labelledby="brief-title"><div class="gm-brief-heading"><p class="gm-kicker">The reading / in three moves</p><h2 id="brief-title">Start with the distinction.</h2></div>'+''.join('<div class="gm-brief-point"><span class="gm-brief-index">0'+str(i)+'</span><div><h3>'+h+'</h3><p>'+esc(r[k])+'</p></div></div>' for i,(k,h) in enumerate([('overview',first),('whyItMatters','Why you should care'),('ghostMeshTakeaway','What GhostMesh takes away')],1))+f'<p class="gm-verdict"><strong>GhostMesh verdict: {esc(r["verdict"])}</strong>. Editorial recommendation, not factual verification. Architecture impact: {esc(r["architectureImpact"])}. Proposed only; no adoption implied.</p></section>'
 def evidence(r):
  refs={x['id']:x for x in r['references']}
@@ -101,7 +103,8 @@ def home_card(r,number,featured=False):
  tag='h2' if featured else 'h3'
  unverified=sum(c['status']=='unverified' for c in r['claims'])
  source=r['source']
- if source.get('kind')=='article':
+ if source.get('kind') in {'article','repository'}:
+  repository=source.get('kind')=='repository'
   visual=(f'<div class="gm-home-visual gm-home-paper"><span class="gm-home-visual-label">GM / READER {number:02d} · ORIGINAL ARTICLE</span>'
           f'<div class="gm-home-source-fallback">{esc(source["publisher"])}<br>{esc(source["title"])}</div>'
           '<span class="gm-home-visual-label">ORIGINAL SOURCE / DIRECT LINK</span></div>')
@@ -111,7 +114,8 @@ def home_card(r,number,featured=False):
         f'<p class="gm-home-verdict">{esc(r["verdict"])} · Mapped evidence: {esc(r["evidenceState"])}. {unverified}/{len(r["claims"])} claims unverified</p>'
         f'<p class="gm-tags">{esc(" / ".join(r["tags"]))}</p>'
         f'<div class="gm-home-actions"><a class="gm-home-open" href="/{esc(r["slug"])}/">Open Reader →</a>'
-        f'<a class="gm-home-source" href="{esc(source["url"])}">Original article ↗</a></div></div>')
+        f'<a class="gm-home-source" href="{esc(source["url"])}">{("Pinned repository" if repository else "Original article")} ↗</a></div></div>')
+  if repository:visual=visual.replace('ORIGINAL ARTICLE','SOURCE CODE REPOSITORY').replace('ORIGINAL SOURCE / DIRECT LINK','PINNED COMMIT / DIRECT LINK')
   return f'<article class="gm-card gm-home-card" data-category="{esc(r["category"])}" data-tags="{esc(" ".join(r["tags"]))}" data-date="{r["published"]}" data-rank="{r["rank"]}">'+visual+copy+'</article>'
  if source.get('kind')=='paper':
   if __package__:
@@ -156,9 +160,7 @@ def home_card(r,number,featured=False):
        f'<div class="gm-home-actions"><a class="gm-home-open" href="/{esc(r["slug"])}/">Open Reader →</a>'
        f'<a class="gm-home-source" href="{esc(source["url"])}">Original {esc(platform)} source ↗</a></div></div>')
  return f'<article class="gm-card gm-home-card" data-category="{esc(r["category"])}" data-tags="{esc(" ".join(r["tags"]))}" data-date="{r["published"]}" data-rank="{r["rank"]}">'+visual+copy+'</article>'
-def page(title,path,body,social_spec=None):
- raw='<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>'+esc(title)+' | GhostMesh Readers</title><meta name="description" content="Original analysis, explicit evidence and accountable judgment."><link rel="canonical" href="https://youtube.shareplane.malott.ai'+path+'"><link rel="icon" href="/favicon.svg">'+head()+'</head><body class="gm-catalog"><a class="gm-skip" href="#main">Skip to content</a>'+controls()+'<main id="main">'+body+'</main>'+footer(include_email=path!='/knowledge/')+'</body></html>'
- return social_cards.inject(raw,social_spec) if social_spec else raw
+def page(title,path,body):return '<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>'+esc(title)+' | GhostMesh Readers</title><meta name="description" content="Original analysis, explicit evidence and accountable judgment."><link rel="canonical" href="https://youtube.shareplane.malott.ai'+path+'"><link rel="icon" href="/favicon.svg">'+head()+'</head><body class="gm-catalog"><a class="gm-skip" href="#main">Skip to content</a>'+controls()+'<main id="main">'+body+'</main>'+footer(include_email=path!='/knowledge/')+'</body></html>'
 class LinkOnlySource(HTMLParser):
  def __init__(self,source_url):
   super().__init__(convert_charrefs=True);self.source_url=source_url;self.direct_link=False;self.violations=[]
@@ -208,6 +210,26 @@ def validate_article_source(raw,source):
  if source['updatedDate']<source['publicationDate']:raise ValueError('Article source update precedes publication')
  validate_link_only_source(raw,source['url'])
 
+def validate_repository_source(raw,source):
+ """A repository Reader links to an exact commit without executing or embedding code."""
+ expected={'kind','identity','url','repositoryUrl','repository','commit','title','authors','publisher','license','createdDate','commitDate','dateNote'}
+ if set(source)!=expected or source.get('kind')!='repository':raise ValueError('Repository source shape has missing or media-only fields')
+ if not re.fullmatch(r'[a-z0-9][a-z0-9-]{5,}',source.get('identity','')):raise ValueError('Repository identity invalid')
+ repo=source.get('repository','');commit=source.get('commit','')
+ if not re.fullmatch(r'[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+',repo) or not re.fullmatch(r'[0-9a-f]{40}',commit):raise ValueError('Repository identity or commit invalid')
+ base=f'https://github.com/{repo}'
+ if source.get('repositoryUrl')!=base or source.get('url')!=f'{base}/tree/{commit}':raise ValueError('Repository source must link to exact GitHub commit')
+ for key in ('title','authors','publisher','license','dateNote'):
+  if not isinstance(source[key],str) or not source[key].strip():raise ValueError('Repository bibliography incomplete')
+ parsed={}
+ for key in ('createdDate','commitDate'):
+  value=source.get(key)
+  if not isinstance(value,str) or not re.fullmatch(r'\d{4}-\d{2}-\d{2}',value):raise ValueError('Repository source date missing or invalid')
+  try:parsed[key]=date.fromisoformat(value)
+  except ValueError:raise ValueError('Repository source date missing or invalid')
+ if parsed['commitDate']<parsed['createdDate']:raise ValueError('Repository commit predates creation')
+ validate_link_only_source(raw,source['url'])
+
 class PaperViewerSource(HTMLParser):
  def __init__(self,pdf_url):
   super().__init__(convert_charrefs=True);self.pdf_url=pdf_url;self.frames=[];self.openers=[];self.pdf_fallback=False;self.violations=[]
@@ -253,8 +275,10 @@ def player_contract(raw,aspect,source_url,source_title=None):
 def projections():
  global READER_COUNT
  data=json.loads((ROOT/'content/catalog.json').read_text());validate_text(data)
- social_record=social_cards.approval(ROOT)
- social_specs=social_cards.specs(data,preview_base=social_record.get('previewBaseUrl'))
+ scout=validate_scout(json.loads((ROOT/'content/scout-public.json').read_text()))
+ editions=validate_editions(json.loads((ROOT/'content/scout-editions.json').read_text()),scout)['editions']
+ release_events=validate_events(json.loads((ROOT/'content/public-release-events.json').read_text()),data,scout)
+ research=validate_research(json.loads((ROOT/'content/scout-research.json').read_text()),scout,release_events,ROOT)
  readers=sorted(data['readers'],key=lambda r:(r['published'],r['slug']),reverse=True)
  READER_COUNT=len(readers)
  for r in readers:r['rank']=r['editorialOrder']
@@ -277,6 +301,7 @@ def projections():
     raw=raw.replace('<!--GM_BRIEF-->',share+'<!--GM_BRIEF-->',1).replace('</body>','<script src="/assets/reader-share.js" defer></script></body>',1)
   if r['source'].get('kind')=='paper':validate_paper_source(raw,r['source'])
   elif r['source'].get('kind')=='article':validate_article_source(raw,r['source'])
+  elif r['source'].get('kind')=='repository':validate_repository_source(raw,r['source'])
   else:
    validate_media_source(r['source'])
    raw=player_contract(raw,r['source'].get('mediaAspect'),r['source']['url'],r['source'].get('title'))
@@ -338,7 +363,7 @@ def projections():
    raw=raw.replace('</main>',share+'</main>',1)
    if '/assets/reader-share.js' not in raw:
     raw=raw.replace('</body>','<script defer src="/assets/reader-share.js"></script></body>',1)
-  out[f'{r["slug"]}/index.html']=social_cards.inject(raw,social_specs[f'/{r["slug"]}/'])
+  out[f'{r["slug"]}/index.html']=raw
   receipt=dict(r.get('legacyReceipt') or {'schema':'ghostmesh-reader-receipt-v2','source':r['source'],'custody':{'status':'historical-public-account-only','note':'No private source pack was opened or reverified during normalization. See original provenance on the Reader.'}})
   receipt['normalization']={k:v for k,v in r.items() if k not in ['legacyReceipt','rank']}
   receipt.setdefault('editorial',{}).update({k:r[k] for k in ['overview','whyItMatters','ghostMeshTakeaway']})
@@ -385,15 +410,15 @@ def projections():
               '<p><a href="/knowledge/#how-to-read">Inspect the evidence labels ↗</a><small>These counts describe claim-register entries, not a verification score or a tally of false claims.</small></p></div>'
               '<aside class="gm-shorthand"><div><span>PROPOSED ARCHITECTURE SHORTHAND / FOR REVIEW</span><h3>Context. Continuity. Control.</h3></div>'
               '<p>The public Reader record is a semantic layer: it keeps source, claim and qualification connected across revisions. That context can inform future agentic work, while authority to act stays with people. This is a proposed description, not a claim that an estate-wide agent or search system is live.</p></aside></section>')
- out['index.html']=page('The algorithm got your attention. Did the argument earn it?','/',home_intro+home_readers+home_browse+home_method,social_specs['/'])
- home=out['index.html'];legacy='<details class="gm-legacy"><summary>Earlier video bookmarks</summary><ul>'+''.join('<li id="'+esc(r['source'].get('videoId') or r['source'].get('shortcode',''))+'"><a href="/'+r['slug']+'/">'+esc(r['title'])+'</a></li>' for r in readers if r['source'].get('kind') not in {'paper','article'})+'</ul></details>'
+ out['index.html']=page('The algorithm got your attention. Did the argument earn it?','/',home_intro+home_readers+home_browse+home_method)
+ home=out['index.html'];legacy='<details class="gm-legacy"><summary>Earlier video bookmarks</summary><ul>'+''.join('<li id="'+esc(r['source'].get('videoId') or r['source'].get('shortcode',''))+'"><a href="/'+r['slug']+'/">'+esc(r['title'])+'</a></li>' for r in readers if r['source'].get('kind') not in {'paper','article','repository'})+'</ul></details>'
  home=home.replace('<body class="gm-catalog">','<body class="gm-catalog" id="home">').replace('<h2>Continue reading</h2>','<h2 id="readers-title">Continue reading</h2>')
  destinations=('<section id="about" class="gm-home-about"><div><p class="gm-kicker">04 / Why this exists</p><h2 id="about-title">Why I built it.</h2><p class="gm-about-side">A public reading practice for an age of compressed certainty.</p></div>'
                '<div><p>I built this surface to slow the jump from a persuasive source to a settled conclusion. The original stays one click away; my reading sits beside it, with claim-level corroboration, counterevidence, unverified labels and sanitized handling receipts you can inspect.</p>'
                '<p>GhostMesh is Tony Malott’s AI identity and collaboration, research and learning system. These deconstructions are one public editorial surface within it. They are independent interpretations, not endorsements by a source’s creator or publisher.</p>'
                '<p class="gm-authority">GhostMesh can help organize a reading, but it does not make the decision for you. People remain accountable for what is published and for any action taken from it.</p>'
-               '<div class="gm-source-scope"><p><strong>Available now</strong> Published videos, research papers and original written articles, each with a direct original link and visible evidence limits.</p>'
-               '<p><strong>Proposed future inputs</strong> Websites, repositories, Reddit threads, other article forms and viewpoints require their own source, rights and review contracts. None is indexed as a live Reader input here.</p></div></div></section>'
+               '<div class="gm-source-scope"><p><strong>Available now</strong> Published videos, research papers, written articles and pinned public repositories, each with a direct original link and visible evidence limits.</p>'
+               '<p><strong>Proposed future inputs</strong> Other websites, Reddit threads and viewpoints require their own source, rights and review contracts. None is indexed as a live Reader input here.</p></div></div></section>'
                '<section id="ecosystem"><div class="gm-section-heading"><div><p class="gm-kicker">05 / Connected destinations</p><h2 id="ecosystem-title">A wider mesh, with clear boundaries.</h2></div><p>These public destinations answer different questions. This site does not search or merge their content.</p></div>'
                '<div class="gm-destinations">'
                '<a class="gm-destination gm-destination-ghostmesh" href="https://ghostmesh.ai/">'
@@ -418,31 +443,40 @@ def projections():
   from . import catalog_design
  else:
   import catalog_design
- out['readers/index.html']=page('The Reader library','/readers/',catalog_design.archive(readers,CATEGORIES),social_specs['/readers/']).replace('</head>','<link rel="stylesheet" href="/assets/catalog-design.css"></head>')
+ out['readers/index.html']=page('The Reader library','/readers/',catalog_design.archive(readers,CATEGORIES)).replace('</head>','<link rel="stylesheet" href="/assets/catalog-design.css"></head>')
  for i,c in enumerate(CATEGORIES):
-  route=f'/readers/categories/{i}/'
-  out[f'readers/categories/{i}/index.html']=page(c,route,catalog_design.category(readers,CATEGORIES,c),social_specs[route]).replace('</head>','<link rel="stylesheet" href="/assets/catalog-design.css"></head>')
+  out[f'readers/categories/{i}/index.html']=page(c,f'/readers/categories/{i}/',catalog_design.category(readers,CATEGORIES,c)).replace('</head>','<link rel="stylesheet" href="/assets/catalog-design.css"></head>')
  out['readers/index.html']=out['readers/index.html'].replace('all 13 Readers',f'all {len(readers)} Readers').replace('>13 Readers<',f'>{len(readers)} Readers<')
- out['map/index.html']=page('Reader relationship map','/map/',relationship_map(readers,byid),social_specs['/map/']).replace('</head>','<link rel="stylesheet" href="/assets/map-design.css"></head>').replace('<body class="gm-catalog">','<body class="gm-catalog gm-map-page">')
+ out['map/index.html']=page('Reader relationship map','/map/',relationship_map(readers,byid)).replace('</head>','<link rel="stylesheet" href="/assets/map-design.css"></head>').replace('<body class="gm-catalog">','<body class="gm-catalog gm-map-page">')
  if __package__:
   from .map_design import relationship_graph
  else:
   from map_design import relationship_graph
  out['map/relationships.json']=dump(relationship_graph(readers,byid,data['host']))
- urls=['/','/readers/','/map/','/knowledge/']+['/'+r['slug']+'/' for r in readers]+[f'/readers/categories/{i}/' for i in range(len(CATEGORIES))]
+ def scout_page(title,url,body):
+  return page(title,url,body).replace('</head>','<link rel="stylesheet" href="/assets/scout.css"></head>')
+ latest=max(editions,key=lambda edition:(edition['reviewedOn'],edition['id']))
+ out['scout/index.html']=scout_page('Scout','/scout/',scout_home(scout,latest,research))
+ out['scout/archive/index.html']=scout_page('Scout review library','/scout/archive/',archive_page(scout))
+ out['scout/research/index.html']=scout_page('Scout Research Library','/scout/research/',research_page(research))
+ out['scout/method/index.html']=scout_page('How Scout works','/scout/method/',method_page((ROOT/'content/scout/method.md').read_text()))
+ for edition in editions:
+  url=edition_url(edition)
+  out[url.strip('/')+'/index.html']=scout_page(edition['title'],url,edition_page(edition,scout,(ROOT/'content/scout/editions'/f'{edition["id"]}.md').read_text()))
+ for review in scout['reviews']:
+  url=review_url(review)
+  out[url.strip('/')+'/index.html']=scout_page(review['title'],url,review_page(review,(ROOT/'content/scout/reviews'/f'{review["id"]}.md').read_text()))
+ out['feed.xml']=feed_xml(release_events,data['host'])
+ urls=['/','/readers/','/map/','/knowledge/','/scout/','/scout/archive/','/scout/research/','/scout/method/','/scout/essays/']+[record['url'] for record in research['records']]+[edition_url(edition) for edition in editions]+['/'+r['slug']+'/' for r in readers]+[f'/readers/categories/{i}/' for i in range(len(CATEGORIES))]
  out['sitemap.xml']='<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'+''.join('<url><loc>'+data['host']+u+'</loc></url>' for u in sorted(urls))+'</urlset>\n'
  out['404.html']=page('Page not found','/404.html','<h1>That page is not here.</h1><p><a href="/readers/">Browse the complete Reader library</a> or return to the <a href="/">homepage</a>.</p>')
- out.update(social_cards.asset_outputs(data,social_record.get('previewBaseUrl')))
  return out
 if __name__=='__main__':
  outputs=projections();bad=[]
  for rel,content in outputs.items():
   p=SITE/rel
   if '--check' in sys.argv:
-   if not p.exists() or (p.read_bytes() if isinstance(content,bytes) else p.read_text())!=content:bad.append(rel)
-  else:
-   p.parent.mkdir(parents=True,exist_ok=True)
-   if isinstance(content,bytes):p.write_bytes(content)
-   else:p.write_text(content)
+   if not p.exists() or p.read_text()!=content:bad.append(rel)
+  else:p.parent.mkdir(parents=True,exist_ok=True);p.write_text(content)
  if bad:print('Generated projections drift: '+', '.join(bad));sys.exit(1)
  print('PASS: '+str(len(outputs))+' deterministic projections'+(' checked' if '--check' in sys.argv else ' generated'))
