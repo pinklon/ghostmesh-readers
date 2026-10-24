@@ -4,10 +4,10 @@
   "sourceId": "deepseek-ai-deepinfer-774ce244",
   "sourceDigest": "0623457690a2f9e84d3adff67abc47b92dcc8d92d692e0a2c4908f06d033c5da",
   "sourceAidSha256": "904289606d33e1d950d19e260c7d921aee462831f2d44dd9d55b1fe767bc2d55",
-  "articleSha256": "4d1e11134a655828b60e42002365ddf73a7e8acda48cf846805381b854dd05c7",
+  "articleSha256": "ccbcff552360042cb315791f8de27caac9199035dc34c39b1f0dc919a4c74654",
   "evidenceRevision": "6a62f69aba7f86ae9e146326ded3ca6f61f7c1e8ede4c5afdcfd4ee34078eaf7",
   "sourceMapEvidenceSha256": "c901cbf96d828e65cc9e0b463fc652e6d783470f162b4c3d9377c08a10d962b3",
-  "reviewEvidenceSha256": "d6654cc4eefa650786302e2023554f72b5dd86f3466cc6598a12856438303f65",
+  "reviewEvidenceSha256": "cead56e56c05c9d83e9c5ded32a234b6e8a7734e89ba6363da82cb921b6fbdd2",
   "candidateAuthor": "pinklon",
   "complexity": {
     "tier": "extended",
@@ -107,11 +107,11 @@
   },
   "independentCorroboration": "none",
   "ownerDecision": {
-    "pullNumber": 54,
-    "commentId": 6379501764
+    "pullNumber": 82,
+    "commentId": null
   },
   "decision": "accept",
   "gaps": [],
-  "decisionRationale": "Tony qualitatively accepted the exact previewed article after independent source and copy review found no remaining defect. The direct authenticated GitHub acceptance marker and a separate exact-head production release decision are still pending.",
-  "assessedAt": "2026-10-21T05:10:39Z"
+  "decisionRationale": "A genuine independent focused review accepted the exact style-only HTML amendment for owner review; all 112 visible text segments and substantive source evidence are unchanged. Tony’s new direct PR82 GitHub marker and separate exact-head production release decision remain pending.",
+  "assessedAt": "2026-10-24T11:32:11Z"
 }

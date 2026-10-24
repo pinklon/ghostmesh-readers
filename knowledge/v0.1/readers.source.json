@@ -504,7 +504,7 @@
       "provenance": {
         "sourceNodeId": "urn:ghostmesh-readers:reader:the-engine-is-not-the-service",
         "locator": "#scope",
-        "sourceFileSha256": "7372230dabe4b39693f0e64584a1acbc1b60f243cb380553a510b5f960d7687d",
+        "sourceFileSha256": "3147268b3cf47bfd9883f28c551408bbf6788ee577f4882263f7e2910021ca0a",
         "quoteSha256": "bfa05fcb520298ba0530f1f3dad1dc0affbc814532745a4fe296f4903ff2259c"
       }
     },
@@ -517,7 +517,7 @@
       "url": "https://youtube.shareplane.malott.ai/the-engine-is-not-the-service/",
       "source": {
         "path": "site/the-engine-is-not-the-service/index.html",
-        "sha256": "7372230dabe4b39693f0e64584a1acbc1b60f243cb380553a510b5f960d7687d"
+        "sha256": "3147268b3cf47bfd9883f28c551408bbf6788ee577f4882263f7e2910021ca0a"
       }
     },
     {
@@ -598,7 +598,7 @@
       "provenance": {
         "sourceNodeId": "urn:ghostmesh-readers:reader:the-engine-is-not-the-service",
         "locator": "#scope",
-        "sourceFileSha256": "7372230dabe4b39693f0e64584a1acbc1b60f243cb380553a510b5f960d7687d",
+        "sourceFileSha256": "3147268b3cf47bfd9883f28c551408bbf6788ee577f4882263f7e2910021ca0a",
         "quoteSha256": "bfa05fcb520298ba0530f1f3dad1dc0affbc814532745a4fe296f4903ff2259c"
       }
     }
