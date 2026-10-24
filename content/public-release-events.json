@@ -2,6 +2,15 @@
   "schema": "ghostmesh-public-release-events-v1",
   "events": [
     {
+      "id": "reader:the-fleet-needs-a-control-plane:first-public-release",
+      "kind": "new-reader",
+      "subjectId": "reader:the-fleet-needs-a-control-plane",
+      "url": "https://youtube.shareplane.malott.ai/the-fleet-needs-a-control-plane/",
+      "title": "The Fleet Needs a Control Plane",
+      "summary": "A reading of Orca's parallel coding-agent interface that tests file isolation against shared effects, operator attention and recovery.",
+      "publicDate": "2026-10-24"
+    },
+    {
       "id": "reader:the-missing-step-is-not-more-intelligence:first-public-release",
       "kind": "new-reader",
       "subjectId": "reader:the-missing-step-is-not-more-intelligence",
