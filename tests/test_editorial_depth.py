@@ -133,6 +133,12 @@ class EditorialDepthGate(unittest.TestCase):
     def test_long_form_fixture_with_owner_acceptance_after_retained_findings_is_admitted(self):
         self.assertEqual([], validate_reader(self.root, self.reader))
 
+    def test_local_only_skips_remote_owner_lookup_but_default_still_requires_it(self):
+        with patch("editorial_depth._authenticated_owner_decision_errors", side_effect=RuntimeError("remote invoked")):
+            self.assertEqual([], validate_reader(self.root, self.reader, verify_owner_remote=False))
+            with self.assertRaisesRegex(RuntimeError, "remote invoked"):
+                validate_reader(self.root, self.reader)
+
     def test_schema_complete_but_reviewer_rejected_superficial_argument_is_held(self):
         self.receipt["decision"] = "revise"
         self.receipt["gaps"] = [{"type": "synthesis", "severity": "blocking", "rationale": "The sections repeat the episode's talking points without testing the consequential inference."}]

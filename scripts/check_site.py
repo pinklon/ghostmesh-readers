@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Offline publication gates: projections, evidence mapping, routes and public boundary."""
+"""Publication gate: local static checks plus remote owner approval verification."""
 from pathlib import Path
 from html.parser import HTMLParser
 from urllib.parse import urlsplit,unquote
@@ -60,7 +60,7 @@ class Page(HTMLParser):
   if t in ('script','style'):self.hide-=1
  def handle_data(self,d):
   if not self.hide:self.text.append(d)
-def check(root=ROOT):
+def check(root=ROOT, *, local_only=False):
  site=root/'site';errors=[]
  event_pr=None
  if os.environ.get('GITHUB_EVENT_NAME')=='pull_request':
@@ -119,7 +119,8 @@ def check(root=ROOT):
   require(re.findall(r'data-start="(\d+)"',raw)==old.get('chapterStarts',[]),'Chapter timestamps drift: '+old['slug'])
  for r in readers:
   slug=r['slug'];p=site/slug/'index.html';raw=p.read_text();a=pages[p]
-  errors.extend(validate_editorial_depth(root,r,event_pr=event_pr,require_merged=require_merged))
+  errors.extend(validate_editorial_depth(root,r,event_pr=event_pr,require_merged=require_merged,
+                                        verify_owner_remote=not local_only))
   timestamp(r['updated'],slug+' updated')
   try:date.fromisoformat(r['published'])
   except ValueError:errors.append(slug+': invalid publication date')
@@ -227,7 +228,15 @@ def check(root=ROOT):
   for rel,content in projections().items():require((site/rel).read_text()==content,'Generated drift: '+rel)
  return errors
 if __name__=='__main__':
- errors=check()
+ local_only=sys.argv[1:]==['--local']
+ if sys.argv[1:] and not local_only:
+  print('Usage: python3 scripts/check_site.py [--local]');sys.exit(2)
+ if local_only and os.environ.get('GITHUB_ACTIONS')=='true':
+  print('FAIL: --local cannot qualify a GitHub Actions release gate');sys.exit(2)
+ errors=check(local_only=local_only)
  for e in errors:print('FAIL:',e)
  if errors:sys.exit(1)
- print('PASS: all Readers, projections, evidence mapping, relationships, URLs, sitemap, editorial text and public boundary')
+ if local_only:
+  print('PASS: LOCAL STATIC CHECK ONLY; NOT RELEASE QUALIFIED; authenticated GitHub owner decisions were NOT verified')
+ else:
+  print('PASS: all Readers, projections, evidence mapping, relationships, URLs, sitemap, editorial text and public boundary')

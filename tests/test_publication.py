@@ -5,6 +5,12 @@ from unittest.mock import patch
 ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT/'scripts'))
 from check_site import check
 class PublicationGate(unittest.TestCase):
+ def test_local_cli_cannot_masquerade_as_release_in_ci(self):
+  import os
+  with patch.dict(os.environ, {'GITHUB_ACTIONS':'true'}):
+   result=subprocess.run([sys.executable,'-B',str(ROOT/'scripts/check_site.py'),'--local'],capture_output=True,text=True,env=os.environ.copy())
+  self.assertEqual(2,result.returncode)
+  self.assertIn('cannot qualify a GitHub Actions release gate',result.stdout)
  def setUp(self):
   self.tmp=tempfile.TemporaryDirectory();self.root=Path(self.tmp.name)
   for name in ['site','content','docs']:shutil.copytree(ROOT/name,self.root/name)

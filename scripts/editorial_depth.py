@@ -222,7 +222,8 @@ def _authenticated_owner_decision_errors(root: Path, reader: dict, receipt: dict
 
 
 def validate_reader(root: Path, reader: dict, *, release: bool = True,
-                    event_pr: int | None = None, require_merged: bool = False) -> list[str]:
+                    event_pr: int | None = None, require_merged: bool = False,
+                    verify_owner_remote: bool = True) -> list[str]:
     """Validate one candidate or an unchanged, explicitly listed historical page."""
     slug = reader["slug"]
     article_path = root / "content" / "readers" / f"{slug}.html"
@@ -402,8 +403,9 @@ def validate_reader(root: Path, reader: dict, *, release: bool = True,
     if release and receipt.get("decision") == "accept" and not any("binding mismatch" in error for error in errors):
         if not isinstance(review_evidence, dict) or review_evidence.get("conclusion") != "accept-for-owner-review":
             errors.append(f"{slug}: retained qualitative findings do not support owner acceptance")
-        errors.extend(_authenticated_owner_decision_errors(root, reader, receipt, review_evidence,
-                                                           event_pr=event_pr, require_merged=require_merged))
+        if verify_owner_remote:
+            errors.extend(_authenticated_owner_decision_errors(root, reader, receipt, review_evidence,
+                                                               event_pr=event_pr, require_merged=require_merged))
     gaps = receipt["gaps"]
     if not isinstance(gaps, list) or any(not isinstance(g, dict) or set(g) != {"type", "severity", "rationale"} or g.get("type") not in GAP_TYPES or g.get("severity") not in {"blocking", "nonblocking"} or not _reasoned(g.get("rationale")) for g in gaps):
         errors.append(f"{slug}: typed editorial gaps invalid")
