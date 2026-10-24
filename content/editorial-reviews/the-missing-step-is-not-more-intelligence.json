@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "readerId": "reader:the-missing-step-is-not-more-intelligence",
+  "sourceId": "wsj-hassabis-cohen-2026",
+  "sourceAidSha256": "4c578a9981549a08852d1f43a9158a5786c2c26c850b50218856d52c2112aace",
+  "articleSha256": "7620a6de8cc44db4ddbb35dc12a8a1ad7d93c8a988f8fc2d4fc7c19d2af3aa61",
+  "evidenceRevision": "1b2b852e3649721600fb66134ad9bd4f97a9f0a2b6757923e7e629c8e53ea0fb",
+  "reviewedAt": "2026-10-24T12:35:41Z",
+  "provenance": {
+    "kind": "codex-task-agent",
+    "reference": "Native Task9 independent read-only review of clean commit 334d6ea7285732ed33135bf5bdc25734475eaa22, tree db06e623ce1b6ca976d85c4a761492646607417a, against base 604ab5eec0fc6c3e4fc3bcfbfbf3da54c5c7e7f2. Complete binary Git diff SHA256 d4c2c85874e62d3ce33e280a2e302c4bc67c749fd25c52db5f8f9687acfaf430, 107 changed paths. Reviewer did not edit publisher-owned source or receipts.",
+    "limits": "Compared the retained owner-prose lock rather than rereading Slack. The verified source aid is a limited access note, not a complete original WSJ archive. The credited Mint partner edition and cited public primary materials were inspected; complete original WSJ byte parity, forecast validity, experimental results, clinical benefit and enforceable oversight were not independently established. Producer browser results of 14.50/16.62 contrast and no overflow were not independently replayed. No hosted preview, owner GitHub marker, release acceptance or deployment is attested."
+  },
+  "summary": "No actionable introduced P1/P2 findings in the exact local candidate. All 22 locked analysis blocks are preserved; attribution, source-access limits and publication HOLD remain explicit. This is bounded source review, not release approval.",
+  "findings": [
+    "Independently compared all 22 ordered prose and heading blocks in authored and generated HTML with the retained lock SHA256 d3fa9758c190c120495e5dfa193a68afa936fd78358ca31ac7bd30a5bcdddb89. Ordered block-array SHA256 is 73ec70e5a5b327ec9796ef3b7db5b4e5022c91cc7d94214af390316a3fa0871e. Only delivery/private-draft labels and separate source-link lines are omitted; no substantive prose compression was found.",
+    "The source panel distinguishes the original WSJ profile from its credited readable Mint partner edition. Reported AGI timing, the proposed Einstein challenge, drug-discovery ambitions and proposed oversight retain attribution. The public endnote discloses unavailable complete original text; no original-full-byte parity is claimed.",
+    "EMBL-EBI supports bounded high-confidence AlphaFold2 accuracy with limits. Google cognitive-framework material supports held-out tests and representative human baselines. Isomorphic reports intermediate computational, wet-lab and preclinical progress; DeepMind publishes capability thresholds and safety-case review procedures. The article does not convert these into verified AGI timing, patient benefit or independently binding governance. GhostMesh architecture claims are expressly arguments, with stalled handoffs acknowledged as a counterexample.",
+    "Seven catalog claims and five written-source map sections distinguish source roles and epistemic limits. Source-map SHA256 is 26131c2f8e49d06ba793ef99313c024861b15c7ae6ee3420529de8fd563d5b1f. Section anchors and original-profile/supporting links are coherent. The canonical route is /the-missing-step-is-not-more-intelligence/; generated article SHA256 is 11defa7d4eabdfa03b8ae24504395af18312ae004ffef4c5bf94e3d8d10fe970.",
+    "All 34 pre-existing Reader HTML pages are byte-identical after only the public search-count label changes from 34 to 35. Existing catalog records and public receipts additionally refresh relationship-review catalog size and rationale; map nodes carry that same review update. All 72 existing map edges are unchanged. Existing knowledge node and relationship changes are source-hash rebinding, with the new Reader node added. This broader deterministic metadata refresh is not represented as count-label-only source scope.",
+    "No substantial republished source passage, private source-aid contents, private local path or raw Slack payload was found in the public Reader. New CSS uses scoped gm-essay selectors and shared theme tokens; no shared theme JavaScript change or unrelated Reader styling change is introduced. Browser execution and contrast values remain producer-attributed.",
+    "Independent execution PASS: all 122 Python unittest methods, focused locked-prose test, 93 deterministic site projections, eight deterministic knowledge outputs with schema/hash/provenance/privacy checks, and git diff --check. Publisher checkout remained clean at the exact reviewed head after these checks.",
+    "scripts/check_site.py --local returned exit 1 with the explicit new Reader editorial-release-held message. The qualitative decision remains hold and ownerDecision has no PR/comment binding. This expected refusal is recorded as a release gate, not a passing release check or a source defect. Hosted preview/UAT and exact owner editorial acceptance remain required through the incumbent publication workflow."
+  ],
+  "conclusion": "accept-for-owner-review"
+}
