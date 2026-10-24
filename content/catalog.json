@@ -12366,12 +12366,12 @@
         }
       },
       "review": {
-        "status": "independent-bounded-source-and-copy-reviewed; owner-acceptance-pending",
+        "status": "independent-bounded-source-and-copy-reviewed; direct-owner-acceptance-pending",
         "reviewer": "Independent read-only Codex editorial reviewer",
         "reviewedSourceHead": "Exact authored article SHA-256 7620a6de8cc44db4ddbb35dc12a8a1ad7d93c8a988f8fc2d4fc7c19d2af3aa61",
-        "checkedAt": "2026-10-24T12:25:56Z",
-        "scope": "Locked owner prose parity, accessible WSJ preview and credited partner edition, dated primary references, claim limits, source map, copyright and privacy; local visual checks inspected within stated coverage.",
-        "findings": "No blocking factual, attribution, copyright or privacy issue found. All 22 locked analysis blocks are unchanged. A focused final pass confirmed one correct original WSJ link in each of five mapped sections. Complete original WSJ HTML was not independently compared with the partner edition; owner acceptance and hosted preview remain pending."
+        "checkedAt": "2026-10-24T12:35:41Z",
+        "scope": "Independent exact-article and source-map review, locked prose parity, credited partner reporting, primary-reference boundaries and public-source privacy; producer browser evidence was not independently replayed.",
+        "findings": "No actionable factual, attribution, copyright or privacy finding. All 22 locked analysis blocks remain unchanged. Complete original WSJ HTML was not compared; direct GitHub owner marker and exact-head release decision remain separate."
       },
       "revisionHistory": [
         {

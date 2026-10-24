@@ -7,7 +7,7 @@
   "articleSha256": "7620a6de8cc44db4ddbb35dc12a8a1ad7d93c8a988f8fc2d4fc7c19d2af3aa61",
   "evidenceRevision": "1b2b852e3649721600fb66134ad9bd4f97a9f0a2b6757923e7e629c8e53ea0fb",
   "sourceMapEvidenceSha256": "26131c2f8e49d06ba793ef99313c024861b15c7ae6ee3420529de8fd563d5b1f",
-  "reviewEvidenceSha256": "13da09c6fefdc32d1d3581a67e17820126fa4de3b344cd17772d5b051d231f47",
+  "reviewEvidenceSha256": "8f927a64d412bfceecf4e12d69df7255d36fc9c257d610f3a28e7ab9ce61cfea",
   "candidateAuthor": "pinklon",
   "complexity": {
     "tier": "extended",
@@ -105,10 +105,10 @@
   },
   "independentCorroboration": "none",
   "ownerDecision": {
-    "pullNumber": null,
+    "pullNumber": 83,
     "commentId": null
   },
-  "decision": "hold",
+  "decision": "accept",
   "gaps": [
     {
       "type": "source",
@@ -116,6 +116,6 @@
       "rationale": "The complete original WSJ HTML was not independently compared with the credited readable partner edition; exact original-only wording should remain outside claims until accessible."
     }
   ],
-  "decisionRationale": "The independent bounded source and copy review, including its final five-link check, found no blocking factual or privacy defect in the exact authored article. Tony has not yet reviewed this candidate in a hosted preview or posted a direct GitHub hash marker, so release remains held.",
-  "assessedAt": "2026-10-24T12:25:56Z"
+  "decisionRationale": "The independent read-only review of the exact unchanged article, mapped public evidence and source limits found no blocking factual or privacy issue. Tony supplied and approved the locked analysis; authenticated acceptance of these exact PR bytes by his direct GitHub comment remains required before release.",
+  "assessedAt": "2026-10-24T13:42:09Z"
 }
