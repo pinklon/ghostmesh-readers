@@ -5,7 +5,7 @@ This inventory distinguishes **source-committed public copy** from **production 
 
 ## A. Public editorial works: 9 confirmed source records
 
-All nine source files exist in `pinklon/ghostmesh-readers`. The three review URLs are generated from `content/scout-public.json`; the six essays have committed static HTML and retained editorial drafts. They enter the proposed unified index in draft PR #72, not yet merged at the time of this inventory.
+All nine source files exist in `pinklon/ghostmesh-readers`. The three review URLs are generated from `content/scout-public.json`; the six essays have committed static HTML and retained editorial drafts. They entered the unified public index through merged PR #72. The main-branch index and nine public routes were verified after that release.
 
 | Stable public ID | Title | Source of record | Public route | Disposition |
 | --- | --- | --- | --- | --- |
@@ -25,7 +25,7 @@ The six publication drafts are retained editorial source counterparts, **not six
 
 | Evidence | What it proves | Next disposition |
 | --- | --- | --- |
-| `content/scout/method.md` and `site/scout/method/index.html` | Existing roughly 484-word public method page covers a narrow GitHub repository scanner, its explicit priorities, review limits and re-review protocol | Expand into a comprehensive method guide; preserve the narrower scanner description as one component |
+| `content/scout/method.md` and `site/scout/method/index.html` | Expanded public method page now covers distinct acquisition lanes, source provenance, evidence levels, experiment boundaries, and explicit unknowns | Published through PR #74 on October 23, 2026; retain and update the evidence status distinctions |
 | `content/scout/editions/2026-10-22-first-look.md` | First dated three-review edition; organizing wrapper, not a fourth independent investigation | Keep existing URL and list as an edition, outside the nine-work count |
 | `content/scout/publication-drafts/02-follow-the-work-not-the-follower-count.md` | Detailed 12-stream pilot, 36-lead capped sample, familiar/outside-vocabulary lanes, evidence ladder and limitations, as editorially described | Primary narrative source for new method guide; verify each operational assertion before claiming it is still current |
 | `content/scout/publication-drafts/03-five-ideas-outside-the-filter.md` | Published editorial account of corrected 21-item comparison with significant selection limits | Use for an experiments ledger summary; do not invent raw cohort evidence |
@@ -50,13 +50,13 @@ No public repository evidence establishes the total size of the owner-private hi
 
 ## D. Next substantive publication tranche
 
-1. **Method guide:** `How GhostMesh Scout Actually Researches`. Explain the distinct public repo scanner, broader 12-stream research pilot, first-party provider watch, acquisition limits, source versioning, normalization/deduplication, outside-vocabulary sampling, evidence ladder, counterevidence, source injection boundary, uncertainty, human authorization, revision receipts and publication. Include concrete examples and distinguish implemented/tested from proposed/unverified. Source-lock narrative against the public essays and method docs.
-2. **Research journal:** a dated, openly qualified index of specific experiments and comparisons. Start from the already published 21-item and synthetic-stopping narratives, link to existing essays, and include new raw-result appendices only when independently reconciled and public-safe.
+1. **Method guide:** `How GhostMesh Scout Actually Researches` is published at `/scout/method/` through PR #74. Future amendments should preserve the distinct acquisition lanes, source versioning, deduplication, outside-vocabulary selection, evidence ladder, counterevidence, uncertainty, human authorization, and the distinction between implemented and proposed mechanisms.
+2. **Research journal:** an unpublished editorial draft is staged at `content/scout/publication-drafts/08-the-research-journal.md`. It cross-references the 21-item comparison and synthetic stopping experiments. A rendered public page and raw-result appendix remain HOLD pending evidence review, Creative Lock and owner approval.
 3. **Historical reconciliation:** inventory owner-private research by stable identifiers using a read-only custodian and a redacted classification worksheet. Emit counts by investigated, approved, published and withheld only when backed by inspected records. Never require Tony to manually classify all items or expose private files publicly.
 
 ## E. Release and ownership boundary
 
-- The current nine-work Research Library is in [draft PR #72](https://github.com/pinklon/ghostmesh-readers/pull/72), head `8688d53fe5badba19c4f0fed242a02746ba9aa51` at inventory time. Its GitHub checks and Netlify preview passed; **production merge and deployment are not asserted here**.
+- The nine-work Research Library was released via [merged PR #72](https://github.com/pinklon/ghostmesh-readers/pull/72), with production verification reported after merge. The expanded methodology was released through [merged PR #74](https://github.com/pinklon/ghostmesh-readers/pull/74), merge commit `2616079a74b8da06856de6a19b197455d2a5daf0`, and production content observed at `https://youtube.shareplane.malott.ai/scout/method/` on October 23, 2026.
 - Tony and segfault own the editorial thesis, source/counterevidence choice, exact public copy, relationship decisions and publication authorization. Mechanical execution may wire approved content into the static Netlify generator and run checks.
-- Open a separate draft publication PR for the new method guide and journal. No automatic public release, credential/identity changes, database, RAG or private source export. Preserve existing URLs.
+- The method guide is already published. The research journal remains an editorial draft; later public rendering requires a separate owner-locked release and exact-head authorization. No automatic public release, credential/identity changes, database, RAG or private source export. Preserve existing URLs.
 - Acceptance: source provenance and status table, genuine counterexamples, all material unknowns, full CI, exact-head Netlify preview, desktop/mobile UAT, then Tony's exact-head merge approval. Record production HTTP verification separately.
