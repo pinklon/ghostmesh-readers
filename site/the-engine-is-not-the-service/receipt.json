@@ -358,12 +358,12 @@
       "rationale": "Compared the pinned DeepInfer source with all 32 existing Readers. Three specific routes link performance-to-product interpretation, local service-control boundaries and inference service economics. Other topic overlap does not establish independent corroboration or a shared empirical result. The later HORTRAME film was also compared; its visual swarm and mathematical references do not establish a further serving relationship."
     },
     "review": {
-      "status": "independent-source-and-copy-reviewed; owner-acceptance-pending",
+      "status": "independent-style-amendment-reviewed; owner-acceptance-pending",
       "reviewer": "Independent read-only Codex editorial reviewer",
-      "reviewedSourceHead": "Exact authored article SHA-256 4d1e11134a655828b60e42002365ddf73a7e8acda48cf846805381b854dd05c7",
-      "checkedAt": "2026-10-21T04:36:01Z",
-      "scope": "Pinned private source capture, benchmark formulas, first-party metrics, catalog claims, source-map points, graph relations, prose depth and public/private boundary.",
-      "findings": "Four catalog citations were corrected to pinned file URLs. Source map was expanded to cover reference scores and operator-scale claims. Focused re-review found no remaining factual, attribution, graph or privacy defect; DeepSeek metrics remain unreplicated."
+      "reviewedSourceHead": "Exact authored article SHA-256 ccbcff552360042cb315791f8de27caac9199035dc34c39b1f0dc919a4c74654",
+      "checkedAt": "2026-10-24T11:29:08.695871Z",
+      "scope": "Focused style-only amendment, visible-word parity, theme contrast and exact-hash bindings; prior substantive source/copy/privacy review remains historical and no DeepInfer result was replicated.",
+      "findings": "Independent focused review found no introduced presentation, editorial-parity, evidence-rebinding or Reader-isolation defect at PR82 head 4cc9043. The old owner marker does not cover these HTML bytes; new direct owner acceptance remains pending."
     },
     "revisionHistory": [
       {
