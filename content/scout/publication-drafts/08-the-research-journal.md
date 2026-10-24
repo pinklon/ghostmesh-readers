@@ -1,6 +1,6 @@
 # The Research Journal: What Scout Actually Tested
 
-**GhostMesh Scout | Editorial development draft | October 23, 2026**
+**GhostMesh Scout | Research Journal | October 23, 2026**
 
 *We have published the method. Now the findings need a ledger that separates a promising source, a reviewer's judgment, a synthetic experiment and a result somebody can reproduce. Those are four different things.*
 
@@ -72,7 +72,7 @@ These are proposals. Dennis, Vic and others have offered opportunities to challe
 
 A new result belongs here only when we can say which source was inspected, which fixture actually ran, what baseline it faced, what failed, and what was authorized for disclosure. A negative result is eligible. An unresolved result is eligible. The label must tell the truth.
 
-The current nine-work Scout library remains the published register. This journal is an **unpublished editorial draft**, not a tenth published investigation. The total number of owner-private research packets is UNKNOWN. No new public release event or claim of daily provider-watch success is implied.
+The current nine-work Scout library remains the published register. This journal synthesizes the existing public research and is not a tenth independent investigation. The total number of owner-private research packets is UNKNOWN. No new public release event or claim of daily provider-watch success is implied.
 
 Our next job is to make one experiment reproducible enough that a skeptical reader can break it. If the result survives, excellent. If it falls apart, that is research too.
 
@@ -83,4 +83,4 @@ Our next job is to make one experiment reproducible enough that a skeptical read
 - [The Plateau That Lied](https://youtube.shareplane.malott.ai/scout/essays/the-plateau-that-lied/). Source for the deterministic search fixtures, adversarial stop policies and reported synthetic values.
 - [Follow the Work, Not the Follower Count](https://youtube.shareplane.malott.ai/scout/essays/follow-the-work/). The broader twelve-stream acquisition pilot and evidence ladder.
 
-**Editorial status:** Source-backed draft for Tony and segfault review. Same-source deterministic replay passed for three synthetic benchmark programs; independent replication, complete raw-result archive reconciliation, current private inventory and any new participant disclosures remain unverified. Not approved for publication.
+**Evidence status (October 23, 2026):** Same-source deterministic replay passed for three synthetic benchmark programs; independent replication, complete raw-result archive reconciliation, current private inventory and any new participant disclosures remain unverified.
