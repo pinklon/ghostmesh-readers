@@ -66,6 +66,29 @@ def validate_research(source, scout, events, root):
     return source
 
 
+def research_graph(source):
+    """Project only reviewed public Research Library identities and approved links."""
+    records = sorted(source['records'], key=lambda item: item['id'])
+    if any(item['status'] != 'published' for item in records):
+        raise ValueError('Nonpublic Scout research graph record')
+    by_id = {item['id']: item for item in records}
+    return {
+        'schema': 'ghostmesh-scout-research-relationships-v1',
+        'scope': 'Public Scout research reading routes; links are editorial, not corroboration.',
+        'authority': 'scout-research-curated-editorial',
+        'visibility': 'public',
+        'recordCount': len(records),
+        'relationshipCount': sum(len(item['relatedIds']) for item in records),
+        'nodes': [{'id': 'scout:' + item['id'], 'sourceId': item['id'],
+                   'type': item['type'], 'title': item['title'],
+                   'url': HOST + item['url']} for item in records],
+        'edges': [{'from': 'scout:' + item['id'], 'to': 'scout:' + target,
+                   'type': 'approved related work',
+                   'fromUrl': HOST + item['url'], 'toUrl': HOST + by_id[target]['url']}
+                  for item in records for target in item['relatedIds']],
+    }
+
+
 def research_page(source):
     records = sorted(source['records'], key=lambda r: (r['type'] != 'investigation', r['title'].lower()))
     types = sorted({r['type'] for r in records})
@@ -80,4 +103,4 @@ def research_page(source):
     return (nav() +
             '<section class="gm-scout-archive"><header><p class="gm-kicker">GhostMesh / Scout / Public research</p><h1>The work behind the signal.</h1><p>One public record for reviewed source investigations and original essays. Read the evidence, challenge the interpretation and keep the unknowns visible. Private collection, tentative leads and internal experiments are not published here.</p></header>'
             '<form id="scout-research-filters" class="gm-scout-filters" role="search"><label>Search research<input id="research-query" type="search" placeholder="An idea, source or method"></label><label>Type<select id="research-type"><option value="">All types</option>' + options(types) + '</select></label><label>Topic<select id="research-topic"><option value="">All topics</option>' + options(topics) + '</select></label><button type="reset">Clear filters</button></form>'
-            '<p id="research-count" role="status" aria-live="polite">' + str(len(cards)) + ' public works.</p><div id="research-results">' + ''.join(cards) + '</div></section><script src="/assets/scout-research.js" defer></script>')
+            '<p id="research-count" role="status" aria-live="polite">' + str(len(cards)) + ' public works.</p><p><a href="/scout/research/relationships.json">Download approved Scout research relationships JSON ↗</a></p><div id="research-results">' + ''.join(cards) + '</div></section><script src="/assets/scout-research.js" defer></script>')
