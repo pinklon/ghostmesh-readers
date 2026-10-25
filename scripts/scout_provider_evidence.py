@@ -136,13 +136,15 @@ def review_targets(candidates, current, registry):
         else:
             if source["format"] != "rss":
                 raise ValueError("Entry candidate is not from an official feed")
-            target_url = ensure_url(candidate.get("url"))
-            if urlsplit(target_url).hostname != urlsplit(source["url"]).hostname:
+            candidate_url = ensure_url(candidate.get("url"))
+            if urlsplit(candidate_url).hostname != urlsplit(source["url"]).hostname:
                 raise ValueError("Feed entry left its first-party source host")
             matches = [entry for entry in observation.get("entries", [])
                        if isinstance(entry, dict) and entry_key(source_id, entry) == ident]
-            if len(matches) != 1 or matches[0].get("title") != candidate.get("title"):
+            if (len(matches) != 1 or matches[0].get("title") != candidate.get("title")
+                    or matches[0].get("url") != candidate_url):
                 raise ValueError("Entry candidate does not match the observed feed")
+            target_url = matches[0]["url"]
             source_scope = "feed-entry-metadata-only"
         targets.append({"candidateId": ident, "sourceId": source_id,
                         "provider": source["provider"], "changeKind": candidate["kind"],

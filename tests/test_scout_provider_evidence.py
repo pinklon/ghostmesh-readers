@@ -131,6 +131,10 @@ class ProviderEvidenceTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             review_targets(bad, new, REGISTRY)
         bad = copy.deepcopy(candidates)
+        bad["candidates"][0]["url"] = "https://openai.com/index/other-story/"
+        with self.assertRaises(ValueError):
+            review_targets(bad, new, REGISTRY)
+        bad = copy.deepcopy(candidates)
         bad["candidates"][0]["id"] = "unbound"
         with self.assertRaises(ValueError):
             review_targets(bad, new, REGISTRY)
