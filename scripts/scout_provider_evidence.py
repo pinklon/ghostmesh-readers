@@ -28,7 +28,8 @@ class VisibleText(HTMLParser):
     """Extract bounded readable blocks, never a claim or an availability signal."""
 
     BLOCKS = {"h1", "h2", "h3", "p", "li"}
-    SKIP = {"script", "style", "noscript", "svg", "nav", "footer"}
+    SKIP = {"script", "style", "noscript", "svg", "nav", "footer", "template", "iframe"}
+    VOID = {"area", "base", "br", "col", "embed", "hr", "img", "input", "link", "meta", "param", "source", "track", "wbr"}
 
     def __init__(self):
         super().__init__(convert_charrefs=True)
@@ -38,15 +39,24 @@ class VisibleText(HTMLParser):
         self.blocks = []
 
     def handle_starttag(self, tag, attrs):
-        if tag in self.SKIP:
+        if self.skip:
+            if tag not in self.VOID:
+                self.skip.append(tag)
+            return
+        properties = dict(attrs)
+        style = re.sub(r"\s+", "", properties.get("style") or "").lower()
+        if (tag in self.SKIP or "hidden" in properties or "inert" in properties
+                or (properties.get("aria-hidden") or "").lower() == "true"
+                or "display:none" in style or "visibility:hidden" in style):
             self.skip.append(tag)
-        elif not self.skip and self.active is None and tag in self.BLOCKS:
+        elif self.active is None and tag in self.BLOCKS:
             self.active, self.parts = tag, []
 
     def handle_endtag(self, tag):
         if self.skip:
-            if tag == self.skip[-1]:
-                self.skip.pop()
+            if tag in self.skip:
+                while self.skip.pop() != tag:
+                    pass
             return
         if tag == self.active:
             value = " ".join(" ".join(self.parts).split())
@@ -140,7 +150,16 @@ def review_targets(candidates, current, registry):
     return targets
 
 
-def capture(candidates, current, registry, now=None, fetch_page=fetch):
+def fetch_context(source):
+    return fetch(source, include_final_url=True)
+
+
+def same_document(expected, actual):
+    a, b = urlsplit(expected), urlsplit(ensure_url(actual))
+    return (a.scheme, a.hostname, a.path.rstrip("/"), a.query) == (b.scheme, b.hostname, b.path.rstrip("/"), b.query)
+
+
+def capture(candidates, current, registry, now=None, fetch_page=fetch_context):
     targets = review_targets(candidates, current, registry)
     captured_at = now or datetime.now(timezone.utc).isoformat()
     records, cache = [], {}
@@ -148,8 +167,10 @@ def capture(candidates, current, registry, now=None, fetch_page=fetch):
         url = target["officialEvidenceUrl"]
         if url not in cache:
             try:
-                payload = fetch_page({"url": url})
-                cache[url] = {"captureSha256": sha256(payload).hexdigest(), "payload": payload}
+                payload, final_url = fetch_page({"url": url})
+                cache[url] = {"captureSha256": sha256(payload).hexdigest(), "payload": payload,
+                              "redirectStatus": "same-document" if same_document(url, final_url)
+                              else "DIFFERENT_SOURCE"}
             except Exception as exc:
                 cache[url] = {"captureStatus": "UNKNOWN", "errorType": type(exc).__name__,
                               "visibleExcerpt": ""}
@@ -158,7 +179,11 @@ def capture(candidates, current, registry, now=None, fetch_page=fetch):
         if "payload" in cached:
             excerpt = visible_excerpt(cached["payload"], target["excerptAnchors"])
             record.update(captureStatus="captured" if excerpt else "UNKNOWN",
-                          captureSha256=cached["captureSha256"], visibleExcerpt=excerpt)
+                          captureSha256=cached["captureSha256"], visibleExcerpt=excerpt,
+                          redirectStatus=cached["redirectStatus"])
+            if record["redirectStatus"] == "DIFFERENT_SOURCE":
+                record["captureStatus"] = "UNKNOWN"
+                record["visibleExcerpt"] = ""
         else:
             record.update(cached)
         if (target["sourceScope"] == "page-heading-change-only"

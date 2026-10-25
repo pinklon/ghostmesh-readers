@@ -2,7 +2,7 @@
 
 Issue [#69](https://github.com/pinklon/ghostmesh-readers/issues/69) needs a bridge from a changed feed item or page heading to a reviewable first-party source. `scripts/scout_provider_evidence.py` provides that bridge inside the existing daily Scout Provider Release Watch workflow. It creates a third, 30-day, review-only artifact named `scout-provider-evidence-<run-id>`.
 
-The script binds each candidate to the same run's observation and the six-source registry. RSS entry URLs must stay on the registered source host. A changed HTML heading is tied to the observed heading-window digest; a later change in the page bytes becomes `STALE_SOURCE`. It fetches at most the observer's existing two-megabyte limit and retains up to 2,000 characters of visible official context near the observed title or heading. The artifact also carries the entire six-source health matrix, including unknown sources. It does not retain full third-party pages.
+The script binds each candidate to the same run's observation and the six-source registry. RSS entry URLs must stay on the registered source host. A changed HTML heading is tied to the observed heading-window digest; a later change in the page bytes becomes `STALE_SOURCE`. A redirect to a different page becomes `UNKNOWN`. It fetches at most the observer's existing two-megabyte limit and retains up to 2,000 characters of readable HTML text near the observed title or heading. It excludes common hidden and control elements, but does not render CSS or establish what a browser user saw. The artifact also carries the entire six-source health matrix, including unknown sources. It does not retain full third-party pages.
 
 ```sh
 python3 scripts/scout_provider_evidence.py \

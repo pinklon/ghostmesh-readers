@@ -51,7 +51,7 @@ class ProviderEvidenceTests(unittest.TestCase):
             current_entries[1]["url"]: b"<main><h1>Agents API</h1><p>Announced at DevDay.</p></main>",
         }
         result = capture(candidates, current, REGISTRY, WHEN,
-                         fetch_page=lambda source: pages[source["url"]])
+                         fetch_page=lambda source: (pages[source["url"]], source["url"]))
         self.assertEqual(len(result["records"]), 2)
         self.assertEqual({r["officialEvidenceUrl"] for r in result["records"]}, set(pages))
         self.assertEqual({r["candidateId"] for r in result["records"]},
@@ -73,7 +73,7 @@ class ProviderEvidenceTests(unittest.TestCase):
         old = snapshot([observation(source, [{"title": "Decisions preview", "url": url}])])
         new = snapshot([observation(source, [{"title": "Decisions GA and pricing update", "url": url}])])
         result = capture(compare(old, new), new, REGISTRY, WHEN,
-                         fetch_page=lambda _: b"<main><p>Provider page changed.</p></main>")
+                         fetch_page=lambda source: (b"<main><p>Provider page changed.</p></main>", source["url"]))
         self.assertEqual(result["records"][0]["changeKind"], "changed-entry-title")
         self.assertEqual(result["records"][0]["eventStatus"], "UNKNOWN")
         self.assertEqual(result["records"][0]["planEntitlement"], "UNKNOWN")
@@ -85,7 +85,7 @@ class ProviderEvidenceTests(unittest.TestCase):
         after = snapshot([observation(source, [{"level": "h2", "text": "New release"}], payload)])
         candidates = compare(before, after)
         record = capture(candidates, after, REGISTRY, WHEN,
-                         fetch_page=lambda _: payload)["records"][0]
+                         fetch_page=lambda source: (payload, source["url"]))["records"][0]
         self.assertEqual(record["captureStatus"], "captured")
         self.assertEqual(record["sourceScope"], "page-heading-change-only")
         self.assertEqual(record["excerptAnchors"], ["New release"])
@@ -93,7 +93,7 @@ class ProviderEvidenceTests(unittest.TestCase):
         self.assertIsNone(record["capabilityIdentity"])
         self.assertEqual(record["eventStatus"], "UNKNOWN")
         stale = capture(candidates, after, REGISTRY, WHEN,
-                        fetch_page=lambda _: payload + b"<p>Later edit</p>")["records"][0]
+                        fetch_page=lambda source: (payload + b"<p>Later edit</p>", source["url"]))["records"][0]
         self.assertEqual(stale["captureStatus"], "STALE_SOURCE")
         self.assertNotEqual(stale["captureSha256"], stale["observedSourceSha256"])
 
@@ -106,7 +106,7 @@ class ProviderEvidenceTests(unittest.TestCase):
         def fetch_page(item):
             if item["url"].endswith("preview/"):
                 raise TimeoutError("private request internals must not be retained")
-            return b"<article><h1>Deprecation</h1><p>Read the official notice.</p></article>"
+            return b"<article><h1>Deprecation</h1><p>Read the official notice.</p></article>", item["url"]
         records = capture(compare(old, new), new, REGISTRY, WHEN, fetch_page)["records"]
         self.assertEqual(len(records), 2)
         by_url = {r["officialEvidenceUrl"]: r for r in records}
@@ -157,6 +157,25 @@ class ProviderEvidenceTests(unittest.TestCase):
         self.assertEqual(visible_excerpt(b"<h2>Old</h2><p>Old text</p>"
                                          b"<h2>New</h2><p>New text</p>", ["New"]),
                          "New\nNew text")
+        self.assertEqual(visible_excerpt(
+            b'<div hidden><div><p>Unreleased</p></div></div>'
+            b'<p aria-hidden="true">Not visible</p>'
+            b'<p style="display:\n none">Also hidden</p>'
+            b'<template><p>Unpublished draft</p></template>'
+            b'<main><p>Public notice</p></main>'), "Public notice")
+
+    def test_redirect_to_different_page_never_looks_like_captured_evidence(self):
+        source = REGISTRY["sources"][0]
+        old = snapshot([observation(source, [{"title": "Earlier", "url": "https://openai.com/index/earlier/"}])])
+        new = snapshot([observation(source, old["observations"][0]["entries"] +
+                                    [{"title": "Decisions API", "url": "https://openai.com/index/decisions-api/"}])])
+        result = capture(compare(old, new), new, REGISTRY, WHEN,
+                         fetch_page=lambda _: (b"<h1>OpenAI news homepage</h1>",
+                                               "https://openai.com/news/"))["records"][0]
+        self.assertEqual(result["captureStatus"], "UNKNOWN")
+        self.assertEqual(result["redirectStatus"], "DIFFERENT_SOURCE")
+        self.assertEqual(result["visibleExcerpt"], "")
+        self.assertEqual(result["eventStatus"], "UNKNOWN")
 
 
 if __name__ == "__main__":

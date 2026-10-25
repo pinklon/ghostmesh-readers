@@ -51,14 +51,14 @@ def ensure_url(url):
     return url
 
 
-def fetch(source):
+def fetch(source, *, include_final_url=False):
     request = Request(source["url"], headers={"User-Agent": "GhostMeshScoutPublicReleaseWatch/1.0", "Accept": "application/rss+xml, application/atom+xml, text/html, application/xml"})
     with urlopen(request, timeout=12) as response:
-        ensure_url(response.geturl())
+        final_url = ensure_url(response.geturl())
         payload = response.read(MAX_BYTES + 1)
         if len(payload) > MAX_BYTES:
             raise ValueError("Source exceeds bounded response size")
-    return payload
+    return (payload, final_url) if include_final_url else payload
 
 
 def element_text(node, names):
