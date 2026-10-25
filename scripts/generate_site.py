@@ -463,7 +463,7 @@ def projections():
  latest=max(editions,key=lambda edition:(edition['reviewedOn'],edition['id']))
  out['scout/index.html']=scout_page('Scout','/scout/',scout_home(scout,latest,research))
  out['scout/archive/index.html']=scout_page('Scout review library','/scout/archive/',archive_page(scout))
- out['scout/research/index.html']=scout_page('Scout Research Library','/scout/research/',research_page(research))
+ out['scout/research/index.html']=scout_page('Scout Research Library','/scout/research/',research_page(research,release_events))
  out['scout/research/relationships.json']=dump(research_graph(research))
  out['scout/method/index.html']=scout_page('How Scout works','/scout/method/',method_page((ROOT/'content/scout/method.md').read_text()))
  for edition in editions:

@@ -1,6 +1,6 @@
 {
   "schema": "ghostmesh-scout-research-v1",
-  "note": "Only approved public works. Historic essays predate the explicit release-event register; null is an honest legacy exception, not a fabricated publication event.",
+  "note": "Only approved public works. Six historical essays have an evidenced October 23 public-by bound from the released nine-work Library, but their exact first-publication day remains unverified; they do not gain retroactive RSS events.",
   "records": [
     {
       "id": "journal:research-journal",
@@ -88,7 +88,9 @@
       ],
       "reviewedOn": null,
       "releaseEventId": null,
-      "relatedIds": []
+      "relatedIds": [],
+      "publicByOn": "2026-10-23",
+      "publicByEvidenceUrl": "https://github.com/pinklon/ghostmesh-readers/pull/72"
     },
     {
       "id": "essay:follow-the-work",
@@ -106,7 +108,9 @@
       ],
       "reviewedOn": null,
       "releaseEventId": null,
-      "relatedIds": []
+      "relatedIds": [],
+      "publicByOn": "2026-10-23",
+      "publicByEvidenceUrl": "https://github.com/pinklon/ghostmesh-readers/pull/72"
     },
     {
       "id": "essay:five-ideas-outside-the-filter",
@@ -124,7 +128,9 @@
       ],
       "reviewedOn": null,
       "releaseEventId": null,
-      "relatedIds": []
+      "relatedIds": [],
+      "publicByOn": "2026-10-23",
+      "publicByEvidenceUrl": "https://github.com/pinklon/ghostmesh-readers/pull/72"
     },
     {
       "id": "essay:a-faster-review-button-is-not-a-better-decision",
@@ -142,7 +148,9 @@
       ],
       "reviewedOn": null,
       "releaseEventId": null,
-      "relatedIds": []
+      "relatedIds": [],
+      "publicByOn": "2026-10-23",
+      "publicByEvidenceUrl": "https://github.com/pinklon/ghostmesh-readers/pull/72"
     },
     {
       "id": "essay:the-plateau-that-lied",
@@ -160,7 +168,9 @@
       ],
       "reviewedOn": null,
       "releaseEventId": null,
-      "relatedIds": []
+      "relatedIds": [],
+      "publicByOn": "2026-10-23",
+      "publicByEvidenceUrl": "https://github.com/pinklon/ghostmesh-readers/pull/72"
     },
     {
       "id": "essay:latent-states-are-not-an-agent-api",
@@ -178,7 +188,9 @@
       ],
       "reviewedOn": null,
       "releaseEventId": null,
-      "relatedIds": []
+      "relatedIds": [],
+      "publicByOn": "2026-10-23",
+      "publicByEvidenceUrl": "https://github.com/pinklon/ghostmesh-readers/pull/72"
     },
     {
       "id": "essay:what-survives-a-checkpoint",
