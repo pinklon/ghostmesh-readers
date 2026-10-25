@@ -403,12 +403,12 @@
     "relationshipDisposition": "One qualified thematic route to a different simulation-evidence critique. Similar words such as singularity or swarm do not establish a shared claim or corroboration.",
     "relationshipReview": {
       "reviewedAt": "2026-10-24",
-      "reviewedCatalogSize": 36,
+      "reviewedCatalogSize": 37,
       "decision": "linked",
       "reviewedTargets": [
         "reader:the-score-is-not-the-system"
       ],
-      "rationale": "Compared the film's visual and mathematical thesis with all 32 current Readers. This one route clarifies simulation-evidence limits without treating unrelated videos, agent fleets or singularity forecasts as independent corroboration. The pinned DeepInfer repository addresses inference serving, not the film’s sampled visual swarm or its cited mathematics; no new outgoing route is supported. The new Hassabis profile was compared for a specific shared claim; no further typed relation is admitted on thematic overlap alone. The Orca fleet Reader was compared as a newer neighbor; its three outbound routes cover the supported comparisons, without reciprocal corroboration."
+      "rationale": "Compared the film's visual and mathematical thesis with all 32 current Readers. This one route clarifies simulation-evidence limits without treating unrelated videos, agent fleets or singularity forecasts as independent corroboration. The pinned DeepInfer repository addresses inference serving, not the film’s sampled visual swarm or its cited mathematics; no new outgoing route is supported. The new Hassabis profile was compared for a specific shared claim; no further typed relation is admitted on thematic overlap alone. The Orca fleet Reader was compared as a newer neighbor; its three outbound routes cover the supported comparisons, without reciprocal corroboration. The newly added LangChain webhook Reader was compared for a distinct source-grounded relationship; no existing typed edge is changed by this candidate."
     },
     "review": {
       "status": "independent editorial review accepted; owner-accepted; production-published",

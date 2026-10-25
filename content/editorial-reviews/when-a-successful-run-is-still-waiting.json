@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "readerId": "reader:when-a-successful-run-is-still-waiting",
+  "sourceId": "langchain-webhooks-docs-4506df5",
+  "sourceAidSha256": "72fa309d40ed675e95d82497fdc4c75e49f197c7ab2dbce55c474697c59fb930",
+  "articleSha256": "6357a15b2456eceeffdaa5aca1e1800c9fd111ce9ec9d88a9dcb2d01965770f0",
+  "evidenceRevision": "f344aa740cf8c64eba44a8b3060c0228bb1a88e9a164fbc26edd98e0ca7be4f0",
+  "reviewedAt": "2026-10-25T05:01:10.820168Z",
+  "provenance": {
+    "kind": "codex-task-agent",
+    "reference": "Prior independent review of local source head 1205ee8 and article SHA256 4cc294f8482292092348bce543139e7086fb897b7e678c005469570b59f9fff7; current generated-candidate metadata and presentation have not received independent exact-head review.",
+    "limits": "Prior reviewer accepted the original article for owner review with no factual finding. Current article bytes and catalog evidence differ; this record remains HOLD until a separate exact-candidate reviewer checks them."
+  },
+  "summary": "The original independent source and prose review is retained, but its acceptance cannot be carried to changed exact bytes or newly authored catalog and receipt metadata.",
+  "findings": [
+    "Original review found no source-fidelity or privacy finding at SHA256 4cc294f8482292092348bce543139e7086fb897b7e678c005469570b59f9fff7. The current candidate preserves its analysis paragraphs while adding canonical review sections and updated navigation.",
+    "No independent browser rendering, current catalog evidence binding or production workflow behavior has been verified for this candidate. Exact-candidate review is required before owner acceptance."
+  ],
+  "conclusion": "hold"
+}

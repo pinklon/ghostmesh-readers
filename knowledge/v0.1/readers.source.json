@@ -11,7 +11,7 @@
       "url": "https://youtube.shareplane.malott.ai/the-inbox-was-a-boundary/",
       "source": {
         "path": "site/the-inbox-was-a-boundary/index.html",
-        "sha256": "ebf5d822661d7d561bd69f5a8624217e66f4ba6284087885bd02aa1a2f820dde"
+        "sha256": "740f7c591dbdff63c2f177580b1ca727a215f998ae884c6de710d5089bef7d92"
       }
     },
     {
@@ -24,7 +24,7 @@
       "provenance": {
         "sourceNodeId": "urn:ghostmesh-readers:reader:the-inbox-was-a-boundary",
         "locator": "#fleet-activity-source",
-        "sourceFileSha256": "ebf5d822661d7d561bd69f5a8624217e66f4ba6284087885bd02aa1a2f820dde",
+        "sourceFileSha256": "740f7c591dbdff63c2f177580b1ca727a215f998ae884c6de710d5089bef7d92",
         "quoteSha256": "846ff5ff13d32b94826d855429ca96ab02c922f5bf353fe426d6df57dfd28743"
       }
     },
@@ -47,7 +47,7 @@
       "url": "https://youtube.shareplane.malott.ai/a-challenge-is-not-a-verdict/",
       "source": {
         "path": "site/a-challenge-is-not-a-verdict/index.html",
-        "sha256": "bed5e6916af233f2a284c4a7caebd816c818938e07d630ebecbd98804b3aaf2c"
+        "sha256": "08cf32d744fb6b112a2c800eb18e62f5159f6ebbef478a41e03c927e98a924f5"
       }
     },
     {
@@ -59,7 +59,7 @@
       "url": "https://youtube.shareplane.malott.ai/ask-for-the-outcome-keep-the-boundary/",
       "source": {
         "path": "site/ask-for-the-outcome-keep-the-boundary/index.html",
-        "sha256": "5965e868e82ebc36f935a8fe1f9a534a314f0db5ebbfe23156be338c32c36036"
+        "sha256": "cda7bfe9e450c732aadfbd6435ff4eb39275124ef02b4a9035804f670fb9142e"
       }
     },
     {
@@ -71,7 +71,7 @@
       "url": "https://youtube.shareplane.malott.ai/autonomy-needs-an-interface/",
       "source": {
         "path": "site/autonomy-needs-an-interface/index.html",
-        "sha256": "3c89d9922969e9af7f399985ef97484570d2da770f663c1e41827345742ebb82"
+        "sha256": "511f2519e330743d057b4ce1e887737294be277fe6a2819e84f03249eab6cc51"
       }
     },
     {
@@ -83,7 +83,7 @@
       "url": "https://youtube.shareplane.malott.ai/make-good-work-inspectable/",
       "source": {
         "path": "site/make-good-work-inspectable/index.html",
-        "sha256": "1dae7def19ce85cf54cd0639e539be2f865f97ce80238eabbb079d82e15a5937"
+        "sha256": "c78b40f85db28b28dbb9bcac1b1c43e6d07b161cc4513ae1fa2a7493088322f0"
       }
     },
     {
@@ -95,7 +95,7 @@
       "url": "https://youtube.shareplane.malott.ai/the-agent-a-company-owns/",
       "source": {
         "path": "site/the-agent-a-company-owns/index.html",
-        "sha256": "b79b7c8ca8afcc64b83fc08a87e158db5b8eb7a8840291f618246e1ea98321e2"
+        "sha256": "194b20885afd84743e29e092f549d15ecfeec530dd8464fcaf3ef7c95263a266"
       }
     },
     {
@@ -107,7 +107,7 @@
       "url": "https://youtube.shareplane.malott.ai/the-funnel-is-not-the-frontier/",
       "source": {
         "path": "site/the-funnel-is-not-the-frontier/index.html",
-        "sha256": "11f8fba05b4962e2b125671fdee58f80e61bddc978264f2866626867481ce406"
+        "sha256": "368d541d11f2505c9dc546e11e3a8e15b09f4080533497b68624d36fef87d9ac"
       }
     },
     {
@@ -119,7 +119,7 @@
       "url": "https://youtube.shareplane.malott.ai/the-key-was-the-boundary/",
       "source": {
         "path": "site/the-key-was-the-boundary/index.html",
-        "sha256": "9efb5e05c3f66e032d6c46cb84421b661799d4c740f8ddf6cdab0bac1bc7ff23"
+        "sha256": "54c6e55abb1ee97a9ab669074571dce2a9f0a44abcff6c77b3ab7167f507aab6"
       }
     },
     {
@@ -131,7 +131,7 @@
       "url": "https://youtube.shareplane.malott.ai/the-microscope-is-not-a-soul/",
       "source": {
         "path": "site/the-microscope-is-not-a-soul/index.html",
-        "sha256": "68b12c0e05d70e58977176ea1a06c7af4d4c77a166666a0e9396fdde2d7d5258"
+        "sha256": "74a2edde6ec8d5fba811de81acbc0db07ae09ef44c4df658c11b520f58a52f95"
       }
     },
     {
@@ -143,7 +143,7 @@
       "url": "https://youtube.shareplane.malott.ai/the-scan-never-reached-the-login/",
       "source": {
         "path": "site/the-scan-never-reached-the-login/index.html",
-        "sha256": "6f29ae6e8729314ec57dd83b25ad6de14de0c62b01c60fba6118975962df6a51"
+        "sha256": "f5a174f7e054e49965bc70cd66f1c49ef89c4876f575a09a427bfd4cc51a2a42"
       }
     },
     {
@@ -155,7 +155,7 @@
       "url": "https://youtube.shareplane.malott.ai/the-score-is-not-the-system/",
       "source": {
         "path": "site/the-score-is-not-the-system/index.html",
-        "sha256": "dc4bc6ddd8964ff9994e121bf253bdf43a9fab7d01d22da0d07f45afa2fbe763"
+        "sha256": "55b535b197b9bbaca46bb8c3abe69394c1f53cb870cc0d0cd9b62559af71e6e0"
       }
     },
     {
@@ -167,7 +167,7 @@
       "url": "https://youtube.shareplane.malott.ai/when-agents-become-the-customer/",
       "source": {
         "path": "site/when-agents-become-the-customer/index.html",
-        "sha256": "36ee25933bf55d1f02ccf47dad5f8649d39c41fa5a18c2047d05d8ffa0976d9d"
+        "sha256": "1afb6da4d98e558cb465a1a06104cc96b1468942ca6fa259a8fac2864159793f"
       }
     },
     {
@@ -179,7 +179,7 @@
       "url": "https://youtube.shareplane.malott.ai/when-software-becomes-legible/",
       "source": {
         "path": "site/when-software-becomes-legible/index.html",
-        "sha256": "2961070cd529639b0ff95728545d4f3f5f7d7db589c14a4f9231febe92e90edf"
+        "sha256": "8dba2fbad4b4f134b63739dcd4153ae81570a59c5be00d8a7743d7363c36d005"
       }
     },
     {
@@ -191,7 +191,7 @@
       "url": "https://youtube.shareplane.malott.ai/the-fleet-does-not-prove-the-forecast/",
       "source": {
         "path": "site/the-fleet-does-not-prove-the-forecast/index.html",
-        "sha256": "2bc449d1d092fadaeeefc481aae23a6efbca3cb121516f7f52615e2b064f2c58"
+        "sha256": "92db0310a12f8d3ac4f3971160e3c69a5dc11c4c0957831126b80820ac9af8a5"
       }
     },
     {
@@ -203,7 +203,7 @@
       "url": "https://youtube.shareplane.malott.ai/a-scenario-is-not-a-singularity/",
       "source": {
         "path": "site/a-scenario-is-not-a-singularity/index.html",
-        "sha256": "74a6889c13845febbdab339fb414547270ff3096fcae9a3627ef1754e82ca826"
+        "sha256": "12654062307764e9fdc9ee34098b387daca5bef3ac1a0c0662821a64bd07c881"
       }
     },
     {
@@ -215,7 +215,7 @@
       "url": "https://youtube.shareplane.malott.ai/the-test-must-name-its-target/",
       "source": {
         "path": "site/the-test-must-name-its-target/index.html",
-        "sha256": "17d1be0bcfc7f7a51246e99e84a1e96b85caf7838266092bc3b87e296ffc1465"
+        "sha256": "87dc12db8b594c2ecd4b39e555226587daf9fce3228c93704137e7e9eed4359f"
       }
     },
     {
@@ -227,7 +227,7 @@
       "url": "https://youtube.shareplane.malott.ai/the-parallel-result-is-not-the-product/",
       "source": {
         "path": "site/the-parallel-result-is-not-the-product/index.html",
-        "sha256": "2e6feb22dbbd260db9c440afac3bc64ea6ed18eedd7084edd5edbcbf5c549e26"
+        "sha256": "37c680645cfff2c58ba44490582e968dfd0011caeeb2055a87e7149506407db4"
       }
     },
     {
@@ -239,7 +239,7 @@
       "url": "https://youtube.shareplane.malott.ai/the-experiment-ran-did-the-research-advance/",
       "source": {
         "path": "site/the-experiment-ran-did-the-research-advance/index.html",
-        "sha256": "b7f9d187a20b67b963783d33dcf22fd71e0270f1b34b619788f0cfc71f8e765c"
+        "sha256": "a0f3bf99dcfdeb210e7be5c371c5b8f54cebb595990e34c5ba6f4cd878e3e30d"
       }
     },
     {
@@ -252,7 +252,7 @@
       "provenance": {
         "sourceNodeId": "urn:ghostmesh-readers:reader:the-experiment-ran-did-the-research-advance",
         "locator": "#finding",
-        "sourceFileSha256": "b7f9d187a20b67b963783d33dcf22fd71e0270f1b34b619788f0cfc71f8e765c",
+        "sourceFileSha256": "a0f3bf99dcfdeb210e7be5c371c5b8f54cebb595990e34c5ba6f4cd878e3e30d",
         "quoteSha256": "ce0b396286bda974612b110f11b5f554fb24af0908e4bc4c07d7f7d28d4a9909"
       }
     },
@@ -275,7 +275,7 @@
       "url": "https://youtube.shareplane.malott.ai/the-list-is-the-business-claim/",
       "source": {
         "path": "site/the-list-is-the-business-claim/index.html",
-        "sha256": "f644aca7217469c7ac07c321ab84d121558fd565122a73e68609911f3759fe3c"
+        "sha256": "e930fd711d530a0c8004a733b8d08031e5b8d86ba5117392863dc6269313ef50"
       }
     },
     {
@@ -287,7 +287,7 @@
       "url": "https://youtube.shareplane.malott.ai/the-label-the-box-and-the-bargain/",
       "source": {
         "path": "site/the-label-the-box-and-the-bargain/index.html",
-        "sha256": "c579839289237527523d17217816db2c7ed89a2ab346b34a2caf4c7faac04b77"
+        "sha256": "87ed3f7d9050bfbbbe297e03f9c77f0da732fceaf90525d33a5b1716cc4f9270"
       }
     },
     {
@@ -299,7 +299,7 @@
       "url": "https://youtube.shareplane.malott.ai/the-warning-is-not-a-ballot-ruling/",
       "source": {
         "path": "site/the-warning-is-not-a-ballot-ruling/index.html",
-        "sha256": "90470b9eb593903611c7b5899e3b77a86e4a8aa04c42611ae966e852cf8153c4"
+        "sha256": "d1b2f79a16b7c236e4f4958db1f8f5536efb856c1691984729d19d4d1e86b5fd"
       }
     },
     {
@@ -311,7 +311,7 @@
       "url": "https://youtube.shareplane.malott.ai/the-threshold-is-a-claim-not-a-test/",
       "source": {
         "path": "site/the-threshold-is-a-claim-not-a-test/index.html",
-        "sha256": "e5cd873e7f70c7b412862e29e2fbcfd217d4f6e2c93b36ebd69422de5f532ed8"
+        "sha256": "f77cf5445a180491528a6d48e9665e4a7fd5da1168ebd66099d269c365e05667"
       }
     },
     {
@@ -323,7 +323,7 @@
       "url": "https://youtube.shareplane.malott.ai/the-brakes-need-a-test/",
       "source": {
         "path": "site/the-brakes-need-a-test/index.html",
-        "sha256": "524fc422d0702c08f38b1fd751fee17c0156852847296b2c6997e61083d72c08"
+        "sha256": "f9a6e8b4c18a1af210b2d4660abee001fef75af9b4e7cbe95e2a88355419716e"
       }
     },
     {
@@ -335,7 +335,7 @@
       "url": "https://youtube.shareplane.malott.ai/the-grader-is-part-of-the-harness/",
       "source": {
         "path": "site/the-grader-is-part-of-the-harness/index.html",
-        "sha256": "567b02379d762dea2538c08be8550374749de3e74dde7b136800c0053891fdcc"
+        "sha256": "f28bb4157b2a191fa17f95d36396b0af23e9bd2cc05e7151ef5486ffd90496b4"
       }
     },
     {
@@ -347,7 +347,7 @@
       "url": "https://youtube.shareplane.malott.ai/the-stop-button-is-outside-the-chat/",
       "source": {
         "path": "site/the-stop-button-is-outside-the-chat/index.html",
-        "sha256": "1fc3fd19a25111a8d7eff42898a51a0244a53504ecab200a328a024707075ec5"
+        "sha256": "7d8dffae177b05636202dac4c83fe76d02fc8db1082bd74cd8f32a9a54608cd5"
       }
     },
     {
@@ -359,7 +359,7 @@
       "url": "https://youtube.shareplane.malott.ai/the-boundary-is-bigger-than-the-box/",
       "source": {
         "path": "site/the-boundary-is-bigger-than-the-box/index.html",
-        "sha256": "776fc2471404a8b30912a16f1c68ae785b08e9919edd36cb486e947917220814"
+        "sha256": "20e6c5285a1a7700e6b0d87ac14b4f9ca020cec3f6e626d58ce361378b3322dc"
       }
     },
     {
@@ -371,7 +371,7 @@
       "url": "https://youtube.shareplane.malott.ai/the-commit-is-not-the-control/",
       "source": {
         "path": "site/the-commit-is-not-the-control/index.html",
-        "sha256": "ea500affa2ac05a186dd4f3a8e7eca52be447261f058c1614404b9aa4c7aa5e1"
+        "sha256": "1bc87257e9bb61f1131b9aef3a8465e5d889aa66b3a2b7241734528aba18f6e7"
       }
     },
     {
@@ -384,7 +384,7 @@
       "provenance": {
         "sourceNodeId": "urn:ghostmesh-readers:reader:the-commit-is-not-the-control",
         "locator": "#volume",
-        "sourceFileSha256": "ea500affa2ac05a186dd4f3a8e7eca52be447261f058c1614404b9aa4c7aa5e1",
+        "sourceFileSha256": "1bc87257e9bb61f1131b9aef3a8465e5d889aa66b3a2b7241734528aba18f6e7",
         "quoteSha256": "b1d05a9a858a78403843179429f2d50dc5ff87d56c116f8dd4ae263b26ba8d64"
       }
     },
@@ -407,7 +407,7 @@
       "url": "https://youtube.shareplane.malott.ai/the-harness-keeps-the-receipt/",
       "source": {
         "path": "site/the-harness-keeps-the-receipt/index.html",
-        "sha256": "5a871fa1f2c68ccbc8855632da6054ad79c474da69ea31eeb9dbf2e2bc423478"
+        "sha256": "663a7f47b45aa129529d944d696afa7239a8a69c183fed03836cd90c08f18963"
       }
     },
     {
@@ -419,7 +419,7 @@
       "url": "https://youtube.shareplane.malott.ai/the-operator-is-part-of-the-denominator/",
       "source": {
         "path": "site/the-operator-is-part-of-the-denominator/index.html",
-        "sha256": "286c1f2393c74efc1e5eb7e47aabac2c0abdf40252311e7901761cd5592338da"
+        "sha256": "691de1576563cede8dd50da1529e3f0fd8696dd118d6053b95696de6837b0fe2"
       }
     },
     {
@@ -431,7 +431,7 @@
       "url": "https://youtube.shareplane.malott.ai/unsupervised-is-a-permission/",
       "source": {
         "path": "site/unsupervised-is-a-permission/index.html",
-        "sha256": "088b0064479b02590463b80ddbf1a71eeef6cf8eb0e4b7e29784da47ce5da467"
+        "sha256": "75bbf06e716b6739429cb62d03c9f18be7ca4a6be8b60d0cb239f18d6d3d8279"
       }
     },
     {
@@ -443,7 +443,7 @@
       "url": "https://youtube.shareplane.malott.ai/a-wallet-is-not-a-mandate/",
       "source": {
         "path": "site/a-wallet-is-not-a-mandate/index.html",
-        "sha256": "fa3090f4a0851b792ce4d96e4044d35e88c7c86c7b1bf97205edbd6c41bebfc7"
+        "sha256": "8a047e3c90909c3f54a9ea0a18aef8752df2215c6715fa9c4770ada80534a21b"
       }
     },
     {
@@ -455,7 +455,7 @@
       "url": "https://youtube.shareplane.malott.ai/the-page-is-part-of-the-proof/",
       "source": {
         "path": "site/the-page-is-part-of-the-proof/index.html",
-        "sha256": "36b5784214f3453b8447ebdaaa9fd9d9b5ee39366e09dcaa54490a3a0c72e612"
+        "sha256": "5b595ed83f060a064e3a230bdd3698a8905dcea08f6bea5b59d0e31637afadc2"
       }
     },
     {
@@ -468,7 +468,7 @@
       "provenance": {
         "sourceNodeId": "urn:ghostmesh-readers:reader:the-page-is-part-of-the-proof",
         "locator": "#surface",
-        "sourceFileSha256": "36b5784214f3453b8447ebdaaa9fd9d9b5ee39366e09dcaa54490a3a0c72e612",
+        "sourceFileSha256": "5b595ed83f060a064e3a230bdd3698a8905dcea08f6bea5b59d0e31637afadc2",
         "quoteSha256": "53914a59dbc7eaad341076727d96193a0ce3abb113b66ed859f11e18c370b6e2"
       }
     },
@@ -491,7 +491,7 @@
       "url": "https://youtube.shareplane.malott.ai/what-a-swarm-makes-us-see/",
       "source": {
         "path": "site/what-a-swarm-makes-us-see/index.html",
-        "sha256": "ef51ca56159d4c95f8d63710148ddac8538e2713494a2fbd9cdb8588fab203b4"
+        "sha256": "a461b50d9d9c2d64ae9cbbcba7bc3f9a3a5b4d1d41c3653a1a6588c2a22708c3"
       }
     },
     {
@@ -504,7 +504,7 @@
       "provenance": {
         "sourceNodeId": "urn:ghostmesh-readers:reader:the-engine-is-not-the-service",
         "locator": "#scope",
-        "sourceFileSha256": "92092a2030a437b3db962483f3299eb353c042e2c5b2ec6bcb6e4b9395a60905",
+        "sourceFileSha256": "c8ba61fa19061e2e0a78088c365c42a854386dee25db08853802e007d5e68f67",
         "quoteSha256": "bfa05fcb520298ba0530f1f3dad1dc0affbc814532745a4fe296f4903ff2259c"
       }
     },
@@ -517,7 +517,7 @@
       "url": "https://youtube.shareplane.malott.ai/the-engine-is-not-the-service/",
       "source": {
         "path": "site/the-engine-is-not-the-service/index.html",
-        "sha256": "92092a2030a437b3db962483f3299eb353c042e2c5b2ec6bcb6e4b9395a60905"
+        "sha256": "c8ba61fa19061e2e0a78088c365c42a854386dee25db08853802e007d5e68f67"
       }
     },
     {
@@ -539,7 +539,7 @@
       "url": "https://youtube.shareplane.malott.ai/the-missing-step-is-not-more-intelligence/",
       "source": {
         "path": "site/the-missing-step-is-not-more-intelligence/index.html",
-        "sha256": "4060eca96ed9183dc9a053ab10b2de63b94f9e444c9b885eb52db238800673f9"
+        "sha256": "5267b31ac44c58fa3cab4239fa15dea1de5bd09a23c58ed37f9e38e84fb67442"
       }
     },
     {
@@ -551,7 +551,19 @@
       "url": "https://youtube.shareplane.malott.ai/the-fleet-needs-a-control-plane/",
       "source": {
         "path": "site/the-fleet-needs-a-control-plane/index.html",
-        "sha256": "3ee39eb27c4c8ab961156ab5a7811155c94300b01204dee7a8adb04396308d00"
+        "sha256": "1ffec9e4d5b5dace46bbffbcc0022e64f4fbec13107dfb8fa05b0142970546e7"
+      }
+    },
+    {
+      "id": "urn:ghostmesh-readers:reader:when-a-successful-run-is-still-waiting",
+      "type": "Reader",
+      "visibility": "public",
+      "epistemicStatus": "source-editorial",
+      "label": "When a Successful Run Is Still Waiting",
+      "url": "https://youtube.shareplane.malott.ai/when-a-successful-run-is-still-waiting/",
+      "source": {
+        "path": "site/when-a-successful-run-is-still-waiting/index.html",
+        "sha256": "f35785061a60b3a46e59a3f913ec2b0e44a75179209151ac9d3b8f010f377220"
       }
     }
   ],
@@ -566,7 +578,7 @@
       "provenance": {
         "sourceNodeId": "urn:ghostmesh-readers:reader:the-inbox-was-a-boundary",
         "locator": "#fleet-activity-source",
-        "sourceFileSha256": "ebf5d822661d7d561bd69f5a8624217e66f4ba6284087885bd02aa1a2f820dde",
+        "sourceFileSha256": "740f7c591dbdff63c2f177580b1ca727a215f998ae884c6de710d5089bef7d92",
         "quoteSha256": "846ff5ff13d32b94826d855429ca96ab02c922f5bf353fe426d6df57dfd28743"
       }
     },
@@ -580,7 +592,7 @@
       "provenance": {
         "sourceNodeId": "urn:ghostmesh-readers:reader:the-experiment-ran-did-the-research-advance",
         "locator": "#finding",
-        "sourceFileSha256": "b7f9d187a20b67b963783d33dcf22fd71e0270f1b34b619788f0cfc71f8e765c",
+        "sourceFileSha256": "a0f3bf99dcfdeb210e7be5c371c5b8f54cebb595990e34c5ba6f4cd878e3e30d",
         "quoteSha256": "ce0b396286bda974612b110f11b5f554fb24af0908e4bc4c07d7f7d28d4a9909"
       }
     },
@@ -594,7 +606,7 @@
       "provenance": {
         "sourceNodeId": "urn:ghostmesh-readers:reader:the-commit-is-not-the-control",
         "locator": "#volume",
-        "sourceFileSha256": "ea500affa2ac05a186dd4f3a8e7eca52be447261f058c1614404b9aa4c7aa5e1",
+        "sourceFileSha256": "1bc87257e9bb61f1131b9aef3a8465e5d889aa66b3a2b7241734528aba18f6e7",
         "quoteSha256": "b1d05a9a858a78403843179429f2d50dc5ff87d56c116f8dd4ae263b26ba8d64"
       }
     },
@@ -608,7 +620,7 @@
       "provenance": {
         "sourceNodeId": "urn:ghostmesh-readers:reader:the-page-is-part-of-the-proof",
         "locator": "#surface",
-        "sourceFileSha256": "36b5784214f3453b8447ebdaaa9fd9d9b5ee39366e09dcaa54490a3a0c72e612",
+        "sourceFileSha256": "5b595ed83f060a064e3a230bdd3698a8905dcea08f6bea5b59d0e31637afadc2",
         "quoteSha256": "53914a59dbc7eaad341076727d96193a0ce3abb113b66ed859f11e18c370b6e2"
       }
     },
@@ -622,7 +634,7 @@
       "provenance": {
         "sourceNodeId": "urn:ghostmesh-readers:reader:the-engine-is-not-the-service",
         "locator": "#scope",
-        "sourceFileSha256": "92092a2030a437b3db962483f3299eb353c042e2c5b2ec6bcb6e4b9395a60905",
+        "sourceFileSha256": "c8ba61fa19061e2e0a78088c365c42a854386dee25db08853802e007d5e68f67",
         "quoteSha256": "bfa05fcb520298ba0530f1f3dad1dc0affbc814532745a4fe296f4903ff2259c"
       }
     }

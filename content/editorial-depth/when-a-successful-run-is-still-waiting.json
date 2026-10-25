@@ -1,0 +1,132 @@
+{
+  "schemaVersion": 1,
+  "readerId": "reader:when-a-successful-run-is-still-waiting",
+  "sourceId": "langchain-webhooks-docs-4506df5",
+  "sourceDigest": "7ec34d962b3bd0bfbee4026001774901b2be5cedb8d40a9c249828eb36346cb9",
+  "sourceAidSha256": "72fa309d40ed675e95d82497fdc4c75e49f197c7ab2dbce55c474697c59fb930",
+  "articleSha256": "6357a15b2456eceeffdaa5aca1e1800c9fd111ce9ec9d88a9dcb2d01965770f0",
+  "evidenceRevision": "f344aa740cf8c64eba44a8b3060c0228bb1a88e9a164fbc26edd98e0ca7be4f0",
+  "sourceMapEvidenceSha256": "20178d750d4418bdee88ea07cbea2dbbcdf7a7d9b426dead9d70099bef163aa2",
+  "reviewEvidenceSha256": "ceb4d82aaf5e4b3ec67b13a4379aa1c454f4e0a3960424f08a83b63de7021b0a",
+  "candidateAuthor": "pinklon",
+  "complexity": {
+    "tier": "extended",
+    "factors": [
+      "Eight material claim notes span event semantics, replay, idempotency, authorization and serialization.",
+      "The proposed action classifier must separate observed source behavior from unrun tests and uncertain effects."
+    ],
+    "rationale": "The source is short but the analysis crosses consequential continuation and permission boundaries, so the extended evidence map and counterargument are proportionate."
+  },
+  "sourceMap": [
+    {
+      "atSeconds": null,
+      "sectionId": "when-a-successful-run-is-still-waiting",
+      "claimIds": [
+        "when-a-successful-run-is-still-waiting--c1"
+      ],
+      "rationale": "The vendor documentation labels a webhook success that can leave a run waiting for human input."
+    },
+    {
+      "atSeconds": null,
+      "sectionId": "define-what-the-consumer-is-allowed-to-conclude",
+      "claimIds": [
+        "when-a-successful-run-is-still-waiting--c2"
+      ],
+      "rationale": "The documented payload and status semantics motivate attribution and UNKNOWN rules as GhostMesh inference."
+    },
+    {
+      "atSeconds": null,
+      "sectionId": "keep-the-completion-rule-separate-from-permission",
+      "claimIds": [
+        "when-a-successful-run-is-still-waiting--c3",
+        "when-a-successful-run-is-still-waiting--c4"
+      ],
+      "rationale": "Vendor replay and idempotency documents inform, but do not prove, separate authorization and destination outcome controls."
+    },
+    {
+      "atSeconds": null,
+      "sectionId": "test-the-interpretation-rather-than-another-orchestration-stack",
+      "claimIds": [
+        "when-a-successful-run-is-still-waiting--c8"
+      ],
+      "rationale": "The article proposes synthetic callback and state fixtures to falsify an overconfident completion classifier."
+    },
+    {
+      "atSeconds": null,
+      "sectionId": "prefer-the-smallest-change-that-preserves-the-distinction",
+      "claimIds": [
+        "when-a-successful-run-is-still-waiting--c5",
+        "when-a-successful-run-is-still-waiting--c6",
+        "when-a-successful-run-is-still-waiting--c7"
+      ],
+      "rationale": "Pinned Docling implementation and export materials illustrate the limits of flattening and the need for a bounded comparison."
+    }
+  ],
+  "assessment": {
+    "sourceCoverage": {
+      "disposition": "covered",
+      "rationale": "The five mapped sections identify the pinned webhook documentation and separate supporting references; the original page date and production behavior remain limited."
+    },
+    "supportingArgument": {
+      "disposition": "covered",
+      "rationale": "The strongest documented webhook status distinction is represented alongside relevant retry and serialization context without claiming a deployed GhostMesh defect."
+    },
+    "evidenceRoles": {
+      "disposition": "covered",
+      "rationale": "Vendor documentation, inspected implementation source, GhostMesh inference and unrun experiments are labeled separately in the claim register."
+    },
+    "counterargument": {
+      "disposition": "covered",
+      "rationale": "The article acknowledges that the existing consumer may already handle this correctly and that a new adapter could create competing lifecycle state."
+    },
+    "tradeoffs": {
+      "disposition": "covered",
+      "rationale": "It considers the cost of a new orchestration layer against inspecting the incumbent runtime and making the smallest evidence-preserving change."
+    },
+    "falsifiability": {
+      "disposition": "covered",
+      "rationale": "Synthetic waiting, duplicate, delayed, missing and completed cases define concrete failures that would reject the proposed reducer."
+    },
+    "originalSynthesis": {
+      "disposition": "covered",
+      "rationale": "The GhostMesh thesis distinguishes callback processing, requested outcome, operation identity and permission to perform a consequential action."
+    },
+    "performance": {
+      "disposition": "covered",
+      "rationale": "No throughput, latency or accuracy measurement is asserted; the synthetic experiment is framed as a proposed decision-quality test."
+    },
+    "economics": {
+      "disposition": "not-applicable",
+      "rationale": "No measured cost claim appears; additional adapter and review effort are acknowledged as a reason to prefer the existing boundary."
+    },
+    "threatGovernance": {
+      "disposition": "covered",
+      "rationale": "Authorization, cross-run attribution, uncertain destination effects and replay risk are analyzed as separate control boundaries."
+    }
+  },
+  "independentCorroboration": "none",
+  "ownerDecision": {
+    "pullNumber": null,
+    "commentId": null
+  },
+  "decision": "hold",
+  "gaps": [
+    {
+      "type": "evidence",
+      "severity": "blocking",
+      "rationale": "Independent review of the exact new article, catalog claims, source map and receipt has not been completed after mechanical presentation changes."
+    },
+    {
+      "type": "test",
+      "severity": "blocking",
+      "rationale": "Browser visual and accessibility checks of the generated route have not been completed under the available permitted surface."
+    },
+    {
+      "type": "scope",
+      "severity": "blocking",
+      "rationale": "The catalog date reflects local draft preparation and must be replaced with the verified first-publication date before production release."
+    }
+  ],
+  "decisionRationale": "The approved analysis is preserved, but publication remains held for exact-candidate independent review, visual QA and authenticated owner acceptance on a future PR.",
+  "assessedAt": "2026-10-25T05:01:10.820168Z"
+}

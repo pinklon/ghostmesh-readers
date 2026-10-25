@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 1,
+  "readerId": "reader:when-a-successful-run-is-still-waiting",
+  "sourceId": "langchain-webhooks-docs-4506df5",
+  "sourceAidSha256": "72fa309d40ed675e95d82497fdc4c75e49f197c7ab2dbce55c474697c59fb930",
+  "points": [
+    {
+      "atSeconds": null,
+      "sectionId": "when-a-successful-run-is-still-waiting",
+      "claimIds": [
+        "when-a-successful-run-is-still-waiting--c1"
+      ],
+      "cueParaphrase": "The vendor documentation labels a webhook success that can leave a run waiting for human input.",
+      "privateAidCheck": "The private source packet records the inspected LangChain revision; no deployed GhostMesh behavior was witnessed."
+    },
+    {
+      "atSeconds": null,
+      "sectionId": "define-what-the-consumer-is-allowed-to-conclude",
+      "claimIds": [
+        "when-a-successful-run-is-still-waiting--c2"
+      ],
+      "cueParaphrase": "The documented payload and status semantics motivate attribution and UNKNOWN rules as GhostMesh inference.",
+      "privateAidCheck": "The source packet distinguishes the pinned webhook text from the untested consumer proposal and its correlation limit."
+    },
+    {
+      "atSeconds": null,
+      "sectionId": "keep-the-completion-rule-separate-from-permission",
+      "claimIds": [
+        "when-a-successful-run-is-still-waiting--c3",
+        "when-a-successful-run-is-still-waiting--c4"
+      ],
+      "cueParaphrase": "Vendor replay and idempotency documents inform, but do not prove, separate authorization and destination outcome controls.",
+      "privateAidCheck": "Temporal, LangGraph and AWS sources were inspected separately; no shared production contract was exercised."
+    },
+    {
+      "atSeconds": null,
+      "sectionId": "test-the-interpretation-rather-than-another-orchestration-stack",
+      "claimIds": [
+        "when-a-successful-run-is-still-waiting--c8"
+      ],
+      "cueParaphrase": "The article proposes synthetic callback and state fixtures to falsify an overconfident completion classifier.",
+      "privateAidCheck": "The source packet records this as an unrun experiment, not a witnessed run or product defect."
+    },
+    {
+      "atSeconds": null,
+      "sectionId": "prefer-the-smallest-change-that-preserves-the-distinction",
+      "claimIds": [
+        "when-a-successful-run-is-still-waiting--c5",
+        "when-a-successful-run-is-still-waiting--c6",
+        "when-a-successful-run-is-still-waiting--c7"
+      ],
+      "cueParaphrase": "Pinned Docling implementation and export materials illustrate the limits of flattening and the need for a bounded comparison.",
+      "privateAidCheck": "The source packet distinguishes code-path inspection from unmeasured retrieval quality and untested structured-export benefit."
+    }
+  ]
+}
