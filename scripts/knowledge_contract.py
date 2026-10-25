@@ -529,7 +529,8 @@ def outputs(model: dict, schema_bytes: bytes, source_bytes: bytes,
             "human": f"{HOST}/knowledge/", "json": f"{HOST}/knowledge/v0.1/readers.json",
             "jsonld": f"{HOST}/knowledge/v0.1/readers.jsonld",
             "schema": f"{HOST}/knowledge/v0.1/contract.schema.json",
-            "manifest": f"{HOST}/knowledge/v0.1/publication-manifest.json"
+            "manifest": f"{HOST}/knowledge/v0.1/publication-manifest.json",
+            "scoutResearchRelationships": f"{HOST}/scout/research/relationships.json"
         }),
         "site/llms.txt": (f"# GhostMesh Readers\n\nSource-only public knowledge reference: {HOST}/knowledge/\n"
                           f"JSON: {HOST}/knowledge/v0.1/readers.json\n"

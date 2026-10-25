@@ -145,5 +145,9 @@ def relationship_map(readers, byid):
         f'The current published types are {_e(kind_text)}.</p>'
         '<p>SharePlane essays and other sites require their own reviewed identity and link '
         'decision before appearing here. No cross-site edge is included.</p>'
+        '<p>Scout research uses its own approved public relationships. '
+        '<a href="/scout/research/">Explore the Scout Research Library</a> or '
+        '<a href="/scout/research/relationships.json">inspect its relationship JSON</a>. '
+        'These are separate from the Reader routes counted above.</p>'
         '<a href="/knowledge/">Inspect the public knowledge records ↗</a></div></aside>'
     )

@@ -200,6 +200,8 @@ class KnowledgeContractTests(unittest.TestCase):
         self.assertEqual(discovery["publicationMode"], "source-only")
         self.assertEqual(discovery["jsonld"],
                          "https://youtube.shareplane.malott.ai/knowledge/v0.1/readers.jsonld")
+        self.assertEqual(discovery["scoutResearchRelationships"],
+                         "https://youtube.shareplane.malott.ai/scout/research/relationships.json")
         self.assertEqual(manifest["outputsDigest"],
                          hashlib.sha256((json.dumps(manifest["outputs"], sort_keys=True,
                                                     ensure_ascii=False, separators=(",", ":")) + "\n").encode()).hexdigest())

@@ -99,6 +99,7 @@ class ScoutResearchTests(unittest.TestCase):
         self.assertTrue(all(node['url'].startswith('https://youtube.shareplane.malott.ai/scout/')
                             for node in graph['nodes']))
         self.assertIn('/scout/research/relationships.json', (ROOT/'site/scout/research/index.html').read_text())
+        self.assertIn('/scout/research/relationships.json', (ROOT/'site/map/index.html').read_text())
 
     def test_graph_rejects_private_record_and_home_names_new_public_work(self):
         source = copy.deepcopy(self.source)
