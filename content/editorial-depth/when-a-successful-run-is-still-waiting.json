@@ -124,7 +124,7 @@
     {
       "type": "scope",
       "severity": "blocking",
-      "rationale": "The catalog date reflects local draft preparation and must be replaced with the verified first-publication date before production release."
+      "rationale": "The catalog date is the planned UTC release day, not a verified first-publication date. Confirm or correct it against the actual production release before acceptance."
     }
   ],
   "decisionRationale": "The approved analysis is preserved, but publication remains held for exact-candidate independent review, visual QA and authenticated owner acceptance on a future PR.",

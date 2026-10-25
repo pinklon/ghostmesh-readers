@@ -51,8 +51,8 @@
       "updatedDate": "2026-10-23",
       "dateNote": "Original publication date unknown; October 23, 2026 is the inspected revision date for this living documentation."
     },
-    "published": "2026-10-24",
-    "updated": "2026-10-24T23:37:12Z",
+    "published": "2026-10-25",
+    "updated": "2026-10-25T05:15:52Z",
     "overview": "LangChain documents a webhook success that can still leave a LangGraph run waiting at an interrupt.",
     "whyItMatters": "Execution status, the user-requested outcome and permission for the next action answer different questions.",
     "ghostMeshTakeaway": "Audit the existing consumer completion rule, preserve event identity and leave unattributable outcomes explicitly unknown.",
@@ -319,6 +319,11 @@
         "at": "2026-10-24T23:37:12Z",
         "kind": "new-reader-local-draft",
         "reason": "Approved Scout article prepared for canonical Reader review; not yet published."
+      },
+      {
+        "at": "2026-10-25T05:15:52Z",
+        "kind": "local-release-preparation",
+        "reason": "Set the planned UTC release day after owner review; actual first-publication date remains a release gate and no public event is recorded."
       }
     ],
     "editorialOrder": 30,
