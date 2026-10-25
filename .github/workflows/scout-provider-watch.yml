@@ -8,9 +8,11 @@ on:
       - 'scripts/scout_provider_watch.py'
       - 'scripts/scout_provider_diff.py'
       - 'scripts/scout_provider_history.py'
+      - 'scripts/scout_provider_evidence.py'
       - 'tests/test_scout_provider_watch.py'
       - 'tests/test_scout_provider_diff.py'
       - 'tests/test_scout_provider_history.py'
+      - 'tests/test_scout_provider_evidence.py'
       - 'content/scout/provider-sources.json'
       - '.github/workflows/scout-provider-watch.yml'
 permissions:
@@ -75,5 +77,21 @@ jobs:
         with:
           name: scout-provider-candidates-${{ github.run_id }}
           path: scout-provider-candidates.json
+          retention-days: 30
+          if-no-files-found: error
+      - name: Capture bounded official context for review
+        if: github.event_name != 'pull_request'
+        run: |
+          python3 scripts/scout_provider_evidence.py \
+            --candidates scout-provider-candidates.json \
+            --observations scout-provider-observations.json \
+            --registry content/scout/provider-sources.json \
+            --output scout-provider-evidence.json
+      - name: Retain review-only evidence
+        if: github.event_name != 'pull_request'
+        uses: actions/upload-artifact@v4
+        with:
+          name: scout-provider-evidence-${{ github.run_id }}
+          path: scout-provider-evidence.json
           retention-days: 30
           if-no-files-found: error
