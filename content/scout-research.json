@@ -179,6 +179,38 @@
       "reviewedOn": null,
       "releaseEventId": null,
       "relatedIds": []
+    },
+    {
+      "id": "essay:what-survives-a-checkpoint",
+      "slug": "what-survives-a-checkpoint",
+      "type": "essay",
+      "status": "published",
+      "title": "What Survives a Checkpoint",
+      "url": "/scout/essays/what-survives-a-checkpoint/",
+      "sourcePath": "site/scout/essays/what-survives-a-checkpoint/index.html",
+      "provenance": "Pinned LangGraph source and documentation; author-reported SemIso experiments; DVC and Temporal primary documentation.",
+      "evidenceLimits": "Static inspection and literature analysis. The proposed continuation experiment was not performed; no improvement or deployed behavior was verified.",
+      "summary": "A checkpoint can preserve state without preserving the dependencies that make its conclusions usable. A bounded compatibility test should precede another orchestrator.",
+      "topics": ["agent-continuity", "dependency-compatibility"],
+      "reviewedOn": "2026-10-25",
+      "releaseEventId": "scout:what-survives-a-checkpoint:first-public-release",
+      "relatedIds": ["journal:research-journal"]
+    },
+    {
+      "id": "method:before-the-model-sees-the-spreadsheet",
+      "slug": "before-the-model-sees-the-spreadsheet",
+      "type": "method",
+      "status": "published",
+      "title": "Before the Model Sees the Spreadsheet",
+      "url": "/scout/essays/before-the-model-sees-the-spreadsheet/",
+      "sourcePath": "site/scout/essays/before-the-model-sees-the-spreadsheet/index.html",
+      "provenance": "Pinned Docling and Onyx implementation and tests; primary openpyxl/OOXML documentation; one unchanged upstream XLSX fixture read with openpyxl 3.1.5.",
+      "evidenceLimits": "One positive fixture dual-read only. No Docling or Onyx execution; missing/stale-cache cases and the proposed four-case test were not performed. No freshness, performance or improvement claim.",
+      "summary": "One public XLSX fixture exposes the difference between formula text and cached values. Source analysis defines what a successful conversion does not prove.",
+      "topics": ["document-reading", "spreadsheet-semantics"],
+      "reviewedOn": "2026-10-25",
+      "releaseEventId": "scout:before-the-model-sees-the-spreadsheet:first-public-release",
+      "relatedIds": ["journal:research-journal"]
     }
   ]
 }

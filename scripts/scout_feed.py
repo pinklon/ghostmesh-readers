@@ -125,7 +125,9 @@ def validate_events(source, catalog, scout):
             if subject not in readers or event['url'] != host + '/' + readers[subject]['slug'] + '/':
                 raise ValueError('Release event Reader identity')
         elif kind == 'new-scout-research':
-            if event['url'] != host + '/scout/' + subject + '/':
+            research_path = ('/scout/research-journal/' if subject == 'research-journal'
+                             else '/scout/essays/' + subject + '/')
+            if event['url'] != host + research_path:
                 raise ValueError('Release event Scout research identity')
         elif subject not in reviews or event['url'] != host + '/scout/reviews/' + subject + '/':
             raise ValueError('Release event Scout identity')

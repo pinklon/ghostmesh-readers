@@ -102,7 +102,13 @@ class ScoutFeedTests(unittest.TestCase):
                          next(reader for reader in self.catalog['readers']
                               if reader['id'] == webhook_events[0]['subjectId'])['overview'])
         self.assertNotIn('releasedAt', webhook_events[0])
-        earlier = [event for event in events['events'] if event['id'] not in {wsj_id, orca_id, webhook_id}]
+        new_research_ids = {'scout:what-survives-a-checkpoint:first-public-release',
+                            'scout:before-the-model-sees-the-spreadsheet:first-public-release'}
+        new_research = [event for event in events['events'] if event['id'] in new_research_ids]
+        self.assertEqual({event['id'] for event in new_research}, new_research_ids)
+        self.assertTrue(all(event['publicDate'] == '2026-10-25' for event in new_research))
+        earlier = [event for event in events['events']
+                   if event['id'] not in {wsj_id, orca_id, webhook_id} | new_research_ids]
         self.assertEqual({event['publicDate'] for event in earlier}, {'2026-10-22', '2026-10-23'})
         self.assertTrue(all('releasedAt' not in event for event in earlier))
 
@@ -209,6 +215,22 @@ class ScoutFeedTests(unittest.TestCase):
         source['events'].append({**first, 'id': 'scout:fixture-tool:other-first'})
         with self.assertRaisesRegex(ValueError, 'Duplicate first public release'):
             validate_events(source, self.catalog, scout)
+
+    def test_scout_research_essay_release_url_is_bound_to_subject(self):
+        host = self.catalog['host']
+        event = {'id': 'scout:fixture-essay:first-public-release',
+                 'kind': 'new-scout-research', 'subjectId': 'fixture-essay',
+                 'url': host + '/scout/essays/fixture-essay/',
+                 'title': 'Fixture essay', 'summary': 'A bounded public analysis.',
+                 'publicDate': '2026-10-20'}
+        source = {'schema': 'ghostmesh-public-release-events-v1', 'events': [event]}
+        scout = {'schema': 'ghostmesh-public-scout-v1', 'reviews': []}
+        validate_events(source, self.catalog, scout)
+        for wrong in (host + '/scout/essays/other/', host + '/scout/fixture-essay/',
+                      host + '/scout/reviews/fixture-essay/'):
+            source['events'][0]['url'] = wrong
+            with self.assertRaisesRegex(ValueError, 'Scout research identity'):
+                validate_events(source, self.catalog, scout)
 
     def test_static_projection_links_scout_and_rss_without_event_churn(self):
         site = ROOT / 'site'
