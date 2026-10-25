@@ -6,7 +6,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'scripts'))
-from scout_research import validate_research, research_page
+from scout_research import validate_research, research_page, research_graph
 
 
 class ScoutResearchTests(unittest.TestCase):
@@ -79,6 +79,41 @@ class ScoutResearchTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, 'relationship target'):
             self.validate(source)
         self.assertNotIn('private:unknown', research_page(self.source))
+
+    def test_public_graph_projects_every_approved_link_not_just_anchors(self):
+        self.validate(self.source)
+        graph = research_graph(self.source)
+        generated = json.loads((ROOT/'site/scout/research/relationships.json').read_text())
+        self.assertEqual(graph, generated)
+        self.assertEqual(graph['recordCount'], len(self.source['records']))
+        self.assertEqual(graph['relationshipCount'], len(graph['edges']))
+        expected = {('scout:' + item['id'], 'scout:' + target)
+                    for item in self.source['records'] for target in item['relatedIds']}
+        self.assertEqual({(edge['from'], edge['to']) for edge in graph['edges']}, expected)
+        for slug, kind in (('what-survives-a-checkpoint', 'essay'),
+                           ('before-the-model-sees-the-spreadsheet', 'method')):
+            item = next(r for r in self.source['records'] if r['slug'] == slug)
+            self.assertEqual(item['id'], kind + ':' + slug)
+            self.assertIn(('scout:' + item['id'], 'scout:journal:research-journal'), expected)
+        self.assertTrue(all(node['id'] == 'scout:' + node['sourceId'] for node in graph['nodes']))
+        self.assertTrue(all(node['url'].startswith('https://youtube.shareplane.malott.ai/scout/')
+                            for node in graph['nodes']))
+        self.assertIn('/scout/research/relationships.json', (ROOT/'site/scout/research/index.html').read_text())
+        self.assertIn('/scout/research/relationships.json', (ROOT/'site/map/index.html').read_text())
+
+    def test_graph_rejects_private_record_and_home_names_new_public_work(self):
+        source = copy.deepcopy(self.source)
+        source['records'][-1]['status'] = 'under-review'
+        with self.assertRaisesRegex(ValueError, 'Nonpublic'):
+            research_graph(source)
+        home = (ROOT/'site/scout/index.html').read_text()
+        self.assertIn('Recently reviewed Scout research', home)
+        self.assertIn('Latest tool-review edition / reviewed 2026-10-22', home)
+        for slug in ('what-survives-a-checkpoint', 'before-the-model-sees-the-spreadsheet'):
+            self.assertIn('href="/scout/essays/' + slug + '/"', home)
+        journal = (ROOT/'site/scout/research-journal/index.html').read_text()
+        self.assertIn('See the current public Research Library', journal)
+        self.assertNotIn('Search article text from all 33 public Readers', journal)
 
 
 if __name__ == '__main__':

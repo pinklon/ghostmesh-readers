@@ -1,0 +1,124 @@
+{
+  "schema": "ghostmesh-scout-research-relationships-v1",
+  "scope": "Public Scout research reading routes; links are editorial, not corroboration.",
+  "authority": "scout-research-curated-editorial",
+  "visibility": "public",
+  "recordCount": 12,
+  "relationshipCount": 4,
+  "nodes": [
+    {
+      "id": "scout:cloudflare-security-audit-skill",
+      "sourceId": "cloudflare-security-audit-skill",
+      "type": "investigation",
+      "title": "Cloudflare security-audit-skill",
+      "url": "https://youtube.shareplane.malott.ai/scout/reviews/cloudflare-security-audit-skill/"
+    },
+    {
+      "id": "scout:essay:a-faster-review-button-is-not-a-better-decision",
+      "sourceId": "essay:a-faster-review-button-is-not-a-better-decision",
+      "type": "essay",
+      "title": "A Faster Review Button Is Not a Better Decision",
+      "url": "https://youtube.shareplane.malott.ai/scout/essays/a-faster-review-button-is-not-a-better-decision/"
+    },
+    {
+      "id": "scout:essay:five-ideas-outside-the-filter",
+      "sourceId": "essay:five-ideas-outside-the-filter",
+      "type": "essay",
+      "title": "Five Ideas Outside the Filter",
+      "url": "https://youtube.shareplane.malott.ai/scout/essays/five-ideas-outside-the-filter/"
+    },
+    {
+      "id": "scout:essay:follow-the-work",
+      "sourceId": "essay:follow-the-work",
+      "type": "essay",
+      "title": "Follow the Work, Not the Follower Count",
+      "url": "https://youtube.shareplane.malott.ai/scout/essays/follow-the-work/"
+    },
+    {
+      "id": "scout:essay:latent-states-are-not-an-agent-api",
+      "sourceId": "essay:latent-states-are-not-an-agent-api",
+      "type": "essay",
+      "title": "Latent States Are Not an Agent API",
+      "url": "https://youtube.shareplane.malott.ai/scout/essays/latent-states-are-not-an-agent-api/"
+    },
+    {
+      "id": "scout:essay:the-plateau-that-lied",
+      "sourceId": "essay:the-plateau-that-lied",
+      "type": "essay",
+      "title": "The Plateau That Lied",
+      "url": "https://youtube.shareplane.malott.ai/scout/essays/the-plateau-that-lied/"
+    },
+    {
+      "id": "scout:essay:the-signal-is-not-the-finding",
+      "sourceId": "essay:the-signal-is-not-the-finding",
+      "type": "essay",
+      "title": "The Signal Is Not the Finding",
+      "url": "https://youtube.shareplane.malott.ai/scout/essays/the-signal-is-not-the-finding/"
+    },
+    {
+      "id": "scout:essay:what-survives-a-checkpoint",
+      "sourceId": "essay:what-survives-a-checkpoint",
+      "type": "essay",
+      "title": "What Survives a Checkpoint",
+      "url": "https://youtube.shareplane.malott.ai/scout/essays/what-survives-a-checkpoint/"
+    },
+    {
+      "id": "scout:graphify-labs-graphify",
+      "sourceId": "graphify-labs-graphify",
+      "type": "investigation",
+      "title": "Graphify",
+      "url": "https://youtube.shareplane.malott.ai/scout/reviews/graphify-labs-graphify/"
+    },
+    {
+      "id": "scout:journal:research-journal",
+      "sourceId": "journal:research-journal",
+      "type": "journal",
+      "title": "The Research Journal: What Scout Actually Tested",
+      "url": "https://youtube.shareplane.malott.ai/scout/research-journal/"
+    },
+    {
+      "id": "scout:method:before-the-model-sees-the-spreadsheet",
+      "sourceId": "method:before-the-model-sees-the-spreadsheet",
+      "type": "method",
+      "title": "Before the Model Sees the Spreadsheet",
+      "url": "https://youtube.shareplane.malott.ai/scout/essays/before-the-model-sees-the-spreadsheet/"
+    },
+    {
+      "id": "scout:nvidia-openshell",
+      "sourceId": "nvidia-openshell",
+      "type": "investigation",
+      "title": "NVIDIA OpenShell",
+      "url": "https://youtube.shareplane.malott.ai/scout/reviews/nvidia-openshell/"
+    }
+  ],
+  "edges": [
+    {
+      "from": "scout:essay:what-survives-a-checkpoint",
+      "to": "scout:journal:research-journal",
+      "type": "approved related work",
+      "fromUrl": "https://youtube.shareplane.malott.ai/scout/essays/what-survives-a-checkpoint/",
+      "toUrl": "https://youtube.shareplane.malott.ai/scout/research-journal/"
+    },
+    {
+      "from": "scout:journal:research-journal",
+      "to": "scout:essay:five-ideas-outside-the-filter",
+      "type": "approved related work",
+      "fromUrl": "https://youtube.shareplane.malott.ai/scout/research-journal/",
+      "toUrl": "https://youtube.shareplane.malott.ai/scout/essays/five-ideas-outside-the-filter/"
+    },
+    {
+      "from": "scout:journal:research-journal",
+      "to": "scout:essay:the-plateau-that-lied",
+      "type": "approved related work",
+      "fromUrl": "https://youtube.shareplane.malott.ai/scout/research-journal/",
+      "toUrl": "https://youtube.shareplane.malott.ai/scout/essays/the-plateau-that-lied/"
+    },
+    {
+      "from": "scout:method:before-the-model-sees-the-spreadsheet",
+      "to": "scout:journal:research-journal",
+      "type": "approved related work",
+      "fromUrl": "https://youtube.shareplane.malott.ai/scout/essays/before-the-model-sees-the-spreadsheet/",
+      "toUrl": "https://youtube.shareplane.malott.ai/scout/research-journal/"
+    }
+  ]
+}

@@ -7,7 +7,7 @@ from datetime import date
 import json,re,sys
 from scout_feed import validate_scout,validate_events,feed_xml
 from scout_pages import validate_editions,home as scout_home,review_page,edition_page,archive_page,method_page,review_url,edition_url
-from scout_research import validate_research, research_page
+from scout_research import validate_research, research_page, research_graph
 from social_cards import approval as social_approval, specs as social_specs, inject as inject_social
 ROOT=Path(__file__).resolve().parents[1]; SITE=ROOT/'site'
 CATEGORIES=['AI & Technology','Society & Politics','Science','Business','Ethics & Culture','Other']
@@ -464,6 +464,7 @@ def projections():
  out['scout/index.html']=scout_page('Scout','/scout/',scout_home(scout,latest,research))
  out['scout/archive/index.html']=scout_page('Scout review library','/scout/archive/',archive_page(scout))
  out['scout/research/index.html']=scout_page('Scout Research Library','/scout/research/',research_page(research))
+ out['scout/research/relationships.json']=dump(research_graph(research))
  out['scout/method/index.html']=scout_page('How Scout works','/scout/method/',method_page((ROOT/'content/scout/method.md').read_text()))
  for edition in editions:
   url=edition_url(edition)
