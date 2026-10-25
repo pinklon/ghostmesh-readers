@@ -8,13 +8,16 @@
   "reviewedAt": "2026-10-25T05:08:25.827959Z",
   "provenance": {
     "kind": "codex-task-agent",
-    "reference": "Prior independent review of local source head 1205ee8 and article SHA256 4cc294f8482292092348bce543139e7086fb897b7e678c005469570b59f9fff7; current generated-candidate metadata and presentation have not received independent exact-head review.",
-    "limits": "Prior reviewer accepted the original article for owner review with no factual finding. Current article bytes and catalog evidence differ; this record remains HOLD until a separate exact-candidate reviewer checks them."
+    "reference": "Independent read-only Codex agent /root/scout_reader_review reviewed local head 95d36174e6c30239673f76f42e8fd602cc69ede6 against original approved analysis and previous local draft.",
+    "limits": "Reviewer checked source-date correction, article prose parity, eight claims, source-map hashes, privacy and generated scope. Browser visual QA, a real first-publication date, direct owner marker, hosted CI and deployment were not verified."
   },
-  "summary": "The original independent source and prose review is retained, but its acceptance cannot be carried to changed exact bytes or newly authored catalog and receipt metadata.",
+  "summary": "No new factual or privacy findings on the exact local candidate. The pinned documentation original publication date is now unknown, with the inspected revision date separately disclosed. Suitable for Tony’s local review only.",
   "findings": [
-    "Original review found no source-fidelity or privacy finding at SHA256 4cc294f8482292092348bce543139e7086fb897b7e678c005469570b59f9fff7. The current candidate preserves its analysis paragraphs while adding canonical review sections and updated navigation.",
-    "No independent browser rendering, current catalog evidence binding or production workflow behavior has been verified for this candidate. Exact-candidate review is required before owner acceptance."
+    "The six substantive analysis sections remain byte-identical to the previously reviewed draft; eight claim assessments and five source-map cues are unchanged.",
+    "The LangChain living-documentation source records original publication date as unknown and inspected revision as October 23, 2026; a negative validator test protects that distinction.",
+    "All 36 prior authored Reader bodies and 75 graph edges remain unchanged. Prior generated pages only refresh the search count and reviewed relationship metadata.",
+    "The catalog Reader publication date is provisional; this candidate remains local, noindex, and on editorial HOLD. A Netlify preview would still be publicly reachable and must not be described as private.",
+    "No browser visual QA or production authorization was performed in this independent review."
   ],
-  "conclusion": "hold"
+  "conclusion": "accept-for-owner-review"
 }

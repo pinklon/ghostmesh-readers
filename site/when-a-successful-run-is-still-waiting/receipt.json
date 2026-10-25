@@ -307,12 +307,12 @@
     "relationships": [],
     "relationshipDisposition": "No relationship is admitted by this candidate. Related Reader links proposed in private notes need separate source-grounded editorial review.",
     "review": {
-      "status": "independent-prose-review-complete; exact-candidate-review-and-owner-acceptance-pending",
+      "status": "independent local source and privacy reviewed; visual QA, owner marker and release pending",
       "reviewer": "Independent read-only Codex editorial reviewer",
-      "reviewedSourceHead": "Original article SHA-256 4cc294f8482292092348bce543139e7086fb897b7e678c005469570b59f9fff7",
+      "reviewedSourceHead": "Exact local source head 95d36174e6c30239673f76f42e8fd602cc69ede6",
       "checkedAt": "2026-10-24T23:37:12Z",
       "scope": "Pinned-source and claim-note fidelity, privacy and structural review of the original draft; current catalog and presentation changes require exact-candidate delta review.",
-      "findings": "No findings on the original prose. Visual QA and actual owner acceptance remain pending."
+      "findings": "No new factual or privacy finding on the local candidate. First-publication date is provisional and hosted preview is not private; release remains held."
     },
     "revisionHistory": [
       {
