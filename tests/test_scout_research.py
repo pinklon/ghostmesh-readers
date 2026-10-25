@@ -45,7 +45,11 @@ class ScoutResearchTests(unittest.TestCase):
             self.assertEqual(item['type'], kind)
             self.assertEqual(item['relatedIds'], ['journal:research-journal'])
             self.assertIn('href="' + item['url'] + '"', (ROOT/'site/scout/essays/index.html').read_text())
-            self.assertNotIn('Editorial candidate', (ROOT/item['sourcePath']).read_text())
+            page = (ROOT/item['sourcePath']).read_text()
+            self.assertNotIn('Editorial candidate', page)
+            self.assertNotIn('noindex', page)
+            self.assertIn('<link rel="canonical" href="https://youtube.shareplane.malott.ai' + item['url'] + '">', page)
+            self.assertIn('https://youtube.shareplane.malott.ai' + item['url'], (ROOT/'site/sitemap.xml').read_text())
             matches = [e for e in self.events['events'] if e['id'] == item['releaseEventId']]
             self.assertEqual(len(matches), 1)
             self.assertEqual(matches[0]['kind'], 'new-scout-research')
