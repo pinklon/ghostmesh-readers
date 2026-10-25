@@ -14,6 +14,6 @@ python3 -m unittest discover -s tests -p 'test_scout_provider_diff.py'
 - Removed entries are not treated as deprecations.
 - Every candidate is `NOT_APPROVED` and must undergo first-party evidence and owner editorial review before inclusion in #68.
 
-This first increment deliberately does not download the previous GitHub Actions artifact, run a semantic classifier or publish anything. Retained artifacts expire after 30 days. A subsequent change will connect adjacent scheduled-run artifacts and add source-specific status evidence. Never infer Tony's account entitlement from a public release notice.
+The scheduled workflow now selects the latest retained successful `main` observation and emits the comparison artifact. `scout_provider_evidence.py` then fetches bounded context from the official page for each review-only candidate; see `SCOUT_PROVIDER_EVIDENCE.md`. Neither step semantically classifies a feature or publishes. Retained artifacts expire after 30 days. Never infer Tony's account entitlement from a public release notice.
 
 Related: #69 and #68.
