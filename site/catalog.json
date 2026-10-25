@@ -296,12 +296,12 @@
       "relationships": [],
       "relationshipDisposition": "No relationship is admitted by this candidate. Related Reader links proposed in private notes need separate source-grounded editorial review.",
       "review": {
-        "status": "independent local source and privacy reviewed; visual QA, owner marker and release pending",
+        "status": "independent source and final presentation delta accepted for owner review; owner marker and release pending",
         "reviewer": "Independent read-only Codex editorial reviewer",
-        "reviewedSourceHead": "Exact local source head 95d36174e6c30239673f76f42e8fd602cc69ede6",
-        "checkedAt": "2026-10-24T23:37:12Z",
-        "scope": "Pinned-source and claim-note fidelity, privacy and structural review of the original draft; current catalog and presentation changes require exact-candidate delta review.",
-        "findings": "No new factual or privacy finding on the local candidate. First-publication date is provisional and hosted preview is not private; release remains held."
+        "reviewedSourceHead": "Exact authored article SHA-256 cb14f38fe7bd6db0fe13e42fef239e0c16964dc1778c165c14077b68028eb088; final presentation delta from PR 89 head 1f0dbcc9ec23d77802e5c7c28cec5ea0d05574b0",
+        "checkedAt": "2026-10-25T05:28:55Z",
+        "scope": "Pinned-source and claim fidelity, privacy and source-date review of the approved analysis, plus independent exact-delta review of the final header and nine-file projection scope; reviewer did not run browser QA.",
+        "findings": "No factual or privacy finding in the reviewed delta; all six analysis sections remain unchanged. The October 25 UTC catalog day is intended for release and must match actual deployment; authenticated owner marker and production decision remain pending."
       },
       "revisionHistory": [
         {

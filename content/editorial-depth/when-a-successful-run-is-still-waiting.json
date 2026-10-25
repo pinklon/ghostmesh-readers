@@ -4,10 +4,10 @@
   "sourceId": "langchain-webhooks-docs-4506df5",
   "sourceDigest": "eca94bbf6aacb09fb7e3dd0ac82440d6f13c7d564ee63c6ab0203aeefcd1df57",
   "sourceAidSha256": "72fa309d40ed675e95d82497fdc4c75e49f197c7ab2dbce55c474697c59fb930",
-  "articleSha256": "3d6e1fded61bdd5d2cd78499e43e9a87413323cddbe4fa44546d8634e46f8981",
+  "articleSha256": "cb14f38fe7bd6db0fe13e42fef239e0c16964dc1778c165c14077b68028eb088",
   "evidenceRevision": "f344aa740cf8c64eba44a8b3060c0228bb1a88e9a164fbc26edd98e0ca7be4f0",
   "sourceMapEvidenceSha256": "20178d750d4418bdee88ea07cbea2dbbcdf7a7d9b426dead9d70099bef163aa2",
-  "reviewEvidenceSha256": "987360ee88a53098c9e52c50ec5fa2613aa88d3f035964a50c3d954705311d12",
+  "reviewEvidenceSha256": "c46b1f9b26c0a46f5981ba1b2ee9614bd84f69ef356f24b31bb5cb241bc04062",
   "candidateAuthor": "pinklon",
   "complexity": {
     "tier": "extended",
@@ -106,27 +106,22 @@
   },
   "independentCorroboration": "none",
   "ownerDecision": {
-    "pullNumber": null,
+    "pullNumber": 89,
     "commentId": null
   },
-  "decision": "hold",
+  "decision": "accept",
   "gaps": [
     {
-      "type": "evidence",
-      "severity": "blocking",
-      "rationale": "Independent review of the exact new article, catalog claims, source map and receipt has not been completed after mechanical presentation changes."
+      "type": "scope",
+      "severity": "nonblocking",
+      "rationale": "The catalog day is the intended October 25, 2026 UTC release date. Confirm that day against the actual production deployment and revise this candidate if release slips."
     },
     {
       "type": "test",
-      "severity": "blocking",
-      "rationale": "Browser visual and accessibility checks of the generated route have not been completed under the available permitted surface."
-    },
-    {
-      "type": "scope",
-      "severity": "blocking",
-      "rationale": "The catalog date is the planned UTC release day, not a verified first-publication date. Confirm or correct it against the actual production release before acceptance."
+      "severity": "nonblocking",
+      "rationale": "The prior hosted preview passed focused mobile overflow and theme checks. Final header bytes require refreshed hosted preview inspection before the separate exact-head release decision."
     }
   ],
-  "decisionRationale": "The approved analysis is preserved, but publication remains held for exact-candidate independent review, visual QA and authenticated owner acceptance on a future PR.",
-  "assessedAt": "2026-10-25T05:08:25.827959Z"
+  "decisionRationale": "The approved analysis, source roles and intentional absence of relationships remain unchanged. Independent review accepted the narrow final presentation delta; owner content acceptance is recorded in conversation, while authenticated GitHub marker and exact-head production release remain separate gates.",
+  "assessedAt": "2026-10-25T05:28:55Z"
 }
