@@ -6,7 +6,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'scripts'))
-from scout_research import validate_research, research_page, research_graph
+from scout_research import validate_research, research_page, research_graph, publication_label, LEGACY_PUBLIC_BY_IDS
 
 
 class ScoutResearchTests(unittest.TestCase):
@@ -58,7 +58,7 @@ class ScoutResearchTests(unittest.TestCase):
 
     def test_future_tranche_and_private_status_fail_closed(self):
         source = copy.deepcopy(self.source)
-        future = copy.deepcopy(next(item for item in source['records'] if item['type'] == 'essay'))
+        future = copy.deepcopy(next(item for item in source['records'] if item['slug'] == 'what-survives-a-checkpoint'))
         future.update(id='essay:synthetic-next-tranche', slug='synthetic-next-tranche',
                       url='/scout/essays/synthetic-next-tranche/',
                       sourcePath='site/scout/essays/synthetic-next-tranche/index.html')
@@ -73,12 +73,61 @@ class ScoutResearchTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, 'identity'):
             self.validate(source)
 
+    def test_publication_dates_keep_review_and_first_publication_distinct(self):
+        self.validate(self.source)
+        events = {event['id']: event for event in self.events['events']}
+        cards = research_page(self.source, self.events)
+        self.assertEqual(cards.count('class="gm-scout-date"'), len(self.source['records']))
+        self.assertNotIn('Historical essay / release date not asserted', cards)
+        for item in self.source['records']:
+            label = publication_label(item, events)
+            self.assertIn(label, cards)
+            if item['id'] in LEGACY_PUBLIC_BY_IDS:
+                self.assertEqual(item['publicByOn'], '2026-10-23')
+                self.assertEqual(item['publicByEvidenceUrl'],
+                                 'https://github.com/pinklon/ghostmesh-readers/pull/72')
+                self.assertIn('Public by', label)
+                self.assertIn('First-publication day unverified', label)
+                self.assertIsNone(item['reviewedOn'])
+            else:
+                self.assertEqual(events[item['releaseEventId']]['publicDate'],
+                                 label.split('datetime="', 1)[1].split('"', 1)[0])
+                self.assertIn('Published', label)
+            if item['type'] in {'essay', 'method'}:
+                page = (ROOT/item['sourcePath']).read_text()
+                hero = page.split('<section class="hero">', 1)[1].split('</section>', 1)[0]
+                self.assertIn(label, hero)
+                self.assertIn(label.split(' · <a href=', 1)[0],
+                              (ROOT/'site/scout/essays/index.html').read_text())
+
+    def test_future_publication_requires_source_bound_first_release_event(self):
+        source = copy.deepcopy(self.source)
+        item = next(r for r in source['records'] if r['slug'] == 'what-survives-a-checkpoint')
+        item['releaseEventId'] = None
+        with self.assertRaisesRegex(ValueError, 'first-publication event required'):
+            self.validate(source)
+        item['releaseEventId'] = 'scout:research-journal:first-public-release'
+        with self.assertRaisesRegex(ValueError, 'release event mismatch'):
+            self.validate(source)
+        item['releaseEventId'] = 'scout:what-survives-a-checkpoint:first-public-release'
+        self.validate(source)
+
+    def test_later_review_does_not_change_first_publication_date(self):
+        source = copy.deepcopy(self.source)
+        item = next(r for r in source['records'] if r['slug'] == 'research-journal')
+        item['reviewedOn'] = '2026-10-25'
+        self.validate(source)
+        events = {event['id']: event for event in self.events['events']}
+        label = publication_label(item, events)
+        self.assertIn('Published <time datetime="2026-10-23">', label)
+        self.assertIn('Reviewed <time datetime="2026-10-25">', label)
+
     def test_relationships_require_explicit_existing_ids(self):
         source = copy.deepcopy(self.source)
         source['records'][0]['relatedIds'] = ['private:unknown']
         with self.assertRaisesRegex(ValueError, 'relationship target'):
             self.validate(source)
-        self.assertNotIn('private:unknown', research_page(self.source))
+        self.assertNotIn('private:unknown', research_page(self.source, self.events))
 
     def test_public_graph_projects_every_approved_link_not_just_anchors(self):
         self.validate(self.source)
