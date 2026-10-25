@@ -94,7 +94,15 @@ class ScoutFeedTests(unittest.TestCase):
         self.assertEqual(len(orca_events), 1)
         self.assertEqual(orca_events[0]['publicDate'], '2026-10-24')
         self.assertNotIn('releasedAt', orca_events[0])
-        earlier = [event for event in events['events'] if event['id'] not in {wsj_id, orca_id}]
+        webhook_id = 'reader:when-a-successful-run-is-still-waiting:first-public-release'
+        webhook_events = [event for event in events['events'] if event['id'] == webhook_id]
+        self.assertEqual(len(webhook_events), 1)
+        self.assertEqual(webhook_events[0]['publicDate'], '2026-10-25')
+        self.assertEqual(webhook_events[0]['summary'],
+                         next(reader for reader in self.catalog['readers']
+                              if reader['id'] == webhook_events[0]['subjectId'])['overview'])
+        self.assertNotIn('releasedAt', webhook_events[0])
+        earlier = [event for event in events['events'] if event['id'] not in {wsj_id, orca_id, webhook_id}]
         self.assertEqual({event['publicDate'] for event in earlier}, {'2026-10-22', '2026-10-23'})
         self.assertTrue(all('releasedAt' not in event for event in earlier))
 

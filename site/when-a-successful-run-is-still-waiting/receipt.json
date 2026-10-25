@@ -1,0 +1,348 @@
+{
+  "schema": "ghostmesh-reader-receipt-v2",
+  "createdAt": "2026-10-24T23:37:12Z",
+  "source": {
+    "kind": "article",
+    "identity": "langchain-webhooks-docs-4506df5",
+    "url": "https://github.com/langchain-ai/docs/blob/4506df5fb4105a39b84c2b7390d21bed89e28668/src/langsmith/use-webhooks.mdx",
+    "title": "Use webhooks",
+    "authors": "LangChain documentation team",
+    "publisher": "LangChain",
+    "publicationDate": "unknown",
+    "updatedDate": "2026-10-23",
+    "dateNote": "Original publication date unknown; October 23, 2026 is the inspected revision date for this living documentation."
+  },
+  "sourceInspection": {
+    "sourceAidSha256": "72fa309d40ed675e95d82497fdc4c75e49f197c7ab2dbce55c474697c59fb930",
+    "method": "A privately retained source and claim packet records the pinned documentation, supporting primary references and local editorial review.",
+    "caveat": "Source reading does not establish a deployed integration defect, atomic state readback or a measured destination outcome.",
+    "publicationBoundary": "Only original analysis, public citations and sanitized hash metadata may be published; the private packet remains outside Git."
+  },
+  "custody": {
+    "status": "private-source-packet-retained",
+    "note": "The hash-bound working packet and review artifacts remain private; no raw source text or private paths are published."
+  },
+  "normalization": {
+    "id": "reader:when-a-successful-run-is-still-waiting",
+    "slug": "when-a-successful-run-is-still-waiting",
+    "title": "When a Successful Run Is Still Waiting",
+    "category": "AI & Technology",
+    "tags": [
+      "agents",
+      "webhooks",
+      "recovery",
+      "evidence"
+    ],
+    "entities": [
+      "LangChain",
+      "LangGraph",
+      "Temporal",
+      "AWS",
+      "Docling"
+    ],
+    "source": {
+      "kind": "article",
+      "identity": "langchain-webhooks-docs-4506df5",
+      "url": "https://github.com/langchain-ai/docs/blob/4506df5fb4105a39b84c2b7390d21bed89e28668/src/langsmith/use-webhooks.mdx",
+      "title": "Use webhooks",
+      "authors": "LangChain documentation team",
+      "publisher": "LangChain",
+      "publicationDate": "unknown",
+      "updatedDate": "2026-10-23",
+      "dateNote": "Original publication date unknown; October 23, 2026 is the inspected revision date for this living documentation."
+    },
+    "published": "2026-10-25",
+    "updated": "2026-10-25T05:15:52Z",
+    "overview": "LangChain documents a webhook success that can still leave a LangGraph run waiting at an interrupt.",
+    "whyItMatters": "Execution status, the user-requested outcome and permission for the next action answer different questions.",
+    "ghostMeshTakeaway": "Audit the existing consumer completion rule, preserve event identity and leave unattributable outcomes explicitly unknown.",
+    "verdict": "Worth studying",
+    "architectureImpact": "experiment recommended",
+    "falsification": "Revise the recommendation if the deployed consumer already correlates each callback to the correct run, state, permission and destination outcome across delayed, missing and duplicate events.",
+    "evidenceState": "partially corroborated",
+    "lastEvidenceChecked": "2026-10-24T23:37:12Z",
+    "freshness": "The inspected LangChain documentation revision is dated October 23, 2026. No deployed GhostMesh integration or proposed synthetic experiment was tested.",
+    "variant": "dossier",
+    "accent": "teal",
+    "claims": [
+      {
+        "id": "when-a-successful-run-is-still-waiting--c1",
+        "proposition": "A LangGraph API webhook success status can describe a run paused at interrupt() without certifying the user-requested outcome.",
+        "kind": "vendor-documented-event-semantics",
+        "asOf": "2026-10-24",
+        "status": "corroborated",
+        "assessment": "The pinned LangChain documentation explicitly distinguishes callback status from the interrupt omitted in the payload.",
+        "limits": "Documentation behavior was not reproduced in a deployed GhostMesh consumer.",
+        "sourceLocation": "Webhook payload and status sections",
+        "references": [
+          "langchain-webhook"
+        ],
+        "counterevidence": [],
+        "temporalScope": "Pinned source revisions inspected October 24, 2026; no GhostMesh runtime experiment was performed."
+      },
+      {
+        "id": "when-a-successful-run-is-still-waiting--c2",
+        "proposition": "A consumer should bind a callback to attributable run state and retain UNKNOWN when a later state read cannot be correlated.",
+        "kind": "editorial-engineering-inference",
+        "asOf": "2026-10-24",
+        "status": "unverified",
+        "assessment": "This is the proposed interpretation rule derived from the documented callback contract.",
+        "limits": "Atomic callback-to-state pairing and a suitable checkpoint query are not established by the source.",
+        "sourceLocation": "Define what the consumer is allowed to conclude",
+        "references": [
+          "langchain-webhook"
+        ],
+        "counterevidence": [],
+        "temporalScope": "Pinned source revisions inspected October 24, 2026; no GhostMesh runtime experiment was performed."
+      },
+      {
+        "id": "when-a-successful-run-is-still-waiting--c3",
+        "proposition": "Durable workflow replay and idempotent destination APIs require separate evidence about external effects and retries.",
+        "kind": "engineering-context",
+        "asOf": "2026-10-24",
+        "status": "partially corroborated",
+        "assessment": "Temporal, LangGraph and AWS documents describe relevant replay and request-identity mechanisms.",
+        "limits": "No cited runtime or destination contract was tested for this specific workflow.",
+        "sourceLocation": "Keep the completion rule separate from permission",
+        "references": [
+          "temporal-activities",
+          "langgraph-functional",
+          "aws-idempotency"
+        ],
+        "counterevidence": [],
+        "temporalScope": "Pinned source revisions inspected October 24, 2026; no GhostMesh runtime experiment was performed."
+      },
+      {
+        "id": "when-a-successful-run-is-still-waiting--c4",
+        "proposition": "Stable operation identity should not be treated as renewed permission or proof of completion.",
+        "kind": "editorial-governance-recommendation",
+        "asOf": "2026-10-24",
+        "status": "unverified",
+        "assessment": "The article proposes separate identity, authorization and destination-outcome checks.",
+        "limits": "This is a GhostMesh design recommendation, not a measured defect or vendor guarantee.",
+        "sourceLocation": "Keep the completion rule separate from permission",
+        "references": [
+          "aws-idempotency"
+        ],
+        "counterevidence": [],
+        "temporalScope": "Pinned source revisions inspected October 24, 2026; no GhostMesh runtime experiment was performed."
+      },
+      {
+        "id": "when-a-successful-run-is-still-waiting--c5",
+        "proposition": "The inspected Docling Markdown serializer suppresses certain adjacent duplicate headings.",
+        "kind": "implementation-source-observation",
+        "asOf": "2026-10-24",
+        "status": "corroborated",
+        "assessment": "The pinned serializer source shows position-based adjacent duplicate suppression.",
+        "limits": "The frequency or downstream effect of this behavior was not measured.",
+        "sourceLocation": "Prefer the smallest change that preserves the distinction",
+        "references": [
+          "docling-serializer"
+        ],
+        "counterevidence": [],
+        "temporalScope": "Pinned source revisions inspected October 24, 2026; no GhostMesh runtime experiment was performed."
+      },
+      {
+        "id": "when-a-successful-run-is-still-waiting--c6",
+        "proposition": "Docling structured export can retain modeled information that a flattened Markdown projection cannot express.",
+        "kind": "implementation-source-observation",
+        "asOf": "2026-10-24",
+        "status": "partially corroborated",
+        "assessment": "The pinned export path and documentation describe structured model output.",
+        "limits": "Preserving model structure does not validate the original parse or answer quality.",
+        "sourceLocation": "Prefer the smallest change that preserves the distinction",
+        "references": [
+          "docling-export",
+          "docling-serialization"
+        ],
+        "counterevidence": [],
+        "temporalScope": "Pinned source revisions inspected October 24, 2026; no GhostMesh runtime experiment was performed."
+      },
+      {
+        "id": "when-a-successful-run-is-still-waiting--c7",
+        "proposition": "A structured-export comparison may improve retrieval where heading or table structure is material.",
+        "kind": "proposed-experiment",
+        "asOf": "2026-10-24",
+        "status": "unverified",
+        "assessment": "A bounded same-model comparison with a plain-prose control is proposed.",
+        "limits": "The experiment has not been run; benefit and cost remain unknown.",
+        "sourceLocation": "Prefer the smallest change that preserves the distinction",
+        "references": [
+          "docling-serializer",
+          "docling-export"
+        ],
+        "counterevidence": [],
+        "temporalScope": "Pinned source revisions inspected October 24, 2026; no GhostMesh runtime experiment was performed."
+      },
+      {
+        "id": "when-a-successful-run-is-still-waiting--c8",
+        "proposition": "Synthetic callback and state fixtures could test the proposed completion classifier before a live integration.",
+        "kind": "proposed-experiment",
+        "asOf": "2026-10-24",
+        "status": "unverified",
+        "assessment": "The article specifies waiting, missing, duplicated, delayed, unattributable and completed cases.",
+        "limits": "A passing local reducer would not prove network behavior or destination guarantees.",
+        "sourceLocation": "Test the interpretation rather than another orchestration stack",
+        "references": [
+          "langchain-webhook"
+        ],
+        "counterevidence": [],
+        "temporalScope": "Pinned source revisions inspected October 24, 2026; no GhostMesh runtime experiment was performed."
+      }
+    ],
+    "references": [
+      {
+        "id": "langchain-webhook",
+        "title": "Use webhooks",
+        "author": "LangChain documentation team",
+        "publisher": "LangChain",
+        "url": "https://github.com/langchain-ai/docs/blob/4506df5fb4105a39b84c2b7390d21bed89e28668/src/langsmith/use-webhooks.mdx",
+        "publicationDate": "unknown",
+        "eventDate": null,
+        "location": "Webhook payload, status and interrupt behavior",
+        "sourceType": "vendor documentation",
+        "independence": "Original documentation revision; no deployed GhostMesh consumer was tested.",
+        "evidenceFamily": "langchain-webhook",
+        "checkedAt": "2026-10-24T23:37:12Z",
+        "datePrecision": "unknown",
+        "dateNote": "Original publication date was not independently established for this reference."
+      },
+      {
+        "id": "temporal-activities",
+        "title": "Activity Definition",
+        "author": "Temporal documentation team",
+        "publisher": "Temporal",
+        "url": "https://github.com/temporalio/documentation/blob/013b6f8b13f0613056250b17a5034960b3a440ae/docs/encyclopedia/activities/activity-definition.mdx",
+        "publicationDate": "unknown",
+        "eventDate": null,
+        "location": "Activity retry and replay semantics",
+        "sourceType": "vendor documentation",
+        "independence": "Documents Temporal Activity replay behavior, not this LangGraph webhook integration.",
+        "evidenceFamily": "temporal-activities",
+        "checkedAt": "2026-10-24T23:37:12Z",
+        "datePrecision": "unknown",
+        "dateNote": "Original publication date was not independently established for this reference."
+      },
+      {
+        "id": "langgraph-functional",
+        "title": "Functional API",
+        "author": "LangChain documentation team",
+        "publisher": "LangChain",
+        "url": "https://github.com/langchain-ai/docs/blob/4506df5fb4105a39b84c2b7390d21bed89e28668/src/oss/langgraph/functional-api.mdx",
+        "publicationDate": "unknown",
+        "eventDate": null,
+        "location": "Functional API task continuation",
+        "sourceType": "vendor documentation",
+        "independence": "Explains unfinished-task replay; does not certify an external destination effect.",
+        "evidenceFamily": "langgraph-functional",
+        "checkedAt": "2026-10-24T23:37:12Z",
+        "datePrecision": "unknown",
+        "dateNote": "Original publication date was not independently established for this reference."
+      },
+      {
+        "id": "aws-idempotency",
+        "title": "Making retries safe with idempotent APIs",
+        "author": "Malcolm Featonby",
+        "publisher": "AWS Builders Library",
+        "url": "https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/",
+        "publicationDate": "unknown",
+        "eventDate": null,
+        "location": "Request identifiers, parameter binding and atomic token handling",
+        "sourceType": "first-party engineering account",
+        "independence": "Describes a destination API contract and its limits, not a GhostMesh implementation.",
+        "evidenceFamily": "aws-idempotency",
+        "checkedAt": "2026-10-24T23:37:12Z",
+        "datePrecision": "unknown",
+        "dateNote": "Original publication date was not independently established for this reference."
+      },
+      {
+        "id": "docling-serializer",
+        "title": "Docling Markdown serializer",
+        "author": "Docling contributors",
+        "publisher": "Docling",
+        "url": "https://github.com/docling-project/docling-core/blob/b501ec8011181db4a08a45b27a47fe7f66814cbe/docling_core/transforms/serializer/markdown.py#L665-L703",
+        "publicationDate": "unknown",
+        "eventDate": null,
+        "location": "Adjacent duplicate heading suppression",
+        "sourceType": "implementation source inspected",
+        "independence": "Pinned code path, not a measured frequency or OCR outcome.",
+        "evidenceFamily": "docling-serializer",
+        "checkedAt": "2026-10-24T23:37:12Z",
+        "datePrecision": "unknown",
+        "dateNote": "Original publication date was not independently established for this reference."
+      },
+      {
+        "id": "docling-export",
+        "title": "Docling structured export",
+        "author": "Docling contributors",
+        "publisher": "Docling",
+        "url": "https://github.com/docling-project/docling-core/blob/b501ec8011181db4a08a45b27a47fe7f66814cbe/docling_core/types/doc/document.py#L3917-L3933",
+        "publicationDate": "unknown",
+        "eventDate": null,
+        "location": "Export to dict implementation",
+        "sourceType": "implementation source inspected",
+        "independence": "Structured export retains modeled fields; it does not validate extraction accuracy.",
+        "evidenceFamily": "docling-export",
+        "checkedAt": "2026-10-24T23:37:12Z",
+        "datePrecision": "unknown",
+        "dateNote": "Original publication date was not independently established for this reference."
+      },
+      {
+        "id": "docling-serialization",
+        "title": "Serialization documentation",
+        "author": "Docling contributors",
+        "publisher": "Docling",
+        "url": "https://docling-project.github.io/docling/concepts/serialization/",
+        "publicationDate": "unknown",
+        "eventDate": null,
+        "location": "JSON span preservation description",
+        "sourceType": "vendor documentation",
+        "independence": "Documentation differs in detail from pinned Markdown implementation; not treated as a measured result.",
+        "evidenceFamily": "docling-serialization",
+        "checkedAt": "2026-10-24T23:37:12Z",
+        "datePrecision": "unknown",
+        "dateNote": "Original publication date was not independently established for this reference."
+      }
+    ],
+    "relationships": [],
+    "relationshipDisposition": "No relationship is admitted by this candidate. Related Reader links proposed in private notes need separate source-grounded editorial review.",
+    "review": {
+      "status": "independent source and final presentation delta accepted for owner review; owner marker and release pending",
+      "reviewer": "Independent read-only Codex editorial reviewer",
+      "reviewedSourceHead": "Exact authored article SHA-256 cb14f38fe7bd6db0fe13e42fef239e0c16964dc1778c165c14077b68028eb088; final presentation delta from PR 89 head 1f0dbcc9ec23d77802e5c7c28cec5ea0d05574b0",
+      "checkedAt": "2026-10-25T05:28:55Z",
+      "scope": "Pinned-source and claim fidelity, privacy and source-date review of the approved analysis, plus independent exact-delta review of the final header and nine-file projection scope; reviewer did not run browser QA.",
+      "findings": "No factual or privacy finding in the reviewed delta; all six analysis sections remain unchanged. The October 25 UTC catalog day is intended for release and must match actual deployment; authenticated owner marker and production decision remain pending."
+    },
+    "revisionHistory": [
+      {
+        "at": "2026-10-24T23:37:12Z",
+        "kind": "new-reader-local-draft",
+        "reason": "Approved Scout article prepared for canonical Reader review; not yet published."
+      },
+      {
+        "at": "2026-10-25T05:15:52Z",
+        "kind": "local-release-preparation",
+        "reason": "Set the planned UTC release day after owner review; actual first-publication date remains a release gate and no public event is recorded."
+      }
+    ],
+    "editorialOrder": 30,
+    "orderReason": "Place this written-source webhook analysis after the existing published Readers.",
+    "relationshipReview": {
+      "reviewedAt": "2026-10-24",
+      "reviewedCatalogSize": 37,
+      "decision": "none",
+      "reviewedTargets": [],
+      "rationale": "Existing authority and ingestion Readers have thematic overlap, but no typed link is admitted without a distinct reviewed evidence or architecture relationship."
+    },
+    "editorialDepth": {
+      "schemaVersion": 1,
+      "receiptPath": "content/editorial-depth/when-a-successful-run-is-still-waiting.json"
+    }
+  },
+  "editorial": {
+    "overview": "LangChain documents a webhook success that can still leave a LangGraph run waiting at an interrupt.",
+    "whyItMatters": "Execution status, the user-requested outcome and permission for the next action answer different questions.",
+    "ghostMeshTakeaway": "Audit the existing consumer completion rule, preserve event identity and leave unattributable outcomes explicitly unknown."
+  }
+}

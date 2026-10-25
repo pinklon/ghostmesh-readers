@@ -1,0 +1,127 @@
+{
+  "schemaVersion": 1,
+  "readerId": "reader:when-a-successful-run-is-still-waiting",
+  "sourceId": "langchain-webhooks-docs-4506df5",
+  "sourceDigest": "eca94bbf6aacb09fb7e3dd0ac82440d6f13c7d564ee63c6ab0203aeefcd1df57",
+  "sourceAidSha256": "72fa309d40ed675e95d82497fdc4c75e49f197c7ab2dbce55c474697c59fb930",
+  "articleSha256": "cb14f38fe7bd6db0fe13e42fef239e0c16964dc1778c165c14077b68028eb088",
+  "evidenceRevision": "f344aa740cf8c64eba44a8b3060c0228bb1a88e9a164fbc26edd98e0ca7be4f0",
+  "sourceMapEvidenceSha256": "20178d750d4418bdee88ea07cbea2dbbcdf7a7d9b426dead9d70099bef163aa2",
+  "reviewEvidenceSha256": "c46b1f9b26c0a46f5981ba1b2ee9614bd84f69ef356f24b31bb5cb241bc04062",
+  "candidateAuthor": "pinklon",
+  "complexity": {
+    "tier": "extended",
+    "factors": [
+      "Eight material claim notes span event semantics, replay, idempotency, authorization and serialization.",
+      "The proposed action classifier must separate observed source behavior from unrun tests and uncertain effects."
+    ],
+    "rationale": "The source is short but the analysis crosses consequential continuation and permission boundaries, so the extended evidence map and counterargument are proportionate."
+  },
+  "sourceMap": [
+    {
+      "atSeconds": null,
+      "sectionId": "when-a-successful-run-is-still-waiting",
+      "claimIds": [
+        "when-a-successful-run-is-still-waiting--c1"
+      ],
+      "rationale": "The vendor documentation labels a webhook success that can leave a run waiting for human input."
+    },
+    {
+      "atSeconds": null,
+      "sectionId": "define-what-the-consumer-is-allowed-to-conclude",
+      "claimIds": [
+        "when-a-successful-run-is-still-waiting--c2"
+      ],
+      "rationale": "The documented payload and status semantics motivate attribution and UNKNOWN rules as GhostMesh inference."
+    },
+    {
+      "atSeconds": null,
+      "sectionId": "keep-the-completion-rule-separate-from-permission",
+      "claimIds": [
+        "when-a-successful-run-is-still-waiting--c3",
+        "when-a-successful-run-is-still-waiting--c4"
+      ],
+      "rationale": "Vendor replay and idempotency documents inform, but do not prove, separate authorization and destination outcome controls."
+    },
+    {
+      "atSeconds": null,
+      "sectionId": "test-the-interpretation-rather-than-another-orchestration-stack",
+      "claimIds": [
+        "when-a-successful-run-is-still-waiting--c8"
+      ],
+      "rationale": "The article proposes synthetic callback and state fixtures to falsify an overconfident completion classifier."
+    },
+    {
+      "atSeconds": null,
+      "sectionId": "prefer-the-smallest-change-that-preserves-the-distinction",
+      "claimIds": [
+        "when-a-successful-run-is-still-waiting--c5",
+        "when-a-successful-run-is-still-waiting--c6",
+        "when-a-successful-run-is-still-waiting--c7"
+      ],
+      "rationale": "Pinned Docling implementation and export materials illustrate the limits of flattening and the need for a bounded comparison."
+    }
+  ],
+  "assessment": {
+    "sourceCoverage": {
+      "disposition": "covered",
+      "rationale": "The five mapped sections identify the pinned webhook documentation and separate supporting references; the original page date and production behavior remain limited."
+    },
+    "supportingArgument": {
+      "disposition": "covered",
+      "rationale": "The strongest documented webhook status distinction is represented alongside relevant retry and serialization context without claiming a deployed GhostMesh defect."
+    },
+    "evidenceRoles": {
+      "disposition": "covered",
+      "rationale": "Vendor documentation, inspected implementation source, GhostMesh inference and unrun experiments are labeled separately in the claim register."
+    },
+    "counterargument": {
+      "disposition": "covered",
+      "rationale": "The article acknowledges that the existing consumer may already handle this correctly and that a new adapter could create competing lifecycle state."
+    },
+    "tradeoffs": {
+      "disposition": "covered",
+      "rationale": "It considers the cost of a new orchestration layer against inspecting the incumbent runtime and making the smallest evidence-preserving change."
+    },
+    "falsifiability": {
+      "disposition": "covered",
+      "rationale": "Synthetic waiting, duplicate, delayed, missing and completed cases define concrete failures that would reject the proposed reducer."
+    },
+    "originalSynthesis": {
+      "disposition": "covered",
+      "rationale": "The GhostMesh thesis distinguishes callback processing, requested outcome, operation identity and permission to perform a consequential action."
+    },
+    "performance": {
+      "disposition": "covered",
+      "rationale": "No throughput, latency or accuracy measurement is asserted; the synthetic experiment is framed as a proposed decision-quality test."
+    },
+    "economics": {
+      "disposition": "not-applicable",
+      "rationale": "No measured cost claim appears; additional adapter and review effort are acknowledged as a reason to prefer the existing boundary."
+    },
+    "threatGovernance": {
+      "disposition": "covered",
+      "rationale": "Authorization, cross-run attribution, uncertain destination effects and replay risk are analyzed as separate control boundaries."
+    }
+  },
+  "independentCorroboration": "none",
+  "ownerDecision": {
+    "pullNumber": 89,
+    "commentId": 6393970066
+  },
+  "decision": "accept",
+  "gaps": [
+    {
+      "type": "scope",
+      "severity": "nonblocking",
+      "rationale": "The catalog day is the intended October 25, 2026 UTC release date. Confirm that day against the actual production deployment and revise this candidate if release slips."
+    },
+    {
+      "type": "test",
+      "severity": "nonblocking",
+      "rationale": "The prior hosted preview passed focused mobile overflow and theme checks. Final header bytes require refreshed hosted preview inspection before the separate exact-head release decision."
+    }
+  ],
+  "decisionRationale": "The approved analysis, source roles and intentional absence of relationships remain unchanged. Independent review accepted the narrow final presentation delta; owner content acceptance is recorded in conversation, while authenticated GitHub marker and exact-head production release remain separate gates.",
+  "assessedAt": "2026-10-25T05:28:55Z"
+}

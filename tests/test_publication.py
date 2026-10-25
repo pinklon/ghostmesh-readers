@@ -83,7 +83,7 @@ class PublicationGate(unittest.TestCase):
  def test_justified_zero_relationship_assessment_is_allowed(self):
   data=json.loads((self.root/'content/catalog.json').read_text())
   unlinked=[r for r in data['readers'] if not r['relationships']]
-  self.assertEqual({'the-warning-is-not-a-ballot-ruling','the-parallel-result-is-not-the-product','the-missing-step-is-not-more-intelligence'},{r['slug'] for r in unlinked})
+  self.assertEqual({'the-warning-is-not-a-ballot-ruling','the-parallel-result-is-not-the-product','the-missing-step-is-not-more-intelligence','when-a-successful-run-is-still-waiting'},{r['slug'] for r in unlinked})
   self.assertEqual([],self.structural_errors())
  def test_five_relations_remain_public_and_navigable(self):
   p=self.root/'content/catalog.json';data=json.loads(p.read_text());reader=data['readers'][0]

@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "readerId": "reader:when-a-successful-run-is-still-waiting",
+  "sourceId": "langchain-webhooks-docs-4506df5",
+  "sourceAidSha256": "72fa309d40ed675e95d82497fdc4c75e49f197c7ab2dbce55c474697c59fb930",
+  "articleSha256": "cb14f38fe7bd6db0fe13e42fef239e0c16964dc1778c165c14077b68028eb088",
+  "evidenceRevision": "f344aa740cf8c64eba44a8b3060c0228bb1a88e9a164fbc26edd98e0ca7be4f0",
+  "reviewedAt": "2026-10-25T05:28:55Z",
+  "provenance": {
+    "kind": "codex-task-agent",
+    "reference": "Independent read-only Codex agent /root/scout_reader_review reviewed the final presentation delta from PR 89 head 1f0dbcc9ec23d77802e5c7c28cec5ea0d05574b0 after its earlier source and claim review; six approved analysis sections remained byte-identical.",
+    "limits": "Source and privacy review covers the prior article and the narrow final header delta. The reviewer did not run browser QA or verify production publication; hosted PR 89 mobile checks on the previous header remain separately scoped."
+  },
+  "summary": "No factual, source-link or privacy finding on the final presentation delta. Six substantive analysis sections are byte-identical; removing preview-only noindex and candidate labeling is suitable for owner release review.",
+  "findings": [
+    "The six substantive analysis sections and their source links are byte-identical to the previously approved and reviewed PR 89 candidate; the authored HTML change only removes noindex and the candidate kicker.",
+    "The original LangChain living-documentation publication date remains unknown; the inspected revision is identified separately as October 23, 2026.",
+    "The eight claim assessments, five source-map cues, intentional zero relationships and prior Reader article bodies remain unchanged.",
+    "The catalog publication day is the intended October 25, 2026 UTC release day, not proof of a completed production deployment; it must be revised if publication moves to another day.",
+    "The reviewer did not run browser QA. The preceding hosted PR 89 preview was checked at 390 pixels in light and dark modes after the source-hash wrapping fix; the final header has not yet been hosted."
+  ],
+  "conclusion": "accept-for-owner-review"
+}
