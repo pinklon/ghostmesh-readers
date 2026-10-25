@@ -45,6 +45,12 @@ class WrittenArticleSource(unittest.TestCase):
         self.assertNotIn("gm-media-frame", page)
         self.assertNotIn("data-paper-frame", page)
 
+    def test_living_documentation_can_disclose_unknown_first_publication(self):
+        source = {**self.source, "publicationDate": "unknown", "dateNote": "Original publication date unknown; the inspected revision was dated later."}
+        validate_article_source(self.raw, source)
+        with self.assertRaises(ValueError):
+            validate_article_source(self.raw, {**source, "dateNote": "Inspected revision date only."})
+
 
 if __name__ == "__main__":
     unittest.main()

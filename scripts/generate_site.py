@@ -205,10 +205,14 @@ def validate_article_source(raw,source):
  if not re.fullmatch(r'[a-z0-9][a-z0-9-]{5,}',source.get('identity','')):raise ValueError('Article identity invalid')
  for key in ('title','authors','publisher','dateNote'):
   if not isinstance(source[key],str) or not source[key].strip():raise ValueError('Article bibliography incomplete')
- for key in ('publicationDate','updatedDate'):
-  try:date.fromisoformat(source[key])
+ try:date.fromisoformat(source['updatedDate'])
+ except (ValueError,TypeError):raise ValueError('Article source date missing or invalid')
+ if source['publicationDate']=='unknown':
+  if 'unknown' not in source['dateNote'].lower():raise ValueError('Unknown article publication date needs a clear date note')
+ else:
+  try:date.fromisoformat(source['publicationDate'])
   except (ValueError,TypeError):raise ValueError('Article source date missing or invalid')
- if source['updatedDate']<source['publicationDate']:raise ValueError('Article source update precedes publication')
+  if source['updatedDate']<source['publicationDate']:raise ValueError('Article source update precedes publication')
  validate_link_only_source(raw,source['url'])
 
 def validate_repository_source(raw,source):

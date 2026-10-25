@@ -2,12 +2,12 @@
   "schemaVersion": 1,
   "readerId": "reader:when-a-successful-run-is-still-waiting",
   "sourceId": "langchain-webhooks-docs-4506df5",
-  "sourceDigest": "7ec34d962b3bd0bfbee4026001774901b2be5cedb8d40a9c249828eb36346cb9",
+  "sourceDigest": "eca94bbf6aacb09fb7e3dd0ac82440d6f13c7d564ee63c6ab0203aeefcd1df57",
   "sourceAidSha256": "72fa309d40ed675e95d82497fdc4c75e49f197c7ab2dbce55c474697c59fb930",
-  "articleSha256": "6357a15b2456eceeffdaa5aca1e1800c9fd111ce9ec9d88a9dcb2d01965770f0",
+  "articleSha256": "3d6e1fded61bdd5d2cd78499e43e9a87413323cddbe4fa44546d8634e46f8981",
   "evidenceRevision": "f344aa740cf8c64eba44a8b3060c0228bb1a88e9a164fbc26edd98e0ca7be4f0",
   "sourceMapEvidenceSha256": "20178d750d4418bdee88ea07cbea2dbbcdf7a7d9b426dead9d70099bef163aa2",
-  "reviewEvidenceSha256": "ceb4d82aaf5e4b3ec67b13a4379aa1c454f4e0a3960424f08a83b63de7021b0a",
+  "reviewEvidenceSha256": "bc046ac1914ad60c944e594f374fc8cfbb6af6c8c4578adf7680167d3efc9c42",
   "candidateAuthor": "pinklon",
   "complexity": {
     "tier": "extended",
@@ -128,5 +128,5 @@
     }
   ],
   "decisionRationale": "The approved analysis is preserved, but publication remains held for exact-candidate independent review, visual QA and authenticated owner acceptance on a future PR.",
-  "assessedAt": "2026-10-25T05:01:10.820168Z"
+  "assessedAt": "2026-10-25T05:08:25.827959Z"
 }

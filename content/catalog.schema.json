@@ -81,7 +81,7 @@
         "title": {"type": "string", "minLength": 1},
         "authors": {"type": "string", "minLength": 1},
         "publisher": {"type": "string", "minLength": 1},
-        "publicationDate": {"type": "string", "format": "date"},
+        "publicationDate": {"oneOf": [{"type": "string", "format": "date"}, {"const": "unknown"}]},
         "updatedDate": {"type": "string", "format": "date"},
         "dateNote": {"type": "string", "minLength": 1}
       }

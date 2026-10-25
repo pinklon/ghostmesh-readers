@@ -3,9 +3,9 @@
   "readerId": "reader:when-a-successful-run-is-still-waiting",
   "sourceId": "langchain-webhooks-docs-4506df5",
   "sourceAidSha256": "72fa309d40ed675e95d82497fdc4c75e49f197c7ab2dbce55c474697c59fb930",
-  "articleSha256": "6357a15b2456eceeffdaa5aca1e1800c9fd111ce9ec9d88a9dcb2d01965770f0",
+  "articleSha256": "3d6e1fded61bdd5d2cd78499e43e9a87413323cddbe4fa44546d8634e46f8981",
   "evidenceRevision": "f344aa740cf8c64eba44a8b3060c0228bb1a88e9a164fbc26edd98e0ca7be4f0",
-  "reviewedAt": "2026-10-25T05:01:10.820168Z",
+  "reviewedAt": "2026-10-25T05:08:25.827959Z",
   "provenance": {
     "kind": "codex-task-agent",
     "reference": "Prior independent review of local source head 1205ee8 and article SHA256 4cc294f8482292092348bce543139e7086fb897b7e678c005469570b59f9fff7; current generated-candidate metadata and presentation have not received independent exact-head review.",
