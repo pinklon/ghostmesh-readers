@@ -16,6 +16,7 @@
 .gm-essay-section:first-child{border-top:0;padding-top:0}
 .gm-essay-section h2{font-size:clamp(1.8rem,3.5vw,2.9rem);letter-spacing:-.04em;line-height:1.14;margin:.5rem 0 1.4rem}
 .gm-essay-section p{font-size:1.06rem;line-height:1.78;margin:0 0 1.25rem;max-width:720px}
+.gm-essay-section code{overflow-wrap:anywhere}
 .gm-essay-section .gm-essay-citation{font-size:.85rem;color:var(--gm-muted);overflow-wrap:anywhere;margin:-.55rem 0 1.6rem}
 .gm-essay-endnote{border-top:1px solid var(--gm-border);padding:1.5rem 0;max-width:790px;color:var(--gm-muted);font-size:.88rem;line-height:1.65}
 @media(max-width:760px){.gm-essay-source,.gm-essay-layout{grid-template-columns:1fr}.gm-essay-toc{position:static;display:block;border-bottom:1px solid var(--gm-border);padding-bottom:1rem}.gm-essay-toc a{display:inline-block;border:0;text-decoration:underline;margin:.5rem .8rem .25rem 0;padding:0}.gm-essay-source-limit{margin-top:0}.gm-essay-section:first-child{padding-top:1.2rem}}
