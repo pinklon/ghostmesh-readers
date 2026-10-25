@@ -1,0 +1,42 @@
+{
+  "schema": "scout-connection-cross-domain-intake-v0",
+  "status": "research-only-unscored",
+  "created_utc_date": "2026-10-23",
+  "method": "topic-directed retrieval of public primary-source pages; no popularity features; no randomized sampling",
+  "outreach_authorized": false,
+  "notes": "Cross-domain discovery hypotheses; no positive/negative labels or reviewer ratings; not a blinded benchmark without independent raters.",
+  "candidates": [
+    {
+      "id": "cross-a",
+      "source_url": "https://arxiv.org/abs/2606.09840",
+      "source_kind": "research-paper"
+    },
+    {
+      "id": "cross-b",
+      "source_url": "https://github.com/ahrtr/disco",
+      "source_kind": "code-repository"
+    },
+    {
+      "id": "cross-c",
+      "source_url": "https://github.com/sensein/assertion-evidence-paper",
+      "source_kind": "research-code"
+    },
+    {
+      "id": "cross-d",
+      "source_url": "https://github.com/kritibehl/faultline",
+      "source_kind": "code-repository"
+    },
+    {
+      "id": "cross-e",
+      "source_url": "https://github.com/Weeki513/evidence-ledger",
+      "source_kind": "code-repository"
+    },
+    {
+      "id": "cross-f",
+      "source_url": "https://arxiv.org/abs/2509.25499",
+      "source_kind": "research-paper"
+    }
+  ],
+  "ratings": [],
+  "results": null
+}

@@ -1,0 +1,59 @@
+{
+  "schema": "scout-deep-source-comparisons-v0",
+  "status": "SOURCE_INSPECTED_NOT_REPRODUCED",
+  "publication_authorized": false,
+  "outreach_authorized": false,
+  "assessments": [
+    {
+      "id": "bottleneck-review",
+      "title": "Bottleneck code-review workbench",
+      "source_urls": [
+        "https://github.com/areibman/bottleneck",
+        "https://github.com/areibman/bottleneck/blob/master/README.md"
+      ],
+      "source_kind": "public_github_repo",
+      "source_version_note": "Repository master public description inspected 2026-10-23; no release version pinned",
+      "source_observations": [
+        "README describes Electron + React/TypeScript, Monaco diff review, local SQLite cache, incremental GitHub GraphQL sync, prefix-grouped PRs, and bulk PR actions.",
+        "GitHub repository metadata lists MIT license and last pushed 2025-12-04. This is a source snapshot, not a live quality verification."
+      ],
+      "ghostmesh_problem": "Too many simultaneous agent-generated PRs and review receipts create operator attention bottlenecks.",
+      "unexpected_connection": "An account first surfaced as a contributor to agentops-ai/agentops also owns a public desktop code-review workbench, which is closer to GhostMesh operator attention management than its initial contributor attribution implied.",
+      "strongest_objection": "A faster UI for GitHub PRs is not the same as GhostMesh's evidence custody, owner authority, task identity, cross-surface continuation, or approval policy. Bulk merge operations increase impact if mistakenly bound to automation.",
+      "missing_evidence": [
+        "No hands-on review of application behavior",
+        "No measured comparison to current owner review flow",
+        "No verified personal identity or contact interest"
+      ],
+      "disposition": "INVESTIGATE",
+      "small_test": "Read-only offline audit of 12 historical agent PR records, comparing present review steps against mock Bottleneck-style batching. Score time-to-locate-a-change, missed review context, and incorrect action affordances. No installation, OAuth grants, bulk action, or merge."
+    },
+    {
+      "id": "inspectorraget-eval",
+      "title": "InspectorRAGet RAG evaluation introspection",
+      "source_urls": [
+        "https://arxiv.org/html/2404.17347v2",
+        "https://github.com/IBM/InspectorRAGet"
+      ],
+      "source_kind": "paper_and_public_code",
+      "source_version_note": "arXiv v2, 2025-05-01; IBM repository main metadata inspected 2026-10-23",
+      "source_observations": [
+        "Paper describes aggregate and instance-level RAG evaluation with human/algorithmic scores, metric correlation, inter-annotator agreement and model comparisons.",
+        "Standardized JSON includes dataset instances, retrieved contexts, response outputs, metric metadata, evaluator scores and annotator data.",
+        "Authors describe a stateless NextJS-based introspection UI; empirical examples support research-use observations, not guaranteed GhostMesh quality improvements.",
+        "Public IBM code repository lists Apache-2.0 license and was pushed 2026-10-20."
+      ],
+      "ghostmesh_problem": "Scout claim reviews and Readers research need to surface disagreement, source quality and individual exceptions without drowning editors in aggregate scores.",
+      "unexpected_connection": "A possible same-name byline trail from an arXiv paper about query clarification led to a mature RAG evaluation introspection system with explicit human-annotator disagreement and individual-case review.",
+      "strongest_objection": "Its benchmark experiment format targets RAG model outputs, not Scout editorial claim provenance or human-authority workflows; adapting its interface without measuring the real gap could add redundant dashboard machinery.",
+      "missing_evidence": [
+        "No reproduced evaluation on GhostMesh receipts",
+        "No independent contributor identity mapping from repeated author name",
+        "No established need beyond existing Scout history and claim-impact views"
+      ],
+      "disposition": "FOLLOW_WITH_BASELINE_TEST",
+      "small_test": "Use 12 owner-private redacted claim histories. Measure current time-to-explain a disputed recommendation and missed provenance, then compare a minimal instance-level disagreement table inspired by the paper. Require better performance than current UI before any implementation."
+    }
+  ],
+  "selection_limit": "Two source-derived cases selected from the first 21 public work trails, not a ranked representative sample"
+}

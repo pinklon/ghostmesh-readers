@@ -1,0 +1,41 @@
+{
+  "schema": "scout-claim-register-v0",
+  "status": "EDITORIAL_DRAFT_NOT_INDEPENDENTLY_REPRODUCED",
+  "publication_authorized": false,
+  "outreach_authorized": false,
+  "claims": [
+    {
+      "id": "debate-diversity",
+      "source_identity": "2601.19921",
+      "source_kind": "arxiv",
+      "source_revision": "v3",
+      "source_url": "https://arxiv.org/abs/2601.19921v3",
+      "claim": "Authors report diversity-aware initialization and calibrated confidence changes multi-agent debate outcomes for benchmarked reasoning tasks.",
+      "claim_type": "AUTHOR_REPORTED",
+      "editorial_interpretation": "Potential relevance to testing independent answer diversity in GhostMesh multi-agent review; independent source acquisition is a separate extension.",
+      "disposition": "INVESTIGATE"
+    },
+    {
+      "id": "sensemaking-usability",
+      "source_identity": "2606.09840",
+      "source_kind": "arxiv",
+      "source_revision": "v1",
+      "source_url": "https://arxiv.org/abs/2606.09840v1",
+      "claim": "Authors propose principles and conceptual collaborative sensemaking workspaces preserving competing interpretations and provenance.",
+      "claim_type": "CONCEPTUAL_PROPOSAL",
+      "editorial_interpretation": "Follow until existing GhostMesh provenance interface is shown to have a concrete usability gap.",
+      "disposition": "FOLLOW"
+    },
+    {
+      "id": "cpython-control",
+      "source_identity": "python/cpython",
+      "source_kind": "github",
+      "source_revision": "3fc4d1f9b38e6a5fbb9daa5296d04e3247783af4",
+      "source_url": "https://github.com/python/cpython/tree/3fc4d1f9b38e6a5fbb9daa5296d04e3247783af4",
+      "claim": "CPython repository provides upstream language implementation, documentation, and tests.",
+      "claim_type": "UPSTREAM_DOCUMENTATION",
+      "editorial_interpretation": "No differentiated GhostMesh collaboration thesis justified by general documentation.",
+      "disposition": "NO_CONNECTION_JUSTIFIED"
+    }
+  ]
+}
