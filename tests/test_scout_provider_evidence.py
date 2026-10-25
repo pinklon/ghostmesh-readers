@@ -149,6 +149,18 @@ class ProviderEvidenceTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             review_targets(compare(before, incomplete), incomplete, REGISTRY)
 
+    def test_removed_historical_source_keeps_unknown_health_without_blocking_current_sources(self):
+        source = REGISTRY["sources"][0]
+        old = snapshot([observation(source, [{"title": "Earlier", "url": "https://openai.com/index/earlier/"}])])
+        old["observations"].append({"id": "retired-source", "status": "observed", "entries": []})
+        new = snapshot([observation(source, [{"title": "Earlier", "url": "https://openai.com/index/earlier/"},
+                                              {"title": "New", "url": "https://openai.com/index/new/"}])])
+        result = capture(compare(old, new), new, REGISTRY, WHEN,
+                         fetch_page=lambda item: (b"<h1>New</h1>", item["url"]))
+        self.assertEqual(len(result["records"]), 1)
+        self.assertEqual(next(x for x in result["sourceHealth"] if x["id"] == "retired-source")["status"],
+                         "UNKNOWN")
+
     def test_visible_excerpt_skips_scripts_and_is_bounded(self):
         text = visible_excerpt(b"<nav><p>Menu</p></nav><script>secret()</script>"
                                b"<main><h1>Official page</h1><p>Useful source context.</p></main>")

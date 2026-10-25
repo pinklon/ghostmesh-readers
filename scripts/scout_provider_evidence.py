@@ -97,8 +97,11 @@ def review_targets(candidates, current, registry):
     if set(observations) != set(sources):
         raise ValueError("Observation omits a registered source")
     health = candidates.get("source_health")
-    if (not isinstance(health, list) or len(health) != len(sources)
-            or {item.get("id") for item in health if isinstance(item, dict)} != set(sources)):
+    health_ids = ([item.get("id") for item in health if isinstance(item, dict)]
+                  if isinstance(health, list) else [])
+    if (not isinstance(health, list) or len(health_ids) != len(health)
+            or len(set(health_ids)) != len(health_ids)
+            or not set(sources).issubset(health_ids)):
         raise ValueError("Incomplete source health matrix")
     targets, seen = [], set()
     for candidate in candidates["candidates"]:
