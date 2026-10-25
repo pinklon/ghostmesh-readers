@@ -2,6 +2,15 @@
   "schema": "ghostmesh-public-release-events-v1",
   "events": [
     {
+      "id": "reader:when-a-successful-run-is-still-waiting:first-public-release",
+      "kind": "new-reader",
+      "subjectId": "reader:when-a-successful-run-is-still-waiting",
+      "url": "https://youtube.shareplane.malott.ai/when-a-successful-run-is-still-waiting/",
+      "title": "When a Successful Run Is Still Waiting",
+      "summary": "LangChain documents a webhook success that can still leave a LangGraph run waiting at an interrupt.",
+      "publicDate": "2026-10-25"
+    },
+    {
       "id": "reader:the-fleet-needs-a-control-plane:first-public-release",
       "kind": "new-reader",
       "subjectId": "reader:the-fleet-needs-a-control-plane",
