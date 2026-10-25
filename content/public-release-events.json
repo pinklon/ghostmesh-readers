@@ -2,6 +2,24 @@
   "schema": "ghostmesh-public-release-events-v1",
   "events": [
     {
+      "id": "scout:what-survives-a-checkpoint:first-public-release",
+      "kind": "new-scout-research",
+      "subjectId": "what-survives-a-checkpoint",
+      "url": "https://youtube.shareplane.malott.ai/scout/essays/what-survives-a-checkpoint/",
+      "title": "What Survives a Checkpoint",
+      "summary": "A checkpoint can preserve state without preserving the dependencies that make its conclusions usable. A bounded compatibility test should precede another orchestrator.",
+      "publicDate": "2026-10-25"
+    },
+    {
+      "id": "scout:before-the-model-sees-the-spreadsheet:first-public-release",
+      "kind": "new-scout-research",
+      "subjectId": "before-the-model-sees-the-spreadsheet",
+      "url": "https://youtube.shareplane.malott.ai/scout/essays/before-the-model-sees-the-spreadsheet/",
+      "title": "Before the Model Sees the Spreadsheet",
+      "summary": "One public XLSX fixture exposes the difference between formula text and cached values. Source analysis defines what a successful conversion does not prove.",
+      "publicDate": "2026-10-25"
+    },
+    {
       "id": "reader:when-a-successful-run-is-still-waiting:first-public-release",
       "kind": "new-reader",
       "subjectId": "reader:when-a-successful-run-is-still-waiting",
