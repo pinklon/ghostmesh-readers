@@ -3,6 +3,23 @@
   "note": "Only approved public works. Six historical essays have an evidenced October 23 public-by bound from the released nine-work Library, but their exact first-publication day remains unverified; they do not gain retroactive RSS events.",
   "records": [
     {
+      "id": "report:mcp-tasks-cancellation-status-and-retention",
+      "slug": "mcp-tasks-cancellation-status-and-retention",
+      "type": "source-report",
+      "status": "published",
+      "title": "MCP Tasks: cancellation status and retention",
+      "url": "/scout/essays/mcp-tasks-cancellation-status-and-retention/",
+      "sourcePath": "site/scout/essays/mcp-tasks-cancellation-status-and-retention/index.html",
+      "provenance": "https://modelcontextprotocol.io/specification/2025-11-25/basic/utilities/tasks",
+      "evidenceLimits": "Specification text inspected at a pinned repository revision. No client, server or account behavior was tested.",
+      "summary": "A source-only note on cancellation and retention provisions in the versioned MCP Tasks specification.",
+      "topics": ["agent-continuity", "protocol-semantics"],
+      "reviewedOn": "2026-10-26",
+      "releaseEventId": "scout:mcp-tasks-cancellation-status-and-retention:first-public-release",
+      "relatedIds": [],
+      "standingRelease": "routine-source-report-v1"
+    },
+    {
       "id": "journal:research-journal",
       "slug": "research-journal",
       "type": "journal",

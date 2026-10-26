@@ -3,7 +3,7 @@
   "scope": "Public Scout research reading routes; links are editorial, not corroboration.",
   "authority": "scout-research-curated-editorial",
   "visibility": "public",
-  "recordCount": 12,
+  "recordCount": 13,
   "relationshipCount": 4,
   "nodes": [
     {
@@ -89,6 +89,13 @@
       "type": "investigation",
       "title": "NVIDIA OpenShell",
       "url": "https://youtube.shareplane.malott.ai/scout/reviews/nvidia-openshell/"
+    },
+    {
+      "id": "scout:report:mcp-tasks-cancellation-status-and-retention",
+      "sourceId": "report:mcp-tasks-cancellation-status-and-retention",
+      "type": "source-report",
+      "title": "MCP Tasks: cancellation status and retention",
+      "url": "https://youtube.shareplane.malott.ai/scout/essays/mcp-tasks-cancellation-status-and-retention/"
     }
   ],
   "edges": [

@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="canonical" href="https://youtube.shareplane.malott.ai/scout/essays/mcp-tasks-cancellation-status-and-retention/">
+  <meta name="description" content="A source-only note on cancellation and retention provisions in the versioned MCP Tasks specification.">
+  <title>MCP Tasks: cancellation status and retention | GhostMesh Scout Research</title>
+  <link rel="icon" href="/favicon.svg">
+  <link rel="stylesheet" href="/assets/scout-essays.css">
+</head>
+<body>
+  <header class="bar">
+    <a class="brand" href="/">GHOST<em>MESH</em> / READERS</a>
+    <nav aria-label="Main"><a href="/scout/">Scout</a><a href="/scout/research/">Research Library</a><a href="/readers/">Readers</a><a href="/map/">Knowledge Map</a></nav>
+  </header>
+  <section class="hero">
+    <p class="eyebrow">GhostMesh / Scout / Source report</p>
+    <h1>MCP Tasks: cancellation status and retention</h1>
+    <p class="lede">A source-only note on cancellation and retention provisions in the versioned MCP Tasks specification.</p>
+    <p class="publication-meta">Published <time datetime="2026-10-26">October 26, 2026</time> · Reviewed <time datetime="2026-10-26">October 26, 2026</time></p>
+  </section>
+  <main id="main">
+    <article class="article" data-scout-source-report="v1">
+      <p>Source-reported; not independently tested</p>
+      <p>Observation date: <time datetime="2026-10-26">October 26, 2026</time>. Inspected specification version: 2025-11-25.</p>
+      <p>The versioned MCP Tasks documentation labels the feature experimental. For a valid cancellation request, it says receivers should try to stop execution and must set the task status to cancelled before responding. That status remains cancelled if the underlying execution later finishes or fails.</p>
+      <p>The specification also permits cancelled tasks to be deleted immediately. More generally, a task and its results may be deleted after its lifetime expires, regardless of status.</p>
+      <p>Source: MCP Tasks specification, <a href="https://modelcontextprotocol.io/specification/2025-11-25/basic/utilities/tasks">https://modelcontextprotocol.io/specification/2025-11-25/basic/utilities/tasks</a>, checked against pinned repository text <a href="https://github.com/modelcontextprotocol/modelcontextprotocol/blob/6364efad121ffa1b50aeecf8c4ed22ad1b789c2f/docs/specification/2025-11-25/basic/utilities/tasks.mdx#L492-L498">https://github.com/modelcontextprotocol/modelcontextprotocol/blob/6364efad121ffa1b50aeecf8c4ed22ad1b789c2f/docs/specification/2025-11-25/basic/utilities/tasks.mdx#L492-L498</a>.</p>
+      <p>Inspection limits: This note reports specification text, not the behavior of a client or server. No implementation, cancellation path, account support or retained result was tested.</p>
+    </article>
+  </main>
+  <footer><p>GhostMesh Scout · Source report · The research workspace is private.</p><p><a href="/scout/">Scout</a> · <a href="/scout/research/">Research Library</a> · <a href="/">Readers home</a></p></footer>
+</body>
+</html>
