@@ -1,12 +1,16 @@
 import copy
+from datetime import datetime, timezone
+import hashlib
 import json
 import sys
+import tempfile
 import unittest
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'scripts'))
 from scout_research import validate_research, research_page, research_graph, publication_label, LEGACY_PUBLIC_BY_IDS
+from check_scout_routine_release import check_delta
 
 
 class ScoutResearchTests(unittest.TestCase):
@@ -17,6 +21,136 @@ class ScoutResearchTests(unittest.TestCase):
 
     def validate(self, source):
         return validate_research(source, self.scout, self.events, ROOT)
+
+    def test_standing_release_requires_independent_source_bound_public_copy(self):
+        day = datetime.now(timezone.utc).date().isoformat()
+        slug = 'synthetic-official-change'
+        url = 'https://example.org/official/release'
+        page = ('<!doctype html><html><head><link rel="canonical" '
+                'href="https://youtube.shareplane.malott.ai/scout/essays/' + slug + '/"></head>'
+                '<body><article data-scout-source-report="v1"><h1>Official change</h1>'
+                '<p>Source-reported; not independently tested</p><a href="' + url + '">'
+                'Primary source</a><time datetime="' + day + '">' + day + '</time>'
+                '</article></body></html>')
+        item = {'id': 'report:' + slug, 'slug': slug, 'type': 'source-report',
+                'status': 'published', 'title': 'Official change',
+                'url': '/scout/essays/' + slug + '/',
+                'sourcePath': 'site/scout/essays/' + slug + '/index.html',
+                'provenance': url, 'evidenceLimits': 'Source announcement only; no test.',
+                'summary': 'The source reports a change.', 'topics': ['research'],
+                'reviewedOn': day, 'releaseEventId': 'scout:' + slug + ':first-public-release',
+                'relatedIds': [], 'standingRelease': 'routine-source-report-v1'}
+        event = {'id': item['releaseEventId'], 'kind': 'new-scout-research',
+                 'subjectId': slug, 'url': 'https://youtube.shareplane.malott.ai' + item['url'],
+                 'title': item['title'], 'summary': item['summary'], 'publicDate': day}
+        review = {'schema': 'ghostmesh-scout-source-report-review-v1',
+                  'policy': 'routine-source-report-v1', 'researchId': item['id'],
+                  'sourceUrl': url, 'observedOn': day, 'reviewedOn': day,
+                  'sourceMethod': 'official-release-note',
+                  'sourceSha256': hashlib.sha256(page.encode()).hexdigest(),
+                  'reviewerTask': 'independent-reviewer', 'publisherTask': 'sole-publisher',
+                  'decision': 'accept', 'sourceReportedOnly': True,
+                  'noNewRecommendation': True, 'noExecutionOrEntitlementClaim': True,
+                  'publicSafe': True, 'title': item['title'],
+                  'summary': item['summary'], 'evidenceLimits': item['evidenceLimits'],
+                  'topics': item['topics']}
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            source_file = root/item['sourcePath']
+            review_file = root/f'content/scout/release-reviews/{slug}.json'
+            source_file.parent.mkdir(parents=True)
+            review_file.parent.mkdir(parents=True)
+            source_file.write_text(page)
+            review_file.write_text(json.dumps(review))
+            source = {'schema': 'ghostmesh-scout-research-v1', 'records': [item]}
+            events = {'events': [event]}
+            self.assertEqual(validate_research(source, {'reviews': []}, events, root), source)
+            item['summary'] = 'Unreviewed recommendation.'
+            with self.assertRaisesRegex(ValueError, 'review binding'):
+                validate_research(source, {'reviews': []}, events, root)
+            item['summary'] = event['summary']
+            event['summary'] = 'Unreviewed RSS recommendation.'
+            with self.assertRaisesRegex(ValueError, 'event copy differs'):
+                validate_research(source, {'reviews': []}, events, root)
+            event['summary'] = item['summary']
+            item['id'] = 'essay:' + slug
+            with self.assertRaisesRegex(ValueError, 'report identity'):
+                validate_research(source, {'reviews': []}, events, root)
+            item['id'] = review['researchId']
+            invisible_pages = (
+                page.replace('<p>Source-reported; not independently tested</p>',
+                             '<p hidden>Source-reported; not independently tested</p>'),
+                page.replace('<p>Source-reported; not independently tested</p>',
+                             '<p style="visibility: hidden">Source-reported; not independently tested</p>'),
+                page.replace('<p>Source-reported; not independently tested</p>',
+                             '<p style="visibility:\thidden">Source-reported; not independently tested</p>'),
+                page.replace('>Primary source</a>', '></a>'),
+                page.replace('>' + day + '</time>', '></time>'),
+            )
+            for invisible in invisible_pages:
+                source_file.write_text(invisible)
+                review['sourceSha256'] = hashlib.sha256(invisible.encode()).hexdigest()
+                review_file.write_text(json.dumps(review))
+                with self.assertRaisesRegex(ValueError, 'public wrapper'):
+                    validate_research(source, {'reviews': []}, events, root)
+            source_file.write_text(page)
+            review['sourceSha256'] = hashlib.sha256(page.encode()).hexdigest()
+            review_file.write_text(json.dumps(review))
+            review['reviewerTask'] = review['publisherTask']
+            review_file.write_text(json.dumps(review))
+            with self.assertRaisesRegex(ValueError, 'reviewer independence'):
+                validate_research(source, {'reviews': []}, events, root)
+            review['reviewerTask'] = 'independent-reviewer'
+            review_file.write_text(json.dumps(review))
+            event['publicDate'] = '2020-01-01'
+            with self.assertRaisesRegex(ValueError, 'release before review'):
+                validate_research(source, {'reviews': []}, events, root)
+            event['publicDate'] = day
+            review['noNewRecommendation'] = False
+            review_file.write_text(json.dumps(review))
+            with self.assertRaisesRegex(ValueError, 'review binding'):
+                validate_research(source, {'reviews': []}, events, root)
+            review['noNewRecommendation'] = True
+            review_file.write_text(json.dumps(review))
+            source_file.write_text(page.replace('not independently tested', 'independently tested'))
+            with self.assertRaisesRegex(ValueError, 'review binding'):
+                validate_research(source, {'reviews': []}, events, root)
+            source_file.write_text(page)
+            item['releaseEventId'] = 'scout:other:first-public-release'
+            with self.assertRaisesRegex(ValueError, 'release event mismatch'):
+                validate_research(source, {'reviews': []}, events, root)
+            item['releaseEventId'] = event['id']
+            item['relatedIds'] = ['journal:research-journal']
+            with self.assertRaisesRegex(ValueError, 'cannot infer relationships'):
+                validate_research(source, {'reviews': []}, events, root)
+            item['relatedIds'] = []
+            item['standingRelease'] = 'unbounded'
+            with self.assertRaisesRegex(ValueError, 'standing release class'):
+                validate_research(source, {'reviews': []}, events, root)
+
+    def test_standing_release_scope_excludes_previous_edits_and_unrelated_paths(self):
+        slug = 'synthetic-report'
+        item = {'id': 'report:' + slug, 'slug': slug, 'type': 'source-report',
+                'standingRelease': 'routine-source-report-v1',
+                'title': 'Official change', 'summary': 'Source reported a change.',
+                'sourcePath': f'site/scout/essays/{slug}/index.html',
+                'releaseEventId': f'scout:{slug}:first-public-release'}
+        event = {'id': item['releaseEventId'], 'kind': 'new-scout-research',
+                 'title': item['title'], 'summary': item['summary']}
+        changed = {'content/scout-research.json', 'content/public-release-events.json',
+                   item['sourcePath'], f'content/scout/release-reviews/{slug}.json',
+                   'site/scout/research/index.html', 'site/feed.xml'}
+        old = [{'id': 'essay:old', 'title': 'Original'}]
+        ledger = [{'id': 'scout:old:first-public-release', 'title': 'Original'}]
+        self.assertEqual(check_delta(old, old + [item], ledger, ledger + [event], changed), item)
+        with self.assertRaisesRegex(ValueError, 'Previously published research changed'):
+            check_delta(old, [{'id': 'essay:old', 'title': 'Rewritten'}, item], ledger, ledger + [event], changed)
+        with self.assertRaisesRegex(ValueError, 'Existing release events changed'):
+            check_delta(old, old + [item], [{'id': 'scout:old:first-public-release', 'title': 'Other'}], ledger + [event], changed)
+        with self.assertRaisesRegex(ValueError, 'outside one report'):
+            check_delta(old, old + [item], ledger, ledger + [event], changed | {'site/other-reader/index.html'})
+        with self.assertRaisesRegex(ValueError, 'one new routine'):
+            check_delta(old, old + [item, {'id': 'essay:extra'}], ledger, ledger + [event], changed)
 
     def test_published_works_and_synthesis_journal_are_reachable(self):
         self.validate(self.source)
