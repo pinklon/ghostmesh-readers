@@ -82,6 +82,8 @@ class ScoutResearchTests(unittest.TestCase):
                              '<p hidden>Source-reported; not independently tested</p>'),
                 page.replace('<p>Source-reported; not independently tested</p>',
                              '<p style="visibility: hidden">Source-reported; not independently tested</p>'),
+                page.replace('<p>Source-reported; not independently tested</p>',
+                             '<p style="visibility:\thidden">Source-reported; not independently tested</p>'),
                 page.replace('>Primary source</a>', '></a>'),
                 page.replace('>' + day + '</time>', '></time>'),
             )

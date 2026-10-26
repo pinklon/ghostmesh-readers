@@ -53,7 +53,7 @@ class SourceReportSurface(HTMLParser):
         parent_visible = self.stack[-1]['visible'] if self.stack else True
         parent_inside = self.stack[-1]['inside'] if self.stack else False
         marker = tag == 'article' and attrs.get('data-scout-source-report') == 'v1'
-        style = attrs.get('style', '').replace(' ', '').lower()
+        style = re.sub(r'\s+', '', attrs.get('style', '')).lower()
         visible = (parent_visible and 'hidden' not in attrs
                    and attrs.get('aria-hidden') != 'true'
                    and not any(rule in style for rule in ('display:none', 'visibility:hidden', 'opacity:0'))
