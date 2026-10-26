@@ -258,11 +258,31 @@ class ScoutResearchTests(unittest.TestCase):
                 hero = page.split('<section class="hero">', 1)[1].split('</section>', 1)[0]
                 if item['id'] == 'report:mcp-tasks-cancellation-status-and-retention':
                     self.assertIn('Original source note published <time datetime="2026-10-26">October 26, 2026</time>', hero)
-                    self.assertIn('Expanded analysis reviewed <time datetime="2026-10-26">October 26, 2026</time>', hero)
+                    self.assertIn('Corrected analysis reviewed <time datetime="2026-10-26">October 26, 2026</time>', hero)
                 else:
                     self.assertIn(label, hero)
                 self.assertIn(label.split(' · <a href=', 1)[0],
                               (ROOT/'site/scout/essays/index.html').read_text())
+
+    def test_mcp_correction_preserves_history_and_names_current_contract(self):
+        item = next(r for r in self.source['records']
+                    if r['id'] == 'report:mcp-tasks-cancellation-status-and-retention')
+        page = (ROOT/item['sourcePath']).read_text()
+        self.assertEqual(item['provenance'],
+                         'https://tasks.extensions.modelcontextprotocol.io/specification/2026-07-28/tasks')
+        self.assertIn('Correction notice', page)
+        self.assertIn('acknowledgment does not settle the task&#x27;s state', page)
+        self.assertIn('The older contract made a different promise', page)
+        self.assertIn('Original source note, published October 26, 2026', page)
+        self.assertNotIn('Private correction assessment', page)
+        self.assertNotIn('Not owner-approved for publication', page)
+        events = [event for event in self.events['events']
+                  if event['subjectId'] == item['slug']]
+        self.assertEqual([event['kind'] for event in events],
+                         ['material-scout-update', 'material-scout-update', 'new-scout-research'])
+        self.assertEqual(len({event['id'] for event in events}), 3)
+        self.assertEqual(item['releaseEventId'],
+                         'scout:mcp-tasks-cancellation-status-and-retention:first-public-release')
 
     def test_future_publication_requires_source_bound_first_release_event(self):
         source = copy.deepcopy(self.source)

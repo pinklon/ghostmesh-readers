@@ -252,6 +252,14 @@ class ScoutFeedTests(unittest.TestCase):
         items = ET.fromstring(feed_xml(source, host)).findall('./channel/item')
         self.assertEqual(len(items), 2)
         self.assertEqual([item.findtext('title') for item in items], ['Expanded analysis', 'Original'])
+        correction = {**update, 'id': 'scout:fixture-essay:corrected-analysis-20261020',
+                      'title': 'Corrected analysis', 'summary': 'Corrected claim.'}
+        source['events'].insert(0, correction)
+        self.assertEqual(validate_events(source, self.catalog, scout, research), source)
+        same_day_items = ET.fromstring(feed_xml(source, host)).findall('./channel/item')
+        self.assertEqual([item.findtext('title') for item in same_day_items],
+                         ['Corrected analysis', 'Expanded analysis', 'Original'])
+        source['events'].pop(0)
         first['releasedAt'] = '2026-10-20T10:00:00Z'
         self.assertEqual([item.findtext('title') for item in ET.fromstring(feed_xml(source, host)).findall('./channel/item')],
                          ['Expanded analysis', 'Original'])
