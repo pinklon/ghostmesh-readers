@@ -2,6 +2,15 @@
   "schema": "ghostmesh-public-release-events-v1",
   "events": [
     {
+      "id": "scout:mcp-tasks-cancellation-status-and-retention:first-public-release",
+      "kind": "new-scout-research",
+      "subjectId": "mcp-tasks-cancellation-status-and-retention",
+      "url": "https://youtube.shareplane.malott.ai/scout/essays/mcp-tasks-cancellation-status-and-retention/",
+      "title": "MCP Tasks: cancellation status and retention",
+      "summary": "A source-only note on cancellation and retention provisions in the versioned MCP Tasks specification.",
+      "publicDate": "2026-10-26"
+    },
+    {
       "id": "scout:what-survives-a-checkpoint:first-public-release",
       "kind": "new-scout-research",
       "subjectId": "what-survives-a-checkpoint",

@@ -1,0 +1,21 @@
+{
+  "schema": "ghostmesh-scout-source-report-review-v1",
+  "policy": "routine-source-report-v1",
+  "researchId": "report:mcp-tasks-cancellation-status-and-retention",
+  "sourceUrl": "https://modelcontextprotocol.io/specification/2025-11-25/basic/utilities/tasks",
+  "observedOn": "2026-10-26",
+  "reviewedOn": "2026-10-26",
+  "sourceMethod": "official-docs",
+  "sourceSha256": "96ae751cfee00a0a8d752d7e27facca3aff4a2f2852e9d080cda47efb763b74d",
+  "reviewerTask": "/root/mcp_report_artifact_review",
+  "publisherTask": "01a159bf-611e-71f2-aca0-49a64101502c",
+  "decision": "accept",
+  "sourceReportedOnly": true,
+  "noNewRecommendation": true,
+  "noExecutionOrEntitlementClaim": true,
+  "publicSafe": true,
+  "title": "MCP Tasks: cancellation status and retention",
+  "summary": "A source-only note on cancellation and retention provisions in the versioned MCP Tasks specification.",
+  "evidenceLimits": "Specification text inspected at a pinned repository revision. No client, server or account behavior was tested.",
+  "topics": ["agent-continuity", "protocol-semantics"]
+}
