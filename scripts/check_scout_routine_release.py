@@ -29,6 +29,8 @@ def check_delta(old_records, records, old_events, events, changed):
         raise ValueError('Standing release requires one new routine source report')
     item = added[0]
     slug = item['slug']
+    if item['id'] != f'report:{slug}':
+        raise ValueError('Standing release report identity')
     expected_event_id = f'scout:{slug}:first-public-release'
     before = {e['id']: e for e in old_events}
     after = {e['id']: e for e in events}
@@ -38,6 +40,8 @@ def check_delta(old_records, records, old_events, events, changed):
     new_events = [e for key, e in after.items() if key not in before]
     if (len(new_events) != 1 or new_events[0]['id'] != expected_event_id
             or new_events[0]['kind'] != 'new-scout-research'
+            or new_events[0]['title'] != item['title']
+            or new_events[0]['summary'] != item['summary']
             or item['releaseEventId'] != expected_event_id):
         raise ValueError('Standing release requires one first-publication event')
     required = {REGISTER, LEDGER, item['sourcePath'],

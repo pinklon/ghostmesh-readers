@@ -51,7 +51,9 @@ class ScoutResearchTests(unittest.TestCase):
                   'reviewerTask': 'independent-reviewer', 'publisherTask': 'sole-publisher',
                   'decision': 'accept', 'sourceReportedOnly': True,
                   'noNewRecommendation': True, 'noExecutionOrEntitlementClaim': True,
-                  'publicSafe': True}
+                  'publicSafe': True, 'title': item['title'],
+                  'summary': item['summary'], 'evidenceLimits': item['evidenceLimits'],
+                  'topics': item['topics']}
         with tempfile.TemporaryDirectory() as temp:
             root = Path(temp)
             source_file = root/item['sourcePath']
@@ -63,6 +65,28 @@ class ScoutResearchTests(unittest.TestCase):
             source = {'schema': 'ghostmesh-scout-research-v1', 'records': [item]}
             events = {'events': [event]}
             self.assertEqual(validate_research(source, {'reviews': []}, events, root), source)
+            item['summary'] = 'Unreviewed recommendation.'
+            with self.assertRaisesRegex(ValueError, 'review binding'):
+                validate_research(source, {'reviews': []}, events, root)
+            item['summary'] = event['summary']
+            event['summary'] = 'Unreviewed RSS recommendation.'
+            with self.assertRaisesRegex(ValueError, 'event copy differs'):
+                validate_research(source, {'reviews': []}, events, root)
+            event['summary'] = item['summary']
+            item['id'] = 'essay:' + slug
+            with self.assertRaisesRegex(ValueError, 'report identity'):
+                validate_research(source, {'reviews': []}, events, root)
+            item['id'] = review['researchId']
+            hidden = page.replace('<p>Source-reported; not independently tested</p>',
+                                  '<p hidden>Source-reported; not independently tested</p>')
+            source_file.write_text(hidden)
+            review['sourceSha256'] = hashlib.sha256(hidden.encode()).hexdigest()
+            review_file.write_text(json.dumps(review))
+            with self.assertRaisesRegex(ValueError, 'public wrapper'):
+                validate_research(source, {'reviews': []}, events, root)
+            source_file.write_text(page)
+            review['sourceSha256'] = hashlib.sha256(page.encode()).hexdigest()
+            review_file.write_text(json.dumps(review))
             review['reviewerTask'] = review['publisherTask']
             review_file.write_text(json.dumps(review))
             with self.assertRaisesRegex(ValueError, 'reviewer independence'):
@@ -99,9 +123,11 @@ class ScoutResearchTests(unittest.TestCase):
         slug = 'synthetic-report'
         item = {'id': 'report:' + slug, 'slug': slug, 'type': 'source-report',
                 'standingRelease': 'routine-source-report-v1',
+                'title': 'Official change', 'summary': 'Source reported a change.',
                 'sourcePath': f'site/scout/essays/{slug}/index.html',
                 'releaseEventId': f'scout:{slug}:first-public-release'}
-        event = {'id': item['releaseEventId'], 'kind': 'new-scout-research'}
+        event = {'id': item['releaseEventId'], 'kind': 'new-scout-research',
+                 'title': item['title'], 'summary': item['summary']}
         changed = {'content/scout-research.json', 'content/public-release-events.json',
                    item['sourcePath'], f'content/scout/release-reviews/{slug}.json',
                    'site/scout/research/index.html', 'site/feed.xml'}

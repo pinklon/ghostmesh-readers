@@ -1,6 +1,7 @@
 """Public, owner-approved Scout research register and deterministic catalog."""
 from datetime import date, datetime, timezone
 from html import escape
+from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import urlsplit
 import hashlib
@@ -11,6 +12,8 @@ import re
 TYPES = {'investigation', 'essay', 'experiment', 'counterexample', 'method', 'journal', 'source-report'}
 HOST = 'https://youtube.shareplane.malott.ai'
 ROUTINE_POLICY = 'routine-source-report-v1'
+VOID_TAGS = {'area', 'base', 'br', 'col', 'embed', 'hr', 'img', 'input', 'link',
+             'meta', 'param', 'source', 'track', 'wbr'}
 LEGACY_PUBLIC_BY_IDS = {
     'essay:the-signal-is-not-the-finding', 'essay:follow-the-work',
     'essay:five-ideas-outside-the-filter',
@@ -35,6 +38,47 @@ def publication_label(item, events):
     return result
 
 
+class SourceReportSurface(HTMLParser):
+    """Collect only visible article copy, source links and dated observations."""
+    def __init__(self):
+        super().__init__(convert_charrefs=True)
+        self.stack = []
+        self.words = []
+        self.links = set()
+        self.dates = set()
+        self.marked_article = False
+
+    def handle_starttag(self, tag, attrs):
+        attrs = dict(attrs)
+        parent_visible = self.stack[-1][1] if self.stack else True
+        parent_inside = self.stack[-1][2] if self.stack else False
+        marker = tag == 'article' and attrs.get('data-scout-source-report') == 'v1'
+        visible = (parent_visible and 'hidden' not in attrs
+                   and attrs.get('aria-hidden') != 'true'
+                   and 'display:none' not in attrs.get('style', '').replace(' ', '').lower()
+                   and tag not in {'script', 'style', 'noscript', 'template'})
+        inside = parent_inside or marker
+        if marker and visible:
+            self.marked_article = True
+        if visible and inside:
+            if tag == 'a' and attrs.get('href'):
+                self.links.add(attrs['href'])
+            if tag == 'time' and attrs.get('datetime'):
+                self.dates.add(attrs['datetime'])
+        if tag not in VOID_TAGS:
+            self.stack.append((tag, visible, inside))
+
+    def handle_endtag(self, tag):
+        for index in range(len(self.stack) - 1, -1, -1):
+            if self.stack[index][0] == tag:
+                del self.stack[index:]
+                return
+
+    def handle_data(self, data):
+        if self.stack and self.stack[-1][1] and self.stack[-1][2]:
+            self.words.append(data)
+
+
 def validate_routine_source_report(item, root):
     """Bind the narrow standing policy to exact public copy and independent review."""
     if item['type'] != 'source-report' or item['standingRelease'] != ROUTINE_POLICY:
@@ -42,6 +86,8 @@ def validate_routine_source_report(item, root):
     if item['relatedIds']:
         raise ValueError('Routine source report cannot infer relationships')
     slug = item['slug']
+    if item['id'] != f'report:{slug}':
+        raise ValueError('Routine source report identity')
     source_path = f'site/scout/essays/{slug}/index.html'
     if item['sourcePath'] != source_path:
         raise ValueError('Routine source report path')
@@ -53,7 +99,7 @@ def validate_routine_source_report(item, root):
     fields = {'schema', 'policy', 'researchId', 'sourceUrl', 'observedOn', 'reviewedOn',
               'sourceMethod', 'sourceSha256', 'reviewerTask', 'publisherTask', 'decision',
               'sourceReportedOnly', 'noNewRecommendation', 'noExecutionOrEntitlementClaim',
-              'publicSafe'}
+              'publicSafe', 'title', 'summary', 'evidenceLimits', 'topics'}
     if (not isinstance(review, dict) or set(review) != fields
             or review['schema'] != 'ghostmesh-scout-source-report-review-v1'
             or review['policy'] != ROUTINE_POLICY or review['researchId'] != item['id']
@@ -61,6 +107,7 @@ def validate_routine_source_report(item, root):
             or review['sourceMethod'] not in {'official-release-note', 'official-docs', 'primary-repository'}
             or review['sourceSha256'] != hashlib.sha256(raw).hexdigest()
             or review['reviewedOn'] != item['reviewedOn']
+            or any(review[key] != item[key] for key in ('title', 'summary', 'evidenceLimits', 'topics'))
             or any(review[field] is not True for field in ('sourceReportedOnly',
                 'noNewRecommendation', 'noExecutionOrEntitlementClaim', 'publicSafe'))):
         raise ValueError('Routine source report review binding')
@@ -90,11 +137,13 @@ def validate_routine_source_report(item, root):
             or '/private/' in parsed.path or any(x in url.lower() for x in ('token=', 'signature=', 'secret='))):
         raise ValueError('Routine source report primary URL')
     page = raw.decode('utf-8')
-    if (not re.search(r'<article\b[^>]*\bdata-scout-source-report="v1"', page)
-            or f'href="{escape(url, quote=True)}"' not in page
+    surface = SourceReportSurface()
+    surface.feed(page)
+    if (not surface.marked_article
+            or url not in surface.links
             or f'<link rel="canonical" href="{HOST}{item["url"]}">' not in page
-            or 'Source-reported; not independently tested' not in page
-            or f'datetime="{review["observedOn"]}"' not in page
+            or 'Source-reported; not independently tested' not in ' '.join(surface.words)
+            or review['observedOn'] not in surface.dates
             or 'noindex' in page.lower() or item['provenance'] != url):
         raise ValueError('Routine source report public wrapper')
     return review
@@ -163,6 +212,8 @@ def validate_research(source, scout, events, root):
             event = release_events[item['releaseEventId']]
             if date.fromisoformat(event['publicDate']) < date.fromisoformat(item['reviewedOn']):
                 raise ValueError('Routine source report release before review')
+            if event['title'] != item['title'] or event['summary'] != item['summary']:
+                raise ValueError('Routine source report event copy differs from reviewed record')
     for item in source['records']:
         if any(target not in ids or target == item['id'] for target in item['relatedIds']):
             raise ValueError('Scout research relationship target')
