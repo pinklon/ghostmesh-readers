@@ -72,9 +72,16 @@ class ScoutResearchTests(unittest.TestCase):
             additive = {'schema': source['schema'], 'records': self.source['records'] + [item]}
             additive_events = {'events': self.events['events'] + [event]}
             self.assertEqual(validate_research(additive, self.scout, additive_events, root), additive)
-            self.assertEqual(research_page(additive, additive_events).count('data-research-card'),
-                             len(additive['records']))
-            self.assertEqual(research_graph(additive)['recordCount'], len(additive['records']))
+            catalog = research_page(additive, additive_events)
+            self.assertEqual(catalog.count('data-research-card'), len(additive['records']))
+            self.assertEqual(catalog.count(f'href="{item["url"]}"'), 1)
+            graph = research_graph(additive)
+            self.assertEqual(graph['recordCount'], len(additive['records']))
+            self.assertEqual(len(graph['nodes']), len(additive['records']))
+            self.assertEqual([node for node in graph['nodes'] if node['sourceId'] == item['id']],
+                             [{'id': 'scout:' + item['id'], 'sourceId': item['id'],
+                               'type': 'source-report', 'title': item['title'],
+                               'url': 'https://youtube.shareplane.malott.ai' + item['url']}])
             item['summary'] = 'Unreviewed recommendation.'
             with self.assertRaisesRegex(ValueError, 'review binding'):
                 validate_research(source, {'reviews': []}, events, root)
