@@ -69,6 +69,11 @@ class ScoutResearchTests(unittest.TestCase):
                 target = root/published['sourcePath']
                 target.parent.mkdir(parents=True, exist_ok=True)
                 target.write_bytes((ROOT/published['sourcePath']).read_bytes())
+                if published['type'] == 'source-report':
+                    review_path = Path(f'content/scout/release-reviews/{published["slug"]}.json')
+                    copied_review = root/review_path
+                    copied_review.parent.mkdir(parents=True, exist_ok=True)
+                    copied_review.write_bytes((ROOT/review_path).read_bytes())
             additive = {'schema': source['schema'], 'records': self.source['records'] + [item]}
             additive_events = {'events': self.events['events'] + [event]}
             self.assertEqual(validate_research(additive, self.scout, additive_events, root), additive)
@@ -275,7 +280,8 @@ class ScoutResearchTests(unittest.TestCase):
 
     def test_relationships_require_explicit_existing_ids(self):
         source = copy.deepcopy(self.source)
-        source['records'][0]['relatedIds'] = ['private:unknown']
+        journal = next(item for item in source['records'] if item['id'] == 'journal:research-journal')
+        journal['relatedIds'] = ['private:unknown']
         with self.assertRaisesRegex(ValueError, 'relationship target'):
             self.validate(source)
         self.assertNotIn('private:unknown', research_page(self.source, self.events))

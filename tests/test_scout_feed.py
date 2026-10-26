@@ -107,8 +107,10 @@ class ScoutFeedTests(unittest.TestCase):
         new_research = [event for event in events['events'] if event['id'] in new_research_ids]
         self.assertEqual({event['id'] for event in new_research}, new_research_ids)
         self.assertTrue(all(event['publicDate'] == '2026-10-25' for event in new_research))
-        earlier = [event for event in events['events']
-                   if event['id'] not in {wsj_id, orca_id, webhook_id} | new_research_ids]
+        historical_ids = {'scout:research-journal:first-public-release'} | {
+            'scout:' + review['id'] + ':first-public-review' for review in source['reviews']}
+        earlier = [event for event in events['events'] if event['id'] in historical_ids]
+        self.assertEqual({event['id'] for event in earlier}, historical_ids)
         self.assertEqual({event['publicDate'] for event in earlier}, {'2026-10-22', '2026-10-23'})
         self.assertTrue(all('releasedAt' not in event for event in earlier))
 
