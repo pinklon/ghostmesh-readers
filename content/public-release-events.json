@@ -2,6 +2,15 @@
   "schema": "ghostmesh-public-release-events-v1",
   "events": [
     {
+      "id": "scout:mcp-tasks-cancellation-status-and-retention:expanded-analysis-20261026",
+      "kind": "material-scout-update",
+      "subjectId": "mcp-tasks-cancellation-status-and-retention",
+      "url": "https://youtube.shareplane.malott.ai/scout/essays/mcp-tasks-cancellation-status-and-retention/",
+      "title": "MCP task cancellation and evidence after the reply",
+      "summary": "A cancellation acknowledgment gives us one piece of evidence. The application still has to know which question it answers.",
+      "publicDate": "2026-10-26"
+    },
+    {
       "id": "scout:mcp-tasks-cancellation-status-and-retention:first-public-release",
       "kind": "new-scout-research",
       "subjectId": "mcp-tasks-cancellation-status-and-retention",

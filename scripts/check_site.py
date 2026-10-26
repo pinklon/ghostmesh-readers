@@ -81,8 +81,9 @@ def check(root=ROOT, *, local_only=False):
  try:
   scout=validate_scout(json.loads((root/'content/scout-public.json').read_text()))
   editions=validate_editions(json.loads((root/'content/scout-editions.json').read_text()),scout)['editions']
-  validate_events(json.loads((root/'content/public-release-events.json').read_text()),data,scout)
-  research=validate_research(json.loads((root/'content/scout-research.json').read_text()),scout,json.loads((root/'content/public-release-events.json').read_text()),root)
+  research_source=json.loads((root/'content/scout-research.json').read_text())
+  release_events=validate_events(json.loads((root/'content/public-release-events.json').read_text()),data,scout,research_source)
+  research=validate_research(research_source,scout,release_events,root)
  except (ValueError,KeyError,TypeError,FileNotFoundError) as e:return ['Scout/feed source: '+str(e)]
  def timestamp(value, label):
   try:

@@ -177,9 +177,13 @@ class ScoutResearchTests(unittest.TestCase):
     def test_published_works_and_synthesis_journal_are_reachable(self):
         self.validate(self.source)
         records = self.source['records']
-        self.assertEqual(sum(item['type'] != 'source-report' for item in records), 12)
+        self.assertEqual(sum(item['id'] != 'report:mcp-tasks-cancellation-status-and-retention' for item in records), 12)
+        expanded = next(item for item in records if item['id'] == 'report:mcp-tasks-cancellation-status-and-retention')
+        self.assertEqual(expanded['type'], 'essay')
+        self.assertEqual(expanded['relatedIds'], [])
+        self.assertEqual(expanded['releaseEventId'], 'scout:mcp-tasks-cancellation-status-and-retention:first-public-release')
         self.assertEqual(sum(item['type'] == 'investigation' for item in records), 3)
-        self.assertEqual(sum(item['type'] == 'essay' for item in records), 7)
+        self.assertEqual(sum(item['type'] == 'essay' for item in records), 8)
         self.assertEqual(sum(item['type'] == 'method' for item in records), 1)
         self.assertEqual(sum(item['type'] == 'journal' for item in records), 1)
         rendered = (ROOT/'site/scout/research/index.html').read_text()
@@ -252,7 +256,11 @@ class ScoutResearchTests(unittest.TestCase):
             if item['type'] in {'essay', 'method'}:
                 page = (ROOT/item['sourcePath']).read_text()
                 hero = page.split('<section class="hero">', 1)[1].split('</section>', 1)[0]
-                self.assertIn(label, hero)
+                if item['id'] == 'report:mcp-tasks-cancellation-status-and-retention':
+                    self.assertIn('Original source note published <time datetime="2026-10-26">October 26, 2026</time>', hero)
+                    self.assertIn('Expanded analysis reviewed <time datetime="2026-10-26">October 26, 2026</time>', hero)
+                else:
+                    self.assertIn(label, hero)
                 self.assertIn(label.split(' · <a href=', 1)[0],
                               (ROOT/'site/scout/essays/index.html').read_text())
 

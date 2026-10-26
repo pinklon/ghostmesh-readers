@@ -97,14 +97,16 @@ def validate_scout(source):
     return source
 
 
-def validate_events(source, catalog, scout):
+def validate_events(source, catalog, scout, research=None):
     if set(source) != {'schema', 'events'} or source['schema'] != 'ghostmesh-public-release-events-v1' or not isinstance(source['events'], list):
         raise ValueError('Public release event schema')
     host = catalog['host']
     readers = {r['id']: r for r in catalog['readers']}
     reviews = {r['id']: r for r in scout['reviews']}
+    research_by_slug = {r['slug']: r for r in (research or {}).get('records', [])}
     seen = set()
     first_releases = set()
+    research_updates = set()
     for event in source['events']:
         required = {'id', 'kind', 'subjectId', 'url', 'title', 'summary', 'publicDate'}
         if not isinstance(event, dict) or not required <= set(event) or set(event) - (required | {'releasedAt'}):
@@ -129,6 +131,11 @@ def validate_events(source, catalog, scout):
                              else '/scout/essays/' + subject + '/')
             if event['url'] != host + research_path:
                 raise ValueError('Release event Scout research identity')
+        elif kind == 'material-scout-update' and subject in research_by_slug:
+            item = research_by_slug[subject]
+            if event['url'] != host + item['url']:
+                raise ValueError('Release event Scout research identity')
+            research_updates.add(subject)
         elif subject not in reviews or event['url'] != host + '/scout/reviews/' + subject + '/':
             raise ValueError('Release event Scout identity')
         if kind in {'new-reader', 'new-scout-review', 'new-scout-research'}:
@@ -146,6 +153,8 @@ def validate_events(source, catalog, scout):
                 raise ValueError('Release timestamp must be timezone-aware and match public date')
             if stamp > datetime.now(timezone.utc):
                 raise ValueError('Release timestamp is in the future')
+    if any('scout:' + slug not in first_releases for slug in research_updates):
+        raise ValueError('Scout research update requires first public release')
     return source
 
 
@@ -228,7 +237,11 @@ def scout_body(scout, report_html=''):
 
 def feed_xml(events, host):
     items = []
-    for event in sorted(events['events'], key=lambda item: (item.get('releasedAt', item['publicDate']), item['id']), reverse=True):
+    def order(item):
+        # A same-day revision follows its first release without inventing a clock time.
+        revised = item['kind'] in {'material-reader-update', 'material-scout-update'}
+        return (item['publicDate'], revised, item.get('releasedAt', ''), item['id'])
+    for event in sorted(events['events'], key=order, reverse=True):
         item = '<item><title>' + escape(event['title']) + '</title><link>' + escape(event['url']) + '</link>'
         item += '<guid isPermaLink="false">urn:ghostmesh-readers:release:' + escape(event['id']) + '</guid>'
         item += '<description>' + escape(event['summary']) + '</description><dc:date>' + event['publicDate'] + '</dc:date>'
