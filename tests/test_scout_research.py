@@ -1,6 +1,7 @@
 import copy
 from datetime import datetime, timezone
 import hashlib
+from html import escape
 import json
 import sys
 import tempfile
@@ -283,6 +284,24 @@ class ScoutResearchTests(unittest.TestCase):
         self.assertEqual(len({event['id'] for event in events}), 3)
         self.assertEqual(item['releaseEventId'],
                          'scout:mcp-tasks-cancellation-status-and-retention:first-public-release')
+
+    def test_mcp_essay_index_matches_canonical_record_and_current_article(self):
+        item = next(record for record in self.source['records']
+                    if record['id'] == 'report:mcp-tasks-cancellation-status-and-retention')
+        essays = (ROOT/'site/scout/essays/index.html').read_text()
+        card_start = '<a class="card" href="' + item['url'] + '">'
+        self.assertEqual(essays.count(card_start), 1)
+        card = essays.split(card_start, 1)[1].split('</a>', 1)[0]
+        self.assertIn('<h3>' + escape(item['title']) + '</h3>', card)
+        self.assertIn('<p>' + escape(item['summary']) + '</p>', card)
+        self.assertIn('2026-07-28', card)
+        self.assertIn('2025-11-25', card)
+        article = (ROOT/item['sourcePath']).read_text()
+        library = (ROOT/'site/scout/research/index.html').read_text()
+        landing = (ROOT/'site/scout/index.html').read_text()
+        for surface in (card, library, landing, article):
+            self.assertIn(escape(item['title']), surface)
+            self.assertNotIn('A cancellation reply establishes task status', surface)
 
     def test_future_publication_requires_source_bound_first_release_event(self):
         source = copy.deepcopy(self.source)
