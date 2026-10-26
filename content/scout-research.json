@@ -5,19 +5,18 @@
     {
       "id": "report:mcp-tasks-cancellation-status-and-retention",
       "slug": "mcp-tasks-cancellation-status-and-retention",
-      "type": "source-report",
+      "type": "essay",
       "status": "published",
-      "title": "MCP Tasks: cancellation status and retention",
+      "title": "MCP task cancellation and evidence after the reply",
       "url": "/scout/essays/mcp-tasks-cancellation-status-and-retention/",
       "sourcePath": "site/scout/essays/mcp-tasks-cancellation-status-and-retention/index.html",
       "provenance": "https://modelcontextprotocol.io/specification/2025-11-25/basic/utilities/tasks",
-      "evidenceLimits": "Specification text inspected at a pinned repository revision. No client, server or account behavior was tested.",
-      "summary": "A source-only note on cancellation and retention provisions in the versioned MCP Tasks specification.",
+      "evidenceLimits": "Source analysis and an unrun experiment proposal. No client, server, account behavior, rollback outcome or retained result was tested.",
+      "summary": "A cancellation acknowledgment gives us one piece of evidence. The application still has to know which question it answers.",
       "topics": ["agent-continuity", "protocol-semantics"],
       "reviewedOn": "2026-10-26",
       "releaseEventId": "scout:mcp-tasks-cancellation-status-and-retention:first-public-release",
-      "relatedIds": [],
-      "standingRelease": "routine-source-report-v1"
+      "relatedIds": []
     },
     {
       "id": "journal:research-journal",

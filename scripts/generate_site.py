@@ -282,8 +282,9 @@ def projections():
  data=json.loads((ROOT/'content/catalog.json').read_text());validate_text(data)
  scout=validate_scout(json.loads((ROOT/'content/scout-public.json').read_text()))
  editions=validate_editions(json.loads((ROOT/'content/scout-editions.json').read_text()),scout)['editions']
- release_events=validate_events(json.loads((ROOT/'content/public-release-events.json').read_text()),data,scout)
- research=validate_research(json.loads((ROOT/'content/scout-research.json').read_text()),scout,release_events,ROOT)
+ research_source=json.loads((ROOT/'content/scout-research.json').read_text())
+ release_events=validate_events(json.loads((ROOT/'content/public-release-events.json').read_text()),data,scout,research_source)
+ research=validate_research(research_source,scout,release_events,ROOT)
  readers=sorted(data['readers'],key=lambda r:(r['published'],r['slug']),reverse=True)
  READER_COUNT=len(readers)
  for r in readers:r['rank']=r['editorialOrder']

@@ -80,7 +80,8 @@ class ScoutFeedTests(unittest.TestCase):
         self.assertNotIn('pinklon/skills', method)
         self.assertEqual(validate_scout(source), source)
         events = json.loads((ROOT / 'content/public-release-events.json').read_text())
-        self.assertEqual(validate_events(events, self.catalog, source), events)
+        research = json.loads((ROOT / 'content/scout-research.json').read_text())
+        self.assertEqual(validate_events(events, self.catalog, source, research), events)
         self.assertEqual([event['subjectId'] for event in events['events'] if event['kind'] == 'new-scout-review'],
                          [review['id'] for review in source['reviews']])
         self.assertEqual(sum(event['kind'] == 'new-reader' and event['subjectId'] == 'reader:what-a-swarm-makes-us-see'
@@ -233,6 +234,34 @@ class ScoutFeedTests(unittest.TestCase):
             source['events'][0]['url'] = wrong
             with self.assertRaisesRegex(ValueError, 'Scout research identity'):
                 validate_events(source, self.catalog, scout)
+
+    def test_material_research_update_preserves_first_release_and_binds_route(self):
+        host = self.catalog['host']
+        slug = 'fixture-essay'
+        url = host + '/scout/essays/' + slug + '/'
+        first = {'id': 'scout:fixture-essay:first-public-release',
+                 'kind': 'new-scout-research', 'subjectId': slug, 'url': url,
+                 'title': 'Original', 'summary': 'Initial report.', 'publicDate': '2026-10-20'}
+        update = {'id': 'scout:fixture-essay:expanded-analysis-20261020',
+                  'kind': 'material-scout-update', 'subjectId': slug, 'url': url,
+                  'title': 'Expanded analysis', 'summary': 'New analysis.', 'publicDate': '2026-10-20'}
+        source = {'schema': 'ghostmesh-public-release-events-v1', 'events': [update, first]}
+        scout = {'schema': 'ghostmesh-public-scout-v1', 'reviews': []}
+        research = {'records': [{'slug': slug, 'url': '/scout/essays/' + slug + '/'}]}
+        self.assertEqual(validate_events(source, self.catalog, scout, research), source)
+        items = ET.fromstring(feed_xml(source, host)).findall('./channel/item')
+        self.assertEqual(len(items), 2)
+        self.assertEqual([item.findtext('title') for item in items], ['Expanded analysis', 'Original'])
+        first['releasedAt'] = '2026-10-20T10:00:00Z'
+        self.assertEqual([item.findtext('title') for item in ET.fromstring(feed_xml(source, host)).findall('./channel/item')],
+                         ['Expanded analysis', 'Original'])
+        del first['releasedAt']
+        source['events'] = [update]
+        with self.assertRaisesRegex(ValueError, 'requires first public release'):
+            validate_events(source, self.catalog, scout, research)
+        source['events'] = [{**update, 'url': host + '/scout/essays/other/'}, first]
+        with self.assertRaisesRegex(ValueError, 'Scout research identity'):
+            validate_events(source, self.catalog, scout, research)
 
     def test_static_projection_links_scout_and_rss_without_event_churn(self):
         site = ROOT / 'site'
