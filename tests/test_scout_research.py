@@ -77,13 +77,20 @@ class ScoutResearchTests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, 'report identity'):
                 validate_research(source, {'reviews': []}, events, root)
             item['id'] = review['researchId']
-            hidden = page.replace('<p>Source-reported; not independently tested</p>',
-                                  '<p hidden>Source-reported; not independently tested</p>')
-            source_file.write_text(hidden)
-            review['sourceSha256'] = hashlib.sha256(hidden.encode()).hexdigest()
-            review_file.write_text(json.dumps(review))
-            with self.assertRaisesRegex(ValueError, 'public wrapper'):
-                validate_research(source, {'reviews': []}, events, root)
+            invisible_pages = (
+                page.replace('<p>Source-reported; not independently tested</p>',
+                             '<p hidden>Source-reported; not independently tested</p>'),
+                page.replace('<p>Source-reported; not independently tested</p>',
+                             '<p style="visibility: hidden">Source-reported; not independently tested</p>'),
+                page.replace('>Primary source</a>', '></a>'),
+                page.replace('>' + day + '</time>', '></time>'),
+            )
+            for invisible in invisible_pages:
+                source_file.write_text(invisible)
+                review['sourceSha256'] = hashlib.sha256(invisible.encode()).hexdigest()
+                review_file.write_text(json.dumps(review))
+                with self.assertRaisesRegex(ValueError, 'public wrapper'):
+                    validate_research(source, {'reviews': []}, events, root)
             source_file.write_text(page)
             review['sourceSha256'] = hashlib.sha256(page.encode()).hexdigest()
             review_file.write_text(json.dumps(review))

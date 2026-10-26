@@ -50,33 +50,40 @@ class SourceReportSurface(HTMLParser):
 
     def handle_starttag(self, tag, attrs):
         attrs = dict(attrs)
-        parent_visible = self.stack[-1][1] if self.stack else True
-        parent_inside = self.stack[-1][2] if self.stack else False
+        parent_visible = self.stack[-1]['visible'] if self.stack else True
+        parent_inside = self.stack[-1]['inside'] if self.stack else False
         marker = tag == 'article' and attrs.get('data-scout-source-report') == 'v1'
+        style = attrs.get('style', '').replace(' ', '').lower()
         visible = (parent_visible and 'hidden' not in attrs
                    and attrs.get('aria-hidden') != 'true'
-                   and 'display:none' not in attrs.get('style', '').replace(' ', '').lower()
+                   and not any(rule in style for rule in ('display:none', 'visibility:hidden', 'opacity:0'))
                    and tag not in {'script', 'style', 'noscript', 'template'})
         inside = parent_inside or marker
         if marker and visible:
             self.marked_article = True
-        if visible and inside:
-            if tag == 'a' and attrs.get('href'):
-                self.links.add(attrs['href'])
-            if tag == 'time' and attrs.get('datetime'):
-                self.dates.add(attrs['datetime'])
         if tag not in VOID_TAGS:
-            self.stack.append((tag, visible, inside))
+            self.stack.append({'tag': tag, 'visible': visible, 'inside': inside,
+                               'href': attrs.get('href'), 'date': attrs.get('datetime'),
+                               'text': ''})
 
     def handle_endtag(self, tag):
         for index in range(len(self.stack) - 1, -1, -1):
-            if self.stack[index][0] == tag:
+            if self.stack[index]['tag'] == tag:
+                for element in self.stack[index:]:
+                    if element['inside'] and element['visible'] and element['text'].strip():
+                        if element['tag'] == 'a' and element['href']:
+                            self.links.add(element['href'])
+                        if element['tag'] == 'time' and element['date']:
+                            self.dates.add(element['date'])
                 del self.stack[index:]
                 return
 
     def handle_data(self, data):
-        if self.stack and self.stack[-1][1] and self.stack[-1][2]:
+        if self.stack and self.stack[-1]['visible'] and self.stack[-1]['inside']:
             self.words.append(data)
+            for element in self.stack:
+                if element['visible'] and element['inside']:
+                    element['text'] += data
 
 
 def validate_routine_source_report(item, root):
