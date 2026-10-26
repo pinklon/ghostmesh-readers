@@ -1,11 +1,16 @@
 """Public, owner-approved Scout research register and deterministic catalog."""
-from datetime import date
+from datetime import date, datetime, timezone
 from html import escape
 from pathlib import Path
+from urllib.parse import urlsplit
+import hashlib
+import ipaddress
+import json
 import re
 
-TYPES = {'investigation', 'essay', 'experiment', 'counterexample', 'method', 'journal'}
+TYPES = {'investigation', 'essay', 'experiment', 'counterexample', 'method', 'journal', 'source-report'}
 HOST = 'https://youtube.shareplane.malott.ai'
+ROUTINE_POLICY = 'routine-source-report-v1'
 LEGACY_PUBLIC_BY_IDS = {
     'essay:the-signal-is-not-the-finding', 'essay:follow-the-work',
     'essay:five-ideas-outside-the-filter',
@@ -30,6 +35,71 @@ def publication_label(item, events):
     return result
 
 
+def validate_routine_source_report(item, root):
+    """Bind the narrow standing policy to exact public copy and independent review."""
+    if item['type'] != 'source-report' or item['standingRelease'] != ROUTINE_POLICY:
+        raise ValueError('Scout standing release class')
+    if item['relatedIds']:
+        raise ValueError('Routine source report cannot infer relationships')
+    slug = item['slug']
+    source_path = f'site/scout/essays/{slug}/index.html'
+    if item['sourcePath'] != source_path:
+        raise ValueError('Routine source report path')
+    raw = (root/source_path).read_bytes()
+    review_path = root/f'content/scout/release-reviews/{slug}.json'
+    if not review_path.is_file():
+        raise ValueError('Routine source report independent review missing')
+    review = json.loads(review_path.read_text())
+    fields = {'schema', 'policy', 'researchId', 'sourceUrl', 'observedOn', 'reviewedOn',
+              'sourceMethod', 'sourceSha256', 'reviewerTask', 'publisherTask', 'decision',
+              'sourceReportedOnly', 'noNewRecommendation', 'noExecutionOrEntitlementClaim',
+              'publicSafe'}
+    if (not isinstance(review, dict) or set(review) != fields
+            or review['schema'] != 'ghostmesh-scout-source-report-review-v1'
+            or review['policy'] != ROUTINE_POLICY or review['researchId'] != item['id']
+            or review['decision'] != 'accept'
+            or review['sourceMethod'] not in {'official-release-note', 'official-docs', 'primary-repository'}
+            or review['sourceSha256'] != hashlib.sha256(raw).hexdigest()
+            or review['reviewedOn'] != item['reviewedOn']
+            or any(review[field] is not True for field in ('sourceReportedOnly',
+                'noNewRecommendation', 'noExecutionOrEntitlementClaim', 'publicSafe'))):
+        raise ValueError('Routine source report review binding')
+    if (not isinstance(review['reviewerTask'], str) or not review['reviewerTask'].strip()
+            or not isinstance(review['publisherTask'], str) or not review['publisherTask'].strip()
+            or review['reviewerTask'] == review['publisherTask']):
+        raise ValueError('Routine source report reviewer independence')
+    try:
+        observed = date.fromisoformat(review['observedOn'])
+        reviewed = date.fromisoformat(review['reviewedOn'])
+    except (TypeError, ValueError):
+        raise ValueError('Routine source report evidence dates')
+    if observed > reviewed or reviewed > datetime.now(timezone.utc).date():
+        raise ValueError('Routine source report evidence dates')
+    if item['releaseEventId'] != f'scout:{slug}:first-public-release':
+        raise ValueError('Routine source report release identity')
+    url = review['sourceUrl']
+    if not isinstance(url, str):
+        raise ValueError('Routine source report primary URL')
+    parsed = urlsplit(url)
+    try:
+        private_ip = not ipaddress.ip_address(parsed.hostname).is_global
+    except (TypeError, ValueError):
+        private_ip = False
+    if (parsed.scheme != 'https' or not parsed.hostname or parsed.username or parsed.password
+            or parsed.hostname == 'localhost' or private_ip
+            or '/private/' in parsed.path or any(x in url.lower() for x in ('token=', 'signature=', 'secret='))):
+        raise ValueError('Routine source report primary URL')
+    page = raw.decode('utf-8')
+    if (not re.search(r'<article\b[^>]*\bdata-scout-source-report="v1"', page)
+            or f'href="{escape(url, quote=True)}"' not in page
+            or f'<link rel="canonical" href="{HOST}{item["url"]}">' not in page
+            or 'Source-reported; not independently tested' not in page
+            or f'datetime="{review["observedOn"]}"' not in page
+            or 'noindex' in page.lower() or item['provenance'] != url):
+        raise ValueError('Routine source report public wrapper')
+    return review
+
+
 def validate_research(source, scout, events, root):
     if source.get('schema') != 'ghostmesh-scout-research-v1' or not isinstance(source.get('records'), list):
         raise ValueError('Scout research schema')
@@ -40,7 +110,8 @@ def validate_research(source, scout, events, root):
         required = {'id', 'slug', 'type', 'status', 'title', 'url', 'sourcePath', 'provenance',
                     'evidenceLimits', 'summary', 'topics', 'reviewedOn', 'releaseEventId', 'relatedIds'}
         legacy = item.get('id') in LEGACY_PUBLIC_BY_IDS
-        expected_fields = required | ({'publicByOn', 'publicByEvidenceUrl'} if legacy else set())
+        routine = item.get('type') == 'source-report'
+        expected_fields = required | ({'publicByOn', 'publicByEvidenceUrl'} if legacy else set()) | ({'standingRelease'} if routine else set())
         if set(item) != expected_fields or item['type'] not in TYPES or item['status'] != 'published':
             raise ValueError('Invalid Scout research record fields/status')
         ident, slug, url = item['id'], item['slug'], item['url']
@@ -87,6 +158,11 @@ def validate_research(source, scout, events, root):
                 raise ValueError('Scout research release event mismatch')
         if not isinstance(item['relatedIds'], list) or len(set(item['relatedIds'])) != len(item['relatedIds']):
             raise ValueError('Scout research relationships')
+        if routine:
+            validate_routine_source_report(item, root)
+            event = release_events[item['releaseEventId']]
+            if date.fromisoformat(event['publicDate']) < date.fromisoformat(item['reviewedOn']):
+                raise ValueError('Routine source report release before review')
     for item in source['records']:
         if any(target not in ids or target == item['id'] for target in item['relatedIds']):
             raise ValueError('Scout research relationship target')

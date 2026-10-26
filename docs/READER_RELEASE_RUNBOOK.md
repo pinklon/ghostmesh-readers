@@ -2,6 +2,8 @@
 
 This is the one publication queue and release path for `pinklon/ghostmesh-readers`. One accepted publisher owns a candidate from source handoff through the final production receipt. Source custodians and independent reviewers can supply evidence or read-only findings; they do not start competing uploads. The public repository contains original analysis and sanitized receipts, never copied media, captions, full transcripts, private source packs, signed URLs, or credentials.
 
+Scout has one bounded standing exception to per-item owner production decisions: the `routine-source-report-v1` class in [SCOUT_RESEARCH_CONTRIBUTING.md](SCOUT_RESEARCH_CONTRIBUTING.md). It covers source-reported public research with exact-copy independent review, no new recommendation or relationship, full CI/preview checks, and live readback. It does not apply to Readers, essays, rated investigations, experiments or other Scout judgments. The publisher must stop if the candidate exceeds that class; this exception does not weaken the direct owner editorial marker or exact-head gate for Readers.
+
 ## Canonical queue and evidence
 
 The status table below is the one maintained Reader queue. Add a row when a source is accepted; update its public-safe evidence status or receipt reference, exact candidate head, review gate, PR and deployment state as work advances. The publisher's task receipt holds detailed evidence for these fields, not a second status queue. Keep private custody in private storage and cite only sanitized evidence in public Git. Do not create a second tracker or uploader.
