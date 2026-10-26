@@ -54,6 +54,14 @@
 <p>Start with a current-extension acknowledgment followed by an observed working state. The consumer must not report the task as cancelled or execution as stopped. Then let the work complete before cancellation takes effect and return its result through tasks/get. Add a case in which cancellation takes effect, and another in which a mock destination effect precedes the worker&#x27;s exit. Keep client-state disposal distinct from server-record expiry. Legacy cancellation rules belong in a separately labeled legacy test, not in the current extension&#x27;s expected outcomes.</p>
 <p>Include a positive control with attributable evidence that execution stopped without a mock destination change. A consumer that always answers unknown is not an improvement. Give the current and proposed rules identical observations and compare false cancellation claims, false stop claims, mistaken effect claims, and unnecessary uncertainty. The proposal fails its practical test if the existing consumer reaches the same correct conclusions with less machinery.</p>
 <p>A passing fixture would justify examining one pinned implementation under separate authorization. It would not demonstrate universal adoption or production behavior. For the current extension, the conclusion is straightforward: the cancellation reply acknowledges a request. What happened to the task and its effects remains a separate question.</p>
+<section id="related-reading" aria-labelledby="related-reading-title">
+<h2 id="related-reading-title">Related reading</h2>
+<p>These Readers examine adjacent operational questions. Neither tests an MCP Tasks implementation or corroborates this specification analysis.</p>
+<ul>
+<li><a href="/when-a-successful-run-is-still-waiting/">When a Successful Run Is Still Waiting</a> asks whether a successful LangGraph webhook describes a completed outcome or a run paused for input. It calls for attributable state readback before promoting an event to completion.</li>
+<li><a href="/the-stop-button-is-outside-the-chat/">The Stop Button Is Outside the Chat</a> asks whether an agent stop procedure reaches active processes, future schedules and account access. It addresses operational controls beyond a protocol acknowledgment.</li>
+</ul>
+</section>
 <h2 id="sources">Source register</h2>
 <p id="source-1">S1. Official MCP Tasks extension, specification version 2026-07-28, inspected October 26 2026. The repository README identifies this version as Stable and the separate draft version as Development. The Draft link in the documentation navigation points to another version; it is not a status label on the July page. This is specification status, not implementation adoption.</p>
 <p><a href="https://tasks.extensions.modelcontextprotocol.io/specification/2026-07-28/tasks">https://tasks.extensions.modelcontextprotocol.io/specification/2026-07-28/tasks</a></p>
