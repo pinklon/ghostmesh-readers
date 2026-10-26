@@ -65,6 +65,23 @@ class ScoutResearchTests(unittest.TestCase):
             source = {'schema': 'ghostmesh-scout-research-v1', 'records': [item]}
             events = {'events': [event]}
             self.assertEqual(validate_research(source, {'reviews': []}, events, root), source)
+            for published in self.source['records']:
+                target = root/published['sourcePath']
+                target.parent.mkdir(parents=True, exist_ok=True)
+                target.write_bytes((ROOT/published['sourcePath']).read_bytes())
+            additive = {'schema': source['schema'], 'records': self.source['records'] + [item]}
+            additive_events = {'events': self.events['events'] + [event]}
+            self.assertEqual(validate_research(additive, self.scout, additive_events, root), additive)
+            catalog = research_page(additive, additive_events)
+            self.assertEqual(catalog.count('data-research-card'), len(additive['records']))
+            self.assertEqual(catalog.count(f'href="{item["url"]}"'), 1)
+            graph = research_graph(additive)
+            self.assertEqual(graph['recordCount'], len(additive['records']))
+            self.assertEqual(len(graph['nodes']), len(additive['records']))
+            self.assertEqual([node for node in graph['nodes'] if node['sourceId'] == item['id']],
+                             [{'id': 'scout:' + item['id'], 'sourceId': item['id'],
+                               'type': 'source-report', 'title': item['title'],
+                               'url': 'https://youtube.shareplane.malott.ai' + item['url']}])
             item['summary'] = 'Unreviewed recommendation.'
             with self.assertRaisesRegex(ValueError, 'review binding'):
                 validate_research(source, {'reviews': []}, events, root)
@@ -155,13 +172,13 @@ class ScoutResearchTests(unittest.TestCase):
     def test_published_works_and_synthesis_journal_are_reachable(self):
         self.validate(self.source)
         records = self.source['records']
-        self.assertEqual(len(records), 12)
+        self.assertEqual(sum(item['type'] != 'source-report' for item in records), 12)
         self.assertEqual(sum(item['type'] == 'investigation' for item in records), 3)
         self.assertEqual(sum(item['type'] == 'essay' for item in records), 7)
         self.assertEqual(sum(item['type'] == 'method' for item in records), 1)
         self.assertEqual(sum(item['type'] == 'journal' for item in records), 1)
         rendered = (ROOT/'site/scout/research/index.html').read_text()
-        self.assertEqual(rendered.count('data-research-card'), 12)
+        self.assertEqual(rendered.count('data-research-card'), len(records))
         for item in records:
             self.assertIn('href="' + item['url'] + '"', rendered)
             self.assertTrue((ROOT/'site'/item['url'].strip('/')/'index.html').is_file())
