@@ -11,7 +11,7 @@
       "url": "/scout/essays/mcp-tasks-cancellation-status-and-retention/",
       "sourcePath": "site/scout/essays/mcp-tasks-cancellation-status-and-retention/index.html",
       "provenance": "https://modelcontextprotocol.io/specification/2025-11-25/basic/utilities/tasks",
-      "evidenceLimits": "Source analysis and an unrun experiment proposal. No client, server, account behavior, rollback outcome or retained result was tested.",
+      "evidenceLimits": "Older but relevant: this analyzes the experimental 2025-11-25 text to distinguish cancellation acknowledgement from confirmed termination. The current 2026-07-28 Tasks extension changes cancellation status semantics. No client, server, account behavior, rollback outcome or retained result was tested.",
       "summary": "A cancellation acknowledgment gives us one piece of evidence. The application still has to know which question it answers.",
       "topics": ["agent-continuity", "protocol-semantics"],
       "reviewedOn": "2026-10-26",
