@@ -13,10 +13,16 @@
       "provenance": "Anthropic PDF support and citations documentation observed October 26, 2026; original evidence-review analysis and a hypothetical manual comparison. Original source publication/update dates and immutable revisions were not established.",
       "evidenceLimits": "Documentation analysis and an unperformed manual test proposal. No model, API, OCR or citation-output behavior was tested; source publication and revision dates remain unknown.",
       "summary": "A proposed claim-level review method for distinguishing cited text, inspected visual evidence and unresolved support in PDF answers.",
-      "topics": ["document-reading", "citation-evidence"],
+      "topics": [
+        "document-reading",
+        "citation-evidence"
+      ],
       "reviewedOn": "2026-10-26",
       "releaseEventId": "scout:reviewing-visual-claims-in-claude-pdf-answers:first-public-release",
-      "relatedIds": ["method:before-the-model-sees-the-spreadsheet", "essay:the-signal-is-not-the-finding"]
+      "relatedIds": [
+        "method:before-the-model-sees-the-spreadsheet",
+        "essay:the-signal-is-not-the-finding"
+      ]
     },
     {
       "id": "report:mcp-tasks-cancellation-status-and-retention",
@@ -29,7 +35,10 @@
       "provenance": "https://tasks.extensions.modelcontextprotocol.io/specification/2026-07-28/tasks",
       "evidenceLimits": "The current 2026-07-28 Tasks extension is the lead specification. The 2025-11-25 text is older but relevant historical comparison. No implementation, cancellation path, result-retention behavior or SDK adoption was tested.",
       "summary": "A cancellation acknowledgment gives us one piece of evidence. The application still has to know which question it answers.",
-      "topics": ["agent-continuity", "protocol-semantics"],
+      "topics": [
+        "agent-continuity",
+        "protocol-semantics"
+      ],
       "reviewedOn": "2026-10-26",
       "releaseEventId": "scout:mcp-tasks-cancellation-status-and-retention:first-public-release",
       "relatedIds": []
@@ -45,10 +54,15 @@
       "provenance": "Public GhostMesh synthesis of the existing Scout research essays, with a source-pinned same-implementation replay receipt in PR #75.",
       "evidenceLimits": "Synthesizes earlier editorial evidence and synthetic tests. Same-source deterministic replay passed; independent replication, raw archive reconciliation, and real-workload validation remain unverified.",
       "summary": "An open ledger of Scout's outside-vocabulary comparisons, synthetic stopping tests, failures, caveats and reproducibility gaps.",
-      "topics": ["research"],
+      "topics": [
+        "research"
+      ],
       "reviewedOn": "2026-10-23",
       "releaseEventId": "scout:research-journal:first-public-release",
-      "relatedIds": ["essay:five-ideas-outside-the-filter", "essay:the-plateau-that-lied"]
+      "relatedIds": [
+        "essay:five-ideas-outside-the-filter",
+        "essay:the-plateau-that-lied"
+      ]
     },
     {
       "id": "cloudflare-security-audit-skill",
@@ -235,10 +249,15 @@
       "provenance": "Pinned LangGraph source and documentation; author-reported SemIso experiments; DVC and Temporal primary documentation.",
       "evidenceLimits": "Static inspection and literature analysis. The proposed continuation experiment was not performed; no improvement or deployed behavior was verified.",
       "summary": "A checkpoint can preserve state without preserving the dependencies that make its conclusions usable. A bounded compatibility test should precede another orchestrator.",
-      "topics": ["agent-continuity", "dependency-compatibility"],
+      "topics": [
+        "agent-continuity",
+        "dependency-compatibility"
+      ],
       "reviewedOn": "2026-10-25",
       "releaseEventId": "scout:what-survives-a-checkpoint:first-public-release",
-      "relatedIds": ["journal:research-journal"]
+      "relatedIds": [
+        "journal:research-journal"
+      ]
     },
     {
       "id": "method:before-the-model-sees-the-spreadsheet",
@@ -251,10 +270,55 @@
       "provenance": "Pinned Docling and Onyx implementation and tests; primary openpyxl/OOXML documentation; one unchanged upstream XLSX fixture read with openpyxl 3.1.5.",
       "evidenceLimits": "One positive fixture dual-read only. No Docling or Onyx execution; missing/stale-cache cases and the proposed four-case test were not performed. No freshness, performance or improvement claim.",
       "summary": "One public XLSX fixture exposes the difference between formula text and cached values. Source analysis defines what a successful conversion does not prove.",
-      "topics": ["document-reading", "spreadsheet-semantics"],
+      "topics": [
+        "document-reading",
+        "spreadsheet-semantics"
+      ],
       "reviewedOn": "2026-10-25",
       "releaseEventId": "scout:before-the-model-sees-the-spreadsheet:first-public-release",
-      "relatedIds": ["journal:research-journal"]
+      "relatedIds": [
+        "journal:research-journal"
+      ]
+    },
+    {
+      "id": "essay:assisted-permissions-and-human-approval",
+      "slug": "assisted-permissions-and-human-approval",
+      "type": "essay",
+      "status": "published",
+      "title": "Assisted permissions and the meaning of human approval",
+      "url": "/scout/essays/assisted-permissions-and-human-approval/",
+      "sourcePath": "site/scout/essays/assisted-permissions-and-human-approval/index.html",
+      "provenance": "GitHub Copilot Assisted permissions, enterprise policy and sandbox documentation; October 26, 2026 announcement; VS Code 1.142 and 1.143 guidance.",
+      "evidenceLimits": "No Copilot execution or account entitlement was verified. The proposed comparison was not performed; documentation tension is not a demonstrated enforcement defect.",
+      "summary": "The important question in GitHub Copilot's assisted-permissions release is whether a team that writes ask into its policy still means ask a person.",
+      "topics": [
+        "security-review",
+        "agent-continuity"
+      ],
+      "reviewedOn": "2026-10-27",
+      "releaseEventId": "scout:assisted-permissions-and-human-approval:first-public-release",
+      "relatedIds": [
+        "essay:a-faster-review-button-is-not-a-better-decision"
+      ]
+    },
+    {
+      "id": "method:anthropic-october-21-api-sdk-migration",
+      "slug": "anthropic-october-21-api-sdk-migration",
+      "type": "method",
+      "status": "published",
+      "title": "Anthropic API and SDK changes introduced on October 21",
+      "url": "/scout/essays/anthropic-october-21-api-sdk-migration/",
+      "sourcePath": "site/scout/essays/anthropic-october-21-api-sdk-migration/index.html",
+      "provenance": "Anthropic October 21, 2026 release notes and migration guide; tagged SDK source and release metadata inspected October 27, 2026.",
+      "evidenceLimits": "No particular deployment was inspected or runtime-tested. SDK installation, account exposure, legal obligations and compatibility remain unverified.",
+      "summary": "The useful operational distinction is between API-version changes and independent SDK changes.",
+      "topics": [
+        "dependency-compatibility",
+        "research"
+      ],
+      "reviewedOn": "2026-10-27",
+      "releaseEventId": "scout:anthropic-october-21-api-sdk-migration:first-public-release",
+      "relatedIds": []
     }
   ]
 }

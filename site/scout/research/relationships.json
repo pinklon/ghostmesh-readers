@@ -3,8 +3,8 @@
   "scope": "Public Scout research reading routes; links are editorial, not corroboration.",
   "authority": "scout-research-curated-editorial",
   "visibility": "public",
-  "recordCount": 14,
-  "relationshipCount": 6,
+  "recordCount": 16,
+  "relationshipCount": 7,
   "nodes": [
     {
       "id": "scout:cloudflare-security-audit-skill",
@@ -19,6 +19,13 @@
       "type": "essay",
       "title": "A Faster Review Button Is Not a Better Decision",
       "url": "https://youtube.shareplane.malott.ai/scout/essays/a-faster-review-button-is-not-a-better-decision/"
+    },
+    {
+      "id": "scout:essay:assisted-permissions-and-human-approval",
+      "sourceId": "essay:assisted-permissions-and-human-approval",
+      "type": "essay",
+      "title": "Assisted permissions and the meaning of human approval",
+      "url": "https://youtube.shareplane.malott.ai/scout/essays/assisted-permissions-and-human-approval/"
     },
     {
       "id": "scout:essay:five-ideas-outside-the-filter",
@@ -77,6 +84,13 @@
       "url": "https://youtube.shareplane.malott.ai/scout/research-journal/"
     },
     {
+      "id": "scout:method:anthropic-october-21-api-sdk-migration",
+      "sourceId": "method:anthropic-october-21-api-sdk-migration",
+      "type": "method",
+      "title": "Anthropic API and SDK changes introduced on October 21",
+      "url": "https://youtube.shareplane.malott.ai/scout/essays/anthropic-october-21-api-sdk-migration/"
+    },
+    {
       "id": "scout:method:before-the-model-sees-the-spreadsheet",
       "sourceId": "method:before-the-model-sees-the-spreadsheet",
       "type": "method",
@@ -106,6 +120,13 @@
     }
   ],
   "edges": [
+    {
+      "from": "scout:essay:assisted-permissions-and-human-approval",
+      "to": "scout:essay:a-faster-review-button-is-not-a-better-decision",
+      "type": "approved related work",
+      "fromUrl": "https://youtube.shareplane.malott.ai/scout/essays/assisted-permissions-and-human-approval/",
+      "toUrl": "https://youtube.shareplane.malott.ai/scout/essays/a-faster-review-button-is-not-a-better-decision/"
+    },
     {
       "from": "scout:essay:what-survives-a-checkpoint",
       "to": "scout:journal:research-journal",

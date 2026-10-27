@@ -127,6 +127,24 @@
       "title": "What a Swarm Makes Us See",
       "summary": "A visual-only reading of HORTRAME’s simulation artwork, its multi-agent mathematical inspirations and the limits of what sampled frames can establish.",
       "publicDate": "2026-10-22"
+    },
+    {
+      "id": "scout:assisted-permissions-and-human-approval:first-public-release",
+      "kind": "new-scout-research",
+      "subjectId": "assisted-permissions-and-human-approval",
+      "url": "https://youtube.shareplane.malott.ai/scout/essays/assisted-permissions-and-human-approval/",
+      "title": "Assisted permissions and the meaning of human approval",
+      "summary": "The important question in GitHub Copilot's assisted-permissions release is whether a team that writes ask into its policy still means ask a person.",
+      "publicDate": "2026-10-27"
+    },
+    {
+      "id": "scout:anthropic-october-21-api-sdk-migration:first-public-release",
+      "kind": "new-scout-research",
+      "subjectId": "anthropic-october-21-api-sdk-migration",
+      "url": "https://youtube.shareplane.malott.ai/scout/essays/anthropic-october-21-api-sdk-migration/",
+      "title": "Anthropic API and SDK changes introduced on October 21",
+      "summary": "The useful operational distinction is between API-version changes and independent SDK changes.",
+      "publicDate": "2026-10-27"
     }
   ]
 }
