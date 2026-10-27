@@ -221,7 +221,7 @@ class ScoutResearchTests(unittest.TestCase):
             self.assertEqual(matches[0]['url'], 'https://youtube.shareplane.malott.ai' + item['url'])
             self.assertIn(item['releaseEventId'], (ROOT/'site/feed.xml').read_text())
 
-    def test_claude_pdf_method_keeps_reviewed_copy_and_no_invented_links(self):
+    def test_claude_pdf_method_keeps_reviewed_copy_and_approved_links(self):
         slug = 'reviewing-visual-claims-in-claude-pdf-answers'
         source = ROOT/f'content/scout/publication-drafts/11-{slug}.md'
         self.assertEqual(hashlib.sha256(source.read_bytes()).hexdigest(),
@@ -230,9 +230,18 @@ class ScoutResearchTests(unittest.TestCase):
         self.assertEqual(len(records), 1)
         item = records[0]
         self.assertEqual(item['type'], 'method')
-        self.assertEqual(item['relatedIds'], [])
+        approved = ['method:before-the-model-sees-the-spreadsheet',
+                    'essay:the-signal-is-not-the-finding']
+        self.assertEqual(item['relatedIds'], approved)
         self.assertNotIn('standingRelease', item)
         page = (ROOT/item['sourcePath']).read_text()
+        article = page.split('<article class="article">', 1)[1].split('</article>', 1)[0]
+        self.assertEqual(hashlib.sha256(article.encode()).hexdigest(),
+                         '8880def5e26a1d862570d383535ddaab2c8a225453451fb8d416ba37ea65cfeb')
+        self.assertIn('<aside class="article related-reading"', page)
+        by_id = {record['id']: record for record in self.source['records']}
+        for target in approved:
+            self.assertEqual(page.count('href="' + by_id[target]['url'] + '"'), 1)
         self.assertIn('No model or review experiment was performed.', page)
         self.assertNotIn('noindex', page)
         self.assertIn('https://youtube.shareplane.malott.ai' + item['url'],
@@ -241,7 +250,9 @@ class ScoutResearchTests(unittest.TestCase):
         self.assertEqual(len(events), 1)
         self.assertEqual(events[0]['kind'], 'new-scout-research')
         graph = json.loads((ROOT/'site/scout/research/relationships.json').read_text())
-        self.assertFalse(any(slug in str(edge) for edge in graph['edges']))
+        self.assertEqual({edge['to'] for edge in graph['edges']
+                          if edge['from'] == 'scout:' + item['id']},
+                         {'scout:' + target for target in approved})
 
     def test_future_tranche_and_private_status_fail_closed(self):
         source = copy.deepcopy(self.source)

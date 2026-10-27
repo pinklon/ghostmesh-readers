@@ -16,7 +16,7 @@
       "topics": ["document-reading", "citation-evidence"],
       "reviewedOn": "2026-10-26",
       "releaseEventId": "scout:reviewing-visual-claims-in-claude-pdf-answers:first-public-release",
-      "relatedIds": []
+      "relatedIds": ["method:before-the-model-sees-the-spreadsheet", "essay:the-signal-is-not-the-finding"]
     },
     {
       "id": "report:mcp-tasks-cancellation-status-and-retention",

@@ -4,7 +4,7 @@
   "authority": "scout-research-curated-editorial",
   "visibility": "public",
   "recordCount": 14,
-  "relationshipCount": 4,
+  "relationshipCount": 6,
   "nodes": [
     {
       "id": "scout:cloudflare-security-audit-skill",
@@ -133,6 +133,20 @@
       "type": "approved related work",
       "fromUrl": "https://youtube.shareplane.malott.ai/scout/essays/before-the-model-sees-the-spreadsheet/",
       "toUrl": "https://youtube.shareplane.malott.ai/scout/research-journal/"
+    },
+    {
+      "from": "scout:method:reviewing-visual-claims-in-claude-pdf-answers",
+      "to": "scout:method:before-the-model-sees-the-spreadsheet",
+      "type": "approved related work",
+      "fromUrl": "https://youtube.shareplane.malott.ai/scout/essays/reviewing-visual-claims-in-claude-pdf-answers/",
+      "toUrl": "https://youtube.shareplane.malott.ai/scout/essays/before-the-model-sees-the-spreadsheet/"
+    },
+    {
+      "from": "scout:method:reviewing-visual-claims-in-claude-pdf-answers",
+      "to": "scout:essay:the-signal-is-not-the-finding",
+      "type": "approved related work",
+      "fromUrl": "https://youtube.shareplane.malott.ai/scout/essays/reviewing-visual-claims-in-claude-pdf-answers/",
+      "toUrl": "https://youtube.shareplane.malott.ai/scout/essays/the-signal-is-not-the-finding/"
     }
   ]
 }
