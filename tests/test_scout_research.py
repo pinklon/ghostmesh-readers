@@ -1,6 +1,7 @@
 import copy
 from datetime import datetime, timezone
 import hashlib
+from html import escape
 import json
 import sys
 import tempfile
@@ -255,14 +256,72 @@ class ScoutResearchTests(unittest.TestCase):
                 self.assertIn('Published', label)
             if item['type'] in {'essay', 'method'}:
                 page = (ROOT/item['sourcePath']).read_text()
+                essays = (ROOT/'site/scout/essays/index.html').read_text()
+                card_start = '<a class="card" href="' + item['url'] + '">'
+                self.assertEqual(essays.count(card_start), 1)
+                card = essays.split(card_start, 1)[1].split('</a>', 1)[0]
+                self.assertIn('<h3>' + escape(item['title']) + '</h3>', card)
                 hero = page.split('<section class="hero">', 1)[1].split('</section>', 1)[0]
                 if item['id'] == 'report:mcp-tasks-cancellation-status-and-retention':
                     self.assertIn('Original source note published <time datetime="2026-10-26">October 26, 2026</time>', hero)
-                    self.assertIn('Expanded analysis reviewed <time datetime="2026-10-26">October 26, 2026</time>', hero)
+                    self.assertIn('Corrected analysis reviewed <time datetime="2026-10-26">October 26, 2026</time>', hero)
                 else:
                     self.assertIn(label, hero)
-                self.assertIn(label.split(' · <a href=', 1)[0],
-                              (ROOT/'site/scout/essays/index.html').read_text())
+                self.assertIn(label.split(' · <a href=', 1)[0], card)
+
+    def test_mcp_correction_preserves_history_and_names_current_contract(self):
+        item = next(r for r in self.source['records']
+                    if r['id'] == 'report:mcp-tasks-cancellation-status-and-retention')
+        page = (ROOT/item['sourcePath']).read_text()
+        self.assertEqual(item['provenance'],
+                         'https://tasks.extensions.modelcontextprotocol.io/specification/2026-07-28/tasks')
+        self.assertIn('Correction notice', page)
+        self.assertIn('Older but relevant', page)
+        self.assertIn('acknowledgment does not settle the task&#x27;s state', page)
+        self.assertIn('The older contract made a different promise', page)
+        self.assertIn('Outside the present six-month source window', page)
+        self.assertIn('Original source note, published October 26, 2026', page)
+        self.assertNotIn('Private correction assessment', page)
+        self.assertNotIn('Not owner-approved for publication', page)
+        events = [event for event in self.events['events']
+                  if event['subjectId'] == item['slug']]
+        self.assertEqual([event['kind'] for event in events],
+                         ['material-scout-update', 'material-scout-update', 'new-scout-research'])
+        self.assertEqual(len({event['id'] for event in events}), 3)
+        self.assertEqual(item['releaseEventId'],
+                         'scout:mcp-tasks-cancellation-status-and-retention:first-public-release')
+
+    def test_mcp_approved_reader_links_remain_distinct_from_scout_graph_edges(self):
+        item = next(record for record in self.source['records']
+                    if record['id'] == 'report:mcp-tasks-cancellation-status-and-retention')
+        page = (ROOT/item['sourcePath']).read_text()
+        self.assertIn('<section id="related-reading"', page)
+        for slug in ('when-a-successful-run-is-still-waiting',
+                     'the-stop-button-is-outside-the-chat'):
+            self.assertEqual(page.count('href="/' + slug + '/"'), 1)
+            self.assertTrue((ROOT/'site'/slug/'index.html').is_file())
+        self.assertIn('Neither tests an MCP Tasks implementation', page)
+        self.assertEqual(item['relatedIds'], [])
+        graph = research_graph(self.source)
+        self.assertFalse(any(edge['from'] == 'scout:' + item['id'] for edge in graph['edges']))
+
+    def test_mcp_essay_index_matches_canonical_record_and_current_article(self):
+        item = next(record for record in self.source['records']
+                    if record['id'] == 'report:mcp-tasks-cancellation-status-and-retention')
+        essays = (ROOT/'site/scout/essays/index.html').read_text()
+        card_start = '<a class="card" href="' + item['url'] + '">'
+        self.assertEqual(essays.count(card_start), 1)
+        card = essays.split(card_start, 1)[1].split('</a>', 1)[0]
+        self.assertIn('<h3>' + escape(item['title']) + '</h3>', card)
+        self.assertIn('<p>' + escape(item['summary']) + '</p>', card)
+        self.assertIn('2026-07-28', card)
+        self.assertIn('2025-11-25', card)
+        article = (ROOT/item['sourcePath']).read_text()
+        library = (ROOT/'site/scout/research/index.html').read_text()
+        landing = (ROOT/'site/scout/index.html').read_text()
+        for surface in (card, library, landing, article):
+            self.assertIn(escape(item['title']), surface)
+            self.assertNotIn('A cancellation reply establishes task status', surface)
 
     def test_future_publication_requires_source_bound_first_release_event(self):
         source = copy.deepcopy(self.source)

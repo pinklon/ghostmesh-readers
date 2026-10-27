@@ -2,6 +2,15 @@
   "schema": "ghostmesh-public-release-events-v1",
   "events": [
     {
+      "id": "scout:mcp-tasks-cancellation-status-and-retention:corrected-analysis-20261026",
+      "kind": "material-scout-update",
+      "subjectId": "mcp-tasks-cancellation-status-and-retention",
+      "url": "https://youtube.shareplane.malott.ai/scout/essays/mcp-tasks-cancellation-status-and-retention/",
+      "title": "What an MCP cancellation acknowledgment actually proves",
+      "summary": "Under the newer extension, a successful cancellation acknowledgment does not establish that the task has entered the cancelled state.",
+      "publicDate": "2026-10-26"
+    },
+    {
       "id": "scout:mcp-tasks-cancellation-status-and-retention:expanded-analysis-20261026",
       "kind": "material-scout-update",
       "subjectId": "mcp-tasks-cancellation-status-and-retention",

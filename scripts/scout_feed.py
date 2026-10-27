@@ -237,11 +237,13 @@ def scout_body(scout, report_html=''):
 
 def feed_xml(events, host):
     items = []
-    def order(item):
-        # A same-day revision follows its first release without inventing a clock time.
+    def order(indexed):
+        index, item = indexed
+        # The ledger is newest first. Preserve that order among same-day revisions
+        # whose exact release times are unknown; IDs are not chronological evidence.
         revised = item['kind'] in {'material-reader-update', 'material-scout-update'}
-        return (item['publicDate'], revised, item.get('releasedAt', ''), item['id'])
-    for event in sorted(events['events'], key=order, reverse=True):
+        return (item['publicDate'], revised, -index)
+    for _, event in sorted(enumerate(events['events']), key=order, reverse=True):
         item = '<item><title>' + escape(event['title']) + '</title><link>' + escape(event['url']) + '</link>'
         item += '<guid isPermaLink="false">urn:ghostmesh-readers:release:' + escape(event['id']) + '</guid>'
         item += '<description>' + escape(event['summary']) + '</description><dc:date>' + event['publicDate'] + '</dc:date>'
