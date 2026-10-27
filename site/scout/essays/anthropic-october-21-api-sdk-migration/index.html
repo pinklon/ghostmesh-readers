@@ -1,0 +1,68 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="canonical" href="https://youtube.shareplane.malott.ai/scout/essays/anthropic-october-21-api-sdk-migration/"><meta name="description" content="Anthropic released API version 2026-10-21 alongside major client SDK and CLI releases on October 21, 2026. These changes were observed in the published documentation and source on October 27, 2026; they are not an October 27 announcement."><title>Anthropic API and SDK changes introduced on October 21 | GhostMesh Scout Essays</title><link rel="icon" href="/favicon.svg"><link rel="stylesheet" href="/assets/scout-essays.css"></head><body><header class="bar"><a class="brand" href="/">GHOST<em>MESH</em> / READERS</a><nav aria-label="Main"><a href="/scout/">Scout</a><a href="/scout/essays/">Scout Essays</a><a href="/readers/">Readers</a><a href="/map/">Knowledge Map</a></nav></header><section class="hero"><p class="eyebrow">GhostMesh / Scout / Research method</p><h1>Anthropic API and SDK changes introduced on October 21</h1><p class="lede">Anthropic released API version 2026-10-21 alongside major client SDK and CLI releases on October 21, 2026. These changes were observed in the published documentation and source on October 27, 2026; they are not an October 27 announcement.</p><p class="publication-meta">GhostMesh analysis · Published <time datetime="2026-10-27">October 27, 2026</time> · Reviewed <time datetime="2026-10-27">October 27, 2026</time></p></section><main id="main"><article class="article"><h1 id="anthropic-api-and-sdk-changes-introduced-on-october-21">Anthropic API and SDK changes introduced on October 21</h1>
+<h2 id="release-scope">Release scope</h2>
+<p>Anthropic released API version <code>2026-10-21</code> alongside major client SDK and CLI releases on October 21, 2026. The first versions in this release are Python 2.0.0, TypeScript 1.0.0, C# 13.0.0, Go 2.0.0, Java 3.0.0, PHP 1.0.0, Ruby 2.0.0, and ant CLI 2.0.0. These changes were observed in the published documentation and source on October 27, 2026; they are not an October 27 announcement. <a href="https://platform.claude.com/docs/en/release-notes/overview">Official release notes</a></p>
+<p>The useful operational distinction is between API-version changes and independent SDK changes. Pinning an API date alone is not a complete SDK-upgrade compatibility strategy.</p>
+<h2 id="api-contract-changes">API contract changes</h2>
+<p>For <code>2026-10-21</code>, the official version history specifies:</p>
+<table>
+<thead>
+<tr>
+<th>Surface</th>
+<th>Change</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Messages</td>
+<td>Direct assistant-message document blocks return 400.</td>
+</tr>
+<tr>
+<td>Messages</td>
+<td>Non-empty citations on user-message text blocks return 400, including text inside search results.</td>
+</tr>
+<tr>
+<td>Messages</td>
+<td><code>temperature</code>, <code>top_p</code>, and <code>top_k</code> return 400 on every model.</td>
+</tr>
+<tr>
+<td>RBAC groups</td>
+<td><code>roles</code> becomes <code>role_ids</code>.</td>
+</tr>
+<tr>
+<td>RBAC group members</td>
+<td><code>group_id</code> becomes <code>rbac_group_id</code>.</td>
+</tr>
+<tr>
+<td>RBAC roles</td>
+<td><code>name</code> becomes <code>display_name</code>.</td>
+</tr>
+<tr>
+<td>Rate-limit entries</td>
+<td><code>group_type</code> becomes <code>group.type</code>.</td>
+</tr>
+<tr>
+<td>API-key responses</td>
+<td><code>workspace_id</code> becomes <code>scope</code>; workspace-bound keys identify the real workspace, while organization-wide scope has no workspace ID.</td>
+</tr>
+<tr>
+<td>Enterprise per-user reports</td>
+<td><code>actor.email</code> becomes <code>actor.email_address</code>.</td>
+</tr>
+<tr>
+<td>Enterprise activity summaries</td>
+<td><code>summaries</code> becomes <code>data</code>.</td>
+</tr>
+</tbody>
+</table>
+<p>On Bedrock, this API version is available only for Claude 4.7 and later. <a href="https://platform.claude.com/docs/en/api/versioning">API version history</a></p>
+<h2 id="independent-sdk-changes">Independent SDK changes</h2>
+<p>The migration guide also identifies role-specific message unions; constants replacing single-value enums in C#, Go, Java, PHP and Ruby; removal of TypeScript/Ruby client-side tool-runner compaction; removal of legacy Text Completions from TypeScript, Go, Java, Ruby and CLI; moving Models beta arguments to beta methods; changed authentication headers and credential selection; and language-specific changes. The CLI removes credential-value command-line flags. These are separate from the API-date switch. Foundry's SDK API-key header is an explicit exception to the general bearer-header change. The service still accepts API keys in either header. <a href="https://platform.claude.com/docs/en/api/migration-2026-10-21#sdk-and-cli-changes">SDK and CLI migration sections</a></p>
+<h2 id="tagged-python-source-and-license-changes">Tagged Python source and license changes</h2>
+<p>Python's tagged source supplies a concrete before-and-after pair. In <a href="https://raw.githubusercontent.com/anthropics/anthropic-sdk-python/v1.17.0/src/anthropic/_client.py">v1.17.0 <code>_client.py</code></a>, API-key authentication emits <code>X-Api-Key</code>; in <a href="https://raw.githubusercontent.com/anthropics/anthropic-sdk-python/v2.0.0/src/anthropic/_client.py">v2.0.0 <code>_client.py</code></a>, it emits <code>Authorization: Bearer</code>. The latter documents mutually exclusive explicit credential inputs and selection of the API key when both static credential environment variables exist. Its <a href="https://raw.githubusercontent.com/anthropics/anthropic-sdk-python/v2.0.0/src/anthropic/_constants.py">tagged constants</a> set the API date to <code>2026-10-21</code>.</p>
+<p>Python <a href="https://raw.githubusercontent.com/anthropics/anthropic-sdk-python/v1.17.0/LICENSE">v1.17.0 LICENSE</a> contains MIT license text; <a href="https://raw.githubusercontent.com/anthropics/anthropic-sdk-python/v2.0.0/LICENSE">v2.0.0 LICENSE</a> contains Apache License 2.0. The <a href="https://github.com/anthropics/anthropic-sdk-python/commit/ecfee6cd504cfbf634919bdbd058fb74afdbd533">v2.0.0 release commit</a> records Apache-2.0 package metadata. The official guide says earlier versions retain MIT and separately scopes platform-package releases. This is a package/source fact, not an interpretation of legal obligations or service access. <a href="https://platform.claude.com/docs/en/api/migration-2026-10-21#the-license-is-apache-20">License migration section</a></p>
+<h2 id="integration-impact-remains-conditional">Integration impact remains conditional</h2>
+<p>An upstream change does not establish that a particular integration is affected. That depends on its manifest, lockfile, deployed package, request serializer, proxy, and logging implementation. A pinned older SDK or an integration without these assumptions may be unaffected. A gateway or log filter that recognizes only the old API-key header is a plausible compatibility or redaction concern, not an established defect. No particular deployment has been inspected or runtime-tested for this assessment.</p>
+<p>The documentation distinguishes general API SDKs from Claude Code, Claude Agent SDK, and Managed Agents. The license finding must not be generalized across those products. <a href="https://platform.claude.com/docs/en/cli-sdks-libraries/overview">Official tooling scope</a></p>
+<h2 id="a-read-only-compatibility-check">A read-only compatibility check</h2>
+<p>For an integration repository you are authorized to inspect, identify the exact locked Anthropic package and review tracked source and tests for <code>X-Api-Key</code>, <code>Authorization</code>, explicit API-version overrides, and sampling-parameter serialization. Record file and line references and whether matches affect gateway forwarding, redaction, or request construction; do not inspect secret values. Stop once the package version and relevant call sites are classified as affected, unaffected, or unknown. This produces a disposable local findings note without an installation, API call, environment-variable read, credential change, dependency edit, or publication. It is a proposed static check, not a completed compatibility test.</p>
+</article></main><footer><p>GhostMesh Scout · GhostMesh analysis · The research workspace is private.</p><p><a href="/scout/">Scout reviews</a> · <a href="/scout/essays/">Essay series</a> · <a href="/">Readers home</a></p></footer></body></html>

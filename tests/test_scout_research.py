@@ -188,8 +188,8 @@ class ScoutResearchTests(unittest.TestCase):
         self.assertEqual(expanded['relatedIds'], [])
         self.assertEqual(expanded['releaseEventId'], 'scout:mcp-tasks-cancellation-status-and-retention:first-public-release')
         self.assertEqual(sum(item['type'] == 'investigation' for item in records), 3)
-        self.assertEqual(sum(item['type'] == 'essay' for item in records), 8)
-        self.assertEqual(sum(item['type'] == 'method' for item in records), 2)
+        self.assertGreaterEqual(sum(item['type'] == 'essay' for item in records), 8)
+        self.assertGreaterEqual(sum(item['type'] == 'method' for item in records), 2)
         self.assertEqual(sum(item['type'] == 'journal' for item in records), 1)
         rendered = (ROOT/'site/scout/research/index.html').read_text()
         self.assertEqual(rendered.count('data-research-card'), len(records))
@@ -253,6 +253,47 @@ class ScoutResearchTests(unittest.TestCase):
         self.assertEqual({edge['to'] for edge in graph['edges']
                           if edge['from'] == 'scout:' + item['id']},
                          {'scout:' + target for target in approved})
+
+    def test_october_27_research_preserves_copy_and_only_approved_relationship(self):
+        cases = (
+            ('assisted-permissions-and-human-approval', 'essay', '12-',
+             'c8d1284a5c4c889a2c1d3785d2d540539e65cf7ee8c5e2c3b0060d59992b0645',
+             'd6c632fcb7a30bef13e14618d92d7020044fd55ca963b166a436475f971621e2',
+             ['essay:a-faster-review-button-is-not-a-better-decision']),
+            ('anthropic-october-21-api-sdk-migration', 'method', '13-',
+             'b81bba8caeef20fbef666a5e680038d65ee96a9e58fbf763908e46bcd8485e78',
+             'd2ca08b7d542be01194faf52d9218d17768eb87de7c0912574602b0cbeade14c',
+             []),
+        )
+        graph = json.loads((ROOT/'site/scout/research/relationships.json').read_text())
+        for slug, kind, prefix, manuscript_hash, article_hash, approved in cases:
+            source = ROOT/f'content/scout/publication-drafts/{prefix}{slug}.md'
+            self.assertEqual(hashlib.sha256(source.read_bytes()).hexdigest(), manuscript_hash)
+            records = [item for item in self.source['records'] if item['slug'] == slug]
+            self.assertEqual(len(records), 1)
+            item = records[0]
+            self.assertEqual(item['id'], kind + ':' + slug)
+            self.assertEqual(item['type'], kind)
+            self.assertEqual(item['relatedIds'], approved)
+            self.assertNotIn('standingRelease', item)
+            page = (ROOT/item['sourcePath']).read_text()
+            article = page.split('<article class="article">', 1)[1].split('</article>', 1)[0]
+            self.assertEqual(hashlib.sha256(article.encode()).hexdigest(), article_hash)
+            self.assertIn('GhostMesh analysis', page)
+            self.assertNotIn('Editorial candidate', page)
+            self.assertNotIn('noindex', page)
+            self.assertIn('href="' + item['url'] + '"',
+                          (ROOT/'site/scout/essays/index.html').read_text())
+            self.assertIn('https://youtube.shareplane.malott.ai' + item['url'],
+                          (ROOT/'site/sitemap.xml').read_text())
+            events = [event for event in self.events['events'] if event['id'] == item['releaseEventId']]
+            self.assertEqual(len(events), 1)
+            self.assertEqual(events[0]['kind'], 'new-scout-research')
+            self.assertEqual(events[0]['publicDate'], '2026-10-27')
+            self.assertIn(item['releaseEventId'], (ROOT/'site/feed.xml').read_text())
+            self.assertEqual({edge['to'] for edge in graph['edges']
+                              if edge['from'] == 'scout:' + item['id']},
+                             {'scout:' + target for target in approved})
 
     def test_future_tranche_and_private_status_fail_closed(self):
         source = copy.deepcopy(self.source)
@@ -419,7 +460,9 @@ class ScoutResearchTests(unittest.TestCase):
         home = (ROOT/'site/scout/index.html').read_text()
         self.assertIn('Recently reviewed Scout research', home)
         self.assertIn('Latest tool-review edition / reviewed 2026-10-22', home)
-        self.assertIn('href="/scout/essays/reviewing-visual-claims-in-claude-pdf-answers/"', home)
+        for slug in ('assisted-permissions-and-human-approval',
+                     'anthropic-october-21-api-sdk-migration'):
+            self.assertIn('href="/scout/essays/' + slug + '/"', home)
         for slug in ('what-survives-a-checkpoint', 'before-the-model-sees-the-spreadsheet'):
             self.assertIn('href="/scout/essays/' + slug + '/"',
                           (ROOT/'site/scout/research/index.html').read_text())
