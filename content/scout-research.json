@@ -3,22 +3,6 @@
   "note": "Only approved public works. Six historical essays have an evidenced October 23 public-by bound from the released nine-work Library, but their exact first-publication day remains unverified; they do not gain retroactive RSS events.",
   "records": [
     {
-      "id": "method:reviewing-visual-claims-in-claude-pdf-answers",
-      "slug": "reviewing-visual-claims-in-claude-pdf-answers",
-      "type": "method",
-      "status": "published",
-      "title": "Reviewing visual claims in Claude PDF answers",
-      "url": "/scout/essays/reviewing-visual-claims-in-claude-pdf-answers/",
-      "sourcePath": "site/scout/essays/reviewing-visual-claims-in-claude-pdf-answers/index.html",
-      "provenance": "Anthropic PDF support and citations documentation observed October 26, 2026; original evidence-review analysis and a hypothetical manual comparison. Original source publication/update dates and immutable revisions were not established.",
-      "evidenceLimits": "Documentation analysis and an unperformed manual test proposal. No model, API, OCR or citation-output behavior was tested; source publication and revision dates remain unknown.",
-      "summary": "A proposed claim-level review method for distinguishing cited text, inspected visual evidence and unresolved support in PDF answers.",
-      "topics": ["document-reading", "citation-evidence"],
-      "reviewedOn": "2026-10-26",
-      "releaseEventId": "scout:reviewing-visual-claims-in-claude-pdf-answers:first-public-release",
-      "relatedIds": []
-    },
-    {
       "id": "report:mcp-tasks-cancellation-status-and-retention",
       "slug": "mcp-tasks-cancellation-status-and-retention",
       "type": "essay",

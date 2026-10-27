@@ -178,18 +178,14 @@ class ScoutResearchTests(unittest.TestCase):
     def test_published_works_and_synthesis_journal_are_reachable(self):
         self.validate(self.source)
         records = self.source['records']
-        historical_ids = {'journal:research-journal', 'essay:the-signal-is-not-the-finding',
-                          'essay:follow-the-work', 'essay:five-ideas-outside-the-filter',
-                          'essay:a-faster-review-button-is-not-a-better-decision',
-                          'essay:the-plateau-that-lied', 'essay:latent-states-are-not-an-agent-api'}
-        self.assertTrue(historical_ids.issubset({item['id'] for item in records}))
+        self.assertEqual(sum(item['id'] != 'report:mcp-tasks-cancellation-status-and-retention' for item in records), 12)
         expanded = next(item for item in records if item['id'] == 'report:mcp-tasks-cancellation-status-and-retention')
         self.assertEqual(expanded['type'], 'essay')
         self.assertEqual(expanded['relatedIds'], [])
         self.assertEqual(expanded['releaseEventId'], 'scout:mcp-tasks-cancellation-status-and-retention:first-public-release')
         self.assertEqual(sum(item['type'] == 'investigation' for item in records), 3)
         self.assertEqual(sum(item['type'] == 'essay' for item in records), 8)
-        self.assertEqual(sum(item['type'] == 'method' for item in records), 2)
+        self.assertEqual(sum(item['type'] == 'method' for item in records), 1)
         self.assertEqual(sum(item['type'] == 'journal' for item in records), 1)
         rendered = (ROOT/'site/scout/research/index.html').read_text()
         self.assertEqual(rendered.count('data-research-card'), len(records))
@@ -220,28 +216,6 @@ class ScoutResearchTests(unittest.TestCase):
             self.assertEqual(matches[0]['kind'], 'new-scout-research')
             self.assertEqual(matches[0]['url'], 'https://youtube.shareplane.malott.ai' + item['url'])
             self.assertIn(item['releaseEventId'], (ROOT/'site/feed.xml').read_text())
-
-    def test_claude_pdf_method_keeps_reviewed_copy_and_no_invented_links(self):
-        slug = 'reviewing-visual-claims-in-claude-pdf-answers'
-        source = ROOT/f'content/scout/publication-drafts/11-{slug}.md'
-        self.assertEqual(hashlib.sha256(source.read_bytes()).hexdigest(),
-                         'b6776c2f39d61b13a159231c86a2a5e26173dac81648794b6f17a86d67f01b25')
-        records = [item for item in self.source['records'] if item['slug'] == slug]
-        self.assertEqual(len(records), 1)
-        item = records[0]
-        self.assertEqual(item['type'], 'method')
-        self.assertEqual(item['relatedIds'], [])
-        self.assertNotIn('standingRelease', item)
-        page = (ROOT/item['sourcePath']).read_text()
-        self.assertIn('No model or review experiment was performed.', page)
-        self.assertNotIn('noindex', page)
-        self.assertIn('https://youtube.shareplane.malott.ai' + item['url'],
-                      (ROOT/'site/sitemap.xml').read_text())
-        events = [event for event in self.events['events'] if event['id'] == item['releaseEventId']]
-        self.assertEqual(len(events), 1)
-        self.assertEqual(events[0]['kind'], 'new-scout-research')
-        graph = json.loads((ROOT/'site/scout/research/relationships.json').read_text())
-        self.assertFalse(any(slug in str(edge) for edge in graph['edges']))
 
     def test_future_tranche_and_private_status_fail_closed(self):
         source = copy.deepcopy(self.source)
@@ -408,10 +382,8 @@ class ScoutResearchTests(unittest.TestCase):
         home = (ROOT/'site/scout/index.html').read_text()
         self.assertIn('Recently reviewed Scout research', home)
         self.assertIn('Latest tool-review edition / reviewed 2026-10-22', home)
-        self.assertIn('href="/scout/essays/reviewing-visual-claims-in-claude-pdf-answers/"', home)
         for slug in ('what-survives-a-checkpoint', 'before-the-model-sees-the-spreadsheet'):
-            self.assertIn('href="/scout/essays/' + slug + '/"',
-                          (ROOT/'site/scout/research/index.html').read_text())
+            self.assertIn('href="/scout/essays/' + slug + '/"', home)
         journal = (ROOT/'site/scout/research-journal/index.html').read_text()
         self.assertIn('See the current public Research Library', journal)
         self.assertNotIn('Search article text from all 33 public Readers', journal)

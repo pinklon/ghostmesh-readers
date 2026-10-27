@@ -3,7 +3,7 @@
   "scope": "Public Scout research reading routes; links are editorial, not corroboration.",
   "authority": "scout-research-curated-editorial",
   "visibility": "public",
-  "recordCount": 14,
+  "recordCount": 13,
   "relationshipCount": 4,
   "nodes": [
     {
@@ -82,13 +82,6 @@
       "type": "method",
       "title": "Before the Model Sees the Spreadsheet",
       "url": "https://youtube.shareplane.malott.ai/scout/essays/before-the-model-sees-the-spreadsheet/"
-    },
-    {
-      "id": "scout:method:reviewing-visual-claims-in-claude-pdf-answers",
-      "sourceId": "method:reviewing-visual-claims-in-claude-pdf-answers",
-      "type": "method",
-      "title": "Reviewing visual claims in Claude PDF answers",
-      "url": "https://youtube.shareplane.malott.ai/scout/essays/reviewing-visual-claims-in-claude-pdf-answers/"
     },
     {
       "id": "scout:nvidia-openshell",
