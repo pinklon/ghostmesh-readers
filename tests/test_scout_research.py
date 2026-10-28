@@ -397,9 +397,17 @@ class ScoutResearchTests(unittest.TestCase):
         article = (ROOT/item['sourcePath']).read_text()
         library = (ROOT/'site/scout/research/index.html').read_text()
         landing = (ROOT/'site/scout/index.html').read_text()
-        for surface in (card, library, landing, article):
+        for surface in (card, library, article):
             self.assertIn(escape(item['title']), surface)
             self.assertNotIn('A cancellation reply establishes task status', surface)
+        recent = sorted(
+            (record for record in self.source['records']
+             if record['reviewedOn'] and record['type'] not in {'investigation', 'journal'}),
+            key=lambda record: (record['reviewedOn'], record['id']), reverse=True)[:3]
+        for record in recent:
+            self.assertIn(escape(record['title']), landing)
+            self.assertIn('href="' + record['url'] + '"', landing)
+        self.assertIn('href="/scout/research/"', landing)
 
     def test_future_publication_requires_source_bound_first_release_event(self):
         source = copy.deepcopy(self.source)
