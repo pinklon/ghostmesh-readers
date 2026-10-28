@@ -2,6 +2,15 @@
   "schema": "ghostmesh-public-release-events-v1",
   "events": [
     {
+      "id": "scout:copilot-cli-background-wait-modes:expanded-analysis-20261028",
+      "kind": "material-scout-update",
+      "subjectId": "copilot-cli-background-wait-modes",
+      "url": "https://youtube.shareplane.malott.ai/scout/essays/copilot-cli-background-wait-modes/",
+      "title": "Keeping the Agent Alive Is Not Finishing the Work",
+      "summary": "A small Copilot wait-rule change opens a larger question: how an agent keeps responsibility for unfinished work without mistaking a running process or an accepted handoff for a verified outcome.",
+      "publicDate": "2026-10-28"
+    },
+    {
       "id": "scout:reviewing-visual-claims-in-claude-pdf-answers:first-public-release",
       "kind": "new-scout-research",
       "subjectId": "reviewing-visual-claims-in-claude-pdf-answers",

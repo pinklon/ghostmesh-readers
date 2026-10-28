@@ -114,8 +114,8 @@
     {
       "id": "scout:report:copilot-cli-background-wait-modes",
       "sourceId": "report:copilot-cli-background-wait-modes",
-      "type": "source-report",
-      "title": "Copilot CLI 1.0.104 documents different background-task waits by mode",
+      "type": "essay",
+      "title": "Keeping the Agent Alive Is Not Finishing the Work",
       "url": "https://youtube.shareplane.malott.ai/scout/essays/copilot-cli-background-wait-modes/"
     },
     {

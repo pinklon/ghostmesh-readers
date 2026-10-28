@@ -323,22 +323,21 @@
     {
       "id": "report:copilot-cli-background-wait-modes",
       "slug": "copilot-cli-background-wait-modes",
-      "type": "source-report",
+      "type": "essay",
       "status": "published",
-      "title": "Copilot CLI 1.0.104 documents different background-task waits by mode",
+      "title": "Keeping the Agent Alive Is Not Finishing the Work",
       "url": "/scout/essays/copilot-cli-background-wait-modes/",
       "sourcePath": "site/scout/essays/copilot-cli-background-wait-modes/index.html",
-      "provenance": "https://github.com/github/copilot-cli/releases/tag/v1.0.104",
-      "evidenceLimits": "Release-note, pinned-changelog and command-reference inspection only. No installation, runtime execution, account entitlement or task-completion outcome was verified.",
-      "summary": "GitHub’s release notes distinguish interactive and SDK Autopilot waiting from the timeout retained by prompt-mode Autopilot.",
+      "provenance": "Official Copilot CLI 1.0.104 release notes, pinned changelog, command reference and Autopilot guide; public issue #5264 is explicitly unverified.",
+      "evidenceLimits": "Official source inspection, one explicitly unverified public issue report and GhostMesh analysis. No runtime executed; the proposed comparison is unperformed. Performance, costs and account entitlement remain unknown.",
+      "summary": "A small Copilot wait-rule change opens a larger question: how an agent keeps responsibility for unfinished work without mistaking a running process or an accepted handoff for a verified outcome.",
       "topics": [
         "agent-continuity",
-        "dependency-compatibility"
+        "research"
       ],
       "reviewedOn": "2026-10-28",
       "releaseEventId": "scout:copilot-cli-background-wait-modes:first-public-release",
-      "relatedIds": [],
-      "standingRelease": "routine-source-report-v1"
+      "relatedIds": []
     }
   ]
 }

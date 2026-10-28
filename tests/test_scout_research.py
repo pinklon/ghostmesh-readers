@@ -383,6 +383,42 @@ class ScoutResearchTests(unittest.TestCase):
         graph = research_graph(self.source)
         self.assertFalse(any(edge['from'] == 'scout:' + item['id'] for edge in graph['edges']))
 
+    def test_copilot_report_expansion_preserves_one_work_and_release_history(self):
+        slug = 'copilot-cli-background-wait-modes'
+        records = [item for item in self.source['records'] if item['slug'] == slug]
+        self.assertEqual(len(records), 1)
+        item = records[0]
+        self.assertEqual(item['id'], 'report:' + slug)
+        self.assertEqual(item['type'], 'essay')
+        self.assertEqual(item['url'], '/scout/essays/' + slug + '/')
+        self.assertNotIn('standingRelease', item)
+        self.assertEqual(item['relatedIds'], [])
+        self.assertEqual(item['releaseEventId'], 'scout:' + slug + ':first-public-release')
+        events = [event for event in self.events['events'] if event['subjectId'] == slug]
+        update_id = 'scout:' + slug + ':expanded-analysis-20261028'
+        self.assertEqual(sum(event['id'] == item['releaseEventId'] for event in events), 1)
+        self.assertEqual(sum(event['id'] == update_id for event in events), 1)
+        first = next(event for event in events if event['id'] == item['releaseEventId'])
+        update = next(event for event in events if event['id'] == update_id)
+        self.assertEqual(first['kind'], 'new-scout-research')
+        self.assertEqual(first['id'], item['releaseEventId'])
+        self.assertEqual(first['title'], 'Copilot CLI 1.0.104 documents different background-task waits by mode')
+        self.assertEqual(first['summary'], 'GitHub’s release notes distinguish interactive and SDK Autopilot waiting from the timeout retained by prompt-mode Autopilot.')
+        self.assertEqual(first['publicDate'], '2026-10-28')
+        self.assertEqual(update['kind'], 'material-scout-update')
+        self.assertEqual(update['title'], 'Keeping the Agent Alive Is Not Finishing the Work')
+        self.assertEqual(update['summary'], 'A small Copilot wait-rule change opens a larger question: how an agent keeps responsibility for unfinished work without mistaking a running process or an accepted handoff for a verified outcome.')
+        page = (ROOT/item['sourcePath']).read_text()
+        self.assertIn('<h1>' + item['title'] + '</h1>', page)
+        self.assertNotIn('data-scout-source-report="v1"', page)
+        graph = research_graph(self.source)
+        self.assertEqual(sum(node['sourceId'] == item['id'] for node in graph['nodes']), 1)
+        self.assertFalse(any(edge['from'] == 'scout:' + item['id'] for edge in graph['edges']))
+        feed = (ROOT/'site/feed.xml').read_text()
+        self.assertEqual(feed.count('urn:ghostmesh-readers:release:' + first['id']), 1)
+        self.assertEqual(feed.count('urn:ghostmesh-readers:release:' + update['id']), 1)
+        self.assertEqual((ROOT/'site/sitemap.xml').read_text().count(item['url']), 1)
+
     def test_mcp_essay_index_matches_canonical_record_and_current_article(self):
         item = next(record for record in self.source['records']
                     if record['id'] == 'report:mcp-tasks-cancellation-status-and-retention')
