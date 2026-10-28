@@ -145,6 +145,15 @@
       "title": "Anthropic API and SDK changes introduced on October 21",
       "summary": "The useful operational distinction is between API-version changes and independent SDK changes.",
       "publicDate": "2026-10-27"
+    },
+    {
+      "id": "scout:copilot-cli-background-wait-modes:first-public-release",
+      "kind": "new-scout-research",
+      "subjectId": "copilot-cli-background-wait-modes",
+      "url": "https://youtube.shareplane.malott.ai/scout/essays/copilot-cli-background-wait-modes/",
+      "title": "Copilot CLI 1.0.104 documents different background-task waits by mode",
+      "summary": "GitHub’s release notes distinguish interactive and SDK Autopilot waiting from the timeout retained by prompt-mode Autopilot.",
+      "publicDate": "2026-10-28"
     }
   ]
 }

@@ -1,0 +1,24 @@
+{
+  "schema": "ghostmesh-scout-source-report-review-v1",
+  "policy": "routine-source-report-v1",
+  "researchId": "report:copilot-cli-background-wait-modes",
+  "sourceUrl": "https://github.com/github/copilot-cli/releases/tag/v1.0.104",
+  "observedOn": "2026-10-28",
+  "reviewedOn": "2026-10-28",
+  "sourceMethod": "official-release-note",
+  "sourceSha256": "e95207e9cf26e2a7737c2586aff2dbd46dc375267aa50d5993b7b83778ec990c",
+  "reviewerTask": "/root/oct28_rendered_review",
+  "publisherTask": "01a159bf-611e-71f2-aca0-49a64101502c",
+  "decision": "accept",
+  "sourceReportedOnly": true,
+  "noNewRecommendation": true,
+  "noExecutionOrEntitlementClaim": true,
+  "publicSafe": true,
+  "title": "Copilot CLI 1.0.104 documents different background-task waits by mode",
+  "summary": "GitHub’s release notes distinguish interactive and SDK Autopilot waiting from the timeout retained by prompt-mode Autopilot.",
+  "evidenceLimits": "Release-note, pinned-changelog and command-reference inspection only. No installation, runtime execution, account entitlement or task-completion outcome was verified.",
+  "topics": [
+    "agent-continuity",
+    "dependency-compatibility"
+  ]
+}
