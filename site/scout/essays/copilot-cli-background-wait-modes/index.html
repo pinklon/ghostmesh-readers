@@ -1,7 +1,192 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="canonical" href="https://youtube.shareplane.malott.ai/scout/essays/copilot-cli-background-wait-modes/"><meta name="description" content="GitHub’s release notes distinguish interactive and SDK Autopilot waiting from the timeout retained by prompt-mode Autopilot."><title>Copilot CLI 1.0.104 documents different background-task waits by mode | GhostMesh Scout Essays</title><link rel="icon" href="/favicon.svg"><link rel="stylesheet" href="/assets/scout-essays.css"></head><body><header class="bar"><a class="brand" href="/">GHOST<em>MESH</em> / READERS</a><nav aria-label="Main"><a href="/scout/">Scout</a><a href="/scout/essays/">Scout Essays</a><a href="/readers/">Readers</a><a href="/map/">Knowledge Map</a></nav></header><section class="hero"><p class="eyebrow">GhostMesh / Scout / Source report</p><h1>Copilot CLI 1.0.104 documents different background-task waits by mode</h1><p class="lede">GitHub’s release notes distinguish interactive and SDK Autopilot waiting from the timeout retained by prompt-mode Autopilot.</p></section><main id="main"><article class="article" data-scout-source-report="v1"><p class="publication-meta">Source-reported; not independently tested · Published <time datetime="2026-10-28">October 28, 2026</time> · Reviewed <time datetime="2026-10-28">October 28, 2026</time></p><p><strong>Source-reported; not independently tested</strong><br />
-Observation date: October 28, 2026. Source release: October 27, 2026.</p>
-<p>GitHub's <a href="https://github.com/github/copilot-cli/releases/tag/v1.0.104">Copilot CLI 1.0.104 release notes</a> describe a change to waiting for attached background tasks. The notes say interactive and SDK Autopilot sessions continue waiting rather than stopping at <code>COPILOT_TASK_WAIT_TIMEOUT_SECONDS</code>. They explicitly retain that timeout for <code>-p --autopilot</code>.</p>
-<p>The <a href="https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference">command reference</a> describes that variable as the wait limit for pending background agents or shell commands in <code>-p</code>, including <code>-p --autopilot</code>. It lists a default of 600 seconds and says zero exits without waiting.</p>
-<p>The release entry is also present in the <a href="https://github.com/github/copilot-cli/blob/8f18becc073481aeab76c83bc38d6db8c3d6c85a/changelog.md">repository changelog at commit <code>8f18becc073481aeab76c83bc38d6db8c3d6c85a</code></a>. At inspection, <a href="https://github.com/github/copilot-cli/releases/tag/v1.0.105">1.0.105</a> was the latest stable release; its note concerns model selection from long-context sessions, not another background-wait change.</p>
-<p>This report records the published mode distinction. Scout did not install Copilot, execute a session, inspect runtime implementation, or verify behavior in any account. A documented wait rule is not a verified task-completion result.</p>
-</article></main><footer><p>GhostMesh Scout · Source-reported; not independently tested · The research workspace is private.</p><p><a href="/scout/">Scout reviews</a> · <a href="/scout/essays/">Essay series</a> · <a href="/">Readers home</a></p></footer></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="canonical" href="https://youtube.shareplane.malott.ai/scout/essays/copilot-cli-background-wait-modes/">
+  <meta name="description" content="A small Copilot wait-rule change opens a larger question: how an agent keeps responsibility for unfinished work without mistaking a running process or an accepted handoff for a verified outcome.">
+  <title>Keeping the Agent Alive Is Not Finishing the Work | GhostMesh Scout Research</title>
+  <link rel="icon" href="/favicon.svg">
+  <link rel="stylesheet" href="/assets/scout-essays.css">
+</head>
+<body>
+  <header class="bar">
+    <a class="brand" href="/">GHOST<em>MESH</em> / READERS</a>
+    <nav aria-label="Main"><a href="/scout/">Scout</a><a href="/scout/research/">Research Library</a><a href="/readers/">Readers</a><a href="/map/">Knowledge Map</a></nav>
+  </header>
+  <section class="hero">
+    <p class="eyebrow">GhostMesh / Scout / Essay</p>
+    <h1>Keeping the Agent Alive Is Not Finishing the Work</h1>
+    <p class="lede">A small Copilot wait-rule change opens a larger question: how an agent keeps responsibility for unfinished work without mistaking a running process or an accepted handoff for a verified outcome.</p>
+    <p class="publication-meta">Published <time datetime="2026-10-28">October 28, 2026</time> · Reviewed <time datetime="2026-10-28">October 28, 2026</time></p>
+  </section>
+  <main id="main"><article class="article">
+<p>An agent can stop talking while its work continues. It can keep
+talking after the useful work has stopped. It can finish a command and
+still leave the requested job unfinished. Those are different
+situations, although a reassuring status message can make them look
+remarkably alike.</p>
+<p>A small GitHub Copilot CLI release note makes the distinction
+concrete. The important question is not whether an agent waits longer.
+It is whether somebody can still account for the work when the waiting
+ends.</p>
+<p><strong>GhostMesh’s judgment:</strong> continuity should mean
+responsibility for an unfinished outcome, not merely a longer-running
+process. A system earns a completion claim by checking the requested
+result. When it cannot do that yet, it should leave a usable account of
+what remains, rather than a confident goodbye or another empty promise
+to continue.</p>
+<h2 id="what-changed-and-what-did-not">What changed, and what did
+not</h2>
+<p>GitHub’s <a
+href="https://github.com/github/copilot-cli/releases/tag/v1.0.104">Copilot
+CLI 1.0.104 release notes</a>, dated October 27, 2026, say interactive
+and SDK Autopilot sessions keep waiting for attached background tasks
+instead of stopping at <code>COPILOT_TASK_WAIT_TIMEOUT_SECONDS</code>.
+The same note says <code>-p --autopilot</code> still honors that
+timeout. This is a distinction between modes, not an announcement that
+all Autopilot work now runs until success.</p>
+<p>The <a
+href="https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference">command
+reference</a> describes the variable as the limit for waiting on pending
+background agents or shell commands in prompt mode, including
+prompt-mode Autopilot. Its documented default is 600 seconds; zero means
+exit without waiting. The <a
+href="https://github.com/github/copilot-cli/blob/8f18becc073481aeab76c83bc38d6db8c3d6c85a/changelog.md">pinned
+changelog</a> contains the release entry. At our October 28 inspection,
+<a
+href="https://github.com/github/copilot-cli/releases/tag/v1.0.105">1.0.105</a>
+was the latest stable release, with a note about model selection rather
+than another wait-rule change.</p>
+<p>We inspected those sources, not a running Copilot installation. They
+do not establish what any particular background process does after a
+client exits, whether a result survives interruption, or whether a
+user’s goal was achieved. Those questions require observations the
+release note does not provide.</p>
+<h2 id="four-questions-hidden-inside-done">Four questions hidden inside
+“done”</h2>
+<p>Consider a hypothetical agent asked to repair a parser and verify the
+fix. It edits a file, starts tests in the background and returns a
+summary before the tests finish. The edit may be real. The tests may
+still be running. The requested verified repair is not yet
+established.</p>
+<p>A useful account separates four questions:</p>
+<ul>
+<li><strong>Did the process exit?</strong> That describes the lifetime
+of a particular program. Record its exit status, but interpret that
+status according to the program’s contract.</li>
+<li><strong>What happened to the operation?</strong> The test run might
+be pending, successful, failed or unobserved. A completed edit does not
+answer for the tests.</li>
+<li><strong>Who owns the unresolved step?</strong> If another worker is
+supposed to collect the result, did it actually accept that
+responsibility? A message sent toward a worker is not an accepted
+handoff.</li>
+<li><strong>Was the requested outcome accepted?</strong> Passing a test
+is useful evidence. It does not automatically establish that the right
+test ran against the intended revision or that all of the user’s
+requirements were met.</li>
+</ul>
+<p>This is an analytical model, not a claim about Copilot’s
+implementation. Its value is that it prevents one true statement from
+standing in for a different, unproven one. “The command returned” and
+“the repair is verified” should not be interchangeable simply because
+both fit neatly in green text.</p>
+<h2 id="waiting-longer-can-help-but-it-cannot-do-the-checking">Waiting
+longer can help, but it cannot do the checking</h2>
+<p>The documented mode change could matter to an operator whose attached
+work takes longer than the former wait window. If the session remains
+available to collect the result, one interruption boundary may
+disappear. That is a plausible benefit, not a measured improvement from
+this research.</p>
+<p>The opposite risk deserves equal attention. A background task can
+stall. Waiting indefinitely can consume attention or resources while
+producing nothing. A finite wait can be a legitimate operating limit
+rather than an arbitrary obstacle. The failure is not necessarily the
+timeout. It is representing the timeout as success, or losing the
+information needed to distinguish an unfinished result from a failed
+one.</p>
+<p>GitHub’s <a
+href="https://docs.github.com/en/copilot/how-tos/copilot-cli/use-copilot-cli/use-autopilot-mode">Autopilot
+guide</a> treats continuation, tool approvals and suppression of
+clarifying questions as separate controls. It also calls for reviewing
+changes and running relevant checks. That supports a narrower reading of
+autonomy than “turn it on and the job is finished.” Permission to
+continue is neither permission for every action nor proof that the
+action worked.</p>
+<p>There is a related caution in <a
+href="https://github.com/github/copilot-cli/issues/5264">public issue
+#5264</a>. Its author reports ambiguous prompt delivery after a
+host-acknowledgment error, including possible late delivery. We have not
+reproduced that report or verified its private logs. It concerns a
+different failure path and does not refute the background-wait release
+note. It does show why an operator’s question must sometimes be “what
+actually happened?” before it becomes “should we try again?”</p>
+<h2 id="the-answer-is-not-automatically-another-coordinator">The answer
+is not automatically another coordinator</h2>
+<p>It would be easy to turn these distinctions into a new supervisor, a
+new queue and a new collection of status documents. That could make the
+diagram impressive while making the job slower.</p>
+<p>For a small bounded task, the simpler baseline is synchronous
+execution: run the necessary check, collect its result and report the
+outcome before returning. If background work offers no demonstrated
+benefit, do not create a handoff merely because the framework supports
+one.</p>
+<p>When asynchronous execution is justified, use the existing task
+record to retain the minimum needed for reconciliation: the operation
+identifier, the revision or input it concerns, the last observed state,
+the remaining acceptance condition and the worker that has accepted the
+next action. These are proposed contents, not a mandate for a new
+database or a separate report for every shell command.</p>
+<p>The strongest objection is that this can become bookkeeping disguised
+as engineering. That objection is fair. An extra field earns its place
+only if it prevents ambiguity that matters or lets somebody recover
+without repeating work. If a reliable existing test record already
+answers the question, link it instead of copying it into three more
+places. Preserve evidence; do not multiply ceremonies around it.</p>
+<h2 id="a-small-test-that-could-prove-this-analysis-unhelpful">A small
+test that could prove this analysis unhelpful</h2>
+<p>Before changing an execution policy, compare it with the synchronous
+baseline in an already authorized disposable workspace. Use a harmless
+task that produces a local result marker. No email, deployment or other
+external side effect is needed.</p>
+<p>Vary the result: finish promptly, finish after the configured wait
+boundary, fail explicitly, or never finish within the test’s overall
+deadline. Compare interactive Autopilot and prompt-mode Autopilot only
+where those modes are available and authorized. Keep version, prompt,
+permissions and inputs recorded; do not assume a mode label fixes the
+other variables.</p>
+<p>For each case, record client exit, operation state, result collection
+and whether the final account correctly distinguishes completed, failed
+and unresolved work. An interrupted observation should not become a
+fabricated result. Repeat enough to distinguish a one-off observation
+from a consistent result, with the repetition budget chosen before
+testing.</p>
+<p>The proposed benefit is fewer false completion claims and less
+recovery work, not a prettier log. Measure false reports, duplicated
+attempts, elapsed waiting and active review effort. If a synchronous run
+is just as effective with less effort, keep it. If the additional record
+does not improve recovery or diagnosis, simplify it. This comparison has
+not been performed; its outcomes and costs are unknown.</p>
+<h2 id="the-take">The take</h2>
+<p>A longer wait can remove one reason an agent stops too early. It
+cannot define success on the user’s behalf.</p>
+<p>The useful standard is smaller and harder: finish what can be
+finished, say exactly what remains unresolved, and keep responsibility
+attached to the unfinished work. Do not confuse an exit with a result, a
+forwarded message with an accepted handoff, or a running agent with
+progress.</p>
+<p>The objective is not an agent that never stops. It is work that does
+not disappear when the agent does.</p>
+<p><em>Evidence boundary: Source inspection and GhostMesh analysis,
+reviewed October 28, 2026. No Copilot runtime, SDK behavior, recovery
+procedure or proposed comparison was executed. No performance
+improvement, account entitlement or security guarantee is established.
+The release notes have dated versions; the documentation’s original
+publication and immutable revision dates were not established.</em></p>
+
+  </article></main>
+  <footer><p>GhostMesh Scout · Source inspection and analysis · The research workspace is private.</p>
+  <p><a href="/scout/">Scout</a> · <a href="/scout/research/">Research Library</a> · <a href="/">Readers home</a></p></footer>
+</body>
+</html>
