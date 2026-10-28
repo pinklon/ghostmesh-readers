@@ -3,7 +3,7 @@
   "scope": "Public Scout research reading routes; links are editorial, not corroboration.",
   "authority": "scout-research-curated-editorial",
   "visibility": "public",
-  "recordCount": 16,
+  "recordCount": 17,
   "relationshipCount": 7,
   "nodes": [
     {
@@ -110,6 +110,13 @@
       "type": "investigation",
       "title": "NVIDIA OpenShell",
       "url": "https://youtube.shareplane.malott.ai/scout/reviews/nvidia-openshell/"
+    },
+    {
+      "id": "scout:report:copilot-cli-background-wait-modes",
+      "sourceId": "report:copilot-cli-background-wait-modes",
+      "type": "source-report",
+      "title": "Copilot CLI 1.0.104 documents different background-task waits by mode",
+      "url": "https://youtube.shareplane.malott.ai/scout/essays/copilot-cli-background-wait-modes/"
     },
     {
       "id": "scout:report:mcp-tasks-cancellation-status-and-retention",

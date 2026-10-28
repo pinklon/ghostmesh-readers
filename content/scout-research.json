@@ -319,6 +319,26 @@
       "reviewedOn": "2026-10-27",
       "releaseEventId": "scout:anthropic-october-21-api-sdk-migration:first-public-release",
       "relatedIds": []
+    },
+    {
+      "id": "report:copilot-cli-background-wait-modes",
+      "slug": "copilot-cli-background-wait-modes",
+      "type": "source-report",
+      "status": "published",
+      "title": "Copilot CLI 1.0.104 documents different background-task waits by mode",
+      "url": "/scout/essays/copilot-cli-background-wait-modes/",
+      "sourcePath": "site/scout/essays/copilot-cli-background-wait-modes/index.html",
+      "provenance": "https://github.com/github/copilot-cli/releases/tag/v1.0.104",
+      "evidenceLimits": "Release-note, pinned-changelog and command-reference inspection only. No installation, runtime execution, account entitlement or task-completion outcome was verified.",
+      "summary": "GitHub’s release notes distinguish interactive and SDK Autopilot waiting from the timeout retained by prompt-mode Autopilot.",
+      "topics": [
+        "agent-continuity",
+        "dependency-compatibility"
+      ],
+      "reviewedOn": "2026-10-28",
+      "releaseEventId": "scout:copilot-cli-background-wait-modes:first-public-release",
+      "relatedIds": [],
+      "standingRelease": "routine-source-report-v1"
     }
   ]
 }
