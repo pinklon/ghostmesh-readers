@@ -165,7 +165,8 @@ class ScoutResearchTests(unittest.TestCase):
                    'site/scout/research/index.html', 'site/feed.xml'}
         old = [{'id': 'essay:old', 'title': 'Original'}]
         ledger = [{'id': 'scout:old:first-public-release', 'title': 'Original'}]
-        self.assertEqual(check_delta(old, old + [item], ledger, ledger + [event], changed), item)
+        with self.assertRaisesRegex(ValueError, 'Standing source-report publication suspended'):
+            check_delta(old, old + [item], ledger, ledger + [event], changed)
         with self.assertRaisesRegex(ValueError, 'Previously published research changed'):
             check_delta(old, [{'id': 'essay:old', 'title': 'Rewritten'}, item], ledger, ledger + [event], changed)
         with self.assertRaisesRegex(ValueError, 'Existing release events changed'):

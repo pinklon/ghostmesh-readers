@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
-"""Fail closed on the source scope of a standing-policy Scout release PR."""
+"""Fail closed on new standing-policy Scout release PRs."""
 import argparse
 import json
 from pathlib import Path
 import subprocess
 
-from scout_research import ROUTINE_POLICY, validate_routine_source_report
+from scout_research import ROUTINE_POLICY
 
 ROOT = Path(__file__).resolve().parents[1]
 REGISTER = 'content/scout-research.json'
@@ -17,7 +17,7 @@ PROJECTED = {
 
 
 def check_delta(old_records, records, old_events, events, changed):
-    """Require one additive, source-bound report and one stable first-release event."""
+    """Check a proposed standing release, then reject new source-only publication."""
     prior = {r['id']: r for r in old_records}
     current = {r['id']: r for r in records}
     if len(prior) != len(old_records) or len(current) != len(records):
@@ -48,7 +48,21 @@ def check_delta(old_records, records, old_events, events, changed):
                 f'content/scout/release-reviews/{slug}.json'}
     if not required <= changed or changed - required - PROJECTED:
         raise ValueError('Standing release changed paths outside one report and projections')
-    return item
+    require_standing_publication_authority(item)
+
+
+def require_standing_publication_authority(item):
+    """Keep source-only observations in research intake, not automatic public release.
+
+    The prior standing class checked attribution and scope, but admitted pages
+    without a GhostMesh argument. Substantive analysis needs the ordinary
+    editorial and exact-head release path; a word-count threshold is no proxy.
+    Existing published reports remain valid historical records.
+    """
+    raise ValueError(
+        f'Standing source-report publication suspended for {item["id"]}; '
+        'prepare substantive GhostMesh analysis under ordinary editorial review'
+    )
 
 
 def git(*args):
@@ -74,9 +88,7 @@ def main():
     changed = set(git('diff', '--name-only', base, 'HEAD').splitlines())
     old_events = json.loads(git('show', f'{base}:{LEDGER}'))['events']
     events = json.loads((ROOT / LEDGER).read_text())['events']
-    item = check_delta(old_records, records, old_events, events, changed)
-    validate_routine_source_report(item, ROOT)
-    print(f'PASS standing Scout release scope: {item["id"]} at {git("rev-parse", "HEAD")}')
+    check_delta(old_records, records, old_events, events, changed)
 
 
 if __name__ == '__main__':
