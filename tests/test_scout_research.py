@@ -504,9 +504,13 @@ class ScoutResearchTests(unittest.TestCase):
         home = (ROOT/'site/scout/index.html').read_text()
         self.assertIn('Recently reviewed Scout research', home)
         self.assertIn('Latest tool-review edition / reviewed 2026-10-22', home)
-        for slug in ('assisted-permissions-and-human-approval',
-                     'anthropic-october-21-api-sdk-migration'):
-            self.assertIn('href="/scout/essays/' + slug + '/"', home)
+        recent = sorted((item for item in self.source['records']
+                         if item['reviewedOn'] and item['type'] not in {'investigation', 'journal'}),
+                        key=lambda item: (item['reviewedOn'], item['id']), reverse=True)[:3]
+        recent_section = home.split('Recently reviewed Scout research', 1)[1].split('Browse all public research', 1)[0]
+        self.assertEqual(recent_section.count('href="/scout/essays/'), len(recent))
+        for item in recent:
+            self.assertIn('href="' + item['url'] + '"', recent_section)
         for slug in ('what-survives-a-checkpoint', 'before-the-model-sees-the-spreadsheet'):
             self.assertIn('href="/scout/essays/' + slug + '/"',
                           (ROOT/'site/scout/research/index.html').read_text())
