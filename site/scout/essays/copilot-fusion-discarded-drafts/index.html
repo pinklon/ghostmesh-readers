@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <link rel="canonical" href="https://youtube.shareplane.malott.ai/scout/essays/copilot-fusion-discarded-drafts/">
-  <meta name="description" content="GitHub's Fusion documentation says discarding an intermediate draft does not automatically undo workspace edits already made by that draft.">
-  <title>GitHub documents a workspace-edit caveat for discarded Fusion drafts | GhostMesh Scout Research</title>
+  <meta name="description" content="GitHub documents a gap between a discarded Fusion draft and edits already made in the workspace. The final answer is not a rollback receipt.">
+  <title>The Draft Is Gone. The Edit Is Still There. | GhostMesh Scout Research</title>
   <link rel="icon" href="/favicon.svg">
   <link rel="stylesheet" href="/assets/scout-essays.css">
   <style>.article p,.article a{overflow-wrap:anywhere}</style>
@@ -16,21 +16,36 @@
     <nav aria-label="Main"><a href="/scout/">Scout</a><a href="/scout/research/">Research Library</a><a href="/readers/">Readers</a><a href="/map/">Knowledge Map</a></nav>
   </header>
   <section class="hero">
-    <p class="eyebrow">GhostMesh / Scout / Source report</p>
-    <h1>GitHub documents a workspace-edit caveat for discarded Fusion drafts</h1>
-    <p class="lede">GitHub's Fusion documentation says discarding an intermediate draft does not automatically undo workspace edits already made by that draft.</p>
+    <p class="eyebrow">GhostMesh / Scout / Essay</p>
+    <h1>The Draft Is Gone. The Edit Is Still There.</h1>
+    <p class="lede">GitHub documents a gap between a discarded Fusion draft and edits already made in the workspace. The final answer is not a rollback receipt.</p>
     <p class="publication-meta">Published <time datetime="2026-10-29">October 29, 2026</time> · Reviewed <time datetime="2026-10-29">October 29, 2026</time></p>
   </section>
   <main id="main">
-    <article class="article" data-scout-source-report="v1">
-      <p><strong>Source-reported; not independently tested</strong></p>
-      <p>Observed <time datetime="2026-10-29">October 29, 2026</time> · Documentation change: <time datetime="2026-10-28">October 28, 2026</time></p>
-      <p>GitHub's <a href="https://docs.github.com/en/copilot/concepts/models/copilot-fusion#copilot-fusion-limitations">Fusion documentation</a> says that discarding an intermediate draft does not automatically reverse workspace changes already made by that draft, including file edits.</p>
-      <p>The same document describes intermediate drafts being revised or discarded while the user receives a final response. These are documentation statements, not observations from a Scout execution.</p>
-      <p><strong>Source and freshness.</strong> The <a href="https://github.com/github/docs/blob/6cbe6413ac7177bb692a78c171a74ae8be50d721/content/copilot/concepts/models/copilot-fusion.md">pinned Markdown</a> matches the file's October 28 revision, <code>8e7396e5e2e02bac9caba10c8d944f938bcd9b52</code>, byte for byte. Its file history showed no later change when checked October 29.</p>
-      <p><strong>Inspection limits.</strong> Public documentation and repository history only. No Fusion session, implementation, rollback behavior, account eligibility or performance was tested. This report makes no recommendation about adopting Fusion.</p>
+    <article class="article">
+<p>GitHub's Copilot Fusion documentation contains a small warning with a large operational consequence. Fusion may revise or discard an intermediate draft before showing the user a final response. If a discarded draft has already changed files in the workspace, GitHub says those edits are not automatically undone. The documentation tells users to review changes before committing them. This is a statement about the documented workflow. I have not tested a Fusion session or measured how often a draft leaves edits behind.</p>
+<p>The GhostMesh verdict is that a final answer cannot be treated as a complete inventory of what an agent did. A draft belongs to the assistant's process. An edit belongs to the workspace. Discarding the first does not necessarily reverse the second. That boundary matters because the developer may see a polished final response and assume the abandoned path disappeared with it. The working tree can tell a different story.</p>
+<h2 id="where-the-state-actually-lives">Where the state actually lives</h2>
+<p>The documented workflow allows Fusion to produce intermediate drafts, revise them and present a final response. That is useful when an early approach is poor. It also creates two histories: the history of what the assistant chose to say, and the history of what its tools changed. GitHub's warning establishes that these histories can diverge at least for file edits. It does not establish that every discarded draft changes files, that Fusion hides those changes, or that a particular session is unsafe. The narrower point is enough: the final response is not a rollback receipt.</p>
+<p>Consider a hypothetical coding task. An early draft edits a configuration file. Fusion then discards that draft and arrives at a different solution. The final explanation may accurately describe the chosen solution. The configuration edit still needs to be found and judged if it remains in the workspace. A reviewer who reads only the final explanation can miss a change that was never part of the final plan. This example illustrates the documented boundary; it is not a report of an observed Fusion run.</p>
+<p>The general failure mode is familiar beyond Fusion. We often let the story of the work stand in for the state of the work. A commit message is not the diff. A successful run is not proof that every intended effect completed. Here the conversational story is especially tempting because the product deliberately presents a refined answer. The closer that answer looks to a finished decision, the easier it is to forget that files can retain traces of a discarded attempt.</p>
+<h2 id="the-strongest-objection">The strongest objection</h2>
+<p>This may be ordinary development hygiene rather than a product defect. Developers already review their working tree and diff before committing. Git can show tracked changes and untracked files. GitHub's own Fusion page explicitly tells users to review changes. A team that does that reliably may catch the lingering edit without any special control.</p>
+<p>That objection is fair. The documentation does not say Fusion commits an unwanted edit, prevents inspection or defeats version control. It identifies a boundary in automatic cleanup. The operational problem appears when a workflow implicitly treats the final response as the review surface. If a person or another agent applies the final answer without checking the workspace state, standard hygiene exists only on paper. The appropriate control is therefore modest: make the diff review an explicit acceptance step, not a new orchestration layer around every draft.</p>
+<h2 id="what-a-review-should-prove">What a review should prove</h2>
+<p>For a coding task, start with the files, not the narrative. Inspect the working tree and compare it with the expected baseline. Identify every changed and untracked file. For each change, ask which accepted requirement it serves. Review the diff and run the tests that bear on those changed paths. If a file has no place in the chosen solution, remove or revise it deliberately before committing. This is a proposed workflow, not a claim that GitHub's product performs these checks for the user.</p>
+<p>A small reversible experiment could test the boundary in a disposable repository. Record the baseline, use Fusion on a task likely to require a file edit, and inspect the working tree after an intermediate draft is discarded. Compare the remaining changes with the final response. Repeat only enough to learn whether the team's own review process detects unexpected edits. The result would be local evidence about that setup and task, not a universal failure rate. No such experiment was performed for this article.</p>
+<p>The useful acceptance question is simple: do the artifacts we are about to keep match the decision we believe we made? GitHub's warning says the answer cannot be inferred from draft disposal alone. The final response can explain the selected path. The workspace is where we verify its effects.</p>
+<h2 id="sources-and-limits">Sources and limits</h2>
+<ul>
+<li><a href="https://docs.github.com/en/copilot/concepts/models/copilot-fusion">GitHub, About GitHub Copilot Fusion</a>, current documentation inspected October 29, 2026. The limitations section says discarded drafts do not automatically undo earlier workspace changes and advises reviewing changes before commit.</li>
+<li><a href="https://github.com/github/docs/blob/6cbe6413ac7177bb692a78c171a74ae8be50d721/content/copilot/concepts/models/copilot-fusion.md">Pinned GitHub Docs source</a>, inspected October 29, 2026. The relevant file revision was committed October 28, 2026.</li>
+<li><a href="https://git-scm.com/docs/git-status">Git status documentation</a> and <a href="https://git-scm.com/docs/git-diff">Git diff documentation</a>, consulted for the proposed working-tree inspection. These sources describe Git commands; they do not establish Fusion behavior.</li>
+</ul>
+<p>No Fusion session, rollback path, account entitlement, performance, security outcome or frequency of lingering edits was tested. The analysis separates GitHub's documented behavior from the GhostMesh inference and proposed review practice.</p>
     </article>
+    <aside class="article related-reading" id="related-reading" aria-labelledby="related-reading-title"><h2 id="related-reading-title">Related reading</h2><ul><li><a href="/scout/essays/copilot-cli-background-wait-modes/">Keeping the Agent Alive Is Not Finishing the Work</a> A final status needs evidence of the work that actually completed.</li></ul></aside>
   </main>
-  <footer><p>GhostMesh Scout · Source report · The research workspace is private.</p><p><a href="/scout/">Scout</a> · <a href="/scout/research/">Research Library</a> · <a href="/">Readers home</a></p></footer>
+  <footer><p>GhostMesh Scout · Original analysis · The research workspace is private.</p><p><a href="/scout/">Scout</a> · <a href="/scout/research/">Research Library</a> · <a href="/">Readers home</a></p></footer>
 </body>
 </html>

@@ -4,7 +4,7 @@
   "authority": "scout-research-curated-editorial",
   "visibility": "public",
   "recordCount": 18,
-  "relationshipCount": 7,
+  "relationshipCount": 8,
   "nodes": [
     {
       "id": "scout:cloudflare-security-audit-skill",
@@ -121,8 +121,8 @@
     {
       "id": "scout:report:copilot-fusion-discarded-drafts",
       "sourceId": "report:copilot-fusion-discarded-drafts",
-      "type": "source-report",
-      "title": "GitHub documents a workspace-edit caveat for discarded Fusion drafts",
+      "type": "essay",
+      "title": "The Draft Is Gone. The Edit Is Still There.",
       "url": "https://youtube.shareplane.malott.ai/scout/essays/copilot-fusion-discarded-drafts/"
     },
     {
@@ -182,6 +182,13 @@
       "type": "approved related work",
       "fromUrl": "https://youtube.shareplane.malott.ai/scout/essays/reviewing-visual-claims-in-claude-pdf-answers/",
       "toUrl": "https://youtube.shareplane.malott.ai/scout/essays/the-signal-is-not-the-finding/"
+    },
+    {
+      "from": "scout:report:copilot-fusion-discarded-drafts",
+      "to": "scout:report:copilot-cli-background-wait-modes",
+      "type": "approved related work",
+      "fromUrl": "https://youtube.shareplane.malott.ai/scout/essays/copilot-fusion-discarded-drafts/",
+      "toUrl": "https://youtube.shareplane.malott.ai/scout/essays/copilot-cli-background-wait-modes/"
     }
   ]
 }

@@ -2,6 +2,15 @@
   "schema": "ghostmesh-public-release-events-v1",
   "events": [
     {
+      "id": "scout:copilot-fusion-discarded-drafts:expanded-analysis-20261029",
+      "kind": "material-scout-update",
+      "subjectId": "copilot-fusion-discarded-drafts",
+      "url": "https://youtube.shareplane.malott.ai/scout/essays/copilot-fusion-discarded-drafts/",
+      "title": "The Draft Is Gone. The Edit Is Still There.",
+      "summary": "GitHub documents a gap between a discarded Fusion draft and edits already made in the workspace. The final answer is not a rollback receipt.",
+      "publicDate": "2026-10-29"
+    },
+    {
       "id": "scout:copilot-fusion-discarded-drafts:first-public-release",
       "kind": "new-scout-research",
       "subjectId": "copilot-fusion-discarded-drafts",
