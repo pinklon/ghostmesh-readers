@@ -2,6 +2,15 @@
   "schema": "ghostmesh-public-release-events-v1",
   "events": [
     {
+      "id": "scout:copilot-fusion-discarded-drafts:first-public-release",
+      "kind": "new-scout-research",
+      "subjectId": "copilot-fusion-discarded-drafts",
+      "url": "https://youtube.shareplane.malott.ai/scout/essays/copilot-fusion-discarded-drafts/",
+      "title": "GitHub documents a workspace-edit caveat for discarded Fusion drafts",
+      "summary": "GitHub's Fusion documentation says discarding an intermediate draft does not automatically undo workspace edits already made by that draft.",
+      "publicDate": "2026-10-29"
+    },
+    {
       "id": "scout:copilot-cli-background-wait-modes:expanded-analysis-20261028",
       "kind": "material-scout-update",
       "subjectId": "copilot-cli-background-wait-modes",

@@ -3,7 +3,7 @@
   "scope": "Public Scout research reading routes; links are editorial, not corroboration.",
   "authority": "scout-research-curated-editorial",
   "visibility": "public",
-  "recordCount": 17,
+  "recordCount": 18,
   "relationshipCount": 7,
   "nodes": [
     {
@@ -117,6 +117,13 @@
       "type": "essay",
       "title": "Keeping the Agent Alive Is Not Finishing the Work",
       "url": "https://youtube.shareplane.malott.ai/scout/essays/copilot-cli-background-wait-modes/"
+    },
+    {
+      "id": "scout:report:copilot-fusion-discarded-drafts",
+      "sourceId": "report:copilot-fusion-discarded-drafts",
+      "type": "source-report",
+      "title": "GitHub documents a workspace-edit caveat for discarded Fusion drafts",
+      "url": "https://youtube.shareplane.malott.ai/scout/essays/copilot-fusion-discarded-drafts/"
     },
     {
       "id": "scout:report:mcp-tasks-cancellation-status-and-retention",
