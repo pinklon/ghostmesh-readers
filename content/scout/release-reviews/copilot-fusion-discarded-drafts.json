@@ -1,0 +1,21 @@
+{
+  "schema": "ghostmesh-scout-source-report-review-v1",
+  "policy": "routine-source-report-v1",
+  "researchId": "report:copilot-fusion-discarded-drafts",
+  "sourceUrl": "https://github.com/github/docs/blob/6cbe6413ac7177bb692a78c171a74ae8be50d721/content/copilot/concepts/models/copilot-fusion.md",
+  "observedOn": "2026-10-29",
+  "reviewedOn": "2026-10-29",
+  "sourceMethod": "official-docs",
+  "sourceSha256": "02c40bb52482ad9e20cf462e3f9828c90350334323efa1898a12663e113b1ca9",
+  "reviewerTask": "/root/oct28_rendered_review",
+  "publisherTask": "01a159bf-611e-71f2-aca0-49a64101502c",
+  "decision": "accept",
+  "sourceReportedOnly": true,
+  "noNewRecommendation": true,
+  "noExecutionOrEntitlementClaim": true,
+  "publicSafe": true,
+  "title": "GitHub documents a workspace-edit caveat for discarded Fusion drafts",
+  "summary": "GitHub's Fusion documentation says discarding an intermediate draft does not automatically undo workspace edits already made by that draft.",
+  "evidenceLimits": "Public documentation and source history only. No Fusion session, implementation, rollback behavior, account eligibility or performance was tested.",
+  "topics": ["agent-continuity"]
+}
