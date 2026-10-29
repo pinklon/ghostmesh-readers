@@ -509,8 +509,12 @@ class ScoutResearchTests(unittest.TestCase):
                         key=lambda item: (item['reviewedOn'], item['id']), reverse=True)[:3]
         recent_section = home.split('Recently reviewed Scout research', 1)[1].split('Browse all public research', 1)[0]
         self.assertEqual(recent_section.count('href="/scout/essays/'), len(recent))
+        positions = []
         for item in recent:
-            self.assertIn('href="' + item['url'] + '"', recent_section)
+            link = 'href="' + item['url'] + '"'
+            self.assertIn(link, recent_section)
+            positions.append(recent_section.index(link))
+        self.assertEqual(positions, sorted(positions))
         for slug in ('what-survives-a-checkpoint', 'before-the-model-sees-the-spreadsheet'):
             self.assertIn('href="/scout/essays/' + slug + '/"',
                           (ROOT/'site/scout/research/index.html').read_text())
