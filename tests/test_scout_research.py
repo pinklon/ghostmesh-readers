@@ -420,6 +420,44 @@ class ScoutResearchTests(unittest.TestCase):
         self.assertEqual(feed.count('urn:ghostmesh-readers:release:' + update['id']), 1)
         self.assertEqual((ROOT/'site/sitemap.xml').read_text().count(item['url']), 1)
 
+    def test_fusion_amendment_keeps_original_release_and_matches_visible_relationships(self):
+        slug = 'copilot-fusion-discarded-drafts'
+        records = [item for item in self.source['records'] if item['slug'] == slug]
+        self.assertEqual(len(records), 1)
+        item = records[0]
+        self.assertEqual(item['id'], 'report:' + slug)
+        self.assertEqual(item['type'], 'essay')
+        self.assertNotIn('standingRelease', item)
+        self.assertEqual(item['releaseEventId'], 'scout:' + slug + ':first-public-release')
+        events = [event for event in self.events['events'] if event['subjectId'] == slug]
+        self.assertEqual(len(events), 2)
+        first = next(event for event in events if event['id'] == item['releaseEventId'])
+        update = next(event for event in events if event['id'] != item['releaseEventId'])
+        self.assertEqual(first['kind'], 'new-scout-research')
+        self.assertEqual(first['title'], 'GitHub documents a workspace-edit caveat for discarded Fusion drafts')
+        self.assertEqual(update['id'], 'scout:' + slug + ':expanded-analysis-20261029')
+        self.assertEqual(update['kind'], 'material-scout-update')
+        self.assertEqual(update['title'], item['title'])
+        self.assertEqual(update['summary'], item['summary'])
+
+        related_targets = ['report:copilot-cli-background-wait-modes']
+        self.assertEqual(item['relatedIds'], related_targets)
+        page = (ROOT/item['sourcePath']).read_text()
+        self.assertIn('<h1>' + item['title'] + '</h1>', page)
+        self.assertIn('The GhostMesh verdict is that a final answer cannot be treated as a complete inventory', page)
+        self.assertNotIn('GhostMesh analysis candidate. Not published.', page)
+        self.assertNotIn('data-scout-source-report="v1"', page)
+        by_id = {record['id']: record for record in self.source['records']}
+        graph = research_graph(self.source)
+        edges = [edge for edge in graph['edges'] if edge['from'] == 'scout:' + item['id']]
+        self.assertEqual({edge['to'] for edge in edges}, {'scout:' + target for target in related_targets})
+        for target in related_targets:
+            self.assertEqual(page.count('href="' + by_id[target]['url'] + '"'), 1)
+        self.assertEqual((ROOT/'site/sitemap.xml').read_text().count(item['url']), 1)
+        feed = (ROOT/'site/feed.xml').read_text()
+        self.assertEqual(feed.count('urn:ghostmesh-readers:release:' + first['id']), 1)
+        self.assertEqual(feed.count('urn:ghostmesh-readers:release:' + update['id']), 1)
+
     def test_mcp_essay_index_matches_canonical_record_and_current_article(self):
         item = next(record for record in self.source['records']
                     if record['id'] == 'report:mcp-tasks-cancellation-status-and-retention')

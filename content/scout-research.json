@@ -5,21 +5,22 @@
     {
       "id": "report:copilot-fusion-discarded-drafts",
       "slug": "copilot-fusion-discarded-drafts",
-      "type": "source-report",
+      "type": "essay",
       "status": "published",
-      "title": "GitHub documents a workspace-edit caveat for discarded Fusion drafts",
+      "title": "The Draft Is Gone. The Edit Is Still There.",
       "url": "/scout/essays/copilot-fusion-discarded-drafts/",
       "sourcePath": "site/scout/essays/copilot-fusion-discarded-drafts/index.html",
       "provenance": "https://github.com/github/docs/blob/6cbe6413ac7177bb692a78c171a74ae8be50d721/content/copilot/concepts/models/copilot-fusion.md",
-      "evidenceLimits": "Public documentation and source history only. No Fusion session, implementation, rollback behavior, account eligibility or performance was tested.",
-      "summary": "GitHub's Fusion documentation says discarding an intermediate draft does not automatically undo workspace edits already made by that draft.",
+      "evidenceLimits": "GitHub documentation and GhostMesh analysis only. No Fusion session, rollback path, account entitlement, performance, security outcome or frequency of lingering edits was tested.",
+      "summary": "GitHub documents a gap between a discarded Fusion draft and edits already made in the workspace. The final answer is not a rollback receipt.",
       "topics": [
         "agent-continuity"
       ],
       "reviewedOn": "2026-10-29",
       "releaseEventId": "scout:copilot-fusion-discarded-drafts:first-public-release",
-      "relatedIds": [],
-      "standingRelease": "routine-source-report-v1"
+      "relatedIds": [
+        "report:copilot-cli-background-wait-modes"
+      ]
     },
     {
       "id": "method:reviewing-visual-claims-in-claude-pdf-answers",
