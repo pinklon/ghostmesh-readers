@@ -2,6 +2,15 @@
   "schema": "ghostmesh-public-release-events-v1",
   "events": [
     {
+      "id": "scout:qualifying-a-connected-apps-integration-before-building-it:first-public-release",
+      "kind": "new-scout-research",
+      "subjectId": "qualifying-a-connected-apps-integration-before-building-it",
+      "url": "https://youtube.shareplane.malott.ai/scout/essays/qualifying-a-connected-apps-integration-before-building-it/",
+      "title": "Qualifying a Connected Apps integration before building it",
+      "summary": "A one-page pre-build review method separates the owned service, declared tools, account authority, side effects and server revision while retaining one unresolved CIMD-only registration question.",
+      "publicDate": "2026-10-29"
+    },
+    {
       "id": "reader:the-model-is-not-the-demonstration:first-public-release",
       "kind": "new-reader",
       "subjectId": "reader:the-model-is-not-the-demonstration",

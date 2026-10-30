@@ -3,8 +3,8 @@
   "scope": "Public Scout research reading routes; links are editorial, not corroboration.",
   "authority": "scout-research-curated-editorial",
   "visibility": "public",
-  "recordCount": 18,
-  "relationshipCount": 8,
+  "recordCount": 19,
+  "relationshipCount": 9,
   "nodes": [
     {
       "id": "scout:cloudflare-security-audit-skill",
@@ -98,6 +98,13 @@
       "url": "https://youtube.shareplane.malott.ai/scout/essays/before-the-model-sees-the-spreadsheet/"
     },
     {
+      "id": "scout:method:qualifying-a-connected-apps-integration-before-building-it",
+      "sourceId": "method:qualifying-a-connected-apps-integration-before-building-it",
+      "type": "method",
+      "title": "Qualifying a Connected Apps integration before building it",
+      "url": "https://youtube.shareplane.malott.ai/scout/essays/qualifying-a-connected-apps-integration-before-building-it/"
+    },
+    {
       "id": "scout:method:reviewing-visual-claims-in-claude-pdf-answers",
       "sourceId": "method:reviewing-visual-claims-in-claude-pdf-answers",
       "type": "method",
@@ -168,6 +175,13 @@
       "type": "approved related work",
       "fromUrl": "https://youtube.shareplane.malott.ai/scout/essays/before-the-model-sees-the-spreadsheet/",
       "toUrl": "https://youtube.shareplane.malott.ai/scout/research-journal/"
+    },
+    {
+      "from": "scout:method:qualifying-a-connected-apps-integration-before-building-it",
+      "to": "scout:essay:assisted-permissions-and-human-approval",
+      "type": "approved related work",
+      "fromUrl": "https://youtube.shareplane.malott.ai/scout/essays/qualifying-a-connected-apps-integration-before-building-it/",
+      "toUrl": "https://youtube.shareplane.malott.ai/scout/essays/assisted-permissions-and-human-approval/"
     },
     {
       "from": "scout:method:reviewing-visual-claims-in-claude-pdf-answers",
