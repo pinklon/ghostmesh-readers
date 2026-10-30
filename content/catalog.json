@@ -13287,12 +13287,12 @@
         }
       },
       "review": {
-        "status": "exact Markdown copy independently accepted; rendered Reader review pending",
-        "reviewer": "Distinct parent-side internal copy reviewer, as reported in the existing task handoff",
-        "reviewedSourceHead": "Exact approved Markdown SHA-256 0eaa63f00aef903a4199580b27cb56c3e8d7977aab955db0b5b299e80cc962e1",
-        "checkedAt": "2026-10-30T00:05:28Z",
-        "scope": "Exact 59-line public prose, source attribution, audio-ASR limits and privacy. Rendered HTML and generated projections have not yet received a distinct review.",
-        "findings": "No blocking copy or privacy finding in the approved Markdown; source limits and three owner-approved related destinations remain separate from production acceptance."
+        "status": "exact Markdown copy and PR108 desktop render independently accepted; mobile layout publisher-inspected",
+        "reviewer": "Distinct internal copy and desktop render reviewers; publisher separately inspected mobile layout",
+        "reviewedSourceHead": "Approved Markdown SHA-256 0eaa63f00aef903a4199580b27cb56c3e8d7977aab955db0b5b299e80cc962e1; rendered PR108 head 179f4e0ef71fcb5a9ea79a50daa8a3ec9bd718c9",
+        "checkedAt": "2026-10-30T01:17:07Z",
+        "scope": "Exact public prose, source attribution, audio-ASR limits and privacy were independently checked. A distinct desktop preview review covered the opt-in player and failed-thumbnail fallback; the publisher checked 390px layout. Independent mobile execution and production deployment were not attested.",
+        "findings": "No blocking copy, privacy or desktop render finding in the approved candidate. The thumbnail fallback, direct video link and source limits remain visible; related destinations are editorial navigation, not source corroboration."
       },
       "revisionHistory": [
         {
