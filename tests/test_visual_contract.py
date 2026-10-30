@@ -2,6 +2,7 @@ import json
 import html
 import copy
 import re
+import subprocess
 import unittest
 from html.parser import HTMLParser
 from pathlib import Path
@@ -240,6 +241,10 @@ class VisualContractTest(unittest.TestCase):
                 self.assertIn(f'data-source-id="{video_id}"', archive)
                 if reader in selected:
                     self.assertIn(f'data-source-id="{video_id}"', home)
+
+    def test_kimi_thumbnail_failure_preserves_play_control(self):
+        subprocess.run(['node', str(ROOT / 'tests/reader_thumbnail_fallback.cjs')],
+                       check=True, capture_output=True, text=True)
 
 
 if __name__ == '__main__':
