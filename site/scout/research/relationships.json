@@ -3,7 +3,7 @@
   "scope": "Public Scout research reading routes; links are editorial, not corroboration.",
   "authority": "scout-research-curated-editorial",
   "visibility": "public",
-  "recordCount": 19,
+  "recordCount": 20,
   "relationshipCount": 9,
   "nodes": [
     {
@@ -61,6 +61,13 @@
       "type": "essay",
       "title": "The Signal Is Not the Finding",
       "url": "https://youtube.shareplane.malott.ai/scout/essays/the-signal-is-not-the-finding/"
+    },
+    {
+      "id": "scout:essay:validate-the-association-not-just-the-extracted-value",
+      "sourceId": "essay:validate-the-association-not-just-the-extracted-value",
+      "type": "essay",
+      "title": "Validate the Association, Not Just the Extracted Value",
+      "url": "https://youtube.shareplane.malott.ai/scout/essays/validate-the-association-not-just-the-extracted-value/"
     },
     {
       "id": "scout:essay:what-survives-a-checkpoint",
