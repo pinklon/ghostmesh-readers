@@ -241,7 +241,7 @@
     "orderReason": "Follows the existing source-control Reader in Tony's four-video requested queue order.",
     "relationshipReview": {
       "reviewedAt": "2026-10-24",
-      "reviewedCatalogSize": 38,
+      "reviewedCatalogSize": 39,
       "decision": "linked",
       "reviewedTargets": [
         "reader:the-grader-is-part-of-the-harness",

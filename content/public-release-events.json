@@ -2,6 +2,15 @@
   "schema": "ghostmesh-public-release-events-v1",
   "events": [
     {
+      "id": "reader:the-review-needs-a-different-failure-mode:first-public-release",
+      "kind": "new-reader",
+      "subjectId": "reader:the-review-needs-a-different-failure-mode",
+      "url": "https://youtube.shareplane.malott.ai/the-review-needs-a-different-failure-mode/",
+      "title": "The Review Needs a Different Failure Mode",
+      "summary": "An EGM walkthrough tests whether fresh-context review adds consequential findings or repeats the same missing assumptions.",
+      "publicDate": "2026-10-29"
+    },
+    {
       "id": "scout:qualifying-a-connected-apps-integration-before-building-it:first-public-release",
       "kind": "new-scout-research",
       "subjectId": "qualifying-a-connected-apps-integration-before-building-it",

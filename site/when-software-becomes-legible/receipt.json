@@ -293,7 +293,7 @@
     },
     "relationshipReview": {
       "reviewedAt": "2026-10-24",
-      "reviewedCatalogSize": 38,
+      "reviewedCatalogSize": 39,
       "decision": "linked",
       "reviewedTargets": [
         "reader:a-challenge-is-not-a-verdict",

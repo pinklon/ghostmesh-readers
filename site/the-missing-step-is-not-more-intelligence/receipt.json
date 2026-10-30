@@ -281,7 +281,7 @@
     "relationshipDisposition": "No typed Reader relationship is admitted for this candidate. Several existing Readers discuss agent authority or AI risk, but none supplies evidence for this profile’s forecast, clinical claims or proposed federal oversight; thematic proximity alone is insufficient.",
     "relationshipReview": {
       "reviewedAt": "2026-10-24",
-      "reviewedCatalogSize": 38,
+      "reviewedCatalogSize": 39,
       "decision": "none",
       "reviewedTargets": [],
       "rationale": "Compared all 34 current published Reader overviews and their qualified relationship roles against this WSJ-profile deconstruction. Authority and risk themes overlap, but no distinct shared claim or source-grounded relationship is sufficiently specific for a typed public edge yet. A later reviewed editorial pass may add one. The Orca fleet-control Reader was reviewed as a distinct agent-orchestration case; its worktree and review claims do not verify this profile’s AGI forecast, drug outcomes or proposed oversight, so no typed edge is admitted. The newly added LangChain webhook Reader was compared for a distinct source-grounded relationship; no existing typed edge is changed by this candidate."

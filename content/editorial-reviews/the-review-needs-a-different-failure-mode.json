@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "readerId": "reader:the-review-needs-a-different-failure-mode",
+  "sourceId": "xxf6D9jynFw",
+  "sourceAidSha256": "086b10a04b15cb2a07053e6758b281d3d1f0bf95cdddd47e7ac9fd492f747879",
+  "articleSha256": "84f19eac61acda6a5c979a85b00e8e2afde58f09224ef64b8e2ecd9e5a5946d0",
+  "evidenceRevision": "7783fb2016342699c2cbf25e2a71b124c315f526a0344c16064dbbfd555b52d1",
+  "reviewedAt": "2026-10-30T05:37:30.761948Z",
+  "provenance": {
+    "kind": "codex-task-agent",
+    "reference": "Distinct parent-side editorial/source/privacy review relayed through coordinator task 01a173c6-7418-7252-bb2c-b75388db40f3 accepted exact manuscript SHA-256 2d900cf36ca75b2f7a62a2047d4ea84b5f419f9536d0d060ef56bd0c21eaa7e8. Publisher transcribes the finding without claiming machine-authenticated reviewer identity.",
+    "limits": "The reviewer inspected manuscript, source handoff, pinned primary sources and ASR cue bands at 02:15, 07:08 and 14:18. This HTML/source integration, players and desktop/mobile rendering were not independently reviewed."
+  },
+  "summary": "Independent review found no blocking editorial/source/privacy issue in the exact manuscript; publisher rendering remains a separate qualification.",
+  "findings": [
+    "The full 1,350-word manuscript, source handoff and pinned README, review, bootstrap, drift, TESTING and manifest were independently inspected.",
+    "The reported product-deletion defect is explicitly attributed to the presenter. No performance improvement, verified demo outcome, installation or pilot is invented.",
+    "The strongest overhead objection and proposed unperformed comparison are substantive; relationships to grader quality and full task cost are editorial adjacency, not corroboration.",
+    "Tony subsequently accepted the exact prose and the two proposed related Readers for local implementation; this is not a public preview or production authorization."
+  ],
+  "conclusion": "accept-for-owner-review"
+}
