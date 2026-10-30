@@ -2,6 +2,10 @@
 
 *A parser can preserve a number and its bounding box while assigning it to the wrong column. The useful validation boundary is the relationship between the value, its source region, and its header.*
 
+## GhostMesh Verdict
+
+Correct text and plausible coordinates are not enough. For consequential document values, verify the relationship to the right row and header. Start with small, deterministic checks rather than another parser or service.
+
 A table extraction can preserve every digit and still change the answer. The number is present. Its bounding box points somewhere plausible. The document loads successfully. But the number now belongs to a different year.
 
 That distinction matters before a language model enters the workflow. Text recognition, source location, and table membership are separate claims. Checking one does not automatically check the others.
