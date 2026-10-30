@@ -87,7 +87,7 @@
   },
   "independentCorroboration": "none",
   "ownerDecision": null,
-  "decision": "hold",
+  "decision": "accept",
   "gaps": [
     {
       "type": "evidence",
@@ -100,6 +100,6 @@
       "rationale": "The audio-only partial capture has no visual coverage, listening-verified exact speech or closed ReasonPack SourceID. The Reader discloses these limits and omits visual outcomes."
     }
   ],
-  "decisionRationale": "Tony approved the exact prose, three relations and an opt-in YouTube viewer for the preview. Distinct exact desktop render review is accepted and publisher mobile layout passed. Source aspect remains unknown and source limits remain visible. Production stays on hold for the direct authenticated owner marker, exact-head hosted checks and separate release decision.",
-  "assessedAt": "2026-10-30T01:17:07Z"
+  "decisionRationale": "The publisher accepts this bounded Reader for owner review after independent exact desktop render review and publisher mobile layout inspection. The article preserves approved prose and relations, a graceful thumbnail fallback, opt-in video and explicit audio-only source limits. This assessment does not replace Tony's direct PR-bound acceptance marker, fresh hosted checks or exact-head production decision.",
+  "assessedAt": "2026-10-30T01:20:09Z"
 }
