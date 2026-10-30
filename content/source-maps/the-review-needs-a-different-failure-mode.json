@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "readerId": "reader:the-review-needs-a-different-failure-mode",
+  "sourceId": "xxf6D9jynFw",
+  "sourceAidSha256": "086b10a04b15cb2a07053e6758b281d3d1f0bf95cdddd47e7ac9fd492f747879",
+  "points": [
+    {
+      "atSeconds": 135,
+      "sectionId": "the-conversation-has-become-part-of-the-specification",
+      "claimIds": [
+        "egm--context-split"
+      ],
+      "cueParaphrase": "The narrator describes the author/reviewer context separation as central to EGM.",
+      "privateAidCheck": "Retained, hash-verified machine ASR supports attributed topic navigation only. Exact speech and visual demonstration outcomes were not verified."
+    },
+    {
+      "atSeconds": 428,
+      "sectionId": "the-contract-can-be-wrong-before-the-code-drifts",
+      "claimIds": [
+        "egm--bootstrap"
+      ],
+      "cueParaphrase": "The walkthrough turns to mapping the existing application before planning a new feature.",
+      "privateAidCheck": "Retained, hash-verified machine ASR supports attributed topic navigation only. Exact speech and visual demonstration outcomes were not verified."
+    },
+    {
+      "atSeconds": 858,
+      "sectionId": "reported-drift-finding",
+      "claimIds": [
+        "egm--drift-account"
+      ],
+      "cueParaphrase": "The presenter reports that drift review found a sold-product deletion inconsistency.",
+      "privateAidCheck": "Retained, hash-verified machine ASR supports attributed topic navigation only. Exact speech and visual demonstration outcomes were not verified."
+    }
+  ]
+}

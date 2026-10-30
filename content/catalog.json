@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "host": "https://youtube.shareplane.malott.ai",
-  "revision": "2026-10-30T00:08:51Z",
+  "revision": "2026-10-30T05:37:30.761948Z",
   "categories": [
     "AI & Technology",
     "Society & Politics",
@@ -406,7 +406,7 @@
       },
       "relationshipReview": {
         "reviewedAt": "2026-10-24",
-        "reviewedCatalogSize": 38,
+        "reviewedCatalogSize": 39,
         "decision": "linked",
         "reviewedTargets": [
           "reader:ask-for-the-outcome-keep-the-boundary",
@@ -911,7 +911,7 @@
       },
       "relationshipReview": {
         "reviewedAt": "2026-10-24",
-        "reviewedCatalogSize": 38,
+        "reviewedCatalogSize": 39,
         "decision": "linked",
         "reviewedTargets": [
           "reader:a-challenge-is-not-a-verdict",
@@ -1178,7 +1178,7 @@
       },
       "relationshipReview": {
         "reviewedAt": "2026-10-24",
-        "reviewedCatalogSize": 38,
+        "reviewedCatalogSize": 39,
         "decision": "linked",
         "reviewedTargets": [
           "reader:the-agent-a-company-owns",
@@ -1745,7 +1745,7 @@
       },
       "relationshipReview": {
         "reviewedAt": "2026-10-24",
-        "reviewedCatalogSize": 38,
+        "reviewedCatalogSize": 39,
         "decision": "linked",
         "reviewedTargets": [
           "reader:a-challenge-is-not-a-verdict",
@@ -2041,7 +2041,7 @@
       },
       "relationshipReview": {
         "reviewedAt": "2026-10-24",
-        "reviewedCatalogSize": 38,
+        "reviewedCatalogSize": 39,
         "decision": "linked",
         "reviewedTargets": [
           "reader:autonomy-needs-an-interface",
@@ -2354,7 +2354,7 @@
       },
       "relationshipReview": {
         "reviewedAt": "2026-10-24",
-        "reviewedCatalogSize": 38,
+        "reviewedCatalogSize": 39,
         "decision": "linked",
         "reviewedTargets": [
           "reader:ask-for-the-outcome-keep-the-boundary",
@@ -2637,7 +2637,7 @@
       },
       "relationshipReview": {
         "reviewedAt": "2026-10-24",
-        "reviewedCatalogSize": 38,
+        "reviewedCatalogSize": 39,
         "decision": "linked",
         "reviewedTargets": [
           "reader:the-key-was-the-boundary",
@@ -3130,7 +3130,7 @@
       },
       "relationshipReview": {
         "reviewedAt": "2026-10-24",
-        "reviewedCatalogSize": 38,
+        "reviewedCatalogSize": 39,
         "decision": "linked",
         "reviewedTargets": [
           "reader:the-inbox-was-a-boundary",
@@ -3497,7 +3497,7 @@
       },
       "relationshipReview": {
         "reviewedAt": "2026-10-24",
-        "reviewedCatalogSize": 38,
+        "reviewedCatalogSize": 39,
         "decision": "linked",
         "reviewedTargets": [
           "reader:the-score-is-not-the-system"
@@ -3934,7 +3934,7 @@
       },
       "relationshipReview": {
         "reviewedAt": "2026-10-24",
-        "reviewedCatalogSize": 38,
+        "reviewedCatalogSize": 39,
         "decision": "linked",
         "reviewedTargets": [
           "reader:ask-for-the-outcome-keep-the-boundary",
@@ -4272,7 +4272,7 @@
       },
       "relationshipReview": {
         "reviewedAt": "2026-10-24",
-        "reviewedCatalogSize": 38,
+        "reviewedCatalogSize": 39,
         "decision": "linked",
         "reviewedTargets": [
           "reader:the-microscope-is-not-a-soul"
@@ -4533,7 +4533,7 @@
       },
       "relationshipReview": {
         "reviewedAt": "2026-10-24",
-        "reviewedCatalogSize": 38,
+        "reviewedCatalogSize": 39,
         "decision": "linked",
         "reviewedTargets": [
           "reader:autonomy-needs-an-interface",
@@ -4825,7 +4825,7 @@
       },
       "relationshipReview": {
         "reviewedAt": "2026-10-24",
-        "reviewedCatalogSize": 38,
+        "reviewedCatalogSize": 39,
         "decision": "linked",
         "reviewedTargets": [
           "reader:a-challenge-is-not-a-verdict",
@@ -5153,7 +5153,7 @@
       "orderReason": "Read after the earlier Amap fleet case to examine the broader forecast and its evidence limits.",
       "relationshipReview": {
         "reviewedAt": "2026-10-24",
-        "reviewedCatalogSize": 38,
+        "reviewedCatalogSize": 39,
         "decision": "linked",
         "reviewedTargets": [
           "reader:the-inbox-was-a-boundary",
@@ -5436,7 +5436,7 @@
       "orderReason": "Read after other model-score Readers to test how benchmark evidence is converted into a larger forecast.",
       "relationshipReview": {
         "reviewedAt": "2026-10-24",
-        "reviewedCatalogSize": 38,
+        "reviewedCatalogSize": 39,
         "decision": "linked",
         "reviewedTargets": [
           "reader:the-experiment-ran-did-the-research-advance"
@@ -5737,7 +5737,7 @@
       "orderReason": "Read after the existing Count Grey Matter interpretability Reader to examine a distinct functional-understanding claim.",
       "relationshipReview": {
         "reviewedAt": "2026-10-24",
-        "reviewedCatalogSize": 38,
+        "reviewedCatalogSize": 39,
         "decision": "linked",
         "reviewedTargets": [
           "reader:the-microscope-is-not-a-soul"
@@ -6012,7 +6012,7 @@
       "orderReason": "Read after the current collection as a research-method comparison with explicit deployment limits.",
       "relationshipReview": {
         "reviewedAt": "2026-10-24",
-        "reviewedCatalogSize": 38,
+        "reviewedCatalogSize": 39,
         "decision": "none",
         "reviewedTargets": [],
         "rationale": "No other local Reader analyzes NCM or HybridAgents, their parallel-code and latent-reasoning methods, or the same benchmark claims. External studies remain outside this Reader graph. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged. Reassessed against four distinct AI Engineer video theses; their new outgoing links carry the qualified comparisons, with no new outgoing edge warranted from this existing entry. The HORTRAME visual swarm Reader was assessed as a new catalog neighbor; no additional outgoing route is justified by its distinct film and mathematics source. The newly added DeepInfer source was checked for another outgoing route; none is justified beyond its new Reader-to-Reader routes. The new Hassabis profile was compared for a specific shared claim; no further typed relation is admitted on thematic overlap alone. Compared the new Orca fleet Reader as a possible target; its three outbound comparisons cover the supported links, and no reciprocal claim of source corroboration is warranted. The newly added LangChain webhook Reader was compared for a distinct source-grounded relationship; no existing typed edge is changed by this candidate."
@@ -6285,7 +6285,7 @@
       },
       "relationshipReview": {
         "reviewedAt": "2026-10-24",
-        "reviewedCatalogSize": 38,
+        "reviewedCatalogSize": 39,
         "decision": "linked",
         "reviewedTargets": [
           "reader:a-scenario-is-not-a-singularity"
@@ -6654,7 +6654,7 @@
       },
       "relationshipReview": {
         "reviewedAt": "2026-10-24",
-        "reviewedCatalogSize": 38,
+        "reviewedCatalogSize": 39,
         "decision": "linked",
         "reviewedTargets": [
           "reader:when-agents-become-the-customer",
@@ -7156,7 +7156,7 @@
       },
       "relationshipReview": {
         "reviewedAt": "2026-10-24",
-        "reviewedCatalogSize": 38,
+        "reviewedCatalogSize": 39,
         "decision": "linked",
         "reviewedTargets": [
           "reader:the-test-must-name-its-target",
@@ -7618,7 +7618,7 @@
       },
       "relationshipReview": {
         "reviewedAt": "2026-10-24",
-        "reviewedCatalogSize": 38,
+        "reviewedCatalogSize": 39,
         "decision": "none",
         "reviewedTargets": [],
         "rationale": "The other published Readers do not examine this California voter-list dispute, individualized ballot procedure or conditional DOJ warning. AI evaluation analogies are too distant to admit as local routes. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged. Reassessed against four distinct AI Engineer video theses; their new outgoing links carry the qualified comparisons, with no new outgoing edge warranted from this existing entry. The HORTRAME visual swarm Reader was assessed as a new catalog neighbor; no additional outgoing route is justified by its distinct film and mathematics source. The newly added DeepInfer source was checked for another outgoing route; none is justified beyond its new Reader-to-Reader routes. The new Hassabis profile was compared for a specific shared claim; no further typed relation is admitted on thematic overlap alone. Compared the new Orca fleet Reader as a possible target; its three outbound comparisons cover the supported links, and no reciprocal claim of source corroboration is warranted. The newly added LangChain webhook Reader was compared for a distinct source-grounded relationship; no existing typed edge is changed by this candidate."
@@ -8173,7 +8173,7 @@
       },
       "relationshipReview": {
         "reviewedAt": "2026-10-24",
-        "reviewedCatalogSize": 38,
+        "reviewedCatalogSize": 39,
         "decision": "linked",
         "reviewedTargets": [
           "reader:the-brakes-need-a-test",
@@ -8753,7 +8753,7 @@
       },
       "relationshipReview": {
         "reviewedAt": "2026-10-24",
-        "reviewedCatalogSize": 38,
+        "reviewedCatalogSize": 39,
         "decision": "linked",
         "reviewedTargets": [
           "reader:the-label-the-box-and-the-bargain",
@@ -9033,7 +9033,7 @@
       "orderReason": "Follow the existing evaluation and research-agent Readers with a focused test of adaptive harness claims.",
       "relationshipReview": {
         "reviewedAt": "2026-10-24",
-        "reviewedCatalogSize": 38,
+        "reviewedCatalogSize": 39,
         "decision": "linked",
         "reviewedTargets": [
           "reader:make-good-work-inspectable",
@@ -9316,7 +9316,7 @@
       "orderReason": "Place the operational agent-boundary Reader after the harness-evaluation Reader.",
       "relationshipReview": {
         "reviewedAt": "2026-10-24",
-        "reviewedCatalogSize": 38,
+        "reviewedCatalogSize": 39,
         "decision": "linked",
         "reviewedTargets": [
           "reader:make-good-work-inspectable",
@@ -9615,7 +9615,7 @@
       "orderReason": "Place the local deployment and privacy-boundary reading after the agent control readings.",
       "relationshipReview": {
         "reviewedAt": "2026-10-24",
-        "reviewedCatalogSize": 38,
+        "reviewedCatalogSize": 39,
         "decision": "linked",
         "reviewedTargets": [
           "reader:the-agent-a-company-owns",
@@ -9899,7 +9899,7 @@
       "relationshipDisposition": "Two substantive editorial comparisons connect agent work inspectability and evaluation infrastructure. They do not corroborate Anthropic’s internal scale or performance reports.",
       "relationshipReview": {
         "reviewedAt": "2026-10-24",
-        "reviewedCatalogSize": 38,
+        "reviewedCatalogSize": 39,
         "decision": "linked",
         "reviewedTargets": [
           "reader:make-good-work-inspectable",
@@ -10212,7 +10212,7 @@
       "orderReason": "Follows the existing source-control Reader in Tony's four-video requested queue order.",
       "relationshipReview": {
         "reviewedAt": "2026-10-24",
-        "reviewedCatalogSize": 38,
+        "reviewedCatalogSize": 39,
         "decision": "linked",
         "reviewedTargets": [
           "reader:the-grader-is-part-of-the-harness",
@@ -10451,7 +10451,7 @@
       "orderReason": "Follows the existing source-control Reader in Tony's four-video requested queue order.",
       "relationshipReview": {
         "reviewedAt": "2026-10-24",
-        "reviewedCatalogSize": 38,
+        "reviewedCatalogSize": 39,
         "decision": "linked",
         "reviewedTargets": [
           "reader:the-parallel-result-is-not-the-product",
@@ -10673,7 +10673,7 @@
       "orderReason": "Follows the existing source-control Reader in Tony's four-video requested queue order.",
       "relationshipReview": {
         "reviewedAt": "2026-10-24",
-        "reviewedCatalogSize": 38,
+        "reviewedCatalogSize": 39,
         "decision": "linked",
         "reviewedTargets": [
           "reader:the-stop-button-is-outside-the-chat",
@@ -10912,7 +10912,7 @@
       "orderReason": "Follows the existing source-control Reader in Tony's four-video requested queue order.",
       "relationshipReview": {
         "reviewedAt": "2026-10-24",
-        "reviewedCatalogSize": 38,
+        "reviewedCatalogSize": 39,
         "decision": "linked",
         "reviewedTargets": [
           "reader:when-agents-become-the-customer",
@@ -11185,7 +11185,7 @@
       "relationshipDisposition": "Two specific editorial comparisons connect human inspectability and authenticated acceptance. No existing Reader independently tests this author’s HTML-versus-Markdown workflow.",
       "relationshipReview": {
         "reviewedAt": "2026-10-24",
-        "reviewedCatalogSize": 38,
+        "reviewedCatalogSize": 39,
         "decision": "linked",
         "reviewedTargets": [
           "reader:make-good-work-inspectable",
@@ -11630,7 +11630,7 @@
       "relationshipDisposition": "One qualified thematic route to a different simulation-evidence critique. Similar words such as singularity or swarm do not establish a shared claim or corroboration.",
       "relationshipReview": {
         "reviewedAt": "2026-10-24",
-        "reviewedCatalogSize": 38,
+        "reviewedCatalogSize": 39,
         "decision": "linked",
         "reviewedTargets": [
           "reader:the-score-is-not-the-system"
@@ -12007,7 +12007,7 @@
       "relationshipDisposition": "Three qualified editorial routes connect performance-to-product interpretation, local control boundaries and service economics. They do not corroborate DeepSeek benchmark or production metrics.",
       "relationshipReview": {
         "reviewedAt": "2026-10-24",
-        "reviewedCatalogSize": 38,
+        "reviewedCatalogSize": 39,
         "decision": "linked",
         "reviewedTargets": [
           "reader:the-parallel-result-is-not-the-product",
@@ -12335,7 +12335,7 @@
       "relationshipDisposition": "No typed Reader relationship is admitted for this candidate. Several existing Readers discuss agent authority or AI risk, but none supplies evidence for this profile’s forecast, clinical claims or proposed federal oversight; thematic proximity alone is insufficient.",
       "relationshipReview": {
         "reviewedAt": "2026-10-24",
-        "reviewedCatalogSize": 38,
+        "reviewedCatalogSize": 39,
         "decision": "none",
         "reviewedTargets": [],
         "rationale": "Compared all 34 current published Reader overviews and their qualified relationship roles against this WSJ-profile deconstruction. Authority and risk themes overlap, but no distinct shared claim or source-grounded relationship is sufficiently specific for a typed public edge yet. A later reviewed editorial pass may add one. The Orca fleet-control Reader was reviewed as a distinct agent-orchestration case; its worktree and review claims do not verify this profile’s AGI forecast, drug outcomes or proposed oversight, so no typed edge is admitted. The newly added LangChain webhook Reader was compared for a distinct source-grounded relationship; no existing typed edge is changed by this candidate."
@@ -12695,7 +12695,7 @@
       "orderReason": "Follows the four-video PR 56 batch in owner-requested source order.",
       "relationshipReview": {
         "reviewedAt": "2026-10-24",
-        "reviewedCatalogSize": 38,
+        "reviewedCatalogSize": 39,
         "decision": "linked",
         "reviewedTargets": [
           "reader:the-parallel-result-is-not-the-product",
@@ -13042,7 +13042,7 @@
       "orderReason": "Place this written-source webhook analysis after the existing published Readers.",
       "relationshipReview": {
         "reviewedAt": "2026-10-24",
-        "reviewedCatalogSize": 38,
+        "reviewedCatalogSize": 39,
         "decision": "none",
         "reviewedTargets": [],
         "rationale": "Existing authority and ingestion Readers have thematic overlap, but no typed link is admitted without a distinct reviewed evidence or architecture relationship."
@@ -13254,7 +13254,7 @@
       "relationshipDisposition": "Three owner-approved editorial connections compare full task cost, evaluation quality and bounded agent authority. These are navigation and interpretation, not corroboration of Kimi or the video.",
       "relationshipReview": {
         "reviewedAt": "2026-10-29",
-        "reviewedCatalogSize": 38,
+        "reviewedCatalogSize": 39,
         "decision": "linked",
         "reviewedTargets": [
           "reader:the-operator-is-part-of-the-denominator",
@@ -13306,6 +13306,300 @@
       "editorialDepth": {
         "schemaVersion": 1,
         "receiptPath": "content/editorial-depth/the-model-is-not-the-demonstration.json"
+      }
+    },
+    {
+      "id": "reader:the-review-needs-a-different-failure-mode",
+      "slug": "the-review-needs-a-different-failure-mode",
+      "title": "The Review Needs a Different Failure Mode",
+      "category": "AI & Technology",
+      "tags": [
+        "independent review",
+        "specifications",
+        "agent workflows"
+      ],
+      "entities": [
+        "AI LABS",
+        "Elephant-Goldfish Model",
+        "Google"
+      ],
+      "source": {
+        "platform": "YouTube",
+        "url": "https://www.youtube.com/watch?v=xxf6D9jynFw",
+        "videoId": "xxf6D9jynFw",
+        "title": "EGM: Google's New Way To Use Claude Code Is Insane",
+        "creator": "AI LABS",
+        "durationSeconds": 953.819533,
+        "mediaAspect": "16:9",
+        "dateNote": "The issue identifies October 25, 2026; exact original upload timestamp was not independently verified in this editorial step."
+      },
+      "published": "2026-10-29",
+      "updated": "2026-10-30T05:37:30.761948Z",
+      "overview": "An EGM walkthrough tests whether fresh-context review adds consequential findings or repeats the same missing assumptions.",
+      "whyItMatters": "Fresh context can expose an incomplete specification while retaining correlated errors and omitted business constraints.",
+      "ghostMeshTakeaway": "Adapt author/reviewer separation and measure valid additional findings together with adjudication cost before expanding the process.",
+      "verdict": "Worth studying",
+      "architectureImpact": "experiment recommended",
+      "falsification": "Reconsider the narrow adaptation if a bounded comparison exposes consequential omissions missed by the existing review at a defensible full cost; narrow use if findings mostly repeat, fail adjudication or require avoidable resolution work.",
+      "evidenceState": "partially corroborated",
+      "lastEvidenceChecked": "2026-10-30T05:37:30.761948Z",
+      "freshness": "Pinned EGM repository revision 5efe34126a0059eff51ca7e0af7e3249d70952bf declares v0.1.0. Source-bound video/audio and 294 machine-ASR cues are retained; no exact speech, visual demonstration, EGM workflow or outcome comparison was independently executed.",
+      "variant": "dossier",
+      "accent": "teal",
+      "claims": [
+        {
+          "id": "egm--context-split",
+          "proposition": "EGM prescribes an author with project context and fresh reviewers receiving the document and referenced sources.",
+          "kind": "project-architecture",
+          "asOf": "2026-10-30",
+          "status": "partially corroborated",
+          "assessment": "Pinned source instructions support the intended context separation and human trade-off role.",
+          "limits": "No isolation trace or enforcement was executed in this Reader. Fresh context is not measured error independence.",
+          "sourceLocation": "02:15 provisional ASR topic; pinned README/review instructions",
+          "references": [
+            "egm-readme",
+            "egm-review"
+          ],
+          "counterevidence": [],
+          "temporalScope": "Pinned EGM source inspected October 30, 2026; video uses uncorrected machine ASR with no visual or listening-verified outcome."
+        },
+        {
+          "id": "egm--bootstrap",
+          "proposition": "EGM bootstrap prescribes contracts for interfaces, invariants and side effects.",
+          "kind": "project-workflow",
+          "asOf": "2026-10-30",
+          "status": "partially corroborated",
+          "assessment": "Pinned bootstrap instructions describe this documentation scope.",
+          "limits": "No generated contract or application mapping was executed or visually verified here.",
+          "sourceLocation": "07:08 provisional ASR topic; bootstrap overview",
+          "references": [
+            "egm-bootstrap"
+          ],
+          "counterevidence": [],
+          "temporalScope": "Pinned EGM source inspected October 30, 2026; video uses uncorrected machine ASR with no visual or listening-verified outcome."
+        },
+        {
+          "id": "egm--drift-account",
+          "proposition": "The presenter reports a drift finding involving deletion of previously sold products.",
+          "kind": "creator-reported-outcome",
+          "asOf": "2026-10-30",
+          "status": "unverified",
+          "assessment": "Timed machine ASR supports a provisional attributed account.",
+          "limits": "No demonstration frames, application behavior or reproduced bug was inspected; the outcome remains unverified.",
+          "sourceLocation": "14:18–14:29 machine-ASR navigation",
+          "references": [],
+          "counterevidence": [],
+          "temporalScope": "Pinned EGM source inspected October 30, 2026; video uses uncorrected machine ASR with no visual or listening-verified outcome."
+        },
+        {
+          "id": "egm--fixture-limits",
+          "proposition": "EGM records structural and native workflow fixture coverage alongside incomplete cloud verification.",
+          "kind": "project-test-record",
+          "asOf": "2026-10-30",
+          "status": "partially corroborated",
+          "assessment": "Pinned test and harness documents specify their tested surfaces and limitations.",
+          "limits": "Reported fixtures do not establish reduced production defects, incremental reviewer value or complete cloud support.",
+          "sourceLocation": "TESTING harness record and docs/harnesses support status",
+          "references": [
+            "egm-testing",
+            "egm-harnesses"
+          ],
+          "counterevidence": [],
+          "temporalScope": "Pinned EGM source inspected October 30, 2026; video uses uncorrected machine ASR with no visual or listening-verified outcome."
+        },
+        {
+          "id": "egm--review-value",
+          "proposition": "Review value should include valid additional findings and their full resolution burden.",
+          "kind": "editorial-inference",
+          "asOf": "2026-10-30",
+          "status": "unverified",
+          "assessment": "The Reader proposes an evaluation against the review already in use.",
+          "limits": "No comparative experiment, model call, pilot, efficiency outcome or rollout was performed.",
+          "sourceLocation": "Compare against the review we already have",
+          "references": [
+            "egm-testing"
+          ],
+          "counterevidence": [],
+          "temporalScope": "Pinned EGM source inspected October 30, 2026; video uses uncorrected machine ASR with no visual or listening-verified outcome."
+        }
+      ],
+      "references": [
+        {
+          "id": "egm-readme",
+          "title": "README.md",
+          "author": "EGM contributors",
+          "publisher": "google/elephant-goldfish-model",
+          "url": "https://github.com/google/elephant-goldfish-model/blob/5efe34126a0059eff51ca7e0af7e3249d70952bf/README.md",
+          "publicationDate": "unknown",
+          "eventDate": null,
+          "location": "Author/reviewer roles, human decisions, small-fix exception and product-support disclaimer",
+          "sourceType": "project documentation",
+          "independence": "First-party project source describing its own architecture and test records; not independent outcome replication.",
+          "evidenceFamily": "egm-repository",
+          "checkedAt": "2026-10-30T05:37:30.761948Z",
+          "dateNote": "Pinned written revision; original document publication time not established. Not asserted to be the video demonstration revision.",
+          "datePrecision": null
+        },
+        {
+          "id": "egm-review",
+          "title": "skills/egm-review/SKILL.md",
+          "author": "EGM contributors",
+          "publisher": "google/elephant-goldfish-model",
+          "url": "https://github.com/google/elephant-goldfish-model/blob/5efe34126a0059eff51ca7e0af7e3249d70952bf/skills/egm-review/SKILL.md",
+          "publicationDate": "unknown",
+          "eventDate": null,
+          "location": "Fresh contexts, comprehension and five review stages",
+          "sourceType": "project documentation",
+          "independence": "First-party project source describing its own architecture and test records; not independent outcome replication.",
+          "evidenceFamily": "egm-repository",
+          "checkedAt": "2026-10-30T05:37:30.761948Z",
+          "dateNote": "Pinned written revision; original document publication time not established. Not asserted to be the video demonstration revision.",
+          "datePrecision": null
+        },
+        {
+          "id": "egm-bootstrap",
+          "title": "skills/egm-bootstrap/SKILL.md",
+          "author": "EGM contributors",
+          "publisher": "google/elephant-goldfish-model",
+          "url": "https://github.com/google/elephant-goldfish-model/blob/5efe34126a0059eff51ca7e0af7e3249d70952bf/skills/egm-bootstrap/SKILL.md",
+          "publicationDate": "unknown",
+          "eventDate": null,
+          "location": "Interfaces, invariants and side effects in directory contracts",
+          "sourceType": "project documentation",
+          "independence": "First-party project source describing its own architecture and test records; not independent outcome replication.",
+          "evidenceFamily": "egm-repository",
+          "checkedAt": "2026-10-30T05:37:30.761948Z",
+          "dateNote": "Pinned written revision; original document publication time not established. Not asserted to be the video demonstration revision.",
+          "datePrecision": null
+        },
+        {
+          "id": "egm-drift",
+          "title": "skills/egm-drift-report/SKILL.md",
+          "author": "EGM contributors",
+          "publisher": "google/elephant-goldfish-model",
+          "url": "https://github.com/google/elephant-goldfish-model/blob/5efe34126a0059eff51ca7e0af7e3249d70952bf/skills/egm-drift-report/SKILL.md",
+          "publicationDate": "unknown",
+          "eventDate": null,
+          "location": "Document/source discrepancy comparison",
+          "sourceType": "project documentation",
+          "independence": "First-party project source describing its own architecture and test records; not independent outcome replication.",
+          "evidenceFamily": "egm-repository",
+          "checkedAt": "2026-10-30T05:37:30.761948Z",
+          "dateNote": "Pinned written revision; original document publication time not established. Not asserted to be the video demonstration revision.",
+          "datePrecision": null
+        },
+        {
+          "id": "egm-testing",
+          "title": "TESTING.md",
+          "author": "EGM contributors",
+          "publisher": "google/elephant-goldfish-model",
+          "url": "https://github.com/google/elephant-goldfish-model/blob/5efe34126a0059eff51ca7e0af7e3249d70952bf/TESTING.md",
+          "publicationDate": "unknown",
+          "eventDate": null,
+          "location": "Native fixtures, measured workflow surfaces and cloud verification limits",
+          "sourceType": "project documentation",
+          "independence": "First-party project source describing its own architecture and test records; not independent outcome replication.",
+          "evidenceFamily": "egm-repository",
+          "checkedAt": "2026-10-30T05:37:30.761948Z",
+          "dateNote": "Pinned written revision; original document publication time not established. Not asserted to be the video demonstration revision.",
+          "datePrecision": null
+        },
+        {
+          "id": "egm-harnesses",
+          "title": "docs/harnesses.md",
+          "author": "EGM contributors",
+          "publisher": "google/elephant-goldfish-model",
+          "url": "https://github.com/google/elephant-goldfish-model/blob/5efe34126a0059eff51ca7e0af7e3249d70952bf/docs/harnesses.md",
+          "publicationDate": "unknown",
+          "eventDate": null,
+          "location": "Harness-specific delegation and support boundaries",
+          "sourceType": "project documentation",
+          "independence": "First-party project source describing its own architecture and test records; not independent outcome replication.",
+          "evidenceFamily": "egm-repository",
+          "checkedAt": "2026-10-30T05:37:30.761948Z",
+          "dateNote": "Pinned written revision; original document publication time not established. Not asserted to be the video demonstration revision.",
+          "datePrecision": null
+        }
+      ],
+      "relationships": [
+        {
+          "target": "reader:the-grader-is-part-of-the-harness",
+          "type": "related topic",
+          "reason": "Review findings need an adjudication standard that measures consequential value, just as harness optimization needs a valid grader. These are editorial comparisons, not corroboration.",
+          "provenance": [
+            "/the-review-needs-a-different-failure-mode/#compare-against-the-review-we-already-have",
+            "/the-grader-is-part-of-the-harness/#grading"
+          ],
+          "basis": "curated-editorial-comparison",
+          "direction": "outgoing"
+        },
+        {
+          "target": "reader:the-operator-is-part-of-the-denominator",
+          "type": "related topic",
+          "reason": "Human adjudication and correction work belongs in the cost of accepted review findings, paralleling the full-service denominator of accepted task output. Neither source validates the other.",
+          "provenance": [
+            "/the-review-needs-a-different-failure-mode/#the-strongest-objection-is-that-the-extra-review-may-be-the-point",
+            "/the-operator-is-part-of-the-denominator/#the-service-layer-can-create-or-destroy-value"
+          ],
+          "basis": "curated-editorial-comparison",
+          "direction": "outgoing"
+        }
+      ],
+      "relationshipDisposition": "Two owner-approved editorial connections address evaluation quality and full review cost. They are navigation, not corroboration or reciprocal relationships.",
+      "relationshipReview": {
+        "reviewedAt": "2026-10-30",
+        "reviewedCatalogSize": 39,
+        "decision": "linked",
+        "reviewedTargets": [
+          "reader:the-grader-is-part-of-the-harness",
+          "reader:the-operator-is-part-of-the-denominator"
+        ],
+        "rationale": "Reviewed the current 38 Reader titles and takeaways, then inspected the two existing destination articles. Tony explicitly approved these exact grader-quality and full-cost connections for EGM implementation; no reverse or additional edges are inferred."
+      },
+      "legacyReceipt": {
+        "schema": "ghostmesh-reader-receipt-v2",
+        "createdAt": "2026-10-30T05:37:30.761948Z",
+        "source": {
+          "platform": "YouTube",
+          "url": "https://www.youtube.com/watch?v=xxf6D9jynFw",
+          "videoId": "xxf6D9jynFw",
+          "title": "EGM: Google's New Way To Use Claude Code Is Insane",
+          "creator": "AI LABS",
+          "durationSeconds": 953.819533,
+          "mediaAspect": "16:9",
+          "dateNote": "The issue identifies October 25, 2026; exact original upload timestamp was not independently verified in this editorial step."
+        },
+        "sourceInspection": {
+          "sourceAidSha256": "086b10a04b15cb2a07053e6758b281d3d1f0bf95cdddd47e7ac9fd492f747879",
+          "method": "Hash-verified retained video, audio and 294 uncorrected timed CPU-ASR cues; repository technical claims checked against pinned written sources.",
+          "caveat": "Source video was captured but not visually inspected; no exact speech quotation or listening verification, formal ReasonPack SourceID, closed pack or executed EGM workflow is claimed.",
+          "publicationBoundary": "Only original analysis, source links, paraphrased cue maps and sanitized findings may enter Git. No raw media, transcripts or private paths are included."
+        },
+        "custody": {
+          "status": "source-bound-media-and-machine-asr-retained",
+          "note": "Existing source operator supplied hash-bound video/audio and machine ASR. Formal ReasonPack SourceID remains unassigned and the global source queue is unknown; source identity here is the stable YouTube video ID."
+        }
+      },
+      "review": {
+        "status": "independent exact manuscript acceptance; rendered review pending",
+        "reviewer": "Distinct parent-side editorial/source/privacy reviewer, relayed by existing coordinator",
+        "reviewedSourceHead": "Exact Markdown SHA-256 2d900cf36ca75b2f7a62a2047d4ea84b5f419f9536d0d060ef56bd0c21eaa7e8",
+        "checkedAt": "2026-10-30T05:37:30.761948Z",
+        "scope": "Independent reviewer read the full copy, source handoff, pinned primary repository files and three selected ASR cue bands. Rendering and publisher source integration were not inspected by that reviewer.",
+        "findings": "No blocking copy/source/privacy finding. The deletion account remains presenter-reported; no execution or visual outcome is claimed. Two relationships are editorial adjacency."
+      },
+      "revisionHistory": [
+        {
+          "at": "2026-10-30T05:37:30.761948Z",
+          "kind": "new-reader-local-draft",
+          "reason": "Exact owner-approved EGM manuscript and two related-reading directions implemented locally; public preview and production remain separately gated."
+        }
+      ],
+      "editorialOrder": 32,
+      "orderReason": "New EGM video deconstruction; preserve incumbent Reader ordering.",
+      "editorialDepth": {
+        "schemaVersion": 1,
+        "receiptPath": "content/editorial-depth/the-review-needs-a-different-failure-mode.json"
       }
     }
   ],

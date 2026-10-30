@@ -1,0 +1,105 @@
+{
+  "schemaVersion": 1,
+  "readerId": "reader:the-review-needs-a-different-failure-mode",
+  "sourceId": "xxf6D9jynFw",
+  "sourceDigest": "effbb0bfa7181d2470f15dd73e5b6a912aa753c2b9f59fe4a130eebfa93cdb60",
+  "sourceAidSha256": "086b10a04b15cb2a07053e6758b281d3d1f0bf95cdddd47e7ac9fd492f747879",
+  "articleSha256": "84f19eac61acda6a5c979a85b00e8e2afde58f09224ef64b8e2ecd9e5a5946d0",
+  "evidenceRevision": "7783fb2016342699c2cbf25e2a71b124c315f526a0344c16064dbbfd555b52d1",
+  "sourceMapEvidenceSha256": "cf9d17dfd43cdb19b21c4cf7ee1a622734474a502d7234248c2cbec59d5a2ceb",
+  "reviewEvidenceSha256": "1ff904f2be304f3952a5a01aa751d113ffbc96724c2ab8fd48b0b2ab4469d9c1",
+  "candidateAuthor": "pinklon",
+  "complexity": {
+    "tier": "extended",
+    "factors": [
+      "Several distinct architecture, specification-authority and outcome-evidence questions in a sixteen-minute walkthrough",
+      "Consequential proposed adaptation of an existing review process"
+    ],
+    "rationale": "The source and proposed interpretation require explicit coverage, counterevidence and a testable comparison. Three separately mapped passages preserve the source roles without claiming video witness."
+  },
+  "sourceMap": [
+    {
+      "atSeconds": 135,
+      "sectionId": "the-conversation-has-become-part-of-the-specification",
+      "claimIds": [
+        "egm--context-split"
+      ],
+      "rationale": "Maps the attributed narration to the corresponding analytical passage while preserving machine-ASR and unverified-outcome limits."
+    },
+    {
+      "atSeconds": 428,
+      "sectionId": "the-contract-can-be-wrong-before-the-code-drifts",
+      "claimIds": [
+        "egm--bootstrap"
+      ],
+      "rationale": "Maps the attributed narration to the corresponding analytical passage while preserving machine-ASR and unverified-outcome limits."
+    },
+    {
+      "atSeconds": 858,
+      "sectionId": "reported-drift-finding",
+      "claimIds": [
+        "egm--drift-account"
+      ],
+      "rationale": "Maps the attributed narration to the corresponding analytical passage while preserving machine-ASR and unverified-outcome limits."
+    }
+  ],
+  "assessment": {
+    "sourceCoverage": {
+      "disposition": "covered",
+      "rationale": "Three source moments map context separation, application mapping and the reported drift finding; primary repository records bound technical claims."
+    },
+    "supportingArgument": {
+      "disposition": "covered",
+      "rationale": "The Reader grants the value of a specification surviving another reader without the author conversation and of review on costly irreversible features."
+    },
+    "evidenceRoles": {
+      "disposition": "covered",
+      "rationale": "Project documentation, machine-ASR presenter accounts, unverified demonstrations and GhostMesh counterhypotheses remain explicitly distinct."
+    },
+    "counterargument": {
+      "disposition": "covered",
+      "rationale": "The strongest case for extra review is that one prevented consequential omission can outweigh false-positive and preparation costs."
+    },
+    "tradeoffs": {
+      "disposition": "covered",
+      "rationale": "Fresh contexts can lose business constraints or share errors; adjudication and document authority determine the value of more reviewer stages."
+    },
+    "falsifiability": {
+      "disposition": "covered",
+      "rationale": "A proposed bounded comparison records valid unique findings, wrong or repeated findings and resolution costs against the actual existing review baseline."
+    },
+    "originalSynthesis": {
+      "disposition": "covered",
+      "rationale": "The original judgment is to adapt context separation and assess different failure modes and accountable dispositions before expanding review machinery."
+    },
+    "performance": {
+      "disposition": "covered",
+      "rationale": "Project workflow fixtures are distinguished from reduced production-defect claims; no comparative outcome or causal benefit was measured."
+    },
+    "economics": {
+      "disposition": "covered",
+      "rationale": "Human reading, rejected findings, model use and correction effort enter the proposed full review cost without invented monetary estimates."
+    },
+    "threatGovernance": {
+      "disposition": "covered",
+      "rationale": "Document authority and missing organizational constraints are considered; no security assurance, pilot authority or uncontrolled rollout is inferred."
+    }
+  },
+  "independentCorroboration": "none",
+  "ownerDecision": null,
+  "decision": "accept",
+  "gaps": [
+    {
+      "type": "source",
+      "severity": "nonblocking",
+      "rationale": "SourceID remains unassigned and global source queue unknown; stable YouTube identity and retained-source hashes qualify limited paraphrase without a closed ReasonPack or listening/visual witness claim."
+    },
+    {
+      "type": "evidence",
+      "severity": "nonblocking",
+      "rationale": "Exact manuscript source review is accepted. Separate independent rendered review, owner native editorial marker and production decision remain future qualification steps."
+    }
+  ],
+  "decisionRationale": "Accept the bounded content for owner review and local integration after independent manuscript review and explicit owner semantic/relationship acceptance. This does not attest rendered UAT, authenticated PR marker or production authorization.",
+  "assessedAt": "2026-10-30T05:37:30.761948Z"
+}

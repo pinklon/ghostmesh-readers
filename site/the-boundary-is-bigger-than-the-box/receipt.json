@@ -286,7 +286,7 @@
     "orderReason": "Place the local deployment and privacy-boundary reading after the agent control readings.",
     "relationshipReview": {
       "reviewedAt": "2026-10-24",
-      "reviewedCatalogSize": 38,
+      "reviewedCatalogSize": 39,
       "decision": "linked",
       "reviewedTargets": [
         "reader:the-agent-a-company-owns",

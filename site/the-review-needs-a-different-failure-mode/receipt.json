@@ -1,0 +1,299 @@
+{
+  "schema": "ghostmesh-reader-receipt-v2",
+  "createdAt": "2026-10-30T05:37:30.761948Z",
+  "source": {
+    "platform": "YouTube",
+    "url": "https://www.youtube.com/watch?v=xxf6D9jynFw",
+    "videoId": "xxf6D9jynFw",
+    "title": "EGM: Google's New Way To Use Claude Code Is Insane",
+    "creator": "AI LABS",
+    "durationSeconds": 953.819533,
+    "mediaAspect": "16:9",
+    "dateNote": "The issue identifies October 25, 2026; exact original upload timestamp was not independently verified in this editorial step."
+  },
+  "sourceInspection": {
+    "sourceAidSha256": "086b10a04b15cb2a07053e6758b281d3d1f0bf95cdddd47e7ac9fd492f747879",
+    "method": "Hash-verified retained video, audio and 294 uncorrected timed CPU-ASR cues; repository technical claims checked against pinned written sources.",
+    "caveat": "Source video was captured but not visually inspected; no exact speech quotation or listening verification, formal ReasonPack SourceID, closed pack or executed EGM workflow is claimed.",
+    "publicationBoundary": "Only original analysis, source links, paraphrased cue maps and sanitized findings may enter Git. No raw media, transcripts or private paths are included."
+  },
+  "custody": {
+    "status": "source-bound-media-and-machine-asr-retained",
+    "note": "Existing source operator supplied hash-bound video/audio and machine ASR. Formal ReasonPack SourceID remains unassigned and the global source queue is unknown; source identity here is the stable YouTube video ID."
+  },
+  "normalization": {
+    "id": "reader:the-review-needs-a-different-failure-mode",
+    "slug": "the-review-needs-a-different-failure-mode",
+    "title": "The Review Needs a Different Failure Mode",
+    "category": "AI & Technology",
+    "tags": [
+      "independent review",
+      "specifications",
+      "agent workflows"
+    ],
+    "entities": [
+      "AI LABS",
+      "Elephant-Goldfish Model",
+      "Google"
+    ],
+    "source": {
+      "platform": "YouTube",
+      "url": "https://www.youtube.com/watch?v=xxf6D9jynFw",
+      "videoId": "xxf6D9jynFw",
+      "title": "EGM: Google's New Way To Use Claude Code Is Insane",
+      "creator": "AI LABS",
+      "durationSeconds": 953.819533,
+      "mediaAspect": "16:9",
+      "dateNote": "The issue identifies October 25, 2026; exact original upload timestamp was not independently verified in this editorial step."
+    },
+    "published": "2026-10-29",
+    "updated": "2026-10-30T05:37:30.761948Z",
+    "overview": "An EGM walkthrough tests whether fresh-context review adds consequential findings or repeats the same missing assumptions.",
+    "whyItMatters": "Fresh context can expose an incomplete specification while retaining correlated errors and omitted business constraints.",
+    "ghostMeshTakeaway": "Adapt author/reviewer separation and measure valid additional findings together with adjudication cost before expanding the process.",
+    "verdict": "Worth studying",
+    "architectureImpact": "experiment recommended",
+    "falsification": "Reconsider the narrow adaptation if a bounded comparison exposes consequential omissions missed by the existing review at a defensible full cost; narrow use if findings mostly repeat, fail adjudication or require avoidable resolution work.",
+    "evidenceState": "partially corroborated",
+    "lastEvidenceChecked": "2026-10-30T05:37:30.761948Z",
+    "freshness": "Pinned EGM repository revision 5efe34126a0059eff51ca7e0af7e3249d70952bf declares v0.1.0. Source-bound video/audio and 294 machine-ASR cues are retained; no exact speech, visual demonstration, EGM workflow or outcome comparison was independently executed.",
+    "variant": "dossier",
+    "accent": "teal",
+    "claims": [
+      {
+        "id": "egm--context-split",
+        "proposition": "EGM prescribes an author with project context and fresh reviewers receiving the document and referenced sources.",
+        "kind": "project-architecture",
+        "asOf": "2026-10-30",
+        "status": "partially corroborated",
+        "assessment": "Pinned source instructions support the intended context separation and human trade-off role.",
+        "limits": "No isolation trace or enforcement was executed in this Reader. Fresh context is not measured error independence.",
+        "sourceLocation": "02:15 provisional ASR topic; pinned README/review instructions",
+        "references": [
+          "egm-readme",
+          "egm-review"
+        ],
+        "counterevidence": [],
+        "temporalScope": "Pinned EGM source inspected October 30, 2026; video uses uncorrected machine ASR with no visual or listening-verified outcome."
+      },
+      {
+        "id": "egm--bootstrap",
+        "proposition": "EGM bootstrap prescribes contracts for interfaces, invariants and side effects.",
+        "kind": "project-workflow",
+        "asOf": "2026-10-30",
+        "status": "partially corroborated",
+        "assessment": "Pinned bootstrap instructions describe this documentation scope.",
+        "limits": "No generated contract or application mapping was executed or visually verified here.",
+        "sourceLocation": "07:08 provisional ASR topic; bootstrap overview",
+        "references": [
+          "egm-bootstrap"
+        ],
+        "counterevidence": [],
+        "temporalScope": "Pinned EGM source inspected October 30, 2026; video uses uncorrected machine ASR with no visual or listening-verified outcome."
+      },
+      {
+        "id": "egm--drift-account",
+        "proposition": "The presenter reports a drift finding involving deletion of previously sold products.",
+        "kind": "creator-reported-outcome",
+        "asOf": "2026-10-30",
+        "status": "unverified",
+        "assessment": "Timed machine ASR supports a provisional attributed account.",
+        "limits": "No demonstration frames, application behavior or reproduced bug was inspected; the outcome remains unverified.",
+        "sourceLocation": "14:18–14:29 machine-ASR navigation",
+        "references": [],
+        "counterevidence": [],
+        "temporalScope": "Pinned EGM source inspected October 30, 2026; video uses uncorrected machine ASR with no visual or listening-verified outcome."
+      },
+      {
+        "id": "egm--fixture-limits",
+        "proposition": "EGM records structural and native workflow fixture coverage alongside incomplete cloud verification.",
+        "kind": "project-test-record",
+        "asOf": "2026-10-30",
+        "status": "partially corroborated",
+        "assessment": "Pinned test and harness documents specify their tested surfaces and limitations.",
+        "limits": "Reported fixtures do not establish reduced production defects, incremental reviewer value or complete cloud support.",
+        "sourceLocation": "TESTING harness record and docs/harnesses support status",
+        "references": [
+          "egm-testing",
+          "egm-harnesses"
+        ],
+        "counterevidence": [],
+        "temporalScope": "Pinned EGM source inspected October 30, 2026; video uses uncorrected machine ASR with no visual or listening-verified outcome."
+      },
+      {
+        "id": "egm--review-value",
+        "proposition": "Review value should include valid additional findings and their full resolution burden.",
+        "kind": "editorial-inference",
+        "asOf": "2026-10-30",
+        "status": "unverified",
+        "assessment": "The Reader proposes an evaluation against the review already in use.",
+        "limits": "No comparative experiment, model call, pilot, efficiency outcome or rollout was performed.",
+        "sourceLocation": "Compare against the review we already have",
+        "references": [
+          "egm-testing"
+        ],
+        "counterevidence": [],
+        "temporalScope": "Pinned EGM source inspected October 30, 2026; video uses uncorrected machine ASR with no visual or listening-verified outcome."
+      }
+    ],
+    "references": [
+      {
+        "id": "egm-readme",
+        "title": "README.md",
+        "author": "EGM contributors",
+        "publisher": "google/elephant-goldfish-model",
+        "url": "https://github.com/google/elephant-goldfish-model/blob/5efe34126a0059eff51ca7e0af7e3249d70952bf/README.md",
+        "publicationDate": "unknown",
+        "eventDate": null,
+        "location": "Author/reviewer roles, human decisions, small-fix exception and product-support disclaimer",
+        "sourceType": "project documentation",
+        "independence": "First-party project source describing its own architecture and test records; not independent outcome replication.",
+        "evidenceFamily": "egm-repository",
+        "checkedAt": "2026-10-30T05:37:30.761948Z",
+        "dateNote": "Pinned written revision; original document publication time not established. Not asserted to be the video demonstration revision.",
+        "datePrecision": null
+      },
+      {
+        "id": "egm-review",
+        "title": "skills/egm-review/SKILL.md",
+        "author": "EGM contributors",
+        "publisher": "google/elephant-goldfish-model",
+        "url": "https://github.com/google/elephant-goldfish-model/blob/5efe34126a0059eff51ca7e0af7e3249d70952bf/skills/egm-review/SKILL.md",
+        "publicationDate": "unknown",
+        "eventDate": null,
+        "location": "Fresh contexts, comprehension and five review stages",
+        "sourceType": "project documentation",
+        "independence": "First-party project source describing its own architecture and test records; not independent outcome replication.",
+        "evidenceFamily": "egm-repository",
+        "checkedAt": "2026-10-30T05:37:30.761948Z",
+        "dateNote": "Pinned written revision; original document publication time not established. Not asserted to be the video demonstration revision.",
+        "datePrecision": null
+      },
+      {
+        "id": "egm-bootstrap",
+        "title": "skills/egm-bootstrap/SKILL.md",
+        "author": "EGM contributors",
+        "publisher": "google/elephant-goldfish-model",
+        "url": "https://github.com/google/elephant-goldfish-model/blob/5efe34126a0059eff51ca7e0af7e3249d70952bf/skills/egm-bootstrap/SKILL.md",
+        "publicationDate": "unknown",
+        "eventDate": null,
+        "location": "Interfaces, invariants and side effects in directory contracts",
+        "sourceType": "project documentation",
+        "independence": "First-party project source describing its own architecture and test records; not independent outcome replication.",
+        "evidenceFamily": "egm-repository",
+        "checkedAt": "2026-10-30T05:37:30.761948Z",
+        "dateNote": "Pinned written revision; original document publication time not established. Not asserted to be the video demonstration revision.",
+        "datePrecision": null
+      },
+      {
+        "id": "egm-drift",
+        "title": "skills/egm-drift-report/SKILL.md",
+        "author": "EGM contributors",
+        "publisher": "google/elephant-goldfish-model",
+        "url": "https://github.com/google/elephant-goldfish-model/blob/5efe34126a0059eff51ca7e0af7e3249d70952bf/skills/egm-drift-report/SKILL.md",
+        "publicationDate": "unknown",
+        "eventDate": null,
+        "location": "Document/source discrepancy comparison",
+        "sourceType": "project documentation",
+        "independence": "First-party project source describing its own architecture and test records; not independent outcome replication.",
+        "evidenceFamily": "egm-repository",
+        "checkedAt": "2026-10-30T05:37:30.761948Z",
+        "dateNote": "Pinned written revision; original document publication time not established. Not asserted to be the video demonstration revision.",
+        "datePrecision": null
+      },
+      {
+        "id": "egm-testing",
+        "title": "TESTING.md",
+        "author": "EGM contributors",
+        "publisher": "google/elephant-goldfish-model",
+        "url": "https://github.com/google/elephant-goldfish-model/blob/5efe34126a0059eff51ca7e0af7e3249d70952bf/TESTING.md",
+        "publicationDate": "unknown",
+        "eventDate": null,
+        "location": "Native fixtures, measured workflow surfaces and cloud verification limits",
+        "sourceType": "project documentation",
+        "independence": "First-party project source describing its own architecture and test records; not independent outcome replication.",
+        "evidenceFamily": "egm-repository",
+        "checkedAt": "2026-10-30T05:37:30.761948Z",
+        "dateNote": "Pinned written revision; original document publication time not established. Not asserted to be the video demonstration revision.",
+        "datePrecision": null
+      },
+      {
+        "id": "egm-harnesses",
+        "title": "docs/harnesses.md",
+        "author": "EGM contributors",
+        "publisher": "google/elephant-goldfish-model",
+        "url": "https://github.com/google/elephant-goldfish-model/blob/5efe34126a0059eff51ca7e0af7e3249d70952bf/docs/harnesses.md",
+        "publicationDate": "unknown",
+        "eventDate": null,
+        "location": "Harness-specific delegation and support boundaries",
+        "sourceType": "project documentation",
+        "independence": "First-party project source describing its own architecture and test records; not independent outcome replication.",
+        "evidenceFamily": "egm-repository",
+        "checkedAt": "2026-10-30T05:37:30.761948Z",
+        "dateNote": "Pinned written revision; original document publication time not established. Not asserted to be the video demonstration revision.",
+        "datePrecision": null
+      }
+    ],
+    "relationships": [
+      {
+        "target": "reader:the-grader-is-part-of-the-harness",
+        "type": "related topic",
+        "reason": "Review findings need an adjudication standard that measures consequential value, just as harness optimization needs a valid grader. These are editorial comparisons, not corroboration.",
+        "provenance": [
+          "/the-review-needs-a-different-failure-mode/#compare-against-the-review-we-already-have",
+          "/the-grader-is-part-of-the-harness/#grading"
+        ],
+        "basis": "curated-editorial-comparison",
+        "direction": "outgoing"
+      },
+      {
+        "target": "reader:the-operator-is-part-of-the-denominator",
+        "type": "related topic",
+        "reason": "Human adjudication and correction work belongs in the cost of accepted review findings, paralleling the full-service denominator of accepted task output. Neither source validates the other.",
+        "provenance": [
+          "/the-review-needs-a-different-failure-mode/#the-strongest-objection-is-that-the-extra-review-may-be-the-point",
+          "/the-operator-is-part-of-the-denominator/#the-service-layer-can-create-or-destroy-value"
+        ],
+        "basis": "curated-editorial-comparison",
+        "direction": "outgoing"
+      }
+    ],
+    "relationshipDisposition": "Two owner-approved editorial connections address evaluation quality and full review cost. They are navigation, not corroboration or reciprocal relationships.",
+    "relationshipReview": {
+      "reviewedAt": "2026-10-30",
+      "reviewedCatalogSize": 39,
+      "decision": "linked",
+      "reviewedTargets": [
+        "reader:the-grader-is-part-of-the-harness",
+        "reader:the-operator-is-part-of-the-denominator"
+      ],
+      "rationale": "Reviewed the current 38 Reader titles and takeaways, then inspected the two existing destination articles. Tony explicitly approved these exact grader-quality and full-cost connections for EGM implementation; no reverse or additional edges are inferred."
+    },
+    "review": {
+      "status": "independent exact manuscript acceptance; rendered review pending",
+      "reviewer": "Distinct parent-side editorial/source/privacy reviewer, relayed by existing coordinator",
+      "reviewedSourceHead": "Exact Markdown SHA-256 2d900cf36ca75b2f7a62a2047d4ea84b5f419f9536d0d060ef56bd0c21eaa7e8",
+      "checkedAt": "2026-10-30T05:37:30.761948Z",
+      "scope": "Independent reviewer read the full copy, source handoff, pinned primary repository files and three selected ASR cue bands. Rendering and publisher source integration were not inspected by that reviewer.",
+      "findings": "No blocking copy/source/privacy finding. The deletion account remains presenter-reported; no execution or visual outcome is claimed. Two relationships are editorial adjacency."
+    },
+    "revisionHistory": [
+      {
+        "at": "2026-10-30T05:37:30.761948Z",
+        "kind": "new-reader-local-draft",
+        "reason": "Exact owner-approved EGM manuscript and two related-reading directions implemented locally; public preview and production remain separately gated."
+      }
+    ],
+    "editorialOrder": 32,
+    "orderReason": "New EGM video deconstruction; preserve incumbent Reader ordering.",
+    "editorialDepth": {
+      "schemaVersion": 1,
+      "receiptPath": "content/editorial-depth/the-review-needs-a-different-failure-mode.json"
+    }
+  },
+  "editorial": {
+    "overview": "An EGM walkthrough tests whether fresh-context review adds consequential findings or repeats the same missing assumptions.",
+    "whyItMatters": "Fresh context can expose an incomplete specification while retaining correlated errors and omitted business constraints.",
+    "ghostMeshTakeaway": "Adapt author/reviewer separation and measure valid additional findings together with adjudication cost before expanding the process."
+  }
+}
