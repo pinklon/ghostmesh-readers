@@ -2,6 +2,15 @@
   "schema": "ghostmesh-public-release-events-v1",
   "events": [
     {
+      "id": "scout:validate-the-association-not-just-the-extracted-value:first-public-release",
+      "kind": "new-scout-research",
+      "subjectId": "validate-the-association-not-just-the-extracted-value",
+      "url": "https://youtube.shareplane.malott.ai/scout/essays/validate-the-association-not-just-the-extracted-value/",
+      "title": "Validate the Association, Not Just the Extracted Value",
+      "summary": "A parser can preserve a number and its bounding box while assigning it to the wrong column. The useful validation boundary is the relationship between the value, its source region, and its header.",
+      "publicDate": "2026-10-30"
+    },
+    {
       "id": "scout:qualifying-a-connected-apps-integration-before-building-it:first-public-release",
       "kind": "new-scout-research",
       "subjectId": "qualifying-a-connected-apps-integration-before-building-it",

@@ -3,6 +3,25 @@
   "note": "Only approved public works. Six historical essays have an evidenced October 23 public-by bound from the released nine-work Library, but their exact first-publication day remains unverified; they do not gain retroactive RSS events.",
   "records": [
     {
+      "id": "essay:validate-the-association-not-just-the-extracted-value",
+      "slug": "validate-the-association-not-just-the-extracted-value",
+      "type": "essay",
+      "status": "published",
+      "title": "Validate the Association, Not Just the Extracted Value",
+      "url": "/scout/essays/validate-the-association-not-just-the-extracted-value/",
+      "sourcePath": "site/scout/essays/validate-the-association-not-just-the-extracted-value/index.html",
+      "provenance": "Docling core snapshot 2dc4c9f511269eb39be5aad84b838f7bb179142e (commit October 29, 2026), Docling documentation snapshot 7b12671e1d324710e70784c18844d1d97522414f and PyMuPDF snapshot d2423b1367bcc9721ea7e994e710e5bc7ea91b09 (commits October 30). Sources checked October 30, 2026; snapshot dates are not stable-release or deployment dates.",
+      "evidenceLimits": "Pinned source-code and documentation analysis with a proposed synthetic fixture. No parser, conversion, model-load roundtrip, benchmark, coordinate mutation or negative-control experiment was executed. Association-error frequency and source truth are not established.",
+      "summary": "A parser can preserve a number and its bounding box while assigning it to the wrong column. The useful validation boundary is the relationship between the value, its source region, and its header.",
+      "topics": [
+        "document-reading",
+        "citation-evidence"
+      ],
+      "reviewedOn": "2026-10-30",
+      "releaseEventId": "scout:validate-the-association-not-just-the-extracted-value:first-public-release",
+      "relatedIds": []
+    },
+    {
       "id": "method:qualifying-a-connected-apps-integration-before-building-it",
       "slug": "qualifying-a-connected-apps-integration-before-building-it",
       "type": "method",
