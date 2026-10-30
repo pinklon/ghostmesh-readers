@@ -5,17 +5,18 @@
   "sourceAidSha256": "f883ef0a7b2ee9d04d60a943ed06519b8150184170bbf7db72f48c84632d9160",
   "articleSha256": "a646aaf2ada2ea211d90afe4dfb592ed095572090622d6489bc889048fcc30d9",
   "evidenceRevision": "139110b424f55ce2184308b824e9636c657cf278e6b49a9a07ecc9c4b4e8b2a0",
-  "reviewedAt": "2026-10-30T00:08:51Z",
+  "reviewedAt": "2026-10-30T01:17:07Z",
   "provenance": {
     "kind": "codex-task-agent",
-    "reference": "Parent-side distinct internal reviewer acceptance relayed to this publisher task for the exact 59-line Markdown source SHA-256 0eaa63f00aef903a4199580b27cb56c3e8d7977aab955db0b5b299e80cc962e1. This receipt is a publisher transcription of that bounded finding, not a signed independent review of the rendered Reader.",
-    "limits": "The reviewer accepted exact public prose, official-source attribution and privacy as relayed by the parent. This publisher has not received a signed exact rendered-page review, and the parent-side reviewer did not assess generated catalog, map or browser output."
+    "reference": "Distinct internal reviewer /root/review_kimi_reader_copy accepted the rendered PR108 preview at exact head 179f4e0ef71fcb5a9ea79a50daa8a3ec9bd718c9, bound by Netlify bot comment 6511678894 to deploy 6ae3eef2d28f9876b38b2156. This publisher transcribes the reviewer finding; earlier exact-copy acceptance binds Markdown SHA-256 0eaa63f00aef903a4199580b27cb56c3e8d7977aab955db0b5b299e80cc962e1.",
+    "limits": "The distinct reviewer inspected desktop preview DOM and screenshot, including the failed-thumbnail state; it did not independently execute mobile viewport checks, recompute the authored HTML SHA-256, or attest a production deploy. Publisher separately observed 390px mobile layout with no horizontal overflow. The prior prose, related Reader and compact player review carries unchanged; no source video frames or exact audio speech were verified."
   },
-  "summary": "The approved Markdown has no reported blocking copy or privacy findings. The article now has a thumbnail-failure fallback; a distinct independent review of the changed rendered HTML and projections remains pending.",
+  "summary": "No blocking copy, privacy or changed-render finding was reported. The distinct reviewer accepted the exact PR108 desktop preview, including a readable thumbnail-failure fallback, opt-in player and source limits. Production and owner acceptance remain separate gates.",
   "findings": [
     "The privately retained source aid consists of 400 timed, uncorrected CPU-ASR cues from audio only. The article attributes product facts to official Kimi pages, avoids exact speech quotation and does not claim video-frame inspection or model execution.",
     "Three related Reader destinations were checked against their existing canonical article text and section anchors. Tony approved those exact cost, evaluation and stop-authority connections as editorial navigation, not independent corroboration.",
-    "The Markdown article SHA is 0eaa63f00aef903a4199580b27cb56c3e8d7977aab955db0b5b299e80cc962e1. This record binds the authored HTML separately, but a different reviewer has not yet examined that derived artifact and its projections."
+    "The distinct reviewer read Netlify bot comment 6511678894 binding head 179f4e0ef71fcb5a9ea79a50daa8a3ec9bd718c9 to deploy 6ae3eef2d28f9876b38b2156, then matched the live preview DOM. In a desktop screenshot with failed YouTube thumbnail, the article displayed a readable fallback, Play button and direct source link. No iframe loaded before click; the opt-in iframe uses youtube-nocookie.com/embed/RHMsAm4ODDU?playsinline=1 with no autoplay. Document width stayed within the 1180px viewport.",
+    "The publisher separately inspected the refreshed preview at 390px: the thumbnail loaded normally, Play remained visible and document width was 390px without horizontal overflow. This is publisher mobile evidence, not an independent mobile review. The local normal, forced-error and prefailed-image regression test passed. The authored HTML SHA-256 a646aaf2ada2ea211d90afe4dfb592ed095572090622d6489bc889048fcc30d9 is the publisher binding, not an independently recomputed reviewer hash."
   ],
-  "conclusion": "hold"
+  "conclusion": "accept-for-owner-review"
 }

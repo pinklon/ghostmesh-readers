@@ -7,7 +7,7 @@
   "articleSha256": "a646aaf2ada2ea211d90afe4dfb592ed095572090622d6489bc889048fcc30d9",
   "evidenceRevision": "139110b424f55ce2184308b824e9636c657cf278e6b49a9a07ecc9c4b4e8b2a0",
   "sourceMapEvidenceSha256": "4835f787c5ed095fa07fbb5be28f56e83fe764259643e90fea32f524eadb904a",
-  "reviewEvidenceSha256": "aca420fffb5b8d2ac6c29b557d1813bbd0a7c9b2674b0f9c575632890046e908",
+  "reviewEvidenceSha256": "41433cd04e9c6b37840868dbdda76138a7d11cf7073ee9bc627c15396ce7086d",
   "candidateAuthor": "pinklon",
   "complexity": {
     "tier": "extended",
@@ -91,8 +91,8 @@
   "gaps": [
     {
       "type": "evidence",
-      "severity": "blocking",
-      "rationale": "A distinct independent reviewer accepted the prior exact Markdown copy only. The added opt-in YouTube player, compact previews and regenerated projections need exact rendered-artifact review; the existing review evidence remains bound to the pre-player HTML."
+      "severity": "nonblocking",
+      "rationale": "A distinct reviewer accepted the exact PR108 desktop preview at 179f4e0ef71fcb5a9ea79a50daa8a3ec9bd718c9, including the failed-thumbnail fallback and opt-in viewer. Publisher mobile inspection found no overflow at 390px; independent mobile execution was not claimed."
     },
     {
       "type": "source",
@@ -100,6 +100,6 @@
       "rationale": "The audio-only partial capture has no visual coverage, listening-verified exact speech or closed ReasonPack SourceID. The Reader discloses these limits and omits visual outcomes."
     }
   ],
-  "decisionRationale": "Tony approved the exact prose, three relations and an opt-in YouTube viewer for the preview. Source aspect remains unknown and the source limits remain visible. The release stays on hold for distinct exact rendered review, hosted checks and direct authenticated owner acceptance of the PR-bound bytes.",
-  "assessedAt": "2026-10-30T00:28:57Z"
+  "decisionRationale": "Tony approved the exact prose, three relations and an opt-in YouTube viewer for the preview. Distinct exact desktop render review is accepted and publisher mobile layout passed. Source aspect remains unknown and source limits remain visible. Production stays on hold for the direct authenticated owner marker, exact-head hosted checks and separate release decision.",
+  "assessedAt": "2026-10-30T01:17:07Z"
 }
