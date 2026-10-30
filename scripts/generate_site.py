@@ -12,7 +12,7 @@ from social_cards import approval as social_approval, specs as social_specs, inj
 ROOT=Path(__file__).resolve().parents[1]; SITE=ROOT/'site'
 CATEGORIES=['AI & Technology','Society & Politics','Science','Business','Ethics & Culture','Other']
 READER_COUNT=0
-MEDIA_SOURCE_FIELDS={'url','platform','mediaAspect','videoId','shortcode','channel','creator','creatorChapters','captionTrack','captionType','durationSeconds','title','uploadDate','publicationDate','dateNote'}
+MEDIA_SOURCE_FIELDS={'url','platform','mediaAspect','videoId','shortcode','channel','creator','creatorChapters','captionTrack','captionType','durationSeconds','title','uploadDate','publicationDate','dateNote','unknownAspectPlayerApproved'}
 def esc(x):return escape(str(x),quote=True)
 def dump(x):return json.dumps(x,indent=2,ensure_ascii=False)+'\n'
 def validate_text(value):
@@ -136,7 +136,7 @@ def home_card(r,number,featured=False):
   return f'<article class="gm-card gm-home-card" data-category="{esc(r["category"])}" data-tags="{esc(" ".join(r["tags"]))}" data-date="{r["published"]}" data-rank="{r["rank"]}">'+visual+copy+'</article>'
  platform=source.get('platform','YouTube');aspect=source['mediaAspect']
  if aspect not in {'16:9','9:16','1:1','unknown'}:raise ValueError('Unsupported home source aspect')
- if aspect=='unknown':
+ if aspect=='unknown' and not source.get('unknownAspectPlayerApproved'):
   source_id='';preview='<p class="gm-home-source-fallback">Source shape unverified.<br>Open the original source or Reader.</p>'
  elif platform=='YouTube':
   source_id=source['videoId']
@@ -148,11 +148,12 @@ def home_card(r,number,featured=False):
   # No durable, approved public Reel thumbnail exists in the source record.
   preview='<p class="gm-home-source-fallback">Original Instagram Reel<br>Source image unavailable</p>'
  else:raise ValueError('Unsupported home source platform')
+ playable=aspect!='unknown' or source.get('unknownAspectPlayerApproved')
  player=(f'<div class="gm-home-player" data-home-player data-source-platform="{esc(platform)}" data-source-id="{esc(source_id)}" data-gm-aspect="{esc(aspect)}">'
-         +preview+'<button type="button" data-home-play hidden>Play original here</button></div>' if aspect!='unknown' else '<div class="gm-home-unknown">'+preview+'</div>')
+         +preview+'<button type="button" data-home-play hidden>Play original here</button></div>' if playable else '<div class="gm-home-unknown">'+preview+'</div>')
  visual=(f'<div class="gm-home-visual"><span class="gm-home-visual-label">GM / READER {number:02d} · {esc(platform)}</span>'
          +player+
-         '<span class="gm-home-visual-label">'+('SOURCE / DIRECT LINK ONLY' if aspect=='unknown' else 'ORIGINAL SOURCE / OPT-IN PLAYER')+'</span></div>')
+         '<span class="gm-home-visual-label">'+('SOURCE / DIRECT LINK ONLY' if not playable else 'SOURCE SHAPE UNVERIFIED / OPT-IN PLAYER' if aspect=='unknown' else 'ORIGINAL SOURCE / OPT-IN PLAYER')+'</span></div>')
  copy=(f'<div class="gm-home-copy"><p class="gm-kicker">{esc(r["category"])} / {r["published"]}</p>'
        f'<{tag}><a href="/{r["slug"]}/">{esc(r["title"])}</a></{tag}>'
        f'<p>{esc(r["overview"])}</p>'
@@ -260,13 +261,19 @@ def validate_media_source(source):
   raise ValueError('Media source has missing required or paper-only fields')
  if source['platform'] not in {'YouTube','Instagram'} or source['mediaAspect'] not in {'16:9','9:16','1:1','unknown'}:
   raise ValueError('Invalid media platform or aspect')
+ if 'unknownAspectPlayerApproved' in source and (source['unknownAspectPlayerApproved'] is not True or source['platform']!='YouTube' or source['mediaAspect']!='unknown' or not re.fullmatch(r'[A-Za-z0-9_-]{11}',source.get('videoId','')) or source['url']!=f'https://www.youtube.com/watch?v={source.get("videoId")}'):
+  raise ValueError('Unknown-aspect player requires explicit YouTube approval and safe video ID')
 
-def player_contract(raw,aspect,source_url,source_title=None):
+def player_contract(raw,aspect,source_url,source_title=None,unknown_aspect_player_approved=False):
  if aspect not in {'16:9','9:16','1:1','unknown'}:raise ValueError('Unknown media aspect declaration')
  markers=[name for name in ('video-shell','player','player-ratio') if f'class="{name}"' in raw]
- if aspect=='unknown':
+ if aspect=='unknown' and not unknown_aspect_player_approved:
   validate_link_only_source(raw,source_url)
   return raw
+ if unknown_aspect_player_approved and (aspect!='unknown' or not re.fullmatch(r'https://www\.youtube\.com/watch\?v=[A-Za-z0-9_-]{11}',source_url)):
+  raise ValueError('Unknown-aspect player approval requires an exact YouTube watch URL')
+ if unknown_aspect_player_approved and f'href="{esc(source_url)}"' not in raw:
+  raise ValueError('Unknown-aspect player requires its direct source link')
  if len(markers)!=1:raise ValueError(f'Expected exactly one source player, found {markers}')
  marker=markers[0]
  raw=raw.replace(f'class="{marker}"',f'class="{marker} gm-media-frame" data-gm-aspect="{aspect}"',1)
@@ -310,7 +317,7 @@ def projections():
   elif r['source'].get('kind')=='repository':validate_repository_source(raw,r['source'])
   else:
    validate_media_source(r['source'])
-   raw=player_contract(raw,r['source'].get('mediaAspect'),r['source']['url'],r['source'].get('title'))
+   raw=player_contract(raw,r['source'].get('mediaAspect'),r['source']['url'],r['source'].get('title'),r['source'].get('unknownAspectPlayerApproved',False))
    if 'class="chapters" aria-label="Publisher chapters"' in raw and 'class="chapter-heading"' not in raw:
     count=raw.count('class="chapter"')
     if count:

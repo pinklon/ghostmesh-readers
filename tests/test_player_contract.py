@@ -1,6 +1,6 @@
 import unittest
 
-from scripts.generate_site import player_contract, validate_link_only_source
+from scripts.generate_site import player_contract, validate_link_only_source, validate_media_source
 
 SOURCE_URL = 'https://example.org/source'
 
@@ -39,6 +39,21 @@ class PlayerContractTest(unittest.TestCase):
                         '<a href="/source">Source</a>', '<p>Source</p>'):
             with self.subTest(snippet=snippet), self.assertRaisesRegex(ValueError, 'direct source link'):
                 validate_link_only_source(snippet, SOURCE_URL)
+
+    def test_explicit_unknown_youtube_player_keeps_source_shape_unknown(self):
+        url = 'https://www.youtube.com/watch?v=RHMsAm4ODDU'
+        source = f'<div class="player"></div><a href="{url}">Original source</a>'
+        rendered = player_contract(source, 'unknown', url, unknown_aspect_player_approved=True)
+        self.assertIn('class="player gm-media-frame" data-gm-aspect="unknown"', rendered)
+        with self.assertRaisesRegex(ValueError, 'direct source link'):
+            player_contract('<div class="player"></div>', 'unknown', url, unknown_aspect_player_approved=True)
+        with self.assertRaisesRegex(ValueError, 'exact YouTube watch URL'):
+            player_contract(source, 'unknown', SOURCE_URL, unknown_aspect_player_approved=True)
+        metadata = {'platform': 'YouTube', 'mediaAspect': 'unknown', 'videoId': 'RHMsAm4ODDU',
+                    'url': url, 'unknownAspectPlayerApproved': True}
+        validate_media_source(metadata)
+        with self.assertRaisesRegex(ValueError, 'explicit YouTube approval'):
+            validate_media_source({**metadata, 'url': 'https://www.youtube.com/watch?v=AAAAAAAAAAA'})
 
 
 if __name__ == '__main__':

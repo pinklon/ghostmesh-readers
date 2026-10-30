@@ -89,7 +89,7 @@ class VisualContractTest(unittest.TestCase):
         written_count = sum(reader['source'].get('kind') in {'paper', 'article', 'repository'} for reader in selected)
         playable = [reader for reader in selected
                     if reader['source'].get('kind') not in {'paper', 'article', 'repository'}
-                    and reader['source']['mediaAspect'] != 'unknown']
+                    and (reader['source']['mediaAspect'] != 'unknown' or reader['source'].get('unknownAspectPlayerApproved'))]
         self.assertEqual(len(panels), len(playable))
         self.assertCountEqual([a.get('data-source-platform') for a in panels],
                               [reader['source']['platform'] for reader in playable])
@@ -156,12 +156,12 @@ class VisualContractTest(unittest.TestCase):
         parsed.feed(archive)
         frames = [a for _, a in parsed.tags if 'gm-library-frame' in a.get('class', '').split()]
         media = [r for r in catalog['readers'] if r['source'].get('kind') not in {'paper', 'article', 'repository'}]
-        known_aspect = [reader for reader in media if reader['source']['mediaAspect'] != 'unknown']
-        self.assertEqual(len(frames), len(known_aspect))
+        playable = [reader for reader in media if reader['source']['mediaAspect'] != 'unknown' or reader['source'].get('unknownAspectPlayerApproved')]
+        self.assertEqual(len(frames), len(playable))
         self.assertCountEqual([a['data-gm-aspect'] for a in frames],
-                              [r['source']['mediaAspect'] for r in known_aspect])
+                              [r['source']['mediaAspect'] for r in playable])
         self.assertEqual(archive.count('Source shape unverified. Open the Reader for the original link.'),
-                         len(media) - len(known_aspect))
+                         len(media) - len(playable))
         self.assertIn('class="gm-paper-cover"', archive)
         self.assertIn('LLM<br>personas', archive)
         self.assertIn('TabPFN<br>distribution', archive)
@@ -190,12 +190,31 @@ class VisualContractTest(unittest.TestCase):
         reader = copy.deepcopy(json.loads((ROOT / 'content/catalog.json').read_text())['readers'][0])
         reader['rank'] = 1
         reader['source']['mediaAspect'] = 'unknown'
+        reader['source'].pop('unknownAspectPlayerApproved', None)
         for rendered in (card(reader), home_card(reader, 1)):
             self.assertNotIn('data-home-player', rendered)
             self.assertNotIn('data-home-play', rendered)
             self.assertNotIn('<iframe', rendered)
             self.assertIn('Source shape unverified', rendered)
             self.assertIn(html.escape(reader['source']['url'], quote=True), rendered)
+
+    def test_kimi_unknown_shape_uses_approved_opt_in_viewers_without_claiming_aspect(self):
+        catalog = json.loads((ROOT / 'content/catalog.json').read_text())
+        reader = next(r for r in catalog['readers'] if r['slug'] == 'the-model-is-not-the-demonstration')
+        self.assertEqual(reader['source']['mediaAspect'], 'unknown')
+        self.assertTrue(reader['source']['unknownAspectPlayerApproved'])
+        home = (ROOT / 'site/index.html').read_text()
+        archive = (ROOT / 'site/readers/index.html').read_text()
+        article = (ROOT / 'site/the-model-is-not-the-demonstration/index.html').read_text()
+        for page in (home, archive, article):
+            self.assertIn('data-gm-aspect="unknown"', page)
+            self.assertIn('RHMsAm4ODDU', page)
+        self.assertIn('SOURCE SHAPE UNVERIFIED / OPT-IN PLAYER', home)
+        self.assertIn('Source shape unverified / opt-in player', archive)
+        self.assertIn('id="play" hidden', article)
+        self.assertIn('youtube-nocookie.com/embed/RHMsAm4ODDU', article)
+        self.assertIn('Source aspect and upload date are unconfirmed.', article)
+        self.assertNotIn('<iframe', article)
 
 
 if __name__ == '__main__':

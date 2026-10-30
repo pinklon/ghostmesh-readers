@@ -2,9 +2,9 @@
   "schemaVersion": 1,
   "readerId": "reader:the-model-is-not-the-demonstration",
   "sourceId": "RHMsAm4ODDU",
-  "sourceDigest": "565d3aa40ca634c72f7caa8e8c83fa7f4fe4c78c79570602dd98d3bb2c9b6dc7",
+  "sourceDigest": "1b6a09efc6880dc79938617fe118c26142e7ab91790b4481bdfe84485870c6ed",
   "sourceAidSha256": "f883ef0a7b2ee9d04d60a943ed06519b8150184170bbf7db72f48c84632d9160",
-  "articleSha256": "18309bdc300555c349045bfd8be124a59ee81e96f7f9261d7de2f829688899ad",
+  "articleSha256": "3e42091fe781b10edd7b053b69bc46b4c8bac51badebe7e2c6e8896971d71b71",
   "evidenceRevision": "139110b424f55ce2184308b824e9636c657cf278e6b49a9a07ecc9c4b4e8b2a0",
   "sourceMapEvidenceSha256": "4835f787c5ed095fa07fbb5be28f56e83fe764259643e90fea32f524eadb904a",
   "reviewEvidenceSha256": "e4cbbeb7aa66f5279556cd4df9c962c3b65aafc3fd0ba1a2d3a955f942d575bf",
@@ -92,7 +92,7 @@
     {
       "type": "evidence",
       "severity": "blocking",
-      "rationale": "A distinct independent reviewer has accepted the exact Markdown copy only; rendered HTML, catalog evidence and generated projections have not yet received exact artifact review."
+      "rationale": "A distinct independent reviewer accepted the prior exact Markdown copy only. The added opt-in YouTube player, compact previews and regenerated projections need exact rendered-artifact review; the existing review evidence remains bound to the pre-player HTML."
     },
     {
       "type": "source",
@@ -100,6 +100,6 @@
       "rationale": "The audio-only partial capture has no visual coverage, listening-verified exact speech or closed ReasonPack SourceID. The Reader discloses these limits and omits visual outcomes."
     }
   ],
-  "decisionRationale": "Tony approved the exact prose and three relations, and source limits are preserved. The release remains on hold for a distinct exact rendered review, hosted preview and direct authenticated owner acceptance of the PR-bound bytes.",
-  "assessedAt": "2026-10-30T00:08:51Z"
+  "decisionRationale": "Tony approved the exact prose, three relations and an opt-in YouTube viewer for the preview. Source aspect remains unknown and the source limits remain visible. The release stays on hold for distinct exact rendered review, hosted checks and direct authenticated owner acceptance of the PR-bound bytes.",
+  "assessedAt": "2026-10-30T00:28:57Z"
 }
