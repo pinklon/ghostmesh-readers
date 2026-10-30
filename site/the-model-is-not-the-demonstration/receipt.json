@@ -1,0 +1,260 @@
+{
+  "schema": "ghostmesh-reader-receipt-v2",
+  "createdAt": "2026-10-30T00:05:28Z",
+  "source": {
+    "platform": "YouTube",
+    "url": "https://www.youtube.com/watch?v=RHMsAm4ODDU",
+    "videoId": "RHMsAm4ODDU",
+    "title": "Kimi K3.1 Pro walkthrough",
+    "creator": "David Ondrej",
+    "durationSeconds": 2204.665,
+    "mediaAspect": "unknown"
+  },
+  "sourceInspection": {
+    "sourceAidSha256": "f883ef0a7b2ee9d04d60a943ed06519b8150184170bbf7db72f48c84632d9160",
+    "method": "Hash-checked retained audio-only partial capture with 400 timed, uncorrected CPU-ASR cues; consequential product facts checked against current primary written sources.",
+    "caveat": "No video coverage, listening-verified quotation, formal ReasonPack SourceID, closed pack, visual demonstration result or model execution is claimed.",
+    "publicationBoundary": "Only paraphrased editorial analysis and public citations are published; no raw audio, transcript, source capture, local path or private operational payload leaves custody."
+  },
+  "custody": {
+    "status": "partial-audio-capture-retained",
+    "note": "The source operator accepted exact partial-audio hashes; the private source remains outside Git and is not a closed ReasonPack."
+  },
+  "normalization": {
+    "id": "reader:the-model-is-not-the-demonstration",
+    "slug": "the-model-is-not-the-demonstration",
+    "title": "The Model Is Not the Demonstration",
+    "category": "AI & Technology",
+    "tags": [
+      "AI agents",
+      "evaluation",
+      "model economics"
+    ],
+    "entities": [
+      "David Ondrej",
+      "Kimi",
+      "Kimi K3.1 Pro"
+    ],
+    "source": {
+      "platform": "YouTube",
+      "url": "https://www.youtube.com/watch?v=RHMsAm4ODDU",
+      "videoId": "RHMsAm4ODDU",
+      "title": "Kimi K3.1 Pro walkthrough",
+      "creator": "David Ondrej",
+      "durationSeconds": 2204.665,
+      "mediaAspect": "unknown"
+    },
+    "published": "2026-10-29",
+    "updated": "2026-10-30T00:05:28Z",
+    "overview": "A Kimi K3.1 Pro walkthrough mixes benchmark claims, narrated tool work, route choices, price and security-agent proposals.",
+    "whyItMatters": "A selected demonstration and a low token rate do not establish accepted task quality, full cost or safe operating authority.",
+    "ghostMeshTakeaway": "Evaluate the model, toolchain and operator together with pinned tasks, acceptance rules, full spend and a stop path.",
+    "verdict": "Worth studying",
+    "architectureImpact": "experiment recommended",
+    "falsification": "Revisit the cautious call if pinned K3.1 Pro trials repeatedly yield accepted coding and artifact work at lower full cost, with inspectable files, comparable tools and a workable custody and review route.",
+    "evidenceState": "partially corroborated",
+    "lastEvidenceChecked": "2026-10-30T00:08:51Z",
+    "freshness": "Kimi official launch, API model list and billing pages were inspected October 29, 2026. The video aid is audio-only uncorrected CPU-ASR. No model, benchmark, video frames, tool artifacts, account entitlement or security loop was independently tested.",
+    "variant": "dossier",
+    "accent": "teal",
+    "claims": [
+      {
+        "id": "kimi--availability",
+        "proposition": "Kimi lists K3.1 Pro and Highspeed routes and promises full model weights by November 4, 2026.",
+        "kind": "vendor-availability",
+        "asOf": "2026-10-29",
+        "status": "partially corroborated",
+        "assessment": "Official pages name the routes and future weights commitment.",
+        "limits": "A route listing does not establish a buyer account entitlement, regional access or a currently downloadable K3.1 Pro artifact.",
+        "sourceLocation": "The first boundary is availability",
+        "references": [
+          "kimi-announcement",
+          "kimi-models"
+        ],
+        "counterevidence": [],
+        "temporalScope": "Official written sources inspected October 29, 2026; machine-ASR topic cues are provisional and video outcomes are unverified."
+      },
+      {
+        "id": "kimi--toolchain-demonstration",
+        "proposition": "The creator narrates cloud-sandbox, Blender and FreeCAD work in a model walkthrough.",
+        "kind": "creator-demonstration",
+        "asOf": "2026-10-29",
+        "status": "unverified",
+        "assessment": "Uncorrected audio-only ASR suggests these topics and tools.",
+        "limits": "No video frames, final artifacts, exact speech, tool logs or demonstration outcomes were inspected.",
+        "sourceLocation": "02:09 and 04:12-10:25 provisional audio cues",
+        "references": [],
+        "counterevidence": [],
+        "temporalScope": "Official written sources inspected October 29, 2026; machine-ASR topic cues are provisional and video outcomes are unverified."
+      },
+      {
+        "id": "kimi--benchmark-harness",
+        "proposition": "Kimi reports strong benchmark results while its footnotes disclose differing harnesses and internal or externally reported comparisons.",
+        "kind": "vendor-benchmark",
+        "asOf": "2026-10-29",
+        "status": "partially corroborated",
+        "assessment": "The vendor announcement contains the benchmark presentation and methodological footnotes.",
+        "limits": "No GhostMesh rerun or independently reproduced model ranking was performed.",
+        "sourceLocation": "Benchmark footnotes in Kimi announcement",
+        "references": [
+          "kimi-announcement"
+        ],
+        "counterevidence": [],
+        "temporalScope": "Official written sources inspected October 29, 2026; machine-ASR topic cues are provisional and video outcomes are unverified."
+      },
+      {
+        "id": "kimi--task-cost-frame",
+        "proposition": "Token price alone does not establish full cost per accepted task.",
+        "kind": "editorial-inference",
+        "asOf": "2026-10-29",
+        "status": "unverified",
+        "assessment": "Billing categories document one cost input; the full-task comparison is an original test proposal.",
+        "limits": "No actual buyer workload, model comparison or accepted-task cost was measured.",
+        "sourceLocation": "14:29-17:42 provisional audio cues",
+        "references": [
+          "kimi-billing"
+        ],
+        "counterevidence": [],
+        "temporalScope": "Official written sources inspected October 29, 2026; machine-ASR topic cues are provisional and video outcomes are unverified."
+      },
+      {
+        "id": "kimi--cyber-position-and-loops",
+        "proposition": "Kimi reports a cyber-training choice and internal evaluation; the creator argues for recurring security-agent loops.",
+        "kind": "vendor-claim-and-creator-argument",
+        "asOf": "2026-10-29",
+        "status": "partially corroborated",
+        "assessment": "The vendor page supports its own training and internal benchmark descriptions; ASR supplies only a provisional creator argument.",
+        "limits": "No security loop, offensive capability reduction, product efficacy or defender outcome was tested.",
+        "sourceLocation": "23:55-29:56 provisional audio cues",
+        "references": [
+          "kimi-announcement"
+        ],
+        "counterevidence": [],
+        "temporalScope": "Official written sources inspected October 29, 2026; machine-ASR topic cues are provisional and video outcomes are unverified."
+      }
+    ],
+    "references": [
+      {
+        "id": "kimi-announcement",
+        "title": "Introducing Kimi K3.1 Pro",
+        "author": "Kimi team",
+        "publisher": "Kimi",
+        "url": "https://www.kimi.com/en/blog/kimi-k3-1-pro",
+        "publicationDate": "unknown",
+        "eventDate": null,
+        "location": "Availability, weights commitment, benchmark footnotes and cyber positioning",
+        "sourceType": "vendor announcement",
+        "independence": "First-party product and benchmark claims, not independent replication.",
+        "evidenceFamily": "kimi-launch",
+        "checkedAt": "2026-10-30T00:08:51Z",
+        "dateNote": "Exact publication day was not established.",
+        "datePrecision": null
+      },
+      {
+        "id": "kimi-models",
+        "title": "API model list",
+        "author": "Kimi team",
+        "publisher": "Kimi",
+        "url": "https://platform.kimi.ai/docs/models",
+        "publicationDate": "unknown",
+        "eventDate": null,
+        "location": "K3.1 Pro and Highspeed model names",
+        "sourceType": "vendor documentation",
+        "independence": "First-party documentation of listed routes, not account entitlement.",
+        "evidenceFamily": "kimi-api",
+        "checkedAt": "2026-10-30T00:08:51Z",
+        "dateNote": "Living documentation; original publication day unknown.",
+        "datePrecision": null
+      },
+      {
+        "id": "kimi-billing",
+        "title": "Chat pricing and billing",
+        "author": "Kimi team",
+        "publisher": "Kimi",
+        "url": "https://platform.kimi.ai/docs/pricing/chat",
+        "publicationDate": "unknown",
+        "eventDate": null,
+        "location": "API, membership and Kimi Code billing distinctions",
+        "sourceType": "vendor documentation",
+        "independence": "First-party billing description, not measured full task cost.",
+        "evidenceFamily": "kimi-api",
+        "checkedAt": "2026-10-30T00:08:51Z",
+        "dateNote": "Living documentation; original publication day unknown.",
+        "datePrecision": null
+      }
+    ],
+    "relationships": [
+      {
+        "target": "reader:the-operator-is-part-of-the-denominator",
+        "type": "related topic",
+        "reason": "Both distinguish a low unit price from the full cost of accepted work. The operator Reader is about inference service output; this Reader applies the denominator to a model walkthrough. Neither validates the other video.",
+        "provenance": [
+          "/the-model-is-not-the-demonstration/#cheap-tokens-can-still-buy-an-expensive-task",
+          "/the-operator-is-part-of-the-denominator/#the-service-layer-can-create-or-destroy-value"
+        ],
+        "basis": "curated-editorial-comparison",
+        "direction": "outgoing"
+      },
+      {
+        "target": "reader:the-grader-is-part-of-the-harness",
+        "type": "related topic",
+        "reason": "Both ask whether a benchmark or demonstration measures the intended task. The grader Reader examines adaptive harness research; this Reader inspects launch benchmark footnotes. The evidence families remain separate.",
+        "provenance": [
+          "/the-model-is-not-the-demonstration/#the-benchmark-footnotes-are-part-of-the-result",
+          "/the-grader-is-part-of-the-harness/#grading"
+        ],
+        "basis": "curated-editorial-comparison",
+        "direction": "outgoing"
+      },
+      {
+        "target": "reader:unsupervised-is-a-permission",
+        "type": "informs architecture",
+        "reason": "The existing Reader defines bounded agent authority and an operator stop path; this Reader applies that boundary to a proposed recurring security-agent loop. It does not claim the loop was tested.",
+        "provenance": [
+          "/the-model-is-not-the-demonstration/#security-loops-need-a-stop-rule",
+          "/unsupervised-is-a-permission/#the-loop-needs-an-exit-with-authority"
+        ],
+        "basis": "curated-editorial-comparison",
+        "direction": "outgoing"
+      }
+    ],
+    "relationshipDisposition": "Three owner-approved editorial connections compare full task cost, evaluation quality and bounded agent authority. These are navigation and interpretation, not corroboration of Kimi or the video.",
+    "relationshipReview": {
+      "reviewedAt": "2026-10-29",
+      "reviewedCatalogSize": 38,
+      "decision": "linked",
+      "reviewedTargets": [
+        "reader:the-operator-is-part-of-the-denominator",
+        "reader:the-grader-is-part-of-the-harness",
+        "reader:unsupervised-is-a-permission"
+      ],
+      "rationale": "Compared the current Reader catalog and verified these three destination theses and section anchors. Tony approved these exact connections for cost, grader quality and stop authority. No reciprocal edges or shared-source verification is inferred."
+    },
+    "review": {
+      "status": "exact Markdown copy independently accepted; rendered Reader review pending",
+      "reviewer": "Distinct parent-side internal copy reviewer, as reported in the existing task handoff",
+      "reviewedSourceHead": "Exact approved Markdown SHA-256 0eaa63f00aef903a4199580b27cb56c3e8d7977aab955db0b5b299e80cc962e1",
+      "checkedAt": "2026-10-30T00:05:28Z",
+      "scope": "Exact 59-line public prose, source attribution, audio-ASR limits and privacy. Rendered HTML and generated projections have not yet received a distinct review.",
+      "findings": "No blocking copy or privacy finding in the approved Markdown; source limits and three owner-approved related destinations remain separate from production acceptance."
+    },
+    "revisionHistory": [
+      {
+        "at": "2026-10-30T00:05:28Z",
+        "kind": "new-reader-local-draft",
+        "reason": "Owner-approved video deconstruction implemented from exact locked Markdown; release held for rendered review and authenticated PR acceptance."
+      }
+    ],
+    "editorialOrder": 31,
+    "orderReason": "Place the new Kimi video deconstruction after existing published Reader works.",
+    "editorialDepth": {
+      "schemaVersion": 1,
+      "receiptPath": "content/editorial-depth/the-model-is-not-the-demonstration.json"
+    }
+  },
+  "editorial": {
+    "overview": "A Kimi K3.1 Pro walkthrough mixes benchmark claims, narrated tool work, route choices, price and security-agent proposals.",
+    "whyItMatters": "A selected demonstration and a low token rate do not establish accepted task quality, full cost or safe operating authority.",
+    "ghostMeshTakeaway": "Evaluate the model, toolchain and operator together with pinned tasks, acceptance rules, full spend and a stop path."
+  }
+}

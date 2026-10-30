@@ -87,10 +87,12 @@ class VisualContractTest(unittest.TestCase):
         recent = sorted(catalog['readers'], key=lambda reader: (reader['published'], reader['slug']), reverse=True)
         selected = [by_id[catalog['featuredId']]] + [reader for reader in recent if reader['id'] != catalog['featuredId']][:6]
         written_count = sum(reader['source'].get('kind') in {'paper', 'article', 'repository'} for reader in selected)
-        self.assertEqual(len(panels), len(selected) - written_count)
+        playable = [reader for reader in selected
+                    if reader['source'].get('kind') not in {'paper', 'article', 'repository'}
+                    and reader['source']['mediaAspect'] != 'unknown']
+        self.assertEqual(len(panels), len(playable))
         self.assertCountEqual([a.get('data-source-platform') for a in panels],
-                              [reader['source']['platform'] for reader in selected
-                               if reader['source'].get('kind') not in {'paper', 'article', 'repository'}])
+                              [reader['source']['platform'] for reader in playable])
         self.assertEqual(home.count('class="gm-home-visual gm-home-paper"'), written_count)
         self.assertEqual(sum(tag == 'iframe' for tag, _ in parsed.tags), 0)
         self.assertEqual(home.count('class="gm-home-open"'), 7)
@@ -154,9 +156,12 @@ class VisualContractTest(unittest.TestCase):
         parsed.feed(archive)
         frames = [a for _, a in parsed.tags if 'gm-library-frame' in a.get('class', '').split()]
         media = [r for r in catalog['readers'] if r['source'].get('kind') not in {'paper', 'article', 'repository'}]
-        self.assertEqual(len(frames), len(media))
+        known_aspect = [reader for reader in media if reader['source']['mediaAspect'] != 'unknown']
+        self.assertEqual(len(frames), len(known_aspect))
         self.assertCountEqual([a['data-gm-aspect'] for a in frames],
-                              [r['source']['mediaAspect'] for r in media])
+                              [r['source']['mediaAspect'] for r in known_aspect])
+        self.assertEqual(archive.count('Source shape unverified. Open the Reader for the original link.'),
+                         len(media) - len(known_aspect))
         self.assertIn('class="gm-paper-cover"', archive)
         self.assertIn('LLM<br>personas', archive)
         self.assertIn('TabPFN<br>distribution', archive)

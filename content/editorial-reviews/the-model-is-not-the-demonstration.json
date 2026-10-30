@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "readerId": "reader:the-model-is-not-the-demonstration",
+  "sourceId": "RHMsAm4ODDU",
+  "sourceAidSha256": "f883ef0a7b2ee9d04d60a943ed06519b8150184170bbf7db72f48c84632d9160",
+  "articleSha256": "18309bdc300555c349045bfd8be124a59ee81e96f7f9261d7de2f829688899ad",
+  "evidenceRevision": "139110b424f55ce2184308b824e9636c657cf278e6b49a9a07ecc9c4b4e8b2a0",
+  "reviewedAt": "2026-10-30T00:08:51Z",
+  "provenance": {
+    "kind": "codex-task-agent",
+    "reference": "Parent-side distinct internal reviewer acceptance relayed to this publisher task for the exact 59-line Markdown source SHA-256 0eaa63f00aef903a4199580b27cb56c3e8d7977aab955db0b5b299e80cc962e1. This receipt is a publisher transcription of that bounded finding, not a signed independent review of the rendered Reader.",
+    "limits": "The reviewer accepted exact public prose, official-source attribution and privacy as relayed by the parent. This publisher has not received a signed exact rendered-page review, and the parent-side reviewer did not assess generated catalog, map or browser output."
+  },
+  "summary": "The approved Markdown has no reported blocking copy or privacy findings. Rendered HTML, catalog claims, source-map binding, generated projections and browser presentation still require a distinct independent check.",
+  "findings": [
+    "The privately retained source aid consists of 400 timed, uncorrected CPU-ASR cues from audio only. The article attributes product facts to official Kimi pages, avoids exact speech quotation and does not claim video-frame inspection or model execution.",
+    "Three related Reader destinations were checked against their existing canonical article text and section anchors. Tony approved those exact cost, evaluation and stop-authority connections as editorial navigation, not independent corroboration.",
+    "The Markdown article SHA is 0eaa63f00aef903a4199580b27cb56c3e8d7977aab955db0b5b299e80cc962e1. This record binds the authored HTML separately, but a different reviewer has not yet examined that derived artifact and its projections."
+  ],
+  "conclusion": "hold"
+}

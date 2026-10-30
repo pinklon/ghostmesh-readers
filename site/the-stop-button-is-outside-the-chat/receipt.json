@@ -270,7 +270,7 @@
     "orderReason": "Place the operational agent-boundary Reader after the harness-evaluation Reader.",
     "relationshipReview": {
       "reviewedAt": "2026-10-24",
-      "reviewedCatalogSize": 37,
+      "reviewedCatalogSize": 38,
       "decision": "linked",
       "reviewedTargets": [
         "reader:make-good-work-inspectable",

@@ -271,7 +271,7 @@
     "orderReason": "Read after other model-score Readers to test how benchmark evidence is converted into a larger forecast.",
     "relationshipReview": {
       "reviewedAt": "2026-10-24",
-      "reviewedCatalogSize": 37,
+      "reviewedCatalogSize": 38,
       "decision": "linked",
       "reviewedTargets": [
         "reader:the-experiment-ran-did-the-research-advance"

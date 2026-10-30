@@ -1,0 +1,105 @@
+{
+  "schemaVersion": 1,
+  "readerId": "reader:the-model-is-not-the-demonstration",
+  "sourceId": "RHMsAm4ODDU",
+  "sourceDigest": "565d3aa40ca634c72f7caa8e8c83fa7f4fe4c78c79570602dd98d3bb2c9b6dc7",
+  "sourceAidSha256": "f883ef0a7b2ee9d04d60a943ed06519b8150184170bbf7db72f48c84632d9160",
+  "articleSha256": "18309bdc300555c349045bfd8be124a59ee81e96f7f9261d7de2f829688899ad",
+  "evidenceRevision": "139110b424f55ce2184308b824e9636c657cf278e6b49a9a07ecc9c4b4e8b2a0",
+  "sourceMapEvidenceSha256": "4835f787c5ed095fa07fbb5be28f56e83fe764259643e90fea32f524eadb904a",
+  "reviewEvidenceSha256": "e4cbbeb7aa66f5279556cd4df9c962c3b65aafc3fd0ba1a2d3a955f942d575bf",
+  "candidateAuthor": "pinklon",
+  "complexity": {
+    "tier": "extended",
+    "factors": [
+      "A thirty-six-minute audio-only video aid and five distinct material claims",
+      "Architecture and security-loop recommendations with consequential permission and task-cost implications"
+    ],
+    "rationale": "The source spans availability, tool demonstrations, benchmarks, cost and cyber-agent loops. Those distinct claims require extended mapping and explicit uncertainty, not a short launch summary."
+  },
+  "sourceMap": [
+    {
+      "atSeconds": 129,
+      "sectionId": "a-demonstration-has-more-than-one-author",
+      "claimIds": [
+        "kimi--toolchain-demonstration"
+      ],
+      "rationale": "This provisional audio cue maps the creator’s narrated tool work; the article refuses to infer visual quality from audio-only capture."
+    },
+    {
+      "atSeconds": 869,
+      "sectionId": "cheap-tokens-can-still-buy-an-expensive-task",
+      "claimIds": [
+        "kimi--task-cost-frame"
+      ],
+      "rationale": "This cue maps the price-to-task-cost turn while withholding unstable comparative numbers from uncorrected machine ASR."
+    },
+    {
+      "atSeconds": 1435,
+      "sectionId": "security-loops-need-a-stop-rule",
+      "claimIds": [
+        "kimi--cyber-position-and-loops"
+      ],
+      "rationale": "This cue maps the creator’s security-loop argument and distinguishes it from the vendor’s first-party training and benchmark statement."
+    }
+  ],
+  "assessment": {
+    "sourceCoverage": {
+      "disposition": "covered",
+      "rationale": "The mapped audio cues cover demonstration, economics and cyber-loop themes; official written pages support product facts without implying inspected video frames."
+    },
+    "supportingArgument": {
+      "disposition": "covered",
+      "rationale": "The article grants the strongest case for a selected demonstration: it can reveal a workflow worth reproducing even without proving repeatability."
+    },
+    "evidenceRoles": {
+      "disposition": "covered",
+      "rationale": "Vendor documentation, provisional creator paraphrase, uninspected visual outcomes and original GhostMesh inference are explicitly separated."
+    },
+    "counterargument": {
+      "disposition": "covered",
+      "rationale": "The essay gives the demonstration a fair interpretation and acknowledges that defenders can benefit from powerful tools before setting evidence limits."
+    },
+    "tradeoffs": {
+      "disposition": "covered",
+      "rationale": "Hosted access, prospective open weights, task cost, review effort, sandbox and operator authority are treated as distinct buying and deployment constraints."
+    },
+    "falsifiability": {
+      "disposition": "covered",
+      "rationale": "The proposed comparison pins model route, tools, acceptance criteria, full spend, retries and reviewer decisions, with outcomes that could revise the call."
+    },
+    "originalSynthesis": {
+      "disposition": "covered",
+      "rationale": "The Reader connects benchmark, demonstration and token price to the complete accepted task, its workbench and accountable stop decision."
+    },
+    "performance": {
+      "disposition": "covered",
+      "rationale": "The essay describes vendor benchmark footnotes and harness differences but does not convert reported scores into an independently replicated ranking."
+    },
+    "economics": {
+      "disposition": "covered",
+      "rationale": "The article distinguishes token rate from full accepted-task cost and proposes a small comparison including retries, tools and human corrections."
+    },
+    "threatGovernance": {
+      "disposition": "covered",
+      "rationale": "Cyber training and security-loop claims are attributed to vendor and creator; the trial asks for bounded targets, false positives and an operator exit."
+    }
+  },
+  "independentCorroboration": "none",
+  "ownerDecision": null,
+  "decision": "hold",
+  "gaps": [
+    {
+      "type": "evidence",
+      "severity": "blocking",
+      "rationale": "A distinct independent reviewer has accepted the exact Markdown copy only; rendered HTML, catalog evidence and generated projections have not yet received exact artifact review."
+    },
+    {
+      "type": "source",
+      "severity": "nonblocking",
+      "rationale": "The audio-only partial capture has no visual coverage, listening-verified exact speech or closed ReasonPack SourceID. The Reader discloses these limits and omits visual outcomes."
+    }
+  ],
+  "decisionRationale": "Tony approved the exact prose and three relations, and source limits are preserved. The release remains on hold for a distinct exact rendered review, hosted preview and direct authenticated owner acceptance of the PR-bound bytes.",
+  "assessedAt": "2026-10-30T00:08:51Z"
+}
