@@ -216,6 +216,31 @@ class VisualContractTest(unittest.TestCase):
         self.assertIn('Source aspect and upload date are unconfirmed.', article)
         self.assertNotIn('<iframe', article)
 
+    def test_youtube_readers_keep_article_and_browse_players_together(self):
+        catalog = json.loads((ROOT / 'content/catalog.json').read_text())
+        readers = catalog['readers']
+        recent = sorted(readers, key=lambda reader: (reader['published'], reader['slug']), reverse=True)
+        selected = [next(reader for reader in readers if reader['id'] == catalog['featuredId'])]
+        selected += [reader for reader in recent if reader['id'] != catalog['featuredId']][:6]
+        home = (ROOT / 'site/index.html').read_text()
+        archive = (ROOT / 'site/readers/index.html').read_text()
+        for reader in readers:
+            source = reader['source']
+            if source.get('platform') != 'YouTube':
+                continue
+            with self.subTest(slug=reader['slug']):
+                video_id = source['videoId']
+                self.assertTrue(source['mediaAspect'] != 'unknown' or
+                                source.get('unknownAspectPlayerApproved'),
+                                'YouTube Reader needs a verified aspect or explicit unknown-aspect player approval')
+                article = (ROOT / 'site' / reader['slug'] / 'index.html').read_text()
+                self.assertIn('gm-media-frame', article)
+                self.assertIn('youtube-nocookie.com/embed/', article)
+                self.assertIn(video_id, article)
+                self.assertIn(f'data-source-id="{video_id}"', archive)
+                if reader in selected:
+                    self.assertIn(f'data-source-id="{video_id}"', home)
+
 
 if __name__ == '__main__':
     unittest.main()
