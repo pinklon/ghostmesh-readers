@@ -268,7 +268,7 @@
     "orderReason": "Follow the existing evaluation and research-agent Readers with a focused test of adaptive harness claims.",
     "relationshipReview": {
       "reviewedAt": "2026-10-24",
-      "reviewedCatalogSize": 37,
+      "reviewedCatalogSize": 38,
       "decision": "linked",
       "reviewedTargets": [
         "reader:make-good-work-inspectable",

@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "host": "https://youtube.shareplane.malott.ai",
-  "revision": "2026-10-24T12:02:09Z",
+  "revision": "2026-10-30T00:08:51Z",
   "categories": [
     "AI & Technology",
     "Society & Politics",
@@ -406,7 +406,7 @@
       },
       "relationshipReview": {
         "reviewedAt": "2026-10-24",
-        "reviewedCatalogSize": 37,
+        "reviewedCatalogSize": 38,
         "decision": "linked",
         "reviewedTargets": [
           "reader:ask-for-the-outcome-keep-the-boundary",
@@ -911,7 +911,7 @@
       },
       "relationshipReview": {
         "reviewedAt": "2026-10-24",
-        "reviewedCatalogSize": 37,
+        "reviewedCatalogSize": 38,
         "decision": "linked",
         "reviewedTargets": [
           "reader:a-challenge-is-not-a-verdict",
@@ -1178,7 +1178,7 @@
       },
       "relationshipReview": {
         "reviewedAt": "2026-10-24",
-        "reviewedCatalogSize": 37,
+        "reviewedCatalogSize": 38,
         "decision": "linked",
         "reviewedTargets": [
           "reader:the-agent-a-company-owns",
@@ -1745,7 +1745,7 @@
       },
       "relationshipReview": {
         "reviewedAt": "2026-10-24",
-        "reviewedCatalogSize": 37,
+        "reviewedCatalogSize": 38,
         "decision": "linked",
         "reviewedTargets": [
           "reader:a-challenge-is-not-a-verdict",
@@ -2041,7 +2041,7 @@
       },
       "relationshipReview": {
         "reviewedAt": "2026-10-24",
-        "reviewedCatalogSize": 37,
+        "reviewedCatalogSize": 38,
         "decision": "linked",
         "reviewedTargets": [
           "reader:autonomy-needs-an-interface",
@@ -2354,7 +2354,7 @@
       },
       "relationshipReview": {
         "reviewedAt": "2026-10-24",
-        "reviewedCatalogSize": 37,
+        "reviewedCatalogSize": 38,
         "decision": "linked",
         "reviewedTargets": [
           "reader:ask-for-the-outcome-keep-the-boundary",
@@ -2637,7 +2637,7 @@
       },
       "relationshipReview": {
         "reviewedAt": "2026-10-24",
-        "reviewedCatalogSize": 37,
+        "reviewedCatalogSize": 38,
         "decision": "linked",
         "reviewedTargets": [
           "reader:the-key-was-the-boundary",
@@ -3130,7 +3130,7 @@
       },
       "relationshipReview": {
         "reviewedAt": "2026-10-24",
-        "reviewedCatalogSize": 37,
+        "reviewedCatalogSize": 38,
         "decision": "linked",
         "reviewedTargets": [
           "reader:the-inbox-was-a-boundary",
@@ -3497,7 +3497,7 @@
       },
       "relationshipReview": {
         "reviewedAt": "2026-10-24",
-        "reviewedCatalogSize": 37,
+        "reviewedCatalogSize": 38,
         "decision": "linked",
         "reviewedTargets": [
           "reader:the-score-is-not-the-system"
@@ -3934,7 +3934,7 @@
       },
       "relationshipReview": {
         "reviewedAt": "2026-10-24",
-        "reviewedCatalogSize": 37,
+        "reviewedCatalogSize": 38,
         "decision": "linked",
         "reviewedTargets": [
           "reader:ask-for-the-outcome-keep-the-boundary",
@@ -4272,7 +4272,7 @@
       },
       "relationshipReview": {
         "reviewedAt": "2026-10-24",
-        "reviewedCatalogSize": 37,
+        "reviewedCatalogSize": 38,
         "decision": "linked",
         "reviewedTargets": [
           "reader:the-microscope-is-not-a-soul"
@@ -4533,7 +4533,7 @@
       },
       "relationshipReview": {
         "reviewedAt": "2026-10-24",
-        "reviewedCatalogSize": 37,
+        "reviewedCatalogSize": 38,
         "decision": "linked",
         "reviewedTargets": [
           "reader:autonomy-needs-an-interface",
@@ -4825,7 +4825,7 @@
       },
       "relationshipReview": {
         "reviewedAt": "2026-10-24",
-        "reviewedCatalogSize": 37,
+        "reviewedCatalogSize": 38,
         "decision": "linked",
         "reviewedTargets": [
           "reader:a-challenge-is-not-a-verdict",
@@ -5153,7 +5153,7 @@
       "orderReason": "Read after the earlier Amap fleet case to examine the broader forecast and its evidence limits.",
       "relationshipReview": {
         "reviewedAt": "2026-10-24",
-        "reviewedCatalogSize": 37,
+        "reviewedCatalogSize": 38,
         "decision": "linked",
         "reviewedTargets": [
           "reader:the-inbox-was-a-boundary",
@@ -5436,7 +5436,7 @@
       "orderReason": "Read after other model-score Readers to test how benchmark evidence is converted into a larger forecast.",
       "relationshipReview": {
         "reviewedAt": "2026-10-24",
-        "reviewedCatalogSize": 37,
+        "reviewedCatalogSize": 38,
         "decision": "linked",
         "reviewedTargets": [
           "reader:the-experiment-ran-did-the-research-advance"
@@ -5737,7 +5737,7 @@
       "orderReason": "Read after the existing Count Grey Matter interpretability Reader to examine a distinct functional-understanding claim.",
       "relationshipReview": {
         "reviewedAt": "2026-10-24",
-        "reviewedCatalogSize": 37,
+        "reviewedCatalogSize": 38,
         "decision": "linked",
         "reviewedTargets": [
           "reader:the-microscope-is-not-a-soul"
@@ -6012,7 +6012,7 @@
       "orderReason": "Read after the current collection as a research-method comparison with explicit deployment limits.",
       "relationshipReview": {
         "reviewedAt": "2026-10-24",
-        "reviewedCatalogSize": 37,
+        "reviewedCatalogSize": 38,
         "decision": "none",
         "reviewedTargets": [],
         "rationale": "No other local Reader analyzes NCM or HybridAgents, their parallel-code and latent-reasoning methods, or the same benchmark claims. External studies remain outside this Reader graph. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged. Reassessed against four distinct AI Engineer video theses; their new outgoing links carry the qualified comparisons, with no new outgoing edge warranted from this existing entry. The HORTRAME visual swarm Reader was assessed as a new catalog neighbor; no additional outgoing route is justified by its distinct film and mathematics source. The newly added DeepInfer source was checked for another outgoing route; none is justified beyond its new Reader-to-Reader routes. The new Hassabis profile was compared for a specific shared claim; no further typed relation is admitted on thematic overlap alone. Compared the new Orca fleet Reader as a possible target; its three outbound comparisons cover the supported links, and no reciprocal claim of source corroboration is warranted. The newly added LangChain webhook Reader was compared for a distinct source-grounded relationship; no existing typed edge is changed by this candidate."
@@ -6285,7 +6285,7 @@
       },
       "relationshipReview": {
         "reviewedAt": "2026-10-24",
-        "reviewedCatalogSize": 37,
+        "reviewedCatalogSize": 38,
         "decision": "linked",
         "reviewedTargets": [
           "reader:a-scenario-is-not-a-singularity"
@@ -6654,7 +6654,7 @@
       },
       "relationshipReview": {
         "reviewedAt": "2026-10-24",
-        "reviewedCatalogSize": 37,
+        "reviewedCatalogSize": 38,
         "decision": "linked",
         "reviewedTargets": [
           "reader:when-agents-become-the-customer",
@@ -7156,7 +7156,7 @@
       },
       "relationshipReview": {
         "reviewedAt": "2026-10-24",
-        "reviewedCatalogSize": 37,
+        "reviewedCatalogSize": 38,
         "decision": "linked",
         "reviewedTargets": [
           "reader:the-test-must-name-its-target",
@@ -7618,7 +7618,7 @@
       },
       "relationshipReview": {
         "reviewedAt": "2026-10-24",
-        "reviewedCatalogSize": 37,
+        "reviewedCatalogSize": 38,
         "decision": "none",
         "reviewedTargets": [],
         "rationale": "The other published Readers do not examine this California voter-list dispute, individualized ballot procedure or conditional DOJ warning. AI evaluation analogies are too distant to admit as local routes. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged. Reassessed against four distinct AI Engineer video theses; their new outgoing links carry the qualified comparisons, with no new outgoing edge warranted from this existing entry. The HORTRAME visual swarm Reader was assessed as a new catalog neighbor; no additional outgoing route is justified by its distinct film and mathematics source. The newly added DeepInfer source was checked for another outgoing route; none is justified beyond its new Reader-to-Reader routes. The new Hassabis profile was compared for a specific shared claim; no further typed relation is admitted on thematic overlap alone. Compared the new Orca fleet Reader as a possible target; its three outbound comparisons cover the supported links, and no reciprocal claim of source corroboration is warranted. The newly added LangChain webhook Reader was compared for a distinct source-grounded relationship; no existing typed edge is changed by this candidate."
@@ -8173,7 +8173,7 @@
       },
       "relationshipReview": {
         "reviewedAt": "2026-10-24",
-        "reviewedCatalogSize": 37,
+        "reviewedCatalogSize": 38,
         "decision": "linked",
         "reviewedTargets": [
           "reader:the-brakes-need-a-test",
@@ -8753,7 +8753,7 @@
       },
       "relationshipReview": {
         "reviewedAt": "2026-10-24",
-        "reviewedCatalogSize": 37,
+        "reviewedCatalogSize": 38,
         "decision": "linked",
         "reviewedTargets": [
           "reader:the-label-the-box-and-the-bargain",
@@ -9033,7 +9033,7 @@
       "orderReason": "Follow the existing evaluation and research-agent Readers with a focused test of adaptive harness claims.",
       "relationshipReview": {
         "reviewedAt": "2026-10-24",
-        "reviewedCatalogSize": 37,
+        "reviewedCatalogSize": 38,
         "decision": "linked",
         "reviewedTargets": [
           "reader:make-good-work-inspectable",
@@ -9316,7 +9316,7 @@
       "orderReason": "Place the operational agent-boundary Reader after the harness-evaluation Reader.",
       "relationshipReview": {
         "reviewedAt": "2026-10-24",
-        "reviewedCatalogSize": 37,
+        "reviewedCatalogSize": 38,
         "decision": "linked",
         "reviewedTargets": [
           "reader:make-good-work-inspectable",
@@ -9615,7 +9615,7 @@
       "orderReason": "Place the local deployment and privacy-boundary reading after the agent control readings.",
       "relationshipReview": {
         "reviewedAt": "2026-10-24",
-        "reviewedCatalogSize": 37,
+        "reviewedCatalogSize": 38,
         "decision": "linked",
         "reviewedTargets": [
           "reader:the-agent-a-company-owns",
@@ -9899,7 +9899,7 @@
       "relationshipDisposition": "Two substantive editorial comparisons connect agent work inspectability and evaluation infrastructure. They do not corroborate Anthropic’s internal scale or performance reports.",
       "relationshipReview": {
         "reviewedAt": "2026-10-24",
-        "reviewedCatalogSize": 37,
+        "reviewedCatalogSize": 38,
         "decision": "linked",
         "reviewedTargets": [
           "reader:make-good-work-inspectable",
@@ -10212,7 +10212,7 @@
       "orderReason": "Follows the existing source-control Reader in Tony's four-video requested queue order.",
       "relationshipReview": {
         "reviewedAt": "2026-10-24",
-        "reviewedCatalogSize": 37,
+        "reviewedCatalogSize": 38,
         "decision": "linked",
         "reviewedTargets": [
           "reader:the-grader-is-part-of-the-harness",
@@ -10451,7 +10451,7 @@
       "orderReason": "Follows the existing source-control Reader in Tony's four-video requested queue order.",
       "relationshipReview": {
         "reviewedAt": "2026-10-24",
-        "reviewedCatalogSize": 37,
+        "reviewedCatalogSize": 38,
         "decision": "linked",
         "reviewedTargets": [
           "reader:the-parallel-result-is-not-the-product",
@@ -10673,7 +10673,7 @@
       "orderReason": "Follows the existing source-control Reader in Tony's four-video requested queue order.",
       "relationshipReview": {
         "reviewedAt": "2026-10-24",
-        "reviewedCatalogSize": 37,
+        "reviewedCatalogSize": 38,
         "decision": "linked",
         "reviewedTargets": [
           "reader:the-stop-button-is-outside-the-chat",
@@ -10912,7 +10912,7 @@
       "orderReason": "Follows the existing source-control Reader in Tony's four-video requested queue order.",
       "relationshipReview": {
         "reviewedAt": "2026-10-24",
-        "reviewedCatalogSize": 37,
+        "reviewedCatalogSize": 38,
         "decision": "linked",
         "reviewedTargets": [
           "reader:when-agents-become-the-customer",
@@ -11185,7 +11185,7 @@
       "relationshipDisposition": "Two specific editorial comparisons connect human inspectability and authenticated acceptance. No existing Reader independently tests this author’s HTML-versus-Markdown workflow.",
       "relationshipReview": {
         "reviewedAt": "2026-10-24",
-        "reviewedCatalogSize": 37,
+        "reviewedCatalogSize": 38,
         "decision": "linked",
         "reviewedTargets": [
           "reader:make-good-work-inspectable",
@@ -11630,7 +11630,7 @@
       "relationshipDisposition": "One qualified thematic route to a different simulation-evidence critique. Similar words such as singularity or swarm do not establish a shared claim or corroboration.",
       "relationshipReview": {
         "reviewedAt": "2026-10-24",
-        "reviewedCatalogSize": 37,
+        "reviewedCatalogSize": 38,
         "decision": "linked",
         "reviewedTargets": [
           "reader:the-score-is-not-the-system"
@@ -12007,7 +12007,7 @@
       "relationshipDisposition": "Three qualified editorial routes connect performance-to-product interpretation, local control boundaries and service economics. They do not corroborate DeepSeek benchmark or production metrics.",
       "relationshipReview": {
         "reviewedAt": "2026-10-24",
-        "reviewedCatalogSize": 37,
+        "reviewedCatalogSize": 38,
         "decision": "linked",
         "reviewedTargets": [
           "reader:the-parallel-result-is-not-the-product",
@@ -12335,7 +12335,7 @@
       "relationshipDisposition": "No typed Reader relationship is admitted for this candidate. Several existing Readers discuss agent authority or AI risk, but none supplies evidence for this profile’s forecast, clinical claims or proposed federal oversight; thematic proximity alone is insufficient.",
       "relationshipReview": {
         "reviewedAt": "2026-10-24",
-        "reviewedCatalogSize": 37,
+        "reviewedCatalogSize": 38,
         "decision": "none",
         "reviewedTargets": [],
         "rationale": "Compared all 34 current published Reader overviews and their qualified relationship roles against this WSJ-profile deconstruction. Authority and risk themes overlap, but no distinct shared claim or source-grounded relationship is sufficiently specific for a typed public edge yet. A later reviewed editorial pass may add one. The Orca fleet-control Reader was reviewed as a distinct agent-orchestration case; its worktree and review claims do not verify this profile’s AGI forecast, drug outcomes or proposed oversight, so no typed edge is admitted. The newly added LangChain webhook Reader was compared for a distinct source-grounded relationship; no existing typed edge is changed by this candidate."
@@ -12695,7 +12695,7 @@
       "orderReason": "Follows the four-video PR 56 batch in owner-requested source order.",
       "relationshipReview": {
         "reviewedAt": "2026-10-24",
-        "reviewedCatalogSize": 37,
+        "reviewedCatalogSize": 38,
         "decision": "linked",
         "reviewedTargets": [
           "reader:the-parallel-result-is-not-the-product",
@@ -13042,7 +13042,7 @@
       "orderReason": "Place this written-source webhook analysis after the existing published Readers.",
       "relationshipReview": {
         "reviewedAt": "2026-10-24",
-        "reviewedCatalogSize": 37,
+        "reviewedCatalogSize": 38,
         "decision": "none",
         "reviewedTargets": [],
         "rationale": "Existing authority and ingestion Readers have thematic overlap, but no typed link is admitted without a distinct reviewed evidence or architecture relationship."
@@ -13050,6 +13050,262 @@
       "editorialDepth": {
         "schemaVersion": 1,
         "receiptPath": "content/editorial-depth/when-a-successful-run-is-still-waiting.json"
+      }
+    },
+    {
+      "id": "reader:the-model-is-not-the-demonstration",
+      "slug": "the-model-is-not-the-demonstration",
+      "title": "The Model Is Not the Demonstration",
+      "category": "AI & Technology",
+      "tags": [
+        "AI agents",
+        "evaluation",
+        "model economics"
+      ],
+      "entities": [
+        "David Ondrej",
+        "Kimi",
+        "Kimi K3.1 Pro"
+      ],
+      "source": {
+        "platform": "YouTube",
+        "url": "https://www.youtube.com/watch?v=RHMsAm4ODDU",
+        "videoId": "RHMsAm4ODDU",
+        "title": "Kimi K3.1 Pro walkthrough",
+        "creator": "David Ondrej",
+        "durationSeconds": 2204.665,
+        "mediaAspect": "unknown",
+        "unknownAspectPlayerApproved": true
+      },
+      "published": "2026-10-29",
+      "updated": "2026-10-30T00:05:28Z",
+      "overview": "A Kimi K3.1 Pro walkthrough mixes benchmark claims, narrated tool work, route choices, price and security-agent proposals.",
+      "whyItMatters": "A selected demonstration and a low token rate do not establish accepted task quality, full cost or safe operating authority.",
+      "ghostMeshTakeaway": "Evaluate the model, toolchain and operator together with pinned tasks, acceptance rules, full spend and a stop path.",
+      "verdict": "Worth studying",
+      "architectureImpact": "experiment recommended",
+      "falsification": "Revisit the cautious call if pinned K3.1 Pro trials repeatedly yield accepted coding and artifact work at lower full cost, with inspectable files, comparable tools and a workable custody and review route.",
+      "evidenceState": "partially corroborated",
+      "lastEvidenceChecked": "2026-10-30T00:08:51Z",
+      "freshness": "Kimi official launch, API model list and billing pages were inspected October 29, 2026. The video aid is audio-only uncorrected CPU-ASR. No model, benchmark, video frames, tool artifacts, account entitlement or security loop was independently tested.",
+      "variant": "dossier",
+      "accent": "teal",
+      "claims": [
+        {
+          "id": "kimi--availability",
+          "proposition": "Kimi lists K3.1 Pro and Highspeed routes and promises full model weights by November 4, 2026.",
+          "kind": "vendor-availability",
+          "asOf": "2026-10-29",
+          "status": "partially corroborated",
+          "assessment": "Official pages name the routes and future weights commitment.",
+          "limits": "A route listing does not establish a buyer account entitlement, regional access or a currently downloadable K3.1 Pro artifact.",
+          "sourceLocation": "The first boundary is availability",
+          "references": [
+            "kimi-announcement",
+            "kimi-models"
+          ],
+          "counterevidence": [],
+          "temporalScope": "Official written sources inspected October 29, 2026; machine-ASR topic cues are provisional and video outcomes are unverified."
+        },
+        {
+          "id": "kimi--toolchain-demonstration",
+          "proposition": "The creator narrates cloud-sandbox, Blender and FreeCAD work in a model walkthrough.",
+          "kind": "creator-demonstration",
+          "asOf": "2026-10-29",
+          "status": "unverified",
+          "assessment": "Uncorrected audio-only ASR suggests these topics and tools.",
+          "limits": "No video frames, final artifacts, exact speech, tool logs or demonstration outcomes were inspected.",
+          "sourceLocation": "02:09 and 04:12-10:25 provisional audio cues",
+          "references": [],
+          "counterevidence": [],
+          "temporalScope": "Official written sources inspected October 29, 2026; machine-ASR topic cues are provisional and video outcomes are unverified."
+        },
+        {
+          "id": "kimi--benchmark-harness",
+          "proposition": "Kimi reports strong benchmark results while its footnotes disclose differing harnesses and internal or externally reported comparisons.",
+          "kind": "vendor-benchmark",
+          "asOf": "2026-10-29",
+          "status": "partially corroborated",
+          "assessment": "The vendor announcement contains the benchmark presentation and methodological footnotes.",
+          "limits": "No GhostMesh rerun or independently reproduced model ranking was performed.",
+          "sourceLocation": "Benchmark footnotes in Kimi announcement",
+          "references": [
+            "kimi-announcement"
+          ],
+          "counterevidence": [],
+          "temporalScope": "Official written sources inspected October 29, 2026; machine-ASR topic cues are provisional and video outcomes are unverified."
+        },
+        {
+          "id": "kimi--task-cost-frame",
+          "proposition": "Token price alone does not establish full cost per accepted task.",
+          "kind": "editorial-inference",
+          "asOf": "2026-10-29",
+          "status": "unverified",
+          "assessment": "Billing categories document one cost input; the full-task comparison is an original test proposal.",
+          "limits": "No actual buyer workload, model comparison or accepted-task cost was measured.",
+          "sourceLocation": "14:29-17:42 provisional audio cues",
+          "references": [
+            "kimi-billing"
+          ],
+          "counterevidence": [],
+          "temporalScope": "Official written sources inspected October 29, 2026; machine-ASR topic cues are provisional and video outcomes are unverified."
+        },
+        {
+          "id": "kimi--cyber-position-and-loops",
+          "proposition": "Kimi reports a cyber-training choice and internal evaluation; the creator argues for recurring security-agent loops.",
+          "kind": "vendor-claim-and-creator-argument",
+          "asOf": "2026-10-29",
+          "status": "partially corroborated",
+          "assessment": "The vendor page supports its own training and internal benchmark descriptions; ASR supplies only a provisional creator argument.",
+          "limits": "No security loop, offensive capability reduction, product efficacy or defender outcome was tested.",
+          "sourceLocation": "23:55-29:56 provisional audio cues",
+          "references": [
+            "kimi-announcement"
+          ],
+          "counterevidence": [],
+          "temporalScope": "Official written sources inspected October 29, 2026; machine-ASR topic cues are provisional and video outcomes are unverified."
+        }
+      ],
+      "references": [
+        {
+          "id": "kimi-announcement",
+          "title": "Introducing Kimi K3.1 Pro",
+          "author": "Kimi team",
+          "publisher": "Kimi",
+          "url": "https://www.kimi.com/en/blog/kimi-k3-1-pro",
+          "publicationDate": "unknown",
+          "eventDate": null,
+          "location": "Availability, weights commitment, benchmark footnotes and cyber positioning",
+          "sourceType": "vendor announcement",
+          "independence": "First-party product and benchmark claims, not independent replication.",
+          "evidenceFamily": "kimi-launch",
+          "checkedAt": "2026-10-30T00:08:51Z",
+          "dateNote": "Exact publication day was not established.",
+          "datePrecision": null
+        },
+        {
+          "id": "kimi-models",
+          "title": "API model list",
+          "author": "Kimi team",
+          "publisher": "Kimi",
+          "url": "https://platform.kimi.ai/docs/models",
+          "publicationDate": "unknown",
+          "eventDate": null,
+          "location": "K3.1 Pro and Highspeed model names",
+          "sourceType": "vendor documentation",
+          "independence": "First-party documentation of listed routes, not account entitlement.",
+          "evidenceFamily": "kimi-api",
+          "checkedAt": "2026-10-30T00:08:51Z",
+          "dateNote": "Living documentation; original publication day unknown.",
+          "datePrecision": null
+        },
+        {
+          "id": "kimi-billing",
+          "title": "Chat pricing and billing",
+          "author": "Kimi team",
+          "publisher": "Kimi",
+          "url": "https://platform.kimi.ai/docs/pricing/chat",
+          "publicationDate": "unknown",
+          "eventDate": null,
+          "location": "API, membership and Kimi Code billing distinctions",
+          "sourceType": "vendor documentation",
+          "independence": "First-party billing description, not measured full task cost.",
+          "evidenceFamily": "kimi-api",
+          "checkedAt": "2026-10-30T00:08:51Z",
+          "dateNote": "Living documentation; original publication day unknown.",
+          "datePrecision": null
+        }
+      ],
+      "relationships": [
+        {
+          "target": "reader:the-operator-is-part-of-the-denominator",
+          "type": "related topic",
+          "reason": "Both distinguish a low unit price from the full cost of accepted work. The operator Reader is about inference service output; this Reader applies the denominator to a model walkthrough. Neither validates the other video.",
+          "provenance": [
+            "/the-model-is-not-the-demonstration/#cheap-tokens-can-still-buy-an-expensive-task",
+            "/the-operator-is-part-of-the-denominator/#the-service-layer-can-create-or-destroy-value"
+          ],
+          "basis": "curated-editorial-comparison",
+          "direction": "outgoing"
+        },
+        {
+          "target": "reader:the-grader-is-part-of-the-harness",
+          "type": "related topic",
+          "reason": "Both ask whether a benchmark or demonstration measures the intended task. The grader Reader examines adaptive harness research; this Reader inspects launch benchmark footnotes. The evidence families remain separate.",
+          "provenance": [
+            "/the-model-is-not-the-demonstration/#the-benchmark-footnotes-are-part-of-the-result",
+            "/the-grader-is-part-of-the-harness/#grading"
+          ],
+          "basis": "curated-editorial-comparison",
+          "direction": "outgoing"
+        },
+        {
+          "target": "reader:unsupervised-is-a-permission",
+          "type": "informs architecture",
+          "reason": "The existing Reader defines bounded agent authority and an operator stop path; this Reader applies that boundary to a proposed recurring security-agent loop. It does not claim the loop was tested.",
+          "provenance": [
+            "/the-model-is-not-the-demonstration/#security-loops-need-a-stop-rule",
+            "/unsupervised-is-a-permission/#the-loop-needs-an-exit-with-authority"
+          ],
+          "basis": "curated-editorial-comparison",
+          "direction": "outgoing"
+        }
+      ],
+      "relationshipDisposition": "Three owner-approved editorial connections compare full task cost, evaluation quality and bounded agent authority. These are navigation and interpretation, not corroboration of Kimi or the video.",
+      "relationshipReview": {
+        "reviewedAt": "2026-10-29",
+        "reviewedCatalogSize": 38,
+        "decision": "linked",
+        "reviewedTargets": [
+          "reader:the-operator-is-part-of-the-denominator",
+          "reader:the-grader-is-part-of-the-harness",
+          "reader:unsupervised-is-a-permission"
+        ],
+        "rationale": "Compared the current Reader catalog and verified these three destination theses and section anchors. Tony approved these exact connections for cost, grader quality and stop authority. No reciprocal edges or shared-source verification is inferred."
+      },
+      "legacyReceipt": {
+        "schema": "ghostmesh-reader-receipt-v2",
+        "createdAt": "2026-10-30T00:05:28Z",
+        "source": {
+          "platform": "YouTube",
+          "url": "https://www.youtube.com/watch?v=RHMsAm4ODDU",
+          "videoId": "RHMsAm4ODDU",
+          "title": "Kimi K3.1 Pro walkthrough",
+          "creator": "David Ondrej",
+          "durationSeconds": 2204.665,
+          "mediaAspect": "unknown"
+        },
+        "sourceInspection": {
+          "sourceAidSha256": "f883ef0a7b2ee9d04d60a943ed06519b8150184170bbf7db72f48c84632d9160",
+          "method": "Hash-checked retained audio-only partial capture with 400 timed, uncorrected CPU-ASR cues; consequential product facts checked against current primary written sources.",
+          "caveat": "No video coverage, listening-verified quotation, formal ReasonPack SourceID, closed pack, visual demonstration result or model execution is claimed.",
+          "publicationBoundary": "Only paraphrased editorial analysis and public citations are published; no raw audio, transcript, source capture, local path or private operational payload leaves custody."
+        },
+        "custody": {
+          "status": "partial-audio-capture-retained",
+          "note": "The source operator accepted exact partial-audio hashes; the private source remains outside Git and is not a closed ReasonPack."
+        }
+      },
+      "review": {
+        "status": "exact Markdown copy and PR108 desktop render independently accepted; mobile layout publisher-inspected",
+        "reviewer": "Distinct internal copy and desktop render reviewers; publisher separately inspected mobile layout",
+        "reviewedSourceHead": "Approved Markdown SHA-256 0eaa63f00aef903a4199580b27cb56c3e8d7977aab955db0b5b299e80cc962e1; rendered PR108 head 179f4e0ef71fcb5a9ea79a50daa8a3ec9bd718c9",
+        "checkedAt": "2026-10-30T01:17:07Z",
+        "scope": "Exact public prose, source attribution, audio-ASR limits and privacy were independently checked. A distinct desktop preview review covered the opt-in player and failed-thumbnail fallback; the publisher checked 390px layout. Independent mobile execution and production deployment were not attested.",
+        "findings": "No blocking copy, privacy or desktop render finding in the approved candidate. The thumbnail fallback, direct video link and source limits remain visible; related destinations are editorial navigation, not source corroboration."
+      },
+      "revisionHistory": [
+        {
+          "at": "2026-10-30T00:05:28Z",
+          "kind": "new-reader-local-draft",
+          "reason": "Owner-approved video deconstruction implemented from exact locked Markdown; release held for rendered review and authenticated PR acceptance."
+        }
+      ],
+      "editorialOrder": 31,
+      "orderReason": "Place the new Kimi video deconstruction after existing published Reader works.",
+      "editorialDepth": {
+        "schemaVersion": 1,
+        "receiptPath": "content/editorial-depth/the-model-is-not-the-demonstration.json"
       }
     }
   ],

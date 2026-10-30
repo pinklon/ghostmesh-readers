@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "readerId": "reader:the-model-is-not-the-demonstration",
+  "sourceId": "RHMsAm4ODDU",
+  "sourceAidSha256": "f883ef0a7b2ee9d04d60a943ed06519b8150184170bbf7db72f48c84632d9160",
+  "points": [
+    {
+      "atSeconds": 129,
+      "sectionId": "a-demonstration-has-more-than-one-author",
+      "claimIds": [
+        "kimi--toolchain-demonstration"
+      ],
+      "cueParaphrase": "The creator describes a cloud sandbox and later narrates Blender and FreeCAD work while discussing the model.",
+      "privateAidCheck": "The accepted audio-only capture's uncorrected CPU-ASR cues at approximately 02:09 and 04:12 support only this provisional topic and tool map. No video frame, artifact, exact speech or demonstrated outcome was inspected."
+    },
+    {
+      "atSeconds": 869,
+      "sectionId": "cheap-tokens-can-still-buy-an-expensive-task",
+      "claimIds": [
+        "kimi--task-cost-frame"
+      ],
+      "cueParaphrase": "The creator moves from model price to the cost of completing a task and revisits the comparison near the close.",
+      "privateAidCheck": "Uncorrected timed ASR around 14:29–17:42 and 32:15–32:56 supports the topic sequence, not the numerical comparison. The unstable figures and apparent later reversal are excluded from public copy."
+    },
+    {
+      "atSeconds": 1435,
+      "sectionId": "security-loops-need-a-stop-rule",
+      "claimIds": [
+        "kimi--cyber-position-and-loops"
+      ],
+      "cueParaphrase": "The creator discusses Kimi's cyber-training position, then advocates recurring agent loops alongside his product.",
+      "privateAidCheck": "Uncorrected timed ASR around 23:55–29:56 supports a provisional paraphrase of the argument. Kimi's official announcement independently supports only Kimi's own training and internal-benchmark statements. No loop outcome or product efficacy was tested."
+    }
+  ]
+}

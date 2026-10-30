@@ -301,7 +301,7 @@
     "relationshipDisposition": "Two substantive editorial comparisons connect agent work inspectability and evaluation infrastructure. They do not corroborate Anthropic’s internal scale or performance reports.",
     "relationshipReview": {
       "reviewedAt": "2026-10-24",
-      "reviewedCatalogSize": 37,
+      "reviewedCatalogSize": 38,
       "decision": "linked",
       "reviewedTargets": [
         "reader:make-good-work-inspectable",

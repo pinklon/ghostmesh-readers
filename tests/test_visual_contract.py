@@ -2,6 +2,7 @@ import json
 import html
 import copy
 import re
+import subprocess
 import unittest
 from html.parser import HTMLParser
 from pathlib import Path
@@ -87,10 +88,12 @@ class VisualContractTest(unittest.TestCase):
         recent = sorted(catalog['readers'], key=lambda reader: (reader['published'], reader['slug']), reverse=True)
         selected = [by_id[catalog['featuredId']]] + [reader for reader in recent if reader['id'] != catalog['featuredId']][:6]
         written_count = sum(reader['source'].get('kind') in {'paper', 'article', 'repository'} for reader in selected)
-        self.assertEqual(len(panels), len(selected) - written_count)
+        playable = [reader for reader in selected
+                    if reader['source'].get('kind') not in {'paper', 'article', 'repository'}
+                    and (reader['source']['mediaAspect'] != 'unknown' or reader['source'].get('unknownAspectPlayerApproved'))]
+        self.assertEqual(len(panels), len(playable))
         self.assertCountEqual([a.get('data-source-platform') for a in panels],
-                              [reader['source']['platform'] for reader in selected
-                               if reader['source'].get('kind') not in {'paper', 'article', 'repository'}])
+                              [reader['source']['platform'] for reader in playable])
         self.assertEqual(home.count('class="gm-home-visual gm-home-paper"'), written_count)
         self.assertEqual(sum(tag == 'iframe' for tag, _ in parsed.tags), 0)
         self.assertEqual(home.count('class="gm-home-open"'), 7)
@@ -154,9 +157,12 @@ class VisualContractTest(unittest.TestCase):
         parsed.feed(archive)
         frames = [a for _, a in parsed.tags if 'gm-library-frame' in a.get('class', '').split()]
         media = [r for r in catalog['readers'] if r['source'].get('kind') not in {'paper', 'article', 'repository'}]
-        self.assertEqual(len(frames), len(media))
+        playable = [reader for reader in media if reader['source']['mediaAspect'] != 'unknown' or reader['source'].get('unknownAspectPlayerApproved')]
+        self.assertEqual(len(frames), len(playable))
         self.assertCountEqual([a['data-gm-aspect'] for a in frames],
-                              [r['source']['mediaAspect'] for r in media])
+                              [r['source']['mediaAspect'] for r in playable])
+        self.assertEqual(archive.count('Source shape unverified. Open the Reader for the original link.'),
+                         len(media) - len(playable))
         self.assertIn('class="gm-paper-cover"', archive)
         self.assertIn('LLM<br>personas', archive)
         self.assertIn('TabPFN<br>distribution', archive)
@@ -185,12 +191,60 @@ class VisualContractTest(unittest.TestCase):
         reader = copy.deepcopy(json.loads((ROOT / 'content/catalog.json').read_text())['readers'][0])
         reader['rank'] = 1
         reader['source']['mediaAspect'] = 'unknown'
+        reader['source'].pop('unknownAspectPlayerApproved', None)
         for rendered in (card(reader), home_card(reader, 1)):
             self.assertNotIn('data-home-player', rendered)
             self.assertNotIn('data-home-play', rendered)
             self.assertNotIn('<iframe', rendered)
             self.assertIn('Source shape unverified', rendered)
             self.assertIn(html.escape(reader['source']['url'], quote=True), rendered)
+
+    def test_kimi_unknown_shape_uses_approved_opt_in_viewers_without_claiming_aspect(self):
+        catalog = json.loads((ROOT / 'content/catalog.json').read_text())
+        reader = next(r for r in catalog['readers'] if r['slug'] == 'the-model-is-not-the-demonstration')
+        self.assertEqual(reader['source']['mediaAspect'], 'unknown')
+        self.assertTrue(reader['source']['unknownAspectPlayerApproved'])
+        home = (ROOT / 'site/index.html').read_text()
+        archive = (ROOT / 'site/readers/index.html').read_text()
+        article = (ROOT / 'site/the-model-is-not-the-demonstration/index.html').read_text()
+        for page in (home, archive, article):
+            self.assertIn('data-gm-aspect="unknown"', page)
+            self.assertIn('RHMsAm4ODDU', page)
+        self.assertIn('SOURCE SHAPE UNVERIFIED / OPT-IN PLAYER', home)
+        self.assertIn('Source shape unverified / opt-in player', archive)
+        self.assertIn('id="play" hidden', article)
+        self.assertIn('youtube-nocookie.com/embed/RHMsAm4ODDU', article)
+        self.assertIn('Source aspect and upload date are unconfirmed.', article)
+        self.assertNotIn('<iframe', article)
+
+    def test_youtube_readers_keep_article_and_browse_players_together(self):
+        catalog = json.loads((ROOT / 'content/catalog.json').read_text())
+        readers = catalog['readers']
+        recent = sorted(readers, key=lambda reader: (reader['published'], reader['slug']), reverse=True)
+        selected = [next(reader for reader in readers if reader['id'] == catalog['featuredId'])]
+        selected += [reader for reader in recent if reader['id'] != catalog['featuredId']][:6]
+        home = (ROOT / 'site/index.html').read_text()
+        archive = (ROOT / 'site/readers/index.html').read_text()
+        for reader in readers:
+            source = reader['source']
+            if source.get('platform') != 'YouTube':
+                continue
+            with self.subTest(slug=reader['slug']):
+                video_id = source['videoId']
+                self.assertTrue(source['mediaAspect'] != 'unknown' or
+                                source.get('unknownAspectPlayerApproved'),
+                                'YouTube Reader needs a verified aspect or explicit unknown-aspect player approval')
+                article = (ROOT / 'site' / reader['slug'] / 'index.html').read_text()
+                self.assertIn('gm-media-frame', article)
+                self.assertIn('youtube-nocookie.com/embed/', article)
+                self.assertIn(video_id, article)
+                self.assertIn(f'data-source-id="{video_id}"', archive)
+                if reader in selected:
+                    self.assertIn(f'data-source-id="{video_id}"', home)
+
+    def test_kimi_thumbnail_failure_preserves_play_control(self):
+        subprocess.run(['node', str(ROOT / 'tests/reader_thumbnail_fallback.cjs')],
+                       check=True, capture_output=True, text=True)
 
 
 if __name__ == '__main__':

@@ -2,6 +2,15 @@
   "schema": "ghostmesh-public-release-events-v1",
   "events": [
     {
+      "id": "reader:the-model-is-not-the-demonstration:first-public-release",
+      "kind": "new-reader",
+      "subjectId": "reader:the-model-is-not-the-demonstration",
+      "url": "https://youtube.shareplane.malott.ai/the-model-is-not-the-demonstration/",
+      "title": "The Model Is Not the Demonstration",
+      "summary": "A Kimi K3.1 Pro walkthrough mixes benchmark claims, narrated tool work, route choices, price and security-agent proposals.",
+      "publicDate": "2026-10-29"
+    },
+    {
       "id": "scout:copilot-fusion-discarded-drafts:expanded-analysis-20261029",
       "kind": "material-scout-update",
       "subjectId": "copilot-fusion-discarded-drafts",

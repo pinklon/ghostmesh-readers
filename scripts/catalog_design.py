@@ -29,6 +29,7 @@ def paper_cover(source):
 # test, not verification labels. Keep the source-grounding checks below when
 # adding a Reader; never infer a call from its category or claim count.
 CALLS = {
+    'the-model-is-not-the-demonstration': ('Test the complete task', 'Treat Kimi benchmark and narrated demo claims as reasons for a pinned trial, then compare accepted work, full cost and review authority.'),
     'ask-for-the-outcome-keep-the-boundary': ('Watch selectively', 'Try the frames on one low-risk task. The top-one-percent label is not measured evidence.'),
     'make-good-work-inspectable': ('Watch the failure story', 'Judge the result by inspectable application behavior, not commit volume.'),
     'a-challenge-is-not-a-verdict': ('Try on a consequential choice', 'Use an AI objection as a candidate for checking, never as a verdict.'),
@@ -80,7 +81,7 @@ def _poster(reader):
     aspect = source.get('mediaAspect')
     if platform not in {'YouTube', 'Instagram'} or aspect not in {'16:9', '9:16', '1:1', 'unknown'}:
         raise ValueError('Unsupported catalog source shape')
-    if aspect == 'unknown':
+    if aspect == 'unknown' and not source.get('unknownAspectPlayerApproved'):
         return '<div class="gm-archive-source-unknown">Source shape unverified. Open the Reader for the original link.</div>'
     source_id = source.get('videoId') if platform == 'YouTube' else source.get('shortcode')
     pattern = r'[A-Za-z0-9_-]{11}' if platform == 'YouTube' else r'[A-Za-z0-9_-]+'
@@ -127,7 +128,7 @@ def card(reader, number=None):
         f'<a href="/{_e(slug)}/">Read the deconstruction <span aria-hidden="true">↗</span></a>'
         f'<a href="{_e(reader["source"]["url"])}">Original {_e(platform)} source <span aria-hidden="true">↗</span></a>'
         '</div></div>'
-        f'<div class="gm-archive-visual"><span>{"Original source / direct link" if written else "Original source / opt-in player"}</span>{_poster(reader)}</div>'
+        f'<div class="gm-archive-visual"><span>{"Original source / direct link" if written else "Source shape unverified / opt-in player" if reader["source"].get("unknownAspectPlayerApproved") else "Original source / opt-in player"}</span>{_poster(reader)}</div>'
         '</article>'
     )
 

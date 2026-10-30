@@ -151,7 +151,7 @@ def check(root=ROOT, *, local_only=False):
    if slug not in {old['slug'] for old in baseline}:errors.extend(source_custody_errors(r))
    aspect=r['source'].get('mediaAspect')
    require(aspect in {'16:9','9:16','1:1','unknown'},f'{slug}: source aspect missing or invalid')
-   if aspect!='unknown':
+   if aspect!='unknown' or r['source'].get('unknownAspectPlayerApproved'):
     require(raw.count('gm-media-frame')==1 and raw.count(f'data-gm-aspect="{aspect}"')==1,f'{slug}: shared source player or aspect missing')
     require('gm-source-layout' in raw or 'class="player gm-media-frame"' in raw or 'class="player-ratio gm-media-frame"' in raw,f'{slug}: source player layout missing')
    else:

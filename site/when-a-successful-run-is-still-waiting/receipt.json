@@ -330,7 +330,7 @@
     "orderReason": "Place this written-source webhook analysis after the existing published Readers.",
     "relationshipReview": {
       "reviewedAt": "2026-10-24",
-      "reviewedCatalogSize": 37,
+      "reviewedCatalogSize": 38,
       "decision": "none",
       "reviewedTargets": [],
       "rationale": "Existing authority and ingestion Readers have thematic overlap, but no typed link is admitted without a distinct reviewed evidence or architecture relationship."

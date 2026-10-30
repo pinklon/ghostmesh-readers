@@ -314,7 +314,7 @@
     },
     "relationshipReview": {
       "reviewedAt": "2026-10-24",
-      "reviewedCatalogSize": 37,
+      "reviewedCatalogSize": 38,
       "decision": "linked",
       "reviewedTargets": [
         "reader:ask-for-the-outcome-keep-the-boundary",

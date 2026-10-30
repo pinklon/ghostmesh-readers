@@ -38,6 +38,7 @@ body[data-reader] #play-cover small{color:#d2d8df}
 /* One aspect contract for the opt-in source players across Reader templates. */
 .gm-media-frame{position:relative;width:100%;max-width:100%;height:auto!important;min-height:0!important;aspect-ratio:var(--gm-media-ratio);overflow:hidden;background:#101318}
 .gm-media-frame[data-gm-aspect="16:9"]{--gm-media-ratio:16/9}
+.gm-media-frame[data-gm-aspect="unknown"]{--gm-media-ratio:16/9}/* Viewing box only; the source's intrinsic aspect remains unverified. */
 .gm-media-frame[data-gm-aspect="9:16"]{--gm-media-ratio:9/16;width:min(100%,520px,47.8125vh);margin-inline:auto}
 .gm-media-frame[data-gm-aspect="1:1"]{--gm-media-ratio:1;width:min(100%,760px,85vh);margin-inline:auto}
 .gm-media-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0;background:#000}
