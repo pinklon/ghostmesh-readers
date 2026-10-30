@@ -255,6 +255,33 @@ class ScoutResearchTests(unittest.TestCase):
                           if edge['from'] == 'scout:' + item['id']},
                          {'scout:' + target for target in approved})
 
+    def test_connected_apps_method_keeps_copy_and_one_grounded_relationship(self):
+        slug = 'qualifying-a-connected-apps-integration-before-building-it'
+        source = ROOT/f'content/scout/publication-drafts/{slug}.md'
+        self.assertEqual(hashlib.sha256(source.read_bytes()).hexdigest(),
+                         '6c07f0c07f435583aab49d4bfada3e3f53aaeaf69241ce46fc4ee4168c9d507a')
+        records = [item for item in self.source['records'] if item['slug'] == slug]
+        self.assertEqual(len(records), 1)
+        item = records[0]
+        self.assertEqual(item['type'], 'method')
+        self.assertEqual(item['relatedIds'], ['essay:assisted-permissions-and-human-approval'])
+        self.assertNotIn('standingRelease', item)
+        page = (ROOT/item['sourcePath']).read_text()
+        article = page.split('<article class="article">', 1)[1].split('</article>', 1)[0]
+        self.assertEqual(hashlib.sha256(article.encode()).hexdigest(),
+                         '17d18c4fbb69dbfa940a444f4f96110513016351579ae90791e03120fd08fc46')
+        self.assertIn('No console session, service code, authentication flow, enforcement or interoperability was tested.', page)
+        self.assertIn('CIMD-only', page)
+        self.assertNotIn('noindex', page)
+        self.assertEqual(page.count('href="/scout/essays/assisted-permissions-and-human-approval/"'), 1)
+        graph = json.loads((ROOT/'site/scout/research/relationships.json').read_text())
+        edges = [edge for edge in graph['edges'] if edge['from'] == 'scout:' + item['id']]
+        self.assertEqual([edge['to'] for edge in edges],
+                         ['scout:essay:assisted-permissions-and-human-approval'])
+        self.assertEqual(sum(e['id'] == item['releaseEventId'] for e in self.events['events']), 1)
+        self.assertEqual((ROOT/'site/sitemap.xml').read_text().count(
+            'https://youtube.shareplane.malott.ai' + item['url']), 1)
+
     def test_october_27_research_preserves_copy_and_only_approved_relationship(self):
         cases = (
             ('assisted-permissions-and-human-approval', 'essay', '12-',

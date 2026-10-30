@@ -3,6 +3,27 @@
   "note": "Only approved public works. Six historical essays have an evidenced October 23 public-by bound from the released nine-work Library, but their exact first-publication day remains unverified; they do not gain retroactive RSS events.",
   "records": [
     {
+      "id": "method:qualifying-a-connected-apps-integration-before-building-it",
+      "slug": "qualifying-a-connected-apps-integration-before-building-it",
+      "type": "method",
+      "status": "published",
+      "title": "Qualifying a Connected Apps integration before building it",
+      "url": "/scout/essays/qualifying-a-connected-apps-integration-before-building-it/",
+      "sourcePath": "site/scout/essays/qualifying-a-connected-apps-integration-before-building-it/index.html",
+      "provenance": "Google Connected Apps announcement of October 28, 2026, its current policy, registration, OAuth and troubleshooting guides, and the MCP client-registration specification; public sources inspected October 29 to 30, 2026.",
+      "evidenceLimits": "Source analysis and an unperformed one-page review exercise. No console session, integration, service code, authentication flow, enforcement, account eligibility or interoperability was tested. CIMD-only behavior remains unresolved.",
+      "summary": "A one-page pre-build review method separates the owned service, declared tools, account authority, side effects and server revision while retaining one unresolved CIMD-only registration question.",
+      "topics": [
+        "agent-authority",
+        "integration-method"
+      ],
+      "reviewedOn": "2026-10-29",
+      "releaseEventId": "scout:qualifying-a-connected-apps-integration-before-building-it:first-public-release",
+      "relatedIds": [
+        "essay:assisted-permissions-and-human-approval"
+      ]
+    },
+    {
       "id": "report:copilot-fusion-discarded-drafts",
       "slug": "copilot-fusion-discarded-drafts",
       "type": "essay",
