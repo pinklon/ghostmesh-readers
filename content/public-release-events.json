@@ -2,6 +2,15 @@
   "schema": "ghostmesh-public-release-events-v1",
   "events": [
     {
+      "id": "scout:did-the-evidence-change-the-answer:first-public-release",
+      "kind": "new-scout-research",
+      "subjectId": "did-the-evidence-change-the-answer",
+      "url": "https://youtube.shareplane.malott.ai/scout/essays/did-the-evidence-change-the-answer/",
+      "title": "Did the Evidence Change the Answer?",
+      "summary": "A correct answer can demonstrate useful knowledge without demonstrating that the supplied evidence determined it. A proposed controlled comparison examines sensitivity to supplied evidence.",
+      "publicDate": "2026-10-31"
+    },
+    {
       "id": "scout:validate-the-association-not-just-the-extracted-value:first-public-release",
       "kind": "new-scout-research",
       "subjectId": "validate-the-association-not-just-the-extracted-value",

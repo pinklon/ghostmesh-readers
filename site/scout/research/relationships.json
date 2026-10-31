@@ -3,8 +3,8 @@
   "scope": "Public Scout research reading routes; links are editorial, not corroboration.",
   "authority": "scout-research-curated-editorial",
   "visibility": "public",
-  "recordCount": 20,
-  "relationshipCount": 9,
+  "recordCount": 21,
+  "relationshipCount": 11,
   "nodes": [
     {
       "id": "scout:cloudflare-security-audit-skill",
@@ -26,6 +26,13 @@
       "type": "essay",
       "title": "Assisted permissions and the meaning of human approval",
       "url": "https://youtube.shareplane.malott.ai/scout/essays/assisted-permissions-and-human-approval/"
+    },
+    {
+      "id": "scout:essay:did-the-evidence-change-the-answer",
+      "sourceId": "essay:did-the-evidence-change-the-answer",
+      "type": "essay",
+      "title": "Did the Evidence Change the Answer?",
+      "url": "https://youtube.shareplane.malott.ai/scout/essays/did-the-evidence-change-the-answer/"
     },
     {
       "id": "scout:essay:five-ideas-outside-the-filter",
@@ -154,6 +161,20 @@
       "type": "approved related work",
       "fromUrl": "https://youtube.shareplane.malott.ai/scout/essays/assisted-permissions-and-human-approval/",
       "toUrl": "https://youtube.shareplane.malott.ai/scout/essays/a-faster-review-button-is-not-a-better-decision/"
+    },
+    {
+      "from": "scout:essay:did-the-evidence-change-the-answer",
+      "to": "scout:essay:the-signal-is-not-the-finding",
+      "type": "approved related work",
+      "fromUrl": "https://youtube.shareplane.malott.ai/scout/essays/did-the-evidence-change-the-answer/",
+      "toUrl": "https://youtube.shareplane.malott.ai/scout/essays/the-signal-is-not-the-finding/"
+    },
+    {
+      "from": "scout:essay:did-the-evidence-change-the-answer",
+      "to": "scout:essay:the-plateau-that-lied",
+      "type": "approved related work",
+      "fromUrl": "https://youtube.shareplane.malott.ai/scout/essays/did-the-evidence-change-the-answer/",
+      "toUrl": "https://youtube.shareplane.malott.ai/scout/essays/the-plateau-that-lied/"
     },
     {
       "from": "scout:essay:what-survives-a-checkpoint",

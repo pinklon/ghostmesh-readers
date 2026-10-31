@@ -1,0 +1,61 @@
+# Did the Evidence Change the Answer?
+
+*A correct answer can demonstrate useful knowledge without demonstrating that the supplied evidence determined it. An evaluation of source use needs to separate those claims.*
+
+**Source-based analysis; proposed test not performed.** Sources checked October 31, 2026.
+
+**Older but relevant.** This analysis revisits Oren and colleagues' November 24, 2023 preprint revision and the 2024 ConStat study because their distinctions matter when qualifying today's research agents. A 2026 reanalysis supplies counterevidence. These are dated research results, not a new product announcement or a test of a current model.
+
+A model reads a short account of a famous technical failure and supplies the accepted explanation. It cites the packet, expresses appropriate caution and gets the answer right. That can be a useful result. It does not yet tell us how much the packet contributed.
+
+The model may have reasoned from the record, recognized the event, or combined evidence with prior knowledge. Removing the event's name does not remove its recognizable structure. A distinctive instrument, sequence of events or measurement can be enough. Calling the exercise blind because the title was hidden makes a stronger claim than the procedure supports.
+
+For a research assistant, the consequential question is often whether it can distinguish what a document establishes from what it already believes. That question deserves its own measurement. Otherwise, an evaluator can reward a correct conclusion while missing unsupported source attribution.
+
+## Recognition is a warning about interpretation
+
+Recognition is not, by itself, proof that benchmark questions leaked into training. Knowing a public event and memorizing a particular evaluation item are different possibilities. A model's statement that it recognizes a case is useful disclosure, but not an audit of its training history. A denial of recognition is not a clean bill of health either.
+
+Oren and colleagues' contamination test illustrates the distance between suspicion and a statistical claim. Their method compares likelihoods for a benchmark's canonical and shuffled example orders, relying on exchangeability. It requires sequence log probabilities; an ordinary answer or confidence statement is not that test. Its scope also does not rule out every kind of partial exposure. [Version-pinned study, problem setting and limitations](https://arxiv.org/html/2310.17623v2).
+
+The practical consequence is to retain two descriptions when appropriate: the answer was correct, and the case may have been familiar. Neither description cancels the other. The evaluation becomes misleading when correctness is promoted into evidence of unfamiliar-case investigation without a procedure that can distinguish the two.
+
+## Ask which performance claim matters
+
+ConStat approaches contamination through performance that fails to generalize, comparing a benchmark with reference tasks and models. Its correction for task difficulty matters: changing wording or making a reference task harder can create a gap without establishing memorization. Its estimates also depend on its references. [ConStat, NeurIPS 2024, sections 2–3 and limitations](https://proceedings.nips.cc/paper_files/paper/2024/file/a7f89793b9e6f8c6568dbbb6ff727b9b-Paper-Conference.pdf).
+
+Our inference is narrower than a new contamination detector. If the qualification question is whether a model uses a supplied record, start by testing sensitivity to that record. A familiar-case accuracy score cannot answer this alone. Nor can a raw performance drop on a rewritten question establish why the answer changed.
+
+This affects the architecture decision. Before adding an agent panel, ask what observation the panel would contribute that a small controlled comparison lacks. Different expertise may improve interpretation. More people or models discussing the same recognizable story do not, merely by participating, remove its familiarity. A larger review arrangement should earn its cost through an identifiable improvement in the measurement.
+
+## The strongest objection: knowledge is part of competence
+
+A useful research assistant should know things. Requiring every answer to emerge from an unfamiliar packet can turn a realistic task into an artificial reading exercise. A model that notices a source conflicts with well-established facts may be doing exactly what we want. Blind obedience to a packet would be a poor definition of grounding.
+
+There is also empirical reason to avoid declaring leaderboards worthless. Xiao and Cheng's 2026 preprint reanalyzes public response data from four benchmarks and reports that score inflation need not materially change model rankings. It reuses ConStat data, so it is not an independent collection of model runs. The authors limit their conclusion to the studied comparisons and discuss reference and paraphrase limitations. [Pinned reanalysis, methods and discussion](https://arxiv.org/pdf/2609.02899v1).
+
+That objection changes what we should report, rather than making qualification unnecessary. A ranking can remain useful for choosing between models while an absolute score remains unsuitable as a reliability guarantee. Likewise, a familiar case can test whether an assistant explains an established answer well without establishing how it investigates an unknown one. The useful claim depends on the decision we intend to make.
+
+## A small comparison worth trying
+
+For a proposed first check, write one clearly fictional equipment-diagnosis record. Define the task as stating what the record warrants, including its unresolved assumptions. Prepare three versions before any solver sees them:
+
+- A baseline containing enough information for a bounded conclusion.
+- A version changing one fact that should alter that conclusion.
+- A version changing an irrelevant detail that should not alter it.
+
+Have a second reader check the intended distinction and freeze the answer criteria. Keep the model, instructions and allowed tools fixed, and use separate contexts so one version does not reveal another. This is a proposed source-use check, not a claim of true blinding or a guarantee that synthetic material is unfamiliar.
+
+Ask for the conclusion, its supporting record entries and any conflict with background knowledge. Score unsupported factual assertions separately from conclusion accuracy. Record whether the decisive change produces the warranted revision, whether the irrelevant change leaves it stable, and when the assistant abstains. An explicit conflict or justified abstention can be a sound response; repeating a record mechanically is not the pass condition.
+
+The check fails as a qualification method if independent readers cannot agree on what changed, if a supposedly irrelevant edit alters the reasoning burden, or if success depends on guessing the evaluator's preferred narrative. Revise the materials before expanding the experiment. A few successful responses would show behavior on those materials, not a calibrated general investigation success rate.
+
+This comparison has not been run. It would require separately authorized model use and retained outputs. No training-data audit, contamination test, model comparison or orchestration experiment was executed for this essay. No product capability, account entitlement or deployment recommendation follows from the cited studies.
+
+## GhostMesh Verdict
+
+Qualify the claim the workflow needs. For source-grounded research, test whether the evidence can appropriately change the answer and whether the assistant marks what remains unsupported. Keep useful knowledge, report familiarity honestly, and start with a controlled comparison before building a larger review apparatus. A correct answer earns credit for correctness. Additional claims need additional evidence.
+
+### Source dates and inspection limits
+
+Oren et al. is pinned to arXiv v2, dated November 24, 2023; its later ICLR 2024 publication was identified. ConStat's 2024 conference version and its May 25, 2024 preprint were inspected. The 2026 reanalysis is pinned to v1; its displayed July 5 version date and September-style identifier are unreconciled here, so no exact original-posting date is asserted. Version records and relevant methods and limitations were checked October 31. The studies were not reproduced, their training corpora were not inspected, and their findings do not qualify any current model for a real investigation.

@@ -3,6 +3,28 @@
   "note": "Only approved public works. Six historical essays have an evidenced October 23 public-by bound from the released nine-work Library, but their exact first-publication day remains unverified; they do not gain retroactive RSS events.",
   "records": [
     {
+      "id": "essay:did-the-evidence-change-the-answer",
+      "slug": "did-the-evidence-change-the-answer",
+      "type": "essay",
+      "status": "published",
+      "title": "Did the Evidence Change the Answer?",
+      "url": "/scout/essays/did-the-evidence-change-the-answer/",
+      "sourcePath": "site/scout/essays/did-the-evidence-change-the-answer/index.html",
+      "provenance": "Oren et al. arXiv v2 (November 24, 2023), ConStat NeurIPS 2024 and Xiao and Cheng arXiv v1 (2026); primary methods and limitations checked October 31, 2026. The 2026 preprint has an unreconciled displayed July 5 date and September-style identifier; no exact original-posting date is asserted.",
+      "evidenceLimits": "Source-based analysis and an unperformed controlled comparison. No study reproduction, training-data audit, contamination test, model comparison or orchestration experiment was executed. Older but relevant: Oren v2 (November 24, 2023) and ConStat (NeurIPS 2024) inform current evidence-use qualification. Version and publication records were checked October 31, 2026, including Oren's later ICLR 2024 publication. No current model or real investigation is qualified.",
+      "summary": "A correct answer can demonstrate useful knowledge without demonstrating that the supplied evidence determined it. A proposed controlled comparison examines sensitivity to supplied evidence.",
+      "topics": [
+        "evaluation-method",
+        "evidence-use"
+      ],
+      "reviewedOn": "2026-10-31",
+      "releaseEventId": "scout:did-the-evidence-change-the-answer:first-public-release",
+      "relatedIds": [
+        "essay:the-signal-is-not-the-finding",
+        "essay:the-plateau-that-lied"
+      ]
+    },
+    {
       "id": "essay:validate-the-association-not-just-the-extracted-value",
       "slug": "validate-the-association-not-just-the-extracted-value",
       "type": "essay",
