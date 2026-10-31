@@ -255,6 +255,52 @@ class ScoutResearchTests(unittest.TestCase):
                           if edge['from'] == 'scout:' + item['id']},
                          {'scout:' + target for target in approved})
 
+    def test_evidence_use_essay_keeps_locked_copy_and_release_connections(self):
+        slug = 'did-the-evidence-change-the-answer'
+        raw = (ROOT/f'content/scout/publication-drafts/{slug}.md').read_bytes()
+        self.assertEqual(hashlib.sha256(raw).hexdigest(),
+                         '2ce54b598fcee8d34d24b2a056346ac241913361875ce775305340f1b6000650')
+        records = [record for record in self.source['records'] if record['slug'] == slug]
+        self.assertEqual(len(records), 1)
+        item = records[0]
+        targets = ['essay:the-signal-is-not-the-finding', 'essay:the-plateau-that-lied']
+        self.assertEqual(item['id'], 'essay:' + slug)
+        self.assertEqual(item['type'], 'essay')
+        self.assertNotIn('standingRelease', item)
+        self.assertEqual(item['relatedIds'], targets)
+        page = (ROOT/item['sourcePath']).read_text()
+        article = '<article' + page.split('<article', 1)[1].split('</article>', 1)[0] + '</article>'
+        self.assertEqual(hashlib.sha256(article.encode()).hexdigest(),
+                         'efe6e0565a4a6f79e5b705ec2f7d9778e32f575665111a05618e8de151f28a35')
+        self.assertNotIn('noindex', page)
+        self.assertNotIn('Editorial candidate', page)
+        self.assertNotIn('Not published', page)
+        self.assertIn('GhostMesh analysis', page)
+        self.assertIn('These are editorial connections, not independent corroboration.', page)
+        by_id = {record['id']: record for record in self.source['records']}
+        for target in targets:
+            self.assertEqual(page.count('href="' + by_id[target]['url'] + '"'), 1)
+        graph = json.loads((ROOT/'site/scout/research/relationships.json').read_text())
+        self.assertEqual(sum(node['sourceId'] == item['id'] for node in graph['nodes']), 1)
+        self.assertEqual({edge['to'] for edge in graph['edges']
+                          if edge['from'] == 'scout:' + item['id']},
+                         {'scout:' + target for target in targets})
+        events = [event for event in self.events['events'] if event['subjectId'] == slug]
+        self.assertEqual(len(events), 1)
+        event = events[0]
+        self.assertEqual(event['id'], item['releaseEventId'])
+        self.assertEqual(event['kind'], 'new-scout-research')
+        self.assertEqual(event['title'], item['title'])
+        self.assertEqual(event['summary'], item['summary'])
+        self.assertIn('Published <time datetime="' + event['publicDate'] + '"', page)
+        self.assertEqual((ROOT/'site/feed.xml').read_text().count(
+            'urn:ghostmesh-readers:release:' + event['id']), 1)
+        self.assertEqual((ROOT/'site/sitemap.xml').read_text().count(event['url']), 1)
+        self.assertIn('href="' + item['url'] + '"',
+                      (ROOT/'site/scout/essays/index.html').read_text())
+        self.assertIn('href="' + item['url'] + '"',
+                      (ROOT/'site/scout/research/index.html').read_text())
+
     def test_connected_apps_method_keeps_copy_and_one_grounded_relationship(self):
         slug = 'qualifying-a-connected-apps-integration-before-building-it'
         source = ROOT/f'content/scout/publication-drafts/{slug}.md'
