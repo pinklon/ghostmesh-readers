@@ -11,7 +11,7 @@
       "url": "/scout/essays/did-the-evidence-change-the-answer/",
       "sourcePath": "site/scout/essays/did-the-evidence-change-the-answer/index.html",
       "provenance": "Oren et al. arXiv v2 (November 24, 2023), ConStat NeurIPS 2024 and Xiao and Cheng arXiv v1 (2026); primary methods and limitations checked October 31, 2026. The 2026 preprint has an unreconciled displayed July 5 date and September-style identifier; no exact original-posting date is asserted.",
-      "evidenceLimits": "Source-based analysis and an unperformed controlled comparison. No study reproduction, training-data audit, contamination test, model comparison or orchestration experiment was executed. Older but relevant: the 2023 and 2024 sources inform current evidence-use qualification; no current model or real investigation is qualified.",
+      "evidenceLimits": "Source-based analysis and an unperformed controlled comparison. No study reproduction, training-data audit, contamination test, model comparison or orchestration experiment was executed. Older but relevant: Oren v2 (November 24, 2023) and ConStat (NeurIPS 2024) inform current evidence-use qualification. Version and publication records were checked October 31, 2026, including Oren's later ICLR 2024 publication. No current model or real investigation is qualified.",
       "summary": "A correct answer can demonstrate useful knowledge without demonstrating that the supplied evidence determined it. A proposed controlled comparison examines sensitivity to supplied evidence.",
       "topics": [
         "evaluation-method",

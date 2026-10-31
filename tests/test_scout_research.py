@@ -300,6 +300,13 @@ class ScoutResearchTests(unittest.TestCase):
                       (ROOT/'site/scout/essays/index.html').read_text())
         self.assertIn('href="' + item['url'] + '"',
                       (ROOT/'site/scout/research/index.html').read_text())
+        for surface in ('site/scout/essays/index.html', 'site/scout/research/index.html'):
+            card = (ROOT/surface).read_text().split(item['url'], 1)[1]
+            card = card.split('</article>' if '/research/' in surface else '</a>', 1)[0]
+            self.assertIn('Older but relevant', card)
+            self.assertIn('Oren v2 (November 24, 2023)', card)
+            self.assertIn('inform current evidence-use qualification', card)
+            self.assertIn('Version and publication records were checked October 31, 2026', card)
 
     def test_connected_apps_method_keeps_copy_and_one_grounded_relationship(self):
         slug = 'qualifying-a-connected-apps-integration-before-building-it'
