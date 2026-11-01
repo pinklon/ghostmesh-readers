@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "readerId": "reader:the-cockpit-is-not-the-control-plane",
+  "sourceId": "8QgBcI40VC8",
+  "sourceAidSha256": "8fcbb048dcc5f8bff4dc6fd30c4f654fd5ee8f8020ee0acacbcac44bc81aff2a",
+  "articleSha256": "7da6f0ef6c6796b1025042f127e6f0ae8e94a216f85dbb36f346d285852a7c8d",
+  "evidenceRevision": "934a935518837b3dd57e141001ce8292cdbe575320c1eac523ac166b1d6d0ffa",
+  "reviewedAt": "2026-11-01T04:38:00Z",
+  "provenance": {
+    "kind": "codex-task-agent",
+    "reference": "Independent reviewer /root/independent_reader_review, separate from the authoring agent. Source-fidelity, private ReasonPack caption/manifest, primary Orca docs, Reader claim and relationship review on 2026-11-01; initial REVISE findings corrected and rechecked.",
+    "limits": "Read-only reviewer inspected selected private caption passages, official product documentation and authored claims. No continuous audiovisual playback, live Orca installation, production reliability audit or measured GhostMesh pilot."
+  },
+  "summary": "Accept for owner review after correcting the 06:12 chapter, documentation-only SSH/scheduling/telemetry attribution, and untested GhostMesh attention hypothesis. No blocking privacy or factual findings remain.",
+  "findings": [
+    "The 06:12 source moment covers file drag, diff annotation, previews, Orca CLI, GitHub and Linear integrations and keep-awake behavior, not SSH, scheduling or telemetry. The corrected chapter accurately distinguishes these.",
+    "SSH worktrees, scheduled jobs and telemetry limits are attributed to first-party Orca documentation, not to the video; the five mapped source moments now represent demonstrated or speaker-described video subjects.",
+    "Reduced GhostMesh owner attention is explicitly a falsifiable GhostMesh hypothesis, not a measured result or presenter quote.",
+    "Private canonical manifest SHA-256 was independently verified; automatic English captions were used as timing aids, not certified exact speech.",
+    "The worktree, Design Mode, CLI, Git and orchestration descriptions align with selected source passages and primary mechanism documentation; no runtime or productivity guarantee is inferred.",
+    "Three editorial relationship targets have substantive comparative reasons and valid cited anchors; the routes are navigation, not source corroboration.",
+    "No third-party media, full transcript, captions, signed URLs, local private paths or credentials appear in the inspected publication inputs; authored article has no em dash."
+  ],
+  "conclusion": "accept-for-owner-review"
+}
