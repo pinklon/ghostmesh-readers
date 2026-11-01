@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "readerId": "reader:the-cockpit-is-not-the-control-plane",
+  "sourceId": "8QgBcI40VC8",
+  "sourceAidSha256": "8fcbb048dcc5f8bff4dc6fd30c4f654fd5ee8f8020ee0acacbcac44bc81aff2a",
+  "points": [
+    {
+      "atSeconds": 37,
+      "sectionId": "the-first-principle-preserve-the-terminal-improve-the-surrounding-context",
+      "claimIds": [
+        "the-cockpit-is-not-the-control-plane--orca-1"
+      ],
+      "cueParaphrase": "Orca runs Claude and Codex CLI sessions in one terminal-centered interface",
+      "privateAidCheck": "Source cue located using timestamped English automatic captions in a verified private pack. Timing is an aid, not exact speech or outcome verification."
+    },
+    {
+      "atSeconds": 99,
+      "sectionId": "git-worktrees-genuine-parallelism-limited-isolation",
+      "claimIds": [
+        "the-cockpit-is-not-the-control-plane--orca-2"
+      ],
+      "cueParaphrase": "Worktrees isolate agent file checkouts",
+      "privateAidCheck": "Source cue located using timestamped English automatic captions in a verified private pack. Timing is an aid, not exact speech or outcome verification."
+    },
+    {
+      "atSeconds": 152,
+      "sectionId": "design-mode-the-shortest-route-from-seeing-a-defect-to-specifying-it",
+      "claimIds": [
+        "the-cockpit-is-not-the-control-plane--orca-3"
+      ],
+      "cueParaphrase": "Design Mode transmits selected DOM, CSS and screenshot context to agents",
+      "privateAidCheck": "Source cue located using timestamped English automatic captions in a verified private pack. Timing is an aid, not exact speech or outcome verification."
+    },
+    {
+      "atSeconds": 227,
+      "sectionId": "orchestration-the-most-powerful-feature-and-the-greatest-overlap",
+      "claimIds": [
+        "the-cockpit-is-not-the-control-plane--orca-4"
+      ],
+      "cueParaphrase": "Cross-provider orchestration allocates work and improves results",
+      "privateAidCheck": "Source cue located using timestamped English automatic captions in a verified private pack. Timing is an aid, not exact speech or outcome verification."
+    },
+    {
+      "atSeconds": 318,
+      "sectionId": "why-he-switched-and-what-that-actually-proves",
+      "claimIds": [
+        "the-cockpit-is-not-the-control-plane--orca-5"
+      ],
+      "cueParaphrase": "Previous terminal setup reported completion while background work continued",
+      "privateAidCheck": "Source cue located using timestamped English automatic captions in a verified private pack. Timing is an aid, not exact speech or outcome verification."
+    }
+  ]
+}

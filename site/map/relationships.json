@@ -3,9 +3,9 @@
   "scope": "Local public editorial reading routes; no independent corroboration or cross-site graph admission.",
   "authority": "catalog-curated-editorial",
   "visibility": "public",
-  "readerCount": 39,
-  "assessmentCount": 39,
-  "relationshipCount": 80,
+  "readerCount": 40,
+  "assessmentCount": 40,
+  "relationshipCount": 83,
   "nodes": [
     {
       "id": "reader:ask-for-the-outcome-keep-the-boundary",
@@ -627,6 +627,23 @@
           "reader:the-stop-button-is-outside-the-chat"
         ],
         "rationale": "Provisional comparison across the current thirty-eight Reader identities and this new candidate: the two selected works address persistent harness effects and external stop authority with specific complementary theses. Shared broad AI themes in other Readers are insufficient as corroboration. The exact cross-catalog editorial assessment still requires independent verification before release."
+      }
+    },
+    {
+      "id": "reader:the-cockpit-is-not-the-control-plane",
+      "slug": "the-cockpit-is-not-the-control-plane",
+      "title": "The Cockpit Is Not the Control Plane",
+      "url": "https://youtube.shareplane.malott.ai/the-cockpit-is-not-the-control-plane/",
+      "review": {
+        "reviewedAt": "2026-11-01",
+        "reviewedCatalogSize": 40,
+        "decision": "linked",
+        "reviewedTargets": [
+          "reader:the-fleet-needs-a-control-plane",
+          "reader:the-harness-keeps-the-receipt",
+          "reader:the-stop-button-is-outside-the-chat"
+        ],
+        "rationale": "The existing Orca, harness and stop-boundary Readers have specific complementary theses. Other AI Readers are too broad to imply corroboration."
       }
     }
   ],
@@ -1586,6 +1603,42 @@
       "reason": "The stop-button Reader focuses on target-side control; this edition tests whether recurring agent loops and Mac relays preserve that authority under replay and cloud scheduler dependency.",
       "provenance": [
         "/the-session-count-is-not-the-system/#five-corrections-and-cautions",
+        "/the-stop-button-is-outside-the-chat/#stop-surface"
+      ],
+      "basis": "curated-editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:the-cockpit-is-not-the-control-plane",
+      "to": "reader:the-fleet-needs-a-control-plane",
+      "type": "extends",
+      "reason": "The earlier Orca fleet Reader examines worktrees and orchestrated coding sessions. This Reader tests the cockpit benefit against durable GhostMesh ownership and completion. Neither source verifies the other.",
+      "provenance": [
+        "/the-cockpit-is-not-the-control-plane/#the-first-principle-preserve-the-terminal-improve-the-surrounding-context",
+        "/the-fleet-needs-a-control-plane/#where-isolation-ends"
+      ],
+      "basis": "curated-editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:the-cockpit-is-not-the-control-plane",
+      "to": "reader:the-harness-keeps-the-receipt",
+      "type": "informs architecture",
+      "reason": "Orca's operator surface is not a durable action receipt. The harness Reader frames the separate control and evidence requirement; this is an architectural comparison, not outcome corroboration.",
+      "provenance": [
+        "/the-cockpit-is-not-the-control-plane/#orchestration-the-most-powerful-feature-and-the-greatest-overlap",
+        "/the-harness-keeps-the-receipt/#the-boundary-that-stays"
+      ],
+      "basis": "curated-editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:the-cockpit-is-not-the-control-plane",
+      "to": "reader:the-stop-button-is-outside-the-chat",
+      "type": "informs architecture",
+      "reason": "Mobile, scheduling and SSH operations require an independently available stop and readback path. The existing Reader describes that boundary, which this video does not test.",
+      "provenance": [
+        "/the-cockpit-is-not-the-control-plane/#scheduling-mobile-and-remote-execution-useful-but-not-free-of-governance-consequences",
         "/the-stop-button-is-outside-the-chat/#stop-surface"
       ],
       "basis": "curated-editorial-comparison",

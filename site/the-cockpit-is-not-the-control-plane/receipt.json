@@ -1,0 +1,380 @@
+{
+  "schema": "ghostmesh-reader-receipt-v2",
+  "createdAt": "2026-11-01T04:35:00Z",
+  "source": {
+    "platform": "YouTube",
+    "url": "https://www.youtube.com/watch?v=8QgBcI40VC8",
+    "videoId": "8QgBcI40VC8",
+    "title": "The Best Agent IDE I've Ever Used (Orca)",
+    "creator": "Better Stack",
+    "uploadDate": "20261023",
+    "durationSeconds": 425,
+    "mediaAspect": "16:9"
+  },
+  "sourceInspection": {
+    "method": "Private canonical seven-member ReasonPack with automatic English caption timing aid; primary Orca documentation examined.",
+    "status": "verified-private-pack-and-automatic-caption-aid",
+    "manifestSha256": "8fcbb048dcc5f8bff4dc6fd30c4f654fd5ee8f8020ee0acacbcac44bc81aff2a",
+    "caveat": "Source demonstrates interface actions; measured quality, reliability and security remain unverified.",
+    "publicationBoundary": "No private media, captions, transcript, paths or signed source URLs in public Git."
+  },
+  "reasonPack": {
+    "skill": "reasonpack",
+    "schema": "ghostmesh-reasoning-pack-v1",
+    "verification": "pass",
+    "manifestSha256": "8fcbb048dcc5f8bff4dc6fd30c4f654fd5ee8f8020ee0acacbcac44bc81aff2a"
+  },
+  "custody": {
+    "status": "qualified-private-pack-verified",
+    "note": "Canonical verifier PASS; registry SourceID unassigned."
+  },
+  "overview": "Better Stack demonstrates Orca as a unified interface for Claude Code and Codex CLI sessions, Git worktrees, browser annotations, reviews and orchestration.",
+  "whyItMatters": "Agent operators can reduce tab and context switching, but an integrated interface does not establish completion truth, isolation or security.",
+  "ghostMeshTakeaway": "Pilot Orca against a disposable repository and compare reviewed changes, interventions and interruption recovery while retaining Pale Horse task ownership and Control Tower evidence.",
+  "normalization": {
+    "id": "reader:the-cockpit-is-not-the-control-plane",
+    "slug": "the-cockpit-is-not-the-control-plane",
+    "title": "The Cockpit Is Not the Control Plane",
+    "category": "AI & Technology",
+    "tags": [
+      "Orca",
+      "coding agents",
+      "worktrees",
+      "agent orchestration"
+    ],
+    "entities": [
+      "Orca",
+      "Better Stack",
+      "Claude Code",
+      "Codex",
+      "GhostMesh"
+    ],
+    "source": {
+      "platform": "YouTube",
+      "url": "https://www.youtube.com/watch?v=8QgBcI40VC8",
+      "videoId": "8QgBcI40VC8",
+      "title": "The Best Agent IDE I've Ever Used (Orca)",
+      "creator": "Better Stack",
+      "uploadDate": "20261023",
+      "durationSeconds": 425,
+      "mediaAspect": "16:9"
+    },
+    "published": "2026-11-01",
+    "updated": "2026-11-01T04:35:00Z",
+    "overview": "Better Stack demonstrates Orca as a unified interface for Claude Code and Codex CLI sessions, Git worktrees, browser annotations, reviews and orchestration.",
+    "whyItMatters": "Agent operators can reduce tab and context switching, but an integrated interface does not establish completion truth, isolation or security.",
+    "ghostMeshTakeaway": "Pilot Orca against a disposable repository and compare reviewed changes, interventions and interruption recovery while retaining Pale Horse task ownership and Control Tower evidence.",
+    "verdict": "Worth studying",
+    "architectureImpact": "experiment recommended",
+    "falsification": "Reject Orca as a GhostMesh dependency if a finite pilot does not reduce operator attention or creates conflicting authority, unverifiable completion, or wider access.",
+    "evidenceState": "unverified",
+    "lastEvidenceChecked": "2026-11-01T04:35:00Z",
+    "freshness": "Private ReasonPack verified; primary Orca documentation inspected 2026-11-01. Measured security and operator-efficiency outcomes unknown.",
+    "variant": "dossier",
+    "accent": "teal",
+    "claims": [
+      {
+        "id": "the-cockpit-is-not-the-control-plane--orca-1",
+        "proposition": "Orca runs Claude and Codex CLI sessions in one terminal-centered interface",
+        "kind": "speaker-workflow-or-claim",
+        "asOf": "2026-11-01",
+        "status": "unverified",
+        "assessment": "Observed source interface or described vendor behavior; no controlled outcome evaluation.",
+        "limits": "The primary source and first-party documentation do not verify operational outcomes or every privilege boundary.",
+        "sourceLocation": "37",
+        "references": [],
+        "counterevidence": [],
+        "temporalScope": "2026-10-23 video; private acquisition and source check 2026-11-01."
+      },
+      {
+        "id": "the-cockpit-is-not-the-control-plane--orca-2",
+        "proposition": "Worktrees isolate agent file checkouts",
+        "kind": "speaker-workflow-or-claim",
+        "asOf": "2026-11-01",
+        "status": "unverified",
+        "assessment": "Observed source interface or described vendor behavior; no controlled outcome evaluation.",
+        "limits": "does not isolate credentials, host or services",
+        "sourceLocation": "99",
+        "references": [
+          "orca-worktrees"
+        ],
+        "counterevidence": [],
+        "temporalScope": "2026-10-23 video; private acquisition and source check 2026-11-01."
+      },
+      {
+        "id": "the-cockpit-is-not-the-control-plane--orca-3",
+        "proposition": "Design Mode transmits selected DOM, CSS and screenshot context to agents",
+        "kind": "speaker-workflow-or-claim",
+        "asOf": "2026-11-01",
+        "status": "unverified",
+        "assessment": "Observed source interface or described vendor behavior; no controlled outcome evaluation.",
+        "limits": "sensitive UI content boundary",
+        "sourceLocation": "152",
+        "references": [
+          "orca-design"
+        ],
+        "counterevidence": [],
+        "temporalScope": "2026-10-23 video; private acquisition and source check 2026-11-01."
+      },
+      {
+        "id": "the-cockpit-is-not-the-control-plane--orca-4",
+        "proposition": "Cross-provider orchestration allocates work and improves results",
+        "kind": "speaker-workflow-or-claim",
+        "asOf": "2026-11-01",
+        "status": "unverified",
+        "assessment": "Observed source interface or described vendor behavior; no controlled outcome evaluation.",
+        "limits": "The primary source and first-party documentation do not verify operational outcomes or every privilege boundary.",
+        "sourceLocation": "227",
+        "references": [
+          "orca-orchestration"
+        ],
+        "counterevidence": [],
+        "temporalScope": "2026-10-23 video; private acquisition and source check 2026-11-01."
+      },
+      {
+        "id": "the-cockpit-is-not-the-control-plane--orca-5",
+        "proposition": "Previous terminal setup reported completion while background work continued",
+        "kind": "speaker-workflow-or-claim",
+        "asOf": "2026-11-01",
+        "status": "unverified",
+        "assessment": "Creator's subjective comparison, not an independently reproduced completion-state defect.",
+        "limits": "The primary source and first-party documentation do not verify operational outcomes or every privilege boundary.",
+        "sourceLocation": "318",
+        "references": [],
+        "counterevidence": [],
+        "temporalScope": "2026-10-23 video; private acquisition and source check 2026-11-01."
+      },
+      {
+        "id": "the-cockpit-is-not-the-control-plane--orca-6",
+        "proposition": "Orca supports SSH remote worktrees and scheduled jobs",
+        "kind": "first-party-documentation-claim",
+        "asOf": "2026-11-01",
+        "status": "unverified",
+        "assessment": "Supported by first-party SSH and automations documentation, not shown in the selected source-video passage or independently piloted.",
+        "limits": "Official docs describe product capabilities; no host interruption, replay, isolation or scheduling reliability tests were conducted.",
+        "sourceLocation": "official docs: /docs/ssh and /docs/cli/automations",
+        "references": [
+          "orca-ssh",
+          "orca-automations"
+        ],
+        "counterevidence": [],
+        "temporalScope": "2026-10-23 video; private acquisition and source check 2026-11-01."
+      },
+      {
+        "id": "the-cockpit-is-not-the-control-plane--orca-7",
+        "proposition": "Published product telemetry excludes prompts and file contents",
+        "kind": "first-party-documentation-claim",
+        "asOf": "2026-11-01",
+        "status": "unverified",
+        "assessment": "Vendor telemetry documentation only; not a claim made or tested at the 06:12 video passage.",
+        "limits": "No independent audit of transport, provider tool payloads or mobile relay metadata was performed.",
+        "sourceLocation": "official docs: /docs/telemetry",
+        "references": [
+          "orca-telemetry"
+        ],
+        "counterevidence": [],
+        "temporalScope": "2026-10-23 video; private acquisition and source check 2026-11-01."
+      },
+      {
+        "id": "the-cockpit-is-not-the-control-plane--orca-8",
+        "proposition": "Orca reduces GhostMesh owner attention",
+        "kind": "ghostmesh-pilot-hypothesis",
+        "asOf": "2026-11-01",
+        "status": "unverified",
+        "assessment": "GhostMesh's falsifiable pilot hypothesis. It is not a benefit asserted or measured by the speaker for GhostMesh.",
+        "limits": "No comparative GhostMesh operator-attention trial has been conducted.",
+        "sourceLocation": "proposed GhostMesh bounded pilot; not a video observation",
+        "references": [],
+        "counterevidence": [],
+        "temporalScope": "2026-10-23 video; private acquisition and source check 2026-11-01."
+      }
+    ],
+    "references": [
+      {
+        "id": "orca-core",
+        "title": "Orca open-source repository",
+        "author": "Orca",
+        "publisher": "GitHub",
+        "url": "https://github.com/stablyai/orca",
+        "publicationDate": "unknown",
+        "eventDate": null,
+        "location": "first-party implementation or documentation",
+        "sourceType": "creator-maintained repository",
+        "independence": "First-party mechanism evidence; not an independent product benchmark.",
+        "evidenceFamily": "orca",
+        "checkedAt": "2026-11-01T04:35:00Z",
+        "datePrecision": "unknown",
+        "dateNote": "Mutable first-party source; initial publication date not verified."
+      },
+      {
+        "id": "orca-worktrees",
+        "title": "Orca worktree documentation",
+        "author": "Orca",
+        "publisher": "Orca",
+        "url": "https://www.onorca.dev/docs/model/worktrees",
+        "publicationDate": "unknown",
+        "eventDate": null,
+        "location": "first-party implementation or documentation",
+        "sourceType": "vendor documentation",
+        "independence": "First-party mechanism evidence; not an independent product benchmark.",
+        "evidenceFamily": "orca",
+        "checkedAt": "2026-11-01T04:35:00Z",
+        "datePrecision": "unknown",
+        "dateNote": "Mutable first-party source; initial publication date not verified."
+      },
+      {
+        "id": "orca-design",
+        "title": "Orca Design Mode documentation",
+        "author": "Orca",
+        "publisher": "Orca",
+        "url": "https://www.onorca.dev/docs/browser/design-mode",
+        "publicationDate": "unknown",
+        "eventDate": null,
+        "location": "first-party implementation or documentation",
+        "sourceType": "vendor documentation",
+        "independence": "First-party mechanism evidence; not an independent product benchmark.",
+        "evidenceFamily": "orca",
+        "checkedAt": "2026-11-01T04:35:00Z",
+        "datePrecision": "unknown",
+        "dateNote": "Mutable first-party source; initial publication date not verified."
+      },
+      {
+        "id": "orca-orchestration",
+        "title": "Orca orchestration documentation",
+        "author": "Orca",
+        "publisher": "Orca",
+        "url": "https://www.onorca.dev/docs/cli/orchestration",
+        "publicationDate": "unknown",
+        "eventDate": null,
+        "location": "first-party implementation or documentation",
+        "sourceType": "vendor documentation",
+        "independence": "First-party mechanism evidence; not an independent product benchmark.",
+        "evidenceFamily": "orca",
+        "checkedAt": "2026-11-01T04:35:00Z",
+        "datePrecision": "unknown",
+        "dateNote": "Mutable first-party source; initial publication date not verified."
+      },
+      {
+        "id": "orca-automations",
+        "title": "Orca automations documentation",
+        "author": "Orca",
+        "publisher": "Orca",
+        "url": "https://www.onorca.dev/docs/cli/automations",
+        "publicationDate": "unknown",
+        "eventDate": null,
+        "location": "first-party implementation or documentation",
+        "sourceType": "vendor documentation",
+        "independence": "First-party mechanism evidence; not an independent product benchmark.",
+        "evidenceFamily": "orca",
+        "checkedAt": "2026-11-01T04:35:00Z",
+        "datePrecision": "unknown",
+        "dateNote": "Mutable first-party source; initial publication date not verified."
+      },
+      {
+        "id": "orca-ssh",
+        "title": "Orca remote SSH worktree documentation",
+        "author": "Orca",
+        "publisher": "Orca",
+        "url": "https://www.onorca.dev/docs/ssh",
+        "publicationDate": "unknown",
+        "eventDate": null,
+        "location": "first-party implementation or documentation",
+        "sourceType": "vendor documentation",
+        "independence": "First-party mechanism evidence; not an independent product benchmark.",
+        "evidenceFamily": "orca",
+        "checkedAt": "2026-11-01T04:35:00Z",
+        "datePrecision": "unknown",
+        "dateNote": "Mutable first-party source; initial publication date not verified."
+      },
+      {
+        "id": "orca-telemetry",
+        "title": "Orca telemetry documentation",
+        "author": "Orca",
+        "publisher": "Orca",
+        "url": "https://www.onorca.dev/docs/telemetry",
+        "publicationDate": "unknown",
+        "eventDate": null,
+        "location": "first-party implementation or documentation",
+        "sourceType": "vendor documentation",
+        "independence": "First-party mechanism evidence; not an independent product benchmark.",
+        "evidenceFamily": "orca",
+        "checkedAt": "2026-11-01T04:35:00Z",
+        "datePrecision": "unknown",
+        "dateNote": "Mutable first-party source; initial publication date not verified."
+      }
+    ],
+    "relationships": [
+      {
+        "target": "reader:the-fleet-needs-a-control-plane",
+        "type": "extends",
+        "reason": "The earlier Orca fleet Reader examines worktrees and orchestrated coding sessions. This Reader tests the cockpit benefit against durable GhostMesh ownership and completion. Neither source verifies the other.",
+        "provenance": [
+          "/the-cockpit-is-not-the-control-plane/#the-first-principle-preserve-the-terminal-improve-the-surrounding-context",
+          "/the-fleet-needs-a-control-plane/#where-isolation-ends"
+        ],
+        "basis": "curated-editorial-comparison",
+        "direction": "outgoing"
+      },
+      {
+        "target": "reader:the-harness-keeps-the-receipt",
+        "type": "informs architecture",
+        "reason": "Orca's operator surface is not a durable action receipt. The harness Reader frames the separate control and evidence requirement; this is an architectural comparison, not outcome corroboration.",
+        "provenance": [
+          "/the-cockpit-is-not-the-control-plane/#orchestration-the-most-powerful-feature-and-the-greatest-overlap",
+          "/the-harness-keeps-the-receipt/#the-boundary-that-stays"
+        ],
+        "basis": "curated-editorial-comparison",
+        "direction": "outgoing"
+      },
+      {
+        "target": "reader:the-stop-button-is-outside-the-chat",
+        "type": "informs architecture",
+        "reason": "Mobile, scheduling and SSH operations require an independently available stop and readback path. The existing Reader describes that boundary, which this video does not test.",
+        "provenance": [
+          "/the-cockpit-is-not-the-control-plane/#scheduling-mobile-and-remote-execution-useful-but-not-free-of-governance-consequences",
+          "/the-stop-button-is-outside-the-chat/#stop-surface"
+        ],
+        "basis": "curated-editorial-comparison",
+        "direction": "outgoing"
+      }
+    ],
+    "relationshipDisposition": "Three editorial comparisons, not independent corroboration of Orca outcomes or security.",
+    "review": {
+      "status": "awaiting independent exact-copy review",
+      "reviewer": "not yet recorded",
+      "reviewedSourceHead": "private approved preview, current release branch not reviewed",
+      "checkedAt": "2026-11-01T04:35:00Z",
+      "scope": "Pending source/claim/public-safe and full visual review.",
+      "findings": "Owner approved private preview in conversation; GitHub hash-bound editorial acceptance not yet recorded."
+    },
+    "revisionHistory": [
+      {
+        "at": "2026-11-01T04:35:00Z",
+        "kind": "new-reader-candidate",
+        "reason": "Owner-approved Reader #39 visual baseline transferred into canonical Reader release branch. Pending exact-head editorial and release receipts."
+      }
+    ],
+    "editorialOrder": 39,
+    "orderReason": "Deep companion examination following the existing Orca fleet Reader.",
+    "relationshipReview": {
+      "reviewedAt": "2026-11-01",
+      "reviewedCatalogSize": 40,
+      "decision": "linked",
+      "reviewedTargets": [
+        "reader:the-fleet-needs-a-control-plane",
+        "reader:the-harness-keeps-the-receipt",
+        "reader:the-stop-button-is-outside-the-chat"
+      ],
+      "rationale": "The existing Orca, harness and stop-boundary Readers have specific complementary theses. Other AI Readers are too broad to imply corroboration."
+    },
+    "editorialDepth": {
+      "schemaVersion": 1,
+      "receiptPath": "content/editorial-depth/the-cockpit-is-not-the-control-plane.json"
+    }
+  },
+  "editorial": {
+    "overview": "Better Stack demonstrates Orca as a unified interface for Claude Code and Codex CLI sessions, Git worktrees, browser annotations, reviews and orchestration.",
+    "whyItMatters": "Agent operators can reduce tab and context switching, but an integrated interface does not establish completion truth, isolation or security.",
+    "ghostMeshTakeaway": "Pilot Orca against a disposable repository and compare reviewed changes, interventions and interruption recovery while retaining Pale Horse task ownership and Control Tower evidence."
+  }
+}

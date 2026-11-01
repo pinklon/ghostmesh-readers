@@ -1,0 +1,129 @@
+{
+  "schemaVersion": 1,
+  "readerId": "reader:the-cockpit-is-not-the-control-plane",
+  "sourceId": "8QgBcI40VC8",
+  "sourceDigest": "eef8f3718be86a41f282a8c4c366e6ff228570ec08dededadfe09a6524d3485d",
+  "sourceAidSha256": "8fcbb048dcc5f8bff4dc6fd30c4f654fd5ee8f8020ee0acacbcac44bc81aff2a",
+  "articleSha256": "7da6f0ef6c6796b1025042f127e6f0ae8e94a216f85dbb36f346d285852a7c8d",
+  "evidenceRevision": "934a935518837b3dd57e141001ce8292cdbe575320c1eac523ac166b1d6d0ffa",
+  "sourceMapEvidenceSha256": "dc84130e21580cff8391192cb14d39af95cc9abe9b086880a945d31625acaa7e",
+  "reviewEvidenceSha256": "db9628f63ca46ae7f7ab25a0f253136ac4e7d1e7b9cfb62d9ecae0878a634d3d",
+  "candidateAuthor": "pinklon",
+  "complexity": {
+    "tier": "extended",
+    "factors": [
+      "Ten source chapters and eight claims across demonstrated UI, vendor documentation, creator self-report and GhostMesh pilot hypothesis.",
+      "Consequence of overlapping task schedulers and remote execution authority demands a detailed adoption boundary."
+    ],
+    "rationale": "The source is short but packs many distinct coding workflow mechanisms and potential architecture consequences; the Deep treatment maps each class without claiming outcome proof."
+  },
+  "sourceMap": [
+    {
+      "atSeconds": 37,
+      "sectionId": "the-first-principle-preserve-the-terminal-improve-the-surrounding-context",
+      "claimIds": [
+        "the-cockpit-is-not-the-control-plane--orca-1"
+      ],
+      "rationale": "Orca runs Claude and Codex CLI sessions in one terminal-centered interface"
+    },
+    {
+      "atSeconds": 99,
+      "sectionId": "git-worktrees-genuine-parallelism-limited-isolation",
+      "claimIds": [
+        "the-cockpit-is-not-the-control-plane--orca-2"
+      ],
+      "rationale": "Worktrees isolate agent file checkouts"
+    },
+    {
+      "atSeconds": 152,
+      "sectionId": "design-mode-the-shortest-route-from-seeing-a-defect-to-specifying-it",
+      "claimIds": [
+        "the-cockpit-is-not-the-control-plane--orca-3"
+      ],
+      "rationale": "Design Mode transmits selected DOM, CSS and screenshot context to agents"
+    },
+    {
+      "atSeconds": 227,
+      "sectionId": "orchestration-the-most-powerful-feature-and-the-greatest-overlap",
+      "claimIds": [
+        "the-cockpit-is-not-the-control-plane--orca-4"
+      ],
+      "rationale": "Cross-provider orchestration allocates work and improves results"
+    },
+    {
+      "atSeconds": 318,
+      "sectionId": "why-he-switched-and-what-that-actually-proves",
+      "claimIds": [
+        "the-cockpit-is-not-the-control-plane--orca-5"
+      ],
+      "rationale": "Previous terminal setup reported completion while background work continued"
+    }
+  ],
+  "assessment": {
+    "sourceCoverage": {
+      "disposition": "covered",
+      "rationale": "Selected CLI, worktree, browser, Git, orchestration and mobile cues were inspected; the 06:12 source correction removes a false scheduling/SSH attribution."
+    },
+    "supportingArgument": {
+      "disposition": "covered",
+      "rationale": "A unified terminal-centered cockpit can reduce switching without replacing the underlying agent executors or claiming an independently verified advantage."
+    },
+    "evidenceRoles": {
+      "disposition": "covered",
+      "rationale": "Direct demonstrations, creator opinion, first-party docs and untested GhostMesh hypothesis are explicitly separated in prose and claim metadata."
+    },
+    "counterargument": {
+      "disposition": "covered",
+      "rationale": "A polished session list can still misstate child-command completion, while worktrees do not isolate credentials or host authority."
+    },
+    "tradeoffs": {
+      "disposition": "covered",
+      "rationale": "Integrated review and browser annotation simplify handoff at the cost of another product dependency and potentially broader captured UI data."
+    },
+    "falsifiability": {
+      "disposition": "covered",
+      "rationale": "A disposable multi-provider test measures reviewed-change time, interruptions, owner attention and duplicated task authority; failure rejects the dependency."
+    },
+    "originalSynthesis": {
+      "disposition": "covered",
+      "rationale": "GhostMesh can borrow the cockpit while preserving Pale Horse authority, syscall execution and Control Tower receipts as independent control truth."
+    },
+    "performance": {
+      "disposition": "covered",
+      "rationale": "The presenter demonstrates operations rather than a controlled workload comparison; no accepted-code throughput claim is made."
+    },
+    "economics": {
+      "disposition": "covered",
+      "rationale": "Pilot compares total operator and integration cost without inventing subscription or performance estimates."
+    },
+    "threatGovernance": {
+      "disposition": "covered",
+      "rationale": "Browser capture, copied environment files, SSH hosts, mobile relay and autonomous scheduling create boundaries to qualify before privileged use."
+    }
+  },
+  "independentCorroboration": "none",
+  "ownerDecision": {
+    "pullNumber": null,
+    "commentId": null
+  },
+  "decision": "accept",
+  "gaps": [
+    {
+      "type": "source",
+      "severity": "nonblocking",
+      "rationale": "Video moments were checked using automatic English captions and private source aids, not continuous audiovisual playback; navigation remains a qualified aid."
+    },
+    {
+      "type": "evidence",
+      "severity": "nonblocking",
+      "rationale": "Vendor documentation describes product mechanisms but does not independently verify reliability, security or productivity."
+    },
+    {
+      "type": "test",
+      "severity": "nonblocking",
+      "rationale": "No bounded Orca versus existing GhostMesh cockpit pilot was run; reduction in owner interventions is a proposed test outcome."
+    }
+  ],
+  "decisionRationale": "Independent source/copy/privacy review accepted corrected article for Tony's authenticated exact-content GitHub marker and separate release decision. No runtime adoption implied.",
+  "assessedAt": "2026-11-01T04:38:00Z"
+}
