@@ -7,7 +7,7 @@ import unittest
 
 ROOT=Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(ROOT/'scripts'))
-from check_site import source_custody_errors
+from check_site import source_custody_errors,chapter_label_errors
 
 
 class SourceCustodyPolicyTests(unittest.TestCase):
@@ -36,6 +36,21 @@ class SourceCustodyPolicyTests(unittest.TestCase):
         errors=' '.join(source_custody_errors(candidate))
         self.assertIn('receipt source identity mismatch',errors)
         self.assertIn('limited source inspection needs a retained-source digest',errors)
+
+
+class VideoChapterNavigationTests(unittest.TestCase):
+    def test_unique_specific_chapters_pass(self):
+        raw='<div class="chapter"><h3>Inspect Git worktrees</h3></div><div class="chapter"><h3>Review pull requests</h3></div>'
+        self.assertEqual(chapter_label_errors(raw,'2026-11-01'),[])
+
+    def test_duplicate_chapter_labels_fail_even_when_case_differs(self):
+        raw='<div class="chapter"><h3>Inspect Git worktrees</h3></div><div class="chapter"><h3>inspect git worktrees</h3></div>'
+        self.assertIn('repeated video chapter labels',chapter_label_errors(raw,'2026-11-01'))
+
+    def test_generic_chapter_labels_fail_for_new_readers_only(self):
+        raw='<div class="chapter"><h3>Setup</h3></div>'
+        self.assertIn('chapter labels too generic',chapter_label_errors(raw,'2026-11-01'))
+        self.assertEqual(chapter_label_errors(raw,'2026-10-31'),[])
 
 
 if __name__=='__main__':unittest.main()

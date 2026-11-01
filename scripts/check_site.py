@@ -19,6 +19,17 @@ RELATIONS={'examines same claim','extends','challenges','responds to','shares en
 PUBLIC_TEXT_EXTENSIONS={'.html','.json','.jsonld','.js','.css','.svg','.xml','.webmanifest'}
 PUBLIC_TEXT_PATHS={'robots.txt','_headers','llms.txt','social/previews/home.png','social/previews/the-inbox-was-a-boundary.png'}
 SOURCE_EXTENSIONS=set('.vtt .srt .sbv .ass .ssa .sub .ttml .dfxp .scc .sami .smi .lrc .srv1 .srv2 .srv3 .json3 .mkv .mka .mks .mp4 .m4a .m4v .mp3 .webm .wav .wave .mov .qt .ogg .ogv .oga .opus .flac .aac .aiff .aif .avi .wmv .wma .asf .flv .f4v .mpeg .mpg .mpe .m2v .ts .mts .m2ts .3gp .3g2 .vob .amr .ape .ac3 .aax'.split())
+def chapter_label_errors(raw,published):
+ """Forward-only navigation lint; do not retroactively rewrite historical Reader pages."""
+ if published < '2026-11-01':return []
+ chapter_labels=re.findall(r'class="chapter"[^>]*>.*?<h3>(.*?)</h3>',raw,re.S)
+ if not chapter_labels:return []
+ labels=[re.sub(r'<[^>]+>','',label).strip() for label in chapter_labels]
+ errors=[]
+ if len(labels)!=len(set(label.casefold() for label in labels)):errors.append('repeated video chapter labels')
+ if not all(len(label)>=9 for label in labels):errors.append('chapter labels too generic')
+ return errors
+
 def capture_signature(data):
  return (data.startswith((b'\x1a\x45\xdf\xa3',b'OggS',b'fLaC',b'ID3',b'FLV',b'#!AMR',b'WEBVTT'))
          or data[:4] in (b'RIFF',b'FORM')
@@ -157,6 +168,7 @@ def check(root=ROOT, *, local_only=False):
    else:
     try:validate_link_only_source(raw,r['source']['url'])
     except ValueError as exc:errors.append(f'{slug}: {exc}')
+  for problem in chapter_label_errors(raw,r['published']):require(False,f'{slug}: {problem}')
   for marker in ['at-a-glance','external-evidence','related-thinking']:require(marker in a.ids,f'{slug}: missing {marker}')
   require('data-theme-toggle' in raw and '/assets/theme.js' in raw,f'{slug}: theme missing')
   require(raw.find('id="at-a-glance"')<min([pos for token in ['data-gm-aspect=','id="source"','class="theater"'] if (pos:=raw.find(token))>=0] or [len(raw)]),f'{slug}: brief after source')
