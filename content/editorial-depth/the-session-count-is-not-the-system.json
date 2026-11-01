@@ -134,7 +134,7 @@
     }
   },
   "independentCorroboration": "none",
-  "ownerDecision": null,
+  "ownerDecision": {"pullNumber": 114, "commentId": 6552859064},
   "decision": "accept",
   "gaps": [
     {
