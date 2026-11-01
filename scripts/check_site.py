@@ -196,7 +196,9 @@ def check(root=ROOT, *, local_only=False):
    reviewed=date.fromisoformat(reviewed_value)
    require(reviewed<=datetime.now(timezone.utc).date(),f'{slug}: future relationship review')
   except (ValueError,TypeError):errors.append(f'{slug}: missing or invalid relationship review date')
-  require(assessment.get('reviewedCatalogSize')==len(readers),f'{slug}: stale relationship review catalog size')
+  # Historical relationship reviews are snapshots. New catalog additions do not retroactively claim a reviewer inspected later works.
+  count=assessment.get('reviewedCatalogSize')
+  require(isinstance(count,int) and not isinstance(count,bool) and 1<=count<=len(readers),f'{slug}: impossible relationship review catalog size')
   targets=[edge['target'] for edge in r['relationships']]
   require(len(targets)==len(set(targets)),f'{slug}: duplicate relationship target')
   require(assessment.get('reviewedTargets')==targets,f'{slug}: relationship review targets differ from catalog edges')

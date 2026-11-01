@@ -1,0 +1,158 @@
+{
+  "schemaVersion": 1,
+  "readerId": "reader:the-session-count-is-not-the-system",
+  "sourceId": "F8rc-ULd4_4",
+  "sourceDigest": "6c57c013055215dad4c17d6556c802ea815b83241b204f30801197f1face72c3",
+  "sourceAidSha256": "d74562f791c7f2113719808ccefc45203c7ccd1e07687e428d0ad9a306fd0b2b",
+  "articleSha256": "d58581078c754e4d8ba2041c4d8d7a423f5f675e89e8a7c6433ae6a8c1c0a4d7",
+  "evidenceRevision": "7b54053d732fa7bf76c604eec2cc0c49a4fff593fe63df13d5b89ac3e009cd76",
+  "sourceMapEvidenceSha256": "fafe484583ae555159ad9853b1c92e3c9e3b67436a9e1b3f141e7db5c3c0644d",
+  "reviewEvidenceSha256": "67745741903e9dc49e95b12ee9df32a2ec9e179b7f43701f447e8d0c7731327e",
+  "candidateAuthor": "pinklon",
+  "complexity": {
+    "tier": "extended",
+    "factors": [
+      "Long-form 85-minute creator account with multiple security and reliability claims.",
+      "Comparing reported productivity scale with actual code and permission boundaries requires several evidence classes."
+    ],
+    "rationale": "An extended treatment is warranted by the long source, nine claim cues, conditional adoption decisions and unverified operational outcome claims."
+  },
+  "sourceMap": [
+    {
+      "atSeconds": 581,
+      "sectionId": "method-and-review",
+      "claimIds": [
+        "the-session-count-is-not-the-system--scoped-sessions"
+      ],
+      "rationale": "Task-sized sessions reduce context drift; no controlled outcome comparison."
+    },
+    {
+      "atSeconds": 849,
+      "sectionId": "method-and-review",
+      "claimIds": [
+        "the-session-count-is-not-the-system--cross-model-review"
+      ],
+      "rationale": "Separate model review finds possible omissions; agreement is not proof."
+    },
+    {
+      "atSeconds": 961,
+      "sectionId": "method-and-review",
+      "claimIds": [
+        "the-session-count-is-not-the-system--total-review"
+      ],
+      "rationale": "Five-perspective review pattern; public total-review skill includes inappropriate unrestricted review permissions."
+    },
+    {
+      "atSeconds": 1361,
+      "sectionId": "harness-boundaries",
+      "claimIds": [
+        "the-session-count-is-not-the-system--subagents"
+      ],
+      "rationale": "Independent bounded tasks can use child agents; efficiency not independently measured."
+    },
+    {
+      "atSeconds": 1880,
+      "sectionId": "harness-boundaries",
+      "claimIds": [
+        "the-session-count-is-not-the-system--cloud-mac-access"
+      ],
+      "rationale": "Cloud-local sandbox and Mac relay require separate authorization and identity boundaries."
+    },
+    {
+      "atSeconds": 2732,
+      "sectionId": "automation-and-metrics",
+      "claimIds": [
+        "the-session-count-is-not-the-system--cloud-loops"
+      ],
+      "rationale": "Scheduled loops run in fresh contexts; website scheduler and secrets behavior matter."
+    },
+    {
+      "atSeconds": 3038,
+      "sectionId": "automation-and-metrics",
+      "claimIds": [
+        "the-session-count-is-not-the-system--unattended-volume"
+      ],
+      "rationale": "High autonomous run volume and unattended percentage are speaker self-report, not outcome audit."
+    },
+    {
+      "atSeconds": 3515,
+      "sectionId": "automation-and-metrics",
+      "claimIds": [
+        "the-session-count-is-not-the-system--approval-split"
+      ],
+      "rationale": "Proposed safe autonomy versus human approval is a design rule, not measured universal proportion."
+    },
+    {
+      "atSeconds": 4098,
+      "sectionId": "automation-and-metrics",
+      "claimIds": [
+        "the-session-count-is-not-the-system--intervention-mining"
+      ],
+      "rationale": "Recurring interventions can become a read-only scan recipe with deduplication and exit condition."
+    }
+  ],
+  "assessment": {
+    "sourceCoverage": {
+      "disposition": "covered",
+      "rationale": "The independent reviewer inspected nine caption cue windows and four video frames; these corroborate bounded article claims. Continuous full-length audiovisual verification was not performed."
+    },
+    "supportingArgument": {
+      "disposition": "covered",
+      "rationale": "Narrow sessions, cross-model critical review and read-only loops are supported as described methods by the creator's video and public instructions."
+    },
+    "evidenceRoles": {
+      "disposition": "covered",
+      "rationale": "Private automatic captions are timing aids; first-party public source code confirms mechanisms; reported scale and outcomes remain self-report."
+    },
+    "counterargument": {
+      "disposition": "covered",
+      "rationale": "A high volume of sessions is not an outcome, and an unrestricted review permission profile undermines the claimed separation of review and execution."
+    },
+    "tradeoffs": {
+      "disposition": "covered",
+      "rationale": "Fresh short sessions reduce drift but add coordination overhead, while cloud loops offer continuity at the cost of hosted scheduling and Mac access exposure."
+    },
+    "falsifiability": {
+      "disposition": "covered",
+      "rationale": "The proposed ten-run intervention scan can fail if findings repeat, attention cost rises or a permission boundary is crossed."
+    },
+    "originalSynthesis": {
+      "disposition": "covered",
+      "rationale": "The editorial contribution separates agent work throughput from durable authorization and outcome evidence, and recommends one bounded adoption pilot."
+    },
+    "performance": {
+      "disposition": "covered",
+      "rationale": "Creator-displayed loop counts and session totals are distinguished from unmeasured accepted completion, defects, and productivity; no external audit is claimed."
+    },
+    "economics": {
+      "disposition": "covered",
+      "rationale": "The article identifies hosting, subscription, intervention and operating-cost unknowns and proposes a bounded local comparison, not fabricated cost conclusions."
+    },
+    "threatGovernance": {
+      "disposition": "covered",
+      "rationale": "Default-all loop secrets, remote Mac execution and unrestricted review instructions warrant least-privilege rejection before any deployment."
+    }
+  },
+  "independentCorroboration": "none",
+  "ownerDecision": null,
+  "decision": "accept",
+  "gaps": [
+    {
+      "type": "source",
+      "severity": "nonblocking",
+      "rationale": "Review relied on timestamped caption passages and four sampled frames, not continuous audiovisual playback; uncertain demonstrations retain explicit attribution."
+    },
+    {
+      "type": "evidence",
+      "severity": "nonblocking",
+      "rationale": "Creator activity and autonomy counts are self-reports and not independently audited; the article does not present them as verified outcomes."
+    },
+    {
+      "type": "test",
+      "severity": "nonblocking",
+      "rationale": "No controlled Cloudroom-versus-GhostMesh benchmark has run. The article presents that as a proposed experiment, not an observed result."
+    }
+  ],
+  "decisionRationale": "Independent source, copy, and privacy review accepted the qualified article for Tony's exact-hash editorial decision. No substantive rewrite was requested; public release still requires the authenticated owner PR marker and separate exact-head authorization.",
+  "assessedAt": "2026-11-01T03:23:22Z"
+}

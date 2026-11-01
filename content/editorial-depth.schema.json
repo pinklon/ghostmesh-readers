@@ -31,7 +31,7 @@
       "threatGovernance": {"$ref": "#/$defs/disposition"}
     }},
     "independentCorroboration": {"enum": ["none", "qualified"]},
-    "ownerDecision": {"oneOf": [{"type": "null"}, {"type": "object", "additionalProperties": false, "required": ["pullNumber", "commentId"], "properties": {"pullNumber": {"type": "integer", "minimum": 1}, "commentId": {"type": ["integer", "null"], "minimum": 1}}]},
+    "ownerDecision": {"oneOf": [{"type": "null"}, {"type": "object", "additionalProperties": false, "required": ["pullNumber", "commentId"], "properties": {"pullNumber": {"type": "integer", "minimum": 1}, "commentId": {"type": ["integer", "null"], "minimum": 1}}}]},
     "decision": {"enum": ["accept", "revise", "hold"]},
     "gaps": {"type": "array", "items": {"type": "object", "additionalProperties": false, "required": ["type", "severity", "rationale"], "properties": {"type": {"enum": ["source", "claim", "evidence", "counterargument", "scope", "risk", "test", "synthesis"]}, "severity": {"enum": ["blocking", "nonblocking"]}, "rationale": {"type": "string", "minLength": 35}}}},
     "decisionRationale": {"type": "string", "minLength": 35},

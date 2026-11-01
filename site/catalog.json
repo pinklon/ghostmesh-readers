@@ -12,6 +12,284 @@
   ],
   "readers": [
     {
+      "id": "reader:the-session-count-is-not-the-system",
+      "slug": "the-session-count-is-not-the-system",
+      "title": "The Session Count Is Not the System",
+      "category": "AI & Technology",
+      "tags": [
+        "coding agents",
+        "workflow",
+        "Cloudroom",
+        "autonomy"
+      ],
+      "entities": [
+        "David Ondrej",
+        "Cloudroom",
+        "Codex",
+        "Claude Code",
+        "GhostMesh"
+      ],
+      "source": {
+        "platform": "YouTube",
+        "url": "https://www.youtube.com/watch?v=F8rc-ULd4_4",
+        "videoId": "F8rc-ULd4_4",
+        "title": "My Agentic Engineering Workflow (after 15,700 sessions)",
+        "creator": "David Ondrej",
+        "uploadDate": "20261030",
+        "durationSeconds": 5140.31746,
+        "mediaAspect": "16:9"
+      },
+      "published": "2026-11-01",
+      "updated": "2026-11-01T02:15:00Z",
+      "overview": "David Ondrej demonstrates a high-volume coding-agent operation across model/harness choices, narrow tasks, independent review, cloud and local sessions, subagents and recurring loops.",
+      "whyItMatters": "The most actionable material is the system around the model: bounded tasks, trustworthy reviews, recoverable sessions and selective automation. His session and commit counts are not quality evidence.",
+      "ghostMeshTakeaway": "Pilot one read-only deduplicated loop derived from repeated owner interventions. Keep existing execution and publication custody and reject unlimited review permissions.",
+      "verdict": "Worth studying",
+      "architectureImpact": "experiment recommended",
+      "falsification": "Abandon the proposed loop if ten comparable runs create more owner attention or false findings than a manual scan, or trigger any unauthorized mutation or private-data exposure.",
+      "evidenceState": "unverified",
+      "lastEvidenceChecked": "2026-11-01T02:15:00Z",
+      "freshness": "Private source captured and public creator code inspected 2026-11-01. Mutable Cloudroom implementation and billing assumptions require rechecking before release.",
+      "variant": "dossier",
+      "accent": "teal",
+      "claims": [
+        {
+          "id": "the-session-count-is-not-the-system--scoped-sessions",
+          "proposition": "Task-sized sessions reduce context drift; no controlled outcome comparison.",
+          "kind": "speaker-workflow-or-claim",
+          "asOf": "2026-11-01",
+          "status": "unverified",
+          "assessment": "Source attribution supported by private timestamped machine caption aid; external effectiveness or prevalence unmeasured.",
+          "limits": "Automatic captions are not certified verbatim. Operational outcome and scale claims lack independent production audit.",
+          "sourceLocation": "581",
+          "references": [],
+          "counterevidence": [],
+          "temporalScope": "2026-10-30 video; evidence inspection 2026-11-01."
+        },
+        {
+          "id": "the-session-count-is-not-the-system--cross-model-review",
+          "proposition": "Separate model review finds possible omissions; agreement is not proof.",
+          "kind": "speaker-workflow-or-claim",
+          "asOf": "2026-11-01",
+          "status": "unverified",
+          "assessment": "Source attribution supported by private timestamped machine caption aid; external effectiveness or prevalence unmeasured.",
+          "limits": "Automatic captions are not certified verbatim. Operational outcome and scale claims lack independent production audit.",
+          "sourceLocation": "849",
+          "references": [
+            "ondrej-skills"
+          ],
+          "counterevidence": [],
+          "temporalScope": "2026-10-30 video; evidence inspection 2026-11-01."
+        },
+        {
+          "id": "the-session-count-is-not-the-system--total-review",
+          "proposition": "Five-perspective review pattern; public total-review skill includes inappropriate unrestricted review permissions.",
+          "kind": "speaker-workflow-or-claim",
+          "asOf": "2026-11-01",
+          "status": "unverified",
+          "assessment": "The creator-maintained public total-review skill confirms an overly broad permission requirement; this does not verify review effectiveness.",
+          "limits": "Automatic captions are not certified verbatim. Operational outcome and scale claims lack independent production audit.",
+          "sourceLocation": "961",
+          "references": [
+            "ondrej-skills"
+          ],
+          "counterevidence": [],
+          "temporalScope": "2026-10-30 video; evidence inspection 2026-11-01."
+        },
+        {
+          "id": "the-session-count-is-not-the-system--subagents",
+          "proposition": "Independent bounded tasks can use child agents; efficiency not independently measured.",
+          "kind": "speaker-workflow-or-claim",
+          "asOf": "2026-11-01",
+          "status": "unverified",
+          "assessment": "Source attribution supported by private timestamped machine caption aid; external effectiveness or prevalence unmeasured.",
+          "limits": "Automatic captions are not certified verbatim. Operational outcome and scale claims lack independent production audit.",
+          "sourceLocation": "1361",
+          "references": [
+            "cloudroom-core"
+          ],
+          "counterevidence": [],
+          "temporalScope": "2026-10-30 video; evidence inspection 2026-11-01."
+        },
+        {
+          "id": "the-session-count-is-not-the-system--cloud-mac-access",
+          "proposition": "Cloud-local sandbox and Mac relay require separate authorization and identity boundaries.",
+          "kind": "speaker-workflow-or-claim",
+          "asOf": "2026-11-01",
+          "status": "unverified",
+          "assessment": "Source attribution supported by private timestamped machine caption aid; external effectiveness or prevalence unmeasured.",
+          "limits": "Automatic captions are not certified verbatim. Operational outcome and scale claims lack independent production audit.",
+          "sourceLocation": "1880",
+          "references": [
+            "cloudroom-core"
+          ],
+          "counterevidence": [],
+          "temporalScope": "2026-10-30 video; evidence inspection 2026-11-01."
+        },
+        {
+          "id": "the-session-count-is-not-the-system--cloud-loops",
+          "proposition": "Scheduled loops run in fresh contexts; website scheduler and secrets behavior matter.",
+          "kind": "speaker-workflow-or-claim",
+          "asOf": "2026-11-01",
+          "status": "unverified",
+          "assessment": "Public Cloudroom core code confirms hosted scheduler delegation and optional default-all loop secrets, not runtime reliability.",
+          "limits": "Automatic captions are not certified verbatim. Operational outcome and scale claims lack independent production audit.",
+          "sourceLocation": "2732",
+          "references": [
+            "cloudroom-core"
+          ],
+          "counterevidence": [],
+          "temporalScope": "2026-10-30 video; evidence inspection 2026-11-01."
+        },
+        {
+          "id": "the-session-count-is-not-the-system--unattended-volume",
+          "proposition": "High autonomous run volume and unattended percentage are speaker self-report, not outcome audit.",
+          "kind": "speaker-workflow-or-claim",
+          "asOf": "2026-11-01",
+          "status": "unverified",
+          "assessment": "Source attribution supported by private timestamped machine caption aid; external effectiveness or prevalence unmeasured.",
+          "limits": "Automatic captions are not certified verbatim. Operational outcome and scale claims lack independent production audit.",
+          "sourceLocation": "3038",
+          "references": [],
+          "counterevidence": [],
+          "temporalScope": "2026-10-30 video; evidence inspection 2026-11-01."
+        },
+        {
+          "id": "the-session-count-is-not-the-system--approval-split",
+          "proposition": "Proposed safe autonomy versus human approval is a design rule, not measured universal proportion.",
+          "kind": "speaker-workflow-or-claim",
+          "asOf": "2026-11-01",
+          "status": "unverified",
+          "assessment": "Source attribution supported by private timestamped machine caption aid; external effectiveness or prevalence unmeasured.",
+          "limits": "Automatic captions are not certified verbatim. Operational outcome and scale claims lack independent production audit.",
+          "sourceLocation": "3515",
+          "references": [],
+          "counterevidence": [],
+          "temporalScope": "2026-10-30 video; evidence inspection 2026-11-01."
+        },
+        {
+          "id": "the-session-count-is-not-the-system--intervention-mining",
+          "proposition": "Recurring interventions can become a read-only scan recipe with deduplication and exit condition.",
+          "kind": "speaker-workflow-or-claim",
+          "asOf": "2026-11-01",
+          "status": "unverified",
+          "assessment": "Source attribution supported by private timestamped machine caption aid; external effectiveness or prevalence unmeasured.",
+          "limits": "Automatic captions are not certified verbatim. Operational outcome and scale claims lack independent production audit.",
+          "sourceLocation": "4098",
+          "references": [],
+          "counterevidence": [],
+          "temporalScope": "2026-10-30 video; evidence inspection 2026-11-01."
+        }
+      ],
+      "references": [
+        {
+          "id": "cloudroom-core",
+          "title": "Cloudroom core and session implementation",
+          "author": "David Ondrej",
+          "publisher": "GitHub",
+          "url": "https://github.com/davidondrej/cloudroom",
+          "publicationDate": "unknown",
+          "eventDate": null,
+          "location": "core/docs and core/src; first-party code",
+          "sourceType": "creator-maintained repository",
+          "independence": "First-party implementation evidence; confirms mechanism, not outcome or scale.",
+          "evidenceFamily": "cloudroom",
+          "checkedAt": "2026-11-01T02:15:00Z",
+          "datePrecision": "unknown",
+          "dateNote": "This is a mutable creator-maintained source; no stable initial publication date was verified in this audit."
+        },
+        {
+          "id": "ondrej-skills",
+          "title": "David Ondrej public agent skills",
+          "author": "David Ondrej",
+          "publisher": "GitHub",
+          "url": "https://github.com/davidondrej/skills",
+          "publicationDate": "unknown",
+          "eventDate": null,
+          "location": "agent-orchestration skills",
+          "sourceType": "creator-maintained repository",
+          "independence": "First-party skill instructions; cannot validate production efficacy.",
+          "evidenceFamily": "ondrej-skills",
+          "checkedAt": "2026-11-01T02:15:00Z",
+          "datePrecision": "unknown",
+          "dateNote": "This is a mutable creator-maintained source; no stable initial publication date was verified in this audit."
+        },
+        {
+          "id": "cloudroom-docs",
+          "title": "Cloudroom documentation",
+          "author": "Cloudroom",
+          "publisher": "Cloudroom",
+          "url": "https://www.cloudroom.dev/docs",
+          "publicationDate": "unknown",
+          "eventDate": null,
+          "location": "service capability and product documentation",
+          "sourceType": "vendor documentation",
+          "independence": "First-party service docs, not an independent reliability study.",
+          "evidenceFamily": "cloudroom",
+          "checkedAt": "2026-11-01T02:15:00Z",
+          "datePrecision": "unknown",
+          "dateNote": "This is a mutable creator-maintained source; no stable initial publication date was verified in this audit."
+        }
+      ],
+      "relationships": [
+        {
+          "target": "reader:the-harness-keeps-the-receipt",
+          "type": "informs architecture",
+          "reason": "Both distinguish model capability from durable execution authority. The earlier Reader argues for receipts at external effects; Ondrej's workflow shows operational session machinery and potential broad-access failure modes.",
+          "provenance": [
+            "/the-session-count-is-not-the-system/#the-system-beneath-the-demonstration",
+            "/the-harness-keeps-the-receipt/#the-boundary-that-stays"
+          ],
+          "basis": "curated-editorial-comparison",
+          "direction": "outgoing"
+        },
+        {
+          "target": "reader:the-stop-button-is-outside-the-chat",
+          "type": "extends",
+          "reason": "The stop-button Reader focuses on target-side control; this edition tests whether recurring agent loops and Mac relays preserve that authority under replay and cloud scheduler dependency.",
+          "provenance": [
+            "/the-session-count-is-not-the-system/#five-corrections-and-cautions",
+            "/the-stop-button-is-outside-the-chat/#stop-surface"
+          ],
+          "basis": "curated-editorial-comparison",
+          "direction": "outgoing"
+        }
+      ],
+      "relationshipDisposition": "Two editorial architecture comparisons; neither independent corroboration of Ondrej's output or security claims.",
+      "review": {
+        "status": "draft not independently reviewed; hold for owner review",
+        "reviewer": "none yet",
+        "reviewedSourceHead": "isolated private candidate, no PR",
+        "checkedAt": "2026-11-01T02:15:00Z",
+        "scope": "Preliminary author self-check only: caption-aligned cues, public first-party code, source privacy and claim inventory.",
+        "findings": "Independent reader/editor review and exact audiovisual spot checks remain pending. No approval is represented."
+      },
+      "revisionHistory": [
+        {
+          "at": "2026-11-01T02:15:00Z",
+          "kind": "new-reader-candidate",
+          "reason": "Private draft from verified ReasonPack; catalog integration staged for editorial and source review, not authorized release."
+        }
+      ],
+      "editorialOrder": 32,
+      "orderReason": "Follows the existing architecture and harness Readers as a new owner-requested deep deconstruction.",
+      "relationshipReview": {
+        "reviewedAt": "2026-11-01",
+        "reviewedCatalogSize": 39,
+        "decision": "linked",
+        "reviewedTargets": [
+          "reader:the-harness-keeps-the-receipt",
+          "reader:the-stop-button-is-outside-the-chat"
+        ],
+        "rationale": "Provisional comparison across the current thirty-eight Reader identities and this new candidate: the two selected works address persistent harness effects and external stop authority with specific complementary theses. Shared broad AI themes in other Readers are insufficient as corroboration. The exact cross-catalog editorial assessment still requires independent verification before release."
+      },
+      "editorialDepth": {
+        "schemaVersion": 1,
+        "receiptPath": "content/editorial-depth/the-session-count-is-not-the-system.json"
+      },
+      "rank": 32
+    },
+    {
       "id": "reader:the-model-is-not-the-demonstration",
       "slug": "the-model-is-not-the-demonstration",
       "title": "The Model Is Not the Demonstration",
