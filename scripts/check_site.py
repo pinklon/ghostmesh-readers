@@ -157,6 +157,12 @@ def check(root=ROOT, *, local_only=False):
    else:
     try:validate_link_only_source(raw,r['source']['url'])
     except ValueError as exc:errors.append(f'{slug}: {exc}')
+  # Source navigation must describe individual moments rather than repeat broad topic buckets.
+  chapter_labels=re.findall(r'class="chapter"[^>]*>.*?<h3>(.*?)</h3>',raw,re.S)
+  if chapter_labels and r['published'] >= '2026-11-01':
+   labels=[re.sub(r'<[^>]+>','',label).strip() for label in chapter_labels]
+   require(len(labels)==len(set(label.casefold() for label in labels)),f'{slug}: repeated video chapter labels')
+   require(all(len(label)>=9 for label in labels),f'{slug}: chapter labels too generic')
   for marker in ['at-a-glance','external-evidence','related-thinking']:require(marker in a.ids,f'{slug}: missing {marker}')
   require('data-theme-toggle' in raw and '/assets/theme.js' in raw,f'{slug}: theme missing')
   require(raw.find('id="at-a-glance"')<min([pos for token in ['data-gm-aspect=','id="source"','class="theater"'] if (pos:=raw.find(token))>=0] or [len(raw)]),f'{slug}: brief after source')
