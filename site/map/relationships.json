@@ -3,9 +3,9 @@
   "scope": "Local public editorial reading routes; no independent corroboration or cross-site graph admission.",
   "authority": "catalog-curated-editorial",
   "visibility": "public",
-  "readerCount": 38,
-  "assessmentCount": 38,
-  "relationshipCount": 78,
+  "readerCount": 39,
+  "assessmentCount": 39,
+  "relationshipCount": 80,
   "nodes": [
     {
       "id": "reader:ask-for-the-outcome-keep-the-boundary",
@@ -611,6 +611,22 @@
           "reader:unsupervised-is-a-permission"
         ],
         "rationale": "Compared the current Reader catalog and verified these three destination theses and section anchors. Tony approved these exact connections for cost, grader quality and stop authority. No reciprocal edges or shared-source verification is inferred."
+      }
+    },
+    {
+      "id": "reader:the-session-count-is-not-the-system",
+      "slug": "the-session-count-is-not-the-system",
+      "title": "The Session Count Is Not the System",
+      "url": "https://youtube.shareplane.malott.ai/the-session-count-is-not-the-system/",
+      "review": {
+        "reviewedAt": "2026-11-01",
+        "reviewedCatalogSize": 39,
+        "decision": "linked",
+        "reviewedTargets": [
+          "reader:the-harness-keeps-the-receipt",
+          "reader:the-stop-button-is-outside-the-chat"
+        ],
+        "rationale": "Provisional comparison across the current thirty-eight Reader identities and this new candidate: the two selected works address persistent harness effects and external stop authority with specific complementary theses. Shared broad AI themes in other Readers are insufficient as corroboration. The exact cross-catalog editorial assessment still requires independent verification before release."
       }
     }
   ],
@@ -1547,6 +1563,30 @@
       "provenance": [
         "/the-model-is-not-the-demonstration/#security-loops-need-a-stop-rule",
         "/unsupervised-is-a-permission/#the-loop-needs-an-exit-with-authority"
+      ],
+      "basis": "curated-editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:the-session-count-is-not-the-system",
+      "to": "reader:the-harness-keeps-the-receipt",
+      "type": "informs architecture",
+      "reason": "Both distinguish model capability from durable execution authority. The earlier Reader argues for receipts at external effects; Ondrej's workflow shows operational session machinery and potential broad-access failure modes.",
+      "provenance": [
+        "/the-session-count-is-not-the-system/#the-system-beneath-the-demonstration",
+        "/the-harness-keeps-the-receipt/#the-boundary-that-stays"
+      ],
+      "basis": "curated-editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:the-session-count-is-not-the-system",
+      "to": "reader:the-stop-button-is-outside-the-chat",
+      "type": "extends",
+      "reason": "The stop-button Reader focuses on target-side control; this edition tests whether recurring agent loops and Mac relays preserve that authority under replay and cloud scheduler dependency.",
+      "provenance": [
+        "/the-session-count-is-not-the-system/#five-corrections-and-cautions",
+        "/the-stop-button-is-outside-the-chat/#stop-surface"
       ],
       "basis": "curated-editorial-comparison",
       "direction": "outgoing"

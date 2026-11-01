@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "readerId": "reader:the-session-count-is-not-the-system",
+  "sourceId": "F8rc-ULd4_4",
+  "sourceAidSha256": "d74562f791c7f2113719808ccefc45203c7ccd1e07687e428d0ad9a306fd0b2b",
+  "articleSha256": "d58581078c754e4d8ba2041c4d8d7a423f5f675e89e8a7c6433ae6a8c1c0a4d7",
+  "evidenceRevision": "7b54053d732fa7bf76c604eec2cc0c49a4fff593fe63df13d5b89ac3e009cd76",
+  "reviewedAt": "2026-11-01T03:23:22Z",
+  "provenance": {
+    "kind": "codex-task-agent",
+    "reference": "Independent ChatGPT editorial-review task in the November 1, 2026 owner publication request; reviewer examined the exact Reader, separate cue map, creator-maintained source files, private caption cue windows, and four sampled private video frames. This review was separate from the authoring agent.",
+    "limits": "Reviewer did not conduct continuous 85-minute audiovisual playback or independently reproduce production statistics, sandbox security, Cloudroom runtime behavior, or Hyperion benchmark trials; automatic captions are timing aids."
+  },
+  "summary": "Accept for owner review. The deep workflow treatment and nine distinct navigational cues are faithful to inspected moments, claims are qualified, and the public inputs do not expose private source media or credentials.",
+  "findings": [
+    "At 14:09 the source frame depicts a fresh read-only GPT-6 Astra review and five-model escalation. Separate reviewer procedures and selective escalation are supported by inspected creator-maintained skill instructions.",
+    "At 31:20 the source frame shows a Cloudroom product page, not a visual proof of isolation; the verbal assertion and creator documentation support describing the mechanism, not a verified security guarantee.",
+    "At 50:38 the UI displays 33 loops, 1,974 runs per day and 86% independently operating; these are creator-displayed values rather than audited completion or quality outcomes.",
+    "At 58:35 the 10/90 split is a conceptual sketch, not a measured universal approval ratio.",
+    "Caption windows around all nine mapped cues support the distinct chapter labels, task-scoping, cross-model review, subagent choices, cloud/local environments, loops and intervention feedback.",
+    "The article fairly distinguishes disciplined risky-change and goal-loop procedures from the unnecessarily unrestricted permissions required by total-review.",
+    "The GhostMesh comparison labels dated narrow harness evaluations separately from current availability and broad production qualification.",
+    "No signed media URL, raw copied transcript or captions, credentials, private paths or stale original template video identity were found in the reviewed public inputs."
+  ],
+  "conclusion": "accept-for-owner-review"
+}

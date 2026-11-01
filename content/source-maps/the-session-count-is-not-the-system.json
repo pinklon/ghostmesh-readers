@@ -1,0 +1,89 @@
+{
+  "schemaVersion": 1,
+  "readerId": "reader:the-session-count-is-not-the-system",
+  "sourceId": "F8rc-ULd4_4",
+  "sourceAidSha256": "d74562f791c7f2113719808ccefc45203c7ccd1e07687e428d0ad9a306fd0b2b",
+  "points": [
+    {
+      "atSeconds": 581,
+      "sectionId": "method-and-review",
+      "claimIds": [
+        "the-session-count-is-not-the-system--scoped-sessions"
+      ],
+      "cueParaphrase": "Task-sized sessions reduce context drift; no controlled outcome comparison.",
+      "privateAidCheck": "Source cue located from timestamped English automatic captions of a hash-verified private pack. Machine captions support timing and attribution, not exact verbatim speech or outcomes. Decisive audiovisual spot check remains pending."
+    },
+    {
+      "atSeconds": 849,
+      "sectionId": "method-and-review",
+      "claimIds": [
+        "the-session-count-is-not-the-system--cross-model-review"
+      ],
+      "cueParaphrase": "Separate model review finds possible omissions; agreement is not proof.",
+      "privateAidCheck": "Source cue located from timestamped English automatic captions of a hash-verified private pack. Machine captions support timing and attribution, not exact verbatim speech or outcomes. Decisive audiovisual spot check remains pending."
+    },
+    {
+      "atSeconds": 961,
+      "sectionId": "method-and-review",
+      "claimIds": [
+        "the-session-count-is-not-the-system--total-review"
+      ],
+      "cueParaphrase": "Five-perspective review pattern; public total-review skill includes inappropriate unrestricted review permissions.",
+      "privateAidCheck": "Source cue located from timestamped English automatic captions of a hash-verified private pack. Machine captions support timing and attribution, not exact verbatim speech or outcomes. Decisive audiovisual spot check remains pending."
+    },
+    {
+      "atSeconds": 1361,
+      "sectionId": "harness-boundaries",
+      "claimIds": [
+        "the-session-count-is-not-the-system--subagents"
+      ],
+      "cueParaphrase": "Independent bounded tasks can use child agents; efficiency not independently measured.",
+      "privateAidCheck": "Source cue located from timestamped English automatic captions of a hash-verified private pack. Machine captions support timing and attribution, not exact verbatim speech or outcomes. Decisive audiovisual spot check remains pending."
+    },
+    {
+      "atSeconds": 1880,
+      "sectionId": "harness-boundaries",
+      "claimIds": [
+        "the-session-count-is-not-the-system--cloud-mac-access"
+      ],
+      "cueParaphrase": "Cloud-local sandbox and Mac relay require separate authorization and identity boundaries.",
+      "privateAidCheck": "Source cue located from timestamped English automatic captions of a hash-verified private pack. Machine captions support timing and attribution, not exact verbatim speech or outcomes. Decisive audiovisual spot check remains pending."
+    },
+    {
+      "atSeconds": 2732,
+      "sectionId": "automation-and-metrics",
+      "claimIds": [
+        "the-session-count-is-not-the-system--cloud-loops"
+      ],
+      "cueParaphrase": "Scheduled loops run in fresh contexts; website scheduler and secrets behavior matter.",
+      "privateAidCheck": "Source cue located from timestamped English automatic captions of a hash-verified private pack. Machine captions support timing and attribution, not exact verbatim speech or outcomes. Decisive audiovisual spot check remains pending."
+    },
+    {
+      "atSeconds": 3038,
+      "sectionId": "automation-and-metrics",
+      "claimIds": [
+        "the-session-count-is-not-the-system--unattended-volume"
+      ],
+      "cueParaphrase": "High autonomous run volume and unattended percentage are speaker self-report, not outcome audit.",
+      "privateAidCheck": "Source cue located from timestamped English automatic captions of a hash-verified private pack. Machine captions support timing and attribution, not exact verbatim speech or outcomes. Decisive audiovisual spot check remains pending."
+    },
+    {
+      "atSeconds": 3515,
+      "sectionId": "automation-and-metrics",
+      "claimIds": [
+        "the-session-count-is-not-the-system--approval-split"
+      ],
+      "cueParaphrase": "Proposed safe autonomy versus human approval is a design rule, not measured universal proportion.",
+      "privateAidCheck": "Source cue located from timestamped English automatic captions of a hash-verified private pack. Machine captions support timing and attribution, not exact verbatim speech or outcomes. Decisive audiovisual spot check remains pending."
+    },
+    {
+      "atSeconds": 4098,
+      "sectionId": "automation-and-metrics",
+      "claimIds": [
+        "the-session-count-is-not-the-system--intervention-mining"
+      ],
+      "cueParaphrase": "Recurring interventions can become a read-only scan recipe with deduplication and exit condition.",
+      "privateAidCheck": "Source cue located from timestamped English automatic captions of a hash-verified private pack. Machine captions support timing and attribution, not exact verbatim speech or outcomes. Decisive audiovisual spot check remains pending."
+    }
+  ]
+}

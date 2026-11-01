@@ -77,9 +77,13 @@ class PublicationGate(unittest.TestCase):
   self.mutate(lambda d:d['readers'][0].update(relationshipReview={'reviewedAt':'2026-10-20','reviewedCatalogSize':len(d['readers']),'decision':'none','reviewedTargets':[],'rationale':'No links'}));self.rejected('relationship review needs a substantive rationale')
  def test_compact_relationship_review_date_is_rejected(self):
   self.mutate(lambda d:d['readers'][0]['relationshipReview'].update(reviewedAt='20261020'));self.rejected('missing or invalid relationship review date')
- def test_stale_or_false_zero_relationship_assessment_is_rejected(self):
-  self.mutate(lambda d:d['readers'][0]['relationshipReview'].update(reviewedCatalogSize=22));self.rejected('stale relationship review catalog size')
+ def test_impossible_or_false_zero_relationship_assessment_is_rejected(self):
+  self.mutate(lambda d:d['readers'][0]['relationshipReview'].update(reviewedCatalogSize=0));self.rejected('impossible relationship review catalog size')
+  self.mutate(lambda d:d['readers'][0]['relationshipReview'].update(reviewedCatalogSize=len(d['readers'])+1));self.rejected('impossible relationship review catalog size')
   self.mutate(lambda d:d['readers'][0]['relationshipReview'].update(reviewedCatalogSize=len(d['readers']),decision='none',reviewedTargets=[]));self.rejected('relationship review targets differ from catalog edges')
+ def test_historical_review_snapshot_survives_new_reader(self):
+  self.mutate(lambda d:d['readers'][0]['relationshipReview'].update(reviewedCatalogSize=len(d['readers'])-1))
+  self.assertEqual([],self.structural_errors())
  def test_justified_zero_relationship_assessment_is_allowed(self):
   data=json.loads((self.root/'content/catalog.json').read_text())
   unlinked=[r for r in data['readers'] if not r['relationships']]
