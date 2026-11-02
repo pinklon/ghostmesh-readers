@@ -108,8 +108,7 @@ def main():
     result = build(json.loads(args.readers.read_text()), json.loads(args.shareplane.read_text()),
                    min_readers=args.min_readers, min_shareplane=args.min_shareplane,
                    expected_source_sha=args.expected_source_sha)
-    args.output.write_text(json.dumps(result, indent=2, ensure_ascii=False) + "
-")
+    args.output.write_text(json.dumps(result, indent=2, ensure_ascii=False) + "\n")
     print(f"PASS unified index: {result['sources']['Readers']['count']} Readers, "
           f"{result['sources']['SharePlane']['count']} SharePlane Works")
 
