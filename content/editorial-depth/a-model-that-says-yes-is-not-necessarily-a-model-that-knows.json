@@ -1,0 +1,249 @@
+{
+  "schemaVersion": 1,
+  "readerId": "reader:a-model-that-says-yes-is-not-necessarily-a-model-that-knows",
+  "sourceId": "9tOu4r-FiQI",
+  "sourceDigest": "52044062f577c4baf42c4b93bfefad882921f0631ff9cc1bb0c455ca7a995e7e",
+  "sourceAidSha256": "a41f9f1dd5cd65c51e9933f68fe79bb9ce46d5828fe40256e189f3c0c2c49eed",
+  "articleSha256": "bab5b2ce62c51aebf00b81f5f3a7be3ad8eb677c534a25b53126c9af33de7a4a",
+  "evidenceRevision": "ef52c4d5fbdaffe72d21efee7b770285ed749a7bfed97b9317d240f31bead437",
+  "sourceMapEvidenceSha256": "e0a162fa3f66412c519f6c1ef45daa8c4300e31d085abbe7a3eebdbed24b5d5b",
+  "reviewEvidenceSha256": "ee0ef150f220370e47a89ae5beb192e82e853f2e7b3041bb5e63cb5087d9331e",
+  "candidateAuthor": "pinklon",
+  "complexity": {
+    "tier": "extended",
+    "factors": [
+      "Twenty material claims across mechanism, hardware, privacy, harnesses and productivity.",
+      "A35minute source informs consequential execution-authority recommendations."
+    ],
+    "rationale": "Extended mapping is warranted by distinct technical evidence classes and security consequences, not a word quota."
+  },
+  "sourceMap": [
+    {
+      "atSeconds": 4,
+      "sectionId": "mechanism",
+      "claimIds": [
+        "a-model-that-says-yes-is-not-necessarily-a-model-that-knows--claim-1"
+      ],
+      "rationale": "Checked retained approximate source cue and its qualified claim discussion: Abliterated models will answer virtually anything"
+    },
+    {
+      "atSeconds": 90,
+      "sectionId": "mechanism",
+      "claimIds": [
+        "a-model-that-says-yes-is-not-necessarily-a-model-that-knows--claim-2"
+      ],
+      "rationale": "Checked retained approximate source cue and its qualified claim discussion: Restricted models failed defenders during recent cyber incidents"
+    },
+    {
+      "atSeconds": 218,
+      "sectionId": "mechanism",
+      "claimIds": [
+        "a-model-that-says-yes-is-not-necessarily-a-model-that-knows--claim-3"
+      ],
+      "rationale": "Checked retained approximate source cue and its qualified claim discussion: A refusal direction can be isolated by comparing model activations"
+    },
+    {
+      "atSeconds": 345,
+      "sectionId": "boundaries",
+      "claimIds": [
+        "a-model-that-says-yes-is-not-necessarily-a-model-that-knows--claim-4"
+      ],
+      "rationale": "Checked retained approximate source cue and its qualified claim discussion: Defenders should hack themselves first with less-restricted models"
+    },
+    {
+      "atSeconds": 448,
+      "sectionId": "mechanism",
+      "claimIds": [
+        "a-model-that-says-yes-is-not-necessarily-a-model-that-knows--claim-5"
+      ],
+      "rationale": "Checked retained approximate source cue and its qualified claim discussion: The 2024 paper proves refusal removal preserves intelligence"
+    },
+    {
+      "atSeconds": 530,
+      "sectionId": "mechanism",
+      "claimIds": [
+        "a-model-that-says-yes-is-not-necessarily-a-model-that-knows--claim-6"
+      ],
+      "rationale": "Checked retained approximate source cue and its qualified claim discussion: DeepSeek refusals fell from 100% to 2% with zero trade-off"
+    },
+    {
+      "atSeconds": 567,
+      "sectionId": "mechanism",
+      "claimIds": [
+        "a-model-that-says-yes-is-not-necessarily-a-model-that-knows--claim-7"
+      ],
+      "rationale": "Checked retained approximate source cue and its qualified claim discussion: Jailbreaking, fine-tuning and abliteration are distinct routes"
+    },
+    {
+      "atSeconds": 635,
+      "sectionId": "mechanism",
+      "claimIds": [
+        "a-model-that-says-yes-is-not-necessarily-a-model-that-knows--claim-8"
+      ],
+      "rationale": "Checked retained approximate source cue and its qualified claim discussion: Heretic automates censorship removal while constraining divergence"
+    },
+    {
+      "atSeconds": 740,
+      "sectionId": "hardware",
+      "claimIds": [
+        "a-model-that-says-yes-is-not-necessarily-a-model-that-knows--claim-9"
+      ],
+      "rationale": "Checked retained approximate source cue and its qualified claim discussion: SuperDeepSeek V4 Flash has ~306B parameters and runs on paired DGX Sparks"
+    },
+    {
+      "atSeconds": 858,
+      "sectionId": "hardware",
+      "claimIds": [
+        "a-model-that-says-yes-is-not-necessarily-a-model-that-knows--claim-10"
+      ],
+      "rationale": "Checked retained approximate source cue and its qualified claim discussion: A rule of thumb is 0.6 GB per billion parameters"
+    },
+    {
+      "atSeconds": 1000,
+      "sectionId": "hardware",
+      "claimIds": [
+        "a-model-that-says-yes-is-not-necessarily-a-model-that-knows--claim-11"
+      ],
+      "rationale": "Checked retained approximate source cue and its qualified claim discussion: Memory bandwidth materially affects decoding throughput"
+    },
+    {
+      "atSeconds": 1090,
+      "sectionId": "hardware",
+      "claimIds": [
+        "a-model-that-says-yes-is-not-necessarily-a-model-that-knows--claim-12"
+      ],
+      "rationale": "Checked retained approximate source cue and its qualified claim discussion: Open weights should be archived against future restrictions"
+    },
+    {
+      "atSeconds": 1212,
+      "sectionId": "boundaries",
+      "claimIds": [
+        "a-model-that-says-yes-is-not-necessarily-a-model-that-knows--claim-13"
+      ],
+      "rationale": "Checked retained approximate source cue and its qualified claim discussion: API, local and rented GPU are three deployment paths"
+    },
+    {
+      "atSeconds": 1351,
+      "sectionId": "hardware",
+      "claimIds": [
+        "a-model-that-says-yes-is-not-necessarily-a-model-that-knows--claim-14"
+      ],
+      "rationale": "Checked retained approximate source cue and its qualified claim discussion: KYC providers may be government honeypots"
+    },
+    {
+      "atSeconds": 1385,
+      "sectionId": "hardware",
+      "claimIds": [
+        "a-model-that-says-yes-is-not-necessarily-a-model-that-knows--claim-15"
+      ],
+      "rationale": "Checked retained approximate source cue and its qualified claim discussion: Venice offers an abliterated DeepSeek variant and zero retention"
+    },
+    {
+      "atSeconds": 1650,
+      "sectionId": "hardware",
+      "claimIds": [
+        "a-model-that-says-yes-is-not-necessarily-a-model-that-knows--claim-16"
+      ],
+      "rationale": "Checked retained approximate source cue and its qualified claim discussion: A Qwen variant is practical on consumer unified-memory systems"
+    },
+    {
+      "atSeconds": 1700,
+      "sectionId": "hardware",
+      "claimIds": [
+        "a-model-that-says-yes-is-not-necessarily-a-model-that-knows--claim-17"
+      ],
+      "rationale": "Checked retained approximate source cue and its qualified claim discussion: Ollama simplifies local download and execution"
+    },
+    {
+      "atSeconds": 1934,
+      "sectionId": "product",
+      "claimIds": [
+        "a-model-that-says-yes-is-not-necessarily-a-model-that-knows--claim-18"
+      ],
+      "rationale": "Checked retained approximate source cue and its qualified claim discussion: Cloudroom connects Pi to self-hosted inference"
+    },
+    {
+      "atSeconds": 2015,
+      "sectionId": "product",
+      "claimIds": [
+        "a-model-that-says-yes-is-not-necessarily-a-model-that-knows--claim-19"
+      ],
+      "rationale": "Checked retained approximate source cue and its qualified claim discussion: Paired DGX Sparks achieve 60 to 110 output tokens/s"
+    },
+    {
+      "atSeconds": 2106,
+      "sectionId": "product",
+      "claimIds": [
+        "a-model-that-says-yes-is-not-necessarily-a-model-that-knows--claim-20"
+      ],
+      "rationale": "Checked retained approximate source cue and its qualified claim discussion: Cloudroom users ship 43% more commits or PRs in week one"
+    }
+  ],
+  "assessment": {
+    "sourceCoverage": {
+      "disposition": "covered",
+      "rationale": "All20 source cues checked against retained timed aid; full authored and generated copy read, corrected map spans mechanism, boundaries, hardware and product with exact source links."
+    },
+    "supportingArgument": {
+      "disposition": "covered",
+      "rationale": "Refusal suppression can aid authorized defensive work, but willingness does not prove correct useful results."
+    },
+    "evidenceRoles": {
+      "disposition": "covered",
+      "rationale": "Creator claims, primary mechanism evidence, vendor documentation and unexecuted hypotheses remain separated."
+    },
+    "counterargument": {
+      "disposition": "covered",
+      "rationale": "Actual TruthfulQA regressions and Qwen/Yi exceptions now bound claims of preserved model capability."
+    },
+    "tradeoffs": {
+      "disposition": "covered",
+      "rationale": "Local custody, model quality, compute cost and harness privileges are treated as distinct engineering tradeoffs."
+    },
+    "falsifiability": {
+      "disposition": "covered",
+      "rationale": "Same authorized tasks, base versus modified models, false positives, misses and latency form a reversible test."
+    },
+    "originalSynthesis": {
+      "disposition": "covered",
+      "rationale": "Evaluate useful findings and authority boundaries rather than treating a lower refusal count as complete quality."
+    },
+    "performance": {
+      "disposition": "covered",
+      "rationale": "Capacity and bandwidth documentation are separated from unverified throughput and exact checkpoint behavior."
+    },
+    "economics": {
+      "disposition": "covered",
+      "rationale": "Cost and setup friction remain unmeasured; the proposed pilot measures them rather than inventing savings."
+    },
+    "threatGovernance": {
+      "disposition": "covered",
+      "rationale": "Disposable repository, allowlisted commands, network limits and no production credentials bound the proposed experiment."
+    }
+  },
+  "independentCorroboration": "none",
+  "ownerDecision": {
+    "pullNumber": 120,
+    "commentId": null
+  },
+  "decision": "accept",
+  "gaps": [
+    {
+      "type": "source",
+      "severity": "nonblocking",
+      "rationale": "Source cues are approximate local machine-transcript aids, not certified exact speech or full independent audiovisual replay."
+    },
+    {
+      "type": "test",
+      "severity": "nonblocking",
+      "rationale": "Model throughput, exact provider entitlement, private runtime synthesis and functional model quality were not independently executed in this review."
+    },
+    {
+      "type": "scope",
+      "severity": "nonblocking",
+      "rationale": "Optional related-work links remain editorial suggestions rather than authorized graph edges; stale rationale mentions removed suggestions without adding them back."
+    }
+  ],
+  "decisionRationale": "Independent source/copy/privacy review accepts repaired exact article for Tony owner review; actual owner GitHub acceptance, full CI and separate exact-head publication approval remain required.",
+  "assessedAt": "2026-11-02T22:36:00Z"
+}

@@ -462,6 +462,10 @@
           "reason": "Owner-approved Candidate 006 staged for canonical generator and publication review."
         }
       ],
+      "editorialDepth": {
+        "schemaVersion": 1,
+        "receiptPath": "content/editorial-depth/a-model-that-says-yes-is-not-necessarily-a-model-that-knows.json"
+      },
       "editorialOrder": 41,
       "orderReason": "New deep deconstruction following the current 40-Reader archive; subject-specific analysis of refusal-suppressed models.",
       "relationshipReview": {
