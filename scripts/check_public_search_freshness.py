@@ -40,6 +40,9 @@ def needs_refresh(corpus_url, catalog_url, deployed_index_url):
         if error.code == 404:
             return True
         raise
+    except json.JSONDecodeError:
+        # Some static hosts serve the HTML fallback at an absent JSON route.
+        return True
     return (deployed.get("schema") != "ghostmesh-unified-search-v1" or
             deployed.get("sources", {}).get("SharePlane", {}).get("sourceCatalogSha256") != source_sha or
             deployed.get("sources", {}).get("SharePlane", {}).get("count") != len(works))
