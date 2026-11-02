@@ -70,7 +70,7 @@ def build(readers, shareplane, *, min_readers=1, min_shareplane=100):
         if not text:
             raise ValueError("Published SharePlane Work lacks searchable metadata")
         route = public_url(HOSTS["SharePlane"], x["canonicalUrl"])
-        if not re.fullmatch(r"https://shareplane\\.malott\\.ai/(artifacts|market)/[a-z0-9-]+/", route):
+        if not re.fullmatch(r"https://shareplane\.malott\.ai/(artifacts|market)/[a-z0-9-]+/", route):
             raise ValueError("SharePlane Work has non-canonical public route")
         records.append({
             "id": x["id"], "source": "SharePlane", "title": x["title"],
