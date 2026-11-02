@@ -2,7 +2,8 @@
 """Build a static, public-only search index from two canonical projections.
 
 The producer of each input is responsible for supplying a current snapshot.
-This adapter refuses suspiciously small SharePlane coverage by default.
+The CLI requires an independently verified canonical source-catalog digest;
+a count floor alone cannot establish current production coverage.
 """
 import argparse
 import json
@@ -31,7 +32,7 @@ def public_url(host, path):
     return "https://" + host + "/" + path.lstrip("/")
 
 
-def build(readers, shareplane, *, min_readers=1, min_shareplane=100):
+def build(readers, shareplane, *, min_readers=1, min_shareplane=1, expected_source_sha=None):
     if readers.get("schema") != "ghostmesh-public-reader-text-v1":
         raise ValueError("Unsupported Reader search schema")
     reader_items = readers.get("readers")
@@ -44,6 +45,8 @@ def build(readers, shareplane, *, min_readers=1, min_shareplane=100):
     digest = shareplane.get("sourceCatalogSha256")
     if not isinstance(digest, str) or not re.fullmatch(r"[a-fA-F0-9]{64}", digest):
         raise ValueError("SharePlane corpus source hash missing or invalid")
+    if expected_source_sha is not None and digest.lower() != expected_source_sha.lower():
+        raise ValueError("SharePlane source catalog digest does not match approved current source")
     works = shareplane.get("records")
     if not isinstance(works, list) or not all(x.get("publiclyAccessible") is True for x in works):
         raise ValueError("SharePlane corpus contains unverified public routes")
@@ -103,8 +106,10 @@ def main():
     parser.add_argument("--min-shareplane", type=int, default=100)
     args = parser.parse_args()
     result = build(json.loads(args.readers.read_text()), json.loads(args.shareplane.read_text()),
-                   min_readers=args.min_readers, min_shareplane=args.min_shareplane)
-    args.output.write_text(json.dumps(result, indent=2, ensure_ascii=False) + "\n")
+                   min_readers=args.min_readers, min_shareplane=args.min_shareplane,
+                   expected_source_sha=args.expected_source_sha)
+    args.output.write_text(json.dumps(result, indent=2, ensure_ascii=False) + "
+")
     print(f"PASS unified index: {result['sources']['Readers']['count']} Readers, "
           f"{result['sources']['SharePlane']['count']} SharePlane Works")
 
