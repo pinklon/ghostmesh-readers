@@ -17,6 +17,36 @@
     });
   window.gmLoadReaderIndex = load;
 
+  /* Optional verified cross-site projection. Reader-only search remains usable if absent. */
+  let unifiedPromise;
+  const loadUnified = () => unifiedPromise ||= fetch('/readers/unified-search-index.json')
+    .then(response => {
+      if (!response.ok) throw new Error('Unified index unavailable');
+      return response.json();
+    })
+    .then(index => {
+      const sources = index.sources;
+      if (index.schema !== 'ghostmesh-unified-search-v1' || !Array.isArray(index.records) ||
+          !sources || !sources.Readers || !sources.SharePlane ||
+          !Number.isSafeInteger(sources.Readers.count) || !Number.isSafeInteger(sources.SharePlane.count) ||
+          sources.Readers.count < 1 || sources.SharePlane.count < 1 ||
+          index.records.length !== sources.Readers.count + sources.SharePlane.count ||
+          !/^[a-f0-9]{64}$/i.test(sources.SharePlane.sourceCatalogSha256 || '') ||
+          index.records.some(record => !['Readers', 'SharePlane'].includes(record.source) ||
+            typeof record.title !== 'string' || !record.title.trim() ||
+            typeof record.text !== 'string' || !record.text.trim() ||
+            typeof record.url !== 'string' || !/^https:\/\//.test(record.url) ||
+            (() => { try {
+              const url = new URL(record.url);
+              return url.protocol !== 'https:' || url.username || url.password ||
+                url.hostname !== (record.source === 'Readers' ? 'youtube.shareplane.malott.ai' : 'shareplane.malott.ai') ||
+                (record.source === 'SharePlane' && !/^\/(artifacts|market)\/[a-z0-9-]+\/$/.test(url.pathname)) ||
+                url.search || url.hash;
+            } catch (_) { return true; } })())) throw new Error('Unified index invalid');
+      return index.records;
+    });
+
+
   const normalize = value => value.normalize('NFKD').replace(/[\u0300-\u036f]/g, '').toLocaleLowerCase();
   const excerpt = (article, term) => {
     const normalized = normalize(article);
@@ -29,7 +59,7 @@
   const findMatches = (articles, query) => {
     const terms = query.split(/\s+/).filter(Boolean);
     if (!terms.length) return [];
-    const corpus = article => normalize(article.title + ' ' + article.category + ' ' + article.text);
+    const corpus = article => normalize(article.title + ' ' + (article.category || '') + ' ' + article.text);
     const phraseMatches = articles.filter(article => corpus(article).includes(query));
     return phraseMatches.length ? phraseMatches :
       articles.filter(article => terms.every(term => corpus(article).includes(term)));
@@ -50,17 +80,20 @@
     if (!terms.length) { status.textContent = 'Type to search the public Reader articles.'; return; }
     status.textContent = 'Searching published Reader articles…';
     try {
-      const articles = await load();
+      let articles, limited = false;
+      try { articles = await loadUnified(); }
+      catch (_) { articles = await load(); limited = true; }
       if (!dialog.open || revision !== renderRevision || normalize(input.value.trim()) !== query) return;
       results.replaceChildren();
       const matches = findMatches(articles, query);
-      status.textContent = matches.length ? `${matches.length} of ${articles.length} Reader articles match.` :
-        'No Reader articles match. Try another claim, source or phrase.';
+      status.textContent = matches.length ?
+        `${matches.length} of ${articles.length} public ${limited ? 'Reader articles' : 'Reader and SharePlane works'} match.${limited ? ' SharePlane search is temporarily unavailable.' : ''}` :
+        `No ${limited ? 'Reader articles' : 'public works'} match. Try another claim, source or phrase.${limited ? ' SharePlane search is temporarily unavailable.' : ''}`;
       for (const article of matches) {
         const link = document.createElement('a');
         link.href = article.url;
         const type = document.createElement('small');
-        type.textContent = article.category + ' / PUBLIC READER';
+        type.textContent = (article.source === 'SharePlane' ? 'SHAREPLANE / ' : 'READER / ') + (article.category || 'PUBLIC WORK');
         const title = document.createElement('strong');
         title.textContent = article.title;
         const snippet = document.createElement('span');
@@ -108,13 +141,15 @@
       if (!query) return;
       panel.textContent = 'Searching published Reader articles…';
       try {
-        const articles = await load();
+        let articles, limited = false;
+        try { articles = await loadUnified(); }
+        catch (_) { articles = await load(); limited = true; }
         if (normalize(homeInput.value.trim()) !== query) return;
         const matches = findMatches(articles, query);
         panel.replaceChildren();
         const summary = document.createElement('p');
-        summary.textContent = matches.length ? `${matches.length} Reader article${matches.length === 1 ? '' : 's'} match as you type.` :
-          'No Reader articles match. Try another phrase.';
+        summary.textContent = matches.length ? `${matches.length} public ${limited ? 'Reader article' : 'work'}${matches.length === 1 ? '' : 's'} match as you type.${limited ? ' SharePlane search unavailable.' : ''}` :
+          `No public ${limited ? 'Reader articles' : 'works'} match. Try another phrase.`;
         panel.append(summary);
         for (const article of matches.slice(0, 5)) {
           const link = document.createElement('a');
@@ -123,7 +158,9 @@
           label.textContent = article.title;
           const snippet = document.createElement('span');
           snippet.textContent = excerpt(article.text, normalize(article.text).includes(query) ? query : query.split(/\s+/)[0]);
-          link.append(label, snippet);
+          const type = document.createElement('small');
+          type.textContent = article.source === 'SharePlane' ? 'SHAREPLANE' : 'READER';
+          link.append(type, label, snippet);
           panel.append(link);
         }
       } catch (_) {
