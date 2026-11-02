@@ -446,7 +446,7 @@
         }
       ],
       "relationships": [],
-      "relationshipDisposition": "Four manually curated reading suggestions appear in the article; formal Reader graph edges are not yet approved.",
+      "relationshipDisposition": "Two manually curated Reader suggestions appear in the article; formal Reader graph edges are not yet approved.",
       "review": {
         "status": "awaiting independent exact-copy review",
         "reviewer": "not yet recorded",

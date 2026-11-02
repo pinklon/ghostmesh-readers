@@ -14429,7 +14429,7 @@
         }
       ],
       "relationships": [],
-      "relationshipDisposition": "Four manually curated reading suggestions appear in the article; formal Reader graph edges are not yet approved.",
+      "relationshipDisposition": "Two manually curated Reader suggestions appear in the article; formal Reader graph edges are not yet approved.",
       "legacyReceipt": {
         "schema": "ghostmesh-reader-receipt-v2",
         "createdAt": "2026-11-02T17:45:00Z",
@@ -14444,7 +14444,7 @@
         "sourceInspection": {
           "method": "Locally retained video, audio and approximate speech transcript, with claim-level primary-source research.",
           "status": "hash-identified-private-source-capture",
-          "manifestSha256": "26ad4f21f40ded4ea80c6cf1040e4303144a11a4c660051ced5a52d66a77d663",
+          "timedAidSha256": "a41f9f1dd5cd65c51e9933f68fe79bb9ce46d5828fe40256e189f3c0c2c49eed",
           "caveat": "Transcription timestamps are approximate; model claims, throughput and outcomes were not independently reproduced.",
           "publicationBoundary": "Public repository contains original analysis and sanitized metadata, never raw media or transcripts."
         },
