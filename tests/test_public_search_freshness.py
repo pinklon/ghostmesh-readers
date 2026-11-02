@@ -28,7 +28,7 @@ class FreshnessTests(unittest.TestCase):
         response.__enter__.return_value.read.return_value = json.dumps(deployed).encode()
         with patch("scripts.check_public_search_freshness.fetch_shareplane_bytes",
                    side_effect=[catalog, corpus]), patch(
-                       "scripts.check_public_search_freshness.urlopen",
+                       "urllib.request.urlopen",
                        return_value=response):
             return needs_refresh("https://shareplane.malott.ai/corpus.json",
                                  "https://shareplane.malott.ai/catalog.js",
