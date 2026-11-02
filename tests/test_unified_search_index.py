@@ -36,7 +36,19 @@ class UnifiedIndexTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "Duplicate"):
             build(readers, share, min_shareplane=1)
 
-    def test_missing_source_hash_rejected(self):\n        readers, share = fixtures()\n        del share["sourceCatalogSha256"]\n        with self.assertRaisesRegex(ValueError, "source hash"):\n            build(readers, share, min_shareplane=1)\n\n    def test_noncanonical_shareplane_route_rejected(self):\n        readers, share = fixtures()\n        share["records"][0]["canonicalUrl"] = "https://shareplane.malott.ai/admin/"\n        with self.assertRaisesRegex(ValueError, "non-canonical"):\n            build(readers, share, min_shareplane=1)\n\n    def test_untrusted_host_rejected(self):
+    def test_missing_source_hash_rejected(self):
+        readers, share = fixtures()
+        del share["sourceCatalogSha256"]
+        with self.assertRaisesRegex(ValueError, "source hash"):
+            build(readers, share, min_shareplane=1)
+
+    def test_noncanonical_shareplane_route_rejected(self):
+        readers, share = fixtures()
+        share["records"][0]["canonicalUrl"] = "https://shareplane.malott.ai/admin/"
+        with self.assertRaisesRegex(ValueError, "non-canonical"):
+            build(readers, share, min_shareplane=1)
+
+    def test_untrusted_host_rejected(self):
         with self.assertRaises(ValueError):
             public_url("shareplane.malott.ai", "https://untrusted.example/path")
 
