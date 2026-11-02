@@ -103,7 +103,8 @@ def main():
     parser.add_argument("--shareplane", type=Path, required=True)
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--min-readers", type=int, default=1)
-    parser.add_argument("--min-shareplane", type=int, default=100)
+    parser.add_argument("--min-shareplane", type=int, default=1)
+    parser.add_argument("--expected-source-sha", required=True, help="SHA-256 of verified current SharePlane catalog")
     args = parser.parse_args()
     result = build(json.loads(args.readers.read_text()), json.loads(args.shareplane.read_text()),
                    min_readers=args.min_readers, min_shareplane=args.min_shareplane,
