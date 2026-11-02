@@ -82,6 +82,46 @@ const readerCount = require('../content/catalog.json').readers.length;
     assert.match(await missingPage.locator('#result-count').textContent(), /Article-text search is unavailable/);
     await missing.close();
 
+    // Synthetic mixed-site fixture exercises UI behavior without publishing a stale cross-site snapshot.
+    for (const width of [390, 1440]) {
+      const mixed = await browser.newContext({ viewport: { width, height: 900 } });
+      const fixture = {
+        schema: 'ghostmesh-unified-search-v1',
+        sources: { Readers: { count: 1 }, SharePlane: { count: 1, sourceCatalogSha256: 'a'.repeat(64) } },
+        records: [
+          { id: 'reader:fixture', source: 'Readers', title: 'Reader signal lantern',
+            url: 'https://youtube.shareplane.malott.ai/reader-fixture/', category: 'AI', text: 'signal-lantern Reader source context.' },
+          { id: 'work:fixture', source: 'SharePlane', title: 'Work signal lantern',
+            url: 'https://shareplane.malott.ai/artifacts/work-fixture/', category: 'Artifact', text: 'signal-lantern SharePlane source context.' }
+        ]
+      };
+      await mixed.route('**/readers/unified-search-index.json', route => route.fulfill({
+        status: 200, contentType: 'application/json', body: JSON.stringify(fixture)
+      }));
+      const mixedPage = await mixed.newPage();
+      await mixedPage.goto(base + '/', { waitUntil: 'domcontentloaded' });
+      await mixedPage.locator('.gm-search-control').click();
+      await mixedPage.locator('#gm-search-input').fill('signal-lantern');
+      await mixedPage.waitForFunction(() => document.querySelector('[data-reader-search-status]')?.textContent.includes('2 of 2 public'));
+      assert.equal(await mixedPage.locator('[data-reader-search-results] > a').count(), 2);
+      assert.equal(await mixedPage.locator('.gm-search-source-filters button').count(), 3);
+      assert.equal(await mixedPage.locator('[data-reader-search-results] > a[href="https://shareplane.malott.ai/artifacts/work-fixture/"]').count(), 1);
+      assert.equal(await mixedPage.locator('[data-reader-search-results] > a[href="https://youtube.shareplane.malott.ai/reader-fixture/"]').count(), 1);
+      await mixedPage.locator('.gm-search-source-filters button[data-source="SharePlane"]').click();
+      assert.equal(await mixedPage.locator('[data-reader-search-results] > a').count(), 1);
+      assert.equal(await mixedPage.locator('[data-reader-search-results] > a').getAttribute('href'),
+        'https://shareplane.malott.ai/artifacts/work-fixture/');
+      assert.equal(await mixedPage.locator('.gm-search-source-filters button[data-source="SharePlane"]').getAttribute('aria-pressed'), 'true');
+      await mixedPage.locator('.gm-search-source-filters button[data-source="Readers"]').click();
+      assert.equal(await mixedPage.locator('[data-reader-search-results] > a').count(), 1);
+      assert.equal(await mixedPage.locator('[data-reader-search-results] > a').getAttribute('href'),
+        'https://youtube.shareplane.malott.ai/reader-fixture/');
+      await mixedPage.locator('.gm-search-source-filters button[data-source="All"]').click();
+      assert.equal(await mixedPage.locator('[data-reader-search-results] > a').count(), 2);
+      assert.equal(await mixedPage.evaluate(() => document.documentElement.scrollWidth <= innerWidth), true);
+      await mixed.close();
+    }
+
     const context = await browser.newContext({ javaScriptEnabled: false });
     const page = await context.newPage();
     await page.goto(base + '/', { waitUntil: 'domcontentloaded' });
