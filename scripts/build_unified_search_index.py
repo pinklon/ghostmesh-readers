@@ -6,6 +6,7 @@ This adapter refuses suspiciously small SharePlane coverage by default.
 """
 import argparse
 import json
+import re
 from pathlib import Path
 from urllib.parse import urlparse
 
@@ -19,10 +20,13 @@ def public_url(host, path):
         raise ValueError("Missing publication route")
     if path.startswith("https://"):
         parsed = urlparse(path)
-        if parsed.netloc != host or parsed.username or parsed.password:
+        if (parsed.netloc != host or parsed.username or parsed.password or
+                parsed.query or parsed.fragment or not re.fullmatch(r"/[a-z0-9/-]+/", parsed.path) or
+                "//" in parsed.path or ".." in parsed.path):
             raise ValueError("Unexpected external search target")
         return path
-    if path.startswith("//") or "?" in path or "#" in path or ".." in path.split("/"):
+    if (not re.fullmatch(r"/[a-z0-9/-]+/", path) or "//" in path or
+            ".." in path.split("/")):
         raise ValueError("Unsafe publication route")
     return "https://" + host + "/" + path.lstrip("/")
 
@@ -37,6 +41,9 @@ def build(readers, shareplane, *, min_readers=1, min_shareplane=100):
         raise ValueError("Reader index is below required coverage")
     if shareplane.get("schemaVersion") != "shareplane.reader-public-works-snapshot.v1":
         raise ValueError("Unsupported SharePlane public Work corpus schema")
+    digest = shareplane.get("sourceCatalogSha256")
+    if not isinstance(digest, str) or not re.fullmatch(r"[a-fA-F0-9]{64}", digest):
+        raise ValueError("SharePlane corpus source hash missing or invalid")
     works = shareplane.get("records")
     if not isinstance(works, list) or not all(x.get("publiclyAccessible") is True for x in works):
         raise ValueError("SharePlane corpus contains unverified public routes")
@@ -62,14 +69,18 @@ def build(readers, shareplane, *, min_readers=1, min_shareplane=100):
         text = " ".join(str(v) for v in fields if v).strip()
         if not text:
             raise ValueError("Published SharePlane Work lacks searchable metadata")
+        route = public_url(HOSTS["SharePlane"], x["canonicalUrl"])
+        if not re.fullmatch(r"https://shareplane\\.malott\\.ai/(artifacts|market)/[a-z0-9-]+/", route):
+            raise ValueError("SharePlane Work has non-canonical public route")
         records.append({
             "id": x["id"], "source": "SharePlane", "title": x["title"],
-            "url": public_url(HOSTS["SharePlane"], x["canonicalUrl"]),
+            "url": route,
             "category": x.get("kind", "Work"), "text": text,
             "indexDepth": "public-corpus",
         })
     ids = [x["id"] for x in records]
-    if len(ids) != len(set(ids)):
+    urls = [x["url"] for x in records]
+    if len(ids) != len(set(ids)) or len(urls) != len(set(urls)):
         raise ValueError("Duplicate cross-site search identity")
     return {
         "schema": SCHEMA,
