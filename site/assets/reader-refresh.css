@@ -99,3 +99,12 @@ main .chapters .chapter button:hover{border-color:var(--gm-accent);color:var(--g
 /* DeepInfer's authored palette also drives the generated Reader chrome. */
 body.infer-reader{--gm-bg:var(--infer-bg);--gm-paper:var(--infer-panel);--gm-ink:var(--infer-ink);--gm-muted:var(--infer-muted);--gm-border:var(--infer-shared-border);--gm-accent:var(--infer-accent);--gm-soft:var(--infer-soft)}
 body.infer-reader .gm-share-button:focus-visible,body.infer-reader .gm-share-email:focus-visible{outline-color:var(--infer-accent)}
+
+/* Unified search uses the established Reader dialog and token palette. */
+.gm-search-source-filters{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 16px}
+.gm-search-source-filters[hidden]{display:none}
+.gm-search-source-filters button{appearance:none;cursor:pointer;border:1px solid var(--gm-border);background:var(--gm-paper);color:var(--gm-muted);border-radius:999px;padding:8px 14px;font:650 12px/1.2 system-ui,sans-serif;letter-spacing:.02em;transition:background .15s,color .15s,border-color .15s}
+.gm-search-source-filters button:hover{border-color:var(--gm-accent);color:var(--gm-ink)}
+.gm-search-source-filters button[aria-pressed="true"]{background:var(--gm-accent);border-color:var(--gm-accent);color:var(--gm-bg)}
+.gm-search-source-filters button:focus-visible{outline:2px solid var(--gm-accent);outline-offset:3px}
+@media(prefers-reduced-motion:reduce){.gm-search-source-filters button{transition:none}}
