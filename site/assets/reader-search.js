@@ -72,6 +72,27 @@
   const status = dialog.querySelector('[data-reader-search-status]');
   let openedBy;
   let renderRevision = 0;
+  let activeSource = 'All';
+  const sourceFilters = document.createElement('div');
+  sourceFilters.className = 'gm-search-source-filters';
+  sourceFilters.setAttribute('role', 'group');
+  sourceFilters.setAttribute('aria-label', 'Search result source');
+  sourceFilters.hidden = true;
+  for (const source of ['All', 'Readers', 'SharePlane']) {
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.textContent = source === 'All' ? 'All sources' : source;
+    button.dataset.source = source;
+    button.setAttribute('aria-pressed', String(source === activeSource));
+    button.addEventListener('click', () => {
+      activeSource = source;
+      for (const item of sourceFilters.querySelectorAll('button'))
+        item.setAttribute('aria-pressed', String(item.dataset.source === source));
+      render();
+    });
+    sourceFilters.append(button);
+  }
+  results.before(sourceFilters);
   const render = async () => {
     const revision = ++renderRevision;
     const query = normalize(input.value.trim());
@@ -85,7 +106,8 @@
       catch (_) { articles = await load(); limited = true; }
       if (!dialog.open || revision !== renderRevision || normalize(input.value.trim()) !== query) return;
       results.replaceChildren();
-      const matches = findMatches(articles, query);
+      sourceFilters.hidden = limited;
+      const matches = findMatches(articles, query).filter(article => limited || activeSource === 'All' || article.source === activeSource);
       status.textContent = matches.length ?
         `${matches.length} of ${articles.length} public ${limited ? 'Reader articles' : 'Reader and SharePlane works'} match.${limited ? ' SharePlane search is temporarily unavailable.' : ''}` :
         `No ${limited ? 'Reader articles' : 'public works'} match. Try another claim, source or phrase.${limited ? ' SharePlane search is temporarily unavailable.' : ''}`;
@@ -105,6 +127,7 @@
     } catch (_) {
       if (!dialog.open || revision !== renderRevision) return;
       results.replaceChildren();
+      sourceFilters.hidden = true;
       status.textContent = 'Search is unavailable. Browse the complete Reader library below.';
       const fallback = document.createElement('a');
       fallback.href = '/readers/';
@@ -117,6 +140,9 @@
     openedBy = trigger;
     dialog.showModal();
     input.focus();
+    activeSource = 'All';
+    for (const item of sourceFilters.querySelectorAll('button'))
+      item.setAttribute('aria-pressed', String(item.dataset.source === 'All'));
     render();
   });
   dialog.querySelector('[data-reader-search-close]').addEventListener('click', () => dialog.close());
