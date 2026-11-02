@@ -6,7 +6,7 @@ from pathlib import Path
 from unittest.mock import patch
 
 from scripts.refresh_unified_public_search import fetch_shareplane_bytes, refresh
-from tests.test_unified_search_index import fixtures
+from test_unified_search_index import fixtures
 
 
 class PublicRefreshTests(unittest.TestCase):
