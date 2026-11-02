@@ -1,5 +1,5 @@
 import unittest
-from build_unified_search_index import build, public_url
+from scripts.build_unified_search_index import build, public_url
 
 
 def fixtures():
