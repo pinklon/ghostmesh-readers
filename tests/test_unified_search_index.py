@@ -23,7 +23,7 @@ class UnifiedIndexTests(unittest.TestCase):
 
     def test_incomplete_coverage_fails(self):
         with self.assertRaisesRegex(ValueError, "coverage incomplete"):
-            build(*fixtures())
+            build(*fixtures(), min_shareplane=2)
 
     def test_public_historical_work_included(self):
         readers, share = fixtures()
@@ -35,6 +35,14 @@ class UnifiedIndexTests(unittest.TestCase):
         share["publicWorkCount"] = share["verifiedPublicRouteCount"] = 2
         with self.assertRaisesRegex(ValueError, "Duplicate"):
             build(readers, share, min_shareplane=1)
+
+    def test_source_freshness_pin_rejected(self):
+        with self.assertRaisesRegex(ValueError, "approved current source"):
+            build(*fixtures(), expected_source_sha="b" * 64)
+
+    def test_source_freshness_pin_accepted(self):
+        result = build(*fixtures(), expected_source_sha="a" * 64)
+        self.assertEqual(result["sources"]["SharePlane"]["sourceCatalogSha256"], "a" * 64)
 
     def test_missing_source_hash_rejected(self):
         readers, share = fixtures()
