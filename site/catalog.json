@@ -33,7 +33,7 @@
         "platform": "YouTube",
         "url": "https://www.youtube.com/watch?v=9tOu4r-FiQI",
         "videoId": "9tOu4r-FiQI",
-        "title": "David Ondrej discusses abliterated open models",
+        "title": "This DeepSeek v4.1 is powerful and uncensored, let’s run it.",
         "creator": "David Ondrej",
         "mediaAspect": "16:9"
       },
@@ -113,13 +113,15 @@
           "kind": "source-attributed-claim",
           "asOf": "2026-11-02",
           "status": "partially corroborated",
-          "assessment": "Only a narrower mechanism or vendor-reported observation is supported; this is not independent confirmation of the full video claim.",
-          "limits": "The article records an evidence boundary; unsupported performance and incident assertions remain unresolved.",
+          "assessment": "The paper supports the refusal-direction mechanism and reports many near-baseline evaluations, but it does not prove intelligence is universally preserved.",
+          "limits": "Arditi et al. §4.3 and Appendix G discuss TruthfulQA declines and Qwen-7B/Yi-34B exceptions; no universal zero-tradeoff conclusion follows.",
           "sourceLocation": "00:07:28",
           "references": [
             "arditi"
           ],
-          "counterevidence": [],
+          "counterevidence": [
+            "arditi"
+          ],
           "temporalScope": "Video analyzed November 2, 2026; mutable claims require later rechecking."
         },
         {
@@ -156,11 +158,13 @@
           "proposition": "Heretic automates censorship removal while constraining divergence",
           "kind": "source-attributed-claim",
           "asOf": "2026-11-02",
-          "status": "unverified",
-          "assessment": "No independent corroboration established for this precise source proposition.",
+          "status": "corroborated",
+          "assessment": "Heretic's first-party repository documents its refusal-reduction and divergence-constraining approach; this does not independently establish quality.",
           "limits": "The article records an evidence boundary; unsupported performance and incident assertions remain unresolved.",
           "sourceLocation": "00:10:35",
-          "references": [],
+          "references": [
+            "heretic"
+          ],
           "counterevidence": [],
           "temporalScope": "Video analyzed November 2, 2026; mutable claims require later rechecking."
         },
@@ -182,13 +186,11 @@
           "proposition": "A rule of thumb is 0.6 GB per billion parameters",
           "kind": "source-attributed-claim",
           "asOf": "2026-11-02",
-          "status": "corroborated",
-          "assessment": "Primary source or first-party documentation supports the stated mechanism, with limits explained in the article.",
+          "status": "unverified",
+          "assessment": "The 0.6 GB-per-billion heuristic has not been independently established as a general throughput or memory prediction.",
           "limits": "The article records an evidence boundary; unsupported performance and incident assertions remain unresolved.",
           "sourceLocation": "00:14:18",
-          "references": [
-            "heretic"
-          ],
+          "references": [],
           "counterevidence": [],
           "temporalScope": "Video analyzed November 2, 2026; mutable claims require later rechecking."
         },
