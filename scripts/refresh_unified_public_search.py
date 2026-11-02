@@ -14,7 +14,10 @@ import tempfile
 from urllib.parse import urlparse
 from urllib.request import Request, urlopen
 
-from build_unified_search_index import build
+if __package__:
+    from .build_unified_search_index import build
+else:
+    from build_unified_search_index import build
 
 MAX_BYTES = 16 * 1024 * 1024
 
