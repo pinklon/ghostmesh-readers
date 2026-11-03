@@ -314,7 +314,7 @@ def projections():
     raw=raw.replace('<!--GM_BRIEF-->',share+'<!--GM_BRIEF-->',1).replace('</body>','<script src="/assets/reader-share.js" defer></script></body>',1)
   if r['slug']=='a-model-that-says-yes-is-not-necessarily-a-model-that-knows':
    # Preserve the accepted article source; adapt its opt-in player ID only in projection.
-   raw=raw.replace('class="source-launch" type="button" id="source-launch"','class="launch source-launch" type="button" id="launch"',1)
+   raw=raw.replace('class="source-launch" type="button" id="source-launch"','class="source-launch" type="button" id="launch"',1)
    raw=raw.replace("getElementById('source-launch')","getElementById('launch')")
    raw=raw.replace('▶ Play the original video</button>',
                    '<span class="gm-player-source-title">'+esc(r['source']['title'])+'</span> ▶ Play the original video</button>',1)
