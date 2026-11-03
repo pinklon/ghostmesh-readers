@@ -255,6 +255,48 @@ class ScoutResearchTests(unittest.TestCase):
                           if edge['from'] == 'scout:' + item['id']},
                          {'scout:' + target for target in approved})
 
+    def test_approval_summary_essay_keeps_copy_scout_wrapper_and_reader_links(self):
+        slug = 'the-approval-must-survive-the-summary'
+        raw = (ROOT/f'content/scout/publication-drafts/{slug}.md').read_bytes()
+        self.assertEqual(hashlib.sha256(raw).hexdigest(),
+                         '3f9beab97a00d652b88bf1006c2d9c48d891501bb7da8a97a7f69499889db43d')
+        items = [r for r in self.source['records'] if r['slug'] == slug]
+        self.assertEqual(len(items), 1)
+        item = items[0]
+        self.assertEqual(item['type'], 'essay')
+        self.assertNotIn('standingRelease', item)
+        self.assertEqual(item['relatedIds'], [])
+        page = (ROOT/item['sourcePath']).read_text()
+        article = '<article' + page.split('<article', 1)[1].split('</article>', 1)[0] + '</article>'
+        self.assertEqual(hashlib.sha256(article.encode()).hexdigest(),
+                         '20fecb6a1f8ba6ce4b1b4f360db35888fede76bb56eddc3c8ed2591da0e24c31')
+        precedent = (ROOT/'site/scout/essays/did-the-evidence-change-the-answer/index.html').read_text()
+        for tag in ('header', 'footer'):
+            section = lambda text: '<' + tag + text.split('<' + tag, 1)[1].split('</' + tag + '>', 1)[0] + '</' + tag + '>'
+            self.assertEqual(section(page), section(precedent))
+        self.assertIn('href="/assets/scout-essays.css"', page)
+        for target in ('the-harness-keeps-the-receipt', 'when-a-successful-run-is-still-waiting'):
+            self.assertEqual(page.count('href="/' + target + '/"'), 1)
+            self.assertTrue((ROOT/'site'/target/'index.html').is_file())
+        self.assertIn('neither independently corroborates the SDK incident', page)
+        graph = json.loads((ROOT/'site/scout/research/relationships.json').read_text())
+        self.assertEqual(sum(node['sourceId'] == item['id'] for node in graph['nodes']), 1)
+        self.assertFalse(any(edge['from'] == 'scout:' + item['id'] for edge in graph['edges']))
+        self.assertNotIn('noindex', page)
+        self.assertIn('No installed SDK behavior', page)
+        self.assertIn('compaction result is mocked', page)
+        events = [event for event in self.events['events'] if event['subjectId'] == slug]
+        self.assertEqual(len(events), 1)
+        self.assertEqual(events[0]['id'], item['releaseEventId'])
+        self.assertEqual(events[0]['kind'], 'new-scout-research')
+        self.assertEqual(events[0]['summary'], item['summary'])
+        self.assertIn('Published <time datetime="' + events[0]['publicDate'] + '"', page)
+        self.assertEqual((ROOT/'site/feed.xml').read_text().count(
+            'urn:ghostmesh-readers:release:' + item['releaseEventId']), 1)
+        self.assertEqual((ROOT/'site/sitemap.xml').read_text().count(events[0]['url']), 1)
+        for path in ('site/scout/research/index.html', 'site/scout/essays/index.html', 'site/scout/index.html'):
+            self.assertIn('href="' + item['url'] + '"', (ROOT/path).read_text())
+
     def test_evidence_use_essay_keeps_locked_copy_and_release_connections(self):
         slug = 'did-the-evidence-change-the-answer'
         raw = (ROOT/f'content/scout/publication-drafts/{slug}.md').read_bytes()

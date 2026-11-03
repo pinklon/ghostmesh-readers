@@ -3,7 +3,7 @@
   "scope": "Public Scout research reading routes; links are editorial, not corroboration.",
   "authority": "scout-research-curated-editorial",
   "visibility": "public",
-  "recordCount": 21,
+  "recordCount": 22,
   "relationshipCount": 11,
   "nodes": [
     {
@@ -54,6 +54,13 @@
       "type": "essay",
       "title": "Latent States Are Not an Agent API",
       "url": "https://youtube.shareplane.malott.ai/scout/essays/latent-states-are-not-an-agent-api/"
+    },
+    {
+      "id": "scout:essay:the-approval-must-survive-the-summary",
+      "sourceId": "essay:the-approval-must-survive-the-summary",
+      "type": "essay",
+      "title": "The Approval Must Survive the Summary",
+      "url": "https://youtube.shareplane.malott.ai/scout/essays/the-approval-must-survive-the-summary/"
     },
     {
       "id": "scout:essay:the-plateau-that-lied",
