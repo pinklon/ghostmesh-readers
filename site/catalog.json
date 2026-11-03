@@ -12,6 +12,472 @@
   ],
   "readers": [
     {
+      "id": "reader:a-model-that-says-yes-is-not-necessarily-a-model-that-knows",
+      "slug": "a-model-that-says-yes-is-not-necessarily-a-model-that-knows",
+      "title": "A Model That Says Yes Is Not Necessarily a Model That Knows",
+      "category": "AI & Technology",
+      "tags": [
+        "model abliteration",
+        "refusal",
+        "local inference",
+        "coding agents"
+      ],
+      "entities": [
+        "DeepSeek",
+        "Heretic",
+        "DGX Spark",
+        "Cloudroom",
+        "Pi"
+      ],
+      "source": {
+        "platform": "YouTube",
+        "url": "https://www.youtube.com/watch?v=9tOu4r-FiQI",
+        "videoId": "9tOu4r-FiQI",
+        "title": "This DeepSeek v4.1 is powerful and uncensored, let’s run it.",
+        "creator": "David Ondrej",
+        "mediaAspect": "16:9"
+      },
+      "published": "2026-11-02",
+      "updated": "2026-11-02T17:45:00Z",
+      "overview": "David Ondrej discusses refusal-suppressed open models, local inference hardware and connecting coding harnesses to self-hosted inference.",
+      "whyItMatters": "The refusal mechanism is plausible, but lower refusal frequency does not establish accurate answers, safe tools or verified software outcomes.",
+      "ghostMeshTakeaway": "Pilot a base and refusal-suppressed model on identical authorized tasks with bounded tools and independent scoring of valid findings.",
+      "verdict": "Worth studying",
+      "architectureImpact": "experiment recommended",
+      "falsification": "Reject the architecture recommendation if controlled, identical tasks show no additional validated findings or reveal unacceptable tool-boundary failures.",
+      "evidenceState": "partially corroborated",
+      "lastEvidenceChecked": "2026-11-02T17:45:00Z",
+      "freshness": "Mechanism and hardware sources checked November 2, 2026; named model throughput and productivity claims remain unverified.",
+      "variant": "editorial",
+      "accent": "red",
+      "claims": [
+        {
+          "id": "a-model-that-says-yes-is-not-necessarily-a-model-that-knows--claim-1",
+          "proposition": "Abliterated models will answer virtually anything",
+          "kind": "source-attributed-claim",
+          "asOf": "2026-11-02",
+          "status": "partially corroborated",
+          "assessment": "Only a narrower mechanism or vendor-reported observation is supported; this is not independent confirmation of the full video claim.",
+          "limits": "The article records an evidence boundary; unsupported performance and incident assertions remain unresolved.",
+          "sourceLocation": "00:00:04",
+          "references": [
+            "arditi"
+          ],
+          "counterevidence": [],
+          "temporalScope": "Video analyzed November 2, 2026; mutable claims require later rechecking."
+        },
+        {
+          "id": "a-model-that-says-yes-is-not-necessarily-a-model-that-knows--claim-2",
+          "proposition": "Restricted models failed defenders during recent cyber incidents",
+          "kind": "source-attributed-claim",
+          "asOf": "2026-11-02",
+          "status": "unverified",
+          "assessment": "No independent corroboration established for this precise source proposition.",
+          "limits": "The article records an evidence boundary; unsupported performance and incident assertions remain unresolved.",
+          "sourceLocation": "00:01:30",
+          "references": [],
+          "counterevidence": [],
+          "temporalScope": "Video analyzed November 2, 2026; mutable claims require later rechecking."
+        },
+        {
+          "id": "a-model-that-says-yes-is-not-necessarily-a-model-that-knows--claim-3",
+          "proposition": "A refusal direction can be isolated by comparing model activations",
+          "kind": "source-attributed-claim",
+          "asOf": "2026-11-02",
+          "status": "corroborated",
+          "assessment": "Primary source or first-party documentation supports the stated mechanism, with limits explained in the article.",
+          "limits": "The article records an evidence boundary; unsupported performance and incident assertions remain unresolved.",
+          "sourceLocation": "00:03:38",
+          "references": [
+            "arditi"
+          ],
+          "counterevidence": [],
+          "temporalScope": "Video analyzed November 2, 2026; mutable claims require later rechecking."
+        },
+        {
+          "id": "a-model-that-says-yes-is-not-necessarily-a-model-that-knows--claim-4",
+          "proposition": "Defenders should hack themselves first with less-restricted models",
+          "kind": "source-attributed-claim",
+          "asOf": "2026-11-02",
+          "status": "unverified",
+          "assessment": "No independent corroboration established for this precise source proposition.",
+          "limits": "The article records an evidence boundary; unsupported performance and incident assertions remain unresolved.",
+          "sourceLocation": "00:05:45",
+          "references": [],
+          "counterevidence": [],
+          "temporalScope": "Video analyzed November 2, 2026; mutable claims require later rechecking."
+        },
+        {
+          "id": "a-model-that-says-yes-is-not-necessarily-a-model-that-knows--claim-5",
+          "proposition": "The 2024 paper proves refusal removal preserves intelligence",
+          "kind": "source-attributed-claim",
+          "asOf": "2026-11-02",
+          "status": "partially corroborated",
+          "assessment": "The paper supports the refusal-direction mechanism and reports many near-baseline evaluations, but it does not prove intelligence is universally preserved.",
+          "limits": "Arditi et al. §4.3 and Appendix G discuss TruthfulQA declines and Qwen-7B/Yi-34B exceptions; no universal zero-tradeoff conclusion follows.",
+          "sourceLocation": "00:07:28",
+          "references": [
+            "arditi"
+          ],
+          "counterevidence": [
+            "arditi"
+          ],
+          "temporalScope": "Video analyzed November 2, 2026; mutable claims require later rechecking."
+        },
+        {
+          "id": "a-model-that-says-yes-is-not-necessarily-a-model-that-knows--claim-6",
+          "proposition": "DeepSeek refusals fell from 100% to 2% with zero trade-off",
+          "kind": "source-attributed-claim",
+          "asOf": "2026-11-02",
+          "status": "unverified",
+          "assessment": "No independent corroboration established for this precise source proposition.",
+          "limits": "The article records an evidence boundary; unsupported performance and incident assertions remain unresolved.",
+          "sourceLocation": "00:08:50",
+          "references": [],
+          "counterevidence": [],
+          "temporalScope": "Video analyzed November 2, 2026; mutable claims require later rechecking."
+        },
+        {
+          "id": "a-model-that-says-yes-is-not-necessarily-a-model-that-knows--claim-7",
+          "proposition": "Jailbreaking, fine-tuning and abliteration are distinct routes",
+          "kind": "source-attributed-claim",
+          "asOf": "2026-11-02",
+          "status": "partially corroborated",
+          "assessment": "Only a narrower mechanism or vendor-reported observation is supported; this is not independent confirmation of the full video claim.",
+          "limits": "The article records an evidence boundary; unsupported performance and incident assertions remain unresolved.",
+          "sourceLocation": "00:09:27",
+          "references": [
+            "arditi",
+            "heretic"
+          ],
+          "counterevidence": [],
+          "temporalScope": "Video analyzed November 2, 2026; mutable claims require later rechecking."
+        },
+        {
+          "id": "a-model-that-says-yes-is-not-necessarily-a-model-that-knows--claim-8",
+          "proposition": "Heretic automates censorship removal while constraining divergence",
+          "kind": "source-attributed-claim",
+          "asOf": "2026-11-02",
+          "status": "corroborated",
+          "assessment": "Heretic's first-party repository documents its refusal-reduction and divergence-constraining approach; this does not independently establish quality.",
+          "limits": "The article records an evidence boundary; unsupported performance and incident assertions remain unresolved.",
+          "sourceLocation": "00:10:35",
+          "references": [
+            "heretic"
+          ],
+          "counterevidence": [],
+          "temporalScope": "Video analyzed November 2, 2026; mutable claims require later rechecking."
+        },
+        {
+          "id": "a-model-that-says-yes-is-not-necessarily-a-model-that-knows--claim-9",
+          "proposition": "SuperDeepSeek V4 Flash has ~306B parameters and runs on paired DGX Sparks",
+          "kind": "source-attributed-claim",
+          "asOf": "2026-11-02",
+          "status": "unverified",
+          "assessment": "No independent corroboration established for this precise source proposition.",
+          "limits": "The article records an evidence boundary; unsupported performance and incident assertions remain unresolved.",
+          "sourceLocation": "00:12:20",
+          "references": [],
+          "counterevidence": [],
+          "temporalScope": "Video analyzed November 2, 2026; mutable claims require later rechecking."
+        },
+        {
+          "id": "a-model-that-says-yes-is-not-necessarily-a-model-that-knows--claim-10",
+          "proposition": "A rule of thumb is 0.6 GB per billion parameters",
+          "kind": "source-attributed-claim",
+          "asOf": "2026-11-02",
+          "status": "unverified",
+          "assessment": "The 0.6 GB-per-billion heuristic has not been independently established as a general throughput or memory prediction.",
+          "limits": "The article records an evidence boundary; unsupported performance and incident assertions remain unresolved.",
+          "sourceLocation": "00:14:18",
+          "references": [],
+          "counterevidence": [],
+          "temporalScope": "Video analyzed November 2, 2026; mutable claims require later rechecking."
+        },
+        {
+          "id": "a-model-that-says-yes-is-not-necessarily-a-model-that-knows--claim-11",
+          "proposition": "Memory bandwidth materially affects decoding throughput",
+          "kind": "source-attributed-claim",
+          "asOf": "2026-11-02",
+          "status": "corroborated",
+          "assessment": "Primary source or first-party documentation supports the stated mechanism, with limits explained in the article.",
+          "limits": "The article records an evidence boundary; unsupported performance and incident assertions remain unresolved.",
+          "sourceLocation": "00:16:40",
+          "references": [
+            "vllm"
+          ],
+          "counterevidence": [],
+          "temporalScope": "Video analyzed November 2, 2026; mutable claims require later rechecking."
+        },
+        {
+          "id": "a-model-that-says-yes-is-not-necessarily-a-model-that-knows--claim-12",
+          "proposition": "Open weights should be archived against future restrictions",
+          "kind": "source-attributed-claim",
+          "asOf": "2026-11-02",
+          "status": "unverified",
+          "assessment": "No independent corroboration established for this precise source proposition.",
+          "limits": "The article records an evidence boundary; unsupported performance and incident assertions remain unresolved.",
+          "sourceLocation": "00:18:10",
+          "references": [],
+          "counterevidence": [],
+          "temporalScope": "Video analyzed November 2, 2026; mutable claims require later rechecking."
+        },
+        {
+          "id": "a-model-that-says-yes-is-not-necessarily-a-model-that-knows--claim-13",
+          "proposition": "API, local and rented GPU are three deployment paths",
+          "kind": "source-attributed-claim",
+          "asOf": "2026-11-02",
+          "status": "unverified",
+          "assessment": "No independent corroboration established for this precise source proposition.",
+          "limits": "The article records an evidence boundary; unsupported performance and incident assertions remain unresolved.",
+          "sourceLocation": "00:20:12",
+          "references": [],
+          "counterevidence": [],
+          "temporalScope": "Video analyzed November 2, 2026; mutable claims require later rechecking."
+        },
+        {
+          "id": "a-model-that-says-yes-is-not-necessarily-a-model-that-knows--claim-14",
+          "proposition": "KYC providers may be government honeypots",
+          "kind": "source-attributed-claim",
+          "asOf": "2026-11-02",
+          "status": "unverified",
+          "assessment": "No independent corroboration established for this precise source proposition.",
+          "limits": "The article records an evidence boundary; unsupported performance and incident assertions remain unresolved.",
+          "sourceLocation": "00:22:31",
+          "references": [],
+          "counterevidence": [],
+          "temporalScope": "Video analyzed November 2, 2026; mutable claims require later rechecking."
+        },
+        {
+          "id": "a-model-that-says-yes-is-not-necessarily-a-model-that-knows--claim-15",
+          "proposition": "Venice offers an abliterated DeepSeek variant and zero retention",
+          "kind": "source-attributed-claim",
+          "asOf": "2026-11-02",
+          "status": "unverified",
+          "assessment": "No independent corroboration established for this precise source proposition.",
+          "limits": "The article records an evidence boundary; unsupported performance and incident assertions remain unresolved.",
+          "sourceLocation": "00:23:05",
+          "references": [],
+          "counterevidence": [],
+          "temporalScope": "Video analyzed November 2, 2026; mutable claims require later rechecking."
+        },
+        {
+          "id": "a-model-that-says-yes-is-not-necessarily-a-model-that-knows--claim-16",
+          "proposition": "A Qwen variant is practical on consumer unified-memory systems",
+          "kind": "source-attributed-claim",
+          "asOf": "2026-11-02",
+          "status": "unverified",
+          "assessment": "No independent corroboration established for this precise source proposition.",
+          "limits": "The article records an evidence boundary; unsupported performance and incident assertions remain unresolved.",
+          "sourceLocation": "00:27:30",
+          "references": [],
+          "counterevidence": [],
+          "temporalScope": "Video analyzed November 2, 2026; mutable claims require later rechecking."
+        },
+        {
+          "id": "a-model-that-says-yes-is-not-necessarily-a-model-that-knows--claim-17",
+          "proposition": "Ollama simplifies local download and execution",
+          "kind": "source-attributed-claim",
+          "asOf": "2026-11-02",
+          "status": "unverified",
+          "assessment": "No independent corroboration established for this precise source proposition.",
+          "limits": "The article records an evidence boundary; unsupported performance and incident assertions remain unresolved.",
+          "sourceLocation": "00:28:20",
+          "references": [],
+          "counterevidence": [],
+          "temporalScope": "Video analyzed November 2, 2026; mutable claims require later rechecking."
+        },
+        {
+          "id": "a-model-that-says-yes-is-not-necessarily-a-model-that-knows--claim-18",
+          "proposition": "Cloudroom connects Pi to self-hosted inference",
+          "kind": "source-attributed-claim",
+          "asOf": "2026-11-02",
+          "status": "corroborated",
+          "assessment": "Primary source or first-party documentation supports the stated mechanism, with limits explained in the article.",
+          "limits": "The article records an evidence boundary; unsupported performance and incident assertions remain unresolved.",
+          "sourceLocation": "00:32:14",
+          "references": [
+            "cloudroom"
+          ],
+          "counterevidence": [],
+          "temporalScope": "Video analyzed November 2, 2026; mutable claims require later rechecking."
+        },
+        {
+          "id": "a-model-that-says-yes-is-not-necessarily-a-model-that-knows--claim-19",
+          "proposition": "Paired DGX Sparks achieve 60 to 110 output tokens/s",
+          "kind": "source-attributed-claim",
+          "asOf": "2026-11-02",
+          "status": "unverified",
+          "assessment": "No independent corroboration established for this precise source proposition.",
+          "limits": "The article records an evidence boundary; unsupported performance and incident assertions remain unresolved.",
+          "sourceLocation": "00:33:35",
+          "references": [],
+          "counterevidence": [],
+          "temporalScope": "Video analyzed November 2, 2026; mutable claims require later rechecking."
+        },
+        {
+          "id": "a-model-that-says-yes-is-not-necessarily-a-model-that-knows--claim-20",
+          "proposition": "Cloudroom users ship 43% more commits or PRs in week one",
+          "kind": "source-attributed-claim",
+          "asOf": "2026-11-02",
+          "status": "partially corroborated",
+          "assessment": "Only a narrower mechanism or vendor-reported observation is supported; this is not independent confirmation of the full video claim.",
+          "limits": "The article records an evidence boundary; unsupported performance and incident assertions remain unresolved.",
+          "sourceLocation": "00:35:06",
+          "references": [
+            "cloudroom-results"
+          ],
+          "counterevidence": [],
+          "temporalScope": "Video analyzed November 2, 2026; mutable claims require later rechecking."
+        }
+      ],
+      "references": [
+        {
+          "id": "arditi",
+          "title": "Refusal in Language Models Is Mediated by a Single Direction",
+          "author": "Arditi et al.",
+          "publisher": "arXiv",
+          "url": "https://arxiv.org/abs/2406.11717",
+          "publicationDate": "unknown",
+          "dateNote": "First publication date not verified; mutable source inspected for this deconstruction.",
+          "datePrecision": "unknown",
+          "eventDate": null,
+          "location": "referenced technical documentation",
+          "sourceType": "research paper",
+          "independence": "Research on selected models, not universal performance preservation.",
+          "evidenceFamily": "research",
+          "checkedAt": "2026-11-02T17:45:00Z"
+        },
+        {
+          "id": "heretic",
+          "title": "Heretic",
+          "author": "p-e-w",
+          "publisher": "GitHub",
+          "url": "https://github.com/p-e-w/heretic",
+          "publicationDate": "unknown",
+          "dateNote": "First publication date not verified; mutable source inspected for this deconstruction.",
+          "datePrecision": "unknown",
+          "eventDate": null,
+          "location": "referenced technical documentation",
+          "sourceType": "open-source project",
+          "independence": "Maintainer implementation evidence, not independent quality proof.",
+          "evidenceFamily": "heretic",
+          "checkedAt": "2026-11-02T17:45:00Z"
+        },
+        {
+          "id": "nvidia",
+          "title": "DGX Spark hardware specifications",
+          "author": "NVIDIA",
+          "publisher": "NVIDIA",
+          "url": "https://docs.nvidia.com/dgx/dgx-spark/hardware.html",
+          "publicationDate": "unknown",
+          "dateNote": "First publication date not verified; mutable source inspected for this deconstruction.",
+          "datePrecision": "unknown",
+          "eventDate": null,
+          "location": "referenced technical documentation",
+          "sourceType": "vendor documentation",
+          "independence": "Product specification evidence only, not video benchmark verification.",
+          "evidenceFamily": "nvidia",
+          "checkedAt": "2026-11-02T17:45:00Z"
+        },
+        {
+          "id": "vllm",
+          "title": "vLLM performance and optimization documentation",
+          "author": "vLLM",
+          "publisher": "vLLM",
+          "url": "https://docs.vllm.ai/en/latest/configuration/optimization/",
+          "publicationDate": "unknown",
+          "dateNote": "First publication date not verified; mutable source inspected for this deconstruction.",
+          "datePrecision": "unknown",
+          "eventDate": null,
+          "location": "referenced technical documentation",
+          "sourceType": "project documentation",
+          "independence": "General inference architecture, not a reproduced workload.",
+          "evidenceFamily": "vllm",
+          "checkedAt": "2026-11-02T17:45:00Z"
+        },
+        {
+          "id": "cloudroom",
+          "title": "Cloudroom harness integrations",
+          "author": "Cloudroom",
+          "publisher": "Cloudroom",
+          "url": "https://www.cloudroom.dev/docs/harnesses",
+          "publicationDate": "unknown",
+          "dateNote": "First publication date not verified; mutable source inspected for this deconstruction.",
+          "datePrecision": "unknown",
+          "eventDate": null,
+          "location": "referenced technical documentation",
+          "sourceType": "vendor documentation",
+          "independence": "Integration documented, claimed outcomes not independently measured.",
+          "evidenceFamily": "cloudroom",
+          "checkedAt": "2026-11-02T17:45:00Z"
+        },
+        {
+          "id": "cloudroom-results",
+          "title": "Cloudroom homepage",
+          "author": "Cloudroom",
+          "publisher": "Cloudroom",
+          "url": "https://www.cloudroom.dev/",
+          "publicationDate": "unknown",
+          "dateNote": "First publication date not verified; mutable source inspected for this deconstruction.",
+          "datePrecision": "unknown",
+          "eventDate": null,
+          "location": "referenced technical documentation",
+          "sourceType": "vendor statement",
+          "independence": "Vendor-reported first-week contribution comparison, not causal evidence.",
+          "evidenceFamily": "cloudroom",
+          "checkedAt": "2026-11-02T17:45:00Z"
+        },
+        {
+          "id": "venice",
+          "title": "Venice privacy documentation",
+          "author": "Venice",
+          "publisher": "Venice",
+          "url": "https://cdn.venice.ai/privacy",
+          "publicationDate": "unknown",
+          "dateNote": "First publication date not verified; mutable source inspected for this deconstruction.",
+          "datePrecision": "unknown",
+          "eventDate": null,
+          "location": "referenced technical documentation",
+          "sourceType": "vendor policy",
+          "independence": "Retention and routing commitments vary by product path.",
+          "evidenceFamily": "venice",
+          "checkedAt": "2026-11-02T17:45:00Z"
+        }
+      ],
+      "relationships": [],
+      "relationshipDisposition": "Two manually curated Reader suggestions appear in the article; formal Reader graph edges are not yet approved.",
+      "review": {
+        "status": "awaiting independent exact-copy review",
+        "reviewer": "not yet recorded",
+        "reviewedSourceHead": "source-only owner-approved candidate",
+        "checkedAt": "2026-11-02T17:45:00Z",
+        "scope": "Review pending of source/claims/privacy and generated shared chrome.",
+        "findings": "Owner approved Candidate 006 visual preview in conversation. Exact-hash GitHub editorial acceptance pending."
+      },
+      "revisionHistory": [
+        {
+          "at": "2026-11-02T17:45:00Z",
+          "kind": "new-reader-candidate",
+          "reason": "Owner-approved Candidate 006 staged for canonical generator and publication review."
+        }
+      ],
+      "editorialDepth": {
+        "schemaVersion": 1,
+        "receiptPath": "content/editorial-depth/a-model-that-says-yes-is-not-necessarily-a-model-that-knows.json"
+      },
+      "editorialOrder": 40,
+      "orderReason": "New deep deconstruction following the current 40-Reader archive; subject-specific analysis of refusal-suppressed models.",
+      "relationshipReview": {
+        "reviewedAt": "2026-11-02",
+        "reviewedCatalogSize": 40,
+        "decision": "none",
+        "reviewedTargets": [],
+        "rationale": "Two GhostMesh Readers and two SharePlane works are useful editorial comparisons, but the owner-approved visual artifact labels them proposed. No registry graph edges were authorized; preserve them as inline links pending relationship review."
+      },
+      "rank": 40
+    },
+    {
       "id": "reader:the-session-count-is-not-the-system",
       "slug": "the-session-count-is-not-the-system",
       "title": "The Session Count Is Not the System",

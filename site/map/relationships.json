@@ -3,8 +3,8 @@
   "scope": "Local public editorial reading routes; no independent corroboration or cross-site graph admission.",
   "authority": "catalog-curated-editorial",
   "visibility": "public",
-  "readerCount": 40,
-  "assessmentCount": 40,
+  "readerCount": 41,
+  "assessmentCount": 41,
   "relationshipCount": 83,
   "nodes": [
     {
@@ -644,6 +644,19 @@
           "reader:the-stop-button-is-outside-the-chat"
         ],
         "rationale": "The existing Orca, harness and stop-boundary Readers have specific complementary theses. Other AI Readers are too broad to imply corroboration."
+      }
+    },
+    {
+      "id": "reader:a-model-that-says-yes-is-not-necessarily-a-model-that-knows",
+      "slug": "a-model-that-says-yes-is-not-necessarily-a-model-that-knows",
+      "title": "A Model That Says Yes Is Not Necessarily a Model That Knows",
+      "url": "https://youtube.shareplane.malott.ai/a-model-that-says-yes-is-not-necessarily-a-model-that-knows/",
+      "review": {
+        "reviewedAt": "2026-11-02",
+        "reviewedCatalogSize": 40,
+        "decision": "none",
+        "reviewedTargets": [],
+        "rationale": "Two GhostMesh Readers and two SharePlane works are useful editorial comparisons, but the owner-approved visual artifact labels them proposed. No registry graph edges were authorized; preserve them as inline links pending relationship review."
       }
     }
   ],

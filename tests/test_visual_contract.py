@@ -32,6 +32,10 @@ class VisualContractTest(unittest.TestCase):
                 page = (ROOT / 'site' / reader['slug'] / 'index.html').read_text()
                 if 'class="player gm-media-frame"' in page:
                     self.assertIn('id="launch"', page)
+                    if reader['slug'] == 'a-model-that-says-yes-is-not-necessarily-a-model-that-knows':
+                        # The shared .launch rule removes the video box's aspect ratio.
+                        self.assertIn('class="source-launch" type="button" id="launch"', page)
+                        self.assertNotIn('class="launch source-launch"', page)
                     self.assertIn(f'data-gm-aspect="{reader["source"]["mediaAspect"]}"', page)
                     self.assertNotIn('<iframe', page)
                     if reader['source'].get('title'):
