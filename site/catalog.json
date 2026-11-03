@@ -466,7 +466,7 @@
         "schemaVersion": 1,
         "receiptPath": "content/editorial-depth/a-model-that-says-yes-is-not-necessarily-a-model-that-knows.json"
       },
-      "editorialOrder": 41,
+      "editorialOrder": 40,
       "orderReason": "New deep deconstruction following the current 40-Reader archive; subject-specific analysis of refusal-suppressed models.",
       "relationshipReview": {
         "reviewedAt": "2026-11-02",
@@ -475,7 +475,7 @@
         "reviewedTargets": [],
         "rationale": "Two GhostMesh Readers and two SharePlane works are useful editorial comparisons, but the owner-approved visual artifact labels them proposed. No registry graph edges were authorized; preserve them as inline links pending relationship review."
       },
-      "rank": 41
+      "rank": 40
     },
     {
       "id": "reader:the-session-count-is-not-the-system",

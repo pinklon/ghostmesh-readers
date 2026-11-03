@@ -312,6 +312,24 @@ def projections():
    if 'data-gm-share' not in raw:
     share='<div class="gm-sharebar" data-gm-share=""><span class="gm-share-label">Share this Video Deconstruction</span><div class="gm-share-actions"><button class="gm-share-button" data-native-share="" type="button">Share</button><button class="gm-share-button" data-copy-link="" type="button">Copy link</button><a class="gm-share-email" data-email-link="" href="mailto:">Email</a><span aria-live="polite" class="gm-share-message" data-gm-share-message="" role="status"></span></div></div>'
     raw=raw.replace('<!--GM_BRIEF-->',share+'<!--GM_BRIEF-->',1).replace('</body>','<script src="/assets/reader-share.js" defer></script></body>',1)
+  if r['slug']=='a-model-that-says-yes-is-not-necessarily-a-model-that-knows':
+   # Preserve the accepted article source; adapt its opt-in player ID only in projection.
+   raw=raw.replace('class="source-launch" type="button" id="source-launch"','class="launch source-launch" type="button" id="launch"',1)
+   raw=raw.replace("getElementById('source-launch')","getElementById('launch')")
+   raw=raw.replace('▶ Play the original video</button>',
+                   '<span class="gm-player-source-title">'+esc(r['source']['title'])+'</span> ▶ Play the original video</button>',1)
+   # The source's about:blank frame is still an iframe before consent. Mount only on play.
+   raw,n=re.subn(r'<iframe id="source-video"[^>]*></iframe>',
+                 '<div id="source-video" style="position:absolute;inset:0"></div>',raw,count=1)
+   if n!=1:raise ValueError('Accepted source player mount changed')
+   frame_adapter=('<script>(function(){const mount=document.getElementById("source-video");'
+                  'Object.defineProperty(mount,"src",{set:function(url){'
+                  'let frame=mount.querySelector("iframe");if(!frame){frame=document.createElement("iframe");'
+                  'frame.title="David Ondrej video under deconstruction";frame.allowFullscreen=true;'
+                  'frame.referrerPolicy="strict-origin-when-cross-origin";'
+                  'frame.allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";'
+                  'mount.appendChild(frame)}frame.src=url}})})();</script>')
+   raw=raw.replace('</body>',frame_adapter+'</body>',1)
   if r['source'].get('kind')=='paper':validate_paper_source(raw,r['source'])
   elif r['source'].get('kind')=='article':validate_article_source(raw,r['source'])
   elif r['source'].get('kind')=='repository':validate_repository_source(raw,r['source'])
@@ -376,6 +394,14 @@ def projections():
    raw=raw.replace('</main>',share+'</main>',1)
    if '/assets/reader-share.js' not in raw:
     raw=raw.replace('</body>','<script defer src="/assets/reader-share.js"></script></body>',1)
+  if r['slug']=='a-model-that-says-yes-is-not-necessarily-a-model-that-knows':
+   # The accepted article has no share widget; project the standard Reader control.
+   share=('<div class="gm-sharebar" data-gm-share=""><span class="gm-share-label">Share this Video Deconstruction</span>'
+          '<div class="gm-share-actions"><button class="gm-share-button" data-native-share="" type="button">Share</button>'
+          '<button class="gm-share-button" data-copy-link="" type="button">Copy link</button>'
+          '<a class="gm-share-email" data-email-link="" href="mailto:?subject='+esc(r['title'])+'">Email</a>'
+          '<span aria-live="polite" class="gm-share-message" data-gm-share-message="" role="status"></span></div></div>')
+   raw=raw.replace('</main>',share+'</main>',1).replace('</body>','<script defer src="/assets/reader-share.js"></script></body>',1)
   out[f'{r["slug"]}/index.html']=raw
   receipt=dict(r.get('legacyReceipt') or {'schema':'ghostmesh-reader-receipt-v2','source':r['source'],'custody':{'status':'historical-public-account-only','note':'No private source pack was opened or reverified during normalization. See original provenance on the Reader.'}})
   receipt['normalization']={k:v for k,v in r.items() if k not in ['legacyReceipt','rank']}
