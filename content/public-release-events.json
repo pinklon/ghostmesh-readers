@@ -2,6 +2,15 @@
   "schema": "ghostmesh-public-release-events-v1",
   "events": [
     {
+      "id": "scout:the-approval-must-survive-the-summary:first-public-release",
+      "kind": "new-scout-research",
+      "subjectId": "the-approval-must-survive-the-summary",
+      "url": "https://youtube.shareplane.malott.ai/scout/essays/the-approval-must-survive-the-summary/",
+      "title": "The Approval Must Survive the Summary",
+      "summary": "An agent that remembers the work still needs a reliable account of who may authorize it, which execution owns it, and whether it already happened.",
+      "publicDate": "2026-11-03"
+    },
+    {
       "id": "scout:did-the-evidence-change-the-answer:first-public-release",
       "kind": "new-scout-research",
       "subjectId": "did-the-evidence-change-the-answer",

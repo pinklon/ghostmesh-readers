@@ -3,6 +3,25 @@
   "note": "Only approved public works. Six historical essays have an evidenced October 23 public-by bound from the released nine-work Library, but their exact first-publication day remains unverified; they do not gain retroactive RSS events.",
   "records": [
     {
+      "id": "essay:the-approval-must-survive-the-summary",
+      "slug": "the-approval-must-survive-the-summary",
+      "type": "essay",
+      "status": "published",
+      "title": "The Approval Must Survive the Summary",
+      "url": "/scout/essays/the-approval-must-survive-the-summary/",
+      "sourcePath": "site/scout/essays/the-approval-must-survive-the-summary/index.html",
+      "provenance": "OpenAI Agents SDK for Python PR 5363, merged October 13, 2026, implementation and regressions pinned to 5eb47a5bdeab8ba9f6087de288c7e606816c76c6; approval guidance and server example pinned to 17d994bd3045dae71acda676a4ef4762ed8ecd94. Primary sources reviewed November 3, 2026; later inspection is not a new release announcement.",
+      "evidenceLimits": "Source-based analysis. The reported SDK incident is HTTP 400 before an approval interruption, not observed unauthorized execution. Publication scenarios are hypothetical; compaction regressions use a mocked summary. No SDK, application, summary-quality, concurrency or recovery experiment was run for this essay.",
+      "summary": "An agent that remembers the work still needs a reliable account of who may authorize it, which execution owns it, and whether it already happened.",
+      "topics": [
+        "agent-continuity",
+        "agent-authority"
+      ],
+      "reviewedOn": "2026-11-03",
+      "releaseEventId": "scout:the-approval-must-survive-the-summary:first-public-release",
+      "relatedIds": []
+    },
+    {
       "id": "essay:did-the-evidence-change-the-answer",
       "slug": "did-the-evidence-change-the-answer",
       "type": "essay",
