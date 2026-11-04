@@ -1,0 +1,114 @@
+{
+  "schema": "scout-source-reviewed-deltas-v0",
+  "status": "PUBLIC_README_INSPECTION_NOT_EXECUTION",
+  "review_date": "2026-10-23",
+  "publication_authorized": false,
+  "outreach_authorized": false,
+  "cases": [
+    {
+      "id": "meeting-skills",
+      "source_url": "https://github.com/HowieG/mem0-meeting-skills",
+      "observed_documentation": [
+        "Meeting ID is the idempotency key, not a time cursor",
+        "Deterministic parser, identity filter, ledger and audit are distinct from LLM extraction",
+        "Unresolved person/company names remain unconfirmed in a reviewable vault",
+        "Source code and frequently changing generated vault are separate repos"
+      ],
+      "existing_ghostmesh": "Scout tracks source IDs, revisions and uncertain contributor names; GhostMesh has distinct deterministic readers and model interpretation steps.",
+      "specific_difference": "A source-item identity checkpoint and explicit unresolved-entity queue avoid silently advancing past delayed transcripts.",
+      "transfer_question": "Would Scout's collector skip delayed or reappearing sources if using timestamps instead of immutable IDs?",
+      "strongest_objection": "A single-writer, Circleback-only meeting ingest pipeline is not a general distributed Scout collector; its correctness claims are README statements.",
+      "minimum_test": "Construct 12 offline out-of-order source events with delayed arrivals, duplicate IDs and ambiguous author names; compare timestamp-cursor and source-ID ledger behavior. Keep unresolved names unmerged.",
+      "status": "INVESTIGATE_SOURCE_ID_LEDGER",
+      "source_review": "README_INSPECTED",
+      "runtime_verified": false,
+      "identity_verified": false
+    },
+    {
+      "id": "sandbox-tuner",
+      "source_url": "https://github.com/dot-agi/sandbox-tuner",
+      "observed_documentation": [
+        "Explains repeated sandbox blocks and proposed narrow configuration edits",
+        "Requires a direct Allow or Deny review before applying a settings change",
+        "Records undo history and backup",
+        "Refuses wildcard hosts and broad /tmp grants, according to documentation"
+      ],
+      "existing_ghostmesh": "GhostMesh has owner-only execution authority, release approvals and strict secret boundaries.",
+      "specific_difference": "Operator-facing explanation of repeated blocked actions, their scope and reversible repair alternatives may reduce approval-loop confusion without silently increasing authority.",
+      "transfer_question": "Could a read-only diagnostic report explain repeated GhostMesh prompts and suggest scoped corrections while preserving explicit owner authorization?",
+      "strongest_objection": "The project is tailored to Claude Code's sandbox and proposed permission edits can increase attack surface; repeated blocks do not justify automatic grants.",
+      "minimum_test": "Use six synthetic permission-block receipts and produce operator-readable explanations and hypothetical reversible remedies; reject wildcards, credential access and any automatic grant.",
+      "status": "INVESTIGATE_EXPLANATION_ONLY",
+      "source_review": "README_INSPECTED",
+      "runtime_verified": false,
+      "identity_verified": false
+    },
+    {
+      "id": "bottleneck",
+      "source_url": "https://github.com/areibman/bottleneck",
+      "observed_documentation": [
+        "Electron PR client with grouping, cache and diff navigation",
+        "README describes multi-agent review and bulk PR actions"
+      ],
+      "existing_ghostmesh": "GhostMesh already maintains review custody, owner approvals and source receipts.",
+      "specific_difference": "Navigation and grouping of concurrent reviews may improve operator throughput.",
+      "transfer_question": "Does a grouped queue reduce blocked-review retrieval time against GhostMesh's existing workflow?",
+      "strongest_objection": "No measured improvement, and bulk operations do not convey approval authority.",
+      "minimum_test": "Read-only six-PR fixture; compare retrieval and decision error rates without any merge action.",
+      "status": "FOLLOW_USABILITY_FIXTURE",
+      "source_review": "README_INSPECTED",
+      "runtime_verified": false,
+      "identity_verified": false
+    },
+    {
+      "id": "inspectorraget",
+      "source_url": "https://github.com/IBM/InspectorRAGet",
+      "observed_documentation": [
+        "JSON schema has model, metric, document, task and result data",
+        "Task-level and aggregate review includes human and algorithmic judgments"
+      ],
+      "existing_ghostmesh": "Scout has source-revision, claim-impact, counterevidence and review status.",
+      "specific_difference": "Task- and annotator-level inspection may reveal errors hidden by aggregated scores.",
+      "transfer_question": "Can its schema carry Scout's source revisions and dissent without losing semantics?",
+      "strongest_objection": "Six-case mapping showed eight Scout fields requiring deliberate representation; full importer was not validated.",
+      "minimum_test": "Complete one private import fixture with explicit provenance fields; no external app installation.",
+      "status": "FOLLOW_SCHEMA_EVIDENCE",
+      "source_review": "README_INSPECTED",
+      "runtime_verified": false,
+      "identity_verified": false
+    },
+    {
+      "id": "repatch",
+      "source_url": "https://github.com/areibman/repatch",
+      "observed_documentation": [
+        "README describes summarizing GitHub changes across chosen date/release/label windows",
+        "Creates editable release notes and supports emailing subscribers"
+      ],
+      "existing_ghostmesh": "Scout already records revision witnesses and changes and can prepare editorial views.",
+      "specific_difference": "Release-window editorial packaging could make source changes easier for humans to consume.",
+      "transfer_question": "Would structured release-window briefs improve readback beyond existing change logs?",
+      "strongest_objection": "Generated prose can conceal underlying changed-file evidence; external email integration is unnecessary and unauthorized.",
+      "minimum_test": "Summarize one retained read-only change witness and require links to exact changed files.",
+      "status": "FOLLOW",
+      "source_review": "README_INSPECTED",
+      "runtime_verified": false,
+      "identity_verified": false
+    },
+    {
+      "id": "web-change-bot",
+      "source_url": "https://github.com/braelyn-ai/web-change-bot",
+      "observed_documentation": [
+        "README describes fuzzy text change comparison, optional AI summaries and Twilio SMS alerts"
+      ],
+      "existing_ghostmesh": "Scout has revision witness and content diff prototypes.",
+      "specific_difference": "Broad website snapshots could extend collection where revisions are unavailable.",
+      "transfer_question": "Does fuzzy diffing identify meaningful edits with fewer false notifications?",
+      "strongest_objection": "This is a common polling/alert pattern; README setup includes credentials and optional external sends, neither needed for Scout research.",
+      "minimum_test": "Compare existing local content diff with fuzzy character edits on fixed offline pages.",
+      "status": "LOW_PRIORITY",
+      "source_review": "README_INSPECTED",
+      "runtime_verified": false,
+      "identity_verified": false
+    }
+  ]
+}

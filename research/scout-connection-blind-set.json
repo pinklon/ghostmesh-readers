@@ -1,0 +1,34 @@
+{
+  "schema": "scout-connection-blind-intake-v0",
+  "status": "research-only-unscored",
+  "sampling": "topic-directed discovery, nonrandom, not a validated control set",
+  "outreach_authorized": false,
+  "candidates": [
+    {
+      "id": "case-a",
+      "source_url": "https://github.com/agent-memory-lab/agent-memory"
+    },
+    {
+      "id": "case-b",
+      "source_url": "https://github.com/ionalpha/provetrail"
+    },
+    {
+      "id": "case-c",
+      "source_url": "https://github.com/AndrewMoryakov/AgentMemory"
+    },
+    {
+      "id": "case-d",
+      "source_url": "https://github.com/pngen/Persistent-Execution-Fabric"
+    },
+    {
+      "id": "case-e",
+      "source_url": "https://github.com/webpro255/agentlock"
+    },
+    {
+      "id": "case-f",
+      "source_url": "https://github.com/agentralabs/agentic-memory"
+    }
+  ],
+  "ratings": [],
+  "results": null
+}
