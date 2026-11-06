@@ -2,6 +2,15 @@
   "schema": "ghostmesh-public-release-events-v1",
   "events": [
     {
+      "id": "scout:the-agent-can-build-the-app-who-lets-it-touch-the-data:first-public-release",
+      "kind": "new-scout-research",
+      "subjectId": "the-agent-can-build-the-app-who-lets-it-touch-the-data",
+      "url": "https://youtube.shareplane.malott.ai/scout/essays/the-agent-can-build-the-app-who-lets-it-touch-the-data/",
+      "title": "The Agent Can Build the App. Who Lets It Touch the Data?",
+      "summary": "An agent can generate an application, but its authority to call data queries must be granted, scoped and enforced separately.",
+      "publicDate": "2026-11-06"
+    },
+    {
       "id": "scout:the-approval-must-survive-the-summary:first-public-release",
       "kind": "new-scout-research",
       "subjectId": "the-approval-must-survive-the-summary",
