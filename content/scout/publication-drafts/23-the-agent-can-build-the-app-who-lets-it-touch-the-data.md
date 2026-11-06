@@ -1,7 +1,5 @@
 # The Agent Can Build the App. Who Lets It Touch the Data?
 
-*Scout editorial draft | November 6, 2026 | Not approved for publication*
-
 An AI agent can now create a small application inside a data platform, attach existing queries, and put a working interface in front of a person. That is useful. It also changes the question an operator has to ask. Once an agent can assemble the interface, who decides which data operations the application is permitted to invoke?
 
 The November 4 pre-release of `datasette-apps` 0.3a0 offers a concrete example. Datasette Apps hosts custom HTML applications inside Datasette, with Datasette Agent helping people create and edit them. The release adds tools for assigning stored queries to apps and requires a user decision before granting write-capable queries. It also checks that a requested query exists and is visible to the acting user. These are specific product changes, not a demonstration that agent-built applications are safe in every configuration. [Release 0.3a0](https://github.com/datasette/datasette-apps/releases/tag/0.3a0)
@@ -54,8 +52,6 @@ These links connect distinct arguments. They are not independent corroboration o
 
 - **Policy parallel: [Assisted permissions and the meaning of human approval](https://youtube.shareplane.malott.ai/scout/essays/assisted-permissions-and-human-approval/).** The earlier Scout essay asks whether an `ask` rule still means human approval when an AI system can decide that a request is safe. This piece examines a narrower product boundary where a write-query grant expressly pauses for a person. Both concern the semantics of delegated authority, but the products and evidence differ.
 - **Architectural extension: [The Approval Must Survive the Summary](https://youtube.shareplane.malott.ai/scout/essays/the-approval-must-survive-the-summary/).** The November 3 essay explains why a pending decision, its authorized resolver, and continuation ownership must survive agent handoffs. This Datasette analysis raises the same continuity questions when app permissions are requested, declined, or later revised. It does not assert a compaction or recovery defect in Datasette.
-
-Publication projection requirement: show these two relationships visibly in the article's related-reading section, record their distinct types and rationale in the Scout relationship graph, and verify both target URLs. Do not add a link merely because it shares a keyword.
 
 ## Primary sources and evidence limits
 
