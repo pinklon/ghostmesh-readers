@@ -2,13 +2,26 @@
 
 The canonical public register is `content/scout-research.json`. The generated searchable catalog is `/scout/research/`. The earlier `/scout/archive/` and `/scout/essays/` addresses remain stable.
 
-1. Secure Tony's editorial approval of the complete public Markdown or static essay, evidence boundary, provenance, topic tags and any exact related-work IDs. Source-only findings remain private research input under the suspended standing-publication rule below. Do not export private Scout scans or internal experiments.
+1. Secure Tony's editorial approval of the complete public Markdown or static essay, evidence boundary, provenance, topic tags and the relationship disposition defined below. Source-only findings remain private research input under the suspended standing-publication rule below. Do not export private Scout scans or internal experiments.
 2. Put reviewed source content at its existing stable location (`content/scout/reviews/<id>.md` for investigations; `site/scout/essays/<slug>/index.html` for legacy essays). Future essays should use the existing public essay layout and its canonical trailing-slash URL. Never silently rewrite published text.
-3. Add one `published` entry to `content/scout-research.json`. Set a unique stable ID/slug and exact source path. Add only owner-approved `relatedIds`. For new publications, add the dated explicit first-release event to the release ledger before entering its ID in `releaseEventId`. The six historical essays were public by October 23 according to the merged nine-work Library PR and production-verification inventory, but their exact first-publication days remain unverified. Their `publicByOn`/`publicByEvidenceUrl` fields preserve that bounded fact; their null event IDs do not create retroactive RSS announcements. New records cannot use this exception.
+3. Add one `published` entry to `content/scout-research.json`. Set a unique stable ID/slug and exact source path. Complete the relationship review before setting `relatedIds`; add only owner-approved exact IDs. For new publications, add the dated explicit first-release event to the release ledger before entering its ID in `releaseEventId`. The six historical essays were public by October 23 according to the merged nine-work Library PR and production-verification inventory, but their exact first-publication days remain unverified. Their `publicByOn`/`publicByEvidenceUrl` fields preserve that bounded fact; their null event IDs do not create retroactive RSS announcements. New records cannot use this exception.
 4. Run `python3 scripts/generate_site.py`, `python3 scripts/generate_site.py --check`, `python3 scripts/check_site.py`, and `python3 -m unittest discover -s tests -p 'test_*.py'`. Check the generated index, links, sitemap and absence of private files.
 5. Review a Netlify deploy preview on desktop/mobile. Tony approves semantic/visual UAT and the exact PR head before merge. Verify production HTTP routes and Netlify deploy ID afterward. Keep unknowns UNKNOWN.
 
 No database, semantic-autolinker, reader rewrite or ingestion job is needed. Public research inventory and historical private Scout candidate counts must remain separate until independently reconciled.
+
+## Mandatory relationship review for every new public work
+
+Relationship discovery is an editorial step, not a post-publication cleanup. Before Tony accepts a new Scout article or substantive revision:
+
+- Search the current published Scout Research Library, published Readers and applicable SharePlane Works for relevant prior thinking. Inspect the actual target and canonical URL; title or keyword similarity alone is insufficient.
+- Record a finite relationship disposition alongside the candidate: each proposed target's canonical ID/URL, precise type (such as policy parallel, corroboration, counterexample, methodological comparison or architectural extension), and a one-sentence rationale explaining what the reader gains. Distinguish internal related reading from independent external corroboration.
+- Present the proposed visible `Follow the thinking` or related-reading section to Tony with the manuscript. Owner acceptance covers the exact relationships as well as the prose. Do not silently insert, change or remove links afterward.
+- If no defensible target exists, record `NO_DEFENSIBLE_RELATIONSHIP` with the searched public catalogs and concise reason, and obtain Tony's acceptance of that zero-edge disposition. Zero is valid when justified; an absent relationship review is not.
+- For Scout-to-Scout relationships, add accepted canonical research IDs to `relatedIds`, ensure the typed/rationalized links appear in the page and Scout relationship projection, and check the destination and graph edge after generation. Cross-surface Reader/SharePlane links belong in visible related reading and the appropriate supported graph contract; do not fabricate a Scout research node or edge for another corpus.
+- The review/handoff must explicitly report `RELATIONSHIPS_ACCEPTED` or `NO_DEFENSIBLE_RELATIONSHIP_ACCEPTED`. An omitted, unresolved or unaccepted disposition is `RELATIONSHIPS_PENDING` and blocks the exact-head publication handoff, even if the article's prose and tests pass.
+
+Use the existing review notes, PR description and deterministic generation checks for this record; no second relationship database, automatic semantic linker, scheduler or new release gate service is authorized. This requirement applies prospectively, not a retroactive rewrite of historically published works.
 
 ## Repeatable public handoff
 
