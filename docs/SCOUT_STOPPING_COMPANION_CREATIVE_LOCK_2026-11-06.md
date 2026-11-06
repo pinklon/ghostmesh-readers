@@ -13,7 +13,8 @@ Owner and editorial authority: Tony Malott and segfault. Mechanical executor: Co
 - Slug candidate: `/scout/essays/the-plateau-that-lied-reproducing-the-experiment/`.
 - Source: `content/scout/publication-drafts/24-the-plateau-that-lied-reproducing-the-experiment.md`.
 - Original owner-supplied attachment SHA-256: `f8f62a9d03ba75536ba73cdc79800201719e03623621d2205f5c269f7a9280fc` (no terminal newline).
-- Repository Markdown SHA-256: `b4523498d768858afd60b7f59a400ed35e5a6e871593d069c9f42c3e9221da07` (one terminal newline added by patch serialization, prose and Markdown otherwise identical).
+- Original accepted repository Markdown SHA-256: `b4523498d768858afd60b7f59a400ed35e5a6e871593d069c9f42c3e9221da07` (one terminal newline added by patch serialization, prose and Markdown otherwise identical).
+- Owner-approved November 6 factual status amendment SHA-256: `1f8129edccf7f706f214c3ee093a99968e1f133eabd6facbb98dd7f2e58f4eae`. Exact edit limited to four package-status paragraphs and the dated evidence-boundary paragraph; original accepted source is preserved in prior Git history.
 - No compression, paraphrase, table replacement, order change, or semantic reinterpretation.
 - Reader audience: technically literate readers challenging reported synthetic results and agent stopping claims.
 
@@ -25,7 +26,7 @@ Owner and editorial authority: Tony Malott and segfault. Mechanical executor: Co
 - Key claims: search 432 rows and strategies 144 trials each; stopping 240 rows and late-breakthrough 20/20 premature basic stops; probe 240 rows and no win against the better alternative across four designed regimes. All exact figures remain in the locked Markdown.
 - Original raw archive hashes: UNKNOWN. Independent algorithmic replication: NOT ESTABLISHED. Production savings or generalization: NOT ESTABLISHED.
 - Public-safe exclusions: private packets, participant data, media/transcripts, credentials, service endpoints, model dispatch, production policies and private archive exports.
-- Required evidence boundary: preserve the accepted final paragraph verbatim until a separately accepted publication-stage correction.
+- Required evidence boundary: retain the limitations and the owner-approved dated status correction. Do not substitute a claim of independent replication or Production effectiveness.
 
 ## Design and publication constraints
 
@@ -47,7 +48,7 @@ Owner and editorial authority: Tony Malott and segfault. Mechanical executor: Co
 
 ## Publication-stage editorial hold
 
-The accepted manuscript says the public package is a *next step* and *not yet implemented or released*. Once a package is actually built, publishing those lines unchanged would be misleading. Do not silently rewrite the accepted copy. Request Tony's focused approval of a narrow status update before marking the draft ready or merging. No need to reopen the article's thesis or other sections.
+Tony approved a narrow factual status correction in the segfault conversation on November 6. It identifies the runner as implemented and tested in draft PR #125, retains the November 6 not-yet-released checkpoint, and preserves every experimental finding and caveat. This amendment is now incorporated; exact-head merge and Production publication remain separate decisions.
 
 ## Scope and rollback
 
