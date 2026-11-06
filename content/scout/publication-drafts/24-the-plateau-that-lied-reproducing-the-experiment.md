@@ -135,13 +135,13 @@ The appropriate evidence status is therefore **same-source deterministic replay 
 
 ## The public reproduction package
 
-The next step is to make the complete result inspectable without asking readers to trust our summary.
+The reproduction package is now implemented in a draft source package, so the complete synthetic result can be regenerated without asking readers to trust our summary.
 
-The companion should provide an isolated, dependency-free Python runner using the pinned historical experiment definitions.
+The package contains an isolated, dependency-free Python runner using the pinned historical experiment definitions. Its source and review history are recorded in [Scout PR #125](https://github.com/pinklon/ghostmesh-readers/pull/125). A source-level implementation does not, by itself, establish public release.
 
-Its outputs should include every synthetic per-trial result, the resulting summaries, source identifiers, seeds, configuration parameters, and cryptographic hashes.
+The runner generates all 912 synthetic per-trial rows, the resulting summaries, source identifiers, seeds, defined parameters, and SHA-256 output hashes.
 
-A second run under the same defined conditions must reproduce the expected outputs. A deliberate mutation of a fixture must cause validation to fail.
+Focused tests verified that a second run under the same defined conditions reproduces the expected output hashes and that a deliberate fixture mutation causes validation to fail.
 
 The runner must refuse to overwrite an existing output directory. It must not call a model, contact GhostMesh services, read private research packets, or change production stopping policies.
 
@@ -199,4 +199,4 @@ The curve does not get to decide which.
 - Historical source commit: `d46047390869ff372aa6239053ef882bd1b60a65`.
 - [Original replay receipt](https://github.com/pinklon/ghostmesh-readers/blob/main/docs/SCOUT_STOPPING_REPLAY_RECEIPT_2026-10-23.md).
 
-**Evidence boundary:** The reported findings concern deterministic synthetic fixtures. Same-source replay has been verified. Independent algorithmic replication, original raw-result archive reconciliation, generalization to real agents, and production stopping effectiveness have not been established. The proposed public reproduction package is not yet implemented or released.
+**Evidence boundary (November 6, 2026 review checkpoint):** The reported findings concern deterministic synthetic fixtures. Same-source replay has been verified. Independent algorithmic replication, original raw-result archive reconciliation, generalization to real agents, and production stopping effectiveness have not been established. The reproduction package was implemented and tested in draft PR #125; at this checkpoint, it had not been merged or publicly released through the Scout publication process.
