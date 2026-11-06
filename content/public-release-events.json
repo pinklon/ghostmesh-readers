@@ -2,6 +2,15 @@
   "schema": "ghostmesh-public-release-events-v1",
   "events": [
     {
+      "id": "scout:the-context-is-there-the-state-is-wrong:first-public-release",
+      "kind": "new-scout-research",
+      "subjectId": "the-context-is-there-the-state-is-wrong",
+      "url": "https://youtube.shareplane.malott.ai/scout/essays/the-context-is-there-the-state-is-wrong/",
+      "title": "The Context Is There. The State Is Wrong.",
+      "summary": "A long context can preserve every decision while an agent still reconstructs the wrong current state. History, state, evidence and authority require different controls.",
+      "publicDate": "2026-11-06"
+    },
+    {
       "id": "scout:the-agent-can-build-the-app-who-lets-it-touch-the-data:first-public-release",
       "kind": "new-scout-research",
       "subjectId": "the-agent-can-build-the-app-who-lets-it-touch-the-data",

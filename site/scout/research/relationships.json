@@ -3,8 +3,8 @@
   "scope": "Public Scout research reading routes; links are editorial, not corroboration.",
   "authority": "scout-research-curated-editorial",
   "visibility": "public",
-  "recordCount": 23,
-  "relationshipCount": 13,
+  "recordCount": 24,
+  "relationshipCount": 14,
   "nodes": [
     {
       "id": "scout:cloudflare-security-audit-skill",
@@ -68,6 +68,13 @@
       "type": "essay",
       "title": "The Approval Must Survive the Summary",
       "url": "https://youtube.shareplane.malott.ai/scout/essays/the-approval-must-survive-the-summary/"
+    },
+    {
+      "id": "scout:essay:the-context-is-there-the-state-is-wrong",
+      "sourceId": "essay:the-context-is-there-the-state-is-wrong",
+      "type": "essay",
+      "title": "The Context Is There. The State Is Wrong.",
+      "url": "https://youtube.shareplane.malott.ai/scout/essays/the-context-is-there-the-state-is-wrong/"
     },
     {
       "id": "scout:essay:the-plateau-that-lied",
@@ -202,6 +209,13 @@
       "to": "scout:essay:the-approval-must-survive-the-summary",
       "type": "approved related work",
       "fromUrl": "https://youtube.shareplane.malott.ai/scout/essays/the-agent-can-build-the-app-who-lets-it-touch-the-data/",
+      "toUrl": "https://youtube.shareplane.malott.ai/scout/essays/the-approval-must-survive-the-summary/"
+    },
+    {
+      "from": "scout:essay:the-context-is-there-the-state-is-wrong",
+      "to": "scout:essay:the-approval-must-survive-the-summary",
+      "type": "approved related work",
+      "fromUrl": "https://youtube.shareplane.malott.ai/scout/essays/the-context-is-there-the-state-is-wrong/",
       "toUrl": "https://youtube.shareplane.malott.ai/scout/essays/the-approval-must-survive-the-summary/"
     },
     {
