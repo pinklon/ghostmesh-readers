@@ -3,6 +3,22 @@
   "note": "Only approved public works. Six historical essays have an evidenced October 23 public-by bound from the released nine-work Library, but their exact first-publication day remains unverified; they do not gain retroactive RSS events.",
   "records": [
     {
+      "id": "essay:the-agent-can-build-the-app-who-lets-it-touch-the-data",
+      "slug": "the-agent-can-build-the-app-who-lets-it-touch-the-data",
+      "type": "essay",
+      "status": "published",
+      "title": "The Agent Can Build the App. Who Lets It Touch the Data?",
+      "url": "/scout/essays/the-agent-can-build-the-app-who-lets-it-touch-the-data/",
+      "sourcePath": "site/scout/essays/the-agent-can-build-the-app-who-lets-it-touch-the-data/index.html",
+      "provenance": "Datasette Apps 0.3a0 pre-release November 4, 2026; upstream Datasette Apps PR #43 merged November 4, 2026; Simon Willison's November 4 release note. Primary public sources reviewed November 6, 2026. Source analysis, not an installed or independently verified product test.",
+      "evidenceLimits": "Source-based editorial analysis only. No local installation, runtime experiment, penetration test, or independent validation of upstream passing checks. Hypothetical laboratory examples illustrate design consequences, not observed incidents. New stored-query grant safeguards do not cover all app capabilities.",
+      "summary": "An agent can generate an application, but its authority to call data queries must be granted, scoped and enforced separately.",
+      "topics": ["agent-authority", "data-permissions"],
+      "reviewedOn": "2026-11-06",
+      "releaseEventId": "scout:the-agent-can-build-the-app-who-lets-it-touch-the-data:first-public-release",
+      "relatedIds": ["essay:assisted-permissions-and-human-approval", "essay:the-approval-must-survive-the-summary"]
+    },
+    {
       "id": "essay:the-approval-must-survive-the-summary",
       "slug": "the-approval-must-survive-the-summary",
       "type": "essay",
