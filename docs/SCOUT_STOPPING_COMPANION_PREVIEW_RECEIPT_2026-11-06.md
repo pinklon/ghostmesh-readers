@@ -8,7 +8,7 @@ Status: SOURCE PACKAGE IMPLEMENTED AND LOCALLY TESTED. NO PUBLIC PAGE, NETLIFY P
 
 ## Inputs and fidelity
 
-- Tony-accepted manuscript frozen at `content/scout/publication-drafts/24-the-plateau-that-lied-reproducing-the-experiment.md` with SHA-256 `b4523498d768858afd60b7f59a400ed35e5a6e871593d069c9f42c3e9221da07`.
+- Tony-accepted manuscript originally frozen at `content/scout/publication-drafts/24-the-plateau-that-lied-reproducing-the-experiment.md` with SHA-256 `b4523498d768858afd60b7f59a400ed35e5a6e871593d069c9f42c3e9221da07`. A November 6 owner-approved factual status amendment produces SHA-256 `1f8129edccf7f706f214c3ee093a99968e1f133eabd6facbb98dd7f2e58f4eae`.
 - Original attachment SHA-256 `f8f62a9d03ba75536ba73cdc79800201719e03623621d2205f5c269f7a9280fc`; only a terminal newline was added in the repository copy.
 - Three pinned research definitions copied from Git commit `d46047390869ff372aa6239053ef882bd1b60a65`, with their original Git blob IDs validated at runtime.
 - One dependency-free runner emits full synthetic `search.json`, `stopping.json`, `probe.json` and a manifest into a new caller-chosen directory, refuses overwrite, and checks expected summaries before writing.
@@ -30,7 +30,7 @@ Status: SOURCE PACKAGE IMPLEMENTED AND LOCALLY TESTED. NO PUBLIC PAGE, NETLIFY P
 - Repository-wide `scripts/check_site.py` result, CI, GitHub draft PR head, Netlify preview, mobile/desktop review, and owner acceptance: NOT YET RECORDED.
 - Public site route, index/RSS update and public package download: NOT IMPLEMENTED.
 - Original raw archive reconciliation: UNKNOWN; independently reimplemented replication: NOT ESTABLISHED.
-- Source manuscript's future-tense package status requires a focused editorial amendment before eventual publication; no rewrite is authorized here.
+- The future-tense package-status problem was corrected under Tony's November 6 narrow editorial approval; results and caveats remain unchanged.
 - Exact-head merge and Production deployment: NOT AUTHORIZED.
 
 Rollback: drop the unmerged branch; Production remains unchanged. The two pre-existing dirty local worktrees were not modified.
