@@ -2,6 +2,15 @@
   "schema": "ghostmesh-public-release-events-v1",
   "events": [
     {
+      "id": "scout:the-plateau-that-lied-reproducing-the-experiment:first-public-release",
+      "kind": "new-scout-research",
+      "subjectId": "the-plateau-that-lied-reproducing-the-experiment",
+      "url": "https://youtube.shareplane.malott.ai/scout/essays/the-plateau-that-lied-reproducing-the-experiment/",
+      "title": "The Plateau That Lied: Reproducing the Experiment",
+      "summary": "Three deterministic synthetic experiments with a pinned source package, full generated result rows, and explicit limits on independent replication.",
+      "publicDate": "2026-11-06"
+    },
+    {
       "id": "scout:the-context-is-there-the-state-is-wrong:first-public-release",
       "kind": "new-scout-research",
       "subjectId": "the-context-is-there-the-state-is-wrong",

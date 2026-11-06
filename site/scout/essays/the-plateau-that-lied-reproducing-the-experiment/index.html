@@ -1,0 +1,169 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="canonical" href="https://youtube.shareplane.malott.ai/scout/essays/the-plateau-that-lied-reproducing-the-experiment/"><meta name="description" content="What three deterministic experiments actually establish about search, stopping decisions, and the limits of synthetic evidence."><title>The Plateau That Lied: Reproducing the Experiment | GhostMesh Scout Essays</title><link rel="icon" href="/favicon.svg"><link rel="stylesheet" href="/assets/scout-essays.css"></head><body><header class="bar"><a class="brand" href="/">GHOST<em>MESH</em> / READERS</a><nav aria-label="Main"><a href="/scout/">Scout</a><a href="/scout/essays/">Scout Essays</a><a href="/readers/">Readers</a><a href="/map/">Knowledge Map</a></nav></header><section class="hero"><p class="eyebrow">GhostMesh / Scout / Original research essay</p><h1>The Plateau That Lied: Reproducing the Experiment</h1><p class="lede">What three deterministic experiments actually establish about search, stopping decisions, and the limits of synthetic evidence.</p><p class="publication-meta">Published <time datetime="2026-11-06">November 6, 2026</time> · Reviewed <time datetime="2026-11-06">November 6, 2026</time></p></section><main id="main"><article class="article" data-approved-markdown-sha256="1f8129edccf7f706f214c3ee093a99968e1f133eabd6facbb98dd7f2e58f4eae"><h1 id="the-plateau-that-lied-reproducing-the-experiment">The Plateau That Lied: Reproducing the Experiment</h1>
+<p><em>What three deterministic experiments actually establish about search, stopping decisions, and the limits of synthetic evidence.</em></p>
+<p><strong>Tony Malott | GhostMesh Scout</strong></p>
+<p>A progress curve can look finished long before the work is finished.</p>
+<p>That was the problem behind our original stopping experiments. An agent performs a sequence of evaluations. Improvement slows. The recent results flatten out. Continuing consumes time and resources, so the reasonable decision appears to be stopping.</p>
+<p>Sometimes it is reasonable.</p>
+<p>Other times, the next useful result sits beyond the apparent plateau. The decision rule has no way of knowing that unless the information available at the time gives it a reason to continue.</p>
+<p>We constructed synthetic experiments to examine that boundary. The results were interesting, including several that undermined our initial expectations. We published the findings in <em>The Plateau That Lied</em> and subsequently described them in the GhostMesh Scout Research Journal.</p>
+<p>Now comes the more important question.</p>
+<p>Can someone reproduce the results, inspect the underlying decisions, and determine whether our conclusions deserve the confidence we gave them?</p>
+<p>A collection of precise decimal values is not an answer. It is an invitation to examine the machinery that produced them.</p>
+<h2 id="what-we-tested">What we tested</h2>
+<p>The research consisted of three related experiments.</p>
+<p>The first examined search strategies operating on twelve one-dimensional synthetic problems. Each strategy received twelve evaluations per trial, across twelve seeds for each problem.</p>
+<p>We compared random exploration, a success-only strategy, and a failure-aware strategy intended to avoid repeating unsuccessful attempts.</p>
+<p>The second experiment tested stopping rules against four deliberately constructed trajectory families: late breakthroughs, false plateaus, steady progress, and flat noise.</p>
+<p>The third introduced another decision: instead of stopping immediately or continuing to completion, what if the agent purchased four additional observations before deciding?</p>
+<p>These were controlled simulations.</p>
+<p>The trajectories were generated, the reward functions were defined by the experiment, and the costs were modeled. No production agent was interrupted. No stronger model was dispatched. No real research workload established that any stopping rule saved money or improved outcomes.</p>
+<p>Those limitations were part of the original research. They remain part of this companion.</p>
+<h2 id="the-first-result-was-already-inconvenient">The first result was already inconvenient</h2>
+<p>The search comparison did not produce one universally superior strategy.</p>
+<table>
+<thead>
+<tr class="header">
+<th>Strategy</th>
+<th style="text-align: right;">Mean best score</th>
+<th style="text-align: right;">Exact matches</th>
+<th style="text-align: right;">Repeated evaluations</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Random</td>
+<td style="text-align: right;">0.964286</td>
+<td style="text-align: right;">20</td>
+<td style="text-align: right;">132</td>
+</tr>
+<tr class="even">
+<td>Success-only</td>
+<td style="text-align: right;">0.891314</td>
+<td style="text-align: right;">40</td>
+<td style="text-align: right;">513</td>
+</tr>
+<tr class="odd">
+<td>Failure-aware</td>
+<td style="text-align: right;">0.956680</td>
+<td style="text-align: right;">75</td>
+<td style="text-align: right;">0</td>
+</tr>
+</tbody>
+</table>
+<p>Each strategy completed 144 trials involving 1,728 synthetic evaluations.</p>
+<p>Random exploration achieved the highest mean best score. Failure-aware search achieved substantially more exact matches and avoided repeated evaluations altogether. Success-only search repeated 513 evaluations.</p>
+<p>Depending on the objective, we might prefer different strategies.</p>
+<p>That matters because the easiest way to overstate a research result is to select the metric that makes our preferred approach look best.</p>
+<p>Failure awareness appeared useful for reducing repeated attempts and finding exact solutions in this fixture. It did not establish that failure memory alone caused the improvement, or that the strategy would outperform alternatives on real tasks.</p>
+<p>A useful experiment should expose those distinctions.</p>
+<h2 id="when-the-plateau-gave-the-wrong-answer">When the plateau gave the wrong answer</h2>
+<p>The second experiment deliberately tested stopping rules against trajectories that could mislead them.</p>
+<p>The most revealing family contained delayed breakthroughs.</p>
+<p>The basic stopping rule quit prematurely in all twenty late-breakthrough cases. Its mean missed reward was 0.129851. The modeled savings from stopping averaged 0.033550.</p>
+<p>Under the selected utility assumptions, the mean net difference relative to continuing was negative 0.096300.</p>
+<p>The saved work was worth less than the improvement abandoned.</p>
+<p>A more cautious rule avoided premature stopping in those twenty cases. That sounds encouraging until we examine the false-plateau family, where both the basic and cautious rules stopped prematurely in all twenty trajectories.</p>
+<p>Caution alone did not solve the problem.</p>
+<p>The rules were responding to observable patterns. They could not reliably distinguish a temporary pause from a meaningful end to progress across every designed regime.</p>
+<p>The experiment demonstrated a failure mode under specified conditions. It did not estimate how frequently that failure occurs in actual agent workloads.</p>
+<h2 id="four-more-observations-did-not-rescue-the-decision">Four more observations did not rescue the decision</h2>
+<p>The third experiment introduced a seemingly reasonable compromise.</p>
+<p>Instead of choosing between stopping and continuing, the decision-maker could observe four more evaluations. That probe incurred an additional modeled review cost of 0.008 units.</p>
+<p>We expected that extra information might help.</p>
+<p>It did not outperform the better alternative in any of the four tested regimes.</p>
+<table>
+<colgroup>
+<col style="width: 27%" />
+<col style="width: 36%" />
+<col style="width: 36%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Trajectory family</th>
+<th style="text-align: right;">Stop utility difference</th>
+<th style="text-align: right;">Probe utility difference</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Late breakthrough</td>
+<td style="text-align: right;">-0.099211</td>
+<td style="text-align: right;">-0.119110</td>
+</tr>
+<tr class="even">
+<td>False plateau</td>
+<td style="text-align: right;">+0.008640</td>
+<td style="text-align: right;">-0.011048</td>
+</tr>
+<tr class="odd">
+<td>Steady progress</td>
+<td style="text-align: right;">-0.089656</td>
+<td style="text-align: right;">-0.008000</td>
+</tr>
+<tr class="even">
+<td>Flat noise</td>
+<td style="text-align: right;">+0.030262</td>
+<td style="text-align: right;">+0.010170</td>
+</tr>
+</tbody>
+</table>
+<p>All values are relative to continuing under the fixture’s defined utility model.</p>
+<p>The probe could reduce losses in some conditions, but its added cost and limited observation window prevented it from becoming a generally superior policy.</p>
+<p>This is an important negative result.</p>
+<p>Extra computation is not automatically useful computation. If the additional observations end before the decisive change, we may have purchased more information without purchasing a better decision.</p>
+<p>We should not generalize that conclusion to every possible probe. The outcome depends on the trajectories, costs, decision rule, and observation window we selected.</p>
+<p>Still, it challenges the comfortable assumption that a little more reasoning or a few more evaluations will necessarily improve an uncertain decision.</p>
+<h2 id="what-the-replay-actually-proved">What the replay actually proved</h2>
+<p>On October 23, 2026, we replayed the original deterministic benchmark functions from pinned historical source.</p>
+<p>The replay reproduced the retained summary values for:</p>
+<ul>
+<li>432 search-policy result rows.</li>
+<li>240 stopping-policy result rows.</li>
+<li>240 probe result rows.</li>
+</ul>
+<p>Five focused tests also passed, covering deterministic behavior, baselines, delayed-breakthrough regret, the absence of future-information leakage into the decision, and the restriction against unauthorized model dispatch.</p>
+<p>An independently checked clean checkout subsequently reproduced the expected results using the same historical implementation.</p>
+<p>That is meaningful evidence.</p>
+<p>It establishes that the inspected source can regenerate the recorded synthetic summaries under the tested conditions.</p>
+<p>It does not establish that a separate team independently implemented the algorithms and obtained the same findings. It does not establish that the experiment design isolates every causal factor. It does not establish that the sampled trajectories represent real agent workloads.</p>
+<p>Most importantly, the original raw-result archive hashes have not been reconciled.</p>
+<p>The appropriate evidence status is therefore <strong>same-source deterministic replay verified; independent replication and original raw-archive reconciliation outstanding</strong>.</p>
+<h2 id="the-public-reproduction-package">The public reproduction package</h2>
+<p>The reproduction package is now implemented in a draft source package, so the complete synthetic result can be regenerated without asking readers to trust our summary.</p>
+<p>The package contains an isolated, dependency-free Python runner using the pinned historical experiment definitions. Its source and review history are recorded in <a href="https://github.com/pinklon/ghostmesh-readers/pull/125">Scout PR #125</a>. A source-level implementation does not, by itself, establish public release.</p>
+<p>The runner generates all 912 synthetic per-trial rows, the resulting summaries, source identifiers, seeds, defined parameters, and SHA-256 output hashes.</p>
+<p>Focused tests verified that a second run under the same defined conditions reproduces the expected output hashes and that a deliberate fixture mutation causes validation to fail.</p>
+<p>The runner must refuse to overwrite an existing output directory. It must not call a model, contact GhostMesh services, read private research packets, or change production stopping policies.</p>
+<p>Readers should be able to inspect both the numerical results and the rules that created them.</p>
+<p>They should also be able to change those rules and observe where the conclusions stop holding.</p>
+<p>That is where the companion becomes useful research rather than another polished explanation.</p>
+<h2 id="the-strongest-objection">The strongest objection</h2>
+<p>These experiments may be too artificial to justify much attention.</p>
+<p>Real agents work with uneven feedback, changing objectives, partial observability, noisy evaluation, human intervention, variable costs, and tasks whose value cannot be reduced to a convenient synthetic reward.</p>
+<p>A deterministic toy benchmark may tell us more about the assumptions embedded in its generator than about the systems we ultimately care about.</p>
+<p>That objection is legitimate.</p>
+<p>Our response should not be to inflate the experiment’s importance.</p>
+<p>The value of these fixtures is that they isolate mechanisms worth challenging. They show that reasonable stopping rules can fail under clearly defined conditions, and that additional observations can be ineffective when their timing and cost are poorly matched to the problem.</p>
+<p>They establish counterexamples to overly broad claims.</p>
+<p>They do not establish a production policy.</p>
+<p>The next substantive experiment would need held-out, low-risk real tasks, predetermined budgets, observable decision-time evidence, comparable baselines, and measured outcomes after the proposed actions are actually taken.</p>
+<p>Until that work occurs, claims about operational savings or reliability remain hypotheses.</p>
+<h2 id="what-the-evidence-should-change">What the evidence should change</h2>
+<p>The practical conclusion is narrower than the temptation to build an elaborate stopping controller.</p>
+<p>We should demand that a stopping decision identify the evidence available when it was made, the costs it assumed, the alternatives it considered, and what would have counted as a reason to continue.</p>
+<p>If a decision rule depends on knowing that no future improvement exists, it has borrowed information the operator did not possess.</p>
+<p>If a probe consumes additional resources, its value must exceed its cost under conditions that are defined before the outcome is known.</p>
+<p>If an experiment reports a precise result, its inputs and calculations should be available for examination.</p>
+<p>We can improve agent operations by making those judgments inspectable. We cannot make them reliable merely by giving their outputs six decimal places.</p>
+<p>The plateau may be real. It may be temporary. It may be a consequence of the measurement itself.</p>
+<p>The curve does not get to decide which.</p>
+<h2 id="sources-and-evidence-boundaries">Sources and evidence boundaries</h2>
+<ul>
+<li><a href="https://youtube.shareplane.malott.ai/scout/essays/the-plateau-that-lied/">The Plateau That Lied</a>, the original public Scout essay.</li>
+<li><a href="https://youtube.shareplane.malott.ai/scout/research-journal/">GhostMesh Scout Research Journal</a>, the published synthesis and evidence ledger.</li>
+<li><a href="https://github.com/pinklon/ghostmesh-readers/issues/76">Scout reproducibility issue #76</a>, historical source identifiers, clean-checkout witness, and outstanding package requirements.</li>
+<li>Historical source commit: <code>d46047390869ff372aa6239053ef882bd1b60a65</code>.</li>
+<li><a href="https://github.com/pinklon/ghostmesh-readers/blob/main/docs/SCOUT_STOPPING_REPLAY_RECEIPT_2026-10-23.md">Original replay receipt</a>.</li>
+</ul>
+<p><strong>Evidence boundary (November 6, 2026 review checkpoint):</strong> The reported findings concern deterministic synthetic fixtures. Same-source replay has been verified. Independent algorithmic replication, original raw-result archive reconciliation, generalization to real agents, and production stopping effectiveness have not been established. The reproduction package was implemented and tested in draft PR #125; at this checkpoint, it had not been merged or publicly released through the Scout publication process.</p>
+</article><aside class="article" aria-label="Reproduction source package"><h2>Regenerate the synthetic evidence</h2><p><a href="https://github.com/pinklon/ghostmesh-readers/tree/main/repro/scout-stopping">Download the pinned source scripts, runner, and tests from the public repository</a>. Run the standard-library Python reproduction script in a fresh output directory; no external model or service is required. The source package supports same-implementation replay, not independent algorithmic replication.</p></aside></main><footer><p>GhostMesh Scout · GhostMesh analysis · The research workspace is private.</p><p><a href="/scout/">Scout reviews</a> · <a href="/scout/essays/">Essay series</a> · <a href="/">Readers home</a></p></footer></body></html>
