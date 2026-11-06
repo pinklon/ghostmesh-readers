@@ -34,3 +34,26 @@ Status: SOURCE PACKAGE IMPLEMENTED AND LOCALLY TESTED. NO PUBLIC PAGE, NETLIFY P
 - Exact-head merge and Production deployment: NOT AUTHORIZED.
 
 Rollback: drop the unmerged branch; Production remains unchanged. The two pre-existing dirty local worktrees were not modified.
+
+## Public-release candidate preparation, November 6
+
+Tony authorized preparing, but not merging or deploying, the public-release candidate.
+The existing article was promoted mechanically from a noindex draft display to a dated publication candidate;
+its approved Markdown remains unchanged at SHA-256
+`1f8129edccf7f706f214c3ee093a99968e1f133eabd6facbb98dd7f2e58f4eae`.
+The added source-package navigation points to the public repository's `repro/scout-stopping/`
+directory on `main`, which will exist only after the authorized merge.
+The Scout essay index gains one card; the immutable release-event source gains one first-release
+event dated November 6; the generated `site/feed.xml` changes accordingly.
+These candidate entries must not be treated as live publication evidence.
+
+- `python3 scripts/generate_site.py --check`: PASS, 106 projections.
+- `python3 -B -m unittest discover -s repro/scout-stopping -p 'test_reproduction.py' -v`: 4 PASS.
+- `python3 scripts/check_site.py --local`: PASS, local static only; NOT RELEASE QUALIFIED.
+- `git diff --check`: PASS.
+- Full site/owner check, newly built Netlify preview, browser proof at candidate head and required CI: PENDING.
+- Exact GitHub candidate head and Production deployment: PENDING. PR must remain draft and unmerged.
+- No private corpus, model calls, runtime service, original Scout essay or historical result figures modified.
+
+The dated evidence-boundary paragraph describes its November 6 review checkpoint, not the future
+release status. That historical checkpoint is intentionally retained.
