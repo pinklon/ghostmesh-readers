@@ -1,3 +1,4 @@
 # Dependency-free static publishing, isolated from SharePlane Production.
 [build]
   publish = "site"
+  command = "python3 -m scripts.netlify_unified_search_build"
