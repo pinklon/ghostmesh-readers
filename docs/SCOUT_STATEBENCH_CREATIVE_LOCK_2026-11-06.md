@@ -12,7 +12,7 @@ Status: **PUBLIC COPY AND TWO VISIBLE RELATIONSHIPS APPROVED FOR DRAFT IMPLEMENT
 - Slug: `the-context-is-there-the-state-is-wrong`.
 - Canonical target: `/scout/essays/the-context-is-there-the-state-is-wrong/`.
 - Source: `content/scout/publication-drafts/the-context-is-there-the-state-is-wrong.md`.
-- Approved source SHA-256: `b87ad242b939ef913d54d9e5ea8c957c8cfbc2f909b66fc55b09fa33bd0fe198`.
+- Approved source SHA-256: `7d6b524a613f35bd424334757b7ad66f2656181cff34c76ebd08dafd9cc10a3d` (November 6 owner-approved byline and source-link correction; prior accepted hash `b87ad242b939ef913d54d9e5ea8c957c8cfbc2f909b66fc55b09fa33bd0fe198`).
 - Audience: agent architects, AI evaluation researchers, long-running automation and governance operators.
 
 ## Meaning and evidence

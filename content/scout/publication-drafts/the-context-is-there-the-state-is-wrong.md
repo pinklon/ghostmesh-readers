@@ -2,7 +2,7 @@
 
 *What StateBench reveals about memory, long-running agents, and the difference between remembering a fact and knowing what is true now.*
 
-**Tony Malott | GhostMesh Scout | Editorial draft**
+**Tony Malott | GhostMesh Scout**
 
 Imagine an agent working on a software release.
 
@@ -170,8 +170,8 @@ Without those distinctions, a very capable agent can give an excellent explanati
 
 ## Primary sources
 
-- Petty, Merrill, and Sabharwal, *A Fine-Grained Hierarchy and Benchmark for State Tracking in Language Models*, arXiv:2611.03094v1, November 2, 2026. https://arxiv.org/abs/2611.03094
-- Allen Institute for AI, *StateBench: Testing how language models track state changes over long documents*, November 3, 2026. https://allenai.org/blog/statebench
-- StateBench source repository. https://github.com/allenai/state-bench
+- Petty, Merrill, and Sabharwal, *A Fine-Grained Hierarchy and Benchmark for State Tracking in Language Models*, arXiv:2611.03094v1, November 2, 2026. [Research paper](https://arxiv.org/abs/2611.03094).
+- Allen Institute for AI, *StateBench: Testing how language models track state changes over long documents*, November 3, 2026. [Research explanation](https://allenai.org/blog/statebench).
+- [StateBench source repository](https://github.com/allenai/state-bench).
 
 **Evidence boundary:** The reported model measurements belong to the researchers. The GhostMesh architecture discussion and proposed experiment are editorial inferences. No GhostMesh StateBench reproduction or production reliability measurement is claimed.
