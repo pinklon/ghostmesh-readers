@@ -3,8 +3,8 @@
   "scope": "Public Scout research reading routes; links are editorial, not corroboration.",
   "authority": "scout-research-curated-editorial",
   "visibility": "public",
-  "recordCount": 22,
-  "relationshipCount": 11,
+  "recordCount": 23,
+  "relationshipCount": 13,
   "nodes": [
     {
       "id": "scout:cloudflare-security-audit-skill",
@@ -54,6 +54,13 @@
       "type": "essay",
       "title": "Latent States Are Not an Agent API",
       "url": "https://youtube.shareplane.malott.ai/scout/essays/latent-states-are-not-an-agent-api/"
+    },
+    {
+      "id": "scout:essay:the-agent-can-build-the-app-who-lets-it-touch-the-data",
+      "sourceId": "essay:the-agent-can-build-the-app-who-lets-it-touch-the-data",
+      "type": "essay",
+      "title": "The Agent Can Build the App. Who Lets It Touch the Data?",
+      "url": "https://youtube.shareplane.malott.ai/scout/essays/the-agent-can-build-the-app-who-lets-it-touch-the-data/"
     },
     {
       "id": "scout:essay:the-approval-must-survive-the-summary",
@@ -182,6 +189,20 @@
       "type": "approved related work",
       "fromUrl": "https://youtube.shareplane.malott.ai/scout/essays/did-the-evidence-change-the-answer/",
       "toUrl": "https://youtube.shareplane.malott.ai/scout/essays/the-plateau-that-lied/"
+    },
+    {
+      "from": "scout:essay:the-agent-can-build-the-app-who-lets-it-touch-the-data",
+      "to": "scout:essay:assisted-permissions-and-human-approval",
+      "type": "approved related work",
+      "fromUrl": "https://youtube.shareplane.malott.ai/scout/essays/the-agent-can-build-the-app-who-lets-it-touch-the-data/",
+      "toUrl": "https://youtube.shareplane.malott.ai/scout/essays/assisted-permissions-and-human-approval/"
+    },
+    {
+      "from": "scout:essay:the-agent-can-build-the-app-who-lets-it-touch-the-data",
+      "to": "scout:essay:the-approval-must-survive-the-summary",
+      "type": "approved related work",
+      "fromUrl": "https://youtube.shareplane.malott.ai/scout/essays/the-agent-can-build-the-app-who-lets-it-touch-the-data/",
+      "toUrl": "https://youtube.shareplane.malott.ai/scout/essays/the-approval-must-survive-the-summary/"
     },
     {
       "from": "scout:essay:what-survives-a-checkpoint",
