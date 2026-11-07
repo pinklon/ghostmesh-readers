@@ -1,0 +1,71 @@
+{
+  "schemaVersion": 1,
+  "readerId": "reader:what-arete-27b-bias-test-measures",
+  "sourceId": "Zvei95OaIg8",
+  "sourceAidSha256": "ebee1f772d805e327f8a6376df24e33bfeb69cc0ee86cbdf3a629eb084d0c6f8",
+  "points": [
+    {
+      "atSeconds": 28,
+      "sectionId": "what-changed",
+      "claimIds": [
+        "what-arete-27b-bias-test-measures--claim-1"
+      ],
+      "cueParaphrase": "The Arete checkpoint. Arete-27B is a 27B fine-tune of Alibaba’s Qwen3.8-27B.",
+      "privateAidCheck": "Approximate local speech-to-text cue, checked against the surrounding timed passage."
+    },
+    {
+      "atSeconds": 114,
+      "sectionId": "what-the-score-measures",
+      "claimIds": [
+        "what-arete-27b-bias-test-measures--claim-2"
+      ],
+      "cueParaphrase": "What the 803 prompts measure. Nous used 803 prompts and graded factual coverage and political framing separately.",
+      "privateAidCheck": "Approximate local speech-to-text cue, checked against the surrounding timed passage."
+    },
+    {
+      "atSeconds": 149,
+      "sectionId": "what-the-score-measures",
+      "claimIds": [
+        "what-arete-27b-bias-test-measures--claim-3"
+      ],
+      "cueParaphrase": "The reported 22% to 0.9% result. The fine-tune improved the fact score and reduced flags under Nous’s framing rubric.",
+      "privateAidCheck": "Approximate local speech-to-text cue, checked against the surrounding timed passage."
+    },
+    {
+      "atSeconds": 209,
+      "sectionId": "what-the-score-measures",
+      "claimIds": [
+        "what-arete-27b-bias-test-measures--claim-4"
+      ],
+      "cueParaphrase": "How to read the cross-model table. GLM and DeepSeek had higher reported framing-flag rates in the same evaluation.",
+      "privateAidCheck": "Approximate local speech-to-text cue, checked against the surrounding timed passage."
+    },
+    {
+      "atSeconds": 258,
+      "sectionId": "what-changed",
+      "claimIds": [
+        "what-arete-27b-bias-test-measures--claim-5"
+      ],
+      "cueParaphrase": "Inkling and supervised training. Nous used Inkling as the teacher and supervised fine-tuning to change behavior.",
+      "privateAidCheck": "Approximate local speech-to-text cue, checked against the surrounding timed passage."
+    },
+    {
+      "atSeconds": 300,
+      "sectionId": "capability-and-trial",
+      "claimIds": [
+        "what-arete-27b-bias-test-measures--claim-6"
+      ],
+      "cueParaphrase": "Hermes and Terminal-Bench. The measured capability checks show little regression.",
+      "privateAidCheck": "Approximate local speech-to-text cue, checked against the surrounding timed passage."
+    },
+    {
+      "atSeconds": 328,
+      "sectionId": "capability-and-trial",
+      "claimIds": [
+        "what-arete-27b-bias-test-measures--claim-7"
+      ],
+      "cueParaphrase": "What the developer’s evaluation leaves open. The same lab built and graded the evaluation, limiting what it can establish about neutrality.",
+      "privateAidCheck": "Approximate local speech-to-text cue, checked against the surrounding timed passage."
+    }
+  ]
+}

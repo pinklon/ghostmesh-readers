@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "readerId": "reader:what-arete-27b-bias-test-measures",
+  "sourceId": "Zvei95OaIg8",
+  "sourceAidSha256": "ebee1f772d805e327f8a6376df24e33bfeb69cc0ee86cbdf3a629eb084d0c6f8",
+  "articleSha256": "fbcc374eac280c355b7f332cc3a7133a0f16cc242af9544d28c9af96ad58143c",
+  "evidenceRevision": "ee517e4170345a817be680ddfbf15b07ac5b6950af2bcd480fec5e3f2cd487c1",
+  "reviewedAt": "2026-11-07T17:18:18Z",
+  "provenance": {
+    "kind": "codex-task-agent",
+    "reference": "Segfault candidate-side drafting and verification of the retained source and three public developer records.",
+    "limits": "Candidate-side check only. The draft is still awaiting an independent exact-copy review, and the benchmarks were not reproduced."
+  },
+  "summary": "The candidate is open for structural and preview checks. An independent exact-copy review remains pending.",
+  "findings": [
+    "Seven approximate cues map to the verified timed aid, and the draft distinguishes first-party results from independently verified outcomes."
+  ],
+  "conclusion": "hold"
+}
