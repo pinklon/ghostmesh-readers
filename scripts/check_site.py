@@ -4,7 +4,7 @@ from pathlib import Path
 from html.parser import HTMLParser
 from urllib.parse import urlsplit,unquote
 from datetime import datetime,date,timezone
-import json,os,re,sys,xml.etree.ElementTree as ET
+import hashlib,json,os,re,sys,xml.etree.ElementTree as ET
 from generate_site import projections,CATEGORIES,validate_text,validate_link_only_source,validate_paper_source,validate_article_source,validate_repository_source,validate_media_source
 from editorial_depth import validate_reader as validate_editorial_depth
 from scout_feed import validate_scout,validate_events
@@ -18,6 +18,11 @@ RELATIONS={'examines same claim','extends','challenges','responds to','shares en
 # an explicit policy change, so an unfamiliar capture container fails closed.
 PUBLIC_TEXT_EXTENSIONS={'.html','.json','.jsonld','.js','.css','.svg','.xml','.webmanifest'}
 PUBLIC_TEXT_PATHS={'robots.txt','_headers','llms.txt','social/previews/home.png','social/previews/the-inbox-was-a-boundary.png'}
+# Tony approved publication of this exact standalone source asset on November 7.
+# This admits its fixed path and bytes, not Python files generally or execution.
+PUBLIC_PINNED_TEXT_ASSETS={
+ 'scout/essays/the-page-left-the-context/retention-probe.py':'1141bbf0efe11407c45455d412067f551fe1304df8ae92f15d5f13ef606010a6'
+}
 SOURCE_EXTENSIONS=set('.vtt .srt .sbv .ass .ssa .sub .ttml .dfxp .scc .sami .smi .lrc .srv1 .srv2 .srv3 .json3 .mkv .mka .mks .mp4 .m4a .m4v .mp3 .webm .wav .wave .mov .qt .ogg .ogv .oga .opus .flac .aac .aiff .aif .avi .wmv .wma .asf .flv .f4v .mpeg .mpg .mpe .m2v .ts .mts .m2ts .3gp .3g2 .vob .amr .ape .ac3 .aax'.split())
 def chapter_label_errors(raw,published):
  """Forward-only navigation lint; do not retroactively rewrite historical Reader pages."""
@@ -225,8 +230,11 @@ def check(root=ROOT, *, local_only=False):
   require(p.suffix.lower() not in SOURCE_EXTENSIONS,f'Private source media: {p.relative_to(root)}')
   require(not p.name.lower().startswith(('transcript','captions','subtitles')),f'Private source artifact: {p.relative_to(root)}')
   if p.is_relative_to(site):
-   require(p.suffix.lower() in PUBLIC_TEXT_EXTENSIONS or p.relative_to(site).as_posix() in PUBLIC_TEXT_PATHS,f'Unapproved public file type: {p.relative_to(site)}')
+   public_path=p.relative_to(site).as_posix()
+   require(p.suffix.lower() in PUBLIC_TEXT_EXTENSIONS or public_path in PUBLIC_TEXT_PATHS or public_path in PUBLIC_PINNED_TEXT_ASSETS,f'Unapproved public file type: {p.relative_to(site)}')
    payload=p.read_bytes()
+   if public_path in PUBLIC_PINNED_TEXT_ASSETS:
+    require(hashlib.sha256(payload).hexdigest()==PUBLIC_PINNED_TEXT_ASSETS[public_path],f'Pinned public asset digest mismatch: {public_path}')
    require(not capture_signature(payload),f'Private source capture signature: {p.relative_to(site)}')
    if p.suffix.lower()=='.png':
     continue
@@ -234,7 +242,7 @@ def check(root=ROOT, *, local_only=False):
    except UnicodeDecodeError:
     errors.append(f'Non-text public asset: {p.relative_to(site)}');continue
    require(b'\x00' not in payload,f'Binary public asset: {p.relative_to(site)}')
-  if p.is_relative_to(site) and p.suffix in {'.html','.json','.jsonld','.js','.css','.xml'}:
+  if p.is_relative_to(site) and (p.suffix in {'.html','.json','.jsonld','.js','.css','.xml'} or p.relative_to(site).as_posix() in PUBLIC_PINNED_TEXT_ASSETS):
    raw=p.read_text();require(not re.search(r'/Users/|/srv/ghostmesh/|/private/var/|gh[pousr]_[A-Za-z0-9]{20,}|(?:X-Amz-Signature|access_token|client_secret)=',raw),f'Private marker: {p.relative_to(site)}')
    if p.suffix in {'.json','.jsonld'}:
     try:validate_text(json.loads(raw))

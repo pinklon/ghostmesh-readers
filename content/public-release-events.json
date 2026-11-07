@@ -2,6 +2,24 @@
   "schema": "ghostmesh-public-release-events-v1",
   "events": [
     {
+      "id": "scout:a-comma-at-the-handoff:first-public-release",
+      "kind": "new-scout-research",
+      "subjectId": "a-comma-at-the-handoff",
+      "url": "https://youtube.shareplane.malott.ai/scout/essays/a-comma-at-the-handoff/",
+      "title": "A Comma at the Handoff",
+      "summary": "A client can request extensions that a receiving agent supports, yet have those requests misread before activation.",
+      "publicDate": "2026-11-07"
+    },
+    {
+      "id": "scout:the-page-left-the-context:first-public-release",
+      "kind": "new-scout-research",
+      "subjectId": "the-page-left-the-context",
+      "url": "https://youtube.shareplane.malott.ai/scout/essays/the-page-left-the-context/",
+      "title": "The Page Left the Context",
+      "summary": "DR Pixel's historical page-hit metric remains true after an original page image is evicted. A bounded offline probe separates evidence acquisition from availability at the answer, while allowing source-linked derived facts to replace originals under an explicit reading policy.",
+      "publicDate": "2026-11-07"
+    },
+    {
       "id": "scout:an-addressed-comment-is-not-a-fixed-defect:first-public-release",
       "kind": "new-scout-research",
       "subjectId": "an-addressed-comment-is-not-a-fixed-defect",

@@ -3,6 +3,70 @@
   "note": "Only approved public works. Six historical essays have an evidenced October 23 public-by bound from the released nine-work Library, but their exact first-publication day remains unverified; they do not gain retroactive RSS events.",
   "records": [
     {
+      "id": "essay:a-comma-at-the-handoff",
+      "slug": "a-comma-at-the-handoff",
+      "type": "essay",
+      "status": "published",
+      "title": "A Comma at the Handoff",
+      "url": "/scout/essays/a-comma-at-the-handoff/",
+      "sourcePath": "site/scout/essays/a-comma-at-the-handoff/index.html",
+      "provenance": "A2A Go PR519 and issue516; fix db838203cd8561b75509c4d3e8c2b57cb4e11f1d merged November 4, 2026. A2A specification pinned to October 30 revision 4735f4876449c6f381825d8a841b31b16c6ad0c4. Release v2.8.0 published November 6 includes the fix; source and release status checked November 7.",
+      "evidenceLimits": "Source inspection and upstream reported reproduction only. No independent Go, transport, executor or deployment test; no demonstrated authorization bypass or production impact. Older but relevant: RFC 9110 (June 2022) provides HTTP field-combination context for this November 2026 defect. RFC Editor status checked November 7, 2026: listed as an Internet Standard.",
+      "summary": "A client can request extensions that a receiving agent supports, yet have those requests misread before activation.",
+      "topics": [
+        "protocol-semantics"
+      ],
+      "reviewedOn": "2026-11-07",
+      "releaseEventId": "scout:a-comma-at-the-handoff:first-public-release",
+      "relatedIds": [
+        "report:mcp-tasks-cancellation-status-and-retention"
+      ]
+    },
+    {
+      "id": "essay:the-page-left-the-context",
+      "slug": "the-page-left-the-context",
+      "type": "essay",
+      "status": "published",
+      "title": "The Page Left the Context",
+      "url": "/scout/essays/the-page-left-the-context/",
+      "sourcePath": "site/scout/essays/the-page-left-the-context/index.html",
+      "provenance": "DR Pixel arXiv:2611.03097v1 (2026-11-02); public implementation pinned to 14a3a82f5c5266c6c87565a19184d1e16adfb531; exact helper-function offline probe with synthetic markers; independent source-check and reproduction.",
+      "evidenceLimits": "No model, image-decoder, retriever, network or API evaluation. Historical retrieval and final-image availability are distinct in released code; no claim which original paper trajectories experienced relevant-image eviction or whether it impaired accuracy. Source descriptions differ on retained observations. Public reproduction has declared figure-index and tool-protocol limits.",
+      "summary": "DR Pixel's historical page-hit metric remains true after an original page image is evicted. A bounded offline probe separates evidence acquisition from availability at the answer, while allowing source-linked derived facts to replace originals under an explicit reading policy.",
+      "topics": [
+        "document-reading",
+        "citation-evidence"
+      ],
+      "reviewedOn": "2026-11-07",
+      "releaseEventId": "scout:the-page-left-the-context:first-public-release",
+      "relatedIds": [
+        "method:reviewing-visual-claims-in-claude-pdf-answers"
+      ]
+    },
+    {
+      "id": "essay:the-plateau-that-lied-reproducing-the-experiment",
+      "slug": "the-plateau-that-lied-reproducing-the-experiment",
+      "type": "essay",
+      "status": "published",
+      "title": "The Plateau That Lied: Reproducing the Experiment",
+      "url": "/scout/essays/the-plateau-that-lied-reproducing-the-experiment/",
+      "sourcePath": "site/scout/essays/the-plateau-that-lied-reproducing-the-experiment/index.html",
+      "provenance": "Existing public companion released November 6, 2026 through PR125, merge c3fd13c70c0c6d1cf1f8a3b85faa9014ef69c880. Pinned historical experiment definitions at d46047390869ff372aa6239053ef882bd1b60a65; same-source deterministic replay, not independent algorithmic replication.",
+      "evidenceLimits": "Deterministic synthetic fixtures and same-source replay only. Original raw-result archive reconciliation, independent algorithmic replication, generalization to real agents and production stopping effectiveness remain unestablished. Preserve the dated November 6 review checkpoint and existing source-package link.",
+      "summary": "Three deterministic synthetic experiments with a pinned source package, full generated result rows, and explicit limits on independent replication.",
+      "topics": [
+        "research",
+        "reproducibility",
+        "stopping-decisions"
+      ],
+      "reviewedOn": "2026-11-06",
+      "releaseEventId": "scout:the-plateau-that-lied-reproducing-the-experiment:first-public-release",
+      "relatedIds": [
+        "essay:the-plateau-that-lied",
+        "journal:research-journal"
+      ]
+    },
+    {
       "id": "essay:an-addressed-comment-is-not-a-fixed-defect",
       "slug": "an-addressed-comment-is-not-a-fixed-defect",
       "type": "essay",

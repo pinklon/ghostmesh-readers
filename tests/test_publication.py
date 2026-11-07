@@ -35,6 +35,14 @@ class PublicationGate(unittest.TestCase):
    with self.subTest(name=name):
     p=self.root/'site'/name;p.write_text('capture fixture')
     self.rejected('Unapproved public file type');p.unlink()
+ def test_reviewed_script_is_bound_to_approved_path_and_bytes(self):
+  self.assertEqual([],self.structural_errors())
+  approved=self.root/'site/scout/essays/the-page-left-the-context/retention-probe.py'
+  original=approved.read_bytes()
+  other=self.root/'site/assets/retention-probe.py';other.write_bytes(original)
+  self.rejected('Unapproved public file type');other.unlink()
+  approved.write_bytes(original+b'\n# unapproved change\n')
+  self.rejected('Pinned public asset digest mismatch')
  def test_renamed_capture_is_rejected(self):
   for payload in [b'\x1a\x45\xdf\xa3test',b'RIFFtestWAVE',b'\x00\x00\x00\x18ftypisom',b'OggStest',b'WEBVTT\n']:
    with self.subTest(payload=payload):
