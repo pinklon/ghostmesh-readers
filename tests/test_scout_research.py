@@ -294,8 +294,11 @@ class ScoutResearchTests(unittest.TestCase):
         self.assertEqual((ROOT/'site/feed.xml').read_text().count(
             'urn:ghostmesh-readers:release:' + item['releaseEventId']), 1)
         self.assertEqual((ROOT/'site/sitemap.xml').read_text().count(events[0]['url']), 1)
-        for path in ('site/scout/research/index.html', 'site/scout/essays/index.html', 'site/scout/index.html'):
+        # The home page rotates its three most recently reviewed works; older
+        # essays remain discoverable through the complete Library and index.
+        for path in ('site/scout/research/index.html', 'site/scout/essays/index.html'):
             self.assertIn('href="' + item['url'] + '"', (ROOT/path).read_text())
+        self.assertIn('href="/scout/research/"', (ROOT/'site/scout/index.html').read_text())
 
     def test_evidence_use_essay_keeps_locked_copy_and_release_connections(self):
         slug = 'did-the-evidence-change-the-answer'

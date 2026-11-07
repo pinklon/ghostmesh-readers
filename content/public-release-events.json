@@ -2,6 +2,15 @@
   "schema": "ghostmesh-public-release-events-v1",
   "events": [
     {
+      "id": "scout:an-addressed-comment-is-not-a-fixed-defect:first-public-release",
+      "kind": "new-scout-research",
+      "subjectId": "an-addressed-comment-is-not-a-fixed-defect",
+      "url": "https://youtube.shareplane.malott.ai/scout/essays/an-addressed-comment-is-not-a-fixed-defect/",
+      "title": "An Addressed Comment Is Not a Fixed Defect",
+      "summary": "Copilot's new metrics can guide an investigation without proving that a repair is complete.",
+      "publicDate": "2026-11-07"
+    },
+    {
       "id": "scout:the-plateau-that-lied-reproducing-the-experiment:first-public-release",
       "kind": "new-scout-research",
       "subjectId": "the-plateau-that-lied-reproducing-the-experiment",
