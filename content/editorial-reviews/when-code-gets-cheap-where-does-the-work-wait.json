@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "readerId": "reader:when-code-gets-cheap-where-does-the-work-wait",
+  "sourceId": "S6SEgMooZpE",
+  "sourceAidSha256": "cce96fd7c338a0b540cff1c186a4e5e39e825ff8f15540edd340c957225ff92d",
+  "articleSha256": "1f12565e1a194246dd350ca1fad27168ec2b7547c256a1473fb6daacf5302969",
+  "evidenceRevision": "b69e535e61425f43dc4b48d4aef9bdbd609eee3e80ba277cae46a04a99796efc",
+  "reviewedAt": "2026-11-07T15:31:15Z",
+  "provenance": {
+    "kind": "codex-task-agent",
+    "reference": "Pale Horse native Codex collaboration task /root/review_pando_reader. Final public-copy review at PR 126 head 2b0a63cbec428ffbb89e9bce10fca53e509ec607.",
+    "limits": "The reviewer inspected the verified timed aid, public primary sources, source map and static preview. Direct audio listening, new transcription, interactive playback, and independent verification of the private retrospective were outside the review."
+  },
+  "summary": "Pale Horse accepted the corrected public article for owner review after independently checking the verified timed aid and the public evidence.",
+  "findings": [
+    "The reviewer independently matched the exact authored article and source map digests and checked all ten cue placements against the verified timed aid. No material placement mismatch was found.",
+    "The retained VTT has 286 raw rows. ReasonPack deduplicates one consecutive repeated cue for navigation, so the private replay receipt records 285 navigation cues.",
+    "The 04:39 passage supports monorepo load and redesign. OpenAI’s engineering article supports the Pando name and company-reported push result. The 06:49 cue addresses checkout throughput and caching.",
+    "The reviewer confirmed that the company’s reported push improvement is correctly attributed, the teaching simulation is separate, and FurtherAI is used as an adjacent experience rather than a replication.",
+    "The GhostMesh trial is a proposal. Static review found no private operational identifiers, credentials, raw transcript, or private source links in the public article or map.",
+    "The corrected catalog identifies the reference authors and dates and includes the interviewer’s contemporaneous account of Raji’s role. The two direct links resolve to the named SharePlane works and confer no deployment evidence.",
+    "The article precedes the external evidence, the reading links are populated, and source provenance follows the related reading."
+  ],
+  "conclusion": "accept-for-owner-review"
+}

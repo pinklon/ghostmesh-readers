@@ -1,0 +1,152 @@
+{
+  "schemaVersion": 1,
+  "readerId": "reader:when-code-gets-cheap-where-does-the-work-wait",
+  "sourceId": "S6SEgMooZpE",
+  "sourceDigest": "faa17f452a01d421150bbcfb8303c7f3c9cfb3ec6301843feba09d7c37277814",
+  "sourceAidSha256": "cce96fd7c338a0b540cff1c186a4e5e39e825ff8f15540edd340c957225ff92d",
+  "articleSha256": "1f12565e1a194246dd350ca1fad27168ec2b7547c256a1473fb6daacf5302969",
+  "evidenceRevision": "b69e535e61425f43dc4b48d4aef9bdbd609eee3e80ba277cae46a04a99796efc",
+  "sourceMapEvidenceSha256": "53448a8832ca123835c70068011fcc227524d277f8237b3e817ed9862aac994f",
+  "reviewEvidenceSha256": "2086258474089fc8ffd09b3bf58949665c0a063ef85f758caedb0214aa631ea9",
+  "candidateAuthor": "pinklon",
+  "complexity": {
+    "tier": "extended",
+    "factors": [
+      "Ten source claims across infrastructure, workflow, product and economics."
+    ],
+    "rationale": "The interview combines consequential design choices with first-party performance and adoption claims that require distinct treatment."
+  },
+  "sourceMap": [
+    {
+      "atSeconds": 20,
+      "sectionId": "full-read-the-interview-against-the-evidence",
+      "claimIds": [
+        "when-code-gets-cheap-where-does-the-work-wait--claim-1"
+      ],
+      "rationale": "Links the approximate spoken cue to the article discussion and assessed proposition."
+    },
+    {
+      "atSeconds": 71,
+      "sectionId": "full-read-the-interview-against-the-evidence",
+      "claimIds": [
+        "when-code-gets-cheap-where-does-the-work-wait--claim-2"
+      ],
+      "rationale": "Links the approximate spoken cue to the article discussion and assessed proposition."
+    },
+    {
+      "atSeconds": 106,
+      "sectionId": "full-read-the-interview-against-the-evidence",
+      "claimIds": [
+        "when-code-gets-cheap-where-does-the-work-wait--claim-3"
+      ],
+      "rationale": "Links the approximate spoken cue to the article discussion and assessed proposition."
+    },
+    {
+      "atSeconds": 196,
+      "sectionId": "full-read-the-interview-against-the-evidence",
+      "claimIds": [
+        "when-code-gets-cheap-where-does-the-work-wait--claim-4"
+      ],
+      "rationale": "Links the approximate spoken cue to the article discussion and assessed proposition."
+    },
+    {
+      "atSeconds": 279,
+      "sectionId": "full-what-pando-actually-changed",
+      "claimIds": [
+        "when-code-gets-cheap-where-does-the-work-wait--claim-5"
+      ],
+      "rationale": "Links the approximate spoken cue to the article discussion and assessed proposition."
+    },
+    {
+      "atSeconds": 409,
+      "sectionId": "full-what-pando-actually-changed",
+      "claimIds": [
+        "when-code-gets-cheap-where-does-the-work-wait--claim-6"
+      ],
+      "rationale": "Links the approximate spoken cue to the article discussion and assessed proposition."
+    },
+    {
+      "atSeconds": 589,
+      "sectionId": "voice-and-prototyping",
+      "claimIds": [
+        "when-code-gets-cheap-where-does-the-work-wait--claim-7"
+      ],
+      "rationale": "Links the approximate spoken cue to the article discussion and assessed proposition."
+    },
+    {
+      "atSeconds": 696,
+      "sectionId": "voice-and-prototyping",
+      "claimIds": [
+        "when-code-gets-cheap-where-does-the-work-wait--claim-8"
+      ],
+      "rationale": "Links the approximate spoken cue to the article discussion and assessed proposition."
+    },
+    {
+      "atSeconds": 804,
+      "sectionId": "full-read-the-interview-against-the-evidence",
+      "claimIds": [
+        "when-code-gets-cheap-where-does-the-work-wait--claim-9"
+      ],
+      "rationale": "Links the approximate spoken cue to the article discussion and assessed proposition."
+    },
+    {
+      "atSeconds": 864,
+      "sectionId": "full-read-the-interview-against-the-evidence",
+      "claimIds": [
+        "when-code-gets-cheap-where-does-the-work-wait--claim-10"
+      ],
+      "rationale": "Links the approximate spoken cue to the article discussion and assessed proposition."
+    }
+  ],
+  "assessment": {
+    "sourceCoverage": {
+      "disposition": "covered",
+      "rationale": "The public article names the interviewer and guest, covers all ten assessed video cues, and states that its source is the highlights edit."
+    },
+    "supportingArgument": {
+      "disposition": "covered",
+      "rationale": "The Pando engineering report supports the Git backend migration, preserved client contract and company-reported push latency."
+    },
+    "evidenceRoles": {
+      "disposition": "covered",
+      "rationale": "The claim register separates interview testimony, company-reported results, technical documentation and editorial inference."
+    },
+    "counterargument": {
+      "disposition": "covered",
+      "rationale": "The article preserves cases where implementation or repository operations can still be the active constraint."
+    },
+    "tradeoffs": {
+      "disposition": "covered",
+      "rationale": "The Pando mechanism comparison identifies branch contention, read costs and migration considerations."
+    },
+    "falsifiability": {
+      "disposition": "covered",
+      "rationale": "The proposed reversible delivery trial defines the baseline and conditions that would change the recommendation."
+    },
+    "originalSynthesis": {
+      "disposition": "covered",
+      "rationale": "The article links parallel implementation to verified outcomes and explains why live use is a distinct delivery boundary."
+    },
+    "performance": {
+      "disposition": "covered",
+      "rationale": "The article distinguishes the reported median push result from system throughput and observed user-facing performance."
+    },
+    "economics": {
+      "disposition": "covered",
+      "rationale": "The article explains the limits of an annualized ad run rate and the evidence needed for comparable consumption."
+    },
+    "threatGovernance": {
+      "disposition": "covered",
+      "rationale": "The article preserves authority over a shared release and raises consent, capture visibility and retention for voice prototypes."
+    }
+  },
+  "independentCorroboration": "none",
+  "ownerDecision": {
+    "pullNumber": 126,
+    "commentId": 6709077606
+  },
+  "decision": "accept",
+  "gaps": [],
+  "decisionRationale": "The independent reviewer accepted the corrected public article and verified cue fit against the retained timed aid. Owner acceptance remains a separate GitHub action.",
+  "assessedAt": "2026-11-07T15:33:04Z"
+}

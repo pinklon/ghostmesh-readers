@@ -394,7 +394,7 @@ def projections():
    raw=raw.replace('</main>',share+'</main>',1)
    if '/assets/reader-share.js' not in raw:
     raw=raw.replace('</body>','<script defer src="/assets/reader-share.js"></script></body>',1)
-  if r['slug']=='a-model-that-says-yes-is-not-necessarily-a-model-that-knows':
+  if r['slug'] in {'a-model-that-says-yes-is-not-necessarily-a-model-that-knows', 'when-code-gets-cheap-where-does-the-work-wait'}:
    # The accepted article has no share widget; project the standard Reader control.
    share=('<div class="gm-sharebar" data-gm-share=""><span class="gm-share-label">Share this Video Deconstruction</span>'
           '<div class="gm-share-actions"><button class="gm-share-button" data-native-share="" type="button">Share</button>'

@@ -29,6 +29,9 @@ def paper_cover(source):
 # test, not verification labels. Keep the source-grounding checks below when
 # adding a Reader; never infer a call from its category or claim count.
 CALLS = {
+    'when-code-gets-cheap-where-does-the-work-wait': (
+        'Worth studying', 'Watch Raji on review and testing at 03:16 and Pando at 04:39. Use the evidence to decide which stage of your own delivery flow to measure.'),
+
     'a-model-that-says-yes-is-not-necessarily-a-model-that-knows': ('Test findings, not compliance', 'Compare refusal-suppressed and base models on identical authorized tasks; measure confirmed findings, tool safety, latency and false positives.'),
     'the-cockpit-is-not-the-control-plane': ('Pilot the cockpit, not the authority', 'Compare worktrees, browser annotation and reviewed changes on a disposable task; keep durable ownership and completion outside the interface.'),
     'the-session-count-is-not-the-system': ('Watch workflow, not volume', 'Borrow bounded tasks, critical review and read-only loops; treat session counts as self-report and test whether automation saves actual owner attention.'),
