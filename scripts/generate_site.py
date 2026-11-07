@@ -394,14 +394,16 @@ def projections():
    raw=raw.replace('</main>',share+'</main>',1)
    if '/assets/reader-share.js' not in raw:
     raw=raw.replace('</body>','<script defer src="/assets/reader-share.js"></script></body>',1)
-  if r['slug'] in {'a-model-that-says-yes-is-not-necessarily-a-model-that-knows', 'when-code-gets-cheap-where-does-the-work-wait'}:
-   # The accepted article has no share widget; project the standard Reader control.
+  if not re.search(r'<[^>]+\sdata-gm-share(?=[\s=>])',raw):
+   # Project the shared control for authored pages that omit it.
    share=('<div class="gm-sharebar" data-gm-share=""><span class="gm-share-label">Share this Video Deconstruction</span>'
           '<div class="gm-share-actions"><button class="gm-share-button" data-native-share="" type="button">Share</button>'
           '<button class="gm-share-button" data-copy-link="" type="button">Copy link</button>'
           '<a class="gm-share-email" data-email-link="" href="mailto:?subject='+esc(r['title'])+'">Email</a>'
           '<span aria-live="polite" class="gm-share-message" data-gm-share-message="" role="status"></span></div></div>')
-   raw=raw.replace('</main>',share+'</main>',1).replace('</body>','<script defer src="/assets/reader-share.js"></script></body>',1)
+   raw=raw.replace('</main>',share+'</main>',1)
+   if '/assets/reader-share.js' not in raw:
+    raw=raw.replace('</body>','<script defer src="/assets/reader-share.js"></script></body>',1)
   out[f'{r["slug"]}/index.html']=raw
   receipt=dict(r.get('legacyReceipt') or {'schema':'ghostmesh-reader-receipt-v2','source':r['source'],'custody':{'status':'historical-public-account-only','note':'No private source pack was opened or reverified during normalization. See original provenance on the Reader.'}})
   receipt['normalization']={k:v for k,v in r.items() if k not in ['legacyReceipt','rank']}
