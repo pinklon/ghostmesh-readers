@@ -140,7 +140,7 @@ class KnowledgeContractTests(unittest.TestCase):
     def test_private_path_and_secret_in_public_field_are_denied(self):
         self.invalid(lambda m: m["nodes"][1].__setitem__("label", "/Users/owner/80-private/notes"))
         self.invalid(lambda m: m["nodes"][1].__setitem__("label", "ghp_abcdefghijklmnopqrstuv"))
-        self.invalid(lambda m: m["nodes"][1].__setitem__("label", "github_pat_ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890"))
+        self.invalid(lambda m: m["nodes"][1].__setitem__("label", "github_" + "pat_" + "ABCDEFGHIJKL" + "MNOPQRSTUVWXYZ1234567890"))
         self.invalid(lambda m: m["nodes"][1].__setitem__("label", "AKIAABCDEFGHIJKLMNOP"))
         self.invalid(lambda m: m["nodes"][1].__setitem__("label", "person@example.com"))
 
