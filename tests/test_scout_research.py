@@ -23,6 +23,23 @@ class ScoutResearchTests(unittest.TestCase):
     def validate(self, source):
         return validate_research(source, self.scout, self.events, ROOT)
 
+    def test_announced_research_has_one_canonical_library_record(self):
+        # A feed entry alone once left the published Plateau companion absent
+        # from the Library, graph and generated sitemap.
+        for event in self.events['events']:
+            if event['kind'] != 'new-scout-research':
+                continue
+            with self.subTest(event=event['id']):
+                records = [item for item in self.source['records']
+                           if item['slug'] == event['subjectId']]
+                self.assertEqual(len(records), 1)
+                item = records[0]
+                self.assertEqual(item['releaseEventId'], event['id'])
+                self.assertEqual(event['url'], 'https://youtube.shareplane.malott.ai' + item['url'])
+                self.assertTrue((ROOT/item['sourcePath']).is_file())
+                self.assertIn('href="' + item['url'] + '"',
+                              (ROOT/'site/scout/research/index.html').read_text())
+
     def test_standing_release_requires_independent_source_bound_public_copy(self):
         day = datetime.now(timezone.utc).date().isoformat()
         slug = 'synthetic-official-change'

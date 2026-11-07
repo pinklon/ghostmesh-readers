@@ -3,8 +3,8 @@
   "scope": "Public Scout research reading routes; links are editorial, not corroboration.",
   "authority": "scout-research-curated-editorial",
   "visibility": "public",
-  "recordCount": 25,
-  "relationshipCount": 15,
+  "recordCount": 28,
+  "relationshipCount": 19,
   "nodes": [
     {
       "id": "scout:cloudflare-security-audit-skill",
@@ -12,6 +12,13 @@
       "type": "investigation",
       "title": "Cloudflare security-audit-skill",
       "url": "https://youtube.shareplane.malott.ai/scout/reviews/cloudflare-security-audit-skill/"
+    },
+    {
+      "id": "scout:essay:a-comma-at-the-handoff",
+      "sourceId": "essay:a-comma-at-the-handoff",
+      "type": "essay",
+      "title": "A Comma at the Handoff",
+      "url": "https://youtube.shareplane.malott.ai/scout/essays/a-comma-at-the-handoff/"
     },
     {
       "id": "scout:essay:a-faster-review-button-is-not-a-better-decision",
@@ -84,11 +91,25 @@
       "url": "https://youtube.shareplane.malott.ai/scout/essays/the-context-is-there-the-state-is-wrong/"
     },
     {
+      "id": "scout:essay:the-page-left-the-context",
+      "sourceId": "essay:the-page-left-the-context",
+      "type": "essay",
+      "title": "The Page Left the Context",
+      "url": "https://youtube.shareplane.malott.ai/scout/essays/the-page-left-the-context/"
+    },
+    {
       "id": "scout:essay:the-plateau-that-lied",
       "sourceId": "essay:the-plateau-that-lied",
       "type": "essay",
       "title": "The Plateau That Lied",
       "url": "https://youtube.shareplane.malott.ai/scout/essays/the-plateau-that-lied/"
+    },
+    {
+      "id": "scout:essay:the-plateau-that-lied-reproducing-the-experiment",
+      "sourceId": "essay:the-plateau-that-lied-reproducing-the-experiment",
+      "type": "essay",
+      "title": "The Plateau That Lied: Reproducing the Experiment",
+      "url": "https://youtube.shareplane.malott.ai/scout/essays/the-plateau-that-lied-reproducing-the-experiment/"
     },
     {
       "id": "scout:essay:the-signal-is-not-the-finding",
@@ -184,6 +205,13 @@
   ],
   "edges": [
     {
+      "from": "scout:essay:a-comma-at-the-handoff",
+      "to": "scout:report:mcp-tasks-cancellation-status-and-retention",
+      "type": "approved related work",
+      "fromUrl": "https://youtube.shareplane.malott.ai/scout/essays/a-comma-at-the-handoff/",
+      "toUrl": "https://youtube.shareplane.malott.ai/scout/essays/mcp-tasks-cancellation-status-and-retention/"
+    },
+    {
       "from": "scout:essay:an-addressed-comment-is-not-a-fixed-defect",
       "to": "scout:essay:a-faster-review-button-is-not-a-better-decision",
       "type": "approved related work",
@@ -231,6 +259,27 @@
       "type": "approved related work",
       "fromUrl": "https://youtube.shareplane.malott.ai/scout/essays/the-context-is-there-the-state-is-wrong/",
       "toUrl": "https://youtube.shareplane.malott.ai/scout/essays/the-approval-must-survive-the-summary/"
+    },
+    {
+      "from": "scout:essay:the-page-left-the-context",
+      "to": "scout:method:reviewing-visual-claims-in-claude-pdf-answers",
+      "type": "approved related work",
+      "fromUrl": "https://youtube.shareplane.malott.ai/scout/essays/the-page-left-the-context/",
+      "toUrl": "https://youtube.shareplane.malott.ai/scout/essays/reviewing-visual-claims-in-claude-pdf-answers/"
+    },
+    {
+      "from": "scout:essay:the-plateau-that-lied-reproducing-the-experiment",
+      "to": "scout:essay:the-plateau-that-lied",
+      "type": "approved related work",
+      "fromUrl": "https://youtube.shareplane.malott.ai/scout/essays/the-plateau-that-lied-reproducing-the-experiment/",
+      "toUrl": "https://youtube.shareplane.malott.ai/scout/essays/the-plateau-that-lied/"
+    },
+    {
+      "from": "scout:essay:the-plateau-that-lied-reproducing-the-experiment",
+      "to": "scout:journal:research-journal",
+      "type": "approved related work",
+      "fromUrl": "https://youtube.shareplane.malott.ai/scout/essays/the-plateau-that-lied-reproducing-the-experiment/",
+      "toUrl": "https://youtube.shareplane.malott.ai/scout/research-journal/"
     },
     {
       "from": "scout:essay:what-survives-a-checkpoint",
