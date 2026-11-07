@@ -3,8 +3,8 @@
   "scope": "Local public editorial reading routes; no independent corroboration or cross-site graph admission.",
   "authority": "catalog-curated-editorial",
   "visibility": "public",
-  "readerCount": 42,
-  "assessmentCount": 42,
+  "readerCount": 43,
+  "assessmentCount": 43,
   "relationshipCount": 83,
   "nodes": [
     {
@@ -670,6 +670,19 @@
         "decision": "none",
         "reviewedTargets": [],
         "rationale": "Proposed links compare parallel sessions and control boundaries. They remain on-page navigation while formal graph edges await editorial review."
+      }
+    },
+    {
+      "id": "reader:what-arete-27b-bias-test-measures",
+      "slug": "what-arete-27b-bias-test-measures",
+      "title": "What Arete-27B’s bias test actually measures",
+      "url": "https://youtube.shareplane.malott.ai/what-arete-27b-bias-test-measures/",
+      "review": {
+        "reviewedAt": "2026-11-07",
+        "reviewedCatalogSize": 42,
+        "decision": "none",
+        "reviewedTargets": [],
+        "rationale": "The cited Reader links are proposed editorial comparisons. The public draft does not assert reviewed catalog edges or independent corroboration."
       }
     }
   ],

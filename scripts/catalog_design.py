@@ -29,6 +29,8 @@ def paper_cover(source):
 # test, not verification labels. Keep the source-grounding checks below when
 # adding a Reader; never infer a call from its category or claim count.
 CALLS = {
+    'what-arete-27b-bias-test-measures': (
+        'Worth studying', 'Keep Arete as a candidate for a controlled comparison. Compare it with base Qwen under the same inference settings and have reviewers score factual coverage, unsupported assertions, refusals, and framing separately.'),
     'when-code-gets-cheap-where-does-the-work-wait': (
         'Worth studying', 'Watch Raji on review and testing at 03:16 and Pando at 04:39. Use the evidence to decide which stage of your own delivery flow to measure.'),
 

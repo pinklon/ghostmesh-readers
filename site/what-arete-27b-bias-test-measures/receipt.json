@@ -1,0 +1,275 @@
+{
+  "schema": "ghostmesh-reader-receipt-v2",
+  "createdAt": "2026-11-07T17:18:18Z",
+  "source": {
+    "platform": "YouTube",
+    "url": "https://www.youtube.com/watch?v=Zvei95OaIg8",
+    "videoId": "Zvei95OaIg8",
+    "title": "Nous Research's NEW Arete-27B AI Is INSANE! 🤯",
+    "creator": "Julian Goldie SEO",
+    "mediaAspect": "16:9",
+    "durationSeconds": 496,
+    "uploadDate": "2026-11-07"
+  },
+  "overview": "Julian Goldie walks through Nous Research’s Arete-27B release, a supervised fine-tune of Alibaba’s Qwen3.8-27B. He covers the targeted political evaluation, the reported scores, and what those results leave unresolved.",
+  "whyItMatters": "Teams choosing a model for politically sensitive work need to know whether a measured gain comes from better facts, fewer refusals, or a different scoring rule. Those changes have different consequences in production.",
+  "ghostMeshTakeaway": "Keep Arete as a candidate for a controlled comparison. Compare it with base Qwen under the same inference settings and have reviewers score factual coverage, unsupported assertions, refusals, and framing separately.",
+  "sourceInspection": {
+    "method": "Verified private video and audio, local Whisper small.en fallback to timed WebVTT, and seven checks against nearby spoken cues.",
+    "status": "qualified-private-pack-verified",
+    "timedAidSha256": "b76fafe65f851b3da14be6030de7e793c4d3e093239fd67f27a5c31615c216fc",
+    "caveat": "Approximate seek points from 240 raw WebVTT rows. The cited results come from the developer. The benchmarks were not independently rerun.",
+    "publicationBoundary": "Public original analysis, direct source links, and sanitized evidence metadata.",
+    "transcriptSha256": "5e68a510fed38da71521e8ae3c891714435eb2c7fd5a2b95f54c78d1367b669b",
+    "evidenceRegistrySha256": "25bae7d075b3f6ad9d6269efdafa55d04bc955d91e5c7d0bd5669705485c0245",
+    "analysisValidationSha256": "e9e52a96171a2b39b702038d2ec913e3943c3d3f2d94e22bed16596b589a5c9a"
+  },
+  "reasonPack": {
+    "skill": "reasonpack",
+    "schema": "ghostmesh-reasoning-pack-v1",
+    "verification": "pass",
+    "manifestSha256": "ebee1f772d805e327f8a6376df24e33bfeb69cc0ee86cbdf3a629eb084d0c6f8"
+  },
+  "custody": {
+    "status": "qualified-private-pack-verified",
+    "note": "Verified in private custody. Public evidence records digests and source identity."
+  },
+  "normalization": {
+    "id": "reader:what-arete-27b-bias-test-measures",
+    "slug": "what-arete-27b-bias-test-measures",
+    "title": "What Arete-27B’s bias test actually measures",
+    "category": "AI & Technology",
+    "tags": [
+      "open weights",
+      "model evaluation",
+      "fine-tuning",
+      "AI governance"
+    ],
+    "entities": [
+      "Nous Research",
+      "Arete-27B",
+      "Qwen3.8-27B",
+      "Julian Goldie"
+    ],
+    "source": {
+      "platform": "YouTube",
+      "url": "https://www.youtube.com/watch?v=Zvei95OaIg8",
+      "videoId": "Zvei95OaIg8",
+      "title": "Nous Research's NEW Arete-27B AI Is INSANE! 🤯",
+      "creator": "Julian Goldie SEO",
+      "mediaAspect": "16:9",
+      "durationSeconds": 496,
+      "uploadDate": "2026-11-07"
+    },
+    "published": "2026-11-07",
+    "updated": "2026-11-07T17:18:18Z",
+    "overview": "Julian Goldie walks through Nous Research’s Arete-27B release, a supervised fine-tune of Alibaba’s Qwen3.8-27B. He covers the targeted political evaluation, the reported scores, and what those results leave unresolved.",
+    "whyItMatters": "Teams choosing a model for politically sensitive work need to know whether a measured gain comes from better facts, fewer refusals, or a different scoring rule. Those changes have different consequences in production.",
+    "ghostMeshTakeaway": "Keep Arete as a candidate for a controlled comparison. Compare it with base Qwen under the same inference settings and have reviewers score factual coverage, unsupported assertions, refusals, and framing separately.",
+    "verdict": "Worth studying",
+    "architectureImpact": "experiment recommended",
+    "falsification": "Set the acceptance thresholds before scoring. Reconsider adoption if the factual gains fail to repeat on held-out tasks or quality and safeguards regress on ordinary work.",
+    "evidenceState": "partially corroborated",
+    "lastEvidenceChecked": "2026-11-07T17:18:18Z",
+    "freshness": "The primary sources describe developer-reported tests on a specific prompt set, rubric and settings.",
+    "variant": "editorial",
+    "accent": "red",
+    "claims": [
+      {
+        "id": "what-arete-27b-bias-test-measures--claim-1",
+        "proposition": "Arete-27B is a 27B fine-tune of Alibaba’s Qwen3.8-27B.",
+        "kind": "source-attributed-claim",
+        "asOf": "2026-11-07",
+        "status": "corroborated",
+        "assessment": "The model card identifies the starting checkpoint and the supervised fine-tune. This establishes the lineage of the released weights.",
+        "limits": "Developer evidence bounds this finding to the documented method and reported evaluation.",
+        "sourceLocation": "00:00:28",
+        "references": [
+          "src-aretecard"
+        ],
+        "counterevidence": [],
+        "temporalScope": "Video and public source materials as reviewed for this Reader."
+      },
+      {
+        "id": "what-arete-27b-bias-test-measures--claim-2",
+        "proposition": "Nous used 803 prompts and graded factual coverage and political framing separately.",
+        "kind": "source-attributed-claim",
+        "asOf": "2026-11-07",
+        "status": "corroborated",
+        "assessment": "Nous publishes the evaluation set and rubric. The grader was a model using source-grounded required facts and a separate framing rule.",
+        "limits": "Developer evidence bounds this finding to the documented method and reported evaluation.",
+        "sourceLocation": "00:01:54",
+        "references": [
+          "src-nousrelease",
+          "src-propagandaeval"
+        ],
+        "counterevidence": [],
+        "temporalScope": "Video and public source materials as reviewed for this Reader."
+      },
+      {
+        "id": "what-arete-27b-bias-test-measures--claim-3",
+        "proposition": "The fine-tune improved the fact score and reduced flags under Nous’s framing rubric.",
+        "kind": "source-attributed-claim",
+        "asOf": "2026-11-07",
+        "status": "corroborated",
+        "assessment": "The matched thinking-off comparison reports 2.32 to 2.98 out of five and 22% to 0.9%. These are developer-reported means across five runs on the specified evaluation.",
+        "limits": "Developer evidence bounds this finding to the documented method and reported evaluation.",
+        "sourceLocation": "00:02:29",
+        "references": [
+          "src-nousrelease",
+          "src-aretecard"
+        ],
+        "counterevidence": [],
+        "temporalScope": "Video and public source materials as reviewed for this Reader."
+      },
+      {
+        "id": "what-arete-27b-bias-test-measures--claim-4",
+        "proposition": "GLM and DeepSeek had higher reported framing-flag rates in the same evaluation.",
+        "kind": "source-attributed-claim",
+        "asOf": "2026-11-07",
+        "status": "partially corroborated",
+        "assessment": "The published values match the walkthrough. Some comparison rows used different temperatures, so the table does not establish a fully matched ranking.",
+        "limits": "Developer evidence bounds this finding to the documented method and reported evaluation.",
+        "sourceLocation": "00:03:29",
+        "references": [
+          "src-nousrelease",
+          "src-aretecard"
+        ],
+        "counterevidence": [],
+        "temporalScope": "Video and public source materials as reviewed for this Reader."
+      },
+      {
+        "id": "what-arete-27b-bias-test-measures--claim-5",
+        "proposition": "Nous used Inkling as the teacher and supervised fine-tuning to change behavior.",
+        "kind": "source-attributed-claim",
+        "asOf": "2026-11-07",
+        "status": "corroborated",
+        "assessment": "The model card identifies Inkling and supervised fine-tuning. Nous reports frozen vision weights and no architectural modification.",
+        "limits": "Developer evidence bounds this finding to the documented method and reported evaluation.",
+        "sourceLocation": "00:04:18",
+        "references": [
+          "src-aretecard"
+        ],
+        "counterevidence": [],
+        "temporalScope": "Video and public source materials as reviewed for this Reader."
+      },
+      {
+        "id": "what-arete-27b-bias-test-measures--claim-6",
+        "proposition": "The measured capability checks show little regression.",
+        "kind": "source-attributed-claim",
+        "asOf": "2026-11-07",
+        "status": "partially corroborated",
+        "assessment": "Hermes Bench was 65.60% versus 65.77% and the lab’s Terminal-Bench 2.1 run was 70% versus 67%. The two evaluations do not establish general capability parity or production safety.",
+        "limits": "Developer evidence bounds this finding to the documented method and reported evaluation.",
+        "sourceLocation": "00:05:00",
+        "references": [
+          "src-aretecard",
+          "src-nousrelease"
+        ],
+        "counterevidence": [],
+        "temporalScope": "Video and public source materials as reviewed for this Reader."
+      },
+      {
+        "id": "what-arete-27b-bias-test-measures--claim-7",
+        "proposition": "The same lab built and graded the evaluation, limiting what it can establish about neutrality.",
+        "kind": "source-attributed-claim",
+        "asOf": "2026-11-07",
+        "status": "corroborated",
+        "assessment": "Nous designed the rubric, calibrated its model judge and reports the results. Public evaluation material enables independent replication but does not itself supply it.",
+        "limits": "Developer evidence bounds this finding to the documented method and reported evaluation.",
+        "sourceLocation": "00:05:28",
+        "references": [
+          "src-nousrelease",
+          "src-propagandaeval"
+        ],
+        "counterevidence": [],
+        "temporalScope": "Video and public source materials as reviewed for this Reader."
+      }
+    ],
+    "references": [
+      {
+        "id": "src-nousrelease",
+        "title": "Nous Research Arete-27B release",
+        "author": "Nous Research",
+        "publisher": "Nous Research",
+        "url": "https://nousresearch.com/arete",
+        "publicationDate": "unknown",
+        "datePrecision": "unknown",
+        "dateNote": "Exact publication date not asserted for this mutable source.",
+        "eventDate": null,
+        "location": "Measuring the problem and Results",
+        "sourceType": "first-party documentation",
+        "independence": "Developer account of the benchmark, its rubric, and its reported results.",
+        "evidenceFamily": "nous-research",
+        "checkedAt": "2026-11-07T17:18:18Z"
+      },
+      {
+        "id": "src-aretecard",
+        "title": "Arete-27B model card and weights",
+        "author": "Nous Research",
+        "publisher": "Nous Research",
+        "url": "https://huggingface.co/NousResearch/Arete-27B",
+        "publicationDate": "unknown",
+        "datePrecision": "unknown",
+        "dateNote": "Exact publication date not asserted for this mutable source.",
+        "eventDate": null,
+        "location": "Model details and Results",
+        "sourceType": "first-party documentation",
+        "independence": "Developer account of the checkpoint, training method, weights, and measured results.",
+        "evidenceFamily": "nous-research",
+        "checkedAt": "2026-11-07T17:18:18Z"
+      },
+      {
+        "id": "src-propagandaeval",
+        "title": "Nous Research Propaganda Eval",
+        "author": "Nous Research",
+        "publisher": "Nous Research",
+        "url": "https://huggingface.co/datasets/NousResearch/Propaganda_Eval",
+        "publicationDate": "unknown",
+        "datePrecision": "unknown",
+        "dateNote": "Exact publication date not asserted for this mutable source.",
+        "eventDate": null,
+        "location": "Dataset card and scoring materials",
+        "sourceType": "first-party documentation",
+        "independence": "Developer-published evaluation materials enable inspection and replication. They do not constitute independent replication.",
+        "evidenceFamily": "nous-research",
+        "checkedAt": "2026-11-07T17:18:18Z"
+      }
+    ],
+    "relationships": [],
+    "relationshipDisposition": "The article links to related Readers as editorial navigation.",
+    "review": {
+      "status": "Independent review complete",
+      "reviewer": "Pale Horse",
+      "reviewedSourceHead": "a6f6ebeaf7789ab524717afddeae37a8302300db",
+      "checkedAt": "2026-11-07T17:38:18Z",
+      "scope": "Exact public copy, seven source cues, methods and evidence attribution, and disclosure boundary.",
+      "findings": "Pale Horse accepted the revised public article for owner review after checking the verified timed aid, developer references, and expanded source and scope."
+    },
+    "revisionHistory": [
+      {
+        "at": "2026-11-07T17:18:18Z",
+        "kind": "new-reader-candidate",
+        "reason": "Trial the Pando Reader layout with the standard ReasonPack depth."
+      }
+    ],
+    "editorialDepth": {
+      "schemaVersion": 1,
+      "receiptPath": "content/editorial-depth/what-arete-27b-bias-test-measures.json"
+    },
+    "editorialOrder": 42,
+    "orderReason": "New video deconstruction of a model fine-tune and the limits of its evaluation.",
+    "relationshipReview": {
+      "reviewedAt": "2026-11-07",
+      "reviewedCatalogSize": 42,
+      "decision": "none",
+      "reviewedTargets": [],
+      "rationale": "The cited Reader links are proposed editorial comparisons. The public draft does not assert reviewed catalog edges or independent corroboration."
+    }
+  },
+  "editorial": {
+    "overview": "Julian Goldie walks through Nous Research’s Arete-27B release, a supervised fine-tune of Alibaba’s Qwen3.8-27B. He covers the targeted political evaluation, the reported scores, and what those results leave unresolved.",
+    "whyItMatters": "Teams choosing a model for politically sensitive work need to know whether a measured gain comes from better facts, fewer refusals, or a different scoring rule. Those changes have different consequences in production.",
+    "ghostMeshTakeaway": "Keep Arete as a candidate for a controlled comparison. Compare it with base Qwen under the same inference settings and have reviewers score factual coverage, unsupported assertions, refusals, and framing separately."
+  }
+}
