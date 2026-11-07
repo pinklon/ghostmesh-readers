@@ -3,6 +3,28 @@
   "note": "Only approved public works. Six historical essays have an evidenced October 23 public-by bound from the released nine-work Library, but their exact first-publication day remains unverified; they do not gain retroactive RSS events.",
   "records": [
     {
+      "id": "essay:an-addressed-comment-is-not-a-fixed-defect",
+      "slug": "an-addressed-comment-is-not-a-fixed-defect",
+      "type": "essay",
+      "status": "published",
+      "title": "An Addressed Comment Is Not a Fixed Defect",
+      "url": "/scout/essays/an-addressed-comment-is-not-a-fixed-defect/",
+      "sourcePath": "site/scout/essays/an-addressed-comment-is-not-a-fixed-defect/index.html",
+      "provenance": "GitHub product announcements dated November 5 and 6, 2026, plus current Copilot impact-dashboard documentation; sources read November 7, 2026. Live documentation has no immutable revision established in this pass.",
+      "evidenceLimits": "Primary product-document interpretation and original GhostMesh recommendation. No source implementation or account telemetry inspected; no classification reproduction, productivity estimate or executed audit.",
+      "summary": "Copilot's new metrics can guide an investigation without proving that a repair is complete.",
+      "topics": [
+        "ai-measurement",
+        "review-evidence",
+        "engineering-management"
+      ],
+      "reviewedOn": "2026-11-07",
+      "releaseEventId": "scout:an-addressed-comment-is-not-a-fixed-defect:first-public-release",
+      "relatedIds": [
+        "essay:a-faster-review-button-is-not-a-better-decision"
+      ]
+    },
+    {
       "id": "essay:the-context-is-there-the-state-is-wrong",
       "slug": "the-context-is-there-the-state-is-wrong",
       "type": "essay",

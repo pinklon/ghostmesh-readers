@@ -3,8 +3,8 @@
   "scope": "Public Scout research reading routes; links are editorial, not corroboration.",
   "authority": "scout-research-curated-editorial",
   "visibility": "public",
-  "recordCount": 24,
-  "relationshipCount": 14,
+  "recordCount": 25,
+  "relationshipCount": 15,
   "nodes": [
     {
       "id": "scout:cloudflare-security-audit-skill",
@@ -19,6 +19,13 @@
       "type": "essay",
       "title": "A Faster Review Button Is Not a Better Decision",
       "url": "https://youtube.shareplane.malott.ai/scout/essays/a-faster-review-button-is-not-a-better-decision/"
+    },
+    {
+      "id": "scout:essay:an-addressed-comment-is-not-a-fixed-defect",
+      "sourceId": "essay:an-addressed-comment-is-not-a-fixed-defect",
+      "type": "essay",
+      "title": "An Addressed Comment Is Not a Fixed Defect",
+      "url": "https://youtube.shareplane.malott.ai/scout/essays/an-addressed-comment-is-not-a-fixed-defect/"
     },
     {
       "id": "scout:essay:assisted-permissions-and-human-approval",
@@ -176,6 +183,13 @@
     }
   ],
   "edges": [
+    {
+      "from": "scout:essay:an-addressed-comment-is-not-a-fixed-defect",
+      "to": "scout:essay:a-faster-review-button-is-not-a-better-decision",
+      "type": "approved related work",
+      "fromUrl": "https://youtube.shareplane.malott.ai/scout/essays/an-addressed-comment-is-not-a-fixed-defect/",
+      "toUrl": "https://youtube.shareplane.malott.ai/scout/essays/a-faster-review-button-is-not-a-better-decision/"
+    },
     {
       "from": "scout:essay:assisted-permissions-and-human-approval",
       "to": "scout:essay:a-faster-review-button-is-not-a-better-decision",
