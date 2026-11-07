@@ -15063,11 +15063,14 @@
         "whyItMatters": "Teams choosing a model for politically sensitive work need to know whether a measured gain comes from better facts, fewer refusals, or a different scoring rule. Those changes have different consequences in production.",
         "ghostMeshTakeaway": "Keep Arete as a candidate for a controlled comparison. Compare it with base Qwen under the same inference settings and have reviewers score factual coverage, unsupported assertions, refusals, and framing separately.",
         "sourceInspection": {
-          "method": "Verified source pack with local speech-to-text fallback and seven approximate timed cue checks.",
+          "method": "Verified private video and audio, local Whisper small.en fallback to timed WebVTT, and seven checks against nearby spoken cues.",
           "status": "qualified-private-pack-verified",
           "timedAidSha256": "b76fafe65f851b3da14be6030de7e793c4d3e093239fd67f27a5c31615c216fc",
-          "caveat": "Automatic speech recognition provides seek aids. The published benchmark was not rerun.",
-          "publicationBoundary": "Public original analysis, direct source links, and sanitized evidence metadata."
+          "caveat": "Approximate seek points from 240 raw WebVTT rows. The cited results come from the developer. The benchmarks were not independently rerun.",
+          "publicationBoundary": "Public original analysis, direct source links, and sanitized evidence metadata.",
+          "transcriptSha256": "5e68a510fed38da71521e8ae3c891714435eb2c7fd5a2b95f54c78d1367b669b",
+          "evidenceRegistrySha256": "25bae7d075b3f6ad9d6269efdafa55d04bc955d91e5c7d0bd5669705485c0245",
+          "analysisValidationSha256": "e9e52a96171a2b39b702038d2ec913e3943c3d3f2d94e22bed16596b589a5c9a"
         },
         "reasonPack": {
           "skill": "reasonpack",

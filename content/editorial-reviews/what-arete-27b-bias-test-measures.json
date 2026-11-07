@@ -3,8 +3,8 @@
   "readerId": "reader:what-arete-27b-bias-test-measures",
   "sourceId": "Zvei95OaIg8",
   "sourceAidSha256": "ebee1f772d805e327f8a6376df24e33bfeb69cc0ee86cbdf3a629eb084d0c6f8",
-  "articleSha256": "fbcc374eac280c355b7f332cc3a7133a0f16cc242af9544d28c9af96ad58143c",
-  "evidenceRevision": "ee517e4170345a817be680ddfbf15b07ac5b6950af2bcd480fec5e3f2cd487c1",
+  "articleSha256": "c0da173a009a8059b6b574d58c1c3b34ecca0de85813c7a28f82b8aadc8deeee",
+  "evidenceRevision": "1f239eec710a27f65611d05572bda6d9bd543d38c659e7b787a2e558b02a8daa",
   "reviewedAt": "2026-11-07T17:18:18Z",
   "provenance": {
     "kind": "codex-task-agent",
