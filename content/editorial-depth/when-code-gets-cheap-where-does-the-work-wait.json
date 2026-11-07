@@ -7,7 +7,7 @@
   "articleSha256": "1f12565e1a194246dd350ca1fad27168ec2b7547c256a1473fb6daacf5302969",
   "evidenceRevision": "b69e535e61425f43dc4b48d4aef9bdbd609eee3e80ba277cae46a04a99796efc",
   "sourceMapEvidenceSha256": "53448a8832ca123835c70068011fcc227524d277f8237b3e817ed9862aac994f",
-  "reviewEvidenceSha256": "6cb440331b8b42cb2bb7b94a6ab92b399c70df69b66f4161c5bbe6275f5a190b",
+  "reviewEvidenceSha256": "2086258474089fc8ffd09b3bf58949665c0a063ef85f758caedb0214aa631ea9",
   "candidateAuthor": "pinklon",
   "complexity": {
     "tier": "extended",
@@ -145,14 +145,8 @@
     "pullNumber": 126,
     "commentId": null
   },
-  "decision": "hold",
-  "gaps": [
-    {
-      "type": "scope",
-      "severity": "blocking",
-      "rationale": "The exact public article needs an independent source, claim and disclosure review before owner acceptance."
-    }
-  ],
-  "decisionRationale": "The exact public article needs an independent source, claim and disclosure review before owner acceptance.",
-  "assessedAt": "2026-11-07T14:51:24Z"
+  "decision": "accept",
+  "gaps": [],
+  "decisionRationale": "The independent reviewer accepted the corrected public article and verified cue fit against the retained timed aid. Owner acceptance remains a separate GitHub action.",
+  "assessedAt": "2026-11-07T15:33:04Z"
 }
