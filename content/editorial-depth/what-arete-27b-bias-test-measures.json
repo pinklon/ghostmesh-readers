@@ -7,7 +7,7 @@
   "articleSha256": "c0da173a009a8059b6b574d58c1c3b34ecca0de85813c7a28f82b8aadc8deeee",
   "evidenceRevision": "1f239eec710a27f65611d05572bda6d9bd543d38c659e7b787a2e558b02a8daa",
   "sourceMapEvidenceSha256": "66b5336e033f5d64a6372e958406a84efeecea7165c2f7dcb1f77276cc17cd23",
-  "reviewEvidenceSha256": "cd39bcdb4c3c18f8e0af7243e103cf480629fc0d6371364ddf041dc457b9c062",
+  "reviewEvidenceSha256": "14717584bb790f822f8befad28de193eb2f2e9dc0d0499a2fc6a4a3e5c7da8c4",
   "candidateAuthor": "pinklon",
   "complexity": {
     "tier": "brief",
@@ -121,14 +121,8 @@
     "pullNumber": 128,
     "commentId": null
   },
-  "decision": "hold",
-  "gaps": [
-    {
-      "type": "scope",
-      "severity": "blocking",
-      "rationale": "The candidate is open for structural and preview checks. An independent exact-copy review remains pending."
-    }
-  ],
-  "decisionRationale": "The candidate is open for structural and preview checks. An independent exact-copy review remains pending.",
-  "assessedAt": "2026-11-07T17:18:18Z"
+  "decision": "accept",
+  "gaps": [],
+  "decisionRationale": "The independent reviewer accepted the exact public copy and verified the seven mapped passages against the retained timed aid. Owner acceptance is recorded separately.",
+  "assessedAt": "2026-11-07T17:39:03Z"
 }

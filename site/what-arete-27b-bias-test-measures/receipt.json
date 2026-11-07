@@ -239,12 +239,12 @@
     "relationships": [],
     "relationshipDisposition": "The article links to related Readers as editorial navigation.",
     "review": {
-      "status": "awaiting independent exact-copy review",
-      "reviewer": "Pending independent review",
-      "reviewedSourceHead": "Public candidate",
-      "checkedAt": "2026-11-07T17:18:18Z",
-      "scope": "Exact public copy, timed evidence, independence and disclosure boundary.",
-      "findings": "The candidate is open for structural and preview checks. An independent exact-copy review remains pending."
+      "status": "Independent review complete",
+      "reviewer": "Pale Horse",
+      "reviewedSourceHead": "a6f6ebeaf7789ab524717afddeae37a8302300db",
+      "checkedAt": "2026-11-07T17:38:18Z",
+      "scope": "Exact public copy, seven source cues, methods and evidence attribution, and disclosure boundary.",
+      "findings": "Pale Horse accepted the revised public article for owner review after checking the verified timed aid, developer references, and expanded source and scope."
     },
     "revisionHistory": [
       {

@@ -5,15 +5,19 @@
   "sourceAidSha256": "ebee1f772d805e327f8a6376df24e33bfeb69cc0ee86cbdf3a629eb084d0c6f8",
   "articleSha256": "c0da173a009a8059b6b574d58c1c3b34ecca0de85813c7a28f82b8aadc8deeee",
   "evidenceRevision": "1f239eec710a27f65611d05572bda6d9bd543d38c659e7b787a2e558b02a8daa",
-  "reviewedAt": "2026-11-07T17:18:18Z",
+  "reviewedAt": "2026-11-07T17:38:18Z",
   "provenance": {
     "kind": "codex-task-agent",
-    "reference": "Segfault candidate-side drafting and verification of the retained source and three public developer records.",
-    "limits": "Candidate-side check only. The draft is still awaiting an independent exact-copy review, and the benchmarks were not reproduced."
+    "reference": "Pale Horse native Codex collaboration task /root/review_arete_reader, with separate primary-source audit. Exact public-copy review at PR 128 head a6f6ebeaf7789ab524717afddeae37a8302300db.",
+    "limits": "Review used the verified timed aid, public developer records and static preview. Independent listening or retranscription, benchmark reruns, a weights audit, interactive browser testing and a full CI audit were outside this review."
   },
-  "summary": "The candidate is open for structural and preview checks. An independent exact-copy review remains pending.",
+  "summary": "Pale Horse accepted the revised public article for owner review after checking the verified timed aid, developer references, and expanded source and scope.",
   "findings": [
-    "Seven approximate cues map to the verified timed aid, and the draft distinguishes first-party results from independently verified outcomes."
+    "The reviewer matched the exact article and source-map digests, verified the seven retained pack members and the timed aid, and checked all seven cue placements in context.",
+    "The release post, model card and evaluation documentation support the model lineage and reported figures. The article distinguishes matched conditions, developer results and independent replication.",
+    "The expanded methods section matches the retained depth profile, Whisper fallback, manifest and analysis-validation receipt. The timed aid has 240 raw WebVTT rows and the validator bound 12 citations.",
+    "Static inspection found the article before supporting evidence, populated related links, and provenance at the end. The reviewed article and map contained no private source text or operational paths.",
+    "The live preview matched the generated exact-head HTML apart from the hosting toolbar. The review reported no blocking editorial finding."
   ],
-  "conclusion": "hold"
+  "conclusion": "accept-for-owner-review"
 }
