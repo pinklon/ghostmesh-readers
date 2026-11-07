@@ -3,8 +3,8 @@
   "scope": "Local public editorial reading routes; no independent corroboration or cross-site graph admission.",
   "authority": "catalog-curated-editorial",
   "visibility": "public",
-  "readerCount": 41,
-  "assessmentCount": 41,
+  "readerCount": 42,
+  "assessmentCount": 42,
   "relationshipCount": 83,
   "nodes": [
     {
@@ -657,6 +657,19 @@
         "decision": "none",
         "reviewedTargets": [],
         "rationale": "Two GhostMesh Readers and two SharePlane works are useful editorial comparisons, but the owner-approved visual artifact labels them proposed. No registry graph edges were authorized; preserve them as inline links pending relationship review."
+      }
+    },
+    {
+      "id": "reader:when-code-gets-cheap-where-does-the-work-wait",
+      "slug": "when-code-gets-cheap-where-does-the-work-wait",
+      "title": "When code gets cheap, where does the work wait?",
+      "url": "https://youtube.shareplane.malott.ai/when-code-gets-cheap-where-does-the-work-wait/",
+      "review": {
+        "reviewedAt": "2026-11-07",
+        "reviewedCatalogSize": 41,
+        "decision": "none",
+        "reviewedTargets": [],
+        "rationale": "Proposed links compare parallel sessions and control boundaries. They remain on-page navigation while formal graph edges await editorial review."
       }
     }
   ],

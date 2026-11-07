@@ -12,6 +12,308 @@
   ],
   "readers": [
     {
+      "id": "reader:when-code-gets-cheap-where-does-the-work-wait",
+      "slug": "when-code-gets-cheap-where-does-the-work-wait",
+      "title": "When code gets cheap, where does the work wait?",
+      "category": "AI & Technology",
+      "tags": [
+        "coding agents",
+        "Git",
+        "engineering workflows",
+        "code review"
+      ],
+      "entities": [
+        "OpenAI",
+        "Codex",
+        "Pando",
+        "Git",
+        "Vijaye Raji"
+      ],
+      "source": {
+        "platform": "YouTube",
+        "url": "https://www.youtube.com/watch?v=S6SEgMooZpE",
+        "videoId": "S6SEgMooZpE",
+        "title": "The end of git? OpenAI CTO on the future of coding.",
+        "creator": "Nate B. Jones",
+        "mediaAspect": "16:9",
+        "durationSeconds": 966,
+        "uploadDate": "2026-11-06"
+      },
+      "published": "2026-11-07",
+      "updated": "2026-11-07T14:51:24Z",
+      "overview": "Nate B. Jones interviews Vijaye Raji, OpenAI’s CTO of Applications, about what happened when Codex agents started working in parallel. Raji explains why OpenAI rebuilt the Git backend for its monorepo and where the extra work landed in code review and testing.",
+      "whyItMatters": "Raji leads product engineering for ChatGPT and Codex, so this is a firsthand account of how OpenAI’s engineering teams adapted as agent-generated work scaled. OpenAI’s monorepo hit a genuine source-control serving limit under parallel agent work. Its response preserved the Git contract while changing the backend. The transferable lesson for GhostMesh is to measure and repair the longest recurring wait between accepted intent and verified use. A faster upstream stage can expose a downstream constraint or feed it more unfinished work.",
+      "ghostMeshTakeaway": "In one existing GhostMesh delivery lane, use receipts for a small set of comparable items to measure elapsed time, waiting by stage, abandoned work, and verified outcomes. Change one recurring delay, compare with the baseline, and keep the change only if verified delivery improves without more escaped failures, rollback exposure, or owner interruptions.",
+      "verdict": "Worth studying",
+      "architectureImpact": "experiment recommended",
+      "falsification": "Reconsider the handoff intervention if comparable work still waits primarily for implementation or greater concurrency increases verified completions without increasing rework.",
+      "evidenceState": "partially corroborated",
+      "lastEvidenceChecked": "2026-11-07T14:51:24Z",
+      "freshness": "The repository design and median push result come from OpenAI’s published account. Adoption and throughput claims retain their original limits.",
+      "variant": "editorial",
+      "accent": "red",
+      "claims": [
+        {
+          "id": "when-code-gets-cheap-where-does-the-work-wait--claim-1",
+          "proposition": "The new repository system replaces Git.",
+          "kind": "source-attributed-claim",
+          "asOf": "2026-11-07",
+          "status": "disputed",
+          "assessment": "The host’s introduction overstates the change. OpenAI replaced its monorepo’s serving backend while retaining Git client and protocol compatibility.",
+          "limits": "The linked assessment distinguishes interview testimony, documented mechanisms, and independently unverified outcomes.",
+          "sourceLocation": "00:00:20",
+          "references": [],
+          "counterevidence": [
+            "pando"
+          ],
+          "temporalScope": "Scope is the published highlights and the referenced public evidence."
+        },
+        {
+          "id": "when-code-gets-cheap-where-does-the-work-wait--claim-2",
+          "proposition": "Parallel agent worktrees contributed to more concurrent engineering activity.",
+          "kind": "source-attributed-claim",
+          "asOf": "2026-11-07",
+          "status": "partially corroborated",
+          "assessment": "The engineering report corroborates increased branch, push, merge and fetch load from parallel Codex work. It does not establish February as a universal capability threshold or isolate the effect of worktrees.",
+          "limits": "The linked assessment distinguishes interview testimony, documented mechanisms, and independently unverified outcomes.",
+          "sourceLocation": "00:01:11",
+          "references": [
+            "pando"
+          ],
+          "counterevidence": [],
+          "temporalScope": "Scope is the published highlights and the referenced public evidence."
+        },
+        {
+          "id": "when-code-gets-cheap-where-does-the-work-wait--claim-3",
+          "proposition": "Frontier labs’ token use rose 17-fold, compared with roughly twofold elsewhere.",
+          "kind": "source-attributed-claim",
+          "asOf": "2026-11-07",
+          "status": "unverified",
+          "assessment": "Raji presents this as adoption intensity. The cited sources do not provide the sample, denominator, measurement window detail or model mix needed to audit the comparison. Neither figure establishes productivity.",
+          "limits": "The linked assessment distinguishes interview testimony, documented mechanisms, and independently unverified outcomes.",
+          "sourceLocation": "00:01:46",
+          "references": [],
+          "counterevidence": [],
+          "temporalScope": "Scope is the published highlights and the referenced public evidence."
+        },
+        {
+          "id": "when-code-gets-cheap-where-does-the-work-wait--claim-4",
+          "proposition": "Review, testing and delivery can constrain the gains from faster coding.",
+          "kind": "source-attributed-claim",
+          "asOf": "2026-11-07",
+          "status": "partially corroborated",
+          "assessment": "The interview is firsthand testimony about those stages. OpenAI’s post substantiates compounded repository traffic from concurrent changes and CI fan-out, but does not quantify review or release waiting time.",
+          "limits": "The linked assessment distinguishes interview testimony, documented mechanisms, and independently unverified outcomes.",
+          "sourceLocation": "00:03:16",
+          "references": [
+            "pando"
+          ],
+          "counterevidence": [],
+          "temporalScope": "Scope is the published highlights and the referenced public evidence."
+        },
+        {
+          "id": "when-code-gets-cheap-where-does-the-work-wait--claim-5",
+          "proposition": "OpenAI moved its monorepo to Pando as agent traffic strained the existing backend.",
+          "kind": "source-attributed-claim",
+          "asOf": "2026-11-07",
+          "status": "corroborated",
+          "assessment": "OpenAI reports the migration and a nearly 80% reduction in median push latency. Its account establishes the choice and the measured result. The relative performance of other viable production remedies and the interview’s broader throughput multiplier remain unverified.",
+          "limits": "The linked assessment distinguishes interview testimony, documented mechanisms, and independently unverified outcomes.",
+          "sourceLocation": "00:04:39",
+          "references": [
+            "pando"
+          ],
+          "counterevidence": [],
+          "temporalScope": "Scope is the published highlights and the referenced public evidence."
+        },
+        {
+          "id": "when-code-gets-cheap-where-does-the-work-wait--claim-6",
+          "proposition": "A flood of checkouts is a distinct problem from collisions on main.",
+          "kind": "source-attributed-claim",
+          "asOf": "2026-11-07",
+          "status": "corroborated",
+          "assessment": "Pando reuses packs on reads and coordinates unrelated branch writes separately. Updates to the same branch still contend. Sparse checkout and caching address different layers; a smaller working tree alone is not proof of lower transfer or integration cost.",
+          "limits": "The linked assessment distinguishes interview testimony, documented mechanisms, and independently unverified outcomes.",
+          "sourceLocation": "00:06:49",
+          "references": [
+            "pando"
+          ],
+          "counterevidence": [],
+          "temporalScope": "Scope is the published highlights and the referenced public evidence."
+        },
+        {
+          "id": "when-code-gets-cheap-where-does-the-work-wait--claim-7",
+          "proposition": "Voice will be central to reaching the next billion users.",
+          "kind": "source-attributed-claim",
+          "asOf": "2026-11-07",
+          "status": "unverified",
+          "assessment": "The language and keyboard friction story motivates testing; anecdotes from one market do not establish adoption, accessibility, consent expectations, or performance across languages.",
+          "limits": "The linked assessment distinguishes interview testimony, documented mechanisms, and independently unverified outcomes.",
+          "sourceLocation": "00:09:49",
+          "references": [],
+          "counterevidence": [],
+          "temporalScope": "Scope is the published highlights and the referenced public evidence."
+        },
+        {
+          "id": "when-code-gets-cheap-where-does-the-work-wait--claim-8",
+          "proposition": "A leader’s voice prototype made the idea concrete before assigning implementation.",
+          "kind": "source-attributed-claim",
+          "asOf": "2026-11-07",
+          "status": "unverified",
+          "assessment": "Raji describes testing a voice-first interaction and buffering initial speech while connecting. This is a firsthand account of feasibility, not independently verified demand, rollout, privacy design, or production readiness.",
+          "limits": "The linked assessment distinguishes interview testimony, documented mechanisms, and independently unverified outcomes.",
+          "sourceLocation": "00:11:36",
+          "references": [],
+          "counterevidence": [],
+          "temporalScope": "Scope is the published highlights and the referenced public evidence."
+        },
+        {
+          "id": "when-code-gets-cheap-where-does-the-work-wait--claim-9",
+          "proposition": "A product that benefits from model upgrades is better positioned.",
+          "kind": "source-attributed-claim",
+          "asOf": "2026-11-07",
+          "status": "partially corroborated",
+          "assessment": "Model gains can improve a useful system, but the benefit is conditional on representative evaluations, latency and cost checks, and stable authority boundaries. The founder test is a useful heuristic and does not establish a moat.",
+          "limits": "The linked assessment distinguishes interview testimony, documented mechanisms, and independently unverified outcomes.",
+          "sourceLocation": "00:13:24",
+          "references": [
+            "further-system",
+            "further-model"
+          ],
+          "counterevidence": [],
+          "temporalScope": "Scope is the published highlights and the referenced public evidence."
+        },
+        {
+          "id": "when-code-gets-cheap-where-does-the-work-wait--claim-10",
+          "proposition": "The ads team reached a $1 billion annualized revenue run rate quickly using LLMs.",
+          "kind": "source-attributed-claim",
+          "asOf": "2026-11-07",
+          "status": "partially corroborated",
+          "assessment": "OpenAI reported the run rate in under 200 days after launch. A run rate is not revenue already earned over a year, and the announcement does not isolate the effects of LLMs from distribution, advertiser demand or existing systems.",
+          "limits": "The linked assessment distinguishes interview testimony, documented mechanisms, and independently unverified outcomes.",
+          "sourceLocation": "00:14:24",
+          "references": [
+            "ads"
+          ],
+          "counterevidence": [],
+          "temporalScope": "Scope is the published highlights and the referenced public evidence."
+        }
+      ],
+      "references": [
+        {
+          "id": "pando",
+          "title": "Scaling Git at OpenAI",
+          "author": "Aaron Friel, Taylor Blau, and Ted Nyman",
+          "publisher": "OpenAI",
+          "url": "https://openai.com/index/scaling-git-at-openai/",
+          "publicationDate": "2026-11-02",
+          "datePrecision": "day",
+          "dateNote": "Publication date shown by the publisher.",
+          "eventDate": null,
+          "location": "Linked primary account",
+          "sourceType": "first-party documentation",
+          "independence": "First-party engineering account of design, rollout and latency.",
+          "evidenceFamily": "openai-engineering",
+          "checkedAt": "2026-11-07T14:51:24Z"
+        },
+        {
+          "id": "ads",
+          "title": "A milestone in expanding access to AI",
+          "author": "OpenAI",
+          "publisher": "OpenAI",
+          "url": "https://openai.com/index/expanding-access-to-ai-with-chatgpt-ads/",
+          "publicationDate": "unknown",
+          "datePrecision": "unknown",
+          "dateNote": "Exact publication date not asserted.",
+          "eventDate": null,
+          "location": "Linked primary account",
+          "sourceType": "first-party documentation",
+          "independence": "First-party commercial report with a scoped annualized figure.",
+          "evidenceFamily": "openai-product",
+          "checkedAt": "2026-11-07T14:51:24Z"
+        },
+        {
+          "id": "further-system",
+          "title": "The frontier is not the model. It’s the system.",
+          "author": "FurtherAI Engineering",
+          "publisher": "FurtherAI",
+          "url": "https://www.furtherai.com/engineering-blogs/the-frontier-is-not-the-model-its-the-system",
+          "publicationDate": "unknown",
+          "datePrecision": "unknown",
+          "dateNote": "Exact publication date not asserted.",
+          "eventDate": null,
+          "location": "Linked primary account",
+          "sourceType": "first-party documentation",
+          "independence": "Separate team’s experience supports a systems comparison with a different workload.",
+          "evidenceFamily": "furtherai-engineering",
+          "checkedAt": "2026-11-07T14:51:24Z"
+        },
+        {
+          "id": "further-model",
+          "title": "Building an Agent That Gets Better With Every Model",
+          "author": "FurtherAI Engineering",
+          "publisher": "FurtherAI",
+          "url": "https://www.furtherai.com/engineering-blogs/build-an-agent-that-gets-better-with-every-model",
+          "publicationDate": "unknown",
+          "datePrecision": "unknown",
+          "dateNote": "Exact publication date not asserted.",
+          "eventDate": null,
+          "location": "Linked primary account",
+          "sourceType": "first-party documentation",
+          "independence": "Separate team’s implementation account supports the evaluation framing.",
+          "evidenceFamily": "furtherai-engineering",
+          "checkedAt": "2026-11-07T14:51:24Z"
+        },
+        {
+          "id": "raji-role",
+          "title": "Vijaye Raji to become CTO of Applications with acquisition of Statsig",
+          "author": "OpenAI",
+          "publisher": "OpenAI",
+          "url": "https://openai.com/index/vijaye-raji-to-become-cto-of-applications-with-acquisition-of-statsig/",
+          "publicationDate": "2025-09-02",
+          "datePrecision": "day",
+          "dateNote": "Publication date shown by the publisher.",
+          "eventDate": null,
+          "location": "Linked primary account",
+          "sourceType": "first-party documentation",
+          "independence": "Company announcement is authoritative for the appointment and responsibilities.",
+          "evidenceFamily": "openai-company",
+          "checkedAt": "2026-11-07T14:51:24Z"
+        }
+      ],
+      "relationships": [],
+      "relationshipDisposition": "The article links to proposed related reading as editorial navigation.",
+      "review": {
+        "status": "awaiting independent exact-copy review",
+        "reviewer": "Pending independent review",
+        "reviewedSourceHead": "Public candidate",
+        "checkedAt": "2026-11-07T14:51:24Z",
+        "scope": "Exact public copy, cited claims, and disclosure boundary.",
+        "findings": "The exact public article needs an independent source, claim and disclosure review before owner acceptance."
+      },
+      "revisionHistory": [
+        {
+          "at": "2026-11-07T14:51:24Z",
+          "kind": "new-reader-candidate",
+          "reason": "Prepare the owner-reviewed Pando deconstruction for the public Readers release path."
+        }
+      ],
+      "editorialDepth": {
+        "schemaVersion": 1,
+        "receiptPath": "content/editorial-depth/when-code-gets-cheap-where-does-the-work-wait.json"
+      },
+      "editorialOrder": 41,
+      "orderReason": "New deconstruction of Pando and downstream verification under agent-driven engineering load.",
+      "relationshipReview": {
+        "reviewedAt": "2026-11-07",
+        "reviewedCatalogSize": 41,
+        "decision": "none",
+        "reviewedTargets": [],
+        "rationale": "Proposed links compare parallel sessions and control boundaries. They remain on-page navigation while formal graph edges await editorial review."
+      },
+      "rank": 41
+    },
+    {
       "id": "reader:a-model-that-says-yes-is-not-necessarily-a-model-that-knows",
       "slug": "a-model-that-says-yes-is-not-necessarily-a-model-that-knows",
       "title": "A Model That Says Yes Is Not Necessarily a Model That Knows",
