@@ -2,11 +2,11 @@
   "schemaVersion": 1,
   "readerId": "reader:the-router-is-not-the-organization",
   "sourceId": "3DklR44DHnM",
-  "sourceAidSha256": "792facd17db8811d816d779209f298ddf3b9b78cb4feda8bad82a23997d98a3d",
+  "sourceAidSha256": "3cacc402bc260a56792cc746c0bc95d3ab545a985e6e9f0589a5878ed67395fb",
   "points": [
-    {"atSeconds": 120, "sectionId": "evidence", "claimIds": ["the-router-is-not-the-organization--claim-1"], "cueParaphrase": "Router and workers are separated for the Claude Code adaptation.", "privateAidCheck": "Verified private timed Whisper aid. This supports presentation location, not independent architectural outcomes."},
-    {"atSeconds": 175, "sectionId": "evidence", "claimIds": ["the-router-is-not-the-organization--claim-2"], "cueParaphrase": "The presenter reports a five-run comparison with a 15.7-minute versus 29.5-minute slowest task.", "privateAidCheck": "Verified private timed Whisper aid. Comparative timing has not been independently reproduced."},
-    {"atSeconds": 216, "sectionId": "evidence", "claimIds": ["the-router-is-not-the-organization--claim-3"], "cueParaphrase": "The workflow uses detailed tickets and dependencies to prepare worker assignments.", "privateAidCheck": "Verified private timed Whisper aid. Independent measurement of ticket quality is unavailable."},
-    {"atSeconds": 536, "sectionId": "evidence", "claimIds": ["the-router-is-not-the-organization--claim-4"], "cueParaphrase": "The presenter describes watchdog checks for stalled workers.", "privateAidCheck": "Verified private timed Whisper aid. Liveness monitoring does not prove correctness."}
+    {"atSeconds": 120, "sectionId": "full-deconstruction", "claimIds": ["the-router-is-not-the-organization--claim-1"], "cueParaphrase": "Router and workers are separated for the Claude Code adaptation.", "privateAidCheck": "Verified private timed Whisper aid. This supports presentation location, not independent architectural outcomes."},
+    {"atSeconds": 175, "sectionId": "full-deconstruction", "claimIds": ["the-router-is-not-the-organization--claim-2"], "cueParaphrase": "The presenter reports a five-run comparison with a 15.7-minute versus 29.5-minute slowest task.", "privateAidCheck": "Verified private timed Whisper aid. Comparative timing has not been independently reproduced."},
+    {"atSeconds": 216, "sectionId": "full-deconstruction", "claimIds": ["the-router-is-not-the-organization--claim-3"], "cueParaphrase": "The workflow uses detailed tickets and dependencies to prepare worker assignments.", "privateAidCheck": "Verified private timed Whisper aid. Independent measurement of ticket quality is unavailable."},
+    {"atSeconds": 536, "sectionId": "full-deconstruction", "claimIds": ["the-router-is-not-the-organization--claim-4"], "cueParaphrase": "The presenter describes watchdog checks for stalled workers.", "privateAidCheck": "Verified private timed Whisper aid. Liveness monitoring does not prove correctness."}
   ]
 }

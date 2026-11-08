@@ -30,6 +30,9 @@ class PublicationGate(unittest.TestCase):
           and not error.endswith('editorial receipt missing or invalid')]
  def test_draft_pr_defers_only_new_reader_editorial_receipt(self):
   import os
+  # The production fixture now has an accepted receipt. Remove it only in this
+  # isolated fixture to exercise draft-only deferral against a missing receipt.
+  (self.root/'content/editorial-depth/the-router-is-not-the-organization.json').unlink()
   event=self.root/'draft-event.json'
   event.write_text(json.dumps({'number':137,'pull_request':{'draft':True}}))
   with patch.dict(os.environ, {'GITHUB_EVENT_NAME':'pull_request','GITHUB_EVENT_PATH':str(event)}):

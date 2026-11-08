@@ -292,6 +292,6 @@ if __name__=='__main__':
  for e in errors:print('FAIL:',e)
  if errors:sys.exit(1)
  if local_only:
-  print('PASS: LOCAL STATIC CHECK ONLY; NOT RELEASE QUALIFIED; authenticated GitHub owner decisions were NOT verified')
+  print('PASS: LOCAL STATIC CHECK ONLY; NOT RELEASE QUALIFIED; remote owner attestations and exact-head merge were NOT verified')
  else:
   print('PASS: all Readers, projections, evidence mapping, relationships, URLs, sitemap, editorial text and public boundary')

@@ -89,6 +89,33 @@ def acceptance_marker(receipt: dict) -> str:
             f"evidenceRevision={receipt['evidenceRevision']}; assessmentSha256={assessment_digest(receipt)}; decision=accept")
 
 
+def _conversation_approval_errors(reader: dict, receipt: dict) -> list[str]:
+    """Owner-approved low-risk Reader route, bound to immutable content digests.
+
+    This is an editorial provenance declaration, not cryptographic proof of
+    conversation identity. Consequential effects still require an exact-head
+    merge authorization outside this receipt.
+    """
+    decision = receipt.get("ownerDecision")
+    expected = {"kind", "owner", "approval", "approvalDate", "articleSha256", "evidenceRevision"}
+    if (not isinstance(decision, dict) or set(decision) != expected
+            or decision.get("kind") != "conversation"
+            or decision.get("owner") != "Tony Malott"
+            or not _reasoned(decision.get("approval"))
+            or not isinstance(decision.get("approvalDate"), str)
+            or not re.fullmatch(r"\d{4}-\d{2}-\d{2}", decision["approvalDate"])
+            or decision.get("articleSha256") != receipt.get("articleSha256")
+            or decision.get("evidenceRevision") != receipt.get("evidenceRevision")):
+        return [f"{reader['slug']}: owner conversation approval binding invalid"]
+    try:
+        approved = datetime.fromisoformat(decision["approvalDate"]).date()
+        if approved > datetime.now(timezone.utc).date():
+            raise ValueError
+    except ValueError:
+        return [f"{reader['slug']}: owner conversation approval date invalid"]
+    return []
+
+
 def _reasoned(value: object) -> bool:
     return isinstance(value, str) and len(value.strip()) >= 35 and not PLACEHOLDERS.search(value)
 
@@ -353,7 +380,8 @@ def validate_reader(root: Path, reader: dict, *, release: bool = True,
                            for entry in source_map if isinstance(entry, dict)]
         if (not isinstance(map_evidence, dict) or set(map_evidence) != {"schemaVersion", "readerId", "sourceId", "sourceAidSha256", "points"}
                 or map_evidence.get("schemaVersion") != 1 or map_evidence.get("readerId") != reader["id"]
-                or map_evidence.get("sourceId") != source_id(reader) or map_evidence.get("sourceAidSha256") != actual["sourceAidSha256"]
+                or map_evidence.get("sourceId") != source_id(reader)
+                or map_evidence.get("sourceAidSha256") != actual["sourceAidSha256"]
                 or not isinstance(map_evidence.get("points"), list) or len(map_evidence["points"]) != len(expected_points)):
             errors.append(f"{slug}: separate source-map identity or coverage mismatch")
         else:
@@ -412,7 +440,9 @@ def validate_reader(root: Path, reader: dict, *, release: bool = True,
     if release and receipt.get("decision") == "accept" and not any("binding mismatch" in error for error in errors):
         if not isinstance(review_evidence, dict) or review_evidence.get("conclusion") != "accept-for-owner-review":
             errors.append(f"{slug}: retained qualitative findings do not support owner acceptance")
-        if verify_owner_remote:
+        if isinstance(receipt.get("ownerDecision"), dict) and receipt["ownerDecision"].get("kind") == "conversation":
+            errors.extend(_conversation_approval_errors(reader, receipt))
+        elif verify_owner_remote:
             errors.extend(_authenticated_owner_decision_errors(root, reader, receipt, review_evidence,
                                                                event_pr=event_pr, require_merged=require_merged))
     gaps = receipt["gaps"]

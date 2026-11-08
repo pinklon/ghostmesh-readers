@@ -53,6 +53,16 @@ The site and repository are public. No third-party video, audio, full transcript
 
 ## Normalized publishing contract (Issue 23)
 
+For low-risk Reader editorial decisions, `content/editorial-depth/<slug>.json`
+may retain Tony's explicit conversational acceptance alongside the exact authored
+article and evidence-revision SHA-256 values. This is a transparent editorial
+declaration, **not** cryptographic authentication of the conversation. The
+existing native GitHub comment route remains supported. Either way, a final
+merge still requires Tony's separate authorization of the exact current PR
+head and successful release checks. The simplified route does not grant
+deployment authority, change source evidence, or permit an agent to invent
+approval. See Reader #45 for the first approved use of this proportionate rule.
+
 All 13 existing Readers and future editions now use the same structural gate. There are no grandfather exceptions. `content/catalog.json` is the authoring authority for identity, brief, classification, source metadata, claim inventory, references, relationships, editorial ordering, theme variant and revision history. `content/readers/<slug>.html` retains the original analysis and source controls, with bounded generation slots. Edit these inputs, then run:
 
 ```sh
