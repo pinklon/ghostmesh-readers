@@ -21,6 +21,7 @@ PUBLIC_TEXT_PATHS={'robots.txt','_headers','llms.txt','social/previews/home.png'
 # Tony approved publication of this exact standalone source asset on November 7.
 # This admits its fixed path and bytes, not Python files generally or execution.
 PUBLIC_PINNED_TEXT_ASSETS={
+ 'assets/when-code-gets-cheap-verified-delivery-qwen.png':'444f77a9fc830efec614ed9325c82dcdf64c071ae91e1e751bfa7aebf6bb7054',
  'scout/essays/the-page-left-the-context/retention-probe.py':'1141bbf0efe11407c45455d412067f551fe1304df8ae92f15d5f13ef606010a6'
 }
 SOURCE_EXTENSIONS=set('.vtt .srt .sbv .ass .ssa .sub .ttml .dfxp .scc .sami .smi .lrc .srv1 .srv2 .srv3 .json3 .mkv .mka .mks .mp4 .m4a .m4v .mp3 .webm .wav .wave .mov .qt .ogg .ogv .oga .opus .flac .aac .aiff .aif .avi .wmv .wma .asf .flv .f4v .mpeg .mpg .mpe .m2v .ts .mts .m2ts .3gp .3g2 .vob .amr .ape .ac3 .aax'.split())
