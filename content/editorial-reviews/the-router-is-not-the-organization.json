@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "readerId": "reader:the-router-is-not-the-organization",
+  "sourceId": "3DklR44DHnM",
+  "sourceAidSha256": "3cacc402bc260a56792cc746c0bc95d3ab545a985e6e9f0589a5878ed67395fb",
+  "articleSha256": "8565c8e9abd3751f188cfc33c4eefb10ae33d05574b12d2ba8647836343c8677",
+  "evidenceRevision": "7aea99ed50caab3522d11a16f5b18b4d569bfdc558fb132ae3b25230d7219b22",
+  "reviewedAt": "2026-11-08T17:50:00Z",
+  "provenance": {
+    "kind": "codex-task-agent",
+    "reference": "Separate read-only collaboration review /root/reader45_editorial_review of local commit a0ea4a19e8658542a100e54e397fecb805ad5b29, authored article SHA-256 8565c8e9abd3751f188cfc33c4eefb10ae33d05574b12d2ba8647836343c8677, and source map SHA-256 afae973c507ef8d4056b72ad3eb56a070c640a4da278b64d17f0e34cf7f9fb2f. This was an independent review of the authored candidate, not an owner acceptance.",
+    "limits": "Reviewer inspected locked manuscript, authored and generated article, catalog, source map, runbook, Pando precedent, official DeepSeek repository and public video synopsis. Reviewer did not directly access private Hyperion media, timed VTT, transcript or independent benchmark logs. No mobile or desktop browser interaction proof was obtained. Private aid hashes are declarations, not recalculated by this reviewer."
+  },
+  "summary": "REVISE. The thesis, evidence limitations and test proposal are substantively sound, but the catalog substitutes unapproved relationship types and the authored wrapper materially diverges from the locked published Pando structure. Source upload date needs verification. Neither issue authorizes rewriting locked prose or publishing.",
+  "findings": [
+    "Blocking: Reader relationship companion was replaced with related topic; SharePlane foundation was replaced with informs architecture; SharePlane counterpoint was replaced with challenges. The Creative Lock requires an explicit owner decision if existing schema cannot express approved semantics.",
+    "Blocking: Although generated shared header and footer are present, custom bodygrid and cue-list structures, inline theme handling and a different opt-in player diverge from the exact Pando wrapper specified in Creative Lock.",
+    "In-article timestamp links do not have the data-seek hooks used by the dedicated chapter controls and therefore do not provide the same inline-player behavior.",
+    "The original analysis accurately distinguishes routing work from governing accepted outcomes, and does not compress the locked manuscript.",
+    "The 15.7 versus 29.5-minute speed comparison is identified as presenter-reported, based on five runs per configuration, without a universal or independently replicated claim.",
+    "The official DeepSeek repository supplies separate architectural context and research-only scope, not independent corroboration of the AI LABS Claude Code adaptation.",
+    "The counterargument and proposed trial meaningfully address task quality, correctness, total cost, interrupted workers, overlapping edits and authority boundaries.",
+    "No copied source media, transcript, signed stream, credential or private filesystem path was found in the public article or reviewed metadata.",
+    "The catalog upload date of November 8, 2026 was not independently established from publisher metadata and should be verified or represented honestly as unknown.",
+    "Deterministic site and knowledge projections passed, but publication admission is blocked by editorial receipt state and unverified browser/mobile UAT."
+  ],
+  "conclusion": "revise"
+}

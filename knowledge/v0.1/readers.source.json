@@ -649,6 +649,18 @@
         "path": "site/the-success-hid-the-failure/index.html",
         "sha256": "753d16f8856ae4fdba9ab5d7f7b234f906bf4c945d91ad2543ad62f9b55ee0cc"
       }
+    },
+    {
+      "id": "urn:ghostmesh-readers:reader:the-router-is-not-the-organization",
+      "type": "Reader",
+      "visibility": "public",
+      "epistemicStatus": "source-editorial",
+      "label": "The Router Is Not the Organization",
+      "url": "https://youtube.shareplane.malott.ai/the-router-is-not-the-organization/",
+      "source": {
+        "path": "site/the-router-is-not-the-organization/index.html",
+        "sha256": "07c82e144ba7ae2cbf44cb9b50de79013991a212de76a2209dd9d5cf07827d02"
+      }
     }
   ],
   "relationships": [

@@ -12,6 +12,209 @@
   ],
   "readers": [
     {
+      "id": "reader:the-router-is-not-the-organization",
+      "slug": "the-router-is-not-the-organization",
+      "title": "The Router Is Not the Organization",
+      "category": "AI & Technology",
+      "tags": [
+        "coding agents",
+        "orchestration",
+        "DeepSeek",
+        "authority",
+        "verification"
+      ],
+      "entities": [
+        "DeepSeek",
+        "AI LABS",
+        "Claude Code",
+        "GhostMesh"
+      ],
+      "source": {
+        "platform": "YouTube",
+        "url": "https://www.youtube.com/watch?v=3DklR44DHnM",
+        "videoId": "3DklR44DHnM",
+        "title": "Deepseek Just Released The Greatest Claude Code Workflow Ever",
+        "creator": "AI LABS",
+        "mediaAspect": "16:9",
+        "durationSeconds": 856,
+        "uploadDate": "unknown"
+      },
+      "published": "2026-11-08",
+      "updated": "2026-11-08T16:45:00Z",
+      "overview": "A router-worker design can reduce supervision overhead, but routing alone cannot establish durable authority, evidence or accepted state.",
+      "whyItMatters": "Delegated work requires recoverable task contracts, independent acceptance, and continuity after the initiating conversation ends.",
+      "ghostMeshTakeaway": "Compare conventional sessions, router-worker orchestration, and durable task contracts using accepted results, cost, interruption recovery and authority boundaries.",
+      "verdict": "Interesting, unproven",
+      "architectureImpact": "experiment recommended",
+      "falsification": "Reject the architectural advantage if matched trials do not improve accepted correct work and interruption recovery after total resource, review and failure costs are counted.",
+      "evidenceState": "unverified",
+      "lastEvidenceChecked": "2026-11-08T16:45:00Z",
+      "freshness": "Video claims are source-attributed. A separate DeepSeek research prototype establishes context, not independent validation of the Claude Code adaptation.",
+      "variant": "editorial",
+      "accent": "red",
+      "claims": [
+        {
+          "id": "the-router-is-not-the-organization--claim-1",
+          "proposition": "A router-worker arrangement separates conversation from parallel task execution.",
+          "kind": "source-attributed-claim",
+          "asOf": "2026-11-08",
+          "status": "unverified",
+          "assessment": "The AI LABS video demonstrates its own Claude Code adaptation.",
+          "limits": "No universal throughput guarantee.",
+          "sourceLocation": "02:00",
+          "references": [],
+          "counterevidence": [],
+          "temporalScope": "November 8 source and verified timed aid."
+        },
+        {
+          "id": "the-router-is-not-the-organization--claim-2",
+          "proposition": "The reported slowest task was 15.7 minutes with a router versus 29.5 minutes with a conventional session.",
+          "kind": "source-attributed-claim",
+          "asOf": "2026-11-08",
+          "status": "unverified",
+          "assessment": "Presenter reports five runs per configuration.",
+          "limits": "No independent replication, controlled correctness comparison or full cost accounting.",
+          "sourceLocation": "02:55",
+          "references": [],
+          "counterevidence": [],
+          "temporalScope": "November 8 source only."
+        },
+        {
+          "id": "the-router-is-not-the-organization--claim-3",
+          "proposition": "Detailed tickets and dependencies support independent worker execution.",
+          "kind": "source-attributed-claim",
+          "asOf": "2026-11-08",
+          "status": "unverified",
+          "assessment": "Tickets and specifications are shown as part of the demonstration.",
+          "limits": "No isolated estimate of ticket quality's effect.",
+          "sourceLocation": "03:36",
+          "references": [],
+          "counterevidence": [],
+          "temporalScope": "November 8 source only."
+        },
+        {
+          "id": "the-router-is-not-the-organization--claim-4",
+          "proposition": "A watchdog identifies stalled worker activity.",
+          "kind": "source-attributed-claim",
+          "asOf": "2026-11-08",
+          "status": "unverified",
+          "assessment": "The demonstration describes periodic liveness checks.",
+          "limits": "Liveness is not correctness or release authority.",
+          "sourceLocation": "08:56",
+          "references": [],
+          "counterevidence": [],
+          "temporalScope": "November 8 source only."
+        }
+      ],
+      "references": [
+        {
+          "id": "src-deepseek-superagent",
+          "title": "DeepSeek super-agent research prototype",
+          "author": "DeepSeek AI",
+          "publisher": "DeepSeek AI",
+          "url": "https://github.com/deepseek-ai/dsh-superagent-prototype",
+          "publicationDate": "unknown",
+          "datePrecision": "unknown",
+          "dateNote": "Mutable research repository; publication date not asserted.",
+          "eventDate": null,
+          "location": "README",
+          "sourceType": "first-party research prototype",
+          "independence": "Distinct implementation; architectural context, not corroboration of the AI LABS timing comparison.",
+          "evidenceFamily": "deepseek-primary",
+          "checkedAt": "2026-11-08T16:45:00Z"
+        }
+      ],
+      "relationships": [
+        {
+          "target": "reader:the-session-count-is-not-the-system",
+          "type": "informs architecture",
+          "reason": "Both distinguish more concurrent sessions from governed, durable work; this Reader adds ticket and authority boundaries.",
+          "provenance": [
+            "/the-router-is-not-the-organization/",
+            "/the-session-count-is-not-the-system/"
+          ],
+          "basis": "curated-editorial-comparison",
+          "direction": "outgoing"
+        },
+        {
+          "target": "reader:the-cockpit-is-not-the-control-plane",
+          "type": "companion",
+          "reason": "A visible router resembles a cockpit; neither inherently preserves accepted state and decision authority.",
+          "provenance": [
+            "/the-router-is-not-the-organization/",
+            "/the-cockpit-is-not-the-control-plane/"
+          ],
+          "basis": "curated-editorial-comparison",
+          "direction": "outgoing"
+        },
+        {
+          "target": "reader:the-harness-keeps-the-receipt",
+          "type": "extends",
+          "reason": "The harness Reader's durable verification receipts supply the missing acceptance evidence after delegated execution.",
+          "provenance": [
+            "/the-router-is-not-the-organization/",
+            "/the-harness-keeps-the-receipt/"
+          ],
+          "basis": "curated-editorial-comparison",
+          "direction": "outgoing"
+        }
+      ],
+      "relationshipDisposition": "Three owner-approved directed Reader relationships and three separate SharePlane outbound routes; none independently corroborates the presenter timing.",
+      "review": {
+        "status": "Pending independent editorial review",
+        "reviewer": "not assigned",
+        "checkedAt": "2026-11-08T17:00:00Z",
+        "scope": "Draft assembled; independent source and editorial review outstanding.",
+        "findings": "No independent review findings claimed."
+      },
+      "relationshipReview": {
+        "reviewedAt": "2026-11-08",
+        "reviewedCatalogSize": 44,
+        "decision": "linked",
+        "reviewedTargets": [
+          "reader:the-session-count-is-not-the-system",
+          "reader:the-cockpit-is-not-the-control-plane",
+          "reader:the-harness-keeps-the-receipt"
+        ],
+        "rationale": "Owner-approved source-specific architectural comparisons, not proof of the video's benchmark."
+      },
+      "sharePlaneRelationships": [
+        {
+          "title": "Stop Prompting Agents. Start Managing Workers",
+          "url": "https://shareplane.malott.ai/artifacts/stop-prompting-agents-start-managing-workers/",
+          "type": "foundation",
+          "reason": "Worker contracts and orchestration provide architectural context for the routing demonstration; the Work gives explicit attention to managing workers beyond opening more agent sessions.",
+          "basis": "curated-editorial-comparison"
+        },
+        {
+          "title": "The Agent Is Not the Product. The Control Plane Is.",
+          "url": "https://shareplane.malott.ai/artifacts/the-agent-is-not-the-product-the-control-plane-is/",
+          "type": "counterpoint",
+          "reason": "The Work's control-plane argument challenges the assumption that a router and worker dashboard are sufficient to retain accepted state, scope, authority and verified outcomes.",
+          "basis": "curated-editorial-comparison"
+        },
+        {
+          "title": "The Semantic Operating System",
+          "url": "https://shareplane.malott.ai/artifacts/the-semantic-operating-system/",
+          "type": "extends",
+          "reason": "Durable task meaning, state and evidence expand the router pattern into an accountable operating layer.",
+          "basis": "curated-editorial-comparison"
+        }
+      ],
+      "sharePlaneReview": {
+        "reviewedAt": "2026-11-08",
+        "decision": "linked",
+        "rationale": "Three owner-approved outbound editorial routes; not independent corroboration or a SharePlane graph write."
+      },
+      "editorialDepth": {
+        "schemaVersion": 1,
+        "receiptPath": "content/editorial-depth/the-router-is-not-the-organization.json"
+      },
+      "editorialOrder": 44,
+      "orderReason": "Owner-approved long-form source deconstruction; draft pending independent review and exact-head owner acceptance.",
+      "rank": 44
+    },
+    {
       "id": "reader:when-code-gets-cheap-where-does-the-work-wait",
       "slug": "when-code-gets-cheap-where-does-the-work-wait",
       "title": "When code gets cheap, where does the work wait?",

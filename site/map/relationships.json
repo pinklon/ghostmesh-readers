@@ -3,11 +3,11 @@
   "scope": "Local public editorial reading routes; no independent corroboration or cross-site graph admission.",
   "authority": "catalog-curated-editorial",
   "visibility": "public",
-  "readerCount": 44,
-  "assessmentCount": 44,
-  "relationshipCount": 91,
-  "sharePlaneRelationshipCount": 5,
-  "sharePlaneReviewCount": 4,
+  "readerCount": 45,
+  "assessmentCount": 45,
+  "relationshipCount": 94,
+  "sharePlaneRelationshipCount": 8,
+  "sharePlaneReviewCount": 5,
   "sharePlaneEdges": [
     {
       "from": "reader:when-code-gets-cheap-where-does-the-work-wait",
@@ -47,6 +47,30 @@
       "url": "https://shareplane.malott.ai/artifacts/the-application-is-disposable-the-context-is-not/",
       "type": "informs architecture",
       "reason": "Changing an agent's skills based on prior runs requires durable context about instructions, decisions, evidence and rollback, directly connecting to the Work's argument for persistent authority beyond replaceable applications.",
+      "basis": "curated-editorial-comparison"
+    },
+    {
+      "from": "reader:the-router-is-not-the-organization",
+      "title": "Stop Prompting Agents. Start Managing Workers",
+      "url": "https://shareplane.malott.ai/artifacts/stop-prompting-agents-start-managing-workers/",
+      "type": "foundation",
+      "reason": "Worker contracts and orchestration provide architectural context for the routing demonstration; the Work gives explicit attention to managing workers beyond opening more agent sessions.",
+      "basis": "curated-editorial-comparison"
+    },
+    {
+      "from": "reader:the-router-is-not-the-organization",
+      "title": "The Agent Is Not the Product. The Control Plane Is.",
+      "url": "https://shareplane.malott.ai/artifacts/the-agent-is-not-the-product-the-control-plane-is/",
+      "type": "counterpoint",
+      "reason": "The Work's control-plane argument challenges the assumption that a router and worker dashboard are sufficient to retain accepted state, scope, authority and verified outcomes.",
+      "basis": "curated-editorial-comparison"
+    },
+    {
+      "from": "reader:the-router-is-not-the-organization",
+      "title": "The Semantic Operating System",
+      "url": "https://shareplane.malott.ai/artifacts/the-semantic-operating-system/",
+      "type": "extends",
+      "reason": "Durable task meaning, state and evidence expand the router pattern into an accountable operating layer.",
       "basis": "curated-editorial-comparison"
     }
   ],
@@ -752,6 +776,23 @@
           "reader:the-cockpit-is-not-the-control-plane"
         ],
         "rationale": "Owner requested meaningful relationships. These two existing Readers supply distinct, source-specific comparisons about accepted work and control over execution, without implying independent validation of Warp's product assertions."
+      }
+    },
+    {
+      "id": "reader:the-router-is-not-the-organization",
+      "slug": "the-router-is-not-the-organization",
+      "title": "The Router Is Not the Organization",
+      "url": "https://youtube.shareplane.malott.ai/the-router-is-not-the-organization/",
+      "review": {
+        "reviewedAt": "2026-11-08",
+        "reviewedCatalogSize": 44,
+        "decision": "linked",
+        "reviewedTargets": [
+          "reader:the-session-count-is-not-the-system",
+          "reader:the-cockpit-is-not-the-control-plane",
+          "reader:the-harness-keeps-the-receipt"
+        ],
+        "rationale": "Owner-approved source-specific architectural comparisons, not proof of the video's benchmark."
       }
     }
   ],
@@ -1844,6 +1885,42 @@
       "provenance": [
         "/the-success-hid-the-failure/",
         "/the-cockpit-is-not-the-control-plane/"
+      ],
+      "basis": "curated-editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:the-router-is-not-the-organization",
+      "to": "reader:the-session-count-is-not-the-system",
+      "type": "informs architecture",
+      "reason": "Both distinguish more concurrent sessions from governed, durable work; this Reader adds ticket and authority boundaries.",
+      "provenance": [
+        "/the-router-is-not-the-organization/",
+        "/the-session-count-is-not-the-system/"
+      ],
+      "basis": "curated-editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:the-router-is-not-the-organization",
+      "to": "reader:the-cockpit-is-not-the-control-plane",
+      "type": "companion",
+      "reason": "A visible router resembles a cockpit; neither inherently preserves accepted state and decision authority.",
+      "provenance": [
+        "/the-router-is-not-the-organization/",
+        "/the-cockpit-is-not-the-control-plane/"
+      ],
+      "basis": "curated-editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:the-router-is-not-the-organization",
+      "to": "reader:the-harness-keeps-the-receipt",
+      "type": "extends",
+      "reason": "The harness Reader's durable verification receipts supply the missing acceptance evidence after delegated execution.",
+      "provenance": [
+        "/the-router-is-not-the-organization/",
+        "/the-harness-keeps-the-receipt/"
       ],
       "basis": "curated-editorial-comparison",
       "direction": "outgoing"
