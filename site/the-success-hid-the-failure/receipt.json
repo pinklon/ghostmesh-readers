@@ -139,8 +139,31 @@
       }
     ],
     "references": [],
-    "relationships": [],
-    "relationshipDisposition": "Two SharePlane works are proposed as on-page editorial navigation, not formal catalog relationships or independent corroboration.",
+    "relationships": [
+      {
+        "target": "reader:when-code-gets-cheap-where-does-the-work-wait",
+        "type": "extends",
+        "reason": "The earlier Reader identifies review and accepted delivery as bottlenecks after agent execution becomes cheap. This deconstruction exposes retries and tool-call waste hidden beneath a successful final result, making execution quality another measurable part of that bottleneck.",
+        "provenance": [
+          "/the-success-hid-the-failure/",
+          "/when-code-gets-cheap-where-does-the-work-wait/"
+        ],
+        "basis": "curated-editorial-comparison",
+        "direction": "outgoing"
+      },
+      {
+        "target": "reader:the-cockpit-is-not-the-control-plane",
+        "type": "informs architecture",
+        "reason": "The cockpit Reader separates visible dashboards from durable operational control. This analysis applies that distinction to grading agents: score trends are observability, while reviewed instruction changes, rollback and accepted outcomes provide the control boundary.",
+        "provenance": [
+          "/the-success-hid-the-failure/",
+          "/the-cockpit-is-not-the-control-plane/"
+        ],
+        "basis": "curated-editorial-comparison",
+        "direction": "outgoing"
+      }
+    ],
+    "relationshipDisposition": "Two curated Reader comparisons and two separately labeled outbound SharePlane Works. These are editorial context, not independent corroboration of Warp's results or automatic SharePlane graph admission.",
     "review": {
       "status": "Independent source/editorial review accepted for owner consideration",
       "reviewer": "Independent Codex collaboration task",
@@ -165,15 +188,33 @@
     "relationshipReview": {
       "reviewedAt": "2026-11-08",
       "reviewedCatalogSize": 44,
-      "decision": "none",
-      "reviewedTargets": [],
-      "rationale": "Reviewed the existing deconstructions on agent observability and execution quality. Comparable topics exist, but this draft has not yet established a specific enough Reader-to-Reader claim comparison to admit an edge without further editorial review. A zero is explicit, not an omitted step."
+      "decision": "linked",
+      "reviewedTargets": [
+        "reader:when-code-gets-cheap-where-does-the-work-wait",
+        "reader:the-cockpit-is-not-the-control-plane"
+      ],
+      "rationale": "Owner requested meaningful relationships. These two existing Readers supply distinct, source-specific comparisons about accepted work and control over execution, without implying independent validation of Warp's product assertions."
     },
-    "sharePlaneRelationships": [],
+    "sharePlaneRelationships": [
+      {
+        "title": "The Code Is No Longer the Hard Part",
+        "url": "https://shareplane.malott.ai/artifacts/the-code-is-no-longer-the-hard-part/",
+        "type": "extends",
+        "reason": "The video illustrates why successful code generation can conceal expensive execution friction, extending the Work's thesis that review, judgment and operational integration become the binding constraints.",
+        "basis": "curated-editorial-comparison"
+      },
+      {
+        "title": "The Application Is Disposable. The Context Is Not.",
+        "url": "https://shareplane.malott.ai/artifacts/the-application-is-disposable-the-context-is-not/",
+        "type": "informs architecture",
+        "reason": "Changing an agent's skills based on prior runs requires durable context about instructions, decisions, evidence and rollback, directly connecting to the Work's argument for persistent authority beyond replaceable applications.",
+        "basis": "curated-editorial-comparison"
+      }
+    ],
     "sharePlaneReview": {
       "reviewedAt": "2026-11-08",
-      "decision": "none",
-      "rationale": "Two SharePlane essays are linked in the draft as broader editorial context, not independent support for Warp's product claims. Both tested artifact URLs currently redirect to legacy /native/v3/ review-transfer05 routes. Do not promote them as canonical Work relationship edges before destination qualification."
+      "decision": "linked",
+      "rationale": "Two published Work identities are admitted only as outbound editorial routes. Their artifact URLs currently resolve through legacy V3 redirects, which is disclosed; neither route is independent corroboration or a write to SharePlane's canonical graph."
     }
   },
   "editorial": {
