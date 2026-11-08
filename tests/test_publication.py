@@ -26,7 +26,26 @@ class PublicationGate(unittest.TestCase):
   # Draft Readers deliberately fail the editorial release gate. These two
   # relationship fixtures test structural validity without granting acceptance.
   return [error for error in check(self.root)
-          if not error.endswith('editorial release held by qualitative decision or unresolved gap')]
+          if not error.endswith('editorial release held by qualitative decision or unresolved gap')
+          and not error.endswith('editorial receipt missing or invalid')]
+ def test_draft_pr_defers_only_new_reader_editorial_receipt(self):
+  import os
+  # The production fixture now has an accepted receipt. Remove it only in this
+  # isolated fixture to exercise draft-only deferral against a missing receipt.
+  (self.root/'content/editorial-depth/the-router-is-not-the-organization.json').unlink()
+  event=self.root/'draft-event.json'
+  event.write_text(json.dumps({'number':137,'pull_request':{'draft':True}}))
+  with patch.dict(os.environ, {'GITHUB_EVENT_NAME':'pull_request','GITHUB_EVENT_PATH':str(event)}):
+   draft_errors=check(self.root,local_only=True)
+   self.assertFalse(any('the-router-is-not-the-organization: editorial receipt' in e for e in draft_errors),draft_errors)
+   self.assertFalse(draft_errors,draft_errors)
+  event.write_text(json.dumps({'number':137,'pull_request':{'draft':False}}))
+  with patch.dict(os.environ, {'GITHUB_EVENT_NAME':'pull_request','GITHUB_EVENT_PATH':str(event)}):
+   self.assertTrue(any('editorial receipt missing or invalid' in e for e in check(self.root,local_only=True)))
+  # CI supplies the real pull_request event; a "local" fixture must explicitly
+  # remove that ambient context instead of inheriting the draft flag.
+  with patch.dict(os.environ, {'GITHUB_EVENT_NAME':'', 'GITHUB_EVENT_PATH':''}):
+   self.assertTrue(any('editorial receipt missing or invalid' in e for e in check(self.root,local_only=True)))
  def rejected(self,term):self.assertTrue(any(term in x for x in check(self.root)),check(self.root))
  def test_source_media_outside_publish_directory(self):
   (self.root/'content/private.vtt').write_text('WEBVTT');self.rejected('Private source media')

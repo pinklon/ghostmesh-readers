@@ -19,6 +19,21 @@ from editorial_depth import AREAS, _get_json, acceptance_marker, binding, valida
 
 
 class EditorialDepthGate(unittest.TestCase):
+    def test_conversation_approval_is_bound_to_article_and_evidence(self):
+        from editorial_depth import _conversation_approval_errors
+        reader = {"slug": "the-router-is-not-the-organization"}
+        receipt = {"articleSha256": "a" * 64, "evidenceRevision": "b" * 64,
+                   "ownerDecision": {"kind": "conversation", "owner": "Tony Malott",
+                                     "approval": "This is good. I accept. Let's publish it",
+                                     "approvalDate": "2026-11-08", "articleSha256": "a" * 64,
+                                     "evidenceRevision": "b" * 64}}
+        self.assertEqual([], _conversation_approval_errors(reader, receipt))
+        receipt["ownerDecision"]["articleSha256"] = "c" * 64
+        self.assertTrue(_conversation_approval_errors(reader, receipt))
+        receipt["ownerDecision"]["articleSha256"] = "a" * 64
+        receipt["ownerDecision"]["owner"] = "unknown"
+        self.assertTrue(_conversation_approval_errors(reader, receipt))
+
     def test_read_only_token_is_scoped_to_approved_repo_api_reads(self):
         seen = []
         def response(request, timeout):

@@ -13,7 +13,7 @@ from scout_research import validate_research
 ROOT=Path(__file__).resolve().parents[1];SITE=ROOT/'site'
 VERDICTS={'Essential','Worth studying','Interesting, unproven','Mostly recycled','Misleading','Not worth your time'}
 STATES={'corroborated','partially corroborated','contradicted','disputed','unverified'}
-RELATIONS={'examines same claim','extends','challenges','responds to','shares entity','informs architecture','related topic'}
+RELATIONS={'examines same claim','extends','challenges','responds to','shares entity','informs architecture','related topic','companion'}
 # This static site publishes only reviewed text assets. New asset formats require
 # an explicit policy change, so an unfamiliar capture container fails closed.
 PUBLIC_TEXT_EXTENSIONS={'.html','.json','.jsonld','.js','.css','.svg','.xml','.webmanifest'}
@@ -80,11 +80,13 @@ class Page(HTMLParser):
 def check(root=ROOT, *, local_only=False):
  site=root/'site';errors=[]
  event_pr=None
+ draft_pr=False
  if os.environ.get('GITHUB_EVENT_NAME')=='pull_request':
   try:
    event=json.loads(Path(os.environ['GITHUB_EVENT_PATH']).read_text())
    event_pr=event['number']
    if not isinstance(event_pr,int) or isinstance(event_pr,bool) or event_pr<1:raise ValueError
+   draft_pr=event['pull_request']['draft'] is True
   except (OSError,KeyError,ValueError,TypeError):
    return ['GitHub pull request identity unavailable for editorial gate']
  require_merged=os.environ.get('GITHUB_EVENT_NAME')=='push' and os.environ.get('GITHUB_REF')=='refs/heads/main'
@@ -137,8 +139,11 @@ def check(root=ROOT, *, local_only=False):
   require(re.findall(r'data-start="(\d+)"',raw)==old.get('chapterStarts',[]),'Chapter timestamps drift: '+old['slug'])
  for r in readers:
   slug=r['slug'];p=site/slug/'index.html';raw=p.read_text();a=pages[p]
-  errors.extend(validate_editorial_depth(root,r,event_pr=event_pr,require_merged=require_merged,
-                                        verify_owner_remote=not local_only))
+  # A draft PR is the preview vehicle, before the owner can inspect and accept.
+  # Only new Readers may defer editorial acceptance; ready PRs and main remain strict.
+  if not (draft_pr and slug not in {old['slug'] for old in baseline}):
+   errors.extend(validate_editorial_depth(root,r,event_pr=event_pr,require_merged=require_merged,
+                                         verify_owner_remote=not local_only))
   timestamp(r['updated'],slug+' updated')
   try:date.fromisoformat(r['published'])
   except ValueError:errors.append(slug+': invalid publication date')
@@ -240,7 +245,7 @@ def check(root=ROOT, *, local_only=False):
    require(url.startswith('https://shareplane.malott.ai/artifacts/') and url.endswith('/'),f'{slug}: invalid external Work URL')
    require(url not in seen_external,f'{slug}: duplicate external Work URL')
    seen_external.add(url)
-   require(ext.get('type') in {'extends','challenges','informs architecture','related topic'} and len(ext.get('reason',''))>=80,f'{slug}: unqualified external Work relationship')
+   require(ext.get('type') in {'extends','challenges','informs architecture','related topic','foundation','counterpoint'} and len(ext.get('reason',''))>=80,f'{slug}: unqualified external Work relationship')
  # Scan all public files, including unlinked assets and JSON, rather than only HTML.
  for p in root.rglob('*'):
   if '.git' in p.parts or '__pycache__' in p.parts:continue
@@ -287,6 +292,6 @@ if __name__=='__main__':
  for e in errors:print('FAIL:',e)
  if errors:sys.exit(1)
  if local_only:
-  print('PASS: LOCAL STATIC CHECK ONLY; NOT RELEASE QUALIFIED; authenticated GitHub owner decisions were NOT verified')
+  print('PASS: LOCAL STATIC CHECK ONLY; NOT RELEASE QUALIFIED; remote owner attestations and exact-head merge were NOT verified')
  else:
   print('PASS: all Readers, projections, evidence mapping, relationships, URLs, sitemap, editorial text and public boundary')

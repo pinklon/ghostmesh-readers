@@ -129,7 +129,7 @@
       "properties": {
         "title": {"type": "string", "minLength": 3},
         "url": {"type": "string", "pattern": "^https://shareplane\\.malott\\.ai/artifacts/[a-z0-9-]+/$"},
-        "type": {"enum": ["extends", "challenges", "informs architecture", "related topic"]},
+        "type": {"enum": ["extends", "challenges", "informs architecture", "related topic", "foundation", "counterpoint"]},
         "reason": {"type": "string", "minLength": 80},
         "basis": {"const": "curated-editorial-comparison"}
       }
@@ -159,7 +159,7 @@
       "type": "object",
       "required": ["target", "type", "reason", "provenance", "basis", "direction"],
       "properties": {
-        "type": {"enum": ["examines same claim", "extends", "challenges", "responds to", "shares entity", "informs architecture", "related topic"]},
+        "type": {"enum": ["examines same claim", "extends", "challenges", "responds to", "shares entity", "informs architecture", "related topic", "companion"]},
         "direction": {"const": "outgoing"},
         "provenance": {"type": "array", "minItems": 1, "items": {"type": "string"}}
       }
