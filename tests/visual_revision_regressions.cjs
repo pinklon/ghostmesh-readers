@@ -109,7 +109,7 @@ async function deepInferColors(page) {
         }
         if (route === '/map/') {
           assert.equal(await page.locator('.gm-atlas-entry').count(), readerCount);
-          assert.equal(await page.locator('.gm-atlas-link').count(), relationshipCount);
+          assert.equal(await page.locator('.gm-atlas-link:not(.gm-atlas-external)').count(), relationshipCount);
           assert.equal(await page.locator('.gm-question-list li').count(), 4);
         }
         if (route.startsWith('/ask-') || route.startsWith('/a-challenge')) {
@@ -152,7 +152,7 @@ async function deepInferColors(page) {
     assert.equal(await page.locator('iframe').count(), 0);
     await page.goto(base + '/map/', { waitUntil: 'domcontentloaded' });
     assert.equal(await page.locator('.gm-atlas-entry').count(), readerCount);
-    assert.equal(await page.locator('.gm-atlas-link').count(), relationshipCount);
+    assert.equal(await page.locator('.gm-atlas-link:not(.gm-atlas-external)').count(), relationshipCount);
     assert.equal(await page.locator('[data-theme-toggle]:visible').count(), 0);
     console.log(JSON.stringify({ cases, noJavaScript: true, failures: [] }));
     await context.close();

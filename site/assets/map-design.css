@@ -45,6 +45,10 @@
 .gm-map-page .gm-atlas-source p{max-width:46ch;margin:0;color:var(--gm-muted);font:13px/1.6 system-ui}
 .gm-map-page .gm-atlas-out-label{margin:0 0 9px;color:var(--gm-muted);font:700 10px/1.5 ui-monospace,monospace;letter-spacing:.09em;text-transform:uppercase}
 .gm-map-page .gm-atlas-out ul{list-style:none;margin:0;padding:0}
+.gm-map-page .gm-atlas-shareplane{margin-top:19px;padding-top:16px;border-top:1px dashed var(--gm-border)}
+.gm-map-page .gm-atlas-shareplane .gm-atlas-out-label{color:var(--gm-accent)}
+.gm-map-page .gm-atlas-external .gm-atlas-type{color:var(--gm-muted)}
+.gm-map-page .gm-atlas-empty{margin:6px 0 0;color:var(--gm-muted);font:12px/1.55 system-ui}
 .gm-map-page .gm-atlas-link{display:grid;grid-template-columns:minmax(75px,.27fr) minmax(0,.73fr);gap:12px;padding:12px 0;border-top:1px solid var(--gm-border)}
 .gm-map-page .gm-atlas-type{padding-top:3px;color:var(--gm-accent);font:700 10px/1.35 ui-monospace,monospace;text-transform:uppercase;letter-spacing:.04em}
 .gm-map-page .gm-atlas-link a{color:var(--gm-ink);font:680 15px/1.3 system-ui;text-decoration:none}
