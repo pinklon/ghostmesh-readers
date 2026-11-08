@@ -163,11 +163,17 @@
     "editorialOrder": 43,
     "orderReason": "New verified private-source deconstruction of hidden agent execution friction.",
     "relationshipReview": {
-      "reviewedAt": "2026-11-07",
-      "reviewedCatalogSize": 43,
+      "reviewedAt": "2026-11-08",
+      "reviewedCatalogSize": 44,
       "decision": "none",
       "reviewedTargets": [],
-      "rationale": "The two named SharePlane works are editorial context outside this Reader catalog; no formal Reader graph edges or independent corroboration are proposed."
+      "rationale": "Reviewed the existing deconstructions on agent observability and execution quality. Comparable topics exist, but this draft has not yet established a specific enough Reader-to-Reader claim comparison to admit an edge without further editorial review. A zero is explicit, not an omitted step."
+    },
+    "sharePlaneRelationships": [],
+    "sharePlaneReview": {
+      "reviewedAt": "2026-11-08",
+      "decision": "none",
+      "rationale": "Two SharePlane essays are linked in the draft as broader editorial context, not independent support for Warp's product claims. Both tested artifact URLs currently redirect to legacy /native/v3/ review-transfer05 routes. Do not promote them as canonical Work relationship edges before destination qualification."
     }
   },
   "editorial": {

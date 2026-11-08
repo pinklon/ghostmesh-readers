@@ -463,8 +463,31 @@
         "checkedAt": "2026-11-02T17:45:00Z"
       }
     ],
-    "relationships": [],
-    "relationshipDisposition": "Two manually curated Reader suggestions appear in the article; formal Reader graph edges are not yet approved.",
+    "relationships": [
+      {
+        "target": "reader:the-model-is-not-the-demonstration",
+        "type": "informs architecture",
+        "reason": "The earlier Reader separates a model's demonstration from established capability. This deconstruction applies that evidence boundary to refusal removal, inference claims and provider benchmarks; neither source independently validates the other's measurements.",
+        "provenance": [
+          "/a-model-that-says-yes-is-not-necessarily-a-model-that-knows/",
+          "/the-model-is-not-the-demonstration/"
+        ],
+        "basis": "curated-editorial-comparison",
+        "direction": "outgoing"
+      },
+      {
+        "target": "reader:the-session-count-is-not-the-system",
+        "type": "extends",
+        "reason": "Both examine the gap between apparent local capability and dependable operational service. Session ownership, permissions and inference routing remain separate from the model's willingness to respond.",
+        "provenance": [
+          "/a-model-that-says-yes-is-not-necessarily-a-model-that-knows/",
+          "/the-session-count-is-not-the-system/"
+        ],
+        "basis": "curated-editorial-comparison",
+        "direction": "outgoing"
+      }
+    ],
+    "relationshipDisposition": "Reviewed local Reader comparisons only; no evidence or outcome corroboration is implied.",
     "review": {
       "status": "awaiting independent exact-copy review",
       "reviewer": "not yet recorded",
@@ -487,11 +510,20 @@
     "editorialOrder": 40,
     "orderReason": "New deep deconstruction following the current 40-Reader archive; subject-specific analysis of refusal-suppressed models.",
     "relationshipReview": {
-      "reviewedAt": "2026-11-02",
-      "reviewedCatalogSize": 40,
+      "reviewedAt": "2026-11-08",
+      "reviewedCatalogSize": 43,
+      "decision": "linked",
+      "reviewedTargets": [
+        "reader:the-model-is-not-the-demonstration",
+        "reader:the-session-count-is-not-the-system"
+      ],
+      "rationale": "Owner-approved editorial comparison review of the complete 43-Reader catalog. These named links connect distinct theses using published Reader text and are navigation routes, not independent corroboration of source claims."
+    },
+    "sharePlaneRelationships": [],
+    "sharePlaneReview": {
+      "reviewedAt": "2026-11-08",
       "decision": "none",
-      "reviewedTargets": [],
-      "rationale": "Two GhostMesh Readers and two SharePlane works are useful editorial comparisons, but the owner-approved visual artifact labels them proposed. No registry graph edges were authorized; preserve them as inline links pending relationship review."
+      "rationale": "No cross-site Work edge is admitted merely because the Reader shares a general topic. Specific published Works must be inspected and approved before appearing as a reviewed external route."
     }
   },
   "editorial": {

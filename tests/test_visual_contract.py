@@ -42,8 +42,12 @@ class VisualContractTest(unittest.TestCase):
                         self.assertIn(html.escape(reader['source']['title']), page)
                 for edge in reader['relationships']:
                     target = by_id[edge['target']]
-                    self.assertIn(f'<a href="/{target["slug"]}/">', page)
-                    self.assertIn(html.escape(edge['reason']), page)
+                    # Newer Readers publish reviewed relationships on the map;
+                    # older Reader pages retain their original inline projections.
+                    surface = ((ROOT / 'site/map/index.html').read_text()
+                               if reader['editorialOrder'] >= 40 else page)
+                    self.assertIn(f'<a href="/{target["slug"]}/">', surface)
+                    self.assertIn(html.escape(edge['reason']), surface)
 
     def test_approved_home_hero_and_distinct_destinations(self):
         home = (ROOT / 'site/index.html').read_text()
@@ -131,7 +135,8 @@ class VisualContractTest(unittest.TestCase):
         parsed = Tags()
         parsed.feed(page)
         entries = [a for _, a in parsed.tags if 'gm-atlas-entry' in a.get('class', '').split()]
-        links = [a for _, a in parsed.tags if 'gm-atlas-link' in a.get('class', '').split()]
+        links = [a for _, a in parsed.tags if 'gm-atlas-link' in a.get('class', '').split()
+                 and 'gm-atlas-external' not in a.get('class', '').split()]
         graph = json.loads((ROOT / 'site/map/relationships.json').read_text())
         self.assertEqual(len(entries), len(catalog['readers']))
         self.assertEqual(len(links), sum(len(r['relationships']) for r in catalog['readers']))

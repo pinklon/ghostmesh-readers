@@ -21,6 +21,7 @@ PUBLIC_TEXT_PATHS={'robots.txt','_headers','llms.txt','social/previews/home.png'
 # Tony approved publication of this exact standalone source asset on November 7.
 # This admits its fixed path and bytes, not Python files generally or execution.
 PUBLIC_PINNED_TEXT_ASSETS={
+ 'assets/when-code-gets-cheap-verified-delivery-qwen.png':'444f77a9fc830efec614ed9325c82dcdf64c071ae91e1e751bfa7aebf6bb7054',
  'scout/essays/the-page-left-the-context/retention-probe.py':'1141bbf0efe11407c45455d412067f551fe1304df8ae92f15d5f13ef606010a6'
 }
 SOURCE_EXTENSIONS=set('.vtt .srt .sbv .ass .ssa .sub .ttml .dfxp .scc .sami .smi .lrc .srv1 .srv2 .srv3 .json3 .mkv .mka .mks .mp4 .m4a .m4v .mp3 .webm .wav .wave .mov .qt .ogg .ogv .oga .opus .flac .aac .aiff .aif .avi .wmv .wma .asf .flv .f4v .mpeg .mpg .mpe .m2v .ts .mts .m2ts .3gp .3g2 .vob .amr .ape .ac3 .aax'.split())
@@ -221,6 +222,25 @@ def check(root=ROOT, *, local_only=False):
   require(assessment.get('reviewedTargets')==targets,f'{slug}: relationship review targets differ from catalog edges')
   require(assessment.get('decision')==('linked' if targets else 'none'),f'{slug}: relationship review decision does not match edges')
   require(len(str(assessment.get('rationale','')).strip())>=80,f'{slug}: relationship review needs a substantive rationale, including justified none')
+  # The 41st published Reader has editorialOrder 40 (zero-based); older snapshots remain valid.
+  external=r.get('sharePlaneRelationships',[])
+  ext_review=r.get('sharePlaneReview')
+  if r['editorialOrder']>=40:
+   require(isinstance(ext_review,dict),f'{slug}: missing separate SharePlane Work review')
+  if ext_review is not None:
+   require(isinstance(ext_review,dict),f'{slug}: invalid SharePlane review')
+   if isinstance(ext_review,dict):
+    require(ext_review.get('decision')==('linked' if external else 'none'),f'{slug}: SharePlane review mismatch')
+    require(len(str(ext_review.get('rationale','')).strip())>=80,f'{slug}: SharePlane review rationale too short')
+    try: require(date.fromisoformat(ext_review.get('reviewedAt',''))<=datetime.now(timezone.utc).date(),f'{slug}: SharePlane review date future')
+    except (ValueError,TypeError):errors.append(f'{slug}: invalid SharePlane review date')
+  seen_external=set()
+  for ext in external:
+   url=ext.get('url','')
+   require(url.startswith('https://shareplane.malott.ai/artifacts/') and url.endswith('/'),f'{slug}: invalid external Work URL')
+   require(url not in seen_external,f'{slug}: duplicate external Work URL')
+   seen_external.add(url)
+   require(ext.get('type') in {'extends','challenges','informs architecture','related topic'} and len(ext.get('reason',''))>=80,f'{slug}: unqualified external Work relationship')
  # Scan all public files, including unlinked assets and JSON, rather than only HTML.
  for p in root.rglob('*'):
   if '.git' in p.parts or '__pycache__' in p.parts:continue

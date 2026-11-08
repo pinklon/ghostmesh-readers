@@ -3,16 +3,19 @@
   "readerId": "reader:when-code-gets-cheap-where-does-the-work-wait",
   "sourceId": "S6SEgMooZpE",
   "sourceAidSha256": "cce96fd7c338a0b540cff1c186a4e5e39e825ff8f15540edd340c957225ff92d",
-  "articleSha256": "1f12565e1a194246dd350ca1fad27168ec2b7547c256a1473fb6daacf5302969",
+  "articleSha256": "c6cc736267ee309d403b53795108eb475e8ce1d1eafeb058755c551eb988c0fa",
   "evidenceRevision": "b69e535e61425f43dc4b48d4aef9bdbd609eee3e80ba277cae46a04a99796efc",
-  "reviewedAt": "2026-11-07T15:31:15Z",
+  "reviewedAt": "2026-11-08T04:47:26Z",
   "provenance": {
     "kind": "codex-task-agent",
-    "reference": "Pale Horse native Codex collaboration task /root/review_pando_reader. Final public-copy review at PR 126 head 2b0a63cbec428ffbb89e9bce10fca53e509ec607.",
-    "limits": "The reviewer inspected the verified timed aid, public primary sources, source map and static preview. Direct audio listening, new transcription, interactive playback, and independent verification of the private retrospective were outside the review."
+    "reference": "Independent Mac Studio Codex read-only review session 01a1b965-8822-72d1-8211-4fddbda2e665 at PR 134 heads e17ed2df5df7721662b1a282834658258879901b and corrected d5a20a880c62f9c320c1b05a13497fc4b4e00ffc; previous source review retained from PR 126.",
+    "limits": "This follow-up independently reviewed the exact public diff, image SHA-256 and caption removal. Original source/cue findings were retained from PR 126, not reverified against the private pack. Mobile browser, screen reader, playback, live Netlify preview, and image-generation custody were not inspected in this review."
   },
-  "summary": "Pale Horse accepted the corrected public article for owner review after independently checking the verified timed aid and the public evidence.",
+  "summary": "Independent Codex review of the image-only PR identified an unapproved caption claim, then accepted the corrected head for owner review after the caption and CSS were removed; the prior article and source assessment remain unchanged.",
   "findings": [
+    "The new figure uses the approved Qwen PNG at a fixed same-origin path, with the exact pinned SHA-256, intrinsic dimensions and descriptive alt text; provenance of the generation service was not independently inspected.",
+    "The first image review found a caption that overstated the conditional bottleneck thesis and exceeded Creative Lock issue 133; corrected head d5a20a8 removes the caption and its CSS without adding replacement prose.",
+    "The follow-up reviewer found no remaining actionable issue in the scoped diff. Removing the hero figure and its CSS leaves prior authored HTML byte-identical to main; generated site and knowledge projections and whitespace checks passed.",
     "The reviewer independently matched the exact authored article and source map digests and checked all ten cue placements against the verified timed aid. No material placement mismatch was found.",
     "The retained VTT has 286 raw rows. ReasonPack deduplicates one consecutive repeated cue for navigation, so the private replay receipt records 285 navigation cues.",
     "The 04:39 passage supports monorepo load and redesign. OpenAI’s engineering article supports the Pando name and company-reported push result. The 06:49 cue addresses checkout throughput and caching.",

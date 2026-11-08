@@ -14428,8 +14428,31 @@
           "checkedAt": "2026-11-02T17:45:00Z"
         }
       ],
-      "relationships": [],
-      "relationshipDisposition": "Two manually curated Reader suggestions appear in the article; formal Reader graph edges are not yet approved.",
+      "relationships": [
+        {
+          "target": "reader:the-model-is-not-the-demonstration",
+          "type": "informs architecture",
+          "reason": "The earlier Reader separates a model's demonstration from established capability. This deconstruction applies that evidence boundary to refusal removal, inference claims and provider benchmarks; neither source independently validates the other's measurements.",
+          "provenance": [
+            "/a-model-that-says-yes-is-not-necessarily-a-model-that-knows/",
+            "/the-model-is-not-the-demonstration/"
+          ],
+          "basis": "curated-editorial-comparison",
+          "direction": "outgoing"
+        },
+        {
+          "target": "reader:the-session-count-is-not-the-system",
+          "type": "extends",
+          "reason": "Both examine the gap between apparent local capability and dependable operational service. Session ownership, permissions and inference routing remain separate from the model's willingness to respond.",
+          "provenance": [
+            "/a-model-that-says-yes-is-not-necessarily-a-model-that-knows/",
+            "/the-session-count-is-not-the-system/"
+          ],
+          "basis": "curated-editorial-comparison",
+          "direction": "outgoing"
+        }
+      ],
+      "relationshipDisposition": "Reviewed local Reader comparisons only; no evidence or outcome corroboration is implied.",
       "legacyReceipt": {
         "schema": "ghostmesh-reader-receipt-v2",
         "createdAt": "2026-11-02T17:45:00Z",
@@ -14484,11 +14507,20 @@
       "editorialOrder": 40,
       "orderReason": "New deep deconstruction following the current 40-Reader archive; subject-specific analysis of refusal-suppressed models.",
       "relationshipReview": {
-        "reviewedAt": "2026-11-02",
-        "reviewedCatalogSize": 40,
+        "reviewedAt": "2026-11-08",
+        "reviewedCatalogSize": 43,
+        "decision": "linked",
+        "reviewedTargets": [
+          "reader:the-model-is-not-the-demonstration",
+          "reader:the-session-count-is-not-the-system"
+        ],
+        "rationale": "Owner-approved editorial comparison review of the complete 43-Reader catalog. These named links connect distinct theses using published Reader text and are navigation routes, not independent corroboration of source claims."
+      },
+      "sharePlaneRelationships": [],
+      "sharePlaneReview": {
+        "reviewedAt": "2026-11-08",
         "decision": "none",
-        "reviewedTargets": [],
-        "rationale": "Two GhostMesh Readers and two SharePlane works are useful editorial comparisons, but the owner-approved visual artifact labels them proposed. No registry graph edges were authorized; preserve them as inline links pending relationship review."
+        "rationale": "No cross-site Work edge is admitted merely because the Reader shares a general topic. Specific published Works must be inspected and approved before appearing as a reviewed external route."
       }
     },
     {
@@ -14777,8 +14809,31 @@
           "checkedAt": "2026-11-07T15:29:28Z"
         }
       ],
-      "relationships": [],
-      "relationshipDisposition": "The article links to proposed related reading as editorial navigation.",
+      "relationships": [
+        {
+          "target": "reader:the-session-count-is-not-the-system",
+          "type": "extends",
+          "reason": "This edition follows increasing parallel agent output into review, testing and integration bottlenecks. The earlier Reader examines durable session ownership and scheduler authority; they are complementary engineering analyses, not shared performance verification.",
+          "provenance": [
+            "/when-code-gets-cheap-where-does-the-work-wait/",
+            "/the-session-count-is-not-the-system/"
+          ],
+          "basis": "curated-editorial-comparison",
+          "direction": "outgoing"
+        },
+        {
+          "target": "reader:the-cockpit-is-not-the-control-plane",
+          "type": "informs architecture",
+          "reason": "The Orca cockpit Reader distinguishes operator visibility from durable ownership and completion. This interview similarly separates coding throughput from accepted product delivery, without independently measuring the same system.",
+          "provenance": [
+            "/when-code-gets-cheap-where-does-the-work-wait/",
+            "/the-cockpit-is-not-the-control-plane/"
+          ],
+          "basis": "curated-editorial-comparison",
+          "direction": "outgoing"
+        }
+      ],
+      "relationshipDisposition": "Reviewed local Reader comparisons only; no evidence or outcome corroboration is implied.",
       "legacyReceipt": {
         "schema": "ghostmesh-reader-receipt-v2",
         "createdAt": "2026-11-07T14:51:24Z",
@@ -14835,11 +14890,42 @@
       "editorialOrder": 41,
       "orderReason": "New deconstruction of Pando and downstream verification under agent-driven engineering load.",
       "relationshipReview": {
-        "reviewedAt": "2026-11-07",
-        "reviewedCatalogSize": 41,
-        "decision": "none",
-        "reviewedTargets": [],
-        "rationale": "Proposed links compare parallel sessions and control boundaries. They remain on-page navigation while formal graph edges await editorial review."
+        "reviewedAt": "2026-11-08",
+        "reviewedCatalogSize": 43,
+        "decision": "linked",
+        "reviewedTargets": [
+          "reader:the-session-count-is-not-the-system",
+          "reader:the-cockpit-is-not-the-control-plane"
+        ],
+        "rationale": "Owner-approved editorial comparison review of the complete 43-Reader catalog. These named links connect distinct theses using published Reader text and are navigation routes, not independent corroboration of source claims."
+      },
+      "sharePlaneRelationships": [
+        {
+          "title": "The Code Is No Longer the Hard Part",
+          "url": "https://shareplane.malott.ai/artifacts/the-code-is-no-longer-the-hard-part/",
+          "type": "extends",
+          "reason": "The interview's parallel coding account gives a concrete instance of the broader argument that review, integration and judgment become the binding constraints.",
+          "basis": "curated-editorial-comparison"
+        },
+        {
+          "title": "Demo Debt",
+          "url": "https://shareplane.malott.ai/artifacts/demo-debt/",
+          "type": "informs architecture",
+          "reason": "The distinction between impressive agent output and accepted production delivery connects to the Work's analysis of unfinished integration and operational obligations.",
+          "basis": "curated-editorial-comparison"
+        },
+        {
+          "title": "The Application Is Disposable. The Context Is Not.",
+          "url": "https://shareplane.malott.ai/artifacts/the-application-is-disposable-the-context-is-not/",
+          "type": "extends",
+          "reason": "High-volume generated code still depends on retained design intent, product context and durable evidence to become maintainable software.",
+          "basis": "curated-editorial-comparison"
+        }
+      ],
+      "sharePlaneReview": {
+        "reviewedAt": "2026-11-08",
+        "decision": "linked",
+        "rationale": "Three already-public outbound Work links in this Reader were reviewed as topic-specific editorial comparisons. They do not write to or claim admission into SharePlane's canonical graph."
       }
     },
     {
@@ -15044,8 +15130,31 @@
           "checkedAt": "2026-11-07T17:18:18Z"
         }
       ],
-      "relationships": [],
-      "relationshipDisposition": "The article links to related Readers as editorial navigation.",
+      "relationships": [
+        {
+          "target": "reader:a-model-that-says-yes-is-not-necessarily-a-model-that-knows",
+          "type": "examines same claim",
+          "reason": "Both deconstructions question what model alignment or refusal evaluations establish. Arete's political-response test and the refusal-removal demonstrations measure different behaviors; comparison is useful but cannot transfer benchmark conclusions.",
+          "provenance": [
+            "/what-arete-27b-bias-test-measures/",
+            "/a-model-that-says-yes-is-not-necessarily-a-model-that-knows/"
+          ],
+          "basis": "curated-editorial-comparison",
+          "direction": "outgoing"
+        },
+        {
+          "target": "reader:the-model-is-not-the-demonstration",
+          "type": "informs architecture",
+          "reason": "The earlier Reader distinguishes a witnessed demonstration from reproducible operational capability. Arete's published evaluation similarly needs a disclosed dataset, scoring rule and independent replication before broader performance claims.",
+          "provenance": [
+            "/what-arete-27b-bias-test-measures/",
+            "/the-model-is-not-the-demonstration/"
+          ],
+          "basis": "curated-editorial-comparison",
+          "direction": "outgoing"
+        }
+      ],
+      "relationshipDisposition": "Reviewed local Reader comparisons only; no evidence or outcome corroboration is implied.",
       "legacyReceipt": {
         "schema": "ghostmesh-reader-receipt-v2",
         "createdAt": "2026-11-07T17:18:18Z",
@@ -15105,11 +15214,20 @@
       "editorialOrder": 42,
       "orderReason": "New video deconstruction of a model fine-tune and the limits of its evaluation.",
       "relationshipReview": {
-        "reviewedAt": "2026-11-07",
-        "reviewedCatalogSize": 42,
+        "reviewedAt": "2026-11-08",
+        "reviewedCatalogSize": 43,
+        "decision": "linked",
+        "reviewedTargets": [
+          "reader:a-model-that-says-yes-is-not-necessarily-a-model-that-knows",
+          "reader:the-model-is-not-the-demonstration"
+        ],
+        "rationale": "Owner-approved editorial comparison review of the complete 43-Reader catalog. These named links connect distinct theses using published Reader text and are navigation routes, not independent corroboration of source claims."
+      },
+      "sharePlaneRelationships": [],
+      "sharePlaneReview": {
+        "reviewedAt": "2026-11-08",
         "decision": "none",
-        "reviewedTargets": [],
-        "rationale": "The cited Reader links are proposed editorial comparisons. The public draft does not assert reviewed catalog edges or independent corroboration."
+        "rationale": "No cross-site Work edge is admitted merely because the Reader shares a general topic. Specific published Works must be inspected and approved before appearing as a reviewed external route."
       }
     },
     {
@@ -15278,11 +15396,17 @@
       "editorialOrder": 43,
       "orderReason": "New verified private-source deconstruction of hidden agent execution friction.",
       "relationshipReview": {
-        "reviewedAt": "2026-11-07",
-        "reviewedCatalogSize": 43,
+        "reviewedAt": "2026-11-08",
+        "reviewedCatalogSize": 44,
         "decision": "none",
         "reviewedTargets": [],
-        "rationale": "The two named SharePlane works are editorial context outside this Reader catalog; no formal Reader graph edges or independent corroboration are proposed."
+        "rationale": "Reviewed the existing deconstructions on agent observability and execution quality. Comparable topics exist, but this draft has not yet established a specific enough Reader-to-Reader claim comparison to admit an edge without further editorial review. A zero is explicit, not an omitted step."
+      },
+      "sharePlaneRelationships": [],
+      "sharePlaneReview": {
+        "reviewedAt": "2026-11-08",
+        "decision": "none",
+        "rationale": "Two SharePlane essays are linked in the draft as broader editorial context, not independent support for Warp's product claims. Both tested artifact URLs currently redirect to legacy /native/v3/ review-transfer05 routes. Do not promote them as canonical Work relationship edges before destination qualification."
       }
     }
   ],

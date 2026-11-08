@@ -236,8 +236,31 @@
         "checkedAt": "2026-11-07T17:18:18Z"
       }
     ],
-    "relationships": [],
-    "relationshipDisposition": "The article links to related Readers as editorial navigation.",
+    "relationships": [
+      {
+        "target": "reader:a-model-that-says-yes-is-not-necessarily-a-model-that-knows",
+        "type": "examines same claim",
+        "reason": "Both deconstructions question what model alignment or refusal evaluations establish. Arete's political-response test and the refusal-removal demonstrations measure different behaviors; comparison is useful but cannot transfer benchmark conclusions.",
+        "provenance": [
+          "/what-arete-27b-bias-test-measures/",
+          "/a-model-that-says-yes-is-not-necessarily-a-model-that-knows/"
+        ],
+        "basis": "curated-editorial-comparison",
+        "direction": "outgoing"
+      },
+      {
+        "target": "reader:the-model-is-not-the-demonstration",
+        "type": "informs architecture",
+        "reason": "The earlier Reader distinguishes a witnessed demonstration from reproducible operational capability. Arete's published evaluation similarly needs a disclosed dataset, scoring rule and independent replication before broader performance claims.",
+        "provenance": [
+          "/what-arete-27b-bias-test-measures/",
+          "/the-model-is-not-the-demonstration/"
+        ],
+        "basis": "curated-editorial-comparison",
+        "direction": "outgoing"
+      }
+    ],
+    "relationshipDisposition": "Reviewed local Reader comparisons only; no evidence or outcome corroboration is implied.",
     "review": {
       "status": "Independent review complete",
       "reviewer": "Pale Horse",
@@ -260,11 +283,20 @@
     "editorialOrder": 42,
     "orderReason": "New video deconstruction of a model fine-tune and the limits of its evaluation.",
     "relationshipReview": {
-      "reviewedAt": "2026-11-07",
-      "reviewedCatalogSize": 42,
+      "reviewedAt": "2026-11-08",
+      "reviewedCatalogSize": 43,
+      "decision": "linked",
+      "reviewedTargets": [
+        "reader:a-model-that-says-yes-is-not-necessarily-a-model-that-knows",
+        "reader:the-model-is-not-the-demonstration"
+      ],
+      "rationale": "Owner-approved editorial comparison review of the complete 43-Reader catalog. These named links connect distinct theses using published Reader text and are navigation routes, not independent corroboration of source claims."
+    },
+    "sharePlaneRelationships": [],
+    "sharePlaneReview": {
+      "reviewedAt": "2026-11-08",
       "decision": "none",
-      "reviewedTargets": [],
-      "rationale": "The cited Reader links are proposed editorial comparisons. The public draft does not assert reviewed catalog edges or independent corroboration."
+      "rationale": "No cross-site Work edge is admitted merely because the Reader shares a general topic. Specific published Works must be inspected and approved before appearing as a reviewed external route."
     }
   },
   "editorial": {
