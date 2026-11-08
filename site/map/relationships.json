@@ -3,8 +3,8 @@
   "scope": "Local public editorial reading routes; no independent corroboration or cross-site graph admission.",
   "authority": "catalog-curated-editorial",
   "visibility": "public",
-  "readerCount": 43,
-  "assessmentCount": 43,
+  "readerCount": 44,
+  "assessmentCount": 44,
   "relationshipCount": 83,
   "nodes": [
     {
@@ -683,6 +683,19 @@
         "decision": "none",
         "reviewedTargets": [],
         "rationale": "The cited Reader links are proposed editorial comparisons. The public draft does not assert reviewed catalog edges or independent corroboration."
+      }
+    },
+    {
+      "id": "reader:the-success-hid-the-failure",
+      "slug": "the-success-hid-the-failure",
+      "title": "The Success Hid the Failure",
+      "url": "https://youtube.shareplane.malott.ai/the-success-hid-the-failure/",
+      "review": {
+        "reviewedAt": "2026-11-07",
+        "reviewedCatalogSize": 43,
+        "decision": "none",
+        "reviewedTargets": [],
+        "rationale": "The two named SharePlane works are editorial context outside this Reader catalog; no formal Reader graph edges or independent corroboration are proposed."
       }
     }
   ],

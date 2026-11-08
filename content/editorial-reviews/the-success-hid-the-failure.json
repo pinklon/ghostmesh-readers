@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "readerId": "reader:the-success-hid-the-failure",
+  "sourceId": "pz74r-4dGfQ",
+  "sourceAidSha256": "6dbdaa5540d5090aa91d9c0f2c1fbccb1cc4456f93be29fcbee1f5d1645ca7f3",
+  "articleSha256": "d430ff3fd3e1bb1e2d0a8c1bf6be6b3383b5d2fa329ed24aca627d943ef94645",
+  "evidenceRevision": "5b8d2b2716ab6b49105e519f0ba543b735a0a529b8f444a2be67d14980016079",
+  "reviewedAt": "2026-11-08T04:13:44Z",
+  "provenance": {
+    "kind": "codex-task-agent",
+    "reference": "Independent Codex collaboration task /root/exact_head_review rechecked article SHA-256 d430ff3fd3e1bb1e2d0a8c1bf6be6b3383b5d2fa329ed24aca627d943ef94645 against PR 132 source head c76ef5f127959f4a5120c530a589a06a1f55f6b4 and prior review comment 6716852429; accepted a canonical link and the mechanical play-to-launch binding pair without public copy changes.",
+    "limits": "The follow-up inspected the exact authored diff and carried forward the earlier private Hyperion Whisper VTT review of unchanged five cues and claims. It did not independently listen to original audio, replicate Warp metrics, or perform generated-page browser UAT."
+  },
+  "summary": "The exact current manuscript preserves the previously reviewed copy and five source-mapped cues; the independent follow-up accepted only the canonical URL and mechanical video-launch binding change for Tony's consideration. Publication and browser UAT remain held.",
+  "findings": [
+    "All five corrected seek cues align with the retained timed Whisper aid: port discovery at 08:38, scoring at 08:57, Skill Doctor at 13:47, trend discussion at 17:21 and suggested PR review at 18:15.",
+    "The article, chapter navigation and source map now agree on those timestamps; the three obsolete seek values were removed, and local blob hashes match GitHub branch readbacks.",
+    "The original thesis distinguishes a completed task from an efficient, policy-correct execution and does not claim that a vendor demonstration establishes measured general productivity gains.",
+    "The article preserves material uncertainties about score validity, scorer correlation, task mix, privacy of retained traces, total review costs and explicit human authority over proposed changes.",
+    "Two SharePlane links remain editorial navigation only. No new Reader graph edge, independent replication or formal corroboration is asserted.",
+    "The public source contains no obvious private filesystem paths, credentials, raw transcript or copied media; the private source pack remains outside the repository.",
+    "Generated-page desktop and mobile behavior, opt-in player, seeking, theme control and console health are not accepted because the article route has not yet been catalog-generated for Netlify."
+  ],
+  "conclusion": "accept-for-owner-review"
+}
