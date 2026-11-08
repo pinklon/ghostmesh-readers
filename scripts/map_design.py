@@ -33,7 +33,7 @@ def relationship_graph(readers, byid, host):
     """Project catalog routes and explicit review outcomes without graph admission."""
     ordered = sorted(readers, key=lambda reader: reader["editorialOrder"])
     return {
-        "schema": "ghostmesh-reader-relationship-map-v1",
+        "schema": "ghostmesh-reader-relationship-map-v2",
         "scope": "Local public editorial reading routes; no independent corroboration or cross-site graph admission.",
         "authority": "catalog-curated-editorial",
         "visibility": "public",

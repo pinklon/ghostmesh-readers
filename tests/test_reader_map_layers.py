@@ -15,6 +15,7 @@ class ReaderMapLayersTests(unittest.TestCase):
 
     def test_canonical_counts_and_separate_namespace(self):
         readers = self.catalog["readers"]
+        self.assertEqual(self.graph["schema"], "ghostmesh-reader-relationship-map-v2")
         self.assertEqual(self.graph["readerCount"], len(readers))
         self.assertEqual(self.graph["relationshipCount"], sum(len(r["relationships"]) for r in readers))
         external = sum(len(r.get("sharePlaneRelationships", [])) for r in readers)
