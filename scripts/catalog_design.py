@@ -29,6 +29,8 @@ def paper_cover(source):
 # test, not verification labels. Keep the source-grounding checks below when
 # adding a Reader; never infer a call from its category or claim count.
 CALLS = {
+    'the-success-hid-the-failure': (
+        'Worth studying', 'Watch the hidden execution friction at 08:38 and Skill Doctor at 13:47. Test one recurring GhostMesh instruction defect against existing receipts before adding continuous grading.'),
     'what-arete-27b-bias-test-measures': (
         'Worth studying', 'Keep Arete as a candidate for a controlled comparison. Compare it with base Qwen under the same inference settings and have reviewers score factual coverage, unsupported assertions, refusals, and framing separately.'),
     'when-code-gets-cheap-where-does-the-work-wait': (

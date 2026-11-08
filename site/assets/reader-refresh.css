@@ -99,3 +99,5 @@ main .chapters .chapter button:hover{border-color:var(--gm-accent);color:var(--g
 /* DeepInfer's authored palette also drives the generated Reader chrome. */
 body.infer-reader{--gm-bg:var(--infer-bg);--gm-paper:var(--infer-panel);--gm-ink:var(--infer-ink);--gm-muted:var(--infer-muted);--gm-border:var(--infer-shared-border);--gm-accent:var(--infer-accent);--gm-soft:var(--infer-soft)}
 body.infer-reader .gm-share-button:focus-visible,body.infer-reader .gm-share-email:focus-visible{outline-color:var(--infer-accent)}
+/* Keep provenance digests readable without widening narrow Reader viewports. */
+.prose code{overflow-wrap:anywhere}

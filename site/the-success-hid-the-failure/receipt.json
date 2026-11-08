@@ -1,0 +1,225 @@
+{
+  "schema": "ghostmesh-reader-receipt-v2",
+  "createdAt": "2026-11-07T23:59:00Z",
+  "source": {
+    "platform": "YouTube",
+    "url": "https://www.youtube.com/watch?v=pz74r-4dGfQ",
+    "videoId": "pz74r-4dGfQ",
+    "title": "Your AI Agent Is Hiding Its Mistakes From You",
+    "creator": "AI Engineer",
+    "mediaAspect": "16:9",
+    "durationSeconds": 1159,
+    "uploadDate": "2026-11-06"
+  },
+  "overview": "Ben Holmes of Warp demonstrates how inspecting agent conversations, tool traces and score rubrics can expose repeated failures that successful task completion conceals.",
+  "whyItMatters": "Agent teams can mistake a successful final result for efficient, reliable execution. Hidden retries, stale environment instructions, unnecessary tests and excessive tool calls can consume time and money without appearing in the result.",
+  "ghostMeshTakeaway": "Sample comparable GhostMesh execution receipts for one recurring failure, correct its responsible instruction, then compare accepted outcomes and total cost before adopting a standing grading and self-repair system.",
+  "sourceInspection": {
+    "method": "Verified private ReasonPack with locally transcribed timed Whisper VTT and independent read-only cue review.",
+    "status": "qualified-private-pack-verified",
+    "timedAidSha256": "1da0d791e3e0f450b60e05240ba61ac07a3014fc31b6ef912c8110231642ac93",
+    "caveat": "Automated speech recognition is a timing aid, not certified speech or a replication of the vendor's internal run logs.",
+    "publicationBoundary": "Only original analysis and sanitized hashes appear in public Git; private media and transcripts remain in private custody."
+  },
+  "reasonPack": {
+    "skill": "reasonpack",
+    "schema": "ghostmesh-reasoning-pack-v1",
+    "verification": "pass",
+    "manifestSha256": "6dbdaa5540d5090aa91d9c0f2c1fbccb1cc4456f93be29fcbee1f5d1645ca7f3"
+  },
+  "custody": {
+    "status": "qualified-private-pack-verified",
+    "note": "Verified source manifest and timed VTT retained privately on Hyperion; the public artifact contains only digests and qualified source descriptions."
+  },
+  "normalization": {
+    "id": "reader:the-success-hid-the-failure",
+    "slug": "the-success-hid-the-failure",
+    "title": "The Success Hid the Failure",
+    "category": "AI & Technology",
+    "tags": [
+      "coding agents",
+      "agent evaluation",
+      "skills",
+      "execution traces"
+    ],
+    "entities": [
+      "Warp",
+      "Skill Doctor",
+      "Ben Holmes",
+      "GhostMesh"
+    ],
+    "source": {
+      "platform": "YouTube",
+      "url": "https://www.youtube.com/watch?v=pz74r-4dGfQ",
+      "videoId": "pz74r-4dGfQ",
+      "title": "Your AI Agent Is Hiding Its Mistakes From You",
+      "creator": "AI Engineer",
+      "mediaAspect": "16:9",
+      "durationSeconds": 1159,
+      "uploadDate": "2026-11-06"
+    },
+    "published": "2026-11-07",
+    "updated": "2026-11-08T00:00:00Z",
+    "overview": "Ben Holmes of Warp demonstrates how inspecting agent conversations, tool traces and score rubrics can expose repeated failures that successful task completion conceals.",
+    "whyItMatters": "Agent teams can mistake a successful final result for efficient, reliable execution. Hidden retries, stale environment instructions, unnecessary tests and excessive tool calls can consume time and money without appearing in the result.",
+    "ghostMeshTakeaway": "Sample comparable GhostMesh execution receipts for one recurring failure, correct its responsible instruction, then compare accepted outcomes and total cost before adopting a standing grading and self-repair system.",
+    "verdict": "Worth studying",
+    "architectureImpact": "experiment recommended",
+    "falsification": "Reject the proposed change if a comparable before-and-after sample does not reduce repeated failed calls and total effort without sacrificing accepted outcomes, safety or review authority.",
+    "evidenceState": "unverified",
+    "lastEvidenceChecked": "2026-11-07T23:59:00Z",
+    "freshness": "The source is a vendor presentation. The verified private ReasonPack and retained timed aid establish what was presented, not independent operational outcomes.",
+    "variant": "editorial",
+    "accent": "red",
+    "claims": [
+      {
+        "id": "the-success-hid-the-failure--claim-1",
+        "proposition": "Agents can complete tasks after avoidable retries caused by stale instructions.",
+        "kind": "source-attributed-claim",
+        "asOf": "2026-11-07",
+        "status": "unverified",
+        "assessment": "Presenter demonstrates an agent searching port numbers and correcting course. The retained transcript supports the spoken example, not independent Warp logs.",
+        "limits": "A verified private source pack supports the reported demonstration, but no independent production replication or controlled result is established.",
+        "sourceLocation": "08:38",
+        "references": [],
+        "counterevidence": [],
+        "temporalScope": "November 6 video and retained timed aid only."
+      },
+      {
+        "id": "the-success-hid-the-failure--claim-2",
+        "proposition": "Agent conversations and tool traces can be graded for redundant tests, verbosity and efficiency.",
+        "kind": "source-attributed-claim",
+        "asOf": "2026-11-07",
+        "status": "unverified",
+        "assessment": "The video shows rubric-based grading. Its predictive validity for accepted engineering quality is not established.",
+        "limits": "A verified private source pack supports the reported demonstration, but no independent production replication or controlled result is established.",
+        "sourceLocation": "08:57",
+        "references": [],
+        "counterevidence": [],
+        "temporalScope": "November 6 video and retained timed aid only."
+      },
+      {
+        "id": "the-success-hid-the-failure--claim-3",
+        "proposition": "Skill Doctor proposes targeted changes to instructions and configuration from repeated scored failures.",
+        "kind": "source-attributed-claim",
+        "asOf": "2026-11-07",
+        "status": "unverified",
+        "assessment": "The vendor demonstrates a proposal mechanism, but no independent controlled reduction in cost or regression is supplied.",
+        "limits": "A verified private source pack supports the reported demonstration, but no independent production replication or controlled result is established.",
+        "sourceLocation": "13:47",
+        "references": [],
+        "counterevidence": [],
+        "temporalScope": "November 6 video and retained timed aid only."
+      },
+      {
+        "id": "the-success-hid-the-failure--claim-4",
+        "proposition": "A merged skill change coincided with a reported increase in efficiency scoring.",
+        "kind": "source-attributed-claim",
+        "asOf": "2026-11-07",
+        "status": "unverified",
+        "assessment": "The presenter associates an inflection with a merged change. Model, task-mix and rubric changes remain confounders.",
+        "limits": "A verified private source pack supports the reported demonstration, but no independent production replication or controlled result is established.",
+        "sourceLocation": "17:21",
+        "references": [],
+        "counterevidence": [],
+        "temporalScope": "November 6 video and retained timed aid only."
+      },
+      {
+        "id": "the-success-hid-the-failure--claim-5",
+        "proposition": "Suggested self-improvement pull requests enter a human review inbox.",
+        "kind": "source-attributed-claim",
+        "asOf": "2026-11-07",
+        "status": "unverified",
+        "assessment": "The presentation shows a review boundary; that does not prove every proposed change is safe or economical.",
+        "limits": "A verified private source pack supports the reported demonstration, but no independent production replication or controlled result is established.",
+        "sourceLocation": "18:15",
+        "references": [],
+        "counterevidence": [],
+        "temporalScope": "November 6 video and retained timed aid only."
+      }
+    ],
+    "references": [],
+    "relationships": [
+      {
+        "target": "reader:when-code-gets-cheap-where-does-the-work-wait",
+        "type": "extends",
+        "reason": "The earlier Reader identifies review and accepted delivery as bottlenecks after agent execution becomes cheap. This deconstruction exposes retries and tool-call waste hidden beneath a successful final result, making execution quality another measurable part of that bottleneck.",
+        "provenance": [
+          "/the-success-hid-the-failure/",
+          "/when-code-gets-cheap-where-does-the-work-wait/"
+        ],
+        "basis": "curated-editorial-comparison",
+        "direction": "outgoing"
+      },
+      {
+        "target": "reader:the-cockpit-is-not-the-control-plane",
+        "type": "informs architecture",
+        "reason": "The cockpit Reader separates visible dashboards from durable operational control. This analysis applies that distinction to grading agents: score trends are observability, while reviewed instruction changes, rollback and accepted outcomes provide the control boundary.",
+        "provenance": [
+          "/the-success-hid-the-failure/",
+          "/the-cockpit-is-not-the-control-plane/"
+        ],
+        "basis": "curated-editorial-comparison",
+        "direction": "outgoing"
+      }
+    ],
+    "relationshipDisposition": "Two curated Reader comparisons and two separately labeled outbound SharePlane Works. These are editorial context, not independent corroboration of Warp's results or automatic SharePlane graph admission.",
+    "review": {
+      "status": "Independent source/editorial review accepted for owner consideration",
+      "reviewer": "Independent Codex collaboration task",
+      "reviewedSourceHead": "c76ef5f127959f4a5120c530a589a06a1f55f6b4",
+      "checkedAt": "2026-11-08T00:00:00Z",
+      "scope": "Exact authored copy, five corrected timed cues, privacy boundary and claim posture; generated-site UAT remains pending.",
+      "findings": "The five cues match the retained Whisper aid; the argument is qualified and publication remains owner-gated."
+    },
+    "revisionHistory": [
+      {
+        "at": "2026-11-08T00:00:00Z",
+        "kind": "new-reader-candidate",
+        "reason": "Admit the owner-approved manuscript to existing draft review without asserting Production publication."
+      }
+    ],
+    "editorialDepth": {
+      "schemaVersion": 1,
+      "receiptPath": "content/editorial-depth/the-success-hid-the-failure.json"
+    },
+    "editorialOrder": 43,
+    "orderReason": "New verified private-source deconstruction of hidden agent execution friction.",
+    "relationshipReview": {
+      "reviewedAt": "2026-11-08",
+      "reviewedCatalogSize": 44,
+      "decision": "linked",
+      "reviewedTargets": [
+        "reader:when-code-gets-cheap-where-does-the-work-wait",
+        "reader:the-cockpit-is-not-the-control-plane"
+      ],
+      "rationale": "Owner requested meaningful relationships. These two existing Readers supply distinct, source-specific comparisons about accepted work and control over execution, without implying independent validation of Warp's product assertions."
+    },
+    "sharePlaneRelationships": [
+      {
+        "title": "The Code Is No Longer the Hard Part",
+        "url": "https://shareplane.malott.ai/artifacts/the-code-is-no-longer-the-hard-part/",
+        "type": "extends",
+        "reason": "The video illustrates why successful code generation can conceal expensive execution friction, extending the Work's thesis that review, judgment and operational integration become the binding constraints.",
+        "basis": "curated-editorial-comparison"
+      },
+      {
+        "title": "The Application Is Disposable. The Context Is Not.",
+        "url": "https://shareplane.malott.ai/artifacts/the-application-is-disposable-the-context-is-not/",
+        "type": "informs architecture",
+        "reason": "Changing an agent's skills based on prior runs requires durable context about instructions, decisions, evidence and rollback, directly connecting to the Work's argument for persistent authority beyond replaceable applications.",
+        "basis": "curated-editorial-comparison"
+      }
+    ],
+    "sharePlaneReview": {
+      "reviewedAt": "2026-11-08",
+      "decision": "linked",
+      "rationale": "Two published Work identities are admitted only as outbound editorial routes. Their artifact URLs currently resolve through legacy V3 redirects, which is disclosed; neither route is independent corroboration or a write to SharePlane's canonical graph."
+    }
+  },
+  "editorial": {
+    "overview": "Ben Holmes of Warp demonstrates how inspecting agent conversations, tool traces and score rubrics can expose repeated failures that successful task completion conceals.",
+    "whyItMatters": "Agent teams can mistake a successful final result for efficient, reliable execution. Hidden retries, stale environment instructions, unnecessary tests and excessive tool calls can consume time and money without appearing in the result.",
+    "ghostMeshTakeaway": "Sample comparable GhostMesh execution receipts for one recurring failure, correct its responsible instruction, then compare accepted outcomes and total cost before adopting a standing grading and self-repair system."
+  }
+}

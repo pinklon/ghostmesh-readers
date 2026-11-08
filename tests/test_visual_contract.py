@@ -216,10 +216,13 @@ class VisualContractTest(unittest.TestCase):
         home = (ROOT / 'site/index.html').read_text()
         archive = (ROOT / 'site/readers/index.html').read_text()
         article = (ROOT / 'site/the-model-is-not-the-demonstration/index.html').read_text()
-        for page in (home, archive, article):
+        # Home is a limited recent/featured selection; older Readers can rotate out.
+        for page in (archive, article):
             self.assertIn('data-gm-aspect="unknown"', page)
             self.assertIn('RHMsAm4ODDU', page)
-        self.assertIn('SOURCE SHAPE UNVERIFIED / OPT-IN PLAYER', home)
+        if 'data-source-id="RHMsAm4ODDU"' in home:
+            self.assertIn('data-gm-aspect="unknown"', home)
+            self.assertIn('SOURCE SHAPE UNVERIFIED / OPT-IN PLAYER', home)
         self.assertIn('Source shape unverified / opt-in player', archive)
         self.assertIn('id="play" hidden', article)
         self.assertIn('youtube-nocookie.com/embed/RHMsAm4ODDU', article)
