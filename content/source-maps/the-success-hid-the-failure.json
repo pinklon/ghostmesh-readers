@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "readerId": "reader:the-success-hid-the-failure",
+  "sourceId": "pz74r-4dGfQ",
+  "sourceAidSha256": "6dbdaa5540d5090aa91d9c0f2c1fbccb1cc4456f93be29fcbee1f5d1645ca7f3",
+  "points": [
+    {
+      "atSeconds": 472,
+      "sectionId": "evidence",
+      "claimIds": ["the-success-hid-the-failure--claim-1"],
+      "cueParaphrase": "The presenter describes an agent working around outdated port guidance and consuming avoidable tool calls.",
+      "privateAidCheck": "Verified private ReasonPack manifest and locally transcribed timed aid; presentation case, not independently reconstructed logs."
+    },
+    {
+      "atSeconds": 537,
+      "sectionId": "evidence",
+      "claimIds": ["the-success-hid-the-failure--claim-2"],
+      "cueParaphrase": "The presentation introduces rubrics for redundant tests, verbosity and execution efficiency.",
+      "privateAidCheck": "Verified private ReasonPack manifest and local timed aid; rubric validity outside direct verification."
+    },
+    {
+      "atSeconds": 827,
+      "sectionId": "evidence",
+      "claimIds": ["the-success-hid-the-failure--claim-3"],
+      "cueParaphrase": "Skill Doctor proposes improvements to operating instructions from inspected runs.",
+      "privateAidCheck": "Verified private ReasonPack manifest and local timed aid; remediation benefit unreplicated."
+    },
+    {
+      "atSeconds": 974,
+      "sectionId": "evidence",
+      "claimIds": ["the-success-hid-the-failure--claim-4"],
+      "cueParaphrase": "Trend scores are presented alongside a merged instruction change.",
+      "privateAidCheck": "Verified private ReasonPack manifest and local timed aid; causation not established."
+    },
+    {
+      "atSeconds": 1079,
+      "sectionId": "evidence",
+      "claimIds": ["the-success-hid-the-failure--claim-5"],
+      "cueParaphrase": "The presentation shows suggested pull requests with human review.",
+      "privateAidCheck": "Verified private ReasonPack manifest and local timed aid; production safety unmeasured."
+    }
+  ]
+}
