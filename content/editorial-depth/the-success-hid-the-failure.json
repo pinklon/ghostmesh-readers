@@ -101,7 +101,7 @@
     }
   },
   "independentCorroboration": "none",
-  "ownerDecision": {"pullNumber": 132, "commentId": 6722706077},
+  "ownerDecision": {"pullNumber": 132, "commentId": 6722794758},
   "decision": "accept",
   "gaps": [],
   "decisionRationale": "The earlier independent review established the unchanged source-mapped claims and caveats; the later relationship-only changes were checked as editorial context, not independent verification. Tony approved publication conditional on Reader and SharePlane relationships, all four are present in the hosted preview, and desktop/mobile layout, theme switching, opt-in player and 08:38 source seeking were checked. The separate immutable owner-account marker remains mandatory before merge.",
