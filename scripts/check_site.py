@@ -222,6 +222,25 @@ def check(root=ROOT, *, local_only=False):
   require(assessment.get('reviewedTargets')==targets,f'{slug}: relationship review targets differ from catalog edges')
   require(assessment.get('decision')==('linked' if targets else 'none'),f'{slug}: relationship review decision does not match edges')
   require(len(str(assessment.get('rationale','')).strip())>=80,f'{slug}: relationship review needs a substantive rationale, including justified none')
+  # The 41st published Reader has editorialOrder 40 (zero-based); older snapshots remain valid.
+  external=r.get('sharePlaneRelationships',[])
+  ext_review=r.get('sharePlaneReview')
+  if r['editorialOrder']>=40:
+   require(isinstance(ext_review,dict),f'{slug}: missing separate SharePlane Work review')
+  if ext_review is not None:
+   require(isinstance(ext_review,dict),f'{slug}: invalid SharePlane review')
+   if isinstance(ext_review,dict):
+    require(ext_review.get('decision')==('linked' if external else 'none'),f'{slug}: SharePlane review mismatch')
+    require(len(str(ext_review.get('rationale','')).strip())>=80,f'{slug}: SharePlane review rationale too short')
+    try: require(date.fromisoformat(ext_review.get('reviewedAt',''))<=datetime.now(timezone.utc).date(),f'{slug}: SharePlane review date future')
+    except (ValueError,TypeError):errors.append(f'{slug}: invalid SharePlane review date')
+  seen_external=set()
+  for ext in external:
+   url=ext.get('url','')
+   require(url.startswith('https://shareplane.malott.ai/artifacts/') and url.endswith('/'),f'{slug}: invalid external Work URL')
+   require(url not in seen_external,f'{slug}: duplicate external Work URL')
+   seen_external.add(url)
+   require(ext.get('type') in {'extends','challenges','informs architecture','related topic'} and len(ext.get('reason',''))>=80,f'{slug}: unqualified external Work relationship')
  # Scan all public files, including unlinked assets and JSON, rather than only HTML.
  for p in root.rglob('*'):
   if '.git' in p.parts or '__pycache__' in p.parts:continue

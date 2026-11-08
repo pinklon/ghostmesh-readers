@@ -26,6 +26,8 @@
         "relationships": {"type": "array", "items": {"$ref": "#/$defs/relationship"}},
         "relationshipDisposition": {"type": "string", "minLength": 1},
         "relationshipReview": {"$ref": "#/$defs/relationshipReview"},
+        "sharePlaneRelationships": {"type": "array", "items": {"$ref": "#/$defs/sharePlaneRelationship"}},
+        "sharePlaneReview": {"$ref": "#/$defs/sharePlaneReview"},
         "editorialDepth": {"type": "object", "additionalProperties": false, "required": ["schemaVersion", "receiptPath"], "properties": {"schemaVersion": {"const": 1}, "receiptPath": {"type": "string", "pattern": "^content/editorial-depth/[a-z0-9-]+\\.json$"}}}
       }
     },
@@ -120,6 +122,26 @@
       "type": "object",
       "required": ["id", "title", "author", "publisher", "url", "publicationDate", "eventDate", "location", "sourceType", "independence", "evidenceFamily", "checkedAt"],
       "properties": {"url": {"type": "string", "format": "uri"}, "checkedAt": {"type": "string", "format": "date-time"}}
+    },
+    "sharePlaneRelationship": {
+      "type": "object", "additionalProperties": false,
+      "required": ["title", "url", "type", "reason", "basis"],
+      "properties": {
+        "title": {"type": "string", "minLength": 3},
+        "url": {"type": "string", "pattern": "^https://shareplane\\.malott\\.ai/artifacts/[a-z0-9-]+/$"},
+        "type": {"enum": ["extends", "challenges", "informs architecture", "related topic"]},
+        "reason": {"type": "string", "minLength": 80},
+        "basis": {"const": "curated-editorial-comparison"}
+      }
+    },
+    "sharePlaneReview": {
+      "type": "object", "additionalProperties": false,
+      "required": ["reviewedAt", "decision", "rationale"],
+      "properties": {
+        "reviewedAt": {"type": "string", "format": "date"},
+        "decision": {"enum": ["linked", "none"]},
+        "rationale": {"type": "string", "minLength": 80}
+      }
     },
     "relationshipReview": {
       "type": "object",

@@ -40,6 +40,9 @@ def relationship_graph(readers, byid, host):
         "readerCount": len(ordered),
         "assessmentCount": sum(bool(reader.get("relationshipReview")) for reader in ordered),
         "relationshipCount": sum(len(reader["relationships"]) for reader in ordered),
+        "sharePlaneRelationshipCount": sum(len(reader.get("sharePlaneRelationships", [])) for reader in ordered),
+        "sharePlaneReviewCount": sum(bool(reader.get("sharePlaneReview")) for reader in ordered),
+        "sharePlaneEdges": [{"from": reader["id"], **edge} for reader in ordered for edge in reader.get("sharePlaneRelationships", [])],
         "nodes": [{"id": reader["id"], "slug": reader["slug"], "title": reader["title"],
                    "url": f'{host}/{reader["slug"]}/', "review": reader["relationshipReview"]}
                   for reader in ordered],
@@ -99,6 +102,21 @@ def relationship_map(readers, byid):
                 f'<div><a href="/{_e(target["slug"])}/">{_e(target["title"])}</a>'
                 f'<p>{_e(_reason(edge))}</p></div></li>'
             )
+        external = [
+            '<li class="gm-atlas-link gm-atlas-external">'
+            f'<span class="gm-atlas-type">{_e(edge["type"])}</span>'
+            f'<div><a href="{_e(edge["url"])}">{_e(edge["title"])} ↗</a>'
+            f'<p>{_e(edge["reason"])}</p></div></li>'
+            for edge in reader.get("sharePlaneRelationships", [])
+        ]
+        external_review = reader.get("sharePlaneReview")
+        external_section = (
+            '<div class="gm-atlas-shareplane"><p class="gm-atlas-out-label">'
+            f'SharePlane Works · {len(external)} reviewed connection{"s" if len(external) != 1 else ""}</p>'
+            f'<ul>{"".join(external)}</ul>'
+            + ('<p class="gm-atlas-empty">No reviewed SharePlane Work connection for this edition.</p>' if not external else '')
+            + '</div>'
+        ) if external_review else ''
         entries.append(
             f'<section class="gm-atlas-entry" id="map-reader-{index:02d}" '
             f'aria-labelledby="map-reader-title-{index:02d}">'
@@ -109,8 +127,8 @@ def relationship_map(readers, byid):
             f'{_e(reader["title"])}</a></h3>'
             f'<p>{_e(reader["overview"])}</p></div></div>'
             f'<div class="gm-atlas-out"><p class="gm-atlas-out-label">'
-            f'{len(edges)} published connection{"s" if len(edges) != 1 else ""}</p>'
-            f'<ul>{"".join(edges)}</ul></div></section>'
+            f'Reader connections · {len(edges)} published{" route" if len(edges) == 1 else " routes"}</p>'
+            f'<ul>{"".join(edges)}</ul>{external_section}</div></section>'
         )
     kind_text = ", ".join(f"{count} {_e(kind)}" for kind, count in sorted(kinds.items()))
     return (
@@ -143,8 +161,9 @@ def relationship_map(readers, byid):
         '<div><p>Topic links do not establish that either Reader’s claims are true. '
         'Open the Reader for the dated evidence, counterevidence and explicit unknowns. '
         f'The current published types are {_e(kind_text)}.</p>'
-        '<p>SharePlane essays and other sites require their own reviewed identity and link '
-        'decision before appearing here. No cross-site edge is included.</p>'
+        '<p>SharePlane Works appear in a separate, explicitly reviewed outbound section when a '
+        'stable public Work route has been accepted. They are not counted as Reader-to-Reader '
+        'connections and are not automatically admitted into the SharePlane graph.</p>'
         '<p>Scout research uses its own approved public relationships. '
         '<a href="/scout/research/">Explore the Scout Research Library</a> or '
         '<a href="/scout/research/relationships.json">inspect its relationship JSON</a>. '
