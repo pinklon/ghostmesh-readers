@@ -4,10 +4,10 @@
   "sourceId": "S6SEgMooZpE",
   "sourceDigest": "faa17f452a01d421150bbcfb8303c7f3c9cfb3ec6301843feba09d7c37277814",
   "sourceAidSha256": "cce96fd7c338a0b540cff1c186a4e5e39e825ff8f15540edd340c957225ff92d",
-  "articleSha256": "1f12565e1a194246dd350ca1fad27168ec2b7547c256a1473fb6daacf5302969",
+  "articleSha256": "c6cc736267ee309d403b53795108eb475e8ce1d1eafeb058755c551eb988c0fa",
   "evidenceRevision": "b69e535e61425f43dc4b48d4aef9bdbd609eee3e80ba277cae46a04a99796efc",
   "sourceMapEvidenceSha256": "53448a8832ca123835c70068011fcc227524d277f8237b3e817ed9862aac994f",
-  "reviewEvidenceSha256": "2086258474089fc8ffd09b3bf58949665c0a063ef85f758caedb0214aa631ea9",
+  "reviewEvidenceSha256": "2cc725959e194f17913e7133670981cb5bebb4d375ba3533070bfb068cf6c669",
   "candidateAuthor": "pinklon",
   "complexity": {
     "tier": "extended",
@@ -142,8 +142,8 @@
   },
   "independentCorroboration": "none",
   "ownerDecision": {
-    "pullNumber": 126,
-    "commentId": 6709077606
+    "pullNumber": 134,
+    "commentId": null
   },
   "decision": "accept",
   "gaps": [],
