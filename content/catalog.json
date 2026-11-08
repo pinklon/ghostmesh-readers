@@ -15475,7 +15475,7 @@
         {"target": "reader:the-harness-keeps-the-receipt", "type": "extends", "reason": "The harness Reader's durable verification receipts supply the missing acceptance evidence after delegated execution.", "provenance": ["/the-router-is-not-the-organization/", "/the-harness-keeps-the-receipt/"], "basis": "curated-editorial-comparison", "direction": "outgoing"}
       ],
       "relationshipDisposition": "Three owner-approved directed Reader relationships and three separate SharePlane outbound routes; none independently corroborates the presenter timing.",
-      "review": {"status": "Pending independent editorial review", "reviewer": "not assigned", "checkedAt": "2026-11-08T17:00:00Z", "scope": "Draft assembled; independent source and editorial review outstanding.", "findings": "No independent review findings claimed."},
+      "review": {"status": "Independent review accepted for owner review", "reviewer": "separate read-only editorial review", "checkedAt": "2026-11-08T21:20:30Z", "scope": "Independent qualitative review of the revised authored manuscript and Pando wrapper; private Hyperion timed source aid was not replayed by the reviewer.", "findings": "Accepted for owner editorial review, with explicit limits on independent performance corroboration and no claim of production approval."},
       "legacyReceipt": {"schema": "ghostmesh-reader-receipt-v2", "createdAt": "2026-11-08T16:45:00Z", "source": {"url": "https://www.youtube.com/watch?v=3DklR44DHnM", "videoId": "3DklR44DHnM"}, "sourceInspection": {"status": "private-timed-aid-verified", "method": "ReasonPack with Whisper timed aid", "timedAidSha256": "3cacc402bc260a56792cc746c0bc95d3ab545a985e6e9f0589a5878ed67395fb", "caveat": "Speech recognition is a timing aid, not an independent performance replication.", "publicationBoundary": "Public original analysis and digests only; no private media, captions or transcript."}, "custody": {"status": "private-timed-aid-verified", "note": "Private material remains on Hyperion; only public-safe SHA-256 digests are recorded."}},
       "relationshipReview": {"reviewedAt": "2026-11-08", "reviewedCatalogSize": 44, "decision": "linked", "reviewedTargets": ["reader:the-session-count-is-not-the-system", "reader:the-cockpit-is-not-the-control-plane", "reader:the-harness-keeps-the-receipt"], "rationale": "Owner-approved source-specific architectural comparisons, not proof of the video's benchmark."},
       "sharePlaneRelationships": [
@@ -15486,7 +15486,7 @@
       "sharePlaneReview": {"reviewedAt": "2026-11-08", "decision": "linked", "rationale": "Three owner-approved outbound editorial routes; not independent corroboration or a SharePlane graph write."},
       "editorialDepth": {"schemaVersion": 1, "receiptPath": "content/editorial-depth/the-router-is-not-the-organization.json"},
       "editorialOrder": 44,
-      "orderReason": "Owner-approved long-form source deconstruction; draft pending independent review and exact-head owner acceptance."
+      "orderReason": "Owner-approved long-form source deconstruction; independent review complete, with exact-head publication qualification pending."
     }
   ],
   "featuredId": "reader:ask-for-the-outcome-keep-the-boundary"

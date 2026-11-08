@@ -166,11 +166,11 @@
     ],
     "relationshipDisposition": "Three owner-approved directed Reader relationships and three separate SharePlane outbound routes; none independently corroborates the presenter timing.",
     "review": {
-      "status": "Pending independent editorial review",
-      "reviewer": "not assigned",
-      "checkedAt": "2026-11-08T17:00:00Z",
-      "scope": "Draft assembled; independent source and editorial review outstanding.",
-      "findings": "No independent review findings claimed."
+      "status": "Independent review accepted for owner review",
+      "reviewer": "separate read-only editorial review",
+      "checkedAt": "2026-11-08T21:20:30Z",
+      "scope": "Independent qualitative review of the revised authored manuscript and Pando wrapper; private Hyperion timed source aid was not replayed by the reviewer.",
+      "findings": "Accepted for owner editorial review, with explicit limits on independent performance corroboration and no claim of production approval."
     },
     "relationshipReview": {
       "reviewedAt": "2026-11-08",
@@ -216,7 +216,7 @@
       "receiptPath": "content/editorial-depth/the-router-is-not-the-organization.json"
     },
     "editorialOrder": 44,
-    "orderReason": "Owner-approved long-form source deconstruction; draft pending independent review and exact-head owner acceptance."
+    "orderReason": "Owner-approved long-form source deconstruction; independent review complete, with exact-head publication qualification pending."
   },
   "editorial": {
     "overview": "A router-worker design can reduce supervision overhead, but routing alone cannot establish durable authority, evidence or accepted state.",
