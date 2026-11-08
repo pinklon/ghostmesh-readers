@@ -39,7 +39,10 @@ class PublicationGate(unittest.TestCase):
   event.write_text(json.dumps({'number':137,'pull_request':{'draft':False}}))
   with patch.dict(os.environ, {'GITHUB_EVENT_NAME':'pull_request','GITHUB_EVENT_PATH':str(event)}):
    self.assertTrue(any('editorial receipt missing or invalid' in e for e in check(self.root,local_only=True)))
-  self.assertTrue(any('editorial receipt missing or invalid' in e for e in check(self.root,local_only=True)))
+  # CI supplies the real pull_request event; a "local" fixture must explicitly
+  # remove that ambient context instead of inheriting the draft flag.
+  with patch.dict(os.environ, {'GITHUB_EVENT_NAME':'', 'GITHUB_EVENT_PATH':''}):
+   self.assertTrue(any('editorial receipt missing or invalid' in e for e in check(self.root,local_only=True)))
  def rejected(self,term):self.assertTrue(any(term in x for x in check(self.root)),check(self.root))
  def test_source_media_outside_publish_directory(self):
   (self.root/'content/private.vtt').write_text('WEBVTT');self.rejected('Private source media')
