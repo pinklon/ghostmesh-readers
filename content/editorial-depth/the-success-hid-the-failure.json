@@ -101,15 +101,9 @@
     }
   },
   "independentCorroboration": "none",
-  "ownerDecision": null,
-  "decision": "hold",
-  "gaps": [
-    {
-      "type": "test",
-      "severity": "blocking",
-      "rationale": "Generated-site preview and desktop/mobile playback, seeking, theme, navigation and console UAT have not yet been completed."
-    }
-  ],
-  "decisionRationale": "Exact-copy independent review accepted the manuscript for owner consideration, but publication remains held pending owner-authenticated acceptance and generated preview UAT.",
-  "assessedAt": "2026-11-08T01:20:00Z"
+  "ownerDecision": {"pullNumber": 132, "commentId": null},
+  "decision": "accept",
+  "gaps": [],
+  "decisionRationale": "The earlier independent review established the unchanged source-mapped claims and caveats; the later relationship-only changes were checked as editorial context, not independent verification. Tony approved publication conditional on Reader and SharePlane relationships, all four are present in the hosted preview, and desktop/mobile layout, theme switching, opt-in player and 08:38 source seeking were checked. The separate immutable owner-account marker remains mandatory before merge.",
+  "assessedAt": "2026-11-08T14:20:47Z"
 }
