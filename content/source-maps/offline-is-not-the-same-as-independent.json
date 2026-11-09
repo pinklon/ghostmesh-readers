@@ -2,11 +2,11 @@
   "schemaVersion": 1,
   "readerId": "reader:offline-is-not-the-same-as-independent",
   "sourceId": "UXaET1n3i7I",
-  "sourceAidSha256": "02f3dfb6203fb35dfac580a632af1e805053e31bde5d6f459b5c606ac51cee17",
+  "sourceAidSha256": "0e4e7f2ad4544edfd54bd0f68e4332f9f5e066f0c0508a5a1300f1f01fa515f9",
   "points": [
     {
       "atSeconds": 50,
-      "sectionId": "a-local-model-is-not-the-entire-application",
+      "sectionId": "film",
       "claimIds": [
         "offline-is-not-the-same-as-independent--claim-1"
       ],
@@ -15,7 +15,7 @@
     },
     {
       "atSeconds": 78,
-      "sectionId": "the-machine-is-local-is-the-boundary",
+      "sectionId": "film",
       "claimIds": [
         "offline-is-not-the-same-as-independent--claim-2"
       ],
@@ -24,7 +24,7 @@
     },
     {
       "atSeconds": 146,
-      "sectionId": "free-inference-does-not-mean-free-ownership",
+      "sectionId": "film",
       "claimIds": [
         "offline-is-not-the-same-as-independent--claim-3"
       ],
@@ -33,7 +33,7 @@
     },
     {
       "atSeconds": 181,
-      "sectionId": "the-second-brain-is-a-retrieval-system",
+      "sectionId": "film",
       "claimIds": [
         "offline-is-not-the-same-as-independent--claim-4"
       ],
@@ -42,7 +42,7 @@
     },
     {
       "atSeconds": 249,
-      "sectionId": "memory-is-more-than-writing-a-file",
+      "sectionId": "film",
       "claimIds": [
         "offline-is-not-the-same-as-independent--claim-5"
       ],
@@ -51,7 +51,7 @@
     },
     {
       "atSeconds": 273,
-      "sectionId": "tools-turn-an-assistant-into-an-actor",
+      "sectionId": "film",
       "claimIds": [
         "offline-is-not-the-same-as-independent--claim-6"
       ],
@@ -60,7 +60,7 @@
     },
     {
       "atSeconds": 325,
-      "sectionId": "a-local-model-is-not-the-entire-application",
+      "sectionId": "film",
       "claimIds": [
         "offline-is-not-the-same-as-independent--claim-1"
       ],

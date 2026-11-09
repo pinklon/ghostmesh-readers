@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "readerId": "reader:offline-is-not-the-same-as-independent",
+  "sourceId": "UXaET1n3i7I",
+  "sourceAidSha256": "0e4e7f2ad4544edfd54bd0f68e4332f9f5e066f0c0508a5a1300f1f01fa515f9",
+  "articleSha256": "b5167d6fc39fc509519e3481cbfff2e5a7575f3188bd9cc12841f56c2464987c",
+  "evidenceRevision": "719a6b7c8964e304b5d1abb4ffe85f6a72fb4cb416b5bba208491463df205447",
+  "reviewedAt": "2026-11-09T15:21:56Z",
+  "provenance": {
+    "kind": "codex-task-agent",
+    "reference": "Independent read-only Reader #49 editorial/source/privacy reviewer task reader49_independent_review, commissioned 2026-11-09 against PR #146 head e31dc3b2967955f6ee390760254cd0f038ee4e1b; ACCEPT FOR OWNER REVIEW.",
+    "limits": "Reviewer read the public candidate, source map, claims, relationships and current official Ollama documentation. YouTube retrieval was throttled and the private video/Whisper aid was inaccessible to the reviewer. SourceAidSha256 binds the publisher-reported private pack manifest, not the distinct VTT digest retained in catalog provenance. All seven mechanical section locators point to the shared video section rather than precise prose subsections. No listening-certified timestamps, private pack integrity check, independent application audit or performance reproduction is claimed."
+  },
+  "summary": "Independent reviewer accepted the authored argument, public-safe source posture, qualified claims, proportional standard-length analysis and both editorial relationship layers for owner review, with explicit source-access limitations.",
+  "findings": [
+    "The article consistently distinguishes local inference, application-wide offline operation, retrieval fidelity, memory integrity and tool authorization; local execution is never presented as independent proof of trustworthiness.",
+    "Six creator-derived claims are attributed and marked unverified. The 02:26 inference-rate cue is internally consistent with the source map, but no spoken timestamp could be listening-certified by this reviewer.",
+    "The official Ollama FAQ documents cloud-disabling configuration, and the official API introduction distinguishes local and cloud endpoints. Neither independently verifies the demonstrated JARVIS implementation.",
+    "The article acknowledges the usefulness of a prototype and proposes proportionate, falsifiable network, retrieval, memory, tool and performance checks without claiming they were executed.",
+    "No raw transcript, media, credential, private inventory or custody path was found in the reviewed public manuscript, source map or catalog. The published prose uses original analysis and bounded paraphrases.",
+    "Two Reader relationships and one separately labeled SharePlane Work are defensible editorial comparisons, not corroboration. The SharePlane Work was reachable; direct retrieval of both Reader URLs failed through the review tool and remains a publisher link check.",
+    "The 7:41 demonstration and six mapped claims warrant the existing standard-length Reader; no extended research treatment is required by the review scope.",
+    "Supplemental independent review retained ACCEPT for the mechanical source-map section locator repair and canonical pack-manifest binding; article, cue times, claim IDs and paraphrases remain unchanged. Navigation locators are coarser, not independently validated."
+  ],
+  "conclusion": "accept-for-owner-review"
+}

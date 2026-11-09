@@ -13,6 +13,7 @@ ROOT = Path(__file__).resolve().parents[1]
 SLUG = "offline-is-not-the-same-as-independent"
 MANUSCRIPT_SHA = "25142c43241651adb1f0a916b644a855c135ee42154bbba674359dac1fac3132"
 SOURCE_AID_SHA = "02f3dfb6203fb35dfac580a632af1e805053e31bde5d6f459b5c606ac51cee17"
+PACK_MANIFEST_SHA = "0e4e7f2ad4544edfd54bd0f68e4332f9f5e066f0c0508a5a1300f1f01fa515f9"
 TARGETS = [
     "https://youtube.shareplane.malott.ai/the-boundary-is-bigger-than-the-box/",
     "https://youtube.shareplane.malott.ai/the-stop-button-is-outside-the-chat/",
@@ -69,7 +70,8 @@ class Reader49CreativeLock(unittest.TestCase):
         self.assertEqual([first], missing_link_targets([first], changed))
 
     def test_source_map_coverage_and_correct_performance_cue(self):
-        self.assertEqual(SOURCE_AID_SHA, self.source_map["sourceAidSha256"])
+        self.assertEqual(PACK_MANIFEST_SHA, self.source_map["sourceAidSha256"])
+        self.assertEqual(SOURCE_AID_SHA, self.catalog["legacyReceipt"]["sourceInspection"]["timedAidSha256"])
         self.assertEqual("UXaET1n3i7I", self.source_map["sourceId"])
         mapped = {claim for point in self.source_map["points"] for claim in point["claimIds"]}
         self.assertEqual({c["id"] for c in self.catalog["claims"]}, mapped)
