@@ -3,11 +3,11 @@
   "scope": "Local public editorial reading routes; no independent corroboration or cross-site graph admission.",
   "authority": "catalog-curated-editorial",
   "visibility": "public",
-  "readerCount": 47,
-  "assessmentCount": 47,
-  "relationshipCount": 100,
-  "sharePlaneRelationshipCount": 13,
-  "sharePlaneReviewCount": 7,
+  "readerCount": 48,
+  "assessmentCount": 48,
+  "relationshipCount": 104,
+  "sharePlaneRelationshipCount": 15,
+  "sharePlaneReviewCount": 8,
   "sharePlaneEdges": [
     {
       "from": "reader:when-code-gets-cheap-where-does-the-work-wait",
@@ -111,6 +111,22 @@
       "url": "https://shareplane.malott.ai/artifacts/cognitive-capital/",
       "type": "extends",
       "reason": "Adds a concrete retrieval and summary failure boundary to the economic thesis: stored text earns durable value through validation and judgment, not merely because inference is cheaper or more history is searchable.",
+      "basis": "curated-editorial-comparison"
+    },
+    {
+      "from": "reader:the-paper-is-not-the-experiment",
+      "title": "Stop Prompting Agents. Start Managing Workers.",
+      "url": "https://shareplane.malott.ai/artifacts/stop-prompting-agents-start-managing-workers/",
+      "type": "foundation",
+      "reason": "Defines work contracts, evidence, measurement and earned autonomy; Reader #48 supplies an empirical research benchmark for those principles.",
+      "basis": "curated-editorial-comparison"
+    },
+    {
+      "from": "reader:the-paper-is-not-the-experiment",
+      "title": "Own the Memory, Rent the Intelligence",
+      "url": "https://shareplane.malott.ai/artifacts/own-memory-rent-intelligence-agent-stack/",
+      "type": "companion",
+      "reason": "Preserving user-owned evidence, qualifications and governed memory prevents a model's latest polished summary from becoming authority without source traceability.",
       "basis": "curated-editorial-comparison"
     }
   ],
@@ -867,6 +883,24 @@
           "reader:the-cost-of-forgetting-where-the-tools-are"
         ],
         "rationale": "All 46 existing Reader theses were reviewed. Tony approved exactly three outgoing comparisons about continuity, runtime authority and context/discovery economy. These are editorial connections, not independent corroboration of Saraev claims."
+      }
+    },
+    {
+      "id": "reader:the-paper-is-not-the-experiment",
+      "slug": "the-paper-is-not-the-experiment",
+      "title": "The Paper Is Not the Experiment",
+      "url": "https://youtube.shareplane.malott.ai/the-paper-is-not-the-experiment/",
+      "review": {
+        "reviewedAt": "2026-11-09",
+        "reviewedCatalogSize": 47,
+        "decision": "linked",
+        "reviewedTargets": [
+          "reader:the-experiment-ran-did-the-research-advance",
+          "reader:the-grader-is-part-of-the-harness",
+          "reader:the-harness-keeps-the-receipt",
+          "reader:the-success-hid-the-failure"
+        ],
+        "rationale": "Tony approved exactly four proposed outgoing editorial comparisons for Reader #48; all 47 existing Reader theses were considered during editorial candidate preparation. Independent relationship review remains pending."
       }
     }
   ],
@@ -2067,6 +2101,54 @@
       "provenance": [
         "/the-second-brain-still-needs-a-judgment/",
         "/the-cost-of-forgetting-where-the-tools-are/"
+      ],
+      "basis": "curated-editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:the-paper-is-not-the-experiment",
+      "to": "reader:the-experiment-ran-did-the-research-advance",
+      "type": "extends",
+      "reason": "Distinguishes executing a research workflow from making a scientifically meaningful advance. Reader #48 adds the evidence-integrity threshold that must be satisfied before the advancement question is even credible.",
+      "provenance": [
+        "/the-paper-is-not-the-experiment/",
+        "/the-experiment-ran-did-the-research-advance/"
+      ],
+      "basis": "curated-editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:the-paper-is-not-the-experiment",
+      "to": "reader:the-grader-is-part-of-the-harness",
+      "type": "companion",
+      "reason": "Examines evaluation design and recursive improvement. Reader #48 applies that concern to automated judgments over scientific code and trajectories, including judge error and rubric scope.",
+      "provenance": [
+        "/the-paper-is-not-the-experiment/",
+        "/the-grader-is-part-of-the-harness/"
+      ],
+      "basis": "curated-editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:the-paper-is-not-the-experiment",
+      "to": "reader:the-harness-keeps-the-receipt",
+      "type": "informs architecture",
+      "reason": "Connects scientific claim-to-log traceability to durable runtime evidence and authorization receipts. Both distinguish narrated completion from verified effects.",
+      "provenance": [
+        "/the-paper-is-not-the-experiment/",
+        "/the-harness-keeps-the-receipt/"
+      ],
+      "basis": "curated-editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:the-paper-is-not-the-experiment",
+      "to": "reader:the-success-hid-the-failure",
+      "type": "extends",
+      "reason": "Investigates hidden failures in tool traces despite apparent success. Reader #48 presents a scientific analogue in which professional-looking papers conceal missing or contradictory experimental work.",
+      "provenance": [
+        "/the-paper-is-not-the-experiment/",
+        "/the-success-hid-the-failure/"
       ],
       "basis": "curated-editorial-comparison",
       "direction": "outgoing"

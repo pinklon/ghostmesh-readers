@@ -1,0 +1,127 @@
+{
+  "schemaVersion": 1,
+  "readerId": "reader:the-paper-is-not-the-experiment",
+  "sourceId": "ULIGFaPLd_Y",
+  "sourceDigest": "8c3875cc008a2e6b0fe048ac7a0731f5c9a6a256aaeaf97bfa6748974876ceaf",
+  "sourceAidSha256": "95d4a375a431d4a4c38344981ca2678df2e2a0f360cb797808c3b1fc6ea2cb3d",
+  "articleSha256": "6f0a86eac1c5fec1092d6e0675209af0009222468f1397bdb8102961257f81d9",
+  "evidenceRevision": "43fd1fc82610fa5124d44288f93ec8a5e8e653fd504b5604bda20423bd05f24a",
+  "sourceMapEvidenceSha256": "d5dc75065a70da494526e18820dc75ff152f7e05c0855ea9936dbb49e262e1d5",
+  "reviewEvidenceSha256": "3ec681ff0deb61b6e7d51b67da404a88e2dc05a8cc7ba044839fbbf3f8fa0efc",
+  "candidateAuthor": "pinklon",
+  "complexity": {
+    "tier": "extended",
+    "factors": [
+      "Consequential study-integrity stakes",
+      "Consequential AI science-adoption stakes"
+    ],
+    "rationale": "The owner-supplied locked editorial assessment requires extended treatment because study integrity and AI science adoption have consequential stakes."
+  },
+  "sourceMap": [
+    {
+      "atSeconds": 205,
+      "sectionId": "three-gates-that-should-never-be-collapsed",
+      "claimIds": [
+        "the-paper-is-not-the-experiment--claim-1"
+      ],
+      "rationale": "Presenter explains distinct rubric conditions for integrity, completeness and sufficiency. Existing private source-caption locator retained; not listening-certified or independently rechecked by this executor."
+    },
+    {
+      "atSeconds": 267,
+      "sectionId": "read-the-denominators",
+      "claimIds": [
+        "the-paper-is-not-the-experiment--claim-2",
+        "the-paper-is-not-the-experiment--claim-3",
+        "the-paper-is-not-the-experiment--claim-4"
+      ],
+      "rationale": "Presenter gives aggregate failures and comparative results; paper is the numerical authority. Existing private source-caption locator retained; not listening-certified or independently rechecked by this executor. Study-reported production and evaluation hours are interpreted with bounded scope. Existing private source-caption locator retained; not listening-certified or independently rechecked by this executor. Study-reported C1 pass counts do not indicate all-gates research success. Existing private source-caption locator retained; not listening-certified or independently rechecked by this executor."
+    },
+    {
+      "atSeconds": 346,
+      "sectionId": "how-agents-get-stuck-in-plausible-failure",
+      "claimIds": [
+        "the-paper-is-not-the-experiment--claim-5"
+      ],
+      "rationale": "Three recurring behavior patterns appear in study trajectory descriptions. Existing private source-caption locator retained; not listening-certified or independently rechecked by this executor."
+    },
+    {
+      "atSeconds": 0,
+      "sectionId": "faking-is-a-headline-not-proof-of-intent",
+      "claimIds": [
+        "the-paper-is-not-the-experiment--claim-6"
+      ],
+      "rationale": "Video headline uses faking; article distinguishes unsupported claims from human-like intent. Existing private source-caption locator retained; not listening-certified or independently rechecked by this executor."
+    }
+  ],
+  "assessment": {
+    "sourceCoverage": {
+      "disposition": "covered",
+      "rationale": "The locked editorial assessment covers six claims. The primary study abstract independently corroborates nine configurations times fifteen tasks = 135 submissions, zero all-condition passes and 114 integrity failures. Other numerical outcomes and model-specific denominators are study-reported, not independently replicated. Video timing is based on the private source-caption aid, not listening-certified; that aid is unavailable to this coding executor."
+    },
+    "supportingArgument": {
+      "disposition": "covered",
+      "rationale": "The thesis distinguishes a paper-shaped report, an executed experiment and reviewer acceptance. C1 integrity, C2 completeness and C3 sufficiency are kept distinct; satisfying one condition does not establish all-condition acceptance."
+    },
+    "evidenceRoles": {
+      "disposition": "covered",
+      "rationale": "The primary study and official artifacts are the same research project, not independent replication. The locked assessment records corroboration against the primary abstract only; no independent source verification beyond that abstract, private source access or numerical replication is claimed by this executor."
+    },
+    "counterargument": {
+      "disposition": "covered",
+      "rationale": "Serious counterarguments include a strict benchmark and automated judge error, demanding open tasks, limited agent/harness configurations and finite compute. The study proves neither a permanent capability ceiling nor deliberate deception."
+    },
+    "tradeoffs": {
+      "disposition": "covered",
+      "rationale": "Strict benchmark conditions and automated judge error must be weighed alongside demanding open tasks, limited agent/harness configurations and finite compute. C1 integrity, C2 completeness and C3 sufficiency remain separate acceptance conditions."
+    },
+    "falsifiability": {
+      "disposition": "covered",
+      "rationale": "The falsifiable proposal uses matched computational tasks, claim-to-log evidence, domain adjudication and measured cost, latency and quality. This is proposed, not executed; no experimental outcome or adoption is implied."
+    },
+    "originalSynthesis": {
+      "disposition": "covered",
+      "rationale": "The paper-shaped report, the executed experiment and reviewer acceptance are distinct. Claim-to-log evidence supports consequential research claims while C1 integrity, C2 completeness and C3 sufficiency remain distinct judgments."
+    },
+    "performance": {
+      "disposition": "covered",
+      "rationale": "Aggregate production and evaluation hours are study-reported. Other numerical outcomes and model-specific denominators are not independently replicated, and limited agent/harness configurations and finite compute bound the performance interpretation."
+    },
+    "economics": {
+      "disposition": "covered",
+      "rationale": "The study reports aggregate hours, with no controlled general cost comparison. The proposed matched-task comparison measures cost, latency and quality; it has not been executed."
+    },
+    "threatGovernance": {
+      "disposition": "covered",
+      "rationale": "Prohibit unsupported research claims. No new infrastructure or adoption is implied. Unsupported claims do not prove deliberate deception; paper-shaped output, executed experiment and reviewer acceptance remain distinct."
+    }
+  },
+  "independentCorroboration": "none",
+  "ownerDecision": {
+    "kind": "conversation",
+    "owner": "Tony Malott",
+    "approval": "Tony accepted the reviewed preview and qualified evidence posture and authorized publication in the ChatGPT conversation on 2026-11-09, then approved completion of this qualified editorial receipt. This declaration binds the actual article hash and evidence revision; it is not cryptographic authentication. The present mechanical implementation remains draft-only: do not mark ready, merge or deploy.",
+    "approvalDate": "2026-11-09",
+    "articleSha256": "6f0a86eac1c5fec1092d6e0675209af0009222468f1397bdb8102961257f81d9",
+    "evidenceRevision": "43fd1fc82610fa5124d44288f93ec8a5e8e653fd504b5604bda20423bd05f24a"
+  },
+  "decision": "accept",
+  "gaps": [
+    {
+      "type": "source",
+      "severity": "nonblocking",
+      "rationale": "No direct video listening certification. Timing is based on the private source-caption aid; source-caption and private aid bytes are unavailable to this coding executor. The catalog records timed-aid SHA-256 34bcac36fd0cf8c111a9467f41452459c524bbbbe7a22f1c6648fa03a3b456f3 and private pack manifest SHA-256 95d4a375a431d4a4c38344981ca2678df2e2a0f360cb797808c3b1fc6ea2cb3d."
+    },
+    {
+      "type": "evidence",
+      "severity": "nonblocking",
+      "rationale": "No independent study reproduction or scientific numerical replication. Only the primary abstract corroboration in the locked assessment is retained; other numerical outcomes and model-specific denominators remain study-reported. Official artifacts are from the same research project."
+    },
+    {
+      "type": "scope",
+      "severity": "nonblocking",
+      "rationale": "Independent copy/privacy review initially held the candidate, then accepted the correction scoped to c3ae675. That finding is not an independent source certification; the locked editorial assessment and owner acceptance are retained as separate declarations."
+    }
+  ],
+  "decisionRationale": "Accept the article for publication with the nonblocking qualifications authorized in the owner-supplied locked editorial assessment. Tony accepted the reviewed preview and qualified evidence posture on 2026-11-09 and authorized publication. Independent copy/privacy ACCEPT remains scoped to correction c3ae675, not source certification. This mechanical receipt does not authenticate the conversation, reproduce the study or authorize this executor to mark ready, merge or deploy.",
+  "assessedAt": "2026-11-09T06:18:37.893566+00:00"
+}
