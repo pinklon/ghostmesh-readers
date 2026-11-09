@@ -153,6 +153,20 @@ class EditorialDepthGate(unittest.TestCase):
     def test_long_form_fixture_with_owner_acceptance_after_retained_findings_is_admitted(self):
         self.assertEqual([], validate_reader(self.root, self.reader))
 
+    def test_same_source_moment_and_claims_in_another_section_is_redundant(self):
+        # Different claims can legitimately use one moment; duplicating the
+        # same claims in another section must not inflate source coverage.
+        self.receipt["sourceMap"][1]["atSeconds"] = self.receipt["sourceMap"][0]["atSeconds"]
+        self.receipt["sourceMap"][1]["claimIds"] = self.receipt["sourceMap"][0]["claimIds"][:]
+        self.receipt["sourceMapEvidenceSha256"] = self.write_map(self.receipt)
+        self.assert_rejected("redundant source map claim cue")
+
+    def test_same_source_moment_for_different_claims_is_not_redundant(self):
+        self.receipt["sourceMap"][1]["atSeconds"] = self.receipt["sourceMap"][0]["atSeconds"]
+        self.receipt["sourceMapEvidenceSha256"] = self.write_map(self.receipt)
+        errors = validate_reader(self.root, self.reader)
+        self.assertFalse(any("redundant source map claim cue" in error for error in errors), errors)
+
     def test_local_only_skips_remote_owner_lookup_but_default_still_requires_it(self):
         with patch("editorial_depth._authenticated_owner_decision_errors", side_effect=RuntimeError("remote invoked")):
             self.assertEqual([], validate_reader(self.root, self.reader, verify_owner_remote=False))

@@ -396,7 +396,8 @@ def validate_reader(root: Path, reader: dict, *, release: bool = True,
         anchors = set(re.findall(r'\bid="([^"]+)"', raw.decode("utf-8", "replace")))
         article = raw.decode("utf-8", "replace")
         source_video = reader["source"].get("videoId")
-        seen: set[tuple[int, str]] = set()
+        seen: set[tuple[str, str]] = set()
+        seen_claim_cues: set[tuple[str, tuple[str, ...]]] = set()
         for entry in source_map:
             if not isinstance(entry, dict) or set(entry) != {"atSeconds", "sectionId", "claimIds", "rationale"}:
                 errors.append(f"{slug}: source map entry schema mismatch");continue
@@ -429,6 +430,13 @@ def validate_reader(root: Path, reader: dict, *, release: bool = True,
             marker = (str(second), str(entry["sectionId"]))
             if marker in seen:errors.append(f"{slug}: duplicate source map point")
             seen.add(marker)
+            # A source moment may support different claims in different sections.
+            # Repeating the same moment for the same claim set adds no coverage.
+            if isinstance(entry["claimIds"], list) and all(isinstance(x, str) for x in entry["claimIds"]):
+                claim_cue = (str(second), tuple(sorted(set(entry["claimIds"]))))
+                if claim_cue in seen_claim_cues:
+                    errors.append(f"{slug}: redundant source map claim cue")
+                seen_claim_cues.add(claim_cue)
         if isinstance(complexity, dict) and complexity.get("tier") == "extended" and len({str(e.get("sectionId")) for e in source_map if isinstance(e, dict)}) < 3:
             errors.append(f"{slug}: extended source map misses distinct analytical sections")
         if (isinstance(complexity, dict) and complexity.get("tier") == "extended"
