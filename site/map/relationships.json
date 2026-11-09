@@ -3,11 +3,11 @@
   "scope": "Local public editorial reading routes; no independent corroboration or cross-site graph admission.",
   "authority": "catalog-curated-editorial",
   "visibility": "public",
-  "readerCount": 45,
-  "assessmentCount": 45,
-  "relationshipCount": 94,
-  "sharePlaneRelationshipCount": 8,
-  "sharePlaneReviewCount": 5,
+  "readerCount": 46,
+  "assessmentCount": 46,
+  "relationshipCount": 97,
+  "sharePlaneRelationshipCount": 11,
+  "sharePlaneReviewCount": 6,
   "sharePlaneEdges": [
     {
       "from": "reader:when-code-gets-cheap-where-does-the-work-wait",
@@ -71,6 +71,30 @@
       "url": "https://shareplane.malott.ai/artifacts/the-semantic-operating-system/",
       "type": "extends",
       "reason": "Durable task meaning, state and evidence expand the router pattern into an accountable operating layer.",
+      "basis": "curated-editorial-comparison"
+    },
+    {
+      "from": "reader:the-cost-of-forgetting-where-the-tools-are",
+      "title": "The Application Is Disposable. The Context Is Not.",
+      "url": "https://shareplane.malott.ai/artifacts/the-application-is-disposable-the-context-is-not/",
+      "type": "foundation",
+      "reason": "Reusable knowledge must outlive a particular execution surface. This is an editorial comparison, not independent corroboration of the benchmark.",
+      "basis": "curated-editorial-comparison"
+    },
+    {
+      "from": "reader:the-cost-of-forgetting-where-the-tools-are",
+      "title": "The Semantic Operating System",
+      "url": "https://shareplane.malott.ai/artifacts/the-semantic-operating-system/",
+      "type": "extends",
+      "reason": "A discoverable capability map protects operational context without forcing every detailed schema into every prompt. This is an editorial comparison, not independent corroboration of the benchmark.",
+      "basis": "curated-editorial-comparison"
+    },
+    {
+      "from": "reader:the-cost-of-forgetting-where-the-tools-are",
+      "title": "The Code Is No Longer the Hard Part",
+      "url": "https://shareplane.malott.ai/artifacts/the-code-is-no-longer-the-hard-part/",
+      "type": "companion",
+      "reason": "Optimize for correct, accepted outcomes rather than raw code output or isolated token counts. This is an editorial comparison, not independent corroboration of the benchmark.",
       "basis": "curated-editorial-comparison"
     }
   ],
@@ -793,6 +817,23 @@
           "reader:the-harness-keeps-the-receipt"
         ],
         "rationale": "Owner-approved source-specific architectural comparisons, not proof of the video's benchmark."
+      }
+    },
+    {
+      "id": "reader:the-cost-of-forgetting-where-the-tools-are",
+      "slug": "the-cost-of-forgetting-where-the-tools-are",
+      "title": "The Cost of Forgetting Where the Tools Are",
+      "url": "https://youtube.shareplane.malott.ai/the-cost-of-forgetting-where-the-tools-are/",
+      "review": {
+        "reviewedAt": "2026-11-08",
+        "reviewedCatalogSize": 45,
+        "decision": "linked",
+        "reviewedTargets": [
+          "reader:the-missing-step-is-not-more-intelligence",
+          "reader:the-harness-keeps-the-receipt",
+          "reader:the-operator-is-part-of-the-denominator"
+        ],
+        "rationale": "Tony approved three specific Reader links that examine adjacent operational concerns. They are source-specific editorial comparisons, not independent verification of TokenEconomizer's performance results."
       }
     }
   ],
@@ -1921,6 +1962,42 @@
       "provenance": [
         "/the-router-is-not-the-organization/",
         "/the-harness-keeps-the-receipt/"
+      ],
+      "basis": "curated-editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:the-cost-of-forgetting-where-the-tools-are",
+      "to": "reader:the-missing-step-is-not-more-intelligence",
+      "type": "informs architecture",
+      "reason": "A missing operational discovery path can defeat an otherwise capable model.",
+      "provenance": [
+        "/the-cost-of-forgetting-where-the-tools-are/",
+        "/the-missing-step-is-not-more-intelligence/"
+      ],
+      "basis": "curated-editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:the-cost-of-forgetting-where-the-tools-are",
+      "to": "reader:the-harness-keeps-the-receipt",
+      "type": "extends",
+      "reason": "Cost and success claims need preserved, reproducible evaluation evidence.",
+      "provenance": [
+        "/the-cost-of-forgetting-where-the-tools-are/",
+        "/the-harness-keeps-the-receipt/"
+      ],
+      "basis": "curated-editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:the-cost-of-forgetting-where-the-tools-are",
+      "to": "reader:the-operator-is-part-of-the-denominator",
+      "type": "companion",
+      "reason": "Owner interventions and operating burden belong in the denominator.",
+      "provenance": [
+        "/the-cost-of-forgetting-where-the-tools-are/",
+        "/the-operator-is-part-of-the-denominator/"
       ],
       "basis": "curated-editorial-comparison",
       "direction": "outgoing"
