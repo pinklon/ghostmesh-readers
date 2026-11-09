@@ -94,7 +94,7 @@ The practical distinction survives: **the paper is the claim; the experiment is 
 
 Kim et al., arXiv:2610.19159, October 13, 2026. Official code, data, trajectories and judge results: https://github.com/prometheus-eval/into-the-unknown.
 
-Cloud Codes video, November 7, 2026, https://www.youtube.com/watch?v=ULIGFaPLd_Y. Private ReasonPack verified on Mac Studio; source-caption transcript is not listening-certified. Timed video cues, historical comparison claims and final relationship assessments still require review before public release. No independent editorial ACCEPT or owner publication authorization is implied.
+Cloud Codes video, November 7, 2026, https://www.youtube.com/watch?v=ULIGFaPLd_Y. Private ReasonPack verified by private source custodian; source-caption transcript is not listening-certified. Timed video cues, historical comparison claims and final relationship assessments still require review before public release. No independent editorial ACCEPT or owner publication authorization is implied.
 
 ## Proposed directed editorial connections (pending independent review)
 

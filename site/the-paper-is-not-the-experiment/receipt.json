@@ -233,7 +233,7 @@
       {
         "target": "reader:the-experiment-ran-did-the-research-advance",
         "type": "extends",
-        "reason": "Separates verified execution from scientific advancement; this Reader adds integrity as a prerequisite to claims of research progress.",
+        "reason": "Distinguishes executing a research workflow from making a scientifically meaningful advance. Reader #48 adds the evidence-integrity threshold that must be satisfied before the advancement question is even credible.",
         "provenance": [
           "/the-paper-is-not-the-experiment/",
           "/the-experiment-ran-did-the-research-advance/"
@@ -244,7 +244,7 @@
       {
         "target": "reader:the-grader-is-part-of-the-harness",
         "type": "companion",
-        "reason": "Examines evaluator design as a limit on interpreting automated scientific benchmark verdicts.",
+        "reason": "Examines evaluation design and recursive improvement. Reader #48 applies that concern to automated judgments over scientific code and trajectories, including judge error and rubric scope.",
         "provenance": [
           "/the-paper-is-not-the-experiment/",
           "/the-grader-is-part-of-the-harness/"
@@ -255,7 +255,7 @@
       {
         "target": "reader:the-harness-keeps-the-receipt",
         "type": "informs architecture",
-        "reason": "Maps agent research claims to durable execution evidence and acceptance receipts.",
+        "reason": "Connects scientific claim-to-log traceability to durable runtime evidence and authorization receipts. Both distinguish narrated completion from verified effects.",
         "provenance": [
           "/the-paper-is-not-the-experiment/",
           "/the-harness-keeps-the-receipt/"
@@ -266,7 +266,7 @@
       {
         "target": "reader:the-success-hid-the-failure",
         "type": "extends",
-        "reason": "Links apparent task success to hidden execution failures visible in actual traces.",
+        "reason": "Investigates hidden failures in tool traces despite apparent success. Reader #48 presents a scientific analogue in which professional-looking papers conceal missing or contradictory experimental work.",
         "provenance": [
           "/the-paper-is-not-the-experiment/",
           "/the-success-hid-the-failure/"
@@ -308,14 +308,14 @@
         "title": "Stop Prompting Agents. Start Managing Workers.",
         "url": "https://shareplane.malott.ai/artifacts/stop-prompting-agents-start-managing-workers/",
         "type": "foundation",
-        "reason": "Work contracts, evidence and accepted outcomes supply an architectural comparison to the benchmark.",
+        "reason": "Defines work contracts, evidence, measurement and earned autonomy; Reader #48 supplies an empirical research benchmark for those principles.",
         "basis": "curated-editorial-comparison"
       },
       {
         "title": "Own the Memory, Rent the Intelligence",
         "url": "https://shareplane.malott.ai/artifacts/own-memory-rent-intelligence-agent-stack/",
         "type": "companion",
-        "reason": "Source records and qualifications should remain available independent of fluent model summaries.",
+        "reason": "Preserving user-owned evidence, qualifications and governed memory prevents a model's latest polished summary from becoming authority without source traceability.",
         "basis": "curated-editorial-comparison"
       }
     ],
