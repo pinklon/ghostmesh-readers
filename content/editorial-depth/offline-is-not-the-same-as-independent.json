@@ -36,7 +36,7 @@
     "threatGovernance": {"disposition": "covered", "rationale": "Tool permissions, argument validation, denied actions, prompt-injection exposure, interruption and execution receipts are raised as tests before granting operational authority."}
   },
   "independentCorroboration": "none",
-  "ownerDecision": {"pullNumber": 146, "commentId": null},
+  "ownerDecision": {"pullNumber": 146, "commentId": 6745482937},
   "decision": "accept",
   "gaps": [
     {"type": "source", "severity": "nonblocking", "rationale": "Independent reviewer could not access the private verified media or Whisper aid and YouTube retrieval was throttled. Source timestamps remain publisher-inspected ASR navigation aids, not listening-certified evidence. The pack manifest and VTT are distinct digests, and section locators now point to the common video section with reduced navigation precision."},
