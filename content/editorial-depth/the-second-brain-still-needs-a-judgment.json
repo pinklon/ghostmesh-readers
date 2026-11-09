@@ -1,0 +1,140 @@
+{
+  "schemaVersion": 1,
+  "readerId": "reader:the-second-brain-still-needs-a-judgment",
+  "sourceId": "LP7bfT4vOlo",
+  "sourceDigest": "98182ae7d199e355cc3b8c1ac9c4287abfe380bd3dddab20ba81780385e686bc",
+  "sourceAidSha256": "45017ef77b520e1c4a8b84c33ab1c0755caa54882ce6435c82cc540802d94e0b",
+  "articleSha256": "b6b334afe9002edebfe02c1f20de0721b20c1f8f17bd834257861c751b478cad",
+  "evidenceRevision": "ee0213004a23f09724aa7c651951dabc7df0d8df23e6bf0548527359b1bcdcb9",
+  "sourceMapEvidenceSha256": "2dd66d01e5833142e08ec31cfccd2c8035425c9c46a52c70fc5f6f7071d857da",
+  "reviewEvidenceSha256": "7ce76ae8540a1517007dd2224ca58ed40968eaa4f257eeeece9e38b08f522092",
+  "candidateAuthor": "pinklon",
+  "complexity": {
+    "tier": "extended",
+    "factors": [
+      "Eight material claims across source assertions, research and editorial inference",
+      "Consequential memory/authority architecture recommendation"
+    ],
+    "rationale": "The 12:02 source is short, but eight claims and the proposed authority/retrieval experiment require extended mapping, counterargument and tradeoff review."
+  },
+  "sourceMap": [
+    {
+      "atSeconds": 574,
+      "sectionId": "source-performance",
+      "claimIds": [
+        "the-second-brain-still-needs-a-judgment--claim-1",
+        "the-second-brain-still-needs-a-judgment--claim-2"
+      ],
+      "rationale": "Machine ASR separately reports inference-time and vector database/embedding maintenance-cost nine-tenths reductions; neither is independently measured here."
+    },
+    {
+      "atSeconds": 582,
+      "sectionId": "source-bm25",
+      "claimIds": [
+        "the-second-brain-still-needs-a-judgment--claim-3"
+      ],
+      "rationale": "The video names BM25 at this passage. The separate BEIR published abstract supports the research finding about a robust baseline; video speech is not evidence of the paper result."
+    },
+    {
+      "atSeconds": 571,
+      "sectionId": "source-bm25",
+      "claimIds": [
+        "the-second-brain-still-needs-a-judgment--claim-4"
+      ],
+      "rationale": "The presenter dismisses RAG at this later passage after defining it more broadly near the beginning. The article distinguishes lexical retrieval from the wider architecture, without claiming a benchmark."
+    },
+    {
+      "atSeconds": 130,
+      "sectionId": "source-recency",
+      "claimIds": [
+        "the-second-brain-still-needs-a-judgment--claim-5"
+      ],
+      "rationale": "The source product-price example motivates a recency boost; the article separately tests whether newer records necessarily carry authority."
+    },
+    {
+      "atSeconds": 437,
+      "sectionId": "source-summaries",
+      "claimIds": [
+        "the-second-brain-still-needs-a-judgment--claim-6"
+      ],
+      "rationale": "The proposed pipeline retains original material, likely-query summaries and technical atoms, with summary matches pointing to raw data."
+    },
+    {
+      "atSeconds": 232,
+      "sectionId": "source-archive",
+      "claimIds": [
+        "the-second-brain-still-needs-a-judgment--claim-7"
+      ],
+      "rationale": "The source reports tens of thousands of records across development history, model sessions and transcripts; creator metadata supplies Engram spelling."
+    },
+    {
+      "atSeconds": 176,
+      "sectionId": "source-retrieve",
+      "claimIds": [
+        "the-second-brain-still-needs-a-judgment--claim-8"
+      ],
+      "rationale": "The presenter describes context-rot, cost and latency concerns; the cited long-context study supplies bounded research context, not an Engram benchmark."
+    }
+  ],
+  "assessment": {
+    "sourceCoverage": {
+      "disposition": "covered",
+      "rationale": "A verified private pack and 153 timed machine-ASR cues cover the 12:02 source span; source and cue hashes were independently checked. ASR text was reviewed without asserting listening, visual or quotation accuracy."
+    },
+    "supportingArgument": {
+      "disposition": "covered",
+      "rationale": "The complete 146-block manuscript develops practical lexical retrieval, source retention, memory qualification and authority continuity, with no mechanical compression."
+    },
+    "evidenceRoles": {
+      "disposition": "covered",
+      "rationale": "Two source-reported percentage measures remain unverified and separate. BEIR and long-context research are bounded context; hypothetical approval failures and the GhostMesh test are original analysis, not observations."
+    },
+    "counterargument": {
+      "disposition": "covered",
+      "rationale": "The article recognizes that more complex ranking can outperform BM25 and admits semantic/hybrid retrieval when measured misses justify it. It preserves the value of the source design and its existing raw-data backlinks."
+    },
+    "tradeoffs": {
+      "disposition": "covered",
+      "rationale": "Context cost and latency are weighed against retrieval quality, stale recency, omitted qualifications and the extra burden of indexing or control machinery."
+    },
+    "falsifiability": {
+      "disposition": "covered",
+      "rationale": "The proposed comparison holds corpus and answer model fixed and uses adjudicated historical questions, authority state, qualifications, missing evidence, latency and cost. No such experiment was run."
+    },
+    "originalSynthesis": {
+      "disposition": "covered",
+      "rationale": "The distinct conclusion is that retrieval improves recall while decisions require preserved status, provenance, qualifications and supersession; cheaper or newer text is not automatically governing knowledge."
+    },
+    "performance": {
+      "disposition": "covered",
+      "rationale": "Reported inference-time and vector-database/embedding-cost reductions have no independently audited baseline, denominator or quality control. Published research is not an Engram performance replication."
+    },
+    "economics": {
+      "disposition": "covered",
+      "rationale": "The questions explicitly include model choice, context amount, retrieval versus total latency, ingestion/storage costs and preserved quality; no general 90-percent savings promise is made."
+    },
+    "threatGovernance": {
+      "disposition": "covered",
+      "rationale": "The article preserves Development-versus-Production qualifications and separates proposals, approvals and observed effects. Examples are hypothetical; no unauthorized Engram action or deployed GhostMesh control is claimed."
+    }
+  },
+  "independentCorroboration": "none",
+  "ownerDecision": {
+    "kind": "conversation",
+    "owner": "Tony Malott",
+    "approval": "Tony approved the complete manuscript and the exact source-title/provenance and two denominator amendments, then all five editorial relationships and mechanical canonical-wrapper implementation in one draft PR/public Netlify preview. The independent implementation review accepts the unchanged copy and approved connections. This retains the actual conversational authorization, not cryptographic authentication; visual UAT, mark-ready, exact-head merge and Production remain held.",
+    "approvalDate": "2026-11-08",
+    "articleSha256": "b6b334afe9002edebfe02c1f20de0721b20c1f8f17bd834257861c751b478cad",
+    "evidenceRevision": "ee0213004a23f09724aa7c651951dabc7df0d8df23e6bf0548527359b1bcdcb9"
+  },
+  "decision": "accept",
+  "gaps": [
+    {
+      "type": "source",
+      "severity": "nonblocking",
+      "rationale": "Machine ASR has not been listening-checked. No visual demonstration or numerical performance result is independently verified; source-attributed paraphrase and explicit limitations are retained."
+    }
+  ],
+  "decisionRationale": "Actual fresh independent source/editorial/privacy implementation review accepts these exact authored HTML and source-map bytes after the precise-cue correction. Owner decisions cover only the recorded copy, five editorial relationships and the draft-preview workflow; no ready, merge, automerge or Production authority.",
+  "assessedAt": "2026-11-09T03:29:29.940202+00:00"
+}

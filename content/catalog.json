@@ -15343,7 +15343,10 @@
           "target": "reader:when-code-gets-cheap-where-does-the-work-wait",
           "type": "extends",
           "reason": "The earlier Reader identifies review and accepted delivery as bottlenecks after agent execution becomes cheap. This deconstruction exposes retries and tool-call waste hidden beneath a successful final result, making execution quality another measurable part of that bottleneck.",
-          "provenance": ["/the-success-hid-the-failure/", "/when-code-gets-cheap-where-does-the-work-wait/"],
+          "provenance": [
+            "/the-success-hid-the-failure/",
+            "/when-code-gets-cheap-where-does-the-work-wait/"
+          ],
           "basis": "curated-editorial-comparison",
           "direction": "outgoing"
         },
@@ -15351,7 +15354,10 @@
           "target": "reader:the-cockpit-is-not-the-control-plane",
           "type": "informs architecture",
           "reason": "The cockpit Reader separates visible dashboards from durable operational control. This analysis applies that distinction to grading agents: score trends are observability, while reviewed instruction changes, rollback and accepted outcomes provide the control boundary.",
-          "provenance": ["/the-success-hid-the-failure/", "/the-cockpit-is-not-the-control-plane/"],
+          "provenance": [
+            "/the-success-hid-the-failure/",
+            "/the-cockpit-is-not-the-control-plane/"
+          ],
           "basis": "curated-editorial-comparison",
           "direction": "outgoing"
         }
@@ -15416,7 +15422,10 @@
         "reviewedAt": "2026-11-08",
         "reviewedCatalogSize": 44,
         "decision": "linked",
-        "reviewedTargets": ["reader:when-code-gets-cheap-where-does-the-work-wait", "reader:the-cockpit-is-not-the-control-plane"],
+        "reviewedTargets": [
+          "reader:when-code-gets-cheap-where-does-the-work-wait",
+          "reader:the-cockpit-is-not-the-control-plane"
+        ],
         "rationale": "Owner requested meaningful relationships. These two existing Readers supply distinct, source-specific comparisons about accepted work and control over execution, without implying independent validation of Warp's product assertions."
       },
       "sharePlaneRelationships": [
@@ -15446,9 +15455,29 @@
       "slug": "the-router-is-not-the-organization",
       "title": "The Router Is Not the Organization",
       "category": "AI & Technology",
-      "tags": ["coding agents", "orchestration", "DeepSeek", "authority", "verification"],
-      "entities": ["DeepSeek", "AI LABS", "Claude Code", "GhostMesh"],
-      "source": {"platform": "YouTube", "url": "https://www.youtube.com/watch?v=3DklR44DHnM", "videoId": "3DklR44DHnM", "title": "Deepseek Just Released The Greatest Claude Code Workflow Ever", "creator": "AI LABS", "mediaAspect": "16:9", "durationSeconds": 856, "uploadDate": "unknown"},
+      "tags": [
+        "coding agents",
+        "orchestration",
+        "DeepSeek",
+        "authority",
+        "verification"
+      ],
+      "entities": [
+        "DeepSeek",
+        "AI LABS",
+        "Claude Code",
+        "GhostMesh"
+      ],
+      "source": {
+        "platform": "YouTube",
+        "url": "https://www.youtube.com/watch?v=3DklR44DHnM",
+        "videoId": "3DklR44DHnM",
+        "title": "Deepseek Just Released The Greatest Claude Code Workflow Ever",
+        "creator": "AI LABS",
+        "mediaAspect": "16:9",
+        "durationSeconds": 856,
+        "uploadDate": "unknown"
+      },
       "published": "2026-11-08",
       "updated": "2026-11-08T16:45:00Z",
       "overview": "A router-worker design can reduce supervision overhead, but routing alone cannot establish durable authority, evidence or accepted state.",
@@ -15463,28 +15492,182 @@
       "variant": "editorial",
       "accent": "red",
       "claims": [
-        {"id": "the-router-is-not-the-organization--claim-1", "proposition": "A router-worker arrangement separates conversation from parallel task execution.", "kind": "source-attributed-claim", "asOf": "2026-11-08", "status": "unverified", "assessment": "The AI LABS video demonstrates its own Claude Code adaptation.", "limits": "No universal throughput guarantee.", "sourceLocation": "02:00", "references": [], "counterevidence": [], "temporalScope": "November 8 source and verified timed aid."},
-        {"id": "the-router-is-not-the-organization--claim-2", "proposition": "The reported slowest task was 15.7 minutes with a router versus 29.5 minutes with a conventional session.", "kind": "source-attributed-claim", "asOf": "2026-11-08", "status": "unverified", "assessment": "Presenter reports five runs per configuration.", "limits": "No independent replication, controlled correctness comparison or full cost accounting.", "sourceLocation": "02:55", "references": [], "counterevidence": [], "temporalScope": "November 8 source only."},
-        {"id": "the-router-is-not-the-organization--claim-3", "proposition": "Detailed tickets and dependencies support independent worker execution.", "kind": "source-attributed-claim", "asOf": "2026-11-08", "status": "unverified", "assessment": "Tickets and specifications are shown as part of the demonstration.", "limits": "No isolated estimate of ticket quality's effect.", "sourceLocation": "03:36", "references": [], "counterevidence": [], "temporalScope": "November 8 source only."},
-        {"id": "the-router-is-not-the-organization--claim-4", "proposition": "A watchdog identifies stalled worker activity.", "kind": "source-attributed-claim", "asOf": "2026-11-08", "status": "unverified", "assessment": "The demonstration describes periodic liveness checks.", "limits": "Liveness is not correctness or release authority.", "sourceLocation": "08:56", "references": [], "counterevidence": [], "temporalScope": "November 8 source only."}
+        {
+          "id": "the-router-is-not-the-organization--claim-1",
+          "proposition": "A router-worker arrangement separates conversation from parallel task execution.",
+          "kind": "source-attributed-claim",
+          "asOf": "2026-11-08",
+          "status": "unverified",
+          "assessment": "The AI LABS video demonstrates its own Claude Code adaptation.",
+          "limits": "No universal throughput guarantee.",
+          "sourceLocation": "02:00",
+          "references": [],
+          "counterevidence": [],
+          "temporalScope": "November 8 source and verified timed aid."
+        },
+        {
+          "id": "the-router-is-not-the-organization--claim-2",
+          "proposition": "The reported slowest task was 15.7 minutes with a router versus 29.5 minutes with a conventional session.",
+          "kind": "source-attributed-claim",
+          "asOf": "2026-11-08",
+          "status": "unverified",
+          "assessment": "Presenter reports five runs per configuration.",
+          "limits": "No independent replication, controlled correctness comparison or full cost accounting.",
+          "sourceLocation": "02:55",
+          "references": [],
+          "counterevidence": [],
+          "temporalScope": "November 8 source only."
+        },
+        {
+          "id": "the-router-is-not-the-organization--claim-3",
+          "proposition": "Detailed tickets and dependencies support independent worker execution.",
+          "kind": "source-attributed-claim",
+          "asOf": "2026-11-08",
+          "status": "unverified",
+          "assessment": "Tickets and specifications are shown as part of the demonstration.",
+          "limits": "No isolated estimate of ticket quality's effect.",
+          "sourceLocation": "03:36",
+          "references": [],
+          "counterevidence": [],
+          "temporalScope": "November 8 source only."
+        },
+        {
+          "id": "the-router-is-not-the-organization--claim-4",
+          "proposition": "A watchdog identifies stalled worker activity.",
+          "kind": "source-attributed-claim",
+          "asOf": "2026-11-08",
+          "status": "unverified",
+          "assessment": "The demonstration describes periodic liveness checks.",
+          "limits": "Liveness is not correctness or release authority.",
+          "sourceLocation": "08:56",
+          "references": [],
+          "counterevidence": [],
+          "temporalScope": "November 8 source only."
+        }
       ],
-      "references": [{"id": "src-deepseek-superagent", "title": "DeepSeek super-agent research prototype", "author": "DeepSeek AI", "publisher": "DeepSeek AI", "url": "https://github.com/deepseek-ai/dsh-superagent-prototype", "publicationDate": "unknown", "datePrecision": "unknown", "dateNote": "Mutable research repository; publication date not asserted.", "eventDate": null, "location": "README", "sourceType": "first-party research prototype", "independence": "Distinct implementation; architectural context, not corroboration of the AI LABS timing comparison.", "evidenceFamily": "deepseek-primary", "checkedAt": "2026-11-08T16:45:00Z"}],
+      "references": [
+        {
+          "id": "src-deepseek-superagent",
+          "title": "DeepSeek super-agent research prototype",
+          "author": "DeepSeek AI",
+          "publisher": "DeepSeek AI",
+          "url": "https://github.com/deepseek-ai/dsh-superagent-prototype",
+          "publicationDate": "unknown",
+          "datePrecision": "unknown",
+          "dateNote": "Mutable research repository; publication date not asserted.",
+          "eventDate": null,
+          "location": "README",
+          "sourceType": "first-party research prototype",
+          "independence": "Distinct implementation; architectural context, not corroboration of the AI LABS timing comparison.",
+          "evidenceFamily": "deepseek-primary",
+          "checkedAt": "2026-11-08T16:45:00Z"
+        }
+      ],
       "relationships": [
-        {"target": "reader:the-session-count-is-not-the-system", "type": "informs architecture", "reason": "Both distinguish more concurrent sessions from governed, durable work; this Reader adds ticket and authority boundaries.", "provenance": ["/the-router-is-not-the-organization/", "/the-session-count-is-not-the-system/"], "basis": "curated-editorial-comparison", "direction": "outgoing"},
-        {"target": "reader:the-cockpit-is-not-the-control-plane", "type": "companion", "reason": "A visible router resembles a cockpit; neither inherently preserves accepted state and decision authority.", "provenance": ["/the-router-is-not-the-organization/", "/the-cockpit-is-not-the-control-plane/"], "basis": "curated-editorial-comparison", "direction": "outgoing"},
-        {"target": "reader:the-harness-keeps-the-receipt", "type": "extends", "reason": "The harness Reader's durable verification receipts supply the missing acceptance evidence after delegated execution.", "provenance": ["/the-router-is-not-the-organization/", "/the-harness-keeps-the-receipt/"], "basis": "curated-editorial-comparison", "direction": "outgoing"}
+        {
+          "target": "reader:the-session-count-is-not-the-system",
+          "type": "informs architecture",
+          "reason": "Both distinguish more concurrent sessions from governed, durable work; this Reader adds ticket and authority boundaries.",
+          "provenance": [
+            "/the-router-is-not-the-organization/",
+            "/the-session-count-is-not-the-system/"
+          ],
+          "basis": "curated-editorial-comparison",
+          "direction": "outgoing"
+        },
+        {
+          "target": "reader:the-cockpit-is-not-the-control-plane",
+          "type": "companion",
+          "reason": "A visible router resembles a cockpit; neither inherently preserves accepted state and decision authority.",
+          "provenance": [
+            "/the-router-is-not-the-organization/",
+            "/the-cockpit-is-not-the-control-plane/"
+          ],
+          "basis": "curated-editorial-comparison",
+          "direction": "outgoing"
+        },
+        {
+          "target": "reader:the-harness-keeps-the-receipt",
+          "type": "extends",
+          "reason": "The harness Reader's durable verification receipts supply the missing acceptance evidence after delegated execution.",
+          "provenance": [
+            "/the-router-is-not-the-organization/",
+            "/the-harness-keeps-the-receipt/"
+          ],
+          "basis": "curated-editorial-comparison",
+          "direction": "outgoing"
+        }
       ],
       "relationshipDisposition": "Three owner-approved directed Reader relationships and three separate SharePlane outbound routes; none independently corroborates the presenter timing.",
-      "review": {"status": "Independent review accepted for owner review", "reviewer": "separate read-only editorial review", "checkedAt": "2026-11-08T21:20:30Z", "scope": "Independent qualitative review of the revised authored manuscript and Pando wrapper; private Hyperion timed source aid was not replayed by the reviewer.", "findings": "Accepted for owner editorial review, with explicit limits on independent performance corroboration and no claim of production approval."},
-      "legacyReceipt": {"schema": "ghostmesh-reader-receipt-v2", "createdAt": "2026-11-08T16:45:00Z", "source": {"url": "https://www.youtube.com/watch?v=3DklR44DHnM", "videoId": "3DklR44DHnM"}, "sourceInspection": {"status": "private-timed-aid-verified", "method": "ReasonPack with Whisper timed aid", "timedAidSha256": "3cacc402bc260a56792cc746c0bc95d3ab545a985e6e9f0589a5878ed67395fb", "caveat": "Speech recognition is a timing aid, not an independent performance replication.", "publicationBoundary": "Public original analysis and digests only; no private media, captions or transcript."}, "custody": {"status": "private-timed-aid-verified", "note": "Private material remains on Hyperion; only public-safe SHA-256 digests are recorded."}},
-      "relationshipReview": {"reviewedAt": "2026-11-08", "reviewedCatalogSize": 44, "decision": "linked", "reviewedTargets": ["reader:the-session-count-is-not-the-system", "reader:the-cockpit-is-not-the-control-plane", "reader:the-harness-keeps-the-receipt"], "rationale": "Owner-approved source-specific architectural comparisons, not proof of the video's benchmark."},
+      "review": {
+        "status": "Independent review accepted for owner review",
+        "reviewer": "separate read-only editorial review",
+        "checkedAt": "2026-11-08T21:20:30Z",
+        "scope": "Independent qualitative review of the revised authored manuscript and Pando wrapper; private Hyperion timed source aid was not replayed by the reviewer.",
+        "findings": "Accepted for owner editorial review, with explicit limits on independent performance corroboration and no claim of production approval."
+      },
+      "legacyReceipt": {
+        "schema": "ghostmesh-reader-receipt-v2",
+        "createdAt": "2026-11-08T16:45:00Z",
+        "source": {
+          "url": "https://www.youtube.com/watch?v=3DklR44DHnM",
+          "videoId": "3DklR44DHnM"
+        },
+        "sourceInspection": {
+          "status": "private-timed-aid-verified",
+          "method": "ReasonPack with Whisper timed aid",
+          "timedAidSha256": "3cacc402bc260a56792cc746c0bc95d3ab545a985e6e9f0589a5878ed67395fb",
+          "caveat": "Speech recognition is a timing aid, not an independent performance replication.",
+          "publicationBoundary": "Public original analysis and digests only; no private media, captions or transcript."
+        },
+        "custody": {
+          "status": "private-timed-aid-verified",
+          "note": "Private material remains on Hyperion; only public-safe SHA-256 digests are recorded."
+        }
+      },
+      "relationshipReview": {
+        "reviewedAt": "2026-11-08",
+        "reviewedCatalogSize": 44,
+        "decision": "linked",
+        "reviewedTargets": [
+          "reader:the-session-count-is-not-the-system",
+          "reader:the-cockpit-is-not-the-control-plane",
+          "reader:the-harness-keeps-the-receipt"
+        ],
+        "rationale": "Owner-approved source-specific architectural comparisons, not proof of the video's benchmark."
+      },
       "sharePlaneRelationships": [
-        {"title": "Stop Prompting Agents. Start Managing Workers", "url": "https://shareplane.malott.ai/artifacts/stop-prompting-agents-start-managing-workers/", "type": "foundation", "reason": "Worker contracts and orchestration provide architectural context for the routing demonstration; the Work gives explicit attention to managing workers beyond opening more agent sessions.", "basis": "curated-editorial-comparison"},
-        {"title": "The Agent Is Not the Product. The Control Plane Is.", "url": "https://shareplane.malott.ai/artifacts/the-agent-is-not-the-product-the-control-plane-is/", "type": "counterpoint", "reason": "The Work's control-plane argument challenges the assumption that a router and worker dashboard are sufficient to retain accepted state, scope, authority and verified outcomes.", "basis": "curated-editorial-comparison"},
-        {"title": "The Semantic Operating System", "url": "https://shareplane.malott.ai/artifacts/the-semantic-operating-system/", "type": "extends", "reason": "Durable task meaning, state and evidence expand the router pattern into an accountable operating layer.", "basis": "curated-editorial-comparison"}
+        {
+          "title": "Stop Prompting Agents. Start Managing Workers",
+          "url": "https://shareplane.malott.ai/artifacts/stop-prompting-agents-start-managing-workers/",
+          "type": "foundation",
+          "reason": "Worker contracts and orchestration provide architectural context for the routing demonstration; the Work gives explicit attention to managing workers beyond opening more agent sessions.",
+          "basis": "curated-editorial-comparison"
+        },
+        {
+          "title": "The Agent Is Not the Product. The Control Plane Is.",
+          "url": "https://shareplane.malott.ai/artifacts/the-agent-is-not-the-product-the-control-plane-is/",
+          "type": "counterpoint",
+          "reason": "The Work's control-plane argument challenges the assumption that a router and worker dashboard are sufficient to retain accepted state, scope, authority and verified outcomes.",
+          "basis": "curated-editorial-comparison"
+        },
+        {
+          "title": "The Semantic Operating System",
+          "url": "https://shareplane.malott.ai/artifacts/the-semantic-operating-system/",
+          "type": "extends",
+          "reason": "Durable task meaning, state and evidence expand the router pattern into an accountable operating layer.",
+          "basis": "curated-editorial-comparison"
+        }
       ],
-      "sharePlaneReview": {"reviewedAt": "2026-11-08", "decision": "linked", "rationale": "Three owner-approved outbound editorial routes; not independent corroboration or a SharePlane graph write."},
-      "editorialDepth": {"schemaVersion": 1, "receiptPath": "content/editorial-depth/the-router-is-not-the-organization.json"},
+      "sharePlaneReview": {
+        "reviewedAt": "2026-11-08",
+        "decision": "linked",
+        "rationale": "Three owner-approved outbound editorial routes; not independent corroboration or a SharePlane graph write."
+      },
+      "editorialDepth": {
+        "schemaVersion": 1,
+        "receiptPath": "content/editorial-depth/the-router-is-not-the-organization.json"
+      },
       "editorialOrder": 44,
       "orderReason": "Owner-approved long-form source deconstruction; independent review complete, with exact-head publication qualification pending."
     },
@@ -15715,6 +15898,398 @@
       },
       "editorialOrder": 45,
       "orderReason": "Owner-approved standard-length Reader #46; exact-head publication qualification still pending."
+    },
+    {
+      "id": "reader:the-second-brain-still-needs-a-judgment",
+      "slug": "the-second-brain-still-needs-a-judgment",
+      "title": "The Second Brain Still Needs a Judgment",
+      "category": "AI & Technology",
+      "tags": [
+        "personal memory",
+        "retrieval",
+        "BM25",
+        "evidence",
+        "authority"
+      ],
+      "entities": [
+        "Nick Saraev",
+        "Engram",
+        "BM25",
+        "GhostMesh"
+      ],
+      "source": {
+        "platform": "YouTube",
+        "url": "https://www.youtube.com/watch?v=LP7bfT4vOlo",
+        "videoId": "LP7bfT4vOlo",
+        "title": "The NEW Way to Build a Second Brain w/ Claude (2027)",
+        "creator": "Nick Saraev",
+        "mediaAspect": "16:9",
+        "durationSeconds": 722,
+        "uploadDate": "2026-10-18",
+        "captionType": "offline machine ASR, not listening-checked",
+        "creatorChapters": [
+          {
+            "start": 0,
+            "end": 53,
+            "title": "From Vannevar Bush's Vision to AI Slop"
+          },
+          {
+            "start": 53,
+            "end": 109,
+            "title": "What a Personal Knowledge Base Does"
+          },
+          {
+            "start": 109,
+            "end": 315,
+            "title": "Why Recency and Retrieval Matter"
+          },
+          {
+            "start": 315,
+            "end": 429,
+            "title": "Building Reliable Data Pipelines"
+          },
+          {
+            "start": 429,
+            "end": 549,
+            "title": "Summaries, Atoms, and Institutional Memory"
+          },
+          {
+            "start": 549,
+            "end": 621,
+            "title": "Make Your Knowledge Base Searchable"
+          },
+          {
+            "start": 621,
+            "end": 648,
+            "title": "Keep the System Fresh and Working"
+          },
+          {
+            "start": 648,
+            "end": 722,
+            "title": "Origins, Resources, and Wrap-Up"
+          }
+        ]
+      },
+      "published": "2026-11-08",
+      "updated": "2026-11-09T03:18:56.823372+00:00",
+      "overview": "The finding. Nick Saraev makes a compelling case for a simpler personal AI knowledge base. Collect information incrementally, preserve the source, extract useful metadata, search it efficiently, and give the model only the context it needs. Much of the fashionable machinery surrounding AI memory is optional.",
+      "whyItMatters": "The limitation. His architecture addresses the retrieval problem more convincingly than the authority problem. A recent record is not necessarily correct. A good summary is not necessarily faithful. A relevant search result is not necessarily an approved decision. The video does not adequately resolve those distinctions.",
+      "ghostMeshTakeaway": "The recommendation. Start with simple retrieval, including BM25. Preserve original records and their provenance. Represent decisions, qualifications, and supersession explicitly. Measure failures before adding semantic indexes or other infrastructure. A second brain should improve judgment, not merely accelerate recall.",
+      "verdict": "Worth studying",
+      "architectureImpact": "experiment recommended",
+      "falsification": "If BM25 performs adequately, keep it. If semantic retrieval improves specific categories of questions, add it where necessary. If neither method reconstructs authority correctly, another embedding model is unlikely to solve the underlying problem.",
+      "evidenceState": "unverified",
+      "lastEvidenceChecked": "2026-11-09T03:18:56.823372+00:00",
+      "freshness": "Source evidence: a private, integrity-verified ReasonPack containing the retained video and audio, plus an offline CPU-generated machine-ASR transcript. Its 153 timed cues span 00:00–12:01.600 of the 12:02 video. The ASR has not been checked by listening, and no visual or numerical claim was independently verified. The earlier third-party automatic-caption transcript was an initial speech aid, not canonical evidence.",
+      "variant": "editorial",
+      "accent": "red",
+      "claims": [
+        {
+          "id": "the-second-brain-still-needs-a-judgment--claim-1",
+          "proposition": "Saraev reports that inference time fell by nine-tenths after moving toward simpler text retrieval.",
+          "kind": "source-attributed-claim",
+          "asOf": "2026-11-09",
+          "status": "unverified",
+          "assessment": "The video does not establish that another system should expect the same result.",
+          "limits": "Inference time only; no baseline, listening authentication or independent reproduction.",
+          "sourceLocation": "09:34 (machine-ASR locator)",
+          "references": [],
+          "counterevidence": [],
+          "temporalScope": "October 18 source; November 9 source inspection. No experiment performed for this Reader."
+        },
+        {
+          "id": "the-second-brain-still-needs-a-judgment--claim-2",
+          "proposition": "He separately reports a nine-tenths reduction in vector database maintenance and embedding costs.",
+          "kind": "source-attributed-claim",
+          "asOf": "2026-11-09",
+          "status": "unverified",
+          "assessment": "Without those details, the two reported nine-tenths reductions remain anecdotal observations, not generalizable results.",
+          "limits": "Vector database maintenance and embedding costs, not a verified all-in inference or operating-cost reduction.",
+          "sourceLocation": "09:34 (machine-ASR locator)",
+          "references": [],
+          "counterevidence": [],
+          "temporalScope": "October 18 source; November 9 source inspection. No experiment performed for this Reader."
+        },
+        {
+          "id": "the-second-brain-still-needs-a-judgment--claim-3",
+          "proposition": "The BEIR retrieval benchmark found BM25 to be a robust baseline across heterogeneous retrieval tasks.",
+          "kind": "research-interpretation",
+          "asOf": "2026-11-09",
+          "status": "partially corroborated",
+          "assessment": "More sophisticated ranking methods can outperform it, but they introduce additional computational and operational costs.",
+          "limits": "Published benchmark findings, not a universal superiority result or a GhostMesh retrieval evaluation.",
+          "sourceLocation": "BEIR published abstract; 09:42 video context only, not the paper result",
+          "references": [
+            "r47-beir"
+          ],
+          "counterevidence": [],
+          "temporalScope": "October 18 source; November 9 source inspection. No experiment performed for this Reader."
+        },
+        {
+          "id": "the-second-brain-still-needs-a-judgment--claim-4",
+          "proposition": "Replacing vector search with BM25 does not eliminate RAG.",
+          "kind": "editorial-inference",
+          "asOf": "2026-11-09",
+          "status": "unverified",
+          "assessment": "Retrieval-augmented generation describes the broader arrangement in which a system retrieves external information to support generation. BM25 is one possible retrieval mechanism.",
+          "limits": "The cited original RAG paper studied dense retrieval; the lexical classification is architectural interpretation. The presenter defines RAG early and later uses it more narrowly.",
+          "sourceLocation": "09:31 (machine-ASR locator for the later RAG dismissal)",
+          "references": [
+            "r47-rag"
+          ],
+          "counterevidence": [],
+          "temporalScope": "October 18 source; November 9 source inspection. No experiment performed for this Reader."
+        },
+        {
+          "id": "the-second-brain-still-needs-a-judgment--claim-5",
+          "proposition": "A newer description of an event does not automatically supersede an earlier authoritative record.",
+          "kind": "editorial-inference",
+          "asOf": "2026-11-09",
+          "status": "unverified",
+          "assessment": "That is useful when time strongly correlates with validity.",
+          "limits": "The authority example is hypothetical GhostMesh analysis, not an observed Engram authorization failure.",
+          "sourceLocation": "02:10 (machine-ASR locator)",
+          "references": [],
+          "counterevidence": [],
+          "temporalScope": "October 18 source; November 9 source inspection. No experiment performed for this Reader."
+        },
+        {
+          "id": "the-second-brain-still-needs-a-judgment--claim-6",
+          "proposition": "This is why extracted memory must remain connected to source evidence.",
+          "kind": "editorial-inference",
+          "asOf": "2026-11-09",
+          "status": "unverified",
+          "assessment": "The summary helps locate the record. The original record establishes what was said. The approval and subsequent operational evidence establish what became authoritative.",
+          "limits": "The source already retains original material and points summary matches back to it; no summary-fidelity experiment was performed.",
+          "sourceLocation": "07:17 (machine-ASR locator)",
+          "references": [],
+          "counterevidence": [],
+          "temporalScope": "October 18 source; November 9 source inspection. No experiment performed for this Reader."
+        },
+        {
+          "id": "the-second-brain-still-needs-a-judgment--claim-7",
+          "proposition": "His system, Engram, reportedly indexes tens of thousands of records, including development history, AI conversations, and transcripts.",
+          "kind": "source-attributed-claim",
+          "asOf": "2026-11-09",
+          "status": "unverified",
+          "assessment": "These are presenter-reported descriptions, not an independently inspected corpus.",
+          "limits": "Engram spelling is supported by creator metadata; no corpus inventory or operational reliability audit.",
+          "sourceLocation": "03:52 (machine-ASR locator)",
+          "references": [],
+          "counterevidence": [],
+          "temporalScope": "October 18 source; November 9 source inspection. No experiment performed for this Reader."
+        },
+        {
+          "id": "the-second-brain-still-needs-a-judgment--claim-8",
+          "proposition": "Research on long-context language models has demonstrated that relevant information can become harder to use depending on its position within the prompt.",
+          "kind": "research-interpretation",
+          "asOf": "2026-11-09",
+          "status": "partially corroborated",
+          "assessment": "The widely discussed Lost in the Middle experiments illustrate precisely this problem.",
+          "limits": "Bound to the studied models and tasks; no universal current-model failure rate or independently measured Engram advantage.",
+          "sourceLocation": "02:56 (machine-ASR locator)",
+          "references": [
+            "r47-lost-middle"
+          ],
+          "counterevidence": [],
+          "temporalScope": "October 18 source; November 9 source inspection. No experiment performed for this Reader."
+        }
+      ],
+      "references": [
+        {
+          "id": "r47-lost-middle",
+          "title": "Lost in the Middle: How Language Models Use Long Contexts",
+          "author": "Liu et al.",
+          "publisher": "arXiv",
+          "url": "https://arxiv.org/abs/2307.03172",
+          "publicationDate": "2023-07-06",
+          "lastUpdated": "2023-11-20",
+          "datePrecision": "day",
+          "eventDate": null,
+          "location": "Published paper abstract and stated evaluation scope",
+          "sourceType": "research paper",
+          "independence": "Primary author research; separate from the video, not independent reproduction of its reported savings.",
+          "evidenceFamily": "research-lost-middle",
+          "checkedAt": "2026-11-09T03:18:56.823372+00:00"
+        },
+        {
+          "id": "r47-beir",
+          "title": "BEIR: A Heterogeneous Benchmark for Zero-shot Evaluation of Information Retrieval Models",
+          "author": "Thakur et al.",
+          "publisher": "arXiv",
+          "url": "https://arxiv.org/abs/2104.08663",
+          "publicationDate": "2021-04-17",
+          "lastUpdated": "2021-10-21",
+          "datePrecision": "day",
+          "eventDate": null,
+          "location": "Published paper abstract and stated evaluation scope",
+          "sourceType": "research paper",
+          "independence": "Primary author research; separate from the video, not independent reproduction of its reported savings.",
+          "evidenceFamily": "research-beir",
+          "checkedAt": "2026-11-09T03:18:56.823372+00:00"
+        },
+        {
+          "id": "r47-rag",
+          "title": "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks",
+          "author": "Lewis et al.",
+          "publisher": "arXiv",
+          "url": "https://arxiv.org/abs/2005.11401",
+          "publicationDate": "2020-05-22",
+          "lastUpdated": "2021-04-12",
+          "datePrecision": "day",
+          "eventDate": null,
+          "location": "Published paper abstract and stated evaluation scope",
+          "sourceType": "research paper",
+          "independence": "Primary author research; separate from the video, not independent reproduction of its reported savings.",
+          "evidenceFamily": "research-rag",
+          "checkedAt": "2026-11-09T03:18:56.823372+00:00"
+        },
+        {
+          "id": "r47-bright",
+          "title": "BRIGHT: A Realistic and Challenging Benchmark for Reasoning-Intensive Retrieval",
+          "author": "Su et al.",
+          "publisher": "arXiv",
+          "url": "https://arxiv.org/abs/2407.12883",
+          "publicationDate": "2024-07-16",
+          "lastUpdated": "2025-03-26",
+          "datePrecision": "day",
+          "eventDate": null,
+          "location": "Published paper abstract and stated evaluation scope",
+          "sourceType": "research paper",
+          "independence": "Primary author research; separate from the video, not independent reproduction of its reported savings.",
+          "evidenceFamily": "research-bright",
+          "checkedAt": "2026-11-09T03:18:56.823372+00:00"
+        },
+        {
+          "id": "r47-ragchecker",
+          "title": "RAGChecker: A Fine-grained Framework for Diagnosing Retrieval-Augmented Generation",
+          "author": "Ru et al.",
+          "publisher": "arXiv",
+          "url": "https://arxiv.org/abs/2408.08067",
+          "publicationDate": "2024-08-15",
+          "lastUpdated": "2024-08-17",
+          "datePrecision": "day",
+          "eventDate": null,
+          "location": "Published paper abstract and stated evaluation scope",
+          "sourceType": "research paper",
+          "independence": "Primary author research; separate from the video, not independent reproduction of its reported savings.",
+          "evidenceFamily": "research-ragchecker",
+          "checkedAt": "2026-11-09T03:18:56.823372+00:00"
+        }
+      ],
+      "relationships": [
+        {
+          "target": "reader:the-agent-a-company-owns",
+          "type": "extends",
+          "reason": "Moves from a company-owned agent that retains corrections, memory isolation and accountable continuity to the narrower retrieval question: whether summaries and recency preserve the governing decision rather than merely a plausible recollection.",
+          "provenance": [
+            "/the-second-brain-still-needs-a-judgment/",
+            "/the-agent-a-company-owns/"
+          ],
+          "basis": "curated-editorial-comparison",
+          "direction": "outgoing"
+        },
+        {
+          "target": "reader:the-harness-keeps-the-receipt",
+          "type": "informs architecture",
+          "reason": "Supplies the execution boundary for the memory argument: a retrieved approval is useful context, while durable authorization and effect receipts determine what may resume and what actually happened.",
+          "provenance": [
+            "/the-second-brain-still-needs-a-judgment/",
+            "/the-harness-keeps-the-receipt/"
+          ],
+          "basis": "curated-editorial-comparison",
+          "direction": "outgoing"
+        },
+        {
+          "target": "reader:the-cost-of-forgetting-where-the-tools-are",
+          "type": "companion",
+          "reason": "Examines the other side of context economy: loading less information is useful only if source and capability discovery remain available. Both require measuring accepted outcomes and recovery alongside reported cost savings.",
+          "provenance": [
+            "/the-second-brain-still-needs-a-judgment/",
+            "/the-cost-of-forgetting-where-the-tools-are/"
+          ],
+          "basis": "curated-editorial-comparison",
+          "direction": "outgoing"
+        }
+      ],
+      "relationshipDisposition": "Owner-approved directed editorial comparisons, not independent corroboration of the source or performance assertions.",
+      "review": {
+        "status": "Independent exact-copy/source/privacy ACCEPT for owner review; draft preview only",
+        "reviewer": "Existing independent Codex qualitative reviewer",
+        "checkedAt": "2026-11-09T03:29:29.940202+00:00",
+        "scope": "Authored/generated article, complete locked manuscript, actual ASR cue/claim roles, five approved editorial relationships and private-source boundary",
+        "findings": "All 146 locked blocks remain in order; 09:31 RAG and 09:42 BM25 locators are separate, with BEIR paper attribution. Unlistened ASR and presenter percentages remain qualified. No visual or Production acceptance is asserted."
+      },
+      "revisionHistory": [
+        {
+          "at": "2026-11-09T03:18:56.823372+00:00",
+          "reason": "Initial owner-approved Reader draft implementation; source-title/provenance and denominator corrections retained in the immutable Creative Lock lineage."
+        }
+      ],
+      "editorialOrder": 46,
+      "orderReason": "Reader #47; owner-approved deep deconstruction. Proposed first-publication date must be rechecked before any exact-head production decision.",
+      "relationshipReview": {
+        "reviewedAt": "2026-11-09",
+        "reviewedCatalogSize": 46,
+        "decision": "linked",
+        "reviewedTargets": [
+          "reader:the-agent-a-company-owns",
+          "reader:the-harness-keeps-the-receipt",
+          "reader:the-cost-of-forgetting-where-the-tools-are"
+        ],
+        "rationale": "All 46 existing Reader theses were reviewed. Tony approved exactly three outgoing comparisons about continuity, runtime authority and context/discovery economy. These are editorial connections, not independent corroboration of Saraev claims."
+      },
+      "sharePlaneRelationships": [
+        {
+          "title": "Own the Memory, Rent the Intelligence",
+          "url": "https://shareplane.malott.ai/artifacts/own-memory-rent-intelligence-agent-stack/",
+          "type": "foundation",
+          "reason": "Establishes personal memory as user-owned context, permissions, evidence and reviewed memory updates across replaceable models. Reader47 proposes evaluating how a simpler lexical retrieval design can retain those distinctions.",
+          "basis": "curated-editorial-comparison"
+        },
+        {
+          "title": "Cognitive Capital",
+          "url": "https://shareplane.malott.ai/artifacts/cognitive-capital/",
+          "type": "extends",
+          "reason": "Adds a concrete retrieval and summary failure boundary to the economic thesis: stored text earns durable value through validation and judgment, not merely because inference is cheaper or more history is searchable.",
+          "basis": "curated-editorial-comparison"
+        }
+      ],
+      "sharePlaneReview": {
+        "reviewedAt": "2026-11-09",
+        "decision": "linked",
+        "rationale": "Tony approved the two published Work routes on governed personal memory and validated cognitive capital. Their arguments supply editorial context, not evidence that Engram or the reported savings were independently verified."
+      },
+      "legacyReceipt": {
+        "schema": "ghostmesh-reader-receipt-v2",
+        "createdAt": "2026-11-09T03:18:56.823372+00:00",
+        "source": {
+          "url": "https://www.youtube.com/watch?v=LP7bfT4vOlo",
+          "videoId": "LP7bfT4vOlo"
+        },
+        "reasonPack": {
+          "verification": "pass",
+          "manifestSha256": "45017ef77b520e1c4a8b84c33ab1c0755caa54882ce6435c82cc540802d94e0b"
+        },
+        "sourceInspection": {
+          "method": "Verified private ReasonPack with offline CPU machine ASR of retained source audio",
+          "timedAidSha256": "1a6be9e8eda1236d4e1989c9f13e5b38d0b5066d97a7a31b4bd94dce2f21d323",
+          "transcriptSha256": "fab62e52148aa4425f46ce21bc8aad9ef19b07c3b80c2c88004d7ca0854a28a7",
+          "sourceReceiptSha256": "fef90e9ba11643ee9636f0a10e4001eaccb6990081c5d298cf7ffcd79946084b",
+          "cueMapSha256": "c30b5d4f8ecd3bcff175d78b8c6d44d725399b6d89580c9c086a22d7fa2f87a0",
+          "coverage": "153 cues span 00:00–12:01.600 of 12:02; cue span is not word-perfect speech coverage.",
+          "caveat": "No listening authentication, visual verification or independent numerical replication. Source claims and proposed GhostMesh tests remain distinct.",
+          "publicationBoundary": "Original analysis and sanitized hash metadata only; no raw media, transcripts, captions, private packet paths or operational payloads."
+        },
+        "custody": {
+          "status": "qualified-private-pack-verified",
+          "note": "Existing source custodian retained the private pack. Publisher independently checked all six manifest-member hashes, cue-map and timed-aid integrity; no speech/visual truth inferred."
+        }
+      },
+      "editorialDepth": {
+        "schemaVersion": 1,
+        "receiptPath": "content/editorial-depth/the-second-brain-still-needs-a-judgment.json"
+      }
     }
   ],
   "featuredId": "reader:ask-for-the-outcome-keep-the-boundary"

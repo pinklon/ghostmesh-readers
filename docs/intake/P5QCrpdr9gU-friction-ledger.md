@@ -60,3 +60,10 @@ Keep the existing candidate receipt's outcomes separate: focused regressions; fu
 3. Reconcile stale preview-only catalog/review metadata with the verified production release.
 
 None is implemented by this intake repair. No article, source map, runtime, public catalog/graph/feed or deployment bytes change here.
+
+
+## Reader #47: first bounded reuse evidence (draft preparation)
+
+The same publisher used commissioned source discovery before requesting any manual transcript and retained a verified private source pack with explicit unlistened-ASR limits. The exact approved manuscript and two narrow owner-approved source amendments remain hash-bound; no private media or source payload is staged. The canonical wrapper, compact home/archive source players and in-article player are reused. Eight focused checks pass on precise paper/video locators, full block/order coverage, omission/compression negatives, exact five destinations, separate unverified cost denominators and a unique staged first-release event. This is concrete F01/F03/F06/F07 preparation evidence, not proof of a published Reader.
+
+F02 actual desktop/mobile interaction evidence must come from the permitted hosted preview; the prior local browser denial is not retried. F05 focused, full-suite, aggregate, independent editorial, hosted and deployment results remain separate. F08 uses the incumbent publisher and source custodian; improved end-to-end latency is still UNKNOWN. Production release and the separate Reader #46 citation/RSS/stale-metadata follow-ups remain outside this draft's authority.

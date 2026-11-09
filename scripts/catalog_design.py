@@ -29,6 +29,8 @@ def paper_cover(source):
 # test, not verification labels. Keep the source-grounding checks below when
 # adding a Reader; never infer a call from its category or claim count.
 CALLS = {
+    'the-second-brain-still-needs-a-judgment': (
+        'The recommendation', 'The recommendation. Start with simple retrieval, including BM25. Preserve original records and their provenance. Represent decisions, qualifications, and supersession explicitly. Measure failures before adding semantic indexes or other infrastructure. A second brain should improve judgment, not merely accelerate recall.'),
     'the-cost-of-forgetting-where-the-tools-are': (
         'Test cost without losing discovery', 'Watch the micro-skills at 01:49 and tool pruning at 03:46. Compare billed cost and accepted work while deliberately requiring a rarely used authorized tool.'),
     'the-router-is-not-the-organization': (

@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "readerId": "reader:the-second-brain-still-needs-a-judgment",
+  "sourceId": "LP7bfT4vOlo",
+  "sourceAidSha256": "45017ef77b520e1c4a8b84c33ab1c0755caa54882ce6435c82cc540802d94e0b",
+  "articleSha256": "b6b334afe9002edebfe02c1f20de0721b20c1f8f17bd834257861c751b478cad",
+  "evidenceRevision": "ee0213004a23f09724aa7c651951dabc7df0d8df23e6bf0548527359b1bcdcb9",
+  "reviewedAt": "2026-11-09T03:29:29.940202+00:00",
+  "provenance": {
+    "kind": "codex-task-agent",
+    "reference": "Actual independent read-only implementation review and precise-cue re-review by existing native task /root/editorial_review. Its final ACCEPT binds this authored article and source-map digest after the prior locator HOLD was repaired. Earlier source/copy/locator HOLDs remain privately retained.",
+    "limits": "Reviewer inspected actual approved Markdown, authored/generated HTML, catalog, source map, retained ASR transcript/VTT and cited research scope. No listening verification, video witness, numerical reproduction, browser QA or release acceptance. Native task provenance is a retained declaration, not cryptographic authentication."
+  },
+  "summary": "ACCEPT FOR OWNER REVIEW of this exact mechanical Reader implementation: complete locked copy, eight source chapters, qualified claim roles and five approved editorial comparisons. Draft preview and Production remain separate.",
+  "findings": [
+    "All 146 approved manuscript blocks, including the complete brief, body, list items, source notes and final limitations, remain visible and in order. The exact 14,794-byte Markdown hash is retained; no condensation or reauthoring was found.",
+    "All eight source chapter labels and timestamps match captured creator metadata. Source identity, date and 16:9 aspect are preserved, without claiming visual verification.",
+    "The 09:31 RAG dismissal and 09:42 BM25 passage are distinct clickable exact-video links. Claim 3 attributes BEIR to its published abstract and uses video as context only. All eight claims have map coverage.",
+    "The inference-time and vector-database/embedding-cost nine-tenths assertions remain separate, speaker-attributed and unverified. No all-in operating-cost reduction or independent performance proof is asserted.",
+    "Raw-source backlinks are acknowledged. The summary/authority critique is hypothetical analysis, not an observed Engram authorization failure. Engram spelling is supported by creator metadata, not ASR speech recognition.",
+    "The three Reader and two SharePlane target/type/reason fields match the approved proposal. These are editorial comparisons, not corroboration. Prior catalog records and release-event values are preserved.",
+    "No initial iframe, private source path, raw transcript or media payload was found in the article, map, record or generated page. Eight focused tests pass. Full gates and hosted visual QA are separate."
+  ],
+  "conclusion": "accept-for-owner-review"
+}

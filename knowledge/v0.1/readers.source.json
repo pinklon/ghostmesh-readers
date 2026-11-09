@@ -673,6 +673,18 @@
         "path": "site/the-cost-of-forgetting-where-the-tools-are/index.html",
         "sha256": "6fed6735401d4353270faa4aa9a11aa07b765af8aedc14a57cde4e80eec04bdd"
       }
+    },
+    {
+      "id": "urn:ghostmesh-readers:reader:the-second-brain-still-needs-a-judgment",
+      "type": "Reader",
+      "visibility": "public",
+      "epistemicStatus": "source-editorial",
+      "label": "The Second Brain Still Needs a Judgment",
+      "url": "https://youtube.shareplane.malott.ai/the-second-brain-still-needs-a-judgment/",
+      "source": {
+        "path": "site/the-second-brain-still-needs-a-judgment/index.html",
+        "sha256": "e055d93c4fc4b641faff0cf1f474daa8ac65b5db1c1f744acf765adde30bf24f"
+      }
     }
   ],
   "relationships": [
