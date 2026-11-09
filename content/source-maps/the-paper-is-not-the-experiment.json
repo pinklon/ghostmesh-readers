@@ -17,27 +17,11 @@
       "atSeconds": 267,
       "sectionId": "read-the-denominators",
       "claimIds": [
-        "the-paper-is-not-the-experiment--claim-2"
-      ],
-      "cueParaphrase": "Presenter gives aggregate failures and comparative results; paper is the numerical authority.",
-      "privateAidCheck": "Private source-caption VTT inspected against timestamp; not listening-certified, no numerical replication."
-    },
-    {
-      "atSeconds": 267,
-      "sectionId": "read-the-denominators",
-      "claimIds": [
-        "the-paper-is-not-the-experiment--claim-3"
-      ],
-      "cueParaphrase": "Study-reported production and evaluation hours are interpreted with bounded scope.",
-      "privateAidCheck": "Private source-caption VTT inspected against timestamp; not listening-certified, no numerical replication."
-    },
-    {
-      "atSeconds": 267,
-      "sectionId": "read-the-denominators",
-      "claimIds": [
+        "the-paper-is-not-the-experiment--claim-2",
+        "the-paper-is-not-the-experiment--claim-3",
         "the-paper-is-not-the-experiment--claim-4"
       ],
-      "cueParaphrase": "Study-reported C1 pass counts do not indicate all-gates research success.",
+      "cueParaphrase": "Presenter gives aggregate failures and comparative results; paper is the numerical authority. Study-reported production and evaluation hours are interpreted with bounded scope. Study-reported C1 pass counts do not indicate all-gates research success.",
       "privateAidCheck": "Private source-caption VTT inspected against timestamp; not listening-certified, no numerical replication."
     },
     {
