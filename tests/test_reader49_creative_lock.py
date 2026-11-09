@@ -11,7 +11,7 @@ from test_reader46_creative_lock import (
 
 ROOT = Path(__file__).resolve().parents[1]
 SLUG = "offline-is-not-the-same-as-independent"
-MANUSCRIPT_SHA = "29b729101656b24d301e3b81fbf4135d31c365ca71d517345e2853321efd0e52"
+MANUSCRIPT_SHA = "25142c43241651adb1f0a916b644a855c135ee42154bbba674359dac1fac3132"
 SOURCE_AID_SHA = "02f3dfb6203fb35dfac580a632af1e805053e31bde5d6f459b5c606ac51cee17"
 TARGETS = [
     "https://youtube.shareplane.malott.ai/the-boundary-is-bigger-than-the-box/",

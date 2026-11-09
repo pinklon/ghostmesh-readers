@@ -148,7 +148,7 @@ The distinction is worth preserving because local AI has genuine promise. It des
 
 **The Boundary Is Bigger Than the Box.** Why locating computation on a private machine does not, by itself, define the complete security and operational boundary.
 
-**The Second Brain Still Needs a Judgment.** Why stored context, retrieval relevance, and reliable reasoning are separate capabilities. Publication status of this related Reader must be confirmed before linking.
+**The Second Brain Still Needs a Judgment.** Why stored context, retrieval relevance, and reliable reasoning are separate capabilities.
 
 **The Stop Button Is Outside the Chat.** Why models that invoke tools need permissions, independent execution receipts, and interruption controls.
 
