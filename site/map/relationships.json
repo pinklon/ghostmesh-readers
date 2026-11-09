@@ -3,11 +3,11 @@
   "scope": "Local public editorial reading routes; no independent corroboration or cross-site graph admission.",
   "authority": "catalog-curated-editorial",
   "visibility": "public",
-  "readerCount": 46,
-  "assessmentCount": 46,
-  "relationshipCount": 97,
-  "sharePlaneRelationshipCount": 11,
-  "sharePlaneReviewCount": 6,
+  "readerCount": 47,
+  "assessmentCount": 47,
+  "relationshipCount": 100,
+  "sharePlaneRelationshipCount": 13,
+  "sharePlaneReviewCount": 7,
   "sharePlaneEdges": [
     {
       "from": "reader:when-code-gets-cheap-where-does-the-work-wait",
@@ -95,6 +95,22 @@
       "url": "https://shareplane.malott.ai/artifacts/the-code-is-no-longer-the-hard-part/",
       "type": "companion",
       "reason": "Optimize for correct, accepted outcomes rather than raw code output or isolated token counts. This is an editorial comparison, not independent corroboration of the benchmark.",
+      "basis": "curated-editorial-comparison"
+    },
+    {
+      "from": "reader:the-second-brain-still-needs-a-judgment",
+      "title": "Own the Memory, Rent the Intelligence",
+      "url": "https://shareplane.malott.ai/artifacts/own-memory-rent-intelligence-agent-stack/",
+      "type": "foundation",
+      "reason": "Establishes personal memory as user-owned context, permissions, evidence and reviewed memory updates across replaceable models. Reader47 proposes evaluating how a simpler lexical retrieval design can retain those distinctions.",
+      "basis": "curated-editorial-comparison"
+    },
+    {
+      "from": "reader:the-second-brain-still-needs-a-judgment",
+      "title": "Cognitive Capital",
+      "url": "https://shareplane.malott.ai/artifacts/cognitive-capital/",
+      "type": "extends",
+      "reason": "Adds a concrete retrieval and summary failure boundary to the economic thesis: stored text earns durable value through validation and judgment, not merely because inference is cheaper or more history is searchable.",
       "basis": "curated-editorial-comparison"
     }
   ],
@@ -834,6 +850,23 @@
           "reader:the-operator-is-part-of-the-denominator"
         ],
         "rationale": "Tony approved three specific Reader links that examine adjacent operational concerns. They are source-specific editorial comparisons, not independent verification of TokenEconomizer's performance results."
+      }
+    },
+    {
+      "id": "reader:the-second-brain-still-needs-a-judgment",
+      "slug": "the-second-brain-still-needs-a-judgment",
+      "title": "The Second Brain Still Needs a Judgment",
+      "url": "https://youtube.shareplane.malott.ai/the-second-brain-still-needs-a-judgment/",
+      "review": {
+        "reviewedAt": "2026-11-09",
+        "reviewedCatalogSize": 46,
+        "decision": "linked",
+        "reviewedTargets": [
+          "reader:the-agent-a-company-owns",
+          "reader:the-harness-keeps-the-receipt",
+          "reader:the-cost-of-forgetting-where-the-tools-are"
+        ],
+        "rationale": "All 46 existing Reader theses were reviewed. Tony approved exactly three outgoing comparisons about continuity, runtime authority and context/discovery economy. These are editorial connections, not independent corroboration of Saraev claims."
       }
     }
   ],
@@ -1998,6 +2031,42 @@
       "provenance": [
         "/the-cost-of-forgetting-where-the-tools-are/",
         "/the-operator-is-part-of-the-denominator/"
+      ],
+      "basis": "curated-editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:the-second-brain-still-needs-a-judgment",
+      "to": "reader:the-agent-a-company-owns",
+      "type": "extends",
+      "reason": "Moves from a company-owned agent that retains corrections, memory isolation and accountable continuity to the narrower retrieval question: whether summaries and recency preserve the governing decision rather than merely a plausible recollection.",
+      "provenance": [
+        "/the-second-brain-still-needs-a-judgment/",
+        "/the-agent-a-company-owns/"
+      ],
+      "basis": "curated-editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:the-second-brain-still-needs-a-judgment",
+      "to": "reader:the-harness-keeps-the-receipt",
+      "type": "informs architecture",
+      "reason": "Supplies the execution boundary for the memory argument: a retrieved approval is useful context, while durable authorization and effect receipts determine what may resume and what actually happened.",
+      "provenance": [
+        "/the-second-brain-still-needs-a-judgment/",
+        "/the-harness-keeps-the-receipt/"
+      ],
+      "basis": "curated-editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:the-second-brain-still-needs-a-judgment",
+      "to": "reader:the-cost-of-forgetting-where-the-tools-are",
+      "type": "companion",
+      "reason": "Examines the other side of context economy: loading less information is useful only if source and capability discovery remain available. Both require measuring accepted outcomes and recovery alongside reported cost savings.",
+      "provenance": [
+        "/the-second-brain-still-needs-a-judgment/",
+        "/the-cost-of-forgetting-where-the-tools-are/"
       ],
       "basis": "curated-editorial-comparison",
       "direction": "outgoing"

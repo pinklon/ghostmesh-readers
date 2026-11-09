@@ -280,6 +280,15 @@
       "title": "Copilot CLI 1.0.104 documents different background-task waits by mode",
       "summary": "GitHub’s release notes distinguish interactive and SDK Autopilot waiting from the timeout retained by prompt-mode Autopilot.",
       "publicDate": "2026-10-28"
+    },
+    {
+      "id": "reader:the-second-brain-still-needs-a-judgment:first-public-release",
+      "kind": "new-reader",
+      "subjectId": "reader:the-second-brain-still-needs-a-judgment",
+      "url": "https://youtube.shareplane.malott.ai/the-second-brain-still-needs-a-judgment/",
+      "title": "The Second Brain Still Needs a Judgment",
+      "summary": "The finding. Nick Saraev makes a compelling case for a simpler personal AI knowledge base. Collect information incrementally, preserve the source, extract useful metadata, search it efficiently, and give the model only the context it needs. Much of the fashionable machinery surrounding AI memory is optional.",
+      "publicDate": "2026-11-08"
     }
   ]
 }
