@@ -1,0 +1,109 @@
+{
+  "schemaVersion": 1,
+  "readerId": "reader:the-cost-of-forgetting-where-the-tools-are",
+  "sourceId": "P5QCrpdr9gU",
+  "sourceDigest": "4e08348405ebe3ef2022b4b96be60f7dd97a6992142536002195b78eb6b31a7f",
+  "sourceAidSha256": "67facce90a71958f4f6b7397dc4097357ec23a5d26bc99d835988d0e31c90b6f",
+  "articleSha256": "94fe479b8f6333c9da27eba4156e1b1ec833d455719149638d6cb504c1263d6d",
+  "evidenceRevision": "0bdfb7f15e20c1945b52afacaec9498010e67a3d54b9b5faa3fcc431330f5fc8",
+  "sourceMapEvidenceSha256": "829ed08b662ce09730d3e295e23409f1846974196be7710bf41ed2e0ced96019",
+  "reviewEvidenceSha256": "5909df44d180f9fea1ea26e1e2912fe4e4e454da83ab8766d24389c842563e4f",
+  "candidateAuthor": "pinklon",
+  "complexity": {
+    "tier": "extended",
+    "factors": [
+      "Consequential architecture and operational optimization recommendation",
+      "Four claims require primary/secondary/local-inference distinctions",
+      "Privacy and total-cost tradeoffs plus bounded ablation design"
+    ],
+    "rationale": "The7:34 source is short, but the proposed architectural judgment and safety/economic implications warrant an extended review across three distinct mapped sections."
+  },
+  "sourceMap": [
+    {
+      "atSeconds": 293,
+      "sectionId": "source-results",
+      "claimIds": [
+        "the-cost-of-forgetting-where-the-tools-are--claim-1",
+        "the-cost-of-forgetting-where-the-tools-are--claim-2"
+      ],
+      "rationale": "The benchmark-summary cue introduces the reported cost and quality comparison; the paper supplies the configuration-specific counterevidence."
+    },
+    {
+      "atSeconds": 390,
+      "sectionId": "source-generalization",
+      "claimIds": [
+        "the-cost-of-forgetting-where-the-tools-are--claim-3"
+      ],
+      "rationale": "The suggested-trial cue is compared with primary results on web and security tasks; repeated repository use is not a universal prerequisite."
+    },
+    {
+      "atSeconds": 226,
+      "sectionId": "source-pruning",
+      "claimIds": [
+        "the-cost-of-forgetting-where-the-tools-are--claim-4"
+      ],
+      "rationale": "The pruning cue locates the feature discussion; the GhostMesh discovery concern is an explicit architectural inference, not a demonstrated TokenEconomizer failure."
+    }
+  ],
+  "assessment": {
+    "sourceCoverage": {
+      "disposition": "covered",
+      "rationale": "Primary paper and pinned README support the bounded mechanisms and figures; video coverage remains caption-derived with direct audio/cue verification unavailable."
+    },
+    "supportingArgument": {
+      "disposition": "covered",
+      "rationale": "The original capability-discovery argument is developed through all39 unchanged body paragraphs and the restored opening, rather than a thin source paraphrase."
+    },
+    "evidenceRoles": {
+      "disposition": "covered",
+      "rationale": "The author-reported benchmark, secondary tutorial, local discovery anecdote and proposed GhostMesh experiment are distinguished; paper counterexamples are mapped as counterevidence."
+    },
+    "counterargument": {
+      "disposition": "covered",
+      "rationale": "The cost of keeping every detailed tool definition is treated seriously and answered with a compact discovery contract rather than universal full-context retention."
+    },
+    "tradeoffs": {
+      "disposition": "covered",
+      "rationale": "The discussion weighs billed cost and context reduction against rare-tool recovery, stale memory, diagnostic errors and authorized continuation."
+    },
+    "falsifiability": {
+      "disposition": "covered",
+      "rationale": "The proposed baseline, feature ablations, rare-tool recovery, stale-memory and failure-loop scenarios could change the recommendation; none was executed here."
+    },
+    "originalSynthesis": {
+      "disposition": "covered",
+      "rationale": "The distinctive judgment optimizes successful accepted work across sessions and protects discoverable capabilities instead of treating the cheapest turn as success."
+    },
+    "performance": {
+      "disposition": "covered",
+      "rationale": "Paper Table1 and additional benchmark ranges remain author-reported and configuration-sensitive; no GhostMesh outcome, latency or independent replication is inferred."
+    },
+    "economics": {
+      "disposition": "covered",
+      "rationale": "Cache-aware billed dollars, controller overhead, owner interruption and rework are separated from raw token counts and headline cost percentages."
+    },
+    "threatGovernance": {
+      "disposition": "covered",
+      "rationale": "The article treats authority, retained secrets and protected deployments explicitly. The owner-approved narrow privacy amendment removes the host/inventory disclosure without altering those arguments; no deployment or plugin safety outcome is claimed."
+    }
+  },
+  "independentCorroboration": "none",
+  "ownerDecision": {
+    "kind": "conversation",
+    "owner": "Tony Malott",
+    "approval": "Tony approved the complete Reader manuscript, wrapper and six relationships, then expressly approved the narrow privacy wording amendment for draft PR and Netlify preview. Ready, merge, automerge and Production remain held. This records the relayed owner decision, not a cryptographically authenticated conversation.",
+    "approvalDate": "2026-11-08",
+    "articleSha256": "94fe479b8f6333c9da27eba4156e1b1ec833d455719149638d6cb504c1263d6d",
+    "evidenceRevision": "0bdfb7f15e20c1945b52afacaec9498010e67a3d54b9b5faa3fcc431330f5fc8"
+  },
+  "decision": "accept",
+  "gaps": [
+    {
+      "type": "source",
+      "severity": "nonblocking",
+      "rationale": "Caption-derived source aid custody is attested upstream, but exact cue and speech accuracy were not independently verified against audio by publisher or reviewer."
+    }
+  ],
+  "decisionRationale": "Actual independent qualitative and privacy-delta reviews accept the exact amended article/map for owner review, and the recorded owner editorial/privacy decisions cover these bytes for the normal draft-preview route. This editorial receipt does not authorize ready status, merge, automerge or Production.",
+  "assessedAt": "2026-11-09T00:01:11.423186+00:00"
+}

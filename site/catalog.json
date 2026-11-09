@@ -215,6 +215,216 @@
       "rank": 44
     },
     {
+      "id": "reader:the-cost-of-forgetting-where-the-tools-are",
+      "slug": "the-cost-of-forgetting-where-the-tools-are",
+      "title": "The Cost of Forgetting Where the Tools Are",
+      "category": "AI & Technology",
+      "tags": [
+        "coding agents",
+        "TokenEconomizer",
+        "tool discovery",
+        "memory",
+        "cost"
+      ],
+      "entities": [
+        "Microsoft Research",
+        "UC Berkeley",
+        "TokenEconomizer",
+        "Better Stack",
+        "GhostMesh"
+      ],
+      "source": {
+        "platform": "YouTube",
+        "url": "https://www.youtube.com/watch?v=P5QCrpdr9gU",
+        "videoId": "P5QCrpdr9gU",
+        "title": "Claude Code Is Wasting Tokens... Microsoft Built a Fix",
+        "creator": "Better Stack",
+        "mediaAspect": "16:9",
+        "durationSeconds": 454,
+        "uploadDate": "2026-11-08"
+      },
+      "published": "2026-11-08",
+      "updated": "2026-11-08T16:45:00Z",
+      "overview": "Microsoft Research and UC Berkeley published TokenEconomizer, a controller that learns recurring repository instructions, reduces unused tool definitions, and intervenes in repetitive agent failures. Better Stack demonstrated its Claude Code workflow and summarized the researchers' cost claims.",
+      "whyItMatters": "The authors report lower model spending in several benchmark configurations, but savings depend on the workload and must be measured alongside correctness. Removing context that appears redundant is useful; concealing the route to a rarely needed capability can be expensive.",
+      "ghostMeshTakeaway": "Preserve a compact, reliable discovery path for commissioned tools while loading their detailed schemas on demand. Our failed first attempt to acquire this very video's transcript illustrated the discovery problem. TokenEconomizer did not cause that incident; it gives us a useful way to reason about the tradeoff.",
+      "verdict": "Interesting, unproven",
+      "architectureImpact": "experiment recommended",
+      "falsification": "Reject fleet-wide deployment if controlled trials fail to preserve authorized rare-tool discovery, correctness and recovery despite cost savings.",
+      "evidenceState": "unverified",
+      "lastEvidenceChecked": "2026-11-08T16:45:00Z",
+      "freshness": "Primary author-reported experiments; the video is an independent tutorial, not an independent performance replication.",
+      "variant": "editorial",
+      "accent": "red",
+      "claims": [
+        {
+          "id": "the-cost-of-forgetting-where-the-tools-are--claim-1",
+          "proposition": "TokenEconomizer lowers mean cost by 18.4–30.9% in the tested SWE-Bench configurations.",
+          "kind": "source-attributed-claim",
+          "asOf": "2026-11-08",
+          "status": "unverified",
+          "assessment": "Author-reported experimental results in Li et al.; counted controller overhead.",
+          "limits": "Not independent replication; savings not interchangeable with raw tokens or latency.",
+          "sourceLocation": "04:53",
+          "references": [
+            "src-token-economizer-paper"
+          ],
+          "counterevidence": [],
+          "temporalScope": "Published 2026 study settings only."
+        },
+        {
+          "id": "the-cost-of-forgetting-where-the-tools-are--claim-2",
+          "proposition": "Pass@1 improves without exception.",
+          "kind": "source-attributed-claim",
+          "asOf": "2026-11-08",
+          "status": "contradicted",
+          "assessment": "Contradicted by the paper's own results. Four of five configurations improved; one declined approximately one point.",
+          "limits": "Outcomes vary across models and configurations.",
+          "sourceLocation": "04:53",
+          "references": [],
+          "counterevidence": [
+            "src-token-economizer-paper"
+          ],
+          "temporalScope": "Published 2026 study settings only."
+        },
+        {
+          "id": "the-cost-of-forgetting-where-the-tools-are--claim-3",
+          "proposition": "Benefits require repeated sessions in one repository.",
+          "kind": "source-attributed-claim",
+          "asOf": "2026-11-08",
+          "status": "contradicted",
+          "assessment": "Overstated as a universal condition. The authors also report lower costs in Web-Bench and security-audit settings, while repeated work may provide greater learning opportunity.",
+          "limits": "Some learning gains may strengthen with repeated work; not a universal requirement.",
+          "sourceLocation": "06:30",
+          "references": [],
+          "counterevidence": [
+            "src-token-economizer-paper"
+          ],
+          "temporalScope": "Published 2026 study settings only."
+        },
+        {
+          "id": "the-cost-of-forgetting-where-the-tools-are--claim-4",
+          "proposition": "Pruning unused tool definitions cannot impair authorized capability discovery.",
+          "kind": "architectural-inference",
+          "asOf": "2026-11-08",
+          "status": "unverified",
+          "assessment": "No GhostMesh TokenEconomizer evaluation has been run.",
+          "limits": "The Reader intake failure was not caused by TokenEconomizer.",
+          "sourceLocation": "03:46",
+          "references": [],
+          "counterevidence": [],
+          "temporalScope": "Unmeasured local hypothesis."
+        }
+      ],
+      "references": [
+        {
+          "id": "src-token-economizer-paper",
+          "title": "TokenEconomizer: Experience-Driven Black-Box Cost Control for Coding Agents",
+          "author": "Li et al.",
+          "publisher": "arXiv",
+          "url": "https://arxiv.org/abs/2610.22732",
+          "publicationDate": "2026-10-15",
+          "datePrecision": "day",
+          "dateNote": "Author-reported benchmark; no independent GhostMesh replication.",
+          "eventDate": null,
+          "location": "Paper",
+          "sourceType": "research paper",
+          "independence": "Primary author source, not independent verification of its own results.",
+          "evidenceFamily": "token-economizer-research",
+          "checkedAt": "2026-11-08T23:00:00Z"
+        }
+      ],
+      "relationships": [
+        {
+          "target": "reader:the-missing-step-is-not-more-intelligence",
+          "type": "informs architecture",
+          "reason": "A missing operational discovery path can defeat an otherwise capable model.",
+          "provenance": [
+            "/the-cost-of-forgetting-where-the-tools-are/",
+            "/the-missing-step-is-not-more-intelligence/"
+          ],
+          "basis": "curated-editorial-comparison",
+          "direction": "outgoing"
+        },
+        {
+          "target": "reader:the-harness-keeps-the-receipt",
+          "type": "extends",
+          "reason": "Cost and success claims need preserved, reproducible evaluation evidence.",
+          "provenance": [
+            "/the-cost-of-forgetting-where-the-tools-are/",
+            "/the-harness-keeps-the-receipt/"
+          ],
+          "basis": "curated-editorial-comparison",
+          "direction": "outgoing"
+        },
+        {
+          "target": "reader:the-operator-is-part-of-the-denominator",
+          "type": "companion",
+          "reason": "Owner interventions and operating burden belong in the denominator.",
+          "provenance": [
+            "/the-cost-of-forgetting-where-the-tools-are/",
+            "/the-operator-is-part-of-the-denominator/"
+          ],
+          "basis": "curated-editorial-comparison",
+          "direction": "outgoing"
+        }
+      ],
+      "relationshipDisposition": "Related Reader deconstructions: these are curated editorial comparisons, not independent corroboration of the benchmark.",
+      "review": {
+        "status": "Independent editorial review accepted for owner review; draft preview only",
+        "reviewer": "Independent Codex qualitative reviewer",
+        "checkedAt": "2026-11-09T00:01:11.423186+00:00",
+        "scope": "Exact privacy-amended article and source map, unchanged substantive argument and relationships, source roles and public boundary",
+        "findings": "Locked content restored; owner-approved privacy-only wording independently verified. Audio cue accuracy and independent runtime performance remain unverified. Production remains held."
+      },
+      "relationshipReview": {
+        "reviewedAt": "2026-11-08",
+        "reviewedCatalogSize": 45,
+        "decision": "linked",
+        "reviewedTargets": [
+          "reader:the-missing-step-is-not-more-intelligence",
+          "reader:the-harness-keeps-the-receipt",
+          "reader:the-operator-is-part-of-the-denominator"
+        ],
+        "rationale": "Tony approved three specific Reader links that examine adjacent operational concerns. They are source-specific editorial comparisons, not independent verification of TokenEconomizer's performance results."
+      },
+      "sharePlaneRelationships": [
+        {
+          "title": "The Application Is Disposable. The Context Is Not.",
+          "url": "https://shareplane.malott.ai/artifacts/the-application-is-disposable-the-context-is-not/",
+          "type": "foundation",
+          "reason": "Reusable knowledge must outlive a particular execution surface. This is an editorial comparison, not independent corroboration of the benchmark.",
+          "basis": "curated-editorial-comparison"
+        },
+        {
+          "title": "The Semantic Operating System",
+          "url": "https://shareplane.malott.ai/artifacts/the-semantic-operating-system/",
+          "type": "extends",
+          "reason": "A discoverable capability map protects operational context without forcing every detailed schema into every prompt. This is an editorial comparison, not independent corroboration of the benchmark.",
+          "basis": "curated-editorial-comparison"
+        },
+        {
+          "title": "The Code Is No Longer the Hard Part",
+          "url": "https://shareplane.malott.ai/artifacts/the-code-is-no-longer-the-hard-part/",
+          "type": "companion",
+          "reason": "Optimize for correct, accepted outcomes rather than raw code output or isolated token counts. This is an editorial comparison, not independent corroboration of the benchmark.",
+          "basis": "curated-editorial-comparison"
+        }
+      ],
+      "sharePlaneReview": {
+        "reviewedAt": "2026-11-08",
+        "decision": "linked",
+        "rationale": "Three explicitly approved SharePlane routes, not an independent performance assessment."
+      },
+      "editorialDepth": {
+        "schemaVersion": 1,
+        "receiptPath": "content/editorial-depth/the-cost-of-forgetting-where-the-tools-are.json"
+      },
+      "editorialOrder": 45,
+      "orderReason": "Owner-approved standard-length Reader #46; exact-head publication qualification still pending.",
+      "rank": 45
+    },
+    {
       "id": "reader:when-code-gets-cheap-where-does-the-work-wait",
       "slug": "when-code-gets-cheap-where-does-the-work-wait",
       "title": "When code gets cheap, where does the work wait?",

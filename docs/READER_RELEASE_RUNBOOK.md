@@ -74,6 +74,14 @@ Muse, Bostrom, California, Gates, and Robinson are published through PRs 36–40
 
 ## Draft preflight
 
+For a new Reader, record the incumbent publisher, source custodian and permitted private handoff route at intake. Confirm the authenticated delivery route without copying credentials or testing a denied route. Existing commissioned source discovery comes before asking the owner for a transcript; PR #139 remains a separate proposal until its behavior is demonstrated.
+
+Before the first owner-facing HTML, validate the candidate's classifications and both relationship layers against the existing contracts. Reuse the current accepted Reader wrapper. A standalone offline review file must include its required styles, scripts and branding; a repository page with root-relative assets is not a self-contained attachment.
+
+Compare the exact approved manuscript with the generated page, including the opening brief, every substantive paragraph, all relationship explanations, claim/counterevidence roles and final limitations. Record exclusions for administrative custody lines explicitly. Report an exact omitted-text diff and current hashes; do not substitute a word count or module test result for content coverage. Reader #46's regression includes missing-brief, missing-relationship and missing-final-limit negative controls. Each subsequent locked manuscript needs its own coverage evidence.
+
+Report unit/module results, aggregate candidate gate, independent editorial findings, rendered desktop/mobile checks and actual deployment as separate outcomes. An aggregate failure remains a failure even when every focused test passes. After a content correction, retain the earlier HOLD and obtain fresh review bound to the corrected article and source map before preview. Keep any run-specific friction ledger in the existing intake/PR evidence, with a named owner and FIXED, PROPOSED or UNKNOWN scope; it is not another queue.
+
 Generate the page and public indexes with the existing scripts. Run the same structural tests CI uses before requesting editorial acceptance.
 
 ```sh

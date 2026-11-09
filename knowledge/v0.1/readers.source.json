@@ -661,6 +661,18 @@
         "path": "site/the-router-is-not-the-organization/index.html",
         "sha256": "dcb917ed12e604229b2a9f7cb91f5b0b3997c52771521d1d9897bad285b06bd8"
       }
+    },
+    {
+      "id": "urn:ghostmesh-readers:reader:the-cost-of-forgetting-where-the-tools-are",
+      "type": "Reader",
+      "visibility": "public",
+      "epistemicStatus": "source-editorial",
+      "label": "The Cost of Forgetting Where the Tools Are",
+      "url": "https://youtube.shareplane.malott.ai/the-cost-of-forgetting-where-the-tools-are/",
+      "source": {
+        "path": "site/the-cost-of-forgetting-where-the-tools-are/index.html",
+        "sha256": "6fed6735401d4353270faa4aa9a11aa07b765af8aedc14a57cde4e80eec04bdd"
+      }
     }
   ],
   "relationships": [
