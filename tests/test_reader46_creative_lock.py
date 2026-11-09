@@ -99,10 +99,15 @@ def offline_asset_gaps(page):
                 self.references.append(attrs['src'])
             if tag == 'img':
                 self.references.append(attrs.get('src', ''))
+            if tag in {'img', 'source'}:
                 # A srcset can fetch even when src is embedded. Fail closed here;
                 # standalone review files should embed one chosen rendition.
                 if attrs.get('srcset'):
                     self.references.append('srcset:' + attrs['srcset'])
+            if tag in {'source', 'video', 'audio'} and 'src' in attrs:
+                self.references.append(attrs['src'])
+            if tag == 'video' and 'poster' in attrs:
+                self.references.append(attrs['poster'])
             if tag in {'image', 'use'}:
                 self.references.append(attrs.get('href', attrs.get('xlink:href', '')))
 
@@ -156,7 +161,10 @@ class ReusableIntakeChecks(unittest.TestCase):
                      '<script src="reader.js"></script>', '<img src="/brand.svg">',
                      '<img>', '<style>@import "remote.css";</style>',
                      '<style>body{background:url(https://example.com/image.png)}</style>',
-                     '<img src="data:image/png;base64,AAAA" srcset="/large.png 2x">']:
+                     '<img src="data:image/png;base64,AAAA" srcset="/large.png 2x">',
+                     '<picture><source srcset="/assets/photo.webp 1x"><img src="data:image/png;base64,AAAA"></picture>',
+                     '<video poster="/assets/poster.jpg"></video>',
+                     '<video><source src="clip.mp4"></video>']:
             with self.subTest(page=page):
                 self.assertTrue(offline_asset_gaps(page))
 
