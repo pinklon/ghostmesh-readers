@@ -16622,6 +16622,317 @@
         "schemaVersion": 1,
         "receiptPath": "content/editorial-depth/the-paper-is-not-the-experiment.json"
       }
+    },
+    {
+      "id": "reader:offline-is-not-the-same-as-independent",
+      "slug": "offline-is-not-the-same-as-independent",
+      "title": "Offline Is Not the Same as Independent",
+      "category": "AI & Technology",
+      "tags": [
+        "local AI",
+        "privacy boundaries",
+        "retrieval",
+        "persistent memory",
+        "tool authorization"
+      ],
+      "entities": [
+        "Julian Goldie SEO",
+        "Ollama",
+        "Qwen 2.5",
+        "GhostMesh"
+      ],
+      "source": {
+        "platform": "YouTube",
+        "url": "https://www.youtube.com/watch?v=UXaET1n3i7I",
+        "videoId": "UXaET1n3i7I",
+        "title": "JARVIS That Runs FREE Forever (100% Offline)",
+        "creator": "Julian Goldie SEO",
+        "mediaAspect": "16:9",
+        "durationSeconds": 461,
+        "uploadDate": "2026-11-05",
+        "captionType": "local Whisper ASR, not listening-certified",
+        "creatorChapters": [
+          {
+            "start": 0,
+            "end": 50,
+            "title": "Local assistant premise"
+          },
+          {
+            "start": 50,
+            "end": 78,
+            "title": "Privacy rationale"
+          },
+          {
+            "start": 78,
+            "end": 146,
+            "title": "Local model and dashboard"
+          },
+          {
+            "start": 146,
+            "end": 181,
+            "title": "Reported inference performance"
+          },
+          {
+            "start": 181,
+            "end": 249,
+            "title": "Second-brain retrieval"
+          },
+          {
+            "start": 249,
+            "end": 273,
+            "title": "Memory example"
+          },
+          {
+            "start": 273,
+            "end": 325,
+            "title": "Tool actions"
+          },
+          {
+            "start": 325,
+            "end": 365,
+            "title": "Privacy indicator"
+          },
+          {
+            "start": 365,
+            "end": 461,
+            "title": "Setup and total cost"
+          }
+        ]
+      },
+      "published": "2026-11-09",
+      "updated": "2026-11-09T14:00:00+00:00",
+      "overview": "The finding. A local JARVIS-style assistant combines downloaded language models, Markdown notes, embedding-based retrieval, speech and tools. The demonstration shows a plausible integration, not an independently qualified offline architecture.",
+      "whyItMatters": "The limitation. Running inference on a private machine does not prove application-wide network isolation, retrieval accuracy, durable memory consistency, safe tool authorization or reproducible performance.",
+      "ghostMeshTakeaway": "The recommendation. Treat locality as an architectural advantage, then run bounded network, retrieval, memory, tool and performance acceptance tests before granting consequential operational authority.",
+      "verdict": "Worth studying",
+      "architectureImpact": "experiment recommended",
+      "falsification": "Block outbound traffic after dependency download; evaluate known-answer retrieval, restart/correct/delete memory, denied tool actions and repeatable latency and rate measurements.",
+      "evidenceState": "unverified",
+      "lastEvidenceChecked": "2026-11-09T14:00:00+00:00",
+      "freshness": "November 5, 2026 07:41 video; private verified media pack with machine Whisper timestamped transcript. Claims were not independently replicated.",
+      "variant": "editorial",
+      "accent": "red",
+      "claims": [
+        {
+          "id": "offline-is-not-the-same-as-independent--claim-1",
+          "proposition": "Local inference and a privacy counter are presented as evidence of offline behavior.",
+          "kind": "creator-demonstration",
+          "asOf": "2026-11-09",
+          "status": "unverified",
+          "assessment": "Attributed to the primary video and mapped by local ASR; not independently reproduced.",
+          "limits": "An application counter does not independently measure all network traffic.",
+          "sourceLocation": "00:50 and 05:25",
+          "references": [
+            "r49-video"
+          ],
+          "counterevidence": [],
+          "temporalScope": "November 5, 2026 video; November 9 editorial source review."
+        },
+        {
+          "id": "offline-is-not-the-same-as-independent--claim-2",
+          "proposition": "Qwen 2.5 7B is described as a primary local model on an M4 Mac with 16 GB memory.",
+          "kind": "creator-reported-specification",
+          "asOf": "2026-11-09",
+          "status": "unverified",
+          "assessment": "Attributed to the primary video and mapped by local ASR; not independently reproduced.",
+          "limits": "The complete application and machine state were not inspected independently.",
+          "sourceLocation": "01:18",
+          "references": [
+            "r49-video"
+          ],
+          "counterevidence": [],
+          "temporalScope": "November 5, 2026 video; November 9 editorial source review."
+        },
+        {
+          "id": "offline-is-not-the-same-as-independent--claim-3",
+          "proposition": "The creator reports approximately 20–30 generated tokens per second.",
+          "kind": "creator-reported-performance",
+          "asOf": "2026-11-09",
+          "status": "unverified",
+          "assessment": "Attributed to the primary video and mapped by local ASR; not independently reproduced.",
+          "limits": "No independently reproducible benchmark method or hardware measurements were provided.",
+          "sourceLocation": "02:26",
+          "references": [
+            "r49-video"
+          ],
+          "counterevidence": [],
+          "temporalScope": "November 5, 2026 video; November 9 editorial source review."
+        },
+        {
+          "id": "offline-is-not-the-same-as-independent--claim-4",
+          "proposition": "Markdown notes and embeddings are used in a visually demonstrated second-brain retrieval flow.",
+          "kind": "creator-demonstration",
+          "asOf": "2026-11-09",
+          "status": "unverified",
+          "assessment": "Attributed to the primary video and mapped by local ASR; not independently reproduced.",
+          "limits": "No recall, precision, contradiction or answer-abstention evaluation was provided.",
+          "sourceLocation": "03:01",
+          "references": [
+            "r49-video"
+          ],
+          "counterevidence": [],
+          "temporalScope": "November 5, 2026 video; November 9 editorial source review."
+        },
+        {
+          "id": "offline-is-not-the-same-as-independent--claim-5",
+          "proposition": "The assistant is shown writing and immediately recalling a scheduling fact.",
+          "kind": "creator-demonstration",
+          "asOf": "2026-11-09",
+          "status": "unverified",
+          "assessment": "Attributed to the primary video and mapped by local ASR; not independently reproduced.",
+          "limits": "The creator states restart durability, but the segment does not demonstrate a restart test.",
+          "sourceLocation": "04:09",
+          "references": [
+            "r49-video"
+          ],
+          "counterevidence": [],
+          "temporalScope": "November 5, 2026 video; November 9 editorial source review."
+        },
+        {
+          "id": "offline-is-not-the-same-as-independent--claim-6",
+          "proposition": "Timer, note and app-opening tools are presented with visible call results.",
+          "kind": "creator-demonstration",
+          "asOf": "2026-11-09",
+          "status": "unverified",
+          "assessment": "Attributed to the primary video and mapped by local ASR; not independently reproduced.",
+          "limits": "No adversarial prompt, deny-path, authorization or recovery assessment was demonstrated.",
+          "sourceLocation": "04:33",
+          "references": [
+            "r49-video"
+          ],
+          "counterevidence": [],
+          "temporalScope": "November 5, 2026 video; November 9 editorial source review."
+        }
+      ],
+      "references": [
+        {
+          "id": "r49-video",
+          "title": "JARVIS That Runs FREE Forever (100% Offline)",
+          "author": "Julian Goldie SEO",
+          "publisher": "YouTube",
+          "url": "https://www.youtube.com/watch?v=UXaET1n3i7I",
+          "publicationDate": "2026-11-05",
+          "lastUpdated": null,
+          "datePrecision": "day",
+          "eventDate": null,
+          "location": "Source video 00:50–06:05",
+          "sourceType": "creator video",
+          "independence": "Primary demonstration by creator, not independent assessment",
+          "evidenceFamily": "julian-goldie-jarvis-demo",
+          "checkedAt": "2026-11-09T14:00:00+00:00"
+        },
+        {
+          "id": "r49-ollama-faq",
+          "title": "Ollama FAQ",
+          "author": "Ollama",
+          "publisher": "Ollama documentation",
+          "url": "https://github.com/ollama/ollama/blob/main/docs/faq.mdx",
+          "publicationDate": "unknown",
+          "dateNote": "Continuously maintained product documentation; original publication date not established.",
+          "lastUpdated": null,
+          "datePrecision": "unknown",
+          "eventDate": null,
+          "location": "Cloud capability disable configuration",
+          "sourceType": "official documentation",
+          "independence": "Independent of the video's author, but does not verify this app's behavior",
+          "evidenceFamily": "ollama-official",
+          "checkedAt": "2026-11-09T14:00:00+00:00"
+        }
+      ],
+      "relationships": [
+        {
+          "target": "reader:the-boundary-is-bigger-than-the-box",
+          "type": "extends",
+          "reason": "The existing Reader expands the distinction between the place inference runs and the complete operational boundary.",
+          "provenance": [
+            "/offline-is-not-the-same-as-independent/",
+            "/the-boundary-is-bigger-than-the-box/"
+          ],
+          "basis": "curated-editorial-comparison",
+          "direction": "outgoing"
+        },
+        {
+          "target": "reader:the-stop-button-is-outside-the-chat",
+          "type": "companion",
+          "reason": "The existing Reader develops tool authorization, independent receipts and interruption beyond a visible tool transcript.",
+          "provenance": [
+            "/offline-is-not-the-same-as-independent/",
+            "/the-stop-button-is-outside-the-chat/"
+          ],
+          "basis": "curated-editorial-comparison",
+          "direction": "outgoing"
+        }
+      ],
+      "relationshipDisposition": "Two owner-approved directed Reader comparisons; neither is corroboration.",
+      "review": {
+        "status": "Creative Lock approved; independent editorial and exact-copy review pending",
+        "reviewer": "pending independent review",
+        "checkedAt": "2026-11-09T14:00:00+00:00",
+        "scope": "Complete locked manuscript, source map, claim posture, source boundary and related links",
+        "findings": "Author-side source review only, with corrected 02:26 cue. No independent reviewer or browser acceptance yet."
+      },
+      "revisionHistory": [
+        {
+          "at": "2026-11-09T14:00:00+00:00",
+          "reason": "Tony approved full manuscript and narrowed relationship set for draft implementation."
+        }
+      ],
+      "editorialOrder": 48,
+      "orderReason": "Reader #49 follows the 48 existing catalog records; first publication remains pending actual release.",
+      "relationshipReview": {
+        "reviewedAt": "2026-11-09",
+        "reviewedCatalogSize": 48,
+        "decision": "linked",
+        "reviewedTargets": [
+          "reader:the-boundary-is-bigger-than-the-box",
+          "reader:the-stop-button-is-outside-the-chat"
+        ],
+        "rationale": "Tony approved these two thematic Reader links. Direct live URL health remains a publisher acceptance check; no inferred graph edges."
+      },
+      "sharePlaneRelationships": [
+        {
+          "title": "Your Second Brain Is Not a Production Architecture",
+          "url": "https://shareplane.malott.ai/artifacts/your-second-brain-is-not-a-production-architecture/",
+          "type": "companion",
+          "reason": "Extends the video's personal Markdown memory boundary into a separately governed production context; it does not corroborate the demonstration.",
+          "basis": "curated-editorial-comparison"
+        }
+      ],
+      "sharePlaneReview": {
+        "reviewedAt": "2026-11-09",
+        "decision": "linked",
+        "rationale": "Tony approved one public Work comparison. Protected Development work is excluded."
+      },
+      "legacyReceipt": {
+        "schema": "ghostmesh-reader-receipt-v2",
+        "createdAt": "2026-11-09T14:00:00+00:00",
+        "source": {
+          "url": "https://www.youtube.com/watch?v=UXaET1n3i7I",
+          "videoId": "UXaET1n3i7I"
+        },
+        "reasonPack": {
+          "verification": "pass",
+          "manifestSha256": "0e4e7f2ad4544edfd54bd0f68e4332f9f5e066f0c0508a5a1300f1f01fa515f9"
+        },
+        "sourceInspection": {
+          "method": "Privately verified local Whisper ASR timestamp aid, not independently listening-certified",
+          "timedAidSha256": "02f3dfb6203fb35dfac580a632af1e805053e31bde5d6f459b5c606ac51cee17",
+          "transcriptSha256": "505e2d7f8299650f5ecc471b44362ea34eb578cbaad6210087d13de1f504d091",
+          "sourceReceiptSha256": "0e4e7f2ad4544edfd54bd0f68e4332f9f5e066f0c0508a5a1300f1f01fa515f9",
+          "cueMapSha256": "02f3dfb6203fb35dfac580a632af1e805053e31bde5d6f459b5c606ac51cee17",
+          "coverage": "7:41 video, selected spoken cues 00:50–06:05 inspected against the private timestamped ASR; no visual or numerical replication.",
+          "caveat": "Zero-cloud telemetry, model performance, restart persistence and tool governance not independently verified.",
+          "publicationBoundary": "Original analysis and sanitized paraphrases only; no raw source bytes, paths, IDs or credentials."
+        },
+        "custody": {
+          "status": "qualified-private-pack-verified",
+          "note": "Pack integrity verified; local Whisper speech cues are not listening-certified."
+        }
+      },
+      "editorialDepth": {
+        "schemaVersion": 1,
+        "receiptPath": "content/editorial-depth/offline-is-not-the-same-as-independent.json"
+      }
     }
   ],
   "featuredId": "reader:ask-for-the-outcome-keep-the-boundary"
