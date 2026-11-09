@@ -3,11 +3,11 @@
   "scope": "Local public editorial reading routes; no independent corroboration or cross-site graph admission.",
   "authority": "catalog-curated-editorial",
   "visibility": "public",
-  "readerCount": 48,
-  "assessmentCount": 48,
-  "relationshipCount": 104,
-  "sharePlaneRelationshipCount": 15,
-  "sharePlaneReviewCount": 8,
+  "readerCount": 49,
+  "assessmentCount": 49,
+  "relationshipCount": 106,
+  "sharePlaneRelationshipCount": 16,
+  "sharePlaneReviewCount": 9,
   "sharePlaneEdges": [
     {
       "from": "reader:when-code-gets-cheap-where-does-the-work-wait",
@@ -127,6 +127,14 @@
       "url": "https://shareplane.malott.ai/artifacts/own-memory-rent-intelligence-agent-stack/",
       "type": "companion",
       "reason": "Preserving user-owned evidence, qualifications and governed memory prevents a model's latest polished summary from becoming authority without source traceability.",
+      "basis": "curated-editorial-comparison"
+    },
+    {
+      "from": "reader:offline-is-not-the-same-as-independent",
+      "title": "Your Second Brain Is Not a Production Architecture",
+      "url": "https://shareplane.malott.ai/artifacts/your-second-brain-is-not-a-production-architecture/",
+      "type": "companion",
+      "reason": "Extends the video's personal Markdown memory boundary into a separately governed production context; it does not corroborate the demonstration.",
       "basis": "curated-editorial-comparison"
     }
   ],
@@ -901,6 +909,22 @@
           "reader:the-success-hid-the-failure"
         ],
         "rationale": "Tony approved exactly four proposed outgoing editorial comparisons for Reader #48; all 47 existing Reader theses were considered during editorial candidate preparation. Independent relationship review remains pending."
+      }
+    },
+    {
+      "id": "reader:offline-is-not-the-same-as-independent",
+      "slug": "offline-is-not-the-same-as-independent",
+      "title": "Offline Is Not the Same as Independent",
+      "url": "https://youtube.shareplane.malott.ai/offline-is-not-the-same-as-independent/",
+      "review": {
+        "reviewedAt": "2026-11-09",
+        "reviewedCatalogSize": 48,
+        "decision": "linked",
+        "reviewedTargets": [
+          "reader:the-boundary-is-bigger-than-the-box",
+          "reader:the-stop-button-is-outside-the-chat"
+        ],
+        "rationale": "Tony approved these two thematic Reader links. Direct live URL health remains a publisher acceptance check; no inferred graph edges."
       }
     }
   ],
@@ -2149,6 +2173,30 @@
       "provenance": [
         "/the-paper-is-not-the-experiment/",
         "/the-success-hid-the-failure/"
+      ],
+      "basis": "curated-editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:offline-is-not-the-same-as-independent",
+      "to": "reader:the-boundary-is-bigger-than-the-box",
+      "type": "extends",
+      "reason": "The existing Reader expands the distinction between the place inference runs and the complete operational boundary.",
+      "provenance": [
+        "/offline-is-not-the-same-as-independent/",
+        "/the-boundary-is-bigger-than-the-box/"
+      ],
+      "basis": "curated-editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:offline-is-not-the-same-as-independent",
+      "to": "reader:the-stop-button-is-outside-the-chat",
+      "type": "companion",
+      "reason": "The existing Reader develops tool authorization, independent receipts and interruption beyond a visible tool transcript.",
+      "provenance": [
+        "/offline-is-not-the-same-as-independent/",
+        "/the-stop-button-is-outside-the-chat/"
       ],
       "basis": "curated-editorial-comparison",
       "direction": "outgoing"

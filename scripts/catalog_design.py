@@ -29,6 +29,8 @@ def paper_cover(source):
 # test, not verification labels. Keep the source-grounding checks below when
 # adding a Reader; never infer a call from its category or claim count.
 CALLS = {
+    'offline-is-not-the-same-as-independent': (
+        'Test the whole local boundary', 'Watch the privacy claim at 00:50 and tool actions at 04:33. Test outbound isolation, retrieval, memory correction and tool authorization before granting operational authority.'),
     'the-paper-is-not-the-experiment': (
         'Require the experiment receipt', 'Bind consequential claims to actual code, data and run logs, then assess integrity, completeness and scientific sufficiency separately. Run a bounded matched-harness replication before expanding controls.'),
     'the-second-brain-still-needs-a-judgment': (

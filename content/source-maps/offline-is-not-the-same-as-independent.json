@@ -1,0 +1,71 @@
+{
+  "schemaVersion": 1,
+  "readerId": "reader:offline-is-not-the-same-as-independent",
+  "sourceId": "UXaET1n3i7I",
+  "sourceAidSha256": "0e4e7f2ad4544edfd54bd0f68e4332f9f5e066f0c0508a5a1300f1f01fa515f9",
+  "points": [
+    {
+      "atSeconds": 50,
+      "sectionId": "film",
+      "claimIds": [
+        "offline-is-not-the-same-as-independent--claim-1"
+      ],
+      "cueParaphrase": "Presenter explains that private client notes and schedules motivate local inference; no independent traffic capture is shown.",
+      "privateAidCheck": "Segfault inspected the retained machine-generated timestamped transcript against the named cue. No independent listening certification, visual reproduction or system benchmark is claimed."
+    },
+    {
+      "atSeconds": 78,
+      "sectionId": "film",
+      "claimIds": [
+        "offline-is-not-the-same-as-independent--claim-2"
+      ],
+      "cueParaphrase": "Presenter identifies the local language-model selection and machine configuration; these are creator-reported specifications.",
+      "privateAidCheck": "Segfault inspected the retained machine-generated timestamped transcript against the named cue. No independent listening certification, visual reproduction or system benchmark is claimed."
+    },
+    {
+      "atSeconds": 146,
+      "sectionId": "film",
+      "claimIds": [
+        "offline-is-not-the-same-as-independent--claim-3"
+      ],
+      "cueParaphrase": "The narrated 20 to 30 tokens per second observation begins here, not at the earlier telemetry introduction.",
+      "privateAidCheck": "Segfault inspected the retained machine-generated timestamped transcript against the named cue. No independent listening certification, visual reproduction or system benchmark is claimed."
+    },
+    {
+      "atSeconds": 181,
+      "sectionId": "film",
+      "claimIds": [
+        "offline-is-not-the-same-as-independent--claim-4"
+      ],
+      "cueParaphrase": "The second-brain segment introduces Markdown notes, embedded relationships and a visually highlighted retrieval demonstration.",
+      "privateAidCheck": "Segfault inspected the retained machine-generated timestamped transcript against the named cue. No independent listening certification, visual reproduction or system benchmark is claimed."
+    },
+    {
+      "atSeconds": 249,
+      "sectionId": "film",
+      "claimIds": [
+        "offline-is-not-the-same-as-independent--claim-5"
+      ],
+      "cueParaphrase": "The presenter asks the assistant to remember a video recording time, shows immediate recall and states that the saved note survives restart.",
+      "privateAidCheck": "Segfault inspected the retained machine-generated timestamped transcript against the named cue. No independent listening certification, visual reproduction or system benchmark is claimed."
+    },
+    {
+      "atSeconds": 273,
+      "sectionId": "film",
+      "claimIds": [
+        "offline-is-not-the-same-as-independent--claim-6"
+      ],
+      "cueParaphrase": "The tool segment presents timer, Markdown note and application-opening actions with visible tool-call transcript entries.",
+      "privateAidCheck": "Segfault inspected the retained machine-generated timestamped transcript against the named cue. No independent listening certification, visual reproduction or system benchmark is claimed."
+    },
+    {
+      "atSeconds": 325,
+      "sectionId": "film",
+      "claimIds": [
+        "offline-is-not-the-same-as-independent--claim-1"
+      ],
+      "cueParaphrase": "The privacy display is described as showing zero cloud calls and zero sent bytes; it is an application-reported counter, not a network audit.",
+      "privateAidCheck": "Segfault inspected the retained machine-generated timestamped transcript against the named cue. No independent listening certification, visual reproduction or system benchmark is claimed."
+    }
+  ]
+}

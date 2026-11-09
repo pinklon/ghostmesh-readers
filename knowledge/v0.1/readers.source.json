@@ -697,6 +697,18 @@
         "path": "site/the-paper-is-not-the-experiment/index.html",
         "sha256": "14cb450d7edcc20701fc47e6a6c8b334c10cabbca126448f97c8e47f4f647bc0"
       }
+    },
+    {
+      "id": "urn:ghostmesh-readers:reader:offline-is-not-the-same-as-independent",
+      "type": "Reader",
+      "visibility": "public",
+      "epistemicStatus": "source-editorial",
+      "label": "Offline Is Not the Same as Independent",
+      "url": "https://youtube.shareplane.malott.ai/offline-is-not-the-same-as-independent/",
+      "source": {
+        "path": "site/offline-is-not-the-same-as-independent/index.html",
+        "sha256": "a0b65e3ed199bd9d42e1b7c41fa3c1b64ed98ad0b7789e54dd200c2d64ab549a"
+      }
     }
   ],
   "relationships": [
