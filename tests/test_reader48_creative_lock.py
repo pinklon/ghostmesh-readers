@@ -61,7 +61,39 @@ class Reader48CreativeLock(unittest.TestCase):
         cls.authored = (ROOT / f'content/readers/{SLUG}.html').read_text()
         cls.record = next(r for r in json.loads((ROOT / 'content/catalog.json').read_text())['readers'] if r['slug'] == SLUG)
         cls.source_map = json.loads((ROOT / f'content/source-maps/{SLUG}.json').read_text())
+        cls.search_record = next(r for r in json.loads((ROOT / 'site/readers/search-index.json').read_text())['readers']
+                                 if r['id'] == 'reader:' + SLUG)
         cls.brief, cls.body, cls.reasons, cls.disclosure, cls.qualification = required_copy(cls.manuscript)
+
+    def privacy_surfaces(self):
+        return {
+            'draft': self.manuscript,
+            'authored HTML': self.authored,
+            'generated HTML': self.page,
+            'search record': json.dumps(self.search_record),
+        }
+
+    def assert_no_workstation_acquisition(self, document):
+        self.assertNotIn('mac studio', normal(document).casefold())
+
+    def test_workstation_acquisition_wording_is_absent_from_all_surfaces(self):
+        for surface, document in self.privacy_surfaces().items():
+            with self.subTest(surface=surface):
+                self.assert_no_workstation_acquisition(document)
+
+    def test_restoring_original_workstation_acquisition_wording_fails(self):
+        sanitized = 'Private ReasonPack verified by private source custodian'
+        original = 'Private ReasonPack verified on Mac Studio'
+        for surface, document in self.privacy_surfaces().items():
+            for prohibited in [original, original.upper(), original.replace('Mac Studio', 'Mac&#32;Studio')]:
+                with self.subTest(surface=surface, prohibited=prohibited):
+                    self.assertIn(sanitized, document)
+                    # Keep the approved disclosure present: positive copy checks
+                    # alone must not hide an added workstation-specific disclosure.
+                    changed = document.replace(sanitized, sanitized + '. ' + prohibited)
+                    self.assertNotEqual(document, changed)
+                    with self.assertRaises(AssertionError):
+                        self.assert_no_workstation_acquisition(changed)
 
     def test_amended_lock_and_source_digest(self):
         self.assertEqual(MANUSCRIPT_SHA, hashlib.sha256(self.manuscript.encode()).hexdigest())
