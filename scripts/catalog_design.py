@@ -29,6 +29,8 @@ def paper_cover(source):
 # test, not verification labels. Keep the source-grounding checks below when
 # adding a Reader; never infer a call from its category or claim count.
 CALLS = {
+    'the-paper-is-not-the-experiment': (
+        'Require the experiment receipt', 'Bind consequential claims to actual code, data and run logs, then assess integrity, completeness and scientific sufficiency separately. Run a bounded matched-harness replication before expanding controls.'),
     'the-second-brain-still-needs-a-judgment': (
         'The recommendation', 'The recommendation. Start with simple retrieval, including BM25. Preserve original records and their provenance. Represent decisions, qualifications, and supersession explicitly. Measure failures before adding semantic indexes or other infrastructure. A second brain should improve judgment, not merely accelerate recall.'),
     'the-cost-of-forgetting-where-the-tools-are': (

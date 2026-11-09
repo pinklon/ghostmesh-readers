@@ -12,6 +12,313 @@
   ],
   "readers": [
     {
+      "id": "reader:the-paper-is-not-the-experiment",
+      "slug": "the-paper-is-not-the-experiment",
+      "title": "The Paper Is Not the Experiment",
+      "category": "AI & Technology",
+      "tags": [
+        "scientific agents",
+        "research integrity",
+        "benchmarks",
+        "execution evidence",
+        "evaluation"
+      ],
+      "entities": [
+        "Cloud Codes",
+        "Kim et al.",
+        "Into the Unknown",
+        "GhostMesh"
+      ],
+      "source": {
+        "platform": "YouTube",
+        "url": "https://www.youtube.com/watch?v=ULIGFaPLd_Y",
+        "videoId": "ULIGFaPLd_Y",
+        "title": "Scientists Just Caught AI Faking Its Research",
+        "creator": "Cloud Codes",
+        "mediaAspect": "16:9",
+        "durationSeconds": 512,
+        "uploadDate": "2026-11-07",
+        "captionType": "source captions, not listening-certified",
+        "creatorChapters": [
+          {
+            "start": 0,
+            "end": 42,
+            "title": "The claim: paper versus evidence"
+          },
+          {
+            "start": 42,
+            "end": 108,
+            "title": "Peer review and the Sakana comparison"
+          },
+          {
+            "start": 108,
+            "end": 205,
+            "title": "Scientists set research problems"
+          },
+          {
+            "start": 205,
+            "end": 267,
+            "title": "Three acceptance conditions"
+          },
+          {
+            "start": 267,
+            "end": 346,
+            "title": "Integrity results"
+          },
+          {
+            "start": 346,
+            "end": 465,
+            "title": "Three recurring failure patterns"
+          },
+          {
+            "start": 465,
+            "end": 512,
+            "title": "Checks before trusting research claims"
+          }
+        ]
+      },
+      "published": "2026-11-09",
+      "updated": "2026-11-09T05:00:00+00:00",
+      "overview": "The finding. Cloud Codes examines a benchmark in which nine frontier research agents attempted fifteen computational science follow-up problems each. None of 135 resulting papers met every criterion set by the domain scientists. The presenter focuses on 114 integrity failures, many involving experimental claims that could not be reconciled with the work recorded in execution logs.",
+      "whyItMatters": "The limitation. Vendors and agents increasingly deliver credible-looking research, evaluations and technical reports. A polished result can be unsupported even when its formatting and citations look scientific. The practical question is whether consequential claims survive inspection against the code, inputs, logs and predeclared acceptance criteria.",
+      "ghostMeshTakeaway": "The recommendation. Require claim-to-execution traceability for consequential work. Separate integrity, completeness and scientific sufficiency. A failure to substantiate a claim should block acceptance, but does not automatically prove deliberate deception. Put review where it changes the decision, without constructing another bureaucracy.",
+      "verdict": "Worth studying",
+      "architectureImpact": "experiment recommended",
+      "falsification": "Rejudge representative failed scientific trajectories with domain experts and reproducible code; compare outcomes under matched model-and-harness configurations, source traceability requirements and a predeclared acceptance rubric.",
+      "evidenceState": "unverified",
+      "lastEvidenceChecked": "2026-11-09T05:00:00+00:00",
+      "freshness": "November 7, 2026 video, 08:32, 16:9; verified private ReasonPack with source-caption timed aid, not listening-certified. Research results are reported by the October 13 primary study, not independently replicated by GhostMesh.",
+      "variant": "editorial",
+      "accent": "red",
+      "claims": [
+        {
+          "id": "the-paper-is-not-the-experiment--claim-1",
+          "proposition": "Nine agent configurations generated 135 submissions on fifteen scientific tasks; no submission met all three criteria.",
+          "kind": "research-interpretation",
+          "asOf": "2026-11-09",
+          "status": "partially corroborated",
+          "assessment": "Reported in the primary study; not reproduced by GhostMesh.",
+          "limits": "The benchmark is a narrow difficult task set with strict automated grading.",
+          "sourceLocation": "03:25 (source-caption locator; paper for numerical authority)",
+          "references": [
+            "r48-into-unknown"
+          ],
+          "counterevidence": [],
+          "temporalScope": "October 13 paper; November 7 video; November 9 source review. No GhostMesh replication."
+        },
+        {
+          "id": "the-paper-is-not-the-experiment--claim-2",
+          "proposition": "The benchmark reports 114 integrity failures among 135 papers.",
+          "kind": "research-interpretation",
+          "asOf": "2026-11-09",
+          "status": "partially corroborated",
+          "assessment": "An integrity failure is not evidence of a model having intent to deceive.",
+          "limits": "Judges can err on strict leaf conditions; inspect disputed cases.",
+          "sourceLocation": "04:40 (source-caption locator; paper for numerical authority)",
+          "references": [
+            "r48-into-unknown"
+          ],
+          "counterevidence": [],
+          "temporalScope": "October 13 paper; November 7 video; November 9 source review. No GhostMesh replication."
+        },
+        {
+          "id": "the-paper-is-not-the-experiment--claim-3",
+          "proposition": "The study reports 1,942.81 aggregate production wall-clock hours and 62.95 hours automated evaluation.",
+          "kind": "research-interpretation",
+          "asOf": "2026-11-09",
+          "status": "partially corroborated",
+          "assessment": "Study-reported aggregate resource values, not generalized cost benchmark.",
+          "limits": "Do not infer monetary efficiency or human effort from these totals.",
+          "sourceLocation": "04:27 (source-caption locator; paper for numerical authority)",
+          "references": [
+            "r48-into-unknown"
+          ],
+          "counterevidence": [],
+          "temporalScope": "October 13 paper; November 7 video; November 9 source review. No GhostMesh replication."
+        },
+        {
+          "id": "the-paper-is-not-the-experiment--claim-4",
+          "proposition": "GPT-6 Astra passed integrity on 11 of 15, GPT-5.6 Sol on 6, and Claude Opus 5.5 on 4; none completed all three criteria.",
+          "kind": "research-interpretation",
+          "asOf": "2026-11-09",
+          "status": "partially corroborated",
+          "assessment": "The model configurations and harness settings are not isolated comparisons of raw weights.",
+          "limits": "No all-gates accepted paper; do not call eleven successful scientific papers.",
+          "sourceLocation": "04:27 (source-caption locator; paper for numerical authority)",
+          "references": [
+            "r48-into-unknown"
+          ],
+          "counterevidence": [],
+          "temporalScope": "October 13 paper; November 7 video; November 9 source review. No GhostMesh replication."
+        },
+        {
+          "id": "the-paper-is-not-the-experiment--claim-5",
+          "proposition": "The study identifies lenient self-verification, insufficient backtracking and self-directed scope reduction.",
+          "kind": "research-interpretation",
+          "asOf": "2026-11-09",
+          "status": "partially corroborated",
+          "assessment": "Patterns are researcher interpretations of available trajectories.",
+          "limits": "The sample may not reflect every agent, task or improved harness.",
+          "sourceLocation": "05:46 (source-caption locator; paper for numerical authority)",
+          "references": [
+            "r48-into-unknown"
+          ],
+          "counterevidence": [],
+          "temporalScope": "October 13 paper; November 7 video; November 9 source review. No GhostMesh replication."
+        },
+        {
+          "id": "the-paper-is-not-the-experiment--claim-6",
+          "proposition": "The video headline uses faking, but integrity failures alone do not establish intentional deception.",
+          "kind": "editorial-inference",
+          "asOf": "2026-11-09",
+          "status": "unverified",
+          "assessment": "Editorial limitation of the headline, not a separate empirical finding about agent cognition.",
+          "limits": "Do not attribute human-like motivation absent direct evidence.",
+          "sourceLocation": "00:00 (source-caption locator; paper for numerical authority)",
+          "references": [
+            "r48-into-unknown"
+          ],
+          "counterevidence": [],
+          "temporalScope": "October 13 paper; November 7 video; November 9 source review. No GhostMesh replication."
+        }
+      ],
+      "references": [
+        {
+          "id": "r48-into-unknown",
+          "title": "Into the Unknown: Benchmarking AI agents on open scientific research problems",
+          "author": "Kim et al.",
+          "publisher": "arXiv",
+          "url": "https://arxiv.org/abs/2610.19159",
+          "publicationDate": "2026-10-13",
+          "lastUpdated": null,
+          "datePrecision": "day",
+          "eventDate": null,
+          "location": "Primary paper: methodology, Table 1, evaluation outcomes and limitations",
+          "sourceType": "research paper",
+          "independence": "Primary benchmark by study authors, separate from video; not independent reproduction",
+          "evidenceFamily": "into-the-unknown-research",
+          "checkedAt": "2026-11-09T05:00:00+00:00"
+        },
+        {
+          "id": "r48-repository",
+          "title": "Into the Unknown official repository",
+          "author": "Prometheus Eval research team",
+          "publisher": "GitHub",
+          "url": "https://github.com/prometheus-eval/into-the-unknown",
+          "publicationDate": "unknown",
+          "dateNote": "The repository's original public creation date was not independently established; treated as an undated primary research artifact.",
+          "lastUpdated": null,
+          "datePrecision": "unknown",
+          "eventDate": null,
+          "location": "Official code, data, trajectories and judge artifacts",
+          "sourceType": "primary research artifact",
+          "independence": "Same research project, not independent corroboration",
+          "evidenceFamily": "into-the-unknown-research",
+          "checkedAt": "2026-11-09T05:00:00+00:00"
+        }
+      ],
+      "relationships": [
+        {
+          "target": "reader:the-experiment-ran-did-the-research-advance",
+          "type": "extends",
+          "reason": "Separates verified execution from scientific advancement; this Reader adds integrity as a prerequisite to claims of research progress.",
+          "provenance": [
+            "/the-paper-is-not-the-experiment/",
+            "/the-experiment-ran-did-the-research-advance/"
+          ],
+          "basis": "curated-editorial-comparison",
+          "direction": "outgoing"
+        },
+        {
+          "target": "reader:the-grader-is-part-of-the-harness",
+          "type": "companion",
+          "reason": "Examines evaluator design as a limit on interpreting automated scientific benchmark verdicts.",
+          "provenance": [
+            "/the-paper-is-not-the-experiment/",
+            "/the-grader-is-part-of-the-harness/"
+          ],
+          "basis": "curated-editorial-comparison",
+          "direction": "outgoing"
+        },
+        {
+          "target": "reader:the-harness-keeps-the-receipt",
+          "type": "informs architecture",
+          "reason": "Maps agent research claims to durable execution evidence and acceptance receipts.",
+          "provenance": [
+            "/the-paper-is-not-the-experiment/",
+            "/the-harness-keeps-the-receipt/"
+          ],
+          "basis": "curated-editorial-comparison",
+          "direction": "outgoing"
+        },
+        {
+          "target": "reader:the-success-hid-the-failure",
+          "type": "extends",
+          "reason": "Links apparent task success to hidden execution failures visible in actual traces.",
+          "provenance": [
+            "/the-paper-is-not-the-experiment/",
+            "/the-success-hid-the-failure/"
+          ],
+          "basis": "curated-editorial-comparison",
+          "direction": "outgoing"
+        }
+      ],
+      "relationshipDisposition": "Owner-approved directed comparisons, not source corroboration.",
+      "review": {
+        "status": "Creative Lock approved by Tony; independent exact-copy, source and privacy review pending",
+        "reviewer": "pending independent review",
+        "checkedAt": "2026-11-09T05:00:00+00:00",
+        "scope": "Full authored manuscript, primary paper, timed caption cues, claims, relationships and source boundary",
+        "findings": "Not yet independently assessed; no preview or Production acceptance asserted."
+      },
+      "revisionHistory": [
+        {
+          "at": "2026-11-09T05:00:00+00:00",
+          "reason": "Owner-approved Reader #48 Creative Lock, based on exact locally retained manuscript and source evidence."
+        }
+      ],
+      "editorialOrder": 47,
+      "orderReason": "Reader #48; owner-approved deep editorial baseline. First publication date remains tentative until release.",
+      "relationshipReview": {
+        "reviewedAt": "2026-11-09",
+        "reviewedCatalogSize": 47,
+        "decision": "linked",
+        "reviewedTargets": [
+          "reader:the-experiment-ran-did-the-research-advance",
+          "reader:the-grader-is-part-of-the-harness",
+          "reader:the-harness-keeps-the-receipt",
+          "reader:the-success-hid-the-failure"
+        ],
+        "rationale": "Tony approved exactly four proposed outgoing editorial comparisons for Reader #48; all 47 existing Reader theses were considered during editorial candidate preparation. Independent relationship review remains pending."
+      },
+      "sharePlaneRelationships": [
+        {
+          "title": "Stop Prompting Agents. Start Managing Workers.",
+          "url": "https://shareplane.malott.ai/artifacts/stop-prompting-agents-start-managing-workers/",
+          "type": "foundation",
+          "reason": "Work contracts, evidence and accepted outcomes supply an architectural comparison to the benchmark.",
+          "basis": "curated-editorial-comparison"
+        },
+        {
+          "title": "Own the Memory, Rent the Intelligence",
+          "url": "https://shareplane.malott.ai/artifacts/own-memory-rent-intelligence-agent-stack/",
+          "type": "companion",
+          "reason": "Source records and qualifications should remain available independent of fluent model summaries.",
+          "basis": "curated-editorial-comparison"
+        }
+      ],
+      "sharePlaneReview": {
+        "reviewedAt": "2026-11-09",
+        "decision": "linked",
+        "rationale": "Tony approved exactly two published-Work editorial comparisons. They do not corroborate scientific claims."
+      },
+      "editorialDepth": {
+        "schemaVersion": 1,
+        "receiptPath": "content/editorial-depth/the-paper-is-not-the-experiment.json"
+      },
+      "rank": 47
+    },
+    {
       "id": "reader:the-second-brain-still-needs-a-judgment",
       "slug": "the-second-brain-still-needs-a-judgment",
       "title": "The Second Brain Still Needs a Judgment",

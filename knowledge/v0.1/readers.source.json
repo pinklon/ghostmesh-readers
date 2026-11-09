@@ -685,6 +685,18 @@
         "path": "site/the-second-brain-still-needs-a-judgment/index.html",
         "sha256": "e055d93c4fc4b641faff0cf1f474daa8ac65b5db1c1f744acf765adde30bf24f"
       }
+    },
+    {
+      "id": "urn:ghostmesh-readers:reader:the-paper-is-not-the-experiment",
+      "type": "Reader",
+      "visibility": "public",
+      "epistemicStatus": "source-editorial",
+      "label": "The Paper Is Not the Experiment",
+      "url": "https://youtube.shareplane.malott.ai/the-paper-is-not-the-experiment/",
+      "source": {
+        "path": "site/the-paper-is-not-the-experiment/index.html",
+        "sha256": "4bc7543e2520c89e883ce2ea3bbd4412e8e9b3f9c40ce0d6d386f1f458aff710"
+      }
     }
   ],
   "relationships": [

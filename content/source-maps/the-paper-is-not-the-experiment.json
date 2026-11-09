@@ -1,0 +1,62 @@
+{
+  "schemaVersion": 1,
+  "readerId": "reader:the-paper-is-not-the-experiment",
+  "sourceId": "ULIGFaPLd_Y",
+  "sourceAidSha256": "95d4a375a431d4a4c38344981ca2678df2e2a0f360cb797808c3b1fc6ea2cb3d",
+  "points": [
+    {
+      "atSeconds": 205,
+      "sectionId": "three-gates-that-should-never-be-collapsed",
+      "claimIds": [
+        "the-paper-is-not-the-experiment--claim-1"
+      ],
+      "cueParaphrase": "Presenter explains distinct rubric conditions for integrity, completeness and sufficiency.",
+      "privateAidCheck": "Private source-caption VTT inspected against timestamp; not listening-certified, no numerical replication."
+    },
+    {
+      "atSeconds": 267,
+      "sectionId": "read-the-denominators",
+      "claimIds": [
+        "the-paper-is-not-the-experiment--claim-2"
+      ],
+      "cueParaphrase": "Presenter gives aggregate failures and comparative results; paper is the numerical authority.",
+      "privateAidCheck": "Private source-caption VTT inspected against timestamp; not listening-certified, no numerical replication."
+    },
+    {
+      "atSeconds": 267,
+      "sectionId": "read-the-denominators",
+      "claimIds": [
+        "the-paper-is-not-the-experiment--claim-3"
+      ],
+      "cueParaphrase": "Study-reported production and evaluation hours are interpreted with bounded scope.",
+      "privateAidCheck": "Private source-caption VTT inspected against timestamp; not listening-certified, no numerical replication."
+    },
+    {
+      "atSeconds": 267,
+      "sectionId": "read-the-denominators",
+      "claimIds": [
+        "the-paper-is-not-the-experiment--claim-4"
+      ],
+      "cueParaphrase": "Study-reported C1 pass counts do not indicate all-gates research success.",
+      "privateAidCheck": "Private source-caption VTT inspected against timestamp; not listening-certified, no numerical replication."
+    },
+    {
+      "atSeconds": 346,
+      "sectionId": "how-agents-get-stuck-in-plausible-failure",
+      "claimIds": [
+        "the-paper-is-not-the-experiment--claim-5"
+      ],
+      "cueParaphrase": "Three recurring behavior patterns appear in study trajectory descriptions.",
+      "privateAidCheck": "Private source-caption VTT inspected against timestamp; not listening-certified, no numerical replication."
+    },
+    {
+      "atSeconds": 0,
+      "sectionId": "faking-is-a-headline-not-proof-of-intent",
+      "claimIds": [
+        "the-paper-is-not-the-experiment--claim-6"
+      ],
+      "cueParaphrase": "Video headline uses faking; article distinguishes unsupported claims from human-like intent.",
+      "privateAidCheck": "Private source-caption VTT inspected against timestamp; not listening-certified, no numerical replication."
+    }
+  ]
+}
