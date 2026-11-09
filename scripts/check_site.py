@@ -245,7 +245,7 @@ def check(root=ROOT, *, local_only=False):
    require(url.startswith('https://shareplane.malott.ai/artifacts/') and url.endswith('/'),f'{slug}: invalid external Work URL')
    require(url not in seen_external,f'{slug}: duplicate external Work URL')
    seen_external.add(url)
-   require(ext.get('type') in {'extends','challenges','informs architecture','related topic','foundation','counterpoint'} and len(ext.get('reason',''))>=80,f'{slug}: unqualified external Work relationship')
+   require(ext.get('type') in {'extends','challenges','informs architecture','related topic','foundation','counterpoint','companion'} and len(ext.get('reason',''))>=80,f'{slug}: unqualified external Work relationship')
  # Scan all public files, including unlinked assets and JSON, rather than only HTML.
  for p in root.rglob('*'):
   if '.git' in p.parts or '__pycache__' in p.parts:continue

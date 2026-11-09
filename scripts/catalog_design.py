@@ -29,6 +29,8 @@ def paper_cover(source):
 # test, not verification labels. Keep the source-grounding checks below when
 # adding a Reader; never infer a call from its category or claim count.
 CALLS = {
+    'the-cost-of-forgetting-where-the-tools-are': (
+        'Test cost without losing discovery', 'Watch the micro-skills at 01:49 and tool pruning at 03:46. Compare billed cost and accepted work while deliberately requiring a rarely used authorized tool.'),
     'the-router-is-not-the-organization': (
         'Test the operating boundary', 'Watch the router-worker separation at 02:00 and the watchdog at 08:56. Compare accepted work, interruption recovery and total cost before adopting the architecture.'),
     'the-success-hid-the-failure': (

@@ -129,7 +129,7 @@
       "properties": {
         "title": {"type": "string", "minLength": 3},
         "url": {"type": "string", "pattern": "^https://shareplane\\.malott\\.ai/artifacts/[a-z0-9-]+/$"},
-        "type": {"enum": ["extends", "challenges", "informs architecture", "related topic", "foundation", "counterpoint"]},
+        "type": {"enum": ["extends", "challenges", "informs architecture", "related topic", "foundation", "counterpoint", "companion"]},
         "reason": {"type": "string", "minLength": 80},
         "basis": {"const": "curated-editorial-comparison"}
       }
