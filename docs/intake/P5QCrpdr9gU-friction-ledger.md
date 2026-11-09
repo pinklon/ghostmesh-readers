@@ -1,6 +1,6 @@
 # Reader #46: process friction and next-intake checks
 
-This is a sanitized process-learning receipt for the existing Reader lane, not a second queue. The owner's private handoff supplied F01–F08. Local repairs below are distinct from independent acceptance, rendered QA and publication, which remain pending. Private media, raw captions, attachment identifiers, credentials and host paths are excluded.
+This is a sanitized process-learning receipt for the existing Reader lane, not a second queue. The owner's private handoff supplied F01–F08. The table and checkpoints below retain their historical preparation state. The November 9 reconciliation at the end records subsequent publication evidence and remaining repairs; historical failures are not erased. Private media, raw captions, attachment identifiers, credentials and host paths are excluded.
 
 | ID | Evidence and root cause | Disposition and repair | Regression or next proof | Accountable owner / unknowns |
 | --- | --- | --- | --- | --- |
@@ -28,3 +28,35 @@ The independent review of authored HTML `be1d0d7f05e0f70ff99e2a1f86548f18e4c1460
 ## Owner-approved privacy amendment and fresh review
 
 Tony approved only the stated naming/inventory redaction. The new manuscript SHA-256 is `9c8d19d278b82d340c9b2e2cbf3e3646d6ecbbf46410af37979768fd62d51132`; authored HTML is `94fe479b8f6333c9da27eba4156e1b1ec833d455719149638d6cb504c1263d6d`. The unchanged source map remains `829ed08b662ce09730d3e295e23409f1846974196be7710bf41ed2e0ced96019`. The fresh independent review is **ACCEPT FOR OWNER REVIEW**, preserving its audio/cue, runtime and browser limits. The earlier HOLDs remain part of private custody history. Current publication authority is draft PR/public preview only; no ready, merge, automerge or Production action is authorized. The public branch will start from the accepted baseline with only the sanitized tree, excluding earlier private intermediate commits.
+
+
+## November 9 production reconciliation and intake repair
+
+Reader #46 is published, not pending preview: [PR #140](https://github.com/pinklon/ghostmesh-readers/pull/140) merged approved head `1c9f579a2bbb13f453a4cf012f1c4ed3393b9f28` as `2c681b2905a58285dfcb99e0c2e9b37aa517916f`. Netlify production deploy `6af10fce4c2e5166240d6964` was ready and published November 9 at 00:12:04 UTC (November 8 Pacific). [Existing closeout](https://github.com/pinklon/ghostmesh-readers/pull/140#issuecomment-6729264032) retains the verification and open follow-ups. Desktop and 390px mobile light/dark, keyboard opt-in playback/seek and overflow were observed by the publisher; separate HTTP readback checked the six related destinations. This is not independent listening verification or a fresh replay of the failed offline attachment.
+
+| ID | Current disposition, accountable owner and remaining proof |
+| --- | --- |
+| F01 | **FIXED for discovery observation:** incumbent publisher reached the commissioned source custodian through existing remote tools; actual CLI help/version and doctor completed with exit 0. **PROPOSED:** merge the public-safe discovery/preflight in existing PR #139. **UNKNOWN:** optional Whisper fallback was reported unconfigured; neither cross-host convergence nor a fresh acquisition was demonstrated. Source custodian owns required capability qualification; publisher records the admission decision. No Reader #47 acquisition was started. |
+| F02 | **FIXED for hosted Reader #46:** actual desktop/mobile production witness and unchanged published assets. **PROPOSED:** reusable offline-resource positive/negative checks and explicit actual-delivery visual checklist. **UNKNOWN:** replay of the original offline failure and a future standalone package's appearance. Publisher must report static checks and browser observations separately; a denied local browser route remains unexecuted. |
+| F03 | **FIXED for Reader #46:** canonical wrapper, complete brief, single claim register, six explained links and final limits verified in production. The next publisher must validate the next edition's wrapper and reading order; this receipt cannot certify a future render. |
+| F04 | **FIXED for released contract/review:** full checks and real editorial/privacy review bound the published source. **PROPOSED, separate amendment:** stale preview-only catalog/review labeling. Existing owner and exact-head gates remain in force. |
+| F05 | **FIXED for reporting:** focused tests, full unit suite, aggregate gate, editorial review, offline/desktop/mobile witness and deployment have separate result fields. A failure or NOT EXECUTED in one is not covered by another's pass. Publisher owns the next complete result receipt. |
+| F06 | **FIXED for approved copy/privacy:** restored brief, body, all relationship rationales and final limits; owner-approved identifier redaction and independent exact-hash review retained. **PROPOSED:** reusable block/order/link checks with omission, compression, wrong-order and wrong-destination negatives. **Separate open content follow-up:** repeated-use counterevidence should cite paper Table 2 rather than Table 1; do not rewrite it in this process PR. Audio/cue accuracy remains unverified. |
+| F07 | **FIXED for this intake:** verified private transport, normal authenticated push and sanitized released tree. **PROPOSED:** short preflight and public-safe role names before the next intake; no host inventory or private source paths in the new discovery instructions. Historical transport denial is retained, not bypassed. Publisher and source custodian own their existing boundaries. |
+| F08 | **FIXED for assignment:** one incumbent owns intake through closeout. **PROPOSED:** freeze the delivered head, report remaining deltas before an authorized transition and reconcile the actual remote state after uncertain operations. **UNKNOWN:** Reader #47 latency and proof that the repaired path prevents another owner chase. No new tracker, dispatcher or scheduled job is introduced. |
+
+### Reader #47 admission and proof
+
+**NOT READY for acquisition while this repair is draft.** Before acquisition, merge only the exact reviewed repair head under owner authorization, then verify the existing custodian's required capabilities and permitted source job from current receipts. An unconfigured optional fallback is not evidence that all source routes fail, nor permission to install or start another capture. If the admitted source requires that fallback, the existing custodian must qualify it or return an exact blocker first.
+
+For the next accepted manuscript, use the existing test module's reusable block/order/link helpers with that manuscript's own full locked block set and explicit administrative exclusions. Verify actual standalone dependencies if delivering offline HTML; then obtain permitted desktop/mobile interaction evidence and real independent editorial review. The next intake must prove these behaviors on its own bytes. Static fixtures are prevention checks, not a claim that a future Reader has passed them.
+
+Keep the existing candidate receipt's outcomes separate: focused regressions; full unit suite; aggregate release gate; independent editorial/source/privacy review; offline/desktop/mobile observations; hosted CI; deployment/live verification. No passing result substitutes for another. Preserve HOLDs and unknowns.
+
+### Separate Reader #46 content follow-ups
+
+1. Correct only the repeated-use counterevidence locator from Table 1 to Table 2 after its own reviewed amendment decision.
+2. Add the missing unique first-publication RSS event, preserving all existing events and the actual November 8 Pacific release date, through that amendment's release gates.
+3. Reconcile stale preview-only catalog/review metadata with the verified production release.
+
+None is implemented by this intake repair. No article, source map, runtime, public catalog/graph/feed or deployment bytes change here.
