@@ -3,21 +3,74 @@
   "readerId": "reader:when-every-ai-website-looks-good",
   "sourceId": "mImbbszCjCI",
   "source": "https://www.youtube.com/watch?v=mImbbszCjCI",
-  "coverage": "Browser-visible timecoded YouTube transcript through 11:17 of an 11:19 video. Not independently listened end-to-end or frame-audited. No private ReasonPack manifest available to bind.",
-  "sourceAidSha256": null,
+  "coverage": "ReasonPack v1 build on existing authorized source surface, 11:18 source video, local Whisper small.en transcript and timestamped VTT. Package verified twice, including after persistent custody copy. Automated transcript may contain recognition/timestamp errors; not independently frame-audited. Referenced performance examples remain presenter-attributed, not independently corroborated.",
+  "sourceAidSha256": "b33d56851dc262bbdbd9b387628f0569f6c9dc8950514017dc3e2ddd0f878c41",
   "points": [
-    {"atSeconds": 24, "topic": "Mirror test", "assessment": "Presenter's framework for matching visitor intent; useful heuristic, not an independently validated experiment."},
-    {"atSeconds": 69, "topic": "Trucking redesign", "assessment": "79.3 percent improvement reported by the presenter; metric denominator and study design unverified."},
-    {"atSeconds": 85, "topic": "Visitor questions", "assessment": "Who is this for, what do I get, and what do I do next; adapt for operational surfaces."},
-    {"atSeconds": 108, "topic": "City Click", "assessment": "90 percent pricing clickthrough increase attributed to a marketing example; no primary experiment verified."},
-    {"atSeconds": 116, "topic": "Campaign Monitor", "assessment": "31.4 percent signup increase attributed to wording; no primary experiment verified."},
-    {"atSeconds": 164, "topic": "Accent highlighter", "assessment": "Restricted emphasis is useful; more than one semantic status color may be needed in operations."},
-    {"atSeconds": 209, "topic": "60/30/10 palette", "assessment": "Interior-design analogy, not a validated universal application-interface requirement."},
-    {"atSeconds": 259, "topic": "Three-layer depth", "assessment": "Background, middle and foreground should express hierarchy; mobile overlap needs rendered QA."},
-    {"atSeconds": 414, "topic": "Purposeful animation", "assessment": "Movement should show product, direct attention or explain change; not a universal numerical limit."},
-    {"atSeconds": 494, "topic": "Motion accessibility", "assessment": "Critical words immediately available and reduced-motion pathway required."},
-    {"atSeconds": 549, "topic": "Try before commit", "assessment": "Interactive tools can produce useful understanding before a commitment; evaluate usefulness and effort."},
-    {"atSeconds": 577, "topic": "Orthodontic calculator", "assessment": "Approximately 45 percent conversion rate attributed to vendor Outgrow, not a 45 percent improvement; independent denominator unavailable."}
+    {
+      "atSeconds": 24,
+      "topic": "Mirror test",
+      "assessment": "Presenter's framework for matching visitor intent; useful heuristic, not an independently validated experiment."
+    },
+    {
+      "atSeconds": 69,
+      "topic": "Trucking redesign",
+      "assessment": "79.3 percent improvement reported by the presenter; metric denominator and study design unverified."
+    },
+    {
+      "atSeconds": 85,
+      "topic": "Visitor questions",
+      "assessment": "Who is this for, what do I get, and what do I do next; adapt for operational surfaces."
+    },
+    {
+      "atSeconds": 108,
+      "topic": "City Click",
+      "assessment": "90 percent pricing clickthrough increase attributed to a marketing example; no primary experiment verified."
+    },
+    {
+      "atSeconds": 116,
+      "topic": "Campaign Monitor",
+      "assessment": "31.4 percent signup increase attributed to wording; no primary experiment verified."
+    },
+    {
+      "atSeconds": 164,
+      "topic": "Accent highlighter",
+      "assessment": "Restricted emphasis is useful; more than one semantic status color may be needed in operations."
+    },
+    {
+      "atSeconds": 209,
+      "topic": "60/30/10 palette",
+      "assessment": "Interior-design analogy, not a validated universal application-interface requirement."
+    },
+    {
+      "atSeconds": 259,
+      "topic": "Three-layer depth",
+      "assessment": "Background, middle and foreground should express hierarchy; mobile overlap needs rendered QA."
+    },
+    {
+      "atSeconds": 414,
+      "topic": "Purposeful animation",
+      "assessment": "Movement should show product, direct attention or explain change; not a universal numerical limit."
+    },
+    {
+      "atSeconds": 494,
+      "topic": "Motion accessibility",
+      "assessment": "Critical words immediately available and reduced-motion pathway required."
+    },
+    {
+      "atSeconds": 549,
+      "topic": "Try before commit",
+      "assessment": "Interactive tools can produce useful understanding before a commitment; evaluate usefulness and effort."
+    },
+    {
+      "atSeconds": 577,
+      "topic": "Orthodontic calculator",
+      "assessment": "Approximately 45 percent conversion rate attributed to vendor Outgrow, not a 45 percent improvement; independent denominator unavailable."
+    }
   ],
-  "releaseRequirements": ["Resolve private source-aid digest or documented permitted alternate receipt", "Bind final source-map schema and claim IDs", "Obtain independent exact-copy source/editorial/privacy findings", "Run the full Reader candidate gate"]
+  "releaseRequirements": [
+    "Bind final source-map schema and claim IDs",
+    "Obtain independent exact-copy source/editorial/privacy findings",
+    "Run the full Reader candidate gate"
+  ],
+  "sourceAidRole": "SHA-256 of private transcript.txt member in verified ReasonPack manifest; private source media/transcript excluded from public Git"
 }
