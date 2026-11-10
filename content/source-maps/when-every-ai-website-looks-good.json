@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "readerId": "reader:when-every-ai-website-looks-good",
   "sourceId": "mImbbszCjCI",
-  "sourceAidSha256": "b33d56851dc262bbdbd9b387628f0569f6c9dc8950514017dc3e2ddd0f878c41",
+  "sourceAidSha256": "67ef2383a3927d4dc5f367fc39e86fc25603b647964110bddcaff1545482897d",
   "points": [
     {
       "atSeconds": 24,
@@ -15,7 +15,7 @@
     },
     {
       "atSeconds": 69,
-      "sectionId": "film",
+      "sectionId": "full-deconstruction",
       "claimIds": [
         "when-every-ai-website-looks-good--trucking-lift"
       ],
@@ -24,7 +24,7 @@
     },
     {
       "atSeconds": 85,
-      "sectionId": "film",
+      "sectionId": "full-deconstruction",
       "claimIds": [
         "when-every-ai-website-looks-good--mirror-test"
       ],
@@ -33,7 +33,7 @@
     },
     {
       "atSeconds": 108,
-      "sectionId": "film",
+      "sectionId": "full-deconstruction",
       "claimIds": [
         "when-every-ai-website-looks-good--city-click-lift"
       ],
@@ -42,7 +42,7 @@
     },
     {
       "atSeconds": 116,
-      "sectionId": "film",
+      "sectionId": "full-deconstruction",
       "claimIds": [
         "when-every-ai-website-looks-good--campaign-monitor-lift"
       ],
@@ -105,7 +105,7 @@
     },
     {
       "atSeconds": 577,
-      "sectionId": "film",
+      "sectionId": "full-deconstruction",
       "claimIds": [
         "when-every-ai-website-looks-good--outgrow-rate"
       ],
