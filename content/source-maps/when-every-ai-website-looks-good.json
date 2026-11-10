@@ -41,7 +41,7 @@
       "privateAidCheck": "The publisher checked this cue against the verified private local-Whisper transcript and timestamp aid. No independent end-to-end listening, frame audit or replication is claimed."
     },
     {
-      "atSeconds": 116,
+      "atSeconds": 125,
       "sectionId": "full-deconstruction",
       "claimIds": [
         "when-every-ai-website-looks-good--campaign-monitor-lift"

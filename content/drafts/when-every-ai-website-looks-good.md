@@ -24,7 +24,7 @@ At [01:25](https://youtu.be/mImbbszCjCI?t=85), Herk describes a visitor recogniz
 
 But recognition is not evidence of delivery. A headline can repeat a customer's language and still promise something the product cannot do. The right Design OS rule should combine intent-first presentation with honest capability. For an operational console, the user-centered first screen answers different questions: what changed, what matters, what happens if I ignore it, and what can I safely do?
 
-Herk cites a trucking redesign reporting a [79.3% improvement](https://youtu.be/mImbbszCjCI?t=69), a City Click headline with a reported [90% pricing clickthrough increase](https://youtu.be/mImbbszCjCI?t=108), and a Campaign Monitor wording change with a [31.4% signup increase](https://youtu.be/mImbbszCjCI?t=116). Those are attributed marketing case examples. The caption readback does not establish their sample sizes, experiment design, confidence intervals, or transferability.
+Herk cites a trucking redesign reporting a [79.3% improvement](https://youtu.be/mImbbszCjCI?t=69), a City Click headline with a reported [90% pricing clickthrough increase](https://youtu.be/mImbbszCjCI?t=108), and a Campaign Monitor wording change with a [31.4% signup increase](https://youtu.be/mImbbszCjCI?t=125). Those are attributed marketing case examples. The caption readback does not establish their sample sizes, experiment design, confidence intervals, or transferability.
 
 ## A highlighter is useful because most of the page is not highlighted
 
@@ -76,18 +76,18 @@ Keep the tests proportionate. This is not a license to construct another design-
 
 The final lesson is not that AI websites need more decoration. It is that the interface must make a coherent promise, explain what matters, and help the person do something real. **Context endures. Possibility evolves. The user still has to understand what to do next.**
 
-## Continue the thinking (proposed editorial routes)
+## Continue the thinking (reviewed editorial routes)
 
 - [Make Good Work Inspectable](https://youtube.shareplane.malott.ai/make-good-work-inspectable/) extends inspectable AI output into interface quality. Another Nate Herk source, not independent corroboration.
 - [The Page Is Part of the Proof](https://youtube.shareplane.malott.ai/the-page-is-part-of-the-proof/) compares visual evidence presentation with the claims it helps humans inspect.
 - [Autonomy Needs an Interface](https://youtube.shareplane.malott.ai/autonomy-needs-an-interface/) contrasts marketing persuasion with accountable operational interfaces.
 
-## Published SharePlane works (proposed secondary routes)
+## Published SharePlane works (reviewed secondary routes)
 
 - [Demo Debt](https://shareplane.malott.ai/artifacts/demo-debt/) is a **counterpoint** to the video’s conversion-first case studies. Its argument distinguishes impressive demonstrations from operational capability. A polished AI website can show a product convincingly while leaving exceptions, ownership, recovery and maintainability unproven. The relation is conceptual, not independent verification of Herk’s marketing figures.
 - [The Semantic Operating System](https://shareplane.malott.ai/artifacts/the-semantic-operating-system/) is an **extension** for operational products. Its dimensions of identity, meaning, authority, state, evidence and next valid action explain why a Mission Control interface needs a different information hierarchy from a marketing landing page. This source supplies Tony’s architectural thesis, not empirical evidence for the video’s design claims.
 
-The three Reader-to-Reader routes and two published SharePlane Work routes are separate editorial proposals. Neither kind of connection establishes independent corroboration. The existing Reader relationship and SharePlane relationship reviews must formally admit or reject each before any graph projection.
+The three Reader-to-Reader routes and two published SharePlane Work routes are separately reviewed editorial comparisons. Neither kind of connection establishes independent corroboration of the video or its conversion figures.
 
 ## Sources and scope
 
