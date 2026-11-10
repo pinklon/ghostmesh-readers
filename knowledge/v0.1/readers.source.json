@@ -709,6 +709,18 @@
         "path": "site/offline-is-not-the-same-as-independent/index.html",
         "sha256": "a0b65e3ed199bd9d42e1b7c41fa3c1b64ed98ad0b7789e54dd200c2d64ab549a"
       }
+    },
+    {
+      "id": "urn:ghostmesh-readers:reader:when-every-ai-website-looks-good",
+      "type": "Reader",
+      "visibility": "public",
+      "epistemicStatus": "source-editorial",
+      "label": "When Every AI Website Looks Good, What Makes One Actually Work?",
+      "url": "https://youtube.shareplane.malott.ai/when-every-ai-website-looks-good/",
+      "source": {
+        "path": "site/when-every-ai-website-looks-good/index.html",
+        "sha256": "19b351691aab56255fa415fc397e556f4d5cbc7befc6f1d7578617c8aae45b44"
+      }
     }
   ],
   "relationships": [

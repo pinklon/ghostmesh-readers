@@ -29,6 +29,8 @@ def paper_cover(source):
 # test, not verification labels. Keep the source-grounding checks below when
 # adding a Reader; never infer a call from its category or claim count.
 CALLS = {
+    'when-every-ai-website-looks-good': (
+        'Test usefulness before decoration', 'Apply the five design principles to one existing screen. Compare comprehension, task completion, accessibility and time to useful information, not visual polish alone.'),
     'offline-is-not-the-same-as-independent': (
         'Test the whole local boundary', 'Watch the privacy claim at 00:50 and tool actions at 04:33. Test outbound isolation, retrieval, memory correction and tool authorization before granting operational authority.'),
     'the-paper-is-not-the-experiment': (
