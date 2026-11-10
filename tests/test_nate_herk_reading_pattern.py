@@ -25,6 +25,11 @@ class NateHerkReadingPattern(unittest.TestCase):
                 self.assertIn("No independent experiment", content)
                 self.assertIn("45% is a conversion rate, not a lift", content)
                 self.assertIn('id="published-shareplane-works-proposed-secondary-routes"', content)
+                self.assertIn('class="gm-work-grid"', content)
+                self.assertEqual(2, len(re.findall(r'class="gm-work-kind"', content)))
+                self.assertIn('class="gm-source-list"', content)
+                self.assertEqual(3, len(re.findall(r'class="gm-source-index"', content)))
+                self.assertIn('class="gm-publication-status"', content)
 
 
 if __name__ == "__main__":
