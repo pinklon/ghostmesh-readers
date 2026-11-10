@@ -82,7 +82,12 @@ The final lesson is not that AI websites need more decoration. It is that the in
 - [The Page Is Part of the Proof](https://youtube.shareplane.malott.ai/the-page-is-part-of-the-proof/) compares visual evidence presentation with the claims it helps humans inspect.
 - [Autonomy Needs an Interface](https://youtube.shareplane.malott.ai/autonomy-needs-an-interface/) contrasts marketing persuasion with accountable operational interfaces.
 
-SharePlane Work comparisons require a separately verified published-work review. These are proposed routes, not admission to a cross-site graph.
+## Published SharePlane works (proposed secondary routes)
+
+- [Demo Debt](https://shareplane.malott.ai/artifacts/demo-debt/) is a **counterpoint** to the video’s conversion-first case studies. Its argument distinguishes impressive demonstrations from operational capability. A polished AI website can show a product convincingly while leaving exceptions, ownership, recovery and maintainability unproven. The relation is conceptual, not independent verification of Herk’s marketing figures.
+- [The Semantic Operating System](https://shareplane.malott.ai/artifacts/the-semantic-operating-system/) is an **extension** for operational products. Its dimensions of identity, meaning, authority, state, evidence and next valid action explain why a Mission Control interface needs a different information hierarchy from a marketing landing page. This source supplies Tony’s architectural thesis, not empirical evidence for the video’s design claims.
+
+The three Reader-to-Reader routes and two published SharePlane Work routes are separate editorial proposals. Neither kind of connection establishes independent corroboration. The existing Reader relationship and SharePlane relationship reviews must formally admit or reject each before any graph projection.
 
 ## Sources and scope
 
