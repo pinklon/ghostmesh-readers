@@ -64,7 +64,7 @@ The design principle is utility before persuasion. Give someone a meaningful res
 
 ## The evidence boundary
 
-This draft is grounded in the original YouTube watch page's visible, timecoded transcript panel, creator description, and a direct read of the creator-maintained Scrollcraft repository. The caption panel supplied cues through 11:17, but the source was not independently listened end-to-end or frame-audited. No complete private ReasonPack manifest, media package or independent case-study replication is claimed. We do not reproduce the full captions or media.
+This draft is grounded in the original YouTube watch page's visible, timecoded transcript panel, creator description, a direct read of the creator-maintained Scrollcraft repository, and a verified private ReasonPack. The package contains normalized media, a locally generated Whisper transcript, timestamped captions, manifest and checksums. Its transcript SHA-256 is `b33d56851dc262bbdbd9b387628f0569f6c9dc8950514017dc3e2ddd0f878c41`. YouTube's caption endpoint returned HTTP 429, so the pack used local speech recognition. The transcript is a source aid, not a substitute for an independent end-to-end listening or frame audit; speech recognition and timestamps can be imperfect. We do not reproduce the full captions or media.
 
 The headline figure of 10,000 websites lacks a disclosed sampling protocol in the material reviewed. The cited conversion cases lack verified original experiment details in this draft. The practical heuristics can be evaluated as design proposals without pretending the numbers establish causality. Independent editorial, source and privacy review must verify the exact published copy and any supporting external research before release.
 
@@ -91,8 +91,8 @@ The three Reader-to-Reader routes and two published SharePlane Work routes are s
 
 ## Sources and scope
 
-- Nate Herk, [original video](https://www.youtube.com/watch?v=mImbbszCjCI), November 9, 2026, 11:19, creator chapter markers and browser-visible timecoded captions.
+- Nate Herk, [original video](https://www.youtube.com/watch?v=mImbbszCjCI), November 9, 2026, 11:18 according to extracted media metadata, creator chapter markers, browser-visible captions and a verified private ReasonPack.
 - Nate Herk, [Scrollcraft repository](https://github.com/nateherkai/scroll-craft), creator-maintained MIT-licensed skill, README and source instructions inspected November 9, 2026.
 - [CXL guidance on testing representativeness](https://cxl.com/blog/stopping-ab-tests-how-many-conversions-do-i-need/), used as a methodological caution, not as verification of Herk's specific conversion stories.
 
-**Publication status:** Draft only. Source-aid hash, independent exact-copy review, current catalog/source-map/depth bindings, full Reader CI, preview QA and production release are pending.
+**Publication status:** Draft only. Private source-aid hash is established. Independent exact-copy review, final catalog/source-map/depth bindings, full Reader CI, preview QA and production release remain pending.
