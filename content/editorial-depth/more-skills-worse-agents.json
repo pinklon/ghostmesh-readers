@@ -112,8 +112,12 @@
   },
   "independentCorroboration": "none",
   "ownerDecision": {
-    "pullNumber": 150,
-    "commentId": null
+    "kind": "conversation",
+    "owner": "Tony Malott",
+    "approval": "Owner explicitly approved publishing the independently reviewed Reader 51 candidate and admitting its three reviewed Reader relationships and one reviewed SharePlane Work as editorial comparisons, conditioned on protected release checks and production verification. This approval does not validate the creator performance assertions.",
+    "approvalDate": "2026-11-11",
+    "articleSha256": "db936b790e068e97e8012de15748d70970590c05c7ed89950eb00da8bd5526bd",
+    "evidenceRevision": "80fd41e8aa36056bcb46e0823eab28a6f7ae7a1a664e659fe198782344156257"
   },
   "decision": "accept",
   "gaps": [

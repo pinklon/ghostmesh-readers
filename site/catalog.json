@@ -193,27 +193,73 @@
           "checkedAt": "2026-11-11T16:54:32Z"
         }
       ],
-      "relationships": [],
-      "relationshipDisposition": "Three Reader and one SharePlane Work editorial comparisons accepted by the independent reviewer on November 11, 2026; owner graph admission and production publication remain pending. No edges admitted.",
+      "relationships": [
+        {
+          "target": "reader:make-good-work-inspectable",
+          "type": "companion",
+          "reason": "Inspectability and retained evidence help distinguish repeatable agent work from impressive narrated outcomes. This is a methodological comparison, not proof that pruning skills improves agent accuracy.",
+          "provenance": [
+            "/more-skills-worse-agents/",
+            "/make-good-work-inspectable/"
+          ],
+          "basis": "curated-editorial-comparison",
+          "direction": "outgoing"
+        },
+        {
+          "target": "reader:autonomy-needs-an-interface",
+          "type": "challenges",
+          "reason": "An agent can retrieve and invoke a well-written skill without having authorization to change production systems. This comparison stresses accountable authority and observable action boundaries beyond instruction reuse.",
+          "provenance": [
+            "/more-skills-worse-agents/",
+            "/autonomy-needs-an-interface/"
+          ],
+          "basis": "curated-editorial-comparison",
+          "direction": "outgoing"
+        },
+        {
+          "target": "reader:the-cost-of-forgetting-where-the-tools-are",
+          "type": "companion",
+          "reason": "Reducing discovery noise may save context, but removing rarely used tool knowledge can also impair incident response and capability recall. Both works support measuring accepted outcomes rather than rewarding file deletion.",
+          "provenance": [
+            "/more-skills-worse-agents/",
+            "/the-cost-of-forgetting-where-the-tools-are/"
+          ],
+          "basis": "curated-editorial-comparison",
+          "direction": "outgoing"
+        }
+      ],
+      "relationshipDisposition": "Three independently reviewed editorial comparisons were admitted by the owner for Reader #51 publication on November 11, 2026. The relationships are navigation and conceptual context, not performance corroboration.",
       "relationshipReview": {
         "reviewedAt": "2026-11-11",
         "reviewedCatalogSize": 50,
-        "decision": "none",
-        "reviewedTargets": [],
-        "rationale": "Independent reviewer accepted the three named Reader comparisons as editorial routes on November 11, 2026, not evidence for the source performance assertions. Owner has not admitted them to the graph; decision remains none and edge array remains empty."
+        "decision": "linked",
+        "reviewedTargets": [
+          "reader:make-good-work-inspectable",
+          "reader:autonomy-needs-an-interface",
+          "reader:the-cost-of-forgetting-where-the-tools-are"
+        ],
+        "rationale": "The incumbent independent reviewer accepted all three named Reader comparisons with source-limited rationales. The owner explicitly approved publishing this reviewed Reader and admitting its four editorial comparisons on November 11, 2026. No relationship is independent corroboration of the claimed deletion gains."
       },
-      "sharePlaneRelationships": [],
+      "sharePlaneRelationships": [
+        {
+          "title": "The Semantic Operating System",
+          "url": "https://shareplane.malott.ai/artifacts/the-semantic-operating-system/",
+          "type": "extends",
+          "reason": "Scoped meaning, capability discovery, provenance, authority and retained context provide a conceptual extension for building accountable agent workflows. This published Work is not independent proof that deleting 80 to 90 percent of skills improves performance.",
+          "basis": "curated-editorial-comparison"
+        }
+      ],
       "sharePlaneReview": {
         "reviewedAt": "2026-11-11",
-        "decision": "none",
-        "rationale": "Independent reviewer accepted The Semantic Operating System as a separately labeled conceptual extension on November 11, 2026, not corroboration of pruning performance. Owner has not admitted the route or authorized publication; decision remains none."
+        "decision": "linked",
+        "rationale": "The existing reviewer accepted this separately labeled SharePlane Work as a conceptual extension, independent of performance corroboration. The owner approved its editorial admission with the reviewed Reader #51 publication on November 11, 2026."
       },
       "review": {
-        "status": "Independent ACCEPT FOR OWNER REVIEW; owner publication decision pending",
+        "status": "Independent ACCEPT FOR OWNER REVIEW; owner approved publication, protected release pending",
         "reviewer": "existing independent Reader reviewer",
         "checkedAt": "2026-11-11T17:21:37Z",
-        "scope": "ASR-limited source fidelity, canonical extended editorial depth, privacy and four separate comparison proposals",
-        "findings": "Independent ACCEPT FOR OWNER REVIEW on exact disclosure-corrected article. Four editorial comparisons reviewed; no owner graph admission or publication. Machine ASR and performance limits remain."
+        "scope": "ASR-limited source fidelity, extended editorial depth, private-source boundary, and four reviewed comparison routes",
+        "findings": "The owner approved publication and four editorial links on November 11, 2026 after independent review. Controlled deletion benefits remain unverified. Release remains gated by the existing protected CI and deployment checks."
       },
       "revisionHistory": [
         {

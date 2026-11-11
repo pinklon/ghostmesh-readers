@@ -298,6 +298,21 @@ def projections():
  byid={r['id']:r for r in readers};out={}
  for r in readers:
   raw=(ROOT/'content/readers'/f'{r["slug"]}.html').read_text()
+  if r['slug']=='more-skills-worse-agents' and len(r.get('relationships',[]))==3 and len(r.get('sharePlaneRelationships',[]))==1:
+   # Administrative public-stage labels. Preserve the exact accepted authored article.
+   replacements={
+    'The four editorial comparisons passed independent review; owner admission is pending.':
+     'The four editorial comparisons passed independent review and were admitted by the owner as navigation, not as proof of performance.',
+    'This reviewed editorial comparison remains proposed until owner admission; it does not corroborate the video.':
+     'This owner-admitted editorial comparison does not corroborate the video or establish its performance claims.',
+    'These editorial comparisons passed independent review, but are not yet admitted into the catalog graph or authorized for publication.':
+     'These editorial comparisons passed independent review and owner admission. They are reading routes, not independent corroboration.',
+    'Editorial preview only. ReasonPack verified, ASR not independently listened to. Independent review accepted for owner consideration. Four comparisons reviewed but not admitted; owner release authorization remains outstanding.':
+     'Owner-approved editorial edition. ReasonPack verified; machine ASR not independently listening-certified. Four reviewed editorial comparisons are admitted; performance claims remain unverified.'
+   }
+   for old,new in replacements.items():
+    if raw.count(old)!=1:raise ValueError('Reader 51 release label projection changed: '+old)
+    raw=raw.replace(old,new,1)
   if r['slug']=='the-threshold-is-a-claim-not-a-test':
    # Preserve the incumbent writer file byte-for-byte; normalize its colliding
    # local brief anchor and missing canonical only in this public projection.
