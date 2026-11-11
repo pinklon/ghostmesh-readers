@@ -29,6 +29,7 @@ def paper_cover(source):
 # test, not verification labels. Keep the source-grounding checks below when
 # adding a Reader; never infer a call from its category or claim count.
 CALLS = {
+    'more-skills-worse-agents': ('Test skill discovery, not file count', 'Watch the discovery and pruning argument at 01:42 and 14:19. Compare identical tasks with scoped skill indexes, measure selection errors and context cost, and preserve rarely used incident-response procedures.'),
     'when-every-ai-website-looks-good': (
         'Test usefulness before decoration', 'Apply the five design principles to one existing screen. Compare comprehension, task completion, accessibility and time to useful information, not visual polish alone.'),
     'offline-is-not-the-same-as-independent': (

@@ -3,11 +3,11 @@
   "scope": "Local public editorial reading routes; no independent corroboration or cross-site graph admission.",
   "authority": "catalog-curated-editorial",
   "visibility": "public",
-  "readerCount": 50,
-  "assessmentCount": 50,
-  "relationshipCount": 109,
-  "sharePlaneRelationshipCount": 18,
-  "sharePlaneReviewCount": 10,
+  "readerCount": 51,
+  "assessmentCount": 51,
+  "relationshipCount": 112,
+  "sharePlaneRelationshipCount": 19,
+  "sharePlaneReviewCount": 11,
   "sharePlaneEdges": [
     {
       "from": "reader:when-code-gets-cheap-where-does-the-work-wait",
@@ -151,6 +151,14 @@
       "url": "https://shareplane.malott.ai/artifacts/the-semantic-operating-system/",
       "type": "extends",
       "reason": "Identity, meaning, authority, state and next valid action explain the additional demands of operational consoles.",
+      "basis": "curated-editorial-comparison"
+    },
+    {
+      "from": "reader:more-skills-worse-agents",
+      "title": "The Semantic Operating System",
+      "url": "https://shareplane.malott.ai/artifacts/the-semantic-operating-system/",
+      "type": "extends",
+      "reason": "Scoped meaning, capability discovery, provenance, authority and retained context provide a conceptual extension for building accountable agent workflows. This published Work is not independent proof that deleting 80 to 90 percent of skills improves performance.",
       "basis": "curated-editorial-comparison"
     }
   ],
@@ -958,6 +966,23 @@
           "reader:autonomy-needs-an-interface"
         ],
         "rationale": "Tony approved all three exact routes in the Creative Lock on November 9. They are editorial relationships, not source corroboration."
+      }
+    },
+    {
+      "id": "reader:more-skills-worse-agents",
+      "slug": "more-skills-worse-agents",
+      "title": "When More Agent Skills Make Agents Worse",
+      "url": "https://youtube.shareplane.malott.ai/more-skills-worse-agents/",
+      "review": {
+        "reviewedAt": "2026-11-11",
+        "reviewedCatalogSize": 50,
+        "decision": "linked",
+        "reviewedTargets": [
+          "reader:make-good-work-inspectable",
+          "reader:autonomy-needs-an-interface",
+          "reader:the-cost-of-forgetting-where-the-tools-are"
+        ],
+        "rationale": "The incumbent independent reviewer accepted all three named Reader comparisons with source-limited rationales. The owner explicitly approved publishing this reviewed Reader and admitting its four editorial comparisons on November 11, 2026. No relationship is independent corroboration of the claimed deletion gains."
       }
     }
   ],
@@ -2266,6 +2291,42 @@
       "provenance": [
         "/when-every-ai-website-looks-good/",
         "/autonomy-needs-an-interface/"
+      ],
+      "basis": "curated-editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:more-skills-worse-agents",
+      "to": "reader:make-good-work-inspectable",
+      "type": "companion",
+      "reason": "Inspectability and retained evidence help distinguish repeatable agent work from impressive narrated outcomes. This is a methodological comparison, not proof that pruning skills improves agent accuracy.",
+      "provenance": [
+        "/more-skills-worse-agents/",
+        "/make-good-work-inspectable/"
+      ],
+      "basis": "curated-editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:more-skills-worse-agents",
+      "to": "reader:autonomy-needs-an-interface",
+      "type": "challenges",
+      "reason": "An agent can retrieve and invoke a well-written skill without having authorization to change production systems. This comparison stresses accountable authority and observable action boundaries beyond instruction reuse.",
+      "provenance": [
+        "/more-skills-worse-agents/",
+        "/autonomy-needs-an-interface/"
+      ],
+      "basis": "curated-editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:more-skills-worse-agents",
+      "to": "reader:the-cost-of-forgetting-where-the-tools-are",
+      "type": "companion",
+      "reason": "Reducing discovery noise may save context, but removing rarely used tool knowledge can also impair incident response and capability recall. Both works support measuring accepted outcomes rather than rewarding file deletion.",
+      "provenance": [
+        "/more-skills-worse-agents/",
+        "/the-cost-of-forgetting-where-the-tools-are/"
       ],
       "basis": "curated-editorial-comparison",
       "direction": "outgoing"

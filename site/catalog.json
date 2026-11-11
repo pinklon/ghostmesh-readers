@@ -12,6 +12,269 @@
   ],
   "readers": [
     {
+      "id": "reader:more-skills-worse-agents",
+      "slug": "more-skills-worse-agents",
+      "title": "When More Agent Skills Make Agents Worse",
+      "category": "AI & Technology",
+      "tags": [
+        "agent skills",
+        "context",
+        "retrieval",
+        "automation"
+      ],
+      "entities": [
+        "David Ondrej",
+        "GhostMesh"
+      ],
+      "source": {
+        "platform": "YouTube",
+        "url": "https://www.youtube.com/watch?v=45-qbcAeUbM",
+        "videoId": "45-qbcAeUbM",
+        "title": "More skills = worse agents (do this instead)",
+        "creator": "David Ondrej",
+        "mediaAspect": "16:9",
+        "durationSeconds": 2545,
+        "uploadDate": "2026-11-09",
+        "captionType": "Offline CPU Whisper, machine ASR not listening-certified"
+      },
+      "published": "2026-11-11",
+      "updated": "2026-11-11T15:00:00Z",
+      "overview": "The video argues that skill sprawl harms agent performance and recommends pruning copied procedures.",
+      "whyItMatters": "Installed file count, discoverable metadata and selected bodies have distinct costs and failure modes.",
+      "ghostMeshTakeaway": "Measure discovery and selection accuracy before pruning; protect rare critical procedures.",
+      "verdict": "Worth studying",
+      "architectureImpact": "experiment recommended",
+      "falsification": "Compare identical tasks across the same harness with controlled skill discovery sets, repeat runs, selection correctness, tokens, latency and error rate.",
+      "evidenceState": "unverified",
+      "lastEvidenceChecked": "2026-11-11T15:00:00Z",
+      "freshness": "Verified private source pack with 803 timed ASR cues; deletion gains not independently replicated.",
+      "variant": "editorial",
+      "accent": "teal",
+      "claims": [
+        {
+          "id": "skills-delete-90",
+          "proposition": "Deleting 80–90% of installed skills improves agent performance.",
+          "kind": "creator-recommendation",
+          "status": "unverified",
+          "sourceLocation": "00:00",
+          "assessment": "The source provides advice, not a controlled causal comparison across harnesses.",
+          "limits": "Deletion percentage cannot be treated as a validated target.",
+          "references": [
+            "r51-video"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-11",
+          "temporalScope": "November 9, 2026 creator video; source paraphrases checked against machine ASR, not independently listening-certified."
+        },
+        {
+          "id": "skills-metadata-overhead",
+          "proposition": "Visible skill metadata can consume context or discovery budget.",
+          "kind": "source-technical-assertion",
+          "status": "unverified",
+          "sourceLocation": "01:42",
+          "assessment": "Anthropic documents always-visible discovery metadata with on-demand instructions. OpenAI documents a bounded Codex initial skill list with progressive disclosure and possible truncation or omission. These vendor-specific mechanisms support the distinction between metadata and full bodies; they do not quantify performance gains from deleting skills.",
+          "limits": "Vendor specifications are implementation-specific and mutable. Neither source establishes universal prompt overhead or a controlled deletion-versus-accuracy effect.",
+          "references": [
+            "r51-video",
+            "r51-anthropic",
+            "r51-openai"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-11",
+          "temporalScope": "November 9, 2026 creator video; source paraphrases checked against machine ASR, not independently listening-certified."
+        },
+        {
+          "id": "skills-wrong-selection",
+          "proposition": "Overlapping descriptions may cause inappropriate skill selection.",
+          "kind": "editorial-inference",
+          "status": "unverified",
+          "sourceLocation": "03:00",
+          "assessment": "A plausible selection mechanism, not a measured failure rate.",
+          "limits": "A controlled harness-specific evaluation is still needed.",
+          "references": [
+            "r51-video"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-11",
+          "temporalScope": "November 9, 2026 creator video; source paraphrases checked against machine ASR, not independently listening-certified."
+        },
+        {
+          "id": "skills-usage-pruning",
+          "proposition": "Infrequently used skills should be removed.",
+          "kind": "creator-recommendation",
+          "status": "unverified",
+          "sourceLocation": "14:19",
+          "assessment": "Frequency does not account for business criticality or rare incident-response obligations.",
+          "limits": "Critical low-use procedures require separate preservation criteria.",
+          "references": [
+            "r51-video"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-11",
+          "temporalScope": "November 9, 2026 creator video; source paraphrases checked against machine ASR, not independently listening-certified."
+        },
+        {
+          "id": "skills-sop-reuse",
+          "proposition": "Repeated workflows may benefit from reusable specialized skills.",
+          "kind": "creator-recommendation",
+          "status": "unverified",
+          "sourceLocation": "29:00",
+          "assessment": "Reuse may improve consistency but does not itself confer privilege or correctness.",
+          "limits": "Separate authorization, provenance and operational testing remain necessary.",
+          "references": [
+            "r51-video"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-11",
+          "temporalScope": "November 9, 2026 creator video; source paraphrases checked against machine ASR, not independently listening-certified."
+        },
+        {
+          "id": "skills-global-scope",
+          "proposition": "Globally exposed skills can add irrelevant discovery overhead.",
+          "kind": "source-technical-assertion",
+          "status": "unverified",
+          "sourceLocation": "36:56",
+          "assessment": "Potential overhead depends on each harness discovery and retrieval design.",
+          "limits": "No universal global-skill penalty demonstrated.",
+          "references": [
+            "r51-video"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-11",
+          "temporalScope": "November 9, 2026 creator video; source paraphrases checked against machine ASR, not independently listening-certified."
+        }
+      ],
+      "references": [
+        {
+          "id": "r51-video",
+          "title": "More skills = worse agents (do this instead)",
+          "author": "David Ondrej",
+          "publisher": "YouTube",
+          "url": "https://www.youtube.com/watch?v=45-qbcAeUbM",
+          "publicationDate": "2026-11-09",
+          "eventDate": null,
+          "location": "Video, 00:00–42:25; verified private Whisper VTT, source cue limitations disclosed",
+          "sourceType": "creator video",
+          "independence": "Primary attribution to creator claims. Not independently listening-checked or replicated.",
+          "evidenceFamily": "r51-video",
+          "checkedAt": "2026-11-11T15:07:25Z",
+          "datePrecision": "day"
+        },
+        {
+          "id": "r51-anthropic",
+          "title": "Agent Skills overview",
+          "author": "Anthropic",
+          "publisher": "Claude Platform Docs",
+          "url": "https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview",
+          "publicationDate": "unknown",
+          "datePrecision": "unknown",
+          "dateNote": "Living vendor documentation; original publication and latest revision dates not independently established.",
+          "eventDate": null,
+          "location": "How Skills work; Level 1 metadata, Level 2 instructions and Level 3 resources",
+          "sourceType": "vendor documentation",
+          "independence": "Primary Anthropic product documentation for its skill-loading design. Independent of video author but not independent performance measurement.",
+          "evidenceFamily": "r51-anthropic-docs",
+          "checkedAt": "2026-11-11T16:54:32Z"
+        },
+        {
+          "id": "r51-openai",
+          "title": "Build skills",
+          "author": "OpenAI",
+          "publisher": "ChatGPT Learn",
+          "url": "https://learn.chatgpt.com/docs/build-skills",
+          "publicationDate": "unknown",
+          "datePrecision": "unknown",
+          "dateNote": "Living vendor documentation; original publication and revision dates not independently established.",
+          "eventDate": null,
+          "location": "Progressive disclosure and bounded initial skill list for Codex",
+          "sourceType": "vendor documentation",
+          "independence": "Primary OpenAI product documentation for Codex discovery behavior. Independent of video author but not independent performance measurement.",
+          "evidenceFamily": "r51-openai-docs",
+          "checkedAt": "2026-11-11T16:54:32Z"
+        }
+      ],
+      "relationships": [
+        {
+          "target": "reader:make-good-work-inspectable",
+          "type": "companion",
+          "reason": "Inspectability and retained evidence help distinguish repeatable agent work from impressive narrated outcomes. This is a methodological comparison, not proof that pruning skills improves agent accuracy.",
+          "provenance": [
+            "/more-skills-worse-agents/",
+            "/make-good-work-inspectable/"
+          ],
+          "basis": "curated-editorial-comparison",
+          "direction": "outgoing"
+        },
+        {
+          "target": "reader:autonomy-needs-an-interface",
+          "type": "challenges",
+          "reason": "An agent can retrieve and invoke a well-written skill without having authorization to change production systems. This comparison stresses accountable authority and observable action boundaries beyond instruction reuse.",
+          "provenance": [
+            "/more-skills-worse-agents/",
+            "/autonomy-needs-an-interface/"
+          ],
+          "basis": "curated-editorial-comparison",
+          "direction": "outgoing"
+        },
+        {
+          "target": "reader:the-cost-of-forgetting-where-the-tools-are",
+          "type": "companion",
+          "reason": "Reducing discovery noise may save context, but removing rarely used tool knowledge can also impair incident response and capability recall. Both works support measuring accepted outcomes rather than rewarding file deletion.",
+          "provenance": [
+            "/more-skills-worse-agents/",
+            "/the-cost-of-forgetting-where-the-tools-are/"
+          ],
+          "basis": "curated-editorial-comparison",
+          "direction": "outgoing"
+        }
+      ],
+      "relationshipDisposition": "Three independently reviewed editorial comparisons were admitted by the owner for Reader #51 publication on November 11, 2026. The relationships are navigation and conceptual context, not performance corroboration.",
+      "relationshipReview": {
+        "reviewedAt": "2026-11-11",
+        "reviewedCatalogSize": 50,
+        "decision": "linked",
+        "reviewedTargets": [
+          "reader:make-good-work-inspectable",
+          "reader:autonomy-needs-an-interface",
+          "reader:the-cost-of-forgetting-where-the-tools-are"
+        ],
+        "rationale": "The incumbent independent reviewer accepted all three named Reader comparisons with source-limited rationales. The owner explicitly approved publishing this reviewed Reader and admitting its four editorial comparisons on November 11, 2026. No relationship is independent corroboration of the claimed deletion gains."
+      },
+      "sharePlaneRelationships": [
+        {
+          "title": "The Semantic Operating System",
+          "url": "https://shareplane.malott.ai/artifacts/the-semantic-operating-system/",
+          "type": "extends",
+          "reason": "Scoped meaning, capability discovery, provenance, authority and retained context provide a conceptual extension for building accountable agent workflows. This published Work is not independent proof that deleting 80 to 90 percent of skills improves performance.",
+          "basis": "curated-editorial-comparison"
+        }
+      ],
+      "sharePlaneReview": {
+        "reviewedAt": "2026-11-11",
+        "decision": "linked",
+        "rationale": "The existing reviewer accepted this separately labeled SharePlane Work as a conceptual extension, independent of performance corroboration. The owner approved its editorial admission with the reviewed Reader #51 publication on November 11, 2026."
+      },
+      "review": {
+        "status": "Independent ACCEPT FOR OWNER REVIEW; owner approved publication, protected release pending",
+        "reviewer": "existing independent Reader reviewer",
+        "checkedAt": "2026-11-11T17:21:37Z",
+        "scope": "ASR-limited source fidelity, extended editorial depth, private-source boundary, and four reviewed comparison routes",
+        "findings": "The owner approved publication and four editorial links on November 11, 2026 after independent review. Controlled deletion benefits remain unverified. Release remains gated by the existing protected CI and deployment checks."
+      },
+      "revisionHistory": [
+        {
+          "at": "2026-11-11T15:00:00Z",
+          "reason": "Owner-approved draft-preview staging, without independent editorial acceptance or production publication."
+        }
+      ],
+      "editorialOrder": 50,
+      "editorialDepth": {
+        "schemaVersion": 1,
+        "receiptPath": "content/editorial-depth/more-skills-worse-agents.json"
+      },
+      "rank": 50
+    },
+    {
       "id": "reader:when-every-ai-website-looks-good",
       "slug": "when-every-ai-website-looks-good",
       "editorialDepth": {
