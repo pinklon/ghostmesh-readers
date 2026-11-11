@@ -16937,6 +16937,10 @@
     {
       "id": "reader:when-every-ai-website-looks-good",
       "slug": "when-every-ai-website-looks-good",
+      "editorialDepth": {
+        "schemaVersion": 1,
+        "receiptPath": "content/editorial-depth/when-every-ai-website-looks-good.json"
+      },
       "title": "When Every AI Website Looks Good, What Makes One Actually Work?",
       "category": "AI & Technology",
       "tags": [
