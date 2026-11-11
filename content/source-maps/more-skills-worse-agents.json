@@ -1,0 +1,62 @@
+{
+  "schemaVersion": 1,
+  "readerId": "reader:more-skills-worse-agents",
+  "sourceId": "45-qbcAeUbM",
+  "sourceAidSha256": "512e80d86f2d07ff7e9e4ed2cf201581fa1708de77f687a800659540f7216b95",
+  "points": [
+    {
+      "atSeconds": 0,
+      "sectionId": "film",
+      "claimIds": [
+        "skills-delete-90"
+      ],
+      "cueParaphrase": "Creator recommends pruning most skills; no measured universal deletion benefit.",
+      "privateAidCheck": "Publisher source-time mapping based on the verified retained CPU Whisper VTT. Source integrity verified; this specific cue has not been independently listening-checked. Treat paraphrase as provisional."
+    },
+    {
+      "atSeconds": 102,
+      "sectionId": "the-count-is-not-the-context",
+      "claimIds": [
+        "skills-metadata-overhead"
+      ],
+      "cueParaphrase": "Skill descriptions and bodies are distinct discovery and invocation costs.",
+      "privateAidCheck": "Publisher source-time mapping based on the verified retained CPU Whisper VTT. Source integrity verified; this specific cue has not been independently listening-checked. Treat paraphrase as provisional."
+    },
+    {
+      "atSeconds": 180,
+      "sectionId": "selection-is-the-failure-mode",
+      "claimIds": [
+        "skills-wrong-selection"
+      ],
+      "cueParaphrase": "Broad skill descriptions can compete for similar user intent.",
+      "privateAidCheck": "Publisher source-time mapping based on the verified retained CPU Whisper VTT. Source integrity verified; this specific cue has not been independently listening-checked. Treat paraphrase as provisional."
+    },
+    {
+      "atSeconds": 859,
+      "sectionId": "rare-is-not-useless",
+      "claimIds": [
+        "skills-usage-pruning"
+      ],
+      "cueParaphrase": "Creator urges pruning unused skills; criticality can outweigh usage frequency.",
+      "privateAidCheck": "Publisher source-time mapping based on the verified retained CPU Whisper VTT. Source integrity verified; this specific cue has not been independently listening-checked. Treat paraphrase as provisional."
+    },
+    {
+      "atSeconds": 1740,
+      "sectionId": "procedures-are-not-permissions",
+      "claimIds": [
+        "skills-sop-reuse"
+      ],
+      "cueParaphrase": "Skills compared with standard operating procedures; permission boundary remains separate.",
+      "privateAidCheck": "Publisher source-time mapping based on the verified retained CPU Whisper VTT. Source integrity verified; this specific cue has not been independently listening-checked. Treat paraphrase as provisional."
+    },
+    {
+      "atSeconds": 2216,
+      "sectionId": "scope-before-scale",
+      "claimIds": [
+        "skills-global-scope"
+      ],
+      "cueParaphrase": "Global exposure is discussed; effective overhead depends on harness behavior.",
+      "privateAidCheck": "Publisher source-time mapping based on the verified retained CPU Whisper VTT. Source integrity verified; this specific cue has not been independently listening-checked. Treat paraphrase as provisional."
+    }
+  ]
+}
