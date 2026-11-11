@@ -35,11 +35,16 @@ def errors(reader, html):
         return []
     parsed = Structure()
     parsed.feed(html)
-    required_ids = {"at-a-glance", "external-evidence", "related-thinking"}
+    required_ids = {"at-a-glance", "external-evidence"}
     required_classes = {"gm-evidence", "gm-evidence-intro", "gm-evidence-body",
-                        "gm-claim-list", "gm-related", "gm-cards",
-                        "gm-work-routes", "gm-work-grid", "gm-source-scope",
-                        "gm-source-list", "gm-publication-status"}
+                        "gm-claim-list", "gm-source-scope", "gm-source-list",
+                        "gm-publication-status"}
+    # An independently reviewed zero is valid. Do not demand fabricated links.
+    if reader.get("relationships"):
+        required_ids.add("related-thinking")
+        required_classes.update({"gm-related", "gm-cards"})
+    if reader.get("sharePlaneRelationships"):
+        required_classes.update({"gm-work-routes", "gm-work-grid"})
     missing = [f"id={name}" for name in sorted(required_ids - parsed.ids)]
     missing += [f"class={name}" for name in sorted(required_classes - parsed.classes)]
     if "/assets/reader-refresh.css" not in parsed.stylesheets:
