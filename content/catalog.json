@@ -17506,7 +17506,7 @@
           "reason": "Owner-approved draft-preview staging, without independent editorial acceptance or production publication."
         }
       ],
-      "editorialOrder": 51,
+      "editorialOrder": 50,
       "legacyReceipt": {
         "schema": "ghostmesh-reader-receipt-v2",
         "createdAt": "2026-11-11T15:00:00Z",
