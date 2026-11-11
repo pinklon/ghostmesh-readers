@@ -1,0 +1,133 @@
+{
+  "schemaVersion": 1,
+  "readerId": "reader:more-skills-worse-agents",
+  "sourceId": "45-qbcAeUbM",
+  "sourceDigest": "cf25e17b20f2acfddc4952f3e70490b8bd4e0adedaac96302382953560a2d7e5",
+  "sourceAidSha256": "0060da049408edbc81df1f6ba8e9e61f730d3e254085a1e9905c3093326551f7",
+  "articleSha256": "473e76a5de3487f067544d14bf48d7d02ef70b4fa27bcb9186f78ae55de49863",
+  "evidenceRevision": "80fd41e8aa36056bcb46e0823eab28a6f7ae7a1a664e659fe198782344156257",
+  "sourceMapEvidenceSha256": "001ffd97c2bd8dbe3054ac193216599f059050a03c3d7c8f083d91f38b9b55ec",
+  "reviewEvidenceSha256": "82abd20ed84694f9ffff5fb4ba3613589a2f003516cf5e2d74511950d88e66f8",
+  "candidateAuthor": "pinklon",
+  "complexity": {
+    "tier": "extended",
+    "factors": [
+      "Source duration 42:25 exceeds the thirty-minute extended-review threshold",
+      "Six material creator, technical and editorial claim roles",
+      "Consequential permission, rare-capability and skill-retirement questions"
+    ],
+    "rationale": "The long creator walkthrough and proposed mass pruning require extended review of source coverage, countercase, performance, economics and threat governance; the result is bounded by machine-ASR and unreplicated outcomes."
+  },
+  "sourceMap": [
+    {
+      "atSeconds": 0,
+      "sectionId": "film",
+      "claimIds": [
+        "skills-delete-90"
+      ],
+      "rationale": "Creator recommends pruning most skills; no measured universal deletion benefit. Approximate source locator grounded in the verified retained machine-ASR VTT; no listening or outcome certification."
+    },
+    {
+      "atSeconds": 102,
+      "sectionId": "the-count-is-not-the-context",
+      "claimIds": [
+        "skills-metadata-overhead"
+      ],
+      "rationale": "Skill descriptions and bodies are distinct discovery and invocation costs. Approximate source locator grounded in the verified retained machine-ASR VTT; no listening or outcome certification."
+    },
+    {
+      "atSeconds": 180,
+      "sectionId": "selection-is-the-failure-mode",
+      "claimIds": [
+        "skills-wrong-selection"
+      ],
+      "rationale": "Broad skill descriptions can compete for similar user intent. Approximate source locator grounded in the verified retained machine-ASR VTT; no listening or outcome certification."
+    },
+    {
+      "atSeconds": 859,
+      "sectionId": "rare-is-not-useless",
+      "claimIds": [
+        "skills-usage-pruning"
+      ],
+      "rationale": "Creator urges pruning unused skills; criticality can outweigh usage frequency. Approximate source locator grounded in the verified retained machine-ASR VTT; no listening or outcome certification."
+    },
+    {
+      "atSeconds": 1740,
+      "sectionId": "procedures-are-not-permissions",
+      "claimIds": [
+        "skills-sop-reuse"
+      ],
+      "rationale": "Skills compared with standard operating procedures; permission boundary remains separate. Approximate source locator grounded in the verified retained machine-ASR VTT; no listening or outcome certification."
+    },
+    {
+      "atSeconds": 2216,
+      "sectionId": "scope-before-scale",
+      "claimIds": [
+        "skills-global-scope"
+      ],
+      "rationale": "Global exposure is discussed; effective overhead depends on harness behavior. Approximate source locator grounded in the verified retained machine-ASR VTT; no listening or outcome certification."
+    }
+  ],
+  "assessment": {
+    "sourceCoverage": {
+      "disposition": "covered",
+      "rationale": "Six selected creator cues map to distinct analytical sections and claim IDs. The retained exact-source machine-ASR VTT was previously opened and checked for approximate alignment; later team-reuse context is attributed in prose. It is not a full listening audit."
+    },
+    "supportingArgument": {
+      "disposition": "covered",
+      "rationale": "The Reader separates installed skill files, visible discovery metadata and invoked instruction bodies. This prevents the false inference that file count alone determines prompt cost or task quality."
+    },
+    "evidenceRoles": {
+      "disposition": "covered",
+      "rationale": "Creator advice is attributed to the video. Anthropic and OpenAI primary documentation is now explicitly bound to the technical metadata claim and limited to product behavior. All six verification statuses remain unverified; neither vendor source measures deletion outcomes."
+    },
+    "counterargument": {
+      "disposition": "covered",
+      "rationale": "Rare incident, recovery, compliance and security skills can be essential despite low invocation. Lazy or scoped discovery can reduce overhead without deleting capability, and ambiguous descriptions can cause selection errors even in small catalogs."
+    },
+    "tradeoffs": {
+      "disposition": "covered",
+      "rationale": "The article weighs discovery noise and token cost against critical-skill recall, reversible retirement, ownership, scope and trust exposure, without imposing a universal deletion quota."
+    },
+    "falsifiability": {
+      "disposition": "covered",
+      "rationale": "The proposed matched model, harness, task suite, permissions and compute comparison varies skill descriptors and retrieval strategy, then measures selection, false invocation, task success, latency, tokens and critical recall. It was not executed."
+    },
+    "originalSynthesis": {
+      "disposition": "covered",
+      "rationale": "GhostMesh's useful inventory dimensions are visibility, invocation, criticality, owner, trust and scope; those distinctions turn the source's pruning rhetoric into a testable and reversible operating decision."
+    },
+    "performance": {
+      "disposition": "covered",
+      "rationale": "No independent benchmark replicated an eighty-to-ninety-percent deletion gain or universal fifty-skill threshold. The performance discussion names measurable outcomes and confines vendor documentation to mechanism."
+    },
+    "economics": {
+      "disposition": "covered",
+      "rationale": "Potential token and latency costs depend on the exact harness configuration. The article proposes measuring those costs and makes no general savings or return-on-investment claim."
+    },
+    "threatGovernance": {
+      "disposition": "covered",
+      "rationale": "Reusable SOP-like skill instructions cannot grant authority, bypass approval or replace auditable tool permissions; provenance, versioning and review must travel with team-shared procedures."
+    }
+  },
+  "independentCorroboration": "none",
+  "ownerDecision": {
+    "pullNumber": 150,
+    "commentId": null
+  },
+  "decision": "accept",
+  "gaps": [
+    {
+      "type": "source",
+      "severity": "nonblocking",
+      "rationale": "The exact private manifest, transcript and timed VTT were hash-verified and selected cues inspected, but the video was not independently listened to and frames were not audited."
+    },
+    {
+      "type": "evidence",
+      "severity": "nonblocking",
+      "rationale": "No controlled cross-harness deletion experiment or independent performance replication was supplied. The eighty-to-ninety-percent recommendation and universal threshold remain unverified."
+    }
+  ],
+  "decisionRationale": "Accept this exact canonical article and evidence revision for Tony's separate editorial decision. The two prior P2 defects are fixed; the extended argument and four reviewed comparison routes are sound within stated ASR and outcome limits. This reviewer decision does not admit graph edges or authorize publication.",
+  "assessedAt": "2026-11-11T16:59:04Z"
+}

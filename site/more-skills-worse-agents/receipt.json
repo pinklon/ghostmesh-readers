@@ -219,11 +219,11 @@
       "rationale": "Publisher draft-stage disposition: no SharePlane links admitted. One conceptual SharePlane Work route remains proposed and is awaiting independent reviewer decision."
     },
     "review": {
-      "status": "Independent editorial HOLD",
-      "reviewer": "incumbent reviewer",
-      "checkedAt": "2026-11-11T15:00:00Z",
-      "scope": "Draft-preview catalog staging, reviewer decision pending",
-      "findings": "Source claims provisionally accepted; no canonical editorial-depth receipt."
+      "status": "Independent ACCEPT FOR OWNER REVIEW; owner publication decision pending",
+      "reviewer": "existing independent Reader reviewer",
+      "checkedAt": "2026-11-11T16:33:00Z",
+      "scope": "ASR-limited source fidelity, canonical extended editorial depth, privacy and four separate comparison proposals",
+      "findings": "Both technical evidence-display P2 findings resolved and accepted; performance replication not claimed. Publication is separately gated."
     },
     "revisionHistory": [
       {
@@ -231,7 +231,11 @@
         "reason": "Owner-approved draft-preview staging, without independent editorial acceptance or production publication."
       }
     ],
-    "editorialOrder": 50
+    "editorialOrder": 50,
+    "editorialDepth": {
+      "schemaVersion": 1,
+      "receiptPath": "content/editorial-depth/more-skills-worse-agents.json"
+    }
   },
   "editorial": {
     "overview": "The video argues that skill sprawl harms agent performance and recommends pruning copied procedures.",
