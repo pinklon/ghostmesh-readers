@@ -25,6 +25,24 @@ class CanonicalReaderContract(unittest.TestCase):
         damaged = self.html.replace('class="gm-source-list"', 'class="plain-list"', 1)
         self.assertIn("class=gm-source-list", " ".join(errors(future, damaged)))
 
+    def test_future_reader_with_no_approved_relationships_needs_no_cards(self):
+        future = {**self.reference, "slug": "future-zero-routes", "published": "2026-11-11",
+                  "relationships": [], "sharePlaneRelationships": []}
+        html = self.html.replace('id="related-thinking"', 'id="no-related-thinking"', 1)
+        for original in ('gm-related', 'gm-cards', 'gm-work-routes', 'gm-work-grid'):
+            html = html.replace(original, 'omitted-' + original)
+        self.assertEqual([], errors(future, html))
+
+    def test_each_reviewed_relationship_layer_is_required_independently(self):
+        future = {**self.reference, "slug": "future-one-layer", "published": "2026-11-11",
+                  "relationships": [], "sharePlaneRelationships": self.reference["sharePlaneRelationships"]}
+        html = self.html.replace('class="gm-work-grid"', 'class="missing-work-grid"', 1)
+        self.assertIn("class=gm-work-grid", " ".join(errors(future, html)))
+        future = {**future, "relationships": self.reference["relationships"],
+                  "sharePlaneRelationships": []}
+        html = self.html.replace('class="gm-cards"', 'class="missing-reader-cards"', 1)
+        self.assertIn("class=gm-cards", " ".join(errors(future, html)))
+
     def test_existing_reader_is_not_retroactively_blocked(self):
         old = {**self.reference, "slug": "historical-reader", "published": "2026-11-09"}
         self.assertEqual([], errors(old, "<html></html>"))
