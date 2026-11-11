@@ -3,15 +3,15 @@
   "readerId": "reader:more-skills-worse-agents",
   "sourceId": "45-qbcAeUbM",
   "sourceAidSha256": "0060da049408edbc81df1f6ba8e9e61f730d3e254085a1e9905c3093326551f7",
-  "articleSha256": "473e76a5de3487f067544d14bf48d7d02ef70b4fa27bcb9186f78ae55de49863",
+  "articleSha256": "db936b790e068e97e8012de15748d70970590c05c7ed89950eb00da8bd5526bd",
   "evidenceRevision": "80fd41e8aa36056bcb46e0823eab28a6f7ae7a1a664e659fe198782344156257",
-  "reviewedAt": "2026-11-11T16:59:04Z",
+  "reviewedAt": "2026-11-11T17:21:37Z",
   "provenance": {
     "kind": "codex-task-agent",
-    "reference": "Existing /root/editorial_review independent Reader 51 task, exact PR 150 draft head d0a89644d7c9bfdeb60e65f2c5eac4485c6d6722; prior b24af4b REVISE and original draft review retained as dated history.",
-    "limits": "Retained private exact-source manifest, transcript and timed VTT were previously opened and hash-checked; current six cues remain approximate machine ASR, not independently listened or visually certified. Vendor documents were opened read-only for bounded product-behavior checks. No controlled performance test, owner graph admission or publication acceptance is claimed."
+    "reference": "Existing /root/editorial_review independent Reader 51 task, exact PR 150 draft head 32e9e02233b02d2060b77ed6f2fdfed8e8faeb63; the prior d0a89644 source/depth acceptance and b24af4b REVISE remain dated history.",
+    "limits": "The exact-source manifest, transcript and timed VTT were previously opened and hash-checked; current six cues remain approximate machine ASR, not independently listened or visually certified. This bounded pass checked only four reviewer-versus-owner disclosure edits and unchanged source/evidence/graph bindings. No controlled performance test, owner graph admission or publication acceptance is claimed."
   },
-  "summary": "Accept the exact Reader 51 canonical article, six-claim source roles, extended-depth analysis, source/privacy boundary and four separately reviewed editorial comparisons for owner review. Prior two evidence-presentation defects are closed; all claimed performance outcomes remain unverified.",
+  "summary": "Accept the exact Reader 51 authored article after four disclosure edits truthfully separate independent reviewer acceptance from pending owner graph admission. Source, claims, ten-area extended depth and privacy remain accepted within prior limits; minor catalog wording and review clock should be reconciled in the next ordinary integration change.",
   "findings": [
     "The two P2 findings from the independent b24af4b review are closed at this exact head: the metadata claim now binds scoped Anthropic and OpenAI documentation, and every visible claim badge identifies unverified verification status separately from its assessment.",
     "The original creator's 80–90% deletion advice and any universal fifty-skill inflection remain unverified. The official documentation supports staged loading or bounded discovery in specific harnesses, not a measured deletion benefit.",
@@ -19,7 +19,9 @@
     "Reviewer admits reader:autonomy-needs-an-interface as a challenges comparison on permissions, routing and visible ownership; a skill instruction does not confer authority.",
     "Reviewer admits reader:the-cost-of-forgetting-where-the-tools-are as a companion comparison on tool-memory pruning and rare-capability recall; this is a distinct intervention without shared outcome evidence.",
     "Reviewer admits the published SharePlane Work The Semantic Operating System as an extends comparison on identity, meaning, state, authority, provenance and recovery; it is conceptual rather than performance evidence.",
-    "The verified retained exact-source machine-ASR aid supports approximate six-cue attribution. No independent listening, frame inspection, full numerical verification or controlled task benchmark is claimed."
+    "The verified retained exact-source machine-ASR aid supports approximate six-cue attribution. No independent listening, frame inspection, full numerical verification or controlled task benchmark is claimed.",
+    "The four changed article disclosures accurately say that the four editorial comparisons passed independent review while owner graph admission and release remain pending. No graph edge was added.",
+    "The catalog's draft-stage relationship rationales still say reviewer decision is pending, and review.checkedAt predates this accepted review. Those are administrative integration labels to reconcile; they neither admit edges nor change the accepted source, claims, argument or owner-decision boundary."
   ],
   "conclusion": "accept-for-owner-review"
 }

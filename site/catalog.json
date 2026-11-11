@@ -194,26 +194,26 @@
         }
       ],
       "relationships": [],
-      "relationshipDisposition": "Zero relationships in isolated dry-run only; four proposed routes remain unadmitted pending the independent reviewer.",
+      "relationshipDisposition": "Three Reader and one SharePlane Work editorial comparisons accepted by the independent reviewer on November 11, 2026; owner graph admission and production publication remain pending. No edges admitted.",
       "relationshipReview": {
         "reviewedAt": "2026-11-11",
         "reviewedCatalogSize": 50,
         "decision": "none",
         "reviewedTargets": [],
-        "rationale": "Publisher draft-stage disposition: no graph links admitted. Three Reader relationships are proposed and under independent review. This is not a final rejection or acceptance."
+        "rationale": "Independent reviewer accepted the three named Reader comparisons as editorial routes on November 11, 2026, not evidence for the source performance assertions. Owner has not admitted them to the graph; decision remains none and edge array remains empty."
       },
       "sharePlaneRelationships": [],
       "sharePlaneReview": {
         "reviewedAt": "2026-11-11",
         "decision": "none",
-        "rationale": "Publisher draft-stage disposition: no SharePlane links admitted. One conceptual SharePlane Work route remains proposed and is awaiting independent reviewer decision."
+        "rationale": "Independent reviewer accepted The Semantic Operating System as a separately labeled conceptual extension on November 11, 2026, not corroboration of pruning performance. Owner has not admitted the route or authorized publication; decision remains none."
       },
       "review": {
         "status": "Independent ACCEPT FOR OWNER REVIEW; owner publication decision pending",
         "reviewer": "existing independent Reader reviewer",
-        "checkedAt": "2026-11-11T16:33:00Z",
+        "checkedAt": "2026-11-11T17:21:37Z",
         "scope": "ASR-limited source fidelity, canonical extended editorial depth, privacy and four separate comparison proposals",
-        "findings": "Both technical evidence-display P2 findings resolved and accepted; performance replication not claimed. Publication is separately gated."
+        "findings": "Independent ACCEPT FOR OWNER REVIEW on exact disclosure-corrected article. Four editorial comparisons reviewed; no owner graph admission or publication. Machine ASR and performance limits remain."
       },
       "revisionHistory": [
         {

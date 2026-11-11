@@ -4,10 +4,10 @@
   "sourceId": "45-qbcAeUbM",
   "sourceDigest": "cf25e17b20f2acfddc4952f3e70490b8bd4e0adedaac96302382953560a2d7e5",
   "sourceAidSha256": "0060da049408edbc81df1f6ba8e9e61f730d3e254085a1e9905c3093326551f7",
-  "articleSha256": "473e76a5de3487f067544d14bf48d7d02ef70b4fa27bcb9186f78ae55de49863",
+  "articleSha256": "db936b790e068e97e8012de15748d70970590c05c7ed89950eb00da8bd5526bd",
   "evidenceRevision": "80fd41e8aa36056bcb46e0823eab28a6f7ae7a1a664e659fe198782344156257",
   "sourceMapEvidenceSha256": "001ffd97c2bd8dbe3054ac193216599f059050a03c3d7c8f083d91f38b9b55ec",
-  "reviewEvidenceSha256": "82abd20ed84694f9ffff5fb4ba3613589a2f003516cf5e2d74511950d88e66f8",
+  "reviewEvidenceSha256": "a0cc7e7c97b6dde56caa5871d41f2d9e3494ea1d3d9a70ab7e819c78baaff9e1",
   "candidateAuthor": "pinklon",
   "complexity": {
     "tier": "extended",
@@ -126,8 +126,13 @@
       "type": "evidence",
       "severity": "nonblocking",
       "rationale": "No controlled cross-harness deletion experiment or independent performance replication was supplied. The eighty-to-ninety-percent recommendation and universal threshold remain unverified."
+    },
+    {
+      "type": "scope",
+      "severity": "nonblocking",
+      "rationale": "Catalog draft-stage relationship rationales still describe independent review as pending and its review.checkedAt predates this acceptance. Reconcile these administrative labels in the next ordinary integration change; graph decision none and owner admission pending remain accurate."
     }
   ],
-  "decisionRationale": "Accept this exact canonical article and evidence revision for Tony's separate editorial decision. The two prior P2 defects are fixed; the extended argument and four reviewed comparison routes are sound within stated ASR and outcome limits. This reviewer decision does not admit graph edges or authorize publication.",
-  "assessedAt": "2026-11-11T16:59:04Z"
+  "decisionRationale": "Accept this exact authored article and unchanged evidence revision for Tony's separate editorial decision. Four changed disclosure sentences accurately distinguish reviewer admission from owner graph and publication authority. The catalog has minor stale reviewer labels to reconcile in ordinary integration; they do not change source truth or add graph edges.",
+  "assessedAt": "2026-11-11T17:21:37Z"
 }
