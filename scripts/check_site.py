@@ -42,6 +42,16 @@ def capture_signature(data):
          or data[:4] in (b'RIFF',b'FORM')
          or data[4:8] in (b'ftyp',b'moov',b'mdat')
          or data.startswith((b'\x00\x00\x01\xba',b'\x00\x00\x01\xb3')))
+def new_reader_canonical_errors(reader, authored):
+ """New-Reader-only guard: fail before publication, never rewrite history."""
+ if reader['editorialOrder'] < 51:return []  # #51 is order 50 and remains immutable.
+ slug=reader['slug'];errors=[]
+ if not isinstance(reader.get('archiveCall'),dict):
+  errors.append(f'{slug}: new Reader archiveCall must live in catalog, not a Python registry')
+ if authored.count('<p class="gm-publication-status" data-gm-release-status="">')!=1:
+  errors.append(f'{slug}: new Reader needs one projected publication-status marker before independent review')
+ return errors
+
 def source_custody_errors(reader):
  """Check honest public receipt labels; private evidence itself stays outside Git."""
  slug=reader['slug'];receipt=reader.get('legacyReceipt') or {};custody=receipt.get('custody') or {}
@@ -141,6 +151,8 @@ def check(root=ROOT, *, local_only=False):
  for r in readers:
   slug=r['slug'];p=site/slug/'index.html';raw=p.read_text();a=pages[p]
   errors.extend(canonical_reader_errors(r,raw))
+  authored=(root/'content/readers'/f'{slug}.html').read_text()
+  errors.extend(new_reader_canonical_errors(r,authored))
   # A draft PR is the preview vehicle, before the owner can inspect and accept.
   # Only new Readers may defer editorial acceptance; ready PRs and main remain strict.
   if not (draft_pr and slug not in {old['slug'] for old in baseline}):

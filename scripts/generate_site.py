@@ -4,7 +4,7 @@ from pathlib import Path
 from html import escape
 from html.parser import HTMLParser
 from datetime import date
-import json,re,sys
+import json,re,sys,hashlib
 from scout_feed import validate_scout,validate_events,feed_xml
 from scout_pages import validate_editions,home as scout_home,review_page,edition_page,archive_page,method_page,review_url,edition_url
 from scout_research import validate_research, research_page, research_graph
@@ -54,6 +54,36 @@ def footer(include_email=True):return ('<footer aria-label="GhostMesh destinatio
  '<a href="https://ghostmesh.ai/">GhostMesh.ai ↗</a><a href="https://shareplane.malott.ai/">SharePlane ↗</a><a href="https://malott.ai/">Tony Malott ↗</a>'
  +('<a href="mailto:ghostmesh@malott.ai?subject=GhostMesh%20Reader%20feedback">Contact GhostMesh ✉</a>' if include_email else '')+'</nav></div></footer>')
 def head():return '<link rel="alternate" type="application/rss+xml" title="GhostMesh Readers and Scout" href="/feed.xml"><script src="/assets/theme.js"></script><script src="/assets/reader-search.js" defer></script><link rel="stylesheet" href="/assets/reader-chrome.css"><link rel="stylesheet" href="/assets/knowledge.css"><link rel="stylesheet" href="/assets/reader-refresh.css">'
+def projected_publication_status(raw, reader, depth=None):
+ """Project mutable release status without changing exact-byte reviewed prose.
+
+ New Reader manuscripts opt in by adding data-gm-release-status to their
+ publication-status paragraph before independent review. Historical pages are
+ unchanged. A rendered preview never claims production deployment.
+ """
+ marker=re.compile(r'(<p class="gm-publication-status" data-gm-release-status="">)(.*?)(</p>)',re.S)
+ matches=list(marker.finditer(raw))
+ if not matches:return raw
+ if len(matches)!=1:raise ValueError(f'{reader["slug"]}: duplicate publication-status marker')
+ bound=(isinstance(depth,dict) and depth.get('decision')=='accept'
+        and depth.get('articleSha256')==hashlib.sha256(raw.encode()).hexdigest())
+ approval=depth.get('ownerDecision') if bound else None
+ authorized=(isinstance(approval,dict)
+             and ((approval.get('kind')=='conversation' and approval.get('owner')=='Tony Malott'
+                   and isinstance(approval.get('approval'),str) and len(approval['approval'].strip())>=35
+                   and re.fullmatch(r'\d{4}-\d{2}-\d{2}',str(approval.get('approvalDate','')))
+                   and approval.get('articleSha256')==depth['articleSha256']
+                   and approval.get('evidenceRevision')==depth.get('evidenceRevision'))
+                  or (isinstance(approval.get('commentId'),int) and approval['commentId']>0)))
+ if authorized:
+  status='Owner-approved for release, subject to protected merge and production verification. This page does not attest deployment.'
+ elif bound:
+  status='Independent editorial review accepted for owner consideration. Publication has not been authorized.'
+ else:
+  status='Editorial draft. Independent acceptance and owner publication authorization are pending.'
+ match=matches[0]
+ return raw[:match.start(2)]+'<strong>Publication status:</strong> '+esc(status)+raw[match.end(2):]
+
 def brief(r):
  first={'paper':'What the paper studied','article':'What the article argues','repository':'What the repository contains'}.get(r['source'].get('kind'),'What the video is about')
  return '<section class="gm-brief" id="at-a-glance" aria-labelledby="brief-title"><div class="gm-brief-heading"><p class="gm-kicker">The reading / in three moves</p><h2 id="brief-title">Start with the distinction.</h2></div>'+''.join('<div class="gm-brief-point"><span class="gm-brief-index">0'+str(i)+'</span><div><h3>'+h+'</h3><p>'+esc(r[k])+'</p></div></div>' for i,(k,h) in enumerate([('overview',first),('whyItMatters','Why you should care'),('ghostMeshTakeaway','What GhostMesh takes away')],1))+f'<p class="gm-verdict"><strong>GhostMesh verdict: {esc(r["verdict"])}</strong>. Editorial recommendation, not factual verification. Architecture impact: {esc(r["architectureImpact"])}. Proposed only; no adoption implied.</p></section>'
@@ -298,6 +328,9 @@ def projections():
  byid={r['id']:r for r in readers};out={}
  for r in readers:
   raw=(ROOT/'content/readers'/f'{r["slug"]}.html').read_text()
+  depth_path=ROOT/'content/editorial-depth'/f'{r["slug"]}.json'
+  depth=json.loads(depth_path.read_text()) if depth_path.exists() else None
+  raw=projected_publication_status(raw,r,depth)
   if r['slug']=='more-skills-worse-agents' and len(r.get('relationships',[]))==3 and len(r.get('sharePlaneRelationships',[]))==1:
    # Administrative public-stage labels. Preserve the exact accepted authored article.
    replacements={
