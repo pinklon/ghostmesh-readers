@@ -18,7 +18,9 @@
       "references": [
         "r51-video"
       ],
-      "counterevidence": []
+      "counterevidence": [],
+      "asOf": "2026-11-11",
+      "temporalScope": "November 9, 2026 creator video; source paraphrases checked against machine ASR, not independently listening-certified."
     },
     {
       "id": "skills-metadata-overhead",
@@ -31,7 +33,9 @@
       "references": [
         "r51-video"
       ],
-      "counterevidence": []
+      "counterevidence": [],
+      "asOf": "2026-11-11",
+      "temporalScope": "November 9, 2026 creator video; source paraphrases checked against machine ASR, not independently listening-certified."
     },
     {
       "id": "skills-wrong-selection",
@@ -44,7 +48,9 @@
       "references": [
         "r51-video"
       ],
-      "counterevidence": []
+      "counterevidence": [],
+      "asOf": "2026-11-11",
+      "temporalScope": "November 9, 2026 creator video; source paraphrases checked against machine ASR, not independently listening-certified."
     },
     {
       "id": "skills-usage-pruning",
@@ -57,7 +63,9 @@
       "references": [
         "r51-video"
       ],
-      "counterevidence": []
+      "counterevidence": [],
+      "asOf": "2026-11-11",
+      "temporalScope": "November 9, 2026 creator video; source paraphrases checked against machine ASR, not independently listening-certified."
     },
     {
       "id": "skills-sop-reuse",
@@ -70,7 +78,9 @@
       "references": [
         "r51-video"
       ],
-      "counterevidence": []
+      "counterevidence": [],
+      "asOf": "2026-11-11",
+      "temporalScope": "November 9, 2026 creator video; source paraphrases checked against machine ASR, not independently listening-certified."
     },
     {
       "id": "skills-global-scope",
@@ -83,7 +93,9 @@
       "references": [
         "r51-video"
       ],
-      "counterevidence": []
+      "counterevidence": [],
+      "asOf": "2026-11-11",
+      "temporalScope": "November 9, 2026 creator video; source paraphrases checked against machine ASR, not independently listening-certified."
     }
   ],
   "proposedReaderRelationships": [
@@ -123,5 +135,21 @@
   "publication": {
     "authorized": false,
     "note": "This proposal is outside content/catalog.json and does not feed the site generator."
-  }
+  },
+  "references": [
+    {
+      "id": "r51-video",
+      "title": "More skills = worse agents (do this instead)",
+      "author": "David Ondrej",
+      "publisher": "YouTube",
+      "url": "https://www.youtube.com/watch?v=45-qbcAeUbM",
+      "publicationDate": "2026-11-09",
+      "eventDate": null,
+      "location": "Video, 00:00–42:25; verified private Whisper VTT, source cue limitations disclosed",
+      "sourceType": "creator video",
+      "independence": "Primary attribution to creator claims. Not independently listening-checked or replicated.",
+      "evidenceFamily": "r51-video",
+      "checkedAt": "2026-11-11T14:00:00Z"
+    }
+  ]
 }
