@@ -15,7 +15,7 @@
     },
     {
       "atSeconds": 69,
-      "sectionId": "full-deconstruction",
+      "sectionId": "mirror-analysis",
       "claimIds": [
         "when-every-ai-website-looks-good--trucking-lift"
       ],
@@ -24,7 +24,7 @@
     },
     {
       "atSeconds": 85,
-      "sectionId": "full-deconstruction",
+      "sectionId": "mirror-analysis",
       "claimIds": [
         "when-every-ai-website-looks-good--mirror-test"
       ],
@@ -33,7 +33,7 @@
     },
     {
       "atSeconds": 108,
-      "sectionId": "full-deconstruction",
+      "sectionId": "mirror-analysis",
       "claimIds": [
         "when-every-ai-website-looks-good--city-click-lift"
       ],
@@ -42,7 +42,7 @@
     },
     {
       "atSeconds": 125,
-      "sectionId": "full-deconstruction",
+      "sectionId": "mirror-analysis",
       "claimIds": [
         "when-every-ai-website-looks-good--campaign-monitor-lift"
       ],
@@ -105,7 +105,7 @@
     },
     {
       "atSeconds": 577,
-      "sectionId": "full-deconstruction",
+      "sectionId": "interactive-proof-analysis",
       "claimIds": [
         "when-every-ai-website-looks-good--outgrow-rate"
       ],
