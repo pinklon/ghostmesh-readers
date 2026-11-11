@@ -48,6 +48,10 @@ def evidence_revision(reader: dict) -> str:
             "evidenceState", "claims", "references", "freshness")
     receipt = reader.get("legacyReceipt") or {}
     payload = {key: reader.get(key) for key in keys}
+    # Bind newly catalog-owned archive recommendations to future editorial
+    # acceptance without changing any historical Reader evidence revision.
+    if "archiveCall" in reader:
+        payload["archiveCall"] = reader["archiveCall"]
     payload["sourceInspection"] = receipt.get("sourceInspection")
     payload["custody"] = receipt.get("custody")
     return digest(payload)

@@ -7,6 +7,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'scripts'))
 from catalog_design import card
 from check_site import new_reader_canonical_errors
+from editorial_depth import evidence_revision
 from generate_site import projected_publication_status
 
 
@@ -57,6 +58,16 @@ class ReaderPublicationDefaults(unittest.TestCase):
         self.assertIn('does not attest deployment', approved)
         self.assertEqual(hashlib.sha256(source.encode()).hexdigest(), authored_sha)
         self.assertEqual(projected_publication_status(source.replace('Status inserted', 'Changed'), reader, receipt).count('Owner-approved'), 0)
+
+    def test_new_archive_recommendation_is_in_review_evidence_binding(self):
+        prior = {'slug': 'historical'}
+        self.assertEqual(evidence_revision(prior), evidence_revision(dict(prior)))
+        future = {'slug': 'test-future-reader',
+                  'archiveCall': {'label': 'Inspect', 'text': 'Test source-specific evidence.'}}
+        first = evidence_revision(future)
+        future['archiveCall']['text'] = 'Change source-specific evidence.'
+        self.assertNotEqual(first, evidence_revision(future))
+        self.assertNotEqual(evidence_revision(prior), evidence_revision(future))
 
     def test_future_reader_gate_rejects_missing_metadata_before_review(self):
         article = '<p class="gm-publication-status" data-gm-release-status="">Status</p>'
