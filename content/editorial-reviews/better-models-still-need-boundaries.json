@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "readerId": "reader:better-models-still-need-boundaries",
+  "sourceId": "OEY-vm7qRHc",
+  "sourceAidSha256": "47e9b3b0457f1190e78a7a21fc460037a9c384f74e1d8ebdd1f473accc6171d6",
+  "articleSha256": "ce88979fd71390f7aaa4a9e354892eff3106d911ba55d80b8cf709249842105e",
+  "evidenceRevision": "c63d7c5ce96e32c785d708c866075f7f6644c6cf1cd83cb3f91d655d9d2eebd8",
+  "reviewedAt": "2026-11-11T22:22:17Z",
+  "provenance": {
+    "kind": "codex-task-agent",
+    "reference": "Existing /root/editorial_review independent Reader 52 task, exact clean local commit 1291b7b8ae61fb4dd348c7cf81a994df4215dcc0 for draft PR 152; initial METR wording revision retained as prior finding.",
+    "limits": "Actual retained source manifest, transcript and timed VTT were opened and independently hash-checked. Selected cues were inspected as approximate machine ASR; no listening, frame inspection, numerical replication, incident forensics, controlled benchmark or desktop/mobile visual QA was performed. Owner graph admission and publication acceptance remain pending."
+  },
+  "summary": "Accept the corrected Reader 52 article for separate owner editorial review. It separates hardware access, measured research capability growth and effective tool authorization; the METR growth-rate wording is now precise, with source roles and limits visible. Four editorial comparisons are supported as navigation, not corroboration or admitted graph edges.",
+  "findings": [
+    "The initial METR ambiguity is closed at this exact article: the roughly twofold figure is the rate of Anthropic model-capability improvement on well-specified tasks as of October 2026 compared with March 2024 through October 2025, not per-task completion speed. Company-supplied partly redacted evidence and uncertainty remain disclosed.",
+    "Reuters chip inventory is attributed to two anonymous sources and remains a reported Hong Kong holding, not an audited available compute service. The overseas-rental route is identified as video discussion rather than a verified legal or usable option.",
+    "The Binance access-path and on-chain revocation distinctions are attributed to its preliminary first-party account; no specific model, prompt-injection mechanism or counterfactual prevention result is claimed. OWASP is labeled design guidance rather than incident proof.",
+    "Reviewer admits reader:the-stop-button-is-outside-the-chat as a companion comparison on a stop procedure reaching continuing authorization. It does not independently corroborate the Binance account.",
+    "Reviewer admits reader:the-experiment-ran-did-the-research-advance as a companion comparison distinguishing research engineering from expert judgment. It does not validate METR results or the creator forecast.",
+    "Reviewer admits reader:the-engine-is-not-the-service as an informs architecture comparison between chip access and a usable, supported, recoverable service. The DeepInfer results do not corroborate the chip inventory.",
+    "Reviewer admits published SharePlane Work The Semantic Operating System as an extends comparison on authority, state and recovery. It is conceptual context and does not claim the Work was tested against this incident.",
+    "All four comparisons remain authored editorial navigation only; catalog Reader and SharePlane graph arrays are empty, relationship decisions are none, and owner graph admission is pending. The timeless authored labels do not claim current admission.",
+    "Selected machine-ASR cue links are approximate source navigation, while the Reuters, METR, Binance and OWASP propositions are explicitly attributed to written sources. No speech-accuracy, frame, deployment or numeric-outcome certification follows from pack integrity.",
+    "The original video loads only after an opt-in player action, uses its native 16:9 frame, and public article/map/receipt inspection found no raw source transcript, media, private selector or operational payload. This is source and static-HTML review, not desktop/mobile browser visual verification."
+  ],
+  "conclusion": "accept-for-owner-review"
+}

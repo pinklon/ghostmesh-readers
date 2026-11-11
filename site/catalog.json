@@ -505,20 +505,20 @@
         "reviewedCatalogSize": 51,
         "decision": "none",
         "reviewedTargets": [],
-        "rationale": "Publisher inspected all 51 existing Reader theses and the selected destinations. Three meaningful comparisons are proposed visibly, but this draft has no owner graph-admission authority. A zero persisted edge set preserves that boundary; it does not assert there are no relevant works."
+        "rationale": "All 51 prior Reader theses were screened. On November 11 the incumbent reviewer accepted three distinct proposed comparisons: revocation beyond chat, research judgment beyond execution, and capacity beyond the inference engine. Owner admission has not been granted, so this draft persists zero Reader edges; editorial acceptance does not corroborate source outcomes."
       },
       "sharePlaneRelationships": [],
       "sharePlaneReview": {
         "reviewedAt": "2026-11-11",
         "decision": "none",
-        "rationale": "The published Semantic Operating System Work was inspected for its treatment of authority, state and recovery. One conceptual comparison is proposed visibly. It is not source corroboration, and no outbound graph relationship is admitted before owner decision."
+        "rationale": "The incumbent reviewer read the published Semantic Operating System Work and accepted the proposed conceptual extension on authority, state and recovery on November 11. Owner graph admission is still outstanding; no SharePlane relationship is persisted and no incident or performance corroboration is implied."
       },
       "review": {
-        "status": "Draft; incumbent independent source/editorial/privacy review pending",
-        "reviewer": "Existing independent Reader reviewer",
-        "checkedAt": "2026-11-11T22:08:30.482925+00:00",
-        "scope": "Complete manuscript, authored article, source map, private aid, both relationship layers and evidence limits",
-        "findings": "Publisher source readback and written-source checks completed. Independent findings and depth assessment are not yet received. No owner release or graph admission is claimed."
+        "status": "Independent ACCEPT FOR OWNER REVIEW; browser QA and owner decisions pending",
+        "reviewer": "Existing independent Reader reviewer /root/editorial_review",
+        "checkedAt": "2026-11-11T22:22:17Z",
+        "scope": "Exact corrected manuscript/article/source map, actual retained private aid, extended depth, privacy and four editorial comparisons",
+        "findings": "Independent reviewer verified the METR capability-growth correction, source roles and private-aid hashes; no remaining substantive source/copy/privacy defect. All four comparisons recommended as editorial navigation only. No listening, frames, outcome replication or desktop/mobile browser QA; no owner graph or release approval."
       },
       "revisionHistory": [
         {
@@ -528,6 +528,10 @@
         {
           "at": "2026-11-11T22:18:49.705384+00:00",
           "reason": "Independent reviewer requested precise METR rate wording: capability improvement versus historical rate, not individual task completion speed. No other manuscript change."
+        },
+        {
+          "at": "2026-11-11T22:23:26.848532+00:00",
+          "reason": "Byte-exact independent review/depth receipts integrated after one METR correction; authored article/map unchanged since reviewer acceptance. Visual QA and owner decisions remain pending."
         }
       ],
       "editorialOrder": 51,

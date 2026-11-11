@@ -1,0 +1,147 @@
+{
+  "readerId": "reader:better-models-still-need-boundaries",
+  "sourceId": "OEY-vm7qRHc",
+  "sourceDigest": "fd17f26e6cddab4e7afa6c486717e4ac7a054459efad846b8b87b3e22c0c46c7",
+  "sourceAidSha256": "47e9b3b0457f1190e78a7a21fc460037a9c384f74e1d8ebdd1f473accc6171d6",
+  "articleSha256": "ce88979fd71390f7aaa4a9e354892eff3106d911ba55d80b8cf709249842105e",
+  "evidenceRevision": "c63d7c5ce96e32c785d708c866075f7f6644c6cf1cd83cb3f91d655d9d2eebd8",
+  "schemaVersion": 1,
+  "sourceMapEvidenceSha256": "7df23b86c21c114e4e07abcec9e8c9de7af3d9182cddbb47e71fc60f217f8a48",
+  "reviewEvidenceSha256": "0b270508df48ee22b6bfe718aab1339086d6ec1f2d023ea3bd4d1d15fe5cf5d4",
+  "candidateAuthor": "pinklon",
+  "complexity": {
+    "tier": "extended",
+    "factors": [
+      "Eight material claims and four analytical sections across hardware access, research capability and security authority",
+      "Consequential incident and revocation interpretation with distinct first-party, independent and guidance sources",
+      "Four separately assessed Reader and SharePlane editorial relationship routes"
+    ],
+    "rationale": "The cross-domain source argument and security implication warrant extended source, countercase, economics, performance and threat-governance review even though the video itself is shorter than thirty minutes."
+  },
+  "sourceMap": [
+    {
+      "atSeconds": 266,
+      "sectionId": "capacity-analysis",
+      "claimIds": [
+        "r52-inventory"
+      ],
+      "rationale": "At 04:26 the video returns to reported H200 inventory; Reuters supplies the separate written count and anonymous-source qualification, not an inventory audit."
+    },
+    {
+      "atSeconds": 172,
+      "sectionId": "capacity-analysis",
+      "claimIds": [
+        "r52-rental"
+      ],
+      "rationale": "At 02:52 the creator discusses alternative compute access; this approximate lead-in cue does not establish rental eligibility or an available service."
+    },
+    {
+      "atSeconds": 667,
+      "sectionId": "research-analysis",
+      "claimIds": [
+        "r52-research",
+        "r52-compute-cause"
+      ],
+      "rationale": "At 11:07 the source introduces AI research progress; METR separately estimates model-capability growth and states its compute-scaling and access limitations."
+    },
+    {
+      "atSeconds": 858,
+      "sectionId": "research-analysis",
+      "claimIds": [
+        "r52-human-role"
+      ],
+      "rationale": "At 14:18 the creator acknowledges humans in the loop; this bounds any claim of autonomous research judgment."
+    },
+    {
+      "atSeconds": 907,
+      "sectionId": "authority-analysis",
+      "claimIds": [
+        "r52-tool-path"
+      ],
+      "rationale": "At 15:07 the source discusses the internal AI-tool access path; Binance supplies the separately attributed preliminary account."
+    },
+    {
+      "atSeconds": 883,
+      "sectionId": "authority-analysis",
+      "claimIds": [
+        "r52-revocation"
+      ],
+      "rationale": "At 14:43 the security segment provides topic context; the Binance written account, not this cue, supplies the authorization-revocation detail."
+    },
+    {
+      "atSeconds": 1036,
+      "sectionId": "capability-objection",
+      "claimIds": [
+        "r52-forecast"
+      ],
+      "rationale": "At 17:16 the creator advances a frontier-access defense forecast; its universal outcome and timetable remain unverified."
+    }
+  ],
+  "assessment": {
+    "sourceCoverage": {
+      "disposition": "covered",
+      "rationale": "Seven timed topic cues across capacity, research, authority and capability-objection sections map all eight material claims. Actual private manifest, transcript and VTT bytes were independently hashed; selected machine-ASR moments were checked only for approximate topic alignment."
+    },
+    "supportingArgument": {
+      "disposition": "covered",
+      "rationale": "The article distinguishes possession of chips from an eligible, usable service; a capability-growth estimate from a hardware purchasing mandate; and a capable defender from effective revocation of attacker authority."
+    },
+    "evidenceRoles": {
+      "disposition": "covered",
+      "rationale": "Reuters is anonymous-source reporting, METR is independent assessment using company-supplied partly redacted evidence, Binance is a preliminary first-party incident account, and OWASP is design guidance. The video supplies provisional topical navigation and forecast attribution; all eight claim statuses remain unverified."
+    },
+    "counterargument": {
+      "disposition": "covered",
+      "rationale": "The strongest pro-capability case says better models can improve code understanding and investigation, and a security team should not preserve a tidy authority boundary around an ineffective service. The article accepts this possibility while requiring a separate deployment and authorization test."
+    },
+    "tradeoffs": {
+      "disposition": "covered",
+      "rationale": "Local chips, remote model access and existing tools have different infrastructure, dependency, permission and recovery costs. The article avoids declaring either arrangement inherently cheaper or safer and narrows the decision to a real workload."
+    },
+    "falsifiability": {
+      "disposition": "covered",
+      "rationale": "A proposed disposable synthetic workflow compares current and candidate models on task quality, review effort and cost, then tests read, write, approval and revocation separately at the destination. No such test was executed for this Reader."
+    },
+    "originalSynthesis": {
+      "disposition": "covered",
+      "rationale": "The GhostMesh contribution is the separation of usable capacity, useful capability and effective authority, with a concrete bounded test and destination-state readback rather than a procurement deadline or another agent-control layer."
+    },
+    "performance": {
+      "disposition": "covered",
+      "rationale": "METR’s roughly twofold number is explicitly capability-improvement rate on well-specified tasks, with uncertainty, not per-task throughput. Neither its research result nor any model-defense benefit was replicated here; the article names matched task quality and reviewer effort as future measures."
+    },
+    "economics": {
+      "disposition": "covered",
+      "rationale": "Chip totals cannot establish deployable service capacity or lower total cost. The proposed workflow measures cost and reviewer effort alongside quality; the article makes no quantified savings or return-on-investment assertion."
+    },
+    "threatGovernance": {
+      "disposition": "covered",
+      "rationale": "The first-party Binance account motivates inspecting tool identity, downstream authorization and revocation separately from pausing a workflow. The bounded test excludes real funds and production credentials and requires supported controls and destination readback."
+    }
+  },
+  "independentCorroboration": "none",
+  "ownerDecision": {
+    "pullNumber": 152,
+    "commentId": null
+  },
+  "decision": "accept",
+  "gaps": [
+    {
+      "type": "source",
+      "severity": "nonblocking",
+      "rationale": "The retained exact-source pack and selected machine-ASR cues were independently hash-checked, but speech was not independently listened to and frames were not audited; the final seconds are outside timed text."
+    },
+    {
+      "type": "evidence",
+      "severity": "nonblocking",
+      "rationale": "No inventory audit, independent incident forensics, controlled security outcome, model benchmark or proposed workflow test was performed; reported results and forecasts retain their attributed limits."
+    },
+    {
+      "type": "test",
+      "severity": "nonblocking",
+      "rationale": "Desktop and mobile visual, keyboard, inline-player and fallback QA have not been executed because browser-control tooling was unavailable; this remains a separate release readiness gate."
+    }
+  ],
+  "decisionRationale": "Accept exact corrected authored Reader 52 and current evidence for Tony’s separate editorial decision. METR now states capability-growth rate rather than per-task throughput; source roles, countercase, privacy and four conceptual relationships are bounded. This independent review does not admit graph edges, authenticate owner acceptance or qualify Production release.",
+  "assessedAt": "2026-11-11T22:22:17Z"
+}
