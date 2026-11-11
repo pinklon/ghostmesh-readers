@@ -12,6 +12,185 @@
   ],
   "readers": [
     {
+      "id": "reader:more-skills-worse-agents",
+      "slug": "more-skills-worse-agents",
+      "title": "When More Agent Skills Make Agents Worse",
+      "category": "AI & Technology",
+      "tags": [
+        "agent skills",
+        "context",
+        "retrieval",
+        "automation"
+      ],
+      "entities": [
+        "David Ondrej",
+        "GhostMesh"
+      ],
+      "source": {
+        "platform": "YouTube",
+        "url": "https://www.youtube.com/watch?v=45-qbcAeUbM",
+        "videoId": "45-qbcAeUbM",
+        "title": "More skills = worse agents (do this instead)",
+        "creator": "David Ondrej",
+        "mediaAspect": "16:9",
+        "durationSeconds": 2545,
+        "uploadDate": "2026-11-09",
+        "captionType": "Offline CPU Whisper, machine ASR not listening-certified"
+      },
+      "published": "2026-11-11",
+      "updated": "2026-11-11T15:00:00Z",
+      "overview": "The video argues that skill sprawl harms agent performance and recommends pruning copied procedures.",
+      "whyItMatters": "Installed file count, discoverable metadata and selected bodies have distinct costs and failure modes.",
+      "ghostMeshTakeaway": "Measure discovery and selection accuracy before pruning; protect rare critical procedures.",
+      "verdict": "Worth studying",
+      "architectureImpact": "experiment recommended",
+      "falsification": "Compare identical tasks across the same harness with controlled skill discovery sets, repeat runs, selection correctness, tokens, latency and error rate.",
+      "evidenceState": "unverified",
+      "lastEvidenceChecked": "2026-11-11T15:00:00Z",
+      "freshness": "Verified private source pack with 803 timed ASR cues; deletion gains not independently replicated.",
+      "variant": "editorial",
+      "accent": "teal",
+      "claims": [
+        {
+          "id": "skills-delete-90",
+          "proposition": "Deleting 80–90% of installed skills improves agent performance.",
+          "kind": "creator-recommendation",
+          "status": "unverified",
+          "sourceLocation": "00:00",
+          "assessment": "The source provides advice, not a controlled causal comparison across harnesses.",
+          "limits": "Deletion percentage cannot be treated as a validated target.",
+          "references": [
+            "r51-video"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-11",
+          "temporalScope": "November 9, 2026 creator video; source paraphrases checked against machine ASR, not independently listening-certified."
+        },
+        {
+          "id": "skills-metadata-overhead",
+          "proposition": "Visible skill metadata can consume context or discovery budget.",
+          "kind": "source-technical-assertion",
+          "status": "unverified",
+          "sourceLocation": "01:42",
+          "assessment": "Vendor documents confirm staged skill loading in specific implementations; measured overhead is not established here.",
+          "limits": "Installed file count differs from prompt-visible metadata and opened skill bodies.",
+          "references": [
+            "r51-video"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-11",
+          "temporalScope": "November 9, 2026 creator video; source paraphrases checked against machine ASR, not independently listening-certified."
+        },
+        {
+          "id": "skills-wrong-selection",
+          "proposition": "Overlapping descriptions may cause inappropriate skill selection.",
+          "kind": "editorial-inference",
+          "status": "unverified",
+          "sourceLocation": "03:00",
+          "assessment": "A plausible selection mechanism, not a measured failure rate.",
+          "limits": "A controlled harness-specific evaluation is still needed.",
+          "references": [
+            "r51-video"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-11",
+          "temporalScope": "November 9, 2026 creator video; source paraphrases checked against machine ASR, not independently listening-certified."
+        },
+        {
+          "id": "skills-usage-pruning",
+          "proposition": "Infrequently used skills should be removed.",
+          "kind": "creator-recommendation",
+          "status": "unverified",
+          "sourceLocation": "14:19",
+          "assessment": "Frequency does not account for business criticality or rare incident-response obligations.",
+          "limits": "Critical low-use procedures require separate preservation criteria.",
+          "references": [
+            "r51-video"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-11",
+          "temporalScope": "November 9, 2026 creator video; source paraphrases checked against machine ASR, not independently listening-certified."
+        },
+        {
+          "id": "skills-sop-reuse",
+          "proposition": "Repeated workflows may benefit from reusable specialized skills.",
+          "kind": "creator-recommendation",
+          "status": "unverified",
+          "sourceLocation": "29:00",
+          "assessment": "Reuse may improve consistency but does not itself confer privilege or correctness.",
+          "limits": "Separate authorization, provenance and operational testing remain necessary.",
+          "references": [
+            "r51-video"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-11",
+          "temporalScope": "November 9, 2026 creator video; source paraphrases checked against machine ASR, not independently listening-certified."
+        },
+        {
+          "id": "skills-global-scope",
+          "proposition": "Globally exposed skills can add irrelevant discovery overhead.",
+          "kind": "source-technical-assertion",
+          "status": "unverified",
+          "sourceLocation": "36:56",
+          "assessment": "Potential overhead depends on each harness discovery and retrieval design.",
+          "limits": "No universal global-skill penalty demonstrated.",
+          "references": [
+            "r51-video"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-11",
+          "temporalScope": "November 9, 2026 creator video; source paraphrases checked against machine ASR, not independently listening-certified."
+        }
+      ],
+      "references": [
+        {
+          "id": "r51-video",
+          "title": "More skills = worse agents (do this instead)",
+          "author": "David Ondrej",
+          "publisher": "YouTube",
+          "url": "https://www.youtube.com/watch?v=45-qbcAeUbM",
+          "publicationDate": "2026-11-09",
+          "eventDate": null,
+          "location": "Video, 00:00–42:25; verified private Whisper VTT, source cue limitations disclosed",
+          "sourceType": "creator video",
+          "independence": "Primary attribution to creator claims. Not independently listening-checked or replicated.",
+          "evidenceFamily": "r51-video",
+          "checkedAt": "2026-11-11T15:07:25Z",
+          "datePrecision": "day"
+        }
+      ],
+      "relationships": [],
+      "relationshipDisposition": "Zero relationships in isolated dry-run only; four proposed routes remain unadmitted pending the independent reviewer.",
+      "relationshipReview": {
+        "reviewedAt": "2026-11-11",
+        "reviewedCatalogSize": 50,
+        "decision": "none",
+        "reviewedTargets": [],
+        "rationale": "Publisher draft-stage disposition: no graph links admitted. Three Reader relationships are proposed and under independent review. This is not a final rejection or acceptance."
+      },
+      "sharePlaneRelationships": [],
+      "sharePlaneReview": {
+        "reviewedAt": "2026-11-11",
+        "decision": "none",
+        "rationale": "Publisher draft-stage disposition: no SharePlane links admitted. One conceptual SharePlane Work route remains proposed and is awaiting independent reviewer decision."
+      },
+      "review": {
+        "status": "Independent editorial HOLD",
+        "reviewer": "incumbent reviewer",
+        "checkedAt": "2026-11-11T15:00:00Z",
+        "scope": "Draft-preview catalog staging, reviewer decision pending",
+        "findings": "Source claims provisionally accepted; no canonical editorial-depth receipt."
+      },
+      "revisionHistory": [
+        {
+          "at": "2026-11-11T15:00:00Z",
+          "reason": "Owner-approved draft-preview staging, without independent editorial acceptance or production publication."
+        }
+      ],
+      "editorialOrder": 51,
+      "rank": 51
+    },
+    {
       "id": "reader:when-every-ai-website-looks-good",
       "slug": "when-every-ai-website-looks-good",
       "editorialDepth": {

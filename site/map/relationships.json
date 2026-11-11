@@ -3,11 +3,11 @@
   "scope": "Local public editorial reading routes; no independent corroboration or cross-site graph admission.",
   "authority": "catalog-curated-editorial",
   "visibility": "public",
-  "readerCount": 50,
-  "assessmentCount": 50,
+  "readerCount": 51,
+  "assessmentCount": 51,
   "relationshipCount": 109,
   "sharePlaneRelationshipCount": 18,
-  "sharePlaneReviewCount": 10,
+  "sharePlaneReviewCount": 11,
   "sharePlaneEdges": [
     {
       "from": "reader:when-code-gets-cheap-where-does-the-work-wait",
@@ -958,6 +958,19 @@
           "reader:autonomy-needs-an-interface"
         ],
         "rationale": "Tony approved all three exact routes in the Creative Lock on November 9. They are editorial relationships, not source corroboration."
+      }
+    },
+    {
+      "id": "reader:more-skills-worse-agents",
+      "slug": "more-skills-worse-agents",
+      "title": "When More Agent Skills Make Agents Worse",
+      "url": "https://youtube.shareplane.malott.ai/more-skills-worse-agents/",
+      "review": {
+        "reviewedAt": "2026-11-11",
+        "reviewedCatalogSize": 50,
+        "decision": "none",
+        "reviewedTargets": [],
+        "rationale": "Publisher draft-stage disposition: no graph links admitted. Three Reader relationships are proposed and under independent review. This is not a final rejection or acceptance."
       }
     }
   ],
