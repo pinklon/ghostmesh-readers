@@ -1,0 +1,127 @@
+{
+  "status": "publisher-proposal-only",
+  "catalogAdmission": "HOLD pending independent review and owner publication decision",
+  "readerId": "reader:more-skills-worse-agents",
+  "slug": "more-skills-worse-agents",
+  "sourceId": "45-qbcAeUbM",
+  "sourceAidSha256": "0060da049408edbc81df1f6ba8e9e61f730d3e254085a1e9905c3093326551f7",
+  "sourceMapPath": "content/source-maps/more-skills-worse-agents.json",
+  "claims": [
+    {
+      "id": "skills-delete-90",
+      "proposition": "Deleting 80–90% of installed skills improves agent performance.",
+      "kind": "creator-recommendation",
+      "status": "unverified",
+      "sourceLocation": "00:00",
+      "assessment": "The source provides advice, not a controlled causal comparison across harnesses.",
+      "limits": "Deletion percentage cannot be treated as a validated target.",
+      "references": [
+        "r51-video"
+      ],
+      "counterevidence": []
+    },
+    {
+      "id": "skills-metadata-overhead",
+      "proposition": "Visible skill metadata can consume context or discovery budget.",
+      "kind": "source-technical-assertion",
+      "status": "unverified",
+      "sourceLocation": "01:42",
+      "assessment": "Vendor documents confirm staged skill loading in specific implementations; measured overhead is not established here.",
+      "limits": "Installed file count differs from prompt-visible metadata and opened skill bodies.",
+      "references": [
+        "r51-video"
+      ],
+      "counterevidence": []
+    },
+    {
+      "id": "skills-wrong-selection",
+      "proposition": "Overlapping descriptions may cause inappropriate skill selection.",
+      "kind": "editorial-inference",
+      "status": "unverified",
+      "sourceLocation": "03:00",
+      "assessment": "A plausible selection mechanism, not a measured failure rate.",
+      "limits": "A controlled harness-specific evaluation is still needed.",
+      "references": [
+        "r51-video"
+      ],
+      "counterevidence": []
+    },
+    {
+      "id": "skills-usage-pruning",
+      "proposition": "Infrequently used skills should be removed.",
+      "kind": "creator-recommendation",
+      "status": "unverified",
+      "sourceLocation": "14:19",
+      "assessment": "Frequency does not account for business criticality or rare incident-response obligations.",
+      "limits": "Critical low-use procedures require separate preservation criteria.",
+      "references": [
+        "r51-video"
+      ],
+      "counterevidence": []
+    },
+    {
+      "id": "skills-sop-reuse",
+      "proposition": "Repeated workflows may benefit from reusable specialized skills.",
+      "kind": "creator-recommendation",
+      "status": "unverified",
+      "sourceLocation": "29:00",
+      "assessment": "Reuse may improve consistency but does not itself confer privilege or correctness.",
+      "limits": "Separate authorization, provenance and operational testing remain necessary.",
+      "references": [
+        "r51-video"
+      ],
+      "counterevidence": []
+    },
+    {
+      "id": "skills-global-scope",
+      "proposition": "Globally exposed skills can add irrelevant discovery overhead.",
+      "kind": "source-technical-assertion",
+      "status": "unverified",
+      "sourceLocation": "36:56",
+      "assessment": "Potential overhead depends on each harness discovery and retrieval design.",
+      "limits": "No universal global-skill penalty demonstrated.",
+      "references": [
+        "r51-video"
+      ],
+      "counterevidence": []
+    }
+  ],
+  "proposedReaderRelationships": [
+    {
+      "target": "reader:make-good-work-inspectable",
+      "type": "companion",
+      "reason": "Source-custody and result-inspectability companion, not corroboration of deletion claims."
+    },
+    {
+      "target": "reader:autonomy-needs-an-interface",
+      "type": "challenges",
+      "reason": "Agent invocation and operational permissions need a boundary independent of instruction files."
+    },
+    {
+      "target": "reader:the-cost-of-forgetting-where-the-tools-are",
+      "type": "companion",
+      "reason": "Retrieval, recall and pruning interact; least-used does not mean least valuable."
+    }
+  ],
+  "proposedSharePlaneRelationships": [
+    {
+      "title": "The Semantic Operating System",
+      "url": "https://shareplane.malott.ai/artifacts/the-semantic-operating-system/",
+      "type": "extends",
+      "reason": "Conceptual extension on scoped meaning, context and operational knowledge; not independent evidence."
+    }
+  ],
+  "relationshipReview": {
+    "status": "proposals-assessed-admission-pending",
+    "date": "2026-11-11",
+    "independentReviewerDecision": "HOLD"
+  },
+  "editorialReview": {
+    "status": "HOLD",
+    "receiptSha256": "12ba0f3e31e4f5171b0b9f39bb9c0af578975d91991978344dad38d40e4c90c7"
+  },
+  "publication": {
+    "authorized": false,
+    "note": "This proposal is outside content/catalog.json and does not feed the site generator."
+  }
+}
