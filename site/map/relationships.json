@@ -3,11 +3,11 @@
   "scope": "Local public editorial reading routes; no independent corroboration or cross-site graph admission.",
   "authority": "catalog-curated-editorial",
   "visibility": "public",
-  "readerCount": 51,
-  "assessmentCount": 51,
+  "readerCount": 52,
+  "assessmentCount": 52,
   "relationshipCount": 112,
   "sharePlaneRelationshipCount": 19,
-  "sharePlaneReviewCount": 11,
+  "sharePlaneReviewCount": 12,
   "sharePlaneEdges": [
     {
       "from": "reader:when-code-gets-cheap-where-does-the-work-wait",
@@ -983,6 +983,19 @@
           "reader:the-cost-of-forgetting-where-the-tools-are"
         ],
         "rationale": "The incumbent independent reviewer accepted all three named Reader comparisons with source-limited rationales. The owner explicitly approved publishing this reviewed Reader and admitting its four editorial comparisons on November 11, 2026. No relationship is independent corroboration of the claimed deletion gains."
+      }
+    },
+    {
+      "id": "reader:better-models-still-need-boundaries",
+      "slug": "better-models-still-need-boundaries",
+      "title": "Better Models Still Need Boundaries",
+      "url": "https://youtube.shareplane.malott.ai/better-models-still-need-boundaries/",
+      "review": {
+        "reviewedAt": "2026-11-11",
+        "reviewedCatalogSize": 51,
+        "decision": "none",
+        "reviewedTargets": [],
+        "rationale": "Publisher inspected all 51 existing Reader theses and the selected destinations. Three meaningful comparisons are proposed visibly, but this draft has no owner graph-admission authority. A zero persisted edge set preserves that boundary; it does not assert there are no relevant works."
       }
     }
   ],
