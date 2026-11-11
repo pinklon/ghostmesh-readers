@@ -27,7 +27,8 @@ class PublicationGate(unittest.TestCase):
   # relationship fixtures test structural validity without granting acceptance.
   return [error for error in check(self.root)
           if not error.endswith('editorial release held by qualitative decision or unresolved gap')
-          and not error.endswith('editorial receipt missing or invalid')]
+          and not error.endswith('editorial receipt missing or invalid')
+          and not error.endswith('editorial acceptance missing')]
  def test_draft_pr_defers_only_new_reader_editorial_receipt(self):
   import os
   # The production fixture now has an accepted receipt. Remove it only in this

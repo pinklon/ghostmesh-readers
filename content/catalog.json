@@ -16933,6 +16933,402 @@
         "schemaVersion": 1,
         "receiptPath": "content/editorial-depth/offline-is-not-the-same-as-independent.json"
       }
+    },
+    {
+      "id": "reader:when-every-ai-website-looks-good",
+      "slug": "when-every-ai-website-looks-good",
+      "editorialDepth": {
+        "schemaVersion": 1,
+        "receiptPath": "content/editorial-depth/when-every-ai-website-looks-good.json"
+      },
+      "title": "When Every AI Website Looks Good, What Makes One Actually Work?",
+      "category": "AI & Technology",
+      "tags": [
+        "AI-generated websites",
+        "Design OS",
+        "UX",
+        "interface evidence",
+        "Scrollcraft"
+      ],
+      "entities": [
+        "Nate Herk",
+        "Scrollcraft",
+        "GhostMesh",
+        "Mission Control",
+        "Hyperion Image Studio"
+      ],
+      "source": {
+        "platform": "YouTube",
+        "url": "https://www.youtube.com/watch?v=mImbbszCjCI",
+        "videoId": "mImbbszCjCI",
+        "title": "I Studied 10,000 AI Websites… Here’s what I learned",
+        "creator": "Nate Herk | AI Automation",
+        "mediaAspect": "16:9",
+        "durationSeconds": 678,
+        "uploadDate": "2026-11-09",
+        "captionType": "local Whisper ASR, not listening-certified",
+        "creatorChapters": [
+          {
+            "start": 0,
+            "end": 24,
+            "title": "10,000 AI websites"
+          },
+          {
+            "start": 24,
+            "end": 156,
+            "title": "Mirror test"
+          },
+          {
+            "start": 156,
+            "end": 208,
+            "title": "Accent highlighter"
+          },
+          {
+            "start": 208,
+            "end": 259,
+            "title": "60/30/10"
+          },
+          {
+            "start": 259,
+            "end": 333,
+            "title": "Three layers"
+          },
+          {
+            "start": 333,
+            "end": 411,
+            "title": "Functional depth"
+          },
+          {
+            "start": 411,
+            "end": 495,
+            "title": "Purposeful animation"
+          },
+          {
+            "start": 495,
+            "end": 549,
+            "title": "Motion rules"
+          },
+          {
+            "start": 549,
+            "end": 622,
+            "title": "Interactive proof"
+          },
+          {
+            "start": 622,
+            "end": 678,
+            "title": "Three takeaways"
+          }
+        ]
+      },
+      "published": "2026-11-09",
+      "updated": "2026-11-10T00:00:00Z",
+      "overview": "Five practical design heuristics distinguish functional interfaces from polished but generic AI-generated pages.",
+      "whyItMatters": "Marketing conversion heuristics cannot be copied without qualification into operational consoles; evidence, authority and task completion matter.",
+      "ghostMeshTakeaway": "Adopt intent-first copy, semantic emphasis, functional depth, purposeful motion and interactive proof; test comprehension and task success.",
+      "verdict": "Worth studying",
+      "architectureImpact": "experiment recommended",
+      "falsification": "Apply the five heuristics to one existing screen each in Mission Control, Hyperion Studio, SharePlane and Readers; compare comprehension, task completion, errors, accessibility and time to useful information.",
+      "evidenceState": "unverified",
+      "lastEvidenceChecked": "2026-11-09T23:00:00Z",
+      "freshness": "November 9, 2026 source, verified private ReasonPack and local Whisper timestamped transcript; performance figures remain unverified.",
+      "variant": "editorial",
+      "accent": "teal",
+      "claims": [
+        {
+          "id": "when-every-ai-website-looks-good--mirror-test",
+          "proposition": "The presenter recommends aligning the first screen with the visitor’s intent.",
+          "kind": "creator-heuristic",
+          "asOf": "2026-11-09",
+          "status": "unverified",
+          "assessment": "Source-attributed and interpreted within the locked GhostMesh analysis.",
+          "limits": "A useful design constraint, not a controlled outcome.",
+          "sourceLocation": "00:24",
+          "references": [
+            "r50-video"
+          ],
+          "counterevidence": [],
+          "temporalScope": "November 9, 2026 video and editorial review."
+        },
+        {
+          "id": "when-every-ai-website-looks-good--trucking-lift",
+          "proposition": "A trucking job-page redesign reportedly improved conversion 79.3%.",
+          "kind": "creator-reported-performance",
+          "asOf": "2026-11-09",
+          "status": "unverified",
+          "assessment": "Source-attributed and interpreted within the locked GhostMesh analysis.",
+          "limits": "No independently inspected experimental denominator or study design.",
+          "sourceLocation": "01:09",
+          "references": [
+            "r50-video"
+          ],
+          "counterevidence": [],
+          "temporalScope": "November 9, 2026 video and editorial review."
+        },
+        {
+          "id": "when-every-ai-website-looks-good--city-click-lift",
+          "proposition": "A City Click headline change reportedly increased pricing-page clickthroughs 90%.",
+          "kind": "creator-reported-performance",
+          "asOf": "2026-11-09",
+          "status": "unverified",
+          "assessment": "Source-attributed and interpreted within the locked GhostMesh analysis.",
+          "limits": "Reported example, not an independently replicated controlled result.",
+          "sourceLocation": "01:48",
+          "references": [
+            "r50-video"
+          ],
+          "counterevidence": [],
+          "temporalScope": "November 9, 2026 video and editorial review."
+        },
+        {
+          "id": "when-every-ai-website-looks-good--campaign-monitor-lift",
+          "proposition": "A Campaign Monitor wording change reportedly increased signups 31.4%.",
+          "kind": "creator-reported-performance",
+          "asOf": "2026-11-09",
+          "status": "unverified",
+          "assessment": "Source-attributed and interpreted within the locked GhostMesh analysis.",
+          "limits": "Reported example, not an independently replicated controlled result.",
+          "sourceLocation": "01:56",
+          "references": [
+            "r50-video"
+          ],
+          "counterevidence": [],
+          "temporalScope": "November 9, 2026 video and editorial review."
+        },
+        {
+          "id": "when-every-ai-website-looks-good--accent-budget",
+          "proposition": "Accent color should preserve visual priority; the 60/30/10 ratio is a heuristic.",
+          "kind": "creator-heuristic",
+          "asOf": "2026-11-09",
+          "status": "unverified",
+          "assessment": "Source-attributed and interpreted within the locked GhostMesh analysis.",
+          "limits": "Operational state requires multiple semantic signals and non-color cues.",
+          "sourceLocation": "02:44–03:29",
+          "references": [
+            "r50-video"
+          ],
+          "counterevidence": [],
+          "temporalScope": "November 9, 2026 video and editorial review."
+        },
+        {
+          "id": "when-every-ai-website-looks-good--functional-depth",
+          "proposition": "Spatial layers can convey hierarchy rather than decorate.",
+          "kind": "creator-heuristic",
+          "asOf": "2026-11-09",
+          "status": "unverified",
+          "assessment": "Source-attributed and interpreted within the locked GhostMesh analysis.",
+          "limits": "Overlap must retain mobile and accessibility function.",
+          "sourceLocation": "04:19",
+          "references": [
+            "r50-video"
+          ],
+          "counterevidence": [],
+          "temporalScope": "November 9, 2026 video and editorial review."
+        },
+        {
+          "id": "when-every-ai-website-looks-good--purposeful-motion",
+          "proposition": "Animation should demonstrate, guide or explain state, with reduced-motion access.",
+          "kind": "creator-heuristic",
+          "asOf": "2026-11-09",
+          "status": "unverified",
+          "assessment": "Source-attributed and interpreted within the locked GhostMesh analysis.",
+          "limits": "A single-motion maximum is a contextual marketing heuristic, not an operations law.",
+          "sourceLocation": "06:54–08:14",
+          "references": [
+            "r50-video"
+          ],
+          "counterevidence": [],
+          "temporalScope": "November 9, 2026 video and editorial review."
+        },
+        {
+          "id": "when-every-ai-website-looks-good--interactive-proof",
+          "proposition": "Useful interactive output can demonstrate value before commitment.",
+          "kind": "creator-heuristic",
+          "asOf": "2026-11-09",
+          "status": "unverified",
+          "assessment": "Source-attributed and interpreted within the locked GhostMesh analysis.",
+          "limits": "Utility and effort must be measured; this is not evidence every quiz improves conversion.",
+          "sourceLocation": "09:09",
+          "references": [
+            "r50-video"
+          ],
+          "counterevidence": [],
+          "temporalScope": "November 9, 2026 video and editorial review."
+        },
+        {
+          "id": "when-every-ai-website-looks-good--outgrow-rate",
+          "proposition": "An orthodontic calculator reportedly converted approximately 45%, according to vendor Outgrow.",
+          "kind": "vendor-attributed-performance",
+          "asOf": "2026-11-09",
+          "status": "unverified",
+          "assessment": "Source-attributed and interpreted within the locked GhostMesh analysis.",
+          "limits": "45% is a conversion rate, not a lift. Denominator and selection effects unverified.",
+          "sourceLocation": "09:37",
+          "references": [
+            "r50-video"
+          ],
+          "counterevidence": [],
+          "temporalScope": "November 9, 2026 video and editorial review."
+        }
+      ],
+      "references": [
+        {
+          "id": "r50-video",
+          "title": "I Studied 10,000 AI Websites… Here’s what I learned",
+          "author": "Nate Herk",
+          "publisher": "YouTube",
+          "url": "https://www.youtube.com/watch?v=mImbbszCjCI",
+          "publicationDate": "2026-11-09",
+          "datePrecision": "day",
+          "lastUpdated": null,
+          "eventDate": null,
+          "location": "Creator chapters 00:24–10:22",
+          "sourceType": "creator video",
+          "independence": "Primary source for presenter claims; not independent experimental evidence",
+          "evidenceFamily": "r50-video",
+          "checkedAt": "2026-11-09T23:00:00Z"
+        },
+        {
+          "id": "r50-scrollcraft",
+          "title": "Scrollcraft",
+          "author": "Nate Herk",
+          "publisher": "GitHub",
+          "url": "https://github.com/nateherkai/scroll-craft",
+          "publicationDate": "unknown",
+          "datePrecision": "unknown",
+          "lastUpdated": null,
+          "dateNote": "Continuously maintained source; original publication date not independently established.",
+          "eventDate": null,
+          "location": "Methodological context",
+          "sourceType": "context",
+          "independence": "Creator-maintained design precedent, not independent outcomes validation",
+          "evidenceFamily": "r50-scrollcraft",
+          "checkedAt": "2026-11-09T23:00:00Z"
+        },
+        {
+          "id": "r50-cxl",
+          "title": "CXL guidance on representative testing",
+          "author": "CXL",
+          "publisher": "CXL",
+          "url": "https://cxl.com/blog/stopping-ab-tests-how-many-conversions-do-i-need/",
+          "publicationDate": "unknown",
+          "datePrecision": "unknown",
+          "lastUpdated": null,
+          "dateNote": "Continuously maintained source; original publication date not independently established.",
+          "eventDate": null,
+          "location": "Methodological context",
+          "sourceType": "context",
+          "independence": "Methodological caution, not verification of video case studies",
+          "evidenceFamily": "r50-cxl",
+          "checkedAt": "2026-11-09T23:00:00Z"
+        }
+      ],
+      "relationships": [
+        {
+          "target": "reader:make-good-work-inspectable",
+          "type": "extends",
+          "reason": "Inspectability connects generated visual output with verifiable quality; this is another Nate Herk source, not independent corroboration.",
+          "provenance": [
+            "/when-every-ai-website-looks-good/",
+            "/make-good-work-inspectable/"
+          ],
+          "basis": "curated-editorial-comparison",
+          "direction": "outgoing"
+        },
+        {
+          "target": "reader:the-page-is-part-of-the-proof",
+          "type": "companion",
+          "reason": "Evidence presentation and interface quality affect whether a reader can inspect a claim.",
+          "provenance": [
+            "/when-every-ai-website-looks-good/",
+            "/the-page-is-part-of-the-proof/"
+          ],
+          "basis": "curated-editorial-comparison",
+          "direction": "outgoing"
+        },
+        {
+          "target": "reader:autonomy-needs-an-interface",
+          "type": "challenges",
+          "reason": "Accountable operational interfaces require state, consequence and authority beyond landing-page persuasion.",
+          "provenance": [
+            "/when-every-ai-website-looks-good/",
+            "/autonomy-needs-an-interface/"
+          ],
+          "basis": "curated-editorial-comparison",
+          "direction": "outgoing"
+        }
+      ],
+      "relationshipDisposition": "Three owner-approved directed editorial routes; no independent corroboration.",
+      "relationshipReview": {
+        "reviewedAt": "2026-11-09",
+        "reviewedCatalogSize": 49,
+        "decision": "linked",
+        "reviewedTargets": [
+          "reader:make-good-work-inspectable",
+          "reader:the-page-is-part-of-the-proof",
+          "reader:autonomy-needs-an-interface"
+        ],
+        "rationale": "Tony approved all three exact routes in the Creative Lock on November 9. They are editorial relationships, not source corroboration."
+      },
+      "sharePlaneRelationships": [
+        {
+          "title": "Demo Debt",
+          "url": "https://shareplane.malott.ai/artifacts/demo-debt/",
+          "type": "counterpoint",
+          "reason": "A polished demonstration can hide operational ownership, exceptions and recovery; this is not independent evidence for the reported marketing outcomes.",
+          "basis": "curated-editorial-comparison"
+        },
+        {
+          "title": "The Semantic Operating System",
+          "url": "https://shareplane.malott.ai/artifacts/the-semantic-operating-system/",
+          "type": "extends",
+          "reason": "Identity, meaning, authority, state and next valid action explain the additional demands of operational consoles.",
+          "basis": "curated-editorial-comparison"
+        }
+      ],
+      "sharePlaneReview": {
+        "reviewedAt": "2026-11-09",
+        "decision": "linked",
+        "rationale": "Tony approved the two specified public Works as separately labeled conceptual routes, not evidence of the reported conversion statistics."
+      },
+      "review": {
+        "status": "Creative Lock approved; independent exact-copy review pending",
+        "reviewer": "pending independent review",
+        "checkedAt": "2026-11-09T23:00:00Z",
+        "scope": "Locked manuscript, nine claim roles, private source boundary and five reviewed editorial comparisons",
+        "findings": "Publisher source mapping only; no independent editorial/privacy acceptance claimed."
+      },
+      "revisionHistory": [
+        {
+          "at": "2026-11-09T23:00:00Z",
+          "reason": "Tony approved Creative Lock for one canonical Reader candidate in PR #148."
+        }
+      ],
+      "legacyReceipt": {
+        "schema": "ghostmesh-reader-receipt-v2",
+        "createdAt": "2026-11-09T23:00:00Z",
+        "source": {
+          "url": "https://www.youtube.com/watch?v=mImbbszCjCI",
+          "videoId": "mImbbszCjCI"
+        },
+        "reasonPack": {
+          "verification": "pass",
+          "manifestSha256": "67ef2383a3927d4dc5f367fc39e86fc25603b647964110bddcaff1545482897d"
+        },
+        "sourceInspection": {
+          "method": "Verified private ReasonPack, locally transcribed Whisper small.en timestamped aid after YouTube caption HTTP 429",
+          "transcriptSha256": "b33d56851dc262bbdbd9b387628f0569f6c9dc8950514017dc3e2ddd0f878c41",
+          "timedAidSha256": "e7fafe29262ddb78c77b5c942954e0eed2381de4cef5f9e9757ce5d026293fd3",
+          "coverage": "11:18 original source, selected timestamped spoken cues; not independently frame-audited or listened end-to-end.",
+          "caveat": "Local ASR and cues may be imperfect; the reported marketing conversion results have no independent experimental verification.",
+          "publicationBoundary": "Original analysis and sanitized paraphrases only; private media, full captions, source files and host paths excluded."
+        },
+        "custody": {
+          "status": "qualified-private-pack-verified",
+          "note": "ReasonPack verification passed twice; local Whisper transcript is not independently listening-certified."
+        }
+      },
+      "editorialOrder": 49,
+      "orderReason": "Follows 49 existing catalog records; release pending."
     }
   ],
   "featuredId": "reader:ask-for-the-outcome-keep-the-boundary"

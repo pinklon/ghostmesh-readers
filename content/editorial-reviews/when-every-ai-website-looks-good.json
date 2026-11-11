@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "readerId": "reader:when-every-ai-website-looks-good",
+  "sourceId": "mImbbszCjCI",
+  "sourceAidSha256": "67ef2383a3927d4dc5f367fc39e86fc25603b647964110bddcaff1545482897d",
+  "articleSha256": "7c30bfcbf8934e1cf49bb89662de9b5715f61fe9cb06cfb7d979e04a4363e427",
+  "evidenceRevision": "410f2c4d4c13bd1ea776b80058d8443b28d1ef53e581aafd1e742d885844f7c2",
+  "reviewedAt": "2026-11-11T00:24:05Z",
+  "provenance": {
+    "kind": "codex-task-agent",
+    "reference": "Independent read-only Reader 50 source, copy, graph, privacy and depth review by the existing native /root/editorial_review task on PR 148 exact head a7bc7dbec618b21ab907b647000dd521357090f2. Earlier HOLD findings and later exact-byte corrections were checked separately.",
+    "limits": "Reviewer opened and hash-checked the retained manifest, local-Whisper transcript and timed VTT in the earlier source pass, then checked the unchanged source binding and current public inputs. No end-to-end listening, frame inspection, browser visual QA, independent conversion replication or owner release acceptance is claimed."
+  },
+  "summary": "ACCEPT FOR OWNER REVIEW of the exact Reader 50 authored article and source map. The locked manuscript, nine source-limited claims, three genuine analytical map sections, five reviewed editorial relationships and public privacy boundary are consistent. Draft PR and preview do not constitute owner acceptance or Production release.",
+  "findings": [
+    "The 14,266-byte locked manuscript remains unchanged. The authored article preserves its brief, five-part argument, countercase, source caveats, relationship rationales and concluding test implications in order; the latest change only wraps existing motion prose and normalizes two video-link suffixes.",
+    "The retained ReasonPack manifest identifies the exact video mImbbszCjCI. Its transcript and timed VTT hashes were independently checked. Local Whisper ASR supports the source-attributed 79.3 percent, 90 percent, 31.4 percent and approximately 45 percent statements within timestamp uncertainty; none is represented as an independently reproduced result.",
+    "The 31.4 percent Campaign Monitor link now seeks 125 seconds, the source passage that states that figure. The motion argument has exact 414s and 494s links. All twelve map cues link within their declared sections; mirror, motion and interactive-proof sections contain substantive analytical prose. The film chapter section remains a navigation aid.",
+    "The headline's 10,000-site count lacks a disclosed sampling protocol. Conversion examples lack verified original denominators and experiment methods. All nine catalog claims remain unverified, contextual references are not promoted to independent corroboration, and the article states these limits.",
+    "The strongest countercase is developed: marketing hierarchy and a single prominent action do not directly transfer to operational consoles that need state, consequence, owner, safe next action, accessibility and dense information. The article proposes bounded comprehension and task-completion checks rather than claiming those tests were run.",
+    "Three Reader and two SharePlane Work routes have reviewed target, type and rationale fields. They are explicitly editorial comparisons rather than evidence for the video or its conversion numbers; current catalog scope and locked relationship wording agree.",
+    "The original player is opt-in and preserves 16:9 aspect. The public article, catalog/map and generated page expose no full transcript, media payload, private host path or private source pack location. Hosted browser visual QA and final owner acceptance remain separate release steps."
+  ],
+  "conclusion": "accept-for-owner-review"
+}

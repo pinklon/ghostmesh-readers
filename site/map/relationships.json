@@ -3,11 +3,11 @@
   "scope": "Local public editorial reading routes; no independent corroboration or cross-site graph admission.",
   "authority": "catalog-curated-editorial",
   "visibility": "public",
-  "readerCount": 49,
-  "assessmentCount": 49,
-  "relationshipCount": 106,
-  "sharePlaneRelationshipCount": 16,
-  "sharePlaneReviewCount": 9,
+  "readerCount": 50,
+  "assessmentCount": 50,
+  "relationshipCount": 109,
+  "sharePlaneRelationshipCount": 18,
+  "sharePlaneReviewCount": 10,
   "sharePlaneEdges": [
     {
       "from": "reader:when-code-gets-cheap-where-does-the-work-wait",
@@ -135,6 +135,22 @@
       "url": "https://shareplane.malott.ai/artifacts/your-second-brain-is-not-a-production-architecture/",
       "type": "companion",
       "reason": "Extends the video's personal Markdown memory boundary into a separately governed production context; it does not corroborate the demonstration.",
+      "basis": "curated-editorial-comparison"
+    },
+    {
+      "from": "reader:when-every-ai-website-looks-good",
+      "title": "Demo Debt",
+      "url": "https://shareplane.malott.ai/artifacts/demo-debt/",
+      "type": "counterpoint",
+      "reason": "A polished demonstration can hide operational ownership, exceptions and recovery; this is not independent evidence for the reported marketing outcomes.",
+      "basis": "curated-editorial-comparison"
+    },
+    {
+      "from": "reader:when-every-ai-website-looks-good",
+      "title": "The Semantic Operating System",
+      "url": "https://shareplane.malott.ai/artifacts/the-semantic-operating-system/",
+      "type": "extends",
+      "reason": "Identity, meaning, authority, state and next valid action explain the additional demands of operational consoles.",
       "basis": "curated-editorial-comparison"
     }
   ],
@@ -925,6 +941,23 @@
           "reader:the-stop-button-is-outside-the-chat"
         ],
         "rationale": "Tony approved these two thematic Reader links. Direct live URL health remains a publisher acceptance check; no inferred graph edges."
+      }
+    },
+    {
+      "id": "reader:when-every-ai-website-looks-good",
+      "slug": "when-every-ai-website-looks-good",
+      "title": "When Every AI Website Looks Good, What Makes One Actually Work?",
+      "url": "https://youtube.shareplane.malott.ai/when-every-ai-website-looks-good/",
+      "review": {
+        "reviewedAt": "2026-11-09",
+        "reviewedCatalogSize": 49,
+        "decision": "linked",
+        "reviewedTargets": [
+          "reader:make-good-work-inspectable",
+          "reader:the-page-is-part-of-the-proof",
+          "reader:autonomy-needs-an-interface"
+        ],
+        "rationale": "Tony approved all three exact routes in the Creative Lock on November 9. They are editorial relationships, not source corroboration."
       }
     }
   ],
@@ -2197,6 +2230,42 @@
       "provenance": [
         "/offline-is-not-the-same-as-independent/",
         "/the-stop-button-is-outside-the-chat/"
+      ],
+      "basis": "curated-editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:when-every-ai-website-looks-good",
+      "to": "reader:make-good-work-inspectable",
+      "type": "extends",
+      "reason": "Inspectability connects generated visual output with verifiable quality; this is another Nate Herk source, not independent corroboration.",
+      "provenance": [
+        "/when-every-ai-website-looks-good/",
+        "/make-good-work-inspectable/"
+      ],
+      "basis": "curated-editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:when-every-ai-website-looks-good",
+      "to": "reader:the-page-is-part-of-the-proof",
+      "type": "companion",
+      "reason": "Evidence presentation and interface quality affect whether a reader can inspect a claim.",
+      "provenance": [
+        "/when-every-ai-website-looks-good/",
+        "/the-page-is-part-of-the-proof/"
+      ],
+      "basis": "curated-editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:when-every-ai-website-looks-good",
+      "to": "reader:autonomy-needs-an-interface",
+      "type": "challenges",
+      "reason": "Accountable operational interfaces require state, consequence and authority beyond landing-page persuasion.",
+      "provenance": [
+        "/when-every-ai-website-looks-good/",
+        "/autonomy-needs-an-interface/"
       ],
       "basis": "curated-editorial-comparison",
       "direction": "outgoing"

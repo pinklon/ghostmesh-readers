@@ -7,6 +7,7 @@ from datetime import datetime,date,timezone
 import hashlib,json,os,re,sys,xml.etree.ElementTree as ET
 from generate_site import projections,CATEGORIES,validate_text,validate_link_only_source,validate_paper_source,validate_article_source,validate_repository_source,validate_media_source
 from editorial_depth import validate_reader as validate_editorial_depth
+from reader_canonical import errors as canonical_reader_errors
 from scout_feed import validate_scout,validate_events
 from scout_pages import validate_editions,review_url,edition_url
 from scout_research import validate_research
@@ -139,6 +140,7 @@ def check(root=ROOT, *, local_only=False):
   require(re.findall(r'data-start="(\d+)"',raw)==old.get('chapterStarts',[]),'Chapter timestamps drift: '+old['slug'])
  for r in readers:
   slug=r['slug'];p=site/slug/'index.html';raw=p.read_text();a=pages[p]
+  errors.extend(canonical_reader_errors(r,raw))
   # A draft PR is the preview vehicle, before the owner can inspect and accept.
   # Only new Readers may defer editorial acceptance; ready PRs and main remain strict.
   if not (draft_pr and slug not in {old['slug'] for old in baseline}):
