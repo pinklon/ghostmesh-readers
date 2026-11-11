@@ -3,11 +3,11 @@
   "scope": "Local public editorial reading routes; no independent corroboration or cross-site graph admission.",
   "authority": "catalog-curated-editorial",
   "visibility": "public",
-  "readerCount": 51,
-  "assessmentCount": 51,
-  "relationshipCount": 112,
-  "sharePlaneRelationshipCount": 19,
-  "sharePlaneReviewCount": 11,
+  "readerCount": 52,
+  "assessmentCount": 52,
+  "relationshipCount": 115,
+  "sharePlaneRelationshipCount": 20,
+  "sharePlaneReviewCount": 12,
   "sharePlaneEdges": [
     {
       "from": "reader:when-code-gets-cheap-where-does-the-work-wait",
@@ -159,6 +159,14 @@
       "url": "https://shareplane.malott.ai/artifacts/the-semantic-operating-system/",
       "type": "extends",
       "reason": "Scoped meaning, capability discovery, provenance, authority and retained context provide a conceptual extension for building accountable agent workflows. This published Work is not independent proof that deleting 80 to 90 percent of skills improves performance.",
+      "basis": "curated-editorial-comparison"
+    },
+    {
+      "from": "reader:better-models-still-need-boundaries",
+      "title": "The Semantic Operating System",
+      "url": "https://shareplane.malott.ai/artifacts/the-semantic-operating-system/",
+      "type": "extends",
+      "reason": "The published Work’s account of meaning, state, evidence, authority and recovery conceptually extends the Reader’s distinction between frontier-model capability and effective delegated permission. It does not demonstrate the proposed architecture against the reported incident or validate the video’s forecasts.",
       "basis": "curated-editorial-comparison"
     }
   ],
@@ -983,6 +991,23 @@
           "reader:the-cost-of-forgetting-where-the-tools-are"
         ],
         "rationale": "The incumbent independent reviewer accepted all three named Reader comparisons with source-limited rationales. The owner explicitly approved publishing this reviewed Reader and admitting its four editorial comparisons on November 11, 2026. No relationship is independent corroboration of the claimed deletion gains."
+      }
+    },
+    {
+      "id": "reader:better-models-still-need-boundaries",
+      "slug": "better-models-still-need-boundaries",
+      "title": "Better Models Still Need Boundaries",
+      "url": "https://youtube.shareplane.malott.ai/better-models-still-need-boundaries/",
+      "review": {
+        "reviewedAt": "2026-11-11",
+        "reviewedCatalogSize": 51,
+        "decision": "linked",
+        "reviewedTargets": [
+          "reader:the-stop-button-is-outside-the-chat",
+          "reader:the-experiment-ran-did-the-research-advance",
+          "reader:the-engine-is-not-the-service"
+        ],
+        "rationale": "A fresh independent reviewer screened all 51 prior Reader theses and accepted these three source-specific comparisons. On November 11, 2026 the owner separately authorized publication and graph admission. The relationships remain editorial and must not be counted as corroboration of the source claims."
       }
     }
   ],
@@ -2327,6 +2352,42 @@
       "provenance": [
         "/more-skills-worse-agents/",
         "/the-cost-of-forgetting-where-the-tools-are/"
+      ],
+      "basis": "curated-editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:better-models-still-need-boundaries",
+      "to": "reader:the-stop-button-is-outside-the-chat",
+      "type": "companion",
+      "reason": "A paused assistant or workflow does not prove that previously delegated account or on-chain authorization has been revoked. This editorial comparison addresses observable recovery authority, not evidence for the specific Binance incident.",
+      "provenance": [
+        "/better-models-still-need-boundaries/",
+        "/the-stop-button-is-outside-the-chat/"
+      ],
+      "basis": "curated-editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:better-models-still-need-boundaries",
+      "to": "reader:the-experiment-ran-did-the-research-advance",
+      "type": "companion",
+      "reason": "The distinction between AI-assisted research throughput and expert judgment complements Nate Jones’s discussion of research acceleration. Neither article independently replicates the reported improvement rate or proves a universal deployment deadline.",
+      "provenance": [
+        "/better-models-still-need-boundaries/",
+        "/the-experiment-ran-did-the-research-advance/"
+      ],
+      "basis": "curated-editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:better-models-still-need-boundaries",
+      "to": "reader:the-engine-is-not-the-service",
+      "type": "informs architecture",
+      "reason": "The gap between acquiring or renting Nvidia hardware and delivering a useful, recoverable model service is the practical systems question behind the compute-access report. This is a source-specific architectural connection, not verification of the chip inventory.",
+      "provenance": [
+        "/better-models-still-need-boundaries/",
+        "/the-engine-is-not-the-service/"
       ],
       "basis": "curated-editorial-comparison",
       "direction": "outgoing"

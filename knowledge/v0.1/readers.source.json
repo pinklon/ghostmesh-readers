@@ -733,6 +733,18 @@
         "path": "site/more-skills-worse-agents/index.html",
         "sha256": "c115affe594d01bf3809d3923acc81a318e91f035c5a49dd5db7d2dfb7d663d7"
       }
+    },
+    {
+      "id": "urn:ghostmesh-readers:reader:better-models-still-need-boundaries",
+      "type": "Reader",
+      "visibility": "public",
+      "epistemicStatus": "source-editorial",
+      "label": "Better Models Still Need Boundaries",
+      "url": "https://youtube.shareplane.malott.ai/better-models-still-need-boundaries/",
+      "source": {
+        "path": "site/better-models-still-need-boundaries/index.html",
+        "sha256": "863a651f4ae8435127e0a53db115802489d17caa00af5e54dbb12f86d16b6649"
+      }
     }
   ],
   "relationships": [

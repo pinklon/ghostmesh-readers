@@ -1,0 +1,345 @@
+{
+  "schema": "ghostmesh-reader-receipt-v2",
+  "createdAt": "2026-11-11T22:08:30.482925+00:00",
+  "source": {
+    "url": "https://www.youtube.com/watch?v=OEY-vm7qRHc",
+    "videoId": "OEY-vm7qRHc"
+  },
+  "reasonPack": {
+    "verification": "pass",
+    "manifestSha256": "47e9b3b0457f1190e78a7a21fc460037a9c384f74e1d8ebdd1f473accc6171d6"
+  },
+  "sourceInspection": {
+    "method": "Private verified ReasonPack; one offline CPU Whisper pass, all transcript lines read and pack members independently hash checked",
+    "transcriptSha256": "1a2ba9bfdb8f5982b0ba10d593a7d6120f58de6c1351dfb54c8d950d1ee61a75",
+    "timedAidSha256": "3312e5dbe33bf6a2ad4f082d3208a44bd6820c6773590e40d729028f42c56fa2",
+    "coverage": "325 monotonic cues, 00:00–20:56.220 of 20:59; final seconds outside timed text",
+    "caveat": "No listening, frame inspection, numerical replication or deployment test. Personal allegations omitted; primary written accounts remain attributed.",
+    "publicationBoundary": "Only original analysis and sanitized integrity metadata; no private source media, transcripts, paths or operational payloads."
+  },
+  "custody": {
+    "status": "qualified-private-pack-verified",
+    "note": "Existing source custodian completed and verified the retained pack; publisher independently hashed all listed pack members and normalized audio. Integrity does not verify speech or reported outcomes."
+  },
+  "normalization": {
+    "id": "reader:better-models-still-need-boundaries",
+    "slug": "better-models-still-need-boundaries",
+    "title": "Better Models Still Need Boundaries",
+    "category": "AI & Technology",
+    "tags": [
+      "AI security",
+      "compute",
+      "research evaluation",
+      "authority"
+    ],
+    "entities": [
+      "Nate B. Jones",
+      "NVIDIA",
+      "METR",
+      "Binance",
+      "GhostMesh"
+    ],
+    "source": {
+      "platform": "YouTube",
+      "url": "https://www.youtube.com/watch?v=OEY-vm7qRHc",
+      "videoId": "OEY-vm7qRHc",
+      "title": "China Won't Take 600,000 Nvidia Chips. Did It Target Jensen Huang For Better Ones?",
+      "creator": "AI News & Strategy Daily | Nate B Jones",
+      "mediaAspect": "16:9",
+      "durationSeconds": 1259,
+      "uploadDate": "2026-11-10",
+      "captionType": "Offline CPU Whisper, machine ASR not listening-certified"
+    },
+    "published": "2026-11-11",
+    "updated": "2026-11-11T22:08:30.482925+00:00",
+    "overview": "What Nate argues: China is reportedly declining permitted Nvidia H200 imports even as organizations seek access to newer compute abroad. Jones connects that contest to accelerating AI research and cyber defense, warning that access to frontier models may become a strategic divide into 2027. The video links reports and forecasts; it does not prove one causal claim.",
+    "whyItMatters": "Why it matters: A newcomer should understand Jones's source argument before GhostMesh tests its implications. Chip counts, usable model access, measured AI-assisted research gains and effective security-tool permissions are different questions, with different evidence limits.",
+    "ghostMeshTakeaway": "The GhostMesh judgment: Study the capability gains, but keep authorization and recovery independently enforceable. Start with a bounded test of an existing workflow before turning a broad forecast into a procurement deadline or adding another agent layer.",
+    "verdict": "Worth studying",
+    "architectureImpact": "experiment recommended",
+    "falsification": "A matched evaluation showing a meaningful defensive gain would strengthen the case for adopting a particular model. Independent incident evidence could change the account of how the internal tool was used. A verified recovery test could establish that a specific stop control reaches all relevant authorizations. None of those results was produced for this Reader.",
+    "evidenceState": "unverified",
+    "lastEvidenceChecked": "2026-11-11T22:08:30.482925+00:00",
+    "freshness": "November 11 primary-source interpretation and provisional machine-ASR navigation. Attributed reports and proposed tests are not independently replicated outcomes.",
+    "variant": "editorial",
+    "accent": "teal",
+    "claims": [
+      {
+        "id": "r52-inventory",
+        "proposition": "Reuters reports about 600,000 H200 chips awaiting mainland import approval.",
+        "kind": "source-attributed-claim",
+        "status": "unverified",
+        "sourceLocation": "04:26 (provisional ASR topic locator; written roles separate)",
+        "assessment": "Reported context, not an inventory audit or proof of usable service capacity.",
+        "limits": "Anonymous-source reporting; no entitlement, legal eligibility or deployment inspection.",
+        "references": [
+          "r52-reuters"
+        ],
+        "counterevidence": [],
+        "asOf": "2026-11-11",
+        "temporalScope": "November 10 source and November 11 written-source readback; no outcome replication."
+      },
+      {
+        "id": "r52-rental",
+        "proposition": "The video discusses overseas rental as another route to advanced compute.",
+        "kind": "source-attributed-claim",
+        "status": "unverified",
+        "sourceLocation": "02:52 (provisional ASR topic locator; written roles separate)",
+        "assessment": "A different access route is described, not qualified for a particular buyer.",
+        "limits": "Machine-ASR paraphrase; no rental service, legal status or account admission tested.",
+        "references": [],
+        "counterevidence": [],
+        "asOf": "2026-11-11",
+        "temporalScope": "November 10 source and November 11 written-source readback; no outcome replication."
+      },
+      {
+        "id": "r52-research",
+        "proposition": "METR estimates a faster rate of improvement in Anthropic model capabilities on well-specified tasks.",
+        "kind": "source-attributed-claim",
+        "status": "unverified",
+        "sourceLocation": "11:07 (provisional ASR topic locator; written roles separate)",
+        "assessment": "A setting-specific capability-growth estimate, not a per-task throughput result or proof of autonomous research.",
+        "limits": "Company-supplied partly redacted evidence; no independent replication here.",
+        "references": [
+          "r52-metr"
+        ],
+        "counterevidence": [],
+        "asOf": "2026-11-11",
+        "temporalScope": "November 10 source and November 11 written-source readback; no outcome replication."
+      },
+      {
+        "id": "r52-compute-cause",
+        "proposition": "The assessment does not attribute acceleration to faster training-compute scaling.",
+        "kind": "source-attributed-claim",
+        "status": "unverified",
+        "sourceLocation": "11:07 (provisional ASR topic locator; written roles separate)",
+        "assessment": "This constrains a causal shortcut; it does not establish that compute is unnecessary.",
+        "limits": "Written assessment qualification; the source cue supplies topic context, not this exact spoken wording.",
+        "references": [
+          "r52-metr"
+        ],
+        "counterevidence": [],
+        "asOf": "2026-11-11",
+        "temporalScope": "November 10 source and November 11 written-source readback; no outcome replication."
+      },
+      {
+        "id": "r52-human-role",
+        "proposition": "Jones acknowledges researchers remaining in the loop.",
+        "kind": "source-attributed-claim",
+        "status": "unverified",
+        "sourceLocation": "14:18 (provisional ASR topic locator; written roles separate)",
+        "assessment": "Useful assistance and independent scientific judgment remain different claims.",
+        "limits": "Unlistened ASR locator; researcher effort was not measured for this Reader.",
+        "references": [],
+        "counterevidence": [],
+        "asOf": "2026-11-11",
+        "temporalScope": "November 10 source and November 11 written-source readback; no outcome replication."
+      },
+      {
+        "id": "r52-tool-path",
+        "proposition": "Binance describes an internal AI tool as part of an attacker access path.",
+        "kind": "source-attributed-claim",
+        "status": "unverified",
+        "sourceLocation": "15:07 (provisional ASR topic locator; written roles separate)",
+        "assessment": "The company account motivates inspecting effective tool authority.",
+        "limits": "Preliminary first-party account; model identity and prompt-injection mechanism not established.",
+        "references": [
+          "r52-binance"
+        ],
+        "counterevidence": [],
+        "asOf": "2026-11-11",
+        "temporalScope": "November 10 source and November 11 written-source readback; no outcome replication."
+      },
+      {
+        "id": "r52-revocation",
+        "proposition": "The company distinguishes withdrawal suspension from revoking on-chain authority.",
+        "kind": "source-attributed-claim",
+        "status": "unverified",
+        "sourceLocation": "14:43 (provisional ASR topic locator; written roles separate)",
+        "assessment": "Stopping a workflow and ending delegated authority need separate verification.",
+        "limits": "Primary written account; the source cue is security-segment context, not a claim of an exact spoken revocation statement.",
+        "references": [
+          "r52-binance"
+        ],
+        "counterevidence": [],
+        "asOf": "2026-11-11",
+        "temporalScope": "November 10 source and November 11 written-source readback; no outcome replication."
+      },
+      {
+        "id": "r52-forecast",
+        "proposition": "Jones predicts frontier-model access will become essential to defense.",
+        "kind": "speaker-opinion",
+        "status": "unverified",
+        "sourceLocation": "17:16 (provisional ASR topic locator; written roles separate)",
+        "assessment": "Treat as a forecast requiring task-specific evidence and permission controls.",
+        "limits": "No universal deadline or prevention benefit demonstrated; constraints are not an empirical disproof.",
+        "references": [],
+        "counterevidence": [
+          "r52-metr",
+          "r52-owasp"
+        ],
+        "asOf": "2026-11-11",
+        "temporalScope": "November 10 source and November 11 written-source readback; no outcome replication."
+      }
+    ],
+    "references": [
+      {
+        "id": "r52-reuters",
+        "title": "Nvidia chips pile up in Hong Kong as China withholds import approval",
+        "author": "Reuters",
+        "publisher": "Reuters",
+        "url": "https://www.reuters.com/world/china/nvidia-chips-pile-up-hong-kong-china-withholds-import-approval-2026-11-05/",
+        "publicationDate": "2026-11-05",
+        "datePrecision": "day",
+        "eventDate": null,
+        "location": "reported inventory, not our audit",
+        "sourceType": "original reporting",
+        "independence": "Separate reporting cited by the video; repeated attribution is one reporting family.",
+        "evidenceFamily": "r52-reuters",
+        "checkedAt": "2026-11-11T22:08:30.482925+00:00"
+      },
+      {
+        "id": "r52-metr",
+        "title": "Anthropic AI R&D acceleration assessment",
+        "author": "METR",
+        "publisher": "METR",
+        "url": "https://metr.org/blog/2026-11-05-anthropic-ai-rd-acceleration-assessment/",
+        "publicationDate": "2026-11-05",
+        "datePrecision": "day",
+        "eventDate": null,
+        "location": "estimate, compute-scale distinction and access limits",
+        "sourceType": "independent behavioral analysis on company-supplied data, scoped",
+        "independence": "External assessor using company-supplied, partly nonpublic evidence; not our replication or a public raw-data audit.",
+        "evidenceFamily": "r52-metr",
+        "checkedAt": "2026-11-11T22:08:30.482925+00:00"
+      },
+      {
+        "id": "r52-binance",
+        "title": "29 October 2026 Binance Security Incident: Initial Findings and Response Update",
+        "author": "Binance",
+        "publisher": "Binance",
+        "url": "https://www.binance.com/en/blog/community/3229153443759566763",
+        "publicationDate": "2026-11-03",
+        "datePrecision": "day",
+        "eventDate": "2026-10-29",
+        "location": "internal-tool access path and on-chain authorization revocation",
+        "sourceType": "first-party incident account",
+        "independence": "Preliminary account by the incident owner; no independent forensics established here.",
+        "evidenceFamily": "r52-binance",
+        "checkedAt": "2026-11-11T22:08:30.482925+00:00"
+      },
+      {
+        "id": "r52-owasp",
+        "title": "LLM06:2025 Excessive Agency",
+        "author": "OWASP",
+        "publisher": "OWASP",
+        "url": "https://genai.owasp.org/llmrisk/llm062025-excessive-agency/",
+        "publicationDate": "unknown",
+        "datePrecision": "unknown",
+        "eventDate": null,
+        "location": "permissions and downstream authorization prevention guidance",
+        "sourceType": "security guidance",
+        "independence": "Primary community guidance; not an incident reproduction or proof that a particular integration is secure.",
+        "evidenceFamily": "r52-owasp",
+        "checkedAt": "2026-11-11T22:08:30.482925+00:00",
+        "dateNote": "2025 edition label; original page-publication date not established."
+      }
+    ],
+    "relationships": [
+      {
+        "target": "reader:the-stop-button-is-outside-the-chat",
+        "type": "companion",
+        "reason": "A paused assistant or workflow does not prove that previously delegated account or on-chain authorization has been revoked. This editorial comparison addresses observable recovery authority, not evidence for the specific Binance incident.",
+        "provenance": [
+          "/better-models-still-need-boundaries/",
+          "/the-stop-button-is-outside-the-chat/"
+        ],
+        "basis": "curated-editorial-comparison",
+        "direction": "outgoing"
+      },
+      {
+        "target": "reader:the-experiment-ran-did-the-research-advance",
+        "type": "companion",
+        "reason": "The distinction between AI-assisted research throughput and expert judgment complements Nate Jones’s discussion of research acceleration. Neither article independently replicates the reported improvement rate or proves a universal deployment deadline.",
+        "provenance": [
+          "/better-models-still-need-boundaries/",
+          "/the-experiment-ran-did-the-research-advance/"
+        ],
+        "basis": "curated-editorial-comparison",
+        "direction": "outgoing"
+      },
+      {
+        "target": "reader:the-engine-is-not-the-service",
+        "type": "informs architecture",
+        "reason": "The gap between acquiring or renting Nvidia hardware and delivering a useful, recoverable model service is the practical systems question behind the compute-access report. This is a source-specific architectural connection, not verification of the chip inventory.",
+        "provenance": [
+          "/better-models-still-need-boundaries/",
+          "/the-engine-is-not-the-service/"
+        ],
+        "basis": "curated-editorial-comparison",
+        "direction": "outgoing"
+      }
+    ],
+    "relationshipDisposition": "The owner approved the three independently reviewed Reader editorial connections for Reader #52 on November 11, 2026. They are navigation and conceptual comparisons, not independent proof of Nate Jones’s claims or a performance result.",
+    "relationshipReview": {
+      "reviewedAt": "2026-11-11",
+      "reviewedCatalogSize": 51,
+      "decision": "linked",
+      "reviewedTargets": [
+        "reader:the-stop-button-is-outside-the-chat",
+        "reader:the-experiment-ran-did-the-research-advance",
+        "reader:the-engine-is-not-the-service"
+      ],
+      "rationale": "A fresh independent reviewer screened all 51 prior Reader theses and accepted these three source-specific comparisons. On November 11, 2026 the owner separately authorized publication and graph admission. The relationships remain editorial and must not be counted as corroboration of the source claims."
+    },
+    "sharePlaneRelationships": [
+      {
+        "title": "The Semantic Operating System",
+        "url": "https://shareplane.malott.ai/artifacts/the-semantic-operating-system/",
+        "type": "extends",
+        "reason": "The published Work’s account of meaning, state, evidence, authority and recovery conceptually extends the Reader’s distinction between frontier-model capability and effective delegated permission. It does not demonstrate the proposed architecture against the reported incident or validate the video’s forecasts.",
+        "basis": "curated-editorial-comparison"
+      }
+    ],
+    "sharePlaneReview": {
+      "reviewedAt": "2026-11-11",
+      "decision": "linked",
+      "rationale": "The independent replacement reviewer examined this published Work as a separately labeled conceptual extension and the owner authorized graph admission along with Reader #52 on November 11, 2026. This connection does not independently corroborate incident facts, model-performance claims or forecasts."
+    },
+    "review": {
+      "status": "Fresh independent ACCEPT FOR OWNER REVIEW; owner approved publication and four editorial relationships; protected release pending",
+      "reviewer": "Fresh independent Reader reviewer /root/review_reader_revision (not unavailable original)",
+      "checkedAt": "2026-11-11T23:32:42.202230+00:00",
+      "scope": "Exact source-first reviewed article, private source pack integrity, Reuters/METR/Binance/OWASP evidence and separately reviewed Reader/SharePlane comparisons",
+      "findings": "Fresh independent reviewer accepted the exact corrected manuscript and privacy/source limits. Owner explicitly approved this reviewed Reader and three Reader plus one SharePlane editorial relationships on November 11, 2026. All eight claims remain unverified; publication is still subject to the existing release gates."
+    },
+    "revisionHistory": [
+      {
+        "at": "2026-11-11T22:08:30.482925+00:00",
+        "reason": "Initial complete Reader52 draft under source/draft-preview authority; original analysis, provisional ASR evidence and proposed comparisons only."
+      },
+      {
+        "at": "2026-11-11T22:18:49.705384+00:00",
+        "reason": "Independent reviewer requested precise METR rate wording: capability improvement versus historical rate, not individual task completion speed. No other manuscript change."
+      },
+      {
+        "at": "2026-11-11T22:23:26.848532+00:00",
+        "reason": "Byte-exact independent review/depth receipts integrated after one METR correction; authored article/map unchanged since reviewer acceptance. Visual QA and owner decisions remain pending."
+      }
+    ],
+    "editorialOrder": 51,
+    "archiveCall": {
+      "label": "Understand the access gap before adopting the forecast",
+      "text": "Start with Jones’s reported H200 inventory and overseas compute access, then examine his AI-research and cyber-defense argument. Separate available hardware, model capability and delegated authority before converting his 2027 forecast into a platform decision."
+    },
+    "editorialDepth": {
+      "schemaVersion": 1,
+      "receiptPath": "content/editorial-depth/better-models-still-need-boundaries.json"
+    }
+  },
+  "editorial": {
+    "overview": "What Nate argues: China is reportedly declining permitted Nvidia H200 imports even as organizations seek access to newer compute abroad. Jones connects that contest to accelerating AI research and cyber defense, warning that access to frontier models may become a strategic divide into 2027. The video links reports and forecasts; it does not prove one causal claim.",
+    "whyItMatters": "Why it matters: A newcomer should understand Jones's source argument before GhostMesh tests its implications. Chip counts, usable model access, measured AI-assisted research gains and effective security-tool permissions are different questions, with different evidence limits.",
+    "ghostMeshTakeaway": "The GhostMesh judgment: Study the capability gains, but keep authorization and recovery independently enforceable. Start with a bounded test of an existing workflow before turning a broad forecast into a procurement deadline or adding another agent layer."
+  }
+}
