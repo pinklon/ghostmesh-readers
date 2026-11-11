@@ -721,6 +721,18 @@
         "path": "site/when-every-ai-website-looks-good/index.html",
         "sha256": "137126e8954a23f7891e4a171482ed05285176eb82af1cc9dc478b25ca02ed73"
       }
+    },
+    {
+      "id": "urn:ghostmesh-readers:reader:more-skills-worse-agents",
+      "type": "Reader",
+      "visibility": "public",
+      "epistemicStatus": "source-editorial",
+      "label": "When More Agent Skills Make Agents Worse",
+      "url": "https://youtube.shareplane.malott.ai/more-skills-worse-agents/",
+      "source": {
+        "path": "site/more-skills-worse-agents/index.html",
+        "sha256": "70bfb1c83e0e2abe58795fb853aa434067560d055bf9297fa0698d46a4f6e64e"
+      }
     }
   ],
   "relationships": [
