@@ -120,11 +120,22 @@ def _poster(reader):
 def card(reader, number=None):
     """One complete, linkable archive entry; caller controls order and heading context."""
     slug = reader['slug']
-    if slug not in CALLS:
-        raise ValueError(f'Reader requires a source-grounded archive call: {slug}')
     if not reader.get('whyItMatters') or not reader.get('ghostMeshTakeaway'):
         raise ValueError(f'Reader lacks source guidance: {slug}')
-    call_label, call = CALLS[slug]
+    # New Readers author their archive recommendation in their existing catalog
+    # record. Historical curated calls remain unchanged; no per-Reader code edit.
+    if 'archiveCall' in reader:
+        archive_call = reader['archiveCall']
+        if (not isinstance(archive_call, dict) or set(archive_call) != {'label', 'text'}
+                or not all(isinstance(archive_call[k], str) and archive_call[k].strip()
+                           for k in ('label', 'text'))
+                or len(archive_call['label']) > 90 or not 40 <= len(archive_call['text']) <= 600):
+            raise ValueError(f'Reader archiveCall needs a short label and a source-grounded 40-600 character recommendation: {slug}')
+        call_label, call = archive_call['label'], archive_call['text']
+    elif slug in CALLS:
+        call_label, call = CALLS[slug]
+    else:
+        raise ValueError(f'Reader missing archiveCall in content/catalog.json: {slug}')
     unverified = sum(claim['status'] == 'unverified' for claim in reader['claims'])
     total = len(reader['claims'])
     written = reader['source'].get('kind') in {'paper', 'article', 'repository'}
