@@ -28,10 +28,12 @@
       "kind": "source-technical-assertion",
       "status": "unverified",
       "sourceLocation": "01:42",
-      "assessment": "Vendor documents confirm staged skill loading in specific implementations; measured overhead is not established here.",
-      "limits": "Installed file count differs from prompt-visible metadata and opened skill bodies.",
+      "assessment": "Anthropic documents always-visible discovery metadata with on-demand instructions. OpenAI documents a bounded Codex initial skill list with progressive disclosure and possible truncation or omission. These vendor-specific mechanisms support the distinction between metadata and full bodies; they do not quantify performance gains from deleting skills.",
+      "limits": "Vendor specifications are implementation-specific and mutable. Neither source establishes universal prompt overhead or a controlled deletion-versus-accuracy effect.",
       "references": [
-        "r51-video"
+        "r51-video",
+        "r51-anthropic",
+        "r51-openai"
       ],
       "counterevidence": [],
       "asOf": "2026-11-11",
@@ -151,6 +153,38 @@
       "evidenceFamily": "r51-video",
       "checkedAt": "2026-11-11T15:07:25Z",
       "datePrecision": "day"
+    },
+    {
+      "id": "r51-anthropic",
+      "title": "Agent Skills overview",
+      "author": "Anthropic",
+      "publisher": "Claude Platform Docs",
+      "url": "https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview",
+      "publicationDate": "unknown",
+      "datePrecision": "unknown",
+      "dateNote": "Living vendor documentation; original publication and latest revision dates not independently established.",
+      "eventDate": null,
+      "location": "How Skills work; Level 1 metadata, Level 2 instructions and Level 3 resources",
+      "sourceType": "vendor documentation",
+      "independence": "Primary Anthropic product documentation for its skill-loading design. Independent of video author but not independent performance measurement.",
+      "evidenceFamily": "r51-anthropic-docs",
+      "checkedAt": "2026-11-11T16:54:32Z"
+    },
+    {
+      "id": "r51-openai",
+      "title": "Build skills",
+      "author": "OpenAI",
+      "publisher": "ChatGPT Learn",
+      "url": "https://learn.chatgpt.com/docs/build-skills",
+      "publicationDate": "unknown",
+      "datePrecision": "unknown",
+      "dateNote": "Living vendor documentation; original publication and revision dates not independently established.",
+      "eventDate": null,
+      "location": "Progressive disclosure and bounded initial skill list for Codex",
+      "sourceType": "vendor documentation",
+      "independence": "Primary OpenAI product documentation for Codex discovery behavior. Independent of video author but not independent performance measurement.",
+      "evidenceFamily": "r51-openai-docs",
+      "checkedAt": "2026-11-11T16:54:32Z"
     }
   ]
 }
