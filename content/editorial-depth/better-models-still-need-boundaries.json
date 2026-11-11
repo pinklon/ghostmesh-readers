@@ -121,8 +121,12 @@
   },
   "independentCorroboration": "none",
   "ownerDecision": {
-    "pullNumber": 152,
-    "commentId": null
+    "kind": "conversation",
+    "owner": "Tony Malott",
+    "approval": "Owner explicitly approved publication of the exact fresh independently reviewed Reader 52 candidate and admission of its three reviewed Reader relationships and one separately reviewed SharePlane Work as editorial comparisons, subject to protected merge and production verification. Claims remain unverified; this does not certify source assertions or forecasts.",
+    "approvalDate": "2026-11-11",
+    "articleSha256": "1df22c937c0058f5306a6c30ff0f55a57e467f5d1be82430d1602d8bced25ca9",
+    "evidenceRevision": "f763703fe4d17a90b13c0839591519a92525b797818c57bff85028371ea8d3bf"
   },
   "decision": "accept",
   "gaps": [

@@ -32,7 +32,12 @@ class Reader52Coverage(unittest.TestCase):
 
  def test_no_graph_admission_or_false_source_verification(self):
   r=next(r for r in json.loads((ROOT/'content/catalog.json').read_text())['readers'] if r['slug']==SLUG)
-  self.assertEqual(r['relationships'],[]);self.assertEqual(r['sharePlaneRelationships'],[])
+  self.assertEqual(len(r['relationships']),3)
+  self.assertEqual(len(r['sharePlaneRelationships']),1)
+  self.assertEqual(r['relationshipReview']['decision'],'linked')
+  self.assertEqual(r['sharePlaneReview']['decision'],'linked')
+  self.assertIn('gm-work-grid',self.page)
+  self.assertIn('gm-cards',self.page)
   self.assertEqual(r['source']['videoId'],'OEY-vm7qRHc')
   self.assertIn('No listening check, frame inspection',self.md)
   self.assertIn('This article supplies a proposed test',self.md)

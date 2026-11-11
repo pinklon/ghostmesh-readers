@@ -346,6 +346,30 @@ def projections():
    for old,new in replacements.items():
     if raw.count(old)!=1:raise ValueError('Reader 51 release label projection changed: '+old)
     raw=raw.replace(old,new,1)
+  if r['slug']=='better-models-still-need-boundaries' and r.get('relationships') and r.get('sharePlaneRelationships'):
+   # Project the admitted cards without changing the reviewed source or deleting
+   # any of its substantive prose. The authored source remains hash-bound.
+   match=re.search(r'<section id="related-thinking" class="gm-related">(.*?)</section>',raw,re.S)
+   if not match:raise ValueError('Reader 52 related-thinking source wrapper changed')
+   body=match.group(1)
+   heading=re.search(r'<h2>.*?</h2>',body,re.S)
+   paragraphs=re.findall(r'<p>.*?</p>',body,re.S)
+   if not heading or len(paragraphs)!=4:raise ValueError('Reader 52 editorial comparison prose changed')
+   cards=''.join('<article><span class="gm-related-index">'+str(i).zfill(2)+'</span>'
+                 '<div class="gm-related-copy">'+para+'</div><span class="gm-related-arrow" aria-hidden="true">↗</span></article>'
+                 for i,para in enumerate(paragraphs[1:],1))
+   replacement='<section id="related-thinking" class="gm-related">'+heading.group(0)+paragraphs[0]+'<div class="gm-cards">'+cards+'</div></section>'
+   raw=raw[:match.start()]+replacement+raw[match.end():]
+   work=re.search(r'<section id="shareplane-thinking">(.*?)</section>',raw,re.S)
+   if not work:raise ValueError('Reader 52 SharePlane source wrapper changed')
+   work_body=work.group(1)
+   title=re.search(r'<h2>.*?</h2>',work_body,re.S)
+   prose=re.findall(r'<p>.*?</p>',work_body,re.S)
+   if not title or len(prose)!=1:raise ValueError('Reader 52 SharePlane editorial prose changed')
+   replacement=('<section id="shareplane-thinking" class="gm-work-routes">'+title.group(0)
+                +'<ul class="gm-work-grid"><li><span class="gm-work-kind">Conceptual extension</span>'
+                +prose[0]+'</li></ul></section>')
+   raw=raw[:work.start()]+replacement+raw[work.end():]
   if r['slug']=='the-threshold-is-a-claim-not-a-test':
    # Preserve the incumbent writer file byte-for-byte; normalize its colliding
    # local brief anchor and missing canonical only in this public projection.
