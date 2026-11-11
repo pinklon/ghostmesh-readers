@@ -22,7 +22,7 @@ For a platform team, the first inventory should therefore describe a service: wh
 
 ## Faster research is a narrower result than a hardware mandate
 
-The video introduces METR’s assessment at [11:07](https://www.youtube.com/watch?v=OEY-vm7qRHc&t=667s). METR’s November 5 report estimates about a twofold acceleration on well-specified Anthropic research tasks, with substantial uncertainty. It explicitly distinguishes that acceleration from faster scaling of training compute. The assessment uses company-supplied evidence, much of it withheld from the public; METR did not directly access Anthropic’s systems. These limits matter alongside the result. [METR’s assessment](https://metr.org/blog/2026-11-05-anthropic-ai-rd-acceleration-assessment/)
+The video introduces METR’s assessment at [11:07](https://www.youtube.com/watch?v=OEY-vm7qRHc&t=667s). METR’s November 5 report judges that, as of October 2026, Anthropic’s model capabilities on well-specified tasks were improving roughly twice as fast as between March 2024 and October 2025, with substantial uncertainty. This concerns capability growth, not individual tasks finishing in half the time. It explicitly distinguishes that acceleration from faster scaling of training compute. The assessment uses company-supplied evidence, much of it withheld from the public; METR did not directly access Anthropic’s systems. These limits matter alongside the result. [METR’s assessment](https://metr.org/blog/2026-11-05-anthropic-ai-rd-acceleration-assessment/)
 
 That report gives a reason to take AI-assisted research seriously. It does not supply a controlled comparison showing that buying more hardware caused the measured gain, or that an unrelated team will receive the same benefit. The opposite inference would also be unwarranted: compute can remain necessary even when increasing its growth rate does not explain a particular acceleration.
 
@@ -66,17 +66,17 @@ The GhostMesh call is to study the video as a set of questions about usable acce
 
 ## Continue the thinking
 
-These are proposed editorial comparisons, not independent corroboration or admitted graph edges. Their destinations were inspected for this draft; owner admission remains pending.
+These are editorial comparisons, not independent corroboration. The relationship types describe how the arguments connect. Graph admission is a separate owner decision recorded in the catalog.
 
-[The Stop Button Is Outside the Chat](https://youtube.shareplane.malott.ai/the-stop-button-is-outside-the-chat/) asks whether stopping a conversation also ends processes, schedules and account access. This Reader applies that question to a company account in which pausing a workflow and revoking delegated authority were separate operations. Proposed relationship: companion.
+[The Stop Button Is Outside the Chat](https://youtube.shareplane.malott.ai/the-stop-button-is-outside-the-chat/) asks whether stopping a conversation also ends processes, schedules and account access. This Reader applies that question to a company account in which pausing a workflow and revoking delegated authority were separate operations. Editorial relationship: companion.
 
-[The Experiment Ran. Did the Research Advance?](https://youtube.shareplane.malott.ai/the-experiment-ran-did-the-research-advance/) distinguishes research engineering from expert confidence in an answer. It helps frame the gap between faster well-specified work and independent research judgment here. Proposed relationship: companion.
+[The Experiment Ran. Did the Research Advance?](https://youtube.shareplane.malott.ai/the-experiment-ran-did-the-research-advance/) distinguishes research engineering from expert confidence in an answer. It helps frame the gap between faster well-specified work and independent research judgment here. Editorial relationship: companion.
 
-[The Engine Is Not the Service](https://youtube.shareplane.malott.ai/the-engine-is-not-the-service/) separates inference components from useful, recoverable delivery. It supplies the complementary workload question behind this video’s hardware-access discussion: what complete service does the equipment make possible? Proposed relationship: informs architecture.
+[The Engine Is Not the Service](https://youtube.shareplane.malott.ai/the-engine-is-not-the-service/) separates inference components from useful, recoverable delivery. It supplies the complementary workload question behind this video’s hardware-access discussion: what complete service does the equipment make possible? Editorial relationship: informs architecture.
 
 ### SharePlane Work comparison
 
-[The Semantic Operating System](https://shareplane.malott.ai/artifacts/the-semantic-operating-system/) treats authority, state, evidence and recovery as distinct dimensions of continuity. This Reader supplies a narrower security example of why a record of intention cannot substitute for current authority at the destination. Proposed relationship: extends. This is conceptual related thinking, not a claim that the architecture has been tested against the incident.
+[The Semantic Operating System](https://shareplane.malott.ai/artifacts/the-semantic-operating-system/) treats authority, state, evidence and recovery as distinct dimensions of continuity. This Reader supplies a narrower security example of why a record of intention cannot substitute for current authority at the destination. Editorial relationship: extends. This is conceptual related thinking, not a claim that the architecture has been tested against the incident.
 
 ## ReasonPack extraction and source limits
 

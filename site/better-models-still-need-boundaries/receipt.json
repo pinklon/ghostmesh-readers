@@ -94,11 +94,11 @@
       },
       {
         "id": "r52-research",
-        "proposition": "METR estimates acceleration on well-specified Anthropic research tasks.",
+        "proposition": "METR estimates a faster rate of improvement in Anthropic model capabilities on well-specified tasks.",
         "kind": "source-attributed-claim",
         "status": "unverified",
         "sourceLocation": "11:07 (provisional ASR topic locator; written roles separate)",
-        "assessment": "A setting-specific estimate with uncertainty, not universal research autonomy.",
+        "assessment": "A setting-specific capability-growth estimate, not a per-task throughput result or proof of autonomous research.",
         "limits": "Company-supplied partly redacted evidence; no independent replication here.",
         "references": [
           "r52-metr"
@@ -271,6 +271,10 @@
       {
         "at": "2026-11-11T22:08:30.482925+00:00",
         "reason": "Initial complete Reader52 draft under source/draft-preview authority; original analysis, provisional ASR evidence and proposed comparisons only."
+      },
+      {
+        "at": "2026-11-11T22:18:49.705384+00:00",
+        "reason": "Independent reviewer requested precise METR rate wording: capability improvement versus historical rate, not individual task completion speed. No other manuscript change."
       }
     ],
     "editorialOrder": 51,
