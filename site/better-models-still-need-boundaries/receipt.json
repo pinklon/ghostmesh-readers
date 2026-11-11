@@ -261,11 +261,11 @@
       "rationale": "The incumbent reviewer read the published Semantic Operating System Work and accepted the proposed conceptual extension on authority, state and recovery on November 11. Owner graph admission is still outstanding; no SharePlane relationship is persisted and no incident or performance corroboration is implied."
     },
     "review": {
-      "status": "Owner UAT revision pending independent delta review; no current editorial acceptance",
-      "reviewer": "Existing independent Reader reviewer /root/editorial_review",
-      "checkedAt": "2026-11-11T22:22:17Z",
-      "scope": "Exact corrected manuscript/article/source map, actual retained private aid, extended depth, privacy and four editorial comparisons",
-      "findings": "Prior reviewer acceptance applied only to the older article hash. Owner rejected its provenance link formatting and the inadequate explanation of Nate’s source thesis. Revised authored article and catalog brief require a fresh exact-byte independent reviewer decision before publication."
+      "status": "Fresh independent ACCEPT FOR OWNER REVIEW; publication and relationship admission pending",
+      "reviewer": "Fresh independent Reader reviewer /root/review_reader_revision (not unavailable original)",
+      "checkedAt": "2026-11-11T23:32:42.202230+00:00",
+      "scope": "Exact corrected article and source map; complete machine transcript and private pack integrity; Reuters/METR/Binance/OWASP evidence; all 51 prior Reader theses and four proposed editorial comparisons",
+      "findings": "Fresh independent review accepted the source-first explanation, corrected provenance layout, qualified 2027 forecast and distinct evidence roles; eight claims remain unverified. Three Reader and one SharePlane comparison are editorial proposals, not corroboration or admitted graph edges. No owner production approval."
     },
     "revisionHistory": [
       {
