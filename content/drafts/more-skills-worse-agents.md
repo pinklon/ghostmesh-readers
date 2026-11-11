@@ -24,6 +24,14 @@ At [33:40](https://youtu.be/45-qbcAeUbM?t=2020) and [36:56](https://youtu.be/45-
 
 At [39:00](https://youtu.be/45-qbcAeUbM?t=2340), Ondrej recommends team reuse. Reuse has value only when provenance, versioning, review and ownership travel with the instructions. Copying a trusted teammate's workflow does not automatically make it safe on another machine or repository.
 
+## Independent technical fact-check: skill loading is harness-specific
+
+Anthropic's [Agent Skills documentation](https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview) describes three levels of progressive disclosure: skill name and description are available for initial discovery, the full `SKILL.md` is read on invocation, and references or scripts are loaded as needed. This supports the distinction between visible metadata and invoked content, **not** a universal claim that every installed skill body is always in context. Its [authoring guidance](https://platform.claude.com/docs/en/agents-and-tools/agent-skills/best-practices) explicitly recommends precise, bounded descriptions to improve matching.
+
+OpenAI's [ChatGPT/Codex skill authoring documentation](https://learn.chatgpt.com/docs/build-skills?product=breeze) similarly says name and description precede loading full instructions. For Codex, the initial list has a context budget, may shorten descriptions and may omit skills when the list grows. This is a concrete **discoverability** tradeoff, not proof that a larger installed catalog necessarily reduces task quality. The relevant threshold is configuration- and version-dependent; avoid turning one documented default into a universal limit.
+
+**Fact-check verdict:** The metadata/context mechanism is supported by vendor documentation for these specific harnesses. The video's implied performance curve, the proposed 80–90% deletion percentage and any claimed universal 50-skill threshold remain **unverified**. A proper test must control the harness and its skill discovery configuration. No vendor documentation reviewed here establishes an improvement in task success after bulk deletion.
+
 ## A falsifiable engineering test
 
 Hold model, harness, task suite, tool permissions and compute constant. Compare 5, 20, 50 and 100 skill descriptors under two discovery strategies: always-visible metadata and scoped/on-demand retrieval. Measure input tokens, selection accuracy, false invocations, latency, task completion and critical-skill recall. Include ambiguous near-duplicate descriptions and rare-but-critical tasks. Repeat trials; report distributions, not one anecdote. Do not interpret absence of benchmark evidence in the video as evidence the claim is false.
