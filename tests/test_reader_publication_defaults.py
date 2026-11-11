@@ -6,6 +6,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'scripts'))
 from catalog_design import card
+from check_site import new_reader_canonical_errors
 from generate_site import projected_publication_status
 
 
@@ -56,6 +57,16 @@ class ReaderPublicationDefaults(unittest.TestCase):
         self.assertIn('does not attest deployment', approved)
         self.assertEqual(hashlib.sha256(source.encode()).hexdigest(), authored_sha)
         self.assertEqual(projected_publication_status(source.replace('Status inserted', 'Changed'), reader, receipt).count('Owner-approved'), 0)
+
+    def test_future_reader_gate_rejects_missing_metadata_before_review(self):
+        article = '<p class="gm-publication-status" data-gm-release-status="">Status</p>'
+        future = {'slug': 'test-future-reader', 'editorialOrder': 51}
+        self.assertIn('archiveCall', new_reader_canonical_errors(future, article)[0])
+        future['archiveCall'] = {'label': 'Check', 'text': 'Grounded recommendation'}
+        self.assertEqual(new_reader_canonical_errors(future, article), [])
+        self.assertIn('projected publication-status',
+                      new_reader_canonical_errors(future, '<p class="gm-publication-status">Old state</p>')[0])
+        self.assertEqual(new_reader_canonical_errors({'slug': 'historical', 'editorialOrder': 50}, ''), [])
 
     def test_existing_reader_without_marker_remains_byte_identical(self):
         historical = '<p class="gm-publication-status">Original review text</p>'
