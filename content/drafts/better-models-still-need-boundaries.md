@@ -6,9 +6,9 @@ This is a connected news-commentary argument, not a single experiment. Jones ask
 
 ## The brief
 
-**The source:** Nate B. Jones’s November 10 video moves from Nvidia chip access to AI-assisted research and a security incident involving an internal AI tool. These are different evidence objects, not successive demonstrations of one causal claim.
+What Nate argues: China is reportedly declining permitted Nvidia H200 imports even as organizations seek access to newer compute abroad. Jones connects that contest to accelerating AI research and cyber defense, warning that access to frontier models may become a strategic divide into 2027. The video links reports and forecasts; it does not prove one causal claim.
 
-**The stakes:** Teams choosing models and infrastructure can confuse hardware availability, useful task performance and permission to act. A favorable result in one category does not establish the other two.
+Why it matters: A newcomer should understand Jones's source argument before GhostMesh tests its implications. Chip counts, usable model access, measured AI-assisted research gains and effective security-tool permissions are different questions, with different evidence limits.
 
 **The GhostMesh judgment:** Study the capability gains, but keep authorization and recovery independently enforceable. Start with a bounded test of an existing workflow before turning a broad forecast into a procurement deadline or adding another agent layer.
 

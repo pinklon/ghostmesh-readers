@@ -20,6 +20,16 @@ class Reader52Coverage(unittest.TestCase):
   self.assertFalse(ordered_blocks_present(['second substantive paragraph','first substantive paragraph'],short))
   self.assertEqual(missing_locked_blocks(['missing final limitation'],short),['missing final limitation'])
   self.assertEqual(missing_link_targets(['https://example.com/required'],short),['https://example.com/required'])
+ def test_owner_accepted_layout_and_nate_thesis_are_present(self):
+  authored=(ROOT/'content/readers'/f'{SLUG}.html').read_text()
+  self.assertIn('id="nate-argument"',self.page)
+  self.assertIn('What Nate is arguing',self.md)
+  self.assertLess(self.page.find('id="nate-argument"'),self.page.find('id="capacity-analysis"'))
+  self.assertIn('grid-template-columns:minmax(0,1fr)',authored)
+  self.assertNotIn('grid-template-columns:2.3rem minmax(0,1fr)',authored)
+  self.assertIn('as 2027 approaches',self.page)
+  self.assertIn('may increasingly determine',self.md)
+
  def test_no_graph_admission_or_false_source_verification(self):
   r=next(r for r in json.loads((ROOT/'content/catalog.json').read_text())['readers'] if r['slug']==SLUG)
   self.assertEqual(r['relationships'],[]);self.assertEqual(r['sharePlaneRelationships'],[])

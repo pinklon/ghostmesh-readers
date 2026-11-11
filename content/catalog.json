@@ -17647,8 +17647,8 @@
       },
       "published": "2026-11-11",
       "updated": "2026-11-11T22:08:30.482925+00:00",
-      "overview": "The source: Nate B. Jones’s November 10 video moves from Nvidia chip access to AI-assisted research and a security incident involving an internal AI tool. These are different evidence objects, not successive demonstrations of one causal claim.",
-      "whyItMatters": "The stakes: Teams choosing models and infrastructure can confuse hardware availability, useful task performance and permission to act. A favorable result in one category does not establish the other two.",
+      "overview": "What Nate argues: China is reportedly declining permitted Nvidia H200 imports even as organizations seek access to newer compute abroad. Jones connects that contest to accelerating AI research and cyber defense, warning that access to frontier models may become a strategic divide into 2027. The video links reports and forecasts; it does not prove one causal claim.",
+      "whyItMatters": "Why it matters: A newcomer should understand Jones's source argument before GhostMesh tests its implications. Chip counts, usable model access, measured AI-assisted research gains and effective security-tool permissions are different questions, with different evidence limits.",
       "ghostMeshTakeaway": "The GhostMesh judgment: Study the capability gains, but keep authorization and recovery independently enforceable. Start with a bounded test of an existing workflow before turning a broad forecast into a procurement deadline or adding another agent layer.",
       "verdict": "Worth studying",
       "architectureImpact": "experiment recommended",
@@ -17856,11 +17856,11 @@
         "rationale": "The incumbent reviewer read the published Semantic Operating System Work and accepted the proposed conceptual extension on authority, state and recovery on November 11. Owner graph admission is still outstanding; no SharePlane relationship is persisted and no incident or performance corroboration is implied."
       },
       "review": {
-        "status": "Independent ACCEPT FOR OWNER REVIEW; browser QA and owner decisions pending",
+        "status": "Owner UAT revision pending independent delta review; no current editorial acceptance",
         "reviewer": "Existing independent Reader reviewer /root/editorial_review",
         "checkedAt": "2026-11-11T22:22:17Z",
         "scope": "Exact corrected manuscript/article/source map, actual retained private aid, extended depth, privacy and four editorial comparisons",
-        "findings": "Independent reviewer verified the METR capability-growth correction, source roles and private-aid hashes; no remaining substantive source/copy/privacy defect. All four comparisons recommended as editorial navigation only. No listening, frames, outcome replication or desktop/mobile browser QA; no owner graph or release approval."
+        "findings": "Prior reviewer acceptance applied only to the older article hash. Owner rejected its provenance link formatting and the inadequate explanation of Nate’s source thesis. Revised authored article and catalog brief require a fresh exact-byte independent reviewer decision before publication."
       },
       "revisionHistory": [
         {
@@ -17878,8 +17878,8 @@
       ],
       "editorialOrder": 51,
       "archiveCall": {
-        "label": "Study the boundary",
-        "text": "Read the source for its compute and security questions. Compare useful model assistance with effective tool authority; the written sources do not establish a universal frontier-access deadline."
+        "label": "Understand the access gap before adopting the forecast",
+        "text": "Start with Jones’s reported H200 inventory and overseas compute access, then examine his AI-research and cyber-defense argument. Separate available hardware, model capability and delegated authority before converting his 2027 forecast into a platform decision."
       },
       "legacyReceipt": {
         "schema": "ghostmesh-reader-receipt-v2",
