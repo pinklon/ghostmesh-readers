@@ -25,6 +25,18 @@ class Reader51ReferenceParity(unittest.TestCase):
         self.assertGreaterEqual(sum('data-seek' in d for _,d in b.attrs),6)
         self.assertTrue(any(d.get('data-video-id')=='45-qbcAeUbM' for _,d in b.attrs))
         self.assertTrue(any(d.get('aria-label')=='In this reading' for _,d in b.attrs))
+    def test_three_moves_and_reasonpack_provenance(self):
+        s=(ROOT/'site/__drafts/more-skills-worse-agents/index.html').read_text()
+        self.assertEqual(s.count('class="gm-brief"'),1)
+        self.assertEqual(s.count('class="gm-brief-point"'),3)
+        self.assertEqual(s.count('id="at-a-glance"'),1)
+        self.assertIn('The reading / in three moves',s)
+        for label in ('What the video is about','Why you should care','What GhostMesh takes away'):
+            self.assertIn(label,s)
+        self.assertIn('id="reasonpack-provenance"',s)
+        for evidence in ('HTTP 429','whisper.cpp 1.9.5-dev','803 timestamped VTT cues','reasonpack verify','0060da049408edbc81df1f6ba8e9e61f730d3e254085a1e9905c3093326551f7','Machine ASR has not been manually checked'):
+            self.assertIn(evidence,s)
+
     def test_preview_cannot_impersonate_reader50(self):
         s=(ROOT/'site/__drafts/more-skills-worse-agents/index.html').read_text()
         self.assertNotIn('when-every-ai-website-looks-good/',s)
