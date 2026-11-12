@@ -1,0 +1,172 @@
+{
+  "schemaVersion": 1,
+  "readerId": "reader:the-small-fix-is-a-boundary",
+  "sourceId": "hMEQ4rdaOLw",
+  "sourceDigest": "7f856319461c08fbcef40cefd7e349ea83b6321bdfe150a26804cf3f17402709",
+  "sourceAidSha256": "af6c28c91e1a4e4097b6cee09e82bce8405b27745f473d59418a2e0261411cac",
+  "articleSha256": "e2394954dfd5fd9a1fca9311815f198c7d38dd4cb54ca270ff6848824cab0c01",
+  "evidenceRevision": "452690289729b6544fc19a6c3191f770ef4088ce43ebdbcd4db7b360d6731042",
+  "sourceMapEvidenceSha256": "414c40b8668a48e68abc25ffda502cd63528a1ab3138933de082d8df015e7cab",
+  "reviewEvidenceSha256": "5e542d7203fa2470d88ce912209764bc699460ef60df0ad8f741cc352781ffee",
+  "candidateAuthor": "pinklon",
+  "complexity": {
+    "tier": "extended",
+    "factors": [
+      "Eleven intervention claims across verification, context, scope, authority and cost",
+      "Separate original pack and large-v3 cue aid with distinct integrity bindings",
+      "Four relationship proposals and canonical visual/interaction requirements"
+    ],
+    "rationale": "Extended editorial review is appropriate for eleven material recommendations and security-sensitive scope claims despite the source being under thirty minutes."
+  },
+  "sourceMap": [
+    {
+      "atSeconds": 109,
+      "sectionId": "premature-completion",
+      "claimIds": [
+        "r53-premature"
+      ],
+      "rationale": "The creator describes premature task-completion claims and proposes adversarial self-checks or fresh reviewers. Independently checked as approximate large-v3 machine-ASR topic alignment, not exact speech or observed performance."
+    },
+    {
+      "atSeconds": 287,
+      "sectionId": "proof-not-assertion",
+      "claimIds": [
+        "r53-proof"
+      ],
+      "rationale": "The creator asks agents to show commands, outputs and visual proof of implementation rather than assert success. Independently checked as approximate large-v3 machine-ASR topic alignment, not exact speech or observed performance."
+    },
+    {
+      "atSeconds": 388,
+      "sectionId": "test-real-app",
+      "claimIds": [
+        "r53-browser"
+      ],
+      "rationale": "The creator argues that green unit tests can miss broken application journeys and recommends real user-path checks. Independently checked as approximate large-v3 machine-ASR topic alignment, not exact speech or observed performance."
+    },
+    {
+      "atSeconds": 508,
+      "sectionId": "enforce-rules",
+      "claimIds": [
+        "r53-hooks"
+      ],
+      "rationale": "The creator proposes executable event hooks for selected rules that agents may ignore when written only as prose. Independently checked as approximate large-v3 machine-ASR topic alignment, not exact speech or observed performance."
+    },
+    {
+      "atSeconds": 757,
+      "sectionId": "prune-instructions",
+      "claimIds": [
+        "r53-pruning"
+      ],
+      "rationale": "Following a sponsor interval, the creator recommends removing redundant global rules and testing whether they are needed. Independently checked as approximate large-v3 machine-ASR topic alignment, not exact speech or observed performance."
+    },
+    {
+      "atSeconds": 844,
+      "sectionId": "reset-context",
+      "claimIds": [
+        "r53-handoff"
+      ],
+      "rationale": "The creator proposes short task sessions and a concise handoff to manage long-conversation context degradation. Independently checked as approximate large-v3 machine-ASR topic alignment, not exact speech or observed performance."
+    },
+    {
+      "atSeconds": 944,
+      "sectionId": "preserve-owner-decisions",
+      "claimIds": [
+        "r53-authority"
+      ],
+      "rationale": "The creator distinguishes important human decisions from routine agent implementation choices. Independently checked as approximate large-v3 machine-ASR topic alignment, not exact speech or observed performance."
+    },
+    {
+      "atSeconds": 1047,
+      "sectionId": "contain-scope",
+      "claimIds": [
+        "r53-scope"
+      ],
+      "rationale": "The creator criticizes changes that turn narrow requests into unrelated refactors or abstractions. Independently checked as approximate large-v3 machine-ASR topic alignment, not exact speech or observed performance."
+    },
+    {
+      "atSeconds": 1137,
+      "sectionId": "budget-delegation",
+      "claimIds": [
+        "r53-delegation"
+      ],
+      "rationale": "The creator argues for deliberately scoped subagents and cost-aware delegation. Independently checked as approximate large-v3 machine-ASR topic alignment, not exact speech or observed performance."
+    },
+    {
+      "atSeconds": 1267,
+      "sectionId": "risk-proportionate-tests",
+      "claimIds": [
+        "r53-risk"
+      ],
+      "rationale": "The creator recommends scaling test effort to consequence and blast radius. Independently checked as approximate large-v3 machine-ASR topic alignment, not exact speech or observed performance."
+    },
+    {
+      "atSeconds": 1364,
+      "sectionId": "park-tangents",
+      "claimIds": [
+        "r53-tangents"
+      ],
+      "rationale": "The creator recommends recording valuable side discoveries without abandoning the current task or creating speculative follow-up sprawl. Independently checked as approximate large-v3 machine-ASR topic alignment, not exact speech or observed performance."
+    }
+  ],
+  "assessment": {
+    "sourceCoverage": {
+      "disposition": "covered",
+      "rationale": "Full retained machine source argument and eleven topic cues were independently reviewed on prior head; unchanged analytical prose and cues are now contained in eleven proper semantic sections. Source-aid manifest identity is corrected; map schema remains a separate integration gap."
+    },
+    "supportingArgument": {
+      "disposition": "covered",
+      "rationale": "Source-first thesis and eleven failures and interventions are ordered faithfully. GhostMesh distinguishes modifying existing work habits from constructing a new framework."
+    },
+    "evidenceRoles": {
+      "disposition": "covered",
+      "rationale": "Creator recommendations, sponsored product claims, vendor guidance and framework documentation remain distinct. No source-specific controlled effectiveness or independent payoff replication is claimed."
+    },
+    "counterargument": {
+      "disposition": "covered",
+      "rationale": "New hooks and skills can worsen the sprawl they try to fix. A hook protects only the actual event and access paths it intercepts; broader security requires effective tool/service permission boundaries."
+    },
+    "tradeoffs": {
+      "disposition": "covered",
+      "rationale": "Independent review, subagents, handoffs and validation all have effort and context costs. The manuscript pairs each intervention with its actual failure rather than recommending blanket adoption."
+    },
+    "falsifiability": {
+      "disposition": "covered",
+      "rationale": "The proposed next ordinary task comparison tracks scope, owner interventions, elapsed time, extra mechanisms and observed defects, while acknowledging task/source differences. It is not an executed causal experiment."
+    },
+    "originalSynthesis": {
+      "disposition": "covered",
+      "rationale": "The small-fix premise becomes a practical selection rule: choose the smallest existing enforceable correction to an observed failure and stop expanding authority or scope."
+    },
+    "performance": {
+      "disposition": "covered",
+      "rationale": "The video supplies recommendations and examples, not controlled defect rates or repeated before/after outcomes. Browser checks establish this Reader’s UI behavior, not the source workflow payoff."
+    },
+    "economics": {
+      "disposition": "covered",
+      "rationale": "Subagent and testing costs are discussed without invented savings. Cost and delay must be assessed alongside quality and avoidable owner intervention."
+    },
+    "threatGovernance": {
+      "disposition": "covered",
+      "rationale": "Human decisions and downstream authorization remain separate from prose rules or isolated hooks. Draft relationship projection and final production authority are explicitly distinguished."
+    }
+  },
+  "independentCorroboration": "none",
+  "ownerDecision": {
+    "kind": "conversation",
+    "owner": "Tony Malott",
+    "approval": "Owner explicitly approved the Autonomy Needs an Interface companion classification and production publication of Reader #53 at exact independently reviewed commit f33a9edc9a0671843b9180d4dd78bf04999b3d4f, subject to existing release safeguards.",
+    "approvalDate": "2026-11-11",
+    "articleSha256": "e2394954dfd5fd9a1fca9311815f198c7d38dd4cb54ca270ff6848824cab0c01",
+    "evidenceRevision": "452690289729b6544fc19a6c3191f770ef4088ce43ebdbcd4db7b360d6731042"
+  },
+  "decision": "accept",
+  "gaps": [
+    {
+      "type": "evidence",
+      "severity": "nonblocking",
+      "rationale": "Machine ASR is not listening or frame certification. No measured intervention-effectiveness experiment was replicated."
+    }
+  ],
+  "decisionRationale": "Independent source, privacy, editorial-depth, and responsive review accepted the exact authored article; owner subsequently approved the corrected companion edge and authorized publication of the reviewed candidate. Remaining ASR and unreplicated-effectiveness limits are disclosed as nonblocking.",
+  "assessedAt": "2026-11-12T04:46:28.124985+00:00"
+}
