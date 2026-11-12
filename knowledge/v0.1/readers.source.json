@@ -781,6 +781,18 @@
         "path": "site/replacing-cowork-is-a-test-not-a-title/index.html",
         "sha256": "5fca1f4742df526601fa4e995a8a1ea67db16440f733ed07acac8046a4b40b4d"
       }
+    },
+    {
+      "id": "urn:ghostmesh-readers:reader:the-taste-is-in-the-loop-not-the-prompt",
+      "type": "Reader",
+      "visibility": "public",
+      "epistemicStatus": "source-editorial",
+      "label": "The Taste Is in the Loop, Not the Prompt",
+      "url": "https://youtube.shareplane.malott.ai/the-taste-is-in-the-loop-not-the-prompt/",
+      "source": {
+        "path": "site/the-taste-is-in-the-loop-not-the-prompt/index.html",
+        "sha256": "14bede92f8e87e13a905bd54d24a8fb7c1c0fd588ba9bf50fa616f24b0a4e195"
+      }
     }
   ],
   "relationships": [

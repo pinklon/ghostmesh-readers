@@ -1,0 +1,61 @@
+{
+  "schemaVersion": 1,
+  "readerId": "reader:the-taste-is-in-the-loop-not-the-prompt",
+  "sourceId": "-bv2xKQzZio",
+  "sourceDigest": "017dd0bd9453befe9c92dbd0454f46bbf1f0d87224467ff5cc92446c8bd7250e",
+  "sourceAidSha256": "ae6ac9eb784cf234951f2814bc66aef2f18ce13d1c4d56e9b38c9ed2ffcbcbbe",
+  "articleSha256": "1f7006da41219c12d598bf4cb2e62784e0bed26b0cc87b411778aeaddf934078",
+  "evidenceRevision": "ffdb9997f5620c47c335725e3abd4a8c725d4b89e02f5f0f61a356ecb9fa5a54",
+  "sourceMapEvidenceSha256": "9beed6bf7977e401d064ca2647d5d60af955e8aa9bc2d68b42bcafade1cc9fc7",
+  "reviewEvidenceSha256": "0df2f9349820a0643d186e6d58554d41c377a81fe9c8d8798b1b006cacefb6fd",
+  "candidateAuthor": "segfault",
+  "complexity": {
+    "tier": "extended",
+    "factors": [
+      "Nine claims distinguish procedural advice from subjective aesthetic ratings",
+      "Nine separately grounded source-map points and creator Cook primary documentation",
+      "Three Reader and one separately labeled SharePlane Work editorial comparisons"
+    ],
+    "rationale": "The creator's workflow combines subjective design judgment, agent implementation claims and unreplicated resource figures, requiring extended source and limitations review."
+  },
+  "sourceMap": [
+    {"atSeconds": 53, "sectionId": "references-not-prompts", "claimIds": ["r56-references"], "rationale": "The presenter introduces reference gathering and contrasts design targets with short prompts; automatic caption cue checked, not replicated design output."},
+    {"atSeconds": 219, "sectionId": "target-before-build", "claimIds": ["r56-mockups"], "rationale": "The presenter recommends mockup and target definition before full implementation; claimed savings are not measured."},
+    {"atSeconds": 298, "sectionId": "numeric-bar", "claimIds": ["r56-score"], "rationale": "The numerical quality-target chapter starts at 04:58, while creator Cook documentation labels the extreme bar aspirational."},
+    {"atSeconds": 378, "sectionId": "numeric-bar", "claimIds": ["r56-sixty-six"], "rationale": "The approximately 66% self-assessment occurs in automatic VTT around 06:18–06:20, separately from the earlier numerical-target introduction."},
+    {"atSeconds": 451, "sectionId": "iteration-and-cost", "claimIds": ["r56-time"], "rationale": "The presenter discusses giving iterative construction enough time; no controlled cost-to-quality result is shown."},
+    {"atSeconds": 522, "sectionId": "slop-and-feedback", "claimIds": ["r56-slop"], "rationale": "The presenter criticizes recurring generic visual patterns while aesthetic criteria remain subjective."},
+    {"atSeconds": 615, "sectionId": "slop-and-feedback", "claimIds": ["r56-stepwise"], "rationale": "Incremental component and motion construction is recommended without comparative productivity evidence."},
+    {"atSeconds": 711, "sectionId": "independent-judgment", "claimIds": ["r56-critics"], "rationale": "Fresh-context critics are proposed but not proven statistically independent or reproducible."},
+    {"atSeconds": 773, "sectionId": "cook-mechanics", "claimIds": ["r56-cook"], "rationale": "Cook's repeatable build, critique and revision loop is checked against its public README, SKILL and rubric; outcome claims are not independently replicated."}
+  ],
+  "assessment": {
+    "sourceCoverage": {"disposition": "covered", "rationale": "Nine distinct source-map cues were checked against the hash-matched automatic VTT and creator primary documents; no listening certification claimed."},
+    "supportingArgument": {"disposition": "covered", "rationale": "The source supports reference-driven design, mockups, iteration and critique as a documented process rather than a guaranteed aesthetic result."},
+    "evidenceRoles": {"disposition": "covered", "rationale": "Creator demonstration, public Cook specification, subjective score and reviewer-proposed tests are distinguished from independent measurements."},
+    "counterargument": {"disposition": "covered", "rationale": "Aspirational 99.9% target, subjective 66% self-rating and noncalibrated critics challenge claims of objectively superior design."},
+    "tradeoffs": {"disposition": "covered", "rationale": "Reference quality and iterative review can improve discipline but consume tokens, time and reviewer attention without guaranteed acceptance."},
+    "falsifiability": {"disposition": "covered", "rationale": "Repeatable matched visual briefs with blinded human acceptance, accessibility checks, cost and time could test outcomes; no such experiment was performed."},
+    "originalSynthesis": {"disposition": "covered", "rationale": "The productive intervention is a visible target and sustained feedback loop, not a longer prompt or an aesthetic score treated as a test oracle."},
+    "performance": {"disposition": "covered", "rationale": "Creator-reported build duration and output-token figures are contextual examples, not benchmarked agent speed or measured design gain."},
+    "economics": {"disposition": "covered", "rationale": "Iteration cost should be normalized to accepted results and review effort; no reproducible pricing, savings or ROI is inferred."},
+    "threatGovernance": {"disposition": "covered", "rationale": "Human acceptance, evidence provenance and distinct critic roles are preserved; the public article exposes no retained media, secrets or private paths."}
+  },
+  "independentCorroboration": "none",
+  "ownerDecision": {
+    "kind": "conversation",
+    "owner": "Tony Malott",
+    "approval": "Tony accepted the Reader #56 draft and preview in the conversation and subsequently approved advancing the review. The later bounded corrections fix timestamp attribution, date labeling and claim-count precision without rewriting the accepted thesis. This declaration records editorial acceptance only, not an exact-head GitHub-authenticated marker or unconditional production merge authorization.",
+    "approvalDate": "2026-11-12",
+    "articleSha256": "1f7006da41219c12d598bf4cb2e62784e0bed26b0cc87b411778aeaddf934078",
+    "evidenceRevision": "ffdb9997f5620c47c335725e3abd4a8c725d4b89e02f5f0f61a356ecb9fa5a54"
+  },
+  "decision": "accept",
+  "gaps": [
+    {"type": "evidence", "severity": "nonblocking", "rationale": "Automatic captions were not independently listening-certified; the video rendering and claimed Cook design outcomes were not reproduced."},
+    {"type": "scope", "severity": "nonblocking", "rationale": "Three Reader and one SharePlane Work connections are editorial comparisons, not source corroboration; the external Work retains a migration-status caveat."},
+    {"type": "test", "severity": "nonblocking", "rationale": "The independent editorial reviewer did not certify native iPhone, full accessibility compliance, Netlify artifact byte binding or production release."}
+  ],
+  "decisionRationale": "A separate, attributable reviewer initially held publication for four precise source and metadata defects, then accepted the corrected exact head 8aefe1fdf5b4a8ddbdfd39dbfed95d953ecd2479. Nine claim and source-map points now distinguish target from self-assessment and retain limitations; the prior owner draft acceptance remains editorial, while exact-head merge authorization is a later release gate.",
+  "assessedAt": "2026-11-12T18:09:24Z"
+}

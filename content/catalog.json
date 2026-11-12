@@ -18973,6 +18973,338 @@
         "schemaVersion": 1,
         "receiptPath": "content/editorial-depth/replacing-cowork-is-a-test-not-a-title.json"
       }
+    },
+    {
+      "id": "reader:the-taste-is-in-the-loop-not-the-prompt",
+      "slug": "the-taste-is-in-the-loop-not-the-prompt",
+      "title": "The Taste Is in the Loop, Not the Prompt",
+      "category": "AI & Technology",
+      "tags": [
+        "AI design",
+        "Cook",
+        "visual references",
+        "coding agents",
+        "UX",
+        "quality evaluation"
+      ],
+      "entities": [
+        "AI LABS",
+        "Leon Lin",
+        "Cook"
+      ],
+      "source": {
+        "platform": "YouTube",
+        "url": "https://www.youtube.com/watch?v=-bv2xKQzZio",
+        "videoId": "-bv2xKQzZio",
+        "title": "Creator Of Taste Skill Just Revealed His Entire AI Design Workflow",
+        "creator": "AI LABS",
+        "mediaAspect": "16:9",
+        "durationSeconds": 921,
+        "uploadDate": "unknown",
+        "captionType": "YouTube English automatic captions; machine-generated, not independently listening-certified"
+      },
+      "published": "2026-11-12",
+      "updated": "2026-11-12T16:30:00Z",
+      "overview": "AI LABS explains Leon Lin's design workflow: strong references, target mockups, a quality bar, repeated criticism and the Cook skill. The Reader separates an inspectable iteration process from subjective quality scores.",
+      "whyItMatters": "Coding agents can deliver functioning interfaces whose visual hierarchy, responsiveness and accessibility are poor. Reference-based comparison can expose gaps, but an arbitrary similarity percentage cannot certify product quality.",
+      "ghostMeshTakeaway": "Use owner-selected references, repeatable screenshots, specific criticism, responsive and accessibility checks, and a cost-bounded revision ledger. Keep final aesthetic and operational acceptance with humans.",
+      "verdict": "Worth studying",
+      "architectureImpact": "experiment recommended",
+      "falsification": "Run matched UI tasks with the same agent/model budget, blind user ratings, accessibility checks, review time, total cost, and stable test devices; compare reference-driven Cook iterations against ordinary bounded review.",
+      "evidenceState": "unverified",
+      "lastEvidenceChecked": "2026-11-12T16:30:00Z",
+      "freshness": "November 2026 creator video and current Cook repository inspected. Public automatic captions support bounded paraphrase, not visually certified demonstration or replicated quality outcomes.",
+      "variant": "editorial",
+      "accent": "teal",
+      "claims": [
+        {
+          "id": "r56-references",
+          "proposition": "Strong visual references provide more actionable design constraints than generic descriptive prompts.",
+          "kind": "creator-recommendation",
+          "status": "unverified",
+          "sourceLocation": "00:53",
+          "assessment": "The video demonstrates a reference-first instruction pattern, but no controlled accuracy comparison.",
+          "limits": "A reference may still be inappropriate, inaccessible or copied too literally.",
+          "references": [
+            "r56-video",
+            "r56-cook"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-12"
+        },
+        {
+          "id": "r56-mockups",
+          "proposition": "Mockups before full implementation can reduce rework and unnecessary agent effort.",
+          "kind": "creator-recommendation",
+          "status": "unverified",
+          "sourceLocation": "03:39",
+          "assessment": "The presenter recommends a visible target before building. Time and token savings are not independently measured.",
+          "limits": "Benefit depends on the task, mockup quality and how much implementation work is avoided.",
+          "references": [
+            "r56-video",
+            "r56-cook"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-12"
+        },
+        {
+          "id": "r56-score",
+          "proposition": "A 99% or 99.9% target reliably measures visual quality.",
+          "kind": "creator-recommendation",
+          "status": "unverified",
+          "sourceLocation": "04:58",
+          "assessment": "Cook explicitly calls 99.9% an aspirational, probably unreachable stretch goal rather than a validated metric.",
+          "limits": "Human/model similarity ratings are subjective; only selected dimensions such as color delta are command-measured.",
+          "references": [
+            "r56-video",
+            "r56-rubric"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-12"
+        },
+        {
+          "id": "r56-sixty-six",
+          "proposition": "The tutorial's self-rated result near 66% is an objective quality measurement.",
+          "kind": "creator-recommendation",
+          "status": "unverified",
+          "sourceLocation": "06:18",
+          "assessment": "The creator discusses a lower assessed result but supplies no independently calibrated universal similarity measurement.",
+          "limits": "No blinded repeatability, population validity or measured perceptual threshold established.",
+          "references": [
+            "r56-video",
+            "r56-cook"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-12"
+        },
+        {
+          "id": "r56-time",
+          "proposition": "Longer autonomous agent runs systematically produce better design outcomes.",
+          "kind": "creator-recommendation",
+          "status": "unverified",
+          "sourceLocation": "07:31",
+          "assessment": "The documented Cook loop sets time floors for ambitious demonstrations and repeated revisions.",
+          "limits": "Marginal quality improvement, inference cost and model token consumption are not controlled in this video.",
+          "references": [
+            "r56-video",
+            "r56-cook"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-12"
+        },
+        {
+          "id": "r56-slop",
+          "proposition": "A prohibition list alone can eliminate generic AI design.",
+          "kind": "creator-recommendation",
+          "status": "unverified",
+          "sourceLocation": "08:42",
+          "assessment": "The source advocates rejecting recurring aesthetic tropes. A list can be useful as targeted feedback, not as a universal design theory.",
+          "limits": "Style appropriateness is contextual; some banned elements may be correct for a specific identity.",
+          "references": [
+            "r56-video",
+            "r56-cook"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-12"
+        },
+        {
+          "id": "r56-stepwise",
+          "proposition": "Building one section and then motion incrementally improves reviewability.",
+          "kind": "creator-recommendation",
+          "status": "unverified",
+          "sourceLocation": "10:15",
+          "assessment": "The source recommends staged construction so individual defects can be corrected.",
+          "limits": "No controlled comparison demonstrates that a staged process always saves effort.",
+          "references": [
+            "r56-video",
+            "r56-cook"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-12"
+        },
+        {
+          "id": "r56-critics",
+          "proposition": "Fresh-context AI critics provide an independent and reliable stop signal.",
+          "kind": "creator-recommendation",
+          "status": "unverified",
+          "sourceLocation": "11:51",
+          "assessment": "The creator skill uses fresh-context side-by-side critics with median scoring and calibration notes.",
+          "limits": "Correlated model bias and uncertain aesthetic rubrics can yield consistently wrong scores.",
+          "references": [
+            "r56-video",
+            "r56-cook"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-12"
+        },
+        {
+          "id": "r56-cook",
+          "proposition": "Cook specifies a reproducible visual build/compare/critic/fix procedure.",
+          "kind": "creator-recommendation",
+          "status": "unverified",
+          "sourceLocation": "12:53",
+          "assessment": "The public repository specifies a brief, shots, stills, comparison images and a rounds ledger.",
+          "limits": "An implemented procedure does not prove the resulting product is excellent or accessible.",
+          "references": [
+            "r56-video",
+            "r56-cook"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-12"
+        }
+      ],
+      "references": [
+        {
+          "id": "r56-video",
+          "title": "Creator Of Taste Skill Just Revealed His Entire AI Design Workflow",
+          "author": "AI LABS",
+          "publisher": "YouTube",
+          "url": "https://www.youtube.com/watch?v=-bv2xKQzZio",
+          "publicationDate": "unknown",
+          "eventDate": null,
+          "location": "00:00–15:21 creator tutorial and chapter labels",
+          "sourceType": "creator video",
+          "independence": "Creator tutorial and linked promotion, not a controlled independent design-quality experiment.",
+          "evidenceFamily": "r56-video",
+          "checkedAt": "2026-11-12T16:30:00Z",
+          "dateNote": "Exact publication date not independently verified."
+        },
+        {
+          "id": "r56-cook",
+          "title": "Cook: visual build and critique loop",
+          "author": "Leon Lin",
+          "publisher": "GitHub",
+          "url": "https://github.com/Leonxlnx/cook",
+          "publicationDate": "unknown",
+          "eventDate": null,
+          "location": "README and SKILL.md, public implementation",
+          "sourceType": "creator repository",
+          "independence": "Primary author specification with self-reported examples, not independently verified outcome evidence.",
+          "evidenceFamily": "r56-cook",
+          "checkedAt": "2026-11-12T16:30:00Z",
+          "dateNote": "Living repository; checked on November 12, 2026."
+        },
+        {
+          "id": "r56-rubric",
+          "title": "Cook target, bar and calibration",
+          "author": "Leon Lin",
+          "publisher": "GitHub",
+          "url": "https://github.com/Leonxlnx/cook/blob/main/references/target-and-bar.md",
+          "publicationDate": "unknown",
+          "eventDate": null,
+          "location": "Stretch target and measured-versus-eyeballed definitions",
+          "sourceType": "creator documentation",
+          "independence": "Primary methodology, not validation of subjective scoring.",
+          "evidenceFamily": "r56-rubric",
+          "checkedAt": "2026-11-12T16:30:00Z",
+          "dateNote": "Living documentation; checked on November 12, 2026."
+        }
+      ],
+      "relationships": [
+        {
+          "target": "reader:when-every-ai-website-looks-good",
+          "type": "companion",
+          "reason": "Reader #50 questions how polished AI websites converge into a generic visual language. Cook proposes visual references and iterative criticism as a response, while neither source establishes objective taste measurement.",
+          "provenance": [
+            "/the-taste-is-in-the-loop-not-the-prompt/",
+            "/when-every-ai-website-looks-good/"
+          ],
+          "basis": "curated-editorial-comparison",
+          "direction": "outgoing"
+        },
+        {
+          "target": "reader:the-small-fix-is-a-boundary",
+          "type": "companion",
+          "reason": "Reader #53 shows why a narrow responsive fix requires direct visual and accessibility checks. Cook expands the iteration idea, but aspirational critic scores cannot substitute for actual device and text-scaling validation.",
+          "provenance": [
+            "/the-taste-is-in-the-loop-not-the-prompt/",
+            "/the-small-fix-is-a-boundary/"
+          ],
+          "basis": "curated-editorial-comparison",
+          "direction": "outgoing"
+        },
+        {
+          "target": "reader:replacing-cowork-is-a-test-not-a-title",
+          "type": "companion",
+          "reason": "Reader #55 separates a creator demonstration from sustained workflow proof. The same boundary applies to Cook: repository mechanics are inspectable, while comparative product-quality outcomes remain unverified.",
+          "provenance": [
+            "/the-taste-is-in-the-loop-not-the-prompt/",
+            "/replacing-cowork-is-a-test-not-a-title/"
+          ],
+          "basis": "curated-editorial-comparison",
+          "direction": "outgoing"
+        }
+      ],
+      "relationshipDisposition": "Source-specific editorial comparisons are proposed with Reader #50, #53 and #55; these are thematic analysis companions, not independent verification of Cook results.",
+      "relationshipReview": {
+        "reviewedAt": "2026-11-12",
+        "reviewedCatalogSize": 56,
+        "decision": "linked",
+        "reviewedTargets": [
+          "reader:when-every-ai-website-looks-good",
+          "reader:the-small-fix-is-a-boundary",
+          "reader:replacing-cowork-is-a-test-not-a-title"
+        ],
+        "rationale": "Three proposed source-specific analogies were compared against the published Reader theses across the catalog. Independent editorial acceptance and owner admission remain pending; no experimental corroboration or reciprocal edge is asserted."
+      },
+      "sharePlaneRelationships": [
+        {
+          "title": "Demo Debt",
+          "url": "https://shareplane.malott.ai/artifacts/demo-debt/",
+          "type": "companion",
+          "reason": "Demo Debt distinguishes a convincing visible demonstration from sustained operating value. Cook is a procedure and selected demos, not yet evidence of cost-effective production design quality.",
+          "basis": "curated-editorial-comparison"
+        }
+      ],
+      "sharePlaneReview": {
+        "reviewedAt": "2026-11-12",
+        "decision": "linked",
+        "rationale": "One existing live SharePlane Work is proposed as a separate conceptual comparison, not source corroboration. Independent relationship acceptance and owner admission remain pending."
+      },
+      "review": {
+        "status": "PENDING independent source/privacy/editorial review; draft only",
+        "reviewer": "unassigned independent reviewer",
+        "checkedAt": "2026-11-12T16:30:00Z",
+        "scope": "Nine source claims, nine source-map points and eight video chapter cues, creator Cook repository, visual/responsive checks and two separate relationship planes",
+        "findings": "Authored draft and source mapping prepared. Independent acceptance and owner publication authorization do not yet exist."
+      },
+      "revisionHistory": [
+        {
+          "at": "2026-11-12T16:30:00Z",
+          "reason": "First source-grounded Reader #56 candidate against the #55 canonical layout; no publication authority."
+        }
+      ],
+      "editorialOrder": 55,
+      "archiveCall": {
+        "label": "Test the design loop",
+        "text": "Choose one real interface and strong references. Compare before-and-after screenshots, mobile and keyboard behavior, owner acceptance, and cost within a fixed iteration budget. Judge results, not a claimed 99% score."
+      },
+      "legacyReceipt": {
+        "schema": "ghostmesh-reader-receipt-v2",
+        "createdAt": "2026-11-12T16:30:00Z",
+        "source": {
+          "url": "https://www.youtube.com/watch?v=-bv2xKQzZio",
+          "videoId": "-bv2xKQzZio"
+        },
+        "reasonPack": {
+          "verification": "not-claimed"
+        },
+        "sourceInspection": {
+          "method": "Public video metadata, description, chapter markers, and full English automatic VTT inspected; creator GitHub skill and rubric checked separately.",
+          "timedAidSha256": "ae6ac9eb784cf234951f2814bc66aef2f18ce13d1c4d56e9b38c9ed2ffcbcbbe",
+          "coverage": "15:21 source with machine-caption cue navigation; visual and listening claims not certified.",
+          "caveat": "Machine text is not certified speech and the referenced design examples were not reproduced.",
+          "publicationBoundary": "Original analysis and sanitized hashes only; no raw captions, media or private machine paths."
+        },
+        "custody": {
+          "status": "public-caption-aid-only",
+          "note": "Public automatic-caption capture identified by SHA-256; not a verified private original-media ReasonPack."
+        }
+      },
+      "editorialDepth": {
+        "schemaVersion": 1,
+        "receiptPath": "content/editorial-depth/the-taste-is-in-the-loop-not-the-prompt.json"
+      }
     }
   ],
   "featuredId": "reader:ask-for-the-outcome-keep-the-boundary"
