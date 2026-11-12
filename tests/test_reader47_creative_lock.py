@@ -74,8 +74,10 @@ class Reader47CreativeLock(unittest.TestCase):
     def test_standard_player_and_both_compact_surfaces(self):
         self.assertNotIn('<iframe', self.page)
         self.assertIn('data-video-id="' + VIDEO + '"', self.page)
-        for rel in ['index.html', 'readers/index.html']:
-            self.assertIn('data-source-id="' + VIDEO + '"', (ROOT / 'site' / rel).read_text())
+        # The home surface is a bounded recent-Reader selection, so Reader #47
+        # eventually rotates out; the full archive must continue to carry it.
+        self.assertIn('data-source-id="' + VIDEO + '"', (ROOT / 'site/readers/index.html').read_text())
+        self.assertIn('data-source-id="', (ROOT / 'site/index.html').read_text())
         self.assertEqual(8, len(self.record['source']['creatorChapters']))
         self.assertIn('www.youtube-nocookie.com/embed/', self.page)
         self.assertEqual(1, self.page.count('id="at-a-glance"'))

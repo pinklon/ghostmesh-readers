@@ -3,11 +3,11 @@
   "scope": "Local public editorial reading routes; no independent corroboration or cross-site graph admission.",
   "authority": "catalog-curated-editorial",
   "visibility": "public",
-  "readerCount": 52,
-  "assessmentCount": 52,
-  "relationshipCount": 115,
-  "sharePlaneRelationshipCount": 20,
-  "sharePlaneReviewCount": 12,
+  "readerCount": 53,
+  "assessmentCount": 53,
+  "relationshipCount": 118,
+  "sharePlaneRelationshipCount": 21,
+  "sharePlaneReviewCount": 13,
   "sharePlaneEdges": [
     {
       "from": "reader:when-code-gets-cheap-where-does-the-work-wait",
@@ -167,6 +167,14 @@
       "url": "https://shareplane.malott.ai/artifacts/the-semantic-operating-system/",
       "type": "extends",
       "reason": "The published Work’s account of meaning, state, evidence, authority and recovery conceptually extends the Reader’s distinction between frontier-model capability and effective delegated permission. It does not demonstrate the proposed architecture against the reported incident or validate the video’s forecasts.",
+      "basis": "curated-editorial-comparison"
+    },
+    {
+      "from": "reader:the-small-fix-is-a-boundary",
+      "title": "Demo Debt",
+      "url": "https://shareplane.malott.ai/artifacts/demo-debt/",
+      "type": "companion",
+      "reason": "A functioning demo does not establish a sustained user-tested service. This comparison contextualizes Cole's verification and scope advice, without testing any of his eleven claimed improvements.",
       "basis": "curated-editorial-comparison"
     }
   ],
@@ -1008,6 +1016,23 @@
           "reader:the-engine-is-not-the-service"
         ],
         "rationale": "A fresh independent reviewer screened all 51 prior Reader theses and accepted these three source-specific comparisons. On November 11, 2026 the owner separately authorized publication and graph admission. The relationships remain editorial and must not be counted as corroboration of the source claims."
+      }
+    },
+    {
+      "id": "reader:the-small-fix-is-a-boundary",
+      "slug": "the-small-fix-is-a-boundary",
+      "title": "The Small Fix Is a Boundary",
+      "url": "https://youtube.shareplane.malott.ai/the-small-fix-is-a-boundary/",
+      "review": {
+        "reviewedAt": "2026-11-11",
+        "reviewedCatalogSize": 52,
+        "decision": "linked",
+        "reviewedTargets": [
+          "reader:more-skills-worse-agents",
+          "reader:make-good-work-inspectable",
+          "reader:autonomy-needs-an-interface"
+        ],
+        "rationale": "Three owner-approved draft destinations; the Autonomy edge is provisionally retyped companion after independent reviewer found no substantive disagreement. Final graph admission requires owner confirmation and independent acceptance."
       }
     }
   ],
@@ -2388,6 +2413,42 @@
       "provenance": [
         "/better-models-still-need-boundaries/",
         "/the-engine-is-not-the-service/"
+      ],
+      "basis": "curated-editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:the-small-fix-is-a-boundary",
+      "to": "reader:more-skills-worse-agents",
+      "type": "companion",
+      "reason": "Cole's rule-pruning advice complements David Ondrej's concern about agent skill sprawl without validating a deletion percentage or general payoff.",
+      "provenance": [
+        "/the-small-fix-is-a-boundary/",
+        "/more-skills-worse-agents/"
+      ],
+      "basis": "curated-editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:the-small-fix-is-a-boundary",
+      "to": "reader:make-good-work-inspectable",
+      "type": "companion",
+      "reason": "The source's initial fixes ask for evidence of completion and real user-facing validation; the companion develops inspectable work without independently proving Cole's tips.",
+      "provenance": [
+        "/the-small-fix-is-a-boundary/",
+        "/make-good-work-inspectable/"
+      ],
+      "basis": "curated-editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:the-small-fix-is-a-boundary",
+      "to": "reader:autonomy-needs-an-interface",
+      "type": "companion",
+      "reason": "Both Readers require downstream authorization beyond prose rules or isolated hooks. This is a complementary treatment of effective authority, not a disagreement or independent corroboration.",
+      "provenance": [
+        "/the-small-fix-is-a-boundary/",
+        "/autonomy-needs-an-interface/"
       ],
       "basis": "curated-editorial-comparison",
       "direction": "outgoing"

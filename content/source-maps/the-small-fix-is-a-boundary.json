@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 1,
+  "readerId": "reader:the-small-fix-is-a-boundary",
+  "sourceId": "hMEQ4rdaOLw",
+  "sourceAidSha256": "af6c28c91e1a4e4097b6cee09e82bce8405b27745f473d59418a2e0261411cac",
+  "points": [
+    {
+      "atSeconds": 109,
+      "sectionId": "premature-completion",
+      "claimIds": [
+        "r53-premature"
+      ],
+      "cueParaphrase": "The creator describes premature task-completion claims and proposes adversarial self-checks or fresh reviewers.",
+      "privateAidCheck": "Retained large-v3 CPU machine transcript inspected by publisher. Approximate topic cue, not independently listening-certified speech, exact quotation or reproduced visual demonstration."
+    },
+    {
+      "atSeconds": 287,
+      "sectionId": "proof-not-assertion",
+      "claimIds": [
+        "r53-proof"
+      ],
+      "cueParaphrase": "The creator asks agents to show commands, outputs and visual proof of implementation rather than assert success.",
+      "privateAidCheck": "Retained large-v3 CPU machine transcript inspected by publisher. Approximate topic cue, not independently listening-certified speech, exact quotation or reproduced visual demonstration."
+    },
+    {
+      "atSeconds": 388,
+      "sectionId": "test-real-app",
+      "claimIds": [
+        "r53-browser"
+      ],
+      "cueParaphrase": "The creator argues that green unit tests can miss broken application journeys and recommends real user-path checks.",
+      "privateAidCheck": "Retained large-v3 CPU machine transcript inspected by publisher. Approximate topic cue, not independently listening-certified speech, exact quotation or reproduced visual demonstration."
+    },
+    {
+      "atSeconds": 508,
+      "sectionId": "enforce-rules",
+      "claimIds": [
+        "r53-hooks"
+      ],
+      "cueParaphrase": "The creator proposes executable event hooks for selected rules that agents may ignore when written only as prose.",
+      "privateAidCheck": "Retained large-v3 CPU machine transcript inspected by publisher. Approximate topic cue, not independently listening-certified speech, exact quotation or reproduced visual demonstration."
+    },
+    {
+      "atSeconds": 757,
+      "sectionId": "prune-instructions",
+      "claimIds": [
+        "r53-pruning"
+      ],
+      "cueParaphrase": "Following a sponsor interval, the creator recommends removing redundant global rules and testing whether they are needed.",
+      "privateAidCheck": "Retained large-v3 CPU machine transcript inspected by publisher. Approximate topic cue, not independently listening-certified speech, exact quotation or reproduced visual demonstration."
+    },
+    {
+      "atSeconds": 844,
+      "sectionId": "reset-context",
+      "claimIds": [
+        "r53-handoff"
+      ],
+      "cueParaphrase": "The creator proposes short task sessions and a concise handoff to manage long-conversation context degradation.",
+      "privateAidCheck": "Retained large-v3 CPU machine transcript inspected by publisher. Approximate topic cue, not independently listening-certified speech, exact quotation or reproduced visual demonstration."
+    },
+    {
+      "atSeconds": 944,
+      "sectionId": "preserve-owner-decisions",
+      "claimIds": [
+        "r53-authority"
+      ],
+      "cueParaphrase": "The creator distinguishes important human decisions from routine agent implementation choices.",
+      "privateAidCheck": "Retained large-v3 CPU machine transcript inspected by publisher. Approximate topic cue, not independently listening-certified speech, exact quotation or reproduced visual demonstration."
+    },
+    {
+      "atSeconds": 1047,
+      "sectionId": "contain-scope",
+      "claimIds": [
+        "r53-scope"
+      ],
+      "cueParaphrase": "The creator criticizes changes that turn narrow requests into unrelated refactors or abstractions.",
+      "privateAidCheck": "Retained large-v3 CPU machine transcript inspected by publisher. Approximate topic cue, not independently listening-certified speech, exact quotation or reproduced visual demonstration."
+    },
+    {
+      "atSeconds": 1137,
+      "sectionId": "budget-delegation",
+      "claimIds": [
+        "r53-delegation"
+      ],
+      "cueParaphrase": "The creator argues for deliberately scoped subagents and cost-aware delegation.",
+      "privateAidCheck": "Retained large-v3 CPU machine transcript inspected by publisher. Approximate topic cue, not independently listening-certified speech, exact quotation or reproduced visual demonstration."
+    },
+    {
+      "atSeconds": 1267,
+      "sectionId": "risk-proportionate-tests",
+      "claimIds": [
+        "r53-risk"
+      ],
+      "cueParaphrase": "The creator recommends scaling test effort to consequence and blast radius.",
+      "privateAidCheck": "Retained large-v3 CPU machine transcript inspected by publisher. Approximate topic cue, not independently listening-certified speech, exact quotation or reproduced visual demonstration."
+    },
+    {
+      "atSeconds": 1364,
+      "sectionId": "park-tangents",
+      "claimIds": [
+        "r53-tangents"
+      ],
+      "cueParaphrase": "The creator recommends recording valuable side discoveries without abandoning the current task or creating speculative follow-up sprawl.",
+      "privateAidCheck": "Retained large-v3 CPU machine transcript inspected by publisher. Approximate topic cue, not independently listening-certified speech, exact quotation or reproduced visual demonstration."
+    }
+  ]
+}
