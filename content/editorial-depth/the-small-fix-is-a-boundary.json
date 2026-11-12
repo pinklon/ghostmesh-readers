@@ -4,10 +4,10 @@
   "sourceId": "hMEQ4rdaOLw",
   "sourceDigest": "7f856319461c08fbcef40cefd7e349ea83b6321bdfe150a26804cf3f17402709",
   "sourceAidSha256": "af6c28c91e1a4e4097b6cee09e82bce8405b27745f473d59418a2e0261411cac",
-  "articleSha256": "e2394954dfd5fd9a1fca9311815f198c7d38dd4cb54ca270ff6848824cab0c01",
+  "articleSha256": "c8abb56b8990a19310ee062667343d9ec585ddd29dadfd07785aa9ec6acc8488",
   "evidenceRevision": "452690289729b6544fc19a6c3191f770ef4088ce43ebdbcd4db7b360d6731042",
   "sourceMapEvidenceSha256": "414c40b8668a48e68abc25ffda502cd63528a1ab3138933de082d8df015e7cab",
-  "reviewEvidenceSha256": "5e542d7203fa2470d88ce912209764bc699460ef60df0ad8f741cc352781ffee",
+  "reviewEvidenceSha256": "19626525e91fdeb146682e348bc89faf6acbf2d5a68d25a1fb4d2e3099333cfe",
   "candidateAuthor": "pinklon",
   "complexity": {
     "tier": "extended",
@@ -152,21 +152,22 @@
   },
   "independentCorroboration": "none",
   "ownerDecision": {
-    "kind": "conversation",
-    "owner": "Tony Malott",
-    "approval": "Owner explicitly approved the Autonomy Needs an Interface companion classification and production publication of Reader #53 at exact independently reviewed commit f33a9edc9a0671843b9180d4dd78bf04999b3d4f, subject to existing release safeguards.",
-    "approvalDate": "2026-11-11",
-    "articleSha256": "e2394954dfd5fd9a1fca9311815f198c7d38dd4cb54ca270ff6848824cab0c01",
-    "evidenceRevision": "452690289729b6544fc19a6c3191f770ef4088ce43ebdbcd4db7b360d6731042"
+    "pullNumber": 155,
+    "commentId": null
   },
-  "decision": "accept",
+  "decision": "hold",
   "gaps": [
+    {
+      "type": "scope",
+      "severity": "blocking",
+      "rationale": "Owner approval of the revised authored HTML and refreshed acceptance binding is pending for PR155. Previous production approval does not automatically authorize these changed bytes."
+    },
     {
       "type": "evidence",
       "severity": "nonblocking",
-      "rationale": "Machine ASR is not listening or frame certification. No measured intervention-effectiveness experiment was replicated."
+      "rationale": "Prior machine-ASR and unreplicated-effectiveness limits are unchanged; this bounded review is not new source certification."
     }
   ],
-  "decisionRationale": "Independent source, privacy, editorial-depth, and responsive review accepted the exact authored article; owner subsequently approved the corrected companion edge and authorized publication of the reviewed candidate. Remaining ASR and unreplicated-effectiveness limits are disclosed as nonblocking.",
-  "assessedAt": "2026-11-12T04:46:28.124985+00:00"
+  "decisionRationale": "Independent mobile-polish review is separate from owner acceptance of new authored bytes. Preserve release hold until the appropriate owner decision and receipt integration.",
+  "assessedAt": "2026-11-12T12:19:48.107635+00:00"
 }
