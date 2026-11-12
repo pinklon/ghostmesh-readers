@@ -1,0 +1,91 @@
+{
+  "schema": "scout-existing-capabilities-v0",
+  "status": "RESEARCH_BASELINE_FROM_EXISTING_SOURCE_ASSESSMENTS_NOT_LIVE_SERVICE_AUDIT",
+  "publication_authorized": false,
+  "outreach_authorized": false,
+  "capabilities": [
+    {
+      "id": "pr-review",
+      "label": "Parallel PR review",
+      "current": "GitHub/Codex review and custody workflows exist; quantified fast parallel human PR triage not established",
+      "evidence": "research/scout-bottleneck-inspectorraget-source-review-v0.md",
+      "keywords": [
+        "code review",
+        "pull requests",
+        "pull request",
+        "diff viewer",
+        "background agents",
+        "reviewing pull"
+      ],
+      "question": "Would a grouped read-only review surface cut context switching and review mistakes?",
+      "known_gap": "No measured operator-side review-speed baseline",
+      "anti_claim": "Fast navigation does not grant merge authority or prove review accuracy"
+    },
+    {
+      "id": "evaluation-visibility",
+      "label": "Evidence inspection",
+      "current": "Scout already has source-revision, claim-impact, dissent and decision views",
+      "evidence": "research/scout-external-implementation-gap-result-v0.md",
+      "keywords": [
+        "evaluation",
+        "inspector",
+        "annotator",
+        "rag",
+        "retrieval",
+        "benchmark"
+      ],
+      "question": "What additional instance-level evidence does the work expose beyond Scout's current views?",
+      "known_gap": "Human error-detection gains and schema-preservation tests are not established",
+      "anti_claim": "An evaluation dashboard is not itself a provenance or correctness system"
+    },
+    {
+      "id": "agent-memory",
+      "label": "Agent memory and continuity",
+      "current": "Source and decision histories exist; actual runtime memory-use benefits unverified",
+      "evidence": "research/scout-three-way-extra-work-result-v0.md",
+      "keywords": [
+        "memory",
+        "mem0",
+        "meeting skills",
+        "agent skill",
+        "persistent"
+      ],
+      "question": "Does this work preserve usable failures or context across agent sessions?",
+      "known_gap": "No measured cross-session correctness benefit",
+      "anti_claim": "Persisting data does not automatically mean an agent uses it correctly"
+    },
+    {
+      "id": "change-observation",
+      "label": "Change detection",
+      "current": "Source-revision witnesses, history and claim-impact prototypes exist",
+      "evidence": "research/scout-observable-feedback-evaluation-v0.md",
+      "keywords": [
+        "change bot",
+        "changes",
+        "website",
+        "alerts",
+        "patchnotes",
+        "monitor"
+      ],
+      "question": "What does the outside work detect that revision-based Scout does not?",
+      "known_gap": "Coverage and meaningful-change classification beyond current collector not measured",
+      "anti_claim": "More notifications can make discovery noisier"
+    },
+    {
+      "id": "entity-provenance",
+      "label": "Entity and source provenance",
+      "current": "Source-linked trail records and conservative identity handling exist",
+      "evidence": "research/scout-independent-reconciliation-v0.md",
+      "keywords": [
+        "entity resolution",
+        "query answering",
+        "knowledge bases",
+        "annotations",
+        "context"
+      ],
+      "question": "Can this approach reduce source/identity confusion without collapsing distinct authors?",
+      "known_gap": "Disambiguation and provenance gains have not been validated",
+      "anti_claim": "Shared bylines are not proof of a single real-world person"
+    }
+  ]
+}
