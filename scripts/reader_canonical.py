@@ -33,7 +33,7 @@ class Structure(HTMLParser):
             self.stylesheets.add(attrs.get("href"))
         if tag == "table":
             wrapped = any("table-wrap" in parent for parent in self.ancestors)
-            if not (wrapped or classes.intersection({"comparison", "gm-responsive-table"})):
+            if not wrapped:
                 self.unstyled_tables += 1
         if tag not in {"area", "base", "br", "col", "embed", "hr", "img", "input",
                        "link", "meta", "param", "source", "track", "wbr"}:

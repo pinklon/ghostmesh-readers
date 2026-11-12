@@ -55,6 +55,8 @@ class CanonicalReaderContract(unittest.TestCase):
                   "editorialOrder": 53}
         plain = self.html.replace('</article>', '<table><tr><td>A</td><td>B</td><td>C</td></tr></table></article>', 1)
         self.assertIn("unstyled table", " ".join(errors(future, plain)))
+        styled_but_unwrapped = plain.replace('<table>', '<table class="comparison">', 1)
+        self.assertIn("unstyled table", " ".join(errors(future, styled_but_unwrapped)))
         wrapped = self.html.replace('</article>', '<div class="table-wrap"><table class="comparison">'
                                     '<tr><td>A</td><td>B</td><td>C</td></tr></table></div></article>', 1)
         self.assertEqual([], errors(future, wrapped))
