@@ -1,0 +1,124 @@
+{
+  "schemaVersion": 1,
+  "readerId": "reader:the-home-repo-is-a-map-not-a-monorepo",
+  "sourceId": "hWe-j78vNpc",
+  "sourceDigest": "4cea1f18c2f1f3a83ac13f96c510d9b6978ebf8b92970b8fd03b1ccdc326f7a8",
+  "sourceAidSha256": "9fa88a70e81284ca6424cf8ebd9ee01bd680565e7356959fac1fc5aeb7dca44d",
+  "articleSha256": "fc111ab0134aa111258c6a4fa7e01ea563dbd212363a81b9dd2a78ccb9607523",
+  "evidenceRevision": "7a5cf37e091c03a3405fad268f855014dc5c542386f38b146ec3a15ae9a89ef4",
+  "sourceMapEvidenceSha256": "3aae2381aeb12f7c4a6f49f877593ea9b109d54b127179da7b55ed2e250bef8a",
+  "reviewEvidenceSha256": "bf14ef7a2f147b5007019f7ee8e540e7119d2967d482c13953c7bc2432cec31d",
+  "candidateAuthor": "pinklon",
+  "complexity": {
+    "tier": "extended",
+    "factors": [
+      "Five source claims across cross-repo navigation, shared skills and service authority",
+      "Three Reader comparisons and relevant Work candidates",
+      "Private source integrity and responsive presentation"
+    ],
+    "rationale": "Short source still warrants extended review because multi-repository/tool authority and source-role distinctions interact."
+  },
+  "sourceMap": [
+    {
+      "atSeconds": 27,
+      "sectionId": "multi-repo-problem",
+      "claimIds": [
+        "r54-dup"
+      ],
+      "rationale": "Pocock illustrates the shared-instruction problem across storefront, payments and other repositories. Independently checked against retained full machine transcript, VTT neighborhood and creator chapter metadata; not exact quotation or measured outcome."
+    },
+    {
+      "atSeconds": 140,
+      "sectionId": "home-repo-entry",
+      "claimIds": [
+        "r54-entry"
+      ],
+      "rationale": "The creator proposes launching agents in a shared home repository with pointers to other repositories. Independently checked against retained full machine transcript, VTT neighborhood and creator chapter metadata; not exact quotation or measured outcome."
+    },
+    {
+      "atSeconds": 173,
+      "sectionId": "navigation-and-worktrees",
+      "claimIds": [
+        "r54-worktrees"
+      ],
+      "rationale": "The creator tours path-based navigation, cloning absent repos and separate worktrees. Independently checked against retained full machine transcript, VTT neighborhood and creator chapter metadata; not exact quotation or measured outcome."
+    },
+    {
+      "atSeconds": 282,
+      "sectionId": "scale-and-monorepo",
+      "claimIds": [
+        "r54-scale"
+      ],
+      "rationale": "The creator discusses tens versus hundreds of repos and his monorepo preference. Independently checked against retained full machine transcript, VTT neighborhood and creator chapter metadata; not exact quotation or measured outcome."
+    },
+    {
+      "atSeconds": 343,
+      "sectionId": "wiki-and-tooling",
+      "claimIds": [
+        "r54-tools"
+      ],
+      "rationale": "The creator describes his Markdown wiki and integrations with messaging, calendar and code services. Independently checked against retained full machine transcript, VTT neighborhood and creator chapter metadata; not exact quotation or measured outcome."
+    }
+  ],
+  "assessment": {
+    "sourceCoverage": {
+      "disposition": "covered",
+      "rationale": "Complete machine transcript covers five substantive chapters and six creator navigation markers. Opening anecdote and closing course promotion do not become evidence; chapter cues are not verbatim time certification."
+    },
+    "supportingArgument": {
+      "disposition": "covered",
+      "rationale": "Separates shared steering/versioning, pointers and worktrees, scale disclosure, monorepo preference and connected tooling while preserving project ownership."
+    },
+    "evidenceRoles": {
+      "disposition": "covered",
+      "rationale": "Creator article and video are related attribution sources. Git and Anthropic documentation support mechanisms, not measured home-repo outcomes or universally identical harness behavior."
+    },
+    "counterargument": {
+      "disposition": "covered",
+      "rationale": "Central maps can become stale duplicate instruction stores and broad tool catalogs can increase noise or access exposure. Existing per-repo workflow remains a reasonable fallback."
+    },
+    "tradeoffs": {
+      "disposition": "covered",
+      "rationale": "Shared maintenance and discovery benefit must be balanced against staleness, harness differences, permission concentration and ownership visibility; no automatic central migration is recommended."
+    },
+    "falsifiability": {
+      "disposition": "covered",
+      "rationale": "Proposes one matched authorized task with consistent model/revisions/permissions and observations of repo choice, retrieved instructions, scope, review effort and owner interventions. Proposal is not executed evidence."
+    },
+    "originalSynthesis": {
+      "disposition": "covered",
+      "rationale": "A shared map and knowledge layer can aid navigation while destination-level authority, CI, owners and revocation stay independently enforceable."
+    },
+    "performance": {
+      "disposition": "covered",
+      "rationale": "No controlled completion-rate or security improvement is established by creator walkthrough. The proposed trial measures operational outcomes rather than asserting a payoff."
+    },
+    "economics": {
+      "disposition": "covered",
+      "rationale": "Reduced duplicate maintenance and irrelevant context are plausible benefits, but no measured cost savings are asserted. Review effort and stale guidance can offset any benefit."
+    },
+    "threatGovernance": {
+      "disposition": "covered",
+      "rationale": "Connected tools and repositories preserve service credentials, delegated scope, review and downstream permission checks. File discoverability is never treated as action authority."
+    }
+  },
+  "independentCorroboration": "none",
+  "ownerDecision": {
+    "kind": "conversation",
+    "owner": "Tony Malott",
+    "approval": "Owner explicitly approved publication of Reader #54, The Home Repo Is a Map, Not a Monorepo, using independently reviewed article SHA-256 fc111ab0134aa111258c6a4fa7e01ea563dbd212363a81b9dd2a78ccb9607523, retaining the three proposed Reader relationships as unadmitted editorial comparisons and no SharePlane Work edge. Owner authorized normal receipt integration, protected merge and production publication of PR #157 subject to unchanged source bytes and passing exact-head checks.",
+    "approvalDate": "2026-11-12",
+    "articleSha256": "fc111ab0134aa111258c6a4fa7e01ea563dbd212363a81b9dd2a78ccb9607523",
+    "evidenceRevision": "7a5cf37e091c03a3405fad268f855014dc5c542386f38b146ec3a15ae9a89ef4"
+  },
+  "decision": "accept",
+  "gaps": [
+    {
+      "type": "evidence",
+      "severity": "nonblocking",
+      "rationale": "Source captions may contain recognition errors; full listening, visual-demo reproduction and independent performance replication were not performed."
+    }
+  ],
+  "decisionRationale": "Independent reviewer accepted the exact source-grounded article, mapped claims, private-source boundary, and canonical responsive presentation. Owner subsequently explicitly approved the article, held the proposed Reader links unadmitted, declined new Work edges, and authorized existing release steps. Remaining machine-caption limitations are disclosed and nonblocking.",
+  "assessedAt": "2026-11-12T13:44:57.460751+00:00"
+}

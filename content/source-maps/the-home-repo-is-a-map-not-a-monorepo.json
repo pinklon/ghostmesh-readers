@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "readerId": "reader:the-home-repo-is-a-map-not-a-monorepo",
+  "sourceId": "hWe-j78vNpc",
+  "sourceAidSha256": "9fa88a70e81284ca6424cf8ebd9ee01bd680565e7356959fac1fc5aeb7dca44d",
+  "points": [
+    {
+      "atSeconds": 27,
+      "sectionId": "multi-repo-problem",
+      "claimIds": [
+        "r54-dup"
+      ],
+      "cueParaphrase": "Pocock illustrates the shared-instruction problem across storefront, payments and other repositories.",
+      "privateAidCheck": "Verified source-caption ReasonPack read; creator chapter marker is a navigation cue. Machine text is not independently listening-certified or a reproduced outcome."
+    },
+    {
+      "atSeconds": 140,
+      "sectionId": "home-repo-entry",
+      "claimIds": [
+        "r54-entry"
+      ],
+      "cueParaphrase": "The creator proposes launching agents in a shared home repository with pointers to other repositories.",
+      "privateAidCheck": "Verified source-caption ReasonPack read; creator chapter marker is a navigation cue. Machine text is not independently listening-certified or a reproduced outcome."
+    },
+    {
+      "atSeconds": 173,
+      "sectionId": "navigation-and-worktrees",
+      "claimIds": [
+        "r54-worktrees"
+      ],
+      "cueParaphrase": "The creator tours path-based navigation, cloning absent repos and separate worktrees.",
+      "privateAidCheck": "Verified source-caption ReasonPack read; creator chapter marker is a navigation cue. Machine text is not independently listening-certified or a reproduced outcome."
+    },
+    {
+      "atSeconds": 282,
+      "sectionId": "scale-and-monorepo",
+      "claimIds": [
+        "r54-scale"
+      ],
+      "cueParaphrase": "The creator discusses tens versus hundreds of repos and his monorepo preference.",
+      "privateAidCheck": "Verified source-caption ReasonPack read; creator chapter marker is a navigation cue. Machine text is not independently listening-certified or a reproduced outcome."
+    },
+    {
+      "atSeconds": 343,
+      "sectionId": "wiki-and-tooling",
+      "claimIds": [
+        "r54-tools"
+      ],
+      "cueParaphrase": "The creator describes his Markdown wiki and integrations with messaging, calendar and code services.",
+      "privateAidCheck": "Verified source-caption ReasonPack read; creator chapter marker is a navigation cue. Machine text is not independently listening-certified or a reproduced outcome."
+    }
+  ]
+}

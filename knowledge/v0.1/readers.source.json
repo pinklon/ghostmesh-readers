@@ -757,6 +757,18 @@
         "path": "site/the-small-fix-is-a-boundary/index.html",
         "sha256": "34182abfd9a1ff16d20b21a279d28fe2ac00d15bd40855e7aaf3eec13a2f59a6"
       }
+    },
+    {
+      "id": "urn:ghostmesh-readers:reader:the-home-repo-is-a-map-not-a-monorepo",
+      "type": "Reader",
+      "visibility": "public",
+      "epistemicStatus": "source-editorial",
+      "label": "The Home Repo Is a Map, Not a Monorepo",
+      "url": "https://youtube.shareplane.malott.ai/the-home-repo-is-a-map-not-a-monorepo/",
+      "source": {
+        "path": "site/the-home-repo-is-a-map-not-a-monorepo/index.html",
+        "sha256": "f6229a1ed67adf4c595ba6316b8a4a99e35331e913211671acc2a7a9f7df13e6"
+      }
     }
   ],
   "relationships": [

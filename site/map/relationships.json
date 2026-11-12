@@ -3,11 +3,11 @@
   "scope": "Local public editorial reading routes; no independent corroboration or cross-site graph admission.",
   "authority": "catalog-curated-editorial",
   "visibility": "public",
-  "readerCount": 53,
-  "assessmentCount": 53,
+  "readerCount": 54,
+  "assessmentCount": 54,
   "relationshipCount": 118,
   "sharePlaneRelationshipCount": 21,
-  "sharePlaneReviewCount": 13,
+  "sharePlaneReviewCount": 14,
   "sharePlaneEdges": [
     {
       "from": "reader:when-code-gets-cheap-where-does-the-work-wait",
@@ -1033,6 +1033,19 @@
           "reader:autonomy-needs-an-interface"
         ],
         "rationale": "Three owner-approved draft destinations; the Autonomy edge is provisionally retyped companion after independent reviewer found no substantive disagreement. Final graph admission requires owner confirmation and independent acceptance."
+      }
+    },
+    {
+      "id": "reader:the-home-repo-is-a-map-not-a-monorepo",
+      "slug": "the-home-repo-is-a-map-not-a-monorepo",
+      "title": "The Home Repo Is a Map, Not a Monorepo",
+      "url": "https://youtube.shareplane.malott.ai/the-home-repo-is-a-map-not-a-monorepo/",
+      "review": {
+        "reviewedAt": "2026-11-12",
+        "reviewedCatalogSize": 53,
+        "decision": "none",
+        "reviewedTargets": [],
+        "rationale": "All 53 Reader theses screened for directly relevant counterparts. Proposed editorial comparisons: tool-discovery continuity, skill metadata sprawl, and accountable authority. They remain authored proposed reading links, not admitted directed graph edges or corroboration. No other Reader edge is yet admitted without review."
       }
     }
   ],
