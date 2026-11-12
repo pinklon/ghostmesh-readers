@@ -104,7 +104,7 @@
           "proposition": "The tutorial's self-rated result near 66% is an objective quality measurement.",
           "kind": "creator-recommendation",
           "status": "unverified",
-          "sourceLocation": "04:58",
+          "sourceLocation": "06:18",
           "assessment": "The creator discusses a lower assessed result but supplies no independently calibrated universal similarity measurement.",
           "limits": "No blinded repeatability, population validity or measured perceptual threshold established.",
           "references": [
@@ -302,7 +302,7 @@
         "status": "PENDING independent source/privacy/editorial review; draft only",
         "reviewer": "unassigned independent reviewer",
         "checkedAt": "2026-11-12T16:30:00Z",
-        "scope": "Eight source claims, video chapter cues, creator Cook repository, visual/responsive checks and two separate relationship planes",
+        "scope": "Nine source claims, eight video chapter cues, creator Cook repository, visual/responsive checks and two separate relationship planes",
         "findings": "Authored draft and source mapping prepared. Independent acceptance and owner publication authorization do not yet exist."
       },
       "revisionHistory": [
