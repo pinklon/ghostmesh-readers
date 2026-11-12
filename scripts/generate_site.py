@@ -131,13 +131,13 @@ def governed_reader_connections(raw, r, byid):
   raise ValueError(f'{slug}: missing canonical related-thinking section')
  if raw.count('id="shareplane-thinking"'):
   raise ValueError(f'{slug}: authored SharePlane Work section conflicts with catalog projection')
- if r['relationships']:
-  reader_html=related(r,byid)
- else:
-  reader_html=('<section class="gm-related" id="related-thinking"><p class="gm-kicker">Continue the inquiry</p>'
-               '<h2>Related thinking</h2><p>'+esc(r['relationshipReview']['rationale'])+'</p>'
-               '<p class="gm-route-empty">No directed Reader connection admitted after source-specific review.</p>'
-               '<div class="gm-cards"></div></section>')
+ reader_html=related(r,byid)
+ if not r['relationships']:
+  # Preserve any separate independent-study cards for paper Readers even
+  # when no directed Reader edge was admitted.
+  reader_html=reader_html.replace('<div class="gm-cards">',
+      '<p class="gm-route-empty">No directed Reader connection admitted after source-specific review.</p>'
+      '<div class="gm-cards">',1)
  raw=raw[:related_section.start()]+reader_html+raw[related_section.end():]
  works=r.get('sharePlaneRelationships',[])
  work_rows=''.join('<li><span class="gm-work-kind">'+esc(x['type'])+'</span>'

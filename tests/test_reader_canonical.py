@@ -57,12 +57,19 @@ class CanonicalReaderContract(unittest.TestCase):
         self.assertEqual([], errors(r, page))
         self.assertIn("No SharePlane Work connection admitted", page)
 
-    def test_paper_independent_study_is_not_mistaken_for_a_reader_edge(self):
-        paper = self.future(source={"kind": "paper"}, references=[
-            {"sourceType": "independent-different-construct-study"}])
-        html = self.html.replace('<div class="gm-cards">', '<div class="gm-cards">'
-                                 '<article><div class="gm-related-copy">Independent study</div></article>', 1)
-        self.assertEqual([], errors(paper, html))
+    def test_paper_independent_study_with_zero_reader_edges_survives_projection(self):
+        extra = {**self.reference['references'][0],
+                 "id": "paper-independent-study", "title": "Independent Study",
+                 "url": "https://example.org/independent-study",
+                 "independence": "Separate study, not a Reader graph edge.",
+                 "sourceType": "independent-different-construct-study"}
+        paper = self.future(source={"kind": "paper"}, relationships=[],
+                            references=[*self.reference["references"], extra])
+        page = governed_reader_connections(self.authored, paper, self.byid).replace(
+            "<!--GM_EVIDENCE-->", evidence(paper))
+        self.assertIn('No directed Reader connection admitted', page)
+        self.assertIn('Independent Study', page)
+        self.assertEqual([], errors(paper, page))
 
     def test_nonvideo_provenance_can_still_render_both_graph_planes(self):
         article = self.authored.replace('id="reasonpack-provenance"', 'id="paper-provenance"', 1)
