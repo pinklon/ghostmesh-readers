@@ -1,0 +1,71 @@
+{
+  "schemaVersion": 1,
+  "readerId": "reader:replacing-cowork-is-a-test-not-a-title",
+  "sourceId": "0i9W42yV3lE",
+  "sourceAidSha256": "4c0ae71943fecfc8e4ae7d44892d31b202c24e22532e4de1e55c06d3efd9746e",
+  "points": [
+    {
+      "atSeconds": 0,
+      "sectionId": "source-framing",
+      "claimIds": [
+        "r55-position"
+      ],
+      "cueParaphrase": "The presenter positions Nod as a Cowork alternative based on schedules, provider choice and a later multiple-account comparison.",
+      "privateAidCheck": "Full private CPU large-v3 machine transcription and approximate cue inspected; not independently listening-certified, quotation-verified or reproduced on screen."
+    },
+    {
+      "atSeconds": 148,
+      "sectionId": "approval-and-browser",
+      "claimIds": [
+        "r55-vault"
+      ],
+      "cueParaphrase": "The presenter tours Vault import and login/card settings, without testing secret exfiltration protections.",
+      "privateAidCheck": "Full private CPU large-v3 machine transcription and approximate cue inspected; not independently listening-certified, quotation-verified or reproduced on screen."
+    },
+    {
+      "atSeconds": 354,
+      "sectionId": "model-and-apps",
+      "claimIds": [
+        "r55-sheets"
+      ],
+      "cueParaphrase": "The presenter initiates Google Sheets connection and returns to Nod after account authorization.",
+      "privateAidCheck": "Full private CPU large-v3 machine transcription and approximate cue inspected; not independently listening-certified, quotation-verified or reproduced on screen."
+    },
+    {
+      "atSeconds": 453,
+      "sectionId": "actual-demo",
+      "claimIds": [
+        "r55-schedule"
+      ],
+      "cueParaphrase": "The presenter defines a daily email follow-up summary and inspects scheduled-task controls; future scheduled success is not demonstrated.",
+      "privateAidCheck": "Full private CPU large-v3 machine transcription and approximate cue inspected; not independently listening-certified, quotation-verified or reproduced on screen."
+    },
+    {
+      "atSeconds": 649,
+      "sectionId": "approval-and-browser",
+      "claimIds": [
+        "r55-ebay"
+      ],
+      "cueParaphrase": "The presenter uses a logged-in browser to inspect Lincoln CDV sales, observes an engraving classification error and discusses offer-price uncertainty.",
+      "privateAidCheck": "Full private CPU large-v3 machine transcription and approximate cue inspected; not independently listening-certified, quotation-verified or reproduced on screen."
+    },
+    {
+      "atSeconds": 832,
+      "sectionId": "model-and-apps",
+      "claimIds": [
+        "r55-provider"
+      ],
+      "cueParaphrase": "The presenter shows Opus-to-Sonnet selection and other provider connections, while wishing for task-level model choice.",
+      "privateAidCheck": "Full private CPU large-v3 machine transcription and approximate cue inspected; not independently listening-certified, quotation-verified or reproduced on screen."
+    },
+    {
+      "atSeconds": 960,
+      "sectionId": "limits-in-source",
+      "claimIds": [
+        "r55-multi"
+      ],
+      "cueParaphrase": "The presenter shows two Gmail accounts and contrasts one-checkbox Cowork connector UI; other Cowork configurations were not assessed.",
+      "privateAidCheck": "Full private CPU large-v3 machine transcription and approximate cue inspected; not independently listening-certified, quotation-verified or reproduced on screen."
+    }
+  ]
+}
