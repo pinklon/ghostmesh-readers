@@ -118,6 +118,52 @@ def related(r,byid):
     out+=f'<article><span class="gm-related-index">↗</span><div class="gm-related-copy"><p class="gm-kicker">External study / outside the Reader graph</p><h3><a href="{esc(ref["url"])}">{esc(ref["title"])}</a></h3><p>{esc(ref["independence"])}</p></div><span class="gm-related-arrow" aria-hidden="true">↗</span></article>'
  out+='</div>'
  return out+'</section>'
+def governed_reader_connections(raw, r, byid):
+ """Project reviewed Reader/Work connections for #54 onward, without editing
+ independently accepted authored article bytes or introducing a second graph.
+ A justified zero renders visibly instead of looking like missing work.
+ """
+ if r.get('editorialOrder', -1) < 53:
+  return raw
+ slug=r['slug']
+ related_section=re.search(r'<section id="related-thinking" class="gm-related">.*?</section>',raw,re.S)
+ if not related_section:
+  raise ValueError(f'{slug}: missing canonical related-thinking section')
+ if raw.count('id="shareplane-thinking"'):
+  raise ValueError(f'{slug}: authored SharePlane Work section conflicts with catalog projection')
+ reader_html=related(r,byid)
+ if not r['relationships']:
+  # Preserve any separate independent-study cards for paper Readers even
+  # when no directed Reader edge was admitted.
+  reader_html=reader_html.replace('<div class="gm-cards">',
+      '<p class="gm-route-empty">No directed Reader connection admitted after source-specific review.</p>'
+      '<div class="gm-cards">',1)
+ raw=raw[:related_section.start()]+reader_html+raw[related_section.end():]
+ works=r.get('sharePlaneRelationships',[])
+ work_rows=''.join('<li><span class="gm-work-kind">'+esc(x['type'])+'</span>'
+                   '<a href="'+esc(x['url'])+'">'+esc(x['title'])+'</a>'
+                   '<span>'+esc(x['reason'])+'</span></li>' for x in works)
+ work_html=('<section id="shareplane-thinking" class="gm-work-routes"><h2>SharePlane Work comparison</h2>'
+            '<p class="gm-backmatter-note">Separately reviewed editorial connections, not independent validation of the video.</p>'
+            +('<ul class="gm-work-grid">'+work_rows+'</ul>' if works else
+              '<p class="gm-route-empty">No SharePlane Work connection admitted after separate review. '
+              +esc(r['sharePlaneReview']['rationale'])+'</p>')+'</section>')
+ provenance=re.search(r'<section\b(?=[^>]*id="reasonpack-provenance")(?=[^>]*class="gm-source-scope")[^>]*>',raw)
+ if not provenance:
+  # A non-video Reader may have a different provenance section. Keep Work
+  # comparisons in the reading column rather than inventing ReasonPack.
+  provenance=re.search(r'</article>\s*<aside class="rail">',raw)
+ if not provenance:
+  raise ValueError(f'{slug}: missing article/rail boundary for Work placement')
+ raw=raw[:provenance.start()]+work_html+raw[provenance.start():]
+ # Reader rail offers both admitted graph planes at the same visual level.
+ rail='<a href="#related-thinking">Related thinking</a>'
+ if raw.count(rail)!=1:
+  raise ValueError(f'{slug}: expected one Reader rail relationship link')
+ raw=raw.replace(rail,rail+'<a href="#shareplane-thinking">SharePlane Work</a>',1)
+ return raw
+
+
 def relationship_map(readers,byid):
  if __package__:
   from .map_design import relationship_map as render
@@ -331,6 +377,7 @@ def projections():
   depth_path=ROOT/'content/editorial-depth'/f'{r["slug"]}.json'
   depth=json.loads(depth_path.read_text()) if depth_path.exists() else None
   raw=projected_publication_status(raw,r,depth)
+  raw=governed_reader_connections(raw,r,byid)
   if r['slug']=='more-skills-worse-agents' and len(r.get('relationships',[]))==3 and len(r.get('sharePlaneRelationships',[]))==1:
    # Administrative public-stage labels. Preserve the exact accepted authored article.
    replacements={

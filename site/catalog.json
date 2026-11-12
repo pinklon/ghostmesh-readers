@@ -217,20 +217,66 @@
           "datePrecision": "day"
         }
       ],
-      "relationships": [],
-      "relationshipDisposition": "No Reader graph edges admitted in this draft. Three grounded cross-Reader comparisons appear in the article as explicit proposals, pending independent assessment and owner admission.",
+      "relationships": [
+        {
+          "target": "reader:the-cost-of-forgetting-where-the-tools-are",
+          "type": "companion",
+          "reason": "Pocock's home repo makes the discovery path stable across projects; this earlier Reader explains why agents repeatedly losing tool locations creates friction. The comparison supports navigation discipline, not a measurement of home-repo performance.",
+          "provenance": [
+            "/the-home-repo-is-a-map-not-a-monorepo/",
+            "/the-cost-of-forgetting-where-the-tools-are/"
+          ],
+          "basis": "curated-editorial-comparison",
+          "direction": "outgoing"
+        },
+        {
+          "target": "reader:more-skills-worse-agents",
+          "type": "companion",
+          "reason": "Shared skills become useful only when relevant instructions are selected and scoped. The earlier Reader challenges uncontrolled instruction sprawl; a home repository centralizes the location but does not by itself improve skill selection.",
+          "provenance": [
+            "/the-home-repo-is-a-map-not-a-monorepo/",
+            "/more-skills-worse-agents/"
+          ],
+          "basis": "curated-editorial-comparison",
+          "direction": "outgoing"
+        },
+        {
+          "target": "reader:autonomy-needs-an-interface",
+          "type": "companion",
+          "reason": "The home repo offers an entry point and links to execution surfaces, while this Reader keeps human decisions and downstream authorization at the actual destination. The comparison distinguishes discoverability from permission.",
+          "provenance": [
+            "/the-home-repo-is-a-map-not-a-monorepo/",
+            "/autonomy-needs-an-interface/"
+          ],
+          "basis": "curated-editorial-comparison",
+          "direction": "outgoing"
+        }
+      ],
+      "relationshipDisposition": "Three source-specific Reader connections are admitted as editorial companions. They compare design, discovery, and authority; none independently corroborates performance or safety results.",
       "relationshipReview": {
         "reviewedAt": "2026-11-12",
-        "reviewedCatalogSize": 53,
-        "decision": "none",
-        "reviewedTargets": [],
-        "rationale": "All 53 Reader theses screened for directly relevant counterparts. Proposed editorial comparisons: tool-discovery continuity, skill metadata sprawl, and accountable authority. They remain authored proposed reading links, not admitted directed graph edges or corroboration. No other Reader edge is yet admitted without review."
+        "reviewedCatalogSize": 55,
+        "decision": "linked",
+        "reviewedTargets": [
+          "reader:the-cost-of-forgetting-where-the-tools-are",
+          "reader:more-skills-worse-agents",
+          "reader:autonomy-needs-an-interface"
+        ],
+        "rationale": "Owner requested repair of the omitted graph admission on published Readers #54 and #55. Three authored candidate targets were checked against their published theses and given source-limited directional rationales; no reciprocal edges or factual corroboration is implied. Independent relationship review on the exact amended record remains an acceptance gate."
       },
-      "sharePlaneRelationships": [],
+      "sharePlaneRelationships": [
+        {
+          "title": "Your Second Brain Is Not a Production Architecture",
+          "url": "https://shareplane.malott.ai/artifacts/your-second-brain-is-not-a-production-architecture/",
+          "type": "companion",
+          "reason": "The published Work distinguishes a useful private Markdown second brain from a shared production context plane with access, evidence and memory governance. It directly qualifies Pocock's personal home-repo/wiki pattern without treating either design as a measured universal solution.",
+          "basis": "curated-editorial-comparison"
+        }
+      ],
       "sharePlaneReview": {
         "reviewedAt": "2026-11-12",
-        "decision": "none",
-        "rationale": "No independent, source-specific SharePlane Work edge is admitted in the first candidate. A separate focused editorial review may propose a Work comparison, or retain an explicit zero. No graph write is implied."
+        "decision": "linked",
+        "rationale": "Owner explicitly requested the missing separately labeled SharePlane Work connection. This published Work is a specific thematic comparison with qualified reach, not experimental corroboration of the source video. Exact-target independent review remains required before release."
       },
       "review": {
         "status": "PENDING independent editorial/source/privacy review; draft only",
@@ -482,20 +528,66 @@
           "dateNote": "Living vendor documentation; original publication date not independently established."
         }
       ],
-      "relationships": [],
-      "relationshipDisposition": "Three proposed on-page editorial comparisons are not admitted as graph edges. Independent review and owner decision required before graph admission.",
+      "relationships": [
+        {
+          "target": "reader:autonomy-needs-an-interface",
+          "type": "companion",
+          "reason": "Nod's model-based action checker and connected service scopes raise the same accountable authorization boundary: a personal agent may propose an action, but permission and accepted effect must be inspected at the destination.",
+          "provenance": [
+            "/replacing-cowork-is-a-test-not-a-title/",
+            "/autonomy-needs-an-interface/"
+          ],
+          "basis": "curated-editorial-comparison",
+          "direction": "outgoing"
+        },
+        {
+          "target": "reader:the-cockpit-is-not-the-control-plane",
+          "type": "companion",
+          "reason": "An attractive personal-agent interface and responsive browser demonstration do not prove that retries, permissions, integration failures and operational recovery form a reliable control plane. This is an evaluation analogy, not Nod benchmarking.",
+          "provenance": [
+            "/replacing-cowork-is-a-test-not-a-title/",
+            "/the-cockpit-is-not-the-control-plane/"
+          ],
+          "basis": "curated-editorial-comparison",
+          "direction": "outgoing"
+        },
+        {
+          "target": "reader:the-home-repo-is-a-map-not-a-monorepo",
+          "type": "companion",
+          "reason": "A home repo and a personal agent each make cross-system context discoverable, but neither should turn links, skills or retrieved information into a blanket grant of production authority. Their governance questions are complementary.",
+          "provenance": [
+            "/replacing-cowork-is-a-test-not-a-title/",
+            "/the-home-repo-is-a-map-not-a-monorepo/"
+          ],
+          "basis": "curated-editorial-comparison",
+          "direction": "outgoing"
+        }
+      ],
+      "relationshipDisposition": "Three source-specific Reader connections are admitted as editorial companions. They compare design, discovery, and authority; none independently corroborates performance or safety results.",
       "relationshipReview": {
         "reviewedAt": "2026-11-12",
-        "reviewedCatalogSize": 54,
-        "decision": "none",
-        "reviewedTargets": [],
-        "rationale": "Screened existing 54 Readers for substantive comparison; proposed only the authority-interface, cockpit/control-plane, and home-repo navigation theses. No directed relation or corroboration is admitted until independent and owner review."
+        "reviewedCatalogSize": 55,
+        "decision": "linked",
+        "reviewedTargets": [
+          "reader:autonomy-needs-an-interface",
+          "reader:the-cockpit-is-not-the-control-plane",
+          "reader:the-home-repo-is-a-map-not-a-monorepo"
+        ],
+        "rationale": "Owner requested repair of the omitted graph admission on published Readers #54 and #55. Three authored candidate targets were checked against their published theses and given source-limited directional rationales; no reciprocal edges or factual corroboration is implied. Independent relationship review on the exact amended record remains an acceptance gate."
       },
-      "sharePlaneRelationships": [],
+      "sharePlaneRelationships": [
+        {
+          "title": "Demo Debt",
+          "url": "https://shareplane.malott.ai/artifacts/demo-debt/",
+          "type": "companion",
+          "reason": "The Work explains why a convincing AI demo does not establish an operable service: recovery, support, permissions, cost and accepted workflow outcomes must be tested. It complements the Nod walkthrough critique without claiming any independent result for Nod or Cowork.",
+          "basis": "curated-editorial-comparison"
+        }
+      ],
       "sharePlaneReview": {
         "reviewedAt": "2026-11-12",
-        "decision": "none",
-        "rationale": "No source-specific SharePlane Work edge has been independently accepted or authorized. Proposed zero to avoid unnecessary graph changes."
+        "decision": "linked",
+        "rationale": "Owner explicitly requested the missing separately labeled SharePlane Work connection. This published Work is a specific thematic comparison with qualified reach, not experimental corroboration of the source video. Exact-target independent review remains required before release."
       },
       "review": {
         "status": "PENDING independent source/privacy/editorial review; draft only",
