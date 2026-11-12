@@ -18243,8 +18243,8 @@
         },
         {
           "target": "reader:autonomy-needs-an-interface",
-          "type": "challenges",
-          "reason": "Human decisions and effective tool permissions complicate any suggestion that prose instructions or isolated hooks alone establish accountability.",
+          "type": "companion",
+          "reason": "Both Readers require downstream authorization beyond prose rules or isolated hooks. This is a complementary treatment of effective authority, not a disagreement or independent corroboration.",
           "provenance": [
             "/the-small-fix-is-a-boundary/",
             "/autonomy-needs-an-interface/"
@@ -18263,7 +18263,7 @@
           "reader:make-good-work-inspectable",
           "reader:autonomy-needs-an-interface"
         ],
-        "rationale": "Owner approved these three named draft candidates after a source-specific editorial proposal. This is an owner draft assessment, not an independent reviewer acceptance or production admission."
+        "rationale": "Three owner-approved draft destinations; the Autonomy edge is provisionally retyped companion after independent reviewer found no substantive disagreement. Final graph admission requires owner confirmation and independent acceptance."
       },
       "sharePlaneRelationships": [
         {
