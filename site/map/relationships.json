@@ -3,11 +3,11 @@
   "scope": "Local public editorial reading routes; no independent corroboration or cross-site graph admission.",
   "authority": "catalog-curated-editorial",
   "visibility": "public",
-  "readerCount": 54,
-  "assessmentCount": 54,
+  "readerCount": 55,
+  "assessmentCount": 55,
   "relationshipCount": 118,
   "sharePlaneRelationshipCount": 21,
-  "sharePlaneReviewCount": 14,
+  "sharePlaneReviewCount": 15,
   "sharePlaneEdges": [
     {
       "from": "reader:when-code-gets-cheap-where-does-the-work-wait",
@@ -1046,6 +1046,19 @@
         "decision": "none",
         "reviewedTargets": [],
         "rationale": "All 53 Reader theses screened for directly relevant counterparts. Proposed editorial comparisons: tool-discovery continuity, skill metadata sprawl, and accountable authority. They remain authored proposed reading links, not admitted directed graph edges or corroboration. No other Reader edge is yet admitted without review."
+      }
+    },
+    {
+      "id": "reader:replacing-cowork-is-a-test-not-a-title",
+      "slug": "replacing-cowork-is-a-test-not-a-title",
+      "title": "Replacing Cowork Is a Test, Not a Title",
+      "url": "https://youtube.shareplane.malott.ai/replacing-cowork-is-a-test-not-a-title/",
+      "review": {
+        "reviewedAt": "2026-11-12",
+        "reviewedCatalogSize": 54,
+        "decision": "none",
+        "reviewedTargets": [],
+        "rationale": "Screened existing 54 Readers for substantive comparison; proposed only the authority-interface, cockpit/control-plane, and home-repo navigation theses. No directed relation or corroboration is admitted until independent and owner review."
       }
     }
   ],

@@ -1,0 +1,293 @@
+{
+  "schema": "ghostmesh-reader-receipt-v2",
+  "createdAt": "2026-11-12T15:12:47Z",
+  "source": {
+    "url": "https://www.youtube.com/watch?v=0i9W42yV3lE",
+    "videoId": "0i9W42yV3lE"
+  },
+  "reasonPack": {
+    "verification": "pass",
+    "manifestSha256": "4c0ae71943fecfc8e4ae7d44892d31b202c24e22532e4de1e55c06d3efd9746e"
+  },
+  "sourceInspection": {
+    "method": "Privately verified original-media ReasonPack; CPU Whisper large-v3 transcription after source caption retrieval HTTP 429, full aid inspected",
+    "transcriptSha256": "8d1abba78b27c1fe74f76b7ea8b4e50ff8da4378b9c4842ad27a5a6c052e8419",
+    "timedAidSha256": "3bbe7e07121fc029fcf6705ba75d470d24641521c95cb84b87a17545dd479091",
+    "coverage": "18:01 original video and full machine-generated timed source aid; no independent listening/frame-by-frame demo verification.",
+    "caveat": "Source metadata and prose checked against retained machine aid; performance payoffs and operational risks not independently replicated.",
+    "publicationBoundary": "Original analysis and public-safe digests only. Excludes private media, raw transcripts/captions and host paths."
+  },
+  "custody": {
+    "status": "qualified-private-pack-verified",
+    "note": "Private original media and CPU large-v3 transcription passed package integrity checks; no independent listening/video verification."
+  },
+  "normalization": {
+    "id": "reader:replacing-cowork-is-a-test-not-a-title",
+    "slug": "replacing-cowork-is-a-test-not-a-title",
+    "title": "Replacing Cowork Is a Test, Not a Title",
+    "category": "AI & Technology",
+    "tags": [
+      "Nod",
+      "n8n",
+      "Claude Cowork",
+      "personal agents",
+      "automation",
+      "security"
+    ],
+    "entities": [
+      "n8n Nod",
+      "Ryan & Matt Data Science",
+      "Claude Cowork"
+    ],
+    "source": {
+      "platform": "YouTube",
+      "url": "https://www.youtube.com/watch?v=0i9W42yV3lE",
+      "videoId": "0i9W42yV3lE",
+      "title": "I Replaced Claude Cowork With n8n Nod (NEW RELEASE)",
+      "creator": "Ryan & Matt Data Science",
+      "mediaAspect": "16:9",
+      "durationSeconds": 1081,
+      "uploadDate": "2026-11-11",
+      "captionType": "Private CPU Whisper large-v3 machine transcription after source-caption HTTP 429; not listening-certified"
+    },
+    "published": "2026-11-12",
+    "updated": "2026-11-12T15:12:47Z",
+    "overview": "A creator video positions the new Nod personal agent as a substitute for Claude Cowork. GhostMesh separates the demonstration from the operating models, vendor benchmarks, privacy flows and authorization limits.",
+    "whyItMatters": "A new computer-using agent can blur product boundaries between local personal tasks, cloud agent workflows and shared business automation. Making choices requires verified outcomes, explicit cost and data-flow accounting, and permission checks at destination.",
+    "ghostMeshTakeaway": "Treat Nod as a research-preview candidate for bounded personal workflows, not as proof that Cowork is obsolete. Compare the same low-risk jobs, preserve service-level authorization, and inspect actual local/provider data flows.",
+    "verdict": "Worth studying",
+    "architectureImpact": "experiment recommended",
+    "falsification": "Matched read-only/reversible tasks against Nod and Cowork with pinned inputs, equivalent model budget, correct result, approval interventions, data flows, runtime availability and failure recovery measured.",
+    "evidenceState": "unverified",
+    "lastEvidenceChecked": "2026-11-12T15:12:47Z",
+    "freshness": "November 11 creator walkthrough; original media privately captured and transcribed after HTTP 429. Vendor documentation supports product architecture, not a general Cowork replacement verdict.",
+    "variant": "editorial",
+    "accent": "teal",
+    "claims": [
+      {
+        "id": "r55-position",
+        "proposition": "A new Nod personal agent can replace Claude Cowork for many of the presenter's personal workflows.",
+        "kind": "creator-recommendation",
+        "status": "unverified",
+        "sourceLocation": "00:00",
+        "assessment": "Video demonstrates or describes a feature, but provides no controlled comparison against Claude Cowork for the same workload.",
+        "limits": "Reviewer must distinguish creator observation from vendor capability and replicated outcome. The chosen model, setup and permissions may change results.",
+        "references": [
+          "r55-video",
+          "r55-nod-launch"
+        ],
+        "counterevidence": [],
+        "asOf": "2026-11-12"
+      },
+      {
+        "id": "r55-vault",
+        "proposition": "Nod allows saved logins and cards to be managed through its Vault rather than directly as model text.",
+        "kind": "creator-recommendation",
+        "status": "unverified",
+        "sourceLocation": "02:28",
+        "assessment": "Video demonstrates or describes a feature, but provides no controlled comparison against Claude Cowork for the same workload.",
+        "limits": "Reviewer must distinguish creator observation from vendor capability and replicated outcome. The chosen model, setup and permissions may change results.",
+        "references": [
+          "r55-video",
+          "r55-nod-launch"
+        ],
+        "counterevidence": [],
+        "asOf": "2026-11-12"
+      },
+      {
+        "id": "r55-sheets",
+        "proposition": "Nod can connect a Google Sheets account in a conversational setup workflow.",
+        "kind": "creator-recommendation",
+        "status": "unverified",
+        "sourceLocation": "05:54",
+        "assessment": "Video demonstrates or describes a feature, but provides no controlled comparison against Claude Cowork for the same workload.",
+        "limits": "Reviewer must distinguish creator observation from vendor capability and replicated outcome. The chosen model, setup and permissions may change results.",
+        "references": [
+          "r55-video",
+          "r55-nod-launch"
+        ],
+        "counterevidence": [],
+        "asOf": "2026-11-12"
+      },
+      {
+        "id": "r55-schedule",
+        "proposition": "Nod can create and manage a recurring daily consignment-email summary workflow.",
+        "kind": "creator-recommendation",
+        "status": "unverified",
+        "sourceLocation": "07:33",
+        "assessment": "Video demonstrates or describes a feature, but provides no controlled comparison against Claude Cowork for the same workload.",
+        "limits": "Reviewer must distinguish creator observation from vendor capability and replicated outcome. The chosen model, setup and permissions may change results.",
+        "references": [
+          "r55-video",
+          "r55-nod-launch"
+        ],
+        "counterevidence": [],
+        "asOf": "2026-11-12"
+      },
+      {
+        "id": "r55-ebay",
+        "proposition": "Nod can browse logged-in eBay listings and retrieve recent high-value sales, although results need verification.",
+        "kind": "creator-recommendation",
+        "status": "unverified",
+        "sourceLocation": "10:49",
+        "assessment": "Video demonstrates or describes a feature, but provides no controlled comparison against Claude Cowork for the same workload.",
+        "limits": "Reviewer must distinguish creator observation from vendor capability and replicated outcome. The chosen model, setup and permissions may change results.",
+        "references": [
+          "r55-video",
+          "r55-nod-launch"
+        ],
+        "counterevidence": [],
+        "asOf": "2026-11-12"
+      },
+      {
+        "id": "r55-provider",
+        "proposition": "Nod lets a user switch AI model providers, but this walkthrough does not establish per-task routing.",
+        "kind": "creator-recommendation",
+        "status": "unverified",
+        "sourceLocation": "13:52",
+        "assessment": "Video demonstrates or describes a feature, but provides no controlled comparison against Claude Cowork for the same workload.",
+        "limits": "Reviewer must distinguish creator observation from vendor capability and replicated outcome. The chosen model, setup and permissions may change results.",
+        "references": [
+          "r55-video",
+          "r55-nod-launch"
+        ],
+        "counterevidence": [],
+        "asOf": "2026-11-12"
+      },
+      {
+        "id": "r55-multi",
+        "proposition": "Nod can connect multiple Gmail accounts and simplifies the presenter's workflow compared with his displayed Cowork connector setup.",
+        "kind": "creator-recommendation",
+        "status": "unverified",
+        "sourceLocation": "16:00",
+        "assessment": "Video demonstrates or describes a feature, but provides no controlled comparison against Claude Cowork for the same workload.",
+        "limits": "Reviewer must distinguish creator observation from vendor capability and replicated outcome. The chosen model, setup and permissions may change results.",
+        "references": [
+          "r55-video",
+          "r55-nod-launch"
+        ],
+        "counterevidence": [],
+        "asOf": "2026-11-12"
+      }
+    ],
+    "references": [
+      {
+        "id": "r55-video",
+        "title": "I Replaced Claude Cowork With n8n Nod (NEW RELEASE)",
+        "author": "Ryan & Matt Data Science",
+        "publisher": "YouTube",
+        "url": "https://www.youtube.com/watch?v=0i9W42yV3lE",
+        "publicationDate": "2026-11-11",
+        "eventDate": null,
+        "location": "00:00–18:01; original creator demo",
+        "sourceType": "creator video",
+        "independence": "Creator walkthrough with affiliate disclosure, not an independent matched benchmark.",
+        "evidenceFamily": "r55-video",
+        "checkedAt": "2026-11-12T15:12:47Z",
+        "datePrecision": "day"
+      },
+      {
+        "id": "r55-nod-launch",
+        "title": "Meet Nod: a standalone personal agent from n8n Labs",
+        "author": "Ophir Prusak",
+        "publisher": "n8n",
+        "url": "https://blog.n8n.io/meet-nod/",
+        "publicationDate": "2026-11-10",
+        "eventDate": null,
+        "location": "Product launch and positioning",
+        "sourceType": "vendor announcement",
+        "independence": "Product vendor account; useful for positioning but not independent outcome verification.",
+        "evidenceFamily": "r55-nod-launch",
+        "checkedAt": "2026-11-12T15:12:47Z",
+        "datePrecision": "day"
+      },
+      {
+        "id": "r55-nod-security",
+        "title": "Security model and limits",
+        "author": "n8n Labs",
+        "publisher": "Nod",
+        "url": "https://nod.n8n.io/docs/trust/security-model/",
+        "publicationDate": "unknown",
+        "eventDate": null,
+        "location": "Action trust, Vault, data routing and exceptions",
+        "sourceType": "vendor documentation",
+        "independence": "Describes intended security controls and acknowledged limits; not independent penetration testing.",
+        "evidenceFamily": "r55-nod-security",
+        "checkedAt": "2026-11-12T15:12:47Z",
+        "dateNote": "Living vendor documentation; original publication date not independently established."
+      },
+      {
+        "id": "r55-nod-bench",
+        "title": "How we evaluate Nod",
+        "author": "n8n Labs",
+        "publisher": "Nod",
+        "url": "https://nod.n8n.io/docs/how-it-works/benchmarks/",
+        "publicationDate": "unknown",
+        "eventDate": null,
+        "location": "Synthetic tasks and memory benchmarks",
+        "sourceType": "vendor evaluation",
+        "independence": "Vendor-run and model-pinned benchmark, not a controlled comparison with Cowork.",
+        "evidenceFamily": "r55-nod-bench",
+        "checkedAt": "2026-11-12T15:12:47Z",
+        "dateNote": "Living vendor documentation; original publication date not independently established."
+      },
+      {
+        "id": "r55-cowork",
+        "title": "Get started with Claude Cowork",
+        "author": "Anthropic",
+        "publisher": "Claude Help Center",
+        "url": "https://support.claude.com/en/articles/13345190-get-started-with-claude-cowork",
+        "publicationDate": "unknown",
+        "eventDate": null,
+        "location": "Cowork cloud execution and local desktop dependency",
+        "sourceType": "vendor documentation",
+        "independence": "Competing vendor positioning, not independent comparative performance evidence.",
+        "evidenceFamily": "r55-cowork",
+        "checkedAt": "2026-11-12T15:12:47Z",
+        "dateNote": "Living vendor documentation; original publication date not independently established."
+      }
+    ],
+    "relationships": [],
+    "relationshipDisposition": "Three proposed on-page editorial comparisons are not admitted as graph edges. Independent review and owner decision required before graph admission.",
+    "relationshipReview": {
+      "reviewedAt": "2026-11-12",
+      "reviewedCatalogSize": 54,
+      "decision": "none",
+      "reviewedTargets": [],
+      "rationale": "Screened existing 54 Readers for substantive comparison; proposed only the authority-interface, cockpit/control-plane, and home-repo navigation theses. No directed relation or corroboration is admitted until independent and owner review."
+    },
+    "sharePlaneRelationships": [],
+    "sharePlaneReview": {
+      "reviewedAt": "2026-11-12",
+      "decision": "none",
+      "rationale": "No source-specific SharePlane Work edge has been independently accepted or authorized. Proposed zero to avoid unnecessary graph changes."
+    },
+    "review": {
+      "status": "PENDING independent source/privacy/editorial review; draft only",
+      "reviewer": "unassigned independent reviewer",
+      "checkedAt": "2026-11-12T15:12:47Z",
+      "scope": "Full private transcription, documented source roles, product comparison, seven mapped claims, affiliate disclosure, mobile accessibility and proposed links",
+      "findings": "Source custody verified for first draft only. Neither independent editorial accept nor owner publication approval exists."
+    },
+    "revisionHistory": [
+      {
+        "at": "2026-11-12T15:12:47Z",
+        "reason": "Reader #55 first source-grounded draft using #53 canonical design. Public article and private source separately scoped; no publication authority."
+      }
+    ],
+    "editorialOrder": 54,
+    "archiveCall": {
+      "label": "Test the replacement claim",
+      "text": "Keep this source as a prompt for a bounded, matched evaluation of personal agent workflows. Compare Nod and Cowork on accepted results, permission behavior, host availability, and data flows, not launch screenshots or the presenter's choice alone."
+    },
+    "editorialDepth": {
+      "schemaVersion": 1,
+      "receiptPath": "content/editorial-depth/replacing-cowork-is-a-test-not-a-title.json"
+    }
+  },
+  "editorial": {
+    "overview": "A creator video positions the new Nod personal agent as a substitute for Claude Cowork. GhostMesh separates the demonstration from the operating models, vendor benchmarks, privacy flows and authorization limits.",
+    "whyItMatters": "A new computer-using agent can blur product boundaries between local personal tasks, cloud agent workflows and shared business automation. Making choices requires verified outcomes, explicit cost and data-flow accounting, and permission checks at destination.",
+    "ghostMeshTakeaway": "Treat Nod as a research-preview candidate for bounded personal workflows, not as proof that Cowork is obsolete. Compare the same low-risk jobs, preserve service-level authorization, and inspect actual local/provider data flows."
+  }
+}
