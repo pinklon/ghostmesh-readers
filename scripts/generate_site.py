@@ -150,7 +150,11 @@ def governed_reader_connections(raw, r, byid):
               +esc(r['sharePlaneReview']['rationale'])+'</p>')+'</section>')
  provenance=re.search(r'<section\b(?=[^>]*id="reasonpack-provenance")(?=[^>]*class="gm-source-scope")[^>]*>',raw)
  if not provenance:
-  raise ValueError(f'{slug}: missing source custody boundary for Work placement')
+  # A non-video Reader may have a different provenance section. Keep Work
+  # comparisons in the reading column rather than inventing ReasonPack.
+  provenance=re.search(r'</article>\s*<aside class="rail">',raw)
+ if not provenance:
+  raise ValueError(f'{slug}: missing article/rail boundary for Work placement')
  raw=raw[:provenance.start()]+work_html+raw[provenance.start():]
  # Reader rail offers both admitted graph planes at the same visual level.
  rail='<a href="#related-thinking">Related thinking</a>'

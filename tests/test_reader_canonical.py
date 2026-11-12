@@ -57,6 +57,20 @@ class CanonicalReaderContract(unittest.TestCase):
         self.assertEqual([], errors(r, page))
         self.assertIn("No SharePlane Work connection admitted", page)
 
+    def test_paper_independent_study_is_not_mistaken_for_a_reader_edge(self):
+        paper = self.future(source={"kind": "paper"}, references=[
+            {"sourceType": "independent-different-construct-study"}])
+        html = self.html.replace('<div class="gm-cards">', '<div class="gm-cards">'
+                                 '<article><div class="gm-related-copy">Independent study</div></article>', 1)
+        self.assertEqual([], errors(paper, html))
+
+    def test_nonvideo_provenance_can_still_render_both_graph_planes(self):
+        article = self.authored.replace('id="reasonpack-provenance"', 'id="paper-provenance"', 1)
+        paper = self.future(source={"kind": "paper"})
+        rendered = governed_reader_connections(article, paper, self.byid)
+        self.assertIn('id="shareplane-thinking"', rendered)
+        self.assertIn('id="paper-provenance"', rendered)
+
     def test_future_reader_needs_exactly_three_styled_brief_moves(self):
         self.assertEqual([], errors(self.future(), self.html))
         damaged = self.html.replace('class="gm-brief-point"', 'class="plain-brief-point"', 1)

@@ -72,7 +72,11 @@ def errors(reader, html):
         work = reader.get("sharePlaneRelationships", [])
         # A reviewed zero is valid, but never silently absent or masked by
         # authored 'proposed' links that are not admitted into the catalog.
-        if parsed.class_counts.get("gm-related-copy", 0) != len(relationships):
+        # Paper Readers may also display separately labeled independent-study
+        # cards. Those are references, not admitted Reader graph edges.
+        study_cards = sum(ref.get("sourceType") == "independent-different-construct-study"
+                          for ref in reader.get("references", [])) if reader.get("source", {}).get("kind") == "paper" else 0
+        if parsed.class_counts.get("gm-related-copy", 0) != len(relationships) + study_cards:
             missing.append("catalog-matched Reader connection card count")
         if parsed.class_counts.get("gm-work-kind", 0) != len(work):
             missing.append("catalog-matched SharePlane Work connection count")
