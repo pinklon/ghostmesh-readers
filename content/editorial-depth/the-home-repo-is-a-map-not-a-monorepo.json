@@ -104,22 +104,21 @@
   },
   "independentCorroboration": "none",
   "ownerDecision": {
-    "pullNumber": 157,
-    "commentId": null
+    "kind": "conversation",
+    "owner": "Tony Malott",
+    "approval": "Owner explicitly approved publication of Reader #54, The Home Repo Is a Map, Not a Monorepo, using independently reviewed article SHA-256 fc111ab0134aa111258c6a4fa7e01ea563dbd212363a81b9dd2a78ccb9607523, retaining the three proposed Reader relationships as unadmitted editorial comparisons and no SharePlane Work edge. Owner authorized normal receipt integration, protected merge and production publication of PR #157 subject to unchanged source bytes and passing exact-head checks.",
+    "approvalDate": "2026-11-12",
+    "articleSha256": "fc111ab0134aa111258c6a4fa7e01ea563dbd212363a81b9dd2a78ccb9607523",
+    "evidenceRevision": "7a5cf37e091c03a3405fad268f855014dc5c542386f38b146ec3a15ae9a89ef4"
   },
-  "decision": "hold",
+  "decision": "accept",
   "gaps": [
-    {
-      "type": "scope",
-      "severity": "blocking",
-      "rationale": "Independent reviewer accepts exact candidate for owner review only. Owner graph disposition and final publication authorization remain pending; no owner decision is fabricated."
-    },
     {
       "type": "evidence",
       "severity": "nonblocking",
       "rationale": "Source captions may contain recognition errors; full listening, visual-demo reproduction and independent performance replication were not performed."
     }
   ],
-  "decisionRationale": "Qualitative review accepts for owner consideration; release remains held for explicit owner decisions and authentic receipt integration. Optional Work comparison is a proposal, not a required new scope expansion.",
+  "decisionRationale": "Independent reviewer accepted the exact source-grounded article, mapped claims, private-source boundary, and canonical responsive presentation. Owner subsequently explicitly approved the article, held the proposed Reader links unadmitted, declined new Work edges, and authorized existing release steps. Remaining machine-caption limitations are disclosed and nonblocking.",
   "assessedAt": "2026-11-12T13:44:57.460751+00:00"
 }
