@@ -70,6 +70,29 @@ Medin presents skills, hooks and rules as an adjustable toolkit and often sugges
 
 The hook recommendation also needs qualification: programmatic interception can reliably reject the event it actually sees, but a hook that guards one tool does not automatically prevent the same sensitive access through another tool, subprocess, or credential path. The effective security claim must be verified against the installed harness and its complete action surface.
 
+## What the platform documentation independently establishes
+
+The official documentation helps distinguish available mechanisms from the outcomes Medin predicts. It does **not** validate the video's claimed payoff.
+
+- **Skills and rule files are real configuration surfaces, but more is not necessarily better.** OpenAI describes skills as repeatable workflow instructions bundled with optional scripts and resources, and its September 2026 guidance specifically recommends revisiting bloated skills, `AGENTS.md`, and task prompts. This independently supports the feasibility of editing the harness and the risk of excess instructions. It does not show that Medin's proposed pruning exercise reduces defects in a particular repository. [OpenAI: Skills](https://developers.openai.com/plugins/concepts/skills) · [OpenAI: Rethinking skills and prompts](https://developers.openai.com/blog/rethinking-skills-and-prompts-for-gpt-6-astra)
+- **Browser assertions can test observable state.** Playwright documents web-facing assertions for visibility, content, navigation, and response status, with automatic retries for asynchronous behavior. This supports the proposed *type* of end-to-end verification, but a passing browser path still covers only the exercised path. [Playwright: Assertions](https://playwright.dev/docs/test-assertions) · [Playwright: Best practices](https://playwright.dev/docs/best-practices)
+- **Approval and guardrail mechanisms have defined scopes.** OpenAI's agent documentation distinguishes requested tool permissions, review decisions, and guardrails applied around tool use. Those mechanisms can support the human-decision boundary; they do not make a generic prompt or a narrowly scoped hook an authorization system for every downstream service. [OpenAI: Agent approvals](https://developers.openai.com/api/docs/guides/agents-api/sessions/approvals) · [OpenAI: Guardrails and human review](https://developers.openai.com/api/docs/guides/agents/guardrails-approvals)
+
+The test of Medin's advice is therefore operational: identify the failure, select the smallest control on the actual execution path, and verify that the failure becomes less frequent without transferring authority or merely moving the cost elsewhere.
+
+## Which changes are worth making now?
+
+| Observed failure | Smallest useful response | Escalate only when |
+| --- | --- | --- |
+| Agent announces completion without direct proof | Require the relevant test command, output, or rendered view in its ordinary completion report | Consequential scope or repeated misses warrant an independent reviewer |
+| User-visible regression despite green unit tests | Exercise the affected route in a real browser | Several connected journeys or security boundaries require wider coverage |
+| An agent changes unrelated files | Set the exact change boundary and inspect the diff | The requested fix cannot work without a justified dependency change |
+| A prohibition is ignored | Enforce it at the real tool, permission, or service boundary | A repeatable intercepted action benefits from a dedicated hook |
+| Long sessions or delegated agents consume effort | Preserve concise state and use fresh sessions or scoped delegation only when useful | The retained context or independent parallel work materially justifies the cost |
+| Valuable tangent appears mid-task | Record it once with an explicit reason, then finish the original task | It is a true blocker or an urgent safety defect |
+
+This is not a proposed new GhostMesh control framework. The rows are choices inside the existing task and review process, and none implies an additional service, scheduled job, or agent role.
+
 ## A falsifiable GhostMesh trial
 
 The next ordinary Reader or single-file Work is a better experiment than constructing a harness benchmark solely to validate this video. Record the originally requested scope, number of changed source files, additional agents or workflows introduced, owner interventions, elapsed time from ready manuscript to preview and release, and actual defects found in browser/production acceptance. Compare against the recent Reader #52 replay with its documented acquisition, editorial, reviewer and layout friction, while acknowledging that task difficulty and source availability differ.
