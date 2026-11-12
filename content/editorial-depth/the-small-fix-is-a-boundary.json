@@ -152,22 +152,21 @@
   },
   "independentCorroboration": "none",
   "ownerDecision": {
-    "pullNumber": 155,
-    "commentId": null
+    "kind": "conversation",
+    "owner": "Tony Malott",
+    "approval": "Owner instructed segfault to take Reader #53 PR #155 through completion rather than waiting for Pale Horse, following presentation of the independently accepted exact article 77ad16b8 and receipt-integrated PR head f4894ac. This authorizes publication of the scoped visual revision under existing release safeguards.",
+    "approvalDate": "2026-11-12",
+    "articleSha256": "c8abb56b8990a19310ee062667343d9ec585ddd29dadfd07785aa9ec6acc8488",
+    "evidenceRevision": "452690289729b6544fc19a6c3191f770ef4088ce43ebdbcd4db7b360d6731042"
   },
-  "decision": "hold",
+  "decision": "accept",
   "gaps": [
-    {
-      "type": "scope",
-      "severity": "blocking",
-      "rationale": "Owner approval of the revised authored HTML and refreshed acceptance binding is pending for PR155. Previous production approval does not automatically authorize these changed bytes."
-    },
     {
       "type": "evidence",
       "severity": "nonblocking",
       "rationale": "Prior machine-ASR and unreplicated-effectiveness limits are unchanged; this bounded review is not new source certification."
     }
   ],
-  "decisionRationale": "Independent mobile-polish review is separate from owner acceptance of new authored bytes. Preserve release hold until the appropriate owner decision and receipt integration.",
+  "decisionRationale": "Independent review accepted the mobile presentation revision with source/copy/anchor parity and responsive browser evidence. Owner subsequently instructed direct completion of this previously identified exact PR and reviewed article. Machine-ASR and efficacy limits remain nonblocking; production verification remains required.",
   "assessedAt": "2026-11-12T12:19:48.107635+00:00"
 }
