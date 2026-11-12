@@ -47,3 +47,13 @@ The independent reviewer must screen the full existing Reader catalog and the re
 - Full existing repository gate, hosted CI and exact-head PR status before one owner publish decision; normal merge and production byte/browser readback afterward.
 
 Phase: editorial preparation. No final Creative Lock, source-map JSON, rendered HTML, draft PR, independent acceptance, owner publication approval or deployment is claimed here.
+
+## Mechanical contract discovered before implementation
+
+- Existing repository is `pinklon/ghostmesh-readers`. Continue **one** candidate branch, `segfault/reader53-cole-medin-editorial`; do not create a parallel publisher or duplicate release queue.
+- Planned Reader ID `reader:the-small-fix-is-a-boundary`, slug `the-small-fix-is-a-boundary`, target `content/readers/the-small-fix-is-a-boundary.html`, authored manuscript `content/drafts/the-small-fix-is-a-boundary.md`, claim map `content/source-maps/the-small-fix-is-a-boundary.json`, existing editorial review/depth schema paths. `editorialOrder` should be 52 if the current 52-Reader catalog remains unchanged. Recheck remote main before any catalog edit.
+- The current `scripts/check_site.py` requires new entries to supply a catalog-owned `archiveCall` object; do not edit `scripts/catalog_design.py` to add a Reader-specific call. The archive wording requires source-specific editorial judgment before Creative Lock.
+- Reuse Reader #52's hosted layout and Reader #51's complete long-form elements. Public status should use the generator's `gm-publication-status` placeholder, not manually written changing release text that would alter reviewed article bytes.
+- Use the repository's Netlify draft-PR preview, not a new Cloudflare publisher. Required existing preflight: `generate_site.py`, `knowledge_contract.py` and `--check`, `generate_site.py --check`, full unit suite, `git diff --check`, and local `check_site.py` with the correctly shaped draft PR event. Then exact-head hosted CI and actual browser checks.
+- Local scratch checkout and remote branch have distinct commit histories because the original source manuscript was pushed through the GitHub connector. Fetch/reconcile the **remote branch** before any implementation commit; do not force push over its published draft bytes.
+- Pending judgment-bearing fields: authentic private `sourceAidSha256` readback, proposed graph relationship decision, final archive-call text, immutable complete authored copy hash, independent reviewer identity/decision. These are not silently populated.
