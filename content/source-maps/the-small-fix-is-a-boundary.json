@@ -103,8 +103,5 @@
       "cueParaphrase": "The creator recommends recording valuable side discoveries without abandoning the current task or creating speculative follow-up sprawl.",
       "privateAidCheck": "Retained large-v3 CPU machine transcript inspected by publisher. Approximate topic cue, not independently listening-certified speech, exact quotation or reproduced visual demonstration."
     }
-  ],
-  "reasonPackManifestSha256": "af6c28c91e1a4e4097b6cee09e82bce8405b27745f473d59418a2e0261411cac",
-  "largeV3TranscriptAidSha256": "8d3c68ee8abf6476d9dabb1c6dc063c21893775dfdff6194b627220c3db79bcb",
-  "largeV3TimedAidSha256": "6a85e96486dd203c9bb75d49302727e592018eff4fd02a57ae154a6026c3d671"
+  ]
 }
