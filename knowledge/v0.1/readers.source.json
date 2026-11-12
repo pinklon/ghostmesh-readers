@@ -745,6 +745,18 @@
         "path": "site/better-models-still-need-boundaries/index.html",
         "sha256": "863a651f4ae8435127e0a53db115802489d17caa00af5e54dbb12f86d16b6649"
       }
+    },
+    {
+      "id": "urn:ghostmesh-readers:reader:the-small-fix-is-a-boundary",
+      "type": "Reader",
+      "visibility": "public",
+      "epistemicStatus": "source-editorial",
+      "label": "The Small Fix Is a Boundary",
+      "url": "https://youtube.shareplane.malott.ai/the-small-fix-is-a-boundary/",
+      "source": {
+        "path": "site/the-small-fix-is-a-boundary/index.html",
+        "sha256": "e1133a4cfefd0e72197cc59f7d182c1025165b700d130f7312dcf6cbe2894f3d"
+      }
     }
   ],
   "relationships": [

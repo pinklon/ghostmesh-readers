@@ -1,0 +1,375 @@
+{
+  "schema": "ghostmesh-reader-receipt-v2",
+  "createdAt": "2026-11-11T23:00:00Z",
+  "source": {
+    "url": "https://www.youtube.com/watch?v=hMEQ4rdaOLw",
+    "videoId": "hMEQ4rdaOLw"
+  },
+  "reasonPack": {
+    "verification": "pass",
+    "manifestSha256": "af6c28c91e1a4e4097b6cee09e82bce8405b27745f473d59418a2e0261411cac"
+  },
+  "sourceInspection": {
+    "method": "Verified private pack plus separately retained CPU large-v3 machine transcript; timed cues provisionally inspected",
+    "transcriptSha256": "8d3c68ee8abf6476d9dabb1c6dc063c21893775dfdff6194b627220c3db79bcb",
+    "timedAidSha256": "6a85e96486dd203c9bb75d49302727e592018eff4fd02a57ae154a6026c3d671",
+    "coverage": "24:38 source and full-coverage timed machine transcript; not independently listened or visually reproduced",
+    "caveat": "Source timing, demonstration visuals and claimed performance improvements are not independently verified.",
+    "publicationBoundary": "Original analysis and sanitized integrity metadata only; no private transcript, media, captions or host paths."
+  },
+  "custody": {
+    "status": "qualified-private-pack-verified",
+    "note": "Verified first ReasonPack and separate local large-v3 aid, with distinctly recorded hashes."
+  },
+  "normalization": {
+    "id": "reader:the-small-fix-is-a-boundary",
+    "slug": "the-small-fix-is-a-boundary",
+    "title": "The Small Fix Is a Boundary",
+    "category": "AI & Technology",
+    "tags": [
+      "coding agents",
+      "agent harness",
+      "verification",
+      "scope",
+      "automation"
+    ],
+    "entities": [
+      "Cole Medin",
+      "GhostMesh"
+    ],
+    "source": {
+      "platform": "YouTube",
+      "url": "https://www.youtube.com/watch?v=hMEQ4rdaOLw",
+      "videoId": "hMEQ4rdaOLw",
+      "title": "11 More Tiny Coding Agent Fixes With A Stupid Amount Of Payoff (Learn These Now)",
+      "creator": "Cole Medin",
+      "mediaAspect": "16:9",
+      "durationSeconds": 1478,
+      "uploadDate": "2026-11-10",
+      "captionType": "CPU large-v3 machine-ASR cue aid, not independently listening-certified"
+    },
+    "published": "2026-11-11",
+    "updated": "2026-11-11T23:00:00Z",
+    "overview": "Cole Medin argues that recurring coding-agent failures often call for small corrections in instructions, verification, context, authority, and scope rather than a new model or framework.",
+    "whyItMatters": "His eleven examples are useful diagnostics, but their claimed payoff is not established by controlled comparisons. Real proof, effective permissions, and proportional validation still have to be tested.",
+    "ghostMeshTakeaway": "Fix observed failures with the smallest enforceable existing control, preserve important human decisions, and measure the next normal task instead of adding eleven new mechanisms.",
+    "verdict": "Worth studying",
+    "architectureImpact": "experiment recommended",
+    "falsification": "Compare matched ordinary agent tasks before and after one targeted harness change, including quality, review effort, elapsed time, changed scope and regression outcomes. The proposed trial has not been run.",
+    "evidenceState": "unverified",
+    "lastEvidenceChecked": "2026-11-11T23:00:00Z",
+    "freshness": "November 10 creator video and private machine-ASR topic cues; platform documentation supports selected mechanisms, not performance payoffs.",
+    "variant": "editorial",
+    "accent": "teal",
+    "claims": [
+      {
+        "id": "r53-premature",
+        "proposition": "Adversarial self-checks or a fresh reviewer can expose premature agent completion claims.",
+        "kind": "creator-recommendation",
+        "status": "unverified",
+        "sourceLocation": "01:49",
+        "assessment": "Plausible review practice, not a controlled error-rate comparison.",
+        "limits": "An independent review costs extra time and context.",
+        "references": [
+          "r53-video"
+        ],
+        "counterevidence": [],
+        "asOf": "2026-11-11"
+      },
+      {
+        "id": "r53-proof",
+        "proposition": "Visible commands, outputs and screenshots improve confidence in an agent's result.",
+        "kind": "creator-recommendation",
+        "status": "unverified",
+        "sourceLocation": "04:47",
+        "assessment": "An inspectable result is easier to verify, but individual receipts cover only observations.",
+        "limits": "No quantified causal payoff or comprehensive system proof.",
+        "references": [
+          "r53-video"
+        ],
+        "counterevidence": [],
+        "asOf": "2026-11-11"
+      },
+      {
+        "id": "r53-browser",
+        "proposition": "Real application journeys reveal defects missed by unit tests.",
+        "kind": "creator-recommendation",
+        "status": "unverified",
+        "sourceLocation": "06:28",
+        "assessment": "Playwright documents observable browser assertions but this source does not measure comparative detection.",
+        "limits": "Passing journeys cover only exercised routes.",
+        "references": [
+          "r53-video",
+          "r53-playwright"
+        ],
+        "counterevidence": [],
+        "asOf": "2026-11-11"
+      },
+      {
+        "id": "r53-hooks",
+        "proposition": "Executable hooks can enforce selected prohibitions more reliably than prose-only rules.",
+        "kind": "creator-recommendation",
+        "status": "unverified",
+        "sourceLocation": "08:28",
+        "assessment": "Specific intercepted tool events can be rejected; downstream authorization remains separate.",
+        "limits": "Hooks do not automatically cover alternate tools, subprocesses or credentials.",
+        "references": [
+          "r53-video",
+          "r53-openai-approvals"
+        ],
+        "counterevidence": [],
+        "asOf": "2026-11-11"
+      },
+      {
+        "id": "r53-pruning",
+        "proposition": "Removing redundant global rules can improve agent focus.",
+        "kind": "creator-recommendation",
+        "status": "unverified",
+        "sourceLocation": "12:37",
+        "assessment": "OpenAI recommends revisiting excessive instructions; no source-specific pruning benchmark is supplied.",
+        "limits": "Rare critical instructions must be preserved.",
+        "references": [
+          "r53-video",
+          "r53-openai-skills"
+        ],
+        "counterevidence": [],
+        "asOf": "2026-11-11"
+      },
+      {
+        "id": "r53-handoff",
+        "proposition": "Shorter task sessions and handoffs can reduce long-context deterioration.",
+        "kind": "creator-recommendation",
+        "status": "unverified",
+        "sourceLocation": "14:04",
+        "assessment": "Plausible context-management practice, unquantified in this source.",
+        "limits": "Summaries can lose nuance and must not supplant retained evidence.",
+        "references": [
+          "r53-video"
+        ],
+        "counterevidence": [],
+        "asOf": "2026-11-11"
+      },
+      {
+        "id": "r53-authority",
+        "proposition": "Consequential product decisions should remain under human authority.",
+        "kind": "creator-recommendation",
+        "status": "unverified",
+        "sourceLocation": "15:44",
+        "assessment": "A governance recommendation about decision scope, not an empirical performance result.",
+        "limits": "Routine bounded implementation should not require repetitive approval.",
+        "references": [
+          "r53-video",
+          "r53-openai-approvals"
+        ],
+        "counterevidence": [],
+        "asOf": "2026-11-11"
+      },
+      {
+        "id": "r53-scope",
+        "proposition": "Explicit boundaries can limit unwanted refactors on small tasks.",
+        "kind": "creator-recommendation",
+        "status": "unverified",
+        "sourceLocation": "17:27",
+        "assessment": "Useful scope discipline; no controlled source benchmark.",
+        "limits": "Necessary dependency changes may still be justified.",
+        "references": [
+          "r53-video"
+        ],
+        "counterevidence": [],
+        "asOf": "2026-11-11"
+      },
+      {
+        "id": "r53-delegation",
+        "proposition": "Deliberate subagent budgeting can reduce unnecessary usage.",
+        "kind": "creator-recommendation",
+        "status": "unverified",
+        "sourceLocation": "18:57",
+        "assessment": "The creator offers cost-management advice without measured savings.",
+        "limits": "Independent parallel work can also reduce elapsed time.",
+        "references": [
+          "r53-video"
+        ],
+        "counterevidence": [],
+        "asOf": "2026-11-11"
+      },
+      {
+        "id": "r53-risk",
+        "proposition": "Test effort should reflect blast radius and consequence.",
+        "kind": "creator-recommendation",
+        "status": "unverified",
+        "sourceLocation": "21:07",
+        "assessment": "Risk-proportional validation is a design principle, not a quantified study.",
+        "limits": "Small diffs may affect high-impact security boundaries.",
+        "references": [
+          "r53-video"
+        ],
+        "counterevidence": [],
+        "asOf": "2026-11-11"
+      },
+      {
+        "id": "r53-tangents",
+        "proposition": "Parking unrelated discoveries helps agents finish the original task.",
+        "kind": "creator-recommendation",
+        "status": "unverified",
+        "sourceLocation": "22:44",
+        "assessment": "Plausible focus discipline, with no controlled productivity evidence.",
+        "limits": "True blockers and urgent safety defects remain in scope.",
+        "references": [
+          "r53-video"
+        ],
+        "counterevidence": [],
+        "asOf": "2026-11-11"
+      }
+    ],
+    "references": [
+      {
+        "id": "r53-video",
+        "title": "11 More Tiny Coding Agent Fixes With A Stupid Amount Of Payoff",
+        "author": "Cole Medin",
+        "publisher": "YouTube",
+        "url": "https://www.youtube.com/watch?v=hMEQ4rdaOLw",
+        "publicationDate": "2026-11-10",
+        "datePrecision": "day",
+        "eventDate": null,
+        "location": "00:00–24:38, source commentary and approximate machine-ASR cues",
+        "sourceType": "creator video",
+        "independence": "Primary source for attributed advice, not independent validation of claimed improvements.",
+        "evidenceFamily": "r53-video",
+        "checkedAt": "2026-11-11T23:00:00Z"
+      },
+      {
+        "id": "r53-playwright",
+        "title": "Assertions",
+        "author": "Playwright",
+        "publisher": "Playwright",
+        "url": "https://playwright.dev/docs/test-assertions",
+        "publicationDate": "unknown",
+        "dateNote": "Living documentation; original publication date not established.",
+        "eventDate": null,
+        "location": "Web-first assertions",
+        "sourceType": "official documentation",
+        "independence": "Primary framework documentation, not an experiment on the video’s recommendations.",
+        "evidenceFamily": "r53-playwright-docs",
+        "checkedAt": "2026-11-11T23:00:00Z"
+      },
+      {
+        "id": "r53-openai-skills",
+        "title": "Rethinking skills and prompts for GPT-6 Astra",
+        "author": "OpenAI",
+        "publisher": "OpenAI Developers",
+        "url": "https://developers.openai.com/blog/rethinking-skills-and-prompts-for-gpt-6-astra",
+        "publicationDate": "2026-09-11",
+        "datePrecision": "day",
+        "eventDate": null,
+        "location": "Skill descriptions and excessive agent instructions",
+        "sourceType": "vendor guidance",
+        "independence": "Vendor guidance for its tools, not a controlled benchmark of Cole Medin's adjustments.",
+        "evidenceFamily": "r53-openai-guidance",
+        "checkedAt": "2026-11-11T23:00:00Z"
+      },
+      {
+        "id": "r53-openai-approvals",
+        "title": "Automatic review",
+        "author": "OpenAI",
+        "publisher": "OpenAI Developers",
+        "url": "https://developers.openai.com/api/docs/guides/agents-api/sessions/approvals",
+        "publicationDate": "unknown",
+        "dateNote": "Living documentation; original publication date not established.",
+        "eventDate": null,
+        "location": "Tool approval boundaries",
+        "sourceType": "vendor documentation",
+        "independence": "Primary product documentation for supported approval mechanisms, not security validation of the source's suggested hooks.",
+        "evidenceFamily": "r53-openai-approvals",
+        "checkedAt": "2026-11-11T23:00:00Z"
+      }
+    ],
+    "relationships": [
+      {
+        "target": "reader:more-skills-worse-agents",
+        "type": "companion",
+        "reason": "Cole's rule-pruning advice complements David Ondrej's concern about agent skill sprawl without validating a deletion percentage or general payoff.",
+        "provenance": [
+          "/the-small-fix-is-a-boundary/",
+          "/more-skills-worse-agents/"
+        ],
+        "basis": "curated-editorial-comparison",
+        "direction": "outgoing"
+      },
+      {
+        "target": "reader:make-good-work-inspectable",
+        "type": "companion",
+        "reason": "The source's initial fixes ask for evidence of completion and real user-facing validation; the companion develops inspectable work without independently proving Cole's tips.",
+        "provenance": [
+          "/the-small-fix-is-a-boundary/",
+          "/make-good-work-inspectable/"
+        ],
+        "basis": "curated-editorial-comparison",
+        "direction": "outgoing"
+      },
+      {
+        "target": "reader:autonomy-needs-an-interface",
+        "type": "challenges",
+        "reason": "Human decisions and effective tool permissions complicate any suggestion that prose instructions or isolated hooks alone establish accountability.",
+        "provenance": [
+          "/the-small-fix-is-a-boundary/",
+          "/autonomy-needs-an-interface/"
+        ],
+        "basis": "curated-editorial-comparison",
+        "direction": "outgoing"
+      }
+    ],
+    "relationshipDisposition": "Three source-specific comparisons approved by Tony for the draft only; independent review and production graph admission are pending. None corroborates the video's claimed payoff.",
+    "relationshipReview": {
+      "reviewedAt": "2026-11-11",
+      "reviewedCatalogSize": 52,
+      "decision": "linked",
+      "reviewedTargets": [
+        "reader:more-skills-worse-agents",
+        "reader:make-good-work-inspectable",
+        "reader:autonomy-needs-an-interface"
+      ],
+      "rationale": "Owner approved these three named draft candidates after a source-specific editorial proposal. This is an owner draft assessment, not an independent reviewer acceptance or production admission."
+    },
+    "sharePlaneRelationships": [
+      {
+        "title": "Demo Debt",
+        "url": "https://shareplane.malott.ai/artifacts/demo-debt/",
+        "type": "companion",
+        "reason": "A functioning demo does not establish a sustained user-tested service. This comparison contextualizes Cole's verification and scope advice, without testing any of his eleven claimed improvements.",
+        "basis": "curated-editorial-comparison"
+      }
+    ],
+    "sharePlaneReview": {
+      "reviewedAt": "2026-11-11",
+      "decision": "linked",
+      "rationale": "Tony approved this single draft Work comparison, separate from Reader links. Independent assessment and final production graph admission remain pending; the Work is not source corroboration."
+    },
+    "review": {
+      "status": "PENDING independent editorial/source/privacy review; draft only",
+      "reviewer": "not yet assigned",
+      "checkedAt": "2026-11-11T23:00:00Z",
+      "scope": "Source fidelity, claim mapping, private-aid boundary and four editorial comparison proposals",
+      "findings": "No independent review decision or owner publication approval exists for this Reader."
+    },
+    "revisionHistory": [
+      {
+        "at": "2026-11-11T23:00:00Z",
+        "reason": "Draft candidate with source-first manuscript, provisional claims and owner-approved comparison proposals. Release not authorized."
+      }
+    ],
+    "editorialOrder": 52,
+    "archiveCall": {
+      "label": "Fix the failure before adding another layer",
+      "text": "Keep this source as a practical checklist for diagnosing recurring coding-agent friction. Start with the observed failure, use the smallest existing control that can address it, and measure the next ordinary task. Do not install all eleven mechanisms by default."
+    },
+    "editorialDepth": {
+      "schemaVersion": 1,
+      "receiptPath": "content/editorial-depth/the-small-fix-is-a-boundary.json"
+    }
+  },
+  "editorial": {
+    "overview": "Cole Medin argues that recurring coding-agent failures often call for small corrections in instructions, verification, context, authority, and scope rather than a new model or framework.",
+    "whyItMatters": "His eleven examples are useful diagnostics, but their claimed payoff is not established by controlled comparisons. Real proof, effective permissions, and proportional validation still have to be tested.",
+    "ghostMeshTakeaway": "Fix observed failures with the smallest enforceable existing control, preserve important human decisions, and measure the next normal task instead of adding eleven new mechanisms."
+  }
+}
