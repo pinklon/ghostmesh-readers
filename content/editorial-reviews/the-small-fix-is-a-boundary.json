@@ -3,26 +3,30 @@
   "readerId": "reader:the-small-fix-is-a-boundary",
   "sourceId": "hMEQ4rdaOLw",
   "sourceAidSha256": "af6c28c91e1a4e4097b6cee09e82bce8405b27745f473d59418a2e0261411cac",
-  "articleSha256": "e2394954dfd5fd9a1fca9311815f198c7d38dd4cb54ca270ff6848824cab0c01",
+  "articleSha256": "c8abb56b8990a19310ee062667343d9ec585ddd29dadfd07785aa9ec6acc8488",
   "evidenceRevision": "452690289729b6544fc19a6c3191f770ef4088ce43ebdbcd4db7b360d6731042",
-  "reviewedAt": "2026-11-12T04:46:28.124985+00:00",
+  "reviewedAt": "2026-11-12T12:19:48.107635+00:00",
   "provenance": {
     "kind": "codex-task-agent",
-    "reference": "Independent Pale Horse review continuation for PR 154 exact head f33a9edc9a0671843b9180d4dd78bf04999b3d4f, following full source review at a48bc721 and bounded recheck at 93bfdc34. Reviewer did not author candidate.",
-    "limits": "Read retained complete large-v3 machine transcript and all eleven cue neighborhoods, verified all original manifest members and both separate aid hashes, inspected article/catalog and four relationship targets, primary documentation and independent responsive Chrome QA. No listening certification, video-frame audit, measured intervention replication or full repository suite rerun."
+    "reference": "Pale Horse independent bounded review of PR 155 exact head 77ad16b8ae6202984cbd021374da262182804336; prior full source review and subsequent PR154 acceptance retained as baseline. Reviewer did not author mobile polish.",
+    "limits": "Review limited to presentation delta, copy/link/anchor/script parity, scoped CSS, responsive browser and focused depth validator. Prior complete machine transcript and source custody review applies unchanged. No new listening, effectiveness replication, complete assistive-technology audit or local full suite run."
   },
-  "summary": "ACCEPT FOR OWNER REVIEW. Prior source-map schema, manifest, analytical-section and canonical brief defects are resolved. Source fidelity, privacy and substantive companion rationale are acceptable within disclosed limits. Owner confirmation of changed edge and final publication decision remain pending.",
+  "summary": "ACCEPT FOR OWNER REVIEW on exact PR155 head 77ad16b8ae6202984cbd021374da262182804336. Presentation-only change preserves source copy, links, anchors and scripts; scoped CSS and actual responsive/keyboard checks pass. New authored bytes require refreshed owner acceptance before publication.",
   "findings": [
+    "Normalized complete visible body text matches approved base after excluding added presentational row labels and moved table headings. Ordered href and id arrays match exactly; no duplicate IDs; scripts identical. Base authored article matches prior accepted f33a9ed bytes.",
+    "All added CSS selectors use r53-prefixed classes in this single article. No shared stylesheet, catalog, map, source or claims changes. Three documentation rows preserve evidence-role qualifications; six labeled decision rows retain original failure/response/escalation content and order; three source-limit rows preserve machine-aid caveats.",
+    "Semantic tradeoff: native table navigation becomes ordinary h3/article groups with repeated visible response/escalation labels in DOM reading order. Content remains available without CSS; no ARIA table/grid is implied. This is acceptable for an editorial response guide, not a quantitative data grid.",
     "PASS: source map now has exactly five required keys and manifest binding af6c28c91e1a4e4097b6cee09e82bce8405b27745f473d59418a2e0261411cac. All eleven sections retain substantive paragraphs and exact source-time links. Actual nonrelease validator with authentic rebound receipts returns zero errors; validator code is unchanged.",
     "PASS: canonical gm-brief markup now uses existing shared reader-refresh.css. Independent Chrome inspection confirms numbered rows, accent indices, separators and responsive heading/body layout rather than an unstyled list. Source-first brief wording remains unchanged.",
-    "PASS: Autonomy Needs an Interface companion rationale correctly identifies shared downstream authorization concerns. Catalog marks retyping provisional; owner confirmation remains pending. Original approval of destination does not itself approve changed relationship type.",
     "Full source review is carried forward from prior exact candidate: complete retained machine transcript read, eleven cue neighborhoods checked, original seven-member pack plus separate aid hashes verified. Source argument, claim/evidence content and cues are unchanged; this continuation does not claim fresh listening or new effectiveness replication.",
     "Full retained large-v3 machine transcript was read and all eleven mapped cue neighborhoods checked. The source-first opening and ordered eleven recommendations faithfully paraphrase the source. The sponsor segment remains separately attributed and its token/security claims are not treated as independent findings. No measured payoff is invented.",
     "Original pack manifest and all seven listed members were independently hash-verified; separate large-v3 transcript and VTT hashes match catalog and article disclosures. The separate aid is not misrepresented as part of the first pack. Approximate cue labels do not establish exact speech or visual-demo accuracy.",
     "Live OpenAI skills, instruction-pruning, approval and guardrail documentation and Playwright assertions support the existence and scope of mechanisms, not a controlled payoff from the video. The article distinguishes those evidence roles and appropriately qualifies narrowly intercepted hooks versus effective downstream authorization.",
     "The source-specific critique and trial are substantive: evidence-backed completion, narrow change scope, retained authority and proportional validation are separated from unnecessary orchestration. The proposed comparison with Reader 52 acknowledges task/source differences, so it is operational learning rather than a causal benchmark.",
     "The two companion Reader routes to skill-sprawl and inspectable-work essays are supported by their authored arguments. Demo Debt supports the demo-versus-operated-service comparison. These are editorial comparisons, not empirical corroboration. Catalog arrays contain three Reader and one Work draft edges, so zero-admitted-edges language would be false for this preview; production admission remains separate.",
-    "Rechecked changed article, map and catalog: no new private source material or host paths. Existing source prose and eleven unverified claims are unchanged; previous full-source and privacy findings remain applicable."
+    "Rechecked changed article, map and catalog: no new private source material or host paths. Existing source prose and eleven unverified claims are unchanged; previous full-source and privacy findings remain applicable.",
+    "Catalog and four relationship proposals are unchanged by PR155. This review neither reopens prior owner decisions nor grants approval of the new visual revision.",
+    "Independent actual Chrome browser checks pass at 320,390,430,1440 pixels: changed sections readable without overflow; focus, claim disclosure, opt-in player and local anchors work; no captured console errors. Exact-head CI verify passed."
   ],
   "conclusion": "accept-for-owner-review"
 }
