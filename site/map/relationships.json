@@ -3,11 +3,11 @@
   "scope": "Local public editorial reading routes; no independent corroboration or cross-site graph admission.",
   "authority": "catalog-curated-editorial",
   "visibility": "public",
-  "readerCount": 55,
-  "assessmentCount": 55,
-  "relationshipCount": 124,
-  "sharePlaneRelationshipCount": 23,
-  "sharePlaneReviewCount": 15,
+  "readerCount": 56,
+  "assessmentCount": 56,
+  "relationshipCount": 127,
+  "sharePlaneRelationshipCount": 24,
+  "sharePlaneReviewCount": 16,
   "sharePlaneEdges": [
     {
       "from": "reader:when-code-gets-cheap-where-does-the-work-wait",
@@ -191,6 +191,14 @@
       "url": "https://shareplane.malott.ai/artifacts/demo-debt/",
       "type": "companion",
       "reason": "The Work explains why a convincing AI demo does not establish an operable service: recovery, support, permissions, cost and accepted workflow outcomes must be tested. It complements the Nod walkthrough critique without claiming any independent result for Nod or Cowork.",
+      "basis": "curated-editorial-comparison"
+    },
+    {
+      "from": "reader:the-taste-is-in-the-loop-not-the-prompt",
+      "title": "Demo Debt",
+      "url": "https://shareplane.malott.ai/artifacts/demo-debt/",
+      "type": "companion",
+      "reason": "Demo Debt distinguishes a convincing visible demonstration from sustained operating value. Cook is a procedure and selected demos, not yet evidence of cost-effective production design quality.",
       "basis": "curated-editorial-comparison"
     }
   ],
@@ -1083,6 +1091,23 @@
           "reader:the-home-repo-is-a-map-not-a-monorepo"
         ],
         "rationale": "Owner requested repair of the omitted graph admission on published Readers #54 and #55. Three authored candidate targets were checked against their published theses and given source-limited directional rationales; no reciprocal edges or factual corroboration is implied. Independent relationship review on the exact amended record remains an acceptance gate."
+      }
+    },
+    {
+      "id": "reader:the-taste-is-in-the-loop-not-the-prompt",
+      "slug": "the-taste-is-in-the-loop-not-the-prompt",
+      "title": "The Taste Is in the Loop, Not the Prompt",
+      "url": "https://youtube.shareplane.malott.ai/the-taste-is-in-the-loop-not-the-prompt/",
+      "review": {
+        "reviewedAt": "2026-11-12",
+        "reviewedCatalogSize": 56,
+        "decision": "linked",
+        "reviewedTargets": [
+          "reader:when-every-ai-website-looks-good",
+          "reader:the-small-fix-is-a-boundary",
+          "reader:replacing-cowork-is-a-test-not-a-title"
+        ],
+        "rationale": "Three proposed source-specific analogies were compared against the published Reader theses across the catalog. Independent editorial acceptance and owner admission remain pending; no experimental corroboration or reciprocal edge is asserted."
       }
     }
   ],
@@ -2571,6 +2596,42 @@
       "provenance": [
         "/replacing-cowork-is-a-test-not-a-title/",
         "/the-home-repo-is-a-map-not-a-monorepo/"
+      ],
+      "basis": "curated-editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:the-taste-is-in-the-loop-not-the-prompt",
+      "to": "reader:when-every-ai-website-looks-good",
+      "type": "companion",
+      "reason": "Reader #50 questions how polished AI websites converge into a generic visual language. Cook proposes visual references and iterative criticism as a response, while neither source establishes objective taste measurement.",
+      "provenance": [
+        "/the-taste-is-in-the-loop-not-the-prompt/",
+        "/when-every-ai-website-looks-good/"
+      ],
+      "basis": "curated-editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:the-taste-is-in-the-loop-not-the-prompt",
+      "to": "reader:the-small-fix-is-a-boundary",
+      "type": "companion",
+      "reason": "Reader #53 shows why a narrow responsive fix requires direct visual and accessibility checks. Cook expands the iteration idea, but aspirational critic scores cannot substitute for actual device and text-scaling validation.",
+      "provenance": [
+        "/the-taste-is-in-the-loop-not-the-prompt/",
+        "/the-small-fix-is-a-boundary/"
+      ],
+      "basis": "curated-editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:the-taste-is-in-the-loop-not-the-prompt",
+      "to": "reader:replacing-cowork-is-a-test-not-a-title",
+      "type": "companion",
+      "reason": "Reader #55 separates a creator demonstration from sustained workflow proof. The same boundary applies to Cook: repository mechanics are inspectable, while comparative product-quality outcomes remain unverified.",
+      "provenance": [
+        "/the-taste-is-in-the-loop-not-the-prompt/",
+        "/replacing-cowork-is-a-test-not-a-title/"
       ],
       "basis": "curated-editorial-comparison",
       "direction": "outgoing"
