@@ -1,0 +1,145 @@
+{
+  "schemaVersion": 1,
+  "readerId": "reader:replacing-cowork-is-a-test-not-a-title",
+  "sourceId": "0i9W42yV3lE",
+  "sourceDigest": "a389d20f53ce71b1212866adadc5d646fbef92053d14d5e03f7da42958990ad9",
+  "sourceAidSha256": "4c0ae71943fecfc8e4ae7d44892d31b202c24e22532e4de1e55c06d3efd9746e",
+  "articleSha256": "3d24daf884ae416d6b6a1c57fea312d5a9dbf569ab7085e06d2b2e1c347ab80b",
+  "evidenceRevision": "7abc230d24e5b0ac87fa01431da809536850134b9deda4deaba9bdebe8890592",
+  "sourceMapEvidenceSha256": "c1bd41683beb83c75a00a912ba6fc9f4102f3bdd017bf28e9e48757d6f0afeee",
+  "reviewEvidenceSha256": "32f5928d4fa92e2d2823056cebcd629c8b6cf446e45a779508745e53d88f66c7",
+  "candidateAuthor": "pinklon",
+  "complexity": {
+    "tier": "extended",
+    "factors": [
+      "Seven source claims across authorization, scheduling, browsing and models",
+      "Vendor benchmark and security-role distinctions",
+      "Three unadmitted comparisons and responsive checks"
+    ],
+    "rationale": "A workflow replacement claim spans several independent operational and authority boundaries."
+  },
+  "sourceMap": [
+    {
+      "atSeconds": 0,
+      "sectionId": "source-framing",
+      "claimIds": [
+        "r55-position"
+      ],
+      "rationale": "The presenter positions Nod as a Cowork alternative based on schedules, provider choice and a later multiple-account comparison. Independently checked against retained machine transcript and VTT neighborhood; not listening-certified or outcome replication."
+    },
+    {
+      "atSeconds": 148,
+      "sectionId": "approval-and-browser",
+      "claimIds": [
+        "r55-vault"
+      ],
+      "rationale": "The presenter tours Vault import and login/card settings, without testing secret exfiltration protections. Independently checked against retained machine transcript and VTT neighborhood; not listening-certified or outcome replication."
+    },
+    {
+      "atSeconds": 354,
+      "sectionId": "actual-demo",
+      "claimIds": [
+        "r55-sheets"
+      ],
+      "rationale": "The retained source supports Sheets account authorization and return to Nod. Corrected actual-demo section now encloses the substantive account-flow narrative and exact 354-second source link."
+    },
+    {
+      "atSeconds": 453,
+      "sectionId": "actual-demo",
+      "claimIds": [
+        "r55-schedule"
+      ],
+      "rationale": "The presenter defines a daily email follow-up summary and inspects scheduled-task controls; future scheduled success is not demonstrated. Independently checked against retained machine transcript and VTT neighborhood; not listening-certified or outcome replication."
+    },
+    {
+      "atSeconds": 649,
+      "sectionId": "approval-and-browser",
+      "claimIds": [
+        "r55-ebay"
+      ],
+      "rationale": "The presenter uses a logged-in browser to inspect Lincoln CDV sales, observes an engraving classification error and discusses offer-price uncertainty. Independently checked against retained machine transcript and VTT neighborhood; not listening-certified or outcome replication."
+    },
+    {
+      "atSeconds": 832,
+      "sectionId": "model-and-apps",
+      "claimIds": [
+        "r55-provider"
+      ],
+      "rationale": "The presenter shows Opus-to-Sonnet selection and other provider connections, while wishing for task-level model choice. Independently checked against retained machine transcript and VTT neighborhood; not listening-certified or outcome replication."
+    },
+    {
+      "atSeconds": 960,
+      "sectionId": "limits-in-source",
+      "claimIds": [
+        "r55-multi"
+      ],
+      "rationale": "The presenter shows two Gmail accounts and contrasts one-checkbox Cowork connector UI; other Cowork configurations were not assessed. Independently checked against retained machine transcript and VTT neighborhood; not listening-certified or outcome replication."
+    }
+  ],
+  "assessment": {
+    "sourceCoverage": {
+      "disposition": "covered",
+      "rationale": "Prior complete retained machine-source review covers seven cues. Bounded correction resolves the 354-second section mismatch; all seven semantic cue mappings validate without altering source claims."
+    },
+    "supportingArgument": {
+      "disposition": "covered",
+      "rationale": "Preserves authorization, recurring email setup, eBay failures, model selection and account comparison without claiming sustained replacement success."
+    },
+    "evidenceRoles": {
+      "disposition": "covered",
+      "rationale": "Creator demonstration, official vendor mechanisms/evaluations and reviewer-proposed tests remain distinct. Affiliate and machine-transcript limitations are disclosed."
+    },
+    "counterargument": {
+      "disposition": "covered",
+      "rationale": "Engraving misclassification, uncertain accepted sale prices, unproved future schedules and product-configuration limits challenge a replacement verdict."
+    },
+    "tradeoffs": {
+      "disposition": "covered",
+      "rationale": "Provider choice, local workspace and multi-account convenience are weighed against credential scope, model fallibility, desktop requirements and maintenance."
+    },
+    "falsifiability": {
+      "disposition": "covered",
+      "rationale": "Matched authorized tasks with stable conditions, accepted outcomes, reviewer interventions, permission boundaries and cost can test replacement; this is a proposal, not executed evidence."
+    },
+    "originalSynthesis": {
+      "disposition": "covered",
+      "rationale": "Replacement is a workflow-level measured outcome, not a title or feature inventory. A common interface cannot itself establish authority or reliability."
+    },
+    "performance": {
+      "disposition": "covered",
+      "rationale": "Vendor simulated errands, memory and injection evaluations are explicitly scoped and not independent comparative Cowork performance evidence."
+    },
+    "economics": {
+      "disposition": "covered",
+      "rationale": "Personal $4 spend is not normalized task cost. Cost per accepted result and review effort are appropriate proposed measures without invented savings."
+    },
+    "threatGovernance": {
+      "disposition": "covered",
+      "rationale": "Vault, browser state and chosen model services have distinct exposure boundaries. Documented authorization checks and model checking are mitigations with known limitations, not immunity."
+    }
+  },
+  "independentCorroboration": "none",
+  "ownerDecision": {
+    "kind": "conversation",
+    "owner": "Tony Malott",
+    "approval": "Owner explicitly approved publication of GhostMesh Reader #55 (Replacing Cowork Is a Test, Not a Title) from PR #158 after viewing the draft preview, saying \"approved... publish it and nice work!\". Independently reviewed correction only changes source-map r55-sheets section mapping, semantic emphasis, displayed 960-second label and catalog review count. Original source propositions, related Reader comparisons and zero SharePlane Work edges remain unchanged; one owner approval authorizes normal protected release subject to exact-head checks.",
+    "approvalDate": "2026-11-12",
+    "articleSha256": "3d24daf884ae416d6b6a1c57fea312d5a9dbf569ab7085e06d2b2e1c347ab80b",
+    "evidenceRevision": "7abc230d24e5b0ac87fa01431da809536850134b9deda4deaba9bdebe8890592"
+  },
+  "decision": "accept",
+  "gaps": [
+    {
+      "type": "scope",
+      "severity": "nonblocking",
+      "rationale": "Owner publication approval is reported by coordinator but not independently inspected here; this review grants no graph admission or release authority."
+    },
+    {
+      "type": "evidence",
+      "severity": "nonblocking",
+      "rationale": "Machine-transcription errors remain possible; no independent listening, security audit or benchmark replication."
+    }
+  ],
+  "decisionRationale": "The independent reviewer accepted the bounded corrections to the exact article and source map, verified all seven cues and privacy limits, and returned an authentic accept-for-owner-review receipt. Owner approved publication in the current conversation and no material editorial/source change was made after approval. Three proposed Reader comparisons remain unadmitted; no SharePlane Work edges. Remaining machine-transcript limitations are disclosed and nonblocking.",
+  "assessedAt": "2026-11-12T15:29:24.521868+00:00"
+}
