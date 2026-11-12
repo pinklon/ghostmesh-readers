@@ -21,9 +21,16 @@
     {
       "atSeconds": 298,
       "sectionId": "numeric-bar",
-      "claimIds": ["r56-score", "r56-sixty-six"],
-      "cueParaphrase": "A high target and a lower observed self-assessment are discussed, without a validated perceptual similarity metric.",
+      "claimIds": ["r56-score"],
+      "cueParaphrase": "The presenter introduces a high numerical quality target without a validated perceptual similarity metric.",
       "privateAidCheck": "English automatic VTT cues inspected; numerical claims are creator-reported, not independently measured."
+    },
+    {
+      "atSeconds": 378,
+      "sectionId": "numeric-bar",
+      "claimIds": ["r56-sixty-six"],
+      "cueParaphrase": "The presenter describes a result as approximately 66% close, without a calibrated or independently reproduced quality measurement.",
+      "privateAidCheck": "English automatic VTT cue at 06:18–06:20 inspected; creator self-assessment, not listening-certified or independently measured."
     },
     {
       "atSeconds": 451,
