@@ -12,6 +12,251 @@
   ],
   "readers": [
     {
+      "id": "reader:the-home-repo-is-a-map-not-a-monorepo",
+      "slug": "the-home-repo-is-a-map-not-a-monorepo",
+      "title": "The Home Repo Is a Map, Not a Monorepo",
+      "category": "AI & Technology",
+      "tags": [
+        "agent architecture",
+        "coding agents",
+        "multi-repo",
+        "skills",
+        "context governance"
+      ],
+      "entities": [
+        "Matt Pocock",
+        "Git worktrees",
+        "GhostMesh"
+      ],
+      "source": {
+        "platform": "YouTube",
+        "url": "https://www.youtube.com/watch?v=hWe-j78vNpc",
+        "videoId": "hWe-j78vNpc",
+        "title": "The Home Repo Pattern: Run agents across ALL your repos",
+        "creator": "Matt Pocock",
+        "mediaAspect": "16:9",
+        "durationSeconds": 533,
+        "uploadDate": "2026-11-12",
+        "creatorChapters": [
+          {
+            "atSeconds": 0,
+            "label": "A too-simple technique goes viral"
+          },
+          {
+            "atSeconds": 27,
+            "label": "The multi-repo agent problem"
+          },
+          {
+            "atSeconds": 140,
+            "label": "The home repo solution"
+          },
+          {
+            "atSeconds": 173,
+            "label": "Tour of my home repo"
+          },
+          {
+            "atSeconds": 282,
+            "label": "Scaling and why not monorepos"
+          },
+          {
+            "atSeconds": 343,
+            "label": "Personal wiki and custom tooling"
+          }
+        ],
+        "captionType": "YouTube automatic English captions captured privately; not independently listening-certified"
+      },
+      "published": "2026-11-12",
+      "updated": "2026-11-12T13:31:23Z",
+      "overview": "Matt Pocock proposes one versioned home repository containing shared agent skills, steering, a wiki and tools, with paths to separately owned code repositories. Source-first analysis weighs navigation benefits against ownership and permission boundaries.",
+      "whyItMatters": "Organizations working across multiple repositories often duplicate instruction files and agent skills. A shared discovery surface can simplify navigation, but centralizing knowledge and connected tools also concentrates operational context and access pathways.",
+      "ghostMeshTakeaway": "Treat the home repo as a shared map and knowledge layer, not a monorepo or authorization system. Pilot one cross-repo workflow; preserve destination-level permissions, owners, CI and release controls.",
+      "verdict": "Worth studying",
+      "architectureImpact": "experiment recommended",
+      "falsification": "Compare the same authorized two-repo task from the existing launch setup and a read-only home index, tracking correct repo discovery, stale guidance, changed file scope, reviewer effort and owner interventions.",
+      "evidenceState": "unverified",
+      "lastEvidenceChecked": "2026-11-12T13:29:49Z",
+      "freshness": "November 12 creator video and creator article; original-media ReasonPack verified; machine captions not independently listening-certified; Git and harness docs support mechanisms but not measured outcome improvement.",
+      "variant": "editorial",
+      "accent": "teal",
+      "claims": [
+        {
+          "id": "r54-dup",
+          "proposition": "Duplicate skills and steering files across repositories create synchronization and navigation friction.",
+          "kind": "creator-recommendation",
+          "status": "unverified",
+          "sourceLocation": "00:27",
+          "assessment": "Attributed creator mechanism or recommendation. The video provides a demonstration, not a controlled before/after study of its organizational benefit.",
+          "limits": "Actual effect depends on repository ownership, agent harness, skills discovery, permissions, review effort and stale instruction rates.",
+          "references": [
+            "r54-video",
+            "r54-article"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-12"
+        },
+        {
+          "id": "r54-entry",
+          "proposition": "A home repository can provide one versioned entry point for skills, instructions and cross-repository navigation.",
+          "kind": "creator-recommendation",
+          "status": "unverified",
+          "sourceLocation": "02:20",
+          "assessment": "Attributed creator mechanism or recommendation. The video provides a demonstration, not a controlled before/after study of its organizational benefit.",
+          "limits": "Actual effect depends on repository ownership, agent harness, skills discovery, permissions, review effort and stale instruction rates.",
+          "references": [
+            "r54-video",
+            "r54-article"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-12"
+        },
+        {
+          "id": "r54-worktrees",
+          "proposition": "Navigation pointers and Git worktrees support cross-repository and parallel working arrangements.",
+          "kind": "creator-recommendation",
+          "status": "unverified",
+          "sourceLocation": "02:53",
+          "assessment": "Attributed creator mechanism or recommendation. The video provides a demonstration, not a controlled before/after study of its organizational benefit.",
+          "limits": "Actual effect depends on repository ownership, agent harness, skills discovery, permissions, review effort and stale instruction rates.",
+          "references": [
+            "r54-video",
+            "r54-article"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-12"
+        },
+        {
+          "id": "r54-scale",
+          "proposition": "Progressively disclosed domain links are preferable to a flat repository list at large scale.",
+          "kind": "creator-recommendation",
+          "status": "unverified",
+          "sourceLocation": "04:42",
+          "assessment": "Attributed creator mechanism or recommendation. The video provides a demonstration, not a controlled before/after study of its organizational benefit.",
+          "limits": "Actual effect depends on repository ownership, agent harness, skills discovery, permissions, review effort and stale instruction rates.",
+          "references": [
+            "r54-video",
+            "r54-article"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-12"
+        },
+        {
+          "id": "r54-tools",
+          "proposition": "A home repository can combine a business wiki and cross-service tools into reusable agent workflows.",
+          "kind": "creator-recommendation",
+          "status": "unverified",
+          "sourceLocation": "05:43",
+          "assessment": "Attributed creator mechanism or recommendation. The video provides a demonstration, not a controlled before/after study of its organizational benefit.",
+          "limits": "Actual effect depends on repository ownership, agent harness, skills discovery, permissions, review effort and stale instruction rates.",
+          "references": [
+            "r54-video",
+            "r54-article"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-12"
+        }
+      ],
+      "references": [
+        {
+          "id": "r54-video",
+          "title": "The Home Repo Pattern: Run agents across ALL your repos",
+          "author": "Matt Pocock",
+          "publisher": "YouTube",
+          "url": "https://www.youtube.com/watch?v=hWe-j78vNpc",
+          "publicationDate": "2026-11-12",
+          "eventDate": null,
+          "location": "00:00–08:53; six creator chapters",
+          "sourceType": "creator video",
+          "independence": "Primary creator account, not independent productivity or security validation.",
+          "evidenceFamily": "r54-video",
+          "checkedAt": "2026-11-12T13:29:49Z",
+          "datePrecision": "day"
+        },
+        {
+          "id": "r54-article",
+          "title": "The Home Repo Pattern",
+          "author": "Matt Pocock",
+          "publisher": "AI Hero",
+          "url": "https://aihero.dev/the-home-repo-pattern",
+          "publicationDate": "2026-11-12",
+          "eventDate": null,
+          "location": "Full written workflow and setup prompt",
+          "sourceType": "creator article",
+          "independence": "Written specification from same creator and therefore not independent corroboration.",
+          "evidenceFamily": "r54-article",
+          "checkedAt": "2026-11-12T13:29:49Z",
+          "datePrecision": "day"
+        },
+        {
+          "id": "r54-git",
+          "title": "git-worktree",
+          "author": "Git project",
+          "publisher": "Git",
+          "url": "https://git-scm.com/docs/git-worktree",
+          "publicationDate": "unknown",
+          "eventDate": null,
+          "location": "Worktree semantics and commands",
+          "sourceType": "official documentation",
+          "independence": "Documents Git mechanism, not safe agent concurrency.",
+          "evidenceFamily": "r54-git",
+          "checkedAt": "2026-11-12T13:29:49Z",
+          "dateNote": "Living documentation; original publication date not independently established."
+        },
+        {
+          "id": "r54-claude",
+          "title": "Give Claude context: CLAUDE.md and better prompts",
+          "author": "Anthropic",
+          "publisher": "Claude Help Center",
+          "url": "https://support.claude.com/en/articles/14553240-give-claude-context-claude-md-and-better-prompts",
+          "publicationDate": "2026-04-15",
+          "eventDate": null,
+          "location": "Project and user instruction file loading",
+          "sourceType": "vendor documentation",
+          "independence": "Describes Claude Code behavior, not every harness or the home-repo performance benefit.",
+          "evidenceFamily": "r54-claude",
+          "checkedAt": "2026-11-12T13:29:49Z",
+          "datePrecision": "day"
+        }
+      ],
+      "relationships": [],
+      "relationshipDisposition": "No Reader graph edges admitted in this draft. Three grounded cross-Reader comparisons appear in the article as explicit proposals, pending independent assessment and owner admission.",
+      "relationshipReview": {
+        "reviewedAt": "2026-11-12",
+        "reviewedCatalogSize": 53,
+        "decision": "none",
+        "reviewedTargets": [],
+        "rationale": "All 53 Reader theses screened for directly relevant counterparts. Proposed editorial comparisons: tool-discovery continuity, skill metadata sprawl, and accountable authority. They remain authored proposed reading links, not admitted directed graph edges or corroboration. No other Reader edge is yet admitted without review."
+      },
+      "sharePlaneRelationships": [],
+      "sharePlaneReview": {
+        "reviewedAt": "2026-11-12",
+        "decision": "none",
+        "rationale": "No independent, source-specific SharePlane Work edge is admitted in the first candidate. A separate focused editorial review may propose a Work comparison, or retain an explicit zero. No graph write is implied."
+      },
+      "review": {
+        "status": "PENDING independent editorial/source/privacy review; draft only",
+        "reviewer": "unassigned independent reviewer",
+        "checkedAt": "2026-11-12T13:29:49Z",
+        "scope": "Source-first argument, five claim cues, source integrity, privacy, 53-Reader relationship screening and Reader #53 visual parity",
+        "findings": "Original media pack verification passed; detailed independent qualitative/editorial review not yet performed. Publication not authorized."
+      },
+      "revisionHistory": [
+        {
+          "at": "2026-11-12T13:29:49Z",
+          "reason": "First Reader #54 source-grounded candidate using Reader #53 canonical shell and verified private ReasonPack; review and release withheld."
+        }
+      ],
+      "editorialOrder": 53,
+      "archiveCall": {
+        "label": "Share the map, keep the owner",
+        "text": "Use the home repo as a versioned entry point for shared agent skills, documentation and navigation. Keep project-specific instructions and code in their owning repositories, and test navigation and permissions before centralizing anything else."
+      },
+      "editorialDepth": {
+        "schemaVersion": 1,
+        "receiptPath": "content/editorial-depth/the-home-repo-is-a-map-not-a-monorepo.json"
+      },
+      "rank": 53
+    },
+    {
       "id": "reader:the-small-fix-is-a-boundary",
       "slug": "the-small-fix-is-a-boundary",
       "title": "The Small Fix Is a Boundary",
