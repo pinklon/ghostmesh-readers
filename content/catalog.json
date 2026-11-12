@@ -8520,9 +8520,476 @@
           "datePrecision": "day",
           "eventDate": "",
           "location": "dated company-reported RL pause and frontier hold",
-          "sourceType": 
-... 27796 bytes omitted ...
-748,
+          "sourceType": "dated company-reported RL pause and frontier hold",
+          "independence": "dated company-reported RL pause and frontier hold",
+          "evidenceFamily": "openai.com",
+          "checkedAt": "2026-10-20T00:00:00Z"
+        },
+        {
+          "id": "P07",
+          "title": "company assessment proposal, not a completed result",
+          "author": "openai.com",
+          "publisher": "openai.com",
+          "url": "https://openai.com/index/priorities-principles-third-party-assessments/",
+          "publicationDate": "2026-09-22",
+          "datePrecision": "day",
+          "eventDate": "",
+          "location": "company assessment proposal, not a completed result",
+          "sourceType": "company assessment proposal, not a completed result",
+          "independence": "company assessment proposal, not a completed result",
+          "evidenceFamily": "openai.com",
+          "checkedAt": "2026-10-20T00:00:00Z"
+        },
+        {
+          "id": "P08",
+          "title": "independent post-interview proposal; not speech from the video",
+          "author": "metr.org",
+          "publisher": "metr.org",
+          "url": "https://metr.org/blog/2026-10-14-better-informing-the-public-about-loss-of-control-risks/",
+          "publicationDate": "2026-10-14",
+          "datePrecision": "day",
+          "eventDate": "",
+          "location": "independent post-interview proposal; not speech from the video",
+          "sourceType": "independent post-interview proposal; not speech from the video",
+          "independence": "independent post-interview proposal; not speech from the video",
+          "evidenceFamily": "metr.org",
+          "checkedAt": "2026-10-20T00:00:00Z"
+        }
+      ],
+      "relationships": [
+        {
+          "target": "reader:the-label-the-box-and-the-bargain",
+          "type": "related topic",
+          "reason": "Both use OpenAI's August 2026 Hugging Face incident. Robinson examines bounded intrusion forensics and safeguards; Bostrom uses the incident as a limited example of a present boundary failure. Their shared source is not independent corroboration or a forecast of universal escape.",
+          "provenance": [
+            "/the-brakes-need-a-test/#incident",
+            "/the-label-the-box-and-the-bargain/#section-2"
+          ],
+          "basis": "curated-source-overlap",
+          "direction": "outgoing"
+        },
+        {
+          "target": "reader:the-threshold-is-a-claim-not-a-test",
+          "type": "related topic",
+          "reason": "Robinson asks whether tests, pauses and retests keep pace with releases; Gates raises a broader threshold for cyber and biological danger and public oversight. The questions complement each other, but Robinson's interview does not measure Gates's actor-uplift claim.",
+          "provenance": [
+            "/the-brakes-need-a-test/#takeaway",
+            "/the-threshold-is-a-claim-not-a-test/#measurement"
+          ],
+          "basis": "curated-editorial-contrast",
+          "direction": "outgoing"
+        }
+      ],
+      "relationshipDisposition": "Two qualified routes compare the bounded Hugging Face incident and release-safety tests with broader control and risk-threshold questions. Shared source evidence is not independent corroboration.",
+      "legacyReceipt": {
+        "schema": "ghostmesh-video-partial-source-receipt-v1",
+        "source": {
+          "platform": "YouTube",
+          "url": "https://www.youtube.com/watch?v=JIMXEuT_ZAU",
+          "videoId": "JIMXEuT_ZAU",
+          "title": "What This OpenAI Insider Saw That Made Him Quit",
+          "creator": "The Ezra Klein Show",
+          "uploadDate": "20261007",
+          "durationSeconds": 4495,
+          "mediaAspect": "16:9"
+        },
+        "custody": {
+          "status": "private-hash-identified-partial-source",
+          "note": "Full automatic text and original audio retained privately; no direct full listening, frames or canonical full ReasonPack verified."
+        },
+        "sourceInspection": {
+          "method": "Full exact-video automatic text plus six short local ASR navigation samples.",
+          "caveat": "Speaker turns, exact wording and visual scenes remain unauthenticated.",
+          "publicationBoundary": "Full captions, media and private paths are excluded from the public site.",
+          "timedCaptionSha256": "722d261126f8d809514ae3cd7bd35d85af6a038e40a5e9148a45a76669469ecf"
+        },
+        "reasonPack": {
+          "verification": "not-performed"
+        },
+        "writerHandoffSourceFacts": {
+          "checkedAt": "2026-10-20",
+          "reader": {
+            "id": "reader:the-brakes-need-a-test",
+            "slug": "the-brakes-need-a-test",
+            "title": "The Brakes Need a Test",
+            "category": "AI & Technology",
+            "variant": "dossier",
+            "overview": "Ezra Klein asks former OpenAI safety-report writer David Robinson why he left and whether the industry's safety process can keep up with faster model and agent work. The automatic video text presents an uncertain but serious risk case, not a prediction that catastrophe is certain.",
+            "whyItMatters": "Watch selected exchanges if you need to decide what evidence a frontier lab should show before its safety claim earns trust. Skip the full 74:55 if you need measured incident rates or a completed independent audit; the interview does not supply either.",
+            "ghostMeshTakeaway": "The useful test is whether a warning reaches a named threshold, an accountable pause-or-proceed decision, and a scoped outside retest. Real pauses and a real intrusion both belong in the record; neither alone settles whether revised controls work.",
+            "proposedVerdict": "Worth studying",
+            "verdictScope": "Selective watch, approximately 21 minutes; source starts are machine-text-derived and must be checked in the original video. No exact quote or visually observed demonstration is asserted.",
+            "architectureImpact": "review process proposed"
+          },
+          "source": {
+            "url": "https://www.youtube.com/watch?v=JIMXEuT_ZAU",
+            "videoId": "JIMXEuT_ZAU",
+            "title": "What This OpenAI Insider Saw That Made Him Quit",
+            "publisher": "The Ezra Klein Show",
+            "publicationDate": "2026-10-07",
+            "publisherDurationSeconds": 4495,
+            "publicMetadataWidth": 1920,
+            "publicMetadataHeight": 1080,
+            "mediaAspect": "16:9",
+            "textRoute": "Exact-video English auto-generated transcript, privately held; machine text is not directly heard speech",
+            "timedTextStart": "00:00",
+            "timedTextEnd": "1:14:55",
+            "timedTextLineCount": 2139,
+            "timedTextSha256": "722d261126f8d809514ae3cd7bd35d85af6a038e40a5e9148a45a76669469ecf"
+          },
+          "privateCustody": {
+            "classification": "partial",
+            "originalAudioByteCount": 27361649,
+            "originalAudioDurationSeconds": 4495.52254,
+            "originalAudioSha256": "44b57efcc6808274b2b976ddf00025e45dabac37760dbba2cddb29c2b5e603ee",
+            "originalAudioDecodedWithoutError": true,
+            "directFullAudioListening": false,
+            "videoFramesReviewed": false,
+            "sixLocalAsrNavigationSamples": true,
+            "speakerTurnsAuthenticated": false,
+            "podcastEditionMatched": false,
+            "podcastDurationNote": "The NYT-distributed Apple listing says 1h11m; it is not used as the 74:55 video's transcript.",
+            "privateMaterialsPublished": false
+          },
+          "methodAndLimits": [
+            "Read the complete timed automatic video text across 00:00-1:14:55 and compared six prior local ASR navigation windows at the opening, 17:10, 37:29, 46:10, 58:31 and 1:11:20.",
+            "The full text and audio remain private; this receipt contains original paraphrases, bounded citations and hashes only.",
+            "Automatic transcription can mishear names, numbers, negations and speaker turns. This edition publishes no exact interview quotation, visual claim or certified speaker transcription.",
+            "Public primary records corroborate the bounded July intrusion and document company policy and pauses; they do not prove every interview interpretation, current control effectiveness, or future outcome.",
+            "OpenAI pages are one company evidence family. Hugging Face documents its observed platform intrusion. METR's independent behavioral analysis relied on OpenAI-supplied records and excluded safeguard effectiveness and remediation."
+          ],
+          "videoClaimIds": [
+            "V01",
+            "V02",
+            "V03",
+            "V04",
+            "V05",
+            "V06",
+            "V07",
+            "V08",
+            "V09",
+            "V10",
+            "V11",
+            "V12",
+            "V13",
+            "V14"
+          ],
+          "sourceMap": "docs/intake/JIMXEuT_ZAU-video-first-source-map.md",
+          "publicReferences": [
+            {
+              "id": "P01",
+              "url": "https://www.theatlantic.com/technology/2026/10/openai-safety-team-resignation/688881/",
+              "date": "2026-10-03",
+              "role": "same-witness first-person essay; not independent internal corroboration"
+            },
+            {
+              "id": "P02",
+              "url": "https://openai.com/index/updating-our-preparedness-framework/",
+              "date": "2025-04-15",
+              "role": "company policy; not an implementation audit"
+            },
+            {
+              "id": "P03",
+              "url": "https://openai.com/index/hugging-face-incident-and-the-road-ahead/",
+              "date": "2026-08-26",
+              "role": "company incident account and retrospective safeguard counterrecord"
+            },
+            {
+              "id": "P04",
+              "url": "https://huggingface.co/blog/agent-intrusion-technical-timeline",
+              "date": "2026-07-27",
+              "role": "affected-platform direct forensic observations"
+            },
+            {
+              "id": "P05",
+              "url": "https://metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation/",
+              "date": "2026-08-26",
+              "role": "independent behavioral analysis on company-supplied data, scoped"
+            },
+            {
+              "id": "P06",
+              "url": "https://openai.com/index/pacing-model-development-cyber-capabilities/",
+              "date": "2026-08-18",
+              "role": "dated company-reported RL pause and frontier hold"
+            },
+            {
+              "id": "P07",
+              "url": "https://openai.com/index/priorities-principles-third-party-assessments/",
+              "date": "2026-09-22",
+              "role": "company assessment proposal, not a completed result"
+            },
+            {
+              "id": "P08",
+              "url": "https://metr.org/blog/2026-10-14-better-informing-the-public-about-loss-of-control-risks/",
+              "date": "2026-10-14",
+              "role": "independent post-interview proposal; not speech from the video"
+            }
+          ],
+          "sanitizedReceiptSha256": "93b42831f5b14dd29ced37a2922463e203408575683570a2de5baa1652f5cd92"
+        }
+      },
+      "review": {
+        "status": "independent-public-copy-reviewed; source-qualified",
+        "reviewer": "Task18 public integration and exact-page review",
+        "reviewedSourceHead": "68a73b00e548c6cd3cf017ab242a104014757d12",
+        "checkedAt": "2026-10-20T12:03:09Z",
+        "scope": "Retained writer article, fourteen claim and nine reference limits, sanitized custody receipt, generated page, desktop/mobile layout and opt-in playback. No full ReasonPack or exact speech verification claimed.",
+        "findings": "No blocking source, privacy or layout issue in the reviewed edition; machine transcript limits remain disclosed."
+      },
+      "revisionHistory": [
+        {
+          "at": "2026-10-20T00:00:00Z",
+          "kind": "private-integration-candidate",
+          "reason": "Mechanical projection of incumbent writer source map."
+        }
+      ],
+      "editorialOrder": 19,
+      "orderReason": "Twentieth Reader, following the Muse edition in the existing archive.",
+      "evidenceReview": {
+        "sourceFidelity": "Full automatic text and six short ASR navigation samples; no direct full-audio listening or video frame review.",
+        "conclusion": "The useful test is whether a warning reaches a named threshold, an accountable pause-or-proceed decision, and a scoped outside retest. Real pauses and a real intrusion both belong in the record; neither alone settles whether revised controls work.",
+        "evidenceBoundary": "Company, affected-platform and independent-but-source-dependent incident records have distinct roles; none authenticates interview speech.",
+        "nextVerification": "Verify targeted original audio before attributing contested wording, speakers or numbers; inspect source visuals before making a visual claim."
+      },
+      "relationshipReview": {
+        "reviewedAt": "2026-10-24",
+        "reviewedCatalogSize": 38,
+        "decision": "linked",
+        "reviewedTargets": [
+          "reader:the-label-the-box-and-the-bargain",
+          "reader:the-threshold-is-a-claim-not-a-test"
+        ],
+        "rationale": "Robinson's incident and release-process analysis supports routes to Bostrom's bounded control example and Gates's risk threshold. These are comparison paths, not independent interview corroboration. The new harness-evaluation Reader was assessed in the 24-Reader catalog; no additional directed route from this entry was warranted. The new acting-agent boundary Reader was assessed in the 25-Reader catalog; no additional outgoing route from this entry was warranted. Reassessed against the new local AI Reader; no additional cross-source claim or substantively distinct route was established. The new Anthropic source-control Reader was assessed for this updated catalog; existing edges remain unchanged. Reassessed against four distinct AI Engineer video theses; their new outgoing links carry the qualified comparisons, with no new outgoing edge warranted from this existing entry. The HORTRAME visual swarm Reader was assessed as a new catalog neighbor; no additional outgoing route is justified by its distinct film and mathematics source. The newly added DeepInfer source was checked for another outgoing route; none is justified beyond its new Reader-to-Reader routes. The new Hassabis profile was compared for a specific shared claim; no further typed relation is admitted on thematic overlap alone. Compared the new Orca fleet Reader as a possible target; its three outbound comparisons cover the supported links, and no reciprocal claim of source corroboration is warranted. The newly added LangChain webhook Reader was compared for a distinct source-grounded relationship; no existing typed edge is changed by this candidate."
+      }
+    },
+    {
+      "id": "reader:the-grader-is-part-of-the-harness",
+      "slug": "the-grader-is-part-of-the-harness",
+      "title": "The Grader Is Part of the Harness",
+      "category": "AI & Technology",
+      "tags": [
+        "agents",
+        "evaluation",
+        "research"
+      ],
+      "entities": [
+        "Cloud Codes",
+        "Harness Learning",
+        "MASS",
+        "Sakana AI"
+      ],
+      "source": {
+        "platform": "YouTube",
+        "url": "https://www.youtube.com/watch?v=AKovdUFvThA",
+        "videoId": "AKovdUFvThA",
+        "title": "Don’t Learn Harness Engineering. Learn This Instead",
+        "creator": "Cloud Codes",
+        "uploadDate": "20261020",
+        "durationSeconds": 748,
+        "mediaAspect": "16:9"
+      },
+      "published": "2026-10-20",
+      "updated": "2026-10-20T20:29:00Z",
+      "overview": "Cloud Codes compares two research efforts that let an AI system revise its own working procedure, then argues that evaluation design determines whether this feedback helps.",
+      "whyItMatters": "Useful for teams tempted to treat an adaptive agent harness as a reusable product recipe. The reported gains are real author results on specified tasks, while coding transfer is mixed.",
+      "ghostMeshTakeaway": "Treat a proposed harness change as an experiment with a named grader, held-out tasks and a rollback path. Do not promote a self-judged gain into production authority.",
+      "verdict": "Worth studying",
+      "architectureImpact": "experiment recommended",
+      "falsification": "Revisit the cautious call if independent held-out coding and operational tasks show reliable gains with recorded failures, cost, authority constraints and external grading; abandon a candidate if it only improves its own proxy score.",
+      "evidenceState": "partially corroborated",
+      "lastEvidenceChecked": "2026-10-20T20:25:00Z",
+      "freshness": "Publisher video, private caption aids and direct paper versions checked 2026-10-20. Benchmarks and product behavior can change; the two studies are not independent confirmations of the same outcome.",
+      "variant": "dossier",
+      "accent": "teal",
+      "claims": [
+        {
+          "id": "the-grader-is-part-of-the-harness--harness-learning-protocol",
+          "proposition": "Harness learning revises executable agent orchestration from task feedback while model weights stay fixed during test-time adaptation.",
+          "kind": "study-method",
+          "asOf": "2026-10-20",
+          "status": "corroborated",
+          "assessment": "The authors define a proposer that edits a frozen solver harness and train it with execution feedback.",
+          "limits": "Corroborates the reported design, not safe self-modification in an open production environment.",
+          "sourceLocation": "02:27-04:50",
+          "references": [
+            "harness-learning-2026"
+          ],
+          "counterevidence": [],
+          "temporalScope": "Video and paper versions checked 2026-10-20; study outcomes are specific to their reported protocols."
+        },
+        {
+          "id": "the-grader-is-part-of-the-harness--harness-learning-scores",
+          "proposition": "In the paper’s 21 unseen Reasoning Gym families, a trained 4B proposer averages 0.62 for one revision versus 0.56 for its 35B teacher under the same protocol.",
+          "kind": "study-result",
+          "asOf": "2026-10-20",
+          "status": "partially corroborated",
+          "assessment": "The author paper reports the comparison and a base proposer mean of 0.32.",
+          "limits": "The teacher does better under oracle best-of-eight selection. These are bounded puzzle scores, not coding reliability or a general model ranking.",
+          "sourceLocation": "03:15-04:50",
+          "references": [
+            "harness-learning-2026"
+          ],
+          "counterevidence": [],
+          "temporalScope": "Video and paper versions checked 2026-10-20; study outcomes are specific to their reported protocols."
+        },
+        {
+          "id": "the-grader-is-part-of-the-harness--mass-design",
+          "proposition": "MASS uses a single base model in distinct solver, optimizer and evaluator roles, then alternates workflow search with training on generated trajectories.",
+          "kind": "study-method",
+          "asOf": "2026-10-20",
+          "status": "corroborated",
+          "assessment": "The author paper specifies the role loop and two rounds using Qwen3.6-27B.",
+          "limits": "The evaluator inside workflow search is part of the same model family. Final research reporting is separate, using withheld external model judgments for workflow comparisons and the named benchmarks' own scoring rules.",
+          "sourceLocation": "04:51-07:01",
+          "references": [
+            "mass-2026"
+          ],
+          "counterevidence": [],
+          "temporalScope": "Video and paper versions checked 2026-10-20; study outcomes are specific to their reported protocols."
+        },
+        {
+          "id": "the-grader-is-part-of-the-harness--mass-transfer",
+          "proposition": "After two MASS rounds, score per output token rises 1.20 to 1.60 times baseline on four research benchmarks but is 0.96 on Terminal-Bench 2.0 and 0.94 on SWE-bench Verified.",
+          "kind": "study-result",
+          "asOf": "2026-10-20",
+          "status": "partially corroborated",
+          "assessment": "The research team reports these ratios for the stated benchmark set.",
+          "limits": "The coding ratios are below baseline and the team notes uneven transfer. The authors also find optimizer capacity can limit workflow improvement speed even when the evaluator can rank candidates. Neither ratio predicts a GhostMesh workflow result.",
+          "sourceLocation": "06:04-08:05",
+          "references": [
+            "mass-2026",
+            "mass-team-2026"
+          ],
+          "counterevidence": [],
+          "temporalScope": "Video and paper versions checked 2026-10-20; study outcomes are specific to their reported protocols."
+        },
+        {
+          "id": "the-grader-is-part-of-the-harness--evaluation-bottleneck",
+          "proposition": "Grader design determines whether an adaptive harness gain reflects the intended task.",
+          "kind": "editorial-inference",
+          "asOf": "2026-10-20",
+          "status": "unverified",
+          "assessment": "Private automatic captions indicate the narrator treats evaluation quality as the central design problem. The cited papers and Anthropic guide explain feedback and grading, but no source tests this video’s proposed production prescription.",
+          "limits": "This is a GhostMesh production-design inference from the reported studies and source aid, not the optimizer-capacity bottleneck measured in the MASS ablation, a measured deployment result, or a verified exact quotation.",
+          "sourceLocation": "08:06-11:23",
+          "references": [
+            "harness-learning-2026",
+            "mass-2026",
+            "anthropic-evals-2026"
+          ],
+          "counterevidence": [],
+          "temporalScope": "Video and paper versions checked 2026-10-20; study outcomes are specific to their reported protocols."
+        }
+      ],
+      "references": [
+        {
+          "id": "harness-learning-2026",
+          "title": "Harness Learning Enables Generalizable Test-Time Adaptation",
+          "author": "Alvin Zhang and coauthors",
+          "publisher": "arXiv",
+          "url": "https://arxiv.org/html/2609.35738v1",
+          "publicationDate": "2026-09-28",
+          "eventDate": null,
+          "location": "Sections 3-6, Table 1 and Appendix B.1",
+          "sourceType": "research preprint",
+          "independence": "Direct author report, not independent replication or a production coding trial.",
+          "evidenceFamily": "harness-learning-2026",
+          "checkedAt": "2026-10-20T17:20:00Z",
+          "datePrecision": "day"
+        },
+        {
+          "id": "mass-2026",
+          "title": "Recursive Self-Improvement through Multi-Agent Self-Supervision",
+          "author": "Hyunin Lee and coauthors",
+          "publisher": "arXiv",
+          "url": "https://arxiv.org/html/2610.12176v1",
+          "publicationDate": "2026-10-08",
+          "eventDate": null,
+          "location": "Abstract, experiments and benchmark protocol",
+          "sourceType": "research preprint",
+          "independence": "Direct author report; the Sakana explanation describes the same evidence family.",
+          "evidenceFamily": "mass-2026",
+          "checkedAt": "2026-10-20T17:20:00Z",
+          "datePrecision": "day"
+        },
+        {
+          "id": "mass-team-2026",
+          "title": "MASS: Recursive Self-Improvement through Multi-Agent Self-Supervision",
+          "author": "Sakana AI research team",
+          "publisher": "Sakana AI",
+          "url": "https://pub.sakana.ai/mass/",
+          "publicationDate": "2026-10",
+          "eventDate": null,
+          "location": "Public benchmark Figure 3 and transfer discussion",
+          "sourceType": "research team report",
+          "independence": "Team explanation of its own paper, not an independent corroborating study.",
+          "evidenceFamily": "mass-2026",
+          "checkedAt": "2026-10-20T17:20:00Z",
+          "datePrecision": "month"
+        },
+        {
+          "id": "anthropic-evals-2026",
+          "title": "Demystifying Evals for AI Agents",
+          "author": "Anthropic engineering team",
+          "publisher": "Anthropic",
+          "url": "https://www.anthropic.com/research/demystifying-evals-for-ai-agents",
+          "publicationDate": "2026-01-09",
+          "eventDate": null,
+          "location": "Evaluation design and grader discussion",
+          "sourceType": "engineering guidance",
+          "independence": "Practitioner guidance for designing evaluations; no validation of either 2026 paper.",
+          "evidenceFamily": "anthropic-evals-guide",
+          "checkedAt": "2026-10-20T17:20:00Z",
+          "datePrecision": "day"
+        }
+      ],
+      "relationships": [
+        {
+          "target": "reader:make-good-work-inspectable",
+          "type": "related topic",
+          "reason": "Both ask how an agent result becomes inspectable. This Reader examines feedback used to change a harness; the earlier Reader asks for visible work and a reviewable result. The earlier video does not validate the paper benchmarks.",
+          "provenance": [
+            "/the-grader-is-part-of-the-harness/#grading",
+            "/make-good-work-inspectable/#core"
+          ],
+          "basis": "curated-editorial-comparison",
+          "direction": "outgoing"
+        },
+        {
+          "target": "reader:the-experiment-ran-did-the-research-advance",
+          "type": "related topic",
+          "reason": "Both consider evaluated research agents. This video highlights adaptive workflow optimization, while the paper Reader distinguishes a completed experiment from an advance in scientific knowledge. Shared interest is not independent replication.",
+          "provenance": [
+            "/the-grader-is-part-of-the-harness/#research-transfer",
+            "/the-experiment-ran-did-the-research-advance/#interpretation"
+          ],
+          "basis": "curated-editorial-contrast",
+          "direction": "outgoing"
+        },
+        {
+          "target": "reader:the-score-is-not-the-system",
+          "type": "related topic",
+          "reason": "Both ask whether an agent can improve a measured score while missing the intended outcome. This video examines adaptive harness graders; the earlier Reader examines reward and evaluation boundary failures. Their distinct sources are a comparison, not independent replication of either paper.",
+          "provenance": [
+            "/the-grader-is-part-of-the-harness/#grading",
+            "/the-score-is-not-the-system/#thesis"
+          ],
+          "basis": "curated-editorial-comparison",
+          "direction": "outgoing"
+        }
+      ],
+      "relationshipDisposition": "Three qualified editorial comparisons about evaluation, inspectability and reward signals; none independently validates the research results.",
+      "legacyReceipt": {
+        "schema": "ghostmesh-reader-receipt-v2",
+        "createdAt": "2026-10-20T17:20:00Z",
+        "source": {
+          "platform": "YouTube",
+          "url": "https://www.youtube.com/watch?v=AKovdUFvThA",
+          "videoId": "AKovdUFvThA",
+          "title": "Don’t Learn Harness Engineering. Learn This Instead",
+          "creator": "Cloud Codes",
+          "uploadDate": "20261020",
+          "durationSeconds": 748,
           "mediaAspect": "16:9"
         },
         "sourceInspection": {
@@ -17494,8 +17961,17 @@
       "slug": "the-small-fix-is-a-boundary",
       "title": "The Small Fix Is a Boundary",
       "category": "AI & Technology",
-      "tags": ["coding agents", "agent harness", "verification", "scope", "automation"],
-      "entities": ["Cole Medin", "GhostMesh"],
+      "tags": [
+        "coding agents",
+        "agent harness",
+        "verification",
+        "scope",
+        "automation"
+      ],
+      "entities": [
+        "Cole Medin",
+        "GhostMesh"
+      ],
       "source": {
         "platform": "YouTube",
         "url": "https://www.youtube.com/watch?v=hMEQ4rdaOLw",
@@ -17521,41 +17997,334 @@
       "variant": "editorial",
       "accent": "teal",
       "claims": [
-        {"id":"r53-premature","proposition":"Adversarial self-checks or a fresh reviewer can expose premature agent completion claims.","kind":"creator-recommendation","status":"unverified","sourceLocation":"01:49","assessment":"Plausible review practice, not a controlled error-rate comparison.","limits":"An independent review costs extra time and context.","references":["r53-video"],"counterevidence":[],"asOf":"2026-11-11"},
-        {"id":"r53-proof","proposition":"Visible commands, outputs and screenshots improve confidence in an agent's result.","kind":"creator-recommendation","status":"unverified","sourceLocation":"04:47","assessment":"An inspectable result is easier to verify, but individual receipts cover only observations.","limits":"No quantified causal payoff or comprehensive system proof.","references":["r53-video"],"counterevidence":[],"asOf":"2026-11-11"},
-        {"id":"r53-browser","proposition":"Real application journeys reveal defects missed by unit tests.","kind":"creator-recommendation","status":"unverified","sourceLocation":"06:28","assessment":"Playwright documents observable browser assertions but this source does not measure comparative detection.","limits":"Passing journeys cover only exercised routes.","references":["r53-video","r53-playwright"],"counterevidence":[],"asOf":"2026-11-11"},
-        {"id":"r53-hooks","proposition":"Executable hooks can enforce selected prohibitions more reliably than prose-only rules.","kind":"creator-recommendation","status":"unverified","sourceLocation":"08:28","assessment":"Specific intercepted tool events can be rejected; downstream authorization remains separate.","limits":"Hooks do not automatically cover alternate tools, subprocesses or credentials.","references":["r53-video","r53-openai-approvals"],"counterevidence":[],"asOf":"2026-11-11"},
-        {"id":"r53-pruning","proposition":"Removing redundant global rules can improve agent focus.","kind":"creator-recommendation","status":"unverified","sourceLocation":"12:37","assessment":"OpenAI recommends revisiting excessive instructions; no source-specific pruning benchmark is supplied.","limits":"Rare critical instructions must be preserved.","references":["r53-video","r53-openai-skills"],"counterevidence":[],"asOf":"2026-11-11"},
-        {"id":"r53-handoff","proposition":"Shorter task sessions and handoffs can reduce long-context deterioration.","kind":"creator-recommendation","status":"unverified","sourceLocation":"14:04","assessment":"Plausible context-management practice, unquantified in this source.","limits":"Summaries can lose nuance and must not supplant retained evidence.","references":["r53-video"],"counterevidence":[],"asOf":"2026-11-11"},
-        {"id":"r53-authority","proposition":"Consequential product decisions should remain under human authority.","kind":"creator-recommendation","status":"unverified","sourceLocation":"15:44","assessment":"A governance recommendation about decision scope, not an empirical performance result.","limits":"Routine bounded implementation should not require repetitive approval.","references":["r53-video","r53-openai-approvals"],"counterevidence":[],"asOf":"2026-11-11"},
-        {"id":"r53-scope","proposition":"Explicit boundaries can limit unwanted refactors on small tasks.","kind":"creator-recommendation","status":"unverified","sourceLocation":"17:27","assessment":"Useful scope discipline; no controlled source benchmark.","limits":"Necessary dependency changes may still be justified.","references":["r53-video"],"counterevidence":[],"asOf":"2026-11-11"},
-        {"id":"r53-delegation","proposition":"Deliberate subagent budgeting can reduce unnecessary usage.","kind":"creator-recommendation","status":"unverified","sourceLocation":"18:57","assessment":"The creator offers cost-management advice without measured savings.","limits":"Independent parallel work can also reduce elapsed time.","references":["r53-video"],"counterevidence":[],"asOf":"2026-11-11"},
-        {"id":"r53-risk","proposition":"Test effort should reflect blast radius and consequence.","kind":"creator-recommendation","status":"unverified","sourceLocation":"21:07","assessment":"Risk-proportional validation is a design principle, not a quantified study.","limits":"Small diffs may affect high-impact security boundaries.","references":["r53-video"],"counterevidence":[],"asOf":"2026-11-11"},
-        {"id":"r53-tangents","proposition":"Parking unrelated discoveries helps agents finish the original task.","kind":"creator-recommendation","status":"unverified","sourceLocation":"22:44","assessment":"Plausible focus discipline, with no controlled productivity evidence.","limits":"True blockers and urgent safety defects remain in scope.","references":["r53-video"],"counterevidence":[],"asOf":"2026-11-11"}
+        {
+          "id": "r53-premature",
+          "proposition": "Adversarial self-checks or a fresh reviewer can expose premature agent completion claims.",
+          "kind": "creator-recommendation",
+          "status": "unverified",
+          "sourceLocation": "01:49",
+          "assessment": "Plausible review practice, not a controlled error-rate comparison.",
+          "limits": "An independent review costs extra time and context.",
+          "references": [
+            "r53-video"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-11"
+        },
+        {
+          "id": "r53-proof",
+          "proposition": "Visible commands, outputs and screenshots improve confidence in an agent's result.",
+          "kind": "creator-recommendation",
+          "status": "unverified",
+          "sourceLocation": "04:47",
+          "assessment": "An inspectable result is easier to verify, but individual receipts cover only observations.",
+          "limits": "No quantified causal payoff or comprehensive system proof.",
+          "references": [
+            "r53-video"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-11"
+        },
+        {
+          "id": "r53-browser",
+          "proposition": "Real application journeys reveal defects missed by unit tests.",
+          "kind": "creator-recommendation",
+          "status": "unverified",
+          "sourceLocation": "06:28",
+          "assessment": "Playwright documents observable browser assertions but this source does not measure comparative detection.",
+          "limits": "Passing journeys cover only exercised routes.",
+          "references": [
+            "r53-video",
+            "r53-playwright"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-11"
+        },
+        {
+          "id": "r53-hooks",
+          "proposition": "Executable hooks can enforce selected prohibitions more reliably than prose-only rules.",
+          "kind": "creator-recommendation",
+          "status": "unverified",
+          "sourceLocation": "08:28",
+          "assessment": "Specific intercepted tool events can be rejected; downstream authorization remains separate.",
+          "limits": "Hooks do not automatically cover alternate tools, subprocesses or credentials.",
+          "references": [
+            "r53-video",
+            "r53-openai-approvals"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-11"
+        },
+        {
+          "id": "r53-pruning",
+          "proposition": "Removing redundant global rules can improve agent focus.",
+          "kind": "creator-recommendation",
+          "status": "unverified",
+          "sourceLocation": "12:37",
+          "assessment": "OpenAI recommends revisiting excessive instructions; no source-specific pruning benchmark is supplied.",
+          "limits": "Rare critical instructions must be preserved.",
+          "references": [
+            "r53-video",
+            "r53-openai-skills"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-11"
+        },
+        {
+          "id": "r53-handoff",
+          "proposition": "Shorter task sessions and handoffs can reduce long-context deterioration.",
+          "kind": "creator-recommendation",
+          "status": "unverified",
+          "sourceLocation": "14:04",
+          "assessment": "Plausible context-management practice, unquantified in this source.",
+          "limits": "Summaries can lose nuance and must not supplant retained evidence.",
+          "references": [
+            "r53-video"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-11"
+        },
+        {
+          "id": "r53-authority",
+          "proposition": "Consequential product decisions should remain under human authority.",
+          "kind": "creator-recommendation",
+          "status": "unverified",
+          "sourceLocation": "15:44",
+          "assessment": "A governance recommendation about decision scope, not an empirical performance result.",
+          "limits": "Routine bounded implementation should not require repetitive approval.",
+          "references": [
+            "r53-video",
+            "r53-openai-approvals"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-11"
+        },
+        {
+          "id": "r53-scope",
+          "proposition": "Explicit boundaries can limit unwanted refactors on small tasks.",
+          "kind": "creator-recommendation",
+          "status": "unverified",
+          "sourceLocation": "17:27",
+          "assessment": "Useful scope discipline; no controlled source benchmark.",
+          "limits": "Necessary dependency changes may still be justified.",
+          "references": [
+            "r53-video"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-11"
+        },
+        {
+          "id": "r53-delegation",
+          "proposition": "Deliberate subagent budgeting can reduce unnecessary usage.",
+          "kind": "creator-recommendation",
+          "status": "unverified",
+          "sourceLocation": "18:57",
+          "assessment": "The creator offers cost-management advice without measured savings.",
+          "limits": "Independent parallel work can also reduce elapsed time.",
+          "references": [
+            "r53-video"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-11"
+        },
+        {
+          "id": "r53-risk",
+          "proposition": "Test effort should reflect blast radius and consequence.",
+          "kind": "creator-recommendation",
+          "status": "unverified",
+          "sourceLocation": "21:07",
+          "assessment": "Risk-proportional validation is a design principle, not a quantified study.",
+          "limits": "Small diffs may affect high-impact security boundaries.",
+          "references": [
+            "r53-video"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-11"
+        },
+        {
+          "id": "r53-tangents",
+          "proposition": "Parking unrelated discoveries helps agents finish the original task.",
+          "kind": "creator-recommendation",
+          "status": "unverified",
+          "sourceLocation": "22:44",
+          "assessment": "Plausible focus discipline, with no controlled productivity evidence.",
+          "limits": "True blockers and urgent safety defects remain in scope.",
+          "references": [
+            "r53-video"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-11"
+        }
       ],
       "references": [
-        {"id":"r53-video","title":"11 More Tiny Coding Agent Fixes With A Stupid Amount Of Payoff","author":"Cole Medin","publisher":"YouTube","url":"https://www.youtube.com/watch?v=hMEQ4rdaOLw","publicationDate":"2026-11-10","datePrecision":"day","eventDate":null,"location":"00:00–24:38, source commentary and approximate machine-ASR cues","sourceType":"creator video","independence":"Primary source for attributed advice, not independent validation of claimed improvements.","evidenceFamily":"r53-video","checkedAt":"2026-11-11T23:00:00Z"},
-        {"id":"r53-playwright","title":"Assertions","author":"Playwright","publisher":"Playwright","url":"https://playwright.dev/docs/test-assertions","publicationDate":"unknown","dateNote":"Living documentation; original publication date not established.","eventDate":null,"location":"Web-first assertions","sourceType":"official documentation","independence":"Primary framework documentation, not an experiment on the video’s recommendations.","evidenceFamily":"r53-playwright-docs","checkedAt":"2026-11-11T23:00:00Z"},
-        {"id":"r53-openai-skills","title":"Rethinking skills and prompts for GPT-6 Astra","author":"OpenAI","publisher":"OpenAI Developers","url":"https://developers.openai.com/blog/rethinking-skills-and-prompts-for-gpt-6-astra","publicationDate":"2026-09-11","datePrecision":"day","eventDate":null,"location":"Skill descriptions and excessive agent instructions","sourceType":"vendor guidance","independence":"Vendor guidance for its tools, not a controlled benchmark of Cole Medin's adjustments.","evidenceFamily":"r53-openai-guidance","checkedAt":"2026-11-11T23:00:00Z"},
-        {"id":"r53-openai-approvals","title":"Automatic review","author":"OpenAI","publisher":"OpenAI Developers","url":"https://developers.openai.com/api/docs/guides/agents-api/sessions/approvals","publicationDate":"unknown","dateNote":"Living documentation; original publication date not established.","eventDate":null,"location":"Tool approval boundaries","sourceType":"vendor documentation","independence":"Primary product documentation for supported approval mechanisms, not security validation of the source's suggested hooks.","evidenceFamily":"r53-openai-approvals","checkedAt":"2026-11-11T23:00:00Z"}
+        {
+          "id": "r53-video",
+          "title": "11 More Tiny Coding Agent Fixes With A Stupid Amount Of Payoff",
+          "author": "Cole Medin",
+          "publisher": "YouTube",
+          "url": "https://www.youtube.com/watch?v=hMEQ4rdaOLw",
+          "publicationDate": "2026-11-10",
+          "datePrecision": "day",
+          "eventDate": null,
+          "location": "00:00–24:38, source commentary and approximate machine-ASR cues",
+          "sourceType": "creator video",
+          "independence": "Primary source for attributed advice, not independent validation of claimed improvements.",
+          "evidenceFamily": "r53-video",
+          "checkedAt": "2026-11-11T23:00:00Z"
+        },
+        {
+          "id": "r53-playwright",
+          "title": "Assertions",
+          "author": "Playwright",
+          "publisher": "Playwright",
+          "url": "https://playwright.dev/docs/test-assertions",
+          "publicationDate": "unknown",
+          "dateNote": "Living documentation; original publication date not established.",
+          "eventDate": null,
+          "location": "Web-first assertions",
+          "sourceType": "official documentation",
+          "independence": "Primary framework documentation, not an experiment on the video’s recommendations.",
+          "evidenceFamily": "r53-playwright-docs",
+          "checkedAt": "2026-11-11T23:00:00Z"
+        },
+        {
+          "id": "r53-openai-skills",
+          "title": "Rethinking skills and prompts for GPT-6 Astra",
+          "author": "OpenAI",
+          "publisher": "OpenAI Developers",
+          "url": "https://developers.openai.com/blog/rethinking-skills-and-prompts-for-gpt-6-astra",
+          "publicationDate": "2026-09-11",
+          "datePrecision": "day",
+          "eventDate": null,
+          "location": "Skill descriptions and excessive agent instructions",
+          "sourceType": "vendor guidance",
+          "independence": "Vendor guidance for its tools, not a controlled benchmark of Cole Medin's adjustments.",
+          "evidenceFamily": "r53-openai-guidance",
+          "checkedAt": "2026-11-11T23:00:00Z"
+        },
+        {
+          "id": "r53-openai-approvals",
+          "title": "Automatic review",
+          "author": "OpenAI",
+          "publisher": "OpenAI Developers",
+          "url": "https://developers.openai.com/api/docs/guides/agents-api/sessions/approvals",
+          "publicationDate": "unknown",
+          "dateNote": "Living documentation; original publication date not established.",
+          "eventDate": null,
+          "location": "Tool approval boundaries",
+          "sourceType": "vendor documentation",
+          "independence": "Primary product documentation for supported approval mechanisms, not security validation of the source's suggested hooks.",
+          "evidenceFamily": "r53-openai-approvals",
+          "checkedAt": "2026-11-11T23:00:00Z"
+        }
       ],
       "relationships": [
-        {"target":"reader:more-skills-worse-agents","type":"companion","reason":"Cole's rule-pruning advice complements David Ondrej's concern about agent skill sprawl without validating a deletion percentage or general payoff.","provenance":["/the-small-fix-is-a-boundary/","/more-skills-worse-agents/"],"basis":"curated-editorial-comparison","direction":"outgoing"},
-        {"target":"reader:make-good-work-inspectable","type":"companion","reason":"The source's initial fixes ask for evidence of completion and real user-facing validation; the companion develops inspectable work without independently proving Cole's tips.","provenance":["/the-small-fix-is-a-boundary/","/make-good-work-inspectable/"],"basis":"curated-editorial-comparison","direction":"outgoing"},
-        {"target":"reader:autonomy-needs-an-interface","type":"challenges","reason":"Human decisions and effective tool permissions complicate any suggestion that prose instructions or isolated hooks alone establish accountability.","provenance":["/the-small-fix-is-a-boundary/","/autonomy-needs-an-interface/"],"basis":"curated-editorial-comparison","direction":"outgoing"}
+        {
+          "target": "reader:more-skills-worse-agents",
+          "type": "companion",
+          "reason": "Cole's rule-pruning advice complements David Ondrej's concern about agent skill sprawl without validating a deletion percentage or general payoff.",
+          "provenance": [
+            "/the-small-fix-is-a-boundary/",
+            "/more-skills-worse-agents/"
+          ],
+          "basis": "curated-editorial-comparison",
+          "direction": "outgoing"
+        },
+        {
+          "target": "reader:make-good-work-inspectable",
+          "type": "companion",
+          "reason": "The source's initial fixes ask for evidence of completion and real user-facing validation; the companion develops inspectable work without independently proving Cole's tips.",
+          "provenance": [
+            "/the-small-fix-is-a-boundary/",
+            "/make-good-work-inspectable/"
+          ],
+          "basis": "curated-editorial-comparison",
+          "direction": "outgoing"
+        },
+        {
+          "target": "reader:autonomy-needs-an-interface",
+          "type": "challenges",
+          "reason": "Human decisions and effective tool permissions complicate any suggestion that prose instructions or isolated hooks alone establish accountability.",
+          "provenance": [
+            "/the-small-fix-is-a-boundary/",
+            "/autonomy-needs-an-interface/"
+          ],
+          "basis": "curated-editorial-comparison",
+          "direction": "outgoing"
+        }
       ],
       "relationshipDisposition": "Three source-specific comparisons approved by Tony for the draft only; independent review and production graph admission are pending. None corroborates the video's claimed payoff.",
-      "relationshipReview": {"reviewedAt":"2026-11-11","reviewedCatalogSize":52,"decision":"linked","reviewedTargets":["reader:more-skills-worse-agents","reader:make-good-work-inspectable","reader:autonomy-needs-an-interface"],"rationale":"Owner approved these three named draft candidates after a source-specific editorial proposal. This is an owner draft assessment, not an independent reviewer acceptance or production admission."},
+      "relationshipReview": {
+        "reviewedAt": "2026-11-11",
+        "reviewedCatalogSize": 52,
+        "decision": "linked",
+        "reviewedTargets": [
+          "reader:more-skills-worse-agents",
+          "reader:make-good-work-inspectable",
+          "reader:autonomy-needs-an-interface"
+        ],
+        "rationale": "Owner approved these three named draft candidates after a source-specific editorial proposal. This is an owner draft assessment, not an independent reviewer acceptance or production admission."
+      },
       "sharePlaneRelationships": [
-        {"title":"Demo Debt","url":"https://shareplane.malott.ai/artifacts/demo-debt/","type":"companion","reason":"A functioning demo does not establish a sustained user-tested service. This comparison contextualizes Cole's verification and scope advice, without testing any of his eleven claimed improvements.","basis":"curated-editorial-comparison"}
+        {
+          "title": "Demo Debt",
+          "url": "https://shareplane.malott.ai/artifacts/demo-debt/",
+          "type": "companion",
+          "reason": "A functioning demo does not establish a sustained user-tested service. This comparison contextualizes Cole's verification and scope advice, without testing any of his eleven claimed improvements.",
+          "basis": "curated-editorial-comparison"
+        }
       ],
-      "sharePlaneReview": {"reviewedAt":"2026-11-11","decision":"linked","rationale":"Tony approved this single draft Work comparison, separate from Reader links. Independent assessment and final production graph admission remain pending; the Work is not source corroboration."},
-      "review": {"status":"PENDING independent editorial/source/privacy review; draft only","reviewer":"not yet assigned","checkedAt":"2026-11-11T23:00:00Z","scope":"Source fidelity, claim mapping, private-aid boundary and four editorial comparison proposals","findings":"No independent review decision or owner publication approval exists for this Reader."},
-      "revisionHistory": [{"at":"2026-11-11T23:00:00Z","reason":"Draft candidate with source-first manuscript, provisional claims and owner-approved comparison proposals. Release not authorized."}],
+      "sharePlaneReview": {
+        "reviewedAt": "2026-11-11",
+        "decision": "linked",
+        "rationale": "Tony approved this single draft Work comparison, separate from Reader links. Independent assessment and final production graph admission remain pending; the Work is not source corroboration."
+      },
+      "review": {
+        "status": "PENDING independent editorial/source/privacy review; draft only",
+        "reviewer": "not yet assigned",
+        "checkedAt": "2026-11-11T23:00:00Z",
+        "scope": "Source fidelity, claim mapping, private-aid boundary and four editorial comparison proposals",
+        "findings": "No independent review decision or owner publication approval exists for this Reader."
+      },
+      "revisionHistory": [
+        {
+          "at": "2026-11-11T23:00:00Z",
+          "reason": "Draft candidate with source-first manuscript, provisional claims and owner-approved comparison proposals. Release not authorized."
+        }
+      ],
       "editorialOrder": 52,
-      "archiveCall": {"label":"Fix the failure before adding another layer","text":"Keep this source as a practical checklist for diagnosing recurring coding-agent friction. Start with the observed failure, use the smallest existing control that can address it, and measure the next ordinary task. Do not install all eleven mechanisms by default."},
-      "legacyReceipt": {"schema":"ghostmesh-reader-receipt-v2","createdAt":"2026-11-11T23:00:00Z","source":{"url":"https://www.youtube.com/watch?v=hMEQ4rdaOLw","videoId":"hMEQ4rdaOLw"},"reasonPack":{"verification":"pass","manifestSha256":"af6c28c91e1a4e4097b6cee09e82bce8405b27745f473d59418a2e0261411cac"},"sourceInspection":{"method":"Verified private pack plus separately retained CPU large-v3 machine transcript; timed cues provisionally inspected","transcriptSha256":"8d3c68ee8abf6476d9dabb1c6dc063c21893775dfdff6194b627220c3db79bcb","timedAidSha256":"6a85e96486dd203c9bb75d49302727e592018eff4fd02a57ae154a6026c3d671","coverage":"24:38 source and full-coverage timed machine transcript; not independently listened or visually reproduced","caveat":"Source timing, demonstration visuals and claimed performance improvements are not independently verified.","publicationBoundary":"Original analysis and sanitized integrity metadata only; no private transcript, media, captions or host paths."},"custody":{"status":"qualified-private-pack-verified","note":"Verified first ReasonPack and separate local large-v3 aid, with distinctly recorded hashes."}},
-      "editorialDepth": {"schemaVersion":1,"receiptPath":"content/editorial-depth/the-small-fix-is-a-boundary.json"}
+      "archiveCall": {
+        "label": "Fix the failure before adding another layer",
+        "text": "Keep this source as a practical checklist for diagnosing recurring coding-agent friction. Start with the observed failure, use the smallest existing control that can address it, and measure the next ordinary task. Do not install all eleven mechanisms by default."
+      },
+      "legacyReceipt": {
+        "schema": "ghostmesh-reader-receipt-v2",
+        "createdAt": "2026-11-11T23:00:00Z",
+        "source": {
+          "url": "https://www.youtube.com/watch?v=hMEQ4rdaOLw",
+          "videoId": "hMEQ4rdaOLw"
+        },
+        "reasonPack": {
+          "verification": "pass",
+          "manifestSha256": "af6c28c91e1a4e4097b6cee09e82bce8405b27745f473d59418a2e0261411cac"
+        },
+        "sourceInspection": {
+          "method": "Verified private pack plus separately retained CPU large-v3 machine transcript; timed cues provisionally inspected",
+          "transcriptSha256": "8d3c68ee8abf6476d9dabb1c6dc063c21893775dfdff6194b627220c3db79bcb",
+          "timedAidSha256": "6a85e96486dd203c9bb75d49302727e592018eff4fd02a57ae154a6026c3d671",
+          "coverage": "24:38 source and full-coverage timed machine transcript; not independently listened or visually reproduced",
+          "caveat": "Source timing, demonstration visuals and claimed performance improvements are not independently verified.",
+          "publicationBoundary": "Original analysis and sanitized integrity metadata only; no private transcript, media, captions or host paths."
+        },
+        "custody": {
+          "status": "qualified-private-pack-verified",
+          "note": "Verified first ReasonPack and separate local large-v3 aid, with distinctly recorded hashes."
+        }
+      },
+      "editorialDepth": {
+        "schemaVersion": 1,
+        "receiptPath": "content/editorial-depth/the-small-fix-is-a-boundary.json"
+      }
     }
   ],
   "featuredId": "reader:ask-for-the-outcome-keep-the-boundary"
