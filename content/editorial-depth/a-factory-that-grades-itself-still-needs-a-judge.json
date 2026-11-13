@@ -4,10 +4,10 @@
   "sourceId": "nKjPBAw_N_0",
   "sourceDigest": "7c97a364c03e7b74aa7757f709a3cfd8ce7ac14d1efdbc9c15374156f03c1721",
   "sourceAidSha256": "2ddef9fd55f700ed6baa04e13ea4c288129a83955623e352925d548109124bc7",
-  "articleSha256": "e2f53e5150773e2ba0b51c6bcc6379efa2ca46cbc659f27542349d8a3be4f84a",
+  "articleSha256": "f478b63ab6b945cdb75e7dbf652fdc54dab73511628d04237c2b31b3fac22e8f",
   "evidenceRevision": "0d0e48aa629278da10c28bcaffef0765820d8a98794eceefc95244cfc1b5df94",
   "sourceMapEvidenceSha256": "7903b384fbda7a1f24c901264cd1142fb1a9c8a1ff91d504e150a9611645f03f",
-  "reviewEvidenceSha256": "acb1a725d6d05969885d5f0644855aa9e7c9c528b6f6190037fd2b53476e4be0",
+  "reviewEvidenceSha256": "3d67bc7a65010229f872f721d0f688e7aac75be88db200e254dfb58811f3df2e",
   "candidateAuthor": "segfault",
   "complexity": {
     "tier": "extended",
@@ -138,9 +138,9 @@
   "ownerDecision": {
     "kind": "conversation",
     "owner": "Tony Malott",
-    "approval": "Tony approved the complete Reader #57 manuscript in the conversation, then separately approved the three Reader and one SharePlane Work editorial relationships. This records those editorial decisions only; no preview acceptance or production merge approval is implied.",
+    "approval": "Tony approved the Reader #57 manuscript and three Reader connections, then explicitly agreed to the source-first opening correction and to replacing the overused Demo Debt comparison with The Code Is No Longer the Hard Part. This records editorial decisions only; no production merge approval is implied.",
     "approvalDate": "2026-11-12",
-    "articleSha256": "e2f53e5150773e2ba0b51c6bcc6379efa2ca46cbc659f27542349d8a3be4f84a",
+    "articleSha256": "f478b63ab6b945cdb75e7dbf652fdc54dab73511628d04237c2b31b3fac22e8f",
     "evidenceRevision": "0d0e48aa629278da10c28bcaffef0765820d8a98794eceefc95244cfc1b5df94"
   },
   "decision": "accept",
@@ -161,6 +161,6 @@
       "rationale": "Independent editorial review did not cover browser UAT, native iPhone accessibility behavior, deployment binding, or production release."
     }
   ],
-  "decisionRationale": "A separate reviewer held an inaccurate 18:12 cost/budget cue, accepted its correction to 18:50, and re-reviewed the final exact article and source-map hashes. Manuscript completeness, claims, privacy and relationship roles pass scoped editorial review. Production authority remains separate.",
-  "assessedAt": "2026-11-13T00:26:41Z"
+  "decisionRationale": "The independent reviewer previously held and corrected an inaccurate budget cue to 18:50, then independently accepted the owner-approved opening and SharePlane comparison delta at the revised exact HTML hash. Manuscript completeness, claims, privacy and relationship roles pass scoped editorial review; preview/mobile and production authority remain separate.",
+  "assessedAt": "2026-11-13T01:44:30Z"
 }

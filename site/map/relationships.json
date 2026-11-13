@@ -203,10 +203,10 @@
     },
     {
       "from": "reader:a-factory-that-grades-itself-still-needs-a-judge",
-      "title": "Demo Debt",
-      "url": "https://shareplane.malott.ai/artifacts/demo-debt/",
-      "type": "companion",
-      "reason": "Demo Debt distinguishes an attractive demonstration from actual sustained operating value. Lloyd’s self-improving factory still needs independent evidence of quality, reliability and economics.",
+      "title": "The Code Is No Longer the Hard Part",
+      "url": "https://shareplane.malott.ai/artifacts/the-code-is-no-longer-the-hard-part/",
+      "type": "extends",
+      "reason": "The Work argues that producing code is no longer the binding constraint; review, integration, operational evidence and judgment increasingly determine accepted value. Lloyd’s factory proposes to improve the production system itself, but must demonstrate gains in those downstream outcomes rather than merely in its internal grader.",
       "basis": "curated-editorial-comparison"
     }
   ],
