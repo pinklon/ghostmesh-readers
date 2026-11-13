@@ -1,0 +1,89 @@
+{
+  "schemaVersion": 1,
+  "readerId": "reader:a-factory-that-grades-itself-still-needs-a-judge",
+  "sourceId": "nKjPBAw_N_0",
+  "sourceAidSha256": "2ddef9fd55f700ed6baa04e13ea4c288129a83955623e352925d548109124bc7",
+  "points": [
+    {
+      "atSeconds": 72,
+      "sectionId": "argument",
+      "claimIds": [
+        "r57-local-agents"
+      ],
+      "cueParaphrase": "Lloyd describes limits of individual local development agents.",
+      "privateAidCheck": "Third-party public timestamped transcript aid checked; not independently listening- or screen-certified. No benchmark reproduced."
+    },
+    {
+      "atSeconds": 242,
+      "sectionId": "argument",
+      "claimIds": [
+        "r57-factory-code"
+      ],
+      "cueParaphrase": "Lloyd describes the factory definition and operating surfaces.",
+      "privateAidCheck": "Third-party public timestamped transcript aid checked; not independently listening- or screen-certified. No benchmark reproduced."
+    },
+    {
+      "atSeconds": 344,
+      "sectionId": "demonstration",
+      "claimIds": [
+        "r57-model-routing"
+      ],
+      "cueParaphrase": "Lloyd describes an internal comparison process.",
+      "privateAidCheck": "Third-party public timestamped transcript aid checked; not independently listening- or screen-certified. No benchmark reproduced."
+    },
+    {
+      "atSeconds": 415,
+      "sectionId": "engineers",
+      "claimIds": [
+        "r57-engineer-split"
+      ],
+      "cueParaphrase": "Lloyd explains the proposed division of responsibilities.",
+      "privateAidCheck": "Third-party public timestamped transcript aid checked; not independently listening- or screen-certified. No benchmark reproduced."
+    },
+    {
+      "atSeconds": 471,
+      "sectionId": "demonstration",
+      "claimIds": [
+        "r57-traces"
+      ],
+      "cueParaphrase": "The presentation shows recorded runs and evaluator views.",
+      "privateAidCheck": "Third-party public timestamped transcript aid checked; not independently listening- or screen-certified. No benchmark reproduced."
+    },
+    {
+      "atSeconds": 786,
+      "sectionId": "demonstration",
+      "claimIds": [
+        "r57-change-pr"
+      ],
+      "cueParaphrase": "The demonstration discusses repeated redundant-test findings and a PR suggestion.",
+      "privateAidCheck": "Third-party public timestamped transcript aid checked; not independently listening- or screen-certified. No benchmark reproduced."
+    },
+    {
+      "atSeconds": 888,
+      "sectionId": "demonstration",
+      "claimIds": [
+        "r57-replay"
+      ],
+      "cueParaphrase": "Lloyd shows historical task benchmarks and a vendor comparison chart.",
+      "privateAidCheck": "Third-party public timestamped transcript aid checked; not independently listening- or screen-certified. No benchmark reproduced."
+    },
+    {
+      "atSeconds": 1130,
+      "sectionId": "practical-standard",
+      "claimIds": [
+        "r57-budget"
+      ],
+      "cueParaphrase": "Lloyd addresses the cost-per-PR and budget question after the verification discussion.",
+      "privateAidCheck": "Third-party public timestamped transcript aid checked; not independently listening- or screen-certified. No benchmark reproduced."
+    },
+    {
+      "atSeconds": 1247,
+      "sectionId": "evaluator-problem",
+      "claimIds": [
+        "r57-llm-judge"
+      ],
+      "cueParaphrase": "Lloyd answers an audience question about correctness scoring.",
+      "privateAidCheck": "Third-party public timestamped transcript aid checked; not independently listening- or screen-certified. No benchmark reproduced."
+    }
+  ]
+}

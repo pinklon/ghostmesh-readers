@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "readerId": "reader:a-factory-that-grades-itself-still-needs-a-judge",
+  "sourceId": "nKjPBAw_N_0",
+  "sourceAidSha256": "2ddef9fd55f700ed6baa04e13ea4c288129a83955623e352925d548109124bc7",
+  "articleSha256": "e2f53e5150773e2ba0b51c6bcc6379efa2ca46cbc659f27542349d8a3be4f84a",
+  "evidenceRevision": "0d0e48aa629278da10c28bcaffef0765820d8a98794eceefc95244cfc1b5df94",
+  "reviewedAt": "2026-11-13T00:26:41Z",
+  "provenance": {
+    "kind": "codex-task-agent",
+    "reference": "Independent agent /root/reader57_independent_review independently inspected the Reader #57 candidate, first found and held an incorrect budget cue, then accepted corrected exact authored HTML and source-map hashes without editing either artifact.",
+    "limits": "Third-party timestamped public transcript text was checked, not independently listened to against the original video. Reviewer did not certify screen demonstrations, vendor benchmarks, mobile/desktop layout, production release or deployment."
+  },
+  "summary": "ACCEPT for owner editorial review at the exact authored HTML and source-map hashes. All 38 owner-approved manuscript paragraphs and six analysis sections remain present; the corrected budget source cue is 18:50. This is not production approval.",
+  "findings": [
+    "All 38 approved manuscript paragraphs remain exact in six sections, with no semantic compression or omitted paragraph.",
+    "The original third-party timed-text aid supports bounded paraphrase of nine cue locations, but does not constitute independent listening or verification of projected slides.",
+    "The corrected 18:50 budget discussion replaces an initial inaccurate 18:12 cue. The latter refers to verification, not the budget question.",
+    "Nine source-map points and their exact section backlinks cover the nine catalog claims without upgrading source evidence into independent corroboration.",
+    "Three Reader relationships (#47, #55, #56) and the separately labeled SharePlane Demo Debt link were owner admitted as editorial thematic comparisons, not supporting source evidence.",
+    "The authored page contains no raw transcript/media, credentials, signed URLs, private hostnames, or private machine paths.",
+    "No software-factory improvement, cost reduction, model quality comparison, or autonomous release reliability has been independently replicated.",
+    "Upload date depends on a third-party index and remains qualified; public video metadata establishes title and publisher without certifying that date.",
+    "This review does not establish visual mobile UAT, production readiness, or exact-head publication authority."
+  ],
+  "conclusion": "accept-for-owner-review"
+}
