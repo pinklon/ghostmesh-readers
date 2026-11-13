@@ -144,8 +144,12 @@
   },
   "independentCorroboration": "none",
   "ownerDecision": {
-    "kind": "pending",
-    "reason": "Tony accepted the current Reader presentation direction for future use, but has not issued an explicit exact-head production publish authorization."
+    "kind": "conversation",
+    "owner": "Tony Malott",
+    "approval": "Tony approved formal acceptance of Reader #59's already-deployed article at PR #167 exact head 334b38db8dfdc0672c4d503232a89176a7713f08, in direct response to the November 13, 2026 question; this records present authorization and does not backdate it.",
+    "approvalDate": "2026-11-13",
+    "articleSha256": "06d4d2486da60bda43b382b2200eb93af7fc88b7447d534e4024891e1f32f16d",
+    "evidenceRevision": "6fbdafb972815896a2f96172214f83d433ea8fa80ddcfffb20eaec273d29e93e"
   },
   "decision": "accept",
   "gaps": [
