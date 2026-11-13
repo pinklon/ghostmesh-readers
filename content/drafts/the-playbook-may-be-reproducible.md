@@ -92,7 +92,7 @@ An AI system prompted on that material may produce a coherent representation of 
 
 The assistant may be useful precisely because it extracts and organizes those ideas. It becomes problematic when a user treats its advice as the decision the actual expert would have made. Without participating expert evaluation or other independent evidence, that equivalence remains unproven.
 
-Even competence in a bounded category of decisions would not establish general expertise. Neither one confers authority.
+Even reliable performance in one bounded category would not make the assistant a general expert, much less authorize it to make decisions on anyone's behalf.
 
 ### The Reconstruction Ladder
 
@@ -103,7 +103,7 @@ We should distinguish four levels:
 3. **Reproduction:** What desired behavior can the replacement produce, under which specified conditions?
 4. **Validation:** How does it perform against independent acceptance criteria, representative cases, exceptions, and adverse conditions?
 
-Each level answers a different question. A beautiful interface and a successful demonstration belong at the reproduction level. Neither substitutes for validation.
+A polished interface and a successful demonstration can establish that a reconstruction works under the conditions shown. They do not tell us how it behaves with different inputs, exceptions, or adverse conditions. Validation addresses that gap.
 
 Validation also does not automatically confer permission to access data, deploy a tool, or make consequential decisions. Those are authority and ownership questions. They require explicit answers.
 
