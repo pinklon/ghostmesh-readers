@@ -413,6 +413,10 @@ def validate_reader(root: Path, reader: dict, *, release: bool = True,
             section = re.search(r'<section\b[^>]*\bid="' + re.escape(str(entry["sectionId"])) + r'"[^>]*>(.*?)</section>', article, re.S)
             section_html = section.group(1) if section else ""
             links = [html.unescape(link) for link in re.findall(r'<a\b[^>]*href="([^"]+)"', section_html)]
+            # A single chapter guide may carry timestamp navigation for every mapped section.
+            chapter = re.search(r'<nav\b[^>]*class="[^"]*chapter-guide[^\"]*"[^>]*>(.*?)</nav>', article, re.S)
+            if chapter:
+                links.extend(html.unescape(link) for link in re.findall(r'<a\b[^>]*href="([^"]+)"', chapter.group(1)))
             if reader["source"].get("kind") in {"paper", "article", "repository"}:
                 if second is not None:
                     errors.append(f"{slug}: written source map must use section locators rather than video time")

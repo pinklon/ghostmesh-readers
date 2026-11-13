@@ -77,6 +77,15 @@ def projected_publication_status(raw, reader, depth=None):
                   or (isinstance(approval.get('commentId'),int) and approval['commentId']>0)))
  if authorized:
   status='Owner-approved for release, subject to protected merge and production verification. This page does not attest deployment.'
+  verified_path=ROOT/'content/production-verifications.json'
+  if verified_path.exists():
+   verified=json.loads(verified_path.read_text()).get(reader['slug'])
+   if (isinstance(verified,dict) and re.fullmatch(r'[0-9a-f]{40}',str(verified.get('mergeCommit','')))
+       and verified.get('url')=='https://youtube.shareplane.malott.ai/'+reader['slug']+'/'
+       and re.fullmatch(r'\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}Z',str(verified.get('verifiedAt','')))
+       and {'article-http-200','receipt-http-200','catalog-http-200','sitemap-http-200','claim-register-http-200'}<=set(verified.get('checks',[]))):
+    published=date.fromisoformat(verified['verifiedAt'][:10]).strftime('%B %d, %Y').replace(' 0',' ')
+    status=f'Published {published}. Production release verified.'
  elif bound:
   status='Independent editorial review accepted for owner consideration. Publication has not been authorized.'
  else:
