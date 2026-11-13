@@ -3,11 +3,11 @@
   "scope": "Local public editorial reading routes; no independent corroboration or cross-site graph admission.",
   "authority": "catalog-curated-editorial",
   "visibility": "public",
-  "readerCount": 56,
-  "assessmentCount": 56,
-  "relationshipCount": 127,
-  "sharePlaneRelationshipCount": 24,
-  "sharePlaneReviewCount": 16,
+  "readerCount": 57,
+  "assessmentCount": 57,
+  "relationshipCount": 130,
+  "sharePlaneRelationshipCount": 25,
+  "sharePlaneReviewCount": 17,
   "sharePlaneEdges": [
     {
       "from": "reader:when-code-gets-cheap-where-does-the-work-wait",
@@ -199,6 +199,14 @@
       "url": "https://shareplane.malott.ai/artifacts/demo-debt/",
       "type": "companion",
       "reason": "Demo Debt distinguishes a convincing visible demonstration from sustained operating value. Cook is a procedure and selected demos, not yet evidence of cost-effective production design quality.",
+      "basis": "curated-editorial-comparison"
+    },
+    {
+      "from": "reader:a-factory-that-grades-itself-still-needs-a-judge",
+      "title": "The Code Is No Longer the Hard Part",
+      "url": "https://shareplane.malott.ai/artifacts/the-code-is-no-longer-the-hard-part/",
+      "type": "extends",
+      "reason": "The Work argues that producing code is no longer the binding constraint; review, integration, operational evidence and judgment increasingly determine accepted value. Lloyd’s factory proposes to improve the production system itself, but must demonstrate gains in those downstream outcomes rather than merely in its internal grader.",
       "basis": "curated-editorial-comparison"
     }
   ],
@@ -1108,6 +1116,23 @@
           "reader:replacing-cowork-is-a-test-not-a-title"
         ],
         "rationale": "Three proposed source-specific analogies were compared against the published Reader theses across the catalog. Independent editorial acceptance and owner admission remain pending; no experimental corroboration or reciprocal edge is asserted."
+      }
+    },
+    {
+      "id": "reader:a-factory-that-grades-itself-still-needs-a-judge",
+      "slug": "a-factory-that-grades-itself-still-needs-a-judge",
+      "title": "A Factory That Grades Itself Still Needs a Judge",
+      "url": "https://youtube.shareplane.malott.ai/a-factory-that-grades-itself-still-needs-a-judge/",
+      "review": {
+        "reviewedAt": "2026-11-12",
+        "reviewedCatalogSize": 57,
+        "decision": "linked",
+        "reviewedTargets": [
+          "reader:the-second-brain-still-needs-a-judgment",
+          "reader:replacing-cowork-is-a-test-not-a-title",
+          "reader:the-taste-is-in-the-loop-not-the-prompt"
+        ],
+        "rationale": "Owner explicitly approved all three editorial comparisons in the Reader #57 conversation. These connect themes of independent judgment, demonstration proof, and evaluation limits, without adding source corroboration."
       }
     }
   ],
@@ -2632,6 +2657,42 @@
       "provenance": [
         "/the-taste-is-in-the-loop-not-the-prompt/",
         "/replacing-cowork-is-a-test-not-a-title/"
+      ],
+      "basis": "curated-editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:a-factory-that-grades-itself-still-needs-a-judge",
+      "to": "reader:the-second-brain-still-needs-a-judgment",
+      "type": "companion",
+      "reason": "Reader #47 examines accountable human judgment in automated systems. Here the same question returns as the validity of factory-defined evaluation and its authority to admit changes.",
+      "provenance": [
+        "/a-factory-that-grades-itself-still-needs-a-judge/",
+        "/the-second-brain-still-needs-a-judgment/"
+      ],
+      "basis": "curated-editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:a-factory-that-grades-itself-still-needs-a-judge",
+      "to": "reader:replacing-cowork-is-a-test-not-a-title",
+      "type": "companion",
+      "reason": "Reader #55 distinguishes an agent demonstration from sustained operating proof. The software factory similarly needs real delivery evidence beyond its internal scores.",
+      "provenance": [
+        "/a-factory-that-grades-itself-still-needs-a-judge/",
+        "/replacing-cowork-is-a-test-not-a-title/"
+      ],
+      "basis": "curated-editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:a-factory-that-grades-itself-still-needs-a-judge",
+      "to": "reader:the-taste-is-in-the-loop-not-the-prompt",
+      "type": "companion",
+      "reason": "Reader #56 shows how iterative criticism can improve output while retaining subjective quality measurements. Lloyd extends the problem to an adaptive development factory.",
+      "provenance": [
+        "/a-factory-that-grades-itself-still-needs-a-judge/",
+        "/the-taste-is-in-the-loop-not-the-prompt/"
       ],
       "basis": "curated-editorial-comparison",
       "direction": "outgoing"

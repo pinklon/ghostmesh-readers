@@ -1,0 +1,166 @@
+{
+  "schemaVersion": 1,
+  "readerId": "reader:a-factory-that-grades-itself-still-needs-a-judge",
+  "sourceId": "nKjPBAw_N_0",
+  "sourceDigest": "7c97a364c03e7b74aa7757f709a3cfd8ce7ac14d1efdbc9c15374156f03c1721",
+  "sourceAidSha256": "2ddef9fd55f700ed6baa04e13ea4c288129a83955623e352925d548109124bc7",
+  "articleSha256": "f478b63ab6b945cdb75e7dbf652fdc54dab73511628d04237c2b31b3fac22e8f",
+  "evidenceRevision": "0d0e48aa629278da10c28bcaffef0765820d8a98794eceefc95244cfc1b5df94",
+  "sourceMapEvidenceSha256": "7903b384fbda7a1f24c901264cd1142fb1a9c8a1ff91d504e150a9611645f03f",
+  "reviewEvidenceSha256": "3d67bc7a65010229f872f721d0f688e7aac75be88db200e254dfb58811f3df2e",
+  "candidateAuthor": "segfault",
+  "complexity": {
+    "tier": "extended",
+    "factors": [
+      "Nine source claims and distinct timed source cues",
+      "A self-referential LLM evaluator introduces score-gaming and independence limits",
+      "Three Reader and one separately labeled SharePlane editorial comparisons"
+    ],
+    "rationale": "The factory presentation combines model quality judgments, self-modifying workflows, costs and human governance, requiring extended source and counterargument review."
+  },
+  "sourceMap": [
+    {
+      "atSeconds": 72,
+      "sectionId": "argument",
+      "claimIds": [
+        "r57-local-agents"
+      ],
+      "rationale": "Lloyd describes limits of individual local development agents. The article section contains an exact time-linked source cue; the linked claim remains unverified."
+    },
+    {
+      "atSeconds": 242,
+      "sectionId": "argument",
+      "claimIds": [
+        "r57-factory-code"
+      ],
+      "rationale": "Lloyd describes the factory definition and operating surfaces. The article section contains an exact time-linked source cue; the linked claim remains unverified."
+    },
+    {
+      "atSeconds": 344,
+      "sectionId": "demonstration",
+      "claimIds": [
+        "r57-model-routing"
+      ],
+      "rationale": "Lloyd describes an internal comparison process. The article section contains an exact time-linked source cue; the linked claim remains unverified."
+    },
+    {
+      "atSeconds": 415,
+      "sectionId": "engineers",
+      "claimIds": [
+        "r57-engineer-split"
+      ],
+      "rationale": "Lloyd explains the proposed division of responsibilities. The article section contains an exact time-linked source cue; the linked claim remains unverified."
+    },
+    {
+      "atSeconds": 471,
+      "sectionId": "demonstration",
+      "claimIds": [
+        "r57-traces"
+      ],
+      "rationale": "The presentation shows recorded runs and evaluator views. The article section contains an exact time-linked source cue; the linked claim remains unverified."
+    },
+    {
+      "atSeconds": 786,
+      "sectionId": "demonstration",
+      "claimIds": [
+        "r57-change-pr"
+      ],
+      "rationale": "The demonstration discusses repeated redundant-test findings and a PR suggestion. The article section contains an exact time-linked source cue; the linked claim remains unverified."
+    },
+    {
+      "atSeconds": 888,
+      "sectionId": "demonstration",
+      "claimIds": [
+        "r57-replay"
+      ],
+      "rationale": "Lloyd shows historical task benchmarks and a vendor comparison chart. The article section contains an exact time-linked source cue; the linked claim remains unverified."
+    },
+    {
+      "atSeconds": 1130,
+      "sectionId": "practical-standard",
+      "claimIds": [
+        "r57-budget"
+      ],
+      "rationale": "Lloyd addresses the cost-per-PR and budget question after the verification discussion. The article section contains an exact time-linked source cue; the linked claim remains unverified."
+    },
+    {
+      "atSeconds": 1247,
+      "sectionId": "evaluator-problem",
+      "claimIds": [
+        "r57-llm-judge"
+      ],
+      "rationale": "Lloyd answers an audience question about correctness scoring. The article section contains an exact time-linked source cue; the linked claim remains unverified."
+    }
+  ],
+  "assessment": {
+    "sourceCoverage": {
+      "disposition": "covered",
+      "rationale": "Nine separately timed source moments and article sections map to nine claims; the public aid was checked without certification of original audio."
+    },
+    "supportingArgument": {
+      "disposition": "covered",
+      "rationale": "Versioned factory definitions, retained traces and task replay are documented as the speaker’s proposed or demonstrated process, not verified outcomes."
+    },
+    "evidenceRoles": {
+      "disposition": "covered",
+      "rationale": "The first-party Warp demonstration, third-party timed-text aid, model judge output and GhostMesh editorial assessment are distinguished explicitly."
+    },
+    "counterargument": {
+      "disposition": "covered",
+      "rationale": "An LLM judge may reward changes that satisfy its own rubric without improving delivered software, even if internal scores rise."
+    },
+    "tradeoffs": {
+      "disposition": "covered",
+      "rationale": "Factory engineering can remove repeated failure causes but can itself consume more effort, operating cost and human attention than the benefits justify."
+    },
+    "falsifiability": {
+      "disposition": "covered",
+      "rationale": "Matched representative tasks, blinded product acceptance, actual defects, review time, compute cost and rollback results could test claimed factory improvement."
+    },
+    "originalSynthesis": {
+      "disposition": "covered",
+      "rationale": "The assessment identifies independent evaluation as the limiting factor of self-improvement, rather than treating agent count or orchestration complexity as maturity."
+    },
+    "performance": {
+      "disposition": "covered",
+      "rationale": "Historical-task cost/quality points in the vendor demonstration are not independently reproduced and do not certify production cycle-time gains."
+    },
+    "economics": {
+      "disposition": "covered",
+      "rationale": "A bounded experiment should compare marginal operating improvement and total human and compute effort; the source does not establish a return on investment."
+    },
+    "threatGovernance": {
+      "disposition": "covered",
+      "rationale": "Approval remains with the owner for consequential changes, with source limits and privacy boundaries maintained; automated scoring is not a release authority."
+    }
+  },
+  "independentCorroboration": "none",
+  "ownerDecision": {
+    "kind": "conversation",
+    "owner": "Tony Malott",
+    "approval": "Tony approved the Reader #57 manuscript and three Reader connections, then explicitly agreed to the source-first opening correction and to replacing the overused Demo Debt comparison with The Code Is No Longer the Hard Part. This records editorial decisions only; no production merge approval is implied.",
+    "approvalDate": "2026-11-12",
+    "articleSha256": "f478b63ab6b945cdb75e7dbf652fdc54dab73511628d04237c2b31b3fac22e8f",
+    "evidenceRevision": "0d0e48aa629278da10c28bcaffef0765820d8a98794eceefc95244cfc1b5df94"
+  },
+  "decision": "accept",
+  "gaps": [
+    {
+      "type": "source",
+      "severity": "nonblocking",
+      "rationale": "The public transcript is a normalized third-party timestamped aid, not independently listening- or screen-certified; original YouTube subtitle retrieval was blocked."
+    },
+    {
+      "type": "evidence",
+      "severity": "nonblocking",
+      "rationale": "Vendor demonstration benchmark values and claimed improvement outcomes were not independently replicated or audited."
+    },
+    {
+      "type": "test",
+      "severity": "nonblocking",
+      "rationale": "Independent editorial review did not cover browser UAT, native iPhone accessibility behavior, deployment binding, or production release."
+    }
+  ],
+  "decisionRationale": "The independent reviewer previously held and corrected an inaccurate budget cue to 18:50, then independently accepted the owner-approved opening and SharePlane comparison delta at the revised exact HTML hash. Manuscript completeness, claims, privacy and relationship roles pass scoped editorial review; preview/mobile and production authority remain separate.",
+  "assessedAt": "2026-11-13T01:44:30Z"
+}

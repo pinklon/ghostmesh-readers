@@ -925,6 +925,277 @@
       "rank": 54
     },
     {
+      "id": "reader:a-factory-that-grades-itself-still-needs-a-judge",
+      "slug": "a-factory-that-grades-itself-still-needs-a-judge",
+      "title": "A Factory That Grades Itself Still Needs a Judge",
+      "category": "AI & Technology",
+      "tags": [
+        "software factory",
+        "coding agents",
+        "evaluation",
+        "agentic workflows",
+        "model benchmarks"
+      ],
+      "entities": [
+        "Zach Lloyd",
+        "Warp"
+      ],
+      "source": {
+        "platform": "YouTube",
+        "url": "https://www.youtube.com/watch?v=nKjPBAw_N_0",
+        "videoId": "nKjPBAw_N_0",
+        "title": "How to Build a Software Factory That Improves Itself",
+        "creator": "AI Engineer",
+        "mediaAspect": "16:9",
+        "durationSeconds": 1316,
+        "uploadDate": "2026-11-09",
+        "captionType": "Third-party public timestamped transcript aid; not independently listening-certified"
+      },
+      "published": "2026-11-12",
+      "updated": "2026-11-12T23:00:00Z",
+      "overview": "Zach Lloyd's software factory makes the development process measurable and adaptable. The difficult question is whether the system can recognize genuine improvement, or merely learn to satisfy its own evaluator.",
+      "whyItMatters": "A development factory that grades and modifies itself can optimize its own scores without delivering better software.",
+      "ghostMeshTakeaway": "Improve the smallest recurring workflow failure; use representative tasks, independent checks, human judgment and measured product results.",
+      "verdict": "Worth studying",
+      "architectureImpact": "experiment recommended",
+      "falsification": "Replay representative development tasks before and after a bounded factory change. Use blinded independent acceptance, product defects, review effort, inference cost and elapsed time, not only factory-supplied scores.",
+      "evidenceState": "unverified",
+      "lastEvidenceChecked": "2026-11-12T23:00:00Z",
+      "freshness": "November 2026 creator presentation; third-party transcript aid only, without direct listening or reproduced benchmark outcomes.",
+      "variant": "editorial",
+      "accent": "teal",
+      "claims": [
+        {
+          "id": "r57-local-agents",
+          "proposition": "Local interactive coding agents have orchestration, governance and observability limitations.",
+          "kind": "speaker-demonstration",
+          "status": "unverified",
+          "sourceLocation": "01:12",
+          "assessment": "Lloyd describes limits of individual local development agents.",
+          "limits": "No comparative organizational study or quantified failure rate is shown.",
+          "references": [
+            "r57-video"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-12"
+        },
+        {
+          "id": "r57-factory-code",
+          "proposition": "A shared factory can define agent instructions, model and workflow choices in version-controlled code.",
+          "kind": "speaker-demonstration",
+          "status": "unverified",
+          "sourceLocation": "04:02",
+          "assessment": "Lloyd describes the factory definition and operating surfaces.",
+          "limits": "Demonstrated design, not independent evidence of operational reliability.",
+          "references": [
+            "r57-video"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-12"
+        },
+        {
+          "id": "r57-model-routing",
+          "proposition": "Private task benchmarks can compare models and workflow configurations for organizational work.",
+          "kind": "speaker-demonstration",
+          "status": "unverified",
+          "sourceLocation": "05:44",
+          "assessment": "Lloyd describes an internal comparison process.",
+          "limits": "Task representativeness and scoring validity are not independently validated.",
+          "references": [
+            "r57-video"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-12"
+        },
+        {
+          "id": "r57-engineer-split",
+          "proposition": "Factory engineers improve the development system while product engineers deliver features.",
+          "kind": "speaker-demonstration",
+          "status": "unverified",
+          "sourceLocation": "06:55",
+          "assessment": "Lloyd explains the proposed division of responsibilities.",
+          "limits": "Team operating outcomes and net staffing implications are not measured.",
+          "references": [
+            "r57-video"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-12"
+        },
+        {
+          "id": "r57-traces",
+          "proposition": "Retained execution traces can support recurring behavior scoring and analysis.",
+          "kind": "speaker-demonstration",
+          "status": "unverified",
+          "sourceLocation": "07:51",
+          "assessment": "The presentation shows recorded runs and evaluator views.",
+          "limits": "Captured traces do not by themselves prove the correctness of scores.",
+          "references": [
+            "r57-video"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-12"
+        },
+        {
+          "id": "r57-change-pr",
+          "proposition": "Recurring evaluator findings can trigger a proposed factory-definition pull request.",
+          "kind": "speaker-demonstration",
+          "status": "unverified",
+          "sourceLocation": "13:06",
+          "assessment": "The demonstration discusses repeated redundant-test findings and a PR suggestion.",
+          "limits": "Whether the change improves downstream product outcomes is unverified.",
+          "references": [
+            "r57-video"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-12"
+        },
+        {
+          "id": "r57-replay",
+          "proposition": "Historical tasks can be replayed to compare cost and evaluated quality.",
+          "kind": "speaker-demonstration",
+          "status": "unverified",
+          "sourceLocation": "14:48",
+          "assessment": "Lloyd shows historical task benchmarks and a vendor comparison chart.",
+          "limits": "Displayed quality values and their external validity were not independently reproduced.",
+          "references": [
+            "r57-video"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-12"
+        },
+        {
+          "id": "r57-budget",
+          "proposition": "Cost and budget criteria should constrain an adaptive software factory.",
+          "kind": "speaker-demonstration",
+          "status": "unverified",
+          "sourceLocation": "18:50",
+          "assessment": "Lloyd addresses the cost-per-PR and budget question after the verification discussion.",
+          "limits": "No independently measured long-term cost reduction is established.",
+          "references": [
+            "r57-video"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-12"
+        },
+        {
+          "id": "r57-llm-judge",
+          "proposition": "The displayed correctness evaluation uses an LLM judge; human grading was not yet added.",
+          "kind": "speaker-demonstration",
+          "status": "unverified",
+          "sourceLocation": "20:47",
+          "assessment": "Lloyd answers an audience question about correctness scoring.",
+          "limits": "The answer does not validate judge calibration or resistance to reward gaming.",
+          "references": [
+            "r57-video"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-12"
+        }
+      ],
+      "references": [
+        {
+          "id": "r57-video",
+          "title": "How to Build a Software Factory That Improves Itself",
+          "author": "Zach Lloyd",
+          "publisher": "AI Engineer / YouTube",
+          "url": "https://www.youtube.com/watch?v=nKjPBAw_N_0",
+          "publicationDate": "2026-11-09",
+          "datePrecision": "day",
+          "eventDate": null,
+          "location": "00:00–21:56 presentation and audience Q&A",
+          "sourceType": "speaker presentation",
+          "independence": "Warp founder presentation and demonstration, not an independent benchmark of factory improvement.",
+          "evidenceFamily": "r57-video",
+          "checkedAt": "2026-11-12T23:00:00Z",
+          "dateNote": "Video upload date from third-party public source index; independently unconfirmed."
+        }
+      ],
+      "relationships": [
+        {
+          "target": "reader:the-second-brain-still-needs-a-judgment",
+          "type": "companion",
+          "reason": "Reader #47 examines accountable human judgment in automated systems. Here the same question returns as the validity of factory-defined evaluation and its authority to admit changes.",
+          "provenance": [
+            "/a-factory-that-grades-itself-still-needs-a-judge/",
+            "/the-second-brain-still-needs-a-judgment/"
+          ],
+          "basis": "curated-editorial-comparison",
+          "direction": "outgoing"
+        },
+        {
+          "target": "reader:replacing-cowork-is-a-test-not-a-title",
+          "type": "companion",
+          "reason": "Reader #55 distinguishes an agent demonstration from sustained operating proof. The software factory similarly needs real delivery evidence beyond its internal scores.",
+          "provenance": [
+            "/a-factory-that-grades-itself-still-needs-a-judge/",
+            "/replacing-cowork-is-a-test-not-a-title/"
+          ],
+          "basis": "curated-editorial-comparison",
+          "direction": "outgoing"
+        },
+        {
+          "target": "reader:the-taste-is-in-the-loop-not-the-prompt",
+          "type": "companion",
+          "reason": "Reader #56 shows how iterative criticism can improve output while retaining subjective quality measurements. Lloyd extends the problem to an adaptive development factory.",
+          "provenance": [
+            "/a-factory-that-grades-itself-still-needs-a-judge/",
+            "/the-taste-is-in-the-loop-not-the-prompt/"
+          ],
+          "basis": "curated-editorial-comparison",
+          "direction": "outgoing"
+        }
+      ],
+      "relationshipDisposition": "Owner admitted three thematic Reader comparisons (Reader #47, #55 and #56), not source corroboration.",
+      "relationshipReview": {
+        "reviewedAt": "2026-11-12",
+        "reviewedCatalogSize": 57,
+        "decision": "linked",
+        "reviewedTargets": [
+          "reader:the-second-brain-still-needs-a-judgment",
+          "reader:replacing-cowork-is-a-test-not-a-title",
+          "reader:the-taste-is-in-the-loop-not-the-prompt"
+        ],
+        "rationale": "Owner explicitly approved all three editorial comparisons in the Reader #57 conversation. These connect themes of independent judgment, demonstration proof, and evaluation limits, without adding source corroboration."
+      },
+      "sharePlaneRelationships": [
+        {
+          "title": "The Code Is No Longer the Hard Part",
+          "url": "https://shareplane.malott.ai/artifacts/the-code-is-no-longer-the-hard-part/",
+          "type": "extends",
+          "reason": "The Work argues that producing code is no longer the binding constraint; review, integration, operational evidence and judgment increasingly determine accepted value. Lloyd’s factory proposes to improve the production system itself, but must demonstrate gains in those downstream outcomes rather than merely in its internal grader.",
+          "basis": "curated-editorial-comparison"
+        }
+      ],
+      "sharePlaneReview": {
+        "reviewedAt": "2026-11-12",
+        "decision": "linked",
+        "rationale": "Owner approved replacing the repeatedly used Demo Debt comparison with The Code Is No Longer the Hard Part. This Work offers the more specific downstream engineering constraint against which Lloyd’s proposed adaptive factory should be evaluated. Demo Debt was considered but rejected as too general and overrepresented. The connection is an editorial extension, not independent evidence for the speaker’s claims."
+      },
+      "review": {
+        "status": "PENDING independent source/privacy/editorial review; draft only",
+        "reviewer": "unassigned independent reviewer",
+        "checkedAt": "2026-11-12T23:00:00Z",
+        "scope": "Nine source cues and claims, approved manuscript, source limitations, layout and four owner-admitted editorial relationships",
+        "findings": "Draft candidate only. Independent review, visual UAT and production authorization have not occurred."
+      },
+      "revisionHistory": [
+        {
+          "at": "2026-11-12T23:00:00Z",
+          "reason": "First Reader #57 draft from owner-approved full-copy Creative Lock in issue #161."
+        }
+      ],
+      "editorialOrder": 56,
+      "archiveCall": {
+        "label": "Test the improvement loop",
+        "text": "Take one recurring factory failure, change the smallest responsible configuration, and compare independent quality, elapsed time and cost against historical tasks."
+      },
+      "editorialDepth": {
+        "schemaVersion": 1,
+        "receiptPath": "content/editorial-depth/a-factory-that-grades-itself-still-needs-a-judge.json"
+      },
+      "rank": 56
+    },
+    {
       "id": "reader:the-small-fix-is-a-boundary",
       "slug": "the-small-fix-is-a-boundary",
       "title": "The Small Fix Is a Boundary",
