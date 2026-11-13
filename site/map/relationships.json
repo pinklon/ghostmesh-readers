@@ -3,11 +3,11 @@
   "scope": "Local public editorial reading routes; no independent corroboration or cross-site graph admission.",
   "authority": "catalog-curated-editorial",
   "visibility": "public",
-  "readerCount": 59,
-  "assessmentCount": 59,
-  "relationshipCount": 136,
-  "sharePlaneRelationshipCount": 27,
-  "sharePlaneReviewCount": 19,
+  "readerCount": 60,
+  "assessmentCount": 60,
+  "relationshipCount": 139,
+  "sharePlaneRelationshipCount": 28,
+  "sharePlaneReviewCount": 20,
   "sharePlaneEdges": [
     {
       "from": "reader:when-code-gets-cheap-where-does-the-work-wait",
@@ -223,6 +223,14 @@
       "url": "https://shareplane.malott.ai/artifacts/the-most-expensive-model-is-often-compensation-for-missing-control/",
       "type": "companion",
       "reason": "The larger-compute purchase reflex can compensate for undefined workload or weak operational control; this Reader supplies a concrete GPU sizing example.",
+      "basis": "curated-editorial-comparison"
+    },
+    {
+      "from": "reader:the-playbook-may-be-reproducible",
+      "title": "Software Has Entered Its Re-Image Era",
+      "url": "https://shareplane.malott.ai/artifacts/software-has-entered-its-re-image-era/",
+      "type": "companion",
+      "reason": "Cheap software reproduction shifts the scarce work toward comprehension, maintenance and chosen outcomes.",
       "basis": "curated-editorial-comparison"
     }
   ],
@@ -1183,6 +1191,23 @@
           "reader:the-engine-is-not-the-service"
         ],
         "rationale": "Source-specific conceptual comparisons, not empirical source corroboration; pending independent admission review."
+      }
+    },
+    {
+      "id": "reader:the-playbook-may-be-reproducible",
+      "slug": "the-playbook-may-be-reproducible",
+      "title": "You Can Copy the Playbook. Can You Copy the Judgment?",
+      "url": "https://youtube.shareplane.malott.ai/the-playbook-may-be-reproducible/",
+      "review": {
+        "reviewedAt": "2026-11-13",
+        "reviewedCatalogSize": 59,
+        "decision": "linked",
+        "reviewedTargets": [
+          "reader:when-software-becomes-legible",
+          "reader:the-second-brain-still-needs-a-judgment",
+          "reader:when-code-gets-cheap-where-does-the-work-wait"
+        ],
+        "rationale": "Three target Readers were inspected for distinct conceptual connections to observed software, retained context and scarce engineering judgment. The links orient readers but neither corroborate Marchese's examples nor establish reliability or authority."
       }
     }
   ],
@@ -2815,6 +2840,42 @@
       "provenance": [
         "/the-12gb-gpu-has-a-three-budget-problem/",
         "/the-engine-is-not-the-service/"
+      ],
+      "basis": "curated-editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:the-playbook-may-be-reproducible",
+      "to": "reader:when-software-becomes-legible",
+      "type": "companion",
+      "reason": "Readable software surfaces speed reconstruction without proving operational equivalence.",
+      "provenance": [
+        "/the-playbook-may-be-reproducible/",
+        "/when-software-becomes-legible/"
+      ],
+      "basis": "curated-editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:the-playbook-may-be-reproducible",
+      "to": "reader:the-second-brain-still-needs-a-judgment",
+      "type": "companion",
+      "reason": "Stored expertise and curated context still require judgment about the next action.",
+      "provenance": [
+        "/the-playbook-may-be-reproducible/",
+        "/the-second-brain-still-needs-a-judgment/"
+      ],
+      "basis": "curated-editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:the-playbook-may-be-reproducible",
+      "to": "reader:when-code-gets-cheap-where-does-the-work-wait",
+      "type": "related topic",
+      "reason": "Lower implementation costs move the bottleneck toward validation and choice.",
+      "provenance": [
+        "/the-playbook-may-be-reproducible/",
+        "/when-code-gets-cheap-where-does-the-work-wait/"
       ],
       "basis": "curated-editorial-comparison",
       "direction": "outgoing"

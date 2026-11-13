@@ -20303,7 +20303,7 @@
       "overview": "Reconstruction can accelerate learning and delivery while leaving reliability, context and authority unproven.",
       "whyItMatters": "A convincing copy can hide missing backend behavior, exception handling, operating economics or human judgment.",
       "ghostMeshTakeaway": "Use reconstruction to discover candidate capabilities; validate representative cases and explicit authority before operational reliance.",
-      "verdict": "Promising method, bounded proof",
+      "verdict": "Interesting, unproven",
       "architectureImpact": "experiment recommended",
       "archiveCall": {
         "label": "Reconstruct to learn; validate to rely",
@@ -20519,7 +20519,7 @@
           "reader:the-second-brain-still-needs-a-judgment",
           "reader:when-code-gets-cheap-where-does-the-work-wait"
         ],
-        "rationale": "Source-specific conceptual comparisons; independent admission review pending."
+        "rationale": "Three target Readers were inspected for distinct conceptual connections to observed software, retained context and scarce engineering judgment. The links orient readers but neither corroborate Marchese's examples nor establish reliability or authority."
       },
       "sharePlaneRelationships": [
         {
@@ -20533,7 +20533,7 @@
       "sharePlaneReview": {
         "reviewedAt": "2026-11-13",
         "decision": "linked",
-        "rationale": "Public Work verified live; editorial comparison, not empirical corroboration."
+        "rationale": "The linked SharePlane Work examines how cheap software reproduction affects product truth and maintenance. It provides a separately labeled conceptual comparison only, not independent verification of the video or its commercial examples."
       },
       "review": {
         "status": "PENDING independent source/privacy/editorial review and owner publication approval",
@@ -20546,7 +20546,30 @@
         "schemaVersion": 1,
         "receiptPath": "content/editorial-depth/the-playbook-may-be-reproducible.json"
       },
-      "revisionHistory": []
+      "revisionHistory": [],
+      "legacyReceipt": {
+        "schema": "ghostmesh-reader-receipt-v2",
+        "createdAt": "2026-11-13T21:00:00Z",
+        "source": {
+          "url": "https://www.youtube.com/watch?v=lKz3cDrLgTk",
+          "videoId": "lKz3cDrLgTk"
+        },
+        "reasonPack": {
+          "verification": "not-established"
+        },
+        "sourceInspection": {
+          "method": "One offline CPU Whisper base.en pass over retained public audio, 225 timestamped segments, used as a private navigation aid.",
+          "coverage": "17:14 source, approximate navigation cues only.",
+          "caveat": "No independent listening certification, reproduction of demonstrated features, or external validation of commercial effectiveness.",
+          "publicationBoundary": "Publish original GhostMesh analysis and sanitized provenance only. No audio, transcript, source-pack paths or private segments.",
+          "audioSha256": "6c3927356c3606746775f9945dc134e1418e3f18669aba589eeec8ea554306b3",
+          "transcriptSha256": "eb64ea6ad674cc67717cd025384fdd2946c51f7fa328ffa56839d607c7bd43c6"
+        },
+        "custody": {
+          "status": "limited-private-source-inspection",
+          "note": "Private retained audio and machine transcription were examined for navigation. No independently certified transcript, ReasonPack verification, or reproduced product behavior."
+        }
+      }
     }
   ],
   "featuredId": "reader:ask-for-the-outcome-keep-the-boundary"
