@@ -3,11 +3,11 @@
   "scope": "Local public editorial reading routes; no independent corroboration or cross-site graph admission.",
   "authority": "catalog-curated-editorial",
   "visibility": "public",
-  "readerCount": 57,
-  "assessmentCount": 57,
-  "relationshipCount": 130,
-  "sharePlaneRelationshipCount": 25,
-  "sharePlaneReviewCount": 17,
+  "readerCount": 58,
+  "assessmentCount": 58,
+  "relationshipCount": 133,
+  "sharePlaneRelationshipCount": 26,
+  "sharePlaneReviewCount": 18,
   "sharePlaneEdges": [
     {
       "from": "reader:when-code-gets-cheap-where-does-the-work-wait",
@@ -207,6 +207,14 @@
       "url": "https://shareplane.malott.ai/artifacts/the-code-is-no-longer-the-hard-part/",
       "type": "extends",
       "reason": "The Work argues that producing code is no longer the binding constraint; review, integration, operational evidence and judgment increasingly determine accepted value. Lloyd’s factory proposes to improve the production system itself, but must demonstrate gains in those downstream outcomes rather than merely in its internal grader.",
+      "basis": "curated-editorial-comparison"
+    },
+    {
+      "from": "reader:the-model-fits-does-the-intelligence-survive",
+      "title": "The Right Model Is the One Your Eval Can Defend",
+      "url": "https://shareplane.malott.ai/artifacts/the-right-model-is-the-one-your-eval-can-defend/",
+      "type": "companion",
+      "reason": "Moves beyond parameter count and throughput to defensible quality, latency, cost and workload evaluation.",
       "basis": "curated-editorial-comparison"
     }
   ],
@@ -1133,6 +1141,23 @@
           "reader:the-taste-is-in-the-loop-not-the-prompt"
         ],
         "rationale": "Owner explicitly approved all three editorial comparisons in the Reader #57 conversation. These connect themes of independent judgment, demonstration proof, and evaluation limits, without adding source corroboration."
+      }
+    },
+    {
+      "id": "reader:the-model-fits-does-the-intelligence-survive",
+      "slug": "the-model-fits-does-the-intelligence-survive",
+      "title": "The Model Fits. Does the Intelligence Survive?",
+      "url": "https://youtube.shareplane.malott.ai/the-model-fits-does-the-intelligence-survive/",
+      "review": {
+        "reviewedAt": "2026-11-12",
+        "reviewedCatalogSize": 57,
+        "decision": "linked",
+        "reviewedTargets": [
+          "reader:the-model-is-not-the-demonstration",
+          "reader:the-operator-is-part-of-the-denominator",
+          "reader:offline-is-not-the-same-as-independent"
+        ],
+        "rationale": "Tony approved three Reader comparisons after cross-catalog assessment; each concerns model demonstration, inference economics or local operating independence."
       }
     }
   ],
@@ -2693,6 +2718,42 @@
       "provenance": [
         "/a-factory-that-grades-itself-still-needs-a-judge/",
         "/the-taste-is-in-the-loop-not-the-prompt/"
+      ],
+      "basis": "curated-editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:the-model-fits-does-the-intelligence-survive",
+      "to": "reader:the-model-is-not-the-demonstration",
+      "type": "companion",
+      "reason": "An attractive demonstration cannot stand in for qualified model capability; this experiment tests that distinction at extreme quantization.",
+      "provenance": [
+        "/the-model-fits-does-the-intelligence-survive/",
+        "/the-model-is-not-the-demonstration/"
+      ],
+      "basis": "curated-editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:the-model-fits-does-the-intelligence-survive",
+      "to": "reader:the-operator-is-part-of-the-denominator",
+      "type": "companion",
+      "reason": "Inference economics must include actual workload, waiting time and operator constraints, not only model size or peak token rates.",
+      "provenance": [
+        "/the-model-fits-does-the-intelligence-survive/",
+        "/the-operator-is-part-of-the-denominator/"
+      ],
+      "basis": "curated-editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:the-model-fits-does-the-intelligence-survive",
+      "to": "reader:offline-is-not-the-same-as-independent",
+      "type": "companion",
+      "reason": "Local execution gives control over placement but not automatic independence from specialized software, validation and source provenance.",
+      "provenance": [
+        "/the-model-fits-does-the-intelligence-survive/",
+        "/offline-is-not-the-same-as-independent/"
       ],
       "basis": "curated-editorial-comparison",
       "direction": "outgoing"

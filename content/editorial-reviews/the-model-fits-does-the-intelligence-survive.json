@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "readerId": "reader:the-model-fits-does-the-intelligence-survive",
+  "sourceId": "DHW0sia6JFI",
+  "sourceAidSha256": "855dcb3bdcce41e7735416c52451241bb9d66c5572e05d630d872fec8d882657",
+  "articleSha256": "39789840e46062ce33c2f43bb7a5643b33500ffcabc3154f2e884d2bf131c14b",
+  "evidenceRevision": "158bcc708795d40ee1bfa419fe0d1a76f0463794058b4d4cef64a779bb37fa44",
+  "reviewedAt": "2026-11-13T05:46:00Z",
+  "provenance": {
+    "kind": "codex-task-agent",
+    "reference": "Independent read-only Codex CLI review on GhostMesh, session 01a1d36f-a6e0-7cb1-b8ac-56e0fbe3fd7b (standalone ACCEPT on final article SHA), following earlier sessions 01a1d369-385f-79f0-8881-2b934955d467 (initial REVISE), 01a1d36a-fd68-76e1-8587-0f8f9d846995 (bounded ACCEPT), and 01a1d36d-b19a-7821-a720-56727ed6169e (delta REVISE). No reviewer file writes.",
+    "limits": "Private caption alignment, speech accuracy and custody were not independently authenticated; no browser visual/playback or deployment verification. Standalone review accepted seven timed source links and the final authored SHA."
+  },
+  "summary": "ACCEPT, standalone source/editorial/privacy review at the final authored article SHA with seven working timed section links, catalog and source map. Original dates are unknown rather than inferred from the November 9 evidence cutoff. All 48 locked paragraphs, source-first placement, privacy, claim caveats and owner-admitted editorial relationships passed. This is not browser or production verification.",
+  "findings": [
+    "All 48 original approved paragraphs were preserved in order after Markdown/HTML normalization.",
+    "Source-first opening precedes concise GhostMesh assessment, three-move brief, source video, full analysis, then complete GhostMesh verdict.",
+    "No private host names or GhostMesh hardware inventory were found in reviewed authored article, catalog record or source map.",
+    "Official DeepSeek model card supports 284B total and 13B active architecture only, not compressed build, CPU speed or fidelity.",
+    "Seven cue times and direct timed links inside their corresponding article sections are internally consistent; private caption-to-audio alignment was not independently checked.",
+    "The three Reader and one separately labeled SharePlane Work relationships are editorial comparisons, not source corroboration.",
+    "Original video publication date remains unknown, with November 9 explicitly retained only as evidence cutoff; the model card is year-precision 2026.",
+    "The seven timed section links use the existing opt-in player; no visual browser proof was performed by reviewer.",
+    "Performance, quality and independent reproducibility are unverified, with a falsifiable GhostMesh experiment described."
+  ],
+  "conclusion": "accept-for-owner-review"
+}
