@@ -1,0 +1,170 @@
+{
+  "schemaVersion": 1,
+  "readerId": "reader:the-12gb-gpu-has-a-three-budget-problem",
+  "sourceId": "r2KBVvh_8Do",
+  "sourceDigest": "10f00bd6d3c6506b3efe40100b60f3a57f65594b7090220f5bffbb056ec6db34",
+  "sourceAidSha256": "42d8e0c3728c5a4b0cba2271e1949e7ac86c41963a98e521fa1603d36b5f2301",
+  "articleSha256": "06d4d2486da60bda43b382b2200eb93af7fc88b7447d534e4024891e1f32f16d",
+  "evidenceRevision": "6fbdafb972815896a2f96172214f83d433ea8fa80ddcfffb20eaec273d29e93e",
+  "sourceMapEvidenceSha256": "9a586480045fd8c665091f8b2be0bc2026cdea59f1842c39efc12fa73b8dec53",
+  "reviewEvidenceSha256": "154daa27eda9555dacaff14db9df711d4e60084f2792faddda5c2766e6d3697f",
+  "candidateAuthor": "segfault",
+  "complexity": {
+    "tier": "extended",
+    "factors": [
+      "Ten source cues covering the substantive hardware and context claims",
+      "Distinct maker specifications, multiple community tests and contradictory MTP evidence",
+      "Seven claim records, three Reader comparisons, and a separately labeled SharePlane Work connection"
+    ],
+    "rationale": "The video combines distinct GPU configurations and context claims that require extended architectural math, counterevidence, and a falsifiable workload-specific decision."
+  },
+  "sourceMap": [
+    {
+      "atSeconds": 0,
+      "sectionId": "opening",
+      "claimIds": [
+        "r59-synthesis"
+      ],
+      "rationale": "Opening premise is mapped to source first-screen claim, not independently verified performance."
+    },
+    {
+      "atSeconds": 136,
+      "sectionId": "full-deconstruction",
+      "claimIds": [
+        "r59-cache"
+      ],
+      "rationale": "Cache cost is a source-reported topic checked against the maker configuration."
+    },
+    {
+      "atSeconds": 243,
+      "sectionId": "full-deconstruction",
+      "claimIds": [
+        "r59-weights"
+      ],
+      "rationale": "Quantization weight fit is separated from occupied total memory."
+    },
+    {
+      "atSeconds": 299,
+      "sectionId": "full-deconstruction",
+      "claimIds": [
+        "r59-3080"
+      ],
+      "rationale": "The short-context RTX 3080 result is source-reported and configuration-specific."
+    },
+    {
+      "atSeconds": 416,
+      "sectionId": "full-deconstruction",
+      "claimIds": [
+        "r59-mtp"
+      ],
+      "rationale": "MTP acceleration is conditional and opposed by other measurements."
+    },
+    {
+      "atSeconds": 487,
+      "sectionId": "full-deconstruction",
+      "claimIds": [
+        "r59-3060"
+      ],
+      "rationale": "The RTX 3060 longer-context result is not conflated with the 3080 run."
+    },
+    {
+      "atSeconds": 574,
+      "sectionId": "full-deconstruction",
+      "claimIds": [
+        "r59-dual"
+      ],
+      "rationale": "Two-card pooled context is not presented as a single 12 GB capability."
+    },
+    {
+      "atSeconds": 751,
+      "sectionId": "qualification",
+      "claimIds": [
+        "r59-synthesis"
+      ],
+      "rationale": "The sizing calculation is a filter, not an independent hardware benchmark."
+    },
+    {
+      "atSeconds": 857,
+      "sectionId": "qualification",
+      "claimIds": [
+        "r59-cache"
+      ],
+      "rationale": "The populated-context cost is linked to the bounded qualification proposal."
+    },
+    {
+      "atSeconds": 878,
+      "sectionId": "ghostmesh-verdict",
+      "claimIds": [
+        "r59-synthesis"
+      ],
+      "rationale": "The final source claim is distinguished from the GhostMesh earned verdict."
+    }
+  ],
+  "assessment": {
+    "sourceCoverage": {
+      "disposition": "covered",
+      "rationale": "Ten distinct, exact timestamped source cues map to four appropriate analytical sections and seven bounded claim records; private aid was not independently audiovisual-certified."
+    },
+    "supportingArgument": {
+      "disposition": "covered",
+      "rationale": "Maker architecture config and original GGUF inventories support the memory arithmetic, while configuration-specific community reports illustrate conditional capacity and throughput."
+    },
+    "evidenceRoles": {
+      "disposition": "covered",
+      "rationale": "Maker specifications, community observations, source-video assertions, contrary MTP comparisons and GhostMesh synthesis are explicitly separated."
+    },
+    "counterargument": {
+      "disposition": "covered",
+      "rationale": "A faster reported short-context rate does not prove usable long-context throughput, while MTP evidence includes contradictory community results."
+    },
+    "tradeoffs": {
+      "disposition": "covered",
+      "rationale": "Quantization, KV cache, compute buffers, bandwidth, prefill, model quality and possible CPU offload impose different costs on a nominal 12 GB deployment."
+    },
+    "falsifiability": {
+      "disposition": "covered",
+      "rationale": "Two bounded matched recipes evaluate actual prompt-assist latency and long-context citation accuracy with specified hardware, context, hashes and output measures."
+    },
+    "originalSynthesis": {
+      "disposition": "covered",
+      "rationale": "The three-budget framing separates model fit, sustained speed and accepted workload quality and avoids treating dissimilar runs as a purchase promise."
+    },
+    "performance": {
+      "disposition": "covered",
+      "rationale": "The cited community RTX 3060, RTX 3080, dual-GPU and MTP results are not independently reproduced; effective sustained speed remains workload-specific."
+    },
+    "economics": {
+      "disposition": "covered",
+      "rationale": "A smaller model or lower precision is warranted when it preserves actual task quality with less contention; any additional memory expense requires demonstrated benefit."
+    },
+    "threatGovernance": {
+      "disposition": "covered",
+      "rationale": "The Reader preserves private caption and transcript custody, explicitly qualifies source date, and does not elevate externally reported benchmarks to production authorization."
+    }
+  },
+  "independentCorroboration": "none",
+  "ownerDecision": {
+    "kind": "pending",
+    "reason": "Tony accepted the current Reader presentation direction for future use, but has not issued an explicit exact-head production publish authorization."
+  },
+  "decision": "accept",
+  "gaps": [
+    {
+      "type": "source",
+      "severity": "nonblocking",
+      "rationale": "Private captions and source video timing were not independently verified by a complete audiovisual listen-through."
+    },
+    {
+      "type": "evidence",
+      "severity": "nonblocking",
+      "rationale": "Community hardware benchmarks and full populated-context task quality were not independently replicated."
+    },
+    {
+      "type": "test",
+      "severity": "nonblocking",
+      "rationale": "Independent reviewer did not certify native iPhone rendering, production deployment or site publication."
+    }
+  ],
+  "decisionRationale": "Independent editorial reviewer accepted corrected authored HTML and source-map bytes after three mechanical linkage corrections, preserving the locked argument, honest source provenance, and bounded evidence posture. Publication remains separately owner-gated.",
+  "assessedAt": "2026-11-13T18:49:00Z"
+}

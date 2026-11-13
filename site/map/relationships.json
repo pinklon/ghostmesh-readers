@@ -3,11 +3,11 @@
   "scope": "Local public editorial reading routes; no independent corroboration or cross-site graph admission.",
   "authority": "catalog-curated-editorial",
   "visibility": "public",
-  "readerCount": 58,
-  "assessmentCount": 58,
-  "relationshipCount": 133,
-  "sharePlaneRelationshipCount": 26,
-  "sharePlaneReviewCount": 18,
+  "readerCount": 59,
+  "assessmentCount": 59,
+  "relationshipCount": 136,
+  "sharePlaneRelationshipCount": 27,
+  "sharePlaneReviewCount": 19,
   "sharePlaneEdges": [
     {
       "from": "reader:when-code-gets-cheap-where-does-the-work-wait",
@@ -215,6 +215,14 @@
       "url": "https://shareplane.malott.ai/artifacts/the-right-model-is-the-one-your-eval-can-defend/",
       "type": "companion",
       "reason": "Moves beyond parameter count and throughput to defensible quality, latency, cost and workload evaluation.",
+      "basis": "curated-editorial-comparison"
+    },
+    {
+      "from": "reader:the-12gb-gpu-has-a-three-budget-problem",
+      "title": "The Most Expensive Model Is Often Compensation for Missing Control",
+      "url": "https://shareplane.malott.ai/artifacts/the-most-expensive-model-is-often-compensation-for-missing-control/",
+      "type": "companion",
+      "reason": "The larger-compute purchase reflex can compensate for undefined workload or weak operational control; this Reader supplies a concrete GPU sizing example.",
       "basis": "curated-editorial-comparison"
     }
   ],
@@ -1158,6 +1166,23 @@
           "reader:offline-is-not-the-same-as-independent"
         ],
         "rationale": "Tony approved three Reader comparisons after cross-catalog assessment; each concerns model demonstration, inference economics or local operating independence."
+      }
+    },
+    {
+      "id": "reader:the-12gb-gpu-has-a-three-budget-problem",
+      "slug": "the-12gb-gpu-has-a-three-budget-problem",
+      "title": "The 12 GB GPU Has a Three-Budget Problem",
+      "url": "https://youtube.shareplane.malott.ai/the-12gb-gpu-has-a-three-budget-problem/",
+      "review": {
+        "reviewedAt": "2026-11-13",
+        "reviewedCatalogSize": 58,
+        "decision": "linked",
+        "reviewedTargets": [
+          "reader:the-model-fits-does-the-intelligence-survive",
+          "reader:the-operator-is-part-of-the-denominator",
+          "reader:the-engine-is-not-the-service"
+        ],
+        "rationale": "Source-specific conceptual comparisons, not empirical source corroboration; pending independent admission review."
       }
     }
   ],
@@ -2754,6 +2779,42 @@
       "provenance": [
         "/the-model-fits-does-the-intelligence-survive/",
         "/offline-is-not-the-same-as-independent/"
+      ],
+      "basis": "curated-editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:the-12gb-gpu-has-a-three-budget-problem",
+      "to": "reader:the-model-fits-does-the-intelligence-survive",
+      "type": "companion",
+      "reason": "Quantization fit does not establish retained useful model quality.",
+      "provenance": [
+        "/the-12gb-gpu-has-a-three-budget-problem/",
+        "/the-model-fits-does-the-intelligence-survive/"
+      ],
+      "basis": "curated-editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:the-12gb-gpu-has-a-three-budget-problem",
+      "to": "reader:the-operator-is-part-of-the-denominator",
+      "type": "companion",
+      "reason": "Actual prompt latency, context and concurrency determine service value beyond headline decode speed.",
+      "provenance": [
+        "/the-12gb-gpu-has-a-three-budget-problem/",
+        "/the-operator-is-part-of-the-denominator/"
+      ],
+      "basis": "curated-editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:the-12gb-gpu-has-a-three-budget-problem",
+      "to": "reader:the-engine-is-not-the-service",
+      "type": "related topic",
+      "reason": "Fast engine decoding under one setup is not equivalent to a qualified inference service.",
+      "provenance": [
+        "/the-12gb-gpu-has-a-three-budget-problem/",
+        "/the-engine-is-not-the-service/"
       ],
       "basis": "curated-editorial-comparison",
       "direction": "outgoing"
