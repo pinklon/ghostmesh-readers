@@ -1,0 +1,71 @@
+{
+  "schemaVersion": 1,
+  "readerId": "reader:the-model-fits-does-the-intelligence-survive",
+  "sourceId": "DHW0sia6JFI",
+  "sourceAidSha256": "855dcb3bdcce41e7735416c52451241bb9d66c5572e05d630d872fec8d882657",
+  "points": [
+    {
+      "atSeconds": 0,
+      "sectionId": "opening",
+      "claimIds": [
+        "r58-reported-demo"
+      ],
+      "cueParaphrase": "Video introduces and qualifies the reported result.",
+      "privateAidCheck": "Original YouTube English auto-caption aid checked; recognition errors possible. No independent CPU-only reproduction or full-weight fidelity evaluation."
+    },
+    {
+      "atSeconds": 144,
+      "sectionId": "architecture",
+      "claimIds": [
+        "r58-moe-quantization"
+      ],
+      "cueParaphrase": "Video describes sparse activation, memory fit and custom code.",
+      "privateAidCheck": "Original YouTube English auto-caption aid checked; recognition errors possible. No independent CPU-only reproduction or full-weight fidelity evaluation."
+    },
+    {
+      "atSeconds": 421,
+      "sectionId": "bandwidth",
+      "claimIds": [
+        "r58-throughput"
+      ],
+      "cueParaphrase": "Video distinguishes approximately 43–44 prefill, 9–10 decode and higher speculative peaks.",
+      "privateAidCheck": "Original YouTube English auto-caption aid checked; recognition errors possible. No independent CPU-only reproduction or full-weight fidelity evaluation."
+    },
+    {
+      "atSeconds": 565,
+      "sectionId": "compression",
+      "claimIds": [
+        "r58-quality"
+      ],
+      "cueParaphrase": "Video questions quality retention at extreme compression.",
+      "privateAidCheck": "Original YouTube English auto-caption aid checked; recognition errors possible. No independent CPU-only reproduction or full-weight fidelity evaluation."
+    },
+    {
+      "atSeconds": 841,
+      "sectionId": "reproduction",
+      "claimIds": [
+        "r58-reproducibility"
+      ],
+      "cueParaphrase": "Video describes hardware and software caveats.",
+      "privateAidCheck": "Original YouTube English auto-caption aid checked; recognition errors possible. No independent CPU-only reproduction or full-weight fidelity evaluation."
+    },
+    {
+      "atSeconds": 928,
+      "sectionId": "qualification",
+      "claimIds": [
+        "r58-compatibility"
+      ],
+      "cueParaphrase": "Video examines hardware prerequisites and bandwidth.",
+      "privateAidCheck": "Original YouTube English auto-caption aid checked; recognition errors possible. No independent CPU-only reproduction or full-weight fidelity evaluation."
+    },
+    {
+      "atSeconds": 1034,
+      "sectionId": "implication",
+      "claimIds": [
+        "r58-conclusion"
+      ],
+      "cueParaphrase": "Video distinguishes demo from operational utility and smaller high-precision alternatives.",
+      "privateAidCheck": "Original YouTube English auto-caption aid checked; recognition errors possible. No independent CPU-only reproduction or full-weight fidelity evaluation."
+    }
+  ]
+}

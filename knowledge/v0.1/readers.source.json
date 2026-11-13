@@ -805,6 +805,18 @@
         "path": "site/a-factory-that-grades-itself-still-needs-a-judge/index.html",
         "sha256": "2205a00c42cfa46e710fa3da82cb70f20fee747e2848d197529222d01d06991c"
       }
+    },
+    {
+      "id": "urn:ghostmesh-readers:reader:the-model-fits-does-the-intelligence-survive",
+      "type": "Reader",
+      "visibility": "public",
+      "epistemicStatus": "source-editorial",
+      "label": "The Model Fits. Does the Intelligence Survive?",
+      "url": "https://youtube.shareplane.malott.ai/the-model-fits-does-the-intelligence-survive/",
+      "source": {
+        "path": "site/the-model-fits-does-the-intelligence-survive/index.html",
+        "sha256": "dd6aed2252879c746f8783f02b8c36d0e269110ba1af2a4adab003f27de3b06d"
+      }
     }
   ],
   "relationships": [
