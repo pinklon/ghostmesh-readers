@@ -274,6 +274,384 @@
       "rank": 57
     },
     {
+      "id": "reader:the-12gb-gpu-has-a-three-budget-problem",
+      "slug": "the-12gb-gpu-has-a-three-budget-problem",
+      "title": "The 12 GB GPU Has a Three-Budget Problem",
+      "category": "AI & Technology",
+      "tags": [
+        "local AI",
+        "GPU",
+        "VRAM",
+        "Qwen3.8",
+        "context window",
+        "inference",
+        "quantization",
+        "MTP"
+      ],
+      "entities": [],
+      "source": {
+        "platform": "YouTube",
+        "url": "https://www.youtube.com/watch?v=r2KBVvh_8Do",
+        "videoId": "r2KBVvh_8Do",
+        "title": "Is 12GB of VRAM Enough for Local AI Now?",
+        "creator": "Cloud Codes",
+        "mediaAspect": "16:9",
+        "durationSeconds": 952,
+        "uploadDate": "unknown",
+        "dateNote": "Exact publication date not independently certified.",
+        "captionType": "YouTube chapter metadata and caption-derived private aid; not independently listened through."
+      },
+      "published": "2026-11-13",
+      "updated": "2026-11-13T18:00:00Z",
+      "overview": "Claims about fast decoding and enormous context on inexpensive GPUs come from unlike configurations. Capacity, context cache and bandwidth must be evaluated together.",
+      "whyItMatters": "A 12 GB card may run a 27B model, but the attractive speed and context figures cannot be combined into one purchasing claim without a matched run.",
+      "ghostMeshTakeaway": "Choose exact artifact, populated context and representative workload; measure answer quality, prefill, decode, offload and GPU contention before deciding on hardware.",
+      "verdict": "Three budgets, no single benchmark",
+      "architectureImpact": "bounded qualification recommended",
+      "falsification": "Independently reproduce a single-12GB configuration with simultaneously populated 262K context, sustained high decoding rate, and acceptable task-specific quality without hidden capacity.",
+      "evidenceState": "mixed: maker specifications and first-hand community reports; not independently reproduced",
+      "lastEvidenceChecked": "2026-11-13",
+      "freshness": "Community reports and repository revisions require exact artifact and backend recheck before reproduction.",
+      "variant": "editorial",
+      "accent": "teal",
+      "claims": [
+        {
+          "id": "r59-weights",
+          "proposition": "GGUF weight file size is not runtime VRAM; two-bit 27B weights can fit where four-bit files may not.",
+          "kind": "third-party-report",
+          "status": "unverified",
+          "sourceLocation": "04:03",
+          "assessment": "File inventory and capacity reasoning; exact artifact revision matters.",
+          "limits": "File inventory and capacity reasoning; exact artifact revision matters.",
+          "references": [
+            "r59-weights",
+            "r59-qwen"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-13"
+        },
+        {
+          "id": "r59-cache",
+          "proposition": "KV cache growth and implementation overhead compete with weight residency at long populated context.",
+          "kind": "derived-analysis",
+          "status": "unverified",
+          "sourceLocation": "02:16",
+          "assessment": "Architecture-derived approximation, not measured runtime memory.",
+          "limits": "Architecture-derived approximation, not measured runtime memory.",
+          "references": [
+            "r59-architecture",
+            "r59-qwen",
+            "r59-video"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-13"
+        },
+        {
+          "id": "r59-3060",
+          "proposition": "A single 3060 12GB community configuration reported 96K context at approximately 9.7 tok/s with offload and MTP.",
+          "kind": "third-party-report",
+          "status": "unverified",
+          "sourceLocation": "08:07",
+          "assessment": "Self-reported; not a same-system 262K high-speed benchmark.",
+          "limits": "Self-reported; not a same-system 262K high-speed benchmark.",
+          "references": [
+            "r59-3060"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-13"
+        },
+        {
+          "id": "r59-3080",
+          "proposition": "A 3080 10GB short-context MTP setup reported 64.4 tok/s under a materially different configuration.",
+          "kind": "third-party-report",
+          "status": "unverified",
+          "sourceLocation": "04:59",
+          "assessment": "Short-context and aggressive quantization; no full-context equivalence.",
+          "limits": "Short-context and aggressive quantization; no full-context equivalence.",
+          "references": [
+            "r59-3080"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-13"
+        },
+        {
+          "id": "r59-dual",
+          "proposition": "A reported 262K window involved pooled GPUs, not one 12GB card.",
+          "kind": "third-party-report",
+          "status": "unverified",
+          "sourceLocation": "09:34",
+          "assessment": "Multi-GPU memory and layer placement differ.",
+          "limits": "Multi-GPU memory and layer placement differ.",
+          "references": [
+            "r59-dual"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-13"
+        },
+        {
+          "id": "r59-mtp",
+          "proposition": "MTP can accelerate some configurations, but community counterevidence finds no improvement in other tested setups.",
+          "kind": "third-party-report",
+          "status": "unverified",
+          "sourceLocation": "06:56",
+          "assessment": "Backend and workload dependent.",
+          "limits": "Backend and workload dependent.",
+          "references": [
+            "r59-mtp",
+            "r59-3080",
+            "r59-counter"
+          ],
+          "counterevidence": [
+            "r59-counter"
+          ],
+          "asOf": "2026-11-13"
+        },
+        {
+          "id": "r59-synthesis",
+          "proposition": "Capacity, context, and bandwidth results cannot be added across unmatched measurements to establish one operational capability.",
+          "kind": "derived-analysis",
+          "status": "unverified",
+          "sourceLocation": "14:38",
+          "assessment": "GhostMesh editorial inference, not independently replicated throughput.",
+          "limits": "GhostMesh editorial inference, not independently replicated throughput.",
+          "references": [
+            "r59-video",
+            "r59-3060",
+            "r59-3080",
+            "r59-dual",
+            "r59-counter"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-13"
+        }
+      ],
+      "references": [
+        {
+          "id": "r59-video",
+          "title": "Is 12GB of VRAM Enough for Local AI Now?",
+          "author": "Cloud Codes",
+          "publisher": "Cloud Codes / YouTube",
+          "url": "https://www.youtube.com/watch?v=r2KBVvh_8Do",
+          "publicationDate": "unknown",
+          "datePrecision": "unknown",
+          "eventDate": null,
+          "location": "Source page / linked records",
+          "sourceType": "source commentary",
+          "independence": "Source video; captions and chapters are private interpretation aid, not independent benchmark verification.",
+          "evidenceFamily": "r59-video",
+          "checkedAt": "2026-11-13T18:00:00Z",
+          "dateNote": "Publication date not independently certified."
+        },
+        {
+          "id": "r59-qwen",
+          "title": "Qwen3.8-27B model card",
+          "author": "Qwen",
+          "publisher": "Qwen / Hugging Face",
+          "url": "https://huggingface.co/Qwen/Qwen3.8-27B",
+          "publicationDate": "unknown",
+          "datePrecision": "unknown",
+          "eventDate": null,
+          "location": "Source page / linked records",
+          "sourceType": "first-party model documentation",
+          "independence": "Primary architecture documentation; does not validate community throughput.",
+          "evidenceFamily": "r59-qwen",
+          "checkedAt": "2026-11-13T18:00:00Z",
+          "dateNote": "Publication date not independently certified."
+        },
+        {
+          "id": "r59-architecture",
+          "title": "Qwen3.8 architecture repository",
+          "author": "Qwen",
+          "publisher": "Qwen / GitHub",
+          "url": "https://github.com/QwenLM/Qwen3.8",
+          "publicationDate": "unknown",
+          "datePrecision": "unknown",
+          "eventDate": null,
+          "location": "Source page / linked records",
+          "sourceType": "first-party model documentation",
+          "independence": "Architecture and cache sizing inputs, not measured allocation.",
+          "evidenceFamily": "r59-architecture",
+          "checkedAt": "2026-11-13T18:00:00Z",
+          "dateNote": "Publication date not independently certified."
+        },
+        {
+          "id": "r59-weights",
+          "title": "Qwen3.8-27B GGUF inventory",
+          "author": "Unsloth",
+          "publisher": "Unsloth / Hugging Face",
+          "url": "https://huggingface.co/unsloth/Qwen3.8-27B-GGUF",
+          "publicationDate": "unknown",
+          "datePrecision": "unknown",
+          "eventDate": null,
+          "location": "Source page / linked records",
+          "sourceType": "artifact inventory",
+          "independence": "Published quantization file sizes; specific versions must be pinned.",
+          "evidenceFamily": "r59-weights",
+          "checkedAt": "2026-11-13T18:00:00Z",
+          "dateNote": "Publication date not independently certified."
+        },
+        {
+          "id": "r59-3060",
+          "title": "Single RTX 3060 96K community configuration",
+          "author": "Community contributor",
+          "publisher": "Unsloth discussion",
+          "url": "https://huggingface.co/unsloth/Qwen3.8-27B-GGUF/discussions/61",
+          "publicationDate": "unknown",
+          "datePrecision": "unknown",
+          "eventDate": null,
+          "location": "Source page / linked records",
+          "sourceType": "first-hand community report",
+          "independence": "Self-reported, inspectable configuration; no GhostMesh reproduction.",
+          "evidenceFamily": "r59-3060",
+          "checkedAt": "2026-11-13T18:00:00Z",
+          "dateNote": "Publication date not independently certified."
+        },
+        {
+          "id": "r59-3080",
+          "title": "RTX 3080 MTP community measurements",
+          "author": "sudoingX",
+          "publisher": "GitHub",
+          "url": "https://github.com/sudoingX/qwen38-mtp",
+          "publicationDate": "unknown",
+          "datePrecision": "unknown",
+          "eventDate": null,
+          "location": "Source page / linked records",
+          "sourceType": "first-hand community report",
+          "independence": "Paired short-context performance measurements, not 262K 12GB equivalence.",
+          "evidenceFamily": "r59-3080",
+          "checkedAt": "2026-11-13T18:00:00Z",
+          "dateNote": "Publication date not independently certified."
+        },
+        {
+          "id": "r59-dual",
+          "title": "Dual-GPU 262K configuration",
+          "author": "bytefjord",
+          "publisher": "GitHub",
+          "url": "https://github.com/bytefjord/qwen3.8-27b-dual-3060-12gb-llama.cpp",
+          "publicationDate": "unknown",
+          "datePrecision": "unknown",
+          "eventDate": null,
+          "location": "Source page / linked records",
+          "sourceType": "first-hand community report",
+          "independence": "Pooled GPUs, not a single-card result.",
+          "evidenceFamily": "r59-dual",
+          "checkedAt": "2026-11-13T18:00:00Z",
+          "dateNote": "Publication date not independently certified."
+        },
+        {
+          "id": "r59-mtp",
+          "title": "Multi-token prediction implementation",
+          "author": "llama.cpp contributors",
+          "publisher": "GitHub",
+          "url": "https://github.com/ggml-org/llama.cpp/pull/22673",
+          "publicationDate": "unknown",
+          "datePrecision": "unknown",
+          "eventDate": null,
+          "location": "Source page / linked records",
+          "sourceType": "upstream implementation",
+          "independence": "Setup-specific performance; Qwen3.6 example not universal Qwen3.8 guarantee.",
+          "evidenceFamily": "r59-mtp",
+          "checkedAt": "2026-11-13T18:00:00Z",
+          "dateNote": "Publication date not independently certified."
+        },
+        {
+          "id": "r59-counter",
+          "title": "MTP community countercomparison",
+          "author": "Community contributor",
+          "publisher": "Unsloth discussion",
+          "url": "https://huggingface.co/unsloth/Qwen3.8-27B-GGUF/discussions/77",
+          "publicationDate": "unknown",
+          "datePrecision": "unknown",
+          "eventDate": null,
+          "location": "Source page / linked records",
+          "sourceType": "first-hand counterevidence",
+          "independence": "Different setup found MTP not faster across its tested workloads.",
+          "evidenceFamily": "r59-counter",
+          "checkedAt": "2026-11-13T18:00:00Z",
+          "dateNote": "Publication date not independently certified."
+        }
+      ],
+      "relationships": [
+        {
+          "target": "reader:the-model-fits-does-the-intelligence-survive",
+          "type": "companion",
+          "reason": "Quantization fit does not establish retained useful model quality.",
+          "provenance": [
+            "/the-12gb-gpu-has-a-three-budget-problem/",
+            "/the-model-fits-does-the-intelligence-survive/"
+          ],
+          "basis": "curated-editorial-comparison",
+          "direction": "outgoing"
+        },
+        {
+          "target": "reader:the-operator-is-part-of-the-denominator",
+          "type": "companion",
+          "reason": "Actual prompt latency, context and concurrency determine service value beyond headline decode speed.",
+          "provenance": [
+            "/the-12gb-gpu-has-a-three-budget-problem/",
+            "/the-operator-is-part-of-the-denominator/"
+          ],
+          "basis": "curated-editorial-comparison",
+          "direction": "outgoing"
+        },
+        {
+          "target": "reader:the-engine-is-not-the-service",
+          "type": "related",
+          "reason": "Fast engine decoding under one setup is not equivalent to a qualified inference service.",
+          "provenance": [
+            "/the-12gb-gpu-has-a-three-budget-problem/",
+            "/the-engine-is-not-the-service/"
+          ],
+          "basis": "curated-editorial-comparison",
+          "direction": "outgoing"
+        }
+      ],
+      "relationshipDisposition": "Three Reader and one SharePlane relationships are editorial comparisons, not source corroboration.",
+      "relationshipReview": {
+        "reviewedAt": "2026-11-13",
+        "reviewedCatalogSize": 58,
+        "decision": "linked",
+        "reviewedTargets": [
+          "reader:the-model-fits-does-the-intelligence-survive",
+          "reader:the-operator-is-part-of-the-denominator",
+          "reader:the-engine-is-not-the-service"
+        ],
+        "rationale": "Source-specific conceptual comparisons, not empirical source corroboration; pending independent admission review."
+      },
+      "sharePlaneRelationships": [
+        {
+          "title": "The Most Expensive Model Is Often Compensation for Missing Control",
+          "url": "https://shareplane.malott.ai/artifacts/the-most-expensive-model-is-often-compensation-for-missing-control/",
+          "type": "companion",
+          "reason": "The larger-compute purchase reflex can compensate for undefined workload or weak operational control; this Reader supplies a concrete GPU sizing example.",
+          "basis": "curated-editorial-comparison"
+        }
+      ],
+      "sharePlaneReview": {
+        "reviewedAt": "2026-11-13",
+        "decision": "linked",
+        "rationale": "Live Work identity checked in public catalog; conceptual comparison, not proof or corroboration."
+      },
+      "review": {
+        "status": "PENDING independent source/privacy/editorial review and owner publication approval",
+        "reviewer": "unassigned",
+        "checkedAt": null,
+        "scope": "Draft article and evidence, subject to exact-head review",
+        "findings": "No acceptance asserted."
+      },
+      "revisionHistory": [],
+      "editorialOrder": 58,
+      "archiveCall": {
+        "label": "Benchmark the task, not the headline",
+        "text": "Pin weights and backend; measure actual filled context, prompt latency, sustained decode, accuracy, offload and operational contention."
+      },
+      "editorialDepth": {
+        "schemaVersion": 1,
+        "receiptPath": "content/editorial-depth/the-12gb-gpu-has-a-three-budget-problem.json"
+      },
+      "rank": 58
+    },
+    {
       "id": "reader:the-taste-is-in-the-loop-not-the-prompt",
       "slug": "the-taste-is-in-the-loop-not-the-prompt",
       "title": "The Taste Is in the Loop, Not the Prompt",

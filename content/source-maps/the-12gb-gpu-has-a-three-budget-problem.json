@@ -1,0 +1,98 @@
+{
+  "schemaVersion": 1,
+  "readerId": "reader:the-12gb-gpu-has-a-three-budget-problem",
+  "sourceId": "r2KBVvh_8Do",
+  "sourceAidSha256": "unknown: private transcript aid digest not present in this workspace",
+  "points": [
+    {
+      "atSeconds": 0,
+      "sectionId": "opening",
+      "claimIds": [
+        "r59-synthesis"
+      ],
+      "cueParaphrase": "Headline premise",
+      "privateAidCheck": "Chapter metadata cross-read against privately retained caption aid; independently listened timing not certified; do not expose raw aid."
+    },
+    {
+      "atSeconds": 136,
+      "sectionId": "full-deconstruction",
+      "claimIds": [
+        "r59-cache"
+      ],
+      "cueParaphrase": "Context/cache cost",
+      "privateAidCheck": "Chapter metadata cross-read against privately retained caption aid; independently listened timing not certified; do not expose raw aid."
+    },
+    {
+      "atSeconds": 243,
+      "sectionId": "full-deconstruction",
+      "claimIds": [
+        "r59-weights"
+      ],
+      "cueParaphrase": "Weight capacity",
+      "privateAidCheck": "Chapter metadata cross-read against privately retained caption aid; independently listened timing not certified; do not expose raw aid."
+    },
+    {
+      "atSeconds": 299,
+      "sectionId": "full-deconstruction",
+      "claimIds": [
+        "r59-3080"
+      ],
+      "cueParaphrase": "Short-context rate",
+      "privateAidCheck": "Chapter metadata cross-read against privately retained caption aid; independently listened timing not certified; do not expose raw aid."
+    },
+    {
+      "atSeconds": 416,
+      "sectionId": "full-deconstruction",
+      "claimIds": [
+        "r59-mtp"
+      ],
+      "cueParaphrase": "MTP discussion",
+      "privateAidCheck": "Chapter metadata cross-read against privately retained caption aid; independently listened timing not certified; do not expose raw aid."
+    },
+    {
+      "atSeconds": 487,
+      "sectionId": "full-deconstruction",
+      "claimIds": [
+        "r59-3060"
+      ],
+      "cueParaphrase": "3060 depth recipe",
+      "privateAidCheck": "Chapter metadata cross-read against privately retained caption aid; independently listened timing not certified; do not expose raw aid."
+    },
+    {
+      "atSeconds": 574,
+      "sectionId": "full-deconstruction",
+      "claimIds": [
+        "r59-dual"
+      ],
+      "cueParaphrase": "Pooled GPUs",
+      "privateAidCheck": "Chapter metadata cross-read against privately retained caption aid; independently listened timing not certified; do not expose raw aid."
+    },
+    {
+      "atSeconds": 751,
+      "sectionId": "qualification",
+      "claimIds": [
+        "r59-synthesis"
+      ],
+      "cueParaphrase": "Sizing method",
+      "privateAidCheck": "Chapter metadata cross-read against privately retained caption aid; independently listened timing not certified; do not expose raw aid."
+    },
+    {
+      "atSeconds": 857,
+      "sectionId": "qualification",
+      "claimIds": [
+        "r59-cache"
+      ],
+      "cueParaphrase": "Long populated context",
+      "privateAidCheck": "Chapter metadata cross-read against privately retained caption aid; independently listened timing not certified; do not expose raw aid."
+    },
+    {
+      "atSeconds": 878,
+      "sectionId": "ghostmesh-verdict",
+      "claimIds": [
+        "r59-synthesis"
+      ],
+      "cueParaphrase": "Performance claim",
+      "privateAidCheck": "Chapter metadata cross-read against privately retained caption aid; independently listened timing not certified; do not expose raw aid."
+    }
+  ]
+}
