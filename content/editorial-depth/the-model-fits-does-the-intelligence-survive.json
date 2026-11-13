@@ -1,0 +1,150 @@
+{
+  "schemaVersion": 1,
+  "readerId": "reader:the-model-fits-does-the-intelligence-survive",
+  "sourceId": "DHW0sia6JFI",
+  "sourceDigest": "5ec7de80b29635bbcdc59421613c07f57447f7e5c44bd809055cd8f571fcea19",
+  "sourceAidSha256": "855dcb3bdcce41e7735416c52451241bb9d66c5572e05d630d872fec8d882657",
+  "articleSha256": "39789840e46062ce33c2f43bb7a5643b33500ffcabc3154f2e884d2bf131c14b",
+  "evidenceRevision": "158bcc708795d40ee1bfa419fe0d1a76f0463794058b4d4cef64a779bb37fa44",
+  "sourceMapEvidenceSha256": "1556517febfd70980ccdac041ac4aef7df40c06a329281ea502eda7551647760",
+  "reviewEvidenceSha256": "981367536d228cc98a858e1db4bb6c2b243814c75e6c46f86b9f7e0ebc5fd6be",
+  "candidateAuthor": "segfault",
+  "complexity": {
+    "tier": "extended",
+    "factors": [
+      "Seven timed source claims",
+      "Critical distinction between compressed execution and retained model fidelity",
+      "Three Reader and one SharePlane editorial comparisons"
+    ],
+    "rationale": "The source makes consequential performance and model-quality claims with distinct evidentiary limits, requiring extended assessment."
+  },
+  "sourceMap": [
+    {
+      "atSeconds": 0,
+      "sectionId": "opening",
+      "claimIds": [
+        "r58-reported-demo"
+      ],
+      "rationale": "Video introduces and qualifies the reported result. The corresponding article section and catalog claim remain explicitly unverified."
+    },
+    {
+      "atSeconds": 144,
+      "sectionId": "architecture",
+      "claimIds": [
+        "r58-moe-quantization"
+      ],
+      "rationale": "Video describes sparse activation, memory fit and custom code. The corresponding article section and catalog claim remain explicitly unverified."
+    },
+    {
+      "atSeconds": 421,
+      "sectionId": "bandwidth",
+      "claimIds": [
+        "r58-throughput"
+      ],
+      "rationale": "Video distinguishes approximately 43–44 prefill, 9–10 decode and higher speculative peaks. The corresponding article section and catalog claim remain explicitly unverified."
+    },
+    {
+      "atSeconds": 565,
+      "sectionId": "compression",
+      "claimIds": [
+        "r58-quality"
+      ],
+      "rationale": "Video questions quality retention at extreme compression. The corresponding article section and catalog claim remain explicitly unverified."
+    },
+    {
+      "atSeconds": 841,
+      "sectionId": "reproduction",
+      "claimIds": [
+        "r58-reproducibility"
+      ],
+      "rationale": "Video describes hardware and software caveats. The corresponding article section and catalog claim remain explicitly unverified."
+    },
+    {
+      "atSeconds": 928,
+      "sectionId": "qualification",
+      "claimIds": [
+        "r58-compatibility"
+      ],
+      "rationale": "Video examines hardware prerequisites and bandwidth. The corresponding article section and catalog claim remain explicitly unverified."
+    },
+    {
+      "atSeconds": 1034,
+      "sectionId": "implication",
+      "claimIds": [
+        "r58-conclusion"
+      ],
+      "rationale": "Video distinguishes demo from operational utility and smaller high-precision alternatives. The corresponding article section and catalog claim remain explicitly unverified."
+    }
+  ],
+  "assessment": {
+    "sourceCoverage": {
+      "disposition": "covered",
+      "rationale": "Seven distinct video-cue locations map to seven claims and valid sections; the private caption aid was not independently authenticated."
+    },
+    "supportingArgument": {
+      "disposition": "covered",
+      "rationale": "Source distinguishes developer-reported compressed model fit, MoE activation, measured rates and software dependencies from reliable intelligence."
+    },
+    "evidenceRoles": {
+      "disposition": "covered",
+      "rationale": "The first-party model card supports architecture; video reports developer measurements; GhostMesh recommendation is original synthesis, not independent replication."
+    },
+    "counterargument": {
+      "disposition": "covered",
+      "rationale": "A compressed model may produce fluent responses but degrade reasoning or coding; smaller higher-precision alternatives may outperform it."
+    },
+    "tradeoffs": {
+      "disposition": "covered",
+      "rationale": "CPU memory fit may lower accelerator requirements but impose bandwidth, prefill latency, precision and maintenance tradeoffs."
+    },
+    "falsifiability": {
+      "disposition": "covered",
+      "rationale": "Reproduce the configured system, compare matched representative tasks against higher-precision and smaller baselines, and record accuracy, latency and operational cost."
+    },
+    "originalSynthesis": {
+      "disposition": "covered",
+      "rationale": "The decision separates fitting and executing the model from retaining sufficiently trustworthy intelligence for production work."
+    },
+    "performance": {
+      "disposition": "covered",
+      "rationale": "Reported 43–44 prefill, 9–10 ordinary decode and speculative higher rates are distinct and unverified by independent benchmarks."
+    },
+    "economics": {
+      "disposition": "covered",
+      "rationale": "A useful local-inference comparison must include memory, CPU/GPU latency, setup, maintenance and task-quality economics, not parameter count alone."
+    },
+    "threatGovernance": {
+      "disposition": "covered",
+      "rationale": "No production adoption is warranted without workload evidence and source-independent validation; private fleet inventory remains excluded."
+    }
+  },
+  "independentCorroboration": "none",
+  "ownerDecision": {
+    "kind": "conversation",
+    "owner": "Tony Malott",
+    "approval": "Tony explicitly approved publication of Reader #58 on November 13, then approved the narrow privacy-safe verdict amendment, source-first placement and citation corrections. Publication remains subject to valid independent review and exact-head CI.",
+    "approvalDate": "2026-11-13",
+    "articleSha256": "39789840e46062ce33c2f43bb7a5643b33500ffcabc3154f2e884d2bf131c14b",
+    "evidenceRevision": "158bcc708795d40ee1bfa419fe0d1a76f0463794058b4d4cef64a779bb37fa44"
+  },
+  "decision": "accept",
+  "gaps": [
+    {
+      "type": "source",
+      "severity": "nonblocking",
+      "rationale": "Independent reviewer did not directly inspect the private caption aid or authenticate audio/timestamp alignment; custodian statement remains bounded."
+    },
+    {
+      "type": "evidence",
+      "severity": "nonblocking",
+      "rationale": "Developer throughput and retained model fidelity were not independently reproduced; source-video publication day is unknown."
+    },
+    {
+      "type": "test",
+      "severity": "nonblocking",
+      "rationale": "Independent review did not execute visual browser UAT, source-video playback, or production verification."
+    }
+  ],
+  "decisionRationale": "After initial HOLD for private hardware disclosure, opening order and unsupported date assertions, the final article with seven timed links, source map and catalog received standalone exact-SHA independent ACCEPT. Limitations remain explicit; the recommendation is a controlled workload comparison, not model deployment.",
+  "assessedAt": "2026-11-13T05:46:00Z"
+}

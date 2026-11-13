@@ -19623,7 +19623,8 @@
         "creator": "Pop Theory",
         "mediaAspect": "16:9",
         "durationSeconds": 1110,
-        "uploadDate": "2026-11-09",
+        "uploadDate": "unknown",
+        "dateNote": "Video upload date not independently certified; November 9 is the evidence cutoff in the source.",
         "captionType": "Original English automatic captions, private aid; errors possible"
       },
       "published": "2026-11-13",
@@ -19663,7 +19664,8 @@
           "assessment": "Video describes sparse activation, memory fit and custom code.",
           "limits": "Compressed fidelity relative to higher precision not established.",
           "references": [
-            "r58-video"
+            "r58-video",
+            "r58-deepseek-model-card"
           ],
           "counterevidence": [],
           "asOf": "2026-11-12"
@@ -19746,8 +19748,8 @@
           "author": "Pop Theory",
           "publisher": "Pop Theory / YouTube",
           "url": "https://www.youtube.com/watch?v=DHW0sia6JFI",
-          "publicationDate": "2026-11-09",
-          "datePrecision": "day",
+          "publicationDate": "unknown",
+          "datePrecision": "unknown",
           "eventDate": null,
           "location": "00:00–18:30 analysis",
           "sourceType": "third-party technical video analysis",
@@ -19755,6 +19757,22 @@
           "evidenceFamily": "r58-video",
           "checkedAt": "2026-11-13T05:10:00Z",
           "dateNote": "November 9 is the evidence cutoff stated in the video; source publication date is not separately certified."
+        },
+        {
+          "id": "r58-deepseek-model-card",
+          "title": "DeepSeek-V4-Flash model card",
+          "author": "DeepSeek AI",
+          "publisher": "DeepSeek AI / Hugging Face",
+          "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash",
+          "publicationDate": "2026",
+          "datePrecision": "year",
+          "eventDate": null,
+          "location": "Model overview and architecture table",
+          "sourceType": "first-party model documentation",
+          "independence": "Primary model specification; does not corroborate third-party quantization throughput or preserved fidelity.",
+          "evidenceFamily": "r58-deepseek-model-card",
+          "checkedAt": "2026-11-13T05:10:00Z",
+          "dateNote": "Only the publication year is attributed; exact day not independently verified."
         }
       ],
       "relationships": [
