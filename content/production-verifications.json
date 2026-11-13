@@ -1,0 +1,8 @@
+{
+  "the-playbook-may-be-reproducible": {
+    "mergeCommit": "f938e6bf493022fb8436ce4a539db365a0a2cf1e",
+    "url": "https://youtube.shareplane.malott.ai/the-playbook-may-be-reproducible/",
+    "verifiedAt": "2026-11-13T22:49:10Z",
+    "checks": ["article-http-200", "receipt-http-200", "catalog-http-200", "sitemap-http-200", "claim-register-http-200"]
+  }
+}
