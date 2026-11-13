@@ -18,6 +18,16 @@ For Reader #48 onward, one explicit owner decision to **publish the reviewed can
 
 **Performance target:** one publication approval, zero routine follow-up approvals, and minutes of release overhead after the manuscript is ready. This is an operating target; record actual interventions and elapsed time on Reader #48 before claiming it achieved.
 
+## Reader #59 is the forward presentation benchmark for #60 onward (owner-selected November 13, 2026)
+
+**Owner-selected reference:** [Reader #59, *The 12 GB GPU Has a Three-Budget Problem*](https://youtube.shareplane.malott.ai/the-12gb-gpu-has-a-three-budget-problem/) at published PR [#167](https://github.com/pinklon/ghostmesh-readers/pull/167), source head `334b38db8dfdc0672c4d503232a89176a7713f08`, merge `a19dbda8a1abe2b6cc4f40f41fdf63311600b047`. This supersedes #55 as the *presentation* starting point, while preserving #55's catalog-backed relationship contract, #57's cold-reader source orientation, and #58's early assessment and earned later verdict.
+
+**Forward design standard:** Source-first opening; clear first-screen assessment; styled three-move brief; opt-in original video; descriptive chapter cards with exact seek links rather than an unlabeled timestamp string; stable reading rail; substantial source-specific analysis; intentional comparison/qualification modules rather than unstyled Markdown-looking bullets; a transparent public-safe account of source acquisition, retained caption/transcription aids, checks, external corroboration limits, and GhostMesh synthesis; a final earned verdict; individually justified Reader connections and separately labeled SharePlane Work comparisons. Scale the analysis to the substance of the source, without padding or semantic compression. Keep private media, raw transcripts and credential-bearing paths excluded.
+
+**Purposeful visuals:** Pilot an inline infographic or rendered explanatory figure in the next suitable Reader when it clarifies a technical mechanism, competing claims, causal/evidence relationship or decision more effectively than prose. Use accurate source-backed labels, visible text alternatives, a readable mobile treatment, and restrained editorial styling. No mandatory visual quota, decorative filler, runtime AI or new renderer/service. A visual must explain rather than merely embellish.
+
+**One existing release path:** Apply this as an editorial and responsive UAT reference, not an additional validator, reviewer, builder or publisher. Carry forward each Reader's own facts, timestamps, claims, relationships and provenance. Do not retrofit published Readers without a separately justified correction.
+
 ## Reader #55 is the complete forward reference for #56 onward (November 12, 2026)
 
 **Owner correction:** [Reader #55, *Replacing Cowork Is a Test, Not a Title*](https://youtube.shareplane.malott.ai/replacing-cowork-is-a-test-not-a-title/) is the next complete visual, analytical and relationship-handling reference after the approved #54/#55 connection repair. Reader #53 remains the original typography and responsive design baseline. Preserve the original independently reviewed #54/#55 manuscript bytes: the existing generator projects admitted connection sections from catalog records, not editor-authored proposed-card text. No second publishing path, service, graph writer or template engine was introduced.
