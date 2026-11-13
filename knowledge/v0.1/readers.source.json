@@ -829,6 +829,18 @@
         "path": "site/the-12gb-gpu-has-a-three-budget-problem/index.html",
         "sha256": "7fe5e3457143794a37564756626331cae840a64baa241db30a02828c08c8e419"
       }
+    },
+    {
+      "id": "urn:ghostmesh-readers:reader:the-playbook-may-be-reproducible",
+      "type": "Reader",
+      "visibility": "public",
+      "epistemicStatus": "source-editorial",
+      "label": "You Can Copy the Playbook. Can You Copy the Judgment?",
+      "url": "https://youtube.shareplane.malott.ai/the-playbook-may-be-reproducible/",
+      "source": {
+        "path": "site/the-playbook-may-be-reproducible/index.html",
+        "sha256": "b0cb68b48cd6eac3df865849ecdda77ad8dec6f0d36b724a17581c9e917e644a"
+      }
     }
   ],
   "relationships": [

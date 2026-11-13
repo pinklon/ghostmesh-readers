@@ -20280,6 +20280,296 @@
           "note": "Governed ReasonPack 1.1.0 separately verified on Hyperion; retained private source media and captions stay outside Git. This is custody, not benchmark replication."
         }
       }
+    },
+    {
+      "id": "reader:the-playbook-may-be-reproducible",
+      "slug": "the-playbook-may-be-reproducible",
+      "title": "You Can Copy the Playbook. Can You Copy the Judgment?",
+      "variant": "editorial",
+      "category": "AI & Technology",
+      "tags": [
+        "reverse engineering",
+        "AI agents",
+        "automation",
+        "software",
+        "judgment",
+        "validation"
+      ],
+      "accent": "teal",
+      "editorialOrder": 59,
+      "published": "2026-11-13",
+      "updated": "2026-11-13T21:00:00Z",
+      "lastEvidenceChecked": "2026-11-13",
+      "overview": "Reconstruction can accelerate learning and delivery while leaving reliability, context and authority unproven.",
+      "whyItMatters": "A convincing copy can hide missing backend behavior, exception handling, operating economics or human judgment.",
+      "ghostMeshTakeaway": "Use reconstruction to discover candidate capabilities; validate representative cases and explicit authority before operational reliance.",
+      "verdict": "Interesting, unproven",
+      "architectureImpact": "experiment recommended",
+      "archiveCall": {
+        "label": "Reconstruct to learn; validate to rely",
+        "text": "Separate observation, inference, reproduction, validation and decision rights before deployment."
+      },
+      "evidenceState": "unverified",
+      "falsification": "Demonstrate representative reconstruction parity across private backend behavior, exceptions, reliability and authorized deployment under independent acceptance criteria.",
+      "freshness": "Project and commercial offerings can change; pin revisions and independently test before reuse.",
+      "entities": [],
+      "source": {
+        "platform": "YouTube",
+        "url": "https://www.youtube.com/watch?v=lKz3cDrLgTk",
+        "videoId": "lKz3cDrLgTk",
+        "title": "Reverse Engineer Anything Does Way More Than You Think",
+        "creator": "Austin Marchese",
+        "mediaAspect": "16:9",
+        "durationSeconds": 1034,
+        "uploadDate": "2026-11-13",
+        "dateNote": "Source intake date; independent page date confirmation pending.",
+        "captionType": "No YouTube subtitles; private one-pass CPU Whisper transcription used as approximate navigation only."
+      },
+      "references": [
+        {
+          "id": "r60-video",
+          "title": "Reverse Engineer Anything Does Way More Than You Think",
+          "author": "Austin Marchese",
+          "publisher": "Austin Marchese / YouTube",
+          "url": "https://www.youtube.com/watch?v=lKz3cDrLgTk",
+          "publicationDate": "2026-11-13",
+          "datePrecision": "day",
+          "eventDate": null,
+          "location": "17:14 source video",
+          "sourceType": "creator demonstration and commentary",
+          "independence": "Primary interpretive source; private CPU-generated transcript used as navigation aid, not independent listening or verification.",
+          "evidenceFamily": "r60-video",
+          "checkedAt": "2026-11-13T21:00:00Z",
+          "dateNote": "Date given in source intake; verify against public page before release."
+        },
+        {
+          "id": "r60-rea-project",
+          "title": "REA repository",
+          "author": "morluto",
+          "publisher": "GitHub",
+          "url": "https://github.com/morluto/rea",
+          "publicationDate": "unknown",
+          "datePrecision": "unknown",
+          "eventDate": null,
+          "location": "Project landing page",
+          "sourceType": "primary software project",
+          "independence": "Project existence and description only; no local parity or reliability test.",
+          "evidenceFamily": "r60-rea",
+          "checkedAt": "2026-11-13T21:00:00Z",
+          "dateNote": "Exact revision not qualified."
+        }
+      ],
+      "claims": [
+        {
+          "id": "r60-method",
+          "proposition": "Marchese presents a repeatable observe, collect, reconstruct, compare and improve method.",
+          "kind": "creator-claim",
+          "status": "unverified",
+          "sourceLocation": "02:32",
+          "assessment": "Creator-proposed process, not a generally validated success rate.",
+          "limits": "Creator-proposed process, not a generally validated success rate.",
+          "references": [
+            "r60-video"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-13"
+        },
+        {
+          "id": "r60-rea",
+          "proposition": "The source demonstrates using REA to attempt an Apple Notes reconstruction.",
+          "kind": "creator-claim",
+          "status": "unverified",
+          "sourceLocation": "00:32",
+          "assessment": "Demonstration does not establish full application or backend parity.",
+          "limits": "Demonstration does not establish full application or backend parity.",
+          "references": [
+            "r60-rea-project",
+            "r60-video"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-13"
+        },
+        {
+          "id": "r60-business",
+          "proposition": "The source extends reconstruction from interface behavior to public business funnels.",
+          "kind": "creator-claim",
+          "status": "unverified",
+          "sourceLocation": "02:51",
+          "assessment": "Public-facing sequence omits private economics and retention mechanisms.",
+          "limits": "Public-facing sequence omits private economics and retention mechanisms.",
+          "references": [
+            "r60-video"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-13"
+        },
+        {
+          "id": "r60-sponsor",
+          "proposition": "The Clay segment is a commercial sponsorship and cannot independently establish business performance.",
+          "kind": "source-qualification",
+          "status": "unverified",
+          "sourceLocation": "05:23",
+          "assessment": "Commercial example, not independent effectiveness evidence.",
+          "limits": "Commercial example, not independent effectiveness evidence.",
+          "references": [
+            "r60-video"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-13"
+        },
+        {
+          "id": "r60-tools",
+          "proposition": "The creator advocates reconstructing targeted capabilities rather than whole applications.",
+          "kind": "creator-claim",
+          "status": "unverified",
+          "sourceLocation": "07:15",
+          "assessment": "Practical design advice; independent outcomes are not reported.",
+          "limits": "Practical design advice; independent outcomes are not reported.",
+          "references": [
+            "r60-video"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-13"
+        },
+        {
+          "id": "r60-workflow",
+          "proposition": "The source proposes recording and narrating recurring tasks as inputs to automation.",
+          "kind": "creator-claim",
+          "status": "unverified",
+          "sourceLocation": "09:41",
+          "assessment": "One recorded path does not reveal exception handling or authorization.",
+          "limits": "One recorded path does not reveal exception handling or authorization.",
+          "references": [
+            "r60-video"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-13"
+        },
+        {
+          "id": "r60-expert",
+          "proposition": "The source proposes AI skills built from an expert's public materials.",
+          "kind": "creator-claim",
+          "status": "unverified",
+          "sourceLocation": "12:37",
+          "assessment": "Public statements do not prove equivalent judgment, competence or authority.",
+          "limits": "Public statements do not prove equivalent judgment, competence or authority.",
+          "references": [
+            "r60-video"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-13"
+        },
+        {
+          "id": "r60-limits",
+          "proposition": "The creator acknowledges difficult-to-copy factors including backend reach, relationships, trust and judgment.",
+          "kind": "source-qualification",
+          "status": "unverified",
+          "sourceLocation": "16:16",
+          "assessment": "Source caveat is not a test of a particular reconstruction.",
+          "limits": "Source caveat is not a test of a particular reconstruction.",
+          "references": [
+            "r60-video"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-13"
+        }
+      ],
+      "relationships": [
+        {
+          "target": "reader:when-software-becomes-legible",
+          "type": "companion",
+          "reason": "Readable software surfaces speed reconstruction without proving operational equivalence.",
+          "provenance": [
+            "/the-playbook-may-be-reproducible/",
+            "/when-software-becomes-legible/"
+          ],
+          "basis": "curated-editorial-comparison",
+          "direction": "outgoing"
+        },
+        {
+          "target": "reader:the-second-brain-still-needs-a-judgment",
+          "type": "companion",
+          "reason": "Stored expertise and curated context still require judgment about the next action.",
+          "provenance": [
+            "/the-playbook-may-be-reproducible/",
+            "/the-second-brain-still-needs-a-judgment/"
+          ],
+          "basis": "curated-editorial-comparison",
+          "direction": "outgoing"
+        },
+        {
+          "target": "reader:when-code-gets-cheap-where-does-the-work-wait",
+          "type": "related topic",
+          "reason": "Lower implementation costs move the bottleneck toward validation and choice.",
+          "provenance": [
+            "/the-playbook-may-be-reproducible/",
+            "/when-code-gets-cheap-where-does-the-work-wait/"
+          ],
+          "basis": "curated-editorial-comparison",
+          "direction": "outgoing"
+        }
+      ],
+      "relationshipDisposition": "Three Reader and one SharePlane relationships are conceptual editorial comparisons, not corroboration.",
+      "relationshipReview": {
+        "reviewedAt": "2026-11-13",
+        "reviewedCatalogSize": 59,
+        "decision": "linked",
+        "reviewedTargets": [
+          "reader:when-software-becomes-legible",
+          "reader:the-second-brain-still-needs-a-judgment",
+          "reader:when-code-gets-cheap-where-does-the-work-wait"
+        ],
+        "rationale": "Three target Readers were inspected for distinct conceptual connections to observed software, retained context and scarce engineering judgment. The links orient readers but neither corroborate Marchese's examples nor establish reliability or authority."
+      },
+      "sharePlaneRelationships": [
+        {
+          "title": "Software Has Entered Its Re-Image Era",
+          "url": "https://shareplane.malott.ai/artifacts/software-has-entered-its-re-image-era/",
+          "type": "companion",
+          "reason": "Cheap software reproduction shifts the scarce work toward comprehension, maintenance and chosen outcomes.",
+          "basis": "curated-editorial-comparison"
+        }
+      ],
+      "sharePlaneReview": {
+        "reviewedAt": "2026-11-13",
+        "decision": "linked",
+        "rationale": "The linked SharePlane Work examines how cheap software reproduction affects product truth and maintenance. It provides a separately labeled conceptual comparison only, not independent verification of the video or its commercial examples."
+      },
+      "review": {
+        "status": "Independent editorial/source/privacy acceptance for owner publication review; claims remain unverified and production pending",
+        "reviewer": "independent ChatGPT task agent /root/reader60_independent_acceptance",
+        "checkedAt": "2026-11-13T22:41:38Z",
+        "scope": "Exact authored article and source-map at PR #170 head 5da27abbf09cfb7a70652c814b2b01343eddbf9b; private source-aid hashes checked read-only on Mac Studio",
+        "findings": "Accepted bounded editorial argument and public-safe provenance; not audiovisual certified, independently replicated, or production verified."
+      },
+      "editorialDepth": {
+        "schemaVersion": 1,
+        "receiptPath": "content/editorial-depth/the-playbook-may-be-reproducible.json"
+      },
+      "revisionHistory": [],
+      "legacyReceipt": {
+        "schema": "ghostmesh-reader-receipt-v2",
+        "createdAt": "2026-11-13T21:00:00Z",
+        "source": {
+          "url": "https://www.youtube.com/watch?v=lKz3cDrLgTk",
+          "videoId": "lKz3cDrLgTk"
+        },
+        "reasonPack": {
+          "verification": "not-established"
+        },
+        "sourceInspection": {
+          "method": "One offline CPU Whisper base.en pass over retained public audio, 225 timestamped segments, used as a private navigation aid.",
+          "coverage": "17:14 source, approximate navigation cues only.",
+          "caveat": "No independent listening certification, reproduction of demonstrated features, or external validation of commercial effectiveness.",
+          "publicationBoundary": "Publish original GhostMesh analysis and sanitized provenance only. No audio, transcript, source-pack paths or private segments.",
+          "audioSha256": "6c3927356c3606746775f9945dc134e1418e3f18669aba589eeec8ea554306b3",
+          "transcriptSha256": "eb64ea6ad674cc67717cd025384fdd2946c51f7fa328ffa56839d607c7bd43c6"
+        },
+        "custody": {
+          "status": "limited-private-source-inspection",
+          "note": "Private retained audio and machine transcription were examined for navigation. No independently certified transcript, ReasonPack verification, or reproduced product behavior."
+        }
+      }
     }
   ],
   "featuredId": "reader:ask-for-the-outcome-keep-the-boundary"

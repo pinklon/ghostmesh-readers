@@ -64,6 +64,10 @@ def source_aid_sha256(reader: dict) -> str:
     if pack.get("verification") == "pass":
         return pack.get("manifestSha256", "")
     inspection = receipt.get("sourceInspection") or {}
+    # A retained transcript is the navigational source aid even when audio is also retained.
+    transcript_sha = inspection.get("transcriptSha256")
+    if isinstance(transcript_sha, str) and SHA.fullmatch(transcript_sha):
+        return transcript_sha
     values = [value for key, value in inspection.items()
               if key.lower().endswith("sha256") and isinstance(value, str) and SHA.fullmatch(value)]
     return values[0] if len(values) == 1 else ""

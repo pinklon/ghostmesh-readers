@@ -1,0 +1,116 @@
+{
+  "schemaVersion": 1,
+  "readerId": "reader:the-playbook-may-be-reproducible",
+  "sourceId": "lKz3cDrLgTk",
+  "sourceAidSha256": "eb64ea6ad674cc67717cd025384fdd2946c51f7fa328ffa56839d607c7bd43c6",
+  "points": [
+    {
+      "atSeconds": 0,
+      "sectionId": "opening",
+      "claimIds": [
+        "r60-method"
+      ],
+      "cueParaphrase": "Creator introduces REA and its broader reconstruction proposal.",
+      "privateAidCheck": "Approximate cue cross-read against one privately retained CPU Whisper base.en transcription; no independent listening certification; do not publish raw aid."
+    },
+    {
+      "atSeconds": 32,
+      "sectionId": "full-deconstruction",
+      "claimIds": [
+        "r60-rea"
+      ],
+      "cueParaphrase": "Creator describes REA tooling and scope.",
+      "privateAidCheck": "Approximate cue cross-read against one privately retained CPU Whisper base.en transcription; no independent listening certification; do not publish raw aid."
+    },
+    {
+      "atSeconds": 152,
+      "sectionId": "full-deconstruction",
+      "claimIds": [
+        "r60-method"
+      ],
+      "cueParaphrase": "Creator outlines the five-step study/rebuild/grade/iterate method.",
+      "privateAidCheck": "Approximate cue cross-read against one privately retained CPU Whisper base.en transcription; no independent listening certification; do not publish raw aid."
+    },
+    {
+      "atSeconds": 171,
+      "sectionId": "full-deconstruction",
+      "claimIds": [
+        "r60-business"
+      ],
+      "cueParaphrase": "Creator extends the method to competitor customer funnels.",
+      "privateAidCheck": "Approximate cue cross-read against one privately retained CPU Whisper base.en transcription; no independent listening certification; do not publish raw aid."
+    },
+    {
+      "atSeconds": 323,
+      "sectionId": "full-deconstruction",
+      "claimIds": [
+        "r60-sponsor"
+      ],
+      "cueParaphrase": "Clay commercial sponsorship begins; not independent corroboration.",
+      "privateAidCheck": "Approximate cue cross-read against one privately retained CPU Whisper base.en transcription; no independent listening certification; do not publish raw aid."
+    },
+    {
+      "atSeconds": 435,
+      "sectionId": "full-deconstruction",
+      "claimIds": [
+        "r60-tools"
+      ],
+      "cueParaphrase": "Creator recommends targeting a useful feature rather than reproducing an entire application.",
+      "privateAidCheck": "Approximate cue cross-read against one privately retained CPU Whisper base.en transcription; no independent listening certification; do not publish raw aid."
+    },
+    {
+      "atSeconds": 581,
+      "sectionId": "full-deconstruction",
+      "claimIds": [
+        "r60-workflow"
+      ],
+      "cueParaphrase": "Creator proposes automating repeated tasks.",
+      "privateAidCheck": "Approximate cue cross-read against one privately retained CPU Whisper base.en transcription; no independent listening certification; do not publish raw aid."
+    },
+    {
+      "atSeconds": 641,
+      "sectionId": "full-deconstruction",
+      "claimIds": [
+        "r60-workflow"
+      ],
+      "cueParaphrase": "Narrated screen recording provides evidence about operator intent.",
+      "privateAidCheck": "Approximate cue cross-read against one privately retained CPU Whisper base.en transcription; no independent listening certification; do not publish raw aid."
+    },
+    {
+      "atSeconds": 757,
+      "sectionId": "full-deconstruction",
+      "claimIds": [
+        "r60-expert"
+      ],
+      "cueParaphrase": "Creator extends the method to expert decision frameworks.",
+      "privateAidCheck": "Approximate cue cross-read against one privately retained CPU Whisper base.en transcription; no independent listening certification; do not publish raw aid."
+    },
+    {
+      "atSeconds": 851,
+      "sectionId": "full-deconstruction",
+      "claimIds": [
+        "r60-expert"
+      ],
+      "cueParaphrase": "Public expert materials and creator-owned Build Partner offering are discussed.",
+      "privateAidCheck": "Approximate cue cross-read against one privately retained CPU Whisper base.en transcription; no independent listening certification; do not publish raw aid."
+    },
+    {
+      "atSeconds": 962,
+      "sectionId": "ghostmesh-verdict",
+      "claimIds": [
+        "r60-limits"
+      ],
+      "cueParaphrase": "Creator discusses falling implementation cost and what remains difficult to copy.",
+      "privateAidCheck": "Approximate cue cross-read against one privately retained CPU Whisper base.en transcription; no independent listening certification; do not publish raw aid."
+    },
+    {
+      "atSeconds": 976,
+      "sectionId": "ghostmesh-verdict",
+      "claimIds": [
+        "r60-limits"
+      ],
+      "cueParaphrase": "Creator names backend context, trust, relationships and judgment as hard to reproduce.",
+      "privateAidCheck": "Approximate cue cross-read against one privately retained CPU Whisper base.en transcription; no independent listening certification; do not publish raw aid."
+    }
+  ]
+}
