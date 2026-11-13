@@ -10,7 +10,7 @@
       "claimIds": [
         "r59-synthesis"
       ],
-      "cueParaphrase": "Headline premise",
+      "cueParaphrase": "The video opens by combining hardware capacity and performance headline claims.",
       "privateAidCheck": "Chapter metadata cross-read against privately retained caption aid; independently listened timing not certified; do not expose raw aid."
     },
     {
@@ -19,7 +19,7 @@
       "claimIds": [
         "r59-cache"
       ],
-      "cueParaphrase": "Context/cache cost",
+      "cueParaphrase": "The source discusses the context cache as an additional memory constraint.",
       "privateAidCheck": "Chapter metadata cross-read against privately retained caption aid; independently listened timing not certified; do not expose raw aid."
     },
     {
@@ -28,7 +28,7 @@
       "claimIds": [
         "r59-weights"
       ],
-      "cueParaphrase": "Weight capacity",
+      "cueParaphrase": "The source separates quantized model weight size from occupied memory.",
       "privateAidCheck": "Chapter metadata cross-read against privately retained caption aid; independently listened timing not certified; do not expose raw aid."
     },
     {
@@ -37,7 +37,7 @@
       "claimIds": [
         "r59-3080"
       ],
-      "cueParaphrase": "Short-context rate",
+      "cueParaphrase": "The source describes a shorter-context decoding rate on a distinct GPU.",
       "privateAidCheck": "Chapter metadata cross-read against privately retained caption aid; independently listened timing not certified; do not expose raw aid."
     },
     {
@@ -46,7 +46,7 @@
       "claimIds": [
         "r59-mtp"
       ],
-      "cueParaphrase": "MTP discussion",
+      "cueParaphrase": "The source introduces multi-token prediction as a conditional speed technique.",
       "privateAidCheck": "Chapter metadata cross-read against privately retained caption aid; independently listened timing not certified; do not expose raw aid."
     },
     {
@@ -55,7 +55,7 @@
       "claimIds": [
         "r59-3060"
       ],
-      "cueParaphrase": "3060 depth recipe",
+      "cueParaphrase": "The source describes a longer-context configuration using an RTX 3060.",
       "privateAidCheck": "Chapter metadata cross-read against privately retained caption aid; independently listened timing not certified; do not expose raw aid."
     },
     {
@@ -64,7 +64,7 @@
       "claimIds": [
         "r59-dual"
       ],
-      "cueParaphrase": "Pooled GPUs",
+      "cueParaphrase": "The source describes memory pooling across two GPUs rather than one card.",
       "privateAidCheck": "Chapter metadata cross-read against privately retained caption aid; independently listened timing not certified; do not expose raw aid."
     },
     {
@@ -73,7 +73,7 @@
       "claimIds": [
         "r59-synthesis"
       ],
-      "cueParaphrase": "Sizing method",
+      "cueParaphrase": "The source offers a practical sizing calculation for the memory budget.",
       "privateAidCheck": "Chapter metadata cross-read against privately retained caption aid; independently listened timing not certified; do not expose raw aid."
     },
     {
@@ -82,7 +82,7 @@
       "claimIds": [
         "r59-cache"
       ],
-      "cueParaphrase": "Long populated context",
+      "cueParaphrase": "The source discusses constraints when the context window is substantially populated.",
       "privateAidCheck": "Chapter metadata cross-read against privately retained caption aid; independently listened timing not certified; do not expose raw aid."
     },
     {
@@ -91,7 +91,7 @@
       "claimIds": [
         "r59-synthesis"
       ],
-      "cueParaphrase": "Performance claim",
+      "cueParaphrase": "The video closes with a performance interpretation bounded by its tests.",
       "privateAidCheck": "Chapter metadata cross-read against privately retained caption aid; independently listened timing not certified; do not expose raw aid."
     }
   ]
