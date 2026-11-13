@@ -2810,7 +2810,7 @@
     {
       "from": "reader:the-12gb-gpu-has-a-three-budget-problem",
       "to": "reader:the-engine-is-not-the-service",
-      "type": "related",
+      "type": "related topic",
       "reason": "Fast engine decoding under one setup is not equivalent to a qualified inference service.",
       "provenance": [
         "/the-12gb-gpu-has-a-three-budget-problem/",

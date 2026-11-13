@@ -1,20 +1,24 @@
 {
   "schema": "ghostmesh-reader-receipt-v2",
+  "createdAt": "2026-11-13T16:00:00Z",
   "source": {
-    "platform": "YouTube",
     "url": "https://www.youtube.com/watch?v=r2KBVvh_8Do",
-    "videoId": "r2KBVvh_8Do",
-    "title": "Is 12GB of VRAM Enough for Local AI Now?",
-    "creator": "Cloud Codes",
-    "mediaAspect": "16:9",
-    "durationSeconds": 952,
-    "uploadDate": "unknown",
-    "dateNote": "Exact publication date not independently certified.",
-    "captionType": "YouTube chapter metadata and caption-derived private aid; not independently listened through."
+    "videoId": "r2KBVvh_8Do"
+  },
+  "reasonPack": {
+    "verification": "pass",
+    "manifestSha256": "42d8e0c3728c5a4b0cba2271e1949e7ac86c41963a98e521fa1603d36b5f2301"
+  },
+  "sourceInspection": {
+    "method": "Original chapter metadata and caption-derived aid were inspected privately alongside public maker and community reports.",
+    "coverage": "15:52, ten timed chapter cues.",
+    "caveat": "Private caption aid has possible transcription errors; no independent listen-through or performance reproduction.",
+    "publicationBoundary": "Only original analysis and sanitized cue paraphrases; no raw captions, media, transcripts or local custody paths.",
+    "timedAidSha256": "486a71dc17cd13cbdf60840451826848329881e73f6bd0c400ceb9b3f5c234d1"
   },
   "custody": {
-    "status": "historical-public-account-only",
-    "note": "No private source pack was opened or reverified during normalization. See original provenance on the Reader."
+    "status": "qualified-private-pack-verified",
+    "note": "Governed ReasonPack 1.1.0 separately verified on Hyperion; retained private source media and captions stay outside Git. This is custody, not benchmark replication."
   },
   "normalization": {
     "id": "reader:the-12gb-gpu-has-a-three-budget-problem",
@@ -45,14 +49,14 @@
       "captionType": "YouTube chapter metadata and caption-derived private aid; not independently listened through."
     },
     "published": "2026-11-13",
-    "updated": "2026-11-13T18:00:00Z",
+    "updated": "2026-11-13T16:00:00Z",
     "overview": "Claims about fast decoding and enormous context on inexpensive GPUs come from unlike configurations. Capacity, context cache and bandwidth must be evaluated together.",
     "whyItMatters": "A 12 GB card may run a 27B model, but the attractive speed and context figures cannot be combined into one purchasing claim without a matched run.",
     "ghostMeshTakeaway": "Choose exact artifact, populated context and representative workload; measure answer quality, prefill, decode, offload and GPU contention before deciding on hardware.",
-    "verdict": "Three budgets, no single benchmark",
-    "architectureImpact": "bounded qualification recommended",
+    "verdict": "Interesting, unproven",
+    "architectureImpact": "experiment recommended",
     "falsification": "Independently reproduce a single-12GB configuration with simultaneously populated 262K context, sustained high decoding rate, and acceptable task-specific quality without hidden capacity.",
-    "evidenceState": "mixed: maker specifications and first-hand community reports; not independently reproduced",
+    "evidenceState": "unverified",
     "lastEvidenceChecked": "2026-11-13",
     "freshness": "Community reports and repository revisions require exact artifact and backend recheck before reproduction.",
     "variant": "editorial",
@@ -182,7 +186,7 @@
         "sourceType": "source commentary",
         "independence": "Source video; captions and chapters are private interpretation aid, not independent benchmark verification.",
         "evidenceFamily": "r59-video",
-        "checkedAt": "2026-11-13T18:00:00Z",
+        "checkedAt": "2026-11-13T16:00:00Z",
         "dateNote": "Publication date not independently certified."
       },
       {
@@ -198,7 +202,7 @@
         "sourceType": "first-party model documentation",
         "independence": "Primary architecture documentation; does not validate community throughput.",
         "evidenceFamily": "r59-qwen",
-        "checkedAt": "2026-11-13T18:00:00Z",
+        "checkedAt": "2026-11-13T16:00:00Z",
         "dateNote": "Publication date not independently certified."
       },
       {
@@ -214,7 +218,7 @@
         "sourceType": "first-party model documentation",
         "independence": "Architecture and cache sizing inputs, not measured allocation.",
         "evidenceFamily": "r59-architecture",
-        "checkedAt": "2026-11-13T18:00:00Z",
+        "checkedAt": "2026-11-13T16:00:00Z",
         "dateNote": "Publication date not independently certified."
       },
       {
@@ -230,7 +234,7 @@
         "sourceType": "artifact inventory",
         "independence": "Published quantization file sizes; specific versions must be pinned.",
         "evidenceFamily": "r59-weights",
-        "checkedAt": "2026-11-13T18:00:00Z",
+        "checkedAt": "2026-11-13T16:00:00Z",
         "dateNote": "Publication date not independently certified."
       },
       {
@@ -246,7 +250,7 @@
         "sourceType": "first-hand community report",
         "independence": "Self-reported, inspectable configuration; no GhostMesh reproduction.",
         "evidenceFamily": "r59-3060",
-        "checkedAt": "2026-11-13T18:00:00Z",
+        "checkedAt": "2026-11-13T16:00:00Z",
         "dateNote": "Publication date not independently certified."
       },
       {
@@ -262,7 +266,7 @@
         "sourceType": "first-hand community report",
         "independence": "Paired short-context performance measurements, not 262K 12GB equivalence.",
         "evidenceFamily": "r59-3080",
-        "checkedAt": "2026-11-13T18:00:00Z",
+        "checkedAt": "2026-11-13T16:00:00Z",
         "dateNote": "Publication date not independently certified."
       },
       {
@@ -278,7 +282,7 @@
         "sourceType": "first-hand community report",
         "independence": "Pooled GPUs, not a single-card result.",
         "evidenceFamily": "r59-dual",
-        "checkedAt": "2026-11-13T18:00:00Z",
+        "checkedAt": "2026-11-13T16:00:00Z",
         "dateNote": "Publication date not independently certified."
       },
       {
@@ -294,7 +298,7 @@
         "sourceType": "upstream implementation",
         "independence": "Setup-specific performance; Qwen3.6 example not universal Qwen3.8 guarantee.",
         "evidenceFamily": "r59-mtp",
-        "checkedAt": "2026-11-13T18:00:00Z",
+        "checkedAt": "2026-11-13T16:00:00Z",
         "dateNote": "Publication date not independently certified."
       },
       {
@@ -310,7 +314,7 @@
         "sourceType": "first-hand counterevidence",
         "independence": "Different setup found MTP not faster across its tested workloads.",
         "evidenceFamily": "r59-counter",
-        "checkedAt": "2026-11-13T18:00:00Z",
+        "checkedAt": "2026-11-13T16:00:00Z",
         "dateNote": "Publication date not independently certified."
       }
     ],
@@ -339,7 +343,7 @@
       },
       {
         "target": "reader:the-engine-is-not-the-service",
-        "type": "related",
+        "type": "related topic",
         "reason": "Fast engine decoding under one setup is not equivalent to a qualified inference service.",
         "provenance": [
           "/the-12gb-gpu-has-a-three-budget-problem/",
