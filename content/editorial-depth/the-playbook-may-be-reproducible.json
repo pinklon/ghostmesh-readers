@@ -1,0 +1,190 @@
+{
+  "schemaVersion": 1,
+  "readerId": "reader:the-playbook-may-be-reproducible",
+  "sourceId": "lKz3cDrLgTk",
+  "sourceDigest": "7126d17c1f56b229bec74ebd1b49fe666ff9cad15a148a5903a90211012e4d55",
+  "sourceAidSha256": "eb64ea6ad674cc67717cd025384fdd2946c51f7fa328ffa56839d607c7bd43c6",
+  "articleSha256": "ffc26f9c8f505f0e0908c389e84bc192f08aa4597806f1fa76c3e61ac97fcb93",
+  "evidenceRevision": "87fd1ab341510c51e68b7cd5fdabe68987c26840fcf1bd49e4671f1b15cec395",
+  "sourceMapEvidenceSha256": "eb5af1379129ede5a0b8e14bd7d3d26fca113acf145de804f25d2abede56f36a",
+  "reviewEvidenceSha256": "565064d91c6cd5f0bb04eb09639c0a7b3b67346a5c9735b2b527f1952e7489e1",
+  "candidateAuthor": "pinklon",
+  "complexity": {
+    "tier": "extended",
+    "factors": [
+      "Eight bounded claim records covering interface, business, automation and expert-model reconstruction",
+      "Twelve source navigation cues from a private machine-generated transcription aid",
+      "Commercial creator claims, capability limits and operational authority distinctions"
+    ],
+    "rationale": "The source spans several operational domains and proposes expert-equivalent behavior; the article needs explicit evidence boundaries, counterarguments and a falsifiable bounded qualification."
+  },
+  "sourceMap": [
+    {
+      "atSeconds": 0,
+      "sectionId": "opening",
+      "claimIds": [
+        "r60-method"
+      ],
+      "rationale": "Creator introduces REA and its broader reconstruction proposal. Claim mapping is source navigation and remains unverified, not a certified quotation."
+    },
+    {
+      "atSeconds": 32,
+      "sectionId": "full-deconstruction",
+      "claimIds": [
+        "r60-rea"
+      ],
+      "rationale": "Creator describes REA tooling and scope. Claim mapping is source navigation and remains unverified, not a certified quotation."
+    },
+    {
+      "atSeconds": 152,
+      "sectionId": "full-deconstruction",
+      "claimIds": [
+        "r60-method"
+      ],
+      "rationale": "Creator outlines the five-step study/rebuild/grade/iterate method. Claim mapping is source navigation and remains unverified, not a certified quotation."
+    },
+    {
+      "atSeconds": 171,
+      "sectionId": "full-deconstruction",
+      "claimIds": [
+        "r60-business"
+      ],
+      "rationale": "Creator extends the method to competitor customer funnels. Claim mapping is source navigation and remains unverified, not a certified quotation."
+    },
+    {
+      "atSeconds": 323,
+      "sectionId": "full-deconstruction",
+      "claimIds": [
+        "r60-sponsor"
+      ],
+      "rationale": "Clay commercial sponsorship begins; not independent corroboration. Claim mapping is source navigation and remains unverified, not a certified quotation."
+    },
+    {
+      "atSeconds": 435,
+      "sectionId": "full-deconstruction",
+      "claimIds": [
+        "r60-tools"
+      ],
+      "rationale": "Creator recommends targeting a useful feature rather than reproducing an entire application. Claim mapping is source navigation and remains unverified, not a certified quotation."
+    },
+    {
+      "atSeconds": 581,
+      "sectionId": "full-deconstruction",
+      "claimIds": [
+        "r60-workflow"
+      ],
+      "rationale": "Creator proposes automating repeated tasks. Claim mapping is source navigation and remains unverified, not a certified quotation."
+    },
+    {
+      "atSeconds": 641,
+      "sectionId": "full-deconstruction",
+      "claimIds": [
+        "r60-workflow"
+      ],
+      "rationale": "Narrated screen recording provides evidence about operator intent. Claim mapping is source navigation and remains unverified, not a certified quotation."
+    },
+    {
+      "atSeconds": 757,
+      "sectionId": "full-deconstruction",
+      "claimIds": [
+        "r60-expert"
+      ],
+      "rationale": "Creator extends the method to expert decision frameworks. Claim mapping is source navigation and remains unverified, not a certified quotation."
+    },
+    {
+      "atSeconds": 851,
+      "sectionId": "full-deconstruction",
+      "claimIds": [
+        "r60-expert"
+      ],
+      "rationale": "Public expert materials and creator-owned Build Partner offering are discussed. Claim mapping is source navigation and remains unverified, not a certified quotation."
+    },
+    {
+      "atSeconds": 962,
+      "sectionId": "ghostmesh-verdict",
+      "claimIds": [
+        "r60-limits"
+      ],
+      "rationale": "Creator discusses falling implementation cost and what remains difficult to copy. Claim mapping is source navigation and remains unverified, not a certified quotation."
+    },
+    {
+      "atSeconds": 976,
+      "sectionId": "ghostmesh-verdict",
+      "claimIds": [
+        "r60-limits"
+      ],
+      "rationale": "Creator names backend context, trust, relationships and judgment as hard to reproduce. Claim mapping is source navigation and remains unverified, not a certified quotation."
+    }
+  ],
+  "assessment": {
+    "sourceCoverage": {
+      "disposition": "covered",
+      "rationale": "Twelve approximate source cues span introductory REA scope, five-step method, business examples, sponsor, targeted tools, recurring workflows, expert material and creator limitations; no certified listen-through is asserted."
+    },
+    "supportingArgument": {
+      "disposition": "covered",
+      "rationale": "The article analyzes observations and creator-proposed methods using the original video and official REA repository only for bounded project scope; no independent feature or outcome claims are elevated."
+    },
+    "evidenceRoles": {
+      "disposition": "covered",
+      "rationale": "Creator video claims, commercial sponsor presentation, official repository scope, machine transcript navigation and original GhostMesh editorial reasoning are explicitly separated."
+    },
+    "counterargument": {
+      "disposition": "covered",
+      "rationale": "A convincing reconstructed interface can fail hidden backend, exception, security and operational conditions; a coherent expert persona cannot be assumed to recover situated judgment."
+    },
+    "tradeoffs": {
+      "disposition": "covered",
+      "rationale": "The piece weighs speed of learning and narrow capability reconstruction against hidden dependencies, representativeness, exception handling, maintenance, decision rights and ownership."
+    },
+    "falsifiability": {
+      "disposition": "covered",
+      "rationale": "The bounded qualification proposes real inputs and expected outputs, at least one exception and stop condition, comparison against competent human execution and documentation of unknowns."
+    },
+    "originalSynthesis": {
+      "disposition": "covered",
+      "rationale": "The four-stage ladder distinguishes observation, inference, reproduction and validation, with authority treated as a separate decision beyond passing tests."
+    },
+    "performance": {
+      "disposition": "covered",
+      "rationale": "No REA application reproduction, business performance improvement, Claude workflow reliability or expert-decision equivalence was measured; all remain unverified."
+    },
+    "economics": {
+      "disposition": "covered",
+      "rationale": "Low implementation cost may improve learning and experimentation but does not eliminate discovery, validation, operational maintenance or the value of relationships and trust."
+    },
+    "threatGovernance": {
+      "disposition": "covered",
+      "rationale": "Private retained audio/transcription hashes were independently checked; public page excludes raw source aids and explicitly limits claims and permission to act."
+    }
+  },
+  "independentCorroboration": "none",
+  "ownerDecision": {
+    "kind": "conversation",
+    "owner": "Tony Malott",
+    "approval": "approve publishing Reader #60 through PR #170 at exact head 5da27abbf09cfb7a70652c814b2b01343eddbf9b, after independent acceptance and required checks pass. Update the publication status after Production is verified.",
+    "approvalDate": "2026-11-13",
+    "articleSha256": "ffc26f9c8f505f0e0908c389e84bc192f08aa4597806f1fa76c3e61ac97fcb93",
+    "evidenceRevision": "87fd1ab341510c51e68b7cd5fdabe68987c26840fcf1bd49e4671f1b15cec395"
+  },
+  "decision": "accept",
+  "gaps": [
+    {
+      "type": "source",
+      "severity": "nonblocking",
+      "rationale": "No independent full listen-through or word-for-word transcription certification; timestamps remain approximate."
+    },
+    {
+      "type": "evidence",
+      "severity": "nonblocking",
+      "rationale": "No independent demonstration replication or commercial outcome verification; creator assertions remain unverified."
+    },
+    {
+      "type": "test",
+      "severity": "nonblocking",
+      "rationale": "Independent reviewer did not certify native iPhone rendering or any production deployment outcome."
+    }
+  ],
+  "decisionRationale": "Independent reviewer accepted exact authored article, source-map identity, public evidence boundaries, source-aid hashes and coherent editorial argument. Owner authorized the former exact PR head; advancing this branch with acceptance receipts requires renewed exact-head merge authorization.",
+  "assessedAt": "2026-11-13T22:41:38Z"
+}

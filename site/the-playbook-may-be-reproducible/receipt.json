@@ -275,11 +275,11 @@
       "rationale": "The linked SharePlane Work examines how cheap software reproduction affects product truth and maintenance. It provides a separately labeled conceptual comparison only, not independent verification of the video or its commercial examples."
     },
     "review": {
-      "status": "PENDING independent source/privacy/editorial review and owner publication approval",
-      "reviewer": "unassigned",
-      "checkedAt": null,
-      "scope": "Draft article and private evidence, subject to exact-head review",
-      "findings": "No acceptance asserted."
+      "status": "Independent editorial/source/privacy acceptance for owner publication review; claims remain unverified and production pending",
+      "reviewer": "independent ChatGPT task agent /root/reader60_independent_acceptance",
+      "checkedAt": "2026-11-13T22:41:38Z",
+      "scope": "Exact authored article and source-map at PR #170 head 5da27abbf09cfb7a70652c814b2b01343eddbf9b; private source-aid hashes checked read-only on Mac Studio",
+      "findings": "Accepted bounded editorial argument and public-safe provenance; not audiovisual certified, independently replicated, or production verified."
     },
     "editorialDepth": {
       "schemaVersion": 1,
