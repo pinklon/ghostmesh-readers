@@ -4,10 +4,10 @@
   "sourceId": "5cZontQjBH4",
   "sourceDigest": "0bbf1785b024e9bd4e5976a3bc3ca8ed5c6ab12e53a9b1ee6c10420748313818",
   "sourceAidSha256": "9c63ea52392bf7f7055bfdce9b276f5655bbc62718602972b05ce740857063c3",
-  "articleSha256": "0b23d6adc0ecf2d30503a8502e31876d8b071e52197ca67b09b039135f2cfe1b",
+  "articleSha256": "251089f778ed064c1d480c25e67002913d9a3ffb15827749833c877f781639ea",
   "evidenceRevision": "b74ba70cec9886563410876b19c6f472251da58885744755cd81a610095df302",
   "sourceMapEvidenceSha256": "acf19716cee2cb22ab6f59391d74648e7b7923b316d07aa94fc958355b6c5fba",
-  "reviewEvidenceSha256": "dd1bd9e542b58545483b16c2ff6f539226aea9d1a855072bb0561834b217756a",
+  "reviewEvidenceSha256": "65d7cf850ddd26f1a10a0524708e6674ab2105bea94858f0a537cfdae9c998eb",
   "candidateAuthor": "segfault (mechanical publication preparation of Tony-approved Reader manuscript)",
   "complexity": {
     "tier": "extended",
@@ -140,7 +140,7 @@
     "owner": "Tony Malott",
     "approval": "I approve merging ghostmesh-readers PR #173 at exact head be6e04e88c6c815bb27f38933d8fed5814c3f10c, following the required independent review, and publishing Reader #61. Subsequently: Okay, approve, get it done.",
     "approvalDate": "2026-11-14",
-    "articleSha256": "0b23d6adc0ecf2d30503a8502e31876d8b071e52197ca67b09b039135f2cfe1b",
+    "articleSha256": "251089f778ed064c1d480c25e67002913d9a3ffb15827749833c877f781639ea",
     "evidenceRevision": "b74ba70cec9886563410876b19c6f472251da58885744755cd81a610095df302"
   },
   "decision": "accept",
