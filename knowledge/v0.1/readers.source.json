@@ -841,6 +841,18 @@
         "path": "site/the-playbook-may-be-reproducible/index.html",
         "sha256": "02e4e994bf5f224cdfd20d61cb689fc6255d2e335977be0675da657826bb4142"
       }
+    },
+    {
+      "id": "urn:ghostmesh-readers:reader:the-robot-is-the-easy-part",
+      "type": "Reader",
+      "visibility": "public",
+      "epistemicStatus": "source-editorial",
+      "label": "The Robot Is the Easy Part. The Boundaries Are the Engineering.",
+      "url": "https://youtube.shareplane.malott.ai/the-robot-is-the-easy-part/",
+      "source": {
+        "path": "site/the-robot-is-the-easy-part/index.html",
+        "sha256": "cd9557de9c853e4bdf1e0bb8274b001fca1709d83541d073f304361e2f8c311b"
+      }
     }
   ],
   "relationships": [
