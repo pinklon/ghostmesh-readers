@@ -8,34 +8,34 @@
       "atSeconds": 170,
       "sectionId": "headline",
       "claimIds": [
-        "r62-1"
+        "r62-usage"
       ],
       "cueParaphrase": "Usage-limit claim; creator-reported, not independently audited.",
       "privateAidCheck": "Local VTT timestamp guide only. Private transcript and media excluded."
     },
     {
       "atSeconds": 241,
-      "sectionId": "uncertainty",
+      "sectionId": "reusable-instructions",
       "claimIds": [
-        "r62-2"
+        "r62-snippets"
       ],
       "cueParaphrase": "Reusable prompt snippets; creator-reported, not independently audited.",
       "privateAidCheck": "Local VTT timestamp guide only. Private transcript and media excluded."
     },
     {
       "atSeconds": 673,
-      "sectionId": "reusable-instructions",
+      "sectionId": "cost-per-task",
       "claimIds": [
-        "r62-3"
+        "r62-cost"
       ],
       "cueParaphrase": "Cost per completed task; creator-reported, not independently audited.",
       "privateAidCheck": "Local VTT timestamp guide only. Private transcript and media excluded."
     },
     {
       "atSeconds": 781,
-      "sectionId": "cost-per-task",
+      "sectionId": "independent-review",
       "claimIds": [
-        "r62-4"
+        "r62-review"
       ],
       "cueParaphrase": "Gemini review; creator-reported, not independently audited.",
       "privateAidCheck": "Local VTT timestamp guide only. Private transcript and media excluded."
@@ -44,61 +44,61 @@
       "atSeconds": 872,
       "sectionId": "independent-review",
       "claimIds": [
-        "r62-5"
+        "r62-productivity"
       ],
       "cueParaphrase": "Productivity claim; creator-reported, not independently audited.",
       "privateAidCheck": "Local VTT timestamp guide only. Private transcript and media excluded."
     },
     {
       "atSeconds": 938,
-      "sectionId": "agent-count",
+      "sectionId": "independent-review",
       "claimIds": [
-        "r62-6"
+        "r62-production"
       ],
       "cueParaphrase": "Direct-to-production practice; creator-reported, not independently audited.",
       "privateAidCheck": "Local VTT timestamp guide only. Private transcript and media excluded."
     },
     {
       "atSeconds": 952,
-      "sectionId": "script-loops",
+      "sectionId": "independent-review",
       "claimIds": [
-        "r62-7"
+        "r62-review"
       ],
       "cueParaphrase": "Cross-family review; creator-reported, not independently audited.",
       "privateAidCheck": "Local VTT timestamp guide only. Private transcript and media excluded."
     },
     {
       "atSeconds": 1177,
-      "sectionId": "data-custody",
+      "sectionId": "agent-count",
       "claimIds": [
-        "r62-8"
+        "r62-agents"
       ],
       "cueParaphrase": "Ten-agent delegation; creator-reported, not independently audited.",
       "privateAidCheck": "Local VTT timestamp guide only. Private transcript and media excluded."
     },
     {
       "atSeconds": 1431,
-      "sectionId": "ghostmesh-experiment",
+      "sectionId": "agent-count",
       "claimIds": [
-        "r62-9"
+        "r62-role"
       ],
       "cueParaphrase": "Role framing; creator-reported, not independently audited.",
       "privateAidCheck": "Local VTT timestamp guide only. Private transcript and media excluded."
     },
     {
       "atSeconds": 1641,
-      "sectionId": "source-and-limits",
+      "sectionId": "script-loops",
       "claimIds": [
-        "r62-10"
+        "r62-loops"
       ],
       "cueParaphrase": "Standing loops; creator-reported, not independently audited.",
       "privateAidCheck": "Local VTT timestamp guide only. Private transcript and media excluded."
     },
     {
       "atSeconds": 1748,
-      "sectionId": "source-and-limits",
+      "sectionId": "script-loops",
       "claimIds": [
-        "r62-11"
+        "r62-feature"
       ],
       "cueParaphrase": "Limits on feature invention; creator-reported, not independently audited.",
       "privateAidCheck": "Local VTT timestamp guide only. Private transcript and media excluded."
