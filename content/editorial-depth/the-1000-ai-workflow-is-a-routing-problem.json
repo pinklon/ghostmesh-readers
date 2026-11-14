@@ -151,8 +151,12 @@
   },
   "independentCorroboration": "none",
   "ownerDecision": {
-    "pullNumber": 176,
-    "commentId": null
+    "kind": "conversation",
+    "owner": "Tony Malott",
+    "approval": "Tony explicitly approved publishing reviewed Reader #62 PR #176 at head 9ec3161f6fee8260fc10d8bdd59029ed95a046bb and merging the separate future Reader standard PR #177 at head 87aad3f1dff77127508e643cbd5555def5346e66 on November 14, 2026.",
+    "approvalDate": "2026-11-14",
+    "articleSha256": "10967cb9641b5eefce19bcd9cf6b189cb3beb5b60165b9b8feed1278e1697875",
+    "evidenceRevision": "d5b75c5975d1135ff5d87fc13a8a67c55577d614e671ddd7c1b5c134082ff96c"
   },
   "decision": "accept",
   "gaps": [
