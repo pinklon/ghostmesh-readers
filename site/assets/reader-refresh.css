@@ -7,8 +7,8 @@
 .gm-brief-heading h2{font:750 clamp(30px,4vw,52px)/1.04 system-ui,sans-serif;letter-spacing:-.055em;margin:0;max-width:16ch}
 .gm-brief-point{display:grid;grid-template-columns:64px minmax(0,1fr);gap:10px 22px;padding:25px 0;border-top:1px solid var(--gm-border)}
 .gm-brief-index{font:700 12px/1.5 ui-monospace,monospace;letter-spacing:.1em;color:var(--gm-accent);padding-top:5px}
-.gm-brief-point>div{display:grid;grid-template-columns:minmax(160px,280px) minmax(0,1fr);gap:18px 30px;align-items:start}
-.gm-brief .gm-brief-point h3{font:750 clamp(18px,2vw,25px)/1.18 system-ui,sans-serif;letter-spacing:-.035em;margin:0;color:var(--gm-ink)}
+.gm-brief-point>div{display:block;min-width:0;max-width:68ch}
+.gm-brief .gm-brief-point h3{font:750 clamp(18px,2vw,25px)/1.18 system-ui,sans-serif;letter-spacing:-.035em;margin:0 0 .6rem;color:var(--gm-ink);max-width:38ch}
 .gm-brief .gm-brief-point p{margin:0;max-width:64ch;font:400 clamp(16px,1.6vw,19px)/1.55 system-ui,sans-serif;color:var(--gm-muted)}
 .gm-brief .gm-verdict{border:0;border-top:1px solid var(--gm-border);padding:24px 0 0 86px;margin:0;color:var(--gm-muted);font-size:14px;line-height:1.6}
 .gm-brief .gm-verdict strong{color:var(--gm-ink)}
