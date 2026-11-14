@@ -1,0 +1,177 @@
+{
+  "schemaVersion": 1,
+  "readerId": "reader:the-1000-ai-workflow-is-a-routing-problem",
+  "sourceId": "dSHSsMY8u88",
+  "sourceDigest": "f0449b74678562f8c08ca614575e43f1d2ed56e4c322f8a4636eb190a6dcd343",
+  "sourceAidSha256": "5b31be4e138794d0e5a69123b0d2e34102d62cb7d9dd3448eb3b43649ab6581c",
+  "articleSha256": "10967cb9641b5eefce19bcd9cf6b189cb3beb5b60165b9b8feed1278e1697875",
+  "evidenceRevision": "d5b75c5975d1135ff5d87fc13a8a67c55577d614e671ddd7c1b5c134082ff96c",
+  "sourceMapEvidenceSha256": "79d051e9f9e3f6a4098dcdf3474284eba92947c4046ea2c9b6cbf600d6ea8b23",
+  "reviewEvidenceSha256": "5f9ed1eebd5765c83e98cd936828195d85b0c37870b979fe7b4e50905459358f",
+  "candidateAuthor": "segfault",
+  "complexity": {
+    "tier": "extended",
+    "factors": [
+      "Eleven mapped material claims across a 30:41 source with unaudited spending, usage and productivity numbers",
+      "Consequential workflow routing, independent review and authorization design recommendations"
+    ],
+    "rationale": "The long source and eleven material claims require extended distinct-cue source mapping, counterargument and testable economic/governance interpretation."
+  },
+  "sourceMap": [
+    {
+      "atSeconds": 170,
+      "sectionId": "headline",
+      "claimIds": [
+        "r62-usage"
+      ],
+      "rationale": "Opening quota and usage claims are creator-reported and unaudited; the analysis challenges prompt counts as productivity evidence."
+    },
+    {
+      "atSeconds": 241,
+      "sectionId": "reusable-instructions",
+      "claimIds": [
+        "r62-snippets"
+      ],
+      "rationale": "Reusable snippets are a claimed workflow practice, not evidence that prompt volume improves accepted outcomes."
+    },
+    {
+      "atSeconds": 673,
+      "sectionId": "cost-per-task",
+      "claimIds": [
+        "r62-cost"
+      ],
+      "rationale": "Cost-per-completed-task framing is preferable to headline spend, but creator bills and net benefits were not independently audited."
+    },
+    {
+      "atSeconds": 781,
+      "sectionId": "independent-review",
+      "claimIds": [
+        "r62-review"
+      ],
+      "rationale": "Gemini review is a claimed review step, not proof of independent defect discovery or correction."
+    },
+    {
+      "atSeconds": 872,
+      "sectionId": "independent-review",
+      "claimIds": [
+        "r62-productivity"
+      ],
+      "rationale": "Reported productivity gain is not a controlled task-level benchmark and lacks independently verified denominator."
+    },
+    {
+      "atSeconds": 938,
+      "sectionId": "independent-review",
+      "claimIds": [
+        "r62-production"
+      ],
+      "rationale": "Direct-to-production practice informs the governance critique, not an observed GhostMesh deployment."
+    },
+    {
+      "atSeconds": 952,
+      "sectionId": "independent-review",
+      "claimIds": [
+        "r62-review"
+      ],
+      "rationale": "Cross-family review can diversify errors but requires blinded outcomes to demonstrate independence."
+    },
+    {
+      "atSeconds": 1177,
+      "sectionId": "agent-count",
+      "claimIds": [
+        "r62-agents"
+      ],
+      "rationale": "Ten-agent delegation is creator description; coordinating more agents has unmeasured overhead."
+    },
+    {
+      "atSeconds": 1431,
+      "sectionId": "agent-count",
+      "claimIds": [
+        "r62-role"
+      ],
+      "rationale": "Role framing is distinguished from evidence of accepted task quality or autonomous effectiveness."
+    },
+    {
+      "atSeconds": 1641,
+      "sectionId": "script-loops",
+      "claimIds": [
+        "r62-loops"
+      ],
+      "rationale": "Standing loops are described by the presenter; recurring deterministic work still requires bounded rules and logs."
+    },
+    {
+      "atSeconds": 1748,
+      "sectionId": "script-loops",
+      "claimIds": [
+        "r62-feature"
+      ],
+      "rationale": "Creator's limits on feature invention motivate boundary tests, not a verified safety claim."
+    }
+  ],
+  "assessment": {
+    "sourceCoverage": {
+      "disposition": "covered",
+      "rationale": "The full 30:41 original video and private local CPU ASR/VTT are identified. Eleven approximate cue links cover the material claims; no listening-certified or visual-frame verification is claimed."
+    },
+    "supportingArgument": {
+      "disposition": "covered",
+      "rationale": "Ten locked analytical sections develop the central routing thesis, distinguishing uncertain reasoning, bounded execution, independent review and deterministic scripts."
+    },
+    "evidenceRoles": {
+      "disposition": "covered",
+      "rationale": "The creator's $1,000 spending, 1,600 prompts, claimed productivity and agent count are attributed and explicitly unaudited. Vendor Anthropic documentation is scoped to stated model behavior, not comparative performance."
+    },
+    "counterargument": {
+      "disposition": "covered",
+      "rationale": "The analysis acknowledges legitimate utility in high-cost reasoning, reusable prompts and multi-agent delegation while requiring evidence that they outperform a simpler baseline."
+    },
+    "tradeoffs": {
+      "disposition": "covered",
+      "rationale": "It weighs premium reasoning against cost, multi-agent review against coordination and correlated error, and standing automation against governance and custody risk."
+    },
+    "falsifiability": {
+      "disposition": "covered",
+      "rationale": "The proposed matched-task GhostMesh experiment specifies accepted tasks, human intervention and escaped defects, with comparable single-model baseline; it is a proposal rather than completed test."
+    },
+    "originalSynthesis": {
+      "disposition": "covered",
+      "rationale": "The manuscript reframes high usage as a task-routing decision and asks which expensive steps actually change verified outcomes instead of equating token bills with success."
+    },
+    "performance": {
+      "disposition": "covered",
+      "rationale": "Creator's prompt counts and reported productivity are treated as observations, not replicated benchmarks; completion, intervention and escaped defects are proposed as actual measures."
+    },
+    "economics": {
+      "disposition": "covered",
+      "rationale": "Subscription allowances and costs may not equal API billing or true task cost; marginal expense is weighed against verified accepted work and human rework."
+    },
+    "threatGovernance": {
+      "disposition": "covered",
+      "rationale": "Production changes and agent delegation require explicit task boundaries, source custody, independent checks and owner authority; no live control or security certification is claimed."
+    }
+  },
+  "independentCorroboration": "none",
+  "ownerDecision": {
+    "pullNumber": 176,
+    "commentId": null
+  },
+  "decision": "accept",
+  "gaps": [
+    {
+      "type": "source",
+      "severity": "nonblocking",
+      "rationale": "Local Whisper transcript and VTT timing have not been listening-certified, and screenshots do not establish full frame-level claims."
+    },
+    {
+      "type": "evidence",
+      "severity": "nonblocking",
+      "rationale": "Creator spending, productivity, subscription and agent claims lack audited logs and controlled matched-task comparison."
+    },
+    {
+      "type": "risk",
+      "severity": "nonblocking",
+      "rationale": "The thumbnail asset is externally requested from YouTube before player activation, even though the embedded video remains opt-in. Tony reviewed and accepted this disclosed tradeoff."
+    }
+  ],
+  "decisionRationale": "The existing independent reviewer accepted exact Reader #62 source/privacy/provenance and the locked essay at PR #176 head c9cfd27. All extended areas are covered with bounded source roles; preview QA and passing CI are separately recorded. The owner has reviewed design but has not yet issued an explicit publication authorization; null owner comment remains pending.",
+  "assessedAt": "2026-11-14T17:42:53Z"
+}
