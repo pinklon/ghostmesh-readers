@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "readerId": "reader:the-1000-ai-workflow-is-a-routing-problem",
+  "sourceId": "dSHSsMY8u88",
+  "sourceAidSha256": "5b31be4e138794d0e5a69123b0d2e34102d62cb7d9dd3448eb3b43649ab6581c",
+  "articleSha256": "10967cb9641b5eefce19bcd9cf6b189cb3beb5b60165b9b8feed1278e1697875",
+  "evidenceRevision": "d5b75c5975d1135ff5d87fc13a8a67c55577d614e671ddd7c1b5c134082ff96c",
+  "reviewedAt": "2026-11-14T17:42:53Z",
+  "provenance": {
+    "kind": "codex-task-agent",
+    "reference": "Actual independent scoped read-only review by existing native task /root/reader62_independent of draft PR #176 at exact head c9cfd27d872a2fdcee0620a671c03f22fe795c81. Earlier source and copy acceptance was retained; this pass examined added provenance and thumbnail presentation.",
+    "limits": "Review matched retained ReasonPack custody statements and existing integrity digests, inspected authored prose and player markup. It did not certify all spoken words, independently reproduce the creator's economics, run model experiments, or authorize release. Browser layout, CI and Production are separate checks."
+  },
+  "summary": "ACCEPT FOR OWNER REVIEW of Reader #62 exact reviewed article and source-provenance boundary. Locked ten analytical sections unchanged. Thumbnail-first source player retains opt-in iframe. Release authorization remains pending.",
+  "findings": [
+    "Ten locked full-analysis sections remain unchanged; added backmatter describes private original media/audio retention, local CPU Whisper transcription, approximate VTT navigation, manifest verification and public-safe limitations.",
+    "The public provenance manifest digest and VTT SHA-256 match prior retained evidence. No private audio, video, raw transcript, VTT text or custody filesystem path entered the public page.",
+    "Eleven source cues retain creator attribution and do not convert usage, cost, subscription or claimed productivity figures into independent benchmark evidence. Anthropic documentation remains vendor-stated rather than independent corroboration.",
+    "A descriptive YouTube thumbnail, labeled keyboard-operable play control and direct source fallback render before playback; the YouTube-nocookie iframe is inserted only after user action. Timestamp navigation remains present.",
+    "The thumbnail image is fetched from i.ytimg.com before playback when visible, creating a third-party request; Tony explicitly reviewed the page and accepted this disclosed presentation tradeoff. This is not zero third-party contact."
+  ],
+  "conclusion": "accept-for-owner-review"
+}
