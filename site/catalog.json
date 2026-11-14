@@ -333,6 +333,322 @@
       "rank": 60
     },
     {
+      "id": "reader:the-1000-ai-workflow-is-a-routing-problem",
+      "slug": "the-1000-ai-workflow-is-a-routing-problem",
+      "title": "The $1,000 AI Workflow Is Really a Routing Problem",
+      "variant": "editorial",
+      "category": "AI & Technology",
+      "tags": [
+        "AI agents",
+        "model routing",
+        "task economics",
+        "cross-model review",
+        "governance"
+      ],
+      "accent": "teal",
+      "editorialOrder": 61,
+      "published": "2026-11-14",
+      "updated": "2026-11-14T15:00:00Z",
+      "lastEvidenceChecked": "2026-11-14",
+      "overview": "David Ondrej’s three-day experiment is less convincing as a model leaderboard than as a demonstration of where expensive reasoning belongs, when to switch to cheaper execution, and why automation needs proof.",
+      "whyItMatters": "Unaudited usage and productivity figures cannot establish that a multi-model workflow improves accepted delivery quality.",
+      "ghostMeshTakeaway": "Route by uncertainty and data authorization, require task-level acceptance, and prefer scripts for deterministic checks.",
+      "verdict": "Interesting, unproven",
+      "architectureImpact": "experiment recommended",
+      "archiveCall": {
+        "label": "Measure accepted tasks, not spend",
+        "text": "Test matched engineering tasks for accepted delivery, human review cost and escaped defects."
+      },
+      "evidenceState": "unverified",
+      "falsification": "Compare eight to twelve matched tasks against a strong single-model baseline using equal acceptance, latency, usage and defect measures.",
+      "freshness": "Vendor terms and model behavior may change; verify before handling sensitive data.",
+      "entities": [],
+      "source": {
+        "platform": "YouTube",
+        "url": "https://www.youtube.com/watch?v=dSHSsMY8u88",
+        "videoId": "dSHSsMY8u88",
+        "title": "My $1,000 Fable 5.2 Workflow (just copy me)",
+        "creator": "David Ondrej",
+        "mediaAspect": "16:9",
+        "durationSeconds": 1841,
+        "uploadDate": "2026-11-12",
+        "dateNote": "Creator page date; source cues from local generated VTT.",
+        "captionType": "Local ASR VTT as private timestamp aid only."
+      },
+      "references": [
+        {
+          "id": "r62-video",
+          "title": "My $1,000 Fable 5.2 Workflow (just copy me)",
+          "author": "David Ondrej",
+          "publisher": "David Ondrej / YouTube",
+          "url": "https://www.youtube.com/watch?v=dSHSsMY8u88",
+          "publicationDate": "2026-11-12",
+          "datePrecision": "day",
+          "eventDate": null,
+          "location": "Public source",
+          "sourceType": "creator experience; unaudited metrics",
+          "independence": "Primary account or vendor guidance, not independent model benchmark.",
+          "evidenceFamily": "r62-video",
+          "checkedAt": "2026-11-14T15:00:00Z",
+          "dateNote": "Public source; scoped attribution."
+        },
+        {
+          "id": "r62-overview",
+          "title": "Claude Fable 5.2 overview",
+          "author": "Anthropic",
+          "publisher": "Anthropic",
+          "url": "https://platform.claude.com/docs/en/models/fable-5-2/overview",
+          "publicationDate": "unknown",
+          "datePrecision": "unknown",
+          "eventDate": null,
+          "location": "Public source",
+          "sourceType": "vendor model and retention documentation",
+          "independence": "Primary account or vendor guidance, not independent model benchmark.",
+          "evidenceFamily": "r62-overview",
+          "checkedAt": "2026-11-14T15:00:00Z",
+          "dateNote": "Public source; scoped attribution."
+        },
+        {
+          "id": "r62-prompting",
+          "title": "Fable 5.2 prompting guide",
+          "author": "Anthropic",
+          "publisher": "Anthropic",
+          "url": "https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-fable-5-2",
+          "publicationDate": "unknown",
+          "datePrecision": "unknown",
+          "eventDate": null,
+          "location": "Public source",
+          "sourceType": "vendor effort and delegation guidance",
+          "independence": "Primary account or vendor guidance, not independent model benchmark.",
+          "evidenceFamily": "r62-prompting",
+          "checkedAt": "2026-11-14T15:00:00Z",
+          "dateNote": "Public source; scoped attribution."
+        }
+      ],
+      "claims": [
+        {
+          "id": "r62-usage",
+          "proposition": "Creator reports over $1,000 usage and more than 1,600 prompts in three days.",
+          "kind": "creator-claim",
+          "status": "unverified",
+          "sourceLocation": "02:50",
+          "assessment": "Self-report is not productivity or accepted-output evidence.",
+          "limits": "Self-report is not productivity or accepted-output evidence.",
+          "references": [
+            "r62-video"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-14"
+        },
+        {
+          "id": "r62-snippets",
+          "proposition": "Creator reports reusable Raycast snippets for recurring prompts.",
+          "kind": "creator-claim",
+          "status": "unverified",
+          "sourceLocation": "04:01",
+          "assessment": "Prompt-share and effectiveness unverified.",
+          "limits": "Prompt-share and effectiveness unverified.",
+          "references": [
+            "r62-video"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-14"
+        },
+        {
+          "id": "r62-cost",
+          "proposition": "Creator argues cost per completed task matters more than unit token cost.",
+          "kind": "creator-claim",
+          "status": "unverified",
+          "sourceLocation": "11:13",
+          "assessment": "No matched task-level measurement provided.",
+          "limits": "No matched task-level measurement provided.",
+          "references": [
+            "r62-video"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-14"
+        },
+        {
+          "id": "r62-review",
+          "proposition": "Creator describes cross-family review using Gemini.",
+          "kind": "creator-claim",
+          "status": "unverified",
+          "sourceLocation": "13:01",
+          "assessment": "Different model family is not guaranteed independent validation.",
+          "limits": "Different model family is not guaranteed independent validation.",
+          "references": [
+            "r62-video"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-14"
+        },
+        {
+          "id": "r62-productivity",
+          "proposition": "Creator claims 43% productivity improvement.",
+          "kind": "creator-claim",
+          "status": "unverified",
+          "sourceLocation": "14:32",
+          "assessment": "No controlled measurement or baseline supplied.",
+          "limits": "No controlled measurement or baseline supplied.",
+          "references": [
+            "r62-video"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-14"
+        },
+        {
+          "id": "r62-production",
+          "proposition": "Creator describes small changes going directly to production.",
+          "kind": "creator-claim",
+          "status": "unverified",
+          "sourceLocation": "15:38",
+          "assessment": "Change size is not risk; authorization not established.",
+          "limits": "Change size is not risk; authorization not established.",
+          "references": [
+            "r62-video"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-14"
+        },
+        {
+          "id": "r62-agents",
+          "proposition": "Creator describes launching groups of premium-model subagents.",
+          "kind": "creator-claim",
+          "status": "unverified",
+          "sourceLocation": "19:37",
+          "assessment": "Parallel count is not independently accepted engineering work.",
+          "limits": "Parallel count is not independently accepted engineering work.",
+          "references": [
+            "r62-video"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-14"
+        },
+        {
+          "id": "r62-role",
+          "proposition": "Creator uses owner/co-founder role prompts.",
+          "kind": "creator-claim",
+          "status": "unverified",
+          "sourceLocation": "23:51",
+          "assessment": "Role wording cannot confer authorization.",
+          "limits": "Role wording cannot confer authorization.",
+          "references": [
+            "r62-video"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-14"
+        },
+        {
+          "id": "r62-loops",
+          "proposition": "Creator describes standing loops, including script-only loops.",
+          "kind": "creator-claim",
+          "status": "unverified",
+          "sourceLocation": "27:21",
+          "assessment": "Loop count and live efficacy not audited.",
+          "limits": "Loop count and live efficacy not audited.",
+          "references": [
+            "r62-video"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-14"
+        },
+        {
+          "id": "r62-feature",
+          "proposition": "Creator warns standing loops not to invent features.",
+          "kind": "creator-claim",
+          "status": "unverified",
+          "sourceLocation": "29:08",
+          "assessment": "Descriptive creator position, not an enforced permission boundary.",
+          "limits": "Descriptive creator position, not an enforced permission boundary.",
+          "references": [
+            "r62-video"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-14"
+        },
+        {
+          "id": "r62-retention",
+          "proposition": "Anthropic documents retention and effort/delegation behavior for Fable 5.2.",
+          "kind": "vendor-documentation",
+          "status": "partially corroborated",
+          "sourceLocation": "vendor-docs",
+          "assessment": "Vendor primary source only; contract-specific approval still required.",
+          "limits": "Vendor primary source only; contract-specific approval still required.",
+          "references": [
+            "r62-overview",
+            "r62-prompting"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-14"
+        }
+      ],
+      "relationships": [
+        {
+          "target": "reader:the-router-is-not-the-organization",
+          "type": "challenges",
+          "reason": "Routing cannot replace authority and acceptance.",
+          "provenance": [
+            "/the-1000-ai-workflow-is-a-routing-problem/",
+            "/the-router-is-not-the-organization/"
+          ],
+          "basis": "curated-editorial-comparison",
+          "direction": "outgoing"
+        },
+        {
+          "target": "reader:when-code-gets-cheap-where-does-the-work-wait",
+          "type": "extends",
+          "reason": "Parallel coding shifts bottlenecks into review and integration.",
+          "provenance": [
+            "/the-1000-ai-workflow-is-a-routing-problem/",
+            "/when-code-gets-cheap-where-does-the-work-wait/"
+          ],
+          "basis": "curated-editorial-comparison",
+          "direction": "outgoing"
+        }
+      ],
+      "relationshipDisposition": "owner-approved four editorial links, 2026-11-14",
+      "relationshipReview": {
+        "reviewedAt": "2026-11-14",
+        "reviewedCatalogSize": 62,
+        "decision": "linked",
+        "reviewedTargets": [
+          "reader:the-router-is-not-the-organization",
+          "reader:when-code-gets-cheap-where-does-the-work-wait"
+        ],
+        "rationale": "Tony explicitly approved these two distinct Reader comparisons under issue #175: routing is insufficient without authority and acceptance, while parallel code generation shifts work into review and integration. Neither link is independent source corroboration."
+      },
+      "sharePlaneRelationships": [
+        {
+          "url": "https://shareplane.malott.ai/artifacts/the-code-is-no-longer-the-hard-part/",
+          "title": "The Code Is No Longer The Hard Part",
+          "type": "extends",
+          "reason": "This Work extends the distinction between generating abundant code and producing accepted engineering outcomes. It supports a comparison about review and integration cost, not a benchmark of Ondrej’s workflow.",
+          "basis": "curated-editorial-comparison"
+        },
+        {
+          "url": "https://shareplane.malott.ai/artifacts/the-agent-is-not-the-product-the-control-plane-is/",
+          "title": "The Agent Is Not The Product The Control Plane Is",
+          "type": "counterpoint",
+          "reason": "This Work provides the control-plane counterpoint: choosing an expensive reasoning model and a cheap executor cannot establish authorization, acceptance, provenance, or production safety on its own.",
+          "basis": "curated-editorial-comparison"
+        }
+      ],
+      "sharePlaneReview": {
+        "reviewedAt": "2026-11-14",
+        "decision": "linked",
+        "rationale": "Tony explicitly approved two SharePlane Work comparisons under issue #175. One extends the claim that accepted work outranks raw code output; the other supplies a counterpoint about governed authority and control planes. They remain editorial comparisons, not independent corroboration or a SharePlane graph mutation."
+      },
+      "review": {
+        "status": "pending",
+        "note": "Independent editorial and source review required before publication."
+      },
+      "editorialDepth": {
+        "status": "pending",
+        "note": "Independent depth review required before publication."
+      },
+      "rank": 61
+    },
+    {
       "id": "reader:the-playbook-may-be-reproducible",
       "slug": "the-playbook-may-be-reproducible",
       "title": "You Can Copy the Playbook. Can You Copy the Judgment?",

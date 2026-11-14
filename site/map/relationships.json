@@ -3,11 +3,11 @@
   "scope": "Local public editorial reading routes; no independent corroboration or cross-site graph admission.",
   "authority": "catalog-curated-editorial",
   "visibility": "public",
-  "readerCount": 61,
-  "assessmentCount": 61,
-  "relationshipCount": 142,
-  "sharePlaneRelationshipCount": 29,
-  "sharePlaneReviewCount": 21,
+  "readerCount": 62,
+  "assessmentCount": 62,
+  "relationshipCount": 144,
+  "sharePlaneRelationshipCount": 31,
+  "sharePlaneReviewCount": 22,
   "sharePlaneEdges": [
     {
       "from": "reader:when-code-gets-cheap-where-does-the-work-wait",
@@ -239,6 +239,22 @@
       "url": "https://shareplane.malott.ai/artifacts/own-memory-rent-intelligence-agent-stack/",
       "type": "companion",
       "reason": "A user-owned permission policy and approval gate provides the concrete control architecture missing from a conversational robot's report of read/draft/send limits.",
+      "basis": "curated-editorial-comparison"
+    },
+    {
+      "from": "reader:the-1000-ai-workflow-is-a-routing-problem",
+      "url": "https://shareplane.malott.ai/artifacts/the-code-is-no-longer-the-hard-part/",
+      "title": "The Code Is No Longer The Hard Part",
+      "type": "extends",
+      "reason": "This Work extends the distinction between generating abundant code and producing accepted engineering outcomes. It supports a comparison about review and integration cost, not a benchmark of Ondrej’s workflow.",
+      "basis": "curated-editorial-comparison"
+    },
+    {
+      "from": "reader:the-1000-ai-workflow-is-a-routing-problem",
+      "url": "https://shareplane.malott.ai/artifacts/the-agent-is-not-the-product-the-control-plane-is/",
+      "title": "The Agent Is Not The Product The Control Plane Is",
+      "type": "counterpoint",
+      "reason": "This Work provides the control-plane counterpoint: choosing an expensive reasoning model and a cheap executor cannot establish authorization, acceptance, provenance, or production safety on its own.",
       "basis": "curated-editorial-comparison"
     }
   ],
@@ -1233,6 +1249,22 @@
           "reader:the-model-is-not-the-demonstration"
         ],
         "rationale": "Tony accepted three distinct Reader routes for permission enforcement, stop/recovery outside chat and model attribution versus demonstrated system performance; strong alternatives were screened and not admitted."
+      }
+    },
+    {
+      "id": "reader:the-1000-ai-workflow-is-a-routing-problem",
+      "slug": "the-1000-ai-workflow-is-a-routing-problem",
+      "title": "The $1,000 AI Workflow Is Really a Routing Problem",
+      "url": "https://youtube.shareplane.malott.ai/the-1000-ai-workflow-is-a-routing-problem/",
+      "review": {
+        "reviewedAt": "2026-11-14",
+        "reviewedCatalogSize": 62,
+        "decision": "linked",
+        "reviewedTargets": [
+          "reader:the-router-is-not-the-organization",
+          "reader:when-code-gets-cheap-where-does-the-work-wait"
+        ],
+        "rationale": "Tony explicitly approved these two distinct Reader comparisons under issue #175: routing is insufficient without authority and acceptance, while parallel code generation shifts work into review and integration. Neither link is independent source corroboration."
       }
     }
   ],
@@ -2937,6 +2969,30 @@
       "provenance": [
         "/the-robot-is-the-easy-part/",
         "/the-model-is-not-the-demonstration/"
+      ],
+      "basis": "curated-editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:the-1000-ai-workflow-is-a-routing-problem",
+      "to": "reader:the-router-is-not-the-organization",
+      "type": "challenges",
+      "reason": "Routing cannot replace authority and acceptance.",
+      "provenance": [
+        "/the-1000-ai-workflow-is-a-routing-problem/",
+        "/the-router-is-not-the-organization/"
+      ],
+      "basis": "curated-editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:the-1000-ai-workflow-is-a-routing-problem",
+      "to": "reader:when-code-gets-cheap-where-does-the-work-wait",
+      "type": "extends",
+      "reason": "Parallel coding shifts bottlenecks into review and integration.",
+      "provenance": [
+        "/the-1000-ai-workflow-is-a-routing-problem/",
+        "/when-code-gets-cheap-where-does-the-work-wait/"
       ],
       "basis": "curated-editorial-comparison",
       "direction": "outgoing"
