@@ -853,6 +853,18 @@
         "path": "site/the-robot-is-the-easy-part/index.html",
         "sha256": "cd9557de9c853e4bdf1e0bb8274b001fca1709d83541d073f304361e2f8c311b"
       }
+    },
+    {
+      "id": "urn:ghostmesh-readers:reader:the-1000-ai-workflow-is-a-routing-problem",
+      "type": "Reader",
+      "visibility": "public",
+      "epistemicStatus": "source-editorial",
+      "label": "The $1,000 AI Workflow Is Really a Routing Problem",
+      "url": "https://youtube.shareplane.malott.ai/the-1000-ai-workflow-is-a-routing-problem/",
+      "source": {
+        "path": "site/the-1000-ai-workflow-is-a-routing-problem/index.html",
+        "sha256": "505f1d920ad9afa613dcefd838978e8abad32761d8d7f136953b1b1dff04c2ac"
+      }
     }
   ],
   "relationships": [
