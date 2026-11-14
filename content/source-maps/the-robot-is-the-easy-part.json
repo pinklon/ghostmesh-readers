@@ -1,0 +1,89 @@
+{
+  "schemaVersion": 1,
+  "readerId": "reader:the-robot-is-the-easy-part",
+  "sourceId": "5cZontQjBH4",
+  "sourceAidSha256": null,
+  "points": [
+    {
+      "atSeconds": 31,
+      "sectionId": "opening",
+      "claimIds": [
+        "r61-device"
+      ],
+      "cueParaphrase": "Creator introduces the off-the-shelf StackChan.",
+      "privateAidCheck": "Approximate YouTube transcript navigation; not audiovisual certification. Raw captions remain excluded."
+    },
+    {
+      "atSeconds": 54,
+      "sectionId": "model-credit",
+      "claimIds": [
+        "r61-model-credit"
+      ],
+      "cueParaphrase": "Creator says Fable was used early and Opus later, across about twenty iterations.",
+      "privateAidCheck": "Approximate YouTube transcript navigation; not audiovisual certification. Raw captions remain excluded."
+    },
+    {
+      "atSeconds": 109,
+      "sectionId": "authorized-action",
+      "claimIds": [
+        "r61-tools"
+      ],
+      "cueParaphrase": "Creator describes account integration and tool access.",
+      "privateAidCheck": "Approximate YouTube transcript navigation; not audiovisual certification. Raw captions remain excluded."
+    },
+    {
+      "atSeconds": 141,
+      "sectionId": "privacy-path",
+      "claimIds": [
+        "r61-privacy"
+      ],
+      "cueParaphrase": "Creator reports local camera checks and recordings.",
+      "privateAidCheck": "Approximate YouTube transcript navigation; not audiovisual certification. Raw captions remain excluded."
+    },
+    {
+      "atSeconds": 195,
+      "sectionId": "hardware-baseline",
+      "claimIds": [
+        "r61-device"
+      ],
+      "cueParaphrase": "Creator describes preexisting manufacturer functionality and firmware replacement.",
+      "privateAidCheck": "Approximate YouTube transcript navigation; not audiovisual certification. Raw captions remain excluded."
+    },
+    {
+      "atSeconds": 294,
+      "sectionId": "subscription-credentials",
+      "claimIds": [
+        "r61-auth"
+      ],
+      "cueParaphrase": "Creator interprets SDK and subscription use as suitable for personal use; actual auth flow unknown.",
+      "privateAidCheck": "Approximate YouTube transcript navigation; not audiovisual certification. Raw captions remain excluded."
+    },
+    {
+      "atSeconds": 442,
+      "sectionId": "full-deconstruction",
+      "claimIds": [
+        "r61-sponsor"
+      ],
+      "cueParaphrase": "Fish Audio voice-cloning sponsorship and affiliate disclosure.",
+      "privateAidCheck": "Approximate YouTube transcript navigation; not audiovisual certification. Raw captions remain excluded."
+    },
+    {
+      "atSeconds": 487,
+      "sectionId": "physics-feedback",
+      "claimIds": [
+        "r61-physical"
+      ],
+      "cueParaphrase": "Creator describes latency and physical feedback failures.",
+      "privateAidCheck": "Approximate YouTube transcript navigation; not audiovisual certification. Raw captions remain excluded."
+    },
+    {
+      "atSeconds": 574,
+      "sectionId": "ghostmesh-verdict",
+      "claimIds": [
+        "r61-physical"
+      ],
+      "cueParaphrase": "Creator frames the always-on second-brain possibility.",
+      "privateAidCheck": "Approximate YouTube transcript navigation; not audiovisual certification. Raw captions remain excluded."
+    }
+  ]
+}

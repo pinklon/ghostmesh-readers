@@ -1,0 +1,348 @@
+{
+  "schema": "ghostmesh-reader-receipt-v2",
+  "createdAt": "2026-11-13T23:00:00Z",
+  "source": {
+    "url": "https://www.youtube.com/watch?v=5cZontQjBH4",
+    "videoId": "5cZontQjBH4"
+  },
+  "reasonPack": {
+    "verification": "not-established"
+  },
+  "sourceInspection": {
+    "method": "Public YouTube transcript reviewed as navigation aid with creator description and public official documentation.",
+    "coverage": "11:50 source, approximate cues only.",
+    "caveat": "No independent audiovisual certification, model performance comparison, hardware reproduction or account-permission audit.",
+    "publicationBoundary": "Original analysis only. No transcript, camera/media aid, credentials or personal account data.",
+    "transcriptPanelSha256": "c15cefef182faae935c57d33c849b052b3613214174470c453f6e4ea807576cd",
+    "digestMethod": "SHA-256 of 17,780-byte UTF-8 innerText of the visible YouTube transcript panel on 2026-11-14 UTC, including panel headings and timestamp labels; distinct from transcript export bytes; source privately inspected, not committed."
+  },
+  "custody": {
+    "status": "limited-public-source-inspection",
+    "note": "Creator YouTube transcript was inspected as an approximate navigation aid and official public references checked; no retained audiovisual verification, privately verified media pack, or independent implementation audit."
+  },
+  "normalization": {
+    "id": "reader:the-robot-is-the-easy-part",
+    "slug": "the-robot-is-the-easy-part",
+    "title": "The Robot Is the Easy Part. The Boundaries Are the Engineering.",
+    "variant": "editorial",
+    "category": "AI & Technology",
+    "tags": [
+      "AI agents",
+      "embodied AI",
+      "hardware",
+      "authorization",
+      "privacy",
+      "physical feedback"
+    ],
+    "accent": "teal",
+    "editorialOrder": 60,
+    "published": "2026-11-14",
+    "updated": "2026-11-14T00:00:00Z",
+    "lastEvidenceChecked": "2026-11-13",
+    "overview": "A creator-integrated desktop robot reveals why account authority, privacy paths and physical feedback matter more than the spectacle.",
+    "whyItMatters": "A multi-model demonstration does not establish one model's benchmark quality, enforced tool permissions or physical reliability.",
+    "ghostMeshTakeaway": "Separate sensor observation, local routing, remote services and account action rights; test stop/recovery with synthetic data.",
+    "verdict": "Interesting, unproven",
+    "architectureImpact": "experiment recommended",
+    "archiveCall": {
+      "label": "The boundaries make it a system",
+      "text": "Test physical feedback, explicit permissions, data-flow custody and recovery before granting real-world authority."
+    },
+    "evidenceState": "unverified",
+    "falsification": "Repeat representative voice/tool tasks with latency, false wakes, revoked send permission and noisy-motor recovery measured under defined conditions.",
+    "freshness": "Vendor authentication rules, model versions and service terms can change; recheck before reuse.",
+    "entities": [],
+    "source": {
+      "platform": "YouTube",
+      "url": "https://www.youtube.com/watch?v=5cZontQjBH4",
+      "videoId": "5cZontQjBH4",
+      "title": "You're Underestimating What Claude Fable 5.2 Can Do",
+      "creator": "Mark Kashef",
+      "mediaAspect": "16:9",
+      "durationSeconds": 710,
+      "uploadDate": "2026-11-12",
+      "dateNote": "Creator page publication date; source timestamp transcript cues approximate.",
+      "captionType": "Public YouTube transcript used as navigation aid; not certified audiovisual review."
+    },
+    "references": [
+      {
+        "id": "r61-video",
+        "title": "You're Underestimating What Claude Fable 5.2 Can Do",
+        "author": "Mark Kashef",
+        "publisher": "Mark Kashef / YouTube",
+        "url": "https://www.youtube.com/watch?v=5cZontQjBH4",
+        "publicationDate": "2026-11-12",
+        "datePrecision": "day",
+        "eventDate": null,
+        "location": "Public source",
+        "sourceType": "creator demonstration and commentary",
+        "independence": "Primary narrative; no independent replication.",
+        "evidenceFamily": "r61-video",
+        "checkedAt": "2026-11-13T23:00:00Z",
+        "dateNote": "Public source reviewed for limited stated role."
+      },
+      {
+        "id": "r61-hardware",
+        "title": "M5Stack StackChan",
+        "author": "M5Stack",
+        "publisher": "M5Stack",
+        "url": "https://docs.m5stack.com/en/StackChan",
+        "publicationDate": "unknown",
+        "datePrecision": "unknown",
+        "eventDate": null,
+        "location": "Public source",
+        "sourceType": "manufacturer specification",
+        "independence": "Device baseline only; not modified firmware reliability.",
+        "evidenceFamily": "r61-hardware",
+        "checkedAt": "2026-11-13T23:00:00Z",
+        "dateNote": "Public source reviewed for limited stated role."
+      },
+      {
+        "id": "r61-anthropic",
+        "title": "Claude Fable and Mythos 5.2",
+        "author": "Anthropic",
+        "publisher": "Anthropic",
+        "url": "https://www.anthropic.com/claude-fable-and-mythos-5-2",
+        "publicationDate": "unknown",
+        "datePrecision": "unknown",
+        "eventDate": null,
+        "location": "Public source",
+        "sourceType": "vendor announcement",
+        "independence": "Release positioning, not independent model attribution.",
+        "evidenceFamily": "r61-anthropic",
+        "checkedAt": "2026-11-13T23:00:00Z",
+        "dateNote": "Public source reviewed for limited stated role."
+      },
+      {
+        "id": "r61-auth-source",
+        "title": "Claude Code legal and compliance",
+        "author": "Anthropic",
+        "publisher": "Anthropic",
+        "url": "https://code.claude.com/docs/en/legal-and-compliance",
+        "publicationDate": "unknown",
+        "datePrecision": "unknown",
+        "eventDate": null,
+        "location": "Public source",
+        "sourceType": "vendor policy documentation",
+        "independence": "SDK/API authentication distinction; creator actual flow unknown.",
+        "evidenceFamily": "r61-auth-source",
+        "checkedAt": "2026-11-13T23:00:00Z",
+        "dateNote": "Public source reviewed for limited stated role."
+      },
+      {
+        "id": "r61-platform-auth",
+        "title": "Claude Platform authentication",
+        "author": "Anthropic",
+        "publisher": "Anthropic",
+        "url": "https://platform.claude.com/docs/en/manage-claude/authentication",
+        "publicationDate": "unknown",
+        "datePrecision": "unknown",
+        "eventDate": null,
+        "location": "Public source",
+        "sourceType": "vendor documentation",
+        "independence": "Authentication methods, not evidence of creator configuration.",
+        "evidenceFamily": "r61-platform-auth",
+        "checkedAt": "2026-11-13T23:00:00Z",
+        "dateNote": "Public source reviewed for limited stated role."
+      },
+      {
+        "id": "r61-api-credits",
+        "title": "API credits for subscribers",
+        "author": "Anthropic",
+        "publisher": "Anthropic",
+        "url": "https://platform.claude.com/docs/en/about-claude/api-credits-for-subscribers",
+        "publicationDate": "unknown",
+        "datePrecision": "unknown",
+        "eventDate": null,
+        "location": "Public source",
+        "sourceType": "vendor documentation",
+        "independence": "Billing availability, not blanket credential authorization.",
+        "evidenceFamily": "r61-api-credits",
+        "checkedAt": "2026-11-13T23:00:00Z",
+        "dateNote": "Public source reviewed for limited stated role."
+      }
+    ],
+    "claims": [
+      {
+        "id": "r61-device",
+        "proposition": "StackChan was an existing electronics platform with documented sensors and actuators.",
+        "kind": "creator-claim",
+        "status": "unverified",
+        "sourceLocation": "03:15",
+        "assessment": "Manufacturer capabilities do not prove the creator's modified firmware or operational stability.",
+        "limits": "Manufacturer capabilities do not prove the creator's modified firmware or operational stability.",
+        "references": [
+          "r61-video",
+          "r61-hardware"
+        ],
+        "counterevidence": [],
+        "asOf": "2026-11-13"
+      },
+      {
+        "id": "r61-model-credit",
+        "proposition": "The project used Fable early and Opus later across about twenty iterations.",
+        "kind": "creator-claim",
+        "status": "unverified",
+        "sourceLocation": "00:54",
+        "assessment": "No model-isolated benchmark or per-iteration attribution record.",
+        "limits": "No model-isolated benchmark or per-iteration attribution record.",
+        "references": [
+          "r61-video"
+        ],
+        "counterevidence": [],
+        "asOf": "2026-11-13"
+      },
+      {
+        "id": "r61-tools",
+        "proposition": "Creator reports Gmail/calendar/tool integration with read and draft, not autonomous send.",
+        "kind": "creator-claim",
+        "status": "unverified",
+        "sourceLocation": "01:49",
+        "assessment": "Account-level privilege enforcement is not independently demonstrated.",
+        "limits": "Account-level privilege enforcement is not independently demonstrated.",
+        "references": [
+          "r61-video"
+        ],
+        "counterevidence": [],
+        "asOf": "2026-11-13"
+      },
+      {
+        "id": "r61-privacy",
+        "proposition": "Creator reports camera checks and recordings remain on his Mac.",
+        "kind": "creator-claim",
+        "status": "unverified",
+        "sourceLocation": "02:21",
+        "assessment": "Other prompts, transcripts and model calls may cross cloud boundaries; actual telemetry uninspected.",
+        "limits": "Other prompts, transcripts and model calls may cross cloud boundaries; actual telemetry uninspected.",
+        "references": [
+          "r61-video"
+        ],
+        "counterevidence": [],
+        "asOf": "2026-11-13"
+      },
+      {
+        "id": "r61-auth",
+        "proposition": "Creator suggests an SDK bridge can use subscription credentials personally.",
+        "kind": "source-qualification",
+        "status": "unverified",
+        "sourceLocation": "04:54",
+        "assessment": "Vendor guidance distinguishes product OAuth and developer SDK/API modes; exact implementation unknown.",
+        "limits": "Vendor guidance distinguishes product OAuth and developer SDK/API modes; exact implementation unknown.",
+        "references": [
+          "r61-video",
+          "r61-auth-source",
+          "r61-platform-auth",
+          "r61-api-credits"
+        ],
+        "counterevidence": [],
+        "asOf": "2026-11-13"
+      },
+      {
+        "id": "r61-sponsor",
+        "proposition": "Fish Audio voice clone is a sponsored/affiliate segment.",
+        "kind": "source-qualification",
+        "status": "unverified",
+        "sourceLocation": "07:22",
+        "assessment": "Commercial presentation is not independent quality evidence.",
+        "limits": "Commercial presentation is not independent quality evidence.",
+        "references": [
+          "r61-video"
+        ],
+        "counterevidence": [],
+        "asOf": "2026-11-13"
+      },
+      {
+        "id": "r61-physical",
+        "proposition": "Creator recounts latency, wake-word, tool intent and motor-noise stop problems.",
+        "kind": "creator-claim",
+        "status": "unverified",
+        "sourceLocation": "08:07",
+        "assessment": "Anecdotal failures, no quantified reliability distribution or independent reproduction.",
+        "limits": "Anecdotal failures, no quantified reliability distribution or independent reproduction.",
+        "references": [
+          "r61-video"
+        ],
+        "counterevidence": [],
+        "asOf": "2026-11-13"
+      }
+    ],
+    "relationships": [
+      {
+        "target": "reader:unsupervised-is-a-permission",
+        "type": "informs architecture",
+        "reason": "Its authority loop distinguishes merely asking an agent not to send from enforcing tool-level read, draft and send scopes.",
+        "provenance": [
+          "/the-robot-is-the-easy-part/",
+          "/unsupervised-is-a-permission/"
+        ],
+        "basis": "curated-editorial-comparison",
+        "direction": "outgoing"
+      },
+      {
+        "target": "reader:the-stop-button-is-outside-the-chat",
+        "type": "companion",
+        "reason": "The recovery argument clarifies why a motor-noise stop failure needs authority outside voice chat.",
+        "provenance": [
+          "/the-robot-is-the-easy-part/",
+          "/the-stop-button-is-outside-the-chat/"
+        ],
+        "basis": "curated-editorial-comparison",
+        "direction": "outgoing"
+      },
+      {
+        "target": "reader:the-model-is-not-the-demonstration",
+        "type": "companion",
+        "reason": "The evaluation lens separates a multi-model builder outcome from isolated Fable performance.",
+        "provenance": [
+          "/the-robot-is-the-easy-part/",
+          "/the-model-is-not-the-demonstration/"
+        ],
+        "basis": "curated-editorial-comparison",
+        "direction": "outgoing"
+      }
+    ],
+    "relationshipDisposition": "Three owner-approved Reader editorial comparisons, no shared-source corroboration.",
+    "relationshipReview": {
+      "reviewedAt": "2026-11-13",
+      "reviewedCatalogSize": 60,
+      "decision": "linked",
+      "reviewedTargets": [
+        "reader:unsupervised-is-a-permission",
+        "reader:the-stop-button-is-outside-the-chat",
+        "reader:the-model-is-not-the-demonstration"
+      ],
+      "rationale": "Tony accepted three distinct Reader routes for permission enforcement, stop/recovery outside chat and model attribution versus demonstrated system performance; strong alternatives were screened and not admitted."
+    },
+    "sharePlaneRelationships": [
+      {
+        "title": "Own the Memory, Rent the Intelligence",
+        "url": "https://shareplane.malott.ai/artifacts/own-memory-rent-intelligence-agent-stack/",
+        "type": "companion",
+        "reason": "A user-owned permission policy and approval gate provides the concrete control architecture missing from a conversational robot's report of read/draft/send limits.",
+        "basis": "curated-editorial-comparison"
+      }
+    ],
+    "sharePlaneReview": {
+      "reviewedAt": "2026-11-13",
+      "decision": "linked",
+      "rationale": "Tony explicitly approved this one public Work comparison. The Work's user-owned context and approval gate offers a distinct architecture, not evidence of Kashef's implementation. Demo Debt and software reconstruction were rejected as less source-specific."
+    },
+    "review": {
+      "status": "PENDING independent editorial/source/privacy review; not publication qualified",
+      "reviewer": "PENDING",
+      "checkedAt": null,
+      "scope": "Exact Reader #61 authored article and source map, Creative Lock issue #172 comment 6868219419",
+      "findings": "PENDING; no independent acceptance asserted."
+    },
+    "editorialDepth": {
+      "schemaVersion": 1,
+      "receiptPath": "content/editorial-depth/the-robot-is-the-easy-part.json"
+    },
+    "revisionHistory": []
+  },
+  "editorial": {
+    "overview": "A creator-integrated desktop robot reveals why account authority, privacy paths and physical feedback matter more than the spectacle.",
+    "whyItMatters": "A multi-model demonstration does not establish one model's benchmark quality, enforced tool permissions or physical reliability.",
+    "ghostMeshTakeaway": "Separate sensor observation, local routing, remote services and account action rights; test stop/recovery with synthetic data."
+  }
+}

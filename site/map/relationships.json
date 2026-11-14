@@ -3,11 +3,11 @@
   "scope": "Local public editorial reading routes; no independent corroboration or cross-site graph admission.",
   "authority": "catalog-curated-editorial",
   "visibility": "public",
-  "readerCount": 60,
-  "assessmentCount": 60,
-  "relationshipCount": 139,
-  "sharePlaneRelationshipCount": 28,
-  "sharePlaneReviewCount": 20,
+  "readerCount": 61,
+  "assessmentCount": 61,
+  "relationshipCount": 142,
+  "sharePlaneRelationshipCount": 29,
+  "sharePlaneReviewCount": 21,
   "sharePlaneEdges": [
     {
       "from": "reader:when-code-gets-cheap-where-does-the-work-wait",
@@ -231,6 +231,14 @@
       "url": "https://shareplane.malott.ai/artifacts/software-has-entered-its-re-image-era/",
       "type": "companion",
       "reason": "Cheap software reproduction shifts the scarce work toward comprehension, maintenance and chosen outcomes.",
+      "basis": "curated-editorial-comparison"
+    },
+    {
+      "from": "reader:the-robot-is-the-easy-part",
+      "title": "Own the Memory, Rent the Intelligence",
+      "url": "https://shareplane.malott.ai/artifacts/own-memory-rent-intelligence-agent-stack/",
+      "type": "companion",
+      "reason": "A user-owned permission policy and approval gate provides the concrete control architecture missing from a conversational robot's report of read/draft/send limits.",
       "basis": "curated-editorial-comparison"
     }
   ],
@@ -1208,6 +1216,23 @@
           "reader:when-code-gets-cheap-where-does-the-work-wait"
         ],
         "rationale": "Three target Readers were inspected for distinct conceptual connections to observed software, retained context and scarce engineering judgment. The links orient readers but neither corroborate Marchese's examples nor establish reliability or authority."
+      }
+    },
+    {
+      "id": "reader:the-robot-is-the-easy-part",
+      "slug": "the-robot-is-the-easy-part",
+      "title": "The Robot Is the Easy Part. The Boundaries Are the Engineering.",
+      "url": "https://youtube.shareplane.malott.ai/the-robot-is-the-easy-part/",
+      "review": {
+        "reviewedAt": "2026-11-13",
+        "reviewedCatalogSize": 60,
+        "decision": "linked",
+        "reviewedTargets": [
+          "reader:unsupervised-is-a-permission",
+          "reader:the-stop-button-is-outside-the-chat",
+          "reader:the-model-is-not-the-demonstration"
+        ],
+        "rationale": "Tony accepted three distinct Reader routes for permission enforcement, stop/recovery outside chat and model attribution versus demonstrated system performance; strong alternatives were screened and not admitted."
       }
     }
   ],
@@ -2876,6 +2901,42 @@
       "provenance": [
         "/the-playbook-may-be-reproducible/",
         "/when-code-gets-cheap-where-does-the-work-wait/"
+      ],
+      "basis": "curated-editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:the-robot-is-the-easy-part",
+      "to": "reader:unsupervised-is-a-permission",
+      "type": "informs architecture",
+      "reason": "Its authority loop distinguishes merely asking an agent not to send from enforcing tool-level read, draft and send scopes.",
+      "provenance": [
+        "/the-robot-is-the-easy-part/",
+        "/unsupervised-is-a-permission/"
+      ],
+      "basis": "curated-editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:the-robot-is-the-easy-part",
+      "to": "reader:the-stop-button-is-outside-the-chat",
+      "type": "companion",
+      "reason": "The recovery argument clarifies why a motor-noise stop failure needs authority outside voice chat.",
+      "provenance": [
+        "/the-robot-is-the-easy-part/",
+        "/the-stop-button-is-outside-the-chat/"
+      ],
+      "basis": "curated-editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:the-robot-is-the-easy-part",
+      "to": "reader:the-model-is-not-the-demonstration",
+      "type": "companion",
+      "reason": "The evaluation lens separates a multi-model builder outcome from isolated Fable performance.",
+      "provenance": [
+        "/the-robot-is-the-easy-part/",
+        "/the-model-is-not-the-demonstration/"
       ],
       "basis": "curated-editorial-comparison",
       "direction": "outgoing"
