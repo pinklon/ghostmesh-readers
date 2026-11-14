@@ -1,0 +1,161 @@
+{
+  "schemaVersion": 1,
+  "readerId": "reader:the-robot-is-the-easy-part",
+  "sourceId": "5cZontQjBH4",
+  "sourceDigest": "0bbf1785b024e9bd4e5976a3bc3ca8ed5c6ab12e53a9b1ee6c10420748313818",
+  "sourceAidSha256": "9c63ea52392bf7f7055bfdce9b276f5655bbc62718602972b05ce740857063c3",
+  "articleSha256": "0b23d6adc0ecf2d30503a8502e31876d8b071e52197ca67b09b039135f2cfe1b",
+  "evidenceRevision": "b74ba70cec9886563410876b19c6f472251da58885744755cd81a610095df302",
+  "sourceMapEvidenceSha256": "acf19716cee2cb22ab6f59391d74648e7b7923b316d07aa94fc958355b6c5fba",
+  "reviewEvidenceSha256": "dd1bd9e542b58545483b16c2ff6f539226aea9d1a855072bb0561834b217756a",
+  "candidateAuthor": "segfault (mechanical publication preparation of Tony-approved Reader manuscript)",
+  "complexity": {
+    "tier": "extended",
+    "factors": [
+      "Eleven-minute creator video crossing physical hardware, cloud model routing and real account permissions",
+      "Seven bounded claim records with multiple independent official documentation references",
+      "Nine approximate source cues plus private verified ReasonPack custody"
+    ],
+    "rationale": "The piece draws conclusions across model attribution, account access, privacy and physical feedback, requiring bounded evidence and clear operational caveats."
+  },
+  "sourceMap": [
+    {
+      "atSeconds": 31,
+      "sectionId": "opening",
+      "claimIds": [
+        "r61-device"
+      ],
+      "rationale": "Creator introduces the off-the-shelf StackChan. Approximate source navigation only, not certification of implementation."
+    },
+    {
+      "atSeconds": 54,
+      "sectionId": "model-credit",
+      "claimIds": [
+        "r61-model-credit"
+      ],
+      "rationale": "Creator says Fable was used early and Opus later, across about twenty iterations. Approximate source navigation only, not certification of implementation."
+    },
+    {
+      "atSeconds": 109,
+      "sectionId": "authorized-action",
+      "claimIds": [
+        "r61-tools"
+      ],
+      "rationale": "Creator describes account integration and tool access. Approximate source navigation only, not certification of implementation."
+    },
+    {
+      "atSeconds": 141,
+      "sectionId": "privacy-path",
+      "claimIds": [
+        "r61-privacy"
+      ],
+      "rationale": "Creator reports local camera checks and recordings. Approximate source navigation only, not certification of implementation."
+    },
+    {
+      "atSeconds": 195,
+      "sectionId": "hardware-baseline",
+      "claimIds": [
+        "r61-device"
+      ],
+      "rationale": "Creator describes preexisting manufacturer functionality and firmware replacement. Approximate source navigation only, not certification of implementation."
+    },
+    {
+      "atSeconds": 294,
+      "sectionId": "subscription-credentials",
+      "claimIds": [
+        "r61-auth"
+      ],
+      "rationale": "Creator interprets SDK and subscription use as suitable for personal use; actual auth flow unknown. Approximate source navigation only, not certification of implementation."
+    },
+    {
+      "atSeconds": 442,
+      "sectionId": "full-deconstruction",
+      "claimIds": [
+        "r61-sponsor"
+      ],
+      "rationale": "Fish Audio voice-cloning sponsorship and affiliate disclosure. Approximate source navigation only, not certification of implementation."
+    },
+    {
+      "atSeconds": 487,
+      "sectionId": "physics-feedback",
+      "claimIds": [
+        "r61-physical"
+      ],
+      "rationale": "Creator describes latency and physical feedback failures. Approximate source navigation only, not certification of implementation."
+    },
+    {
+      "atSeconds": 574,
+      "sectionId": "ghostmesh-verdict",
+      "claimIds": [
+        "r61-physical"
+      ],
+      "rationale": "Creator frames the always-on second-brain possibility. Approximate source navigation only, not certification of implementation."
+    }
+  ],
+  "assessment": {
+    "sourceCoverage": {
+      "disposition": "covered",
+      "rationale": "Nine timestamp cues span creator device baseline, models, tool permissions, privacy, sponsorship, physical feedback and experimental limits. Source navigation remains approximate."
+    },
+    "supportingArgument": {
+      "disposition": "covered",
+      "rationale": "The article develops the permission, attribution, privacy and feedback distinctions from the creator demonstration without claiming independent replication."
+    },
+    "evidenceRoles": {
+      "disposition": "covered",
+      "rationale": "Creator narrative, platform policies, product documentation, local ASR navigation and GhostMesh interpretation are separated by source role."
+    },
+    "counterargument": {
+      "disposition": "covered",
+      "rationale": "A functioning hobby demonstration can be useful without proving durable permission enforcement, physical recovery or representative real-world performance."
+    },
+    "tradeoffs": {
+      "disposition": "covered",
+      "rationale": "A low-cost conversational robot offers accessible prototyping while account delegation, privacy, background recording and physical feedback expand operational risk."
+    },
+    "falsifiability": {
+      "disposition": "covered",
+      "rationale": "Repeat specified voice and tool tasks with revoked send rights, false wakes, latency, noisy motor recovery and defined stop conditions."
+    },
+    "originalSynthesis": {
+      "disposition": "covered",
+      "rationale": "The bounded thesis separates sensor observation, local routing, remote model services and authority to act, with physical feedback as an additional system constraint."
+    },
+    "performance": {
+      "disposition": "covered",
+      "rationale": "No reproducible benchmark of model quality, wake latency, false positive rate, authorization bypass resistance or physical reliability was conducted."
+    },
+    "economics": {
+      "disposition": "covered",
+      "rationale": "The low robot acquisition cost does not establish the cost of safe operation, secure account integration or ongoing maintenance."
+    },
+    "threatGovernance": {
+      "disposition": "covered",
+      "rationale": "Private ReasonPack media and ASR stay off the public site; custody confirms source bytes, not compliance, permission or implementation correctness."
+    }
+  },
+  "independentCorroboration": "none",
+  "ownerDecision": {
+    "kind": "conversation",
+    "owner": "Tony Malott",
+    "approval": "I approve merging ghostmesh-readers PR #173 at exact head be6e04e88c6c815bb27f38933d8fed5814c3f10c, following the required independent review, and publishing Reader #61. Subsequently: Okay, approve, get it done.",
+    "approvalDate": "2026-11-14",
+    "articleSha256": "0b23d6adc0ecf2d30503a8502e31876d8b071e52197ca67b09b039135f2cfe1b",
+    "evidenceRevision": "b74ba70cec9886563410876b19c6f472251da58885744755cd81a610095df302"
+  },
+  "decision": "accept",
+  "gaps": [
+    {
+      "type": "source",
+      "severity": "nonblocking",
+      "rationale": "Local Whisper transcription and approximate cue navigation are not certified word-for-word or a full independent audiovisual review."
+    },
+    {
+      "type": "test",
+      "severity": "nonblocking",
+      "rationale": "Native iPhone rendering and production deployment are not yet verified; desktop preview was owner reviewed."
+    }
+  ],
+  "decisionRationale": "Independent editorial acceptance covered exact authored manuscript and public evidence boundaries. Owner explicitly approved publication, while new source-custody and receipt metadata require fresh exact-head merge authorization before protected merge.",
+  "assessedAt": "2026-11-14T01:15:00Z"
+}

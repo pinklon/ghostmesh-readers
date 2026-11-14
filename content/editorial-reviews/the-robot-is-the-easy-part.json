@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "readerId": "reader:the-robot-is-the-easy-part",
+  "sourceId": "5cZontQjBH4",
+  "sourceAidSha256": "9c63ea52392bf7f7055bfdce9b276f5655bbc62718602972b05ce740857063c3",
+  "articleSha256": "0b23d6adc0ecf2d30503a8502e31876d8b071e52197ca67b09b039135f2cfe1b",
+  "evidenceRevision": "b74ba70cec9886563410876b19c6f472251da58885744755cd81a610095df302",
+  "reviewedAt": "2026-11-14T01:15:00Z",
+  "provenance": {
+    "kind": "codex-task-agent",
+    "reference": "Independent ChatGPT task agent /root/reader61_independent accepted authored Reader #61 on PR #173 at exact head be6e04e88c6c815bb27f38933d8fed5814c3f10c; source package subsequently acquired on Hyperion through ReasonPack and verified by segfault, not independently audited by that agent.",
+    "limits": "No full independent audiovisual listen-through, word-for-word ASR certification, hardware replication, auth-flow audit, native iPhone test or production deployment acceptance. New ReasonPack custody postdates the editorial review and must be separately checked before merge."
+  },
+  "summary": "ACCEPT FOR OWNER REVIEW: exact Reader #61 authored article preserves Creative Lock thesis and no-compression manuscript, seven bounded claims and nine navigable source cues, six external references, three Reader connections and one SharePlane editorial comparison. Owner approved publication subject to exact-head merge.",
+  "findings": [
+    "Thirty of thirty substantive authored long-form paragraphs remained verbatim against Creative Lock; brief conveys three approved moves without recasting the thesis.",
+    "Seven claim records distinguish creator demonstration from independently proven model quality, tool permissions, account data flow and physical reliability.",
+    "Nine source-navigation cues are approximate. An existing Hyperion ReasonPack package now retains the original video, audio and CPU Whisper large-v3 transcription with PASS verification.",
+    "The source map, source-aid hashes, public evidence boundaries and creator-authentication caveat are explicitly scoped; independently proven authorization or performance is not asserted.",
+    "Six source references and three Reader editorial links plus one SharePlane comparison remain distinct from primary evidence.",
+    "No raw video, audio, transcript, secrets or private filesystem paths are committed to the public repository."
+  ],
+  "conclusion": "accept-for-owner-review"
+}
