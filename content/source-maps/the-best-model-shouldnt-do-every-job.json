@@ -10,7 +10,7 @@
       "claimIds": [
         "r65-cue1"
       ],
-      "cueParaphrase": "Choose the model for the job",
+      "cueParaphrase": "Choose the model according to task difficulty and expected outcome.",
       "privateAidCheck": "Automatic English captions used for navigation; no independent replication or verified transcript."
     },
     {
@@ -19,7 +19,7 @@
       "claimIds": [
         "r65-cue2"
       ],
-      "cueParaphrase": "Define a measurable finish line",
+      "cueParaphrase": "Define measurable completion criteria before assigning a task.",
       "privateAidCheck": "Automatic English captions used for navigation; no independent replication or verified transcript."
     },
     {
@@ -28,7 +28,7 @@
       "claimIds": [
         "r65-cue3"
       ],
-      "cueParaphrase": "Bounded delegation and lead/worker roles",
+      "cueParaphrase": "Delegate bounded work with explicit lead and worker responsibilities.",
       "privateAidCheck": "Automatic English captions used for navigation; no independent replication or verified transcript."
     },
     {
@@ -37,7 +37,7 @@
       "claimIds": [
         "r65-cue4"
       ],
-      "cueParaphrase": "Long-run effort settings",
+      "cueParaphrase": "Adjust effort settings for longer unattended agent work.",
       "privateAidCheck": "Automatic English captions used for navigation; no independent replication or verified transcript."
     },
     {
@@ -46,7 +46,7 @@
       "claimIds": [
         "r65-cue5"
       ],
-      "cueParaphrase": "Permissions versus authorization",
+      "cueParaphrase": "Distinguish configured tool permissions from owner authorization.",
       "privateAidCheck": "Automatic English captions used for navigation; no independent replication or verified transcript."
     },
     {
@@ -55,7 +55,7 @@
       "claimIds": [
         "r65-cue6"
       ],
-      "cueParaphrase": "Completion reporting",
+      "cueParaphrase": "Require self-contained completion reports with checkable evidence.",
       "privateAidCheck": "Automatic English captions used for navigation; no independent replication or verified transcript."
     },
     {
@@ -64,7 +64,7 @@
       "claimIds": [
         "r65-cue7"
       ],
-      "cueParaphrase": "Instruction audits",
+      "cueParaphrase": "Audit older agent instructions as model capabilities evolve.",
       "privateAidCheck": "Automatic English captions used for navigation; no independent replication or verified transcript."
     },
     {
@@ -73,7 +73,7 @@
       "claimIds": [
         "r65-cue8"
       ],
-      "cueParaphrase": "Model switching",
+      "cueParaphrase": "Switch models when task demands and capabilities justify it.",
       "privateAidCheck": "Automatic English captions used for navigation; no independent replication or verified transcript."
     }
   ]

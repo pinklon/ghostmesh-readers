@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "readerId": "reader:the-best-model-shouldnt-do-every-job",
+  "sourceId": "EFGvVCpW9zc",
+  "sourceAidSha256": "b1e20a1023affbb59e16330483aa83105ab0abdc7a00f818fca06bbd55b5011d",
+  "articleSha256": "e9ae7ff39b418aa5dbbe22f979804ea708faa99a1ed6885a14b89c95318a4e4b",
+  "evidenceRevision": "1d60309ec5c3d7867aecf54dc0e8b7a1fbd0ddf21eddc1928662f05b9fa391a0",
+  "reviewedAt": "2026-11-15T22:40:00Z",
+  "provenance": {
+    "kind": "codex-task-agent",
+    "reference": "Independent reader63_review agent exact-head ACCEPT on pinklon/ghostmesh-readers PR #185 head 59d1221dfbd568a334dd67e0c0924a90b34f11c4; prior accepted manuscript and source map compared against current content.",
+    "limits": "Source review covers exact authored HTML, source-map pointers and public-safe boundary. Automatic English captions are a navigation aid, not certified transcription. No independent performance replication, native iPhone UAT or production deployment is asserted."
+  },
+  "summary": "ACCEPT FOR OWNER REVIEW. Revised visual hierarchy, consolidated source disclaimer and HTML title escaping preserve the approved manuscript, eight cues, four relationships and provenance.",
+  "findings": [
+    "Three decision sections retain all substantive paragraphs and exact anchors while removing redundant heading numerals; the Decision 01/02/03 kickers remain.",
+    "Eight caption cues retain their timestamps and claim IDs; the repeated non-replication warning is consolidated without strengthening claims.",
+    "The source map maps each claim cue to route, delegation or authority; source limitations remain explicit and no independent benchmark is asserted.",
+    "Four approved relationships and four provenance steps remain intact; automatic-caption digest stays public while the retained private aid itself is not published.",
+    "Title apostrophe escaping renders faithfully; independent acceptance does not certify visual QA, CI, owner permission or production."
+  ],
+  "conclusion": "accept-for-owner-review"
+}

@@ -1,0 +1,157 @@
+{
+  "schemaVersion": 1,
+  "readerId": "reader:the-best-model-shouldnt-do-every-job",
+  "sourceId": "EFGvVCpW9zc",
+  "sourceDigest": "d0dab40fb8d78121e68b83e374f6d18d8ebe4f9a34a7def6493611cee7e6e33c",
+  "sourceAidSha256": "b1e20a1023affbb59e16330483aa83105ab0abdc7a00f818fca06bbd55b5011d",
+  "articleSha256": "e9ae7ff39b418aa5dbbe22f979804ea708faa99a1ed6885a14b89c95318a4e4b",
+  "evidenceRevision": "1d60309ec5c3d7867aecf54dc0e8b7a1fbd0ddf21eddc1928662f05b9fa391a0",
+  "sourceMapEvidenceSha256": "31f70c356aab9dba20f63de023e9506b7adfac64edb9dfc4d82832a1bdfb9ca7",
+  "reviewEvidenceSha256": "3fb1faaa0ea50e773a7e334fd581cbb9f351da7cd7514035e20f68f8d8fcd808",
+  "candidateAuthor": "segfault",
+  "complexity": {
+    "tier": "extended",
+    "factors": [
+      "Eight video cues, an unverified maker benchmark, and creator-run cost anecdotes need precise source roles.",
+      "Model delegation, unattended permissions and owner authorization create consequential operating boundaries."
+    ],
+    "rationale": "Extended analysis is appropriate because performance and agent authority claims can influence consequential engineering choices."
+  },
+  "sourceMap": [
+    {
+      "atSeconds": 232,
+      "sectionId": "route",
+      "claimIds": [
+        "r65-cue1"
+      ],
+      "rationale": "Model choice contrasted with maker recommendations, no universal cost crossover."
+    },
+    {
+      "atSeconds": 301,
+      "sectionId": "delegation",
+      "claimIds": [
+        "r65-cue2"
+      ],
+      "rationale": "Finish line defined before delegation, without independent outcome measurement."
+    },
+    {
+      "atSeconds": 466,
+      "sectionId": "delegation",
+      "claimIds": [
+        "r65-cue3"
+      ],
+      "rationale": "Lead-worker pattern framed as a testable workflow choice."
+    },
+    {
+      "atSeconds": 651,
+      "sectionId": "authority",
+      "claimIds": [
+        "r65-cue4"
+      ],
+      "rationale": "Long-run effort settings attributed as creator guidance."
+    },
+    {
+      "atSeconds": 749,
+      "sectionId": "authority",
+      "claimIds": [
+        "r65-cue5"
+      ],
+      "rationale": "Technical access distinguished from owner authorization."
+    },
+    {
+      "atSeconds": 818,
+      "sectionId": "authority",
+      "claimIds": [
+        "r65-cue6"
+      ],
+      "rationale": "Completion reporting treated as evidence requirement."
+    },
+    {
+      "atSeconds": 864,
+      "sectionId": "authority",
+      "claimIds": [
+        "r65-cue7"
+      ],
+      "rationale": "Instruction audits framed as judgment rather than universal deletion."
+    },
+    {
+      "atSeconds": 901,
+      "sectionId": "authority",
+      "claimIds": [
+        "r65-cue8"
+      ],
+      "rationale": "Model switching retained as a source navigation cue."
+    }
+  ],
+  "assessment": {
+    "sourceCoverage": {
+      "disposition": "covered",
+      "rationale": "All eight source cues are mapped to exact sections with qualified automatic-caption provenance; no certified transcript is claimed."
+    },
+    "supportingArgument": {
+      "disposition": "covered",
+      "rationale": "Model routing, bounded delegation and authorization form a three-decision argument with counterargument and verdict."
+    },
+    "evidenceRoles": {
+      "disposition": "covered",
+      "rationale": "Manufacturer model guidance, creator anecdote and GhostMesh inference are distinguished; no independent benchmark is invented."
+    },
+    "counterargument": {
+      "disposition": "covered",
+      "rationale": "The essay explicitly argues coordination can outweigh multiagent benefits and high effort can waste resources."
+    },
+    "tradeoffs": {
+      "disposition": "covered",
+      "rationale": "Routing weighs task difficulty, error consequence, context, cost and coordination rather than model prestige."
+    },
+    "falsifiability": {
+      "disposition": "covered",
+      "rationale": "A bounded single-model versus delegated run with matched acceptance tests, retries, integration work, time and cost is proposed."
+    },
+    "originalSynthesis": {
+      "disposition": "covered",
+      "rationale": "GhostMesh connects model selection with verified outcome economics and distinct owner authority boundaries."
+    },
+    "performance": {
+      "disposition": "covered",
+      "rationale": "The 27 versus 58 minute and 58 percent comparisons remain unreplicated creator claims, not generalizable estimates."
+    },
+    "economics": {
+      "disposition": "covered",
+      "rationale": "Cost per verified outcome includes retries, coordination and repair; token pricing alone is insufficient."
+    },
+    "threatGovernance": {
+      "disposition": "covered",
+      "rationale": "The Reader distinguishes technical permissions and protected owner authorization, and requires inspectable completion proof."
+    }
+  },
+  "independentCorroboration": "none",
+  "ownerDecision": {
+    "kind": "conversation",
+    "owner": "Tony Malott",
+    "approval": "Tony approved the revised Reader #65 visual and evidence treatment, then gave explicit follow-on publication approval after exact revision 59d1221dfbd568a334dd67e0c0924a90b34f11c4 was identified. Editorial acceptance is distinct from the protected exact-head merge gate.",
+    "approvalDate": "2026-11-15",
+    "articleSha256": "e9ae7ff39b418aa5dbbe22f979804ea708faa99a1ed6885a14b89c95318a4e4b",
+    "evidenceRevision": "1d60309ec5c3d7867aecf54dc0e8b7a1fbd0ddf21eddc1928662f05b9fa391a0"
+  },
+  "decision": "accept",
+  "gaps": [
+    {
+      "type": "source",
+      "severity": "nonblocking",
+      "rationale": "Automatic caption timing and recognition remain uncertain; source audio was not independently certified."
+    },
+    {
+      "type": "test",
+      "severity": "nonblocking",
+      "rationale": "Creator performance and cost demonstrations were not independently reproduced."
+    },
+    {
+      "type": "risk",
+      "severity": "nonblocking",
+      "rationale": "Model permissions cannot substitute for owner authorization in protected operations."
+    }
+  ],
+  "decisionRationale": "Independent reviewer ACCEPT for exact 59d1221 article bytes, with authorial prose preserved, eight source mappings and source custody retained; Tony approved revised design and publication separately.",
+  "assessedAt": "2026-11-15T22:53:26Z"
+}

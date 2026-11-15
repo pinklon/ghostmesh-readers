@@ -310,8 +310,12 @@
         "rationale": "Owner approved exactly two separate, substantive SharePlane Work comparisons on issue #184; these are contextual editorial pointers, not evidence that the creator results have been replicated."
       },
       "review": {
-        "status": "pending",
-        "summary": "Independent editorial, source and public-safe acceptance pending on exact candidate."
+        "status": "accepted-for-owner-review",
+        "summary": "Independent exact-head editorial, source and privacy review accepted; owner-approved publication remains subject to protected merge gate."
+      },
+      "editorialDepth": {
+        "schemaVersion": 1,
+        "receiptPath": "content/editorial-depth/the-best-model-shouldnt-do-every-job.json"
       },
       "rank": 64
     },
