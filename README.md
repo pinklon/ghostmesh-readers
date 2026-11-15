@@ -10,6 +10,8 @@ The public, video-first companion to [SharePlane](https://shareplane.malott.ai/)
 
 Use the [Reader release runbook](docs/READER_RELEASE_RUNBOOK.md) for the single-owner queue, review handoff, normal Git/Netlify path, denial handling, and production receipt. The content contract below remains the authoring standard.
 
+For the next candidate, use the [one-pass checklist](docs/NEXT_READER.md) and run `make reader-prepare` once after the complete source-qualified manuscript, catalog entry and review inputs are staged. The target invokes the existing generators and local checks; hosted CI and owner publication authorization remain separate. `make reader-check` reruns the same deterministic checks without regenerating files.
+
 The [Scout and RSS source contract](docs/SCOUT_AND_FEED.md) describes the separate public-safe review input and stable release events used by the generated `/scout/` page and `/feed.xml`. Scanner watchlists and private source artifacts are never direct site inputs.
 
 1. Start from the [Pando video Reader source](content/readers/when-code-gets-cheap-where-does-the-work-wait.html) and choose the [editorial length](docs/READER_RELEASE_RUNBOOK.md#video-reader-template-and-length). Use the existing player with a direct source fallback. Use timestamps where the source supports seeking.
