@@ -6,7 +6,7 @@
   "points": [
     {
       "atSeconds": 232,
-      "sectionId": "follow-thinking",
+      "sectionId": "route",
       "claimIds": [
         "r65-cue1"
       ],
@@ -15,7 +15,7 @@
     },
     {
       "atSeconds": 301,
-      "sectionId": "follow-thinking",
+      "sectionId": "delegation",
       "claimIds": [
         "r65-cue2"
       ],
@@ -24,7 +24,7 @@
     },
     {
       "atSeconds": 466,
-      "sectionId": "follow-thinking",
+      "sectionId": "delegation",
       "claimIds": [
         "r65-cue3"
       ],
@@ -33,7 +33,7 @@
     },
     {
       "atSeconds": 651,
-      "sectionId": "follow-thinking",
+      "sectionId": "authority",
       "claimIds": [
         "r65-cue4"
       ],
@@ -42,7 +42,7 @@
     },
     {
       "atSeconds": 749,
-      "sectionId": "follow-thinking",
+      "sectionId": "authority",
       "claimIds": [
         "r65-cue5"
       ],
@@ -51,7 +51,7 @@
     },
     {
       "atSeconds": 818,
-      "sectionId": "follow-thinking",
+      "sectionId": "authority",
       "claimIds": [
         "r65-cue6"
       ],
@@ -60,7 +60,7 @@
     },
     {
       "atSeconds": 864,
-      "sectionId": "follow-thinking",
+      "sectionId": "authority",
       "claimIds": [
         "r65-cue7"
       ],
@@ -69,7 +69,7 @@
     },
     {
       "atSeconds": 901,
-      "sectionId": "follow-thinking",
+      "sectionId": "authority",
       "claimIds": [
         "r65-cue8"
       ],
