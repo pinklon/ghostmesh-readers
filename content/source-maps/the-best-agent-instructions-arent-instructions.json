@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 1,
+  "readerId": "reader:the-best-agent-instructions-arent-instructions",
+  "sourceId": "O_zcc6Xl12g",
+  "sourceAidSha256": "bfc68ef2104a0b550ca6af7ab0c6287e0e85dc628bc45b970c664363ad99664a",
+  "points": [
+    {
+      "atSeconds": 45,
+      "sectionId": "first-assessment",
+      "claimIds": [
+        "r63-personal-volume"
+      ],
+      "cueParaphrase": "Speaker reports personally shipping about 3,000 pull requests in a month.",
+      "privateAidCheck": "Private timed VTT and original video; speaker-reported."
+    },
+    {
+      "atSeconds": 123,
+      "sectionId": "three-moves",
+      "claimIds": [
+        "r63-trust-pyramid"
+      ],
+      "cueParaphrase": "Architecture and deterministic checks are prioritized before verification and prose guidance.",
+      "privateAidCheck": "Private timed VTT; official AI Engineer reading edition."
+    },
+    {
+      "atSeconds": 260,
+      "sectionId": "codebase",
+      "claimIds": [
+        "r63-repository-input"
+      ],
+      "cueParaphrase": "Existing code is agent input; recurring workarounds may propagate.",
+      "privateAidCheck": "Private timed VTT; source claim, not controlled study."
+    },
+    {
+      "atSeconds": 335,
+      "sectionId": "architecture",
+      "claimIds": [
+        "r63-dune-useeffect"
+      ],
+      "cueParaphrase": "Dune framework restricts useEffect in product code; targeted audio repair recovered the example.",
+      "privateAidCheck": "Private targeted re-ASR and official talk reading edition."
+    },
+    {
+      "atSeconds": 385,
+      "sectionId": "architecture",
+      "claimIds": [
+        "r63-electron-boundary"
+      ],
+      "cueParaphrase": "Electron renderer and main boundaries enforced with directory structure and lint/dependency checks.",
+      "privateAidCheck": "Private timed VTT and official talk reading edition."
+    },
+    {
+      "atSeconds": 495,
+      "sectionId": "codebase",
+      "claimIds": [
+        "r63-comment-workaround"
+      ],
+      "cueParaphrase": "Agent-authored comments can normalize recurring workaround patterns.",
+      "privateAidCheck": "Speaker observation; no universal prohibition inferred."
+    },
+    {
+      "atSeconds": 592,
+      "sectionId": "verification",
+      "claimIds": [
+        "r63-evidence-review"
+      ],
+      "cueParaphrase": "Review shifts toward videos, screenshots, diagrams, and runtime artifacts.",
+      "privateAidCheck": "Private timed VTT; primary speaker claim."
+    },
+    {
+      "atSeconds": 655,
+      "sectionId": "verification",
+      "claimIds": [
+        "r63-formal"
+      ],
+      "cueParaphrase": "Selected TLA+ model checking and other verification techniques described as experimental.",
+      "privateAidCheck": "Primary speaker claim, no public test-result audit."
+    },
+    {
+      "atSeconds": 818,
+      "sectionId": "numbers",
+      "claimIds": [
+        "r63-team-volume"
+      ],
+      "cueParaphrase": "Team reported about 11,000 pull requests in a month.",
+      "privateAidCheck": "Primary speaker-reported, unaudited."
+    },
+    {
+      "atSeconds": 866,
+      "sectionId": "numbers",
+      "claimIds": [
+        "r63-reverts"
+      ],
+      "cueParaphrase": "Relative revert rate reported near 0.5%; not equated with defect rate.",
+      "privateAidCheck": "Primary speaker-reported, unaudited."
+    },
+    {
+      "atSeconds": 999,
+      "sectionId": "outer-loop",
+      "claimIds": [
+        "r63-automerged-fixes"
+      ],
+      "cueParaphrase": "Release testing may open and auto-merge bug-fix PRs after runtime fuzzing.",
+      "privateAidCheck": "Primary speaker description, not independently deployed proof."
+    }
+  ]
+}

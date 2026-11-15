@@ -865,6 +865,18 @@
         "path": "site/the-1000-ai-workflow-is-a-routing-problem/index.html",
         "sha256": "d5bf0933f851f0f16a5d3a4217049d57aaaa6657a7bdf8ac69beee08b6fde1b5"
       }
+    },
+    {
+      "id": "urn:ghostmesh-readers:reader:the-best-agent-instructions-arent-instructions",
+      "type": "Reader",
+      "visibility": "public",
+      "epistemicStatus": "source-editorial",
+      "label": "The Best Agent Instructions Aren't Instructions",
+      "url": "https://youtube.shareplane.malott.ai/the-best-agent-instructions-arent-instructions/",
+      "source": {
+        "path": "site/the-best-agent-instructions-arent-instructions/index.html",
+        "sha256": "2fb9a7d28d779051b284f422a56c56482c17eb5da43eafd70b2d3c7b08f19e8a"
+      }
     }
   ],
   "relationships": [
