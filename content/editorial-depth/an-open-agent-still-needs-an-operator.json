@@ -1,0 +1,133 @@
+{
+  "schemaVersion": 1,
+  "readerId": "reader:an-open-agent-still-needs-an-operator",
+  "sourceId": "ynEEbqKQSaY",
+  "sourceDigest": "027f686760b7b05e2d9b6e9876d756987182e72b9e42b9584ba5d28d88155951",
+  "sourceAidSha256": "9e44fa0e514e8874d289b3e357f0e2e40124da604d1ea06a55a672c5a008ffe7",
+  "articleSha256": "69e47d78700dbd1a7f84c572c1b8a896be0be44b4e21e58b3753b6b301bc4e39",
+  "evidenceRevision": "e57e8c693dbf3b769302bd6cba1f79a0771bc94bdf23862922f9984425de7b29",
+  "sourceMapEvidenceSha256": "43ffe0a0862ea3ead569d98623256f744df996fd3869cb95034c738642c11715",
+  "reviewEvidenceSha256": "2e2cdedbeace212a071b62d181eea67b42939e3d68e85bb2b0d89bd7b4195a24",
+  "candidateAuthor": "segfault",
+  "complexity": {
+    "tier": "extended",
+    "factors": [
+      "Personal-agent authorization and credential custody carry security and privacy consequences beyond ordinary product-review claims.",
+      "The Reader distinguishes creator marketing, maker architecture documentation and independently testable outcomes across five timed cues."
+    ],
+    "rationale": "Extended assessment is warranted because an owner-operated agent with browser and account access raises consequential trust, recovery and evidence questions."
+  },
+  "sourceMap": [
+    {
+      "atSeconds": 0,
+      "sectionId": "source-first",
+      "claimIds": [
+        "r64-introduction"
+      ],
+      "rationale": "Creator introduces Nod as a personal-agent alternative, not a comparative benchmark."
+    },
+    {
+      "atSeconds": 61,
+      "sectionId": "computer-boundary",
+      "claimIds": [
+        "r64-computer"
+      ],
+      "rationale": "Maker architecture is described without an independently deployed GhostMesh trial."
+    },
+    {
+      "atSeconds": 333,
+      "sectionId": "operator-cost",
+      "claimIds": [
+        "r64-install"
+      ],
+      "rationale": "Installation preview is attributed to the creator and not independently reproduced."
+    },
+    {
+      "atSeconds": 402,
+      "sectionId": "authorization",
+      "claimIds": [
+        "r64-authority"
+      ],
+      "rationale": "Exact-action authorization and Vault are maker-documented claims, not a security certification."
+    },
+    {
+      "atSeconds": 666,
+      "sectionId": "earned-verdict",
+      "claimIds": [
+        "r64-use-cases"
+      ],
+      "rationale": "Potential utility is explicitly GhostMesh inference awaiting real-account outcome tests."
+    }
+  ],
+  "assessment": {
+    "sourceCoverage": {
+      "disposition": "covered",
+      "rationale": "Five creator chapter cues are linked to bounded claims; private automatic captions are a noisy aid, and video playback was not independently verified."
+    },
+    "supportingArgument": {
+      "disposition": "covered",
+      "rationale": "The Reader moves from personal-agent claims to ownership burden, authorization boundaries and the need for outcome receipts."
+    },
+    "evidenceRoles": {
+      "disposition": "covered",
+      "rationale": "Creator pitch, maker primary documentation and GhostMesh inference are separately labeled; neither marketing nor design text is treated as deployed proof."
+    },
+    "counterargument": {
+      "disposition": "covered",
+      "rationale": "Owner control and open source can improve autonomy and inspectability, but self-hosting alone does not establish authorization correctness or operational safety."
+    },
+    "tradeoffs": {
+      "disposition": "covered",
+      "rationale": "The piece weighs user-owned computing and model selection against patching, credential risk, interrupted actions and support burden."
+    },
+    "falsifiability": {
+      "disposition": "covered",
+      "rationale": "Synthetic-account trials of intent changes, connector egress, duplicate actions and interrupted recovery are specified as potential disconfirming tests."
+    },
+    "originalSynthesis": {
+      "disposition": "covered",
+      "rationale": "GhostMesh connects Nod's ownership pitch to governed execution: an exact action needs a verifiable result and recoverable boundary."
+    },
+    "performance": {
+      "disposition": "covered",
+      "rationale": "No throughput, latency or reliability benchmark is invented; advertised use cases remain unmeasured until repeatable deployment trials."
+    },
+    "economics": {
+      "disposition": "covered",
+      "rationale": "Operational ownership includes maintenance and review costs, but the Reader does not assert numerical savings or fabricated return on investment."
+    },
+    "threatGovernance": {
+      "disposition": "covered",
+      "rationale": "Credential Vault separation, model-mediated trust checks, connector side effects and exact-action authority are explicitly treated as boundaries requiring testing."
+    }
+  },
+  "independentCorroboration": "none",
+  "ownerDecision": {
+    "kind": "conversation",
+    "owner": "Tony Malott",
+    "approval": "Tony approved Reader #64's revised Reader #63-aligned presentation and instructed segfault to proceed through independent review and publication gates. This approval covers reviewed presentation and intent, not a later exact-head merge authorization.",
+    "approvalDate": "2026-11-15",
+    "articleSha256": "69e47d78700dbd1a7f84c572c1b8a896be0be44b4e21e58b3753b6b301bc4e39",
+    "evidenceRevision": "e57e8c693dbf3b769302bd6cba1f79a0771bc94bdf23862922f9984425de7b29"
+  },
+  "decision": "accept",
+  "gaps": [
+    {
+      "type": "source",
+      "severity": "nonblocking",
+      "rationale": "The reviewer could not independently play the throttled source video or inspect the retained private VTT; timestamp links are source-map cues, not audio certification."
+    },
+    {
+      "type": "test",
+      "severity": "nonblocking",
+      "rationale": "Nod was not independently installed or tested against real or synthetic account outcomes; operational claims remain qualified."
+    },
+    {
+      "type": "risk",
+      "severity": "nonblocking",
+      "rationale": "Owner-operated agents still require verified credential boundaries, exact-action authorization and interruption recovery before consequential use."
+    }
+  ],
+  "decisionRationale": "Pale Horse independently accepted the corrected exact head cf2e772 in Slack message 1794743514.052389 after two recorded REVISE findings were repaired, with explicit video and VTT limits; publication remains a separate owner gate.",
+  "assessedAt": "2026-11-15T11:51:54Z"
+}
