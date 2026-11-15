@@ -889,6 +889,18 @@
         "path": "site/an-open-agent-still-needs-an-operator/index.html",
         "sha256": "6b73bdf935764ea80671b3eaed516cc33c71654e7b84aec918b7e5c7574d37e6"
       }
+    },
+    {
+      "id": "urn:ghostmesh-readers:reader:the-best-model-shouldnt-do-every-job",
+      "type": "Reader",
+      "visibility": "public",
+      "epistemicStatus": "source-editorial",
+      "label": "The Best Model Shouldn't Do Every Job",
+      "url": "https://youtube.shareplane.malott.ai/the-best-model-shouldnt-do-every-job/",
+      "source": {
+        "path": "site/the-best-model-shouldnt-do-every-job/index.html",
+        "sha256": "1b51886c6990c2c6b1a9629811d37d21c6c2eae96d3637b48df7dea11ef7e42e"
+      }
     }
   ],
   "relationships": [

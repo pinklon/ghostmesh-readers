@@ -21908,6 +21908,328 @@
         "receiptPath": "content/editorial-depth/an-open-agent-still-needs-an-operator.json"
       },
       "publicationStatus": null
+    },
+    {
+      "id": "reader:the-best-model-shouldnt-do-every-job",
+      "slug": "the-best-model-shouldnt-do-every-job",
+      "title": "The Best Model Shouldn't Do Every Job",
+      "variant": "editorial",
+      "category": "AI & Technology",
+      "tags": [
+        "AI agents",
+        "model routing",
+        "delegation",
+        "Claude Fable",
+        "evaluation",
+        "authorization"
+      ],
+      "accent": "teal",
+      "editorialOrder": 64,
+      "published": "2026-11-15",
+      "updated": "2026-11-15T00:00:00Z",
+      "lastEvidenceChecked": "2026-11-15",
+      "overview": "AI LABS walks through nine rules for Claude Fable 5.2, beginning with when *not* to use it. The 16-minute video compares Fable with Opus 5.5, explains finish-line tests and lead/worker delegation, then covers effort, unattended permissions, reporting, instruction audits and model switching. It is a practical workflow guide, not a controlled scientific comparison.",
+      "whyItMatters": "If you use coding agents on meaningful projects, the expensive mistake is not merely paying for too many tokens. It is picking the wrong model, handing off work without a definition of done, or accepting an agent's completion claim without evidence. Watch the routing and delegation sections at 03:52–09:50. The later operating rules are useful if you supervise longer runs. You can skip the 09:50–10:51 sponsor segment. Verify the claimed cost experiments independently before using them for budget decisions.",
+      "ghostMeshTakeaway": "Optimize for a verified, accountable job rather than the prestige or per-token price of a model. Begin with sufficient capability, escalate selectively, delegate only work that can be checked, and distinguish technical permissions from owner authorization. That is an editorial design rule, not proof that a particular multiagent setup will always save money.",
+      "verdict": "Interesting, unproven",
+      "architectureImpact": "experiment recommended",
+      "archiveCall": {
+        "label": "Measure the whole job",
+        "text": "Escalate selectively, delegate bounded work and verify outcomes including coordination and repair."
+      },
+      "evidenceState": "unverified",
+      "falsification": "Compare a single-model and bounded delegated run on the same acceptance test, including total cost, time, retries, integration and quality.",
+      "freshness": "New model; reported benchmark and cost claims require matched-effort independent replication.",
+      "entities": [],
+      "source": {
+        "platform": "YouTube",
+        "url": "https://www.youtube.com/watch?v=EFGvVCpW9zc",
+        "videoId": "EFGvVCpW9zc",
+        "title": "Fable 5.2 Is Insane... Only If You Use It Anthropic's Way",
+        "creator": "AI LABS",
+        "mediaAspect": "16:9",
+        "durationSeconds": 962,
+        "uploadDate": "2026-11-14",
+        "dateNote": "Creator chapter cues and automatic captions; no independent performance replication.",
+        "captionType": "Automatic English caption aid retained privately; no verified transcript.",
+        "creatorChapters": [
+          {
+            "atSeconds": 232,
+            "label": "Choose the model for the job"
+          },
+          {
+            "atSeconds": 301,
+            "label": "Define the finish line"
+          },
+          {
+            "atSeconds": 466,
+            "label": "Delegate bounded tasks"
+          },
+          {
+            "atSeconds": 651,
+            "label": "Long-run effort"
+          },
+          {
+            "atSeconds": 749,
+            "label": "Permissions and authority"
+          },
+          {
+            "atSeconds": 818,
+            "label": "Completion reporting"
+          },
+          {
+            "atSeconds": 864,
+            "label": "Instruction audits"
+          },
+          {
+            "atSeconds": 901,
+            "label": "Switch models"
+          }
+        ]
+      },
+      "references": [
+        {
+          "id": "r65-ref1",
+          "title": "AI LABS: Fable 5.2 Is Insane... Only If You Use It Anthropic's Way",
+          "author": "AI LABS",
+          "publisher": "YouTube",
+          "url": "https://www.youtube.com/watch?v=EFGvVCpW9zc",
+          "publicationDate": "2026-11-14",
+          "datePrecision": "day",
+          "eventDate": null,
+          "location": "Public source",
+          "sourceType": "primary video",
+          "independence": "Creator or manufacturer material; not independent replication.",
+          "evidenceFamily": "r65-video",
+          "checkedAt": "2026-11-15T00:00:00Z",
+          "dateNote": "Paraphrased with limits; no benchmark replication."
+        },
+        {
+          "id": "r65-ref2",
+          "title": "Introducing Claude Fable 5.2 and Claude Mythos 5.2",
+          "author": "Anthropic",
+          "publisher": "Anthropic",
+          "url": "https://www.anthropic.com/claude-fable-and-mythos-5-2",
+          "publicationDate": "2026-11-09",
+          "datePrecision": "day",
+          "eventDate": null,
+          "location": "Public source",
+          "sourceType": "manufacturer announcement",
+          "independence": "Creator or manufacturer material; not independent replication.",
+          "evidenceFamily": "r65-maker",
+          "checkedAt": "2026-11-15T00:00:00Z",
+          "dateNote": "Paraphrased with limits; no benchmark replication."
+        },
+        {
+          "id": "r65-ref3",
+          "title": "Claude Fable model details",
+          "author": "Anthropic",
+          "publisher": "Anthropic",
+          "url": "https://www.anthropic.com/claude/fable",
+          "publicationDate": "unknown",
+          "datePrecision": "unknown",
+          "eventDate": null,
+          "location": "Public source",
+          "sourceType": "manufacturer model details",
+          "independence": "Creator or manufacturer material; not independent replication.",
+          "evidenceFamily": "r65-maker",
+          "checkedAt": "2026-11-15T00:00:00Z",
+          "dateNote": "Paraphrased with limits; no benchmark replication."
+        }
+      ],
+      "claims": [
+        {
+          "id": "r65-cue1",
+          "proposition": "Choose the model for the job",
+          "kind": "creator-claim",
+          "status": "unverified",
+          "sourceLocation": "03:52",
+          "assessment": "Choose the model for the job",
+          "limits": "Automatic-caption cue; no independently reproduced task or cost result.",
+          "references": [
+            "r65-ref1"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-15"
+        },
+        {
+          "id": "r65-cue2",
+          "proposition": "Define the finish line",
+          "kind": "creator-claim",
+          "status": "unverified",
+          "sourceLocation": "05:01",
+          "assessment": "Define the finish line",
+          "limits": "Automatic-caption cue; no independently reproduced task or cost result.",
+          "references": [
+            "r65-ref1"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-15"
+        },
+        {
+          "id": "r65-cue3",
+          "proposition": "Delegate bounded tasks",
+          "kind": "creator-claim",
+          "status": "unverified",
+          "sourceLocation": "07:46",
+          "assessment": "Delegate bounded tasks",
+          "limits": "Automatic-caption cue; no independently reproduced task or cost result.",
+          "references": [
+            "r65-ref1"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-15"
+        },
+        {
+          "id": "r65-cue4",
+          "proposition": "Long-run effort",
+          "kind": "creator-claim",
+          "status": "unverified",
+          "sourceLocation": "10:51",
+          "assessment": "Long-run effort",
+          "limits": "Automatic-caption cue; no independently reproduced task or cost result.",
+          "references": [
+            "r65-ref1"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-15"
+        },
+        {
+          "id": "r65-cue5",
+          "proposition": "Permissions and authority",
+          "kind": "creator-claim",
+          "status": "unverified",
+          "sourceLocation": "12:29",
+          "assessment": "Permissions and authority",
+          "limits": "Automatic-caption cue; no independently reproduced task or cost result.",
+          "references": [
+            "r65-ref1"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-15"
+        },
+        {
+          "id": "r65-cue6",
+          "proposition": "Completion reporting",
+          "kind": "creator-claim",
+          "status": "unverified",
+          "sourceLocation": "13:38",
+          "assessment": "Completion reporting",
+          "limits": "Automatic-caption cue; no independently reproduced task or cost result.",
+          "references": [
+            "r65-ref1"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-15"
+        },
+        {
+          "id": "r65-cue7",
+          "proposition": "Instruction audits",
+          "kind": "creator-claim",
+          "status": "unverified",
+          "sourceLocation": "14:24",
+          "assessment": "Instruction audits",
+          "limits": "Automatic-caption cue; no independently reproduced task or cost result.",
+          "references": [
+            "r65-ref1"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-15"
+        },
+        {
+          "id": "r65-cue8",
+          "proposition": "Switch models",
+          "kind": "creator-claim",
+          "status": "unverified",
+          "sourceLocation": "15:01",
+          "assessment": "Switch models",
+          "limits": "Automatic-caption cue; no independently reproduced task or cost result.",
+          "references": [
+            "r65-ref1"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-15"
+        }
+      ],
+      "relationships": [
+        {
+          "target": "reader:the-1000-ai-workflow-is-a-routing-problem",
+          "type": "companion",
+          "reason": "Compare another Fable routing experiment; both examine cost per verified outcome rather than model prestige.",
+          "provenance": [
+            "/the-best-model-shouldnt-do-every-job/",
+            "/the-1000-ai-workflow-is-a-routing-problem/"
+          ],
+          "basis": "curated-editorial-comparison",
+          "direction": "outgoing"
+        },
+        {
+          "target": "reader:the-best-agent-instructions-arent-instructions",
+          "type": "extends",
+          "reason": "Make delegation verifiable with definition-of-done checks rather than accumulating prompt instructions.",
+          "provenance": [
+            "/the-best-model-shouldnt-do-every-job/",
+            "/the-best-agent-instructions-arent-instructions/"
+          ],
+          "basis": "curated-editorial-comparison",
+          "direction": "outgoing"
+        }
+      ],
+      "sharePlaneRelationships": [
+        {
+          "url": "https://shareplane.malott.ai/artifacts/the-right-model-is-the-one-your-eval-can-defend/",
+          "title": "The Right Model Is the One Your Eval Can Defend",
+          "reason": "This Work provides failure classification, routing frontier and retest conditions, a practical method for evaluating model selection beyond the unreplicated creator anecdotes.",
+          "type": "companion",
+          "basis": "curated-editorial-comparison"
+        },
+        {
+          "url": "https://shareplane.malott.ai/artifacts/the-agent-was-never-the-unit-of-trust/",
+          "title": "The Agent Was Never the Unit of Trust",
+          "reason": "This Work examines boss, worker and checker failure modes and their governed verification loop, a concrete counterweight to the video's optimistic lead-worker framing.",
+          "type": "companion",
+          "basis": "curated-editorial-comparison"
+        }
+      ],
+      "relationshipDisposition": "Tony-approved two Reader companions and two separately labeled SharePlane Work comparisons in issue #184, 2026-11-15.",
+      "relationshipReview": {
+        "reviewedAt": "2026-11-15",
+        "reviewedCatalogSize": 64,
+        "decision": "linked",
+        "reviewedTargets": [
+          "reader:the-1000-ai-workflow-is-a-routing-problem",
+          "reader:the-best-agent-instructions-arent-instructions"
+        ],
+        "rationale": "Tony explicitly approved these two catalog-backed Reader comparisons; neither confirms model performance."
+      },
+      "sharePlaneReview": {
+        "reviewedAt": "2026-11-15",
+        "decision": "linked",
+        "rationale": "Owner approved exactly two separate, substantive SharePlane Work comparisons on issue #184; these are contextual editorial pointers, not evidence that the creator results have been replicated."
+      },
+      "review": {
+        "status": "pending",
+        "summary": "Independent editorial, source and public-safe acceptance pending on exact candidate."
+      },
+      "legacyReceipt": {
+        "source": {
+          "url": "https://www.youtube.com/watch?v=EFGvVCpW9zc",
+          "videoId": "EFGvVCpW9zc"
+        },
+        "custody": {
+          "status": "qualified-private-auto-caption-aid",
+          "note": "Private automatic English captions are a noisy navigation aid, not verified ReasonPack or verbatim transcript."
+        },
+        "reasonPack": {
+          "verification": "unknown"
+        },
+        "sourceInspection": {
+          "method": "Publisher metadata, automatic caption aid and Anthropic primary documentation",
+          "caveat": "No independent benchmark or cost reproduction",
+          "publicationBoundary": "No raw media, VTT, private source paths or transcript",
+          "timedAidSha256": "b1e20a1023affbb59e16330483aa83105ab0abdc7a00f818fca06bbd55b5011d"
+        }
+      }
     }
   ],
   "featuredId": "reader:ask-for-the-outcome-keep-the-boundary"
