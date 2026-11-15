@@ -1,0 +1,341 @@
+{
+  "source": {
+    "url": "https://www.youtube.com/watch?v=ynEEbqKQSaY",
+    "videoId": "ynEEbqKQSaY"
+  },
+  "custody": {
+    "status": "qualified-private-auto-caption-aid",
+    "note": "Public YouTube metadata and maker primary documentation inspected; private English Original auto-caption aid has recognition errors, and no video or audio copy was obtained."
+  },
+  "reasonPack": {
+    "verification": "unknown"
+  },
+  "sourceInspection": {
+    "method": "YouTube publisher metadata, private auto-caption aid and maker primary documentation",
+    "caveat": "No manual transcript, independent product trial or benchmark replication",
+    "publicationBoundary": "No raw media, transcripts, VTT or private source paths",
+    "timedAidSha256": "9e44fa0e514e8874d289b3e357f0e2e40124da604d1ea06a55a672c5a008ffe7"
+  },
+  "normalization": {
+    "id": "reader:an-open-agent-still-needs-an-operator",
+    "slug": "an-open-agent-still-needs-an-operator",
+    "title": "An Open Agent Still Needs an Operator",
+    "variant": "editorial",
+    "category": "AI & Technology",
+    "tags": [
+      "AI agents",
+      "agent sovereignty",
+      "self-hosting",
+      "authorization",
+      "privacy engineering",
+      "bounded autonomy"
+    ],
+    "accent": "teal",
+    "editorialOrder": 63,
+    "published": "2026-11-15",
+    "updated": "2026-11-15T00:00:00Z",
+    "lastEvidenceChecked": "2026-11-15",
+    "overview": "Chase AI introduces n8n Nod, a single-owner open-source assistant with its own computer and browser.",
+    "whyItMatters": "Owner-operated agents shift the burden of privacy, maintenance and trustworthy action onto the operator.",
+    "ghostMeshTakeaway": "Evaluate exact-action authorization, credential boundaries, interruption recovery and independent outcome receipts in a synthetic-account sandbox before production use.",
+    "verdict": "Interesting, unproven",
+    "architectureImpact": "experiment recommended",
+    "archiveCall": {
+      "label": "Ownership is not governance",
+      "text": "Inspect the trust boundary and validate the exact result before giving a personal agent consequential access."
+    },
+    "evidenceState": "unverified",
+    "falsification": "Controlled adversarial runs must test intent changes, connector egress, duplicate actions, and interrupted recovery with synthetic accounts.",
+    "freshness": "Research preview; maker claims and security controls have not been independently replicated.",
+    "entities": [],
+    "source": {
+      "platform": "YouTube",
+      "url": "https://www.youtube.com/watch?v=ynEEbqKQSaY",
+      "videoId": "ynEEbqKQSaY",
+      "title": "n8n Just Released a FREE + Open Source Version of Claude Duet, Grokbot, Dots, & Muse",
+      "creator": "Chase AI",
+      "mediaAspect": "16:9",
+      "durationSeconds": 754,
+      "uploadDate": "2026-11-14",
+      "dateNote": "YouTube publisher metadata and creator chapter timestamps; automatic-caption aid is noisy.",
+      "captionType": "English Original automatic captions retained privately; not verified transcript custody.",
+      "creatorChapters": [
+        {
+          "atSeconds": 0,
+          "label": "The crowded personal-agent pitch"
+        },
+        {
+          "atSeconds": 61,
+          "label": "Where the computer lives"
+        },
+        {
+          "atSeconds": 333,
+          "label": "Installing the preview"
+        },
+        {
+          "atSeconds": 402,
+          "label": "Inside the Nod app"
+        },
+        {
+          "atSeconds": 666,
+          "label": "Best use cases"
+        }
+      ]
+    },
+    "references": [
+      {
+        "id": "r64-ref1",
+        "title": "Chase AI: n8n Just Released a FREE + Open Source Version of Claude Duet, Grokbot, Dots, & Muse",
+        "author": "Chase AI",
+        "publisher": "YouTube",
+        "url": "https://www.youtube.com/watch?v=ynEEbqKQSaY",
+        "publicationDate": "2026-11-14",
+        "datePrecision": "day",
+        "eventDate": null,
+        "location": "Public source",
+        "sourceType": "primary video",
+        "independence": "Primary creator or maker material; not an independent product audit.",
+        "evidenceFamily": "r64-video",
+        "checkedAt": "2026-11-15T00:00:00Z",
+        "dateNote": "Creator presentation, not an independent product audit."
+      },
+      {
+        "id": "r64-ref2",
+        "title": "n8n Labs: Meet Nod",
+        "author": "n8n Labs",
+        "publisher": "n8n",
+        "url": "https://blog.n8n.io/meet-nod/",
+        "publicationDate": "unknown",
+        "datePrecision": "unknown",
+        "eventDate": null,
+        "location": "Public source",
+        "sourceType": "maker announcement",
+        "independence": "Primary creator or maker material; not an independent product audit.",
+        "evidenceFamily": "r64-maker",
+        "checkedAt": "2026-11-15T00:00:00Z",
+        "dateNote": "Research preview, Apache 2.0 and one-owner purpose."
+      },
+      {
+        "id": "r64-ref3",
+        "title": "Nod: Security review guide",
+        "author": "n8n Labs",
+        "publisher": "n8n",
+        "url": "https://nod.n8n.io/docs/trust/security-review/",
+        "publicationDate": "unknown",
+        "datePrecision": "unknown",
+        "eventDate": null,
+        "location": "Public source",
+        "sourceType": "maker security documentation",
+        "independence": "Primary creator or maker material; not an independent product audit.",
+        "evidenceFamily": "r64-maker",
+        "checkedAt": "2026-11-15T00:00:00Z",
+        "dateNote": "Documented runtime boundary, app connection flows, controls and known limits."
+      },
+      {
+        "id": "r64-ref4",
+        "title": "Nod: Approvals and the trust check",
+        "author": "n8n Labs",
+        "publisher": "n8n",
+        "url": "https://nod.n8n.io/docs/trust/approvals/",
+        "publicationDate": "unknown",
+        "datePrecision": "unknown",
+        "eventDate": null,
+        "location": "Public source",
+        "sourceType": "maker permission documentation",
+        "independence": "Primary creator or maker material; not an independent product audit.",
+        "evidenceFamily": "r64-maker",
+        "checkedAt": "2026-11-15T00:00:00Z",
+        "dateNote": "Documented action-level authorization, not independent adversarial assurance."
+      },
+      {
+        "id": "r64-ref5",
+        "title": "Nod: Your data and privacy",
+        "author": "n8n Labs",
+        "publisher": "n8n",
+        "url": "https://nod.n8n.io/docs/trust/privacy/",
+        "publicationDate": "unknown",
+        "datePrecision": "unknown",
+        "eventDate": null,
+        "location": "Public source",
+        "sourceType": "maker privacy documentation",
+        "independence": "Primary creator or maker material; not an independent product audit.",
+        "evidenceFamily": "r64-maker",
+        "checkedAt": "2026-11-15T00:00:00Z",
+        "dateNote": "Model, connector, analytics and third-party data paths."
+      },
+      {
+        "id": "r64-ref6",
+        "title": "n8n-io/nod",
+        "author": "n8n Labs",
+        "publisher": "n8n",
+        "url": "https://github.com/n8n-io/nod",
+        "publicationDate": "unknown",
+        "datePrecision": "unknown",
+        "eventDate": null,
+        "location": "Public source",
+        "sourceType": "maker source code",
+        "independence": "Primary creator or maker material; not an independent product audit.",
+        "evidenceFamily": "r64-maker",
+        "checkedAt": "2026-11-15T00:00:00Z",
+        "dateNote": "Public code and license, not a GhostMesh code audit."
+      }
+    ],
+    "claims": [
+      {
+        "id": "r64-introduction",
+        "proposition": "Nod is presented by Chase AI as an open-source alternative in the personal-agent category.",
+        "kind": "creator-claim",
+        "status": "unverified",
+        "sourceLocation": "00:00",
+        "assessment": "Nod is presented by Chase AI as an open-source alternative in the personal-agent category.",
+        "limits": "Creator pitch; not a comparative benchmark.",
+        "references": [
+          "r64-ref1"
+        ],
+        "counterevidence": [],
+        "asOf": "2026-11-15"
+      },
+      {
+        "id": "r64-computer",
+        "proposition": "Nod runs with its own computer, browser and owner-selected model connection.",
+        "kind": "maker-documentation",
+        "status": "unverified",
+        "sourceLocation": "01:01",
+        "assessment": "Nod runs with its own computer, browser and owner-selected model connection.",
+        "limits": "Maker architecture description, not a GhostMesh deployment test.",
+        "references": [
+          "r64-ref1",
+          "r64-ref2",
+          "r64-ref3"
+        ],
+        "counterevidence": [],
+        "asOf": "2026-11-15"
+      },
+      {
+        "id": "r64-install",
+        "proposition": "Nod is offered as an owner-operated research preview.",
+        "kind": "maker-documentation",
+        "status": "unverified",
+        "sourceLocation": "05:33",
+        "assessment": "Nod is offered as an owner-operated research preview.",
+        "limits": "Installation sequence not independently reproduced.",
+        "references": [
+          "r64-ref1",
+          "r64-ref2",
+          "r64-ref3"
+        ],
+        "counterevidence": [],
+        "asOf": "2026-11-15"
+      },
+      {
+        "id": "r64-authority",
+        "proposition": "Nod describes exact-action authorization and a separate Vault for credentials.",
+        "kind": "maker-documentation",
+        "status": "unverified",
+        "sourceLocation": "06:42",
+        "assessment": "Nod describes exact-action authorization and a separate Vault for credentials.",
+        "limits": "Maker documented design; a model-based trust check can be wrong.",
+        "references": [
+          "r64-ref1",
+          "r64-ref2",
+          "r64-ref3"
+        ],
+        "counterevidence": [],
+        "asOf": "2026-11-15"
+      },
+      {
+        "id": "r64-use-cases",
+        "proposition": "Personal agent use cases remain hypotheses until tested against actual account outcomes.",
+        "kind": "maker-documentation",
+        "status": "unverified",
+        "sourceLocation": "11:06",
+        "assessment": "Personal agent use cases remain hypotheses until tested against actual account outcomes.",
+        "limits": "Creator suggestion and GhostMesh inference, not measured utility.",
+        "references": [
+          "r64-ref1",
+          "r64-ref2",
+          "r64-ref3"
+        ],
+        "counterevidence": [],
+        "asOf": "2026-11-15"
+      }
+    ],
+    "relationships": [
+      {
+        "target": "reader:the-1000-ai-workflow-is-a-routing-problem",
+        "type": "companion",
+        "reason": "Routing a task to a model does not establish authority for the resulting action.",
+        "provenance": [
+          "/an-open-agent-still-needs-an-operator/",
+          "/the-1000-ai-workflow-is-a-routing-problem/"
+        ],
+        "basis": "curated-editorial-comparison",
+        "direction": "outgoing"
+      },
+      {
+        "target": "reader:the-best-agent-instructions-arent-instructions",
+        "type": "extends",
+        "reason": "An enforceable boundary is more reliable than hoping an agent remembers a rule.",
+        "provenance": [
+          "/an-open-agent-still-needs-an-operator/",
+          "/the-best-agent-instructions-arent-instructions/"
+        ],
+        "basis": "curated-editorial-comparison",
+        "direction": "outgoing"
+      }
+    ],
+    "relationshipDisposition": "Tony-approved two local Reader comparisons in issue #182, 2026-11-14",
+    "relationshipReview": {
+      "reviewedAt": "2026-11-14",
+      "reviewedCatalogSize": 63,
+      "decision": "linked",
+      "reviewedTargets": [
+        "reader:the-1000-ai-workflow-is-a-routing-problem",
+        "reader:the-best-agent-instructions-arent-instructions"
+      ],
+      "rationale": "Owner explicitly approved #62 routing/authority and #63 enforceable-constraint comparisons for Reader #64; no source corroboration implied."
+    },
+    "sharePlaneRelationships": [
+      {
+        "url": "https://shareplane.malott.ai/artifacts/when-agent-identity-is-not-enough/",
+        "title": "When Agent Identity Is Not Enough",
+        "reason": "Identity and resource access do not settle whether the next state transition is legitimate.",
+        "type": "companion",
+        "basis": "curated-editorial-comparison"
+      },
+      {
+        "url": "https://shareplane.malott.ai/artifacts/beyond-the-agent/",
+        "title": "Beyond the Agent",
+        "reason": "A single agent completing a task does not establish institutional acceptance or evidence convergence.",
+        "type": "companion",
+        "basis": "curated-editorial-comparison"
+      },
+      {
+        "url": "https://shareplane.malott.ai/artifacts/the-most-expensive-model-is-often-compensation-for-missing-control/",
+        "title": "The Most Expensive Model Is Often Compensation for Missing Control",
+        "reason": "Costs must include permission checks, validation, retries and operator intervention.",
+        "type": "companion",
+        "basis": "curated-editorial-comparison"
+      }
+    ],
+    "sharePlaneReview": {
+      "reviewedAt": "2026-11-14",
+      "decision": "linked",
+      "rationale": "Owner approved exactly three separate SharePlane Work comparisons in issue #182; no automatic SharePlane graph admission."
+    },
+    "review": {
+      "status": "pending",
+      "summary": "Independent editorial/source/privacy acceptance pending on exact candidate inputs."
+    },
+    "editorialDepth": {
+      "schemaVersion": 1,
+      "receiptPath": "content/editorial-depth/an-open-agent-still-needs-an-operator.json"
+    },
+    "publicationStatus": null
+  },
+  "editorial": {
+    "overview": "Chase AI introduces n8n Nod, a single-owner open-source assistant with its own computer and browser.",
+    "whyItMatters": "Owner-operated agents shift the burden of privacy, maintenance and trustworthy action onto the operator.",
+    "ghostMeshTakeaway": "Evaluate exact-action authorization, credential boundaries, interruption recovery and independent outcome receipts in a synthetic-account sandbox before production use."
+  }
+}

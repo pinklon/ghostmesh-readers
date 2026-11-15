@@ -877,6 +877,18 @@
         "path": "site/the-best-agent-instructions-arent-instructions/index.html",
         "sha256": "b8c73db3994623640a37dca83f7fa666d7fa6d01b180880aa585d4292794a701"
       }
+    },
+    {
+      "id": "urn:ghostmesh-readers:reader:an-open-agent-still-needs-an-operator",
+      "type": "Reader",
+      "visibility": "public",
+      "epistemicStatus": "source-editorial",
+      "label": "An Open Agent Still Needs an Operator",
+      "url": "https://youtube.shareplane.malott.ai/an-open-agent-still-needs-an-operator/",
+      "source": {
+        "path": "site/an-open-agent-still-needs-an-operator/index.html",
+        "sha256": "5324707e7c840e0c8341c27a3b65a1c6aa3d3e013311a1f9d574a60a98a6a342"
+      }
     }
   ],
   "relationships": [

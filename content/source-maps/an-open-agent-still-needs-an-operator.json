@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "readerId": "reader:an-open-agent-still-needs-an-operator",
+  "sourceId": "ynEEbqKQSaY",
+  "sourceAidSha256": "9e44fa0e514e8874d289b3e357f0e2e40124da604d1ea06a55a672c5a008ffe7",
+  "points": [
+    {
+      "atSeconds": 0,
+      "sectionId": "source-first",
+      "claimIds": ["r64-introduction"],
+      "cueParaphrase": "Creator introduces Nod in the crowded personal-agent market.",
+      "privateAidCheck": "Creator chapter metadata; English Original automatic captions are a noisy navigational aid, not a verbatim source."
+    },
+    {
+      "atSeconds": 61,
+      "sectionId": "computer-boundary",
+      "claimIds": ["r64-computer"],
+      "cueParaphrase": "Creator compares the location of Nod's computer with other assistants.",
+      "privateAidCheck": "Creator chapter metadata and n8n primary documentation; no independent runtime test."
+    },
+    {
+      "atSeconds": 333,
+      "sectionId": "operator-cost",
+      "claimIds": ["r64-install"],
+      "cueParaphrase": "Creator transitions to installing Nod.",
+      "privateAidCheck": "Creator chapter metadata; installation outcome not independently reproduced."
+    },
+    {
+      "atSeconds": 402,
+      "sectionId": "authorization",
+      "claimIds": ["r64-authority"],
+      "cueParaphrase": "Creator tours Nod's user interface and operating controls.",
+      "privateAidCheck": "Creator chapter metadata; security properties independently read in maker documentation, not tested."
+    },
+    {
+      "atSeconds": 666,
+      "sectionId": "earned-verdict",
+      "claimIds": ["r64-use-cases"],
+      "cueParaphrase": "Creator discusses potential applications.",
+      "privateAidCheck": "Creator chapter metadata; usefulness is a proposed hypothesis, not measured production evidence."
+    }
+  ]
+}
