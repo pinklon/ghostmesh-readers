@@ -1,0 +1,80 @@
+{
+  "schemaVersion": 1,
+  "readerId": "reader:the-best-model-shouldnt-do-every-job",
+  "sourceId": "EFGvVCpW9zc",
+  "sourceAidSha256": "b1e20a1023affbb59e16330483aa83105ab0abdc7a00f818fca06bbd55b5011d",
+  "points": [
+    {
+      "atSeconds": 232,
+      "sectionId": "follow-thinking",
+      "claimIds": [
+        "r65-cue1"
+      ],
+      "cueParaphrase": "Choose the model for the job",
+      "privateAidCheck": "Automatic English captions used for navigation; no independent replication or verified transcript."
+    },
+    {
+      "atSeconds": 301,
+      "sectionId": "follow-thinking",
+      "claimIds": [
+        "r65-cue2"
+      ],
+      "cueParaphrase": "Define a measurable finish line",
+      "privateAidCheck": "Automatic English captions used for navigation; no independent replication or verified transcript."
+    },
+    {
+      "atSeconds": 466,
+      "sectionId": "follow-thinking",
+      "claimIds": [
+        "r65-cue3"
+      ],
+      "cueParaphrase": "Bounded delegation and lead/worker roles",
+      "privateAidCheck": "Automatic English captions used for navigation; no independent replication or verified transcript."
+    },
+    {
+      "atSeconds": 651,
+      "sectionId": "follow-thinking",
+      "claimIds": [
+        "r65-cue4"
+      ],
+      "cueParaphrase": "Long-run effort settings",
+      "privateAidCheck": "Automatic English captions used for navigation; no independent replication or verified transcript."
+    },
+    {
+      "atSeconds": 749,
+      "sectionId": "follow-thinking",
+      "claimIds": [
+        "r65-cue5"
+      ],
+      "cueParaphrase": "Permissions versus authorization",
+      "privateAidCheck": "Automatic English captions used for navigation; no independent replication or verified transcript."
+    },
+    {
+      "atSeconds": 818,
+      "sectionId": "follow-thinking",
+      "claimIds": [
+        "r65-cue6"
+      ],
+      "cueParaphrase": "Completion reporting",
+      "privateAidCheck": "Automatic English captions used for navigation; no independent replication or verified transcript."
+    },
+    {
+      "atSeconds": 864,
+      "sectionId": "follow-thinking",
+      "claimIds": [
+        "r65-cue7"
+      ],
+      "cueParaphrase": "Instruction audits",
+      "privateAidCheck": "Automatic English captions used for navigation; no independent replication or verified transcript."
+    },
+    {
+      "atSeconds": 901,
+      "sectionId": "follow-thinking",
+      "claimIds": [
+        "r65-cue8"
+      ],
+      "cueParaphrase": "Model switching",
+      "privateAidCheck": "Automatic English captions used for navigation; no independent replication or verified transcript."
+    }
+  ]
+}
