@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "readerId": "reader:the-best-agent-instructions-arent-instructions",
+  "sourceId": "O_zcc6Xl12g",
+  "sourceAidSha256": "bfc68ef2104a0b550ca6af7ab0c6287e0e85dc628bc45b970c664363ad99664a",
+  "articleSha256": "76572eb775ce34c2f35d01f824e8778ef795e651ff809ae3fd91f8c562cdef9d",
+  "evidenceRevision": "7ce153fbd555e322f39b6835d10c38d6f9b50f3158f8ebe93e5ef89f8955d453",
+  "reviewedAt": "2026-11-15T02:40:10Z",
+  "provenance": {
+    "kind": "codex-task-agent",
+    "reference": "Independent scoped read-only reviewer /root/reader63_review assessed PR #180 head dc9082d667e54f5c02c4cbfc326437fe3d8ba1e0 and separately ACCEPTED the revised authored article SHA-256 76572eb775ce34c2f35d01f824e8778ef795e651ff809ae3fd91f8c562cdef9d after verifying only semantic chapter-navigation markup changed and all article text and eleven cues remained identical.",
+    "limits": "The review covered authored HTML, eleven claim records, relationships, source-map and provenance against Reader #62. It was not a fresh source-audio audit, production check, independent reproduction of metrics, or release authorization."
+  },
+  "summary": "ACCEPT FOR OWNER REVIEW of Reader #63 exact article and source/evidence boundaries. No blocking editorial findings in ten depth areas. Separate repository receipt and owner release gate still apply.",
+  "findings": [
+    "The expanded introduction and GhostMesh first reaction connect the speaker's architectural argument to actual recurring coordination and validation failures without claiming productivity was reproduced.",
+    "The practical GhostMesh response proposes a bounded experiment using existing interfaces, checks, and approval boundaries, with recurrence, verified completion, human review effort, and escaped defects as measurable outcomes.",
+    "The source provenance documents HTTP 429 captions, CPU Whisper large-v3 fallback, corrupted 05:00–06:07 passage, targeted transcription repair, publisher cross-check, and a public/private evidence boundary.",
+    "The 11 timed source cues retain speaker attribution; 11,000 team PRs and 0.5% reverts are not treated as independently audited quality, security, performance, or economic outcomes.",
+    "The two owner-approved relationships are Reader #42 extends and Reader #62 companion, both explicitly editorial and neither falsely represented as external corroboration."
+  ],
+  "conclusion": "accept-for-owner-review"
+}
