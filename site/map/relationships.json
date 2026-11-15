@@ -3,11 +3,11 @@
   "scope": "Local public editorial reading routes; no independent corroboration or cross-site graph admission.",
   "authority": "catalog-curated-editorial",
   "visibility": "public",
-  "readerCount": 64,
-  "assessmentCount": 64,
-  "relationshipCount": 148,
-  "sharePlaneRelationshipCount": 34,
-  "sharePlaneReviewCount": 24,
+  "readerCount": 65,
+  "assessmentCount": 65,
+  "relationshipCount": 150,
+  "sharePlaneRelationshipCount": 36,
+  "sharePlaneReviewCount": 25,
   "sharePlaneEdges": [
     {
       "from": "reader:when-code-gets-cheap-where-does-the-work-wait",
@@ -278,6 +278,22 @@
       "url": "https://shareplane.malott.ai/artifacts/the-most-expensive-model-is-often-compensation-for-missing-control/",
       "title": "The Most Expensive Model Is Often Compensation for Missing Control",
       "reason": "Costs must include permission checks, validation, retries and operator intervention.",
+      "type": "companion",
+      "basis": "curated-editorial-comparison"
+    },
+    {
+      "from": "reader:the-best-model-shouldnt-do-every-job",
+      "url": "https://shareplane.malott.ai/artifacts/the-right-model-is-the-one-your-eval-can-defend/",
+      "title": "The Right Model Is the One Your Eval Can Defend",
+      "reason": "This Work provides failure classification, routing frontier and retest conditions, a practical method for evaluating model selection beyond the unreplicated creator anecdotes.",
+      "type": "companion",
+      "basis": "curated-editorial-comparison"
+    },
+    {
+      "from": "reader:the-best-model-shouldnt-do-every-job",
+      "url": "https://shareplane.malott.ai/artifacts/the-agent-was-never-the-unit-of-trust/",
+      "title": "The Agent Was Never the Unit of Trust",
+      "reason": "This Work examines boss, worker and checker failure modes and their governed verification loop, a concrete counterweight to the video's optimistic lead-worker framing.",
       "type": "companion",
       "basis": "curated-editorial-comparison"
     }
@@ -1321,6 +1337,22 @@
           "reader:the-best-agent-instructions-arent-instructions"
         ],
         "rationale": "Owner explicitly approved #62 routing/authority and #63 enforceable-constraint comparisons for Reader #64; no source corroboration implied."
+      }
+    },
+    {
+      "id": "reader:the-best-model-shouldnt-do-every-job",
+      "slug": "the-best-model-shouldnt-do-every-job",
+      "title": "The Best Model Shouldn't Do Every Job",
+      "url": "https://youtube.shareplane.malott.ai/the-best-model-shouldnt-do-every-job/",
+      "review": {
+        "reviewedAt": "2026-11-15",
+        "reviewedCatalogSize": 64,
+        "decision": "linked",
+        "reviewedTargets": [
+          "reader:the-1000-ai-workflow-is-a-routing-problem",
+          "reader:the-best-agent-instructions-arent-instructions"
+        ],
+        "rationale": "Tony explicitly approved these two catalog-backed Reader comparisons; neither confirms model performance."
       }
     }
   ],
@@ -3096,6 +3128,30 @@
       "reason": "An enforceable boundary is more reliable than hoping an agent remembers a rule.",
       "provenance": [
         "/an-open-agent-still-needs-an-operator/",
+        "/the-best-agent-instructions-arent-instructions/"
+      ],
+      "basis": "curated-editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:the-best-model-shouldnt-do-every-job",
+      "to": "reader:the-1000-ai-workflow-is-a-routing-problem",
+      "type": "companion",
+      "reason": "Compare another Fable routing experiment; both examine cost per verified outcome rather than model prestige.",
+      "provenance": [
+        "/the-best-model-shouldnt-do-every-job/",
+        "/the-1000-ai-workflow-is-a-routing-problem/"
+      ],
+      "basis": "curated-editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:the-best-model-shouldnt-do-every-job",
+      "to": "reader:the-best-agent-instructions-arent-instructions",
+      "type": "extends",
+      "reason": "Make delegation verifiable with definition-of-done checks rather than accumulating prompt instructions.",
+      "provenance": [
+        "/the-best-model-shouldnt-do-every-job/",
         "/the-best-agent-instructions-arent-instructions/"
       ],
       "basis": "curated-editorial-comparison",
