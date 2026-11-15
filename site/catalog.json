@@ -537,7 +537,7 @@
         {
           "id": "r64-use-cases",
           "proposition": "Personal agent use cases remain hypotheses until tested against actual account outcomes.",
-          "kind": "maker-documentation",
+          "kind": "ghostmesh-editorial-inference",
           "status": "unverified",
           "sourceLocation": "11:06",
           "assessment": "Personal agent use cases remain hypotheses until tested against actual account outcomes.",
