@@ -1,0 +1,80 @@
+{
+  "schemaVersion": 1,
+  "readerId": "reader:uncensored-private-or-sovereign",
+  "sourceId": "FbiOr73tRPk",
+  "sourceAidSha256": "5a79630651338f5dfc375b51a0baf1716cfbb9faa722fd7d2072bb5aa4b86b53",
+  "points": [
+    {
+      "atSeconds": 104,
+      "sectionId": "level-one-remove-behavioral-restrictions",
+      "claimIds": [
+        "r66-cue1"
+      ],
+      "cueParaphrase": "Level one introduces an abliterated model that the creator presents as more willing to answer restricted requests.",
+      "privateAidCheck": "Timestamp checked against privately retained VTT from a full-duration audio capture; speech-recognition errors are present. No full audiovisual authentication or independent outcome replication claimed."
+    },
+    {
+      "atSeconds": 133,
+      "sectionId": "level-one-remove-behavioral-restrictions",
+      "claimIds": [
+        "r66-cue2"
+      ],
+      "cueParaphrase": "The creator demonstrates a DeepSeek-branded uncensored model and model-switching interface; exact model naming in the ASR aid is uncertain.",
+      "privateAidCheck": "Timestamp checked against privately retained VTT from a full-duration audio capture; speech-recognition errors are present. No full audiovisual authentication or independent outcome replication claimed."
+    },
+    {
+      "atSeconds": 351,
+      "sectionId": "level-two-add-a-second-model-to-check-the-first",
+      "claimIds": [
+        "r66-cue3"
+      ],
+      "cueParaphrase": "Level two proposes a partner model to check or correct the first model.",
+      "privateAidCheck": "Timestamp checked against privately retained VTT from a full-duration audio capture; speech-recognition errors are present. No full audiovisual authentication or independent outcome replication claimed."
+    },
+    {
+      "atSeconds": 492,
+      "sectionId": "level-three-make-the-system-available-everywhere",
+      "claimIds": [
+        "r66-cue4"
+      ],
+      "cueParaphrase": "Level three shifts to a hosted, always-available system accessible away from the local laptop.",
+      "privateAidCheck": "Timestamp checked against privately retained VTT from a full-duration audio capture; speech-recognition errors are present. No full audiovisual authentication or independent outcome replication claimed."
+    },
+    {
+      "atSeconds": 900,
+      "sectionId": "level-four-add-images-and-video",
+      "claimIds": [
+        "r66-cue5"
+      ],
+      "cueParaphrase": "Level four expands the workflow from text into image and video generation.",
+      "privateAidCheck": "Timestamp checked against privately retained VTT from a full-duration audio capture; speech-recognition errors are present. No full audiovisual authentication or independent outcome replication claimed."
+    },
+    {
+      "atSeconds": 1079,
+      "sectionId": "level-five-bring-the-weights-home",
+      "claimIds": [
+        "r66-cue6"
+      ],
+      "cueParaphrase": "Level five turns to running models locally on a computer or phone.",
+      "privateAidCheck": "Timestamp checked against privately retained VTT from a full-duration audio capture; speech-recognition errors are present. No full audiovisual authentication or independent outcome replication claimed."
+    },
+    {
+      "atSeconds": 1083,
+      "sectionId": "level-five-bring-the-weights-home",
+      "claimIds": [
+        "r66-cue7"
+      ],
+      "cueParaphrase": "The creator explicitly distinguishes uncensored operation from privacy.",
+      "privateAidCheck": "Timestamp checked against privately retained VTT from a full-duration audio capture; speech-recognition errors are present. No full audiovisual authentication or independent outcome replication claimed."
+    },
+    {
+      "atSeconds": 1253,
+      "sectionId": "level-five-bring-the-weights-home",
+      "claimIds": [
+        "r66-cue8"
+      ],
+      "cueParaphrase": "A local Gemma-family model is shown in the interface; the automatic transcript's exact model-name transcription is not reliable.",
+      "privateAidCheck": "Timestamp checked against privately retained VTT from a full-duration audio capture; speech-recognition errors are present. No full audiovisual authentication or independent outcome replication claimed."
+    }
+  ]
+}
