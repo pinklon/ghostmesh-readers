@@ -25,6 +25,7 @@ class VisualContractTest(unittest.TestCase):
         self.assertIn('data-layout-family="annotated-editorial"', page)
         self.assertIn('data-style-scope="reader66-generated-chrome"', page)
         self.assertIn('grid-template-columns:minmax(0,1fr) minmax(0,740px) minmax(0,1fr)', page)
+        self.assertIn('.gm-related .gm-cards .gm-related-copy h3{font:750 clamp(17px,1.8vw,21px)/1.3 var(--sans);letter-spacing:-.025em;text-transform:none', page)
         for selector in ('.gm-sharebar{', '.gm-share-actions{',
                          '.gm-share-button,', '.gm-reader-footer-inner{',
                          '.gm-footer-links{', '.gm-work-routes{',
