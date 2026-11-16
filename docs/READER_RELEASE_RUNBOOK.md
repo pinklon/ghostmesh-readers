@@ -1,5 +1,7 @@
 # Reader release runbook
 
+**Baseline selection (November 16, 2026):** The publisher may select **any published, owner-accepted Reader** as the editorial/presentation starting point, including #65 or #66, based on fit to the new source. Historical references below document useful precedents, not mandatory templates or a rank by Reader number. Record the baseline choice in the existing PR, preserve common provenance/privacy, relationship, accessibility and release requirements, and carry forward owner publication approval as described below. The [one-pass checklist](NEXT_READER.md) governs current execution order. Do not create a new baseline-selection gate.
+
 This is the one publication queue and release path for `pinklon/ghostmesh-readers`. One accepted publisher owns a candidate from source handoff through the final production receipt. Source custodians and independent reviewers can supply evidence or read-only findings; they do not start competing uploads. The public repository contains original analysis and sanitized receipts, never copied media, captions, full transcripts, private source packs, signed URLs, or credentials.
 
 ## Reader release contract v2 (owner-approved November 9, 2026)
