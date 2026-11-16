@@ -6,6 +6,10 @@ The public, video-first companion to [SharePlane](https://shareplane.malott.ai/)
 
 **Netlify project:** `shareplane-youtube` (existing site ID: `27352ed6-0f74-4756-832e-95ba49e31b09`). **Publish directory:** `site/`, configured by `netlify.toml`; no dependency installation or build command.
 
+## Small page and asset corrections
+
+For isolated text, HTML, CSS, JavaScript, image, or metadata corrections, edit only the affected source or published `site/` members and any demonstrated deterministic dependents. Inspect the changed-file diff and run focused existing checks for that scope; reuse passing evidence when inputs have not changed. Do not regenerate unrelated Readers, trigger a full content refresh, add a second publication path, or invent another validation or approval layer for a small correction. The existing Git-to-Netlify release remains the sole deployment path; its provider may process the site directory, so do not claim verified member-only upload without provider evidence. Shared template or generator changes justify their actual broader dependent outputs. Preserve the existing owner publication decision, source/privacy boundaries, and required release checks.
+
 ## Add a Reader
 
 Use the [Reader release runbook](docs/READER_RELEASE_RUNBOOK.md) for the single-owner queue, review handoff, normal Git/Netlify path, denial handling, and production receipt. The content contract below remains the authoring standard.
