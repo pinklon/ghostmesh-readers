@@ -542,6 +542,30 @@ def projections():
    # Source-claim records remain inspectable without replacing the approved argument layout.
    register='<details class="gm-claim-appendix"><summary>Inspect the eight mapped source claims and limits</summary>'+evidence(r)+'</details>'
    raw=raw.replace('<section class="gm-related" id="related-thinking">',register+'<section class="gm-related" id="related-thinking">',1)
+   # The self-contained annotated route did not import the shared chrome CSS,
+   # while the generator projects shared footer/share controls into its markup.
+   # Scope the minimal shared presentation to this route; no article rewrite.
+   chrome='''<style data-style-scope="reader66-generated-chrome">
+html[data-layout-family="annotated-editorial"] .gm-sharebar{box-sizing:border-box;width:min(1100px,calc(100% - 48px));margin:42px auto 30px;padding:18px 0;border-top:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap;color:var(--ink);font-family:var(--sans)}
+html[data-layout-family="annotated-editorial"] .gm-share-label{font:750 11px/1.5 var(--mono);letter-spacing:.12em;text-transform:uppercase}
+html[data-layout-family="annotated-editorial"] .gm-share-actions{display:flex;align-items:center;justify-content:flex-end;flex-wrap:wrap;gap:10px;margin-left:auto}
+html[data-layout-family="annotated-editorial"] .gm-share-button,html[data-layout-family="annotated-editorial"] .gm-share-email{display:inline-flex;align-items:center;justify-content:center;min-height:40px;box-sizing:border-box;padding:8px 13px;border:1px solid var(--line);border-radius:3px;background:transparent;color:var(--ink);font:700 12px/1.4 var(--sans);text-decoration:none;cursor:pointer}
+html[data-layout-family="annotated-editorial"] .gm-share-button:hover,html[data-layout-family="annotated-editorial"] .gm-share-email:hover{border-color:var(--accent);color:var(--accent)}
+html[data-layout-family="annotated-editorial"] .gm-share-message:empty{display:none}
+html[data-layout-family="annotated-editorial"] .gm-reader-footer{background:#0e1114;color:#f4f5f7;border-top:1px solid #343a42;margin-top:0}
+html[data-layout-family="annotated-editorial"] .gm-reader-footer-inner{box-sizing:border-box;max-width:1180px;margin:0 auto;padding:36px 28px;display:grid;grid-template-columns:minmax(240px,1fr) minmax(0,2fr);align-items:start;gap:32px}
+html[data-layout-family="annotated-editorial"] .gm-footer-brand{display:flex;align-items:center;gap:10px;color:#fff;text-decoration:none}
+html[data-layout-family="annotated-editorial"] .gm-footer-brand strong{font:750 15px/1.3 var(--sans);letter-spacing:.18em}
+html[data-layout-family="annotated-editorial"] .gm-footer-brand strong em{color:#ff7890;font-style:normal}
+html[data-layout-family="annotated-editorial"] .gm-reader-footer-note{color:#b4bac4;font:11px/1.7 var(--sans);margin:12px 0 0}
+html[data-layout-family="annotated-editorial"] .gm-footer-links{display:flex;flex-wrap:wrap;align-items:center;justify-content:flex-end;gap:10px 17px}
+html[data-layout-family="annotated-editorial"] .gm-footer-links a{color:#e4e7ee;font:650 12px/1.5 var(--sans);text-decoration:none;border-bottom:1px solid transparent;padding:5px 0}
+html[data-layout-family="annotated-editorial"] .gm-footer-links a:hover{color:#fff;border-bottom-color:#ff7890}
+html[data-layout-family="annotated-editorial"] .gm-share-button:focus-visible,html[data-layout-family="annotated-editorial"] .gm-share-email:focus-visible,html[data-layout-family="annotated-editorial"] .gm-footer-links a:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+@media(max-width:690px){html[data-layout-family="annotated-editorial"] .gm-sharebar{align-items:flex-start}html[data-layout-family="annotated-editorial"] .gm-share-actions{width:100%;margin-left:0;justify-content:flex-start}html[data-layout-family="annotated-editorial"] .gm-reader-footer-inner{grid-template-columns:1fr;gap:24px}html[data-layout-family="annotated-editorial"] .gm-footer-links{justify-content:flex-start}}
+@media print{html[data-layout-family="annotated-editorial"] .gm-sharebar,html[data-layout-family="annotated-editorial"] .gm-footer-links{display:none!important}}
+</style>'''
+   raw=raw.replace('</head>',chrome+'</head>',1)
   out[f'{r["slug"]}/index.html']=raw
   receipt=dict(r.get('legacyReceipt') or {'schema':'ghostmesh-reader-receipt-v2','source':r['source'],'custody':{'status':'historical-public-account-only','note':'No private source pack was opened or reverified during normalization. See original provenance on the Reader.'}})
   receipt['normalization']={k:v for k,v in r.items() if k not in ['legacyReceipt','rank']}

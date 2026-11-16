@@ -20,6 +20,15 @@ class Tags(HTMLParser):
 
 
 class VisualContractTest(unittest.TestCase):
+    def test_reader66_generated_share_and_footer_are_styled(self):
+        page = (ROOT / 'site/uncensored-private-or-sovereign/index.html').read_text()
+        self.assertIn('data-layout-family="annotated-editorial"', page)
+        self.assertIn('data-style-scope="reader66-generated-chrome"', page)
+        for selector in ('.gm-sharebar{', '.gm-share-actions{',
+                         '.gm-share-button,', '.gm-reader-footer-inner{',
+                         '.gm-footer-links{'):
+            self.assertIn('html[data-layout-family="annotated-editorial"] ' + selector, page)
+
     def test_player_and_related_projection_preserve_mobile_review_surface(self):
         catalog = json.loads((ROOT / 'content/catalog.json').read_text())
         by_id = {reader['id']: reader for reader in catalog['readers']}
