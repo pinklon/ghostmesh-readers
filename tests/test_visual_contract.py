@@ -26,7 +26,9 @@ class VisualContractTest(unittest.TestCase):
         self.assertIn('data-style-scope="reader66-generated-chrome"', page)
         for selector in ('.gm-sharebar{', '.gm-share-actions{',
                          '.gm-share-button,', '.gm-reader-footer-inner{',
-                         '.gm-footer-links{'):
+                         '.gm-footer-links{', '.gm-work-routes{',
+                         '.gm-work-grid{', '.gm-claim-appendix{',
+                         '.gm-related .gm-cards{'):
             self.assertIn('html[data-layout-family="annotated-editorial"] ' + selector, page)
 
     def test_player_and_related_projection_preserve_mobile_review_surface(self):
