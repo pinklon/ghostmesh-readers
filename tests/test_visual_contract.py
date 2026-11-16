@@ -31,7 +31,13 @@ class VisualContractTest(unittest.TestCase):
             with self.subTest(slug=reader['slug']):
                 page = (ROOT / 'site' / reader['slug'] / 'index.html').read_text()
                 if 'class="player gm-media-frame"' in page:
-                    self.assertIn('id="launch"', page)
+                    if reader['slug'] == 'uncensored-private-or-sovereign':
+                        # Approved annotated-editorial player uses its own opt-in
+                        # trigger; it still must not load an iframe on arrival.
+                        self.assertIn('id="play-source"', page)
+                        self.assertIn('id="video-frame"', page)
+                    else:
+                        self.assertIn('id="launch"', page)
                     if reader['slug'] == 'a-model-that-says-yes-is-not-necessarily-a-model-that-knows':
                         # The shared .launch rule removes the video box's aspect ratio.
                         self.assertIn('class="source-launch" type="button" id="launch"', page)
