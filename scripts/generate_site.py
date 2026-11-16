@@ -163,13 +163,19 @@ def governed_reader_connections(raw, r, byid):
   # comparisons in the reading column rather than inventing ReasonPack.
   provenance=re.search(r'</article>\s*<aside class="rail">',raw)
  if not provenance:
+  # The approved annotated-editorial layout has a related section but no
+  # separate provenance/rail boundary; place the Work plane beside it.
+  provenance=re.search(r'<section class="gm-related" id="related-thinking">',raw)
+ if not provenance:
   raise ValueError(f'{slug}: missing article/rail boundary for Work placement')
  raw=raw[:provenance.start()]+work_html+raw[provenance.start():]
  # Reader rail offers both admitted graph planes at the same visual level.
  rail='<a href="#related-thinking">Related thinking</a>'
  if raw.count(rail)!=1:
-  raise ValueError(f'{slug}: expected one Reader rail relationship link')
- raw=raw.replace(rail,rail+'<a href="#shareplane-thinking">SharePlane Work</a>',1)
+  if 'data-layout-family="annotated-editorial"' not in raw:
+   raise ValueError(f'{slug}: expected one Reader rail relationship link')
+ else:
+  raw=raw.replace(rail,rail+'<a href="#shareplane-thinking">SharePlane Work</a>',1)
  return raw
 
 
@@ -532,6 +538,10 @@ def projections():
    raw=raw.replace('</main>',share+'</main>',1)
    if '/assets/reader-share.js' not in raw:
     raw=raw.replace('</body>','<script defer src="/assets/reader-share.js"></script></body>',1)
+  if r['slug']=='uncensored-private-or-sovereign':
+   # Source-claim records remain inspectable without replacing the approved argument layout.
+   register='<details class="gm-claim-appendix"><summary>Inspect the eight mapped source claims and limits</summary>'+evidence(r)+'</details>'
+   raw=raw.replace('<section class="gm-related" id="related-thinking">',register+'<section class="gm-related" id="related-thinking">',1)
   out[f'{r["slug"]}/index.html']=raw
   receipt=dict(r.get('legacyReceipt') or {'schema':'ghostmesh-reader-receipt-v2','source':r['source'],'custody':{'status':'historical-public-account-only','note':'No private source pack was opened or reverified during normalization. See original provenance on the Reader.'}})
   receipt['normalization']={k:v for k,v in r.items() if k not in ['legacyReceipt','rank']}

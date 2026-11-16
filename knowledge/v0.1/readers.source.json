@@ -901,6 +901,18 @@
         "path": "site/the-best-model-shouldnt-do-every-job/index.html",
         "sha256": "cdb96c0a6147cf69591dd5c427f654804120aae5aba82f372d14ae269b0eb875"
       }
+    },
+    {
+      "id": "urn:ghostmesh-readers:reader:uncensored-private-or-sovereign",
+      "type": "Reader",
+      "visibility": "public",
+      "epistemicStatus": "source-editorial",
+      "label": "Uncensored, Private, or Sovereign?",
+      "url": "https://youtube.shareplane.malott.ai/uncensored-private-or-sovereign/",
+      "source": {
+        "path": "site/uncensored-private-or-sovereign/index.html",
+        "sha256": "ee008495353124f3c5fab9b0e8e7e1b684b0eb425859d009bf10540483b9464f"
+      }
     }
   ],
   "relationships": [

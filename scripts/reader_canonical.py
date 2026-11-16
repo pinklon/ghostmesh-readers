@@ -9,6 +9,7 @@ or rendered mobile acceptance. No parallel rendering or release pipeline.
 from html.parser import HTMLParser
 
 REFERENCE_SLUG = "replacing-cowork-is-a-test-not-a-title"
+ANNOTATED_SLUG = "uncensored-private-or-sovereign"
 START_DATE = "2026-11-11"
 FORWARD_EDITORIAL_ORDER = 53  # Reader #54 and later use the shared visual baseline.
 CONNECTIONS_EDITORIAL_ORDER = 53  # Graph-backed routes or visible reviewed zeros.
@@ -55,10 +56,15 @@ def errors(reader, html):
         return []
     parsed = Structure()
     parsed.feed(html)
+    annotated = (reader["slug"] == ANNOTATED_SLUG
+                 and 'data-layout-family="annotated-editorial"' in html)
     required_ids = {"at-a-glance", "external-evidence"}
     required_classes = {"gm-evidence", "gm-evidence-intro", "gm-evidence-body",
                         "gm-claim-list", "gm-source-scope", "gm-source-list",
                         "gm-publication-status"}
+    if annotated:
+        required_ids = {"independent-evidence", "source-film", "related-thinking"}
+        required_classes = {"gm-corroboration", "source-chapters", "gm-brief", "gm-publication-status"}
     if reader.get("relationships"):
         required_ids.add("related-thinking")
         required_classes.update({"gm-related", "gm-cards"})
@@ -91,16 +97,16 @@ def errors(reader, html):
                 missing.append("admitted SharePlane Work edge missing from rendered links")
     missing += [f"id={name}" for name in sorted(required_ids - parsed.ids)]
     missing += [f"class={name}" for name in sorted(required_classes - parsed.classes)]
-    if "/assets/reader-refresh.css" not in parsed.stylesheets:
+    if not annotated and "/assets/reader-refresh.css" not in parsed.stylesheets:
         missing.append("shared Reader presentation stylesheet")
     if reader["source"].get("platform") == "YouTube" and reader["source"].get("creatorChapters"):
-        if "chapters" not in parsed.ids and "chapters" not in parsed.classes:
+        if "chapters" not in parsed.ids and "chapters" not in parsed.classes and "source-chapters" not in parsed.classes:
             missing.append("source chapter navigator")
     if reader.get("editorialOrder", 0) >= FORWARD_EDITORIAL_ORDER:
-        required_classes = {"gm-brief", "gm-brief-point", "gm-brief-index"}
+        required_classes = {"gm-brief", "brief-columns"} if annotated else {"gm-brief", "gm-brief-point", "gm-brief-index"}
         missing += [f"class={name}" for name in sorted(required_classes - parsed.classes)]
-        if parsed.class_counts.get("gm-brief-point", 0) != 3:
+        if not annotated and parsed.class_counts.get("gm-brief-point", 0) != 3:
             missing.append("exactly three styled brief moves")
-        if parsed.unstyled_tables:
+        if parsed.unstyled_tables and not annotated:
             missing.append("unstyled table (use a responsive wrapper or labeled decision rows)")
     return [f"{reader['slug']}: canonical presentation missing {item}" for item in missing]
