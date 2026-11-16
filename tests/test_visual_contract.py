@@ -24,6 +24,7 @@ class VisualContractTest(unittest.TestCase):
         page = (ROOT / 'site/uncensored-private-or-sovereign/index.html').read_text()
         self.assertIn('data-layout-family="annotated-editorial"', page)
         self.assertIn('data-style-scope="reader66-generated-chrome"', page)
+        self.assertIn('grid-template-columns:minmax(0,1fr) minmax(0,740px) minmax(0,1fr)', page)
         for selector in ('.gm-sharebar{', '.gm-share-actions{',
                          '.gm-share-button,', '.gm-reader-footer-inner{',
                          '.gm-footer-links{', '.gm-work-routes{',

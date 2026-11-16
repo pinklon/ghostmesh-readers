@@ -546,6 +546,7 @@ def projections():
    # while the generator projects shared footer/share controls into its markup.
    # Scope the minimal shared presentation to this route; no article rewrite.
    chrome='''<style data-style-scope="reader66-generated-chrome">
+@media(min-width:1240px){html[data-layout-family="annotated-editorial"] .layout{grid-template-columns:minmax(0,1fr) minmax(0,740px) minmax(0,1fr);gap:clamp(18px,2vw,30px)}html[data-layout-family="annotated-editorial"] .layout::after{content:"";grid-column:3;grid-row:1}html[data-layout-family="annotated-editorial"] .layout .toc{grid-column:1;grid-row:1}html[data-layout-family="annotated-editorial"] .layout .article-body{grid-column:2;grid-row:1}}
 html[data-layout-family="annotated-editorial"] .gm-work-routes{box-sizing:border-box;width:min(1100px,calc(100% - 48px));margin:64px auto 28px;padding:34px 0 0;border-top:1px solid var(--line);font-family:var(--sans);color:var(--ink)}
 html[data-layout-family="annotated-editorial"] .gm-work-routes h2{font:750 clamp(25px,2.5vw,32px)/1.15 var(--sans);letter-spacing:-.045em;margin:0 0 14px;text-align:left}
 html[data-layout-family="annotated-editorial"] .gm-backmatter-note{font:13px/1.65 var(--sans);color:var(--muted);margin:0 0 28px;padding:0 0 0 16px;border-left:2px solid var(--accent);max-width:75ch}
