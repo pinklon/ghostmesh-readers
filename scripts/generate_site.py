@@ -163,13 +163,19 @@ def governed_reader_connections(raw, r, byid):
   # comparisons in the reading column rather than inventing ReasonPack.
   provenance=re.search(r'</article>\s*<aside class="rail">',raw)
  if not provenance:
+  # The approved annotated-editorial layout has a related section but no
+  # separate provenance/rail boundary; place the Work plane beside it.
+  provenance=re.search(r'<section class="gm-related" id="related-thinking">',raw)
+ if not provenance:
   raise ValueError(f'{slug}: missing article/rail boundary for Work placement')
  raw=raw[:provenance.start()]+work_html+raw[provenance.start():]
  # Reader rail offers both admitted graph planes at the same visual level.
  rail='<a href="#related-thinking">Related thinking</a>'
  if raw.count(rail)!=1:
-  raise ValueError(f'{slug}: expected one Reader rail relationship link')
- raw=raw.replace(rail,rail+'<a href="#shareplane-thinking">SharePlane Work</a>',1)
+  if 'data-layout-family="annotated-editorial"' not in raw:
+   raise ValueError(f'{slug}: expected one Reader rail relationship link')
+ else:
+  raw=raw.replace(rail,rail+'<a href="#shareplane-thinking">SharePlane Work</a>',1)
  return raw
 
 
@@ -532,6 +538,63 @@ def projections():
    raw=raw.replace('</main>',share+'</main>',1)
    if '/assets/reader-share.js' not in raw:
     raw=raw.replace('</body>','<script defer src="/assets/reader-share.js"></script></body>',1)
+  if r['slug']=='uncensored-private-or-sovereign':
+   # Source-claim records remain inspectable without replacing the approved argument layout.
+   register='<details class="gm-claim-appendix"><summary>Inspect the eight mapped source claims and limits</summary>'+evidence(r)+'</details>'
+   raw=raw.replace('<section class="gm-related" id="related-thinking">',register+'<section class="gm-related" id="related-thinking">',1)
+   # The self-contained annotated route did not import the shared chrome CSS,
+   # while the generator projects shared footer/share controls into its markup.
+   # Scope the minimal shared presentation to this route; no article rewrite.
+   chrome='''<style data-style-scope="reader66-generated-chrome">
+@media(min-width:1240px){html[data-layout-family="annotated-editorial"] .layout{grid-template-columns:minmax(0,1fr) minmax(0,740px) minmax(0,1fr);gap:clamp(18px,2vw,30px)}html[data-layout-family="annotated-editorial"] .layout::after{content:"";grid-column:3;grid-row:1}html[data-layout-family="annotated-editorial"] .layout .toc{grid-column:1;grid-row:1}html[data-layout-family="annotated-editorial"] .layout .article-body{grid-column:2;grid-row:1}}
+html[data-layout-family="annotated-editorial"] .gm-work-routes{box-sizing:border-box;width:min(1100px,calc(100% - 48px));margin:64px auto 28px;padding:34px 0 0;border-top:1px solid var(--line);font-family:var(--sans);color:var(--ink)}
+html[data-layout-family="annotated-editorial"] .gm-work-routes h2{font:750 clamp(25px,2.5vw,32px)/1.15 var(--sans);letter-spacing:-.045em;margin:0 0 14px;text-align:left}
+html[data-layout-family="annotated-editorial"] .gm-backmatter-note{font:13px/1.65 var(--sans);color:var(--muted);margin:0 0 28px;padding:0 0 0 16px;border-left:2px solid var(--accent);max-width:75ch}
+html[data-layout-family="annotated-editorial"] .gm-work-grid{list-style:none;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:26px;margin:0;padding:0}
+html[data-layout-family="annotated-editorial"] .gm-work-grid>li{display:flex;flex-direction:column;align-items:flex-start;gap:9px;min-width:0;padding:20px 0 8px;border-top:1px solid var(--line)}
+html[data-layout-family="annotated-editorial"] .gm-work-kind{font:750 10px/1.4 var(--mono);letter-spacing:.12em;color:var(--accent);text-transform:uppercase}
+html[data-layout-family="annotated-editorial"] .gm-work-grid a{font:750 clamp(17px,1.8vw,21px)/1.3 var(--sans);letter-spacing:-.025em;color:var(--ink);text-decoration:none}
+html[data-layout-family="annotated-editorial"] .gm-work-grid a:hover{text-decoration:underline;text-underline-offset:4px;color:var(--accent)}
+html[data-layout-family="annotated-editorial"] .gm-work-grid li>span:last-child{font:13px/1.65 var(--sans);color:var(--muted);max-width:60ch}
+html[data-layout-family="annotated-editorial"] .gm-claim-appendix{box-sizing:border-box;width:min(1100px,calc(100% - 48px));margin:34px auto;padding:0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);color:var(--ink);font-family:var(--sans)}
+html[data-layout-family="annotated-editorial"] .gm-claim-appendix>summary{cursor:pointer;padding:17px 0;font:700 12px/1.5 var(--sans);list-style-position:inside}
+html[data-layout-family="annotated-editorial"] .gm-claim-appendix>summary:hover{color:var(--accent)}
+html[data-layout-family="annotated-editorial"] .gm-related{box-sizing:border-box;width:min(1100px,calc(100% - 48px));margin:52px auto 30px;padding:32px 0 0;border-top:1px solid var(--line);color:var(--ink);font-family:var(--sans)}
+html[data-layout-family="annotated-editorial"] .gm-related>.gm-kicker{font:750 10px/1.5 var(--mono);letter-spacing:.13em;color:var(--accent);text-transform:uppercase}
+html[data-layout-family="annotated-editorial"] .gm-related>h2{font:750 clamp(26px,2.7vw,34px)/1.15 var(--sans);letter-spacing:-.04em;margin:8px 0 14px}
+html[data-layout-family="annotated-editorial"] .gm-related>p:not(.gm-kicker){font:13px/1.65 var(--sans);color:var(--muted);max-width:75ch;margin:0 0 26px}
+html[data-layout-family="annotated-editorial"] .gm-related .gm-cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 28px}
+html[data-layout-family="annotated-editorial"] .gm-related .gm-cards>article{display:grid;grid-template-columns:28px minmax(0,1fr) 20px;gap:10px;padding:18px 0 12px;border-top:1px solid var(--line);min-width:0}
+html[data-layout-family="annotated-editorial"] .gm-related-index,html[data-layout-family="annotated-editorial"] .gm-related-arrow{font:750 12px/1.5 var(--mono);color:var(--accent)}
+html[data-layout-family="annotated-editorial"] .gm-related-copy{min-width:0}
+html[data-layout-family="annotated-editorial"] .gm-related-copy .gm-kicker{font:750 10px/1.5 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin:0 0 9px}
+html[data-layout-family="annotated-editorial"] .gm-related-copy h3{font:750 clamp(16px,1.6vw,20px)/1.3 var(--sans);margin:0 0 10px}
+html[data-layout-family="annotated-editorial"] .gm-related .gm-cards .gm-related-copy h3{font:750 clamp(17px,1.8vw,21px)/1.3 var(--sans);letter-spacing:-.025em;text-transform:none;margin:0 0 10px}
+html[data-layout-family="annotated-editorial"] .gm-related-copy h3 a{color:var(--ink);text-decoration:none}
+html[data-layout-family="annotated-editorial"] .gm-related-copy h3 a:hover{color:var(--accent);text-decoration:underline}
+html[data-layout-family="annotated-editorial"] .gm-related-copy>p:not(.gm-kicker){font:13px/1.6 var(--sans);color:var(--muted);margin:0}
+html[data-layout-family="annotated-editorial"] .gm-sharebar{box-sizing:border-box;width:100%;margin:34px 0 0;padding:14px max(24px,calc((100vw - 1100px)/2));border-top:1px solid #505861;border-bottom:1px solid #505861;background:#0e1114;display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap;color:#f4f5f7;font-family:var(--sans)}
+html[data-layout-family="annotated-editorial"] .gm-share-label{font:750 10px/1.5 var(--mono);letter-spacing:.13em;text-transform:uppercase;color:#c4cad2}
+html[data-layout-family="annotated-editorial"] .gm-share-actions{display:flex;align-items:center;justify-content:flex-end;flex-wrap:wrap;gap:10px;margin-left:auto}
+html[data-layout-family="annotated-editorial"] .gm-share-button,html[data-layout-family="annotated-editorial"] .gm-share-email{display:inline-flex;align-items:center;justify-content:center;min-height:38px;box-sizing:border-box;padding:8px 11px;border:1px solid transparent;border-radius:2px;background:transparent;color:#f4f5f7;font:700 12px/1.4 var(--sans);text-decoration:none;cursor:pointer}
+html[data-layout-family="annotated-editorial"] .gm-share-button:first-child{border-color:#87919b}
+html[data-layout-family="annotated-editorial"] .gm-share-button:hover,html[data-layout-family="annotated-editorial"] .gm-share-email:hover{border-color:#87919b;color:#fff}
+html[data-layout-family="annotated-editorial"] .gm-share-icon{display:block;width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex:none;margin-right:9px}
+html[data-layout-family="annotated-editorial"] .gm-share-message:empty{display:none}
+html[data-layout-family="annotated-editorial"] .gm-reader-footer{background:#0e1114;color:#f4f5f7;border-top:1px solid #343a42;margin-top:0}
+html[data-layout-family="annotated-editorial"] .gm-reader-footer-inner{box-sizing:border-box;max-width:1180px;margin:0 auto;padding:36px 28px;display:grid;grid-template-columns:minmax(240px,1fr) minmax(0,2fr);align-items:start;gap:32px}
+html[data-layout-family="annotated-editorial"] .gm-footer-brand{display:flex;align-items:center;gap:10px;color:#fff;text-decoration:none}
+html[data-layout-family="annotated-editorial"] .gm-footer-brand strong{font:750 15px/1.3 var(--sans);letter-spacing:.18em}
+html[data-layout-family="annotated-editorial"] .gm-footer-brand strong em{color:#ff7890;font-style:normal}
+html[data-layout-family="annotated-editorial"] .gm-reader-footer-note{color:#b4bac4;font:11px/1.7 var(--sans);margin:12px 0 0}
+html[data-layout-family="annotated-editorial"] .gm-footer-links{display:flex;flex-wrap:wrap;align-items:center;justify-content:flex-end;gap:10px 17px}
+html[data-layout-family="annotated-editorial"] .gm-footer-links a{color:#e4e7ee;font:650 12px/1.5 var(--sans);text-decoration:none;border-bottom:1px solid transparent;padding:5px 0}
+html[data-layout-family="annotated-editorial"] .gm-footer-links a:hover{color:#fff;border-bottom-color:#ff7890}
+html[data-layout-family="annotated-editorial"] .gm-share-button:focus-visible,html[data-layout-family="annotated-editorial"] .gm-share-email:focus-visible,html[data-layout-family="annotated-editorial"] .gm-footer-links a:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+@media(max-width:690px){html[data-layout-family="annotated-editorial"] .gm-work-grid,html[data-layout-family="annotated-editorial"] .gm-related .gm-cards{grid-template-columns:1fr;gap:14px}html[data-layout-family="annotated-editorial"] .gm-work-routes{margin-top:42px}html[data-layout-family="annotated-editorial"] .gm-sharebar{align-items:flex-start}html[data-layout-family="annotated-editorial"] .gm-share-actions{width:100%;margin-left:0;justify-content:flex-start}html[data-layout-family="annotated-editorial"] .gm-reader-footer-inner{grid-template-columns:1fr;gap:24px}html[data-layout-family="annotated-editorial"] .gm-footer-links{justify-content:flex-start}}
+@media print{html[data-layout-family="annotated-editorial"] .gm-sharebar,html[data-layout-family="annotated-editorial"] .gm-footer-links{display:none!important}}
+</style>'''
+   raw=raw.replace('</head>',chrome+'</head>',1)
   out[f'{r["slug"]}/index.html']=raw
   receipt=dict(r.get('legacyReceipt') or {'schema':'ghostmesh-reader-receipt-v2','source':r['source'],'custody':{'status':'historical-public-account-only','note':'No private source pack was opened or reverified during normalization. See original provenance on the Reader.'}})
   receipt['normalization']={k:v for k,v in r.items() if k not in ['legacyReceipt','rank']}

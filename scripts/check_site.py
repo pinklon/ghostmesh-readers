@@ -150,6 +150,7 @@ def check(root=ROOT, *, local_only=False):
   require(re.findall(r'data-start="(\d+)"',raw)==old.get('chapterStarts',[]),'Chapter timestamps drift: '+old['slug'])
  for r in readers:
   slug=r['slug'];p=site/slug/'index.html';raw=p.read_text();a=pages[p]
+  annotated=(slug=='uncensored-private-or-sovereign' and 'data-layout-family="annotated-editorial"' in raw)
   errors.extend(canonical_reader_errors(r,raw))
   authored=(root/'content/readers'/f'{slug}.html').read_text()
   errors.extend(new_reader_canonical_errors(r,authored))
@@ -187,16 +188,23 @@ def check(root=ROOT, *, local_only=False):
    if slug not in {old['slug'] for old in baseline}:errors.extend(source_custody_errors(r))
    aspect=r['source'].get('mediaAspect')
    require(aspect in {'16:9','9:16','1:1','unknown'},f'{slug}: source aspect missing or invalid')
-   if aspect!='unknown' or r['source'].get('unknownAspectPlayerApproved'):
+   if annotated:
+    require(raw.count('id="video-frame"')==1 and 'id="play-source"' in raw and 'class="source-film"' in raw,
+            f'{slug}: annotated opt-in source player missing')
+    require('class="source-chapters"' in raw, f'{slug}: annotated source chapters missing')
+   elif aspect!='unknown' or r['source'].get('unknownAspectPlayerApproved'):
     require(raw.count('gm-media-frame')==1 and raw.count(f'data-gm-aspect="{aspect}"')==1,f'{slug}: shared source player or aspect missing')
     require('gm-source-layout' in raw or 'class="player gm-media-frame"' in raw or 'class="player-ratio gm-media-frame"' in raw,f'{slug}: source player layout missing')
    else:
     try:validate_link_only_source(raw,r['source']['url'])
     except ValueError as exc:errors.append(f'{slug}: {exc}')
   for problem in chapter_label_errors(raw,r['published']):require(False,f'{slug}: {problem}')
-  for marker in ['at-a-glance','external-evidence','related-thinking']:require(marker in a.ids,f'{slug}: missing {marker}')
-  require('data-theme-toggle' in raw and '/assets/theme.js' in raw,f'{slug}: theme missing')
-  require(raw.find('id="at-a-glance"')<min([pos for token in ['data-gm-aspect=','id="source"','class="theater"'] if (pos:=raw.find(token))>=0] or [len(raw)]),f'{slug}: brief after source')
+  for marker in (['source-film','independent-evidence','related-thinking'] if annotated else ['at-a-glance','external-evidence','related-thinking']):require(marker in a.ids,f'{slug}: missing {marker}')
+  require('data-theme-toggle' in raw and (('id="theme-toggle"' in raw and '<script' in raw) if annotated else '/assets/theme.js' in raw),f'{slug}: theme missing')
+  if annotated:
+   require(raw.find('class="gm-brief"')<raw.find('id="source-film"'),f'{slug}: brief after source')
+  else:
+   require(raw.find('id="at-a-glance"')<min([pos for token in ['data-gm-aspect=','id="source"','class="theater"'] if (pos:=raw.find(token))>=0] or [len(raw)]),f'{slug}: brief after source')
   receipt=json.loads((site/slug/'receipt.json').read_text());require(receipt['normalization']['id']==r['id'],f'{slug}: receipt identity')
   refs={x['id']:x for x in r['references']};require(len(refs)==len(r['references']),f'{slug}: duplicate reference IDs')
   require(len({c['id'] for c in r['claims']})==len(r['claims']),f'{slug}: duplicate claim IDs')

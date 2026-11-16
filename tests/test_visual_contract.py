@@ -20,6 +20,19 @@ class Tags(HTMLParser):
 
 
 class VisualContractTest(unittest.TestCase):
+    def test_reader66_generated_share_and_footer_are_styled(self):
+        page = (ROOT / 'site/uncensored-private-or-sovereign/index.html').read_text()
+        self.assertIn('data-layout-family="annotated-editorial"', page)
+        self.assertIn('data-style-scope="reader66-generated-chrome"', page)
+        self.assertIn('grid-template-columns:minmax(0,1fr) minmax(0,740px) minmax(0,1fr)', page)
+        self.assertIn('.gm-related .gm-cards .gm-related-copy h3{font:750 clamp(17px,1.8vw,21px)/1.3 var(--sans);letter-spacing:-.025em;text-transform:none', page)
+        for selector in ('.gm-sharebar{', '.gm-share-actions{',
+                         '.gm-share-button,', '.gm-reader-footer-inner{',
+                         '.gm-footer-links{', '.gm-work-routes{',
+                         '.gm-work-grid{', '.gm-claim-appendix{',
+                         '.gm-related .gm-cards{'):
+            self.assertIn('html[data-layout-family="annotated-editorial"] ' + selector, page)
+
     def test_player_and_related_projection_preserve_mobile_review_surface(self):
         catalog = json.loads((ROOT / 'content/catalog.json').read_text())
         by_id = {reader['id']: reader for reader in catalog['readers']}
@@ -31,7 +44,13 @@ class VisualContractTest(unittest.TestCase):
             with self.subTest(slug=reader['slug']):
                 page = (ROOT / 'site' / reader['slug'] / 'index.html').read_text()
                 if 'class="player gm-media-frame"' in page:
-                    self.assertIn('id="launch"', page)
+                    if reader['slug'] == 'uncensored-private-or-sovereign':
+                        # Approved annotated-editorial player uses its own opt-in
+                        # trigger; it still must not load an iframe on arrival.
+                        self.assertIn('id="play-source"', page)
+                        self.assertIn('id="video-frame"', page)
+                    else:
+                        self.assertIn('id="launch"', page)
                     if reader['slug'] == 'a-model-that-says-yes-is-not-necessarily-a-model-that-knows':
                         # The shared .launch rule removes the video box's aspect ratio.
                         self.assertIn('class="source-launch" type="button" id="launch"', page)

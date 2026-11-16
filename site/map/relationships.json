@@ -3,11 +3,11 @@
   "scope": "Local public editorial reading routes; no independent corroboration or cross-site graph admission.",
   "authority": "catalog-curated-editorial",
   "visibility": "public",
-  "readerCount": 65,
-  "assessmentCount": 65,
-  "relationshipCount": 150,
-  "sharePlaneRelationshipCount": 36,
-  "sharePlaneReviewCount": 25,
+  "readerCount": 66,
+  "assessmentCount": 66,
+  "relationshipCount": 153,
+  "sharePlaneRelationshipCount": 38,
+  "sharePlaneReviewCount": 26,
   "sharePlaneEdges": [
     {
       "from": "reader:when-code-gets-cheap-where-does-the-work-wait",
@@ -294,6 +294,22 @@
       "url": "https://shareplane.malott.ai/artifacts/the-agent-was-never-the-unit-of-trust/",
       "title": "The Agent Was Never the Unit of Trust",
       "reason": "This Work examines boss, worker and checker failure modes and their governed verification loop, a concrete counterweight to the video's optimistic lead-worker framing.",
+      "type": "companion",
+      "basis": "curated-editorial-comparison"
+    },
+    {
+      "from": "reader:uncensored-private-or-sovereign",
+      "url": "https://shareplane.malott.ai/artifacts/own-memory-rent-intelligence-agent-stack/",
+      "title": "Own the Memory, Rent the Intelligence",
+      "reason": "Separates owner-controlled memory from replaceable inference services, sharpening the Reader's definition of sovereignty.",
+      "type": "companion",
+      "basis": "curated-editorial-comparison"
+    },
+    {
+      "from": "reader:uncensored-private-or-sovereign",
+      "url": "https://shareplane.malott.ai/artifacts/the-semantic-operating-system/",
+      "title": "The Semantic Operating System",
+      "reason": "Examines the larger architecture of meaning, memory and orchestration beyond a model's local execution status.",
       "type": "companion",
       "basis": "curated-editorial-comparison"
     }
@@ -1353,6 +1369,23 @@
           "reader:the-best-agent-instructions-arent-instructions"
         ],
         "rationale": "Tony explicitly approved these two catalog-backed Reader comparisons; neither confirms model performance."
+      }
+    },
+    {
+      "id": "reader:uncensored-private-or-sovereign",
+      "slug": "uncensored-private-or-sovereign",
+      "title": "Uncensored, Private, or Sovereign?",
+      "url": "https://youtube.shareplane.malott.ai/uncensored-private-or-sovereign/",
+      "review": {
+        "reviewedAt": "2026-11-16",
+        "reviewedCatalogSize": 65,
+        "decision": "linked",
+        "reviewedTargets": [
+          "reader:the-boundary-is-bigger-than-the-box",
+          "reader:the-stop-button-is-outside-the-chat",
+          "reader:the-second-brain-still-needs-a-judgment"
+        ],
+        "rationale": "Owner approved these three source-relevant conceptual companions; no independent claim verification is implied."
       }
     }
   ],
@@ -3153,6 +3186,42 @@
       "provenance": [
         "/the-best-model-shouldnt-do-every-job/",
         "/the-best-agent-instructions-arent-instructions/"
+      ],
+      "basis": "curated-editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:uncensored-private-or-sovereign",
+      "to": "reader:the-boundary-is-bigger-than-the-box",
+      "type": "companion",
+      "reason": "Separates the location of model weights from the network, identity and service boundaries that determine actual privacy.",
+      "provenance": [
+        "/uncensored-private-or-sovereign/",
+        "/the-boundary-is-bigger-than-the-box/"
+      ],
+      "basis": "curated-editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:uncensored-private-or-sovereign",
+      "to": "reader:the-stop-button-is-outside-the-chat",
+      "type": "extends",
+      "reason": "Adds revocation and independent operator authority to the video's claims about always-available systems.",
+      "provenance": [
+        "/uncensored-private-or-sovereign/",
+        "/the-stop-button-is-outside-the-chat/"
+      ],
+      "basis": "curated-editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:uncensored-private-or-sovereign",
+      "to": "reader:the-second-brain-still-needs-a-judgment",
+      "type": "companion",
+      "reason": "Connects local autonomy to the separate need to audit memory, factual claims and continuity.",
+      "provenance": [
+        "/uncensored-private-or-sovereign/",
+        "/the-second-brain-still-needs-a-judgment/"
       ],
       "basis": "curated-editorial-comparison",
       "direction": "outgoing"
