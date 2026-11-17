@@ -22,6 +22,10 @@ Within that scope, references below to per-work semantic, relationship, visual o
 
 The `routine-source-report-v1` suspension and hosted guard remain unchanged. A thin source report cannot qualify by being relabeled an essay or by passing provenance, layout or mechanical checks. Keep raw private captures and operational payloads private; use public-safe original analysis and sanitized evidence.
 
+## Reading-first Scout presentation (November 17, 2026)
+
+The three-page polish pilot uses the opt-in `/assets/scout-article.css` layer over the existing essay wrapper: bounded title scale, centered serif reading measure, compact section navigation, system-aware light/dark appearance, quiet provenance and related thinking. Search submits to the existing public Scout Library and states its metadata scope; sharing uses the existing canonical-link controls. Reuse this light-touch treatment when appropriate, without rewriting locked paragraphs, obscuring caveats, changing dates/history, adding decorative charts or retrofitting other pages automatically. Existing source material may receive a clearer semantic visual treatment, but never a stronger evidentiary claim. This is presentation guidance within the same publication path, not a new template pipeline or release gate.
+
 ## Mandatory relationship review for every new public work
 
 Relationship discovery is an editorial step, not a post-publication cleanup. Before Tony accepts a new Scout article or substantive revision:
