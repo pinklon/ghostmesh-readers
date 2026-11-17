@@ -202,14 +202,14 @@
       "title": "Validate the Association, Not Just the Extracted Value",
       "url": "/scout/essays/validate-the-association-not-just-the-extracted-value/",
       "sourcePath": "site/scout/essays/validate-the-association-not-just-the-extracted-value/index.html",
-      "provenance": "Docling core snapshot 2dc4c9f511269eb39be5aad84b838f7bb179142e (commit October 29, 2026), Docling documentation snapshot 7b12671e1d324710e70784c18844d1d97522414f and PyMuPDF snapshot d2423b1367bcc9721ea7e994e710e5bc7ea91b09 (commits October 30). Sources checked October 30, 2026; snapshot dates are not stable-release or deployment dates.",
-      "evidenceLimits": "Pinned source-code and documentation analysis with a proposed synthetic fixture. No parser, conversion, model-load roundtrip, benchmark, coordinate mutation or negative-control experiment was executed. Association-error frequency and source truth are not established.",
+      "provenance": "Docling core snapshot 2dc4c9f511269eb39be5aad84b838f7bb179142e (commit October 29, 2026), Docling documentation snapshot 7b12671e1d324710e70784c18844d1d97522414f and PyMuPDF snapshot d2423b1367bcc9721ea7e994e710e5bc7ea91b09 (commits October 30). Sources checked October 30, 2026; snapshot dates are not stable-release or deployment dates. November 17 UTC update: docling-parse v7.26.0 release (November 13), merged PR443 (286f2d0b70f1f618a143794498184ceba76580ef), public issue404 and still-open core PR964/consumer PR4786 inspected.",
+      "evidenceLimits": "Pinned source-code and documentation analysis with a proposed synthetic fixture. No parser, conversion, model-load roundtrip, benchmark, coordinate mutation or negative-control experiment was executed. Association-error frequency and source truth are not established. The dated clipping supplement is primary-source-only; no upstream example or externally reported trial was independently reproduced, and no final table ownership or installed support is established.",
       "summary": "A parser can preserve a number and its bounding box while assigning it to the wrong column. The useful validation boundary is the relationship between the value, its source region, and its header.",
       "topics": [
         "document-reading",
         "citation-evidence"
       ],
-      "reviewedOn": "2026-10-30",
+      "reviewedOn": "2026-11-16",
       "releaseEventId": "scout:validate-the-association-not-just-the-extracted-value:first-public-release",
       "relatedIds": []
     },
@@ -519,14 +519,14 @@
       "title": "Before the Model Sees the Spreadsheet",
       "url": "/scout/essays/before-the-model-sees-the-spreadsheet/",
       "sourcePath": "site/scout/essays/before-the-model-sees-the-spreadsheet/index.html",
-      "provenance": "Pinned Docling and Onyx implementation and tests; primary openpyxl/OOXML documentation; one unchanged upstream XLSX fixture read with openpyxl 3.1.5.",
-      "evidenceLimits": "One positive fixture dual-read only. No Docling or Onyx execution; missing/stale-cache cases and the proposed four-case test were not performed. No freshness, performance or improvement claim.",
+      "provenance": "Pinned Docling and Onyx implementation and tests; primary openpyxl/OOXML documentation; one unchanged upstream XLSX fixture read with openpyxl 3.1.5. November 17 UTC update: official Gemini API Office-format guide and November 5 changelog inspected for worksheet coverage; live documentation, not an immutable implementation snapshot.",
+      "evidenceLimits": "One positive fixture dual-read only. No Docling or Onyx execution; missing/stale-cache cases and the proposed four-case test were not performed. No freshness, performance or improvement claim. The dated Gemini supplement is documentation-only: no API call, workbook upload, entitlement check or model-output comparison. First-sheet coverage is not attributed to Docling or Onyx.",
       "summary": "One public XLSX fixture exposes the difference between formula text and cached values. Source analysis defines what a successful conversion does not prove.",
       "topics": [
         "document-reading",
         "spreadsheet-semantics"
       ],
-      "reviewedOn": "2026-10-25",
+      "reviewedOn": "2026-11-16",
       "releaseEventId": "scout:before-the-model-sees-the-spreadsheet:first-public-release",
       "relatedIds": [
         "journal:research-journal"

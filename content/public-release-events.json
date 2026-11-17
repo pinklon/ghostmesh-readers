@@ -2,6 +2,24 @@
   "schema": "ghostmesh-public-release-events-v1",
   "events": [
     {
+      "id": "scout:validate-the-association-not-just-the-extracted-value:source-boundary-update-20261116",
+      "kind": "material-scout-update",
+      "subjectId": "validate-the-association-not-just-the-extracted-value",
+      "url": "https://youtube.shareplane.malott.ai/scout/essays/validate-the-association-not-just-the-extracted-value/",
+      "title": "Validate the Association, Not Just the Extracted Value",
+      "summary": "Separates the released clip-aware grouping change from untested end-to-end table ownership across parser, core and consumer versions.",
+      "publicDate": "2026-11-16"
+    },
+    {
+      "id": "scout:before-the-model-sees-the-spreadsheet:source-boundary-update-20261116",
+      "kind": "material-scout-update",
+      "subjectId": "before-the-model-sees-the-spreadsheet",
+      "url": "https://youtube.shareplane.malott.ai/scout/essays/before-the-model-sees-the-spreadsheet/",
+      "title": "Before the Model Sees the Spreadsheet",
+      "summary": "Adds worksheet coverage to formula/cache validation: the documented Gemini XLS/XLSX path reads the first sheet; no API experiment performed.",
+      "publicDate": "2026-11-16"
+    },
+    {
       "id": "scout:silence-is-not-security-coverage:first-public-release",
       "kind": "new-scout-research",
       "subjectId": "silence-is-not-security-coverage",
