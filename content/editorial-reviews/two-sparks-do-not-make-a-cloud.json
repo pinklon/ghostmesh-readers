@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "readerId": "reader:two-sparks-do-not-make-a-cloud",
+  "sourceId": "pAC1SRr1_Rc",
+  "sourceAidSha256": "eda5b04e8858018628672a2467d44dc97016c25ed600f8e134fc4104ae44f8f3",
+  "articleSha256": "2bb61e0fb8e58bd44e364778d3b165870c0ffce4cb0519ea57b4c9addc45b832",
+  "evidenceRevision": "54a246eec71b0973b96673d40ed5c8b8254bc8d67f5627e6aa13f5895527346e",
+  "reviewedAt": "2026-11-17T22:40:00Z",
+  "provenance": {
+    "kind": "codex-task-agent",
+    "reference": "Independent focused read-only Codex re-review session 01a1eba9-8025-7553-985e-b9a012448b11 on Tony's Mac Studio, inspected exact head d071a6c69e07fb9e572ceea60510f723c8acabc0 and diff from 8ef6378. Final disposition ACCEPT-FOR-OWNER-REVIEW after prior REVISE.",
+    "limits": "No audiovisual playback, private caption inspection, live URL check, browser UAT, remote approval verification or deployment verification. Public sources remain creator-reported and no independent model benchmark is claimed."
+  },
+  "summary": "ACCEPT FOR OWNER REVIEW: all three prior review findings corrected on exact revision d071a6c, without observed privacy regression or invented audiovisual verification. This is editorial acceptance, not authorization to merge or release.",
+  "findings": [
+    "Grok r67-cue6 appears in the catalog, source map and article with its 16:22 cue and an explicitly unverified creator-reported first-pass failure.",
+    "The stale 'before Creative Lock' wording is replaced across the owner-approved manuscript and authored article with a precise statement of which details remain unverified.",
+    "The canonical Token Burn /tools/token-burn/ destination is restored, and the validator exception is confined to that approved exact URL.",
+    "The reviewed diff showed no new private transcript, media, custody path, credentials or assertion of independent audiovisual authentication.",
+    "The manuscript's argument remains source-qualified and hardware specifications are not presented as token-generation benchmarks."
+  ],
+  "conclusion": "accept-for-owner-review"
+}

@@ -433,7 +433,9 @@ def validate_reader(root: Path, reader: dict, *, release: bool = True,
                 errors.append(f"{slug}: source map timestamp absent from article or source duration")
             elif source_video:
                 exact = (f"https://www.youtube.com/watch?v={source_video}&t={second}s",
-                         f"https://youtu.be/{source_video}?t={second}s")
+                         f"https://youtu.be/{source_video}?t={second}s",
+                         f"https://www.youtube.com/watch?v={source_video}&t={second}",
+                         f"https://youtu.be/{source_video}?t={second}")
                 if not any(link in exact for link in links):
                     errors.append(f"{slug}: source map timestamp absent from exact video in mapped section")
             if not source_video:
