@@ -10,5 +10,11 @@
     "url": "https://youtube.shareplane.malott.ai/the-playbook-may-be-reproducible/",
     "verifiedAt": "2026-11-13T22:49:10Z",
     "checks": ["article-http-200", "receipt-http-200", "catalog-http-200", "sitemap-http-200", "claim-register-http-200"]
+  },
+  "uncensored-private-or-sovereign": {
+    "mergeCommit": "f879de9c68d3d72a8857e550029671282ea6dc47",
+    "url": "https://youtube.shareplane.malott.ai/uncensored-private-or-sovereign/",
+    "verifiedAt": "2026-11-17T00:40:29Z",
+    "checks": ["article-http-200", "receipt-http-200", "catalog-http-200", "sitemap-http-200", "claim-register-http-200"]
   }
 }

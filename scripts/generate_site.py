@@ -75,17 +75,22 @@ def projected_publication_status(raw, reader, depth=None):
                    and approval.get('articleSha256')==depth['articleSha256']
                    and approval.get('evidenceRevision')==depth.get('evidenceRevision'))
                   or (isinstance(approval.get('commentId'),int) and approval['commentId']>0)))
+ verified_path=ROOT/'content/production-verifications.json'
+ verified=json.loads(verified_path.read_text()).get(reader['slug']) if verified_path.exists() else None
+ verified_ok=(isinstance(verified,dict)
+              and re.fullmatch(r'[0-9a-f]{40}',str(verified.get('mergeCommit','')))
+              and verified.get('url')=='https://youtube.shareplane.malott.ai/'+reader['slug']+'/'
+              and re.fullmatch(r'\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}Z',str(verified.get('verifiedAt','')))
+              and {'article-http-200','receipt-http-200','catalog-http-200','sitemap-http-200','claim-register-http-200'}<=set(verified.get('checks',[])))
  if authorized:
   status='Owner-approved for release, subject to protected merge and production verification. This page does not attest deployment.'
-  verified_path=ROOT/'content/production-verifications.json'
-  if verified_path.exists():
-   verified=json.loads(verified_path.read_text()).get(reader['slug'])
-   if (isinstance(verified,dict) and re.fullmatch(r'[0-9a-f]{40}',str(verified.get('mergeCommit','')))
-       and verified.get('url')=='https://youtube.shareplane.malott.ai/'+reader['slug']+'/'
-       and re.fullmatch(r'\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}Z',str(verified.get('verifiedAt','')))
-       and {'article-http-200','receipt-http-200','catalog-http-200','sitemap-http-200','claim-register-http-200'}<=set(verified.get('checks',[]))):
-    published=date.fromisoformat(verified['verifiedAt'][:10]).strftime('%B %d, %Y').replace(' 0',' ')
-    status=f'Published {published}. Production release verified.'
+  if verified_ok:
+   published=date.fromisoformat(reader.get('published',verified['verifiedAt'][:10])).strftime('%B %d, %Y').replace(' 0',' ')
+   status=f'Published {published}. Production release verified.'
+ elif verified_ok:
+  # A public release is a fact, not evidence of independent editorial acceptance.
+  published=date.fromisoformat(reader.get('published',verified['verifiedAt'][:10])).strftime('%B %d, %Y').replace(' 0',' ')
+  status=f'Published {published}. Production release verified; independent editorial review remains pending.'
  elif bound:
   status='Independent editorial review accepted for owner consideration. Publication has not been authorized.'
  else:

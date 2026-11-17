@@ -59,6 +59,15 @@ class ReaderPublicationDefaults(unittest.TestCase):
         self.assertEqual(hashlib.sha256(source.encode()).hexdigest(), authored_sha)
         self.assertEqual(projected_publication_status(source.replace('Status inserted', 'Changed'), reader, receipt).count('Owner-approved'), 0)
 
+    def test_published_reader_can_disclose_outstanding_independent_review(self):
+        from pathlib import Path
+        raw = (Path(__file__).resolve().parents[1] / 'content/readers/uncensored-private-or-sovereign.html').read_text()
+        projected = projected_publication_status(
+            raw, {'slug': 'uncensored-private-or-sovereign', 'published': '2026-11-16'})
+        self.assertIn('Published November 16, 2026', projected)
+        self.assertIn('independent editorial review remains pending', projected)
+        self.assertNotIn('Editorial draft', projected)
+
     def test_new_archive_recommendation_is_in_review_evidence_binding(self):
         prior = {'slug': 'historical'}
         self.assertEqual(evidence_revision(prior), evidence_revision(dict(prior)))
