@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "readerId": "reader:uncensored-private-or-sovereign",
+  "sourceId": "FbiOr73tRPk",
+  "sourceAidSha256": "5a79630651338f5dfc375b51a0baf1716cfbb9faa722fd7d2072bb5aa4b86b53",
+  "articleSha256": "10a202ad285e936c948be263a12742b38b5a1f04d095532b74554b0b47996ad0",
+  "evidenceRevision": "140e5adfb2fbce56942af8c4f2bef87b494b72237f448138ea3152a4c4ef15cc",
+  "reviewedAt": "2026-11-17T00:58:14Z",
+  "provenance": {
+    "kind": "codex-task-agent",
+    "reference": "Read-only independent Codex editorial re-review on GhostMesh VPS, inspected exact head ef3d49e0fe551a80568a1c258497cfd7b170204b; ACCEPT-FOR-OWNER-REVIEW after initial REVISE findings were corrected. Raw review verdict SHA-256 bfab9804ab9527754e832b30efcfa382cae0fa0baaf6c76c25aea4d0e0b4483c.",
+    "limits": "Reviewer did not access retained private audio, authenticate source video by listening, rerun Hyperion model trials, verify video timestamp playback or certify live deployment. The verdict grants no merge or release authority."
+  },
+  "summary": "ACCEPT FOR OWNER REVIEW: no material remaining source-attribution, editorial consistency, privacy or substantive analysis defects on exact reviewed head. Release authority and independent empirical corroboration are separate.",
+  "findings": [
+    "The currently published source title is reconciled in the footer while the owner-locked manuscript retains descriptive working shorthand and the five-level framework attribution.",
+    "Publication status distinguishes the November 16 public release from still-pending independent evidence acceptance; crosslink language matches the owner-reviewed editorial relationships.",
+    "Eight mapped source cues and a retained source-aid digest are separated from actual audiovisual verification; timecode accuracy and underlying private source-aid bytes were not independently checked.",
+    "Hyperion CPU-only local model observations and hosted service comparisons are appropriately qualified as single first-party trial results with model configuration corrections and no causal abliteration claim.",
+    "The inspected public article and receipt did not expose secrets, private topology, raw audio, full transcripts or authentication materials; no comprehensive privacy certification is asserted."
+  ],
+  "conclusion": "accept-for-owner-review"
+}

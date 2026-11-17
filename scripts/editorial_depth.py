@@ -412,9 +412,18 @@ def validate_reader(root: Path, reader: dict, *, release: bool = True,
             second = entry["atSeconds"]
             section = re.search(r'<section\b[^>]*\bid="' + re.escape(str(entry["sectionId"])) + r'"[^>]*>(.*?)</section>', article, re.S)
             section_html = section.group(1) if section else ""
+            # Reader #66 uses H3-anchored subsections inside one locked article,
+            # rather than wrapping every analysis subsection in a section tag.
+            heading_based = (slug == "uncensored-private-or-sovereign"
+                             and 'data-layout-family="annotated-editorial"' in article)
+            if heading_based and not section:
+                heading = re.search(r'<h[23]\b[^>]*\bid="' + re.escape(str(entry["sectionId"])) + r'"[^>]*>.*?</h[23]>', article, re.S)
+                if heading:
+                    following = re.search(r'<h[23]\b|</article>', article[heading.end():])
+                    section_html = article[heading.end():heading.end()+following.start()] if following else ""
             links = [html.unescape(link) for link in re.findall(r'<a\b[^>]*href="([^"]+)"', section_html)]
-            # A single chapter guide may carry timestamp navigation for every mapped section.
-            chapter = re.search(r'<nav\b[^>]*class="[^"]*chapter-guide[^\"]*"[^>]*>(.*?)</nav>', article, re.S)
+            # Source-film navigation provides the same exact timestamp links for this layout.
+            chapter = re.search(r'<nav\b[^>]*class="[^"]*(?:chapter-guide|source-chapters)[^\"]*"[^>]*>(.*?)</nav>', article, re.S)
             if chapter:
                 links.extend(html.unescape(link) for link in re.findall(r'<a\b[^>]*href="([^"]+)"', chapter.group(1)))
             if reader["source"].get("kind") in {"paper", "article", "repository"}:
@@ -437,7 +446,7 @@ def validate_reader(root: Path, reader: dict, *, release: bool = True,
                     label = f"{second // 60:02d}:{second % 60:02d}"
                     if label not in html.unescape(section_html):
                         errors.append(f"{slug}: non-YouTube source map timestamp absent from mapped section")
-            if not isinstance(entry["sectionId"], str) or entry["sectionId"] not in anchors or not _mapped_prose(raw.decode("utf-8", "replace"), entry["sectionId"]) or not isinstance(entry["claimIds"], list) or not entry["claimIds"] or not all(isinstance(x, str) for x in entry["claimIds"]) or not set(entry["claimIds"]) <= claim_ids or not _reasoned(entry["rationale"]):
+            if not isinstance(entry["sectionId"], str) or entry["sectionId"] not in anchors or not (_mapped_prose(raw.decode("utf-8", "replace"), entry["sectionId"]) or (heading_based and section_html and any(len(re.sub(r'<[^>]*>', '', paragraph).strip()) >= 35 for paragraph in re.findall(r'<p\b[^>]*>(.*?)</p>', section_html, re.S)))) or not isinstance(entry["claimIds"], list) or not entry["claimIds"] or not all(isinstance(x, str) for x in entry["claimIds"]) or not set(entry["claimIds"]) <= claim_ids or not _reasoned(entry["rationale"]):
                 errors.append(f"{slug}: ungrounded source/claim map entry")
             marker = (str(second), str(entry["sectionId"]))
             if marker in seen:errors.append(f"{slug}: duplicate source map point")

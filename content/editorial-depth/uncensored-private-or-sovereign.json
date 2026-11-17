@@ -1,0 +1,157 @@
+{
+  "schemaVersion": 1,
+  "readerId": "reader:uncensored-private-or-sovereign",
+  "sourceId": "FbiOr73tRPk",
+  "sourceDigest": "7031cbd3672ce40f7a99796800b5353f125810fd15e92c07f362a34908058fbf",
+  "sourceAidSha256": "5a79630651338f5dfc375b51a0baf1716cfbb9faa722fd7d2072bb5aa4b86b53",
+  "articleSha256": "10a202ad285e936c948be263a12742b38b5a1f04d095532b74554b0b47996ad0",
+  "evidenceRevision": "140e5adfb2fbce56942af8c4f2bef87b494b72237f448138ea3152a4c4ef15cc",
+  "sourceMapEvidenceSha256": "87b8f123af3ef55be9d080f3d1c75daaac23e4d3fc110040b658d526ecdbddef",
+  "reviewEvidenceSha256": "2ad2ed0cc11dbabfa244c1204e5b11157c8eb4eb4af44602c702df40611de915",
+  "candidateAuthor": "segfault",
+  "complexity": {
+    "tier": "extended",
+    "factors": [
+      "Eight creator claims and separate Hyperion model trials require source role separation and careful performance qualification",
+      "Independent analysis distinguishes uncensored model responses from privacy, infrastructure control, continuity and factual correctness"
+    ],
+    "rationale": "Extended review is appropriate for a consequential 26-minute model sovereignty video with eight timestamped claims, experimental observations and operational security implications."
+  },
+  "sourceMap": [
+    {
+      "atSeconds": 104,
+      "sectionId": "level-one-remove-behavioral-restrictions",
+      "claimIds": [
+        "r66-cue1"
+      ],
+      "rationale": "Level one introduces an abliterated model that the creator presents as more willing to answer restricted requests."
+    },
+    {
+      "atSeconds": 133,
+      "sectionId": "level-one-remove-behavioral-restrictions",
+      "claimIds": [
+        "r66-cue2"
+      ],
+      "rationale": "The creator demonstrates a DeepSeek-branded uncensored model and model-switching interface; exact model naming in the ASR aid is uncertain."
+    },
+    {
+      "atSeconds": 351,
+      "sectionId": "level-two-add-a-second-model-to-check-the-first",
+      "claimIds": [
+        "r66-cue3"
+      ],
+      "rationale": "Level two proposes a partner model to check or correct the first model."
+    },
+    {
+      "atSeconds": 492,
+      "sectionId": "level-three-make-the-system-available-everywhere",
+      "claimIds": [
+        "r66-cue4"
+      ],
+      "rationale": "Level three shifts to a hosted, always-available system accessible away from the local laptop."
+    },
+    {
+      "atSeconds": 900,
+      "sectionId": "level-four-add-images-and-video",
+      "claimIds": [
+        "r66-cue5"
+      ],
+      "rationale": "Level four expands the workflow from text into image and video generation."
+    },
+    {
+      "atSeconds": 1079,
+      "sectionId": "level-five-bring-the-weights-home",
+      "claimIds": [
+        "r66-cue6"
+      ],
+      "rationale": "Level five turns to running models locally on a computer or phone."
+    },
+    {
+      "atSeconds": 1083,
+      "sectionId": "level-five-bring-the-weights-home",
+      "claimIds": [
+        "r66-cue7"
+      ],
+      "rationale": "The creator explicitly distinguishes uncensored operation from privacy."
+    },
+    {
+      "atSeconds": 1253,
+      "sectionId": "level-five-bring-the-weights-home",
+      "claimIds": [
+        "r66-cue8"
+      ],
+      "rationale": "A local Gemma-family model is shown in the interface; the automatic transcript's exact model-name transcription is not reliable."
+    }
+  ],
+  "assessment": {
+    "sourceCoverage": {
+      "disposition": "covered",
+      "rationale": "Eight timestamped claims and the underlying five-level creator argument are mapped through a public source map and source digest, with private audio authentication explicitly excluded."
+    },
+    "supportingArgument": {
+      "disposition": "covered",
+      "rationale": "The authored article compares refusal permissiveness, data custody, inference hosting, infrastructure control and factual verifiability through original reasoning and bounded tests."
+    },
+    "evidenceRoles": {
+      "disposition": "covered",
+      "rationale": "The creator video, private ASR navigation aid, first-party Hyperion trials, academic papers and operational source documentation are separated by evidentiary role."
+    },
+    "counterargument": {
+      "disposition": "covered",
+      "rationale": "The article credits the legitimate appeal of removing excessive refusals while also confronting the false inference that locally running weights ensure truth or safety."
+    },
+    "tradeoffs": {
+      "disposition": "covered",
+      "rationale": "Privacy and deployment sovereignty are weighed against hosted speed, cost, patch responsibility, system compatibility and model truthfulness limitations."
+    },
+    "falsifiability": {
+      "disposition": "covered",
+      "rationale": "The artifact proposes concrete operational dependency and model behavior checks, while explicitly stating that the individual comparison runs are not statistically generalizable."
+    },
+    "originalSynthesis": {
+      "disposition": "covered",
+      "rationale": "GhostMesh extends the creator five-level framing into four separate dimensions and operational continuity, including recoverability and independent control of system dependencies."
+    },
+    "performance": {
+      "disposition": "covered",
+      "rationale": "Three observed tasks and the two local GGUF configurations are reported with CPU-only latency, individual limitations, corrections and no general inference benchmark claims."
+    },
+    "economics": {
+      "disposition": "covered",
+      "rationale": "The reader discusses hardware limits and hosted versus local cost or convenience without invented return-on-investment numbers or an unmeasured total cost of ownership."
+    },
+    "threatGovernance": {
+      "disposition": "covered",
+      "rationale": "Network authorization, revocation, private data exposure, provider withdrawal and the limits of a second-model fact checker are addressed without certification claims."
+    }
+  },
+  "independentCorroboration": "none",
+  "ownerDecision": {
+    "kind": "conversation",
+    "owner": "Tony Malott",
+    "approval": "Tony approved publication of the unchanged Design A v9 Reader #66 manuscript on November 16; subsequently authorized a minimal correction of the public publication-status discrepancy and expressly authorized the next GhostMesh Commons announcement. These are owner instructions, separate from the independent review.",
+    "approvalDate": "2026-11-16",
+    "articleSha256": "10a202ad285e936c948be263a12742b38b5a1f04d095532b74554b0b47996ad0",
+    "evidenceRevision": "140e5adfb2fbce56942af8c4f2bef87b494b72237f448138ea3152a4c4ef15cc"
+  },
+  "decision": "accept",
+  "gaps": [
+    {
+      "type": "source",
+      "severity": "nonblocking",
+      "rationale": "The independent reviewer did not directly authenticate raw video, private transcription aid or exact timestamp alignment; claims remain explicitly creator-attributed."
+    },
+    {
+      "type": "evidence",
+      "severity": "nonblocking",
+      "rationale": "Hyperion model runs were not repeated independently, the hosted deployed weight hash is not authenticated and the measured samples do not establish general performance rankings."
+    },
+    {
+      "type": "risk",
+      "severity": "nonblocking",
+      "rationale": "The article makes no comprehensive security or privacy certification of local or hosted inference deployments, and operational boundaries need per-installation assessment."
+    }
+  ],
+  "decisionRationale": "Independent reviewer accepted the corrected exact revision ef3d49e after initial REVISE; retained source-attribution, qualitative constraints and privacy limits are explicit. Existing owner publication approval applies to the unchanged locked manuscript and authorized status-only changes.",
+  "assessedAt": "2026-11-17T00:58:14Z"
+}
