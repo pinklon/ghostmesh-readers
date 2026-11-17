@@ -3,8 +3,8 @@
   "scope": "Public Scout research reading routes; links are editorial, not corroboration.",
   "authority": "scout-research-curated-editorial",
   "visibility": "public",
-  "recordCount": 28,
-  "relationshipCount": 19,
+  "recordCount": 29,
+  "relationshipCount": 20,
   "nodes": [
     {
       "id": "scout:cloudflare-security-audit-skill",
@@ -68,6 +68,13 @@
       "type": "essay",
       "title": "Latent States Are Not an Agent API",
       "url": "https://youtube.shareplane.malott.ai/scout/essays/latent-states-are-not-an-agent-api/"
+    },
+    {
+      "id": "scout:essay:silence-is-not-security-coverage",
+      "sourceId": "essay:silence-is-not-security-coverage",
+      "type": "essay",
+      "title": "Silence Is Not Security Coverage",
+      "url": "https://youtube.shareplane.malott.ai/scout/essays/silence-is-not-security-coverage/"
     },
     {
       "id": "scout:essay:the-agent-can-build-the-app-who-lets-it-touch-the-data",
@@ -238,6 +245,13 @@
       "type": "approved related work",
       "fromUrl": "https://youtube.shareplane.malott.ai/scout/essays/did-the-evidence-change-the-answer/",
       "toUrl": "https://youtube.shareplane.malott.ai/scout/essays/the-plateau-that-lied/"
+    },
+    {
+      "from": "scout:essay:silence-is-not-security-coverage",
+      "to": "scout:essay:the-signal-is-not-the-finding",
+      "type": "approved related work",
+      "fromUrl": "https://youtube.shareplane.malott.ai/scout/essays/silence-is-not-security-coverage/",
+      "toUrl": "https://youtube.shareplane.malott.ai/scout/essays/the-signal-is-not-the-finding/"
     },
     {
       "from": "scout:essay:the-agent-can-build-the-app-who-lets-it-touch-the-data",

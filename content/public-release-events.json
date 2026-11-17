@@ -2,6 +2,15 @@
   "schema": "ghostmesh-public-release-events-v1",
   "events": [
     {
+      "id": "scout:silence-is-not-security-coverage:first-public-release",
+      "kind": "new-scout-research",
+      "subjectId": "silence-is-not-security-coverage",
+      "url": "https://youtube.shareplane.malott.ai/scout/essays/silence-is-not-security-coverage/",
+      "title": "Silence Is Not Security Coverage",
+      "summary": "Repository activity and notification volume cannot tell you whether still-running software remains protected.",
+      "publicDate": "2026-11-16"
+    },
+    {
       "id": "scout:a-comma-at-the-handoff:first-public-release",
       "kind": "new-scout-research",
       "subjectId": "a-comma-at-the-handoff",
