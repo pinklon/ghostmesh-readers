@@ -315,7 +315,7 @@
     },
     {
       "from": "reader:two-sparks-do-not-make-a-cloud",
-      "url": "https://shareplane.malott.ai/artifacts/token-burn/",
+      "url": "https://shareplane.malott.ai/tools/token-burn/",
       "title": "Token Burn",
       "reason": "A dated cost-composition comparison aid, not an empirical total-cost or break-even proof for DGX Sparks.",
       "type": "companion",

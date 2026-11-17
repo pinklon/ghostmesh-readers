@@ -264,7 +264,7 @@ def check(root=ROOT, *, local_only=False):
   seen_external=set()
   for ext in external:
    url=ext.get('url','')
-   require(url.startswith('https://shareplane.malott.ai/artifacts/') and url.endswith('/'),f'{slug}: invalid external Work URL')
+   require((url.startswith('https://shareplane.malott.ai/artifacts/') and url.endswith('/')) or url == 'https://shareplane.malott.ai/tools/token-burn/',f'{slug}: invalid external Work URL')
    require(url not in seen_external,f'{slug}: duplicate external Work URL')
    seen_external.add(url)
    require(ext.get('type') in {'extends','challenges','informs architecture','related topic','foundation','counterpoint','companion'} and len(ext.get('reason',''))>=80,f'{slug}: unqualified external Work relationship')

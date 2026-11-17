@@ -34,7 +34,7 @@ class ReaderMapLayersTests(unittest.TestCase):
 
     def test_local_reader_edges_are_not_external_graph_edges(self):
         self.assertTrue(all(edge["to"].startswith("reader:") for edge in self.graph["edges"]))
-        self.assertTrue(all(edge["url"].startswith("https://shareplane.malott.ai/artifacts/") for edge in self.graph["sharePlaneEdges"]))
+        self.assertTrue(all(edge["url"].startswith("https://shareplane.malott.ai/artifacts/") or edge["url"] == "https://shareplane.malott.ai/tools/token-burn/" for edge in self.graph["sharePlaneEdges"]))
         self.assertIn("Reader connections", self.html)
         self.assertIn("SharePlane Works", self.html)
         self.assertIn("not automatically admitted into the SharePlane graph", self.html)

@@ -211,6 +211,20 @@
           "asOf": "2026-11-17"
         },
         {
+          "id": "r67-cue6",
+          "proposition": "Grok reports completion without a working panel",
+          "kind": "creator-claim",
+          "status": "unverified",
+          "sourceLocation": "16:22",
+          "assessment": "Creator-reported approximately 18-minute run with a nonworking first-pass control panel.",
+          "limits": "Chapter location and automatic captions are not independent audiovisual verification; run conditions and result are not replicated.",
+          "references": [
+            "r67-ref1"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-17"
+        },
+        {
           "id": "r67-cue4",
           "proposition": "Codex run requires tool and quota adjustments",
           "kind": "creator-claim",
@@ -276,7 +290,7 @@
       ],
       "sharePlaneRelationships": [
         {
-          "url": "https://shareplane.malott.ai/artifacts/token-burn/",
+          "url": "https://shareplane.malott.ai/tools/token-burn/",
           "title": "Token Burn",
           "reason": "A dated cost-composition comparison aid, not an empirical total-cost or break-even proof for DGX Sparks.",
           "type": "companion",

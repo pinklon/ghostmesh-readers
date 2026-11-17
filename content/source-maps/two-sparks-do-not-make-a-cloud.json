@@ -32,6 +32,15 @@
       "privateAidCheck": "Creator chapter and private automatic-caption cue only; no independent full audiovisual authentication."
     },
     {
+      "atSeconds": 982,
+      "sectionId": "what-the-video-actually-tests",
+      "claimIds": [
+        "r67-cue6"
+      ],
+      "cueParaphrase": "The comparison reports Grok around 18 minutes with a nonworking first-pass control panel; treated as creator-reported, not independently verified.",
+      "privateAidCheck": "Public chapter metadata locates the Grok segment at 16:22; private automatic-caption evidence and original playback were not independently rechecked for this amendment."
+    },
+    {
       "atSeconds": 1133,
       "sectionId": "what-the-video-actually-tests",
       "claimIds": [
