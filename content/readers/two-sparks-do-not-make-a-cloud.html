@@ -117,7 +117,50 @@ design. It is not a pure GPU performance contest.</p>
 at 11:11</a>, and <a href="https://youtu.be/pAC1SRr1_Rc?t=737">speed,
 quotas and initial failures emerge around 12:17</a>. The source’s
 private automatic transcript supports this provisional comparison:</p>
-<div class="table-wrap">\1</div>
+<div class="table-wrap"><table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr>
+<th>Contender as described by creator</th>
+<th>Reported completion</th>
+<th>First-pass control-panel result</th>
+<th>Interpretation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Claude</td>
+<td>About 9 minutes</td>
+<td>Not working despite a confident completion claim</td>
+<td>Fastest declared finish was not a fully compliant finish</td>
+</tr>
+<tr>
+<td>Codex</td>
+<td>About 20 minutes excluding manual/restart gaps</td>
+<td>Working</td>
+<td>Needed relaunch in permissive execution mode; provider quota/reset
+friction</td>
+</tr>
+<tr>
+<td>Grok</td>
+<td>Around 18 minutes</td>
+<td>Not working</td>
+<td>Declared completion overstated functional compliance</td>
+</tr>
+<tr>
+<td>Locally served Qwen</td>
+<td>Roughly 90–120 minutes</td>
+<td>Required a TLS/websocket correction</td>
+<td>No comparable provider quota, but far beyond the nominal time budget
+and not intervention-free</td>
+</tr>
+</tbody>
+</table></div>
 <p>These are creator-reported observations, not independent
 reproduction. The transcript frequently corrupts exact model names, so
 this table deliberately uses model families rather than unsupported
