@@ -1,0 +1,62 @@
+{
+  "schemaVersion": 1,
+  "readerId": "reader:two-sparks-do-not-make-a-cloud",
+  "sourceId": "pAC1SRr1_Rc",
+  "sourceAidSha256": "eda5b04e8858018628672a2467d44dc97016c25ed600f8e134fc4104ae44f8f3",
+  "points": [
+    {
+      "atSeconds": 538,
+      "sectionId": "what-the-video-actually-tests",
+      "claimIds": [
+        "r67-cue1"
+      ],
+      "cueParaphrase": "The creator sets a mixed system-admin and creative world-building task.",
+      "privateAidCheck": "Creator chapter and private automatic-caption cue only; no independent full audiovisual authentication."
+    },
+    {
+      "atSeconds": 737,
+      "sectionId": "what-the-video-actually-tests",
+      "claimIds": [
+        "r67-cue2"
+      ],
+      "cueParaphrase": "Creator reports early functional/permission/quota failures.",
+      "privateAidCheck": "Creator chapter and private automatic-caption cue only; no independent full audiovisual authentication."
+    },
+    {
+      "atSeconds": 854,
+      "sectionId": "what-the-video-actually-tests",
+      "claimIds": [
+        "r67-cue3"
+      ],
+      "cueParaphrase": "Creator-reported first-pass functional problem.",
+      "privateAidCheck": "Creator chapter and private automatic-caption cue only; no independent full audiovisual authentication."
+    },
+    {
+      "atSeconds": 982,
+      "sectionId": "what-the-video-actually-tests",
+      "claimIds": [
+        "r67-cue6"
+      ],
+      "cueParaphrase": "The comparison reports Grok around 18 minutes with a nonworking first-pass control panel; treated as creator-reported, not independently verified.",
+      "privateAidCheck": "Public chapter metadata locates the Grok segment at 16:22; private automatic-caption evidence and original playback were not independently rechecked for this amendment."
+    },
+    {
+      "atSeconds": 1133,
+      "sectionId": "what-the-video-actually-tests",
+      "claimIds": [
+        "r67-cue4"
+      ],
+      "cueParaphrase": "Creator-reported restart/limit friction before a working panel.",
+      "privateAidCheck": "Creator chapter and private automatic-caption cue only; no independent full audiovisual authentication."
+    },
+    {
+      "atSeconds": 1291,
+      "sectionId": "what-the-video-actually-tests",
+      "claimIds": [
+        "r67-cue5"
+      ],
+      "cueParaphrase": "Creator-reported 90 to 120 minute local run with later TLS/websocket repair.",
+      "privateAidCheck": "Creator chapter and private automatic-caption cue only; no independent full audiovisual authentication."
+    }
+  ]
+}

@@ -913,6 +913,18 @@
         "path": "site/uncensored-private-or-sovereign/index.html",
         "sha256": "a30621d907f9c65d2148d0f9792fbf1bc40d2c6ac8611ba55a31dcd46be05aff"
       }
+    },
+    {
+      "id": "urn:ghostmesh-readers:reader:two-sparks-do-not-make-a-cloud",
+      "type": "Reader",
+      "visibility": "public",
+      "epistemicStatus": "source-editorial",
+      "label": "Two Sparks Do Not Make a Cloud",
+      "url": "https://youtube.shareplane.malott.ai/two-sparks-do-not-make-a-cloud/",
+      "source": {
+        "path": "site/two-sparks-do-not-make-a-cloud/index.html",
+        "sha256": "ae4fcb4c3ed82db3cbd5f382ec73fce93c91fba043ac8fd04d90b7f64ca69cd5"
+      }
     }
   ],
   "relationships": [

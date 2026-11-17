@@ -1,0 +1,136 @@
+{
+  "schemaVersion": 1,
+  "readerId": "reader:two-sparks-do-not-make-a-cloud",
+  "sourceId": "pAC1SRr1_Rc",
+  "sourceDigest": "a43570dcfaafa6c802d4bf27acf4a627b4ca081bdfbbd5c02e832db8d68df69c",
+  "sourceAidSha256": "eda5b04e8858018628672a2467d44dc97016c25ed600f8e134fc4104ae44f8f3",
+  "articleSha256": "2bb61e0fb8e58bd44e364778d3b165870c0ffce4cb0519ea57b4c9addc45b832",
+  "evidenceRevision": "54a246eec71b0973b96673d40ed5c8b8254bc8d67f5627e6aa13f5895527346e",
+  "sourceMapEvidenceSha256": "318aa449e5f51b45fa4c9a55bda837ef5bce83eff3707a8ae7c607bf10dc5fe3",
+  "reviewEvidenceSha256": "b12d8743106cbd2d80daf7e86f8e5c5db40c749d4457e705acf46c78bacad1a7",
+  "candidateAuthor": "segfault",
+  "complexity": {
+    "tier": "brief",
+    "factors": [
+      "A single creator video with six timestamped claims and bounded manufacturer specification comparisons",
+      "The assessment is a first-party task demonstration, not an independently replicated agent benchmark"
+    ],
+    "rationale": "Brief editorial depth fits a 27.5-minute video with six creator-reported cues and an experiment-recommended conclusion; source limitations and acceptance criteria are explicit."
+  },
+  "sourceMap": [
+    {
+      "atSeconds": 538,
+      "sectionId": "what-the-video-actually-tests",
+      "claimIds": [
+        "r67-cue1"
+      ],
+      "rationale": "The creator introduces a mixed system-administration and Minecraft world-building challenge on prepared machines."
+    },
+    {
+      "atSeconds": 737,
+      "sectionId": "what-the-video-actually-tests",
+      "claimIds": [
+        "r67-cue2"
+      ],
+      "rationale": "The creator describes early agent speed, quota and initial functional failures without establishing an independently graded benchmark."
+    },
+    {
+      "atSeconds": 854,
+      "sectionId": "what-the-video-actually-tests",
+      "claimIds": [
+        "r67-cue3"
+      ],
+      "rationale": "Claude reportedly completes rapidly while the first control panel is not functional despite its completion claim."
+    },
+    {
+      "atSeconds": 982,
+      "sectionId": "what-the-video-actually-tests",
+      "claimIds": [
+        "r67-cue6"
+      ],
+      "rationale": "Grok is reported near 18 minutes with a nonfunctional first-pass panel; exact outcome has not been independently replayed."
+    },
+    {
+      "atSeconds": 1133,
+      "sectionId": "what-the-video-actually-tests",
+      "claimIds": [
+        "r67-cue4"
+      ],
+      "rationale": "Codex reportedly reaches a working result after restart, manual/tool friction and quota adjustments."
+    },
+    {
+      "atSeconds": 1291,
+      "sectionId": "what-the-video-actually-tests",
+      "claimIds": [
+        "r67-cue5"
+      ],
+      "rationale": "The local Qwen run is reported as much longer and later requires TLS or websocket intervention."
+    }
+  ],
+  "assessment": {
+    "sourceCoverage": {
+      "disposition": "covered",
+      "rationale": "Six timestamped creator-report cues including Grok are registered and mapped, with a private automatic transcript treated only as a navigational aid."
+    },
+    "supportingArgument": {
+      "disposition": "covered",
+      "rationale": "The article distinguishes hardware capacity and memory bandwidth from measurable end-to-end agent throughput, and evaluates cloud replacement as workload specific."
+    },
+    "evidenceRoles": {
+      "disposition": "covered",
+      "rationale": "Creator demonstration, private automatic transcript, NVIDIA manufacturer specifications and original analytical inference retain separate evidence roles throughout."
+    },
+    "counterargument": {
+      "disposition": "covered",
+      "rationale": "The article acknowledges local memory, privacy and operational-control advantages while rejecting a blanket conclusion that two Sparks replace every cloud workflow."
+    },
+    "tradeoffs": {
+      "disposition": "covered",
+      "rationale": "Costs, tool availability, latency, context requirements, intervention and operating responsibility are discussed as workload-specific constraints rather than one device metric."
+    },
+    "falsifiability": {
+      "disposition": "covered",
+      "rationale": "A repeatable comparison is proposed using fixed acceptance tests, instrumented work and comparable deployments; unverified video observations are not scored as replicated results."
+    },
+    "originalSynthesis": {
+      "disposition": "covered",
+      "rationale": "The source observations support a distinct GhostMesh argument that reliable system acceptance and total workflow cost matter more than completion declarations or raw memory totals."
+    },
+    "performance": {
+      "disposition": "covered",
+      "rationale": "Nominal bandwidth and weight-fit arithmetic are bounded to manufacturer specifications and not converted into invented token-generation or agent-completion measurements."
+    },
+    "economics": {
+      "disposition": "covered",
+      "rationale": "The analysis frames infrastructure cost against actual workload utilization, operational time and cloud alternatives without claiming an independently measured break-even."
+    },
+    "threatGovernance": {
+      "disposition": "covered",
+      "rationale": "The comparison calls out TLS, websocket, permission and quota dependencies and distinguishes local ownership of compute from independence of all external services."
+    }
+  },
+  "independentCorroboration": "none",
+  "ownerDecision": {
+    "kind": "conversation",
+    "owner": "Tony Malott",
+    "approval": "Tony reviewed Reader #67 preview, said it looked good enough and directed publication and a process post-mortem for #68; subsequently expressly approved all three focused editorial corrections on November 17. This does not replace exact-head merge authorization.",
+    "approvalDate": "2026-11-17",
+    "articleSha256": "2bb61e0fb8e58bd44e364778d3b165870c0ffce4cb0519ea57b4c9addc45b832",
+    "evidenceRevision": "54a246eec71b0973b96673d40ed5c8b8254bc8d67f5627e6aa13f5895527346e"
+  },
+  "decision": "accept",
+  "gaps": [
+    {
+      "type": "source",
+      "severity": "nonblocking",
+      "rationale": "The independent read-only reviewer did not replay the source video or inspect private captions; all six reported agent outcomes remain creator-attributed and unverified."
+    },
+    {
+      "type": "evidence",
+      "severity": "nonblocking",
+      "rationale": "No external benchmark or independent reproduction of the Minecraft task, working control panels, model identity or local Qwen repair was provided."
+    }
+  ],
+  "decisionRationale": "The focused independent reviewer accepted the three corrections at exact head d071a6c without new privacy or attribution findings. Tony approved the preview and authorized the corrections, while quantitative and visual observations remain expressly unverified.",
+  "assessedAt": "2026-11-17T22:42:45Z"
+}
