@@ -327,8 +327,8 @@
       "rationale": "Two Work comparisons independently address economic assumptions and custody architecture; neither proves the creator-reported benchmark."
     },
     "review": {
-      "status": "pending",
-      "summary": "Creative-Locked draft; exact-input independent editorial/source/privacy review and owner publication decision pending."
+      "status": "accepted-for-owner-review; published",
+      "summary": "Independent exact-input editorial/source/privacy review accepted for owner consideration; Tony approved publication and Reader #67 was released November 17, 2026. The creator demonstration and claimed benchmark outcomes remain unverified and have not been independently reproduced."
     },
     "editorialDepth": {
       "schemaVersion": 1,
