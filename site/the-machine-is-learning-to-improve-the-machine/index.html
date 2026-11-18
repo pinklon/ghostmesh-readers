@@ -89,6 +89,138 @@ h1{font-size:clamp(2.7rem,6.4vw,5.25rem);letter-spacing:-.06em;line-height:1.06;
 @media(max-width:770px){.brief-columns{grid-template-columns:1fr}.source-chapters{grid-template-columns:repeat(2,minmax(0,1fr))}.gm-source-list{grid-template-columns:1fr}}
 @media(max-width:440px){.source-chapters{grid-template-columns:1fr}}
 </style>
+<style id="reader68-accepted-chrome">
+/* Header, footer and search copied intact from accepted Reader 67.
+   Keep the article's own opening, prose and figures independent of this shell. */
+.gm-site-header{position:relative;z-index:20;--gm-bg:#0f1115;--gm-ink:#f4f5f7;--gm-border:#4c525d;--gm-paper:#151920;--gm-muted:#b8bec9;--gm-accent:#ff879a}.gm-site-header-inner{width:min(1280px,calc(100% - 48px))}.gm-site-tagline{font:500 .68rem/1.3 var(--sans);color:var(--gm-muted);white-space:nowrap;margin:0}.gm-header-actions{display:flex;gap:.6rem;align-items:center}.gm-search-control{width:42px;height:42px;border:1px solid var(--gm-border);border-radius:50%;display:grid;place-items:center;color:var(--gm-ink)}.gm-search-control svg{width:17px;height:17px;stroke:currentColor;stroke-width:1.8;fill:none}.gm-theme-control input{accent-color:var(--gm-accent);width:15px;height:15px}.gm-reader-footer{--gm-bg:#0f1115;--gm-ink:#f4f5f7;--gm-border:#4c525d;--gm-muted:#b8bec9;--gm-accent:#ff879a;background:#0f1115;color:#f4f5f7;padding:0}.gm-reader-footer-inner{max-width:1180px;padding:36px 26px;grid-template-columns:minmax(260px,1fr) minmax(280px,1.25fr);gap:2rem}.gm-footer-brand{display:flex;align-items:center;gap:10px;color:#fff;text-decoration:none}.gm-footer-brand strong{font:740 15px/1.2 var(--sans);letter-spacing:.18em}.gm-footer-brand strong em{font-style:normal;color:#e4314d}.gm-reader-footer-note,.gm-reader-footer-note a{color:#abb0bb;font:12px/1.65 var(--sans)}.gm-footer-links{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:.6rem 1rem;align-items:center}.gm-footer-links a{color:#e4e7ee;text-decoration:none;font:650 .77rem var(--sans)}
+@media(max-width:1080px){.gm-site-tagline{display:none}.gm-site-header-inner{flex-wrap:wrap;gap:.5rem;padding:10px 0}.gm-site-nav{order:3;width:100%;justify-content:space-between;gap:.2rem}.gm-site-nav a{padding:.55rem .3rem!important}.gm-header-actions{margin-left:auto}}@media(max-width:700px){.gm-site-header-inner{width:calc(100% - 30px)}.gm-site-brand span{display:none}.gm-site-nav{overflow-x:auto;flex-wrap:nowrap}.gm-site-nav a{flex:none!important}.gm-reader-footer-inner{grid-template-columns:1fr}.gm-footer-links{justify-content:flex-start}}
+.gm-site-header-inner{min-height:64px;gap:15px}
+.gm-site-brand{font-size:13px;letter-spacing:.1em}
+.gm-site-tagline{max-width:245px;margin:0;color:var(--gm-muted);font:600 12px/1.3 system-ui;letter-spacing:0}
+.gm-site-nav{gap:2px}
+.gm-site-nav a{padding:8px 7px;font-size:12px}
+.gm-header-actions{display:flex;align-items:center;gap:8px}
+.gm-search-control,.gm-theme-control{display:grid;place-items:center;flex:none;width:37px;height:37px;min-width:37px;min-height:37px;margin:0;padding:0;border:1px solid var(--gm-border);border-radius:50%;background:transparent;color:var(--gm-ink)!important;text-decoration:none!important}
+.gm-search-control:hover,.gm-theme-control:hover{border-color:var(--gm-accent);background:var(--gm-soft)}
+.gm-search-control:focus-visible,.gm-theme-control:focus-visible{outline:3px solid var(--gm-accent);outline-offset:3px}
+.gm-search-control svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round}
+.gm-theme-control svg{width:17px;height:17px}
+.gm-reader-search{width:min(680px,calc(100vw - 32px));max-height:min(760px,85dvh);padding:26px;border:1px solid var(--gm-border);background:var(--gm-bg);color:var(--gm-ink);box-shadow:0 24px 80px #0008}
+.gm-reader-search::backdrop{background:#030507b8}
+.gm-reader-search-head{display:flex;align-items:start;justify-content:space-between;gap:20px;border-bottom:1px solid var(--gm-border);padding-bottom:16px;margin-bottom:18px}
+.gm-reader-search-head p{font:700 10px/1.5 ui-monospace,monospace;letter-spacing:.12em;color:var(--gm-accent);margin:0 0 8px}
+.gm-reader-search-head h2{font:650 clamp(25px,4vw,36px)/1.12 system-ui;letter-spacing:-.045em;margin:0}
+.gm-reader-search-head button{flex:none;width:34px;height:34px;background:transparent;color:var(--gm-ink);border:1px solid var(--gm-border);border-radius:50%;font:25px/1 system-ui;cursor:pointer}
+.gm-reader-search label{display:block;font:650 13px/1.4 system-ui;margin-bottom:8px}
+.gm-reader-search input{display:block;width:100%;min-height:48px;padding:11px 14px;border:1px solid var(--gm-border);border-radius:3px;background:var(--gm-paper);color:var(--gm-ink);font:16px/1.4 system-ui}
+.gm-reader-search input:focus-visible,.gm-reader-search-head button:focus-visible{outline:3px solid var(--gm-accent);outline-offset:2px}
+.gm-reader-search-scope,.gm-reader-search [data-reader-search-status]{font:12px/1.55 system-ui;color:var(--gm-muted);margin:12px 0}
+.gm-reader-search a{color:var(--gm-accent)}
+.gm-reader-search [data-reader-search-results]{overflow:auto;max-height:48dvh}
+.gm-reader-search [data-reader-search-results]>a{display:block;padding:14px 2px;border-top:1px solid var(--gm-border);text-decoration:none;color:var(--gm-ink)}
+.gm-reader-search [data-reader-search-results]>a:hover,.gm-reader-search [data-reader-search-results]>a:focus-visible{background:var(--gm-soft);outline:2px solid var(--gm-accent);outline-offset:-2px}
+.gm-reader-search [data-reader-search-results] small,.gm-reader-search [data-reader-search-results] strong,.gm-reader-search [data-reader-search-results] span{display:block}
+.gm-reader-search [data-reader-search-results] small{font:650 10px/1.5 ui-monospace,monospace;letter-spacing:.08em;color:var(--gm-accent)}
+.gm-reader-search [data-reader-search-results] strong{font:650 17px/1.3 system-ui;margin:3px 0}
+.gm-reader-search [data-reader-search-results] span{font:13px/1.5 system-ui;color:var(--gm-muted)}
+.gm-library-match-snippet{padding:11px 14px;background:var(--gm-soft);border-left:2px solid var(--gm-accent);color:var(--gm-ink)!important;font:13px/1.55 system-ui}
+@media(max-width:700px){
+ .gm-site-header-inner{width:calc(100% - 40px);min-height:112px;padding-block:0;display:grid;grid-template-columns:minmax(0,1fr) auto;grid-template-rows:46px 30px 36px;gap:0 8px}
+ .gm-site-brand{grid-column:1;grid-row:1;font-size:12px}
+ .gm-site-brand span{display:none}
+ .gm-site-tagline{grid-column:1/-1;grid-row:2;align-self:center;max-width:none;font-size:12px}
+ .gm-header-actions{grid-column:2;grid-row:1}
+ .gm-site-nav{grid-column:1/-1;grid-row:3;width:100%;margin:0;justify-content:space-between;gap:0;flex-wrap:nowrap}
+ .gm-site-nav a{font-size:11px;padding:8px 3px;white-space:nowrap}
+ .gm-reader-search{padding:18px}
+}
+
+.gm-theme-control .gm-theme-label.gm-visually-hidden{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}.gm-header-actions .gm-search-control,.gm-header-actions .gm-theme-control{width:37px;min-width:37px;height:37px;min-height:37px}.gm-site-header-inner{flex-wrap:nowrap}@media(min-width:701px) and (max-width:1080px){.gm-site-header-inner{display:flex;flex-wrap:nowrap;gap:12px;padding:0}.gm-site-nav{order:0;width:auto;flex:1;justify-content:flex-end;gap:0;margin-left:auto;overflow:visible}.gm-site-nav a{padding:8px 5px!important;white-space:nowrap}.gm-header-actions{flex:none;margin-left:0}}@media(max-width:700px){.gm-site-header-inner{display:grid;flex-wrap:initial;min-height:112px;padding-block:0}.gm-site-tagline{display:block;grid-column:1/-1;grid-row:2}.gm-site-nav{display:flex;order:initial;grid-column:1/-1;grid-row:3;width:100%;overflow-x:auto;justify-content:space-between}.gm-header-actions{grid-column:2;grid-row:1}.gm-theme-control{margin:0}}
+.gm-reader-footer{font-family:var(--sans)!important}
+.gm-reader-footer .gm-reader-footer-inner{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:2rem;align-items:start;max-width:1180px;margin:auto;padding:2rem 1.5rem}
+.gm-reader-footer .gm-footer-links{display:flex;flex-wrap:wrap;align-items:flex-start;justify-content:flex-end;gap:.65rem 1.1rem}
+.gm-reader-footer .gm-footer-links a{display:inline;color:var(--gm-ink,#f4f5f7);font:650 .78rem/1.5 var(--sans)}
+.gm-reader-footer .gm-footer-more{display:flex;flex-wrap:wrap;gap:.55rem 1.4rem;grid-column:1/-1}
+
+@media(max-width:700px){.gm-reader-footer .gm-reader-footer-inner{grid-template-columns:1fr;padding:2rem 1.25rem}.gm-reader-footer .gm-footer-links{justify-content:flex-start}}
+
+/* Keep the accepted mobile navigation spacing above the older route-level !important rules. */
+@media(max-width:700px){.gm-site-header .gm-site-nav{gap:0!important}.gm-site-header .gm-site-nav a{padding:8px 3px!important;font-size:11px!important}}
+</style>
+<style id="reader68-evidence-finish">
+.article p{overflow-wrap:anywhere}
+/* Resolve the existing shared components' palette without importing global article styles. */
+.gm-evidence,.gm-related,.gm-work-routes,.gm-source-scope,.gm-sharebar,.gm-reader-search{
+ --gm-bg:var(--bg);--gm-paper:var(--paper);--gm-ink:var(--ink);--gm-muted:var(--mute);
+ --gm-border:var(--line);--gm-accent:var(--cyan);--gm-soft:color-mix(in srgb,var(--cyan) 7%,var(--paper))
+}
+/* Accepted Work component, adapted only to this Reader's 740px reading column. */
+.gm-work-routes{max-width:1090px;margin:1.5rem auto;padding:2rem clamp(1.15rem,4vw,2.8rem);border-top:1px solid var(--line)}
+.gm-work-routes h2{font:750 clamp(1.55rem,3.5vw,2.25rem)/1.2 var(--sans);letter-spacing:-.035em}
+.gm-work-routes .gm-backmatter-note{font:.9rem/1.6 var(--sans);color:var(--muted)}
+.gm-work-grid{list-style:none;padding:0;margin:1.4rem 0 0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.1rem}
+.gm-work-grid li{min-width:0;display:flex;flex-direction:column;gap:.7rem;border-top:2px solid var(--line);padding:1.1rem 0}
+.gm-work-grid .gm-work-kind{font:700 .69rem var(--mono);text-transform:uppercase;letter-spacing:.11em;color:var(--accent)}
+.gm-work-grid a{display:block;font:750 clamp(1.05rem,2vw,1.35rem)/1.3 var(--sans);text-decoration:none;overflow-wrap:anywhere}
+.gm-work-grid li>span:last-child{display:block;font:.92rem/1.65 var(--sans);color:var(--muted)}
+
+.article .gm-work-routes,.article .gm-related,.article .gm-evidence,.article .gm-source-scope{
+ width:100%;max-width:none;margin:3.5rem 0;padding:2rem 0;min-width:0;font-family:var(--sans)
+}
+.article .gm-work-routes{padding:1.5rem clamp(1rem,3vw,1.7rem);background:var(--gm-soft);border-top:3px solid var(--cyan)}
+.article .gm-work-routes h2,.article .gm-related>h2,.article .gm-evidence h2,.article .gm-source-scope h2{
+ font:750 clamp(1.6rem,2.8vw,2.15rem)/1.15 var(--sans);letter-spacing:-.035em;margin:0 0 1rem
+}
+.article .gm-work-routes .gm-backmatter-note{color:var(--mute)}
+.article .gm-work-grid{padding:0;list-style:none;grid-template-columns:1fr}
+.article .gm-work-grid li{margin:0;border-top:1px solid var(--line);padding:1rem 0 0}
+.article .gm-work-grid .gm-work-kind{color:var(--cyan)}
+.article .gm-work-grid a{color:var(--ink);max-width:34ch}
+.article .gm-work-grid a:hover{color:var(--cyan);text-decoration:underline}
+.article .gm-work-grid li>span:last-child{color:var(--mute);max-width:68ch}
+.article .gm-related>.gm-kicker,.article .gm-evidence .gm-kicker{
+ font:750 .68rem/1.6 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--cyan);margin:0 0 .65rem
+}
+.article .gm-related .gm-related-index{font:750 .9rem/1.5 var(--mono)}
+.article .gm-related .gm-related-copy h3{font:750 clamp(1.08rem,1.75vw,1.3rem)/1.3 var(--sans);letter-spacing:-.025em;margin:0 0 .6rem}
+.article .gm-related .gm-related-copy .gm-kicker{font:700 .65rem/1.5 var(--mono);letter-spacing:.08em;text-transform:uppercase;margin:0 0 .6rem}
+.article .gm-related .gm-related-copy>p:not(.gm-kicker){font:.9rem/1.6 var(--sans)}
+/* A single-column dossier fits the actual container, rather than squeezing a desktop grid into prose. */
+.article .gm-evidence{display:block;border-top:2px solid var(--cyan)}
+.article .gm-evidence-intro{position:static;padding:1.4rem clamp(1rem,3vw,1.7rem);margin:0 0 2rem;background:var(--gm-soft);border-left:3px solid var(--cyan)}
+.article .gm-evidence-intro p{font:.9rem/1.65 var(--sans);margin:0 0 1rem}
+.article .gm-evidence-intro p:last-child{margin-bottom:0}
+.article .gm-evidence-body>h3{font:750 1.25rem/1.25 var(--sans);margin:1.8rem 0 .6rem;letter-spacing:-.02em}
+.article .gm-evidence-hint{font:.85rem/1.6 var(--sans)}
+.article .gm-claim-list{margin-bottom:2.4rem}
+.article .gm-claim-list summary{padding:1.3rem .25rem;gap:.65rem}
+.article .gm-claim-list summary:hover,.article .gm-claim-list details[open]{background:var(--gm-soft)}
+.article .gm-claim-list summary:focus-visible{outline:2px solid var(--cyan);outline-offset:3px}
+.article .gm-claim-label{font-size:.62rem;letter-spacing:.055em}
+.article .gm-claim-status{border:0;padding:.3rem .5rem;background:color-mix(in srgb,var(--cyan) 12%,var(--paper));color:var(--cyan);border-radius:2px}
+.article .gm-claim-proposition{font:700 clamp(1rem,1.7vw,1.2rem)/1.35 var(--sans);max-width:55ch}
+.article .gm-claim-detail{margin:0 .7rem 1.3rem;padding:.2rem 1rem .1rem;border-left:2px solid var(--cyan)}
+.article .gm-claim-detail p{font:.86rem/1.65 var(--sans);margin:0 0 .85rem}
+.article .gm-claim-detail p:nth-child(3){color:var(--ink);font-weight:600}
+.article .gm-claim-detail p:nth-child(4){color:var(--orange)}
+.article .gm-evidence-body>article{border-top:1px solid var(--line);padding:1.3rem 0;scroll-margin-top:2rem}
+.article .gm-evidence-body>article h4{font:750 1.06rem/1.4 var(--sans);margin:0 0 .75rem}
+.article .gm-evidence-body>article h4 a{color:var(--ink);text-decoration-thickness:1px;text-decoration-color:var(--cyan)}
+.article .gm-evidence-body>article h4 a:hover{color:var(--cyan)}
+.article .gm-evidence-body>article p{font:.83rem/1.65 var(--sans);margin:0 0 .6rem}
+.article .gm-evidence-body>article p:last-child{padding-left:.85rem;border-left:2px solid var(--cyan);color:var(--ink)}
+/* Sources are a ruled, ordered ledger, not another grid of link boxes. */
+.article .gm-source-scope{border-top:2px solid var(--cyan)}
+.article .gm-source-list{display:block;list-style:decimal-leading-zero!important;padding:0 0 0 2.6rem!important;margin:1.5rem 0 0}
+.article .gm-source-list li{display:list-item;border:0;border-top:1px solid var(--line);border-radius:0;padding:1.2rem .5rem 1.25rem;background:transparent;margin:0!important}
+.article .gm-source-list li::marker{font:750 .85rem/1.5 var(--mono);color:var(--cyan)}
+.article .gm-source-list a{display:block;font:750 clamp(1.05rem,1.8vw,1.2rem)/1.35 var(--sans);color:var(--ink);text-decoration-color:var(--cyan)}
+.article .gm-source-list a:hover{color:var(--cyan)}
+.article .gm-source-list span{display:block;font:.9rem/1.6 var(--sans);color:var(--mute);margin:.45rem 0 0}
+.article .gm-source-list li:last-child{border-bottom:1px solid var(--line)}
+@media(max-width:760px){.article .gm-related .gm-cards{grid-template-columns:1fr}}
+@media(max-width:520px){.article .gm-work-routes,.article .gm-related,.article .gm-evidence,.article .gm-source-scope{margin:2.5rem 0}.article .gm-source-list{padding-left:2rem!important}.article .gm-source-list li{padding-left:.3rem}.article .gm-evidence-intro{padding:1rem}.article .gm-claim-detail{margin-inline:.25rem}}
+</style>
 <meta name="gm-share-description" content="GPT-6.2 Astra&#x27;s High AI Self-Improvement classification concerns AI-assisted research. A persistent fixed-model coding factory is a separate feedback loop; neither alone confers autonomous production authority."><script src="/assets/reader-search.js" defer></script></head>
 <body><a class="skip" href="#article">Skip to article</a>
 <header class="gm-site-header"><div class="gm-site-header-inner"><a class="gm-site-brand" href="/" aria-label="GhostMesh Readers home"><img src="/brand/ghostmesh-mark.svg" width="45" height="34" alt=""><strong>GHOST<em>MESH</em></strong><span>READERS</span></a><p class="gm-site-tagline">Context endures. Possibility evolves.</p><nav class="gm-site-nav" aria-label="Main navigation"><a href="/">Home</a><a href="/readers/">Readers</a><a href="/map/">Map</a><a href="/knowledge/">Knowledge</a><a href="/scout/">Scout</a><a href="/#about">About</a></nav><div class="gm-header-actions"><a class="gm-search-control" href="/readers/#search" aria-label="Search Reader articles; without JavaScript, browse the Reader archive" data-reader-search-open title="Search Reader articles"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 5 5"/></svg></a><button class="gm-theme-control" id="theme-toggle" data-theme-toggle type="button" aria-label="Light appearance" aria-pressed="false" hidden><svg class="gm-theme-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4M19.1 4.9l-1.4 1.4M6.3 17.7l-1.4 1.4"/></svg><svg class="gm-theme-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.2 15.9A8.7 8.7 0 0 1 8.1 3.8 8.7 8.7 0 1 0 20.2 15.9Z"/></svg><span class="gm-theme-label gm-visually-hidden">Appearance</span></button></div></div><dialog class="gm-reader-search" data-reader-search aria-labelledby="gm-search-title"><div class="gm-reader-search-head"><div><p>GHOSTMESH / READER SEARCH</p><h2 id="gm-search-title">Search the published readings.</h2></div><button type="button" data-reader-search-close aria-label="Close Reader search">×</button></div><label for="gm-search-input">Search article text from all public Readers</label><input id="gm-search-input" type="search" autocomplete="off" placeholder="A claim, source or phrase"><p class="gm-reader-search-scope">Results are limited to the public Reader articles on this site. <a href="/readers/">Browse all Readers</a>.</p><p data-reader-search-status role="status" aria-live="polite">Type to search the public Reader articles.</p><div data-reader-search-results></div></dialog></header>
@@ -308,7 +440,7 @@ demonstrations are described as demonstrations, not independently
 reproduced results. Promotional claims are identified and are not
 endorsed as established measurements.</p>
 <section class="gm-methodology" id="how-built"><p class="edition-label">Transparent methods / Reader 68</p><h2>How We Built This Reader</h2><p class="method-intro">The path from a creator's argument to a published Reader should be inspectable. These are the evidence boundaries, not a claim that a transcript or a benchmark proves itself.</p><ol class="method-steps"><li><span class="step-number">01</span><div><h3>Preserve the original source</h3><p>The November 17 video was retained privately. Source identity and a cryptographic manifest bind this Reader to the original material.</p><p class="method-limit">Private media never enters the public repository.</p></div></li><li><span class="step-number">02</span><div><h3>Build a timed research aid</h3><p>Whisper large-v3 produced local, time-coded captions from the original audio. The nine chapter cues above were curated from that aid, not presented as creator-authored chapters.</p><p class="method-limit">Automatic recognition and timing can be imperfect; no separate audiovisual certification is claimed.</p></div></li><li><span class="step-number">03</span><div><h3>Check external evidence</h3><p>OpenAI's release and deployment-safety material were distinguished from Vals AI's RSI Index. Their claims, dates and independence are documented in the source register.</p><p class="method-limit">Company self-assessment and creator demonstration are not independent replication.</p></div></li><li><span class="step-number">04</span><div><h3>Separate inference from observation</h3><p>The two-loop distinction, reviewer agreement problem and GhostMesh release model are explicit editorial analysis, not results reproduced from the video.</p><p class="method-limit">Source-specific claims and limitations remain inspectable in the register above.</p></div></li></ol><div class="custody"><h3>What stays private</h3><p>Original media, the full transcript, SRT, working research packet and machine-local paths. The public page carries the argument, citation links, timestamps, evidence classifications and provenance limits.</p></div></section>
-<section class="gm-source-scope" id="source-references"><p class="edition-label">Public evidence trail</p><h2>Source references</h2><ul class="gm-source-list"><li><a href="https://youtu.be/K81vU-gykmQ">David Ondrej source video</a><span>Creator-controlled demonstration and commentary</span></li><li><a href="https://deploymentsafety.openai.com/gpt-6-2-astra-sol/ai-self-improvement-capabilities">OpenAI deployment-safety assessment</a><span>Primary source for the High threshold classification</span></li><li><a href="https://openai.com/index/introducing-gpt-6-2-astra-sol/">OpenAI model announcement</a><span>Developer-controlled release claims</span></li><li><a href="https://www.vals.ai/benchmarks/rsi_index">Vals AI RSI Index</a><span>Separate benchmark publisher and evaluation framework</span></li></ul></section><div class="gm-sharebar" data-gm-share=""><span class="gm-share-label">Share this Video Deconstruction</span><div class="gm-share-actions"><button class="gm-share-button" data-native-share="" type="button">Share</button><button class="gm-share-button" data-copy-link="" type="button">Copy link</button><a class="gm-share-email" data-email-link="" href="mailto:?subject=The Machine Is Learning to Improve the Machine">Email</a><span aria-live="polite" class="gm-share-message" data-gm-share-message="" role="status"></span></div></div></main><nav class="rail" aria-label="Article contents"><b>In this Reader</b><a href="#video-guide-the-argument-as-it-unfolds">Video guide: the argument as it unfolds</a>
+<section class="gm-source-scope" id="source-references"><p class="edition-label">Public evidence trail</p><h2>Source references</h2><ol class="gm-source-list"><li><a href="https://youtu.be/K81vU-gykmQ">David Ondrej source video</a><span>Creator-controlled demonstration and commentary</span></li><li><a href="https://deploymentsafety.openai.com/gpt-6-2-astra-sol/ai-self-improvement-capabilities">OpenAI deployment-safety assessment</a><span>Primary source for the High threshold classification</span></li><li><a href="https://openai.com/index/introducing-gpt-6-2-astra-sol/">OpenAI model announcement</a><span>Developer-controlled release claims</span></li><li><a href="https://www.vals.ai/benchmarks/rsi_index">Vals AI RSI Index</a><span>Separate benchmark publisher and evaluation framework</span></li></ol></section><div class="gm-sharebar" data-gm-share=""><span class="gm-share-label">Share this Video Deconstruction</span><div class="gm-share-actions"><button class="gm-share-button" data-native-share="" type="button">Share</button><button class="gm-share-button" data-copy-link="" type="button">Copy link</button><a class="gm-share-email" data-email-link="" href="mailto:?subject=The Machine Is Learning to Improve the Machine">Email</a><span aria-live="polite" class="gm-share-message" data-gm-share-message="" role="status"></span></div></div></main><nav class="rail" aria-label="Article contents"><b>In this Reader</b><a href="#video-guide-the-argument-as-it-unfolds">Video guide: the argument as it unfolds</a>
 <a href="#the-headline-got-my-attention.-the-machinery-matters-more.">The headline got my attention. The machinery matters more.</a>
 <a href="#two-loops-two-kinds-of-progress">Two loops, two kinds of progress</a>
 <a href="#what-the-system-card-actually-establishes">What the system card actually establishes</a>
