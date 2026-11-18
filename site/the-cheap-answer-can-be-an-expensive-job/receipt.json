@@ -241,8 +241,16 @@
         "direction": "outgoing"
       }
     ],
-    "sharePlaneRelationships": [],
-    "relationshipDisposition": "Two Reader companions extend the discussion of model routing and the acceptance boundary.",
+    "sharePlaneRelationships": [
+      {
+        "url": "https://shareplane.malott.ai/artifacts/done-has-a-half-life/",
+        "title": "Done Has a Half-Life",
+        "reason": "The published SharePlane Work carries completion economics into the ongoing cost of safely reconsidering an accepted result. This is a conceptual companion, not independent evidence about Astra or the video's claims.",
+        "type": "companion",
+        "basis": "curated-editorial-comparison"
+      }
+    ],
+    "relationshipDisposition": "Two Reader companions extend model routing and the acceptance boundary; one separately classified SharePlane Work extends trusted completion cost into governed reconsideration.",
     "relationshipReview": {
       "reviewedAt": "2026-11-18",
       "reviewedCatalogSize": 68,
@@ -255,8 +263,8 @@
     },
     "sharePlaneReview": {
       "reviewedAt": "2026-11-18",
-      "decision": "none",
-      "rationale": "The designated companion was serving non-final copy during preflight. The owner directed that it be omitted for this Reader."
+      "decision": "linked",
+      "rationale": "Owner requested a published SharePlane companion during visual UAT. Done Has a Half-Life is publicly labeled Published Release and extends the completion-cost argument. The former proposed Work remains excluded because its public copy advertises a non-final semantic candidate."
     },
     "review": {
       "status": "accepted-for-owner-review",
