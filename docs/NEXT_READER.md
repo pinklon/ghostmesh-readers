@@ -2,6 +2,23 @@
 
 This is the short working checklist for the next Reader. The [release runbook](READER_RELEASE_RUNBOOK.md) remains authoritative. There is one publisher, one draft PR, one independent editorial/source/privacy acceptance, one owner publication decision, and the existing Netlify deployment. This checklist creates no new gate.
 
+## Reader design contract: identity without sameness
+
+For Reader #69 onward, preserve the approved GhostMesh identity without cloning the preceding article's composition. Reader #68 is a useful standard for substantive opening, illustration, visual pacing and source polish, **not** a mandatory page layout. Readers #63 through #68 remain a reference collection; select the strongest source-appropriate precedent and explain the choice in the existing PR.
+
+| Design authority | Rule |
+| --- | --- |
+| **Fixed site shell** | Reuse the accepted branded header/footer, navigation, search, sharing, appearance control and functional scripts/styles. Preserve responsive and keyboard behavior. Do not recreate the shell inside a Reader or replace it with a minimal imitation. |
+| **Consistent reading contract** | Maintain readable measure and contrast, typography relationships, accessibility, source provenance, evidence limits, source/cue navigation when applicable, and the existing catalog-backed Reader and separately classified SharePlane relationships. Both themes must work. |
+| **Adaptable editorial vocabulary** | Choose source-appropriate layouts, accent treatment within the established palette, visual rhythm, evidence comparisons, callouts, timelines, diagrams, figures and source-ledger presentation. Reuse existing patterns when they fit, but avoid a repeated three-card formula. |
+| **Open creative direction** | Allow a distinctive narrative composition, visual metaphor, original illustration or interactive explanation where it makes the subject clearer. A prose-led Reader may need no custom infographic. No visual may overstate evidence, replace required text or impair reading. |
+
+Make five decisions inside the existing editorial/Creative Lock work, not a separate approval form: **thesis**, **why this matters to the reader and GhostMesh**, **visual concept**, **one or two signature treatments (or none)**, and **approved precedent/components to reuse**. Give a short rationale for anything genuinely novel. The manuscript, source map, claims, relationships and public-safe boundaries remain owner-controlled; an implementer does not invent them.
+
+Design to the argument: technical investigation may need annotated measurements; conceptual analysis may need restrained editorial typography; system architecture may need a dependency map; contested claims may benefit from side-by-side evidence. These are examples, never compulsory templates. Prefer a few meaningful changes in scale, density and whitespace over repetitive cards or unformatted bullet lists. Use actual HTML links rather than pasted URLs, and keep headings, body text, captions and source notes distinguishable in light and dark modes.
+
+Compare the **shared shell** to the chosen approved precedent for fidelity, and the **article body** to its own visual concept for distinctiveness. One consolidated desktop/mobile review covers both. Preserve the existing independent editorial/source/privacy acceptance, CI, exact-head owner approval and Netlify verification. No new generator, framework, component service, reviewer, release stage or retroactive restyling is authorized by this contract.
+
 ## Before implementation
 
 - **Select a baseline per Reader.** Any already published, owner-accepted Reader can be the presentation/editorial starting point, including #65 or #66. Choose based on the new source's actual editorial and visual needs, not the highest Reader number. Record the selected baseline and which layout components are intentionally reused or changed in the existing PR. The baseline is a reference, not an immutable template or a second approval contract. Keep the shared source/privacy, catalog, relationships, accessibility and release requirements. Do not copy another Reader's source-specific claims, cues, media, links, hashes or evidence.
