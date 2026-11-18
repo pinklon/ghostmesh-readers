@@ -14,7 +14,7 @@ For isolated text, HTML, CSS, JavaScript, image, or metadata corrections, edit o
 
 Use the [Reader release runbook](docs/READER_RELEASE_RUNBOOK.md) for the single-owner queue, review handoff, normal Git/Netlify path, denial handling, and production receipt. The content contract below remains the authoring standard.
 
-For the next candidate, use the [one-pass checklist](docs/NEXT_READER.md) and run `make reader-prepare` once after the complete source-qualified manuscript, catalog entry and review inputs are staged. The target invokes the existing generators and local checks; hosted CI and owner publication authorization remain separate. `make reader-check` reruns the same deterministic checks without regenerating files.
+For the next candidate, use the [one-pass checklist and creative design contract](docs/NEXT_READER.md) and run `make reader-prepare` once after the complete source-qualified manuscript, catalog entry and review inputs are staged. The target invokes the existing generators and local checks; hosted CI and owner publication authorization remain separate. `make reader-check` reruns the same deterministic checks without regenerating files.
 
 The [Scout and RSS source contract](docs/SCOUT_AND_FEED.md) describes the separate public-safe review input and stable release events used by the generated `/scout/` page and `/feed.xml`. Scanner watchlists and private source artifacts are never direct site inputs.
 
