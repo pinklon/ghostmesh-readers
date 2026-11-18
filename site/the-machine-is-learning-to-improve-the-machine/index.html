@@ -1,0 +1,472 @@
+<!doctype html>
+<html lang="en" data-reader="ghostmesh-editorial-v1">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#0b1015">
+<title>The Machine Is Learning to Improve the Machine | GhostMesh Reader #68</title>
+<meta name="description" content="GPT-6.2's AI self-improvement threshold meets the practical reality of persistent software agents. Two loops, two different kinds of progress, and the authority each requires.">
+<link rel="canonical" href="https://youtube.shareplane.malott.ai/the-machine-is-learning-to-improve-the-machine/">
+<link rel="stylesheet" href="/assets/reader-refresh.css"><style data-style-scope="platform">:root{color-scheme:light dark;--sans:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;--mono:ui-monospace,SFMono-Regular,Consolas,monospace;--bg:#f5f2ec;--ink:#1b2023;--strong:#111;--muted:#5a6567;--panel:#e9e5df;--line:#b5bab8;--shell:#f5f2eced;--link:#8e2828;--accent:#b92c2b}@media(prefers-color-scheme:dark){:root{--bg:#101416;--ink:#e5e5de;--strong:#fff;--muted:#a6ada9;--panel:#21282a;--line:#354045;--shell:#101416ee;--link:#ff9b8c;--accent:#f26b59}}@media(prefers-color-scheme:dark){html:has(#theme:checked){--bg:#f5f2ec;--ink:#1b2023;--strong:#111;--muted:#5a6567;--panel:#e9e5df;--line:#b5bab8;--shell:#f5f2eced;--link:#8e2828;--accent:#b92c2b}}@media(prefers-color-scheme:light){html:has(#theme:checked){--bg:#101416;--ink:#e5e5de;--strong:#fff;--muted:#a6ada9;--panel:#21282a;--line:#354045;--shell:#101416ee;--link:#ff9b8c;--accent:#f26b59}}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.72}a{color:var(--link);text-underline-offset:.18em}a:hover{color:var(--accent)}a:focus-visible,input:focus-visible{outline:3px solid var(--accent);outline-offset:4px}h1,h2,h3{line-height:1.15;letter-spacing:-.035em}h2{scroll-margin-top:6rem}p{margin:0 0 1.3em}main{min-width:0}.skip{position:absolute;left:-9999px}.skip:focus{left:1rem;top:1rem;z-index:9;background:var(--bg);padding:.5rem}.shell{position:sticky;top:0;z-index:5;display:flex;align-items:center;gap:1rem;padding:.7rem clamp(1rem,3vw,3rem);background:var(--shell);border-bottom:1px solid var(--line);backdrop-filter:blur(14px);font:600 .72rem var(--sans);text-transform:uppercase;letter-spacing:.13em}.brand{display:flex;align-items:center;gap:.65rem;margin-right:auto;color:var(--ink);text-decoration:none}.mark{width:20px;height:20px;background:linear-gradient(130deg,#ea403c 0 45%,#1a1013 45% 60%,#ea403c 60%)}.shell nav{display:flex;gap:1.1rem}.shell nav a{color:var(--muted);text-decoration:none}.theme{cursor:pointer;display:flex;align-items:center;gap:.3rem}input#theme{accent-color:var(--accent)}.article-body{font-size:clamp(1.03rem,1.2vw,1.16rem)}.article-body h2{font-size:clamp(1.75rem,3vw,2.55rem);margin:3.5rem 0 1.2rem}.article-body h3{font-size:1.35rem;margin:2.5rem 0 1rem}.article-body ul{padding-left:1.4em}.article-body li{margin:.6rem 0}.article-body table{border-collapse:collapse;width:100%;font-size:.87em;line-height:1.5;margin:1.5rem 0;display:block;overflow-x:auto}.article-body th,.article-body td{border-bottom:1px solid var(--line);padding:.68rem .8rem;text-align:left;white-space:nowrap}.article-body th{color:var(--accent);font-family:var(--mono);font-size:.9em}.article-body code{font: .87em var(--mono);background:var(--panel);padding:.12em .3em;overflow-wrap:anywhere}.article-body hr{border:0;border-top:1px solid var(--line);margin:3.5rem 0}.article-body blockquote{border-left:3px solid var(--accent);padding-left:1rem;margin:2rem 0}.article-body strong{color:var(--strong)}.article-body a{overflow-wrap:anywhere}.footer{border-top:1px solid var(--line);padding:2rem clamp(1rem,4vw,4rem);font: .78rem/1.65 var(--mono);color:var(--muted)}.footer a{color:inherit}.punctuation{font-weight:700;line-height:1.16;letter-spacing:-.05em;color:var(--accent)}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}@media print{.shell,.skip{display:none}body{background:white!important;color:black!important}.article-body{font-size:11pt}a{color:black!important}}@media(max-width:720px){.shell{flex-wrap:wrap}.shell nav{overflow-x:auto;width:100%;order:3}.article-body table{font-size:.8rem}}.source-film{max-width:1050px;margin:3rem auto;padding:0 1.3rem}.film-label{font-family:var(--sans);margin-bottom:1.4rem}.film-label span{font:700 .7rem var(--mono);letter-spacing:.17em;text-transform:uppercase;color:var(--accent)}.film-label h2{font-size:clamp(1.4rem,2vw,2rem);margin:.35rem 0}.film-label p,.source-fallback{color:var(--muted);font-size:.85rem}.player{position:relative;aspect-ratio:16/9;background:#171b1e;overflow:hidden}.player img,.player iframe{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;border:0}.player button{position:absolute;inset:0;width:100%;border:0;background:linear-gradient(0deg,rgba(0,0,0,.7),rgba(0,0,0,.06) 75%);color:#fff;font:800 clamp(1.1rem,2.7vw,1.7rem) var(--sans);cursor:pointer}.player button:focus-visible{outline:3px solid #fff;outline-offset:-7px}.source-chapters{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.6rem;border-top:1px solid var(--line);padding:1rem 0}.source-chapters a{font:600 .8rem/1.4 var(--sans);padding:.6rem;border-left:2px solid var(--line);text-decoration:none;color:var(--ink)}.source-chapters time{display:block;color:var(--accent);font:700 .73rem var(--mono)}@media(max-width:750px){.source-chapters{grid-template-columns:repeat(2,minmax(0,1fr))}}.gm-site-brand{font-weight:850;letter-spacing:.02em;text-transform:none;font-size:.92rem}.gm-site-brand span,.footer-brand span{color:var(--accent)}.gm-site-brand small{margin-left:.4rem;color:var(--muted);border-left:1px solid var(--line);padding-left:.7rem}.gm-site-brand img{object-fit:contain}.gm-edition,.gm-related,.gm-corroboration,.gm-methodology{max-width:1110px;margin:3.5rem auto;padding:2.4rem clamp(1.1rem,3vw,3rem);border-top:1px solid var(--line)}.gm-edition{margin-top:0}.edition-label{text-transform:uppercase;letter-spacing:.18em;font:700 .7rem var(--mono);color:var(--accent)}.gm-edition h2,.gm-related h2,.gm-corroboration h2,.gm-methodology h2{font:700 clamp(1.65rem,3vw,2.35rem)/1.18 var(--sans);margin:.8rem 0 1.5rem}.brief-columns{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2rem}.brief-columns h3{font:750 1rem var(--sans)}.brief-columns p,.edition-cards p,.evidence-list p{font-size:.92rem;line-height:1.65;color:var(--muted)}.edition-note{color:var(--muted);font:.78rem/1.6 var(--sans);margin-top:1.6rem}.gm-verdict{border-left:3px solid var(--accent);padding:1.3rem 0 1.3rem 1.5rem;margin-top:2rem}.gm-verdict p{font:700 clamp(1.3rem,2.6vw,2rem)/1.4 var(--serif,Georgia,serif);max-width:900px;margin:.6rem 0 0}.edition-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem;margin-bottom:2rem}.edition-cards article{padding:1.2rem;border:1px solid var(--line);background:var(--panel)}.edition-cards span,.evidence-list strong{font:700 .68rem var(--mono);letter-spacing:.09em;text-transform:uppercase;color:var(--accent)}.edition-cards h3,.evidence-list h3{font:700 1.1rem/1.35 var(--sans);margin:.65rem 0}.evidence-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.2rem 2.5rem}.evidence-list article{border-bottom:1px solid var(--line);padding:1rem 0}.gm-corroboration details{margin-top:1.5rem;border-top:1px solid var(--line);padding:1rem 0;font:.9rem/1.7 var(--sans)}.gm-corroboration summary{cursor:pointer;font-weight:700}.gm-methodology{max-width:1070px}.method-intro{max-width:850px;font:1.1rem/1.65 var(--serif,Georgia,serif)}.method-steps{list-style:none;padding:0;margin:2rem 0}.method-steps li{display:grid;grid-template-columns:55px minmax(0,1fr);gap:clamp(.7rem,3vw,2rem);border-top:1px solid var(--line);padding:1.6rem 0}.step-number{font:700 1.3rem var(--mono);color:var(--accent)}.method-steps h3{font:750 1.2rem var(--sans);margin:0 0 .8rem}.method-steps p,.custody p{max-width:820px;font:.96rem/1.75 var(--sans);margin:0 0 .9rem}.method-steps .method-limit{font:.83rem/1.6 var(--sans);color:var(--muted)}.custody{padding:1.5rem;border-left:3px solid var(--accent);background:var(--panel)}.custody h3{margin:0 0 1rem}.gm-reader-footer-inner{max-width:1100px;margin:auto;display:grid;grid-template-columns:minmax(0,1fr) 200px;gap:3rem}.footer-brand{font-size:1.2rem;color:var(--ink);font-weight:850}.footer-brand small{font-size:.65rem;color:var(--muted)}.gm-reader-footer nav{display:grid;align-content:start;gap:.7rem}.gm-reader-footer nav a{text-decoration:none}@media(max-width:740px){.brief-columns,.evidence-list,.gm-reader-footer-inner{grid-template-columns:1fr}.gm-site-nav{gap:.6rem!important}.gm-site-nav a{font-size:.65rem!important}.method-steps li{grid-template-columns:34px minmax(0,1fr)}}
+.gm-site-header{background:var(--gm-bg,#0f1115);color:var(--gm-ink,#f4f5f7);border-bottom:1px solid var(--gm-border,#4c525d)}
+.gm-site-header-inner{width:min(1280px,calc(100% - 48px));min-height:78px;margin:auto;display:flex;align-items:center;gap:24px}
+.gm-site-brand{display:flex;align-items:center;gap:10px;white-space:nowrap;text-decoration:none!important;color:var(--gm-ink,#f4f5f7)!important;font:750 14px/1.2 system-ui;letter-spacing:.13em}
+.gm-site-brand img,.gm-site-footer img{background:#171b22;padding:3px;border-radius:4px}
+.gm-site-brand em{color:var(--gm-accent,#ff879a);font-style:normal}.gm-site-brand span{font:650 10px/1.2 ui-monospace,monospace;letter-spacing:.13em;color:var(--gm-muted,#b8bec9);border-left:1px solid var(--gm-border,#4c525d);padding-left:10px}
+.gm-site-nav{display:flex;flex-wrap:wrap;gap:8px;margin-left:auto}.gm-site-nav a{color:var(--gm-muted,#b8bec9)!important;text-decoration:none!important;font:650 12px/1.4 system-ui;padding:9px 10px;border-bottom:2px solid transparent}.gm-site-nav a:hover,.gm-site-nav a:focus-visible{color:var(--gm-ink,#f4f5f7)!important;border-bottom-color:var(--gm-accent,#ff879a)}
+.gm-header-print{background:transparent;color:var(--gm-muted,#b8bec9);border:1px solid var(--gm-border,#4c525d);border-radius:3px;font:650 12px/1.4 system-ui;padding:8px 11px;cursor:pointer}.gm-header-print:hover{color:var(--gm-ink,#f4f5f7)}
+.gm-theme-control{display:inline-flex;align-items:center;justify-content:center;gap:8px;margin-left:0;padding:8px 11px;min-width:42px;min-height:42px;background:var(--gm-paper,#151920);color:var(--gm-ink,#f4f5f7);border:1px solid var(--gm-border,#4c525d);border-radius:50px;cursor:pointer;font:650 11px/1.3 system-ui;white-space:nowrap}.gm-theme-control[hidden]{display:none}.gm-theme-control:hover{border-color:var(--gm-accent)}.gm-theme-control:focus-visible{outline:3px solid var(--gm-accent);outline-offset:3px}.gm-theme-control svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}.gm-theme-control .gm-theme-label{font-size:11px}.gm-theme-sun{display:block}.gm-theme-moon{display:none}html[data-theme="light"] .gm-theme-sun{display:none}html[data-theme="light"] .gm-theme-moon{display:block}
+.gm-reader-footer{background:var(--gm-bg,#0f1115);color:var(--gm-ink,#f4f5f7);border-color:var(--gm-border,#4c525d)}.gm-reader-footer .gm-footer-brand,.gm-reader-footer .gm-footer-brand strong,.gm-footer-links a{color:var(--gm-ink,#f4f5f7)}.gm-reader-footer .gm-footer-brand strong em{color:var(--gm-accent,#ff879a)}.gm-reader-footer-note{color:var(--gm-muted,#b8bec9)}.gm-footer-more{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:10px 24px;padding-top:16px;border-top:1px solid var(--gm-border,#4c525d)}.gm-footer-more a{color:var(--gm-muted,#b8bec9);font:12px/1.5 system-ui}
+body[data-reader] .gm-sharebar{width:min(1180px,calc(100% - 48px));margin:18px auto 24px;padding:18px 22px;border-radius:8px;background:var(--gm-paper);border-color:var(--gm-border);color:var(--gm-ink);box-shadow:0 8px 24px #00000012}
+body[data-reader] .gm-share-label{color:var(--gm-accent);letter-spacing:.14em}body[data-reader] .gm-share-description{flex-basis:100%;max-width:64ch;order:2;margin:0;color:var(--gm-muted);font:13px/1.55 system-ui,sans-serif}body[data-reader] .gm-share-actions{margin-left:auto}body[data-reader] .gm-share-button,body[data-reader] .gm-share-email{min-height:40px;background:transparent;color:var(--gm-ink);border-color:var(--gm-border);border-radius:100px;padding-inline:17px}body[data-reader] .gm-share-button:first-child{background:var(--gm-accent);color:var(--gm-bg);border-color:var(--gm-accent)}body[data-reader] .gm-share-button:hover,body[data-reader] .gm-share-email:hover{background:var(--gm-soft);color:var(--gm-ink)}body[data-reader] .gm-share-message{color:var(--gm-accent)}
+
+.gm-header-actions{gap:8px}.gm-header-actions .gm-search-control,.gm-header-actions .gm-theme-control{display:grid;place-items:center;flex:none;width:37px;height:37px;min-width:37px;min-height:37px;margin:0;padding:0;border:1px solid var(--gm-border);border-radius:50%;background:transparent;color:var(--gm-ink)!important}.gm-header-actions .gm-search-control:hover,.gm-header-actions .gm-theme-control:hover{border-color:var(--gm-accent);background:#222830}.gm-header-actions .gm-search-control svg{width:18px;height:18px}.gm-header-actions .gm-theme-control svg{width:17px;height:17px}.gm-header-actions .gm-theme-moon{display:none}html[data-theme="light"] .gm-header-actions .gm-theme-sun{display:none}html[data-theme="light"] .gm-header-actions .gm-theme-moon{display:block}html[data-theme="light"]{--bg:#f5f2ec;--ink:#1b2023;--strong:#111;--muted:#5a6567;--panel:#e9e5df;--line:#b5bab8;--shell:#f5f2eced;--link:#8e2828;--accent:#b92c2b}html[data-theme="dark"]{--bg:#101416;--ink:#e5e5de;--strong:#fff;--muted:#a6ada9;--panel:#21282a;--line:#354045;--shell:#101416ee;--link:#ff9b8c;--accent:#f26b59}</style>
+<style>
+:root{color-scheme:dark;--bg:#101419;--paper:#151920;--ink:#f4f5f7;--mute:#b8bec9;--line:#4c525d;--cyan:#ff879a;--lime:#c9ff83;--orange:#ffbc7b}
+html[data-theme="light"]{color-scheme:light;--bg:#f5f2ec;--paper:#ffffff;--ink:#1b2023;--mute:#5a6567;--line:#b5bab8;--cyan:#b92c2b;--lime:#427318;--orange:#995222}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,sans-serif}
+a{color:var(--cyan);text-underline-offset:.2em}a:focus-visible,button:focus-visible{outline:2px solid var(--orange);outline-offset:4px}
+.skip{position:absolute;left:-9999px}.skip:focus{left:12px;top:12px;z-index:50;background:var(--paper);padding:12px}
+.top{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(15px);border-bottom:1px solid var(--line)}
+.top-inner{max-width:1180px;margin:auto;padding:12px 20px;display:flex;align-items:center;gap:15px;flex-wrap:wrap}.brand{font-weight:800;color:var(--ink);text-decoration:none;font-size:.87rem;letter-spacing:.05em}.brand span{color:var(--cyan)}
+.top-links{display:flex;gap:15px;margin-left:auto;align-items:center;flex-wrap:wrap}.top-links a{color:var(--mute);font-size:.78rem;text-decoration:none}
+.control{border:1px solid var(--line);background:var(--paper);color:var(--ink);border-radius:9px;padding:7px 10px;cursor:pointer}
+.hero{max-width:1040px;margin:0 auto;padding:78px 22px 48px;border-bottom:1px solid var(--line)}.kicker{color:var(--cyan);text-transform:none;font-size:.8rem;letter-spacing:.14em;font-weight:800}
+h1{font-size:clamp(2.7rem,6.4vw,5.25rem);letter-spacing:-.06em;line-height:1.06;margin:18px 0 22px;max-width:1000px}.dek{font-size:clamp(1.1rem,2.15vw,1.45rem);color:var(--mute);line-height:1.45;max-width:850px}.byline{color:var(--mute);font-size:.84rem;margin:24px 0;display:flex;gap:16px;flex-wrap:wrap}.watch{display:inline-block;background:var(--cyan);color:#07151b;padding:12px 18px;border-radius:8px;font-weight:800;text-decoration:none}
+.layout{max-width:1150px;margin:auto;display:grid;grid-template-columns:minmax(0,740px) 230px;gap:50px;align-items:start;padding:45px 24px}.article{min-width:0;color:var(--ink);font:1.12rem/1.77 Georgia,serif}.article p{margin:0 0 1.42em}.article h3{font:750 clamp(1.5rem,2.4vw,2rem)/1.2 Inter,system-ui,sans-serif;margin:2.5em 0 .8em;letter-spacing:-.035em;scroll-margin-top:95px}.article strong{color:var(--ink)}.article ul{padding-left:22px}.article li{margin-bottom:.6em}.article a{overflow-wrap:anywhere}.article > p:nth-child(1){color:var(--mute)}
+.rail{position:sticky;top:82px;border-left:1px solid var(--line);padding-left:20px;font-size:.78rem;max-height:calc(100vh - 100px);overflow:auto}.rail b{display:block;color:var(--cyan);margin-bottom:10px;letter-spacing:.1em}.rail a{display:block;padding:6px 0;color:var(--mute);text-decoration:none;line-height:1.4}.rail a:hover{color:var(--cyan)}
+.viz{font:1rem/1.45 Inter,system-ui,sans-serif;margin:34px 0;padding:22px;border:1px solid var(--line);background:var(--paper);border-radius:14px}.viz figcaption{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:20px}.viz figcaption b{color:var(--ink);font-size:.86rem}.viz figcaption span,.figure-note{color:var(--mute);font-size:.79rem}.figure-note{margin:18px 0 0!important;line-height:1.5}
+.two-cols,.threshold{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.two-cols>div{background:var(--bg);border-radius:10px;padding:15px}.two-cols strong{display:block;font-size:.87rem;margin-bottom:14px}.cyan{color:var(--cyan)!important}.lime{color:var(--lime)!important}.flowstep{border:1px solid var(--line);padding:12px;border-radius:8px;font-size:.81rem;text-align:center;background:var(--bg)}.flowstep.accent{border-color:var(--lime);color:var(--lime)}.flowarrow{text-align:center;color:var(--mute);padding:5px}.threshold>div{padding:23px 15px;background:var(--bg);border:1px solid var(--line);border-radius:9px;display:flex;flex-direction:column;gap:8px}.threshold small,.threshold span{color:var(--mute);font-size:.73rem}.threshold strong{font-size:clamp(1.35rem,3vw,2rem);line-height:1.1;letter-spacing:-.03em}
+.review-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.blind,.release{grid-column:1/-1;text-align:center;padding:15px;border:1px dashed var(--orange);border-radius:8px;color:var(--orange);font-weight:750}.release{border-style:solid;color:var(--lime);border-color:var(--lime)}.blind small,.release small{display:block;font-weight:400;color:var(--mute);margin-top:5px}
+.stair{list-style:none;padding:0!important;display:grid;gap:8px;counter-reset:step}.stair li{margin:0!important;display:flex;gap:14px;padding:14px;background:var(--bg);border-left:4px solid var(--cyan);border-radius:6px}.stair li:nth-child(n+4){border-color:var(--orange)}.stair b{min-width:95px;font-size:.86rem}.stair span{font-size:.8rem;color:var(--mute)}
+.footer{border-top:1px solid var(--line);padding:42px 20px;color:var(--mute);text-align:center;font-size:.8rem}
+@media(max-width:980px){.layout{grid-template-columns:minmax(0,740px);justify-content:center}.rail{position:static;max-height:none;grid-row:1;border:0;border-bottom:1px solid var(--line);padding:0 0 16px}.rail a{display:inline-block;margin-right:13px}.hero{padding-top:54px}}
+@media(max-width:520px){.hero{padding:46px 18px 32px}.layout{padding:24px 17px}.article{font-size:1.045rem}.two-cols{grid-template-columns:1fr}.viz{padding:13px}.threshold>div{padding:15px 11px}.top-links{margin-left:0}.rail a{font-size:.74rem}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+/* Reader 68 canonical shell and editorial presentation */
+.edition-label{font:800 .68rem/1.5 ui-monospace,monospace;letter-spacing:.16em;text-transform:uppercase;color:var(--cyan);margin:0 0 12px}
+.gm-opening{max-width:1050px;margin:0 auto;padding:2.5rem clamp(1.25rem,5vw,3rem) 1.6rem;border-bottom:1px solid var(--line)}
+.gm-opening h2{font:750 clamp(1.8rem,3vw,2.7rem)/1.1 var(--sans);letter-spacing:-.04em;margin:.6rem 0 1.2rem}
+.gm-opening p:not(.edition-label){max-width:71ch;font:clamp(1rem,1.3vw,1.13rem)/1.73 var(--serif,Georgia,serif);margin:0 0 1.15rem}
+.gm-opening p:last-child{color:var(--muted)}
+.gm-edition{max-width:1100px;margin:0 auto;padding:42px 24px 46px;border-bottom:1px solid var(--line)}
+.gm-edition h2{font:800 clamp(1.9rem,4vw,3.1rem)/1.13 Inter,system-ui,sans-serif;letter-spacing:-.045em;margin:0 0 16px}
+.gm-opening-lede{max-width:800px;color:var(--mute);font:1.1rem/1.65 Georgia,serif;margin:0 0 28px}
+.brief-columns{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px}
+.gm-brief-point{display:block!important;padding:21px;background:var(--paper);border-top:3px solid var(--cyan);border-radius:4px}
+.gm-brief-index{display:inline-block;font:800 .8rem/1 ui-monospace,monospace;color:var(--cyan);margin-bottom:16px}
+.gm-brief-point h3{font:800 1.15rem/1.2 Inter,system-ui,sans-serif;letter-spacing:-.02em;margin:0 0 9px}
+.gm-brief-point p{color:var(--mute);font:.88rem/1.6 Inter,system-ui,sans-serif;margin:0}
+.source-film{max-width:1060px;margin:0 auto;padding:34px 24px;border-bottom:1px solid var(--line)}.film-label{max-width:860px;margin:auto}.film-label span{font:800 .7rem ui-monospace,monospace;letter-spacing:.15em;color:var(--cyan);text-transform:uppercase}.film-label h2{font:800 1.7rem Inter,system-ui,sans-serif;margin:8px 0}.film-label p{color:var(--mute);font:.88rem/1.55 Inter,system-ui,sans-serif}.player{position:relative;aspect-ratio:16/9;max-width:860px;margin:32px auto 0;overflow:hidden;background:#080b0f;border:1px solid var(--line);border-radius:7px}
+.player img,.player iframe{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border:0}
+.player button{position:absolute;inset:0;width:100%;border:0;background:linear-gradient(0deg,rgba(0,0,0,.75),transparent 78%);color:#fff;font:800 clamp(1rem,2vw,1.4rem) Inter,system-ui,sans-serif;cursor:pointer}
+.source-chapters{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:24px 0 40px}
+.source-chapters a{display:grid;grid-template-columns:auto 1fr auto;align-items:start;gap:6px 12px;padding:16px 13px;background:var(--paper);border:1px solid var(--line);border-radius:8px;color:var(--ink);font:650 .85rem/1.35 Inter,system-ui,sans-serif;text-decoration:none;min-width:0}
+.source-chapters a:hover{border-color:var(--cyan);background:color-mix(in srgb,var(--cyan) 8%,var(--paper))}
+.source-chapters time{grid-column:1/-1;color:var(--cyan);font:800 1.08rem/1 ui-monospace,monospace}
+.chapter-index{color:var(--mute);font:700 .7rem ui-monospace,monospace}
+.chapter-arrow{color:var(--cyan)}
+.gm-methodology{padding:40px 0;margin:40px 0;border-top:2px solid var(--cyan)}
+.gm-methodology h2{font:800 clamp(2.1rem,4vw,3.2rem)/1.1 Inter,system-ui,sans-serif;letter-spacing:-.045em;margin:0 0 18px}
+.gm-methodology .method-intro{font:1.05rem/1.65 Georgia,serif;color:var(--mute);max-width:65ch}
+.method-steps{list-style:none!important;margin:25px 0!important;padding:0!important}
+.method-steps li{display:grid;grid-template-columns:52px minmax(0,1fr);gap:16px;margin:0!important;padding:21px 0;border-top:1px solid var(--line)}
+.step-number{color:var(--cyan);font:800 1rem/1.4 ui-monospace,monospace}
+.method-steps h3{font:800 1.18rem/1.3 Inter,system-ui,sans-serif;margin:0 0 7px}
+.method-steps p{font-size:.94rem;line-height:1.55;margin:0 0 8px}
+.method-limit{color:var(--mute);font-style:italic}
+.custody{padding:20px 24px;border-left:4px solid var(--cyan);background:var(--paper);border-radius:0 8px 8px 0}
+.custody h3{margin:0 0 8px;font:800 1.12rem Inter,system-ui,sans-serif}
+.custody p{margin:0;font:.91rem/1.6 Inter,system-ui,sans-serif;color:var(--mute)}
+.gm-source-scope{margin:34px 0 20px;padding:30px 0;border-top:1px solid var(--line)}
+.gm-source-scope h2{font:800 1.7rem Inter,system-ui,sans-serif;margin:0 0 16px}
+.gm-source-list{list-style:none!important;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;padding:0!important}
+.gm-source-list li{padding:16px;margin:0!important;background:var(--paper);border:1px solid var(--line);border-radius:6px;display:flex;flex-direction:column;gap:5px}
+.gm-source-list a{font:750 .9rem/1.4 Inter,system-ui,sans-serif}
+.gm-source-list span{font:.8rem/1.5 Inter,system-ui,sans-serif;color:var(--mute)}
+/* Reader 68 article craft only. Accepted site chrome remains unchanged. */
+.article h3{border-left:3px solid var(--cyan);padding-left:18px;font-size:clamp(1.65rem,2.5vw,2.12rem);line-height:1.19;margin-top:2.9em;margin-bottom:.9em}
+.article h3 + p{font-size:1.055em;line-height:1.73}
+.editorial-evidence{margin:2.3rem 0 3.2rem;padding:22px 24px;border:1px solid var(--line);border-top:4px solid var(--cyan);background:var(--paper);border-radius:7px;font-family:Inter,system-ui,sans-serif}
+.editorial-evidence .evidence-eyebrow{display:block;color:var(--cyan);font:800 .7rem/1.5 ui-monospace,monospace;text-transform:uppercase;letter-spacing:.13em;margin-bottom:6px}
+.editorial-evidence h4{font:800 clamp(1.25rem,2vw,1.65rem)/1.2 Inter,system-ui,sans-serif;margin:0 0 18px;letter-spacing:-.025em}
+.editorial-evidence .evidence-links{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.editorial-evidence .evidence-links a{display:flex;flex-direction:column;gap:8px;padding:15px;border:1px solid var(--line);border-radius:5px;color:var(--ink);background:var(--bg);text-decoration:none;min-width:0}
+.editorial-evidence .evidence-links a:hover,.editorial-evidence .evidence-links a:focus-visible{border-color:var(--cyan)}
+.editorial-evidence .evidence-links strong{font:800 .88rem/1.35 Inter,system-ui,sans-serif;color:var(--cyan)}
+.editorial-evidence .evidence-links span{font:.78rem/1.5 Inter,system-ui,sans-serif;color:var(--mute)}
+.editorial-evidence > p{font:.79rem/1.55 Inter,system-ui,sans-serif;color:var(--mute);margin:16px 0 0}
+.article .autonomy-intro{font-style:italic;color:var(--mute);margin-bottom:16px}
+.article .autonomy-steps{list-style:none;padding:0;counter-reset:authority;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:0 0 2.2rem}
+.article .autonomy-steps li{counter-increment:authority;position:relative;margin:0;padding:18px 18px 18px 57px;background:var(--paper);border:1px solid var(--line);border-left:3px solid var(--cyan);border-radius:5px;font: .9rem/1.55 Georgia,serif}
+.article .autonomy-steps li::before{content:counter(authority,decimal-leading-zero);position:absolute;left:16px;top:18px;color:var(--cyan);font:800 .78rem/1.4 ui-monospace,monospace}
+.article .autonomy-steps li strong{display:block;font:800 1rem/1.28 Inter,system-ui,sans-serif;margin-bottom:7px}
+.article .autonomy-steps li:last-child{grid-column:1/-1}
+@media(max-width:690px){.editorial-evidence .evidence-links,.article .autonomy-steps{grid-template-columns:1fr}.article .autonomy-steps li:last-child{grid-column:auto}.editorial-evidence{padding:17px}.article h3{padding-left:12px}}
+
+.gm-theme-control .gm-theme-label.gm-visually-hidden{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
+@media(max-width:700px){.gm-site-header-inner{width:calc(100% - 40px);min-height:112px;padding-block:0;display:grid;grid-template-columns:minmax(0,1fr) auto;grid-template-rows:46px 30px 36px;gap:0 8px}.gm-site-brand{grid-column:1;grid-row:1;font-size:12px}.gm-site-brand span{display:none}.gm-site-tagline{display:block;grid-column:1/-1;grid-row:2;align-self:center;max-width:none;font-size:12px}.gm-header-actions{grid-column:2;grid-row:1}.gm-site-nav{display:flex;grid-column:1/-1;grid-row:3;width:100%;margin:0;justify-content:space-between;gap:0;flex-wrap:nowrap;overflow-x:auto}.gm-site-nav a{font-size:11px;padding:8px 3px;white-space:nowrap}}
+@media(max-width:770px){.brief-columns{grid-template-columns:1fr}.source-chapters{grid-template-columns:repeat(2,minmax(0,1fr))}.gm-source-list{grid-template-columns:1fr}}
+@media(max-width:440px){.source-chapters{grid-template-columns:1fr}}
+</style>
+<style id="reader68-accepted-chrome">
+/* Header, footer and search copied intact from accepted Reader 67.
+   Keep the article's own opening, prose and figures independent of this shell. */
+.gm-site-header{position:relative;z-index:20;--gm-bg:#0f1115;--gm-ink:#f4f5f7;--gm-border:#4c525d;--gm-paper:#151920;--gm-muted:#b8bec9;--gm-accent:#ff879a}.gm-site-header-inner{width:min(1280px,calc(100% - 48px))}.gm-site-tagline{font:500 .68rem/1.3 var(--sans);color:var(--gm-muted);white-space:nowrap;margin:0}.gm-header-actions{display:flex;gap:.6rem;align-items:center}.gm-search-control{width:42px;height:42px;border:1px solid var(--gm-border);border-radius:50%;display:grid;place-items:center;color:var(--gm-ink)}.gm-search-control svg{width:17px;height:17px;stroke:currentColor;stroke-width:1.8;fill:none}.gm-theme-control input{accent-color:var(--gm-accent);width:15px;height:15px}.gm-reader-footer{--gm-bg:#0f1115;--gm-ink:#f4f5f7;--gm-border:#4c525d;--gm-muted:#b8bec9;--gm-accent:#ff879a;background:#0f1115;color:#f4f5f7;padding:0}.gm-reader-footer-inner{max-width:1180px;padding:36px 26px;grid-template-columns:minmax(260px,1fr) minmax(280px,1.25fr);gap:2rem}.gm-footer-brand{display:flex;align-items:center;gap:10px;color:#fff;text-decoration:none}.gm-footer-brand strong{font:740 15px/1.2 var(--sans);letter-spacing:.18em}.gm-footer-brand strong em{font-style:normal;color:#e4314d}.gm-reader-footer-note,.gm-reader-footer-note a{color:#abb0bb;font:12px/1.65 var(--sans)}.gm-footer-links{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:.6rem 1rem;align-items:center}.gm-footer-links a{color:#e4e7ee;text-decoration:none;font:650 .77rem var(--sans)}
+@media(max-width:1080px){.gm-site-tagline{display:none}.gm-site-header-inner{flex-wrap:wrap;gap:.5rem;padding:10px 0}.gm-site-nav{order:3;width:100%;justify-content:space-between;gap:.2rem}.gm-site-nav a{padding:.55rem .3rem!important}.gm-header-actions{margin-left:auto}}@media(max-width:700px){.gm-site-header-inner{width:calc(100% - 30px)}.gm-site-brand span{display:none}.gm-site-nav{overflow-x:auto;flex-wrap:nowrap}.gm-site-nav a{flex:none!important}.gm-reader-footer-inner{grid-template-columns:1fr}.gm-footer-links{justify-content:flex-start}}
+.gm-site-header-inner{min-height:64px;gap:15px}
+.gm-site-brand{font-size:13px;letter-spacing:.1em}
+.gm-site-tagline{max-width:245px;margin:0;color:var(--gm-muted);font:600 12px/1.3 system-ui;letter-spacing:0}
+.gm-site-nav{gap:2px}
+.gm-site-nav a{padding:8px 7px;font-size:12px}
+.gm-header-actions{display:flex;align-items:center;gap:8px}
+.gm-search-control,.gm-theme-control{display:grid;place-items:center;flex:none;width:37px;height:37px;min-width:37px;min-height:37px;margin:0;padding:0;border:1px solid var(--gm-border);border-radius:50%;background:transparent;color:var(--gm-ink)!important;text-decoration:none!important}
+.gm-search-control:hover,.gm-theme-control:hover{border-color:var(--gm-accent);background:var(--gm-soft)}
+.gm-search-control:focus-visible,.gm-theme-control:focus-visible{outline:3px solid var(--gm-accent);outline-offset:3px}
+.gm-search-control svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round}
+.gm-theme-control svg{width:17px;height:17px}
+.gm-reader-search{width:min(680px,calc(100vw - 32px));max-height:min(760px,85dvh);padding:26px;border:1px solid var(--gm-border);background:var(--gm-bg);color:var(--gm-ink);box-shadow:0 24px 80px #0008}
+.gm-reader-search::backdrop{background:#030507b8}
+.gm-reader-search-head{display:flex;align-items:start;justify-content:space-between;gap:20px;border-bottom:1px solid var(--gm-border);padding-bottom:16px;margin-bottom:18px}
+.gm-reader-search-head p{font:700 10px/1.5 ui-monospace,monospace;letter-spacing:.12em;color:var(--gm-accent);margin:0 0 8px}
+.gm-reader-search-head h2{font:650 clamp(25px,4vw,36px)/1.12 system-ui;letter-spacing:-.045em;margin:0}
+.gm-reader-search-head button{flex:none;width:34px;height:34px;background:transparent;color:var(--gm-ink);border:1px solid var(--gm-border);border-radius:50%;font:25px/1 system-ui;cursor:pointer}
+.gm-reader-search label{display:block;font:650 13px/1.4 system-ui;margin-bottom:8px}
+.gm-reader-search input{display:block;width:100%;min-height:48px;padding:11px 14px;border:1px solid var(--gm-border);border-radius:3px;background:var(--gm-paper);color:var(--gm-ink);font:16px/1.4 system-ui}
+.gm-reader-search input:focus-visible,.gm-reader-search-head button:focus-visible{outline:3px solid var(--gm-accent);outline-offset:2px}
+.gm-reader-search-scope,.gm-reader-search [data-reader-search-status]{font:12px/1.55 system-ui;color:var(--gm-muted);margin:12px 0}
+.gm-reader-search a{color:var(--gm-accent)}
+.gm-reader-search [data-reader-search-results]{overflow:auto;max-height:48dvh}
+.gm-reader-search [data-reader-search-results]>a{display:block;padding:14px 2px;border-top:1px solid var(--gm-border);text-decoration:none;color:var(--gm-ink)}
+.gm-reader-search [data-reader-search-results]>a:hover,.gm-reader-search [data-reader-search-results]>a:focus-visible{background:var(--gm-soft);outline:2px solid var(--gm-accent);outline-offset:-2px}
+.gm-reader-search [data-reader-search-results] small,.gm-reader-search [data-reader-search-results] strong,.gm-reader-search [data-reader-search-results] span{display:block}
+.gm-reader-search [data-reader-search-results] small{font:650 10px/1.5 ui-monospace,monospace;letter-spacing:.08em;color:var(--gm-accent)}
+.gm-reader-search [data-reader-search-results] strong{font:650 17px/1.3 system-ui;margin:3px 0}
+.gm-reader-search [data-reader-search-results] span{font:13px/1.5 system-ui;color:var(--gm-muted)}
+.gm-library-match-snippet{padding:11px 14px;background:var(--gm-soft);border-left:2px solid var(--gm-accent);color:var(--gm-ink)!important;font:13px/1.55 system-ui}
+@media(max-width:700px){
+ .gm-site-header-inner{width:calc(100% - 40px);min-height:112px;padding-block:0;display:grid;grid-template-columns:minmax(0,1fr) auto;grid-template-rows:46px 30px 36px;gap:0 8px}
+ .gm-site-brand{grid-column:1;grid-row:1;font-size:12px}
+ .gm-site-brand span{display:none}
+ .gm-site-tagline{grid-column:1/-1;grid-row:2;align-self:center;max-width:none;font-size:12px}
+ .gm-header-actions{grid-column:2;grid-row:1}
+ .gm-site-nav{grid-column:1/-1;grid-row:3;width:100%;margin:0;justify-content:space-between;gap:0;flex-wrap:nowrap}
+ .gm-site-nav a{font-size:11px;padding:8px 3px;white-space:nowrap}
+ .gm-reader-search{padding:18px}
+}
+
+.gm-theme-control .gm-theme-label.gm-visually-hidden{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}.gm-header-actions .gm-search-control,.gm-header-actions .gm-theme-control{width:37px;min-width:37px;height:37px;min-height:37px}.gm-site-header-inner{flex-wrap:nowrap}@media(min-width:701px) and (max-width:1080px){.gm-site-header-inner{display:flex;flex-wrap:nowrap;gap:12px;padding:0}.gm-site-nav{order:0;width:auto;flex:1;justify-content:flex-end;gap:0;margin-left:auto;overflow:visible}.gm-site-nav a{padding:8px 5px!important;white-space:nowrap}.gm-header-actions{flex:none;margin-left:0}}@media(max-width:700px){.gm-site-header-inner{display:grid;flex-wrap:initial;min-height:112px;padding-block:0}.gm-site-tagline{display:block;grid-column:1/-1;grid-row:2}.gm-site-nav{display:flex;order:initial;grid-column:1/-1;grid-row:3;width:100%;overflow-x:auto;justify-content:space-between}.gm-header-actions{grid-column:2;grid-row:1}.gm-theme-control{margin:0}}
+.gm-reader-footer{font-family:var(--sans)!important}
+.gm-reader-footer .gm-reader-footer-inner{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:2rem;align-items:start;max-width:1180px;margin:auto;padding:2rem 1.5rem}
+.gm-reader-footer .gm-footer-links{display:flex;flex-wrap:wrap;align-items:flex-start;justify-content:flex-end;gap:.65rem 1.1rem}
+.gm-reader-footer .gm-footer-links a{display:inline;color:var(--gm-ink,#f4f5f7);font:650 .78rem/1.5 var(--sans)}
+.gm-reader-footer .gm-footer-more{display:flex;flex-wrap:wrap;gap:.55rem 1.4rem;grid-column:1/-1}
+
+@media(max-width:700px){.gm-reader-footer .gm-reader-footer-inner{grid-template-columns:1fr;padding:2rem 1.25rem}.gm-reader-footer .gm-footer-links{justify-content:flex-start}}
+
+/* Keep the accepted mobile navigation spacing above the older route-level !important rules. */
+@media(max-width:700px){.gm-site-header .gm-site-nav{gap:0!important}.gm-site-header .gm-site-nav a{padding:8px 3px!important;font-size:11px!important}}
+</style>
+<style id="reader68-evidence-finish">
+.article p{overflow-wrap:anywhere}
+/* Resolve the existing shared components' palette without importing global article styles. */
+.gm-evidence,.gm-related,.gm-work-routes,.gm-source-scope,.gm-sharebar,.gm-reader-search{
+ --gm-bg:var(--bg);--gm-paper:var(--paper);--gm-ink:var(--ink);--gm-muted:var(--mute);
+ --gm-border:var(--line);--gm-accent:var(--cyan);--gm-soft:color-mix(in srgb,var(--cyan) 7%,var(--paper))
+}
+/* Accepted Work component, adapted only to this Reader's 740px reading column. */
+.gm-work-routes{max-width:1090px;margin:1.5rem auto;padding:2rem clamp(1.15rem,4vw,2.8rem);border-top:1px solid var(--line)}
+.gm-work-routes h2{font:750 clamp(1.55rem,3.5vw,2.25rem)/1.2 var(--sans);letter-spacing:-.035em}
+.gm-work-routes .gm-backmatter-note{font:.9rem/1.6 var(--sans);color:var(--muted)}
+.gm-work-grid{list-style:none;padding:0;margin:1.4rem 0 0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.1rem}
+.gm-work-grid li{min-width:0;display:flex;flex-direction:column;gap:.7rem;border-top:2px solid var(--line);padding:1.1rem 0}
+.gm-work-grid .gm-work-kind{font:700 .69rem var(--mono);text-transform:uppercase;letter-spacing:.11em;color:var(--accent)}
+.gm-work-grid a{display:block;font:750 clamp(1.05rem,2vw,1.35rem)/1.3 var(--sans);text-decoration:none;overflow-wrap:anywhere}
+.gm-work-grid li>span:last-child{display:block;font:.92rem/1.65 var(--sans);color:var(--muted)}
+
+.article .gm-work-routes,.article .gm-related,.article .gm-evidence,.article .gm-source-scope{
+ width:100%;max-width:none;margin:3.5rem 0;padding:2rem 0;min-width:0;font-family:var(--sans)
+}
+.article .gm-work-routes{padding:1.5rem clamp(1rem,3vw,1.7rem);background:var(--gm-soft);border-top:3px solid var(--cyan)}
+.article .gm-work-routes h2,.article .gm-related>h2,.article .gm-evidence h2,.article .gm-source-scope h2{
+ font:750 clamp(1.6rem,2.8vw,2.15rem)/1.15 var(--sans);letter-spacing:-.035em;margin:0 0 1rem
+}
+.article .gm-work-routes .gm-backmatter-note{color:var(--mute)}
+.article .gm-work-grid{padding:0;list-style:none;grid-template-columns:1fr}
+.article .gm-work-grid li{margin:0;border-top:1px solid var(--line);padding:1rem 0 0}
+.article .gm-work-grid .gm-work-kind{color:var(--cyan)}
+.article .gm-work-grid a{color:var(--ink);max-width:34ch}
+.article .gm-work-grid a:hover{color:var(--cyan);text-decoration:underline}
+.article .gm-work-grid li>span:last-child{color:var(--mute);max-width:68ch}
+.article .gm-related>.gm-kicker,.article .gm-evidence .gm-kicker{
+ font:750 .68rem/1.6 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--cyan);margin:0 0 .65rem
+}
+.article .gm-related .gm-related-index{font:750 .9rem/1.5 var(--mono)}
+.article .gm-related .gm-related-copy h3{font:750 clamp(1.08rem,1.75vw,1.3rem)/1.3 var(--sans);letter-spacing:-.025em;margin:0 0 .6rem}
+.article .gm-related .gm-related-copy .gm-kicker{font:700 .65rem/1.5 var(--mono);letter-spacing:.08em;text-transform:uppercase;margin:0 0 .6rem}
+.article .gm-related .gm-related-copy>p:not(.gm-kicker){font:.9rem/1.6 var(--sans)}
+/* A single-column dossier fits the actual container, rather than squeezing a desktop grid into prose. */
+.article .gm-evidence{display:block;border-top:2px solid var(--cyan)}
+.article .gm-evidence-intro{position:static;padding:1.4rem clamp(1rem,3vw,1.7rem);margin:0 0 2rem;background:var(--gm-soft);border-left:3px solid var(--cyan)}
+.article .gm-evidence-intro p{font:.9rem/1.65 var(--sans);margin:0 0 1rem}
+.article .gm-evidence-intro p:last-child{margin-bottom:0}
+.article .gm-evidence-body>h3{font:750 1.25rem/1.25 var(--sans);margin:1.8rem 0 .6rem;letter-spacing:-.02em}
+.article .gm-evidence-hint{font:.85rem/1.6 var(--sans)}
+.article .gm-claim-list{margin-bottom:2.4rem}
+.article .gm-claim-list summary{padding:1.3rem .25rem;gap:.65rem}
+.article .gm-claim-list summary:hover,.article .gm-claim-list details[open]{background:var(--gm-soft)}
+.article .gm-claim-list summary:focus-visible{outline:2px solid var(--cyan);outline-offset:3px}
+.article .gm-claim-label{font-size:.62rem;letter-spacing:.055em}
+.article .gm-claim-status{border:0;padding:.3rem .5rem;background:color-mix(in srgb,var(--cyan) 12%,var(--paper));color:var(--cyan);border-radius:2px}
+.article .gm-claim-proposition{font:700 clamp(1rem,1.7vw,1.2rem)/1.35 var(--sans);max-width:55ch}
+.article .gm-claim-detail{margin:0 .7rem 1.3rem;padding:.2rem 1rem .1rem;border-left:2px solid var(--cyan)}
+.article .gm-claim-detail p{font:.86rem/1.65 var(--sans);margin:0 0 .85rem}
+.article .gm-claim-detail p:nth-child(3){color:var(--ink);font-weight:600}
+.article .gm-claim-detail p:nth-child(4){color:var(--orange)}
+.article .gm-evidence-body>article{border-top:1px solid var(--line);padding:1.3rem 0;scroll-margin-top:2rem}
+.article .gm-evidence-body>article h4{font:750 1.06rem/1.4 var(--sans);margin:0 0 .75rem}
+.article .gm-evidence-body>article h4 a{color:var(--ink);text-decoration-thickness:1px;text-decoration-color:var(--cyan)}
+.article .gm-evidence-body>article h4 a:hover{color:var(--cyan)}
+.article .gm-evidence-body>article p{font:.83rem/1.65 var(--sans);margin:0 0 .6rem}
+.article .gm-evidence-body>article p:last-child{padding-left:.85rem;border-left:2px solid var(--cyan);color:var(--ink)}
+/* Sources are a ruled, ordered ledger, not another grid of link boxes. */
+.article .gm-source-scope{border-top:2px solid var(--cyan)}
+.article .gm-source-list{display:block;list-style:decimal-leading-zero!important;padding:0 0 0 2.6rem!important;margin:1.5rem 0 0}
+.article .gm-source-list li{display:list-item;border:0;border-top:1px solid var(--line);border-radius:0;padding:1.2rem .5rem 1.25rem;background:transparent;margin:0!important}
+.article .gm-source-list li::marker{font:750 .85rem/1.5 var(--mono);color:var(--cyan)}
+.article .gm-source-list a{display:block;font:750 clamp(1.05rem,1.8vw,1.2rem)/1.35 var(--sans);color:var(--ink);text-decoration-color:var(--cyan)}
+.article .gm-source-list a:hover{color:var(--cyan)}
+.article .gm-source-list span{display:block;font:.9rem/1.6 var(--sans);color:var(--mute);margin:.45rem 0 0}
+.article .gm-source-list li:last-child{border-bottom:1px solid var(--line)}
+@media(max-width:760px){.article .gm-related .gm-cards{grid-template-columns:1fr}}
+@media(max-width:520px){.article .gm-work-routes,.article .gm-related,.article .gm-evidence,.article .gm-source-scope{margin:2.5rem 0}.article .gm-source-list{padding-left:2rem!important}.article .gm-source-list li{padding-left:.3rem}.article .gm-evidence-intro{padding:1rem}.article .gm-claim-detail{margin-inline:.25rem}}
+</style>
+<meta name="gm-share-description" content="GPT-6.2 Astra&#x27;s High AI Self-Improvement classification concerns AI-assisted research. A persistent fixed-model coding factory is a separate feedback loop; neither alone confers autonomous production authority."><script src="/assets/reader-search.js" defer></script></head>
+<body><a class="skip" href="#article">Skip to article</a>
+<header class="gm-site-header"><div class="gm-site-header-inner"><a class="gm-site-brand" href="/" aria-label="GhostMesh Readers home"><img src="/brand/ghostmesh-mark.svg" width="45" height="34" alt=""><strong>GHOST<em>MESH</em></strong><span>READERS</span></a><p class="gm-site-tagline">Context endures. Possibility evolves.</p><nav class="gm-site-nav" aria-label="Main navigation"><a href="/">Home</a><a href="/readers/">Readers</a><a href="/map/">Map</a><a href="/knowledge/">Knowledge</a><a href="/scout/">Scout</a><a href="/#about">About</a></nav><div class="gm-header-actions"><a class="gm-search-control" href="/readers/#search" aria-label="Search Reader articles; without JavaScript, browse the Reader archive" data-reader-search-open title="Search Reader articles"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 5 5"/></svg></a><button class="gm-theme-control" id="theme-toggle" data-theme-toggle type="button" aria-label="Light appearance" aria-pressed="false" hidden><svg class="gm-theme-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4M19.1 4.9l-1.4 1.4M6.3 17.7l-1.4 1.4"/></svg><svg class="gm-theme-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.2 15.9A8.7 8.7 0 0 1 8.1 3.8 8.7 8.7 0 1 0 20.2 15.9Z"/></svg><span class="gm-theme-label gm-visually-hidden">Appearance</span></button></div></div><dialog class="gm-reader-search" data-reader-search aria-labelledby="gm-search-title"><div class="gm-reader-search-head"><div><p>GHOSTMESH / READER SEARCH</p><h2 id="gm-search-title">Search the published readings.</h2></div><button type="button" data-reader-search-close aria-label="Close Reader search">×</button></div><label for="gm-search-input">Search article text from all public Readers</label><input id="gm-search-input" type="search" autocomplete="off" placeholder="A claim, source or phrase"><p class="gm-reader-search-scope">Results are limited to the public Reader articles on this site. <a href="/readers/">Browse all Readers</a>.</p><p data-reader-search-status role="status" aria-live="polite">Type to search the public Reader articles.</p><div data-reader-search-results></div></dialog></header>
+<section class="hero"><div class="kicker">Reader 068 / AI research / Agentic software</div><h1>The Machine Is Learning to Improve the Machine</h1><p class="dek">GPT-6.2, recursive self-improvement, and the difference between research capability and an autonomous software factory.</p><div class="byline"><span>Original GhostMesh analysis</span><span>Source: David Ondrej · Nov 17, 2026</span><span>27:09 source video</span></div><a class="watch" href="https://youtu.be/K81vU-gykmQ" target="_blank" rel="noopener noreferrer">Watch source video ↗</a></section>
+<section class="gm-opening" aria-labelledby="gm-opening-title"><p class="edition-label">The GhostMesh perspective</p><h2 id="gm-opening-title">A faster machine is not an accountable machine.</h2><p>What happens when AI can contribute to improving AI itself? That is the question behind David Ondrej's discussion of GPT-6.2 and recursive self-improvement. The claim deserves attention because it touches both the pace of discovery and the possibility of software that changes itself without waiting for a human developer.</p><p>From a GhostMesh perspective, those are two distinct systems. An AI model assisting research is not the same as an agent editing, testing, and releasing software. Each requires different evidence, different boundaries, and a different answer to a deceptively simple question: who decides the result is good enough to trust?</p><p>This Reader examines the creator's argument against the public evidence and follows those boundaries into the practical engineering problem. The interesting development is real; the leap from capability to earned authority still needs proof.</p></section><section class="gm-edition" id="at-a-glance"><p class="gm-publication-status" data-gm-release-status=""><strong>Publication status:</strong> Editorial draft. Independent acceptance and owner publication authorization are pending.</p><div class="gm-brief"><p class="edition-label">GhostMesh / Reader 68</p><h2>The three-minute brief</h2><div class="brief-columns"><article class="gm-brief-point"><span class="gm-brief-index">01</span><h3>The research loop</h3><p>AI may accelerate the human research process behind future models. A High capability classification is a threshold, not autonomous science.</p></article><article class="gm-brief-point"><span class="gm-brief-index">02</span><h3>The software loop</h3><p>Persistent agents can patch an existing codebase. That does not mean their underlying model has improved.</p></article><article class="gm-brief-point"><span class="gm-brief-index">03</span><h3>The authority gap</h3><p>Reviewer agreement is useful, but independent acceptance, release permissions, and rollback decide whether the change is trustworthy.</p></article></div></div></section>
+<section class="source-film" id="source-film" aria-label="Original video"><div class="film-label"><span>Original source</span><h2>Watch the argument at its source</h2><p>Playback loads only after you choose to play. The time-coded guide below opens the original video at each cue.</p></div><div class="player gm-media-frame" data-gm-aspect="16:9" aria-label="Source video preview"><img src="https://i.ytimg.com/vi/K81vU-gykmQ/hqdefault.jpg" loading="lazy" alt="Thumbnail for David Ondrej's discussion of GPT-6.2 and recursive self-improvement"><button type="button" id="launch" aria-label="Play original YouTube video">▶ Play original video</button></div></section>
+<div class="layout"><main id="article" class="article"><p><strong>Primary source:</strong> David Ondrej, YouTube video
+K81vU-gykmQ, November 17, 2026 (27:10).</p>
+<h3 id="video-guide-the-argument-as-it-unfolds">Video guide: the
+argument as it unfolds</h3>
+<p>This is a guided analysis of David Ondrej’s November 17 video, not a
+transcript or a reproduced benchmark report. The clickable anchors below
+come from an independently generated, time-coded local transcription of
+the source audio. They are approximate speech-entry points, not
+creator-authored YouTube chapters.</p>
+<nav class="source-chapters" id="chapters" aria-label="Source video cue navigator"><a href="https://youtu.be/K81vU-gykmQ?t=0" target="_blank" rel="noopener noreferrer"><span class="chapter-index">01</span><time>00:00</time><span>Launch framing</span><span class="chapter-arrow" aria-hidden="true">↗</span></a><a href="https://youtu.be/K81vU-gykmQ?t=58" target="_blank" rel="noopener noreferrer"><span class="chapter-index">02</span><time>00:58</time><span>Benchmarks</span><span class="chapter-arrow" aria-hidden="true">↗</span></a><a href="https://youtu.be/K81vU-gykmQ?t=220" target="_blank" rel="noopener noreferrer"><span class="chapter-index">03</span><time>03:40</time><span>Cloudroom demo</span><span class="chapter-arrow" aria-hidden="true">↗</span></a><a href="https://youtu.be/K81vU-gykmQ?t=473" target="_blank" rel="noopener noreferrer"><span class="chapter-index">04</span><time>07:53</time><span>Self-improvement threshold</span><span class="chapter-arrow" aria-hidden="true">↗</span></a><a href="https://youtu.be/K81vU-gykmQ?t=681" target="_blank" rel="noopener noreferrer"><span class="chapter-index">05</span><time>11:21</time><span>Coding comparison</span><span class="chapter-arrow" aria-hidden="true">↗</span></a><a href="https://youtu.be/K81vU-gykmQ?t=833" target="_blank" rel="noopener noreferrer"><span class="chapter-index">06</span><time>13:53</time><span>Security loops</span><span class="chapter-arrow" aria-hidden="true">↗</span></a><a href="https://youtu.be/K81vU-gykmQ?t=973" target="_blank" rel="noopener noreferrer"><span class="chapter-index">07</span><time>16:13</time><span>Model agreement</span><span class="chapter-arrow" aria-hidden="true">↗</span></a><a href="https://youtu.be/K81vU-gykmQ?t=1262" target="_blank" rel="noopener noreferrer"><span class="chapter-index">08</span><time>21:02</time><span>Mixed verdict</span><span class="chapter-arrow" aria-hidden="true">↗</span></a><a href="https://youtu.be/K81vU-gykmQ?t=1466" target="_blank" rel="noopener noreferrer"><span class="chapter-index">09</span><time>24:26</time><span>Pre-production review</span><span class="chapter-arrow" aria-hidden="true">↗</span></a></nav>
+<h3 id="the-headline-got-my-attention.-the-machinery-matters-more.">The
+headline got my attention. The machinery matters more.</h3>
+<p>OpenAI released GPT-6.2 Astra and Sol on November 17, 2026. One
+sentence in the associated safety material deserves close attention:
+Astra is the first externally released OpenAI model the company
+classifies as reaching its <strong>High</strong> threshold for AI
+Self-Improvement. Sol does not meet that threshold.</p>
+<p>That sounds like a machine capable of improving itself. It is a much
+narrower claim.</p>
+<p>OpenAI is assessing whether the model can materially accelerate the
+work of researchers and engineers developing better AI systems. The
+category includes diagnosing research failures, optimizing kernels,
+training systems, and improving evaluations. It does not certify an
+autonomous system that reliably develops, validates, and deploys its own
+successor without human judgment.</p>
+<p>David Ondrej’s video takes that release and moves through a second,
+potentially more immediate idea: autonomous agents that keep revisiting
+a software project, identify a problem, fix it, and do it again. These
+are related developments, but they are not interchangeable. Calling them
+both recursive self-improvement hides the part that engineers actually
+need to understand.</p>
+<figure class="viz dual"><figcaption><b>01 / Two feedback loops</b><span>Similar automation. Different object being improved.</span></figcaption><div class="two-cols"><div><strong class="cyan">Research acceleration</strong><div class="flowstep">AI research question</div><div class="flowarrow">↓</div><div class="flowstep">Model-assisted experiment</div><div class="flowarrow">↓</div><div class="flowstep">Independent evaluation</div><div class="flowarrow">↓</div><div class="flowstep accent">Potential future model</div></div><div><strong class="lime">Software iteration</strong><div class="flowstep">Existing repository</div><div class="flowarrow">↓</div><div class="flowstep">Fixed-model coding agent</div><div class="flowarrow">↓</div><div class="flowstep">Tests and release authority</div><div class="flowarrow">↓</div><div class="flowstep accent">Potentially improved software</div></div></div><p class="figure-note">The second loop does not, by itself, improve the intelligence of its underlying model.</p></figure><h3 id="two-loops-two-kinds-of-progress">Two loops, two kinds of
+progress</h3>
+<p><strong>Loop A: AI research acceleration.</strong> Researchers define
+objectives and evaluations. AI models help design or execute
+experiments. Humans and controlled systems decide whether the resulting
+model is better, safer, and releasable. Improvement occurs across model
+generations, if the experiments succeed.</p>
+<p><strong>Loop B: persistent software agents.</strong> An agent
+observes a repository or product, proposes a patch, runs tests, and
+receives feedback. The software may improve through repeated iterations
+even though the underlying model stays exactly the same.</p>
+<p>A tool can make a product better without making itself more
+intelligent. A coding agent can repair ten bugs using one frozen model.
+That is productive automation. It is not evidence of runaway recursive
+intelligence.</p>
+<p>Conversely, assistance with AI research may increase the rate of
+frontier model progress even when the research system still depends
+heavily on humans. The distinction matters because each loop has
+different failure modes, evidence requirements, and governance.</p>
+<figure class="viz"><figcaption><b>02 / A threshold is a classification</b><span>OpenAI's November 17 assessment</span></figcaption><div class="threshold"><div><small>GPT-6.2 Astra</small><strong class="cyan">HIGH</strong><span>AI Self-Improvement</span></div><div><small>GPT-6.2 Sol</small><strong>BELOW HIGH</strong><span>Same capability category</span></div></div><p class="figure-note">Five research-engineering evaluations informed the High determination. It is not evidence of fully autonomous AI research. <a href="https://deploymentsafety.openai.com/gpt-6-2-astra-sol/ai-self-improvement-capabilities">System card ↗</a></p></figure><h3 id="what-the-system-card-actually-establishes">What the system card
+actually establishes</h3>
+<p>OpenAI describes five research-engineering evaluations as central to
+Astra’s High AI Self-Improvement determination. It also reports separate
+informational assessments, including the OpenAI Epoch Capabilities Index
+and outside testing by Epoch AI and Vals AI.</p>
+<p>The official release describes High as an estimated research
+contribution comparable to providing every OpenAI researcher with an
+additional highly capable research engineer, measured against a 2024
+baseline. That is an assessment framework, not a headcount audit or
+proof of an autonomous research laboratory.</p>
+<p>The results are not uniformly upward. On the OpenAI Epoch
+Capabilities Index, Astra scores 170.1 versus GPT-6 Astra’s 168.4.
+OpenAI says the increment is slightly above its historical trend, yet
+consistent with progress at roughly the previous rate. It does not
+present that as demonstrated explosive acceleration.</p>
+<p>The independent evaluations add needed friction. Vals reports
+successes on some defined training and evaluation tasks while showing
+that model order can reverse across tasks. Its open-ended post-training
+results and OpenAI’s own interpretation do not support the claim that
+Astra can fully automate AI research. That is compatible with a model
+being genuinely valuable to a human researcher. It is incompatible with
+pretending the whole research process has been solved.</p>
+<p>There is a useful engineering lesson here. Capability classifications
+define a threshold under a specific test design. They do not erase task
+dependence, uncertainty, or the difference between laboratory
+performance and an operational system.</p>
+<aside class="editorial-evidence" aria-label="Evidence supporting the capability comparison"><span class="evidence-eyebrow">Evidence trail / Three source types</span><h4>Inspect the underlying claims</h4><div class="evidence-links"><a href="https://deploymentsafety.openai.com/gpt-6-2-astra-sol/ai-self-improvement-capabilities" target="_blank" rel="noopener noreferrer"><strong>OpenAI safety assessment</strong><span>Developer classification and its stated limits</span></a><a href="https://openai.com/index/introducing-gpt-6-2-astra-sol/" target="_blank" rel="noopener noreferrer"><strong>OpenAI model announcement</strong><span>Release claims and reported capabilities</span></a><a href="https://www.vals.ai/benchmarks/rsi_index" target="_blank" rel="noopener noreferrer"><strong>Vals RSI Index</strong><span>Separate evaluation framework and results</span></a></div><p>These sources have different evidentiary reach. A developer assessment and a separate benchmark are not interchangeable with independent reproduction.</p></aside>
+<h3 id="the-video-is-more-interesting-than-its-title">The video is more
+interesting than its title</h3>
+<p>Ondrej does not spend 27 minutes explaining a single OpenAI safety
+classification. He surveys competing frontier models, discusses cost,
+coding quality, and divergent user reactions, and walks through his own
+application-building demonstrations. Then he argues for software agents
+that continuously work on an application while its owner sleeps.</p>
+<p>This is an important shift in the source. The evidence changes from
+externally reported research evaluations to personal experiments,
+product observations, and a prediction about where software delivery is
+going.</p>
+<p>The model comparisons are a fair subject for the article precisely
+because they are messy. A model can win a published engineering
+benchmark and still underperform in a particular codebase, UI task,
+debugging session, or cost envelope. Conversely, a developer’s striking
+demonstration does not generalize to every repository. Prompts,
+scaffolding, tools, context quality, and spending all affect the
+outcome.</p>
+<p>The speaker’s advice to benchmark models against one’s own workflows
+is sound as an operational principle. The advertised performance or
+productivity improvement associated with his own product is not
+independent evidence. The video contains promotional material; the
+Reader should identify it without allowing that fact to discredit claims
+that have separate support.</p>
+<p>Specific video claims about vendor revenues, valuations, restrictions
+on AI research, and customer productivity must be corroborated
+individually or explicitly attributed as unverified assertions. One
+entertaining screen recording is not an economic dataset.</p>
+<figure class="viz"><figcaption><b>03 / The agreement trap</b><span>Two models can share a blind spot</span></figcaption><div class="review-grid"><div class="flowstep">Agent A: patch approved</div><div class="flowstep">Agent B: patch approved</div><div class="blind">Shared assumptions<br><small>Stale fixtures · incomplete tests · blind context</small></div><div class="release">Independent release proof required<br><small>Behavioral acceptance · permissions · rollback</small></div></div><p class="figure-note">Agreement can increase confidence. It cannot establish authority or substitute for a measured outcome.</p></figure><h3 id="the-seductive-software-loop">The seductive software loop</h3>
+<p>Imagine an agent assigned to a web service. It watches dependencies
+and logs. It discovers a vulnerable library, opens a patch, tests the
+application, and posts an explanation. Hours later it notices a
+performance regression and tries again. Given enough repetitions, the
+system becomes more reliable, at least in theory.</p>
+<p>This is useful. It is also where terminology starts to do dangerous
+work.</p>
+<p>The agent has a task objective, an observation surface, tools, and a
+feedback signal. None of these guarantees that the feedback signal
+measures the user’s real objective. A suite of green tests can coexist
+with a broken production behavior. A patch can satisfy a static checker
+while silently changing an access boundary. A faster service can be
+faster because it stopped performing a required validation.</p>
+<p>Now put two models in the loop. One writes the patch and the other
+reviews it. This can reduce some independent mistakes if their reasoning
+and evidence differ. Agreement is not proof of safety. Both models may
+share the same false assumption, incomplete test fixture, stale API
+contract, or contaminated context. A second model saying yes is not a
+change-control system.</p>
+<p>The correct unit of analysis is the entire loop: objective,
+observations, authority, validation, deployment, feedback, and recovery.
+Remove any one of those and an impressive demo can become a very
+efficient failure machine.</p>
+<figure class="viz"><figcaption><b>04 / Capability is not authority</b><span>Increase permission only with evidence</span></figcaption><ol class="stair"><li><b>Observe</b><span>Read-only facts and provenance</span></li><li><b>Propose</b><span>Scoped change and expected outcome</span></li><li><b>Implement</b><span>Isolated branch and deterministic tests</span></li><li><b>Release</b><span>Protected approval and reversible rollout</span></li><li><b>Verify</b><span>Production behavior and recovery receipt</span></li></ol><p class="figure-note">Blast radius increases with each step. So does the evidence required.</p></figure><h3 id="what-this-means-for-ghostmesh">What this means for
+GhostMesh</h3>
+<p>GhostMesh already makes the difference tangible. Agents may inspect
+repositories, summarize issues, run validations, and prepare scoped
+changes. Their value is not measured by the number of actions they can
+execute without bothering the owner. It is measured by useful outcomes
+that are attributable, reversible where practical, and actually
+verified.</p>
+<p class="autonomy-intro">A sensible progressive model looks like this:</p>
+<ul class="autonomy-steps" aria-label="Five levels of agent authority">
+<li><strong>Observe:</strong> collect status, identify inconsistencies,
+and report with timestamps and provenance. Read-only authority.</li>
+<li><strong>Propose:</strong> produce a precise change, explain its
+purpose and risk, and attach tests. No production mutation.</li>
+<li><strong>Implement in isolation:</strong> create a branch or draft
+PR, run the approved checks, and show the exact revision.</li>
+<li><strong>Release under policy:</strong> permit carefully classified
+low-risk actions to proceed through existing workflows; retain explicit
+gates for protected changes.</li>
+<li><strong>Verify and recover:</strong> check the real deployed
+behavior and preserve rollback. A merge receipt is not a production
+acceptance receipt.</li>
+</ul>
+<p>The boundaries are not a philosophical objection to automation. They
+are what make sustained automation economically useful. Without them,
+humans spend the time saved by the agent reconstructing what it changed
+and why.</p>
+<p>There is a legitimate argument for gradually increasing autonomy as
+evidence accumulates. The mistake is to treat autonomy as a binary
+switch or to infer safety from a successful run. For high-consequence
+systems, the control plane must evolve at least as deliberately as the
+agents themselves.</p>
+<h3 id="where-the-evidence-still-stops">Where the evidence still
+stops</h3>
+<p>We should separate at least four levels of claim.</p>
+<p><strong>Observed:</strong> OpenAI publishes Astra’s High AI
+Self-Improvement classification and the evaluations behind it. Vals
+publishes independent task results. Ondrej demonstrates his own coding
+workflow and explains a persistent-loop architecture.</p>
+<p><strong>Reasonably inferred:</strong> Frontier models are becoming
+more useful for some research-engineering and software-automation tasks.
+Long-running, tool-using workflows may increase delivered throughput
+when their objectives and checks are well designed.</p>
+<p><strong>Not established by this video:</strong> A fully autonomous AI
+laboratory; a sustained, self-accelerating frontier intelligence curve;
+general superiority of one model across all coding tasks;
+enterprise-safe continuous deployment without explicit authority
+boundaries.</p>
+<p><strong>Open design questions:</strong> How should agent loops
+discover failures they were not taught to test? Which actions can be
+reversible? How do independent reviewers avoid correlated blind spots?
+What evidence permits expansion of scope? Who can halt the loop when its
+metrics become detached from reality?</p>
+<p>These questions are less theatrical than the word RSI. They determine
+whether the machinery deserves access to a real system.</p>
+<h3 id="the-choice-is-not-automation-versus-control">The choice is not
+automation versus control</h3>
+<p>We should want better research assistants. We should want agents that
+perform the tedious maintenance work nobody has time to do. We should be
+willing to test them aggressively, including on local machines, real
+codebases, and uncomfortable failure cases.</p>
+<p>But an automated feedback loop has to learn the difference between
+passing its own test and accomplishing the human objective. Until then,
+an endless stream of accepted patches is not the same thing as a system
+that improves.</p>
+<p>A machine may help us build a better machine. The hard part is making
+sure we can tell.</p>
+<section id="shareplane-thinking" class="gm-work-routes"><h2>SharePlane Work comparison</h2><p class="gm-backmatter-note">Separately reviewed editorial connections, not independent validation of the video.</p><ul class="gm-work-grid"><li><span class="gm-work-kind">companion</span><a href="https://shareplane.malott.ai/artifacts/stop-prompting-agents-start-managing-workers/">Stop Prompting Agents. Start Managing Workers.</a><span>Tony’s published Work frames agents as bounded workers whose authority grows only through measured outcomes and retained evidence. This is an operational companion to #68’s software loop, not independent corroboration of the creator or model claims.</span></li></ul></section><section class="gm-related" id="related-thinking"><p class="gm-kicker">Continue the inquiry</p><h2>Related thinking</h2><p>Three directly relevant Readers were selected in Creative Lock #196. After owner preview feedback, one source-relevant SharePlane Work is added as a separately labeled operational companion, not corroborating evidence.</p><div class="gm-cards"><article><span class="gm-related-index">01</span><div class="gm-related-copy"><p class="gm-kicker">companion</p><h3><a href="/a-factory-that-grades-itself-still-needs-a-judge/">A Factory That Grades Itself Still Needs a Judge</a></h3><p>Independent grading and evaluator boundary</p></div><span class="gm-related-arrow" aria-hidden="true">↗</span></article><article><span class="gm-related-index">02</span><div class="gm-related-copy"><p class="gm-kicker">companion</p><h3><a href="/unsupervised-is-a-permission/">Unsupervised Is a Permission, Not a Personality</a></h3><p>Autonomy is defined by permission and release authority</p></div><span class="gm-related-arrow" aria-hidden="true">↗</span></article><article><span class="gm-related-index">03</span><div class="gm-related-copy"><p class="gm-kicker">companion</p><h3><a href="/the-threshold-is-a-claim-not-a-test/">The Threshold Is a Claim, Not a Test</a></h3><p>Capability thresholds must not be mistaken for field acceptance</p></div><span class="gm-related-arrow" aria-hidden="true">↗</span></article></div></section>
+<section class="gm-evidence" id="external-evidence"><div class="gm-evidence-intro"><p class="gm-kicker">Claim register / revision 2026-11-17</p><h2>Corroboration &amp; counterevidence</h2><p>Creator video and OpenAI system material dated November 17, 2026; no independently reproduced autonomous research or software production system.</p><p>Custody proves what was retained, not that a claim is true. Source assertions, vendor documentation, independent measurements and GhostMesh proposals have different evidentiary reach.</p><p><strong>What would change the call?</strong> Reproduce bounded research and software tasks with independent grading, controlled baselines, recorded operator interventions and verified production behavior.</p><p><a href="/the-machine-is-learning-to-improve-the-machine/receipt.json">Public sanitized evidence receipt</a>. Review: pending.</p></div><div class="gm-evidence-body"><h3>Claims under inspection</h3><p class="gm-evidence-hint">Open a claim to see its source location, support, counterevidence and limits.</p><div class="gm-claim-list"><details id="r68-c1"><summary><span class="gm-claim-label">Source or factual assertion <span class="gm-claim-status">Corroborated</span></span><span class="gm-claim-proposition">Astra High AI Self-Improvement classification</span></summary><div class="gm-claim-detail"><p>Claim ID: <code>r68-c1</code>. As of 2026-11-17. Kind: independently reported. Mapped source location: 07:53</p><p>Supporting evidence type: primary system card. Counterevidence type: None qualified. These labels describe the mapped record, not an article-wide verification score.</p><p>OpenAI system card reports Astra High, Sol below High; this is a bounded capability classification.</p><p>Limits: Not proof of autonomous frontier research.</p><p>Supporting evidence: <a href="#ref-r68-ref2">OpenAI Deployment Safety: GPT-6.2 Astra and Sol: AI Self-Improvement capabilities</a></p><p>Counterevidence / constraints: None qualified</p></div></details><details id="r68-c2"><summary><span class="gm-claim-label">Source or factual assertion <span class="gm-claim-status">Partially corroborated</span></span><span class="gm-claim-proposition">AI research assistance differs from fixed-model software iteration</span></summary><div class="gm-claim-detail"><p>Claim ID: <code>r68-c2</code>. As of 2026-11-17. Kind: analysis. Mapped source location: 07:53</p><p>Supporting evidence type: primary system card. Counterevidence type: None qualified. These labels describe the mapped record, not an article-wide verification score.</p><p>Two different improvement objects and verification boundaries.</p><p>Limits: Conceptual distinction; not a measured deployment claim.</p><p>Supporting evidence: <a href="#ref-r68-ref2">OpenAI Deployment Safety: GPT-6.2 Astra and Sol: AI Self-Improvement capabilities</a></p><p>Counterevidence / constraints: None qualified</p></div></details><details id="r68-c3"><summary><span class="gm-claim-label">Source or factual assertion <span class="gm-claim-status">Unverified</span></span><span class="gm-claim-proposition">Cloudroom persistent coding and two-model review</span></summary><div class="gm-claim-detail"><p>Claim ID: <code>r68-c3</code>. As of 2026-11-17. Kind: creator-claim. Mapped source location: 03:40</p><p>Supporting evidence type: primary video. Counterevidence type: None qualified. These labels describe the mapped record, not an article-wide verification score.</p><p>Creator demonstrates/promotes software factory and reviewer model patterns.</p><p>Limits: No independent production outcome or commercial claim validation.</p><p>Supporting evidence: <a href="#ref-r68-ref1">YouTube: RSI is here?! GPT 6.2 is ‘high’ on recursive self-improvement</a></p><p>Counterevidence / constraints: None qualified</p></div></details><details id="r68-c4"><summary><span class="gm-claim-label">Source or factual assertion <span class="gm-claim-status">Partially corroborated</span></span><span class="gm-claim-proposition">Cross-model agreement is not independent operational proof</span></summary><div class="gm-claim-detail"><p>Claim ID: <code>r68-c4</code>. As of 2026-11-17. Kind: analysis. Mapped source location: 16:13</p><p>Supporting evidence type: primary video. Counterevidence type: None qualified. These labels describe the mapped record, not an article-wide verification score.</p><p>Shared context and flawed tests can produce correlated agreement.</p><p>Limits: Failure mode inference, not a quantified correlation estimate.</p><p>Supporting evidence: <a href="#ref-r68-ref1">YouTube: RSI is here?! GPT 6.2 is ‘high’ on recursive self-improvement</a></p><p>Counterevidence / constraints: None qualified</p></div></details><details id="r68-c5"><summary><span class="gm-claim-label">Source or factual assertion <span class="gm-claim-status">Corroborated</span></span><span class="gm-claim-proposition">Vals RSI Index findings are evaluation-specific</span></summary><div class="gm-claim-detail"><p>Claim ID: <code>r68-c5</code>. As of 2026-11-17. Kind: independently reported. Mapped source location: 00:58</p><p>Supporting evidence type: benchmark publisher. Counterevidence type: None qualified. These labels describe the mapped record, not an article-wide verification score.</p><p>Reported benchmark evidence is heterogeneous across task categories.</p><p>Limits: Not a universal scalar RSI capability.</p><p>Supporting evidence: <a href="#ref-r68-ref3">Vals AI: RSI Index</a></p><p>Counterevidence / constraints: None qualified</p></div></details></div><h3>External references and independence</h3><article id="ref-r68-ref1"><h4><a href="https://youtu.be/K81vU-gykmQ">RSI is here?! GPT 6.2 is ‘high’ on recursive self-improvement</a></h4><p>David Ondrej · YouTube · Published 2026-11-17; last update not specified.  Event / measurement: Not specified; do not substitute publication date. Checked 2026-11-17T00:00:00Z.</p><p>Location: Public source. Type: primary video. Creator promotion and timed private ASR; claims not independently replicated.</p></article><article id="ref-r68-ref2"><h4><a href="https://deploymentsafety.openai.com/gpt-6-2-astra-sol/ai-self-improvement-capabilities">GPT-6.2 Astra and Sol: AI Self-Improvement capabilities</a></h4><p>OpenAI · OpenAI Deployment Safety · Published 2026-11-17; last update not specified.  Event / measurement: Not specified; do not substitute publication date. Checked 2026-11-17T00:00:00Z.</p><p>Location: Public source. Type: primary system card. Developer self-assessment; direct source for its own classification.</p></article><article id="ref-r68-ref3"><h4><a href="https://www.vals.ai/benchmarks/rsi_index">RSI Index</a></h4><p>Vals AI · Vals AI · Published unknown; last update not specified. The benchmark landing page does not establish a single publication date for all evaluations; checked November 17, 2026. Event / measurement: Not specified; do not substitute publication date. Checked 2026-11-17T00:00:00Z.</p><p>Location: Public source. Type: benchmark publisher. Independent benchmark publisher, specific coverage and limitations.</p></article><article id="ref-r68-ref4"><h4><a href="https://openai.com/index/introducing-gpt-6-2-astra-sol/">Introducing GPT-6.2 Astra and Sol</a></h4><p>OpenAI · OpenAI · Published 2026-11-17; last update not specified.  Event / measurement: Not specified; do not substitute publication date. Checked 2026-11-17T00:00:00Z.</p><p>Location: Public source. Type: primary model announcement. Developer-controlled claims, not independent replication.</p></article></div></section>
+<h3 id="source-and-provenance">Source and provenance</h3>
+<p>This original GhostMesh analysis is based on David Ondrej’s <a
+href="https://youtu.be/K81vU-gykmQ">November 17, 2026 video</a> and
+independently reviewed public records from OpenAI and Vals AI. Source
+chapter entry points were derived from an automatic, time-coded
+transcription of the original audio. Wording and chapter boundaries have
+not been certified through a separate listening review. Creator
+demonstrations are described as demonstrations, not independently
+reproduced results. Promotional claims are identified and are not
+endorsed as established measurements.</p>
+<section class="gm-methodology" id="how-built"><p class="edition-label">Transparent methods / Reader 68</p><h2>How We Built This Reader</h2><p class="method-intro">The path from a creator's argument to a published Reader should be inspectable. These are the evidence boundaries, not a claim that a transcript or a benchmark proves itself.</p><ol class="method-steps"><li><span class="step-number">01</span><div><h3>Preserve the original source</h3><p>The November 17 video was retained privately. Source identity and a cryptographic manifest bind this Reader to the original material.</p><p class="method-limit">Private media never enters the public repository.</p></div></li><li><span class="step-number">02</span><div><h3>Build a timed research aid</h3><p>Whisper large-v3 produced local, time-coded captions from the original audio. The nine chapter cues above were curated from that aid, not presented as creator-authored chapters.</p><p class="method-limit">Automatic recognition and timing can be imperfect; no separate audiovisual certification is claimed.</p></div></li><li><span class="step-number">03</span><div><h3>Check external evidence</h3><p>OpenAI's release and deployment-safety material were distinguished from Vals AI's RSI Index. Their claims, dates and independence are documented in the source register.</p><p class="method-limit">Company self-assessment and creator demonstration are not independent replication.</p></div></li><li><span class="step-number">04</span><div><h3>Separate inference from observation</h3><p>The two-loop distinction, reviewer agreement problem and GhostMesh release model are explicit editorial analysis, not results reproduced from the video.</p><p class="method-limit">Source-specific claims and limitations remain inspectable in the register above.</p></div></li></ol><div class="custody"><h3>What stays private</h3><p>Original media, the full transcript, SRT, working research packet and machine-local paths. The public page carries the argument, citation links, timestamps, evidence classifications and provenance limits.</p></div></section>
+<section class="gm-source-scope" id="source-references"><p class="edition-label">Public evidence trail</p><h2>Source references</h2><ol class="gm-source-list"><li><a href="https://youtu.be/K81vU-gykmQ">David Ondrej source video</a><span>Creator-controlled demonstration and commentary</span></li><li><a href="https://deploymentsafety.openai.com/gpt-6-2-astra-sol/ai-self-improvement-capabilities">OpenAI deployment-safety assessment</a><span>Primary source for the High threshold classification</span></li><li><a href="https://openai.com/index/introducing-gpt-6-2-astra-sol/">OpenAI model announcement</a><span>Developer-controlled release claims</span></li><li><a href="https://www.vals.ai/benchmarks/rsi_index">Vals AI RSI Index</a><span>Separate benchmark publisher and evaluation framework</span></li></ol></section><div class="gm-sharebar" data-gm-share=""><span class="gm-share-label">Share this Video Deconstruction</span><div class="gm-share-actions"><button class="gm-share-button" data-native-share="" type="button">Share</button><button class="gm-share-button" data-copy-link="" type="button">Copy link</button><a class="gm-share-email" data-email-link="" href="mailto:?subject=The Machine Is Learning to Improve the Machine">Email</a><span aria-live="polite" class="gm-share-message" data-gm-share-message="" role="status"></span></div></div></main><nav class="rail" aria-label="Article contents"><b>In this Reader</b><a href="#video-guide-the-argument-as-it-unfolds">Video guide: the argument as it unfolds</a>
+<a href="#the-headline-got-my-attention.-the-machinery-matters-more.">The headline got my attention. The machinery matters more.</a>
+<a href="#two-loops-two-kinds-of-progress">Two loops, two kinds of progress</a>
+<a href="#what-the-system-card-actually-establishes">What the system card actually establishes</a>
+<a href="#the-video-is-more-interesting-than-its-title">The video is more interesting than its title</a>
+<a href="#the-seductive-software-loop">The seductive software loop</a>
+<a href="#what-this-means-for-ghostmesh">What this means for GhostMesh</a>
+<a href="#where-the-evidence-still-stops">Where the evidence still stops</a>
+<a href="#the-choice-is-not-automation-versus-control">The choice is not automation versus control</a>
+<a href="#related-thinking">Related thinking</a><a href="#shareplane-thinking">SharePlane Work</a>
+<a href="#source-and-provenance">Source and provenance</a></nav></div>
+<footer aria-label="GhostMesh destinations" class="gm-reader-footer gm-site-footer"><div class="gm-reader-footer-inner"><div><a class="gm-footer-brand" href="/"><img alt="" class="gm-logo-mark" height="34" src="/brand/ghostmesh-mark.svg" width="45"><strong>GHOST<em>MESH</em></strong></a><p class="gm-reader-footer-note">Read the source. Examine the evidence. Challenge the interpretation.<br>GhostMesh editorial · © 2026 GhostMesh / Tony Malott.</p></div><nav aria-label="Reader footer navigation" class="gm-footer-links"><a href="/">Readers home</a><a href="/readers/">All Readers</a><a href="/map/">Relationship map</a><a href="/knowledge/">Public knowledge</a><a href="/scout/">Scout</a><a href="/feed.xml">Subscribe via RSS</a><a href="https://ghostmesh.ai/">GhostMesh.ai ↗</a><a href="https://shareplane.malott.ai/">SharePlane ↗</a><a href="https://malott.ai/">Tony Malott ↗</a><a href="mailto:ghostmesh@malott.ai?subject=GhostMesh%20Reader%20feedback">Contact GhostMesh ✉</a></nav></div></footer>
+<script src="/assets/theme.js" defer></script><script>document.getElementById('launch').addEventListener('click',function(){const f=document.createElement('iframe');f.title='David Ondrej source video for Reader 68';f.allow='autoplay; encrypted-media; picture-in-picture';f.allowFullscreen=true;f.referrerPolicy='strict-origin-when-cross-origin';f.src='https://www.youtube-nocookie.com/embed/K81vU-gykmQ?autoplay=1';this.parentNode.replaceChildren(f)});</script>
+<script defer src="/assets/reader-share.js"></script></body></html>

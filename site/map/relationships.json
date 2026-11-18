@@ -3,11 +3,11 @@
   "scope": "Local public editorial reading routes; no independent corroboration or cross-site graph admission.",
   "authority": "catalog-curated-editorial",
   "visibility": "public",
-  "readerCount": 67,
-  "assessmentCount": 67,
-  "relationshipCount": 156,
-  "sharePlaneRelationshipCount": 40,
-  "sharePlaneReviewCount": 27,
+  "readerCount": 68,
+  "assessmentCount": 68,
+  "relationshipCount": 159,
+  "sharePlaneRelationshipCount": 41,
+  "sharePlaneReviewCount": 28,
   "sharePlaneEdges": [
     {
       "from": "reader:when-code-gets-cheap-where-does-the-work-wait",
@@ -326,6 +326,14 @@
       "url": "https://shareplane.malott.ai/artifacts/frontier-inference-without-frontier-custody/",
       "title": "Frontier Inference Without Frontier Custody",
       "reason": "Explains how local source custody and remote model capability can be separated architecturally.",
+      "type": "companion",
+      "basis": "curated-editorial-comparison"
+    },
+    {
+      "from": "reader:the-machine-is-learning-to-improve-the-machine",
+      "url": "https://shareplane.malott.ai/artifacts/stop-prompting-agents-start-managing-workers/",
+      "title": "Stop Prompting Agents. Start Managing Workers.",
+      "reason": "Tony’s published Work frames agents as bounded workers whose authority grows only through measured outcomes and retained evidence. This is an operational companion to #68’s software loop, not independent corroboration of the creator or model claims.",
       "type": "companion",
       "basis": "curated-editorial-comparison"
     }
@@ -1419,6 +1427,23 @@
           "reader:the-grader-is-part-of-the-harness"
         ],
         "rationale": "Source-specific editorial companions cover memory fit, local custody and independent grading, rather than introducing unrelated generic AI reading."
+      }
+    },
+    {
+      "id": "reader:the-machine-is-learning-to-improve-the-machine",
+      "slug": "the-machine-is-learning-to-improve-the-machine",
+      "title": "The Machine Is Learning to Improve the Machine",
+      "url": "https://youtube.shareplane.malott.ai/the-machine-is-learning-to-improve-the-machine/",
+      "review": {
+        "reviewedAt": "2026-11-17",
+        "reviewedCatalogSize": 67,
+        "decision": "linked",
+        "reviewedTargets": [
+          "reader:a-factory-that-grades-itself-still-needs-a-judge",
+          "reader:unsupervised-is-a-permission",
+          "reader:the-threshold-is-a-claim-not-a-test"
+        ],
+        "rationale": "Three subject-specific companions; editorial linkage, not corroborating sources."
       }
     }
   ],
@@ -3291,6 +3316,42 @@
       "provenance": [
         "/two-sparks-do-not-make-a-cloud/",
         "/the-grader-is-part-of-the-harness/"
+      ],
+      "basis": "curated-editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:the-machine-is-learning-to-improve-the-machine",
+      "to": "reader:a-factory-that-grades-itself-still-needs-a-judge",
+      "type": "companion",
+      "reason": "Independent grading and evaluator boundary",
+      "provenance": [
+        "/the-machine-is-learning-to-improve-the-machine/",
+        "/a-factory-that-grades-itself-still-needs-a-judge/"
+      ],
+      "basis": "curated-editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:the-machine-is-learning-to-improve-the-machine",
+      "to": "reader:unsupervised-is-a-permission",
+      "type": "companion",
+      "reason": "Autonomy is defined by permission and release authority",
+      "provenance": [
+        "/the-machine-is-learning-to-improve-the-machine/",
+        "/unsupervised-is-a-permission/"
+      ],
+      "basis": "curated-editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:the-machine-is-learning-to-improve-the-machine",
+      "to": "reader:the-threshold-is-a-claim-not-a-test",
+      "type": "companion",
+      "reason": "Capability thresholds must not be mistaken for field acceptance",
+      "provenance": [
+        "/the-machine-is-learning-to-improve-the-machine/",
+        "/the-threshold-is-a-claim-not-a-test/"
       ],
       "basis": "curated-editorial-comparison",
       "direction": "outgoing"
