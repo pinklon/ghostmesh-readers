@@ -22766,6 +22766,7 @@
           "url": "https://www.vals.ai/benchmarks/rsi_index",
           "publicationDate": "unknown",
           "datePrecision": "unknown",
+          "dateNote": "The benchmark landing page does not establish a single publication date for all evaluations; checked November 17, 2026.",
           "eventDate": null,
           "location": "Public source",
           "sourceType": "benchmark publisher",
@@ -22794,7 +22795,7 @@
           "id": "r68-c1",
           "proposition": "Astra High AI Self-Improvement classification",
           "kind": "independently reported",
-          "status": "verified",
+          "status": "corroborated",
           "sourceLocation": "07:53",
           "assessment": "OpenAI system card reports Astra High, Sol below High; this is a bounded capability classification.",
           "limits": "Not proof of autonomous frontier research.",
@@ -22808,7 +22809,7 @@
           "id": "r68-c2",
           "proposition": "AI research assistance differs from fixed-model software iteration",
           "kind": "analysis",
-          "status": "assessed",
+          "status": "partially corroborated",
           "sourceLocation": "07:53",
           "assessment": "Two different improvement objects and verification boundaries.",
           "limits": "Conceptual distinction; not a measured deployment claim.",
@@ -22836,7 +22837,7 @@
           "id": "r68-c4",
           "proposition": "Cross-model agreement is not independent operational proof",
           "kind": "analysis",
-          "status": "assessed",
+          "status": "partially corroborated",
           "sourceLocation": "16:13",
           "assessment": "Shared context and flawed tests can produce correlated agreement.",
           "limits": "Failure mode inference, not a quantified correlation estimate.",
@@ -22850,7 +22851,7 @@
           "id": "r68-c5",
           "proposition": "Vals RSI Index findings are evaluation-specific",
           "kind": "independently reported",
-          "status": "verified",
+          "status": "corroborated",
           "sourceLocation": "00:58",
           "assessment": "Reported benchmark evidence is heterogeneous across task categories.",
           "limits": "Not a universal scalar RSI capability.",
@@ -22912,7 +22913,7 @@
       "sharePlaneReview": {
         "reviewedAt": "2026-11-17",
         "decision": "none",
-        "rationale": "No source-specific Work chosen during Creative Lock."
+        "rationale": "No source-specific SharePlane Work was explicitly selected in Creative Lock #196. The Reader graph remains linked to three separately reviewed Readers. Potential Work companions require evidence-backed, owner-admitted selection rather than inferred semantic proximity."
       },
       "review": {
         "status": "pending",
@@ -22925,11 +22926,12 @@
           "videoId": "K81vU-gykmQ"
         },
         "custody": {
-          "status": "private-reasonpack-verified",
-          "note": "Private original and Whisper timecode aid retained off-repository."
+          "status": "qualified-private-pack-verified",
+          "note": "Original media and privately generated timecode aid retained off-repository; ReasonPack verify completed successfully."
         },
         "reasonPack": {
-          "verification": "pass"
+          "verification": "pass",
+          "manifestSha256": "45524e92424c1abf7c4c82972af35353f8a0d8d4c8ed6b4097100bd16fc41f79"
         },
         "sourceInspection": {
           "method": "Original audio transcribed locally using Whisper large-v3",
