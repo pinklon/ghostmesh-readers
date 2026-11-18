@@ -48,6 +48,13 @@ class Reader69CreativeLock(unittest.TestCase):
         ):
             self.assertFalse(matches_lock(changed))
 
+    def test_single_column_evidence_intro_is_not_sticky(self):
+        # The shared reader-refresh.css intentionally makes evidence intros
+        # sticky in two-column layouts. Reader 69 uses a single column.
+        override = ".r69-main .gm-evidence-intro { position: static; top: auto; align-self: stretch;"
+        for page in (self.authored, self.page):
+            self.assertIn(override, page)
+
     def test_locked_source_and_approved_reader_destinations(self):
         targets = [
             SOURCE,
