@@ -16,5 +16,11 @@
     "url": "https://youtube.shareplane.malott.ai/uncensored-private-or-sovereign/",
     "verifiedAt": "2026-11-17T00:40:29Z",
     "checks": ["article-http-200", "receipt-http-200", "catalog-http-200", "sitemap-http-200", "claim-register-http-200"]
+  },
+  "two-sparks-do-not-make-a-cloud": {
+    "mergeCommit": "6b48a856115ecb3427a74be1fd41ab0a6886bb84",
+    "url": "https://youtube.shareplane.malott.ai/two-sparks-do-not-make-a-cloud/",
+    "verifiedAt": "2026-11-18T05:36:24Z",
+    "checks": ["article-http-200", "receipt-http-200", "catalog-http-200", "sitemap-http-200", "claim-register-http-200"]
   }
 }
