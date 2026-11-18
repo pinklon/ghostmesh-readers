@@ -1,0 +1,74 @@
+{
+  "schemaVersion": 1,
+  "readerId": "reader:the-cheap-answer-can-be-an-expensive-job",
+  "sourceId": "gCK2hv9De5U",
+  "sourceDigest": "158e9d9aa48a95535344d27f5e92d6732b4765c65847ea2f1c3962455582ada9",
+  "sourceAidSha256": "c7b7827126872878fc60d33a265bb7f56568110514acdc147c38ead55846964b",
+  "sourceMapEvidenceSha256": "aa298f093937896ac598c73f1269f8a6c81a54fca8bc1c4d24f94e036f5c0f40",
+  "reviewEvidenceSha256": "4d16c7755e04361efccc0a36b7228e111edb8f7897b241ffeb1bfaccfcf3cf76",
+  "articleSha256": "798856b4872e396228d05e03b0f3c900b129c7023a847ee54bde853a8583f97c",
+  "evidenceRevision": "813b10ca649b2f21c308b70745cf9d0354d34ce231477b5ee4b4a86d0caa2a13",
+  "candidateAuthor": "pinklon",
+  "complexity": {
+    "tier": "brief",
+    "factors": [
+      "A ten-and-a-half-minute creator video with five approximate source cues and three public evidence sources",
+      "The central completion-cost ledger is explicitly conceptual and does not make a measured total-cost claim"
+    ],
+    "rationale": "Brief editorial depth fits the bounded source and six claim records. The article maps the creator’s reactions, economics and shorter-answer hypothesis while separately attributing Vals and OpenAI figures."
+  },
+  "sourceMap": [
+    {
+      "atSeconds": 52,
+      "sectionId": "the-invoice-is-not-the-job",
+      "claimIds": ["r69-reactions"],
+      "rationale": "The creator describes launch criticism and ambitious model use, which the Reader treats as failure reports rather than controlled outcomes."
+    },
+    {
+      "atSeconds": 165,
+      "sectionId": "a-leaderboard-has-a-denominator",
+      "claimIds": ["r69-vals", "r69-rates"],
+      "rationale": "The creator turns to efficiency and benchmark comparison. The article assigns the exact Vals snapshot and OpenAI rates to their public records."
+    },
+    {
+      "atSeconds": 308,
+      "sectionId": "short-is-not-the-same-as-incomplete",
+      "claimIds": ["r69-hypothesis"],
+      "rationale": "The creator suggests that fewer output tokens may end work too early; the Reader preserves that proposition as an unproven hypothesis."
+    },
+    {
+      "atSeconds": 392,
+      "sectionId": "the-unpriced-work-begins-at-handoff",
+      "claimIds": ["r69-ledger"],
+      "rationale": "The creator returns to omitted work and cost. The Reader’s four-part ledger is clearly labeled as a conceptual framework rather than a measurement."
+    },
+    {
+      "atSeconds": 579,
+      "sectionId": "the-cheap-model-may-be-the-right-model",
+      "claimIds": ["r69-routing"],
+      "rationale": "The creator discusses cheaper usage at scale. The Reader derives a bounded routing recommendation tied to ambiguity and acceptance cost."
+    }
+  ],
+  "assessment": {
+    "sourceCoverage": {"disposition": "covered", "rationale": "Five timed cues cover launch reactions, model economics, the shorter-answer hypothesis, omitted work, and the routing conclusion with the aid’s limitations made explicit."},
+    "supportingArgument": {"disposition": "covered", "rationale": "The article explains why price per token, cost per benchmark attempt, and cost per accepted result use different denominators."},
+    "evidenceRoles": {"disposition": "covered", "rationale": "Creator reactions, Vals measurements, OpenAI vendor documentation, and GhostMesh’s conceptual ledger are visibly separated by role and limitation."},
+    "counterargument": {"disposition": "covered", "rationale": "The article allows that low inference cost can be a real advantage for bounded work with fast deterministic acceptance checks."},
+    "tradeoffs": {"disposition": "covered", "rationale": "The analysis weighs lower model cost against verification, rework, human attention, ambiguity, and the cost of failure without asserting a universal preference."},
+    "falsifiability": {"disposition": "covered", "rationale": "The article proposes holding the task, tool access, acceptance criteria, and effort setting constant while measuring accepted outcomes, retries, and operator time."},
+    "originalSynthesis": {"disposition": "covered", "rationale": "The acceptance-boundary figure and four-entry ledger add a bounded GhostMesh synthesis without fabricating numerical shares or measured telemetry."},
+    "performance": {"disposition": "covered", "rationale": "Benchmark rank, domain variation, and configuration are described as evaluation-specific, and the article does not convert them into generalized production performance."},
+    "economics": {"disposition": "covered", "rationale": "The Reader directly addresses differing cost denominators and leaves the missing empirical completion-cost terms visible instead of normalizing incompatible measures."},
+    "threatGovernance": {"disposition": "not-applicable", "rationale": "The locked manuscript concerns model economics and acceptance checks. It introduces no security, access-control, or deployment-threat claim needing a separate governance assessment."}
+  },
+  "independentCorroboration": "none",
+  "ownerDecision": {"pullNumber": 201, "commentId": null},
+  "decision": "accept",
+  "gaps": [
+    {"type": "source", "severity": "nonblocking", "rationale": "The caption aid supports approximate cue entry, not independent listening, audiovisual authentication, or certification of the creator’s reported reactions."},
+    {"type": "evidence", "severity": "nonblocking", "rationale": "No matched empirical study measures Astra’s inference, verification, rework, and human-attention costs for accepted production outcomes."},
+    {"type": "test", "severity": "nonblocking", "rationale": "The proposed controlled comparison remains a recommendation. This review did not execute it or independently reproduce model behavior."}
+  ],
+  "decisionRationale": "The exact draft PR head retains the Creative Lock’s scope, source role separation, claim limits, public-safe custody boundary, two admitted Reader relationships, and the owner-directed omission of the non-final SharePlane candidate. The remaining empirical and audiovisual limits are explicit and do not block owner review.",
+  "assessedAt": "2026-11-18T20:38:00Z"
+}

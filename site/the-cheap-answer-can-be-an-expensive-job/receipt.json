@@ -259,8 +259,12 @@
       "rationale": "The designated companion was serving non-final copy during preflight. The owner directed that it be omitted for this Reader."
     },
     "review": {
-      "status": "pending",
-      "summary": "Creative Lock v0.2 approved. Independent source/editorial/privacy review and owner publication decision pending."
+      "status": "accepted-for-owner-review",
+      "summary": "Independent editorial, source and privacy review accepted the exact article and evidence for owner review. Publication authorization is pending."
+    },
+    "editorialDepth": {
+      "schemaVersion": 1,
+      "receiptPath": "content/editorial-depth/the-cheap-answer-can-be-an-expensive-job.json"
     },
     "revisionHistory": []
   },

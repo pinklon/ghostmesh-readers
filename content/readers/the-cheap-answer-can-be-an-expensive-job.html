@@ -65,7 +65,8 @@ a { color: var(--gm-accent); text-underline-offset: .19em; }
 .gm-site-nav a { border-bottom: 2px solid transparent; color: var(--gm-muted); text-decoration: none; font-weight: 650; }
 .gm-site-nav a:is(:focus-visible, :hover) { color: var(--gm-ink); border-color: var(--gm-accent); }
 .gm-reader-footer { margin-top: 0; }
-:root[data-theme="dark"] .gm-theme-sun, :root[data-theme="light"] .gm-theme-moon { display: none; }
+.gm-theme-control svg { fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+:root[data-theme="light"] .gm-theme-sun, :root:not([data-theme="light"]) .gm-theme-moon { display: none; }
 .gm-theme-control[hidden] { display: none; }
 
 .r69-layout {
@@ -75,7 +76,7 @@ a { color: var(--gm-accent); text-underline-offset: .19em; }
   grid-template-columns: minmax(0, 1fr) minmax(0, var(--r69-measure)) minmax(0, 1fr);
   gap: 32px;
 }
-.r69-main { grid-column: 2; grid-row: 1; min-width: 0; padding-top: clamp(40px, 7vw, 108px); }
+.r69-main { grid-column: 2; grid-row: 1; min-width: 0; overflow-wrap: anywhere; padding-top: clamp(40px, 7vw, 108px); }
 .r69-rail { grid-column: 1; grid-row: 1; align-self: start; position: sticky; top: 24px; padding-top: clamp(40px, 7vw, 108px); }
 .r69-rail nav { border-top: 1px solid var(--gm-border); padding: 14px 0; max-width: 172px; }
 .r69-rail a { display: block; color: var(--gm-muted); text-decoration: none; font-size: .81rem; line-height: 1.35; padding-block: 6px; }
@@ -252,7 +253,7 @@ a { color: var(--gm-accent); text-underline-offset: .19em; }
         <h2 id="source-title">Original video</h2>
         <div class="player">
           <img src="https://i.ytimg.com/vi/gCK2hv9De5U/hqdefault.jpg" alt="" loading="lazy" decoding="async">
-          <button id="play-source" type="button" aria-label="Play the original BetterWay video" hidden>Play original video</button>
+          <button id="launch" type="button" aria-label="Play the original BetterWay video" hidden>Play original video</button>
         </div>
         <p><a href="https://www.youtube.com/watch?v=gCK2hv9De5U">Watch on YouTube</a> · 10:30</p>
         <p class="r69-chapter-note">Approximate cue entry points from automatic captions.</p>
@@ -367,7 +368,7 @@ a { color: var(--gm-accent); text-underline-offset: .19em; }
   </div>
   <footer></footer>
   <script>
-    const play = document.getElementById("play-source");
+    const play = document.getElementById("launch");
     const poster = play.previousElementSibling;
     function hideMissingPoster() { poster.hidden = true; }
     poster.addEventListener("error", hideMissingPoster);
