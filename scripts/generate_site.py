@@ -484,6 +484,10 @@ def projections():
      raw=raw.replace('<div class="chapters"',introduction+'<div class="chapters"',1)
   raw=raw.replace('</head>',f'<meta name="gm-share-description" content="{esc(r["overview"])}"></head>',1)
   for slot,value in [('HEAD',head()),('CONTROLS',''),('BRIEF',brief(r)),('EVIDENCE',evidence(r)),('RELATED',related(r,byid))]:raw=raw.replace('<!--GM_'+slot+'-->',value)
+  # The shared search control is projected for every Reader, even when the
+  # authored page omits the optional GM_HEAD slot.
+  if '/assets/reader-search.js' not in raw:
+   raw=raw.replace('</head>','<script src="/assets/reader-search.js" defer></script></head>',1)
   old_header=re.search(r'<header(?:\s[^>]*)?>.*?</header>',raw,re.S)
   if not old_header:raise ValueError(f'{r["slug"]}: expected one site header')
   new_header=controls()

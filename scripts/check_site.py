@@ -152,6 +152,8 @@ def check(root=ROOT, *, local_only=False):
   slug=r['slug'];p=site/slug/'index.html';raw=p.read_text();a=pages[p]
   annotated=(slug=='uncensored-private-or-sovereign' and 'data-layout-family="annotated-editorial"' in raw)
   errors.extend(canonical_reader_errors(r,raw))
+  require(raw.count('src="/assets/reader-search.js"')==1,
+          f'{slug}: shared Search controller missing or duplicated')
   authored=(root/'content/readers'/f'{slug}.html').read_text()
   errors.extend(new_reader_canonical_errors(r,authored))
   # A draft PR is the preview vehicle, before the owner can inspect and accept.
