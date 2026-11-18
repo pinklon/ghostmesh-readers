@@ -22897,8 +22897,16 @@
           "direction": "outgoing"
         }
       ],
-      "sharePlaneRelationships": [],
-      "relationshipDisposition": "Creative Lock #196 selected three directly relevant Readers. No SharePlane Work was selected; none invented.",
+      "sharePlaneRelationships": [
+        {
+          "url": "https://shareplane.malott.ai/artifacts/stop-prompting-agents-start-managing-workers/",
+          "title": "Stop Prompting Agents. Start Managing Workers.",
+          "reason": "Tony’s published Work frames agents as bounded workers whose authority grows only through measured outcomes and retained evidence. This is an operational companion to #68’s software loop, not independent corroboration of the creator or model claims.",
+          "type": "companion",
+          "basis": "curated-editorial-comparison"
+        }
+      ],
+      "relationshipDisposition": "Three directly relevant Readers were selected in Creative Lock #196. After owner preview feedback, one source-relevant SharePlane Work is added as a separately labeled operational companion, not corroborating evidence.",
       "relationshipReview": {
         "reviewedAt": "2026-11-17",
         "reviewedCatalogSize": 67,
@@ -22912,8 +22920,8 @@
       },
       "sharePlaneReview": {
         "reviewedAt": "2026-11-17",
-        "decision": "none",
-        "rationale": "No source-specific SharePlane Work was explicitly selected in Creative Lock #196. The Reader graph remains linked to three separately reviewed Readers. Potential Work companions require evidence-backed, owner-admitted selection rather than inferred semantic proximity."
+        "decision": "linked",
+        "rationale": "Owner preview feedback requested a relevant SharePlane connection. Stop Prompting Agents. Start Managing Workers. is an independently published Tony Work on bounded authority and evidence-driven agent management, precisely relevant to this Reader’s software iteration loop; it does not validate the source video or OpenAI assessment."
       },
       "review": {
         "status": "pending",

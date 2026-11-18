@@ -6,7 +6,7 @@
   "readerCount": 68,
   "assessmentCount": 68,
   "relationshipCount": 159,
-  "sharePlaneRelationshipCount": 40,
+  "sharePlaneRelationshipCount": 41,
   "sharePlaneReviewCount": 28,
   "sharePlaneEdges": [
     {
@@ -326,6 +326,14 @@
       "url": "https://shareplane.malott.ai/artifacts/frontier-inference-without-frontier-custody/",
       "title": "Frontier Inference Without Frontier Custody",
       "reason": "Explains how local source custody and remote model capability can be separated architecturally.",
+      "type": "companion",
+      "basis": "curated-editorial-comparison"
+    },
+    {
+      "from": "reader:the-machine-is-learning-to-improve-the-machine",
+      "url": "https://shareplane.malott.ai/artifacts/stop-prompting-agents-start-managing-workers/",
+      "title": "Stop Prompting Agents. Start Managing Workers.",
+      "reason": "Tony’s published Work frames agents as bounded workers whose authority grows only through measured outcomes and retained evidence. This is an operational companion to #68’s software loop, not independent corroboration of the creator or model claims.",
       "type": "companion",
       "basis": "curated-editorial-comparison"
     }
