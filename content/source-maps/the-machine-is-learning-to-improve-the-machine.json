@@ -1,0 +1,89 @@
+{
+  "schemaVersion": 1,
+  "readerId": "reader:the-machine-is-learning-to-improve-the-machine",
+  "sourceId": "K81vU-gykmQ",
+  "sourceAidSha256": "c88b45c3e07083e34306e210edeff017109faf1d67f5df7e8a8dfdaaf4837065",
+  "points": [
+    {
+      "atSeconds": 0,
+      "sectionId": "video-guide-the-argument-as-it-unfolds",
+      "claimIds": [
+        "r68-c3"
+      ],
+      "cueParaphrase": "Opening framing",
+      "privateAidCheck": "Private original-audio Whisper large-v3 timed SRT; approximate speech cue, not verified creator chapter. No independent task reproduction."
+    },
+    {
+      "atSeconds": 58,
+      "sectionId": "what-the-system-card-actually-establishes",
+      "claimIds": [
+        "r68-c5"
+      ],
+      "cueParaphrase": "Benchmark discussion",
+      "privateAidCheck": "Private original-audio Whisper large-v3 timed SRT; approximate speech cue, not verified creator chapter. No independent task reproduction."
+    },
+    {
+      "atSeconds": 220,
+      "sectionId": "the-seductive-software-loop",
+      "claimIds": [
+        "r68-c3"
+      ],
+      "cueParaphrase": "Cloudroom demonstration",
+      "privateAidCheck": "Private original-audio Whisper large-v3 timed SRT; approximate speech cue, not verified creator chapter. No independent task reproduction."
+    },
+    {
+      "atSeconds": 473,
+      "sectionId": "what-the-system-card-actually-establishes",
+      "claimIds": [
+        "r68-c1"
+      ],
+      "cueParaphrase": "Self-improvement threshold",
+      "privateAidCheck": "Private original-audio Whisper large-v3 timed SRT; approximate speech cue, not verified creator chapter. No independent task reproduction."
+    },
+    {
+      "atSeconds": 681,
+      "sectionId": "two-loops-two-kinds-of-progress",
+      "claimIds": [
+        "r68-c2"
+      ],
+      "cueParaphrase": "Coding comparison",
+      "privateAidCheck": "Private original-audio Whisper large-v3 timed SRT; approximate speech cue, not verified creator chapter. No independent task reproduction."
+    },
+    {
+      "atSeconds": 833,
+      "sectionId": "the-seductive-software-loop",
+      "claimIds": [
+        "r68-c3"
+      ],
+      "cueParaphrase": "Security loops",
+      "privateAidCheck": "Private original-audio Whisper large-v3 timed SRT; approximate speech cue, not verified creator chapter. No independent task reproduction."
+    },
+    {
+      "atSeconds": 973,
+      "sectionId": "the-seductive-software-loop",
+      "claimIds": [
+        "r68-c4"
+      ],
+      "cueParaphrase": "Autonomous release and model agreement",
+      "privateAidCheck": "Private original-audio Whisper large-v3 timed SRT; approximate speech cue, not verified creator chapter. No independent task reproduction."
+    },
+    {
+      "atSeconds": 1262,
+      "sectionId": "where-the-evidence-still-stops",
+      "claimIds": [
+        "r68-c4"
+      ],
+      "cueParaphrase": "Mixed verdict",
+      "privateAidCheck": "Private original-audio Whisper large-v3 timed SRT; approximate speech cue, not verified creator chapter. No independent task reproduction."
+    },
+    {
+      "atSeconds": 1466,
+      "sectionId": "what-this-means-for-ghostmesh",
+      "claimIds": [
+        "r68-c4"
+      ],
+      "cueParaphrase": "Pre-production model review",
+      "privateAidCheck": "Private original-audio Whisper large-v3 timed SRT; approximate speech cue, not verified creator chapter. No independent task reproduction."
+    }
+  ]
+}

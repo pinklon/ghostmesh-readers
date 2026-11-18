@@ -925,6 +925,18 @@
         "path": "site/two-sparks-do-not-make-a-cloud/index.html",
         "sha256": "ae4fcb4c3ed82db3cbd5f382ec73fce93c91fba043ac8fd04d90b7f64ca69cd5"
       }
+    },
+    {
+      "id": "urn:ghostmesh-readers:reader:the-machine-is-learning-to-improve-the-machine",
+      "type": "Reader",
+      "visibility": "public",
+      "epistemicStatus": "source-editorial",
+      "label": "The Machine Is Learning to Improve the Machine",
+      "url": "https://youtube.shareplane.malott.ai/the-machine-is-learning-to-improve-the-machine/",
+      "source": {
+        "path": "site/the-machine-is-learning-to-improve-the-machine/index.html",
+        "sha256": "a03a8994152f49cee99f31a1760e189f1c9b95b98727ccbefd5ad2af67689514"
+      }
     }
   ],
   "relationships": [
