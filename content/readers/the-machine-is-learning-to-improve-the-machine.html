@@ -83,6 +83,25 @@ h1{font-size:clamp(2.7rem,6.4vw,5.25rem);letter-spacing:-.06em;line-height:1.06;
 .gm-source-list li{padding:16px;margin:0!important;background:var(--paper);border:1px solid var(--line);border-radius:6px;display:flex;flex-direction:column;gap:5px}
 .gm-source-list a{font:750 .9rem/1.4 Inter,system-ui,sans-serif}
 .gm-source-list span{font:.8rem/1.5 Inter,system-ui,sans-serif;color:var(--mute)}
+/* Reader 68 article craft only. Accepted site chrome remains unchanged. */
+.article h3{border-left:3px solid var(--cyan);padding-left:18px;font-size:clamp(1.65rem,2.5vw,2.12rem);line-height:1.19;margin-top:2.9em;margin-bottom:.9em}
+.article h3 + p{font-size:1.055em;line-height:1.73}
+.editorial-evidence{margin:2.3rem 0 3.2rem;padding:22px 24px;border:1px solid var(--line);border-top:4px solid var(--cyan);background:var(--paper);border-radius:7px;font-family:Inter,system-ui,sans-serif}
+.editorial-evidence .evidence-eyebrow{display:block;color:var(--cyan);font:800 .7rem/1.5 ui-monospace,monospace;text-transform:uppercase;letter-spacing:.13em;margin-bottom:6px}
+.editorial-evidence h4{font:800 clamp(1.25rem,2vw,1.65rem)/1.2 Inter,system-ui,sans-serif;margin:0 0 18px;letter-spacing:-.025em}
+.editorial-evidence .evidence-links{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.editorial-evidence .evidence-links a{display:flex;flex-direction:column;gap:8px;padding:15px;border:1px solid var(--line);border-radius:5px;color:var(--ink);background:var(--bg);text-decoration:none;min-width:0}
+.editorial-evidence .evidence-links a:hover,.editorial-evidence .evidence-links a:focus-visible{border-color:var(--cyan)}
+.editorial-evidence .evidence-links strong{font:800 .88rem/1.35 Inter,system-ui,sans-serif;color:var(--cyan)}
+.editorial-evidence .evidence-links span{font:.78rem/1.5 Inter,system-ui,sans-serif;color:var(--mute)}
+.editorial-evidence > p{font:.79rem/1.55 Inter,system-ui,sans-serif;color:var(--mute);margin:16px 0 0}
+.article .autonomy-intro{font-style:italic;color:var(--mute);margin-bottom:16px}
+.article .autonomy-steps{list-style:none;padding:0;counter-reset:authority;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:0 0 2.2rem}
+.article .autonomy-steps li{counter-increment:authority;position:relative;margin:0;padding:18px 18px 18px 57px;background:var(--paper);border:1px solid var(--line);border-left:3px solid var(--cyan);border-radius:5px;font: .9rem/1.55 Georgia,serif}
+.article .autonomy-steps li::before{content:counter(authority,decimal-leading-zero);position:absolute;left:16px;top:18px;color:var(--cyan);font:800 .78rem/1.4 ui-monospace,monospace}
+.article .autonomy-steps li strong{display:block;font:800 1rem/1.28 Inter,system-ui,sans-serif;margin-bottom:7px}
+.article .autonomy-steps li:last-child{grid-column:1/-1}
+@media(max-width:690px){.editorial-evidence .evidence-links,.article .autonomy-steps{grid-template-columns:1fr}.article .autonomy-steps li:last-child{grid-column:auto}.editorial-evidence{padding:17px}.article h3{padding-left:12px}}
 
 .gm-theme-control .gm-theme-label.gm-visually-hidden{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
 @media(max-width:700px){.gm-site-header-inner{width:calc(100% - 40px);min-height:112px;padding-block:0;display:grid;grid-template-columns:minmax(0,1fr) auto;grid-template-rows:46px 30px 36px;gap:0 8px}.gm-site-brand{grid-column:1;grid-row:1;font-size:12px}.gm-site-brand span{display:none}.gm-site-tagline{display:block;grid-column:1/-1;grid-row:2;align-self:center;max-width:none;font-size:12px}.gm-header-actions{grid-column:2;grid-row:1}.gm-site-nav{display:flex;grid-column:1/-1;grid-row:3;width:100%;margin:0;justify-content:space-between;gap:0;flex-wrap:nowrap;overflow-x:auto}.gm-site-nav a{font-size:11px;padding:8px 3px;white-space:nowrap}}
@@ -304,10 +323,7 @@ pretending the whole research process has been solved.</p>
 define a threshold under a specific test design. They do not erase task
 dependence, uncertainty, or the difference between laboratory
 performance and an operational system.</p>
-<p><strong>Evidence note:</strong> OpenAI system card,
-https://deploymentsafety.openai.com/gpt-6-2-astra-sol/ai-self-improvement-capabilities;
-OpenAI release, https://openai.com/index/introducing-gpt-6-2-astra-sol/;
-Vals RSI Index, https://www.vals.ai/benchmarks/rsi_index.</p>
+<aside class="editorial-evidence" aria-label="Evidence supporting the capability comparison"><span class="evidence-eyebrow">Evidence trail / Three source types</span><h4>Inspect the underlying claims</h4><div class="evidence-links"><a href="https://deploymentsafety.openai.com/gpt-6-2-astra-sol/ai-self-improvement-capabilities" target="_blank" rel="noopener noreferrer"><strong>OpenAI safety assessment</strong><span>Developer classification and its stated limits</span></a><a href="https://openai.com/index/introducing-gpt-6-2-astra-sol/" target="_blank" rel="noopener noreferrer"><strong>OpenAI model announcement</strong><span>Release claims and reported capabilities</span></a><a href="https://www.vals.ai/benchmarks/rsi_index" target="_blank" rel="noopener noreferrer"><strong>Vals RSI Index</strong><span>Separate evaluation framework and results</span></a></div><p>These sources have different evidentiary reach. A developer assessment and a separate benchmark are not interchangeable with independent reproduction.</p></aside>
 <h3 id="the-video-is-more-interesting-than-its-title">The video is more
 interesting than its title</h3>
 <p>Ondrej does not spend 27 minutes explaining a single OpenAI safety
@@ -368,8 +384,8 @@ changes. Their value is not measured by the number of actions they can
 execute without bothering the owner. It is measured by useful outcomes
 that are attributable, reversible where practical, and actually
 verified.</p>
-<p>A sensible progressive model looks like this:</p>
-<ul>
+<p class="autonomy-intro">A sensible progressive model looks like this:</p>
+<ul class="autonomy-steps" aria-label="Five levels of agent authority">
 <li><strong>Observe:</strong> collect status, identify inconsistencies,
 and report with timestamps and provenance. Read-only authority.</li>
 <li><strong>Propose:</strong> produce a precise change, explain its
