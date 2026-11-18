@@ -1,0 +1,54 @@
+{
+  "schemaVersion": 1,
+  "readerId": "reader:the-cheap-answer-can-be-an-expensive-job",
+  "sourceId": "gCK2hv9De5U",
+  "sourceAidSha256": "c7b7827126872878fc60d33a265bb7f56568110514acdc147c38ead55846964b",
+  "points": [
+    {
+      "atSeconds": 52,
+      "sectionId": "the-invoice-is-not-the-job",
+      "claimIds": [
+        "r69-reactions"
+      ],
+      "cueParaphrase": "The creator turns to a public launch reaction while discussing ambitious model use.",
+      "privateAidCheck": "Approximate speech-entry cue checked against the retained English automatic captions. No separate listening certification."
+    },
+    {
+      "atSeconds": 165,
+      "sectionId": "a-leaderboard-has-a-denominator",
+      "claimIds": [
+        "r69-vals",
+        "r69-rates"
+      ],
+      "cueParaphrase": "The video discusses model cost and benchmark comparison. The exact benchmark and rate-card figures are attributed to their separately linked public sources.",
+      "privateAidCheck": "Approximate speech-entry cue checked against the retained English automatic captions. No separate listening certification."
+    },
+    {
+      "atSeconds": 308,
+      "sectionId": "short-is-not-the-same-as-incomplete",
+      "claimIds": [
+        "r69-hypothesis"
+      ],
+      "cueParaphrase": "The creator raises a possible relationship between shorter answers and incomplete work.",
+      "privateAidCheck": "Approximate speech-entry cue checked against the retained English automatic captions. No separate listening certification."
+    },
+    {
+      "atSeconds": 392,
+      "sectionId": "the-unpriced-work-begins-at-handoff",
+      "claimIds": [
+        "r69-ledger"
+      ],
+      "cueParaphrase": "The creator returns to stopping and cost. The four-part completion ledger is the Reader’s conceptual framing.",
+      "privateAidCheck": "Approximate speech-entry cue checked against the retained English automatic captions. No separate listening certification."
+    },
+    {
+      "atSeconds": 579,
+      "sectionId": "the-cheap-model-may-be-the-right-model",
+      "claimIds": [
+        "r69-routing"
+      ],
+      "cueParaphrase": "The creator returns to cheaper model use. The Reader’s recommendation is scoped to task and acceptance cost.",
+      "privateAidCheck": "Approximate speech-entry cue checked against the retained English automatic captions. No separate listening certification."
+    }
+  ]
+}

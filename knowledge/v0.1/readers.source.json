@@ -937,6 +937,18 @@
         "path": "site/the-machine-is-learning-to-improve-the-machine/index.html",
         "sha256": "8dc76bdbf04c0276a20cc2d599f602e562c1baa2c8289bc54b29fd243c5eec21"
       }
+    },
+    {
+      "id": "urn:ghostmesh-readers:reader:the-cheap-answer-can-be-an-expensive-job",
+      "type": "Reader",
+      "visibility": "public",
+      "epistemicStatus": "source-editorial",
+      "label": "The Cheap Answer Can Be an Expensive Job",
+      "url": "https://youtube.shareplane.malott.ai/the-cheap-answer-can-be-an-expensive-job/",
+      "source": {
+        "path": "site/the-cheap-answer-can-be-an-expensive-job/index.html",
+        "sha256": "1c5d40017011047898fe20d78c044a2ecb3794236537b36f80174b753069fa20"
+      }
     }
   ],
   "relationships": [
