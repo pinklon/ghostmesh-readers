@@ -154,6 +154,18 @@ def check(root=ROOT, *, local_only=False):
   errors.extend(canonical_reader_errors(r,raw))
   require(raw.count('src="/assets/reader-search.js"')==1,
           f'{slug}: shared Search controller missing or duplicated')
+  if r['editorialOrder'] >= 67:  # Reader #68 forward; historical metadata remains unchanged.
+   descriptions=[attrs.get('content','').strip() for tag,attrs in a.tags
+                 if tag=='meta' and attrs.get('name')=='description']
+   require(len(descriptions)==1 and len(descriptions[0])>=40,
+           f'{slug}: missing or generic page description')
+   for other in readers:
+    if other['slug']==slug:continue
+    other_tags=pages[site/other['slug']/'index.html'].tags
+    prior=[attrs.get('content','').strip() for tag,attrs in other_tags
+           if tag=='meta' and attrs.get('name')=='description']
+    require(not prior or descriptions[0]!=prior[0],
+            f'{slug}: copied description from {other["slug"]}')
   authored=(root/'content/readers'/f'{slug}.html').read_text()
   errors.extend(new_reader_canonical_errors(r,authored))
   # A draft PR is the preview vehicle, before the owner can inspect and accept.
