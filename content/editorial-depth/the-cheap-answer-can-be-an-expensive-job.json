@@ -7,6 +7,7 @@
   "sourceMapEvidenceSha256": "aa298f093937896ac598c73f1269f8a6c81a54fca8bc1c4d24f94e036f5c0f40",
   "reviewEvidenceSha256": "4d16c7755e04361efccc0a36b7228e111edb8f7897b241ffeb1bfaccfcf3cf76",
   "articleSha256": "798856b4872e396228d05e03b0f3c900b129c7023a847ee54bde853a8583f97c",
+  "presentationMarkupSha256": "82fcdf341e0822be0cd16e35eca2b13a4980791713e88dca33c27bd725dfa139",
   "evidenceRevision": "813b10ca649b2f21c308b70745cf9d0354d34ce231477b5ee4b4a86d0caa2a13",
   "candidateAuthor": "pinklon",
   "complexity": {
@@ -62,7 +63,14 @@
     "threatGovernance": {"disposition": "not-applicable", "rationale": "The locked manuscript concerns model economics and acceptance checks. It introduces no security, access-control, or deployment-threat claim needing a separate governance assessment."}
   },
   "independentCorroboration": "none",
-  "ownerDecision": {"pullNumber": 201, "commentId": null},
+  "ownerDecision": {
+    "kind": "conversation",
+    "owner": "Tony Malott",
+    "approval": "I authorize you to publish it without me reviewing it again, so you can go straight to merge and activation",
+    "approvalDate": "2026-11-18",
+    "articleSha256": "798856b4872e396228d05e03b0f3c900b129c7023a847ee54bde853a8583f97c",
+    "evidenceRevision": "813b10ca649b2f21c308b70745cf9d0354d34ce231477b5ee4b4a86d0caa2a13"
+  },
   "decision": "accept",
   "gaps": [
     {"type": "source", "severity": "nonblocking", "rationale": "The caption aid supports approximate cue entry, not independent listening, audiovisual authentication, or certification of the creator’s reported reactions."},

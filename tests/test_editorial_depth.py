@@ -19,6 +19,17 @@ from editorial_depth import AREAS, _get_json, acceptance_marker, binding, valida
 
 
 class EditorialDepthGate(unittest.TestCase):
+    def test_presentation_only_fingerprint_allows_css_but_not_editorial_changes(self):
+        from editorial_depth import presentation_neutral_digest, presentation_only_match
+        reviewed = b'<style>.card { color: black }</style><main><p>Preserve the source claim.</p></main>'
+        adjusted = b'<style>.card { color: pink; display: grid }</style><main><p>Preserve the source claim.</p></main>'
+        receipt = {'presentationMarkupSha256': presentation_neutral_digest(reviewed)}
+        self.assertTrue(presentation_only_match(receipt, adjusted))
+        self.assertFalse(presentation_only_match(receipt, adjusted.replace(b'source claim', b'vendor claim')))
+        self.assertFalse(presentation_only_match(receipt, adjusted.replace(b'<p>', b'<h2>').replace(b'</p>', b'</h2>')))
+        self.assertFalse(presentation_only_match(receipt, adjusted + b'<script>alert(1)</script>'))
+        self.assertFalse(presentation_only_match(receipt, b'<main><p>Preserve the source claim.</p></main>'))
+
     def test_conversation_approval_is_bound_to_article_and_evidence(self):
         from editorial_depth import _conversation_approval_errors
         reader = {"slug": "the-router-is-not-the-organization"}

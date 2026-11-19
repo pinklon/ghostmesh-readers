@@ -54,6 +54,15 @@ def footer(include_email=True):return ('<footer aria-label="GhostMesh destinatio
  '<a href="https://ghostmesh.ai/">GhostMesh.ai ↗</a><a href="https://shareplane.malott.ai/">SharePlane ↗</a><a href="https://malott.ai/">Tony Malott ↗</a>'
  +('<a href="mailto:ghostmesh@malott.ai?subject=GhostMesh%20Reader%20feedback">Contact GhostMesh ✉</a>' if include_email else '')+'</nav></div></footer>')
 def head():return '<link rel="alternate" type="application/rss+xml" title="GhostMesh Readers and Scout" href="/feed.xml"><script src="/assets/theme.js"></script><script src="/assets/reader-search.js" defer></script><link rel="stylesheet" href="/assets/reader-chrome.css"><link rel="stylesheet" href="/assets/knowledge.css"><link rel="stylesheet" href="/assets/reader-refresh.css">'
+def presentation_only_match(receipt, authored_html):
+ """Check CSS-only equivalence without requiring a sibling module in isolated builds."""
+ pinned=receipt.get('presentationMarkupSha256')
+ if not isinstance(pinned,str) or re.fullmatch(r'[0-9a-f]{64}',pinned) is None:return False
+ styles=list(re.finditer(rb'<style(?:\s[^>]*)?>[\s\S]*?</style>',authored_html,re.I))
+ if len(styles)!=1:return False
+ neutral=authored_html[:styles[0].start()]+b'<style></style>'+authored_html[styles[0].end():]
+ return hashlib.sha256(neutral).hexdigest()==pinned
+
 def projected_publication_status(raw, reader, depth=None):
  """Project mutable release status without changing exact-byte reviewed prose.
 
@@ -66,7 +75,8 @@ def projected_publication_status(raw, reader, depth=None):
  if not matches:return raw
  if len(matches)!=1:raise ValueError(f'{reader["slug"]}: duplicate publication-status marker')
  bound=(isinstance(depth,dict) and depth.get('decision')=='accept'
-        and depth.get('articleSha256')==hashlib.sha256(raw.encode()).hexdigest())
+        and (depth.get('articleSha256')==hashlib.sha256(raw.encode()).hexdigest()
+             or presentation_only_match(depth,raw.encode())))
  approval=depth.get('ownerDecision') if bound else None
  authorized=(isinstance(approval,dict)
              and ((approval.get('kind')=='conversation' and approval.get('owner')=='Tony Malott'

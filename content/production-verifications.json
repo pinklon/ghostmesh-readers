@@ -22,5 +22,11 @@
     "url": "https://youtube.shareplane.malott.ai/two-sparks-do-not-make-a-cloud/",
     "verifiedAt": "2026-11-18T05:36:24Z",
     "checks": ["article-http-200", "receipt-http-200", "catalog-http-200", "sitemap-http-200", "claim-register-http-200"]
+  },
+  "the-cheap-answer-can-be-an-expensive-job": {
+    "mergeCommit": "42ae257a47ac1be0baaca9c479dadcec43490ce4",
+    "url": "https://youtube.shareplane.malott.ai/the-cheap-answer-can-be-an-expensive-job/",
+    "verifiedAt": "2026-11-19T00:07:58Z",
+    "checks": ["article-http-200", "receipt-http-200", "catalog-http-200", "sitemap-http-200", "claim-register-http-200"]
   }
 }
