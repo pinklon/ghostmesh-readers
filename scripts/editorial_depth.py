@@ -84,6 +84,25 @@ def binding(reader: dict, authored_html: bytes) -> dict:
     }
 
 
+def presentation_neutral_digest(authored_html: bytes) -> str | None:
+    """Exact HTML digest with one inline CSS block excluded, not prose or markup.
+
+    A CSS-only correction may retain its original independent editorial receipt.
+    Changes to text, markup, scripts, source claims, or references still invalidate it.
+    """
+    styles = list(re.finditer(rb"<style(?:\s[^>]*)?>[\s\S]*?</style>", authored_html, re.I))
+    if len(styles) != 1:
+        return None
+    neutral = authored_html[:styles[0].start()] + b"<style></style>" + authored_html[styles[0].end():]
+    return hashlib.sha256(neutral).hexdigest()
+
+
+def presentation_only_match(receipt: dict, authored_html: bytes) -> bool:
+    pinned = receipt.get("presentationMarkupSha256")
+    return (isinstance(pinned, str) and SHA.fullmatch(pinned) is not None
+            and presentation_neutral_digest(authored_html) == pinned)
+
+
 def assessment_digest(receipt: dict) -> str:
     """Bind candidate assessment bytes, excluding only the later owner comment locator."""
     return digest({key: value for key, value in receipt.items() if key != "ownerDecision"})
@@ -303,10 +322,14 @@ def validate_reader(root: Path, reader: dict, *, release: bool = True,
     except (OSError, ValueError):
         return errors + [f"{slug}: editorial receipt missing or invalid"]
     required = {"schemaVersion", *actual, "sourceMapEvidenceSha256", "reviewEvidenceSha256", "candidateAuthor", "complexity", "sourceMap", "assessment", "independentCorroboration", "ownerDecision", "decision", "gaps", "decisionRationale", "assessedAt"}
-    if not isinstance(receipt, dict) or set(receipt) != required or receipt.get("schemaVersion") != 1:
+    if (not isinstance(receipt, dict)
+            or set(receipt) not in (required, required | {"presentationMarkupSha256"})
+            or receipt.get("schemaVersion") != 1):
         return errors + [f"{slug}: editorial receipt schema mismatch"]
+    css_only = (receipt.get("articleSha256") != actual["articleSha256"]
+                and presentation_only_match(receipt, raw))
     for key, value in actual.items():
-        if receipt.get(key) != value:
+        if receipt.get(key) != value and not (key == "articleSha256" and css_only):
             errors.append(f"{slug}: editorial {key} binding mismatch")
     for key in ("sourceDigest", "sourceAidSha256", "articleSha256", "evidenceRevision"):
         if not SHA.fullmatch(str(receipt.get(key, ""))):
@@ -340,7 +363,10 @@ def validate_reader(root: Path, reader: dict, *, release: bool = True,
     if (not isinstance(review_evidence, dict)
             or set(review_evidence) != {"schemaVersion", "readerId", "sourceId", "sourceAidSha256", "articleSha256", "evidenceRevision", "reviewedAt", "provenance", "summary", "findings", "conclusion"}
             or review_evidence.get("schemaVersion") != 1
-            or any(review_evidence.get(key) != actual[key] for key in ("readerId", "sourceId", "sourceAidSha256", "articleSha256", "evidenceRevision"))
+            or any(review_evidence.get(key) != actual[key]
+                   for key in ("readerId", "sourceId", "sourceAidSha256", "evidenceRevision"))
+            or (review_evidence.get("articleSha256") != actual["articleSha256"]
+                and not (css_only and review_evidence.get("articleSha256") == receipt.get("articleSha256")))
             or not isinstance(review_evidence.get("provenance"), dict)
             or set(review_evidence["provenance"]) != {"kind", "reference", "limits"}
             or review_evidence["provenance"].get("kind") not in {"codex-task-agent", "external-human-report"}

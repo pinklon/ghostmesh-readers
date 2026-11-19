@@ -9,6 +9,7 @@ from scout_feed import validate_scout,validate_events,feed_xml
 from scout_pages import validate_editions,home as scout_home,review_page,edition_page,archive_page,method_page,review_url,edition_url
 from scout_research import validate_research, research_page, research_graph
 from social_cards import approval as social_approval, specs as social_specs, inject as inject_social
+from editorial_depth import presentation_only_match
 ROOT=Path(__file__).resolve().parents[1]; SITE=ROOT/'site'
 CATEGORIES=['AI & Technology','Society & Politics','Science','Business','Ethics & Culture','Other']
 READER_COUNT=0
@@ -66,7 +67,8 @@ def projected_publication_status(raw, reader, depth=None):
  if not matches:return raw
  if len(matches)!=1:raise ValueError(f'{reader["slug"]}: duplicate publication-status marker')
  bound=(isinstance(depth,dict) and depth.get('decision')=='accept'
-        and depth.get('articleSha256')==hashlib.sha256(raw.encode()).hexdigest())
+        and (depth.get('articleSha256')==hashlib.sha256(raw.encode()).hexdigest()
+             or presentation_only_match(depth,raw.encode())))
  approval=depth.get('ownerDecision') if bound else None
  authorized=(isinstance(approval,dict)
              and ((approval.get('kind')=='conversation' and approval.get('owner')=='Tony Malott'
