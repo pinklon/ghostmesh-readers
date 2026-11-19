@@ -22924,8 +22924,12 @@
         "rationale": "Owner preview feedback requested a relevant SharePlane connection. Stop Prompting Agents. Start Managing Workers. is an independently published Tony Work on bounded authority and evidence-driven agent management, precisely relevant to this Reader’s software iteration loop; it does not validate the source video or OpenAI assessment."
       },
       "review": {
-        "status": "pending",
-        "summary": "Creative Lock #196 approved; independent exact-input review and owner publication decision pending."
+        "status": "accepted-for-owner-review",
+        "summary": "Independent editorial/source/privacy review passed on exact PR #197 head; manuscript bytes are unchanged. Publication must still satisfy technical and production verification."
+      },
+      "editorialDepth": {
+        "schemaVersion": 1,
+        "receiptPath": "content/editorial-depth/the-machine-is-learning-to-improve-the-machine.json"
       },
       "revisionHistory": [],
       "legacyReceipt": {

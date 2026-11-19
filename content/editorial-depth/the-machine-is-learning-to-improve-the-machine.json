@@ -1,0 +1,165 @@
+{
+  "schemaVersion": 1,
+  "readerId": "reader:the-machine-is-learning-to-improve-the-machine",
+  "sourceId": "K81vU-gykmQ",
+  "sourceDigest": "abda5c826d8636fef13ae4b6529c827ca5e148744d48d8c580b3386ed315922b",
+  "sourceAidSha256": "45524e92424c1abf7c4c82972af35353f8a0d8d4c8ed6b4097100bd16fc41f79",
+  "articleSha256": "08a33769540a80bce110543e0735c0033663b0ed92ed130ec4915a66ca81bebc",
+  "evidenceRevision": "265d544789eafabf34bd80a2706526d409c2665f9c3654c5bf7bd525ebc683c3",
+  "sourceMapEvidenceSha256": "ccf11154e7de3323acb0fa88a0b98c5728cf841e4cc411e906fa9c2ef74068a5",
+  "reviewEvidenceSha256": "e7f20bf6c78810b71bf3af98479165f4c7f2ecbd10515521cc80954660855292",
+  "candidateAuthor": "pinklon",
+  "complexity": {
+    "tier": "brief",
+    "factors": [
+      "A 27-minute creator video with nine approximate source cues, five registered claims and documentary comparisons",
+      "The argument separates two AI feedback loops and bounds release authority without claiming replicated autonomous task outcomes"
+    ],
+    "rationale": "Brief depth matches a 1,629-second single-creator source and five bounded claims, with explicit independent-document checks, four diagrams and nonreplication limits."
+  },
+  "sourceMap": [
+    {
+      "atSeconds": 0,
+      "sectionId": "video-guide-the-argument-as-it-unfolds",
+      "claimIds": [
+        "r68-c3"
+      ],
+      "rationale": "The opening frames the self-improvement claim; a private approximate speech cue anchors creator characterization, not certified playback."
+    },
+    {
+      "atSeconds": 58,
+      "sectionId": "what-the-system-card-actually-establishes",
+      "claimIds": [
+        "r68-c5"
+      ],
+      "rationale": "The benchmark discussion is counterchecked against task-specific Vals evidence, not generalized into independent production performance."
+    },
+    {
+      "atSeconds": 220,
+      "sectionId": "the-seductive-software-loop",
+      "claimIds": [
+        "r68-c3"
+      ],
+      "rationale": "The Cloudroom demonstration is retained as the creator's reported software workflow, not independently replicated throughput."
+    },
+    {
+      "atSeconds": 473,
+      "sectionId": "what-the-system-card-actually-establishes",
+      "claimIds": [
+        "r68-c1"
+      ],
+      "rationale": "The High self-improvement threshold is independently interpreted against OpenAI's system-card classification and its boundary."
+    },
+    {
+      "atSeconds": 681,
+      "sectionId": "two-loops-two-kinds-of-progress",
+      "claimIds": [
+        "r68-c2"
+      ],
+      "rationale": "Coding comparison distinguishes fixed-model software improvement from model-generation research gains."
+    },
+    {
+      "atSeconds": 833,
+      "sectionId": "the-seductive-software-loop",
+      "claimIds": [
+        "r68-c3"
+      ],
+      "rationale": "The security-loop claim motivates a critique of feedback objectives, tests and operational authorization."
+    },
+    {
+      "atSeconds": 973,
+      "sectionId": "the-seductive-software-loop",
+      "claimIds": [
+        "r68-c4"
+      ],
+      "rationale": "Proposed autonomous release and two-model agreement motivate correlated-error and permission-boundary cautions."
+    },
+    {
+      "atSeconds": 1262,
+      "sectionId": "where-the-evidence-still-stops",
+      "claimIds": [
+        "r68-c4"
+      ],
+      "rationale": "A mixed verdict limits extrapolation beyond the unreplicated creator account and qualified documents."
+    },
+    {
+      "atSeconds": 1466,
+      "sectionId": "what-this-means-for-ghostmesh",
+      "claimIds": [
+        "r68-c4"
+      ],
+      "rationale": "Preproduction model review illustrates why a second reviewer is not itself independently verified production acceptance."
+    }
+  ],
+  "assessment": {
+    "sourceCoverage": {
+      "disposition": "covered",
+      "rationale": "Nine approximate private-ASR cues trace the launch, benchmark, Cloudroom, High threshold, coding, security, release agreement, mixed verdict and preproduction argument; speech-to-time correspondence was not independently audiovisual-authenticated."
+    },
+    "supportingArgument": {
+      "disposition": "covered",
+      "rationale": "The reviewed manuscript separates AI-assisted research that may improve future model generations from fixed-model agent loops that iteratively improve ordinary software without changing the underlying model."
+    },
+    "evidenceRoles": {
+      "disposition": "covered",
+      "rationale": "The OpenAI developer-issued High classification, Vals task-specific benchmark, Ondrej creator promotion and GhostMesh analysis have distinct roles and limitations; neither one certifies fully autonomous research."
+    },
+    "counterargument": {
+      "disposition": "covered",
+      "rationale": "Research assistants and persistent coding agents may produce useful gains, and independent model review can catch errors, but these improvements do not imply autonomous release authority or universal safety."
+    },
+    "tradeoffs": {
+      "disposition": "covered",
+      "rationale": "Higher iteration throughput is weighed against erroneous feedback, correlated reviewer blind spots, unverified changes, operator cost, approval boundaries and rollback responsibility."
+    },
+    "falsifiability": {
+      "disposition": "covered",
+      "rationale": "The article proposes bounded research and coding replications using independent grading, controlled baselines, intervention logs and accepted production outcomes without claiming these tests were performed."
+    },
+    "originalSynthesis": {
+      "disposition": "covered",
+      "rationale": "Four source-bounded figures depict two feedback loops, Astra versus Sol threshold interpretation, correlated model-review failures and a five-stage authority staircase without inventing measurements."
+    },
+    "performance": {
+      "disposition": "covered",
+      "rationale": "The reviewer cross-checked OpenAI system-card OECI 170.1 versus 168.4 and the nuance of High classification; Vals task rankings differ and do not establish an autonomous research-production system."
+    },
+    "economics": {
+      "disposition": "covered",
+      "rationale": "Cloudroom productivity and commercial revenue or valuation assertions are treated as unverified creator or vendor claims; no independently measured software throughput or return on investment is inferred."
+    },
+    "threatGovernance": {
+      "disposition": "covered",
+      "rationale": "The argument separates agent patch proposals from release permission, unit tests from behavioral acceptance, model agreement from independent assurance, and controlled escalation from unrestricted autonomy."
+    }
+  },
+  "independentCorroboration": "none",
+  "ownerDecision": {
+    "kind": "conversation",
+    "owner": "Tony Malott",
+    "approval": "Get this thing fixed and over the line, please.",
+    "approvalDate": "2026-11-18",
+    "articleSha256": "08a33769540a80bce110543e0735c0033663b0ed92ed130ec4915a66ca81bebc",
+    "evidenceRevision": "265d544789eafabf34bd80a2706526d409c2665f9c3654c5bf7bd525ebc683c3"
+  },
+  "decision": "accept",
+  "gaps": [
+    {
+      "type": "source",
+      "severity": "nonblocking",
+      "rationale": "Speech-entry anchors derive from a retained private ASR aid. Neither the reviewer nor this receipt authenticates each cue against direct audiovisual playback; creatorChapters remains a legacy field with an explicit disclaimer."
+    },
+    {
+      "type": "evidence",
+      "severity": "nonblocking",
+      "rationale": "No independent reproduction of Ondrej's Cloudroom factory, autonomous software release, full research workflow or claimed commercial productivity and economic return was performed."
+    },
+    {
+      "type": "test",
+      "severity": "nonblocking",
+      "rationale": "Controlled independent acceptance tests and production-level rollback exercises are proposed, not completed; editorial acceptance does not constitute technical or production UAT."
+    }
+  ],
+  "decisionRationale": "A separate read-only reviewer attested editorial/source/privacy PASS at PR #197 head 4f9368eb, and current authored HTML is byte-identical. The structured record faithfully transcribes that assessment and preserves limits on original audiovisual authentication, replication and production acceptance. Tony's current instruction authorizes mechanical closure, subject to required CI and release checks.",
+  "assessedAt": "2026-11-18T23:00:00Z"
+}

@@ -440,8 +440,9 @@ def validate_reader(root: Path, reader: dict, *, release: bool = True,
             section_html = section.group(1) if section else ""
             # Reader #66 uses H3-anchored subsections inside one locked article,
             # rather than wrapping every analysis subsection in a section tag.
-            heading_based = (slug == "uncensored-private-or-sovereign"
-                             and 'data-layout-family="annotated-editorial"' in article)
+            heading_based = ((slug == "uncensored-private-or-sovereign"
+                              and 'data-layout-family="annotated-editorial"' in article)
+                             or slug == "the-machine-is-learning-to-improve-the-machine")
             if heading_based and not section:
                 heading = re.search(r'<h[23]\b[^>]*\bid="' + re.escape(str(entry["sectionId"])) + r'"[^>]*>.*?</h[23]>', article, re.S)
                 if heading:
