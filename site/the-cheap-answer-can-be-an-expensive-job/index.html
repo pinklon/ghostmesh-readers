@@ -1,0 +1,414 @@
+<!doctype html>
+<html lang="en" data-reader="ghostmesh-editorial-v1">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#131619">
+  <title>The Cheap Answer Can Be an Expensive Job | GhostMesh Reader #69</title>
+  <meta name="description" content="GPT-6.2 Astra, benchmark economics, and the work that starts after the model stops.">
+  <link rel="canonical" href="https://youtube.shareplane.malott.ai/the-cheap-answer-can-be-an-expensive-job/">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="The Cheap Answer Can Be an Expensive Job">
+  <meta property="og:description" content="GPT-6.2 Astra, benchmark economics, and the work that starts after the model stops.">
+  <meta property="og:url" content="https://youtube.shareplane.malott.ai/the-cheap-answer-can-be-an-expensive-job/">
+  <meta property="og:image" content="https://youtube.shareplane.malott.ai/the-cheap-answer-can-be-an-expensive-job/social.svg">
+  <meta property="og:image:type" content="image/svg+xml">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Reader 69 cover showing the acceptance boundary between candidate response and accepted outcome">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="The Cheap Answer Can Be an Expensive Job">
+  <meta name="twitter:description" content="GPT-6.2 Astra, benchmark economics, and the work that starts after the model stops.">
+  <meta name="twitter:image" content="https://youtube.shareplane.malott.ai/the-cheap-answer-can-be-an-expensive-job/social.svg">
+  <meta name="twitter:image:alt" content="Reader 69 cover showing the acceptance boundary between candidate response and accepted outcome">
+  <link rel="alternate" type="application/rss+xml" title="GhostMesh Readers and Scout" href="/feed.xml"><script src="/assets/theme.js"></script><script src="/assets/reader-search.js" defer></script><link rel="stylesheet" href="/assets/reader-chrome.css"><link rel="stylesheet" href="/assets/knowledge.css"><link rel="stylesheet" href="/assets/reader-refresh.css">
+  <style>
+:root {
+  color-scheme: dark;
+  --sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --serif: Georgia, "Times New Roman", serif;
+  --mono: ui-monospace, SFMono-Regular, Consolas, monospace;
+  --gm-bg: #131619;
+  --gm-paper: #1b2024;
+  --gm-soft: #252c32;
+  --gm-ink: #f3eee4;
+  --gm-muted: #bdc4c7;
+  --gm-border: #525a60;
+  --gm-accent: #ffc18e;
+  --r69-cool: #a8d3d3;
+  --r69-measure: 720px;
+}
+:root[data-theme="light"] {
+  color-scheme: light;
+  --gm-bg: #f7f4ed;
+  --gm-paper: #eee8dd;
+  --gm-soft: #e9e3d9;
+  --gm-ink: #211f1b;
+  --gm-muted: #4f5759;
+  --gm-border: #99928a;
+  --gm-accent: #871f2e;
+  --r69-cool: #215b61;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--gm-bg); color: var(--gm-ink); font-family: var(--sans); }
+a { color: var(--gm-accent); text-underline-offset: .19em; }
+:focus-visible { outline: 2px solid var(--gm-accent); outline-offset: 4px; }
+.skip { position: absolute; z-index: 30; left: 12px; top: 12px; padding: .6rem; background: var(--gm-bg); transform: translateY(-200%); }
+.skip:focus { transform: none; }
+.gm-site-header { background: var(--gm-bg); color: var(--gm-ink); border-bottom: 1px solid var(--gm-border); }
+.gm-site-header-inner { display: flex; min-height: 70px; margin-inline: auto; align-items: center; }
+.gm-site-brand { display: inline-flex; align-items: center; gap: 10px; white-space: nowrap; color: var(--gm-ink); text-decoration: none; font-weight: 750; }
+.gm-site-brand img, .gm-site-footer img { padding: 3px; border-radius: 4px; background: #171b22; }
+.gm-site-brand em { color: var(--gm-accent); font-style: normal; }
+.gm-site-brand span { padding-left: 10px; border-left: 1px solid var(--gm-border); color: var(--gm-muted); font: 650 10px var(--mono); }
+.gm-site-nav { display: flex; flex-wrap: wrap; margin-left: auto; }
+.gm-site-nav a { border-bottom: 2px solid transparent; color: var(--gm-muted); text-decoration: none; font-weight: 650; }
+.gm-site-nav a:is(:focus-visible, :hover) { color: var(--gm-ink); border-color: var(--gm-accent); }
+.gm-reader-footer { margin-top: 0; }
+.gm-theme-control svg { fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+:root[data-theme="light"] .gm-theme-sun, :root:not([data-theme="light"]) .gm-theme-moon { display: none; }
+.gm-theme-control[hidden] { display: none; }
+
+.r69-layout {
+  width: min(1220px, calc(100% - 64px));
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, var(--r69-measure)) minmax(0, 1fr);
+  gap: 32px;
+}
+.r69-main { grid-column: 2; grid-row: 1; min-width: 0; overflow-wrap: anywhere; padding-top: clamp(40px, 7vw, 108px); }
+.r69-rail { grid-column: 1; grid-row: 1; align-self: start; position: sticky; top: 24px; padding-top: clamp(40px, 7vw, 108px); }
+.r69-rail nav { border-top: 1px solid var(--gm-border); padding: 14px 0; max-width: 172px; }
+.r69-rail a { display: block; color: var(--gm-muted); text-decoration: none; font-size: .81rem; line-height: 1.35; padding-block: 6px; }
+.r69-rail a:is(:focus-visible, :hover) { color: var(--gm-accent); text-decoration: underline; }
+.r69-rail strong { display: block; margin-bottom: 9px; color: var(--r69-cool); font-size: .83rem; }
+.r69-mobile-toc { display: none; }
+.r69-kicker { display: flex; align-items: center; gap: 12px; color: var(--r69-cool); font: 650 .81rem/1.4 var(--mono); }
+.r69-kicker::before { content: ""; width: 30px; border-top: 1px solid; }
+.r69-hero h1 { margin: 22px 0 20px; font: 500 clamp(2.55rem, 6.2vw, 5.9rem)/.98 var(--serif); letter-spacing: -.065em; text-wrap: balance; }
+.r69-dek { max-width: 33ch; margin: 0 0 26px; font: italic clamp(1.29rem, 2.3vw, 1.85rem)/1.3 var(--serif); color: var(--gm-muted); }
+.r69-meta { margin-block: 0 12px; color: var(--gm-muted); font-size: .88rem; line-height: 1.65; }
+.r69-verdict { margin: 24px 0 0; padding: 16px 19px; border-inline-start: 2px solid var(--gm-accent); background: var(--gm-paper); line-height: 1.65; }
+.r69-main h2 { margin: 0 0 16px; font: 500 clamp(1.88rem, 3.6vw, 2.65rem)/1.1 var(--serif); letter-spacing: -.045em; text-wrap: balance; }
+.r69-main section[id] { scroll-margin-top: 24px; }
+.r69-prose { font: clamp(1.06rem, 1.75vw, 1.23rem)/1.7 var(--serif); }
+.r69-prose section { padding-top: clamp(30px, 5vw, 54px); margin-top: clamp(28px, 5vw, 52px); border-top: 1px solid var(--gm-border); }
+.r69-prose section > p { margin: 0 0 1.15em; }
+.r69-prose section:first-child > p:first-of-type { font-size: 1.26em; color: var(--r69-cool); }
+.r69-main .gm-publication-status { color: var(--gm-muted); font-size: .75rem; line-height: 1.5; margin: 20px 0 0; }
+
+.r69-ledger { margin: 0; padding: clamp(17px, 4vw, 29px); background: var(--gm-paper); border: 1px solid var(--gm-border); border-top: 2px solid var(--r69-cool); font-family: var(--sans); }
+.r69-ledger figcaption { font: 500 clamp(1.45rem, 2.5vw, 2.05rem)/1.16 var(--serif); margin-bottom: 18px; }
+.r69-ledger-stages { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); border-block: 1px solid var(--gm-border); }
+.r69-ledger-stages p { display: flex; flex-direction: column; justify-content: center; margin: 0; padding: 17px 16px 17px 0; min-width: 0; color: var(--gm-ink); font-size: 1.06rem; }
+.r69-ledger-stages p:nth-child(2) { border-left: 1px solid var(--gm-accent); padding: 17px; color: var(--r69-cool); }
+.r69-ledger-stages small { color: var(--gm-muted); font-size: .8rem; }
+.r69-ledger ul { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); padding: 0; margin: 0; list-style: none; }
+.r69-ledger li { padding: 14px 8px 0 0; color: var(--gm-muted); font-size: .79rem; line-height: 1.4; }
+.r69-ledger li + li { border-left: 1px solid var(--gm-border); padding-left: 10px; }
+
+.r69-source { margin-top: 44px; }
+.r69-source > p { color: var(--gm-muted); line-height: 1.55; font-size: .88rem; }
+.r69-source .player { display: grid; position: relative; width: 100%; background: #171d22; overflow: hidden; }
+.r69-source .player img, .r69-source .player iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.r69-source .player img { object-fit: cover; }
+.r69-source .player button { align-self: end; justify-self: start; z-index: 1; margin: 0 0 14px 14px; padding: .55em .85em; color: #fff; background: #171d22e8; border: 1px solid #bfccd1; border-radius: 4px; font: 650 .82rem var(--sans); cursor: pointer; }
+.r69-source .player button:hover { background: #303a40; }
+.r69-source .player button:focus-visible { outline-color: #fff; }
+.r69-chapter-note { color: var(--gm-muted); font-size: .83rem; line-height: 1.55; }
+.r69-source .source-chapters a { display: grid; grid-template-columns: 4.1rem minmax(0, 1fr); align-items: start; gap: 12px; padding: 10px 0; border-block-end: 1px solid var(--gm-border); text-decoration: none; color: var(--gm-ink); font-size: .88rem; }
+.r69-source .source-chapters a:is(:focus-visible, :hover) { color: var(--gm-accent); text-decoration: underline; }
+.r69-source .source-chapters time { color: var(--r69-cool); font: 650 .8rem/1.5 var(--mono); }
+
+.r69-main :is(.gm-brief, .gm-evidence, .gm-related, .gm-work-routes, .gm-source-scope) { width: 100%; max-width: none; margin-inline: 0; }
+.r69-main .gm-brief { margin: 18px 0 32px; padding: 0; border: 0; }
+.r69-main .gm-brief-point { display: grid; grid-template-columns: 24px minmax(0, 1fr); gap: 10px; padding: 10px 0; border-bottom: 1px solid var(--gm-border); border-top: 0; }
+.r69-main .gm-brief .gm-brief-point p { font: .87rem/1.55 var(--sans); }
+.r69-main .gm-brief-index { color: var(--r69-cool); padding-top: 2px; }
+.r69-main .gm-evidence { display: block; margin-top: 50px; }
+.r69-main .gm-evidence-intro { position: static; top: auto; align-self: stretch; padding-bottom: 24px; }
+.r69-main .gm-evidence-body { border-left: 0; padding-left: 0; }
+.r69-main .gm-claim-list details { color: var(--gm-ink); }
+.r69-main .gm-claim-list { border-top: 1px solid var(--gm-border); margin-top: 20px; }
+.r69-main .gm-claim-list details { display: block; border-bottom: 1px solid var(--gm-border); }
+.r69-main .gm-claim-list summary { display: block; position: relative; list-style: none; cursor: pointer; padding: 18px 34px 18px 0; min-height: 76px; }
+.r69-main .gm-claim-list summary::-webkit-details-marker { display: none; }
+.r69-main .gm-claim-list summary::after { content: "+"; position: absolute; top: 18px; right: 7px; color: var(--gm-accent); font-size: 1.35rem; line-height: 1; }
+.r69-main .gm-claim-list details[open] summary::after { content: "−"; }
+.r69-main .gm-claim-label { display: block; font: 750 .66rem/1.5 var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--gm-muted); }
+.r69-main .gm-claim-status { display: inline-block; margin-left: 10px; color: var(--gm-accent); }
+.r69-main .gm-claim-proposition { display: block; margin-top: 7px; font: 650 1rem/1.45 var(--sans); overflow-wrap: anywhere; }
+.r69-main .gm-claim-detail { display: block; padding: 0 30px 18px 0; font: .88rem/1.6 var(--sans); color: var(--gm-muted); }
+.r69-main .gm-claim-detail p { margin: 0 0 12px; }
+.r69-main .gm-evidence-intro p { font: .91rem/1.65 var(--sans); color: var(--gm-muted); margin: 0 0 12px; }
+.r69-main .gm-evidence-body h3 { margin: 24px 0 7px; font: 650 1.12rem/1.3 var(--sans); }
+.r69-main .gm-evidence-hint { color: var(--gm-muted); font-size: .84rem; }
+
+.r69-main .gm-cards { display: block; }
+.r69-main .gm-cards > article { margin-bottom: 8px; }
+.r69-main .gm-work-routes, .r69-main .gm-source-scope { border-top: 1px solid var(--gm-border); margin-top: 36px; padding-top: 27px; }
+.r69-main .gm-work-routes .gm-backmatter-note { color: var(--gm-muted); font-size: .91rem; line-height: 1.6; }
+.r69-main .gm-work-grid { list-style: none; margin: 26px 0 0; padding: 0; }
+.r69-main .gm-work-grid > li { display: grid; grid-template-columns: 2.4rem minmax(0, 1fr) 1.5rem; column-gap: 14px; row-gap: 8px; align-items: baseline; padding: 23px 0 26px; border-top: 1px solid var(--gm-border); }
+.r69-main .gm-work-grid > li::before { content: '03'; grid-column: 1; grid-row: 1 / span 3; color: var(--gm-accent); font: 700 .72rem/1.7 var(--mono); }
+.r69-main .gm-work-kind { display: block; grid-column: 2; color: var(--gm-accent); font: 700 .76rem/1.5 var(--mono); letter-spacing: .11em; text-transform: uppercase; }
+.r69-main .gm-work-grid a { display: block; grid-column: 2; color: var(--gm-ink); font: 750 1.16rem/1.32 var(--sans); text-decoration: none; }
+.r69-main .gm-work-grid a:hover, .r69-main .gm-work-grid a:focus-visible { color: var(--gm-accent); text-decoration: underline; }
+.r69-main .gm-work-grid a::after { content: '↗'; float: right; color: var(--gm-accent); font: 500 1.12rem/1.2 var(--sans); }
+.r69-main .gm-work-grid > li > span:last-child { display: block; grid-column: 2 / -1; color: var(--gm-muted); font-size: .88rem; line-height: 1.55; }
+@media (max-width: 560px) { .r69-main .gm-work-grid > li { grid-template-columns: 1.8rem minmax(0, 1fr); column-gap: 10px; } }
+.r69-source-scope p, .r69-source-scope li { color: var(--gm-muted); font-size: .91rem; line-height: 1.65; }
+.r69-source-scope ol { list-style: none; padding: 0; }
+.r69-source-scope li { border-top: 1px solid var(--gm-border); padding: 9px 0; }
+.r69-source-scope li span { display: block; }
+.r69-main .gm-sharebar { width: 100%; margin-inline: 0; }
+@media (max-width: 1080px) {
+  .r69-layout { grid-template-columns: minmax(0, var(--r69-measure)); justify-content: center; }
+  .r69-main { grid-column: 1; }
+  .r69-rail { display: none; }
+  .r69-mobile-toc { display: block; margin: 25px 0; border-block: 1px solid var(--gm-border); padding: 9px 0; }
+  .r69-mobile-toc summary { cursor: pointer; min-height: 30px; padding: 4px 0; font-weight: 650; }
+  .r69-mobile-toc a { display: block; padding: 5px 0; font-size: .89rem; }
+}
+@media (max-width: 520px) {
+  .r69-layout { width: calc(100% - 38px); }
+  .r69-ledger-stages { grid-template-columns: 1fr; }
+  .r69-ledger-stages p:nth-child(2) { border-left: 0; border-top: 1px solid var(--gm-accent); padding-inline: 0; }
+  .r69-ledger ul { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .r69-ledger li { padding-bottom: 9px; }
+  .r69-ledger li:nth-child(3) { border-left: 0; padding-left: 0; }
+  .r69-ledger li:nth-child(n+3) { border-top: 1px solid var(--gm-border); }
+}
+
+  /* Accepted Reader shell and search control styles from Reader #68. */
+.gm-site-header{position:relative;z-index:20;--gm-bg:#0f1115;--gm-ink:#f4f5f7;--gm-border:#4c525d;--gm-paper:#151920;--gm-muted:#b8bec9;--gm-accent:#ff879a}.gm-site-header-inner{width:min(1280px,calc(100% - 48px))}.gm-site-tagline{font:500 .68rem/1.3 var(--sans);color:var(--gm-muted);white-space:nowrap;margin:0}.gm-header-actions{display:flex;gap:.6rem;align-items:center}.gm-search-control{width:42px;height:42px;border:1px solid var(--gm-border);border-radius:50%;display:grid;place-items:center;color:var(--gm-ink)}.gm-search-control svg{width:17px;height:17px;stroke:currentColor;stroke-width:1.8;fill:none}.gm-theme-control input{accent-color:var(--gm-accent);width:15px;height:15px}.gm-reader-footer{--gm-bg:#0f1115;--gm-ink:#f4f5f7;--gm-border:#4c525d;--gm-muted:#b8bec9;--gm-accent:#ff879a;background:#0f1115;color:#f4f5f7;padding:0}.gm-reader-footer-inner{max-width:1180px;padding:36px 26px;grid-template-columns:minmax(260px,1fr) minmax(280px,1.25fr);gap:2rem}.gm-footer-brand{display:flex;align-items:center;gap:10px;color:#fff;text-decoration:none}.gm-footer-brand strong{font:740 15px/1.2 var(--sans);letter-spacing:.18em}.gm-footer-brand strong em{font-style:normal;color:#e4314d}.gm-reader-footer-note,.gm-reader-footer-note a{color:#abb0bb;font:12px/1.65 var(--sans)}.gm-footer-links{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:.6rem 1rem;align-items:center}.gm-footer-links a{color:#e4e7ee;text-decoration:none;font:650 .77rem var(--sans)}
+@media(max-width:1080px){.gm-site-tagline{display:none}.gm-site-header-inner{flex-wrap:wrap;gap:.5rem;padding:10px 0}.gm-site-nav{order:3;width:100%;justify-content:space-between;gap:.2rem}.gm-site-nav a{padding:.55rem .3rem!important}.gm-header-actions{margin-left:auto}}@media(max-width:700px){.gm-site-header-inner{width:calc(100% - 30px)}.gm-site-brand span{display:none}.gm-site-nav{overflow-x:auto;flex-wrap:nowrap}.gm-site-nav a{flex:none!important}.gm-reader-footer-inner{grid-template-columns:1fr}.gm-footer-links{justify-content:flex-start}}
+.gm-site-header-inner{min-height:64px;gap:15px}
+.gm-site-brand{font-size:13px;letter-spacing:.1em}
+.gm-site-tagline{max-width:245px;margin:0;color:var(--gm-muted);font:600 12px/1.3 system-ui;letter-spacing:0}
+.gm-site-nav{gap:2px}
+.gm-site-nav a{padding:8px 7px;font-size:12px}
+.gm-header-actions{display:flex;align-items:center;gap:8px}
+.gm-search-control,.gm-theme-control{display:grid;place-items:center;flex:none;width:37px;height:37px;min-width:37px;min-height:37px;margin:0;padding:0;border:1px solid var(--gm-border);border-radius:50%;background:transparent;color:var(--gm-ink)!important;text-decoration:none!important}
+.gm-search-control:hover,.gm-theme-control:hover{border-color:var(--gm-accent);background:var(--gm-soft)}
+.gm-search-control:focus-visible,.gm-theme-control:focus-visible{outline:3px solid var(--gm-accent);outline-offset:3px}
+.gm-search-control svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round}
+.gm-theme-control svg{width:17px;height:17px}
+.gm-reader-search{width:min(680px,calc(100vw - 32px));max-height:min(760px,85dvh);padding:26px;border:1px solid var(--gm-border);background:var(--gm-bg);color:var(--gm-ink);box-shadow:0 24px 80px #0008}
+.gm-reader-search::backdrop{background:#030507b8}
+.gm-reader-search-head{display:flex;align-items:start;justify-content:space-between;gap:20px;border-bottom:1px solid var(--gm-border);padding-bottom:16px;margin-bottom:18px}
+.gm-reader-search-head p{font:700 10px/1.5 ui-monospace,monospace;letter-spacing:.12em;color:var(--gm-accent);margin:0 0 8px}
+.gm-reader-search-head h2{font:650 clamp(25px,4vw,36px)/1.12 system-ui;letter-spacing:-.045em;margin:0}
+.gm-reader-search-head button{flex:none;width:34px;height:34px;background:transparent;color:var(--gm-ink);border:1px solid var(--gm-border);border-radius:50%;font:25px/1 system-ui;cursor:pointer}
+.gm-reader-search label{display:block;font:650 13px/1.4 system-ui;margin-bottom:8px}
+.gm-reader-search input{display:block;width:100%;min-height:48px;padding:11px 14px;border:1px solid var(--gm-border);border-radius:3px;background:var(--gm-paper);color:var(--gm-ink);font:16px/1.4 system-ui}
+.gm-reader-search input:focus-visible,.gm-reader-search-head button:focus-visible{outline:3px solid var(--gm-accent);outline-offset:2px}
+.gm-reader-search-scope,.gm-reader-search [data-reader-search-status]{font:12px/1.55 system-ui;color:var(--gm-muted);margin:12px 0}
+.gm-reader-search a{color:var(--gm-accent)}
+.gm-reader-search [data-reader-search-results]{overflow:auto;max-height:48dvh}
+.gm-reader-search [data-reader-search-results]>a{display:block;padding:14px 2px;border-top:1px solid var(--gm-border);text-decoration:none;color:var(--gm-ink)}
+.gm-reader-search [data-reader-search-results]>a:hover,.gm-reader-search [data-reader-search-results]>a:focus-visible{background:var(--gm-soft);outline:2px solid var(--gm-accent);outline-offset:-2px}
+.gm-reader-search [data-reader-search-results] small,.gm-reader-search [data-reader-search-results] strong,.gm-reader-search [data-reader-search-results] span{display:block}
+.gm-reader-search [data-reader-search-results] small{font:650 10px/1.5 ui-monospace,monospace;letter-spacing:.08em;color:var(--gm-accent)}
+.gm-reader-search [data-reader-search-results] strong{font:650 17px/1.3 system-ui;margin:3px 0}
+.gm-reader-search [data-reader-search-results] span{font:13px/1.5 system-ui;color:var(--gm-muted)}
+.gm-library-match-snippet{padding:11px 14px;background:var(--gm-soft);border-left:2px solid var(--gm-accent);color:var(--gm-ink)!important;font:13px/1.55 system-ui}
+@media(max-width:700px){
+ .gm-site-header-inner{width:calc(100% - 40px);min-height:112px;padding-block:0;display:grid;grid-template-columns:minmax(0,1fr) auto;grid-template-rows:46px 30px 36px;gap:0 8px}
+ .gm-site-brand{grid-column:1;grid-row:1;font-size:12px}
+ .gm-site-brand span{display:none}
+ .gm-site-tagline{grid-column:1/-1;grid-row:2;align-self:center;max-width:none;font-size:12px}
+ .gm-header-actions{grid-column:2;grid-row:1}
+ .gm-site-nav{grid-column:1/-1;grid-row:3;width:100%;margin:0;justify-content:space-between;gap:0;flex-wrap:nowrap}
+ .gm-site-nav a{font-size:11px;padding:8px 3px;white-space:nowrap}
+ .gm-reader-search{padding:18px}
+}
+
+.gm-theme-control .gm-theme-label.gm-visually-hidden{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}.gm-header-actions .gm-search-control,.gm-header-actions .gm-theme-control{width:37px;min-width:37px;height:37px;min-height:37px}.gm-site-header-inner{flex-wrap:nowrap}@media(min-width:701px) and (max-width:1080px){.gm-site-header-inner{display:flex;flex-wrap:nowrap;gap:12px;padding:0}.gm-site-nav{order:0;width:auto;flex:1;justify-content:flex-end;gap:0;margin-left:auto;overflow:visible}.gm-site-nav a{padding:8px 5px!important;white-space:nowrap}.gm-header-actions{flex:none;margin-left:0}}@media(max-width:700px){.gm-site-header-inner{display:grid;flex-wrap:initial;min-height:112px;padding-block:0}.gm-site-tagline{display:block;grid-column:1/-1;grid-row:2}.gm-site-nav{display:flex;order:initial;grid-column:1/-1;grid-row:3;width:100%;overflow-x:auto;justify-content:space-between}.gm-header-actions{grid-column:2;grid-row:1}.gm-theme-control{margin:0}}
+.gm-reader-footer{font-family:var(--sans)!important}
+.gm-reader-footer .gm-reader-footer-inner{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:2rem;align-items:start;max-width:1180px;margin:auto;padding:2rem 1.5rem}
+.gm-reader-footer .gm-footer-links{display:flex;flex-wrap:wrap;align-items:flex-start;justify-content:flex-end;gap:.65rem 1.1rem}
+.gm-reader-footer .gm-footer-links a{display:inline;color:var(--gm-ink,#f4f5f7);font:650 .78rem/1.5 var(--sans)}
+.gm-reader-footer .gm-footer-more{display:flex;flex-wrap:wrap;gap:.55rem 1.4rem;grid-column:1/-1}
+
+@media(max-width:700px){.gm-reader-footer .gm-reader-footer-inner{grid-template-columns:1fr;padding:2rem 1.25rem}.gm-reader-footer .gm-footer-links{justify-content:flex-start}}
+
+/* Keep the accepted mobile navigation spacing above the older route-level !important rules. */
+@media(max-width:700px){.gm-site-header .gm-site-nav{gap:0!important}.gm-site-header .gm-site-nav a{padding:8px 3px!important;font-size:11px!important}}
+
+  </style>
+<meta name="gm-share-description" content="GPT-6.2 Astra, benchmark economics, and the work that starts after the model stops."></head>
+<body data-reader="ghostmesh-editorial-v1" data-variant="editorial">
+  <a class="skip" href="#article">Skip to article</a>
+  <header class="gm-site-header"><div class="gm-site-header-inner"><a class="gm-site-brand" href="/" aria-label="GhostMesh Readers home"><img src="/brand/ghostmesh-mark.svg" width="45" height="34" alt=""><strong>GHOST<em>MESH</em></strong><span>READERS</span></a><p class="gm-site-tagline">Context endures. Possibility evolves.</p><nav class="gm-site-nav" aria-label="Main navigation"><a href="/">Home</a><a href="/readers/">Readers</a><a href="/map/">Map</a><a href="/knowledge/">Knowledge</a><a href="/scout/">Scout</a><a href="/#about">About</a></nav><div class="gm-header-actions"><a class="gm-search-control" href="/readers/#search" aria-label="Search Reader articles; without JavaScript, browse the Reader archive" data-reader-search-open title="Search Reader articles"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 5 5"/></svg></a><button class="gm-theme-control" id="theme-toggle" data-theme-toggle type="button" aria-label="Light appearance" aria-pressed="false" hidden><svg class="gm-theme-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4M19.1 4.9l-1.4 1.4M6.3 17.7l-1.4 1.4"/></svg><svg class="gm-theme-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.2 15.9A8.7 8.7 0 0 1 8.1 3.8 8.7 8.7 0 1 0 20.2 15.9Z"/></svg><span class="gm-theme-label gm-visually-hidden">Appearance</span></button></div></div><dialog class="gm-reader-search" data-reader-search aria-labelledby="gm-search-title"><div class="gm-reader-search-head"><div><p>GHOSTMESH / READER SEARCH</p><h2 id="gm-search-title">Search the published readings.</h2></div><button type="button" data-reader-search-close aria-label="Close Reader search">×</button></div><label for="gm-search-input">Search article text from all public Readers</label><input id="gm-search-input" type="search" autocomplete="off" placeholder="A claim, source or phrase"><p class="gm-reader-search-scope">Results are limited to the public Reader articles on this site. <a href="/readers/">Browse all Readers</a>.</p><p data-reader-search-status role="status" aria-live="polite">Type to search the public Reader articles.</p><div data-reader-search-results></div></dialog></header>
+  <div class="r69-layout">
+    <main id="article" class="r69-main" tabindex="-1">
+      <div class="r69-hero">
+        <p class="r69-kicker">GhostMesh Reader #69</p>
+        <h1 data-locked-block>The Cheap Answer Can Be an Expensive Job</h1>
+        <p class="r69-dek" data-locked-block><em>GPT-6.2 Astra, benchmark economics, and the work that starts after the model stops.</em></p>
+        <p class="r69-meta" data-locked-block>Source: BetterWay, <em>People Are Wrong About GPT-6.2 Astra</em>, November 18, 2026. <a href="https://www.youtube.com/watch?v=gCK2hv9De5U">Watch the original</a>.</p>
+        <p class="r69-verdict" data-locked-block><strong>GhostMesh verdict:</strong> Watch for the economics argument. Verify the benchmark comparisons. Treat launch reactions as useful failure reports, not as a controlled study of finished work.</p>
+        <p class="gm-publication-status" data-gm-release-status=""><strong>Publication status:</strong> Editorial draft. Independent acceptance and owner publication authorization are pending.</p>
+      </div>
+      <details class="r69-mobile-toc">
+        <summary>In this Reader</summary>
+        <nav aria-label="Article contents">
+      <a href="#source">Source video</a>
+      <a href="#the-invoice-is-not-the-job">The invoice is not the job</a>
+      <a href="#a-leaderboard-has-a-denominator">A leaderboard has a denominator</a>
+      <a href="#the-unpriced-work-begins-at-handoff">The unpriced work begins at handoff</a>
+      <a href="#short-is-not-the-same-as-incomplete">Short is not the same as incomplete</a>
+      <a href="#the-cheap-model-may-be-the-right-model">The cheap model may be the right model</a>
+      <a href="#measure-accepted-outcomes">Measure accepted outcomes</a>
+      <a href="#ghostmesh-take">GhostMesh take</a>
+      <a href="#external-evidence">Claim dossier</a>
+      <a href="#related-thinking"><span>Related thinking</span></a>
+      <a href="#shareplane-thinking">SharePlane Work comparison</a>
+      <a href="#reasonpack-provenance">Source and provenance</a>
+        </nav>
+      </details>
+      <div class="gm-brief" id="at-a-glance" aria-label="At a glance">
+      <div class="gm-brief-point"><span class="gm-brief-index" aria-hidden="true">01</span><div><p>A model can win the price column and lose the afternoon.</p></div></div>
+      <div class="gm-brief-point"><span class="gm-brief-index" aria-hidden="true">02</span><div><p>The price of a candidate answer is not necessarily the cost of an accepted result.</p></div></div>
+      <div class="gm-brief-point"><span class="gm-brief-index" aria-hidden="true">03</span><div><p>Use the model suited to the job and route upward when ambiguity or failure cost warrants it.</p></div></div>
+      </div>
+
+      <section class="r69-source" id="source" aria-labelledby="source-title">
+        <h2 id="source-title">Original video</h2>
+        <div class="player gm-media-frame" data-gm-aspect="16:9">
+          <img src="https://i.ytimg.com/vi/gCK2hv9De5U/hqdefault.jpg" alt="" loading="lazy" decoding="async">
+          <button id="launch" type="button" aria-label="Play the original BetterWay video" hidden>Play original video</button>
+        </div>
+        <p><a href="https://www.youtube.com/watch?v=gCK2hv9De5U">Watch on YouTube</a> · 10:30</p>
+        <p class="r69-chapter-note">Approximate cue entry points from automatic captions.</p>
+        <nav class="source-chapters" id="chapters" aria-label="Video chapter navigation">
+        <a href="https://www.youtube.com/watch?v=gCK2hv9De5U&amp;t=52s"><time datetime="PT52S">00:52</time><span>Launch reactions</span></a>
+        <a href="https://www.youtube.com/watch?v=gCK2hv9De5U&amp;t=165s"><time datetime="PT165S">02:45</time><span>Benchmark costs and comparisons</span></a>
+        <a href="https://www.youtube.com/watch?v=gCK2hv9De5U&amp;t=308s"><time datetime="PT308S">05:08</time><span>The shorter-answer hypothesis</span></a>
+        <a href="https://www.youtube.com/watch?v=gCK2hv9De5U&amp;t=392s"><time datetime="PT392S">06:32</time><span>The cost of stopping early</span></a>
+        <a href="https://www.youtube.com/watch?v=gCK2hv9De5U&amp;t=579s"><time datetime="PT579S">09:39</time><span>Choosing how much model to use</span></a>
+        </nav>
+      </section>
+
+      <article class="r69-prose" aria-label="The Cheap Answer Can Be an Expensive Job">
+    <section id="the-invoice-is-not-the-job">
+      <h2 data-locked-block>The invoice is not the job</h2>
+      <p data-locked-block>A model can win the price column and lose the afternoon.</p>
+      <p data-locked-block>That is the tension in BetterWay's reaction to GPT-6.2 Astra. The video opens with criticism from people using models on ambitious work, then turns to results that make Astra look efficient. The implied contradiction disappears when we examine what each observation measures.</p>
+      <p data-locked-block>A benchmark gives a model a bounded task, a budget, and a scoring procedure. An engineer gives an agent an outcome, checks whether it reached that outcome, fixes what it missed, and sometimes starts again. Both activities matter. They do not share the same denominator.</p>
+      <p data-locked-block>The price of a candidate answer is not necessarily the cost of an accepted result.</p>
+    </section>
+    <section id="a-leaderboard-has-a-denominator">
+      <h2 data-locked-block>A leaderboard has a denominator</h2>
+      <p data-locked-block>Vals reports Astra at 67.66% on its overall index, seventh among 41 models, and $10.68 per evaluated test in the public November 18 snapshot. It evaluates Astra at maximum reasoning effort. Its domain rankings diverge: strong science results sit alongside materially lower placements in finance and legal tasks.</p>
+      <p data-locked-block>OpenAI advertises lower cost on its own multistep evaluations and prices standard Astra API usage at $8 per million input tokens and $40 per million output tokens. Those are vendor results and a rate card, respectively.</p>
+      <p data-locked-block>None of these figures is meaningless. None is a universal price for successful work.</p>
+      <p data-locked-block>Cost per token, cost per benchmark attempt, and cost per accepted production result answer three different questions. A ranking also depends on the task mix, configuration, scoring method, and point in time. It is reasonable to use a leaderboard to shortlist models. It is unreasonable to assume it settles the engineering decision.</p>
+    </section>
+    <section id="the-unpriced-work-begins-at-handoff">
+      <h2 data-locked-block>The unpriced work begins at handoff</h2>
+      <p data-locked-block>The meter stops. The operator's work may not.</p>
+      <p data-locked-block>Someone still has to review the change, run tests, inspect edge cases, detect omissions, and decide whether the result is acceptable. A failure may mean another prompt, a rerun, a manual correction, or escalation to a stronger model.</p>
+      <p data-locked-block>A practical completion ledger needs four entries:</p>
+      <p data-locked-block><strong>Inference:</strong> model calls, tool use, and retries required to produce the candidate.</p>
+      <p data-locked-block><strong>Verification:</strong> tests, review, and independent evidence required to accept it.</p>
+      <p data-locked-block><strong>Rework:</strong> repair or replacement of results that appeared complete but were not.</p>
+      <p data-locked-block><strong>Human attention:</strong> steering, supervision, context switching, and recovery from a failed handoff.</p>
+      <p data-locked-block>This is a conceptual ledger. We do not have matched empirical measurements proving Astra is more expensive on these dimensions. The point is to make the missing terms visible before claiming a cost advantage.</p>
+      <p data-locked-block>For some tasks, verification is cheap and nearly deterministic. For others, verifying an answer can be harder than generating one. The economics flip with the task.</p>
+    </section>
+
+    <figure class="r69-ledger" aria-labelledby="acceptance-boundary">
+      <figcaption id="acceptance-boundary">The acceptance boundary</figcaption>
+      <div class="r69-ledger-stages">
+        <p><strong>Candidate response</strong><small>API invoice</small></p>
+        <p><strong>Accepted outcome</strong></p>
+      </div>
+      <ul aria-label="Cost contributors">
+        <li>Inference</li><li>Verification</li><li>Rework</li><li>Human attention</li>
+      </ul>
+    </figure>
+    <section id="short-is-not-the-same-as-incomplete">
+      <h2 data-locked-block>Short is not the same as incomplete</h2>
+      <p data-locked-block>The video raises a hypothesis that shorter answers may lead the model to stop too soon. It deserves testing, not promotion into a known mechanism.</p>
+      <p data-locked-block>A concise answer may be better. A verbose answer can still omit the actual deliverable. Public criticism of ambitious coding experiments includes concerns about irrelevant exposition as well as missing work. Length alone is a poor diagnostic.</p>
+      <p data-locked-block>The relevant question is whether the agent satisfied the acceptance criteria. If it stopped, did it identify what remains? If it claimed completion, was that claim supported by tests?</p>
+      <p data-locked-block>A clean comparison would hold the task, tool access, acceptance criteria, and effort setting constant. It would record completed outcomes, rejected attempts, operator minutes, and retries. Without those measurements, explanations about the model's internal incentives remain speculation.</p>
+    </section>
+    <section id="the-cheap-model-may-be-the-right-model">
+      <h2 data-locked-block>The cheap model may be the right model</h2>
+      <p data-locked-block>For bounded work with clear success conditions, low inference cost can be a genuine advantage. Drafting a targeted review, exploring alternatives, classifying inputs, or making a change with fast deterministic tests may not justify maximum-cost reasoning.</p>
+      <p data-locked-block>Long-running autonomous work is different. Hidden dependencies, ambiguous authority, poor task definitions, and weak tests can make a seemingly inexpensive model costly to supervise.</p>
+      <p data-locked-block>That is not an argument for always buying the strongest model. A stronger model can itself be an expensive substitute for better specifications and controls.</p>
+      <p data-locked-block>Use the model suited to the job and route upward when ambiguity or failure cost warrants it. Design acceptance checks so that lower-cost capability can be used safely. Escalate when the cost of steering and verification overtakes the savings.</p>
+    </section>
+    <section id="measure-accepted-outcomes">
+      <h2 data-locked-block>Measure accepted outcomes</h2>
+      <p data-locked-block>A useful evaluation should ask:</p>
+      <p data-locked-block><em>For this class of work, how much does one accepted result cost, how long does it take, and how often does a human have to rescue it?</em></p>
+      <p data-locked-block>Sample representative tasks. Hold configurations steady. Record failures alongside successes. Count human time and retries. Separate model limitations from missing context, poor tools, or inadequate instructions.</p>
+      <p data-locked-block>The result may favor Astra. It may favor a more expensive model. It may show that the largest improvement came from fixing the workflow.</p>
+      <p data-locked-block>That is a less photogenic answer than a leaderboard. It is the answer an operator can use.</p>
+    </section>
+    <section id="ghostmesh-take">
+      <h2 data-locked-block>GhostMesh take</h2>
+      <p data-locked-block>The video's useful contribution is to challenge the idea that launch sentiment or a headline benchmark closes the case. The criticism and performance data can coexist because they sample different kinds of work.</p>
+      <p data-locked-block>Astra does not need to sound busy. It needs to finish the assigned task, or state clearly what remains.</p>
+      <p data-locked-block>A cheap candidate becomes a cheap job only when the system can turn it into a trustworthy result without spending the savings after the model stops.</p>
+    </section>
+      </article>
+
+      <section class="gm-evidence" id="external-evidence"><div class="gm-evidence-intro"><p class="gm-kicker">Claim register / revision 2026-11-18</p><h2>Corroboration &amp; counterevidence</h2><p>Vals AI and OpenAI public evidence checked November 18, 2026. No matched measurements of Astra’s completion costs across the four contributors.</p><p>Custody proves what was retained, not that a claim is true. Source assertions, vendor documentation, independent measurements and GhostMesh proposals have different evidentiary reach.</p><p><strong>What would change the call?</strong> A clean comparison would hold the task, tool access, acceptance criteria, and effort setting constant. It would record completed outcomes, rejected attempts, operator minutes, and retries. Without those measurements, explanations about the model&#x27;s internal incentives remain speculation.</p><p><a href="/the-cheap-answer-can-be-an-expensive-job/receipt.json">Public sanitized evidence receipt</a>. Review: accepted-for-owner-review.</p></div><div class="gm-evidence-body"><h3>Claims under inspection</h3><p class="gm-evidence-hint">Open a claim to see its source location, support, counterevidence and limits.</p><div class="gm-claim-list"><details id="r69-reactions"><summary><span class="gm-claim-label">Source or factual assertion <span class="gm-claim-status">Unverified</span></span><span class="gm-claim-proposition">Launch reactions as failure reports</span></summary><div class="gm-claim-detail"><p>Claim ID: <code>r69-reactions</code>. As of 2026-11-18. Kind: creator-claim. Mapped source location: 00:52</p><p>Supporting evidence type: Primary video. Counterevidence type: None qualified. These labels describe the mapped record, not an article-wide verification score.</p><p>The creator discusses launch criticism from model users.</p><p>Limits: These reactions do not constitute a controlled study of finished work.</p><p>Supporting evidence: <a href="#ref-r69-ref-video">YouTube: People Are Wrong About GPT-6.2 Astra</a></p><p>Counterevidence / constraints: None qualified</p></div></details><details id="r69-vals"><summary><span class="gm-claim-label">Source or factual assertion <span class="gm-claim-status">Corroborated</span></span><span class="gm-claim-proposition">Vals Index snapshot</span></summary><div class="gm-claim-detail"><p>Claim ID: <code>r69-vals</code>. As of 2026-11-18. Kind: independently reported. Mapped source location: 02:45; Vals AI model page</p><p>Supporting evidence type: independent benchmark. Counterevidence type: None qualified. These labels describe the mapped record, not an article-wide verification score.</p><p>The November 18 snapshot reports 67.66%, seventh of 41, and $10.68 per test at maximum reasoning effort.</p><p>Limits: Rankings and cost are specific to the index, task mix, settings, and snapshot.</p><p>Supporting evidence: <a href="#ref-r69-ref-vals">Vals AI: GPT-6.2 Astra Benchmarks, Cost and Capabilities</a></p><p>Counterevidence / constraints: None qualified</p></div></details><details id="r69-rates"><summary><span class="gm-claim-label">Source or factual assertion <span class="gm-claim-status">Corroborated</span></span><span class="gm-claim-proposition">OpenAI API rates and evaluation cost claims</span></summary><div class="gm-claim-detail"><p>Claim ID: <code>r69-rates</code>. As of 2026-11-18. Kind: vendor claim. Mapped source location: 02:45; OpenAI announcement</p><p>Supporting evidence type: Vendor announcement. Counterevidence type: None qualified. These labels describe the mapped record, not an article-wide verification score.</p><p>OpenAI lists $8 input and $40 output per million standard API tokens and reports lower costs on its own multistep evaluations.</p><p>Limits: The rate card and vendor evaluation use different units. The reported evaluation cost does not establish production acceptance cost.</p><p>Supporting evidence: <a href="#ref-r69-ref-openai">OpenAI: Introducing GPT-6.2 Astra and Sol</a></p><p>Counterevidence / constraints: None qualified</p></div></details><details id="r69-hypothesis"><summary><span class="gm-claim-label">Advice / interpretation <span class="gm-claim-status">Unverified</span></span><span class="gm-claim-proposition">Shorter answers and early stopping</span></summary><div class="gm-claim-detail"><p>Claim ID: <code>r69-hypothesis</code>. As of 2026-11-18. Kind: speaker-inference. Mapped source location: 05:08</p><p>Supporting evidence type: Primary video. Counterevidence type: None qualified. These labels describe the mapped record, not an article-wide verification score.</p><p>The video raises shorter outputs as a possible explanation for incomplete work.</p><p>Limits: The available sources do not establish the mechanism.</p><p>Supporting evidence: <a href="#ref-r69-ref-video">YouTube: People Are Wrong About GPT-6.2 Astra</a></p><p>Counterevidence / constraints: None qualified</p></div></details><details id="r69-ledger"><summary><span class="gm-claim-label">Advice / interpretation <span class="gm-claim-status">Unverified</span></span><span class="gm-claim-proposition">Four contributors to completion cost</span></summary><div class="gm-claim-detail"><p>Claim ID: <code>r69-ledger</code>. As of 2026-11-18. Kind: framework-example. Mapped source location: 06:32; GhostMesh analysis</p><p>Supporting evidence type: Primary video. Counterevidence type: None qualified. These labels describe the mapped record, not an article-wide verification score.</p><p>The framework accounts for inference, verification, rework, and human attention.</p><p>Limits: There are no matched empirical measurements of Astra’s total completion cost in the cited material.</p><p>Supporting evidence: <a href="#ref-r69-ref-video">YouTube: People Are Wrong About GPT-6.2 Astra</a></p><p>Counterevidence / constraints: None qualified</p></div></details><details id="r69-routing"><summary><span class="gm-claim-label">Advice / interpretation <span class="gm-claim-status">Unverified</span></span><span class="gm-claim-proposition">Model choice depends on the task</span></summary><div class="gm-claim-detail"><p>Claim ID: <code>r69-routing</code>. As of 2026-11-18. Kind: editorial-inference. Mapped source location: 09:39; GhostMesh analysis</p><p>Supporting evidence type: Primary video. Counterevidence type: None qualified. These labels describe the mapped record, not an article-wide verification score.</p><p>The Reader recommends routing upward when ambiguity or failure cost warrants it.</p><p>Limits: The appropriate route depends on acceptance checks and the work required to reach an accepted outcome.</p><p>Supporting evidence: <a href="#ref-r69-ref-video">YouTube: People Are Wrong About GPT-6.2 Astra</a></p><p>Counterevidence / constraints: None qualified</p></div></details></div><h3>External references and independence</h3><article id="ref-r69-ref-video"><h4><a href="https://www.youtube.com/watch?v=gCK2hv9De5U">People Are Wrong About GPT-6.2 Astra</a></h4><p>BetterWay · YouTube · Published 2026-11-18; last update not specified.  Event / measurement: Not specified; do not substitute publication date. Checked 2026-11-18T20:32:00Z.</p><p>Location: Public source. Type: Primary video. Creator commentary and reported reactions.</p></article><article id="ref-r69-ref-vals"><h4><a href="https://www.vals.ai/models/openai_gpt-6.2-astra">GPT-6.2 Astra Benchmarks, Cost and Capabilities</a></h4><p>Vals AI · Vals AI · Published unknown; last update not specified. Rolling model page, checked November 18, 2026. Event / measurement: Not specified; do not substitute publication date. Checked 2026-11-18T20:32:00Z.</p><p>Location: Public source. Type: independent benchmark. Independent, evaluation-specific measurements. The public model page is a rolling snapshot.</p></article><article id="ref-r69-ref-openai"><h4><a href="https://openai.com/index/introducing-gpt-6-2-astra-sol/">Introducing GPT-6.2 Astra and Sol</a></h4><p>OpenAI · OpenAI · Published 2026-11-17; last update not specified.  Event / measurement: Not specified; do not substitute publication date. Checked 2026-11-18T20:32:00Z.</p><p>Location: Public source. Type: Vendor announcement. Primary source for OpenAI’s pricing and its own evaluations.</p></article></div></section>
+      <section class="gm-related" id="related-thinking"><p class="gm-kicker">Continue the inquiry</p><h2>Related thinking</h2><p>Two Reader companions extend model routing and the acceptance boundary; one separately classified SharePlane Work extends trusted completion cost into governed reconsideration.</p><div class="gm-cards"><article><span class="gm-related-index">01</span><div class="gm-related-copy"><p class="gm-kicker">companion</p><h3><a href="/the-best-model-shouldnt-do-every-job/">The Best Model Shouldn&#x27;t Do Every Job</a></h3><p>Model-routing companion</p></div><span class="gm-related-arrow" aria-hidden="true">↗</span></article><article><span class="gm-related-index">02</span><div class="gm-related-copy"><p class="gm-kicker">companion</p><h3><a href="/the-machine-is-learning-to-improve-the-machine/">The Machine Is Learning to Improve the Machine</a></h3><p>Acceptance and authority companion</p></div><span class="gm-related-arrow" aria-hidden="true">↗</span></article></div></section>
+      <section id="shareplane-thinking" class="gm-work-routes"><h2>SharePlane Work comparison</h2><p class="gm-backmatter-note">Separately reviewed editorial connections, not independent validation of the video.</p><ul class="gm-work-grid"><li><span class="gm-work-kind">companion</span><a href="https://shareplane.malott.ai/artifacts/done-has-a-half-life/">Done Has a Half-Life</a><span>The published SharePlane Work carries completion economics into the ongoing cost of safely reconsidering an accepted result. This is a conceptual companion, not independent evidence about Astra or the video&#x27;s claims.</span></li></ul></section><section id="reasonpack-provenance" class="gm-source-scope">
+        <h2>Source and provenance</h2>
+        <div class="r69-source-scope">
+          <p>The original source is BetterWay’s video. Retained English automatic captions were used as an approximate navigation aid. The aid is machine-generated and has no independent listening or frame-by-frame certification.</p>
+          <p>Benchmark results come from Vals AI. API prices and OpenAI’s multistep evaluations come from OpenAI. The completion ledger is a conceptual accounting frame.</p>
+          <ol class="gm-source-list">
+      <li><a href="https://www.youtube.com/watch?v=gCK2hv9De5U">People Are Wrong About GPT-6.2 Astra</a><span>Creator commentary and reported reactions.</span></li>
+      <li><a href="https://www.vals.ai/models/openai_gpt-6.2-astra">GPT-6.2 Astra Benchmarks, Cost and Capabilities</a><span>Independent, evaluation-specific measurements. The public model page is a rolling snapshot.</span></li>
+      <li><a href="https://openai.com/index/introducing-gpt-6-2-astra-sol/">Introducing GPT-6.2 Astra and Sol</a><span>Primary source for OpenAI’s pricing and its own evaluations.</span></li>
+          </ol>
+        </div>
+      </section>
+    <div class="gm-sharebar" data-gm-share=""><span class="gm-share-label">Share this Video Deconstruction</span><div class="gm-share-actions"><button class="gm-share-button" data-native-share="" type="button">Share</button><button class="gm-share-button" data-copy-link="" type="button">Copy link</button><a class="gm-share-email" data-email-link="" href="mailto:?subject=The Cheap Answer Can Be an Expensive Job">Email</a><span aria-live="polite" class="gm-share-message" data-gm-share-message="" role="status"></span></div></div></main>
+    <aside class="r69-rail rail">
+      <nav aria-label="Article contents">
+        <strong>In this Reader</strong>
+      <a href="#source">Source video</a>
+      <a href="#the-invoice-is-not-the-job">The invoice is not the job</a>
+      <a href="#a-leaderboard-has-a-denominator">A leaderboard has a denominator</a>
+      <a href="#the-unpriced-work-begins-at-handoff">The unpriced work begins at handoff</a>
+      <a href="#short-is-not-the-same-as-incomplete">Short is not the same as incomplete</a>
+      <a href="#the-cheap-model-may-be-the-right-model">The cheap model may be the right model</a>
+      <a href="#measure-accepted-outcomes">Measure accepted outcomes</a>
+      <a href="#ghostmesh-take">GhostMesh take</a>
+      <a href="#external-evidence">Claim dossier</a>
+      <a href="#related-thinking">Related thinking</a><a href="#shareplane-thinking">SharePlane Work</a>
+      <a href="#reasonpack-provenance">Source and provenance</a>
+      </nav>
+    </aside>
+  </div>
+  <footer aria-label="GhostMesh destinations" class="gm-reader-footer gm-site-footer"><div class="gm-reader-footer-inner"><div><a class="gm-footer-brand" href="/"><img alt="" class="gm-logo-mark" height="34" src="/brand/ghostmesh-mark.svg" width="45"><strong>GHOST<em>MESH</em></strong></a><p class="gm-reader-footer-note">Read the source. Examine the evidence. Challenge the interpretation.<br>GhostMesh editorial · © 2026 GhostMesh / Tony Malott.</p></div><nav aria-label="Reader footer navigation" class="gm-footer-links"><a href="/">Readers home</a><a href="/readers/">All Readers</a><a href="/map/">Relationship map</a><a href="/knowledge/">Public knowledge</a><a href="/scout/">Scout</a><a href="/feed.xml">Subscribe via RSS</a><a href="https://ghostmesh.ai/">GhostMesh.ai ↗</a><a href="https://shareplane.malott.ai/">SharePlane ↗</a><a href="https://malott.ai/">Tony Malott ↗</a><a href="mailto:ghostmesh@malott.ai?subject=GhostMesh%20Reader%20feedback">Contact GhostMesh ✉</a></nav></div></footer>
+  <script>
+    const play = document.getElementById("launch");
+    const poster = play.previousElementSibling;
+    function hideMissingPoster() { poster.hidden = true; }
+    poster.addEventListener("error", hideMissingPoster);
+    if (poster.complete && !poster.naturalWidth) hideMissingPoster();
+    play.hidden = false;
+    play.addEventListener("click", () => {
+      const frame = document.createElement("iframe");
+      frame.title = "People Are Wrong About GPT-6.2 Astra by BetterWay";
+      frame.allow = "autoplay; encrypted-media; picture-in-picture";
+      frame.allowFullscreen = true;
+      frame.referrerPolicy = "strict-origin-when-cross-origin";
+      frame.src = "https://www.youtube-nocookie.com/embed/gCK2hv9De5U?autoplay=1";
+      play.parentElement.replaceChildren(frame);
+      frame.focus();
+    });
+  </script>
+<script defer src="/assets/reader-share.js"></script></body>
+</html>

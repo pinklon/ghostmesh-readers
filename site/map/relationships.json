@@ -3,11 +3,11 @@
   "scope": "Local public editorial reading routes; no independent corroboration or cross-site graph admission.",
   "authority": "catalog-curated-editorial",
   "visibility": "public",
-  "readerCount": 68,
-  "assessmentCount": 68,
-  "relationshipCount": 159,
-  "sharePlaneRelationshipCount": 41,
-  "sharePlaneReviewCount": 28,
+  "readerCount": 69,
+  "assessmentCount": 69,
+  "relationshipCount": 161,
+  "sharePlaneRelationshipCount": 42,
+  "sharePlaneReviewCount": 29,
   "sharePlaneEdges": [
     {
       "from": "reader:when-code-gets-cheap-where-does-the-work-wait",
@@ -334,6 +334,14 @@
       "url": "https://shareplane.malott.ai/artifacts/stop-prompting-agents-start-managing-workers/",
       "title": "Stop Prompting Agents. Start Managing Workers.",
       "reason": "Tony’s published Work frames agents as bounded workers whose authority grows only through measured outcomes and retained evidence. This is an operational companion to #68’s software loop, not independent corroboration of the creator or model claims.",
+      "type": "companion",
+      "basis": "curated-editorial-comparison"
+    },
+    {
+      "from": "reader:the-cheap-answer-can-be-an-expensive-job",
+      "url": "https://shareplane.malott.ai/artifacts/done-has-a-half-life/",
+      "title": "Done Has a Half-Life",
+      "reason": "The published SharePlane Work carries completion economics into the ongoing cost of safely reconsidering an accepted result. This is a conceptual companion, not independent evidence about Astra or the video's claims.",
       "type": "companion",
       "basis": "curated-editorial-comparison"
     }
@@ -1444,6 +1452,22 @@
           "reader:the-threshold-is-a-claim-not-a-test"
         ],
         "rationale": "Three subject-specific companions; editorial linkage, not corroborating sources."
+      }
+    },
+    {
+      "id": "reader:the-cheap-answer-can-be-an-expensive-job",
+      "slug": "the-cheap-answer-can-be-an-expensive-job",
+      "title": "The Cheap Answer Can Be an Expensive Job",
+      "url": "https://youtube.shareplane.malott.ai/the-cheap-answer-can-be-an-expensive-job/",
+      "review": {
+        "reviewedAt": "2026-11-18",
+        "reviewedCatalogSize": 68,
+        "decision": "linked",
+        "reviewedTargets": [
+          "reader:the-best-model-shouldnt-do-every-job",
+          "reader:the-machine-is-learning-to-improve-the-machine"
+        ],
+        "rationale": "The approved model-routing Reader addresses task-specific selection. Reader #68 addresses evidence and authority at acceptance."
       }
     }
   ],
@@ -3352,6 +3376,30 @@
       "provenance": [
         "/the-machine-is-learning-to-improve-the-machine/",
         "/the-threshold-is-a-claim-not-a-test/"
+      ],
+      "basis": "curated-editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:the-cheap-answer-can-be-an-expensive-job",
+      "to": "reader:the-best-model-shouldnt-do-every-job",
+      "type": "companion",
+      "reason": "Model-routing companion",
+      "provenance": [
+        "/the-cheap-answer-can-be-an-expensive-job/",
+        "/the-best-model-shouldnt-do-every-job/"
+      ],
+      "basis": "curated-editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:the-cheap-answer-can-be-an-expensive-job",
+      "to": "reader:the-machine-is-learning-to-improve-the-machine",
+      "type": "companion",
+      "reason": "Acceptance and authority companion",
+      "provenance": [
+        "/the-cheap-answer-can-be-an-expensive-job/",
+        "/the-machine-is-learning-to-improve-the-machine/"
       ],
       "basis": "curated-editorial-comparison",
       "direction": "outgoing"

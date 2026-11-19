@@ -22948,6 +22948,285 @@
           "timedAidSha256": "c88b45c3e07083e34306e210edeff017109faf1d67f5df7e8a8dfdaaf4837065"
         }
       }
+    },
+    {
+      "id": "reader:the-cheap-answer-can-be-an-expensive-job",
+      "title": "The Cheap Answer Can Be an Expensive Job",
+      "slug": "the-cheap-answer-can-be-an-expensive-job",
+      "variant": "editorial",
+      "category": "AI & Technology",
+      "tags": [
+        "GPT-6.2",
+        "model economics",
+        "verification",
+        "model routing"
+      ],
+      "accent": "red",
+      "editorialOrder": 68,
+      "published": "2026-11-18",
+      "updated": "2026-11-18T20:32:00Z",
+      "lastEvidenceChecked": "2026-11-18",
+      "overview": "GPT-6.2 Astra, benchmark economics, and the work that starts after the model stops.",
+      "whyItMatters": "The price of a candidate answer is not necessarily the cost of an accepted result.",
+      "ghostMeshTakeaway": "Use the model suited to the job and route upward when ambiguity or failure cost warrants it.",
+      "verdict": "Worth studying",
+      "architectureImpact": "experiment recommended",
+      "archiveCall": {
+        "label": "Measure accepted outcomes",
+        "text": "For this class of work, how much does one accepted result cost, how long does it take, and how often does a human have to rescue it?"
+      },
+      "evidenceState": "partially verified",
+      "falsification": "A clean comparison would hold the task, tool access, acceptance criteria, and effort setting constant. It would record completed outcomes, rejected attempts, operator minutes, and retries. Without those measurements, explanations about the model's internal incentives remain speculation.",
+      "freshness": "Vals AI and OpenAI public evidence checked November 18, 2026. No matched measurements of Astra’s completion costs across the four contributors.",
+      "entities": [],
+      "source": {
+        "platform": "YouTube",
+        "url": "https://www.youtube.com/watch?v=gCK2hv9De5U",
+        "videoId": "gCK2hv9De5U",
+        "title": "People Are Wrong About GPT-6.2 Astra",
+        "creator": "BetterWay",
+        "mediaAspect": "16:9",
+        "durationSeconds": 630,
+        "uploadDate": "2026-11-18",
+        "dateNote": "Five approximate speech-entry cues checked against privately retained automatic English captions.",
+        "captionType": "Retained automatic English caption aid, not independently listening-certified.",
+        "creatorChapters": [
+          {
+            "atSeconds": 52,
+            "label": "Launch reactions"
+          },
+          {
+            "atSeconds": 165,
+            "label": "Benchmark costs and comparisons"
+          },
+          {
+            "atSeconds": 308,
+            "label": "The shorter-answer hypothesis"
+          },
+          {
+            "atSeconds": 392,
+            "label": "The cost of stopping early"
+          },
+          {
+            "atSeconds": 579,
+            "label": "Choosing how much model to use"
+          }
+        ]
+      },
+      "references": [
+        {
+          "id": "r69-ref-video",
+          "title": "People Are Wrong About GPT-6.2 Astra",
+          "author": "BetterWay",
+          "publisher": "YouTube",
+          "url": "https://www.youtube.com/watch?v=gCK2hv9De5U",
+          "publicationDate": "2026-11-18",
+          "datePrecision": "day",
+          "eventDate": null,
+          "location": "Public source",
+          "sourceType": "Primary video",
+          "independence": "Creator commentary and reported reactions.",
+          "evidenceFamily": "r69-video",
+          "checkedAt": "2026-11-18T20:32:00Z"
+        },
+        {
+          "id": "r69-ref-vals",
+          "title": "GPT-6.2 Astra Benchmarks, Cost and Capabilities",
+          "author": "Vals AI",
+          "publisher": "Vals AI",
+          "url": "https://www.vals.ai/models/openai_gpt-6.2-astra",
+          "publicationDate": "unknown",
+          "datePrecision": "unknown",
+          "eventDate": null,
+          "location": "Public source",
+          "sourceType": "independent benchmark",
+          "independence": "Independent, evaluation-specific measurements. The public model page is a rolling snapshot.",
+          "evidenceFamily": "r69-vals",
+          "checkedAt": "2026-11-18T20:32:00Z",
+          "dateNote": "Rolling model page, checked November 18, 2026."
+        },
+        {
+          "id": "r69-ref-openai",
+          "title": "Introducing GPT-6.2 Astra and Sol",
+          "author": "OpenAI",
+          "publisher": "OpenAI",
+          "url": "https://openai.com/index/introducing-gpt-6-2-astra-sol/",
+          "publicationDate": "2026-11-17",
+          "datePrecision": "day",
+          "eventDate": null,
+          "location": "Public source",
+          "sourceType": "Vendor announcement",
+          "independence": "Primary source for OpenAI’s pricing and its own evaluations.",
+          "evidenceFamily": "r69-openai",
+          "checkedAt": "2026-11-18T20:32:00Z"
+        }
+      ],
+      "claims": [
+        {
+          "id": "r69-reactions",
+          "proposition": "Launch reactions as failure reports",
+          "kind": "creator-claim",
+          "status": "unverified",
+          "sourceLocation": "00:52",
+          "assessment": "The creator discusses launch criticism from model users.",
+          "limits": "These reactions do not constitute a controlled study of finished work.",
+          "references": [
+            "r69-ref-video"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-18"
+        },
+        {
+          "id": "r69-vals",
+          "proposition": "Vals Index snapshot",
+          "kind": "independently reported",
+          "status": "corroborated",
+          "sourceLocation": "02:45; Vals AI model page",
+          "assessment": "The November 18 snapshot reports 67.66%, seventh of 41, and $10.68 per test at maximum reasoning effort.",
+          "limits": "Rankings and cost are specific to the index, task mix, settings, and snapshot.",
+          "references": [
+            "r69-ref-vals"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-18"
+        },
+        {
+          "id": "r69-rates",
+          "proposition": "OpenAI API rates and evaluation cost claims",
+          "kind": "vendor claim",
+          "status": "corroborated",
+          "sourceLocation": "02:45; OpenAI announcement",
+          "assessment": "OpenAI lists $8 input and $40 output per million standard API tokens and reports lower costs on its own multistep evaluations.",
+          "limits": "The rate card and vendor evaluation use different units. The reported evaluation cost does not establish production acceptance cost.",
+          "references": [
+            "r69-ref-openai"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-18"
+        },
+        {
+          "id": "r69-hypothesis",
+          "proposition": "Shorter answers and early stopping",
+          "kind": "speaker-inference",
+          "status": "unverified",
+          "sourceLocation": "05:08",
+          "assessment": "The video raises shorter outputs as a possible explanation for incomplete work.",
+          "limits": "The available sources do not establish the mechanism.",
+          "references": [
+            "r69-ref-video"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-18"
+        },
+        {
+          "id": "r69-ledger",
+          "proposition": "Four contributors to completion cost",
+          "kind": "framework-example",
+          "status": "unverified",
+          "sourceLocation": "06:32; GhostMesh analysis",
+          "assessment": "The framework accounts for inference, verification, rework, and human attention.",
+          "limits": "There are no matched empirical measurements of Astra’s total completion cost in the cited material.",
+          "references": [
+            "r69-ref-video"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-18"
+        },
+        {
+          "id": "r69-routing",
+          "proposition": "Model choice depends on the task",
+          "kind": "editorial-inference",
+          "status": "unverified",
+          "sourceLocation": "09:39; GhostMesh analysis",
+          "assessment": "The Reader recommends routing upward when ambiguity or failure cost warrants it.",
+          "limits": "The appropriate route depends on acceptance checks and the work required to reach an accepted outcome.",
+          "references": [
+            "r69-ref-video"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-18"
+        }
+      ],
+      "relationships": [
+        {
+          "target": "reader:the-best-model-shouldnt-do-every-job",
+          "type": "companion",
+          "reason": "Model-routing companion",
+          "provenance": [
+            "/the-cheap-answer-can-be-an-expensive-job/",
+            "/the-best-model-shouldnt-do-every-job/"
+          ],
+          "basis": "curated-editorial-comparison",
+          "direction": "outgoing"
+        },
+        {
+          "target": "reader:the-machine-is-learning-to-improve-the-machine",
+          "type": "companion",
+          "reason": "Acceptance and authority companion",
+          "provenance": [
+            "/the-cheap-answer-can-be-an-expensive-job/",
+            "/the-machine-is-learning-to-improve-the-machine/"
+          ],
+          "basis": "curated-editorial-comparison",
+          "direction": "outgoing"
+        }
+      ],
+      "sharePlaneRelationships": [
+        {
+          "url": "https://shareplane.malott.ai/artifacts/done-has-a-half-life/",
+          "title": "Done Has a Half-Life",
+          "reason": "The published SharePlane Work carries completion economics into the ongoing cost of safely reconsidering an accepted result. This is a conceptual companion, not independent evidence about Astra or the video's claims.",
+          "type": "companion",
+          "basis": "curated-editorial-comparison"
+        }
+      ],
+      "relationshipDisposition": "Two Reader companions extend model routing and the acceptance boundary; one separately classified SharePlane Work extends trusted completion cost into governed reconsideration.",
+      "relationshipReview": {
+        "reviewedAt": "2026-11-18",
+        "reviewedCatalogSize": 68,
+        "decision": "linked",
+        "reviewedTargets": [
+          "reader:the-best-model-shouldnt-do-every-job",
+          "reader:the-machine-is-learning-to-improve-the-machine"
+        ],
+        "rationale": "The approved model-routing Reader addresses task-specific selection. Reader #68 addresses evidence and authority at acceptance."
+      },
+      "sharePlaneReview": {
+        "reviewedAt": "2026-11-18",
+        "decision": "linked",
+        "rationale": "Owner requested a published SharePlane companion during visual UAT. Done Has a Half-Life is publicly labeled Published Release and extends the completion-cost argument. The former proposed Work remains excluded because its public copy advertises a non-final semantic candidate."
+      },
+      "review": {
+        "status": "accepted-for-owner-review",
+        "summary": "Independent editorial, source and privacy review accepted the exact article and evidence for owner review. Publication authorization is pending."
+      },
+      "editorialDepth": {
+        "schemaVersion": 1,
+        "receiptPath": "content/editorial-depth/the-cheap-answer-can-be-an-expensive-job.json"
+      },
+      "revisionHistory": [],
+      "legacyReceipt": {
+        "schema": "ghostmesh-reader-receipt-v2",
+        "source": {
+          "url": "https://www.youtube.com/watch?v=gCK2hv9De5U",
+          "videoId": "gCK2hv9De5U"
+        },
+        "custody": {
+          "status": "limited-private-caption-aid",
+          "note": "Retained original English automatic captions were hashed and checked for approximate cue entry points."
+        },
+        "sourceInspection": {
+          "method": "Private automatic English captions; public YouTube source identity and metadata checked.",
+          "caveat": "Caption timing is approximate. Coverage is an automatic text aid, without separate listening or audiovisual certification.",
+          "publicationBoundary": "Original media, caption bytes, transcripts and source custody paths stay outside the repository.",
+          "timedAidSha256": "c7b7827126872878fc60d33a265bb7f56568110514acdc147c38ead55846964b"
+        },
+        "creativeLock": {
+          "comment": "https://github.com/pinklon/ghostmesh-readers/issues/200#issuecomment-6989069580",
+          "approval": "https://github.com/pinklon/ghostmesh-readers/issues/200#issuecomment-6990341090",
+          "bodySha256": "9a4dd98f628b9a8f40f98bdb591d460e95e3f1ac6233b17aede4adc6e29a4bdb"
+        }
+      }
     }
   ],
   "featuredId": "reader:ask-for-the-outcome-keep-the-boundary"

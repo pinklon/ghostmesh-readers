@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "readerId": "reader:the-cheap-answer-can-be-an-expensive-job",
+  "sourceId": "gCK2hv9De5U",
+  "sourceAidSha256": "c7b7827126872878fc60d33a265bb7f56568110514acdc147c38ead55846964b",
+  "articleSha256": "798856b4872e396228d05e03b0f3c900b129c7023a847ee54bde853a8583f97c",
+  "evidenceRevision": "813b10ca649b2f21c308b70745cf9d0354d34ce231477b5ee4b4a86d0caa2a13",
+  "reviewedAt": "2026-11-18T20:38:00Z",
+  "provenance": {
+    "kind": "codex-task-agent",
+    "reference": "Independent read-only Codex editorial, source, and privacy review in task /root/editorial_review. It inspected the frozen authored article, catalog entry, public source map, pinned Creative Lock body, and the retained automatic-caption aid only for the five public cue positions.",
+    "limits": "No audiovisual listening or frame-by-frame certification, browser UAT, live deployment inspection, Netlify verification, owner-decision verification, or independent reproduction of model behavior was performed. The caption aid remains a private approximate navigation source."
+  },
+  "summary": "ACCEPT FOR OWNER REVIEW: the frozen Reader preserves the approved manuscript’s argument, bounded evidence posture, and privacy boundary. Its Vals and OpenAI figures are attributed to their respective sources, while the completion ledger remains an unmeasured conceptual framework.",
+  "findings": [
+    "The approved Creative Lock body hashes to 9a4dd98f628b9a8f40f98bdb591d460e95e3f1ac6233b17aede4adc6e29a4bdb. The 44 manuscript blocks occur in the authored page in the locked order, including the source line, verdict, all seven titled sections, and the final GhostMesh take. The later player-control repair and scoped CSS icon and wrapping repair did not alter those blocks.",
+    "The five public source-map cues are present in the retained automatic-caption aid and each is explicitly described as an approximate entry point. The article does not expose the aid, a local path, raw media, a transcript, or credentials.",
+    "The Vals source supports the stated 67.66%, seventh-of-41, $10.68-per-test, and maximum-reasoning snapshot. The OpenAI announcement is labeled as a vendor source for its rate card and evaluation claims. Neither source is presented as a measured total accepted-result cost.",
+    "The article preserves the lock’s distinction between launch reactions, benchmark measures, vendor claims, and editorial analysis. It does not claim that shorter answers cause early stopping or that Astra is empirically more expensive across the four completion-cost contributors.",
+    "The two Reader relationships are the approved companions. The SharePlane relationship is absent after direct readback found the proposed Work serving non-final copy and the owner directed omission. The omission is stated as a separate review result, not as a missing relationship decision.",
+    "No blocking privacy finding was observed in the frozen authoring inputs. Social-card delivery format, browser behavior, desktop and mobile layout, console health, hosted preview, CI, and exact-head publication authority require their separate normal checks."
+  ],
+  "conclusion": "accept-for-owner-review"
+}
