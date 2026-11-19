@@ -9,7 +9,6 @@ from scout_feed import validate_scout,validate_events,feed_xml
 from scout_pages import validate_editions,home as scout_home,review_page,edition_page,archive_page,method_page,review_url,edition_url
 from scout_research import validate_research, research_page, research_graph
 from social_cards import approval as social_approval, specs as social_specs, inject as inject_social
-from editorial_depth import presentation_only_match
 ROOT=Path(__file__).resolve().parents[1]; SITE=ROOT/'site'
 CATEGORIES=['AI & Technology','Society & Politics','Science','Business','Ethics & Culture','Other']
 READER_COUNT=0
@@ -55,6 +54,15 @@ def footer(include_email=True):return ('<footer aria-label="GhostMesh destinatio
  '<a href="https://ghostmesh.ai/">GhostMesh.ai ↗</a><a href="https://shareplane.malott.ai/">SharePlane ↗</a><a href="https://malott.ai/">Tony Malott ↗</a>'
  +('<a href="mailto:ghostmesh@malott.ai?subject=GhostMesh%20Reader%20feedback">Contact GhostMesh ✉</a>' if include_email else '')+'</nav></div></footer>')
 def head():return '<link rel="alternate" type="application/rss+xml" title="GhostMesh Readers and Scout" href="/feed.xml"><script src="/assets/theme.js"></script><script src="/assets/reader-search.js" defer></script><link rel="stylesheet" href="/assets/reader-chrome.css"><link rel="stylesheet" href="/assets/knowledge.css"><link rel="stylesheet" href="/assets/reader-refresh.css">'
+def presentation_only_match(receipt, authored_html):
+ """Check CSS-only equivalence without requiring a sibling module in isolated builds."""
+ pinned=receipt.get('presentationMarkupSha256')
+ if not isinstance(pinned,str) or re.fullmatch(r'[0-9a-f]{64}',pinned) is None:return False
+ styles=list(re.finditer(rb'<style(?:\s[^>]*)?>[\s\S]*?</style>',authored_html,re.I))
+ if len(styles)!=1:return False
+ neutral=authored_html[:styles[0].start()]+b'<style></style>'+authored_html[styles[0].end():]
+ return hashlib.sha256(neutral).hexdigest()==pinned
+
 def projected_publication_status(raw, reader, depth=None):
  """Project mutable release status without changing exact-byte reviewed prose.
 
