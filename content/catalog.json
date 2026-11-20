@@ -23724,8 +23724,8 @@
           "timedAidSha256": "618d13b92578c32d2b8ef54be78ee45ec2c732dbdaa3f9afdd31548b00a001ee"
         },
         "creativeLock": {
-          "approval": "https://ghostmesh.slack.com/archives/C0CKK741H9S/p1795142134763329",
-          "bodySha256": "57bc9f8f42d38c7aa85645d06da342babf41e2d15013272cadbad3c7ce51f2ca"
+          "bodySha256": "57bc9f8f42d38c7aa85645d06da342babf41e2d15013272cadbad3c7ce51f2ca",
+          "status": "Owner-approved Creative Lock; approval locator retained privately"
         }
       }
     }
