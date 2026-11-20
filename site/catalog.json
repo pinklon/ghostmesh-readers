@@ -217,8 +217,23 @@
           "direction": "outgoing"
         }
       ],
-      "sharePlaneRelationships": [],
-      "relationshipDisposition": "One related Reader (#69) on full cost-of-completion economics; no others admitted.",
+      "sharePlaneRelationships": [
+        {
+          "title": "The Right Model Is the One Your Eval Can Defend",
+          "url": "https://shareplane.malott.ai/artifacts/the-right-model-is-the-one-your-eval-can-defend/",
+          "type": "companion",
+          "reason": "The SharePlane playbook specifies representative task samples, comparative model baselines, trace-level failure analysis, latency, operating cost and retest triggers. It provides the missing evaluation discipline for interpreting this narrow Shopify result; it does not independently reproduce NeuralNine's scores.",
+          "basis": "curated-editorial-comparison"
+        },
+        {
+          "title": "The Best AI System Should Need Less AI Tomorrow",
+          "url": "https://shareplane.malott.ai/artifacts/the-best-ai-system-should-need-less-ai-tomorrow/",
+          "type": "extends",
+          "reason": "The inference retirement thesis extends task specialization into system design: preserve validated repeatable work in deterministic machinery and reserve expensive reasoning for uncertainty. This is an operational extension of the Reader's argument, not evidence that the fine-tuned classifiers will generalize.",
+          "basis": "curated-editorial-comparison"
+        }
+      ],
+      "relationshipDisposition": "Reader #69 is the sole related Reader, providing the full cost-of-completion lens; the separately labeled SharePlane Works develop evaluation discipline and inference architecture.",
       "relationshipReview": {
         "reviewedAt": "2026-11-20",
         "reviewedCatalogSize": 69,
@@ -230,8 +245,8 @@
       },
       "sharePlaneReview": {
         "reviewedAt": "2026-11-20",
-        "decision": "none",
-        "rationale": "No qualifying canonical SharePlane Work admitted. The cost essay candidate was non-final at review."
+        "decision": "linked",
+        "rationale": "Publicly accessible canonical SharePlane Works were inspected for topical and provenance fit. The model-evaluation playbook is directly connected to fair model comparisons and acceptance criteria; the inference-retirement thesis is a distinct architectural extension. The prior cost Work still exposes non-final semantic preview text and remains excluded. Neither new Work link corroborates the underlying source-video benchmark or modifies SharePlane Graph."
       },
       "review": {
         "status": "pending",
