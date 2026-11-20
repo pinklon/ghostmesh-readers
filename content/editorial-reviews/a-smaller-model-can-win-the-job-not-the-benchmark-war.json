@@ -8,8 +8,8 @@
   "reviewedAt": "2026-11-20T21:51:50Z",
   "provenance": {
     "kind": "codex-task-agent",
-    "reference": "Independent Codex review task 01a159bf-611e-71f2-aca0-49a64101502c, turn 01a1faf0-88d2-7317-b3ec-4d5ba4079b50. Pale Horse reported exact-head acceptance in the November 20 GhostMesh Reader #70 Slack review thread; the original report was attached as F0CKAQH12B1.",
-    "limits": "This retained record summarizes findings reported by the independent reviewer through Pale Horse, not a verbatim extraction: the executing agent could not retrieve the Slack file bytes. The reviewer did not independently reproduce model training, benchmark results, cost, or certify all video audio. Earlier Git history retains the now-redacted private locator; only current artifacts were checked for its absence."
+    "reference": "Independent read-only Codex task completed for Reader #70 and accepted on the exact reviewed candidate, as reported by Pale Horse in the owner-private Reader review discussion. The original review task and attachment identifiers remain in the private review record and are not reproduced in the public repository.",
+    "limits": "The executing writer retained the independent reviewer's reported findings but did not access the raw 5.6 KB report, because the available Slack file transport could not retrieve it. No benchmark replication, complete audiovisual certification or model-cost measurements are claimed. The earlier private approval locator remains in historical Git objects, while current production source and pages exclude it."
   },
   "summary": "ACCEPT FOR OWNER CONSIDERATION, as attested by Pale Horse from the independent Codex task at exact pre-receipt head 080fc4af3b743b9dfabc88fb79582c1b3e36f9e8. Locked text, source/privacy correction, and companion links were accepted. Full raw report was not directly retrievable by the executing agent.",
   "findings": [

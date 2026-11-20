@@ -3,30 +3,72 @@
     "mergeCommit": "a19dbda8a1abe2b6cc4f40f41fdf63311600b047",
     "url": "https://youtube.shareplane.malott.ai/the-12gb-gpu-has-a-three-budget-problem/",
     "verifiedAt": "2026-11-13T23:07:36Z",
-    "checks": ["article-http-200", "receipt-http-200", "catalog-http-200", "sitemap-http-200", "claim-register-http-200"]
+    "checks": [
+      "article-http-200",
+      "receipt-http-200",
+      "catalog-http-200",
+      "sitemap-http-200",
+      "claim-register-http-200"
+    ]
   },
   "the-playbook-may-be-reproducible": {
     "mergeCommit": "f938e6bf493022fb8436ce4a539db365a0a2cf1e",
     "url": "https://youtube.shareplane.malott.ai/the-playbook-may-be-reproducible/",
     "verifiedAt": "2026-11-13T22:49:10Z",
-    "checks": ["article-http-200", "receipt-http-200", "catalog-http-200", "sitemap-http-200", "claim-register-http-200"]
+    "checks": [
+      "article-http-200",
+      "receipt-http-200",
+      "catalog-http-200",
+      "sitemap-http-200",
+      "claim-register-http-200"
+    ]
   },
   "uncensored-private-or-sovereign": {
     "mergeCommit": "f879de9c68d3d72a8857e550029671282ea6dc47",
     "url": "https://youtube.shareplane.malott.ai/uncensored-private-or-sovereign/",
     "verifiedAt": "2026-11-17T00:40:29Z",
-    "checks": ["article-http-200", "receipt-http-200", "catalog-http-200", "sitemap-http-200", "claim-register-http-200"]
+    "checks": [
+      "article-http-200",
+      "receipt-http-200",
+      "catalog-http-200",
+      "sitemap-http-200",
+      "claim-register-http-200"
+    ]
   },
   "two-sparks-do-not-make-a-cloud": {
     "mergeCommit": "6b48a856115ecb3427a74be1fd41ab0a6886bb84",
     "url": "https://youtube.shareplane.malott.ai/two-sparks-do-not-make-a-cloud/",
     "verifiedAt": "2026-11-18T05:36:24Z",
-    "checks": ["article-http-200", "receipt-http-200", "catalog-http-200", "sitemap-http-200", "claim-register-http-200"]
+    "checks": [
+      "article-http-200",
+      "receipt-http-200",
+      "catalog-http-200",
+      "sitemap-http-200",
+      "claim-register-http-200"
+    ]
   },
   "the-cheap-answer-can-be-an-expensive-job": {
     "mergeCommit": "42ae257a47ac1be0baaca9c479dadcec43490ce4",
     "url": "https://youtube.shareplane.malott.ai/the-cheap-answer-can-be-an-expensive-job/",
     "verifiedAt": "2026-11-19T00:07:58Z",
-    "checks": ["article-http-200", "receipt-http-200", "catalog-http-200", "sitemap-http-200", "claim-register-http-200"]
+    "checks": [
+      "article-http-200",
+      "receipt-http-200",
+      "catalog-http-200",
+      "sitemap-http-200",
+      "claim-register-http-200"
+    ]
+  },
+  "a-smaller-model-can-win-the-job-not-the-benchmark-war": {
+    "mergeCommit": "93e76d86abc2b5a955b90741d2043f3d1096ab66",
+    "url": "https://youtube.shareplane.malott.ai/a-smaller-model-can-win-the-job-not-the-benchmark-war/",
+    "verifiedAt": "2026-11-20T23:30:33Z",
+    "checks": [
+      "article-http-200",
+      "receipt-http-200",
+      "catalog-http-200",
+      "sitemap-http-200",
+      "claim-register-http-200"
+    ]
   }
 }
