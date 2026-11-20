@@ -22241,7 +22241,14 @@
       "title": "Uncensored, Private, or Sovereign?",
       "variant": "editorial",
       "category": "AI & Technology",
-      "tags": ["open weights", "local inference", "AI privacy", "model behavior", "AI sovereignty", "evaluation"],
+      "tags": [
+        "open weights",
+        "local inference",
+        "AI privacy",
+        "model behavior",
+        "AI sovereignty",
+        "evaluation"
+      ],
       "accent": "red",
       "editorialOrder": 65,
       "published": "2026-11-16",
@@ -22252,7 +22259,10 @@
       "ghostMeshTakeaway": "Control is a system property, not a model label. Audit weights, inference location, service dependencies, access boundaries, durable context and revocation separately, then validate claimed behavior under tests that include error handling and pressure to agree.",
       "verdict": "Interesting, unproven",
       "architectureImpact": "experiment recommended",
-      "archiveCall": {"label": "Test the whole boundary", "text": "Evaluate the model, hosting, memory, network control and verification path together before claiming independence."},
+      "archiveCall": {
+        "label": "Test the whole boundary",
+        "text": "Evaluate the model, hosting, memory, network control and verification path together before claiming independence."
+      },
       "evidenceState": "unverified",
       "falsification": "Repeat the bounded model tests, inspect data flows and third-party dependencies, and check whether observed behavior survives matched prompts, adversarial claims and a loss of external service access.",
       "freshness": "November 2026 video and bounded local/hosted experiments; not a representative model benchmark.",
@@ -22269,46 +22279,269 @@
         "dateNote": "Creator chapters and privately retained full-duration audio/ASR aid; no full audiovisual authentication or independent outcome replication.",
         "captionType": "Private timecoded ASR transcript derived from retained audio; recognition errors present; not a verified ReasonPack package.",
         "creatorChapters": [
-          {"atSeconds": 104, "label": "Level 1: Abliterated behavior"},
-          {"atSeconds": 133, "label": "DeepSeek Flash demonstration"},
-          {"atSeconds": 351, "label": "Level 2: Model checking"},
-          {"atSeconds": 492, "label": "Level 3: Remote availability"},
-          {"atSeconds": 900, "label": "Level 4: Image and video"},
-          {"atSeconds": 1079, "label": "Level 5: Local inference"},
-          {"atSeconds": 1083, "label": "Private versus uncensored"},
-          {"atSeconds": 1253, "label": "Gemma demonstration"}
+          {
+            "atSeconds": 104,
+            "label": "Level 1: Abliterated behavior"
+          },
+          {
+            "atSeconds": 133,
+            "label": "DeepSeek Flash demonstration"
+          },
+          {
+            "atSeconds": 351,
+            "label": "Level 2: Model checking"
+          },
+          {
+            "atSeconds": 492,
+            "label": "Level 3: Remote availability"
+          },
+          {
+            "atSeconds": 900,
+            "label": "Level 4: Image and video"
+          },
+          {
+            "atSeconds": 1079,
+            "label": "Level 5: Local inference"
+          },
+          {
+            "atSeconds": 1083,
+            "label": "Private versus uncensored"
+          },
+          {
+            "atSeconds": 1253,
+            "label": "Gemma demonstration"
+          }
         ]
       },
       "references": [
-        {"id": "r66-ref1", "title": "Uncensored AI Feels Illegal... Use it Whilst You Can", "author": "Jack Roberts", "publisher": "YouTube", "url": "https://www.youtube.com/watch?v=FbiOr73tRPk", "publicationDate": "2026-11-15", "datePrecision": "day", "eventDate": null, "location": "Public source", "sourceType": "primary video", "independence": "Creator presentation, not independent confirmation of performance or privacy.", "evidenceFamily": "r66-video", "checkedAt": "2026-11-16T00:00:00Z", "dateNote": "Timecoded private ASR aid checked at eight cues; exact speech and brand names require source caution."}
+        {
+          "id": "r66-ref1",
+          "title": "Uncensored AI Feels Illegal... Use it Whilst You Can",
+          "author": "Jack Roberts",
+          "publisher": "YouTube",
+          "url": "https://www.youtube.com/watch?v=FbiOr73tRPk",
+          "publicationDate": "2026-11-15",
+          "datePrecision": "day",
+          "eventDate": null,
+          "location": "Public source",
+          "sourceType": "primary video",
+          "independence": "Creator presentation, not independent confirmation of performance or privacy.",
+          "evidenceFamily": "r66-video",
+          "checkedAt": "2026-11-16T00:00:00Z",
+          "dateNote": "Timecoded private ASR aid checked at eight cues; exact speech and brand names require source caution."
+        }
       ],
       "claims": [
-        {"id": "r66-cue1", "proposition": "Level one removes some model refusal behavior", "kind": "creator-claim", "status": "unverified", "sourceLocation": "01:44", "assessment": "The creator introduces abliterated behavior.", "limits": "No general safety, reliability or permission conclusion follows from this demonstration.", "references": ["r66-ref1"], "counterevidence": [], "asOf": "2026-11-16"},
-        {"id": "r66-cue2", "proposition": "An uncensored service offers model switching", "kind": "creator-claim", "status": "unverified", "sourceLocation": "02:13", "assessment": "A model-switching interface is shown.", "limits": "ASR model names are uncertain; service claims are not independently tested.", "references": ["r66-ref1"], "counterevidence": [], "asOf": "2026-11-16"},
-        {"id": "r66-cue3", "proposition": "A second model can check the first", "kind": "creator-claim", "status": "unverified", "sourceLocation": "05:51", "assessment": "The creator proposes a checker-model pattern.", "limits": "A second model does not guarantee independent correctness.", "references": ["r66-ref1"], "counterevidence": [], "asOf": "2026-11-16"},
-        {"id": "r66-cue4", "proposition": "Hosted operation makes the assistant available remotely", "kind": "creator-claim", "status": "unverified", "sourceLocation": "08:12", "assessment": "The creator shifts from a laptop to a persistent hosted service.", "limits": "Availability is separate from authorization, privacy and server hardening.", "references": ["r66-ref1"], "counterevidence": [], "asOf": "2026-11-16"},
-        {"id": "r66-cue5", "proposition": "Image and video tools extend the workflow", "kind": "creator-claim", "status": "unverified", "sourceLocation": "15:00", "assessment": "Level four introduces multimodal generation.", "limits": "Provider rules, data retention and quality vary by service.", "references": ["r66-ref1"], "counterevidence": [], "asOf": "2026-11-16"},
-        {"id": "r66-cue6", "proposition": "Level five brings inference onto local devices", "kind": "creator-claim", "status": "unverified", "sourceLocation": "17:59", "assessment": "Local computer and phone execution are proposed.", "limits": "The surrounding software and dependencies still need inspection.", "references": ["r66-ref1"], "counterevidence": [], "asOf": "2026-11-16"},
-        {"id": "r66-cue7", "proposition": "Uncensored does not imply private", "kind": "creator-claim", "status": "unverified", "sourceLocation": "18:03", "assessment": "The creator explicitly separates behavioral restrictions from privacy.", "limits": "Specific service privacy practices are not independently established by this statement.", "references": ["r66-ref1"], "counterevidence": [], "asOf": "2026-11-16"},
-        {"id": "r66-cue8", "proposition": "The creator demonstrates a local Gemma-family model", "kind": "creator-claim", "status": "unverified", "sourceLocation": "20:53", "assessment": "A local model interface is shown.", "limits": "Exact model identity and performance are not authenticated by the ASR aid.", "references": ["r66-ref1"], "counterevidence": [], "asOf": "2026-11-16"}
+        {
+          "id": "r66-cue1",
+          "proposition": "Level one removes some model refusal behavior",
+          "kind": "creator-claim",
+          "status": "unverified",
+          "sourceLocation": "01:44",
+          "assessment": "The creator introduces abliterated behavior.",
+          "limits": "No general safety, reliability or permission conclusion follows from this demonstration.",
+          "references": [
+            "r66-ref1"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-16"
+        },
+        {
+          "id": "r66-cue2",
+          "proposition": "An uncensored service offers model switching",
+          "kind": "creator-claim",
+          "status": "unverified",
+          "sourceLocation": "02:13",
+          "assessment": "A model-switching interface is shown.",
+          "limits": "ASR model names are uncertain; service claims are not independently tested.",
+          "references": [
+            "r66-ref1"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-16"
+        },
+        {
+          "id": "r66-cue3",
+          "proposition": "A second model can check the first",
+          "kind": "creator-claim",
+          "status": "unverified",
+          "sourceLocation": "05:51",
+          "assessment": "The creator proposes a checker-model pattern.",
+          "limits": "A second model does not guarantee independent correctness.",
+          "references": [
+            "r66-ref1"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-16"
+        },
+        {
+          "id": "r66-cue4",
+          "proposition": "Hosted operation makes the assistant available remotely",
+          "kind": "creator-claim",
+          "status": "unverified",
+          "sourceLocation": "08:12",
+          "assessment": "The creator shifts from a laptop to a persistent hosted service.",
+          "limits": "Availability is separate from authorization, privacy and server hardening.",
+          "references": [
+            "r66-ref1"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-16"
+        },
+        {
+          "id": "r66-cue5",
+          "proposition": "Image and video tools extend the workflow",
+          "kind": "creator-claim",
+          "status": "unverified",
+          "sourceLocation": "15:00",
+          "assessment": "Level four introduces multimodal generation.",
+          "limits": "Provider rules, data retention and quality vary by service.",
+          "references": [
+            "r66-ref1"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-16"
+        },
+        {
+          "id": "r66-cue6",
+          "proposition": "Level five brings inference onto local devices",
+          "kind": "creator-claim",
+          "status": "unverified",
+          "sourceLocation": "17:59",
+          "assessment": "Local computer and phone execution are proposed.",
+          "limits": "The surrounding software and dependencies still need inspection.",
+          "references": [
+            "r66-ref1"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-16"
+        },
+        {
+          "id": "r66-cue7",
+          "proposition": "Uncensored does not imply private",
+          "kind": "creator-claim",
+          "status": "unverified",
+          "sourceLocation": "18:03",
+          "assessment": "The creator explicitly separates behavioral restrictions from privacy.",
+          "limits": "Specific service privacy practices are not independently established by this statement.",
+          "references": [
+            "r66-ref1"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-16"
+        },
+        {
+          "id": "r66-cue8",
+          "proposition": "The creator demonstrates a local Gemma-family model",
+          "kind": "creator-claim",
+          "status": "unverified",
+          "sourceLocation": "20:53",
+          "assessment": "A local model interface is shown.",
+          "limits": "Exact model identity and performance are not authenticated by the ASR aid.",
+          "references": [
+            "r66-ref1"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-16"
+        }
       ],
       "relationships": [
-        {"target": "reader:the-boundary-is-bigger-than-the-box", "type": "companion", "reason": "Separates the location of model weights from the network, identity and service boundaries that determine actual privacy.", "provenance": ["/uncensored-private-or-sovereign/", "/the-boundary-is-bigger-than-the-box/"], "basis": "curated-editorial-comparison", "direction": "outgoing"},
-        {"target": "reader:the-stop-button-is-outside-the-chat", "type": "extends", "reason": "Adds revocation and independent operator authority to the video's claims about always-available systems.", "provenance": ["/uncensored-private-or-sovereign/", "/the-stop-button-is-outside-the-chat/"], "basis": "curated-editorial-comparison", "direction": "outgoing"},
-        {"target": "reader:the-second-brain-still-needs-a-judgment", "type": "companion", "reason": "Connects local autonomy to the separate need to audit memory, factual claims and continuity.", "provenance": ["/uncensored-private-or-sovereign/", "/the-second-brain-still-needs-a-judgment/"], "basis": "curated-editorial-comparison", "direction": "outgoing"}
+        {
+          "target": "reader:the-boundary-is-bigger-than-the-box",
+          "type": "companion",
+          "reason": "Separates the location of model weights from the network, identity and service boundaries that determine actual privacy.",
+          "provenance": [
+            "/uncensored-private-or-sovereign/",
+            "/the-boundary-is-bigger-than-the-box/"
+          ],
+          "basis": "curated-editorial-comparison",
+          "direction": "outgoing"
+        },
+        {
+          "target": "reader:the-stop-button-is-outside-the-chat",
+          "type": "extends",
+          "reason": "Adds revocation and independent operator authority to the video's claims about always-available systems.",
+          "provenance": [
+            "/uncensored-private-or-sovereign/",
+            "/the-stop-button-is-outside-the-chat/"
+          ],
+          "basis": "curated-editorial-comparison",
+          "direction": "outgoing"
+        },
+        {
+          "target": "reader:the-second-brain-still-needs-a-judgment",
+          "type": "companion",
+          "reason": "Connects local autonomy to the separate need to audit memory, factual claims and continuity.",
+          "provenance": [
+            "/uncensored-private-or-sovereign/",
+            "/the-second-brain-still-needs-a-judgment/"
+          ],
+          "basis": "curated-editorial-comparison",
+          "direction": "outgoing"
+        }
       ],
       "sharePlaneRelationships": [
-        {"url": "https://shareplane.malott.ai/artifacts/own-memory-rent-intelligence-agent-stack/", "title": "Own the Memory, Rent the Intelligence", "reason": "Separates owner-controlled memory from replaceable inference services, sharpening the Reader's definition of sovereignty.", "type": "companion", "basis": "curated-editorial-comparison"},
-        {"url": "https://shareplane.malott.ai/artifacts/the-semantic-operating-system/", "title": "The Semantic Operating System", "reason": "Examines the larger architecture of meaning, memory and orchestration beyond a model's local execution status.", "type": "companion", "basis": "curated-editorial-comparison"}
+        {
+          "url": "https://shareplane.malott.ai/artifacts/own-memory-rent-intelligence-agent-stack/",
+          "title": "Own the Memory, Rent the Intelligence",
+          "reason": "Separates owner-controlled memory from replaceable inference services, sharpening the Reader's definition of sovereignty.",
+          "type": "companion",
+          "basis": "curated-editorial-comparison"
+        },
+        {
+          "url": "https://shareplane.malott.ai/artifacts/the-semantic-operating-system/",
+          "title": "The Semantic Operating System",
+          "reason": "Examines the larger architecture of meaning, memory and orchestration beyond a model's local execution status.",
+          "type": "companion",
+          "basis": "curated-editorial-comparison"
+        }
       ],
       "relationshipDisposition": "Tony approved three Reader and two separate SharePlane Work comparisons on 2026-11-16; none is evidence for the creator's claims.",
-      "relationshipReview": {"reviewedAt": "2026-11-16", "reviewedCatalogSize": 65, "decision": "linked", "reviewedTargets": ["reader:the-boundary-is-bigger-than-the-box", "reader:the-stop-button-is-outside-the-chat", "reader:the-second-brain-still-needs-a-judgment"], "rationale": "Owner approved these three source-relevant conceptual companions; no independent claim verification is implied."},
-      "sharePlaneReview": {"reviewedAt": "2026-11-16", "decision": "linked", "rationale": "Owner approved two separately labeled SharePlane Work connections as conceptual architecture comparisons."},
-      "review": {"status": "pending", "summary": "Independent exact-input editorial, source and privacy review pending; owner publication approval recorded in issue #186."},
-      "editorialDepth": {"schemaVersion": 1, "receiptPath": "content/editorial-depth/uncensored-private-or-sovereign.json"},
-      "legacyReceipt": {"source": {"url": "https://www.youtube.com/watch?v=FbiOr73tRPk", "videoId": "FbiOr73tRPk"}, "custody": {"status": "private-hash-identified-capture-set", "note": "Full-duration retained audio and timecoded ASR aid checked privately; not a verified ReasonPack build."}, "reasonPack": {"verification": "unknown"}, "sourceInspection": {"method": "Source metadata and retained private full-duration audio with timecoded ASR aid", "caveat": "ASR recognition errors; no full audiovisual authentication or independent outcome replication", "publicationBoundary": "No raw media, VTT, transcript or private paths", "timedAidSha256": "5a79630651338f5dfc375b51a0baf1716cfbb9faa722fd7d2072bb5aa4b86b53"}}
+      "relationshipReview": {
+        "reviewedAt": "2026-11-16",
+        "reviewedCatalogSize": 65,
+        "decision": "linked",
+        "reviewedTargets": [
+          "reader:the-boundary-is-bigger-than-the-box",
+          "reader:the-stop-button-is-outside-the-chat",
+          "reader:the-second-brain-still-needs-a-judgment"
+        ],
+        "rationale": "Owner approved these three source-relevant conceptual companions; no independent claim verification is implied."
+      },
+      "sharePlaneReview": {
+        "reviewedAt": "2026-11-16",
+        "decision": "linked",
+        "rationale": "Owner approved two separately labeled SharePlane Work connections as conceptual architecture comparisons."
+      },
+      "review": {
+        "status": "pending",
+        "summary": "Independent exact-input editorial, source and privacy review pending; owner publication approval recorded in issue #186."
+      },
+      "editorialDepth": {
+        "schemaVersion": 1,
+        "receiptPath": "content/editorial-depth/uncensored-private-or-sovereign.json"
+      },
+      "legacyReceipt": {
+        "source": {
+          "url": "https://www.youtube.com/watch?v=FbiOr73tRPk",
+          "videoId": "FbiOr73tRPk"
+        },
+        "custody": {
+          "status": "private-hash-identified-capture-set",
+          "note": "Full-duration retained audio and timecoded ASR aid checked privately; not a verified ReasonPack build."
+        },
+        "reasonPack": {
+          "verification": "unknown"
+        },
+        "sourceInspection": {
+          "method": "Source metadata and retained private full-duration audio with timecoded ASR aid",
+          "caveat": "ASR recognition errors; no full audiovisual authentication or independent outcome replication",
+          "publicationBoundary": "No raw media, VTT, transcript or private paths",
+          "timedAidSha256": "5a79630651338f5dfc375b51a0baf1716cfbb9faa722fd7d2072bb5aa4b86b53"
+        }
+      }
     },
-{
+    {
       "id": "reader:two-sparks-do-not-make-a-cloud",
       "slug": "two-sparks-do-not-make-a-cloud",
       "title": "Two Sparks Do Not Make a Cloud",
@@ -23229,6 +23462,255 @@
           "comment": "https://github.com/pinklon/ghostmesh-readers/issues/200#issuecomment-6989069580",
           "approval": "https://github.com/pinklon/ghostmesh-readers/issues/200#issuecomment-6990341090",
           "bodySha256": "9a4dd98f628b9a8f40f98bdb591d460e95e3f1ac6233b17aede4adc6e29a4bdb"
+        }
+      }
+    },
+    {
+      "id": "reader:a-smaller-model-can-win-the-job-not-the-benchmark-war",
+      "title": "A Smaller Model Can Win the Job, Not the Benchmark War",
+      "slug": "a-smaller-model-can-win-the-job-not-the-benchmark-war",
+      "variant": "editorial",
+      "category": "AI & Technology",
+      "tags": [
+        "small models",
+        "fine-tuning",
+        "classification",
+        "evaluation",
+        "model routing"
+      ],
+      "accent": "purple",
+      "editorialOrder": 69,
+      "published": "2026-11-20",
+      "updated": "2026-11-20T12:15:00Z",
+      "lastEvidenceChecked": "2026-11-20",
+      "overview": "NeuralNine reports that task-tuned 2B and 4B Qwen classifiers outperform a GPT-6 Luna baseline on one Shopify classification test, not across general intelligence.",
+      "whyItMatters": "Task specialization and evaluation design matter more than the model leaderboard headline.",
+      "ghostMeshTakeaway": "Choose models by the cost and accuracy of accepted work. A specialized classifier can beat a general-purpose pipeline for a narrowly defined job.",
+      "verdict": "Worth studying",
+      "architectureImpact": "experiment recommended",
+      "archiveCall": {
+        "label": "Test the actual job",
+        "text": "Compare full workflow accuracy and economics after checking split overlap, prompt differences, and paired per-example errors."
+      },
+      "evidenceState": "creator-reported-unverified",
+      "falsification": "Reproduce on pinned Shopify splits, audit near-duplicates, compare matched label/prompt setups, retain paired predictions, and measure actual training and inference costs.",
+      "freshness": "Creator video and scripts inspected November 20, 2026. No independent benchmark run or cost receipt was produced.",
+      "entities": [],
+      "source": {
+        "platform": "YouTube",
+        "url": "https://www.youtube.com/watch?v=nMVFSVIXIBc",
+        "videoId": "nMVFSVIXIBc",
+        "title": "Fine-Tuning Small Models To Beat GPT-6 Luna",
+        "creator": "NeuralNine",
+        "mediaAspect": "16:9",
+        "durationSeconds": 749,
+        "uploadDate": "2026-11-18",
+        "dateNote": "Seven approximate chapter transitions spot-checked against privately retained source frames and automatic captions; speech was not independently certified.",
+        "captionType": "Automatic English captions retained privately as a timing aid; not independently listening-certified.",
+        "creatorChapters": [
+          {
+            "atSeconds": 0,
+            "label": "Task and headline claim"
+          },
+          {
+            "atSeconds": 60,
+            "label": "Dataset conversion and classifier setup"
+          },
+          {
+            "atSeconds": 180,
+            "label": "Sponsor disclosure and hosted fine-tuning rationale"
+          },
+          {
+            "atSeconds": 300,
+            "label": "Fixed 5,000/1,000 sampling and baselines"
+          },
+          {
+            "atSeconds": 420,
+            "label": "Crusoe fine-tuning and omitted validation"
+          },
+          {
+            "atSeconds": 540,
+            "label": "Training-loss checkpoint and adapter export"
+          },
+          {
+            "atSeconds": 660,
+            "label": "Creator-reported accuracy comparison"
+          }
+        ]
+      },
+      "references": [
+        {
+          "id": "r70-video",
+          "title": "Fine-Tuning Small Models To Beat GPT-6 Luna",
+          "author": "NeuralNine",
+          "publisher": "YouTube",
+          "url": "https://www.youtube.com/watch?v=nMVFSVIXIBc",
+          "publicationDate": "2026-11-18",
+          "datePrecision": "day",
+          "eventDate": null,
+          "location": "Public source",
+          "sourceType": "Primary video",
+          "independence": "Crusoe-sponsored original demonstration with reported numerical results.",
+          "evidenceFamily": "r70-video",
+          "checkedAt": "2026-11-20T12:15:00Z"
+        },
+        {
+          "id": "r70-code",
+          "title": "Fine Tuning Crusoe: prepare.py and evaluate.py",
+          "author": "NeuralNine",
+          "publisher": "GitHub",
+          "url": "https://github.com/NeuralNine/youtube-tutorials/tree/main/Fine%20Tuning%20Crusoe",
+          "publicationDate": "unknown",
+          "datePrecision": "unknown",
+          "eventDate": null,
+          "location": "Public source",
+          "sourceType": "Primary source code",
+          "independence": "Creator-published code verified by Git blob; source folder has no publicly supplied training-run outputs or checkpoints.",
+          "evidenceFamily": "r70-code",
+          "checkedAt": "2026-11-20T12:15:00Z",
+          "dateNote": "The creator code repository does not declare an exact publication date for these files; GitHub blobs were inspected on November 20, 2026."
+        }
+      ],
+      "claims": [
+        {
+          "id": "r70-scores",
+          "proposition": "Creator-reported 68.2/69.8/73.0% exact-match accuracy",
+          "kind": "creator-claim",
+          "status": "unverified",
+          "sourceLocation": "11:00",
+          "assessment": "On a 1,000-item Shopify test, the creator reports GPT-6 Luna 68.2%, tuned Qwen3.5-2B 69.8%, and tuned Qwen3.5-4B 73.0%.",
+          "limits": "No independent replication or paired per-item predictions. Small differences may not be reliable.",
+          "references": [
+            "r70-video"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-20"
+        },
+        {
+          "id": "r70-splits",
+          "proposition": "Train/test examples are selected from named Shopify splits",
+          "kind": "creator-claim",
+          "status": "unverified",
+          "sourceLocation": "05:00",
+          "assessment": "Creator code derives eligible labels from the full training split before selecting 5,000 training examples (random_state=42). It filters test items to labels found in that full split, then samples 1,000 evaluation examples. The selected 5,000 training examples are not guaranteed to contain every evaluated label.",
+          "limits": "Not every evaluated label is guaranteed to appear in the 5,000 sampled training examples; the full split defines the eligible labels. Original dataset revision, near-duplicate/product-family overlap, and distribution shifts were not audited.",
+          "references": [
+            "r70-code"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-20"
+        },
+        {
+          "id": "r70-prompts",
+          "proposition": "Prompts differ between tuned and untuned model pipelines",
+          "kind": "creator-claim",
+          "status": "unverified",
+          "sourceLocation": "02:00",
+          "assessment": "Code supplies the candidate category list to Luna and untuned Qwen, but not to tuned Qwen adapters.",
+          "limits": "Cannot isolate the effect of fine-tuning alone under changed prompt conditions.",
+          "references": [
+            "r70-code"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-20"
+        },
+        {
+          "id": "r70-conditions",
+          "proposition": "Qwen decoding is specified but Luna defaults are not",
+          "kind": "creator-claim",
+          "status": "unverified",
+          "sourceLocation": "06:00",
+          "assessment": "Qwen script uses do_sample=False, enable_thinking=False and max_new_tokens=40; Luna uses Responses API with no explicit effort/decoding pin.",
+          "limits": "API model revisions and the inference conditions were not pinned or independently repeated.",
+          "references": [
+            "r70-code"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-20"
+        },
+        {
+          "id": "r70-cost",
+          "proposition": "Total cost or capability superiority has not been demonstrated",
+          "kind": "editorial-inference",
+          "status": "unverified",
+          "sourceLocation": "11:00",
+          "assessment": "A narrow classifier result is not a general model ranking or cost-per-accepted-job calculation.",
+          "limits": "No published training charges, matched inference accounting, latency/throughput, or exception costs.",
+          "references": [
+            "r70-video",
+            "r70-code"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-20"
+        },
+        {
+          "id": "r70-sponsor",
+          "proposition": "Crusoe sponsored the demonstration",
+          "kind": "creator-claim",
+          "status": "unverified",
+          "sourceLocation": "03:00",
+          "assessment": "Crusoe sponsorship is disclosed by the creator in description and within the video.",
+          "limits": "The sponsorship is contextual provenance, not proof the benchmark outcome is incorrect.",
+          "references": [
+            "r70-video"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-20"
+        }
+      ],
+      "relationships": [
+        {
+          "target": "reader:the-cheap-answer-can-be-an-expensive-job",
+          "type": "companion",
+          "reason": "Reader #69 explains why price and total cost of an accepted job are different measures. It is a conceptual editorial companion, not validation of the reported classification percentages.",
+          "provenance": [
+            "/a-smaller-model-can-win-the-job-not-the-benchmark-war/",
+            "/the-cheap-answer-can-be-an-expensive-job/"
+          ],
+          "basis": "curated-editorial-comparison",
+          "direction": "outgoing"
+        }
+      ],
+      "sharePlaneRelationships": [],
+      "relationshipDisposition": "One related Reader (#69) on full cost-of-completion economics; no others admitted.",
+      "relationshipReview": {
+        "reviewedAt": "2026-11-20",
+        "reviewedCatalogSize": 69,
+        "decision": "linked",
+        "reviewedTargets": [
+          "reader:the-cheap-answer-can-be-an-expensive-job"
+        ],
+        "rationale": "Selected by Tony and confirmed in Creative Lock; source-independent editorial comparison, not benchmark corroboration."
+      },
+      "sharePlaneReview": {
+        "reviewedAt": "2026-11-20",
+        "decision": "none",
+        "rationale": "No qualifying canonical SharePlane Work admitted. The cost essay candidate was non-final at review."
+      },
+      "review": {
+        "status": "pending",
+        "summary": "Tony approved Creative Lock for v0.2. Independent exact-article source/privacy/depth acceptance and publication authorization are NOT yet granted."
+      },
+      "revisionHistory": [],
+      "legacyReceipt": {
+        "schema": "ghostmesh-reader-receipt-v2",
+        "source": {
+          "url": "https://www.youtube.com/watch?v=nMVFSVIXIBc",
+          "videoId": "nMVFSVIXIBc"
+        },
+        "custody": {
+          "status": "private-caption-and-frame-aid",
+          "note": "Automatic English captions and representative frames were privately examined; source speech has no independent audio certification. Raw media, transcripts, paths and private content are excluded."
+        },
+        "sourceInspection": {
+          "method": "Creator metadata, code, and private automatic caption/frame spot-check",
+          "caveat": "Creator-reported results remain unreplicated, chapter times approximate, audio not independently certified.",
+          "publicationBoundary": "No raw video, full captions, private paths or credentials are published.",
+          "timedAidSha256": "618d13b92578c32d2b8ef54be78ee45ec2c732dbdaa3f9afdd31548b00a001ee"
+        },
+        "creativeLock": {
+          "approval": "https://ghostmesh.slack.com/archives/C0CKK741H9S/p1795142134763329",
+          "bodySha256": "57bc9f8f42d38c7aa85645d06da342babf41e2d15013272cadbad3c7ce51f2ca"
         }
       }
     }

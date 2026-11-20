@@ -12,6 +12,235 @@
   ],
   "readers": [
     {
+      "id": "reader:a-smaller-model-can-win-the-job-not-the-benchmark-war",
+      "title": "A Smaller Model Can Win the Job, Not the Benchmark War",
+      "slug": "a-smaller-model-can-win-the-job-not-the-benchmark-war",
+      "variant": "editorial",
+      "category": "AI & Technology",
+      "tags": [
+        "small models",
+        "fine-tuning",
+        "classification",
+        "evaluation",
+        "model routing"
+      ],
+      "accent": "purple",
+      "editorialOrder": 69,
+      "published": "2026-11-20",
+      "updated": "2026-11-20T12:15:00Z",
+      "lastEvidenceChecked": "2026-11-20",
+      "overview": "NeuralNine reports that task-tuned 2B and 4B Qwen classifiers outperform a GPT-6 Luna baseline on one Shopify classification test, not across general intelligence.",
+      "whyItMatters": "Task specialization and evaluation design matter more than the model leaderboard headline.",
+      "ghostMeshTakeaway": "Choose models by the cost and accuracy of accepted work. A specialized classifier can beat a general-purpose pipeline for a narrowly defined job.",
+      "verdict": "Worth studying",
+      "architectureImpact": "experiment recommended",
+      "archiveCall": {
+        "label": "Test the actual job",
+        "text": "Compare full workflow accuracy and economics after checking split overlap, prompt differences, and paired per-example errors."
+      },
+      "evidenceState": "creator-reported-unverified",
+      "falsification": "Reproduce on pinned Shopify splits, audit near-duplicates, compare matched label/prompt setups, retain paired predictions, and measure actual training and inference costs.",
+      "freshness": "Creator video and scripts inspected November 20, 2026. No independent benchmark run or cost receipt was produced.",
+      "entities": [],
+      "source": {
+        "platform": "YouTube",
+        "url": "https://www.youtube.com/watch?v=nMVFSVIXIBc",
+        "videoId": "nMVFSVIXIBc",
+        "title": "Fine-Tuning Small Models To Beat GPT-6 Luna",
+        "creator": "NeuralNine",
+        "mediaAspect": "16:9",
+        "durationSeconds": 749,
+        "uploadDate": "2026-11-18",
+        "dateNote": "Seven approximate chapter transitions spot-checked against privately retained source frames and automatic captions; speech was not independently certified.",
+        "captionType": "Automatic English captions retained privately as a timing aid; not independently listening-certified.",
+        "creatorChapters": [
+          {
+            "atSeconds": 0,
+            "label": "Task and headline claim"
+          },
+          {
+            "atSeconds": 60,
+            "label": "Dataset conversion and classifier setup"
+          },
+          {
+            "atSeconds": 180,
+            "label": "Sponsor disclosure and hosted fine-tuning rationale"
+          },
+          {
+            "atSeconds": 300,
+            "label": "Fixed 5,000/1,000 sampling and baselines"
+          },
+          {
+            "atSeconds": 420,
+            "label": "Crusoe fine-tuning and omitted validation"
+          },
+          {
+            "atSeconds": 540,
+            "label": "Training-loss checkpoint and adapter export"
+          },
+          {
+            "atSeconds": 660,
+            "label": "Creator-reported accuracy comparison"
+          }
+        ]
+      },
+      "references": [
+        {
+          "id": "r70-video",
+          "title": "Fine-Tuning Small Models To Beat GPT-6 Luna",
+          "author": "NeuralNine",
+          "publisher": "YouTube",
+          "url": "https://www.youtube.com/watch?v=nMVFSVIXIBc",
+          "publicationDate": "2026-11-18",
+          "datePrecision": "day",
+          "eventDate": null,
+          "location": "Public source",
+          "sourceType": "Primary video",
+          "independence": "Crusoe-sponsored original demonstration with reported numerical results.",
+          "evidenceFamily": "r70-video",
+          "checkedAt": "2026-11-20T12:15:00Z"
+        },
+        {
+          "id": "r70-code",
+          "title": "Fine Tuning Crusoe: prepare.py and evaluate.py",
+          "author": "NeuralNine",
+          "publisher": "GitHub",
+          "url": "https://github.com/NeuralNine/youtube-tutorials/tree/main/Fine%20Tuning%20Crusoe",
+          "publicationDate": "unknown",
+          "datePrecision": "unknown",
+          "eventDate": null,
+          "location": "Public source",
+          "sourceType": "Primary source code",
+          "independence": "Creator-published code verified by Git blob; source folder has no publicly supplied training-run outputs or checkpoints.",
+          "evidenceFamily": "r70-code",
+          "checkedAt": "2026-11-20T12:15:00Z",
+          "dateNote": "The creator code repository does not declare an exact publication date for these files; GitHub blobs were inspected on November 20, 2026."
+        }
+      ],
+      "claims": [
+        {
+          "id": "r70-scores",
+          "proposition": "Creator-reported 68.2/69.8/73.0% exact-match accuracy",
+          "kind": "creator-claim",
+          "status": "unverified",
+          "sourceLocation": "11:00",
+          "assessment": "On a 1,000-item Shopify test, the creator reports GPT-6 Luna 68.2%, tuned Qwen3.5-2B 69.8%, and tuned Qwen3.5-4B 73.0%.",
+          "limits": "No independent replication or paired per-item predictions. Small differences may not be reliable.",
+          "references": [
+            "r70-video"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-20"
+        },
+        {
+          "id": "r70-splits",
+          "proposition": "Train/test examples are selected from named Shopify splits",
+          "kind": "creator-claim",
+          "status": "unverified",
+          "sourceLocation": "05:00",
+          "assessment": "Creator code derives eligible labels from the full training split before selecting 5,000 training examples (random_state=42). It filters test items to labels found in that full split, then samples 1,000 evaluation examples. The selected 5,000 training examples are not guaranteed to contain every evaluated label.",
+          "limits": "Not every evaluated label is guaranteed to appear in the 5,000 sampled training examples; the full split defines the eligible labels. Original dataset revision, near-duplicate/product-family overlap, and distribution shifts were not audited.",
+          "references": [
+            "r70-code"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-20"
+        },
+        {
+          "id": "r70-prompts",
+          "proposition": "Prompts differ between tuned and untuned model pipelines",
+          "kind": "creator-claim",
+          "status": "unverified",
+          "sourceLocation": "02:00",
+          "assessment": "Code supplies the candidate category list to Luna and untuned Qwen, but not to tuned Qwen adapters.",
+          "limits": "Cannot isolate the effect of fine-tuning alone under changed prompt conditions.",
+          "references": [
+            "r70-code"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-20"
+        },
+        {
+          "id": "r70-conditions",
+          "proposition": "Qwen decoding is specified but Luna defaults are not",
+          "kind": "creator-claim",
+          "status": "unverified",
+          "sourceLocation": "06:00",
+          "assessment": "Qwen script uses do_sample=False, enable_thinking=False and max_new_tokens=40; Luna uses Responses API with no explicit effort/decoding pin.",
+          "limits": "API model revisions and the inference conditions were not pinned or independently repeated.",
+          "references": [
+            "r70-code"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-20"
+        },
+        {
+          "id": "r70-cost",
+          "proposition": "Total cost or capability superiority has not been demonstrated",
+          "kind": "editorial-inference",
+          "status": "unverified",
+          "sourceLocation": "11:00",
+          "assessment": "A narrow classifier result is not a general model ranking or cost-per-accepted-job calculation.",
+          "limits": "No published training charges, matched inference accounting, latency/throughput, or exception costs.",
+          "references": [
+            "r70-video",
+            "r70-code"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-20"
+        },
+        {
+          "id": "r70-sponsor",
+          "proposition": "Crusoe sponsored the demonstration",
+          "kind": "creator-claim",
+          "status": "unverified",
+          "sourceLocation": "03:00",
+          "assessment": "Crusoe sponsorship is disclosed by the creator in description and within the video.",
+          "limits": "The sponsorship is contextual provenance, not proof the benchmark outcome is incorrect.",
+          "references": [
+            "r70-video"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-20"
+        }
+      ],
+      "relationships": [
+        {
+          "target": "reader:the-cheap-answer-can-be-an-expensive-job",
+          "type": "companion",
+          "reason": "Reader #69 explains why price and total cost of an accepted job are different measures. It is a conceptual editorial companion, not validation of the reported classification percentages.",
+          "provenance": [
+            "/a-smaller-model-can-win-the-job-not-the-benchmark-war/",
+            "/the-cheap-answer-can-be-an-expensive-job/"
+          ],
+          "basis": "curated-editorial-comparison",
+          "direction": "outgoing"
+        }
+      ],
+      "sharePlaneRelationships": [],
+      "relationshipDisposition": "One related Reader (#69) on full cost-of-completion economics; no others admitted.",
+      "relationshipReview": {
+        "reviewedAt": "2026-11-20",
+        "reviewedCatalogSize": 69,
+        "decision": "linked",
+        "reviewedTargets": [
+          "reader:the-cheap-answer-can-be-an-expensive-job"
+        ],
+        "rationale": "Selected by Tony and confirmed in Creative Lock; source-independent editorial comparison, not benchmark corroboration."
+      },
+      "sharePlaneReview": {
+        "reviewedAt": "2026-11-20",
+        "decision": "none",
+        "rationale": "No qualifying canonical SharePlane Work admitted. The cost essay candidate was non-final at review."
+      },
+      "review": {
+        "status": "pending",
+        "summary": "Tony approved Creative Lock for v0.2. Independent exact-article source/privacy/depth acceptance and publication authorization are NOT yet granted."
+      },
+      "revisionHistory": [],
+      "rank": 69
+    },
+    {
       "id": "reader:the-cheap-answer-can-be-an-expensive-job",
       "title": "The Cheap Answer Can Be an Expensive Job",
       "slug": "the-cheap-answer-can-be-an-expensive-job",

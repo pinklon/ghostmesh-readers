@@ -3,11 +3,11 @@
   "scope": "Local public editorial reading routes; no independent corroboration or cross-site graph admission.",
   "authority": "catalog-curated-editorial",
   "visibility": "public",
-  "readerCount": 69,
-  "assessmentCount": 69,
-  "relationshipCount": 161,
+  "readerCount": 70,
+  "assessmentCount": 70,
+  "relationshipCount": 162,
   "sharePlaneRelationshipCount": 42,
-  "sharePlaneReviewCount": 29,
+  "sharePlaneReviewCount": 30,
   "sharePlaneEdges": [
     {
       "from": "reader:when-code-gets-cheap-where-does-the-work-wait",
@@ -1468,6 +1468,21 @@
           "reader:the-machine-is-learning-to-improve-the-machine"
         ],
         "rationale": "The approved model-routing Reader addresses task-specific selection. Reader #68 addresses evidence and authority at acceptance."
+      }
+    },
+    {
+      "id": "reader:a-smaller-model-can-win-the-job-not-the-benchmark-war",
+      "slug": "a-smaller-model-can-win-the-job-not-the-benchmark-war",
+      "title": "A Smaller Model Can Win the Job, Not the Benchmark War",
+      "url": "https://youtube.shareplane.malott.ai/a-smaller-model-can-win-the-job-not-the-benchmark-war/",
+      "review": {
+        "reviewedAt": "2026-11-20",
+        "reviewedCatalogSize": 69,
+        "decision": "linked",
+        "reviewedTargets": [
+          "reader:the-cheap-answer-can-be-an-expensive-job"
+        ],
+        "rationale": "Selected by Tony and confirmed in Creative Lock; source-independent editorial comparison, not benchmark corroboration."
       }
     }
   ],
@@ -3400,6 +3415,18 @@
       "provenance": [
         "/the-cheap-answer-can-be-an-expensive-job/",
         "/the-machine-is-learning-to-improve-the-machine/"
+      ],
+      "basis": "curated-editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:a-smaller-model-can-win-the-job-not-the-benchmark-war",
+      "to": "reader:the-cheap-answer-can-be-an-expensive-job",
+      "type": "companion",
+      "reason": "Reader #69 explains why price and total cost of an accepted job are different measures. It is a conceptual editorial companion, not validation of the reported classification percentages.",
+      "provenance": [
+        "/a-smaller-model-can-win-the-job-not-the-benchmark-war/",
+        "/the-cheap-answer-can-be-an-expensive-job/"
       ],
       "basis": "curated-editorial-comparison",
       "direction": "outgoing"

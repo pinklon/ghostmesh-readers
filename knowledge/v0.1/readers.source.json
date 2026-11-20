@@ -949,6 +949,18 @@
         "path": "site/the-cheap-answer-can-be-an-expensive-job/index.html",
         "sha256": "ecb7782609e46b4371e2e50e1b0d538f9c59a64b4c28f5dac0792c0db0341d31"
       }
+    },
+    {
+      "id": "urn:ghostmesh-readers:reader:a-smaller-model-can-win-the-job-not-the-benchmark-war",
+      "type": "Reader",
+      "visibility": "public",
+      "epistemicStatus": "source-editorial",
+      "label": "A Smaller Model Can Win the Job, Not the Benchmark War",
+      "url": "https://youtube.shareplane.malott.ai/a-smaller-model-can-win-the-job-not-the-benchmark-war/",
+      "source": {
+        "path": "site/a-smaller-model-can-win-the-job-not-the-benchmark-war/index.html",
+        "sha256": "a1a1539c0a8130d24d2c96f6ef1276cd69efc04d0e7bbc27d9de1dcbe739323b"
+      }
     }
   ],
   "relationships": [

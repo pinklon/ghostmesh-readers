@@ -1,0 +1,357 @@
+<!doctype html>
+<html lang="en" data-reader="ghostmesh-editorial-v1">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#131619">
+  <title>A Smaller Model Can Win the Job, Not the Benchmark War | GhostMesh Reader #70</title>
+  <meta name="description" content="NeuralNine fine-tunes two small Qwen classifiers and reports a win over GPT-6 Luna. The interesting lesson is not a model upset. It is how much the task, evaluation and training boundary determine what winning means.">
+  <link rel="canonical" href="https://youtube.shareplane.malott.ai/a-smaller-model-can-win-the-job-not-the-benchmark-war/">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="A Smaller Model Can Win the Job, Not the Benchmark War">
+  <meta property="og:description" content="NeuralNine fine-tunes two small Qwen classifiers and reports a win over GPT-6 Luna. The interesting lesson is not a model upset. It is how much the task, evaluation and training boundary determine what winning means.">
+  <meta property="og:url" content="https://youtube.shareplane.malott.ai/a-smaller-model-can-win-the-job-not-the-benchmark-war/">
+
+
+
+
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="A Smaller Model Can Win the Job, Not the Benchmark War">
+  <meta name="twitter:description" content="NeuralNine fine-tunes two small Qwen classifiers and reports a win over GPT-6 Luna. The interesting lesson is not a model upset. It is how much the task, evaluation and training boundary determine what winning means.">
+
+
+  <link rel="alternate" type="application/rss+xml" title="GhostMesh Readers and Scout" href="/feed.xml"><script src="/assets/theme.js"></script><script src="/assets/reader-search.js" defer></script><link rel="stylesheet" href="/assets/reader-chrome.css"><link rel="stylesheet" href="/assets/knowledge.css"><link rel="stylesheet" href="/assets/reader-refresh.css">
+  <style>
+:root {
+  color-scheme: dark;
+  --sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --serif: Georgia, "Times New Roman", serif;
+  --mono: ui-monospace, SFMono-Regular, Consolas, monospace;
+  --gm-bg: #131619;
+  --gm-paper: #1b2024;
+  --gm-soft: #252c32;
+  --gm-ink: #f3eee4;
+  --gm-muted: #bdc4c7;
+  --gm-border: #525a60;
+  --gm-accent: #ffc18e;
+  --r69-cool: #a8d3d3;
+  --r69-measure: 720px;
+}
+:root[data-theme="light"] {
+  color-scheme: light;
+  --gm-bg: #f7f4ed;
+  --gm-paper: #eee8dd;
+  --gm-soft: #e9e3d9;
+  --gm-ink: #211f1b;
+  --gm-muted: #4f5759;
+  --gm-border: #99928a;
+  --gm-accent: #871f2e;
+  --r69-cool: #215b61;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--gm-bg); color: var(--gm-ink); font-family: var(--sans); }
+a { color: var(--gm-accent); text-underline-offset: .19em; }
+:focus-visible { outline: 2px solid var(--gm-accent); outline-offset: 4px; }
+.skip { position: absolute; z-index: 30; left: 12px; top: 12px; padding: .6rem; background: var(--gm-bg); transform: translateY(-200%); }
+.skip:focus { transform: none; }
+.gm-site-header { background: var(--gm-bg); color: var(--gm-ink); border-bottom: 1px solid var(--gm-border); }
+.gm-site-header-inner { display: flex; min-height: 70px; margin-inline: auto; align-items: center; }
+.gm-site-brand { display: inline-flex; align-items: center; gap: 10px; white-space: nowrap; color: var(--gm-ink); text-decoration: none; font-weight: 750; }
+.gm-site-brand img, .gm-site-footer img { padding: 3px; border-radius: 4px; background: #171b22; }
+.gm-site-brand em { color: var(--gm-accent); font-style: normal; }
+.gm-site-brand span { padding-left: 10px; border-left: 1px solid var(--gm-border); color: var(--gm-muted); font: 650 10px var(--mono); }
+.gm-site-nav { display: flex; flex-wrap: wrap; margin-left: auto; }
+.gm-site-nav a { border-bottom: 2px solid transparent; color: var(--gm-muted); text-decoration: none; font-weight: 650; }
+.gm-site-nav a:is(:focus-visible, :hover) { color: var(--gm-ink); border-color: var(--gm-accent); }
+.gm-reader-footer { margin-top: 0; }
+.gm-theme-control svg { fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+:root[data-theme="light"] .gm-theme-sun, :root:not([data-theme="light"]) .gm-theme-moon { display: none; }
+.gm-theme-control[hidden] { display: none; }
+
+.r69-layout {
+  width: min(1220px, calc(100% - 64px));
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, var(--r69-measure)) minmax(0, 1fr);
+  gap: 32px;
+}
+.r69-main { grid-column: 2; grid-row: 1; min-width: 0; overflow-wrap: anywhere; padding-top: clamp(40px, 7vw, 108px); }
+.r69-rail { grid-column: 1; grid-row: 1; align-self: start; position: sticky; top: 24px; padding-top: clamp(40px, 7vw, 108px); }
+.r69-rail nav { border-top: 1px solid var(--gm-border); padding: 14px 0; max-width: 172px; }
+.r69-rail a { display: block; color: var(--gm-muted); text-decoration: none; font-size: .81rem; line-height: 1.35; padding-block: 6px; }
+.r69-rail a:is(:focus-visible, :hover) { color: var(--gm-accent); text-decoration: underline; }
+.r69-rail strong { display: block; margin-bottom: 9px; color: var(--r69-cool); font-size: .83rem; }
+.r69-mobile-toc { display: none; }
+.r69-kicker { display: flex; align-items: center; gap: 12px; color: var(--r69-cool); font: 650 .81rem/1.4 var(--mono); }
+.r69-kicker::before { content: ""; width: 30px; border-top: 1px solid; }
+.r69-hero h1 { margin: 22px 0 20px; font: 500 clamp(2.55rem, 6.2vw, 5.9rem)/.98 var(--serif); letter-spacing: -.065em; text-wrap: balance; }
+.r69-dek { max-width: 33ch; margin: 0 0 26px; font: italic clamp(1.29rem, 2.3vw, 1.85rem)/1.3 var(--serif); color: var(--gm-muted); }
+.r69-meta { margin-block: 0 12px; color: var(--gm-muted); font-size: .88rem; line-height: 1.65; }
+.r69-verdict { margin: 24px 0 0; padding: 16px 19px; border-inline-start: 2px solid var(--gm-accent); background: var(--gm-paper); line-height: 1.65; }
+.r69-main h2 { margin: 0 0 16px; font: 500 clamp(1.88rem, 3.6vw, 2.65rem)/1.1 var(--serif); letter-spacing: -.045em; text-wrap: balance; }
+.r69-main section[id] { scroll-margin-top: 24px; }
+.r69-prose { font: clamp(1.06rem, 1.75vw, 1.23rem)/1.7 var(--serif); }
+.r69-prose section { padding-top: clamp(30px, 5vw, 54px); margin-top: clamp(28px, 5vw, 52px); border-top: 1px solid var(--gm-border); }
+.r69-prose section > p { margin: 0 0 1.15em; }
+.r69-prose section:first-child > p:first-of-type { font-size: 1.26em; color: var(--r69-cool); }
+.r69-main .gm-publication-status { color: var(--gm-muted); font-size: .75rem; line-height: 1.5; margin: 20px 0 0; }
+
+.r69-ledger { margin: 0; padding: clamp(17px, 4vw, 29px); background: var(--gm-paper); border: 1px solid var(--gm-border); border-top: 2px solid var(--r69-cool); font-family: var(--sans); }
+.r69-ledger figcaption { font: 500 clamp(1.45rem, 2.5vw, 2.05rem)/1.16 var(--serif); margin-bottom: 18px; }
+.r69-ledger-stages { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); border-block: 1px solid var(--gm-border); }
+.r69-ledger-stages p { display: flex; flex-direction: column; justify-content: center; margin: 0; padding: 17px 16px 17px 0; min-width: 0; color: var(--gm-ink); font-size: 1.06rem; }
+.r69-ledger-stages p:nth-child(2) { border-left: 1px solid var(--gm-accent); padding: 17px; color: var(--r69-cool); }
+.r69-ledger-stages small { color: var(--gm-muted); font-size: .8rem; }
+.r69-ledger ul { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); padding: 0; margin: 0; list-style: none; }
+.r69-ledger li { padding: 14px 8px 0 0; color: var(--gm-muted); font-size: .79rem; line-height: 1.4; }
+.r69-ledger li + li { border-left: 1px solid var(--gm-border); padding-left: 10px; }
+
+.r69-source { margin-top: 44px; }
+.r69-source > p { color: var(--gm-muted); line-height: 1.55; font-size: .88rem; }
+.r69-source .player { display: grid; position: relative; width: 100%; background: #171d22; overflow: hidden; }
+.r69-source .player img, .r69-source .player iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.r69-source .player img { object-fit: cover; }
+.r69-source .player button { align-self: end; justify-self: start; z-index: 1; margin: 0 0 14px 14px; padding: .55em .85em; color: #fff; background: #171d22e8; border: 1px solid #bfccd1; border-radius: 4px; font: 650 .82rem var(--sans); cursor: pointer; }
+.r69-source .player button:hover { background: #303a40; }
+.r69-source .player button:focus-visible { outline-color: #fff; }
+.r69-chapter-note { color: var(--gm-muted); font-size: .83rem; line-height: 1.55; }
+.r69-source .source-chapters a { display: grid; grid-template-columns: 4.1rem minmax(0, 1fr); align-items: start; gap: 12px; padding: 10px 0; border-block-end: 1px solid var(--gm-border); text-decoration: none; color: var(--gm-ink); font-size: .88rem; }
+.r69-source .source-chapters a:is(:focus-visible, :hover) { color: var(--gm-accent); text-decoration: underline; }
+.r69-source .source-chapters time { color: var(--r69-cool); font: 650 .8rem/1.5 var(--mono); }
+
+.r69-main :is(.gm-brief, .gm-evidence, .gm-related, .gm-work-routes, .gm-source-scope) { width: 100%; max-width: none; margin-inline: 0; }
+.r69-main .gm-brief { margin: 18px 0 32px; padding: 0; border: 0; }
+.r69-main .gm-brief-point { display: grid; grid-template-columns: 24px minmax(0, 1fr); gap: 10px; padding: 10px 0; border-bottom: 1px solid var(--gm-border); border-top: 0; }
+.r69-main .gm-brief .gm-brief-point p { font: .87rem/1.55 var(--sans); }
+.r69-main .gm-brief-index { color: var(--r69-cool); padding-top: 2px; }
+.r69-main .gm-evidence { display: block; margin-top: 50px; }
+.r69-main .gm-evidence-intro { position: static; top: auto; align-self: stretch; padding-bottom: 24px; }
+.r69-main .gm-evidence-body { border-left: 0; padding-left: 0; }
+.r69-main .gm-claim-list details { color: var(--gm-ink); }
+.r69-main .gm-claim-list { border-top: 1px solid var(--gm-border); margin-top: 20px; }
+.r69-main .gm-claim-list details { display: block; border-bottom: 1px solid var(--gm-border); }
+.r69-main .gm-claim-list summary { display: block; position: relative; list-style: none; cursor: pointer; padding: 18px 34px 18px 0; min-height: 76px; }
+.r69-main .gm-claim-list summary::-webkit-details-marker { display: none; }
+.r69-main .gm-claim-list summary::after { content: "+"; position: absolute; top: 18px; right: 7px; color: var(--gm-accent); font-size: 1.35rem; line-height: 1; }
+.r69-main .gm-claim-list details[open] summary::after { content: "−"; }
+.r69-main .gm-claim-label { display: block; font: 750 .66rem/1.5 var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--gm-muted); }
+.r69-main .gm-claim-status { display: inline-block; margin-left: 10px; color: var(--gm-accent); }
+.r69-main .gm-claim-proposition { display: block; margin-top: 7px; font: 650 1rem/1.45 var(--sans); overflow-wrap: anywhere; }
+.r69-main .gm-claim-detail { display: block; padding: 0 30px 18px 0; font: .88rem/1.6 var(--sans); color: var(--gm-muted); }
+.r69-main .gm-claim-detail p { margin: 0 0 12px; }
+.r69-main .gm-evidence-intro p { font: .91rem/1.65 var(--sans); color: var(--gm-muted); margin: 0 0 12px; }
+.r69-main .gm-evidence-body h3 { margin: 24px 0 7px; font: 650 1.12rem/1.3 var(--sans); }
+.r69-main .gm-evidence-hint { color: var(--gm-muted); font-size: .84rem; }
+
+.r69-main .gm-cards { display: block; }
+.r69-main .gm-cards > article { margin-bottom: 8px; }
+.r69-main .gm-work-routes, .r69-main .gm-source-scope { border-top: 1px solid var(--gm-border); margin-top: 36px; padding-top: 27px; }
+.r69-main .gm-work-routes .gm-backmatter-note { color: var(--gm-muted); font-size: .91rem; line-height: 1.6; }
+.r69-main .gm-work-grid { list-style: none; margin: 26px 0 0; padding: 0; }
+.r69-main .gm-work-grid > li { display: grid; grid-template-columns: 2.4rem minmax(0, 1fr) 1.5rem; column-gap: 14px; row-gap: 8px; align-items: baseline; padding: 23px 0 26px; border-top: 1px solid var(--gm-border); }
+.r69-main .gm-work-grid > li::before { content: '03'; grid-column: 1; grid-row: 1 / span 3; color: var(--gm-accent); font: 700 .72rem/1.7 var(--mono); }
+.r69-main .gm-work-kind { display: block; grid-column: 2; color: var(--gm-accent); font: 700 .76rem/1.5 var(--mono); letter-spacing: .11em; text-transform: uppercase; }
+.r69-main .gm-work-grid a { display: block; grid-column: 2; color: var(--gm-ink); font: 750 1.16rem/1.32 var(--sans); text-decoration: none; }
+.r69-main .gm-work-grid a:hover, .r69-main .gm-work-grid a:focus-visible { color: var(--gm-accent); text-decoration: underline; }
+.r69-main .gm-work-grid a::after { content: '↗'; float: right; color: var(--gm-accent); font: 500 1.12rem/1.2 var(--sans); }
+.r69-main .gm-work-grid > li > span:last-child { display: block; grid-column: 2 / -1; color: var(--gm-muted); font-size: .88rem; line-height: 1.55; }
+@media (max-width: 560px) { .r69-main .gm-work-grid > li { grid-template-columns: 1.8rem minmax(0, 1fr); column-gap: 10px; } }
+.r69-source-scope p, .r69-source-scope li { color: var(--gm-muted); font-size: .91rem; line-height: 1.65; }
+.r69-source-scope ol { list-style: none; padding: 0; }
+.r69-source-scope li { border-top: 1px solid var(--gm-border); padding: 9px 0; }
+.r69-source-scope li span { display: block; }
+.r69-main .gm-sharebar { width: 100%; margin-inline: 0; }
+@media (max-width: 1080px) {
+  .r69-layout { grid-template-columns: minmax(0, var(--r69-measure)); justify-content: center; }
+  .r69-main { grid-column: 1; }
+  .r69-rail { display: none; }
+  .r69-mobile-toc { display: block; margin: 25px 0; border-block: 1px solid var(--gm-border); padding: 9px 0; }
+  .r69-mobile-toc summary { cursor: pointer; min-height: 30px; padding: 4px 0; font-weight: 650; }
+  .r69-mobile-toc a { display: block; padding: 5px 0; font-size: .89rem; }
+}
+@media (max-width: 520px) {
+  .r69-layout { width: calc(100% - 38px); }
+  .r69-ledger-stages { grid-template-columns: 1fr; }
+  .r69-ledger-stages p:nth-child(2) { border-left: 0; border-top: 1px solid var(--gm-accent); padding-inline: 0; }
+  .r69-ledger ul { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .r69-ledger li { padding-bottom: 9px; }
+  .r69-ledger li:nth-child(3) { border-left: 0; padding-left: 0; }
+  .r69-ledger li:nth-child(n+3) { border-top: 1px solid var(--gm-border); }
+}
+
+  /* Accepted Reader shell and search control styles from Reader #68. */
+.gm-site-header{position:relative;z-index:20;--gm-bg:#0f1115;--gm-ink:#f4f5f7;--gm-border:#4c525d;--gm-paper:#151920;--gm-muted:#b8bec9;--gm-accent:#ff879a}.gm-site-header-inner{width:min(1280px,calc(100% - 48px))}.gm-site-tagline{font:500 .68rem/1.3 var(--sans);color:var(--gm-muted);white-space:nowrap;margin:0}.gm-header-actions{display:flex;gap:.6rem;align-items:center}.gm-search-control{width:42px;height:42px;border:1px solid var(--gm-border);border-radius:50%;display:grid;place-items:center;color:var(--gm-ink)}.gm-search-control svg{width:17px;height:17px;stroke:currentColor;stroke-width:1.8;fill:none}.gm-theme-control input{accent-color:var(--gm-accent);width:15px;height:15px}.gm-reader-footer{--gm-bg:#0f1115;--gm-ink:#f4f5f7;--gm-border:#4c525d;--gm-muted:#b8bec9;--gm-accent:#ff879a;background:#0f1115;color:#f4f5f7;padding:0}.gm-reader-footer-inner{max-width:1180px;padding:36px 26px;grid-template-columns:minmax(260px,1fr) minmax(280px,1.25fr);gap:2rem}.gm-footer-brand{display:flex;align-items:center;gap:10px;color:#fff;text-decoration:none}.gm-footer-brand strong{font:740 15px/1.2 var(--sans);letter-spacing:.18em}.gm-footer-brand strong em{font-style:normal;color:#e4314d}.gm-reader-footer-note,.gm-reader-footer-note a{color:#abb0bb;font:12px/1.65 var(--sans)}.gm-footer-links{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:.6rem 1rem;align-items:center}.gm-footer-links a{color:#e4e7ee;text-decoration:none;font:650 .77rem var(--sans)}
+@media(max-width:1080px){.gm-site-tagline{display:none}.gm-site-header-inner{flex-wrap:wrap;gap:.5rem;padding:10px 0}.gm-site-nav{order:3;width:100%;justify-content:space-between;gap:.2rem}.gm-site-nav a{padding:.55rem .3rem!important}.gm-header-actions{margin-left:auto}}@media(max-width:700px){.gm-site-header-inner{width:calc(100% - 30px)}.gm-site-brand span{display:none}.gm-site-nav{overflow-x:auto;flex-wrap:nowrap}.gm-site-nav a{flex:none!important}.gm-reader-footer-inner{grid-template-columns:1fr}.gm-footer-links{justify-content:flex-start}}
+.gm-site-header-inner{min-height:64px;gap:15px}
+.gm-site-brand{font-size:13px;letter-spacing:.1em}
+.gm-site-tagline{max-width:245px;margin:0;color:var(--gm-muted);font:600 12px/1.3 system-ui;letter-spacing:0}
+.gm-site-nav{gap:2px}
+.gm-site-nav a{padding:8px 7px;font-size:12px}
+.gm-header-actions{display:flex;align-items:center;gap:8px}
+.gm-search-control,.gm-theme-control{display:grid;place-items:center;flex:none;width:37px;height:37px;min-width:37px;min-height:37px;margin:0;padding:0;border:1px solid var(--gm-border);border-radius:50%;background:transparent;color:var(--gm-ink)!important;text-decoration:none!important}
+.gm-search-control:hover,.gm-theme-control:hover{border-color:var(--gm-accent);background:var(--gm-soft)}
+.gm-search-control:focus-visible,.gm-theme-control:focus-visible{outline:3px solid var(--gm-accent);outline-offset:3px}
+.gm-search-control svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round}
+.gm-theme-control svg{width:17px;height:17px}
+.gm-reader-search{width:min(680px,calc(100vw - 32px));max-height:min(760px,85dvh);padding:26px;border:1px solid var(--gm-border);background:var(--gm-bg);color:var(--gm-ink);box-shadow:0 24px 80px #0008}
+.gm-reader-search::backdrop{background:#030507b8}
+.gm-reader-search-head{display:flex;align-items:start;justify-content:space-between;gap:20px;border-bottom:1px solid var(--gm-border);padding-bottom:16px;margin-bottom:18px}
+.gm-reader-search-head p{font:700 10px/1.5 ui-monospace,monospace;letter-spacing:.12em;color:var(--gm-accent);margin:0 0 8px}
+.gm-reader-search-head h2{font:650 clamp(25px,4vw,36px)/1.12 system-ui;letter-spacing:-.045em;margin:0}
+.gm-reader-search-head button{flex:none;width:34px;height:34px;background:transparent;color:var(--gm-ink);border:1px solid var(--gm-border);border-radius:50%;font:25px/1 system-ui;cursor:pointer}
+.gm-reader-search label{display:block;font:650 13px/1.4 system-ui;margin-bottom:8px}
+.gm-reader-search input{display:block;width:100%;min-height:48px;padding:11px 14px;border:1px solid var(--gm-border);border-radius:3px;background:var(--gm-paper);color:var(--gm-ink);font:16px/1.4 system-ui}
+.gm-reader-search input:focus-visible,.gm-reader-search-head button:focus-visible{outline:3px solid var(--gm-accent);outline-offset:2px}
+.gm-reader-search-scope,.gm-reader-search [data-reader-search-status]{font:12px/1.55 system-ui;color:var(--gm-muted);margin:12px 0}
+.gm-reader-search a{color:var(--gm-accent)}
+.gm-reader-search [data-reader-search-results]{overflow:auto;max-height:48dvh}
+.gm-reader-search [data-reader-search-results]>a{display:block;padding:14px 2px;border-top:1px solid var(--gm-border);text-decoration:none;color:var(--gm-ink)}
+.gm-reader-search [data-reader-search-results]>a:hover,.gm-reader-search [data-reader-search-results]>a:focus-visible{background:var(--gm-soft);outline:2px solid var(--gm-accent);outline-offset:-2px}
+.gm-reader-search [data-reader-search-results] small,.gm-reader-search [data-reader-search-results] strong,.gm-reader-search [data-reader-search-results] span{display:block}
+.gm-reader-search [data-reader-search-results] small{font:650 10px/1.5 ui-monospace,monospace;letter-spacing:.08em;color:var(--gm-accent)}
+.gm-reader-search [data-reader-search-results] strong{font:650 17px/1.3 system-ui;margin:3px 0}
+.gm-reader-search [data-reader-search-results] span{font:13px/1.5 system-ui;color:var(--gm-muted)}
+.gm-library-match-snippet{padding:11px 14px;background:var(--gm-soft);border-left:2px solid var(--gm-accent);color:var(--gm-ink)!important;font:13px/1.55 system-ui}
+@media(max-width:700px){
+ .gm-site-header-inner{width:calc(100% - 40px);min-height:112px;padding-block:0;display:grid;grid-template-columns:minmax(0,1fr) auto;grid-template-rows:46px 30px 36px;gap:0 8px}
+ .gm-site-brand{grid-column:1;grid-row:1;font-size:12px}
+ .gm-site-brand span{display:none}
+ .gm-site-tagline{grid-column:1/-1;grid-row:2;align-self:center;max-width:none;font-size:12px}
+ .gm-header-actions{grid-column:2;grid-row:1}
+ .gm-site-nav{grid-column:1/-1;grid-row:3;width:100%;margin:0;justify-content:space-between;gap:0;flex-wrap:nowrap}
+ .gm-site-nav a{font-size:11px;padding:8px 3px;white-space:nowrap}
+ .gm-reader-search{padding:18px}
+}
+
+.gm-theme-control .gm-theme-label.gm-visually-hidden{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}.gm-header-actions .gm-search-control,.gm-header-actions .gm-theme-control{width:37px;min-width:37px;height:37px;min-height:37px}.gm-site-header-inner{flex-wrap:nowrap}@media(min-width:701px) and (max-width:1080px){.gm-site-header-inner{display:flex;flex-wrap:nowrap;gap:12px;padding:0}.gm-site-nav{order:0;width:auto;flex:1;justify-content:flex-end;gap:0;margin-left:auto;overflow:visible}.gm-site-nav a{padding:8px 5px!important;white-space:nowrap}.gm-header-actions{flex:none;margin-left:0}}@media(max-width:700px){.gm-site-header-inner{display:grid;flex-wrap:initial;min-height:112px;padding-block:0}.gm-site-tagline{display:block;grid-column:1/-1;grid-row:2}.gm-site-nav{display:flex;order:initial;grid-column:1/-1;grid-row:3;width:100%;overflow-x:auto;justify-content:space-between}.gm-header-actions{grid-column:2;grid-row:1}.gm-theme-control{margin:0}}
+.gm-reader-footer{font-family:var(--sans)!important}
+.gm-reader-footer .gm-reader-footer-inner{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:2rem;align-items:start;max-width:1180px;margin:auto;padding:2rem 1.5rem}
+.gm-reader-footer .gm-footer-links{display:flex;flex-wrap:wrap;align-items:flex-start;justify-content:flex-end;gap:.65rem 1.1rem}
+.gm-reader-footer .gm-footer-links a{display:inline;color:var(--gm-ink,#f4f5f7);font:650 .78rem/1.5 var(--sans)}
+.gm-reader-footer .gm-footer-more{display:flex;flex-wrap:wrap;gap:.55rem 1.4rem;grid-column:1/-1}
+
+@media(max-width:700px){.gm-reader-footer .gm-reader-footer-inner{grid-template-columns:1fr;padding:2rem 1.25rem}.gm-reader-footer .gm-footer-links{justify-content:flex-start}}
+
+/* Keep the accepted mobile navigation spacing above the older route-level !important rules. */
+@media(max-width:700px){.gm-site-header .gm-site-nav{gap:0!important}.gm-site-header .gm-site-nav a{padding:8px 3px!important;font-size:11px!important}}
+
+  </style>
+<meta name="gm-share-description" content="NeuralNine fine-tunes two small Qwen classifiers and reports a win over GPT-6 Luna. The interesting lesson is not a model upset. It is how much the task, evaluation and training boundary determine what winning means.">
+<style>
+:root{--r69-cool:#c9b6ff}
+:root[data-theme="light"]{--r69-cool:#6a2a9a}
+.r70-result-figure{border-top:2px solid var(--r69-cool);background:var(--gm-paper);padding:1.25rem;margin:2rem 0;max-width:100%;min-width:0;overflow:hidden}
+.r70-table-scroll{max-width:100%;overflow-x:auto;overscroll-behavior-x:contain;border-inline:1px solid var(--gm-border);scrollbar-width:auto}
+.r70-scroll-hint{display:block;font:700 .75rem/1.45 var(--sans);margin:0 0 10px;color:var(--r69-cool)}
+.r70-table-scroll table{min-width:440px}
+.r70-result-figure table{width:100%;border-collapse:collapse;font: .95rem/1.5 var(--sans)}
+.r70-result-figure th,.r70-result-figure td{text-align:left;border-bottom:1px solid var(--gm-border);padding:.55rem}
+.r70-result-figure td:last-child,.r70-result-figure th:last-child{text-align:right;font-variant-numeric:tabular-nums}
+.r70-result-figure caption{text-align:left;font-weight:700;margin-bottom:1rem}
+.r70-preview-banner{margin:0;padding:10px 16px;text-align:center;background:var(--gm-paper);border-bottom:1px solid var(--gm-border);font:700 12px var(--mono);color:var(--gm-ink)}
+.r70-main .r69-prose section>p{margin:0 0 1em}
+.r70-provenance ul{padding-left:1.4em}
+@media(max-width:430px){.r70-result-figure{overflow-x:auto}.r70-result-figure table{min-width:360px}}
+</style>
+<meta property="og:image" content="https://youtube.shareplane.malott.ai/a-smaller-model-can-win-the-job-not-the-benchmark-war/social.svg"><meta name="twitter:image" content="https://youtube.shareplane.malott.ai/a-smaller-model-can-win-the-job-not-the-benchmark-war/social.svg"><meta name="twitter:card" content="summary_large_image"><meta name="gm-share-description" content="NeuralNine reports that task-tuned 2B and 4B Qwen classifiers outperform a GPT-6 Luna baseline on one Shopify classification test, not across general intelligence."></head>
+<body data-reader="ghostmesh-editorial-v1" data-variant="editorial">
+  <a class="skip" href="#article">Skip to article</a>
+  <header class="gm-site-header"><div class="gm-site-header-inner"><a class="gm-site-brand" href="/" aria-label="GhostMesh Readers home"><img src="/brand/ghostmesh-mark.svg" width="45" height="34" alt=""><strong>GHOST<em>MESH</em></strong><span>READERS</span></a><p class="gm-site-tagline">Context endures. Possibility evolves.</p><nav class="gm-site-nav" aria-label="Main navigation"><a href="/">Home</a><a href="/readers/">Readers</a><a href="/map/">Map</a><a href="/knowledge/">Knowledge</a><a href="/scout/">Scout</a><a href="/#about">About</a></nav><div class="gm-header-actions"><a class="gm-search-control" href="/readers/#search" aria-label="Search Reader articles; without JavaScript, browse the Reader archive" data-reader-search-open title="Search Reader articles"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 5 5"/></svg></a><button class="gm-theme-control" id="theme-toggle" data-theme-toggle type="button" aria-label="Light appearance" aria-pressed="false" hidden><svg class="gm-theme-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4M19.1 4.9l-1.4 1.4M6.3 17.7l-1.4 1.4"/></svg><svg class="gm-theme-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.2 15.9A8.7 8.7 0 0 1 8.1 3.8 8.7 8.7 0 1 0 20.2 15.9Z"/></svg><span class="gm-theme-label gm-visually-hidden">Appearance</span></button></div></div><dialog class="gm-reader-search" data-reader-search aria-labelledby="gm-search-title"><div class="gm-reader-search-head"><div><p>GHOSTMESH / READER SEARCH</p><h2 id="gm-search-title">Search the published readings.</h2></div><button type="button" data-reader-search-close aria-label="Close Reader search">×</button></div><label for="gm-search-input">Search article text from all public Readers</label><input id="gm-search-input" type="search" autocomplete="off" placeholder="A claim, source or phrase"><p class="gm-reader-search-scope">Results are limited to the public Reader articles on this site. <a href="/readers/">Browse all Readers</a>.</p><p data-reader-search-status role="status" aria-live="polite">Type to search the public Reader articles.</p><div data-reader-search-results></div></dialog></header>
+
+
+  <div class="r69-layout r70-main">
+    <main id="article" class="r69-main" tabindex="-1">
+      <div class="r69-hero">
+      <p class="r69-kicker">GhostMesh Reader #70</p>
+      <h1 data-locked-block>A Smaller Model Can Win the Job, Not the Benchmark War</h1>
+      <p class="r69-dek" data-locked-block><em>NeuralNine fine-tunes two small Qwen classifiers and reports a win over GPT-6 Luna. The interesting lesson is not a model upset. It is how much the task, evaluation and training boundary determine what winning means.</em></p>
+      <p class="r69-meta" data-locked-block>Source: NeuralNine, <em>Fine-Tuning Small Models To Beat GPT-6 Luna</em>, November 18, 2026. <a href="https://www.youtube.com/watch?v=nMVFSVIXIBc">Original video</a>. Crusoe-sponsored video.</p>
+      <p class="r69-verdict"><strong>GhostMesh verdict:</strong> Worth watching for a compact fine-tuning example. Not proof of general intelligence superiority, cost advantage, or independently reproduced results.</p>
+      <p class="gm-publication-status" data-gm-release-status=""><strong>Publication status:</strong> Editorial draft. Independent acceptance and owner publication authorization are pending.</p>
+      </div>
+      <details class="r69-mobile-toc"><summary>In this Reader</summary><nav aria-label="Article contents"><a href="#source">Original video</a>
+<a href="#opening-an-upset-with-a-very-narrow-playing-field">An upset with a very narrow playing field</a>
+<a href="#the-experiment-reconstructed">The experiment, reconstructed</a>
+<a href="#what-the-video-actually-reports">What the video actually reports</a>
+<a href="#where-the-headline-outruns-the-evidence">Where the headline outruns the evidence</a>
+<a href="#what-ghostmesh-should-take-from-it">What GhostMesh should take from it</a>
+<a href="#source-and-claim-dossier">Source and claim dossier</a>
+<a href="#related-thinking"><span>Related thinking</span></a></nav></details>
+      <div class="gm-brief" id="at-a-glance" aria-label="At a glance">
+      <div class="gm-brief-point"><span class="gm-brief-index">01</span><div><p>Creator-reported tuned 4B accuracy: 73.0% vs Luna 68.2% on one Shopify classification task.</p></div></div>
+      <div class="gm-brief-point"><span class="gm-brief-index">02</span><div><p>Same evaluation items, different prompt conditions, no published paired predictions.</p></div></div>
+      <div class="gm-brief-point"><span class="gm-brief-index">03</span><div><p>Benchmark rank, specialization and accepted-job economics are different questions.</p></div></div>
+      </div>
+
+<section class="r69-source" id="source" aria-labelledby="source-title">
+  <h2 id="source-title">Original video</h2>
+  <div class="player gm-media-frame" data-gm-aspect="16:9"><img src="https://i.ytimg.com/vi/nMVFSVIXIBc/hqdefault.jpg" loading="lazy" decoding="async" alt=""><button type="button" id="launch" aria-label="Play original NeuralNine video" hidden>Play original video</button></div>
+  <p><a href="https://www.youtube.com/watch?v=nMVFSVIXIBc">Watch on YouTube</a> · 12:29 · Crusoe-sponsored video · <a href="https://github.com/NeuralNine/youtube-tutorials/tree/main/Fine%20Tuning%20Crusoe">Creator's scripts</a></p>
+  <p class="r69-chapter-note">Approximate chapter-entry cues cross-checked with source frames and automatic captions. No certified transcript.</p>
+  <nav class="source-chapters" id="chapters" aria-label="Video chapter navigation"><a href="https://www.youtube.com/watch?v=nMVFSVIXIBc&amp;t=0s"><time datetime="PT0S">00:00</time><span>Task and headline claim</span></a>
+<a href="https://www.youtube.com/watch?v=nMVFSVIXIBc&amp;t=60s"><time datetime="PT60S">01:00</time><span>Dataset conversion and classifier setup</span></a>
+<a href="https://www.youtube.com/watch?v=nMVFSVIXIBc&amp;t=180s"><time datetime="PT180S">03:00</time><span>Sponsor disclosure and hosted fine-tuning rationale</span></a>
+<a href="https://www.youtube.com/watch?v=nMVFSVIXIBc&amp;t=300s"><time datetime="PT300S">05:00</time><span>Fixed 5,000/1,000 sampling and baselines</span></a>
+<a href="https://www.youtube.com/watch?v=nMVFSVIXIBc&amp;t=420s"><time datetime="PT420S">07:00</time><span>Crusoe fine-tuning and omitted validation</span></a>
+<a href="https://www.youtube.com/watch?v=nMVFSVIXIBc&amp;t=540s"><time datetime="PT540S">09:00</time><span>Training-loss checkpoint and adapter export</span></a>
+<a href="https://www.youtube.com/watch?v=nMVFSVIXIBc&amp;t=660s"><time datetime="PT660S">11:00</time><span>Creator-reported accuracy comparison</span></a></nav>
+</section>
+      <article class="r69-prose" aria-label="A Smaller Model Can Win the Job, Not the Benchmark War">
+      <section id="opening-an-upset-with-a-very-narrow-playing-field" class=""><h2 data-locked-block>An upset with a very narrow playing field</h2><p data-locked-block>A two-billion-parameter model can be useless for a general question and useful for the one question your business asks a million times. That is the proposition worth testing in NeuralNine&#x27;s fine-tuning demonstration.</p>
+<p data-locked-block>The video builds a product-category classifier from Shopify catalog data, fine-tunes two small Qwen models using Crusoe&#x27;s hosted training interface, and measures their classification accuracy against an untuned GPT-6 Luna call. The creator reports that a tuned 4B model scores 73.0% compared with Luna&#x27;s 68.2%. The result is interesting; the headline that small models &#x27;beat&#x27; a frontier model needs a much narrower definition.</p>
+<p data-locked-block><strong>Reader verdict:</strong> Worth watching for a compact demonstration of the fine-tune / evaluate loop. Not evidence of a general intelligence ranking, proven cost advantage, or independently replicated model comparison. This is a Crusoe-sponsored video, as disclosed by the creator in the description and around 03:00. That relationship belongs in the evidence register, not hidden beneath the conclusion.</p></section><section id="the-experiment-reconstructed" class=""><h2 data-locked-block>The experiment, reconstructed</h2><p data-locked-block>The task is deliberately constrained: given a product title and a truncated product description, return the first two levels of its e-commerce category hierarchy. A single answer string is compared with the expected label, and accuracy is the fraction of 1,000 evaluations with an exact string match.</p>
+<p data-locked-block>The public <code>prepare.py</code> code loads <code>Shopify/product-catalogue</code> train and test splits. It filters hierarchical categories and reduces category paths to two levels. The code derives eligible labels from the full training split before sampling 5,000 training products with random seed 42. It filters test items to labels found in the full training split, then samples 1,000 test products. That filter does not guarantee that every evaluated label appears among the 5,000 sampled training examples. Each sampled training example becomes an instruction / product input / category answer exchange.</p>
+<p data-locked-block>The public <code>evaluate.py</code> code feeds the same prepared 1,000-item evaluation file to all evaluated systems. For GPT-6 Luna, the script calls OpenAI&#x27;s Responses API. For the small models, it loads Qwen3.5-2B and Qwen3.5-4B, and for the tuned runs attaches separately downloaded PEFT adapters. Both the OpenAI baseline and untuned Qwen models receive the full allowed-label list. The tuned adapters instead receive a brief classification instruction without that label list.</p>
+<p data-locked-block>That last detail matters. This is a practical comparison of task pipelines, not identical-prompt model capability. It does not invalidate the result, but it determines how to interpret it.</p></section><section id="what-the-video-actually-reports" class=""><h2 data-locked-block>What the video actually reports</h2><figure class="r70-result-figure"><span class="r70-scroll-hint">Results comparison: scroll horizontally if needed →</span><div class="r70-table-scroll table-wrap" role="region" tabindex="0" aria-label="Accuracy results, horizontal scrolling table"><table><caption>Creator-reported, task-specific accuracy. Not independently reproduced.</caption><tr><th>System</th><th>Creator-reported exact-match accuracy on 1,000 items</th></tr><tr><td>GPT-6 Luna, untuned API call</td><td>68.2%</td></tr><tr><td>Qwen3.5-2B, untuned</td><td>20.4%</td></tr><tr><td>Qwen3.5-4B, untuned</td><td>43.2%</td></tr><tr><td>Qwen3.5-2B, fine-tuned</td><td>69.8%</td></tr><tr><td>Qwen3.5-4B, fine-tuned</td><td>73.0%</td></tr></table></div></figure>
+<p data-locked-block>The tuned 2B system is 1.6 percentage points above Luna, equal to 16 additional correct answers out of 1,000 on the same evaluation items. The video itself notes that this could be statistical noise or effectively a tie. The tuned 4B system is 4.8 percentage points above Luna, or 48 more correct answers per 1,000. These comparisons are paired by design because all systems use the same 1,000 items, but the creator published no paired per-item predictions. We therefore cannot establish the reliability of either margin from the aggregate percentages alone. Neither result has been independently replicated here.</p>
+<p data-locked-block>The large difference between the untuned and tuned Qwen runs is the strongest <strong>creator-reported observation</strong>. It is not a causal estimate of fine-tuning alone: the tuned runs also changed their system prompt and withheld the label list provided to the baselines. This tutorial shows that a specialized <em>pipeline</em> can be effective on one task; a controlled ablation is needed to isolate training from prompt changes.</p></section><section id="where-the-headline-outruns-the-evidence" class=""><h2 data-locked-block>Where the headline outruns the evidence</h2><p data-locked-block><strong>Split integrity is not the same as no leakage.</strong> The scripts use named upstream train/test splits. They do not show a near-duplicate, variant-family or seller-template overlap audit. Shared descriptions or product families could inflate held-out performance; the direction and size of any such effect are UNKNOWN. Data version and snapshot hashes are also unpinned.</p>
+<p data-locked-block><strong>A fixed seed is not repeated evaluation.</strong> Seed 42 selects one train/test sample. The public folder does not provide independent seeds, per-class performance, uncertainty intervals, paired predictions or error analysis. Any significance claim requires those underlying item-level predictions, not only five displayed percentages.</p>
+<p data-locked-block><strong>Exact strings punish formatting and taxonomies.</strong> The scorer compares stripped generated text with the target label. It does not normalize equivalent category paths, separate misclassification from formatting, or measure hierarchical distance. A model that has the right category family but the wrong string gets zero. The Qwen calls explicitly disable sampling (<code>do_sample=False</code>), disable thinking in their chat-template calls (<code>enable_thinking=False</code>), generate at most 40 tokens, and load the model with BF16 weights. The Luna path uses <code>client.responses.create(model=&quot;gpt-6-luna&quot;, instructions=..., input=...)</code> without an explicit decoding configuration, reasoning-effort parameter, or provider revision pin; its effective defaults are UNKNOWN. That can be a valid production contract, but readers need to know what the number measures.</p>
+<p data-locked-block><strong>Training procedure is demonstrated, not published as a complete reproducibility package.</strong> The source folder exposes preparation and evaluation scripts, but no full training recipe, environment lock, training-run receipt, adapter hashes, per-example evaluation output or model checkpoint files. The video shows the Crusoe interface and LoRA settings, including one epoch and selection by training loss. The creator explicitly skips a validation set in the shown run. A lower training loss is not proof of a better held-out classifier.</p>
+<p data-locked-block><strong>The cost argument remains open.</strong> The video shows hosted fine-tuning and the rationale for not needing a large local GPU. It does not establish an end-to-end price per accepted classification across training, API/local inference, validation, exceptions, retraining and operating effort. An amortized cost comparison needs throughput, hardware/utilization, latency, and an error-handling budget.</p>
+<p data-locked-block><strong>Generalization is unknown.</strong> This one Shopify taxonomy does not test new categories, another merchant, another language, concept drift, malicious descriptions or reasoning outside classification. A small model can win this job without winning unrelated jobs.</p></section><section id="what-ghostmesh-should-take-from-it" class=""><h2 data-locked-block>What GhostMesh should take from it</h2><p data-locked-block>This is an argument for routing, not a coronation. Keep an expensive general model for ambiguous cases and investigations; consider small specialized systems for stable, high-volume, easy-to-score work. Use measured task acceptance and cost, not parameters or hype, to choose.</p>
+<p data-locked-block>For a meaningful internal repeat, freeze the dataset version and splits, deduplicate similar products across splits, log every prediction, hold the prompt and candidate-label visibility as separate controlled factors, test repeated samples and data-shift sets, and compare whole-job economics. An <strong>untested hybrid proposal</strong> would send only low-confidence or novel categories to a general model; acceptance rates and exception costs would determine whether that saves anything. No such routing test was performed or claimed in the video.</p>
+<p data-locked-block>The decision is not &#x27;2B versus GPT-6.&#x27; It is &#x27;which system delivers a correctly accepted category at the lowest verified cost and acceptable risk?&#x27; Those are different questions. For engineers, the second question is the only one that pays the bills.</p></section><section id="source-and-claim-dossier" class="r70-provenance"><h2 data-locked-block>Source and claim dossier</h2><ul><li>Primary audiovisual source: NeuralNine&#x27;s video, first published November 18, 2026, 12:29; original URL above. Claim percentages are creator-reported. The accompanying captions are automatic and privately retained, not speech-certified.</li><li>Creator-published <code>prepare.py</code> Git blob <code>ebb06edfaa2a4ce95f2ebaef79528c43674932ea</code>; <code>evaluate.py</code> Git blob <code>d1bdd75df5ebe02e117a0cb56ad2dde664bef0e1</code>. Inspect and pin repository commit before any reproducibility claim.</li><li>Crusoe sponsorship: explicitly disclosed in the creator&#x27;s description and at approximately 03:00 in the video. Crusoe-sponsored video; not an independently evaluated product.</li><li>Unverified: independent rerun, dataset duplicates/leakage, matched prompts, API/model revision and parameters, per-item errors, inference/training cost receipts, and out-of-distribution performance.</li></ul></section>
+      </article>
+      <section class="gm-evidence" id="external-evidence"><div class="gm-evidence-intro"><p class="gm-kicker">Claim register / revision 2026-11-20</p><h2>Corroboration &amp; counterevidence</h2><p>Creator video and scripts inspected November 20, 2026. No independent benchmark run or cost receipt was produced.</p><p>Custody proves what was retained, not that a claim is true. Source assertions, vendor documentation, independent measurements and GhostMesh proposals have different evidentiary reach.</p><p><strong>What would change the call?</strong> Reproduce on pinned Shopify splits, audit near-duplicates, compare matched label/prompt setups, retain paired predictions, and measure actual training and inference costs.</p><p><a href="/a-smaller-model-can-win-the-job-not-the-benchmark-war/receipt.json">Public sanitized evidence receipt</a>. Review: pending.</p></div><div class="gm-evidence-body"><h3>Claims under inspection</h3><p class="gm-evidence-hint">Open a claim to see its source location, support, counterevidence and limits.</p><div class="gm-claim-list"><details id="r70-scores"><summary><span class="gm-claim-label">Source or factual assertion <span class="gm-claim-status">Unverified</span></span><span class="gm-claim-proposition">Creator-reported 68.2/69.8/73.0% exact-match accuracy</span></summary><div class="gm-claim-detail"><p>Claim ID: <code>r70-scores</code>. As of 2026-11-20. Kind: creator-claim. Mapped source location: 11:00</p><p>Supporting evidence type: Primary video. Counterevidence type: None qualified. These labels describe the mapped record, not an article-wide verification score.</p><p>On a 1,000-item Shopify test, the creator reports GPT-6 Luna 68.2%, tuned Qwen3.5-2B 69.8%, and tuned Qwen3.5-4B 73.0%.</p><p>Limits: No independent replication or paired per-item predictions. Small differences may not be reliable.</p><p>Supporting evidence: <a href="#ref-r70-video">YouTube: Fine-Tuning Small Models To Beat GPT-6 Luna</a></p><p>Counterevidence / constraints: None qualified</p></div></details><details id="r70-splits"><summary><span class="gm-claim-label">Source or factual assertion <span class="gm-claim-status">Unverified</span></span><span class="gm-claim-proposition">Train/test examples are selected from named Shopify splits</span></summary><div class="gm-claim-detail"><p>Claim ID: <code>r70-splits</code>. As of 2026-11-20. Kind: creator-claim. Mapped source location: 05:00</p><p>Supporting evidence type: Primary source code. Counterevidence type: None qualified. These labels describe the mapped record, not an article-wide verification score.</p><p>Creator code derives eligible labels from the full training split before selecting 5,000 training examples (random_state=42). It filters test items to labels found in that full split, then samples 1,000 evaluation examples. The selected 5,000 training examples are not guaranteed to contain every evaluated label.</p><p>Limits: Not every evaluated label is guaranteed to appear in the 5,000 sampled training examples; the full split defines the eligible labels. Original dataset revision, near-duplicate/product-family overlap, and distribution shifts were not audited.</p><p>Supporting evidence: <a href="#ref-r70-code">GitHub: Fine Tuning Crusoe: prepare.py and evaluate.py</a></p><p>Counterevidence / constraints: None qualified</p></div></details><details id="r70-prompts"><summary><span class="gm-claim-label">Source or factual assertion <span class="gm-claim-status">Unverified</span></span><span class="gm-claim-proposition">Prompts differ between tuned and untuned model pipelines</span></summary><div class="gm-claim-detail"><p>Claim ID: <code>r70-prompts</code>. As of 2026-11-20. Kind: creator-claim. Mapped source location: 02:00</p><p>Supporting evidence type: Primary source code. Counterevidence type: None qualified. These labels describe the mapped record, not an article-wide verification score.</p><p>Code supplies the candidate category list to Luna and untuned Qwen, but not to tuned Qwen adapters.</p><p>Limits: Cannot isolate the effect of fine-tuning alone under changed prompt conditions.</p><p>Supporting evidence: <a href="#ref-r70-code">GitHub: Fine Tuning Crusoe: prepare.py and evaluate.py</a></p><p>Counterevidence / constraints: None qualified</p></div></details><details id="r70-conditions"><summary><span class="gm-claim-label">Source or factual assertion <span class="gm-claim-status">Unverified</span></span><span class="gm-claim-proposition">Qwen decoding is specified but Luna defaults are not</span></summary><div class="gm-claim-detail"><p>Claim ID: <code>r70-conditions</code>. As of 2026-11-20. Kind: creator-claim. Mapped source location: 06:00</p><p>Supporting evidence type: Primary source code. Counterevidence type: None qualified. These labels describe the mapped record, not an article-wide verification score.</p><p>Qwen script uses do_sample=False, enable_thinking=False and max_new_tokens=40; Luna uses Responses API with no explicit effort/decoding pin.</p><p>Limits: API model revisions and the inference conditions were not pinned or independently repeated.</p><p>Supporting evidence: <a href="#ref-r70-code">GitHub: Fine Tuning Crusoe: prepare.py and evaluate.py</a></p><p>Counterevidence / constraints: None qualified</p></div></details><details id="r70-cost"><summary><span class="gm-claim-label">Advice / interpretation <span class="gm-claim-status">Unverified</span></span><span class="gm-claim-proposition">Total cost or capability superiority has not been demonstrated</span></summary><div class="gm-claim-detail"><p>Claim ID: <code>r70-cost</code>. As of 2026-11-20. Kind: editorial-inference. Mapped source location: 11:00</p><p>Supporting evidence type: Primary video, Primary source code. Counterevidence type: None qualified. These labels describe the mapped record, not an article-wide verification score.</p><p>A narrow classifier result is not a general model ranking or cost-per-accepted-job calculation.</p><p>Limits: No published training charges, matched inference accounting, latency/throughput, or exception costs.</p><p>Supporting evidence: <a href="#ref-r70-video">YouTube: Fine-Tuning Small Models To Beat GPT-6 Luna</a>, <a href="#ref-r70-code">GitHub: Fine Tuning Crusoe: prepare.py and evaluate.py</a></p><p>Counterevidence / constraints: None qualified</p></div></details><details id="r70-sponsor"><summary><span class="gm-claim-label">Source or factual assertion <span class="gm-claim-status">Unverified</span></span><span class="gm-claim-proposition">Crusoe sponsored the demonstration</span></summary><div class="gm-claim-detail"><p>Claim ID: <code>r70-sponsor</code>. As of 2026-11-20. Kind: creator-claim. Mapped source location: 03:00</p><p>Supporting evidence type: Primary video. Counterevidence type: None qualified. These labels describe the mapped record, not an article-wide verification score.</p><p>Crusoe sponsorship is disclosed by the creator in description and within the video.</p><p>Limits: The sponsorship is contextual provenance, not proof the benchmark outcome is incorrect.</p><p>Supporting evidence: <a href="#ref-r70-video">YouTube: Fine-Tuning Small Models To Beat GPT-6 Luna</a></p><p>Counterevidence / constraints: None qualified</p></div></details></div><h3>External references and independence</h3><article id="ref-r70-video"><h4><a href="https://www.youtube.com/watch?v=nMVFSVIXIBc">Fine-Tuning Small Models To Beat GPT-6 Luna</a></h4><p>NeuralNine · YouTube · Published 2026-11-18; last update not specified.  Event / measurement: Not specified; do not substitute publication date. Checked 2026-11-20T12:15:00Z.</p><p>Location: Public source. Type: Primary video. Crusoe-sponsored original demonstration with reported numerical results.</p></article><article id="ref-r70-code"><h4><a href="https://github.com/NeuralNine/youtube-tutorials/tree/main/Fine%20Tuning%20Crusoe">Fine Tuning Crusoe: prepare.py and evaluate.py</a></h4><p>NeuralNine · GitHub · Published unknown; last update not specified. The creator code repository does not declare an exact publication date for these files; GitHub blobs were inspected on November 20, 2026. Event / measurement: Not specified; do not substitute publication date. Checked 2026-11-20T12:15:00Z.</p><p>Location: Public source. Type: Primary source code. Creator-published code verified by Git blob; source folder has no publicly supplied training-run outputs or checkpoints.</p></article></div></section>
+      <section class="gm-related" id="related-thinking"><p class="gm-kicker">Continue the inquiry</p><h2>Related thinking</h2><p>One related Reader (#69) on full cost-of-completion economics; no others admitted.</p><div class="gm-cards"><article><span class="gm-related-index">01</span><div class="gm-related-copy"><p class="gm-kicker">companion</p><h3><a href="/the-cheap-answer-can-be-an-expensive-job/">The Cheap Answer Can Be an Expensive Job</a></h3><p>Reader #69 explains why price and total cost of an accepted job are different measures. It is a conceptual editorial companion, not validation of the reported classification percentages.</p></div><span class="gm-related-arrow" aria-hidden="true">↗</span></article></div></section>
+      <section id="shareplane-thinking" class="gm-work-routes"><h2>SharePlane Work comparison</h2><p class="gm-backmatter-note">Separately reviewed editorial connections, not independent validation of the video.</p><p class="gm-route-empty">No SharePlane Work connection admitted after separate review. No qualifying canonical SharePlane Work admitted. The cost essay candidate was non-final at review.</p></section><section id="reasonpack-provenance" class="gm-source-scope">
+        <h2>Source and provenance</h2>
+        <p>Creator-reported results; the original NeuralNine video explicitly discloses Crusoe sponsorship. Private automatic English captions and representative frames were used for approximate chapter navigation, not certified audio transcription. Full recordings, captions, unpublished per-example predictions and source-custody paths are excluded from this page.</p>
+        <ol class="gm-source-list">
+          <li><a href="https://www.youtube.com/watch?v=nMVFSVIXIBc">NeuralNine original video</a><span>Creator-reported scores, methodology demonstration, sponsorship and chapter cues</span></li>
+          <li><a href="https://github.com/NeuralNine/youtube-tutorials/tree/main/Fine%20Tuning%20Crusoe">Creator-published preparation and evaluation scripts</a><span>Observable dataset selection, unequal prompts and exact-match scoring, not a complete reproducibility package</span></li>
+        </ol>
+      </section>
+    <div class="gm-sharebar" data-gm-share=""><span class="gm-share-label">Share this Video Deconstruction</span><div class="gm-share-actions"><button class="gm-share-button" data-native-share="" type="button">Share</button><button class="gm-share-button" data-copy-link="" type="button">Copy link</button><a class="gm-share-email" data-email-link="" href="mailto:?subject=A Smaller Model Can Win the Job, Not the Benchmark War">Email</a><span aria-live="polite" class="gm-share-message" data-gm-share-message="" role="status"></span></div></div></main>
+    <aside class="r69-rail rail"><nav aria-label="Article contents"><strong>In this Reader</strong><a href="#source">Original video</a>
+<a href="#opening-an-upset-with-a-very-narrow-playing-field">An upset with a very narrow playing field</a>
+<a href="#the-experiment-reconstructed">The experiment, reconstructed</a>
+<a href="#what-the-video-actually-reports">What the video actually reports</a>
+<a href="#where-the-headline-outruns-the-evidence">Where the headline outruns the evidence</a>
+<a href="#what-ghostmesh-should-take-from-it">What GhostMesh should take from it</a>
+<a href="#source-and-claim-dossier">Source and claim dossier</a>
+<a href="#related-thinking">Related thinking</a><a href="#shareplane-thinking">SharePlane Work</a></nav></aside>
+  </div>
+  <footer aria-label="GhostMesh destinations" class="gm-reader-footer gm-site-footer"><div class="gm-reader-footer-inner"><div><a class="gm-footer-brand" href="/"><img alt="" class="gm-logo-mark" height="34" src="/brand/ghostmesh-mark.svg" width="45"><strong>GHOST<em>MESH</em></strong></a><p class="gm-reader-footer-note">Read the source. Examine the evidence. Challenge the interpretation.<br>GhostMesh editorial · © 2026 GhostMesh / Tony Malott.</p></div><nav aria-label="Reader footer navigation" class="gm-footer-links"><a href="/">Readers home</a><a href="/readers/">All Readers</a><a href="/map/">Relationship map</a><a href="/knowledge/">Public knowledge</a><a href="/scout/">Scout</a><a href="/feed.xml">Subscribe via RSS</a><a href="https://ghostmesh.ai/">GhostMesh.ai ↗</a><a href="https://shareplane.malott.ai/">SharePlane ↗</a><a href="https://malott.ai/">Tony Malott ↗</a><a href="mailto:ghostmesh@malott.ai?subject=GhostMesh%20Reader%20feedback">Contact GhostMesh ✉</a></nav></div></footer>
+  <script>
+    const play = document.getElementById("launch");
+    const poster = play.previousElementSibling;
+    function hideMissingPoster() { poster.hidden = true; }
+    poster.addEventListener("error", hideMissingPoster);
+    if (poster.complete && !poster.naturalWidth) hideMissingPoster();
+    play.hidden = false;
+    play.addEventListener("click", () => {
+      const frame = document.createElement("iframe");
+      frame.title = "Fine-Tuning Small Models To Beat GPT-6 Luna by NeuralNine";
+      frame.allow = "autoplay; encrypted-media; picture-in-picture";
+      frame.allowFullscreen = true;
+      frame.referrerPolicy = "strict-origin-when-cross-origin";
+      frame.src = "https://www.youtube-nocookie.com/embed/nMVFSVIXIBc?autoplay=1";
+      play.parentElement.replaceChildren(frame);
+      frame.focus();
+    });
+  </script>
+<script defer src="/assets/reader-share.js"></script></body>
+</html>
