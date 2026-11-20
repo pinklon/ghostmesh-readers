@@ -23703,8 +23703,8 @@
         "rationale": "Publicly accessible canonical SharePlane Works were inspected for topical and provenance fit. The model-evaluation playbook is directly connected to fair model comparisons and acceptance criteria; the inference-retirement thesis is a distinct architectural extension. The prior cost Work still exposes non-final semantic preview text and remains excluded. Neither new Work link corroborates the underlying source-video benchmark or modifies SharePlane Graph."
       },
       "review": {
-        "status": "pending",
-        "summary": "Tony approved Creative Lock for v0.2. Independent exact-article source/privacy/depth acceptance and publication authorization are NOT yet granted."
+        "status": "accepted",
+        "summary": "Independent Codex review accepted for owner consideration on November 20; editor report was relayed through Pale Horse. Publication decision remains pending."
       },
       "revisionHistory": [],
       "legacyReceipt": {
@@ -23727,6 +23727,10 @@
           "bodySha256": "57bc9f8f42d38c7aa85645d06da342babf41e2d15013272cadbad3c7ce51f2ca",
           "status": "Owner-approved Creative Lock; approval locator retained privately"
         }
+      },
+      "editorialDepth": {
+        "schemaVersion": 1,
+        "receiptPath": "content/editorial-depth/a-smaller-model-can-win-the-job-not-the-benchmark-war.json"
       }
     }
   ],
