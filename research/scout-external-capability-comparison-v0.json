@@ -1,0 +1,52 @@
+{
+  "schema": "scout-external-capability-comparison-v0",
+  "status": "README_BASED_READ_ONLY_COMPARISON",
+  "publication_authorized": false,
+  "outreach_authorized": false,
+  "candidates": [
+    {
+      "id": "bottleneck",
+      "source": "https://github.com/areibman/bottleneck",
+      "observed": [
+        "PR list and diff navigation",
+        "Bulk PR actions",
+        "Cached offline PR browsing",
+        "Concurrent agent PR grouping"
+      ],
+      "scout_current": [
+        "Research source review records",
+        "Claim impact tracking",
+        "Private evidence browsing"
+      ],
+      "gaps": [
+        "No validated operator-speed comparison",
+        "No approval authority handoff from a PR client",
+        "No existing PR queue measurement fixture"
+      ],
+      "probe": "Sanitized read-only PR queue usability fixture needed",
+      "verdict": "RESEARCH_PRIORITIZE_UI_ONLY"
+    },
+    {
+      "id": "inspectorraget",
+      "source": "https://github.com/IBM/InspectorRAGet",
+      "observed": [
+        "Aggregate and instance evaluation results",
+        "Human and algorithmic metrics",
+        "Task contexts and targets",
+        "Agentic tool-call results"
+      ],
+      "scout_current": [
+        "Source-linked connection theses",
+        "Separate source revisions",
+        "Editorial decisions and objections",
+        "Attribution uncertainty"
+      ],
+      "gaps": [
+        "No proven mapping of Scout source revision and dissent into external JSON schema",
+        "No verified task-level error finding advantage over existing Scout HTML"
+      ],
+      "probe": "Map six Scout thesis records into safe evaluation task skeletons and audit lost semantics",
+      "verdict": "RESEARCH_PRIORITIZE_SCHEMA"
+    }
+  ]
+}

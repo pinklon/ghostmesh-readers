@@ -1,0 +1,62 @@
+{
+  "schema": "scout-editorial-contrast-v0",
+  "status": "ASSISTANT_EDITORIAL_REVIEW_NOT_INDEPENDENT_HUMAN_LABELS",
+  "publication_authorized": false,
+  "outreach_authorized": false,
+  "assessments": [
+    {
+      "url": "https://arxiv.org/abs/2610.28706",
+      "cohort": "OUTSIDE_BUBBLE",
+      "review_state": "PRIMARY_SOURCE_PREVIOUSLY_REVIEWED",
+      "editorial_disposition": "INVESTIGATE",
+      "reason": "SpecEvo archives failed/successful trials and allocates stronger navigation strategically; established Scout technical research question.",
+      "counterargument": "Earlier synthetic tests did not reproduce source results or establish practical benefit.",
+      "next_test": "Review actual failed-research decision receipts without production model calls."
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.28815",
+      "cohort": "OUTSIDE_BUBBLE",
+      "review_state": "PRIMARY_ABSTRACT_REVIEWED",
+      "editorial_disposition": "INVESTIGATE",
+      "reason": "Successive Scale Racing selects task evidence during agent harness evolution; its central variable is omitted by Scout vocabulary tagging.",
+      "counterargument": "Reported benchmark gains may overfit; larger task pools and efficient validation do not establish safety or transfer to GhostMesh.",
+      "next_test": "Compare held-out source selection on fixed nonprivileged GhostMesh research fixtures against simple equal-budget task sampling."
+    },
+    {
+      "url": "https://github.blog/engineering/architecture-optimization/the-bridge-to-agent-scale-git-infrastructure/",
+      "cohort": "OUTSIDE_BUBBLE",
+      "review_state": "PUBLIC_ARTICLE_LINK_IDENTIFIED_CONTENT_NOT_FULLY_ASSESSED",
+      "editorial_disposition": "FOLLOW",
+      "reason": "Infrastructure scaling for agent-generated Git activity overlaps with GhostMesh's concurrent worker coordination.",
+      "counterargument": "GitHub-scale infrastructure problems may have little direct relevance to a single-owner GhostMesh mesh.",
+      "next_test": "Read primary engineering techniques and list actual bottlenecks observed in GhostMesh first."
+    },
+    {
+      "url": "https://blog.cloudflare.com/webmcp-commerce/",
+      "cohort": "OUTSIDE_BUBBLE",
+      "review_state": "PUBLIC_ARTICLE_LINK_IDENTIFIED_CONTENT_NOT_FULLY_ASSESSED",
+      "editorial_disposition": "FOLLOW",
+      "reason": "Agent-facing web commerce tooling may have implications for public Web agent interfaces.",
+      "counterargument": "Commercial storefront tooling is not automatically applicable to private Scout ingestion or GhostMesh authorization.",
+      "next_test": "Map public interface semantics and real GhostMesh web capability gap before prioritizing."
+    },
+    {
+      "url": "https://simonwillison.net/2026/Oct/22/donating-agent-skills/",
+      "cohort": "TOPIC_MATCHED",
+      "review_state": "PUBLIC_SOURCE_PREVIOUSLY_REVIEWED",
+      "editorial_disposition": "INVESTIGATE",
+      "reason": "Neutral agent-skill packaging may reduce interoperability friction across runtimes.",
+      "counterargument": "Skills format does not convey trust, permission or credentials.",
+      "next_test": "Offline skill schema compatibility test with malicious/invalid fixtures."
+    },
+    {
+      "url": "https://huggingface.co/blog/Dharma-AI/vocabx-vocabulary-specialization",
+      "cohort": "TOPIC_MATCHED",
+      "review_state": "PUBLIC_SOURCE_PREVIOUSLY_REVIEWED",
+      "editorial_disposition": "FOLLOW",
+      "reason": "Vocabulary specialization might reduce cost for repetitive local outputs.",
+      "counterargument": "Reported savings are narrow and tokenizer retraining may hurt accuracy or portability.",
+      "next_test": "Measure representative existing corpus fragmentation, quality and serving cost first."
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "schema": "scout-connection-fixtures-v0",
+  "status": "research-only",
+  "selection_note": "Six named public-source candidates from October 22 exploratory search; not blinded, no historical discovery claim.",
+  "candidates": [
+    {
+      "id": "multi-agent-debate-diversity",
+      "source_url": "https://arxiv.org/abs/2601.19921",
+      "original_contribution": "Analysis of confidence and diversity in multi-agent debate.",
+      "evidence": "Research abstract inspected; independent reproduction not performed.",
+      "ghostmesh_gap": "Unknown marginal value of additional reviewers with correlated inputs.",
+      "connection_thesis": "Connect epistemic independence studies to GhostMesh multi-agent review cost and accuracy.",
+      "proposed_experiment": "Compare one evaluator, repeated same-model samples, shared-source models and independent-source models on fixed contested claims.",
+      "strongest_objection": "Task selection and evaluator strength may dominate diversity effects.",
+      "recommendation": "INVESTIGATE",
+      "outreach_authorized": false
+    },
+    {
+      "id": "agentrx",
+      "source_url": "https://www.microsoft.com/en-us/research/publication/agentrx-diagnosing-ai-agent-failures-from-execution-trajectories/",
+      "original_contribution": "Failure-step diagnosis from agent execution trajectories.",
+      "evidence": "Primary research summary; no framework execution.",
+      "ghostmesh_gap": "Failure explanation is not equivalent to verified recovery.",
+      "connection_thesis": "Compare failure attribution to independently checked completion and recovery evidence.",
+      "proposed_experiment": "Run fixed synthetic failed workflows through diagnostic approaches and score attribution against known injected causes.",
+      "strongest_objection": "Research benchmark trajectories may not represent GhostMesh service failures.",
+      "recommendation": "INVESTIGATE",
+      "outreach_authorized": false
+    },
+    {
+      "id": "atfd",
+      "source_url": "https://github.com/Galea-foo/atfd",
+      "original_contribution": "Benchmark for agent-monitoring failure detection across trajectory classes.",
+      "evidence": "Repository documentation only; benchmark not reproduced.",
+      "ghostmesh_gap": "No fixed independent benchmark established for internal agent failure detection.",
+      "connection_thesis": "Use a third-party test set to detect missing monitoring coverage.",
+      "proposed_experiment": "Map a bounded ATFD subset to the same monitoring outputs and score detection with unknowns preserved.",
+      "strongest_objection": "Benchmark taxonomy may not cover authority or outcome-verification failures.",
+      "recommendation": "INVESTIGATE",
+      "outreach_authorized": false
+    },
+    {
+      "id": "lelu",
+      "source_url": "https://github.com/Lelu-ai/lelu",
+      "original_contribution": "Policy-as-code and human review for AI agent actions.",
+      "evidence": "Repository description inspected, enforcement not executed.",
+      "ghostmesh_gap": "Need concise comparison of tool-call authorization semantics.",
+      "connection_thesis": "Compare policy controls conceptually without introducing a new runtime.",
+      "proposed_experiment": "Map five allow/deny synthetic actions to both rule sets and identify unsupported guarantees.",
+      "strongest_objection": "Integration would duplicate existing authority controls.",
+      "recommendation": "FOLLOW",
+      "outreach_authorized": false
+    },
+    {
+      "id": "agentprovenance",
+      "source_url": "https://github.com/ByteYellow/AgentProvenance",
+      "original_contribution": "Combined runtime evidence, app context and agent intent representations.",
+      "evidence": "Repository description; no independent sensor attestation.",
+      "ghostmesh_gap": "Reconcile agent-reported effects with actual host evidence.",
+      "connection_thesis": "Compare derived evidence graphs against existing deterministic host observations.",
+      "proposed_experiment": "Use synthetic claimed tool actions and observed process/file events to measure supported versus inferred outcomes.",
+      "strongest_objection": "Added instrumentation may increase complexity without improving independent verification.",
+      "recommendation": "INVESTIGATE",
+      "outreach_authorized": false
+    },
+    {
+      "id": "memory-forest",
+      "source_url": "https://github.com/hyungchulc/memory-forest",
+      "original_contribution": "Inspectable provenance path across local agent memory layers.",
+      "evidence": "Repository documentation; no recovery test performed.",
+      "ghostmesh_gap": "Possibility of simpler continuity record structures.",
+      "connection_thesis": "Compare minimal durable memory against existing continuation requirements.",
+      "proposed_experiment": "Perform the same interrupted-task reconstruction with equal-sized source fixtures.",
+      "strongest_objection": "Memory retrieval cannot enforce authorization or independently establish outcome.",
+      "recommendation": "FOLLOW",
+      "outreach_authorized": false
+    }
+  ]
+}
