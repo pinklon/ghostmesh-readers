@@ -961,6 +961,18 @@
         "path": "site/a-smaller-model-can-win-the-job-not-the-benchmark-war/index.html",
         "sha256": "d0fe20797afef9eeb5b03e9f4f2a6ae14b8f1f68bd867a92aedc169538a8d495"
       }
+    },
+    {
+      "id": "urn:ghostmesh-readers:reader:claude-lean-and-the-riemann-hypothesis",
+      "type": "Reader",
+      "visibility": "public",
+      "epistemicStatus": "source-editorial",
+      "label": "Claude, Lean, and the Riemann Hypothesis: What Has Actually Been Proven?",
+      "url": "https://youtube.shareplane.malott.ai/claude-lean-and-the-riemann-hypothesis/",
+      "source": {
+        "path": "site/claude-lean-and-the-riemann-hypothesis/index.html",
+        "sha256": "2821fff24716c10bda480941619adbff95b9ac7e3a30e6b9627a29e6c67da12c"
+      }
     }
   ],
   "relationships": [

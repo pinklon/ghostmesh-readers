@@ -1,0 +1,26 @@
+{
+  "reader": 71,
+  "sourceIssue": "https://github.com/pinklon/shareplane-control-tower/issues/1169",
+  "state": "PRIVATE_PREVIEW_REVIEW_ONLY",
+  "mitAsOf": "2026-11-21T12:55:00Z",
+  "manuscriptSha256": "3c86c5b702894f5c0c0aec3fdfd52e51f11f901cc0046a5dacef14f958dca28a",
+  "previewSha256": "f248bb591038f5e4ef786bad86f948959dd0261ffb6fae053fae1e77a0510110",
+  "review": "Pale Horse REVISE v0.2; corrections integrated into v0.3; not yet reaccepted",
+  "gates": [
+    "canonical generator integration",
+    "source status refresh before publication",
+    "exact-head CI",
+    "owner Creative Lock",
+    "production deployment verification"
+  ],
+  "proofClaim": "MIT reported; no independent proof run by GhostMesh",
+  "previewCssSha256": "8f640c887dc2cdce35fc286fc2c1dfda90e5a2eda58d682d2da6f52368b067d1",
+  "shell": {
+    "sharedHeader": true,
+    "sharedSearch": true,
+    "sharedFooter": true,
+    "sharedTheme": true,
+    "sharedShare": true,
+    "status": "mechanical wrapper integration pending browser UAT"
+  }
+}
