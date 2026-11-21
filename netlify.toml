@@ -1,9 +1,3 @@
 # Dependency-free static publishing, isolated from SharePlane Production.
 [build]
   publish = "site"
-
-# This PR branch's deploy previews must not expose the editorial candidate.
-# Remove this context override only after preview access is protected and
-# independently verified. Production main continues using [build].publish.
-[context.deploy-preview]
-  publish = "site-private-review-placeholder"
