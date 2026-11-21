@@ -2,7 +2,8 @@
 [build]
   publish = "site"
 
-# Reader 71 owner-review PR cannot expose drafts via public Netlify previews.
-# Production and other PR previews retain the existing publish behavior.
+# This PR branch's deploy previews must not expose the editorial candidate.
+# Remove this context override only after preview access is protected and
+# independently verified. Production main continues using [build].publish.
 [context.deploy-preview]
-  command = "python3 scripts/guard_reader71_preview.py"
+  publish = "site-private-review-placeholder"
