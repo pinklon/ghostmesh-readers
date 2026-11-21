@@ -3,11 +3,11 @@
   "scope": "Local public editorial reading routes; no independent corroboration or cross-site graph admission.",
   "authority": "catalog-curated-editorial",
   "visibility": "public",
-  "readerCount": 70,
-  "assessmentCount": 70,
-  "relationshipCount": 162,
+  "readerCount": 71,
+  "assessmentCount": 71,
+  "relationshipCount": 164,
   "sharePlaneRelationshipCount": 44,
-  "sharePlaneReviewCount": 30,
+  "sharePlaneReviewCount": 31,
   "sharePlaneEdges": [
     {
       "from": "reader:when-code-gets-cheap-where-does-the-work-wait",
@@ -1499,6 +1499,22 @@
           "reader:the-cheap-answer-can-be-an-expensive-job"
         ],
         "rationale": "Selected by Tony and confirmed in Creative Lock; source-independent editorial comparison, not benchmark corroboration."
+      }
+    },
+    {
+      "id": "reader:claude-lean-and-the-riemann-hypothesis",
+      "slug": "claude-lean-and-the-riemann-hypothesis",
+      "title": "Claude, Lean, and the Riemann Hypothesis: What Has Actually Been Proven?",
+      "url": "https://youtube.shareplane.malott.ai/claude-lean-and-the-riemann-hypothesis/",
+      "review": {
+        "reviewedAt": "2026-11-21",
+        "reviewedCatalogSize": 70,
+        "decision": "linked",
+        "reviewedTargets": [
+          "reader:the-paper-is-not-the-experiment",
+          "reader:a-smaller-model-can-win-the-job-not-the-benchmark-war"
+        ],
+        "rationale": "Pale Horse checked the canonical Reader routes for #48 and #70, and their arguments are relevant conceptual comparisons. The links do not purport to verify the RH result, and are limited to their respective editorial roles."
       }
     }
   ],
@@ -3443,6 +3459,30 @@
       "provenance": [
         "/a-smaller-model-can-win-the-job-not-the-benchmark-war/",
         "/the-cheap-answer-can-be-an-expensive-job/"
+      ],
+      "basis": "curated-editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:claude-lean-and-the-riemann-hypothesis",
+      "to": "reader:the-paper-is-not-the-experiment",
+      "type": "companion",
+      "reason": "Reader #48 examines how impressive source claims diverge from independently witnessed experiments; here proof artifacts and checker runs deserve similarly separated evidentiary treatment. This is an analogy, not a validation of mathematical truth.",
+      "provenance": [
+        "/the-paper-is-not-the-experiment/",
+        "/a-smaller-model-can-win-the-job-not-the-benchmark-war/"
+      ],
+      "basis": "curated-editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:claude-lean-and-the-riemann-hypothesis",
+      "to": "reader:a-smaller-model-can-win-the-job-not-the-benchmark-war",
+      "type": "companion",
+      "reason": "Reader #70 separates performance on a narrow benchmark from general model intelligence. This investigation similarly separates kernel acceptance from stronger claims about AI creativity, human comprehension and institutional proof acceptance.",
+      "provenance": [
+        "/a-smaller-model-can-win-the-job-not-the-benchmark-war/",
+        "/the-paper-is-not-the-experiment/"
       ],
       "basis": "curated-editorial-comparison",
       "direction": "outgoing"

@@ -1,0 +1,312 @@
+{
+  "schema": "ghostmesh-reader-receipt-v2",
+  "source": {
+    "url": "https://alpo.ge/remark.pdf"
+  },
+  "custody": {
+    "status": "private-snapshot-inspected",
+    "note": "Original author PDF, MIT snapshot, journalism and the claim register were privately retained with hashes; no source media, credentials or complete Lean archive is published."
+  },
+  "sourceInspection": {
+    "method": "Read the first-person note and independent MIT verification status register",
+    "caveat": "No GhostMesh execution of the 14-part Lean formalization or full kernel replay; verification attribution remains MIT-only.",
+    "publicationBoundary": "No unpublished source pack, private Mac path, private screenshot or signed URL is released.",
+    "sourceNoteSha256": "3fc97784b71ddd44ff8aa0a177e99622a1c61b13cfa843a0989ee4a7a0cfeb8d"
+  },
+  "normalization": {
+    "id": "reader:claude-lean-and-the-riemann-hypothesis",
+    "slug": "claude-lean-and-the-riemann-hypothesis",
+    "title": "Claude, Lean, and the Riemann Hypothesis: What Has Actually Been Proven?",
+    "category": "Science",
+    "tags": [
+      "Riemann Hypothesis",
+      "formal verification",
+      "Claude",
+      "Lean",
+      "mathematical proof"
+    ],
+    "entities": [],
+    "source": {
+      "kind": "article",
+      "identity": "alpoge-riemann-hypothesis-announcement-2026",
+      "url": "https://alpo.ge/remark.pdf",
+      "title": "Levent Alpöge: Riemann Hypothesis announcement",
+      "authors": "Levent Alpöge",
+      "publisher": "Alpöge, original four-page note",
+      "publicationDate": "2026-11-20",
+      "updatedDate": "2026-11-20",
+      "dateNote": "The original first-person announcement dated November 20; the independently maintained MIT verification record is separately timestamped November 21 at 12:55 UTC."
+    },
+    "published": "2026-11-21",
+    "updated": "2026-11-21T14:32:00Z",
+    "overview": "Levent Alpöge claims a Claude-assisted proof of the Riemann Hypothesis and Dirichlet GRH, with substantial independent Lean verification reported by MIT.",
+    "whyItMatters": "A formal kernel accepting precisely stated theorems is substantially stronger evidence than an AI-generated argument, but does not settle discovery attribution or community comprehension.",
+    "ghostMeshTakeaway": "Track immutable proof artifacts, exact mathematical targets, independent checker results, limits and acceptance decisions separately. Verification is not a headline.",
+    "verdict": "Worth studying",
+    "architectureImpact": "investigate",
+    "falsification": "Review kernel or comparator rejection, nonstandard axioms, statement mismatch, faulty dependencies, a changed source archive, or a documented flaw in interpretation; publish timestamped revisions, not silent assertions.",
+    "evidenceState": "partially corroborated",
+    "lastEvidenceChecked": "2026-11-21T14:32:00Z",
+    "freshness": "MIT independent verification as of 2026-11-21 12:55 UTC. All technical results are MIT-reported and not re-executed by GhostMesh. End-to-end Lean checks remain running.",
+    "variant": "editorial",
+    "accent": "teal",
+    "claims": [
+      {
+        "id": "r71-author",
+        "proposition": "Alpöge and Claude developed a complete proof of classical RH and Dirichlet GRH.",
+        "kind": "author-claim",
+        "asOf": "2026-11-21",
+        "status": "partially corroborated",
+        "assessment": "The original author claims this. MIT independently reports a complete machine-readable formalization and multiple successful checks.",
+        "limits": "The main end-to-end lake comparator and Lean full-export replays remain running. Human comprehension and broad community acceptance are separate.",
+        "sourceLocation": "sections II–V",
+        "references": [
+          "author",
+          "mit"
+        ],
+        "counterevidence": [
+          "nature",
+          "clay"
+        ],
+        "temporalScope": "As of the time-stamped November 21 verification update; a later check may change status."
+      },
+      {
+        "id": "r71-compilation",
+        "proposition": "The published Lean submission compiles 175,187 modules and depends only on standard Lean axioms.",
+        "kind": "technical-report",
+        "asOf": "2026-11-21",
+        "status": "partially corroborated",
+        "assessment": "MIT reports successful compilation of all modules, zero errors, only three standard axioms and independent module replay.",
+        "limits": "The report is third-party verified but not reproduced by GhostMesh. The build was unsandboxed and not a complete byte-for-byte lake build.",
+        "sourceLocation": "III / table",
+        "references": [
+          "mit"
+        ],
+        "counterevidence": [],
+        "temporalScope": "As of the time-stamped November 21 verification update; a later check may change status."
+      },
+      {
+        "id": "r71-kernels",
+        "proposition": "Independent nanoda and con-leche kernels accept the full exported proof.",
+        "kind": "technical-report",
+        "asOf": "2026-11-21",
+        "status": "partially corroborated",
+        "assessment": "MIT reports acceptance by two separate kernel implementations and comparison of the five statements against the independent challenge.",
+        "limits": "This is independent checker implementation, not separate mathematical research-team replication or comprehensive human audit.",
+        "sourceLocation": "III / table",
+        "references": [
+          "mit"
+        ],
+        "counterevidence": [],
+        "temporalScope": "As of the time-stamped November 21 verification update; a later check may change status."
+      },
+      {
+        "id": "r71-statement",
+        "proposition": "The classical RH theorem targets Mathlib native RiemannHypothesis, while scoped GRH concerns Dirichlet L-functions.",
+        "kind": "technical-report",
+        "asOf": "2026-11-21",
+        "status": "partially corroborated",
+        "assessment": "The source inspection reports Mathlib statement and five challenge comparisons with explicit Dirichlet scope.",
+        "limits": "Extended RH, Dedekind zeta and Hecke L-functions are outside the verified claim.",
+        "sourceLocation": "I and III",
+        "references": [
+          "mit"
+        ],
+        "counterevidence": [],
+        "temporalScope": "As of the time-stamped November 21 verification update; a later check may change status."
+      },
+      {
+        "id": "r71-arithmetic",
+        "proposition": "The submitted classical RH proof implies Robin and Lagarias inequalities when combined with Robin1984.",
+        "kind": "technical-report",
+        "asOf": "2026-11-21",
+        "status": "partially corroborated",
+        "assessment": "MIT reports successful combined compilation, standard-axiom audit and independent nanoda/con-leche acceptance of both divisor-sum theorems.",
+        "limits": "This is an arithmetic cross-check using a separate formalization, not an independent new proof; combined lake comparator still running.",
+        "sourceLocation": "III / arithmetic consequences",
+        "references": [
+          "mit"
+        ],
+        "counterevidence": [],
+        "temporalScope": "As of the time-stamped November 21 verification update; a later check may change status."
+      },
+      {
+        "id": "r71-attribution",
+        "proposition": "Claude made the decisive creative steps in Alpöge’s discovery.",
+        "kind": "author-attribution",
+        "asOf": "2026-11-21",
+        "status": "unverified",
+        "assessment": "The original author credits Claude for significant technical moves.",
+        "limits": "Formal proof objects do not establish who first proposed individual ideas or provide a session-by-session verified provenance.",
+        "sourceLocation": "II",
+        "references": [
+          "author"
+        ],
+        "counterevidence": [],
+        "temporalScope": "As of the time-stamped November 21 verification update; a later check may change status."
+      },
+      {
+        "id": "r71-community",
+        "proposition": "The mathematical community or Clay has officially accepted a solved Riemann Hypothesis.",
+        "kind": "institutional-status",
+        "asOf": "2026-11-21",
+        "status": "unverified",
+        "assessment": "Neither institutional acceptance nor prize decision has been established; Clay still lists RH as unsolved.",
+        "limits": "Institutional status is not a counterexample to a formally verified proposition.",
+        "sourceLocation": "V and source record",
+        "references": [
+          "clay",
+          "rules"
+        ],
+        "counterevidence": [
+          "nature"
+        ],
+        "temporalScope": "As of the time-stamped November 21 verification update; a later check may change status."
+      }
+    ],
+    "references": [
+      {
+        "id": "author",
+        "title": "Alpöge original Riemann Hypothesis announcement",
+        "author": "Levent Alpöge",
+        "publisher": "Alpöge",
+        "url": "https://alpo.ge/remark.pdf",
+        "publicationDate": "2026-11-20",
+        "datePrecision": "day",
+        "dateNote": "Source date as given in the inspected record.",
+        "eventDate": null,
+        "location": "Original four-page announcement",
+        "sourceType": "author-original",
+        "independence": "Author assertion; no independent reconstruction of model exchanges.",
+        "evidenceFamily": "author",
+        "checkedAt": "2026-11-21T14:32:00Z",
+        "verification": "Original author statement, independent report or institutional record inspected; no proof executed by GhostMesh."
+      },
+      {
+        "id": "mit",
+        "title": "Verification files for the Lean proof of the Riemann Hypothesis",
+        "author": "Andrew Sutherland",
+        "publisher": "MIT Mathematics",
+        "url": "https://math.mit.edu/~drew/grh/",
+        "publicationDate": "2026-11-21",
+        "datePrecision": "day",
+        "dateNote": "Source date as given in the inspected record.",
+        "eventDate": null,
+        "location": "Summary, five top-level statements, arithmetic consequences, caveats",
+        "sourceType": "independent-technical-report",
+        "independence": "Sutherland ran third-party verification with Claude Code. Independent kernels are distinct implementations, not second teams discovering the proof.",
+        "evidenceFamily": "mit",
+        "checkedAt": "2026-11-21T14:32:00Z",
+        "verification": "Original author statement, independent report or institutional record inspected; no proof executed by GhostMesh."
+      },
+      {
+        "id": "nature",
+        "title": "Researchers assess the claimed Claude-assisted proof",
+        "author": "Nature reporting staff",
+        "publisher": "Nature",
+        "url": "https://www.nature.com/articles/d41586-026-03812-7",
+        "publicationDate": "unknown",
+        "datePrecision": null,
+        "dateNote": "Original publication date not established from retained record.",
+        "eventDate": null,
+        "location": "Expert commentary including Andrew Granville",
+        "sourceType": "independent-journalism",
+        "independence": "Journalistic and expert interpretation, not a substitute for kernel execution or a formal mathematical counterexample.",
+        "evidenceFamily": "nature",
+        "checkedAt": "2026-11-21T14:32:00Z",
+        "verification": "Original author statement, independent report or institutional record inspected; no proof executed by GhostMesh."
+      },
+      {
+        "id": "clay",
+        "title": "Riemann Hypothesis: Millennium Prize Problem",
+        "author": "Clay Mathematics Institute",
+        "publisher": "Clay Mathematics Institute",
+        "url": "https://www.claymath.org/millennium/riemann-hypothesis/",
+        "publicationDate": "unknown",
+        "datePrecision": null,
+        "dateNote": "Original publication date not established from retained record.",
+        "eventDate": null,
+        "location": "Official listed status",
+        "sourceType": "institutional-status",
+        "independence": "Clay listing is institutional status, not a computational refutation or check of the submitted formalism.",
+        "evidenceFamily": "clay",
+        "checkedAt": "2026-11-21T14:32:00Z",
+        "verification": "Original author statement, independent report or institutional record inspected; no proof executed by GhostMesh."
+      },
+      {
+        "id": "rules",
+        "title": "Millennium Prize Problems: rules",
+        "author": "Clay Mathematics Institute",
+        "publisher": "Clay Mathematics Institute",
+        "url": "https://www.claymath.org/millennium-problems/rules/",
+        "publicationDate": "unknown",
+        "datePrecision": null,
+        "dateNote": "Original publication date not established from retained record.",
+        "eventDate": null,
+        "location": "Official prize criteria",
+        "sourceType": "institutional-rules",
+        "independence": "Prize rules concern formal recognition, not the Lean theorem or mathematical validity.",
+        "evidenceFamily": "rules",
+        "checkedAt": "2026-11-21T14:32:00Z",
+        "verification": "Original author statement, independent report or institutional record inspected; no proof executed by GhostMesh."
+      }
+    ],
+    "relationships": [
+      {
+        "target": "reader:the-paper-is-not-the-experiment",
+        "type": "companion",
+        "reason": "Reader #48 examines how impressive source claims diverge from independently witnessed experiments; here proof artifacts and checker runs deserve similarly separated evidentiary treatment. This is an analogy, not a validation of mathematical truth.",
+        "provenance": [
+          "/the-paper-is-not-the-experiment/",
+          "/a-smaller-model-can-win-the-job-not-the-benchmark-war/"
+        ],
+        "basis": "curated-editorial-comparison",
+        "direction": "outgoing"
+      },
+      {
+        "target": "reader:a-smaller-model-can-win-the-job-not-the-benchmark-war",
+        "type": "companion",
+        "reason": "Reader #70 separates performance on a narrow benchmark from general model intelligence. This investigation similarly separates kernel acceptance from stronger claims about AI creativity, human comprehension and institutional proof acceptance.",
+        "provenance": [
+          "/a-smaller-model-can-win-the-job-not-the-benchmark-war/",
+          "/the-paper-is-not-the-experiment/"
+        ],
+        "basis": "curated-editorial-comparison",
+        "direction": "outgoing"
+      }
+    ],
+    "relationshipDisposition": "Two verified conceptual Reader companions are admitted, while an attempted SharePlane connection resolved to a review-transfer document and remains excluded.",
+    "relationshipReview": {
+      "reviewedAt": "2026-11-21",
+      "reviewedCatalogSize": 70,
+      "decision": "linked",
+      "reviewedTargets": [
+        "reader:the-paper-is-not-the-experiment",
+        "reader:a-smaller-model-can-win-the-job-not-the-benchmark-war"
+      ],
+      "rationale": "Pale Horse checked the canonical Reader routes for #48 and #70, and their arguments are relevant conceptual comparisons. The links do not purport to verify the RH result, and are limited to their respective editorial roles."
+    },
+    "sharePlaneRelationships": [],
+    "sharePlaneReview": {
+      "reviewedAt": "2026-11-21",
+      "decision": "none",
+      "rationale": "The proposed SharePlane evaluation companion resolves to retained review-transfer content rather than a verified canonical published Work. It remains deliberately excluded, with no inferred acceptance or graph edge."
+    },
+    "archiveCall": {
+      "label": "Inspect the proof boundary",
+      "text": "Read the original mathematical statement, the independent checker register and the outstanding end-to-end runs before asserting a breakthrough."
+    },
+    "review": {
+      "status": "pending",
+      "summary": "Pale Horse returned REVISE on v0.2; v0.3 source corrections were applied. The integrated author HTML, claim mapping, provenance and publication layout still require exact-head independent delta acceptance."
+    },
+    "revisionHistory": [],
+    "editorialOrder": 70,
+    "orderReason": "Reader #71 reserved by Tony under Control Tower #1169; publication not authorized."
+  },
+  "editorial": {
+    "overview": "Levent Alpöge claims a Claude-assisted proof of the Riemann Hypothesis and Dirichlet GRH, with substantial independent Lean verification reported by MIT.",
+    "whyItMatters": "A formal kernel accepting precisely stated theorems is substantially stronger evidence than an AI-generated argument, but does not settle discovery attribution or community comprehension.",
+    "ghostMeshTakeaway": "Track immutable proof artifacts, exact mathematical targets, independent checker results, limits and acceptance decisions separately. Verification is not a headline."
+  }
+}
