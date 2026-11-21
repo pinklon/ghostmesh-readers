@@ -1,3 +1,8 @@
 # Dependency-free static publishing, isolated from SharePlane Production.
 [build]
   publish = "site"
+
+# Reader 71 owner-review PR cannot expose drafts via public Netlify previews.
+# Production and other PR previews retain the existing publish behavior.
+[context.deploy-preview]
+  command = "python3 scripts/guard_reader71_preview.py"
