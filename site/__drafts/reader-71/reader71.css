@@ -52,3 +52,9 @@ table{width:100%;border-collapse:collapse;margin:28px 0 35px;font-size:13px}th{c
  .nav h2{display:none}
  .nav a{padding:9px 0;border-top:1px solid var(--line);font-size:13px}
 }
+
+/* Canonical shared Reader shell and review-only notice */
+.r71-private-status{max-width:1200px;margin:1rem auto 0;padding:.6rem 1rem;border:1px solid var(--line);font-size:.75rem;letter-spacing:.055em;color:var(--muted);border-radius:8px}
+.gm-site-header{position:relative;z-index:40}
+.gm-reader-footer{margin-top:2rem}
+.gm-sharebar{margin:1.25rem 0}
