@@ -4,7 +4,7 @@
   "state": "PRIVATE_PREVIEW_REVIEW_ONLY",
   "mitAsOf": "2026-11-21T12:55:00Z",
   "manuscriptSha256": "3c86c5b702894f5c0c0aec3fdfd52e51f11f901cc0046a5dacef14f958dca28a",
-  "previewSha256": "b73c1bfa0ff96616ac4b2109131235700e79cd14522c44405edf87b8315c1091",
+  "previewSha256": "a90d3b36299f91e3be090892f571e4dd0bd5a28e264cf27acfad4184e3bc2758",
   "review": "Pale Horse REVISE v0.2; corrections integrated into v0.3; not yet reaccepted",
   "gates": [
     "canonical generator integration",
