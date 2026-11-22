@@ -1,0 +1,35 @@
+{
+  "schema": "scout-editorial-assessments-v0",
+  "review_state": "AUTHOR_DRAFT_NOT_INDEPENDENTLY_REVIEWED",
+  "outreach_authorized": false,
+  "publication_authorized": false,
+  "cases": [
+    {
+      "id": "debate",
+      "snapshot_sha256": "6a28f40b77cdd29e0f55db881028484260113aba4b43bf69e478ec93979bef75",
+      "recommendation": "INVESTIGATE",
+      "contribution": "Authors propose diversity-aware initialization and confidence-modulated multi-agent debate; reported gains remain author claims.",
+      "ghostmesh_gap": "Unknown marginal benefit of source diversity versus extra correlated reviewers.",
+      "counterargument": "Differences in model strength, benchmark composition or compute budgets could dominate the apparent diversity gain.",
+      "joint_experiment": "Fix contested cases and cost budget; compare repeated same-model samples, distinct initial hypotheses, and independently sourced hypotheses against a scored reference."
+    },
+    {
+      "id": "sensemaking",
+      "snapshot_sha256": "7c1020131353aaaf2ce81790d02328d0f298cb88befe674c4d3f890dd52de809",
+      "recommendation": "INVESTIGATE",
+      "contribution": "Authors propose design principles for human-agent collaborative sensemaking, provenance, and accountability; conceptual rather than validated deployment.",
+      "ghostmesh_gap": "GhostMesh collaboration reviews need to preserve original authorship, dissent and revisions.",
+      "counterargument": "Extra attribution and revision capture may increase friction without improving corrections or collaboration outcomes.",
+      "joint_experiment": "Blind reviewers to condition; compare paired fixed review cases with and without provenance/disagreement fields; score source attribution and correction accuracy."
+    },
+    {
+      "id": "negative-control",
+      "snapshot_sha256": "f4d38cd82676f208ebc22106a96b0a56274be06ccf09a89db96035a02039235b",
+      "recommendation": "NO_CONNECTION_JUSTIFIED",
+      "contribution": "General CPython upstream project documentation, not evidence of a distinct collaboration opportunity.",
+      "ghostmesh_gap": "No specific complementary gap established.",
+      "counterargument": "The documentation could still be useful to GhostMesh engineering, but utility alone is not a connection thesis.",
+      "joint_experiment": "None warranted without a concrete original contribution and independently identified unmet need."
+    }
+  ]
+}
