@@ -206,8 +206,8 @@
           "proposition": "Benchmark-normalized inference prices declined sharply in 2022–24",
           "kind": "external-research",
           "status": "unverified",
-          "sourceLocation": "09:15",
-          "assessment": "Stanford HAI documents >280x price reduction at fixed MMLU threshold through Oct 2024.",
+          "sourceLocation": "Stanford AI Index 2025 primary report; interview 09:15 only contextual",
+          "assessment": "Stanford HAI documents >280x price reduction at fixed MMLU threshold through Oct 2024. Source: https://hai.stanford.edu/ai-index/2025-ai-index-report/research-and-development. The video price discussion is context, not the numerical report origin.",
           "limits": "Historical benchmark-matched comparison does not prove frontier price declines for all task types.",
           "references": [
             "r72-stanford"
@@ -221,8 +221,8 @@
           "kind": "vendor-reported",
           "status": "unverified",
           "sourceLocation": "18:57",
-          "assessment": "Particle Oct 28 reports 28.4-52.2% fewer output tokens, 34.4-51.6% lower cost per task than base DeepSeek V4.1 Flash across four benchmarks, pass@1 within confidence intervals.",
-          "limits": "Vendor study; fixed price/cache assumptions; no independent replication; distinguish compression from omission of needed checks.",
+          "assessment": "Particle Oct 28 reports 28.4-52.2% fewer output tokens, 34.4-51.6% lower cost per task than base DeepSeek V4.1 Flash across four benchmarks, pass@1 within confidence intervals. Vendor cost calculation assumes 95% cache hit and counts failed attempts; it is not audited cost per independently accepted real-world job.",
+          "limits": "Vendor study; fixed price/cache assumptions; no independent replication; distinguish compression from omission of needed checks. Reported average task cost includes failures and fixed cache conditions, not full human acceptance, correction and recovery.",
           "references": [
             "r72-video",
             "r72-particle"
@@ -232,12 +232,12 @@
         },
         {
           "id": "r72-pricing-30x",
-          "proposition": "Thirty-fold cheaper model yields approximately equivalent creative output",
+          "proposition": "Interview describes a 30× subjective design price comparison and a separate Fable quality estimate, not one matched trial",
           "kind": "speaker-anecdote",
           "status": "unverified",
-          "sourceLocation": "31:40",
-          "assessment": "Doshi reports subjective near-equivalence for a small creative/design comparison; Riley introduces 10-20% quality gap in intro.",
-          "limits": "No pinned cases, versions, blind evaluations, paired predictions, workload prices or confidence intervals.",
+          "sourceLocation": "31:41–31:55 (two distinct speaker observations)",
+          "assessment": "At https://www.youtube.com/watch?v=K2UEMxBTu9M&t=1901s Doshi informally compares premium GPT-family output and DeepSeek Flash design results, with approximately 30x different model pricing. At https://www.youtube.com/watch?v=K2UEMxBTu9M&t=1912s he separately offers a subjective 10–20% Fable improvement estimate. The automatic caption aid does not certify the exact premium GPT model identity.",
+          "limits": "Not a single paired Fable-vs-DeepSeek evaluation; no pinned sample, independent blind scoring, repeated runs or audited model prices.",
           "references": [
             "r72-video"
           ],
@@ -307,8 +307,8 @@
           "proposition": "AI coding productivity is mixed and context-dependent in existing independent studies",
           "kind": "external-research",
           "status": "unverified",
-          "sourceLocation": "43:25",
-          "assessment": "METR early-2025 observed 19% longer completion time on specified tasks; Feb 2026 followup says selection effects weaken numerical inference for more recent periods.",
+          "sourceLocation": "METR 2025 experiment and Feb 2026 follow-up; interview 43:25 contextual",
+          "assessment": "METR early-2025 observed 19% longer completion time on specified tasks; Feb 2026 followup says selection effects weaken numerical inference for more recent periods. Primary reports: https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/ and https://metr.org/blog/2026-02-24-uplift-update/. The video career discussion is not the source of the measured percentages.",
           "limits": "Limited participant/task selection; cannot generalize to all workers.",
           "references": [
             "r72-metr2025",

@@ -19,7 +19,7 @@
       "claimIds": [
         "r72-inference-price"
       ],
-      "cueParaphrase": "Stanford HAI documents >280x price reduction at fixed MMLU threshold through Oct 2024.",
+      "cueParaphrase": "Interview 09:15 discusses prices generally; Stanford HAI historical quantitative evidence is EXTERNAL, at https://hai.stanford.edu/ai-index/2025-ai-index-report/research-and-development, not spoken at this time.",
       "privateAidCheck": "Approximate caption-derived cue, not speech-certified and not independent replication."
     },
     {
@@ -28,7 +28,7 @@
       "claimIds": [
         "r72-particle-eff"
       ],
-      "cueParaphrase": "Particle Oct 28 reports 28.4-52.2% fewer output tokens, 34.4-51.6% lower cost per task than base DeepSeek V4.1 Flash across four benchmarks, pass@1 within confidence intervals.",
+      "cueParaphrase": "18:57 interview founder describes token reduction. Exact ranges, 95% assumed cache hit and failure-inclusive task-cost account are from interested-party Particle technical post https://particle.ai/blog/introducing-particle-1, not independently repeated here.",
       "privateAidCheck": "Approximate caption-derived cue, not speech-certified and not independent replication."
     },
     {
@@ -37,7 +37,7 @@
       "claimIds": [
         "r72-pricing-30x"
       ],
-      "cueParaphrase": "Doshi reports subjective near-equivalence for a small creative/design comparison; Riley introduces 10-20% quality gap in intro.",
+      "cueParaphrase": "31:41 roughly 30× difference for premium GPT-family vs DeepSeek Flash in subjective design; 31:52 separate 10–20% estimate for Fable. Not a single paired trial, source/versions not certified.",
       "privateAidCheck": "Approximate caption-derived cue, not speech-certified and not independent replication."
     },
     {
@@ -82,7 +82,7 @@
       "claimIds": [
         "r72-productivity"
       ],
-      "cueParaphrase": "METR early-2025 observed 19% longer completion time on specified tasks; Feb 2026 followup says selection effects weaken numerical inference for more recent periods.",
+      "cueParaphrase": "Interview 43:25 discusses career transition. METR 2025 experiment and Feb 2026 methods update are EXTERNAL data, not spoken results: https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/ and https://metr.org/blog/2026-02-24-uplift-update/.",
       "privateAidCheck": "Approximate caption-derived cue, not speech-certified and not independent replication."
     },
     {
