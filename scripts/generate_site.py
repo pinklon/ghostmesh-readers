@@ -223,6 +223,12 @@ def home_card(r,number,featured=False):
         f'<div class="gm-home-actions"><a class="gm-home-open" href="/{esc(r["slug"])}/">Open Reader →</a>'
         f'<a class="gm-home-source" href="{esc(source["url"])}">{("Pinned repository" if repository else "Original article")} ↗</a></div></div>')
   if repository:visual=visual.replace('ORIGINAL ARTICLE','SOURCE CODE REPOSITORY').replace('ORIGINAL SOURCE / DIRECT LINK','PINNED COMMIT / DIRECT LINK')
+  if r['slug']=='claude-lean-and-the-riemann-hypothesis':
+   visual=('<div class="gm-home-visual gm-home-paper" data-reader-art="71">'
+           '<span class="gm-home-visual-label">GHOSTMESH READER 71 / ORIGINAL EDITORIAL ART</span>'
+           '<img class="r71-card-cover" src="/reader71/square.png" width="800" height="800" '
+           'loading="lazy" decoding="async" alt="Original GhostMesh Reader 71 artwork for Claude, Lean, and the Riemann Hypothesis.">'
+           '<span class="gm-home-visual-label">ORIGINAL SOURCE / DIRECT LINK</span></div>')
   return f'<article class="gm-card gm-home-card" data-category="{esc(r["category"])}" data-tags="{esc(" ".join(r["tags"]))}" data-date="{r["published"]}" data-rank="{r["rank"]}">'+visual+copy+'</article>'
  if source.get('kind')=='paper':
   if __package__:

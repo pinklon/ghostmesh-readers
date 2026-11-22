@@ -94,6 +94,12 @@ CALLS = {
 
 
 def _poster(reader):
+    # Reader 71 is a written-source investigation; use its approved original
+    # GhostMesh artwork rather than the generic plain-text article fallback.
+    if reader['slug'] == 'claude-lean-and-the-riemann-hypothesis':
+        return ('<img class="r71-card-cover" src="/reader71/square.png" '
+                'width="800" height="800" loading="lazy" decoding="async" '
+                'alt="GhostMesh Reader 71 editorial thumbnail: Claude, Lean, and the Riemann Hypothesis. Conceptual illustration, not a proof diagram.">')
     source = reader['source']
     if source.get('kind') in {'article', 'repository'}:
         return (f'<div class="gm-archive-source-unknown">{_e(source["publisher"])}<br>'

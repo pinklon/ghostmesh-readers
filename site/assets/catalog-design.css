@@ -86,3 +86,7 @@
  .gm-archive-evidence{font-size:11px}
  .gm-catalog .gm-archive-copy h3{font-size:26px}
 }
+
+
+/* Written-source Reader #71: owner-approved editorial cover, not video art. */
+.gm-archive-visual img.r71-card-cover{display:block;width:100%;height:auto;aspect-ratio:1/1;max-height:360px;object-fit:cover;border:1px solid var(--gm-border);border-radius:5px;background:#0d1519}
