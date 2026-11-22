@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "readerId": "reader:claude-lean-and-the-riemann-hypothesis",
+  "sourceId": "alpoge-riemann-hypothesis-announcement-2026",
+  "sourceAidSha256": "3fc97784b71ddd44ff8aa0a177e99622a1c61b13cfa843a0989ee4a7a0cfeb8d",
+  "articleSha256": "9c6ea5c2c1369560de6f91a01bfa4c387189a712ef928fe472e294c4f2f45a32",
+  "evidenceRevision": "eb8d422652aee1a66e2ccbefe5b1f8fe5f1bfecee7e924a28393dfea7fcf69e2",
+  "reviewedAt": "2026-11-22T00:16:38Z",
+  "provenance": {
+    "kind": "codex-task-agent",
+    "reference": "Pale Horse independently accepted the exact authored HTML and source map at GitHub PR #205, commit df4035d00d7ddfbd2c050c18550e3c7a00305fa0, in the original Reader 71 Slack review thread at 2026-11-21 16:16:38 Pacific. The independent verdict was limited to three direct author-source citations, their mapping and single shared footer.",
+    "limits": "Read-only editorial and mechanical comparison by Pale Horse against accepted 5954d2e source, not an independent Lean proof execution, formal mathematical reconstruction, or institutional RH acceptance."
+  },
+  "summary": "ACCEPT FOR OWNER CONSIDERATION on the exact Reader 71 authored HTML and source-map delta, as reported by Pale Horse at 2026-11-21 16:16:38 Pacific, with unchanged mathematics and resolved citations.",
+  "findings": [
+    "Pale Horse required precise disclosure of Sutherland using Claude Code, independent kernel implementation distinctions, compiled .olean comparisons and nonconflation of Dirichlet GRH with Extended RH; those corrections were applied.",
+    "Pale Horse verified the November 21 12:55 UTC MIT status cutoff, separate Robin and Lagarias arithmetic implications and the presence of clear still-running checks in the original head.",
+    "Pale Horse verified two canonical Reader companions and specifically rejected a misleading SharePlane review-transfer link; the catalog preserves the reviewed zero.",
+    "The independently reviewed latest authored article adds exactly three original-source links in II, III and V. Pale Horse accepted their targets, all seven mapped claims and the single rendered shared footer at exact commit df4035d."
+  ],
+  "conclusion": "accept-for-owner-review"
+}
