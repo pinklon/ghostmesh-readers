@@ -329,7 +329,7 @@ html[data-theme="light"] body#home .gm-destinations>a.gm-destination-shareplane{
 
 
 /* Reader 71 public listing cover; neighboring source/media cards unchanged. */
-body#home .gm-home-art{background:#0d1519;min-height:0;gap:8px}
-body#home .gm-home-art::after{display:none}
-body#home .gm-home-art .r71-card-cover{width:100%;height:auto;max-height:350px;object-fit:contain;align-self:center;flex:1 1 auto;min-height:0;border-radius:4px}
-body#home .gm-home-art .gm-home-visual-label{z-index:1;position:relative;letter-spacing:.1em;color:#c9d5dc}
+body#home .gm-home-visual[data-reader-art="71"]{background:#0d1519;min-height:0;gap:8px}
+body#home .gm-home-visual[data-reader-art="71"]::after{display:none}
+body#home .gm-home-visual[data-reader-art="71"] .r71-card-cover{width:100%;height:auto;max-height:350px;object-fit:contain;align-self:center;flex:1 1 auto;min-height:0;border-radius:4px}
+body#home .gm-home-visual[data-reader-art="71"] .gm-home-visual-label{z-index:1;position:relative;letter-spacing:.1em;color:#c9d5dc}
