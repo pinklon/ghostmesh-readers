@@ -82,5 +82,17 @@
       "sitemap-http-200",
       "claim-register-http-200"
     ]
+  },
+  "when-code-gets-cheap-ambition-becomes-the-test": {
+    "mergeCommit": "b5f72db7f29be2b54b02dae8bd357651d121028e",
+    "url": "https://youtube.shareplane.malott.ai/when-code-gets-cheap-ambition-becomes-the-test/",
+    "verifiedAt": "2026-11-22T15:11:52Z",
+    "checks": [
+      "article-http-200",
+      "receipt-http-200",
+      "catalog-http-200",
+      "sitemap-http-200",
+      "claim-register-http-200"
+    ]
   }
 }
