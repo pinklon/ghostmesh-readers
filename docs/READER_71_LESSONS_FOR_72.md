@@ -1,0 +1,33 @@
+# Reader #71 lessons, encoded for Reader #72
+
+**Purpose:** make the next Reader simpler, not more ceremonial. This is an explanation of the existing [one-pass contract](NEXT_READER.md) and [release runbook](READER_RELEASE_RUNBOOK.md), not another approval, workflow, publisher, or service.
+
+**Evidence:** [Reader #71 source/release PR #205](https://github.com/pinklon/ghostmesh-readers/pull/205), [publication receipt #207](https://github.com/pinklon/ghostmesh-readers/pull/207), [shell repair #208](https://github.com/pinklon/ghostmesh-readers/pull/208), [artwork repair #209](https://github.com/pinklon/ghostmesh-readers/pull/209), and [appearance/provenance repair #210](https://github.com/pinklon/ghostmesh-readers/pull/210). These are evidence of rework, not five steps that future Readers must repeat.
+
+## What hurt and what changes
+
+| Reader #71 failure | Reader #72 default in the existing pass | Verification moment |
+| --- | --- | --- |
+| Private draft, approved prose, generated page, source-map and receipt diverged across iterations. | Build the canonical authored Reader, catalog, claims, source map and sanitized receipt in one branch. Lock manuscript and chosen visual direction together. Check every substantive locked passage (including dossier, relationships and ending) in the generated page. | Before first owner-facing visual preview, using existing locked-block/source-map tests. |
+| Duplicate footer, oversized header/search SVG, hidden desktop chapter navigation escaped static tests and reached Production. | Reuse a single accepted site shell. Do not layer a second header/footer over generator projections. Run the existing targeted real-browser check for computed shell dimensions, link visibility and interactions, at actual 390 and 1440 CSS pixels in both themes. | Before first draft review and again after affected presentation changes. |
+| Light/dark toggle displayed both icons because broad SVG styles outranked weak theme selectors. | Computed browser check: exactly one visible sun/moon after CSS cascade before and after click. Confirm normal-sized search icon, search open/close, always-visible desktop chapter links and no document overflow. | Visual UAT, not inferred from green structural CI. |
+| First art illustrated a false zeta identity and fictional Lean code. | Decide the visual and factual-art boundary with the source claims. No formula, theorem, model result, or apparent proof artifact in generated art without source-accurate verification. Otherwise use abstract, explicitly conceptual graphics. Review hero, archive cover and social card. | Same Creative Lock and editorial/visual review. |
+| Speculative preview confidentiality policy created false blocks and left historical deploy links to clean up. | Owner permits anonymous Netlify PR previews for editorial drafts by default. Do not impose a privacy embargo the owner did not request. Raw source aids, credentials, protected links and internal approval references remain prohibited from public output. If a particular draft is owner-marked private, authenticate the provider preview before uploading or keep it local. | Intake and first hosted preview. |
+| Moving MIT/Lean evidence forced source-status corrections and repeated broad review. | Record each material claim's source URL, observed UTC, exact theorem/scope, PASS/RUNNING/UNKNOWN, original versus independent verifier, and next refresh. Refresh material moving evidence once before editorial review lock. Re-review only changed claims and bindings, not all unchanged prose. | Source qualification, editorial acceptance and owner decision. |
+| Slack peer review was labeled as native Codex provenance. | Record genuine reviewer identity and channel. Never fabricate an allowed provenance kind. Bind accepted evidence/HTML hashes, using only the existing tightly scoped CSS-only fingerprint exception for a real CSS-only fix. | Existing independent review and receipt. |
+| A request to finish was treated as authorization to publish. | "Finish," "next," and "get ready" authorize work, not public release. Explicit "publish / merge / release" of the reviewed candidate is required. One explicit decision may carry through normal checks, merge and deployment without asking again. | Existing protected merge gate. |
+| Production required three follow-up fixes to shell, artwork and appearance. | One consolidated owner-facing visual review covers article, shell, source ledger, nav, factual artwork, search/theme, social and related Work panels. Post-merge verify live behavior, then use the existing posting pilot. CSS-only repairs need focused checks, not a new broad editorial review. | Pre-merge UAT, then normal production receipt. |
+
+## Reader #72: one execution path
+
+**Intake (segfault owns):** Identify one writer/claim and current-main SHA. Confirm source, an accepted shell precedent, thesis, evidence cutoff, audience, visual concept, art safety, Reader/SharePlane relationships and whether any content is owner-marked private. Reuse already answered decisions; no new form.
+
+**Build once (same writer):** Commit the canonical authored Reader, public-safe source map, catalog claims, provenance, and source-specific art to one draft branch. Keep raw transcripts/media and private approval locators outside the public tree. Include the original locked argument; the generator is not permission to summarize it.
+
+**One visual + editorial pass:** Run existing site/knowledge projections, focused tests and the current-Reader browser check. Obtain the normal independent editorial/source/privacy review at a stable head, return one consolidated ACCEPT/REVISE, and correct only changed surfaces. Browser checks prove computed layout and behavior, not mathematical truth.
+
+**Release once (Tony retains authority):** Exact reviewed PR head, hosted CI and owner UAT; one explicit publication decision; protected merge and Netlify; authentic production article/receipt/catalog/search/sitemap/relationship verification; then only the existing GhostMesh Reader posting pilot. Never equate coded, CI, merged, deployed or production-verified.
+
+## Stop rules
+
+Changing evidence stays marked **as-of**, not "solved"; uncertain reviewer identity stays UNKNOWN, not Codex; absent owner publication authority stays DRAFT, not approved; a Netlify preview is never a production receipt. Target one publisher, one PR, one substantive review and one publication decision, with focused delta checks. These are operating targets, not new hard gates. Exceptions go in the existing PR with cause, accountable owner and next action. Do not create another automation, coordination lane, or postmortem validator.
