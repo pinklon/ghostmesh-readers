@@ -167,16 +167,15 @@
   },
   "independentCorroboration": "none",
   "ownerDecision": {
-    "pullNumber": 212,
-    "commentId": null
+    "kind": "conversation",
+    "owner": "Tony Malott",
+    "approval": "On November 22, 2026, following review of the final Reader #72 PR #212 preview and last endmatter reordering, Tony stated: 'Let's go ahead and publish it. That looks good'. This is his explicit authorization to Creative Lock and publish that reviewed Reader using the existing protected merge, production verification, and announcement workflow; it does not authorize bypassing CI, independent review, or publication protections.",
+    "approvalDate": "2026-11-22",
+    "articleSha256": "3ed479b10b89cbee869934d688d11dab272745e6408ed8679258480b738baf0c",
+    "evidenceRevision": "c5e19b8eb741d6c339d4996d3ba452065674c92880e23b367c60ff9e23bf08db"
   },
-  "decision": "hold",
+  "decision": "accept",
   "gaps": [
-    {
-      "type": "scope",
-      "severity": "blocking",
-      "rationale": "Tony has not yet provided an explicit exact-candidate Creative Lock and publication decision for this revised source head and evidence receipt; no merge or public release is authorized."
-    },
     {
       "type": "source",
       "severity": "nonblocking",
@@ -188,6 +187,6 @@
       "rationale": "Particle commercial model benchmarks and 30x design anecdotes have not been independently reproduced; project-scale and robotics proposals remain explicitly unexecuted hypotheses."
     }
   ],
-  "decisionRationale": "Native Codex independently accepted the original article/evidence argument, precise source-aid and cue corrections, and the final relationship-endmatter order for this exact authored HTML. The original source and claims remain unchanged; only presentation order changed. Owner exact-candidate Creative Lock and explicit publication authorization are absent, so the release decision remains HOLD.",
+  "decisionRationale": "The owner explicitly approved publishing this final reviewed Reader #72 candidate on November 22, 2026. Genuine independent native Codex review accepted the source and presentation at exact article/source hashes. The caption-only and vendor-reported evidence limitations remain disclosed, while protected CI, merge and production verification are required for actual publication.",
   "assessedAt": "2026-11-22T14:53:17Z"
 }

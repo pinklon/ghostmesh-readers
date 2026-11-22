@@ -15,7 +15,7 @@
     "publicationBoundary": "Raw captions and normalized timeline are excluded from public Git; public article contains source URL, source-role citations, sanitized SHA-256 digests, paraphrases, and the exact execution limitations.",
     "timelineNote": "Derived 1,823-entry normalized timeline retained privately; SHA-256 published in article provenance, not a second canonical speech-source aid."
   },
-  "editorialStatus": "DRAFT_PENDING_INDEPENDENT_ACCEPTANCE_AND_OWNER_CREATIVE_LOCK",
+  "editorialStatus": "OWNER_APPROVED_FOR_PROTECTED_RELEASE_PENDING_PRODUCTION_VERIFICATION",
   "intake": "https://github.com/pinklon/shareplane-control-tower/issues/1175",
   "normalization": {
     "id": "reader:when-code-gets-cheap-ambition-becomes-the-test",
@@ -439,8 +439,8 @@
       "rationale": "Two already published Work URLs identified from the current accepted Reader #70 catalog; conceptual relations only, not interview validation."
     },
     "review": {
-      "status": "pending",
-      "summary": "Native Codex independently ACCEPTED the evidence argument, source/caption limitations and final endmatter layout for owner consideration. Formal editorial-depth release decision remains HOLD pending explicit owner Creative Lock and authorization to publish exact final PR head."
+      "status": "accepted",
+      "summary": "Independent source/editorial and endmatter reviews ACCEPT. Owner supplied exact-candidate Creative Lock and publication authorization on November 22, 2026; protected CI, merge and production acceptance remain separately required."
     },
     "revisionHistory": [],
     "editorialDepth": {
