@@ -4,10 +4,10 @@
   "sourceId": "alpoge-riemann-hypothesis-announcement-2026",
   "sourceDigest": "d0e3e55e00a16daa27bfc0e0388f64ae2b55bb545ee46775b2bbde392bb4efb2",
   "sourceAidSha256": "3fc97784b71ddd44ff8aa0a177e99622a1c61b13cfa843a0989ee4a7a0cfeb8d",
-  "articleSha256": "5a106c4161cd8dfc95a1954234d9bd27aa7e49fd5a50a26bb24fb57db3013d29",
+  "articleSha256": "ddb59d629d3f3dc62be03e55cfbe49cafa1f9002ed341a4701794ac3c2bd33ca",
   "evidenceRevision": "eb8d422652aee1a66e2ccbefe5b1f8fe5f1bfecee7e924a28393dfea7fcf69e2",
   "sourceMapEvidenceSha256": "b539d3adbc05ee4dfd3e9b585c3c0a480fd17a21a33b8bf281706394f4c04b4a",
-  "reviewEvidenceSha256": "bef9e31baf3dc0593927d1e1057dd6cf35c4591dcbf214cf116ae14fdaabaac6",
+  "reviewEvidenceSha256": "2106dcace41f0b1600d17e794fb28d4a7465d9aff2b9a6ea88838464e6b961f8",
   "candidateAuthor": "segfault",
   "complexity": {
     "tier": "brief",
@@ -93,13 +93,13 @@
   "ownerDecision": {
     "kind": "conversation",
     "owner": "Tony Malott",
-    "approval": "You got some fixing to do. Check all these screenshots. The typography and layout need careful repair, and the Reader needs appropriate SharePlane connections.",
+    "approval": "Tony approved the generated Reader 71 hero and square thumbnail with “Love it,” directed integration with “Next,” and explicitly authorized correction of release defects with “Fix it please.” The revised artwork corrects the reviewer-identified false mathematical notations while preserving the accepted editorial composition.",
     "approvalDate": "2026-11-21",
-    "articleSha256": "5a106c4161cd8dfc95a1954234d9bd27aa7e49fd5a50a26bb24fb57db3013d29",
+    "articleSha256": "ddb59d629d3f3dc62be03e55cfbe49cafa1f9002ed341a4701794ac3c2bd33ca",
     "evidenceRevision": "eb8d422652aee1a66e2ccbefe5b1f8fe5f1bfecee7e924a28393dfea7fcf69e2"
   },
   "decision": "accept",
   "gaps": [],
-  "decisionRationale": "Tony explicitly requested post-release visual correction and SharePlane connections after reviewing five screenshots. The unchanged mathematical assertions have prior independent editorial acceptance. Pale Horse independently accepted this exact revised visual/source-safe delta, including the fixed chapter rail and conceptual SharePlane links, with no remaining source blocker. This is an authorized repair of existing public Reader 71, not a new mathematical proof claim.",
-  "assessedAt": "2026-11-22T00:59:10Z"
+  "decisionRationale": "Owner approved the artistic concept, directed integration and explicitly asked segfault to fix PR #209. Pale Horse independently accepted the revised exact hero, square and social PNG artwork on 2026-11-21 17:32:31 PST after the incorrect mathematical assertions were removed; the authored article changes only its figure, caption and route-specific social metadata. The scientific claims, seven mapped evidence records and canonical SharePlane relationships remain unchanged. This is a presentation release, not mathematical proof acceptance.",
+  "assessedAt": "2026-11-22T01:33:52Z"
 }

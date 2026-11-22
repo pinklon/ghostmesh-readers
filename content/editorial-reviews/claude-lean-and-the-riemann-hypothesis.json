@@ -3,21 +3,21 @@
   "readerId": "reader:claude-lean-and-the-riemann-hypothesis",
   "sourceId": "alpoge-riemann-hypothesis-announcement-2026",
   "sourceAidSha256": "3fc97784b71ddd44ff8aa0a177e99622a1c61b13cfa843a0989ee4a7a0cfeb8d",
-  "articleSha256": "5a106c4161cd8dfc95a1954234d9bd27aa7e49fd5a50a26bb24fb57db3013d29",
+  "articleSha256": "ddb59d629d3f3dc62be03e55cfbe49cafa1f9002ed341a4701794ac3c2bd33ca",
   "evidenceRevision": "eb8d422652aee1a66e2ccbefe5b1f8fe5f1bfecee7e924a28393dfea7fcf69e2",
-  "reviewedAt": "2026-11-22T00:59:10Z",
+  "reviewedAt": "2026-11-22T01:33:52Z",
   "provenance": {
     "kind": "codex-task-agent",
-    "reference": "Pale Horse independently reviewed Reader 71 post-publication visual/relationship delta in the original GhostMesh Slack thread at 2026-11-21 16:58:46 PST, returning ACCEPT for the exact article SHA 5a106c4161cd8dfc95a1954234d9bd27aa7e49fd5a50a26bb24fb57db3013d29 after finding and requiring repair of the desktop closed-details navigation blocker.",
-    "limits": "Read-only presentation/source-copy review, not independent execution of the Lean theorem or a fresh device-browser run. Chrome dark/light behavior at 390, 768 and 1440 CSS pixels was directly measured by segfault. The mathematical evidence statement and source map are unchanged."
+    "reference": "Pale Horse independently reviewed the amended GhostMesh Reader 71 artwork and caption at PR #209 head cfd2c3157d7322e2a057885a4cfe3440127bd020 in the existing Reader 71 Slack thread, reporting ACCEPT on 2026-11-21 17:32:31 PST. Exact image hashes were checked against the pinned manifest. This does not supersede Pale Horse’s previous review of mathematical prose, visual shell or SharePlane connection claims.",
+    "limits": "Read-only inspection of revised PNG artwork and the authored article illustration/caption, not execution of Lean, an independent mathematical proof, or a new UAT of every possible hosting surface. The prior REVISE of misleading mathematical labels was addressed in the exact new assets."
   },
-  "summary": "ACCEPT FOR OWNER REVIEW: new site shell parity, responsive chapter nav, type hierarchy, ruled evidence matrix, linked source record and two scoped SharePlane conceptual companions. Pale Horse checked exact article and catalog source, prior REVISE defect corrected, mathematical claims unchanged.",
+  "summary": "ACCEPT FOR OWNER REVIEW of corrected original editorial hero, square catalog cover and social image. Corrected graphical theorem wording, removed false zero-free critical line and fictional Lean formula, and left scientific acceptance unchecked; article mathematical prose, source map, and the verified two SharePlane Work connections were not changed.",
   "findings": [
-    "The previous live article produced an unstyled 1,736px header and a 1,440px search SVG. The revised source bounds the desktop header to 67px and search SVG to 18px, restores the established shared Reader brand/search/theme/footer controls, and leaves other Readers untouched.",
-    "A proposed desktop closed-details chapter rail initially failed review. The fix uses one visible desktop nav and a separate mobile details disclosure; the independent reviewer accepted the exact new markup and reported nine reachable desktop chapter links.",
-    "The new typography separates numbered editorial chapter markers, serif argument headings, sans body copy, accent status table, evidence grid and linked source ledger. The original claims, formal-theorem scope and dated MIT caveats remain intact.",
-    "Both SharePlane destinations Clear Thinking Is the Control Plane and Artifact Graph were checked as publicly readable published content. They are conceptual Work connections and do not count as independent validation of the RH proof.",
-    "The final post-publication review corrected stale draft-facing wording and the previously false review-pending catalog label. One shared footer and no hidden desktop rail were retained."
+    "The initial artwork was rejected because a zero-free expression on the critical line reverses RH, the mock Lean theorem was fictional, and plot labels could mislead. The final fixed hero removes these false claims and places the nontrivial-zero conjecture on the critical line, with scientific acceptance explicitly not checked.",
+    "Three exact public PNG digests were matched against the asset manifest by the independent reviewer at commit cfd2c31. The square thumbnail is derived from the accepted fact-safe hero and emphasizes that formal verification is distinct from scientific acceptance.",
+    "The article includes an accessible illustration caption and metadata that do not suggest GhostMesh executed the proof. The text, evidence revision, seven mapped claims, source map and SharePlane conceptual relationships are unchanged.",
+    "Home, archive and Science category entries render the same original square cover instead of the generic article fallback. The published hero and OG image retain the accepted branding without changing existing two-card issue #45 social approval scope.",
+    "Artwork-specific acceptance: Pale Horse inspected all three replacement assets at cfd2c315, matched their SHA256 values, and confirmed the diagram no longer asserts a false zero-free critical line or invented Lean theorem. The original art placement, standalone square cover and route-scoped social metadata remain source-safe; optional minor lettering artifact is nonblocking."
   ],
   "conclusion": "accept-for-owner-review"
 }
