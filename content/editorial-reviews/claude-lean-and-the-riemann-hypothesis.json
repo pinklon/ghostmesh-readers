@@ -3,20 +3,21 @@
   "readerId": "reader:claude-lean-and-the-riemann-hypothesis",
   "sourceId": "alpoge-riemann-hypothesis-announcement-2026",
   "sourceAidSha256": "3fc97784b71ddd44ff8aa0a177e99622a1c61b13cfa843a0989ee4a7a0cfeb8d",
-  "articleSha256": "9c6ea5c2c1369560de6f91a01bfa4c387189a712ef928fe472e294c4f2f45a32",
+  "articleSha256": "5a106c4161cd8dfc95a1954234d9bd27aa7e49fd5a50a26bb24fb57db3013d29",
   "evidenceRevision": "eb8d422652aee1a66e2ccbefe5b1f8fe5f1bfecee7e924a28393dfea7fcf69e2",
-  "reviewedAt": "2026-11-22T00:16:38Z",
+  "reviewedAt": "2026-11-22T00:59:10Z",
   "provenance": {
     "kind": "codex-task-agent",
-    "reference": "Pale Horse independently accepted the exact authored HTML and source map at GitHub PR #205, commit df4035d00d7ddfbd2c050c18550e3c7a00305fa0, in the original Reader 71 Slack review thread at 2026-11-21 16:16:38 Pacific. The independent verdict was limited to three direct author-source citations, their mapping and single shared footer.",
-    "limits": "Read-only editorial and mechanical comparison by Pale Horse against accepted 5954d2e source, not an independent Lean proof execution, formal mathematical reconstruction, or institutional RH acceptance."
+    "reference": "Pale Horse independently reviewed Reader 71 post-publication visual/relationship delta in the original GhostMesh Slack thread at 2026-11-21 16:58:46 PST, returning ACCEPT for the exact article SHA 5a106c4161cd8dfc95a1954234d9bd27aa7e49fd5a50a26bb24fb57db3013d29 after finding and requiring repair of the desktop closed-details navigation blocker.",
+    "limits": "Read-only presentation/source-copy review, not independent execution of the Lean theorem or a fresh device-browser run. Chrome dark/light behavior at 390, 768 and 1440 CSS pixels was directly measured by segfault. The mathematical evidence statement and source map are unchanged."
   },
-  "summary": "ACCEPT FOR OWNER CONSIDERATION on the exact Reader 71 authored HTML and source-map delta, as reported by Pale Horse at 2026-11-21 16:16:38 Pacific, with unchanged mathematics and resolved citations.",
+  "summary": "ACCEPT FOR OWNER REVIEW: new site shell parity, responsive chapter nav, type hierarchy, ruled evidence matrix, linked source record and two scoped SharePlane conceptual companions. Pale Horse checked exact article and catalog source, prior REVISE defect corrected, mathematical claims unchanged.",
   "findings": [
-    "Pale Horse required precise disclosure of Sutherland using Claude Code, independent kernel implementation distinctions, compiled .olean comparisons and nonconflation of Dirichlet GRH with Extended RH; those corrections were applied.",
-    "Pale Horse verified the November 21 12:55 UTC MIT status cutoff, separate Robin and Lagarias arithmetic implications and the presence of clear still-running checks in the original head.",
-    "Pale Horse verified two canonical Reader companions and specifically rejected a misleading SharePlane review-transfer link; the catalog preserves the reviewed zero.",
-    "The independently reviewed latest authored article adds exactly three original-source links in II, III and V. Pale Horse accepted their targets, all seven mapped claims and the single rendered shared footer at exact commit df4035d."
+    "The previous live article produced an unstyled 1,736px header and a 1,440px search SVG. The revised source bounds the desktop header to 67px and search SVG to 18px, restores the established shared Reader brand/search/theme/footer controls, and leaves other Readers untouched.",
+    "A proposed desktop closed-details chapter rail initially failed review. The fix uses one visible desktop nav and a separate mobile details disclosure; the independent reviewer accepted the exact new markup and reported nine reachable desktop chapter links.",
+    "The new typography separates numbered editorial chapter markers, serif argument headings, sans body copy, accent status table, evidence grid and linked source ledger. The original claims, formal-theorem scope and dated MIT caveats remain intact.",
+    "Both SharePlane destinations Clear Thinking Is the Control Plane and Artifact Graph were checked as publicly readable published content. They are conceptual Work connections and do not count as independent validation of the RH proof.",
+    "The final post-publication review corrected stale draft-facing wording and the previously false review-pending catalog label. One shared footer and no hidden desktop rail were retained."
   ],
   "conclusion": "accept-for-owner-review"
 }

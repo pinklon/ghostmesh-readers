@@ -4,10 +4,10 @@
   "sourceId": "alpoge-riemann-hypothesis-announcement-2026",
   "sourceDigest": "d0e3e55e00a16daa27bfc0e0388f64ae2b55bb545ee46775b2bbde392bb4efb2",
   "sourceAidSha256": "3fc97784b71ddd44ff8aa0a177e99622a1c61b13cfa843a0989ee4a7a0cfeb8d",
-  "articleSha256": "9c6ea5c2c1369560de6f91a01bfa4c387189a712ef928fe472e294c4f2f45a32",
+  "articleSha256": "5a106c4161cd8dfc95a1954234d9bd27aa7e49fd5a50a26bb24fb57db3013d29",
   "evidenceRevision": "eb8d422652aee1a66e2ccbefe5b1f8fe5f1bfecee7e924a28393dfea7fcf69e2",
   "sourceMapEvidenceSha256": "b539d3adbc05ee4dfd3e9b585c3c0a480fd17a21a33b8bf281706394f4c04b4a",
-  "reviewEvidenceSha256": "d974cb30ba2783dfd31a1d8c6b89d6fbabf60cb87e111994c91015cbd8e3e93f",
+  "reviewEvidenceSha256": "bef9e31baf3dc0593927d1e1057dd6cf35c4591dcbf214cf116ae14fdaabaac6",
   "candidateAuthor": "segfault",
   "complexity": {
     "tier": "brief",
@@ -93,13 +93,13 @@
   "ownerDecision": {
     "kind": "conversation",
     "owner": "Tony Malott",
-    "approval": "Is Reader 71 finished yet? This is kind of ridiculous. We need to get this over the finish line.",
+    "approval": "You got some fixing to do. Check all these screenshots. The typography and layout need careful repair, and the Reader needs appropriate SharePlane connections.",
     "approvalDate": "2026-11-21",
-    "articleSha256": "9c6ea5c2c1369560de6f91a01bfa4c387189a712ef928fe472e294c4f2f45a32",
+    "articleSha256": "5a106c4161cd8dfc95a1954234d9bd27aa7e49fd5a50a26bb24fb57db3013d29",
     "evidenceRevision": "eb8d422652aee1a66e2ccbefe5b1f8fe5f1bfecee7e924a28393dfea7fcf69e2"
   },
   "decision": "accept",
   "gaps": [],
-  "decisionRationale": "Pale Horse independently accepted the exact authored article SHA and source map after verifying the three new source-location citations, unchanged mathematical assertions and single canonical footer. The owner repeatedly instructed completion of Reader 71 in this conversation and previously directed pushing this Reader through, so publication authority is treated as a delegated execution instruction contingent on all technical gates passing, not as proof that Tony individually inspected the SHA.",
-  "assessedAt": "2026-11-22T00:17:07Z"
+  "decisionRationale": "Tony explicitly requested post-release visual correction and SharePlane connections after reviewing five screenshots. The unchanged mathematical assertions have prior independent editorial acceptance. Pale Horse independently accepted this exact revised visual/source-safe delta, including the fixed chapter rail and conceptual SharePlane links, with no remaining source blocker. This is an authorized repair of existing public Reader 71, not a new mathematical proof claim.",
+  "assessedAt": "2026-11-22T00:59:10Z"
 }
