@@ -25,6 +25,9 @@ const {archiveComplete,currentReaderShell,readerShellProblems}=require('./browse
    await page.goto(siteOrigin+'/'+path+'/');
    const result=await page.evaluate(()=>({width:innerWidth,scroll:document.documentElement.scrollWidth,theme:document.documentElement.dataset.theme,brief:!!document.getElementById('at-a-glance'),h1:document.querySelectorAll('h1').length,preload:[...document.querySelectorAll('iframe')].some(f=>f.src&&!f.src.startsWith('about:'))}));
    if(result.scroll>width+1||result.theme!==theme||result.preload)failures.push({path,width,theme,...result});
+   // Capture the INITIAL appearance before the interaction smoke toggles
+   // theme. The screenshot filename must describe the saved pixels.
+   await page.screenshot({path:`${output}/screenshots/${path||'home'}-${width}-${theme}.png`,fullPage:false});
    if(selected){
     const before=await currentReaderShell(page);
     const issues=readerShellProblems(before,width);
@@ -60,7 +63,6 @@ const {archiveComplete,currentReaderShell,readerShellProblems}=require('./browse
     }
    }
    results.push({path,width,theme,...result});
-   await page.screenshot({path:`${output}/screenshots/${path||'home'}-${width}-${theme}.png`,fullPage:false});
   }
   await context.close();
  }
