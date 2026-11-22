@@ -7,7 +7,7 @@
   "articleSha256": "8d85c4b49c131bc2dff49e82fc464ac85443a341a588392eb7e1417cfc08290d",
   "evidenceRevision": "eb8d422652aee1a66e2ccbefe5b1f8fe5f1bfecee7e924a28393dfea7fcf69e2",
   "sourceMapEvidenceSha256": "b539d3adbc05ee4dfd3e9b585c3c0a480fd17a21a33b8bf281706394f4c04b4a",
-  "reviewEvidenceSha256": "bfe2f7c929ec26d49d6006cae2182bec2821ef98082428cebad0394ce237f530",
+  "reviewEvidenceSha256": "ec939239faee6fb7a51387086ccbc029cd0335463409b305424b4ed3a4f83589",
   "candidateAuthor": "segfault",
   "complexity": {
     "tier": "brief",
@@ -98,14 +98,8 @@
     "articleSha256": "8d85c4b49c131bc2dff49e82fc464ac85443a341a588392eb7e1417cfc08290d",
     "evidenceRevision": "eb8d422652aee1a66e2ccbefe5b1f8fe5f1bfecee7e924a28393dfea7fcf69e2"
   },
-  "decision": "revise",
-  "gaps": [
-    {
-      "type": "test",
-      "severity": "blocking",
-      "rationale": "Pale Horse exact-head visual and Slack provenance review not yet returned for this CSS-only repair; prior accepted mathematical and artwork content is unchanged."
-    }
-  ],
-  "decisionRationale": "Tony identified the simultaneous sun/moon display in the Reader 71 theme control and directed segfault to fix the defect. The implementation is CSS-only within the existing authored article. Peer acceptance of the current correction is pending; original verified mathematical and image content stays unchanged.",
-  "assessedAt": "2026-11-22T02:38:46Z"
+  "decision": "accept",
+  "gaps": [],
+  "decisionRationale": "Tony reported the Reader 71 light/dark wrapper showing both icons in #ghostmesh-test and directed correction. Pale Horse independently accepted exact source 72b2a36 after a first REVISE requiring scoped Slack provenance, and the new validator restricts it to the original pinned Reader 71 content. Browser checks at 390/768/1440px in both themes show one icon before and after toggling, with no change to claim evidence, mathematical prose, image assets, or other Readers.",
+  "assessedAt": "2026-11-22T02:42:32Z"
 }
