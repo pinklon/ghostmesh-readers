@@ -19,11 +19,22 @@ from editorial_depth import AREAS, _get_json, acceptance_marker, binding, valida
 
 
 class EditorialDepthGate(unittest.TestCase):
-    def test_slack_peer_review_is_distinct_from_codex_provenance(self):
-        from editorial_depth import REVIEW_PROVENANCE_KINDS
-        self.assertIn("slack-peer-review", REVIEW_PROVENANCE_KINDS)
-        self.assertIn("codex-task-agent", REVIEW_PROVENANCE_KINDS)
-        self.assertNotEqual("slack-peer-review", "codex-task-agent")
+    def test_slack_peer_review_only_for_pinned_reader71_css(self):
+        from editorial_depth import REVIEW_PROVENANCE_KINDS, scoped_slack_presentation_review
+        catalog = json.loads((ROOT / "content/catalog.json").read_text())
+        reader = next(x for x in catalog["readers"] if x["slug"] == "claude-lean-and-the-riemann-hypothesis")
+        authored = (ROOT / "content/readers" / (reader["slug"] + ".html")).read_bytes()
+        actual = binding(reader, authored)
+        self.assertNotIn("slack-peer-review", REVIEW_PROVENANCE_KINDS)
+        self.assertTrue(scoped_slack_presentation_review(reader["slug"], actual, authored))
+        self.assertFalse(scoped_slack_presentation_review("some-new-reader", actual, authored))
+        altered = dict(actual, evidenceRevision="a" * 64)
+        self.assertFalse(scoped_slack_presentation_review(reader["slug"], altered, authored))
+        altered_source = dict(actual, sourceDigest="b" * 64)
+        self.assertFalse(scoped_slack_presentation_review(reader["slug"], altered_source, authored))
+        changed_text = authored.replace(b"The claim is extraordinary.", b"The claim is verified.", 1)
+        self.assertNotEqual(changed_text, authored)
+        self.assertFalse(scoped_slack_presentation_review(reader["slug"], actual, changed_text))
 
     def test_presentation_only_fingerprint_allows_css_but_not_editorial_changes(self):
         from editorial_depth import presentation_neutral_digest, presentation_only_match
