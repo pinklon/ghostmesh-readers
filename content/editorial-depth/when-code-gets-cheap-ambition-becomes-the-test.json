@@ -4,10 +4,10 @@
   "sourceId": "K2UEMxBTu9M",
   "sourceDigest": "d191264e21b1d5639e87dc91df4d7b8808bc3876d78e8734fc53d90ddb187412",
   "sourceAidSha256": "f1d4aa0bd6818919cb6e684f1399483f14332ce3585811d9ad8a98bae1923407",
-  "articleSha256": "ff74c15b0bc83823737309793c591b825921209c8065fdbd53d8ef1e99a65703",
+  "articleSha256": "3ed479b10b89cbee869934d688d11dab272745e6408ed8679258480b738baf0c",
   "evidenceRevision": "c5e19b8eb741d6c339d4996d3ba452065674c92880e23b367c60ff9e23bf08db",
   "sourceMapEvidenceSha256": "ab518db55ec1f48f56244366c85922a6fd5b1519c3ba084133cedc328df76333",
-  "reviewEvidenceSha256": "069067ddf13a46f0552d3ff63d305ab06047024b451a22ea32831abf87b9ee46",
+  "reviewEvidenceSha256": "2ab6d73ab690c50e1049ee9c374abefd2dd96a192a602e599b214a96226bab61",
   "candidateAuthor": "pinklon",
   "complexity": {
     "tier": "extended",
@@ -188,6 +188,6 @@
       "rationale": "Particle commercial model benchmarks and 30x design anecdotes have not been independently reproduced; project-scale and robotics proposals remain explicitly unexecuted hypotheses."
     }
   ],
-  "decisionRationale": "Authentic independent Codex source/editorial assessments accepted the article, exact VTT source aid and cue bindings for owner review; owner has not yet provided exact-candidate Creative Lock nor unambiguous public release authorization. The editorial-depth release remains HOLD by design.",
-  "assessedAt": "2026-11-22T14:42:06Z"
+  "decisionRationale": "Native Codex independently accepted the original article/evidence argument, precise source-aid and cue corrections, and the final relationship-endmatter order for this exact authored HTML. The original source and claims remain unchanged; only presentation order changed. Owner exact-candidate Creative Lock and explicit publication authorization are absent, so the release decision remains HOLD.",
+  "assessedAt": "2026-11-22T14:53:17Z"
 }

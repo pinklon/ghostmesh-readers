@@ -183,7 +183,18 @@ def governed_reader_connections(raw, r, byid):
   provenance=re.search(r'<section class="gm-related" id="related-thinking">',raw)
  if not provenance:
   raise ValueError(f'{slug}: missing article/rail boundary for Work placement')
- raw=raw[:provenance.start()]+work_html+raw[provenance.start():]
+ if slug=='when-code-gets-cheap-ambition-becomes-the-test':
+  # Reader #72: source/evidence then provenance, then onward-reading panels.
+  # Keep this scoped; previous published Readers retain their approved order.
+  # The canonical related section is now AFTER the complete provenance record.
+  final_related=re.search(r'<section class="gm-related" id="related-thinking">.*?</section>',raw,re.S)
+  if not final_related or not (
+     raw.find('id="reasonpack-provenance"')<final_related.start()
+  ):
+   raise ValueError(f'{slug}: final related reading must follow provenance')
+  raw=raw[:final_related.end()]+work_html+raw[final_related.end():]
+ else:
+  raw=raw[:provenance.start()]+work_html+raw[provenance.start():]
  # Reader rail offers both admitted graph planes at the same visual level.
  rail='<a href="#related-thinking">Related thinking</a>'
  if raw.count(rail)!=1:

@@ -3,15 +3,15 @@
   "readerId": "reader:when-code-gets-cheap-ambition-becomes-the-test",
   "sourceId": "K2UEMxBTu9M",
   "sourceAidSha256": "f1d4aa0bd6818919cb6e684f1399483f14332ce3585811d9ad8a98bae1923407",
-  "articleSha256": "ff74c15b0bc83823737309793c591b825921209c8065fdbd53d8ef1e99a65703",
+  "articleSha256": "3ed479b10b89cbee869934d688d11dab272745e6408ed8679258480b738baf0c",
   "evidenceRevision": "c5e19b8eb741d6c339d4996d3ba452065674c92880e23b367c60ff9e23bf08db",
-  "reviewedAt": "2026-11-22T14:42:06Z",
+  "reviewedAt": "2026-11-22T14:53:17Z",
   "provenance": {
     "kind": "codex-task-agent",
-    "reference": "Genuine native Codex CLI read-only review (v0.4) at source head 21d0c2e with report SHA256 c39b631c1c947cf6ac87b25183acad7306a155d9a23d03bfdc4cd4d28626bcd1, and its focused source-aid binding re-review at exact head ae8fefc, report SHA256 2b7fc42422b7d18151a4dfb1edf9e349eb77de612cc3ade23c80aa473050417e. Review documents are retained owner-privately, are not a certification of video speech, and do not authorize publication. Focused independent source-cue reviewer accepted the exact final v0.5 file hashes and bounded source links, report SHA256 016a239cc17f8262ecd6a3ff89562208951781d776d0edbcfcba65a7fe8ab6c9.",
+    "reference": "Genuine native Codex CLI read-only review (v0.4) at source head 21d0c2e with report SHA256 c39b631c1c947cf6ac87b25183acad7306a155d9a23d03bfdc4cd4d28626bcd1, and its focused source-aid binding re-review at exact head ae8fefc, report SHA256 2b7fc42422b7d18151a4dfb1edf9e349eb77de612cc3ade23c80aa473050417e. Review documents are retained owner-privately, are not a certification of video speech, and do not authorize publication. Focused independent source-cue reviewer accepted the exact final v0.5 file hashes and bounded source links, report SHA256 016a239cc17f8262ecd6a3ff89562208951781d776d0edbcfcba65a7fe8ab6c9. A separate genuine native Codex read-only focused presentation task ACCEPTED moved endmatter in exact author and generator output, report SHA-256 5e974696b0423a9079783e9494c091280dfa7433861830eca98640cb44ed74d2, native thread 01a203bd-e781-7b40-9f85-b8046f8df426.",
     "limits": "This is a source/editorial and provenance-scope review using read-only Codex. Captions are machine-generated and unlistened, the full ReasonPack, media acquisition and vendor benchmark were not reproduced. The reviewer did not authenticate human speech or approve owner release."
   },
-  "summary": "Genuine native Codex independent review of the owner-commissioned long-form Reader with corrected evidence card design and true caption-only acquisition; two subsequent exact-file read-only checks accepted the canonical VTT aid and precise interview cue links for owner consideration. Not a release authorization.",
+  "summary": "The initial independent native Codex assessments accepted Reader #72 factual claims, source cues and caption-only provenance for owner consideration. A subsequent genuine read-only focused review accepted the exact presentation-only relocation of related Readers and SharePlane Works below the complete source and method records, before sharing and footer. Source and claim evidence unchanged. No owner Creative Lock or publication authorization is implied.",
   "findings": [
     "The source is a 60:49 public interview from November 21; acquisition used YouTube metadata and original-English automatic VTT only, with no original video/audio ReasonPack build, Whisper ASR or independent speech certification.",
     "The redesigned source verification uses four evidenced cards, a separate release boundary, and readable retained links to source-specific external reports, earlier Readers and published conceptual SharePlane Works.",
@@ -20,7 +20,8 @@
     "The 13 claims and source map separate creator 30x design anecdote from the Fable quality estimate, vendor Particle assumptions from independent facts, and research on developer productivity from interview speculation.",
     "Private original-English VTT and normalized timeline hashes are visible only as sanitized integrity receipts and media is not embedded, while native Codex and Slack peer acceptance remain separate from owner Creative Lock and publication authorization.",
     "Narrow Chrome results show the nine chapter timestamps remain on one line and scroll within a bounded table at 390, 430 and 500 pixels, with no page-wide overflow; existing screenshots are exact version-candidate evidence, not production UAT.",
-    "The original pricing context now has an exact 09:15 YouTube cue in its mapped section while Stanford historical measurements remain independently located at Stanford AI Index highlight 6; the separate 30x design anecdote correctly uses its 31:41 time of 1,901 seconds rather than 1,900."
+    "The original pricing context now has an exact 09:15 YouTube cue in its mapped section while Stanford historical measurements remain independently located at Stanford AI Index highlight 6; the separate 30x design anecdote correctly uses its 31:41 time of 1,901 seconds rather than 1,900.",
+    "Related thinking and the SharePlane Work comparison were moved to the very bottom after the claim register and full five-step provenance, preceding share controls and footer, without changing either catalog relationship set or source claims. A native Codex read-only reviewer verified one of each section, exact related links, no content deletion and a pinned four-case Chrome witness."
   ],
   "conclusion": "accept-for-owner-review"
 }

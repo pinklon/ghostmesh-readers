@@ -33,6 +33,30 @@ class VisualContractTest(unittest.TestCase):
                          '.gm-related .gm-cards{'):
             self.assertIn('html[data-layout-family="annotated-editorial"] ' + selector, page)
 
+    def test_reader72_onward_reading_follows_provenance_and_claim_register(self):
+        slug = 'when-code-gets-cheap-ambition-becomes-the-test'
+        authored = (ROOT / 'content/readers' / f'{slug}.html').read_text()
+        generated = (ROOT / 'site' / slug / 'index.html').read_text()
+        # The publisher owns one related section; the generator owns the two
+        # catalog-backed relationship panels. They are endmatter, not evidence.
+        self.assertLess(authored.index('<!--GM_EVIDENCE-->'),
+                        authored.index('id="reasonpack-provenance"'))
+        self.assertLess(authored.index('id="reasonpack-provenance"'),
+                        authored.index('id="related-thinking"'))
+        indexes = [generated.index(value) for value in (
+            'id="external-evidence"',
+            'id="reasonpack-provenance"',
+            'id="related-thinking"',
+            'id="shareplane-thinking"',
+            'class="gm-sharebar"',
+            '</main>',
+        )]
+        self.assertEqual(indexes, sorted(indexes))
+        for name in ('reasonpack-provenance', 'related-thinking', 'shareplane-thinking'):
+            self.assertEqual(generated.count(f'id="{name}"'), 1)
+        self.assertEqual(generated.count('class="gm-related-copy"'), 2)
+        self.assertEqual(generated.count('class="gm-work-kind"'), 2)
+
     def test_player_and_related_projection_preserve_mobile_review_surface(self):
         catalog = json.loads((ROOT / 'content/catalog.json').read_text())
         by_id = {reader['id']: reader for reader in catalog['readers']}
