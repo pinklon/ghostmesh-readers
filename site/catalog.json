@@ -206,8 +206,8 @@
           "proposition": "Benchmark-normalized inference prices declined sharply in 2022–24",
           "kind": "external-research",
           "status": "unverified",
-          "sourceLocation": "Stanford AI Index 2025 primary report; interview 09:15 only contextual",
-          "assessment": "Stanford HAI documents >280x price reduction at fixed MMLU threshold through Oct 2024. Source: https://hai.stanford.edu/ai-index/2025-ai-index-report/research-and-development. The video price discussion is context, not the numerical report origin.",
+          "sourceLocation": "Stanford AI Index 2025, Research and Development chapter, numbered highlight 6 (plus Stanford ten-chart summary); interview 09:15 merely contextual",
+          "assessment": "Stanford HAI documents >280x price reduction at fixed MMLU threshold through Oct 2024. Source: https://hai.stanford.edu/ai-index/2025-ai-index-report/research-and-development. The video price discussion is context, not the numerical report origin. Exact numbers are stated in chapter highlight 6: https://hai.stanford.edu/ai-index/2025-ai-index-report/research-and-development and in Stanford HAI official 10-chart summary: https://hai.stanford.edu/news/ai-index-2025-state-of-ai-in-10-charts.",
           "limits": "Historical benchmark-matched comparison does not prove frontier price declines for all task types.",
           "references": [
             "r72-stanford"
@@ -434,7 +434,7 @@
       },
       "review": {
         "status": "pending",
-        "summary": "Extended owner-commissioned Reader #72, not yet independently reviewed or Creative Locked. Public release authorization NOT granted."
+        "summary": "The original v0.2 evidence argument received an ACCEPT in a November 22 Slack peer editorial review; the redesigned v0.3 source/provenance revision has a genuine native Codex read-only review with REVISE findings. Current v0.4 changes are awaiting focused re-review and a valid formal editorial receipt. Owner Creative Lock and publication decision are not granted."
       },
       "revisionHistory": [],
       "rank": 71

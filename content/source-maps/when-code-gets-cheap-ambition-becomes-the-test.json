@@ -19,7 +19,7 @@
       "claimIds": [
         "r72-inference-price"
       ],
-      "cueParaphrase": "Interview 09:15 discusses prices generally; Stanford HAI historical quantitative evidence is EXTERNAL, at https://hai.stanford.edu/ai-index/2025-ai-index-report/research-and-development, not spoken at this time.",
+      "cueParaphrase": "Interview 09:15 addresses pricing generally. The $20.00-to-$0.07/1M, >280× fixed-MMLU historical comparison is EXTERNAL and published in Stanford AI Index 2025 Research and Development CHAPTER HIGHLIGHT 6 at https://hai.stanford.edu/ai-index/2025-ai-index-report/research-and-development ; also corroborated by Stanford official summary https://hai.stanford.edu/news/ai-index-2025-state-of-ai-in-10-charts. Not spoken at this timestamp.",
       "privateAidCheck": "Approximate caption-derived cue, not speech-certified and not independent replication."
     },
     {
