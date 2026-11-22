@@ -346,6 +346,48 @@ a { color: var(--gm-accent); text-underline-offset: .19em; }
 @media(max-width:740px){.r72-arc{grid-template-columns:1fr}.r72-main .source-chapters{grid-template-columns:repeat(2,minmax(0,1fr))}.r72-prose>section{margin-top:40px}.r72-rail{display:none!important}}
 @media(max-width:430px){.r72-main .source-chapters{grid-template-columns:1fr}}
 
+
+/* Reader #72 / source-ledger layout, scoped to this article only */
+.r72-prose .r72-table-wrap th:nth-child(2),
+.r72-prose .r72-table-wrap td:nth-child(2){
+  min-width:74px;width:74px;white-space:nowrap;overflow-wrap:normal;word-break:normal;
+}
+.r72-prose .r72-table-wrap td:nth-child(2) a{white-space:nowrap;overflow-wrap:normal;word-break:normal}
+.r72-source-scroll-note{margin:-22px 0 24px;color:var(--gm-muted);font:.8rem/1.55 var(--sans)}
+.r72-verification-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:40px 0 18px}
+.r72-verification-card{min-width:0;border:1px solid var(--gm-border);border-top:3px solid var(--r69-cool);padding:22px 22px 19px;background:var(--gm-paper)}
+.r72-verification-kicker{margin:0 0 12px!important;font:750 .68rem/1.4 var(--mono)!important;letter-spacing:.11em;text-transform:uppercase;color:var(--r69-cool)!important}
+.r72-verification-card h3{font:600 clamp(1.15rem,1.7vw,1.42rem)/1.25 var(--serif);letter-spacing:-.015em;color:var(--gm-ink);margin:0 0 16px}
+.r72-prose .r72-verification-links{list-style:none;padding:0;margin:0}
+.r72-prose .r72-verification-links li{font:.9rem/1.5 var(--sans);border-bottom:1px solid var(--gm-border);padding:11px 0 12px}
+.r72-prose .r72-verification-links li:last-child{border-bottom:0}
+.r72-prose .r72-verification-links a{display:inline-block;font-weight:700;line-height:1.45;color:var(--gm-ink);text-decoration:underline;text-decoration-color:var(--r69-cool);text-underline-offset:.22em}
+.r72-prose .r72-verification-links span{display:block;color:var(--gm-muted);font:.84rem/1.54 var(--sans);margin-top:6px}
+.r72-prose .r72-verification-note{font:.82rem/1.65 var(--sans);color:var(--gm-muted);border-top:1px solid var(--gm-border);padding-top:13px;margin:10px 0 0}
+.r72-prose .r72-verification-limits p:not(.r72-verification-kicker){font:.93rem/1.75 var(--sans);margin:0 0 .9rem}
+.r72-prose .r72-release-record{border-left:3px solid var(--r69-cool);padding:17px 20px;margin:24px 0 5px;background:var(--gm-soft)}
+.r72-prose .r72-release-record p:not(.r72-verification-kicker){font:.91rem/1.7 var(--sans);margin:0;color:var(--gm-ink)}
+.r72-method-kicker{font:750 .7rem/1.4 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--r69-cool)}
+.r72-main .r72-provenance>h2{font:600 clamp(2rem,3.3vw,2.75rem)/1.15 var(--serif);letter-spacing:-.02em;margin:9px 0 20px}
+.r72-provenance-lead{max-width:70ch;color:var(--gm-ink);font:1.02rem/1.8 var(--sans);margin:0 0 20px}
+.r72-provenance-lead strong{color:var(--r69-cool)}
+.r72-process-list{list-style:none;counter-reset:r72method;padding:0;margin:28px 0 38px;border-top:1px solid var(--gm-border)}
+.r72-process-list>li{display:grid;grid-template-columns:44px minmax(0,1fr);gap:16px;border-bottom:1px solid var(--gm-border);padding:22px 0;min-width:0}
+.r72-process-num{font:750 1rem/1.5 var(--mono);color:var(--r69-cool)}
+.r72-process-list h3{font:600 1.17rem/1.32 var(--serif);margin:0 0 8px}
+.r72-process-list p{max-width:76ch;font:.91rem/1.72 var(--sans);margin:0 0 9px;color:var(--gm-ink)}
+.r72-process-list p:last-child{margin-bottom:0}
+.r72-process-list code,.r72-custody code{font:.8rem/1.6 var(--mono);overflow-wrap:anywhere;word-break:break-word}
+.r72-custody{background:var(--gm-paper);border-left:3px solid var(--r69-cool);padding:18px 20px;margin:16px 0 32px}
+.r72-custody h3{font:600 1.15rem/1.3 var(--serif);margin:0 0 10px}
+.r72-custody p{font:.86rem/1.72 var(--sans);margin:0 0 10px;max-width:76ch}
+.r72-provenance .r72-reference-heading{margin:42px 0 12px;font:600 1.4rem/1.35 var(--serif)}
+@media(max-width:750px){
+  .r72-verification-grid{grid-template-columns:minmax(0,1fr);gap:10px}
+  .r72-verification-card{padding:20px 17px}
+  .r72-process-list>li{grid-template-columns:30px minmax(0,1fr);gap:12px}
+}
+
 </style>
 <meta name="twitter:card" content="summary_large_image"><meta property="og:image" content="https://i.ytimg.com/vi/K2UEMxBTu9M/hqdefault.jpg"><meta name="twitter:image" content="https://i.ytimg.com/vi/K2UEMxBTu9M/hqdefault.jpg"></head>
 <body data-reader="ghostmesh-editorial-v1" data-variant="editorial">
@@ -643,13 +685,55 @@ a { color: var(--gm-accent); text-underline-offset: .19em; }
 <td>Structural opportunity, capital constraints and speculative robotics</td>
 </tr>
 </tbody>
-</table></div>
-<p><strong>Independent / external evidence:</strong> <a href="https://particle.ai/blog/introducing-particle-1">Particle-1 October 28 technical launch</a> (interested-party model comparison); <a href="https://hai.stanford.edu/ai-index/2025-ai-index-report/research-and-development">Stanford HAI 2025 AI Index</a> (historical benchmark-normalized inference prices); <a href="https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/">METR 2025 developer experiment</a> and <a href="https://metr.org/blog/2026-02-24-uplift-update/">February 2026 follow-up</a> (scope-limited productivity evidence and selection effects); <a href="https://paulgraham.com/greatwork.html">Paul Graham's 2023 original essay</a> (intellectual companion on curiosity).</p>
-<p><strong>Related GhostMesh Readers:</strong> <a href="https://youtube.shareplane.malott.ai/the-cheap-answer-can-be-an-expensive-job/">The Cheap Answer Can Be an Expensive Job, #69</a> (accepted-work economics); <a href="https://youtube.shareplane.malott.ai/a-smaller-model-can-win-the-job-not-the-benchmark-war/">A Smaller Model Can Win the Job, Not the Benchmark War, #70</a> (task-bound evaluation, not a universal model ranking).</p>
-<p><strong>Related SharePlane Works:</strong> <a href="https://shareplane.malott.ai/artifacts/the-right-model-is-the-one-your-eval-can-defend/">The Right Model Is the One Your Eval Can Defend</a> (defensible evaluation and routing); <a href="https://shareplane.malott.ai/artifacts/the-best-ai-system-should-need-less-ai-tomorrow/">The Best AI System Should Need Less AI Tomorrow</a> (deterministic repeatability and inference retirement). These are conceptual extensions of the thesis, <strong>not</strong> independent validation of Particle's benchmark.</p>
-<p><strong>What has not been established:</strong> The interview's 30×/10–20% comparison under a disclosed paired protocol, independent Particle-1 replication, causal speedups for mixed creative or enterprise work, an economic model proving tokens approach zero, a working GTA-reconstruction benchmark, widespread job replacement, or validated autonomous robotics deployment. The GhostMesh multi-workload proposal above is not yet executed.</p>
-<p><strong>Release state:</strong> Extended editorial draft, pending independent source/editorial/visual review and separate explicit owner publication approval. A long source does not create a license to omit uncertainty or inflate claims.</p>
+</table></div><p class="r72-source-scroll-note">On narrow screens, scroll the chapter table horizontally to inspect all columns.</p>
+<div class="r72-verification-grid" aria-label="Evidence roles, related thinking and remaining limitations">
+
+<article class="r72-verification-card">
+<p class="r72-verification-kicker">01 / Research record</p>
+<h3>Independent sources and interested-party evidence</h3>
+<ul class="r72-verification-links">
+<li><a href="https://particle.ai/blog/introducing-particle-1">Particle-1 technical announcement</a><span>October 28, 2026. Vendor-reported comparison, not independently reproduced.</span></li>
+<li><a href="https://hai.stanford.edu/ai-index/2025-ai-index-report/research-and-development">Stanford AI Index 2025</a><span>Historical benchmark-normalized inference pricing.</span></li>
+<li><a href="https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/">METR 2025 developer experiment</a> and <a href="https://metr.org/blog/2026-02-24-uplift-update/">February 2026 follow-up</a><span>Scope-limited productivity evidence and selection-effects caveats.</span></li>
+<li><a href="https://paulgraham.com/greatwork.html">Paul Graham, How to Do Great Work</a><span>Conceptual companion on curiosity, not evidence of AI productivity.</span></li>
+</ul>
+</article>
+
+<article class="r72-verification-card">
+<p class="r72-verification-kicker">02 / GhostMesh Reader graph</p>
+<h3>Earlier investigations</h3>
+<ul class="r72-verification-links">
+<li><a href="https://youtube.shareplane.malott.ai/the-cheap-answer-can-be-an-expensive-job/">Reader #69: The Cheap Answer Can Be an Expensive Job</a><span>Accepted-work economics beyond model-token price.</span></li>
+<li><a href="https://youtube.shareplane.malott.ai/a-smaller-model-can-win-the-job-not-the-benchmark-war/">Reader #70: A Smaller Model Can Win the Job, Not the Benchmark War</a><span>Task-specific evaluation, not a universal model ranking.</span></li>
+</ul>
+<p class="r72-verification-note">Conceptual connections. Neither Reader corroborates Doshi's predictions or Particle's reported metrics.</p>
+</article>
+
+<article class="r72-verification-card">
+<p class="r72-verification-kicker">03 / SharePlane connections</p>
+<h3>Related published Works</h3>
+<ul class="r72-verification-links">
+<li><a href="https://shareplane.malott.ai/artifacts/the-right-model-is-the-one-your-eval-can-defend/">The Right Model Is the One Your Eval Can Defend</a><span>Defensible task evaluations and routing decisions.</span></li>
+<li><a href="https://shareplane.malott.ai/artifacts/the-best-ai-system-should-need-less-ai-tomorrow/">The Best AI System Should Need Less AI Tomorrow</a><span>Durable deterministic work after validation.</span></li>
+</ul>
+<p class="r72-verification-note">Conceptual extensions, not external verification of the vendor benchmark.</p>
+</article>
+
+<article class="r72-verification-card r72-verification-limits">
+<p class="r72-verification-kicker">04 / Evidence boundary</p>
+<h3>What has not been established</h3>
+<p>The interview's 30× and 10–20% comparisons under a disclosed paired protocol; independent Particle-1 replication; causal speedups for mixed creative or enterprise work; a model proving token prices approach zero; a working GTA-reconstruction benchmark; widespread job replacement; or validated autonomous robotics deployment.</p>
+<p>The three-workload GhostMesh proposal above is <strong>not yet executed</strong>. Model claims remain distinct from independent evidence.</p>
+</article>
+</div>
+
+<div class="r72-release-record" aria-label="Reader publication and review status">
+<p class="r72-verification-kicker">Review and release boundary</p>
+<p>This is a source-backed editorial draft. Independent peer editorial review accepted the prior evidence argument, but the formal publication receipt and owner's exact-candidate release decision remain separate requirements. A verified source file or passing CI check does not certify speech or approve publication.</p>
+</div>
+
 </section>
+
 
 
       </article>
@@ -658,10 +742,44 @@ a { color: var(--gm-accent); text-underline-offset: .19em; }
         <h2>Related thinking</h2>
         <p><a href="/the-cheap-answer-can-be-an-expensive-job/">The Cheap Answer Can Be an Expensive Job (Reader #69)</a> tests cost per accepted job. <a href="/a-smaller-model-can-win-the-job-not-the-benchmark-war/">A Smaller Model Can Win the Job, Not the Benchmark War (Reader #70)</a> examines task-specific evaluation rather than global model hierarchy. Neither independently validates Doshi's economic predictions.</p>
       </section>
-      <section id="reasonpack-provenance" class="gm-source-scope">
-        <h2>Source and provenance</h2>
-        <p>Primary interview and six public-source families. Automatic captions are a privately retained timing aid, not speech-certified. Vendor benchmark results and founder forecasts are identified as such; no independently measured GhostMesh model run is claimed.</p>
-        <ol class="gm-source-list">
+      <section id="reasonpack-provenance" class="gm-source-scope r72-provenance">
+  <p class="r72-method-kicker">Evidence custody / production method</p>
+  <h2>How this Reader was actually made</h2>
+  <p class="r72-provenance-lead">We examined <a href="https://www.youtube.com/watch?v=K2UEMxBTu9M">Riley Brown’s original 60:49 interview</a>, captured its <strong>original-English automatic captions</strong> as a private timing aid, separated vendor claims from independent research, and built this analysis through the existing GhostMesh Reader generator. <strong>A complete ReasonPack media build was not run for this Reader.</strong> The distinction matters.</p>
+  <ol class="r72-process-list">
+    <li><span class="r72-process-num">01</span><div>
+      <h3>Identify and qualify the public source</h3>
+      <p>On November 22, 2026, the source was inspected using locally installed <code>yt-dlp 2026.08.19</code>. The video ID, title, creator, November 21 publication date, 3,649-second duration, and nine creator-defined chapter entries were confirmed from YouTube metadata.</p>
+      <p>These facts establish source identity and chapter navigation, not that every sentence of the video was manually checked.</p>
+    </div></li>
+    <li><span class="r72-process-num">02</span><div>
+      <h3>Acquire the timed text, without claiming a media package</h3>
+      <p>We used <code>yt-dlp --skip-download --write-auto-subs --sub-langs en-orig --sub-format vtt</code> against the original public video. The downloaded original-English VTT was kept privately and assigned SHA-256 <code>f1d4aa0bd6818919cb6e684f1399483f14332ce3585811d9ad8a98bae1923407</code>.</p>
+      <p><strong>No full video/audio download, ReasonPack <code>build</code>/<code>verify</code> pass, independent Whisper transcription, or full playback/listening certification was performed.</strong> This is a caption-assisted acquisition, not a verified original-media ReasonPack.</p>
+    </div></li>
+    <li><span class="r72-process-num">03</span><div>
+      <h3>Normalize caption timing and map the argument</h3>
+      <p>A local Python parser removed overlapping rolling-caption duplicates and produced 1,823 time-indexed reading entries, organized across the nine creator chapter ranges. The private normalized timeline has SHA-256 <code>5beee825066c710ff2382172e3b619232652d6f5a7eee50ad395827a74874bf0</code>.</p>
+      <p>Machine captions may misrecognize speaker names or model identifiers. Timestamped paraphrases were kept distinct from certified quotations; the 30× design comparison and separate Fable estimate were not treated as one controlled experiment.</p>
+    </div></li>
+    <li><span class="r72-process-num">04</span><div>
+      <h3>Separate evidence types and build a checkable thesis</h3>
+      <p>The private source register maps 13 claims to their interview context, limitations and six public-source families. Particle’s published numbers are labeled interested-party evidence. Stanford and METR findings are linked to their original reports, not falsely attributed to the speaker’s video timestamps. Paul Graham is an intellectual companion, not a source of measured AI outcomes.</p>
+      <p>The analysis adds counterarguments and a proposed three-workload test. That experiment was designed for this Reader, not executed.</p>
+    </div></li>
+    <li><span class="r72-process-num">05</span><div>
+      <h3>Render, inspect and hold release authority separately</h3>
+      <p>The canonical GhostMesh generator produced the article, source map, sanitized evidence receipt, Reader catalog, search and knowledge projections. The reviewed draft was checked in Chrome at 390 and 1,440 CSS pixels, in light and dark modes, including source navigation, appearance, search, footer and overflow.</p>
+      <p>One source/editorial peer review identified corrections to attribution, external-source locations, cost methodology and navigation, then accepted the corrected evidence argument. A peer editorial acceptance is not a source-media certificate, a formal authenticated editorial-depth receipt, or the owner’s publication authorization.</p>
+    </div></li>
+  </ol>
+  <div class="r72-custody">
+    <h3>What the evidence package does and does not prove</h3>
+    <p>The two published hashes identify the retained automatic-caption file and normalized timeline, not independently accurate speech or a fully verified ReasonPack. The production manuscript, original media and full captions are not distributed as public Reader assets. Source links, paraphrased cues and public-safe evidence boundaries remain inspectable.</p>
+    <p>A full ReasonPack workflow would additionally acquire original video/audio, create a verified manifest, and qualify transcription coverage. Those stages were <strong>not performed</strong> here and are not implied by the visible Reader.</p>
+  </div>
+  <h3 class="r72-reference-heading">Public sources and evidence roles</h3>
+  <ol class="gm-source-list">
           <li><a href="https://www.youtube.com/watch?v=K2UEMxBTu9M">Riley Brown and Suhail Doshi interview</a><span>November 21, 2026 · 60:49 · first-hand claims and proposed benchmarks</span></li>
           <li><a href="https://particle.ai/blog/introducing-particle-1">Particle-1 original technical announcement</a><span>October 28, 2026 · interested-party benchmark data, methods and comparison bounds</span></li>
           <li><a href="https://hai.stanford.edu/ai-index/2025-ai-index-report/research-and-development">Stanford AI Index 2025</a><span>Historical task-normalized inference price analysis, not universal current economics</span></li>
@@ -669,7 +787,7 @@ a { color: var(--gm-accent); text-underline-offset: .19em; }
           <li><a href="https://metr.org/blog/2026-02-24-uplift-update/">METR 2026 methodological update</a><span>Selection and measurement uncertainty in later estimates</span></li>
           <li><a href="https://paulgraham.com/greatwork.html">Paul Graham, How to Do Great Work</a><span>Original 2023 essay on curiosity and the selection of meaningful problems</span></li>
         </ol>
-      </section>
+</section>
     </main>
 
     <aside class="r69-rail rail r72-rail"><nav aria-label="Reader chapter navigation"><strong>In this Reader</strong><a href="#source">Original source & chapters</a>

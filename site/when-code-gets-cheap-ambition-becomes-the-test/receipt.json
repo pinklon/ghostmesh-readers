@@ -5,15 +5,15 @@
     "videoId": "K2UEMxBTu9M"
   },
   "custody": {
-    "status": "private-auto-caption-aid",
-    "note": "YouTube original English automatic captions retained privately as an unverified timing/reading aid; published content includes paraphrase and source cues, not the full source."
+    "status": "private-public-metadata-and-auto-caption-only-no-media-reasonpack",
+    "note": "YouTube public metadata and original-English automatic-caption VTT were retained privately. No full ReasonPack build/verify, source video or audio acquisition, local Whisper or listening certification occurred."
   },
   "sourceInspection": {
-    "method": "Video metadata and nine creator chapters corroborated with private automatic-caption timing aid; public Particle primary benchmark and independent methodology/history inspected.",
+    "method": "yt-dlp 2026.08.19 inspected public YouTube metadata and downloaded original English auto-caption VTT with --skip-download --write-auto-subs --sub-langs en-orig --sub-format vtt; private Python normalization recorded 1,823 time-index entries. Nine creator chapters matched to a source/claim registry.",
     "captionAidSha256": "f1d4aa0bd6818919cb6e684f1399483f14332ce3585811d9ad8a98bae1923407",
     "timelineAidSha256": "5beee825066c710ff2382172e3b619232652d6f5a7eee50ad395827a74874bf0",
-    "caveat": "Full audiovisual speech not manually certified. Vendor benchmark not independently replicated. Forecasts and anecdotes remain attributed.",
-    "publicationBoundary": "No raw video, transcripts, local file paths, secret material, private approval URLs or paid-model usage records are embedded."
+    "caveat": "Machine-captured rolling captions are not verified exact speech. No original video/audio ReasonPack, independent Whisper transcription, live video frame audit, vendor benchmark replication, or scientific outcome test.",
+    "publicationBoundary": "Raw captions and normalized timeline are excluded from public Git; public article contains source URL, source-role citations, sanitized SHA-256 digests, paraphrases, and the exact execution limitations."
   },
   "editorialStatus": "DRAFT_PENDING_INDEPENDENT_ACCEPTANCE_AND_OWNER_CREATIVE_LOCK",
   "intake": "https://github.com/pinklon/shareplane-control-tower/issues/1175",
