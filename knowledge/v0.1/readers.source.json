@@ -973,6 +973,18 @@
         "path": "site/claude-lean-and-the-riemann-hypothesis/index.html",
         "sha256": "310b10320a3a2cd26f5796de3acd50fa547f79e72e9a7a49dd83d8ab90893888"
       }
+    },
+    {
+      "id": "urn:ghostmesh-readers:reader:when-code-gets-cheap-ambition-becomes-the-test",
+      "type": "Reader",
+      "visibility": "public",
+      "epistemicStatus": "source-editorial",
+      "label": "When Code Gets Cheap, Ambition Becomes the Test",
+      "url": "https://youtube.shareplane.malott.ai/when-code-gets-cheap-ambition-becomes-the-test/",
+      "source": {
+        "path": "site/when-code-gets-cheap-ambition-becomes-the-test/index.html",
+        "sha256": "5144aec1c3fbabbd08f204e40375c43882d47cd3eb580edd56e8153f4964f1e0"
+      }
     }
   ],
   "relationships": [

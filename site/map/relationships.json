@@ -3,11 +3,11 @@
   "scope": "Local public editorial reading routes; no independent corroboration or cross-site graph admission.",
   "authority": "catalog-curated-editorial",
   "visibility": "public",
-  "readerCount": 71,
-  "assessmentCount": 71,
-  "relationshipCount": 164,
-  "sharePlaneRelationshipCount": 46,
-  "sharePlaneReviewCount": 31,
+  "readerCount": 72,
+  "assessmentCount": 72,
+  "relationshipCount": 166,
+  "sharePlaneRelationshipCount": 48,
+  "sharePlaneReviewCount": 32,
   "sharePlaneEdges": [
     {
       "from": "reader:when-code-gets-cheap-where-does-the-work-wait",
@@ -374,6 +374,22 @@
       "title": "Artifact Graph",
       "url": "https://shareplane.malott.ai/artifacts/artifact-graph/",
       "reason": "The published SharePlane Work explains how claim, source, provenance and receipt links preserve inspectable knowledge. Reader 71 uses that same source/claim architecture to distinguish author testimony, formal-checker reports and institutional recognition."
+    },
+    {
+      "from": "reader:when-code-gets-cheap-ambition-becomes-the-test",
+      "title": "The Right Model Is the One Your Eval Can Defend",
+      "url": "https://shareplane.malott.ai/artifacts/the-right-model-is-the-one-your-eval-can-defend/",
+      "type": "companion",
+      "reason": "A publicly published evaluation playbook for representative task samples, trace-level errors, model baselines and operating cost. It supplies a concrete qualification approach but not empirical evidence for Doshi.",
+      "basis": "curated-editorial-comparison"
+    },
+    {
+      "from": "reader:when-code-gets-cheap-ambition-becomes-the-test",
+      "title": "The Best AI System Should Need Less AI Tomorrow",
+      "url": "https://shareplane.malott.ai/artifacts/the-best-ai-system-should-need-less-ai-tomorrow/",
+      "type": "extends",
+      "reason": "The published inference-retirement thesis asks what should become deterministic after validation. It extends the architecture/control side of cheap model tokens without verifying the video claims.",
+      "basis": "curated-editorial-comparison"
     }
   ],
   "nodes": [
@@ -1529,6 +1545,22 @@
           "reader:a-smaller-model-can-win-the-job-not-the-benchmark-war"
         ],
         "rationale": "Pale Horse checked the canonical Reader routes for #48 and #70, and their arguments are relevant conceptual comparisons. The links do not purport to verify the RH result, and are limited to their respective editorial roles."
+      }
+    },
+    {
+      "id": "reader:when-code-gets-cheap-ambition-becomes-the-test",
+      "slug": "when-code-gets-cheap-ambition-becomes-the-test",
+      "title": "When Code Gets Cheap, Ambition Becomes the Test",
+      "url": "https://youtube.shareplane.malott.ai/when-code-gets-cheap-ambition-becomes-the-test/",
+      "review": {
+        "reviewedAt": "2026-11-22",
+        "reviewedCatalogSize": 71,
+        "decision": "linked",
+        "reviewedTargets": [
+          "reader:the-cheap-answer-can-be-an-expensive-job",
+          "reader:a-smaller-model-can-win-the-job-not-the-benchmark-war"
+        ],
+        "rationale": "Reviewed conceptual comparison with existing published Reader catalog; unrelated themes and unverified works excluded."
       }
     }
   ],
@@ -3497,6 +3529,30 @@
       "provenance": [
         "/a-smaller-model-can-win-the-job-not-the-benchmark-war/",
         "/the-paper-is-not-the-experiment/"
+      ],
+      "basis": "curated-editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:when-code-gets-cheap-ambition-becomes-the-test",
+      "to": "reader:the-cheap-answer-can-be-an-expensive-job",
+      "type": "companion",
+      "reason": "Reader #69 develops accepted-work cost accounting beyond token price. It is a complementary economic lens, not evidence that the interview forecasts are correct.",
+      "provenance": [
+        "/when-code-gets-cheap-ambition-becomes-the-test/",
+        "/the-cheap-answer-can-be-an-expensive-job/"
+      ],
+      "basis": "curated-editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:when-code-gets-cheap-ambition-becomes-the-test",
+      "to": "reader:a-smaller-model-can-win-the-job-not-the-benchmark-war",
+      "type": "companion",
+      "reason": "Reader #70 shows how specific workload evaluation limits general model-price comparisons. It is methodological background, not independent validation of Particle-1.",
+      "provenance": [
+        "/when-code-gets-cheap-ambition-becomes-the-test/",
+        "/a-smaller-model-can-win-the-job-not-the-benchmark-war/"
       ],
       "basis": "curated-editorial-comparison",
       "direction": "outgoing"
