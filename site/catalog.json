@@ -284,19 +284,32 @@
         ],
         "rationale": "Pale Horse checked the canonical Reader routes for #48 and #70, and their arguments are relevant conceptual comparisons. The links do not purport to verify the RH result, and are limited to their respective editorial roles."
       },
-      "sharePlaneRelationships": [],
+      "sharePlaneRelationships": [
+        {
+          "type": "companion",
+          "title": "Clear Thinking Is the Control Plane",
+          "url": "https://shareplane.malott.ai/artifacts/clear-thinking-is-the-control-plane/",
+          "reason": "This published SharePlane essay examines why apparent AI success is not enough: claims, evaluations, independent evidence and human judgment must be separated. Reader 71 applies that discipline to proof objects and mathematical acceptance."
+        },
+        {
+          "type": "companion",
+          "title": "Artifact Graph",
+          "url": "https://shareplane.malott.ai/artifacts/artifact-graph/",
+          "reason": "The published SharePlane Work explains how claim, source, provenance and receipt links preserve inspectable knowledge. Reader 71 uses that same source/claim architecture to distinguish author testimony, formal-checker reports and institutional recognition."
+        }
+      ],
       "sharePlaneReview": {
         "reviewedAt": "2026-11-21",
-        "decision": "none",
-        "rationale": "The proposed SharePlane evaluation companion resolves to retained review-transfer content rather than a verified canonical published Work. It remains deliberately excluded, with no inferred acceptance or graph edge."
+        "decision": "linked",
+        "rationale": "The owner explicitly requested SharePlane relationships. Direct public HTML checks confirmed both published Works resolve with correct titles and substantive content. These two are conceptual companions rather than corroboration of Alpöge proof; links use stable SharePlane artifact paths, which currently redirect to retained public reading routes."
       },
       "archiveCall": {
         "label": "Inspect the proof boundary",
         "text": "Read the original mathematical statement, the independent checker register and the outstanding end-to-end runs before asserting a breakthrough."
       },
       "review": {
-        "status": "pending",
-        "summary": "Pale Horse returned REVISE on v0.2; v0.3 source corrections were applied. The integrated author HTML, claim mapping, provenance and publication layout still require exact-head independent delta acceptance."
+        "status": "accepted",
+        "summary": "Pale Horse independently accepted the mathematical wording and exact source-map delta at PR #205; post-publication presentation refinement is separately under owner visual UAT, with no changes to proof claims."
       },
       "revisionHistory": [],
       "editorialOrder": 70,

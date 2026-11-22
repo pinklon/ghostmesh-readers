@@ -6,7 +6,7 @@
   "readerCount": 71,
   "assessmentCount": 71,
   "relationshipCount": 164,
-  "sharePlaneRelationshipCount": 44,
+  "sharePlaneRelationshipCount": 46,
   "sharePlaneReviewCount": 31,
   "sharePlaneEdges": [
     {
@@ -360,6 +360,20 @@
       "type": "extends",
       "reason": "The inference retirement thesis extends task specialization into system design: preserve validated repeatable work in deterministic machinery and reserve expensive reasoning for uncertainty. This is an operational extension of the Reader's argument, not evidence that the fine-tuned classifiers will generalize.",
       "basis": "curated-editorial-comparison"
+    },
+    {
+      "from": "reader:claude-lean-and-the-riemann-hypothesis",
+      "type": "companion",
+      "title": "Clear Thinking Is the Control Plane",
+      "url": "https://shareplane.malott.ai/artifacts/clear-thinking-is-the-control-plane/",
+      "reason": "This published SharePlane essay examines why apparent AI success is not enough: claims, evaluations, independent evidence and human judgment must be separated. Reader 71 applies that discipline to proof objects and mathematical acceptance."
+    },
+    {
+      "from": "reader:claude-lean-and-the-riemann-hypothesis",
+      "type": "companion",
+      "title": "Artifact Graph",
+      "url": "https://shareplane.malott.ai/artifacts/artifact-graph/",
+      "reason": "The published SharePlane Work explains how claim, source, provenance and receipt links preserve inspectable knowledge. Reader 71 uses that same source/claim architecture to distinguish author testimony, formal-checker reports and institutional recognition."
     }
   ],
   "nodes": [
