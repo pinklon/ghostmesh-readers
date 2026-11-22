@@ -1,0 +1,193 @@
+{
+  "schemaVersion": 1,
+  "readerId": "reader:when-code-gets-cheap-ambition-becomes-the-test",
+  "sourceId": "K2UEMxBTu9M",
+  "sourceDigest": "d191264e21b1d5639e87dc91df4d7b8808bc3876d78e8734fc53d90ddb187412",
+  "sourceAidSha256": "f1d4aa0bd6818919cb6e684f1399483f14332ce3585811d9ad8a98bae1923407",
+  "articleSha256": "ff74c15b0bc83823737309793c591b825921209c8065fdbd53d8ef1e99a65703",
+  "evidenceRevision": "c5e19b8eb741d6c339d4996d3ba452065674c92880e23b367c60ff9e23bf08db",
+  "sourceMapEvidenceSha256": "ab518db55ec1f48f56244366c85922a6fd5b1519c3ba084133cedc328df76333",
+  "reviewEvidenceSha256": "069067ddf13a46f0552d3ff63d305ab06047024b451a22ea32831abf87b9ee46",
+  "candidateAuthor": "pinklon",
+  "complexity": {
+    "tier": "extended",
+    "factors": [
+      "Original 60-minute interview with nine chapters and many consequential economics, software, labor and physical-robotics claims.",
+      "Thirteen source-registered claims, six source families, methodological challenges and a falsifiable mixed-workload test require extended rather than recap treatment."
+    ],
+    "rationale": "Extended treatment is warranted by the hour-long interview’s claims across model economics, software engineering, coding-native creative work, career and robotics extrapolations, with substantial evidence and governance limitations."
+  },
+  "sourceMap": [
+    {
+      "atSeconds": 484,
+      "sectionId": "i-the-falling-price-is-real-the-future-bill-is-not-settled",
+      "claimIds": [
+        "r72-demand"
+      ],
+      "rationale": "Doshi observes longer trajectories and proposes 24/7 agents; no measured adoption/cost forecast in source."
+    },
+    {
+      "atSeconds": 555,
+      "sectionId": "i-the-falling-price-is-real-the-future-bill-is-not-settled",
+      "claimIds": [
+        "r72-inference-price"
+      ],
+      "rationale": "Interview 09:15 addresses pricing generally. The $20.00-to-$0.07/1M, >280× fixed-MMLU historical comparison is EXTERNAL and published in Stanford AI Index 2025 Research and Development CHAPTER HIGHLIGHT 6 at https://hai.stanford.edu/ai-index/2025-ai-index-report/research-and-development ; also corroborated by Stanford official summary https://hai.stanford.edu/news/ai-index-2025-state-of-ai-in-10-charts. Not spoken at this timestamp."
+    },
+    {
+      "atSeconds": 1137,
+      "sectionId": "ii-particle-1-is-a-concrete-result-not-a-universal-model-verdict",
+      "claimIds": [
+        "r72-particle-eff"
+      ],
+      "rationale": "18:57 interview founder describes token reduction. Exact ranges, 95% assumed cache hit and failure-inclusive task-cost account are from interested-party Particle technical post https://particle.ai/blog/introducing-particle-1, not independently repeated here."
+    },
+    {
+      "atSeconds": 1901,
+      "sectionId": "iii-five-personal-evaluations-are-a-beginning-not-a-result",
+      "claimIds": [
+        "r72-pricing-30x"
+      ],
+      "rationale": "31:41 roughly 30× difference for premium GPT-family vs DeepSeek Flash in subjective design; 31:52 separate 10–20% estimate for Fable. Not a single paired trial, source/versions not certified."
+    },
+    {
+      "atSeconds": 1807,
+      "sectionId": "iii-five-personal-evaluations-are-a-beginning-not-a-result",
+      "claimIds": [
+        "r72-evals"
+      ],
+      "rationale": "Doshi recommends a small repeatable task folder, common prompts, and scoring, useful as a pilot."
+    },
+    {
+      "atSeconds": 2035,
+      "sectionId": "iv-work-can-become-code-without-becoming-reliable-software",
+      "claimIds": [
+        "r72-code-native"
+      ],
+      "rationale": "Riley reports direct FFmpeg workflow works better in his creative setup; Doshi suggests training distribution explanation."
+    },
+    {
+      "atSeconds": 2340,
+      "sectionId": "iv-work-can-become-code-without-becoming-reliable-software",
+      "claimIds": [
+        "r72-version-custody"
+      ],
+      "rationale": "Riley reports users losing track of produced files and versions; Doshi forecasts model-mediated version retention."
+    },
+    {
+      "atSeconds": 2528,
+      "sectionId": "v-software-engineering-is-not-dead-its-boundaries-are-changing",
+      "claimIds": [
+        "r72-career"
+      ],
+      "rationale": "Doshi argues software engineers increasingly build AI systems and may have to re-skill; claims are rhetorical."
+    },
+    {
+      "atSeconds": 2605,
+      "sectionId": "v-software-engineering-is-not-dead-its-boundaries-are-changing",
+      "claimIds": [
+        "r72-productivity"
+      ],
+      "rationale": "Interview 43:25 discusses career transition. METR 2025 experiment and Feb 2026 methods update are EXTERNAL data, not spoken results: https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/ and https://metr.org/blog/2026-02-24-uplift-update/."
+    },
+    {
+      "atSeconds": 208,
+      "sectionId": "vi-gta-is-an-interesting-benchmark-precisely-because-it-is-not-one-benchmark",
+      "claimIds": [
+        "r72-games"
+      ],
+      "rationale": "Doshi suggests a progressively difficult game recreation benchmark; interview reports no execution."
+    },
+    {
+      "atSeconds": 3072,
+      "sectionId": "vii-when-workers-can-do-more-who-is-allowed-to-attempt-more",
+      "claimIds": [
+        "r72-ambition"
+      ],
+      "rationale": "The interview argues for scaling individual ambition and structural room to attempt larger projects."
+    },
+    {
+      "atSeconds": 3372,
+      "sectionId": "viii-robotics-is-the-most-exciting-extrapolation-and-the-least-proven",
+      "claimIds": [
+        "r72-robotics"
+      ],
+      "rationale": "Interview extrapolates from recent arm demos to more broad access, not empirical robot deployment."
+    },
+    {
+      "atSeconds": 1380,
+      "sectionId": "ii-particle-1-is-a-concrete-result-not-a-universal-model-verdict",
+      "claimIds": [
+        "r72-particle-business"
+      ],
+      "rationale": "Founder describes the apparent margin/volume tension and compares inference to payments; underdetermined economics."
+    }
+  ],
+  "assessment": {
+    "sourceCoverage": {
+      "disposition": "covered",
+      "rationale": "The public original 60:49 interview has nine creator chapters, 1,823 time-indexed caption entries, and thirteen bounded claims distributed across its full argument, with explicit automatic-caption uncertainty."
+    },
+    "supportingArgument": {
+      "disposition": "covered",
+      "rationale": "The Reader tests whether affordable intelligence can expand the scope of accepted, safe work instead of treating a vendor price ratio or speculative occupational displacement as established."
+    },
+    "evidenceRoles": {
+      "disposition": "covered",
+      "rationale": "The source distinguishes creator quotations and forecasts, Particle commercial benchmarks, Stanford historical unit prices, METR randomized productivity research, and non-empirical conceptual companions."
+    },
+    "counterargument": {
+      "disposition": "covered",
+      "rationale": "The analysis gives substantive competing views about uneven capability, governance and institutional permissions, productivity measurement bias, market concentration and inequitable opportunity."
+    },
+    "tradeoffs": {
+      "disposition": "covered",
+      "rationale": "The proposed design compares token price, retries, accepted outcomes, human verification, provenance, security controls, recovery cost, and practical project scale under controlled workloads."
+    },
+    "falsifiability": {
+      "disposition": "covered",
+      "rationale": "A proposed paired three-workload evaluation would compare premium and inexpensive model routing with task acceptance tests, blinded review where possible and full accounting of verification and retries."
+    },
+    "originalSynthesis": {
+      "disposition": "covered",
+      "rationale": "The distinct editorial finding is that reduced execution cost matters only when individuals can complete larger useful projects under fixed source, quality, safety and authorization conditions."
+    },
+    "performance": {
+      "disposition": "covered",
+      "rationale": "Quantitative metrics are clearly scoped: the thirty-fold speaker comparison is anecdotal, Particle benchmarks are vendor-reported with a 95 percent cache assumption, and no independent model experiment was run."
+    },
+    "economics": {
+      "disposition": "covered",
+      "rationale": "The article correctly divides total model/tool charges, human verification and amortized overhead over independently accepted jobs and distinguishes that from token usage and vendor per-task estimates."
+    },
+    "threatGovernance": {
+      "disposition": "covered",
+      "rationale": "The article requires bounded agent execution, trustworthy source paths, auditable version custody, explicit permission for destructive or external changes, and rollback rather than self-approved release."
+    }
+  },
+  "independentCorroboration": "none",
+  "ownerDecision": {
+    "pullNumber": 212,
+    "commentId": null
+  },
+  "decision": "hold",
+  "gaps": [
+    {
+      "type": "scope",
+      "severity": "blocking",
+      "rationale": "Tony has not yet provided an explicit exact-candidate Creative Lock and publication decision for this revised source head and evidence receipt; no merge or public release is authorized."
+    },
+    {
+      "type": "source",
+      "severity": "nonblocking",
+      "rationale": "The source analysis relies on original-English automatic captions and YouTube metadata, not certified listening, original-media ReasonPack build/verify or independent VTT accuracy validation."
+    },
+    {
+      "type": "evidence",
+      "severity": "nonblocking",
+      "rationale": "Particle commercial model benchmarks and 30x design anecdotes have not been independently reproduced; project-scale and robotics proposals remain explicitly unexecuted hypotheses."
+    }
+  ],
+  "decisionRationale": "Authentic independent Codex source/editorial assessments accepted the article, exact VTT source aid and cue bindings for owner review; owner has not yet provided exact-candidate Creative Lock nor unambiguous public release authorization. The editorial-depth release remains HOLD by design.",
+  "assessedAt": "2026-11-22T14:42:06Z"
+}

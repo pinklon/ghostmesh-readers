@@ -434,9 +434,13 @@
       },
       "review": {
         "status": "pending",
-        "summary": "The original v0.2 evidence argument received an ACCEPT in a November 22 Slack peer editorial review; the redesigned v0.3 source/provenance revision has a genuine native Codex read-only review with REVISE findings. Current v0.4 changes are awaiting focused re-review and a valid formal editorial receipt. Owner Creative Lock and publication decision are not granted."
+        "summary": "Genuine Codex independent editorial and focused source-cue assessments ACCEPT this corrected Reader for owner consideration. The formal editorial-depth release remains HOLD pending owner exact-candidate Creative Lock and explicit publication decision."
       },
       "revisionHistory": [],
+      "editorialDepth": {
+        "schemaVersion": 1,
+        "receiptPath": "content/editorial-depth/when-code-gets-cheap-ambition-becomes-the-test.json"
+      },
       "rank": 71
     },
     {
