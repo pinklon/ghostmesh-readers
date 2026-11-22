@@ -1,0 +1,125 @@
+{
+  "schemaVersion": 1,
+  "readerId": "reader:when-code-gets-cheap-ambition-becomes-the-test",
+  "sourceId": "K2UEMxBTu9M",
+  "sourceAidSha256": "f1d4aa0bd6818919cb6e684f1399483f14332ce3585811d9ad8a98bae1923407",
+  "points": [
+    {
+      "atSeconds": 484,
+      "sectionId": "i-the-falling-price-is-real-the-future-bill-is-not-settled",
+      "claimIds": [
+        "r72-demand"
+      ],
+      "cueParaphrase": "Doshi observes longer trajectories and proposes 24/7 agents; no measured adoption/cost forecast in source.",
+      "privateAidCheck": "Approximate caption-derived cue, not speech-certified and not independent replication."
+    },
+    {
+      "atSeconds": 555,
+      "sectionId": "i-the-falling-price-is-real-the-future-bill-is-not-settled",
+      "claimIds": [
+        "r72-inference-price"
+      ],
+      "cueParaphrase": "Stanford HAI documents >280x price reduction at fixed MMLU threshold through Oct 2024.",
+      "privateAidCheck": "Approximate caption-derived cue, not speech-certified and not independent replication."
+    },
+    {
+      "atSeconds": 1137,
+      "sectionId": "ii-particle-1-is-a-concrete-result-not-a-universal-model-verdict",
+      "claimIds": [
+        "r72-particle-eff"
+      ],
+      "cueParaphrase": "Particle Oct 28 reports 28.4-52.2% fewer output tokens, 34.4-51.6% lower cost per task than base DeepSeek V4.1 Flash across four benchmarks, pass@1 within confidence intervals.",
+      "privateAidCheck": "Approximate caption-derived cue, not speech-certified and not independent replication."
+    },
+    {
+      "atSeconds": 1900,
+      "sectionId": "iii-five-personal-evaluations-are-a-beginning-not-a-result",
+      "claimIds": [
+        "r72-pricing-30x"
+      ],
+      "cueParaphrase": "Doshi reports subjective near-equivalence for a small creative/design comparison; Riley introduces 10-20% quality gap in intro.",
+      "privateAidCheck": "Approximate caption-derived cue, not speech-certified and not independent replication."
+    },
+    {
+      "atSeconds": 1807,
+      "sectionId": "iii-five-personal-evaluations-are-a-beginning-not-a-result",
+      "claimIds": [
+        "r72-evals"
+      ],
+      "cueParaphrase": "Doshi recommends a small repeatable task folder, common prompts, and scoring, useful as a pilot.",
+      "privateAidCheck": "Approximate caption-derived cue, not speech-certified and not independent replication."
+    },
+    {
+      "atSeconds": 2035,
+      "sectionId": "iv-work-can-become-code-without-becoming-reliable-software",
+      "claimIds": [
+        "r72-code-native"
+      ],
+      "cueParaphrase": "Riley reports direct FFmpeg workflow works better in his creative setup; Doshi suggests training distribution explanation.",
+      "privateAidCheck": "Approximate caption-derived cue, not speech-certified and not independent replication."
+    },
+    {
+      "atSeconds": 2340,
+      "sectionId": "iv-work-can-become-code-without-becoming-reliable-software",
+      "claimIds": [
+        "r72-version-custody"
+      ],
+      "cueParaphrase": "Riley reports users losing track of produced files and versions; Doshi forecasts model-mediated version retention.",
+      "privateAidCheck": "Approximate caption-derived cue, not speech-certified and not independent replication."
+    },
+    {
+      "atSeconds": 2528,
+      "sectionId": "v-software-engineering-is-not-dead-its-boundaries-are-changing",
+      "claimIds": [
+        "r72-career"
+      ],
+      "cueParaphrase": "Doshi argues software engineers increasingly build AI systems and may have to re-skill; claims are rhetorical.",
+      "privateAidCheck": "Approximate caption-derived cue, not speech-certified and not independent replication."
+    },
+    {
+      "atSeconds": 2605,
+      "sectionId": "v-software-engineering-is-not-dead-its-boundaries-are-changing",
+      "claimIds": [
+        "r72-productivity"
+      ],
+      "cueParaphrase": "METR early-2025 observed 19% longer completion time on specified tasks; Feb 2026 followup says selection effects weaken numerical inference for more recent periods.",
+      "privateAidCheck": "Approximate caption-derived cue, not speech-certified and not independent replication."
+    },
+    {
+      "atSeconds": 208,
+      "sectionId": "vi-gta-is-an-interesting-benchmark-precisely-because-it-is-not-one-benchmark",
+      "claimIds": [
+        "r72-games"
+      ],
+      "cueParaphrase": "Doshi suggests a progressively difficult game recreation benchmark; interview reports no execution.",
+      "privateAidCheck": "Approximate caption-derived cue, not speech-certified and not independent replication."
+    },
+    {
+      "atSeconds": 3072,
+      "sectionId": "vii-when-workers-can-do-more-who-is-allowed-to-attempt-more",
+      "claimIds": [
+        "r72-ambition"
+      ],
+      "cueParaphrase": "The interview argues for scaling individual ambition and structural room to attempt larger projects.",
+      "privateAidCheck": "Approximate caption-derived cue, not speech-certified and not independent replication."
+    },
+    {
+      "atSeconds": 3372,
+      "sectionId": "viii-robotics-is-the-most-exciting-extrapolation-and-the-least-proven",
+      "claimIds": [
+        "r72-robotics"
+      ],
+      "cueParaphrase": "Interview extrapolates from recent arm demos to more broad access, not empirical robot deployment.",
+      "privateAidCheck": "Approximate caption-derived cue, not speech-certified and not independent replication."
+    },
+    {
+      "atSeconds": 1380,
+      "sectionId": "ii-particle-1-is-a-concrete-result-not-a-universal-model-verdict",
+      "claimIds": [
+        "r72-particle-business"
+      ],
+      "cueParaphrase": "Founder describes the apparent margin/volume tension and compares inference to payments; underdetermined economics.",
+      "privateAidCheck": "Approximate caption-derived cue, not speech-certified and not independent replication."
+    }
+  ]
+}
