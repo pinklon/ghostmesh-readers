@@ -70,5 +70,17 @@
       "sitemap-http-200",
       "claim-register-http-200"
     ]
+  },
+  "claude-lean-and-the-riemann-hypothesis": {
+    "mergeCommit": "7655f4c0784753b6446f7020859e064f7b0d23c0",
+    "url": "https://youtube.shareplane.malott.ai/claude-lean-and-the-riemann-hypothesis/",
+    "verifiedAt": "2026-11-22T00:22:21Z",
+    "checks": [
+      "article-http-200",
+      "receipt-http-200",
+      "catalog-http-200",
+      "sitemap-http-200",
+      "claim-register-http-200"
+    ]
   }
 }
