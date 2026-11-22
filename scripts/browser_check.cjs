@@ -37,6 +37,27 @@ const {archiveComplete,currentReaderShell,readerShellProblems}=require('./browse
      if(after.theme===before.theme)nextProblems.push('appearance click did not change theme');
      if(nextProblems.length)failures.push({path,width,theme,stage:'after-toggle',issues:nextProblems,metrics:after});
     }else failures.push({path,width,theme,issues:['appearance toggle missing']});
+    // A correctly sized search icon can still be dead. Exercise the actual
+    // shared dialog's open, focus, close and trigger-focus restoration.
+    const searchTrigger=page.locator('[data-reader-search-open]');
+    const searchDialog=page.locator('[data-reader-search]');
+    const searchClose=page.locator('[data-reader-search-close]');
+    if(await searchTrigger.count()!==1 || await searchDialog.count()!==1 || await searchClose.count()!==1){
+     failures.push({path,width,theme,stage:'search',issues:['shared search controls missing']});
+    }else{
+     try{
+      await searchTrigger.click({timeout:3000});
+      const opened=await searchDialog.evaluate(el=>el.open);
+      const focused=await page.locator('#gm-search-input').evaluate(el=>document.activeElement===el);
+      if(!opened || !focused)failures.push({path,width,theme,stage:'search-open',issues:['search dialog not open or input not focused']});
+      if(opened){
+       await searchClose.click({timeout:3000});
+       const closed=!(await searchDialog.evaluate(el=>el.open));
+       const restored=await searchTrigger.evaluate(el=>document.activeElement===el);
+       if(!closed || !restored)failures.push({path,width,theme,stage:'search-close',issues:['search dialog did not close or restore trigger focus']});
+      }
+     }catch(error){failures.push({path,width,theme,stage:'search-interaction',issues:[String(error)]});}
+    }
    }
    results.push({path,width,theme,...result});
    await page.screenshot({path:`${output}/screenshots/${path||'home'}-${width}-${theme}.png`,fullPage:false});
@@ -60,6 +81,6 @@ const {archiveComplete,currentReaderShell,readerShellProblems}=require('./browse
  await page.evaluate(()=>localStorage.setItem('gm-appearance','system'));await page.reload();if(await page.locator('html').getAttribute('data-theme')!=='dark')failures.push('system preference');
  for(const r of cat.readers){await page.goto(siteOrigin+'/'+r.slug+'/');const play=page.locator('#play,#play-cover,#play-source,#play-reel,#play-video').first();if(await play.count()){await play.click();if(!(await page.locator('iframe[src^="https://"]').count()))failures.push('player '+r.slug)}else failures.push('play control missing '+r.slug);}
  await context.close();
- const nojs=await browser.newContext({javaScriptEnabled:false,viewport:{width:390,height:844}});const np=await nojs.newPage();await np.goto('http://127.0.0.1:8765/readers/');if(!(await archiveComplete(np,cat)))failures.push('no-JS archive');
+ const nojs=await browser.newContext({javaScriptEnabled:false,viewport:{width:390,height:844}});const np=await nojs.newPage();await np.goto(siteOrigin+'/readers/');if(!(await archiveComplete(np,cat)))failures.push('no-JS archive');
  await nojs.close();await browser.close();fs.writeFileSync(output+'/browser-evidence.json',JSON.stringify({cases:results.length,results,failures},null,2));console.log(JSON.stringify({cases:results.length,failures},null,2));if(failures.length)process.exit(1);
 })();
