@@ -1,0 +1,104 @@
+{
+  "schemaVersion": 1,
+  "readerId": "reader:claude-lean-and-the-riemann-hypothesis",
+  "sourceId": "alpoge-riemann-hypothesis-announcement-2026",
+  "sourceDigest": "d0e3e55e00a16daa27bfc0e0388f64ae2b55bb545ee46775b2bbde392bb4efb2",
+  "sourceAidSha256": "3fc97784b71ddd44ff8aa0a177e99622a1c61b13cfa843a0989ee4a7a0cfeb8d",
+  "articleSha256": "9c6ea5c2c1369560de6f91a01bfa4c387189a712ef928fe472e294c4f2f45a32",
+  "evidenceRevision": "eb8d422652aee1a66e2ccbefe5b1f8fe5f1bfecee7e924a28393dfea7fcf69e2",
+  "sourceMapEvidenceSha256": "b539d3adbc05ee4dfd3e9b585c3c0a480fd17a21a33b8bf281706394f4c04b4a",
+  "reviewEvidenceSha256": "3518bdb4e7e2242413635e502b4b9ecfc35b7386abc5bef608b0c79ab062152b",
+  "candidateAuthor": "segfault",
+  "complexity": {
+    "tier": "brief",
+    "factors": [
+      "Four-page original author announcement plus a 2,200-word Reader with seven mapped claims",
+      "Separately sourced formal verification, mathematical interpretation and collaboration provenance limitations"
+    ],
+    "rationale": "A detailed Reader with seven mapped claims and explicitly scoped technical evidence is sufficient; it does not purport to audit a 14-part mathematical proof or launch an engineering change."
+  },
+  "sourceMap": [
+    {
+      "atSeconds": null,
+      "sectionId": "ii.-what-alpöge-and-claude-say-they-did",
+      "claimIds": [
+        "r71-author",
+        "r71-attribution"
+      ],
+      "rationale": "The author announcement supports only first-person claims about discovery and model contributions, not independent provenance of each insight."
+    },
+    {
+      "atSeconds": null,
+      "sectionId": "iii.-verification-that-matters",
+      "claimIds": [
+        "r71-compilation",
+        "r71-kernels",
+        "r71-statement",
+        "r71-arithmetic"
+      ],
+      "rationale": "The original formal-proof claim is distinguished from MIT independent checker reports, exact target comparison and the Robin/Lagarias arithmetic cross-check."
+    },
+    {
+      "atSeconds": null,
+      "sectionId": "v.-three-ways-this-could-still-change",
+      "claimIds": [
+        "r71-community"
+      ],
+      "rationale": "The original claim is compared against still-running checks and Clay institutional status without misrepresenting either as a formal proof rejection."
+    }
+  ],
+  "assessment": {
+    "sourceCoverage": {
+      "disposition": "covered",
+      "rationale": "The author original note, MIT verification record, Nature reporting and Clay institutional sources are identified separately, with private original-note digest and three exact source-locator sections."
+    },
+    "supportingArgument": {
+      "disposition": "covered",
+      "rationale": "The article follows the author claim through the Lean module build, axioms, independent kernels, statement comparator and arithmetic cross-check, preserving the still-running end-to-end tests."
+    },
+    "evidenceRoles": {
+      "disposition": "covered",
+      "rationale": "The author testimony, MIT checker outputs, Nature interpretation and Clay institutional status have distinct evidentiary roles; GhostMesh did not run a proof checker."
+    },
+    "counterargument": {
+      "disposition": "covered",
+      "rationale": "Andrew Granville questioned whether the write-up could be assessed; this limitation is not exaggerated into a mathematical counterexample, and Clay status is not presented as kernel rejection."
+    },
+    "tradeoffs": {
+      "disposition": "covered",
+      "rationale": "The investigation separates mechanized proof acceptance from mathematical intelligibility, chain-of-custody risk, human review effort and attribution of machine-generated discoveries."
+    },
+    "falsifiability": {
+      "disposition": "covered",
+      "rationale": "The exact theorem definitions, axioms, checker implementations, imported libraries and outstanding lake-comparator runs provide explicit ways new evidence could strengthen or undermine the claim."
+    },
+    "originalSynthesis": {
+      "disposition": "covered",
+      "rationale": "The operating lesson is that validated proof objects, mathematical understanding, attribution and institutional authority are separate stages that deserve separate accountable evidence records."
+    },
+    "performance": {
+      "disposition": "covered",
+      "rationale": "Module and declaration counts are reported only from MIT technical checks, without inventing GhostMesh execution or general AI productivity benchmarks."
+    },
+    "economics": {
+      "disposition": "covered",
+      "rationale": "The essay does not claim computational cost savings or value metrics from a formal proof. It identifies any economic implications as outside independently measured evidence."
+    },
+    "threatGovernance": {
+      "disposition": "covered",
+      "rationale": "The article treats software trust, statement alignment, source provenance, accepted axioms and reviewer authority as distinct assurance boundaries, avoiding claims of universal AI autonomy."
+    }
+  },
+  "independentCorroboration": "none",
+  "ownerDecision": null,
+  "decision": "revise",
+  "gaps": [
+    {
+      "type": "evidence",
+      "severity": "blocking",
+      "rationale": "Pale Horse has not yet accepted the latest exact article SHA after direct source-location link additions; the original acceptance remains valid for the earlier article."
+    }
+  ],
+  "decisionRationale": "The mathematical/editorial corrections have previous independent acceptance. The newest direct citation markup and final source-map receipt still need a bounded exact-byte acceptance before Creative Lock and owner release.",
+  "assessedAt": "2026-11-22T00:15:23Z"
+}

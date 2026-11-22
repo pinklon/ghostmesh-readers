@@ -301,6 +301,10 @@
       "revisionHistory": [],
       "editorialOrder": 70,
       "orderReason": "Reader #71 reserved by Tony under Control Tower #1169; publication not authorized.",
+      "editorialDepth": {
+        "schemaVersion": 1,
+        "receiptPath": "content/editorial-depth/claude-lean-and-the-riemann-hypothesis.json"
+      },
       "rank": 70
     },
     {

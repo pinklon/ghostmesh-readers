@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "readerId": "reader:claude-lean-and-the-riemann-hypothesis",
+  "sourceId": "alpoge-riemann-hypothesis-announcement-2026",
+  "sourceAidSha256": "3fc97784b71ddd44ff8aa0a177e99622a1c61b13cfa843a0989ee4a7a0cfeb8d",
+  "articleSha256": "9c6ea5c2c1369560de6f91a01bfa4c387189a712ef928fe472e294c4f2f45a32",
+  "evidenceRevision": "eb8d422652aee1a66e2ccbefe5b1f8fe5f1bfecee7e924a28393dfea7fcf69e2",
+  "reviewedAt": "2026-11-22T00:15:23Z",
+  "provenance": {
+    "kind": "codex-task-agent",
+    "reference": "Pale Horse independent read-only editorial review in the existing Reader 71 DM thread, initially REVISE on v0.2 then ACCEPT for corrected table and Lagarias content at ca783bf; the newest source-location links await exact-byte delta review.",
+    "limits": "Do not portray this pre-existing verdict as an independently issued approval of the newly changed exact article SHA. No Lean proof execution or full mathematical argument audit was performed."
+  },
+  "summary": "The previous independent reviewer accepted the mathematical editorial corrections and later confirmed no content discrepancy; newly linked section source locators are in pending exact-byte delta review.",
+  "findings": [
+    "Pale Horse required precise disclosure of Sutherland using Claude Code, independent kernel implementation distinctions, compiled .olean comparisons and nonconflation of Dirichlet GRH with Extended RH; those corrections were applied.",
+    "Pale Horse verified the November 21 12:55 UTC MIT status cutoff, separate Robin and Lagarias arithmetic implications and the presence of clear still-running checks in the original head.",
+    "Pale Horse verified two canonical Reader companions and specifically rejected a misleading SharePlane review-transfer link; the catalog preserves the reviewed zero.",
+    "The latest authored article adds three direct original-source links in distinct sections solely to support inspectable source-to-claim mapping. Those exact new bytes have not yet been accepted by the reviewer."
+  ],
+  "conclusion": "revise"
+}
