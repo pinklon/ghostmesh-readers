@@ -22,6 +22,9 @@ PUBLIC_TEXT_PATHS={'robots.txt','_headers','llms.txt','social/previews/home.png'
 # Tony approved publication of this exact standalone source asset on November 7.
 # This admits its fixed path and bytes, not Python files generally or execution.
 PUBLIC_PINNED_TEXT_ASSETS={
+ 'reader71/hero.png':'5b6012afe422b078a8729bbdac19dd0150ae2433c17cecdf62517f332d7cafe3',
+ 'reader71/square.png':'cb8dd8631433122f1bb900e03a9a85b5205985ca7bf43fe142460b6e499dddb0',
+ 'reader71/og.png':'8eb96ae2012dda896d146936630604c95b9a1e526d9302d8e2566f5bddf96fb5',
  'assets/when-code-gets-cheap-verified-delivery-qwen.png':'444f77a9fc830efec614ed9325c82dcdf64c071ae91e1e751bfa7aebf6bb7054',
  'scout/essays/the-page-left-the-context/retention-probe.py':'1141bbf0efe11407c45455d412067f551fe1304df8ae92f15d5f13ef606010a6'
 }
