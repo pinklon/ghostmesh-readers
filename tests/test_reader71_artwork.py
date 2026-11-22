@@ -74,6 +74,15 @@ class Reader71ArtTest(unittest.TestCase):
             self.assertEqual(markup.count('src="/reader71/square.png"'), 1, page)
             self.assertIn('class="r71-card-cover"',markup)
 
+    def test_theme_toggle_selects_exactly_one_icon(self):
+        source = (ROOT / "content/readers/claude-lean-and-the-riemann-hypothesis.html").read_text()
+        self.assertIn('.gm-theme-control .gm-theme-sun{display:block}', source)
+        self.assertIn('.gm-theme-control .gm-theme-moon{display:none}', source)
+        self.assertIn('html[data-theme="light"] .gm-theme-control .gm-theme-sun{display:none}', source)
+        self.assertIn('html[data-theme="light"] .gm-theme-control .gm-theme-moon{display:block}', source)
+        self.assertEqual(source.count('class="gm-theme-sun"'), 1)
+        self.assertEqual(source.count('class="gm-theme-moon"'), 1)
+
     def test_social_issue45_scope_unchanged(self):
         from sys import path
         path.insert(0, str(ROOT / "scripts"))

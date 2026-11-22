@@ -27,6 +27,17 @@ AREAS = (
 DECISIONS = {"accept", "revise", "hold"}
 GAP_TYPES = {"source", "claim", "evidence", "counterargument", "scope", "risk", "test", "synthesis"}
 PLACEHOLDERS = re.compile(r"\b(?:TBD|TODO|lorem ipsum|add analysis here|placeholder)\b", re.I)
+REVIEW_PROVENANCE_KINDS = frozenset({"codex-task-agent", "external-human-report"})
+# Narrow, immutable exception for the Reader 71 CSS-only post-release repair.
+# A Slack peer response cannot substitute for a new Reader's full editorial review
+# or for altered prose, claim definitions, source material or evidence revision.
+READER71_SLACK_PRESENTATION_PIN = {
+    "slug": "claude-lean-and-the-riemann-hypothesis",
+    "sourceDigest": "d0e3e55e00a16daa27bfc0e0388f64ae2b55bb545ee46775b2bbde392bb4efb2",
+    "evidenceRevision": "eb8d422652aee1a66e2ccbefe5b1f8fe5f1bfecee7e924a28393dfea7fcf69e2",
+    "presentationNeutralDigest": "2fec3753b53f471139ddf1ddeb21431d1e9bc7e9ead62d8e8a319057a9586ec5",
+}
+
 SHA = re.compile(r"[0-9a-f]{64}\Z")
 LEGACY_BASELINE = "141a31c1fe9e44a07f9ccdf6f4471347dd13108b"
 LEGACY_BINDINGS_SHA = "45eba2b01e6a1de5f89bbbe222f60a653265e0d554a3a2d23e4bc3a5129a9378"
@@ -82,6 +93,19 @@ def binding(reader: dict, authored_html: bytes) -> dict:
         "articleSha256": hashlib.sha256(authored_html).hexdigest(),
         "evidenceRevision": evidence_revision(reader),
     }
+
+
+def scoped_slack_presentation_review(slug: str, actual: dict, authored_html: bytes) -> bool:
+    """Accept Slack provenance only for pinned Reader 71 presentation-only bytes.
+
+    Never allow new Reader identities or changes to the actual source/evidence
+    to inherit this historical, independently accepted editorial review.
+    """
+    pin = READER71_SLACK_PRESENTATION_PIN
+    return (slug == pin["slug"]
+            and actual.get("sourceDigest") == pin["sourceDigest"]
+            and actual.get("evidenceRevision") == pin["evidenceRevision"]
+            and presentation_neutral_digest(authored_html) == pin["presentationNeutralDigest"])
 
 
 def presentation_neutral_digest(authored_html: bytes) -> str | None:
@@ -369,7 +393,9 @@ def validate_reader(root: Path, reader: dict, *, release: bool = True,
                 and not (css_only and review_evidence.get("articleSha256") == receipt.get("articleSha256")))
             or not isinstance(review_evidence.get("provenance"), dict)
             or set(review_evidence["provenance"]) != {"kind", "reference", "limits"}
-            or review_evidence["provenance"].get("kind") not in {"codex-task-agent", "external-human-report"}
+            or (review_evidence["provenance"].get("kind") not in REVIEW_PROVENANCE_KINDS
+                and not (review_evidence["provenance"].get("kind") == "slack-peer-review"
+                         and scoped_slack_presentation_review(slug, actual, raw)))
             or not _reasoned(review_evidence["provenance"].get("reference"))
             or not _reasoned(review_evidence["provenance"].get("limits"))
             or not _reasoned(review_evidence.get("summary"))
