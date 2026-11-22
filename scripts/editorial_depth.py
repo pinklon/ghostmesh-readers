@@ -27,6 +27,7 @@ AREAS = (
 DECISIONS = {"accept", "revise", "hold"}
 GAP_TYPES = {"source", "claim", "evidence", "counterargument", "scope", "risk", "test", "synthesis"}
 PLACEHOLDERS = re.compile(r"\b(?:TBD|TODO|lorem ipsum|add analysis here|placeholder)\b", re.I)
+REVIEW_PROVENANCE_KINDS = frozenset({"codex-task-agent", "external-human-report", "slack-peer-review"})
 SHA = re.compile(r"[0-9a-f]{64}\Z")
 LEGACY_BASELINE = "141a31c1fe9e44a07f9ccdf6f4471347dd13108b"
 LEGACY_BINDINGS_SHA = "45eba2b01e6a1de5f89bbbe222f60a653265e0d554a3a2d23e4bc3a5129a9378"
@@ -369,7 +370,7 @@ def validate_reader(root: Path, reader: dict, *, release: bool = True,
                 and not (css_only and review_evidence.get("articleSha256") == receipt.get("articleSha256")))
             or not isinstance(review_evidence.get("provenance"), dict)
             or set(review_evidence["provenance"]) != {"kind", "reference", "limits"}
-            or review_evidence["provenance"].get("kind") not in {"codex-task-agent", "external-human-report"}
+            or review_evidence["provenance"].get("kind") not in REVIEW_PROVENANCE_KINDS
             or not _reasoned(review_evidence["provenance"].get("reference"))
             or not _reasoned(review_evidence["provenance"].get("limits"))
             or not _reasoned(review_evidence.get("summary"))

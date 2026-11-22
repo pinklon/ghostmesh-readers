@@ -19,6 +19,12 @@ from editorial_depth import AREAS, _get_json, acceptance_marker, binding, valida
 
 
 class EditorialDepthGate(unittest.TestCase):
+    def test_slack_peer_review_is_distinct_from_codex_provenance(self):
+        from editorial_depth import REVIEW_PROVENANCE_KINDS
+        self.assertIn("slack-peer-review", REVIEW_PROVENANCE_KINDS)
+        self.assertIn("codex-task-agent", REVIEW_PROVENANCE_KINDS)
+        self.assertNotEqual("slack-peer-review", "codex-task-agent")
+
     def test_presentation_only_fingerprint_allows_css_but_not_editorial_changes(self):
         from editorial_depth import presentation_neutral_digest, presentation_only_match
         reviewed = b'<style>.card { color: black }</style><main><p>Preserve the source claim.</p></main>'
