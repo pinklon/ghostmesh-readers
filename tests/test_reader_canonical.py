@@ -92,6 +92,16 @@ class CanonicalReaderContract(unittest.TestCase):
                                     '<tr><td>A</td><td>B</td><td>C</td></tr></table></div></article>', 1)
         self.assertEqual([], errors(self.future(), wrapped))
 
+    def test_reader72_shared_shell_is_singleton(self):
+        current = self.future(editorialOrder=71)
+        self.assertEqual([], errors(current, self.html))
+        duplicated = self.html.replace("</body>", '<footer class="gm-reader-footer">extra</footer></body>', 1)
+        self.assertIn("exactly one shared site footer", " ".join(errors(current, duplicated)))
+        removed = self.html.replace('class="gm-site-header"', 'class="custom-header"', 1)
+        self.assertIn("exactly one shared site header", " ".join(errors(current, removed)))
+        # This is forward only. Earlier published pages retain their receipts.
+        self.assertNotIn("exactly one shared site footer", " ".join(errors(self.reference, duplicated)))
+
     def test_historical_reader_is_not_retroactively_blocked(self):
         old = self.future(slug="historical-reader", published="2026-11-09", editorialOrder=30)
         self.assertEqual([], errors(old, "<html></html>"))

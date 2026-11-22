@@ -24,9 +24,11 @@ class Structure(HTMLParser):
         self.stylesheets = set()
         self.hrefs = set()
         self.unstyled_tables = 0
+        self.tag_counts = {}
         self.ancestors = []
 
     def handle_starttag(self, tag, attrs):
+        self.tag_counts[tag] = self.tag_counts.get(tag, 0) + 1
         attrs = dict(attrs)
         classes = set((attrs.get("class") or "").split())
         self.ids.add(attrs.get("id"))
@@ -102,6 +104,15 @@ def errors(reader, html):
     if reader["source"].get("platform") == "YouTube" and reader["source"].get("creatorChapters"):
         if "chapters" not in parsed.ids and "chapters" not in parsed.classes and "source-chapters" not in parsed.classes:
             missing.append("source chapter navigator")
+    # Reader #72 onward: preserve exactly one shared site wrapper. #71's
+    # double footer and giant custom header required a Production repair.
+    # This is a forward-only addition to the existing presentation checker,
+    # not a second renderer or a new release gate.
+    if reader.get("editorialOrder", 0) >= 71:
+        if parsed.class_counts.get("gm-site-header", 0) != 1:
+            missing.append("exactly one shared site header")
+        if parsed.class_counts.get("gm-reader-footer", 0) != 1 or parsed.tag_counts.get("footer", 0) != 1:
+            missing.append("exactly one shared site footer")
     if reader.get("editorialOrder", 0) >= FORWARD_EDITORIAL_ORDER:
         required_classes = {"gm-brief", "brief-columns"} if annotated else {"gm-brief", "gm-brief-point", "gm-brief-index"}
         missing += [f"class={name}" for name in sorted(required_classes - parsed.classes)]

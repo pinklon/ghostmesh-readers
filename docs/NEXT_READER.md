@@ -19,6 +19,16 @@ Design to the argument: technical investigation may need annotated measurements;
 
 Compare the **shared shell** to the chosen approved precedent for fidelity, and the **article body** to its own visual concept for distinctiveness. One consolidated desktop/mobile review covers both. Preserve the existing independent editorial/source/privacy acceptance, CI, exact-head owner approval and Netlify verification. No new generator, framework, component service, reviewer, release stage or retroactive restyling is authorized by this contract.
 
+## Reader #72 execution defaults (lessons from #71)
+
+Read the [Reader #71 failure-to-control map](READER_71_LESSONS_FOR_72.md) in the **existing one-pass workflow**. It adds no gate. At Creative Lock, decide the factual argument, a visual concept (including hero/social art or justified none), one accepted site shell, and source-safe graphic boundaries. Include both Reader and SharePlane relationship dispositions in that same decision. Do not infer unfinished proof, preview privacy or publication authority.
+
+Build the actual canonical generated candidate directly, not a parallel demonstration later translated into a different shell. **Before the first owner-facing preview**, compare all locked passages to generated content, including the source dossier and limits. Run the existing targeted browser check of computed header/search/theme sizes and icon visibility, desktop chapter TOC, exactly one footer, 390px flow, both appearances and share/search controls. Record a real browser witness or NOT_EXECUTED, never call green static CI visual acceptance.
+
+Use the existing optional Playwright/Chrome browser checker in targeted mode, not the costly full-site loop. Serve the generated site on an unused localhost port, set GM_SITE_ORIGIN to that URL, then run node scripts/browser_check.cjs --latest (or --reader SLUG for a named candidate). Evidence goes to GM_TEST_OUTPUT or the existing default temporary directory; normal full-site mode remains unchanged. The targeted mode checks computed appearance-icon visibility before and after the toggle. When Playwright or the browser is unavailable, mark the witness NOT_EXECUTED and name the missing capability.
+
+Netlify editorial PR previews may be public under the owner's current policy unless this specific draft is explicitly designated private. Raw source aids, protected URLs and internal approval locators are never public. **A request to finish is not an authorization to publish**; bind a separate explicit publication decision to the reviewed candidate. Favor scoped delta review for changes while preserving valid unchanged content and the existing narrowly pinned CSS-only exception.
+
 ## Before implementation
 
 - **Select a baseline per Reader.** Any already published, owner-accepted Reader can be the presentation/editorial starting point, including #65 or #66. Choose based on the new source's actual editorial and visual needs, not the highest Reader number. Record the selected baseline and which layout components are intentionally reused or changed in the existing PR. The baseline is a reference, not an immutable template or a second approval contract. Keep the shared source/privacy, catalog, relationships, accessibility and release requirements. Do not copy another Reader's source-specific claims, cues, media, links, hashes or evidence.
