@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "readerId": "reader:beyond-vibe-coding-engineering-in-the-age-of-ai-agents",
+  "sourceId": "mU8WKII1gpk",
+  "sourceAidSha256": "c14750f59436a716fcbc83a4c4c77bfbb97b86f87d576b6da82ec06c925c72fc",
+  "articleSha256": "02cf794d57f5044849793c57f808c79bcadda9528f8a1cae959363eb5333f951",
+  "evidenceRevision": "d21cfe1a2f695169a96c9f3f4b2c20574351ec2fc1d7f6f4279ea33430ab3ac4",
+  "reviewedAt": "2026-11-25T06:08:00Z",
+  "provenance": {
+    "kind": "codex-task-agent",
+    "reference": "A genuinely separate read-only Work-mode Codex task agent performed the consolidated source, editorial and privacy review and the focused final corrections review, bound to the exact authored article, evidence revision and source map. The actual task-agent report was retained for the owner's inspection.",
+    "limits": "Caption-supported source attribution is not independent listening certification, creator-outcome replication, or a performance audit. Separate Work HTTP attempts returned 403; exact accepted Work revisions were instead established by the publisher's retained authoritative Production manifest and direct canonical byte readback. Browser, CI, owner approval and Production verification are separate."
+  },
+  "summary": "ACCEPT FOR OWNER REVIEW: revised exact candidate is editorially sound, appropriately sourced and public-safe. All ten required assessment areas are covered, with no blocking editorial, source or privacy gap. No publication, merge or Production activation is authorized.",
+  "findings": [
+    "An independent in-place source-semantic check reviewed all 28 interview claims against retained source-provided captions and creator chapter metadata. It identified 24 supported and four requiring precision adjustments; none was unsupported or unknown as an account of source content. All four precision adjustments are incorporated.",
+    "The distinction between Pocock's personal context caution point and a recommended operating threshold is correct. Personal-time and later life-agent discussions use accurately scoped anchors. The open-source recommendation is not generalized into a universal contribution policy.",
+    "The creator demonstrations do not establish implemented results, productivity, safety or maintainability. The article consistently preserves this limitation.",
+    "METR's early study, uncertain later estimates, the bounded Copilot experiment, DORA's organizational amplification finding, Ousterhout's design lineage and Git's linked-worktree semantics are accurately characterized.",
+    "The initial verified acquisition, subsequent structural staging of eight candidate analyses and independent semantic review are correctly distinguished. Structural validation and package integrity do not certify interpretation or exact speech.",
+    "The revised Creative Lock is preserved literally in authored HTML. All 602 nonadministrative visible text units appear in the generated page in order. All 129 manuscript link instances and four relationship destinations remain, with no missing text or targets.",
+    "Independent readback matched accepted Production page revisions for Readers 72 and 73. Two SharePlane relationships rely on the publisher's retained authoritative release-manifest and exact canonical byte readback. The reviewer's separate Work HTTP attempts returned 403; an additional successful independent Work readback is not claimed.",
+    "The original prose passed an in-place twelve-token transcript-overlap scan across 8,705 normalized words, with zero matches. Private-path, credential and protected-destination checks found no prohibited disclosures. The shared public contact footer is unchanged.",
+    "Three final review corrections were narrowly confined to grammar, the exact METR follow-up title, and the chapter-level locator for claim 28. The revised lock preserves the rest of the manuscript and complete relationship rationales.",
+    "All illustrative arithmetic was independently recomputed: the 40-item queue or debt example, throughput ceilings, four-task break-even and accepted-outcome cost comparisons are correct and clearly labeled hypothetical."
+  ],
+  "conclusion": "accept-for-owner-review"
+}

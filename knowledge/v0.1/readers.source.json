@@ -997,6 +997,18 @@
         "path": "site/the-cost-of-forgetting-why-agents-keep-reading-the-same-world/index.html",
         "sha256": "79cbb3874342f9cb226c73fb2b6a312f68de25f76f7091065908388290f16fc3"
       }
+    },
+    {
+      "id": "urn:ghostmesh-readers:reader:beyond-vibe-coding-engineering-in-the-age-of-ai-agents",
+      "type": "Reader",
+      "visibility": "public",
+      "epistemicStatus": "source-editorial",
+      "label": "Beyond Vibe Coding: Engineering in the Age of AI Agents",
+      "url": "https://youtube.shareplane.malott.ai/beyond-vibe-coding-engineering-in-the-age-of-ai-agents/",
+      "source": {
+        "path": "site/beyond-vibe-coding-engineering-in-the-age-of-ai-agents/index.html",
+        "sha256": "f775361a0739b864ed5607155e1bc192f0187878f98b52afb12cc31b585b22c1"
+      }
     }
   ],
   "relationships": [

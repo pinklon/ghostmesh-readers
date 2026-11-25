@@ -1,0 +1,260 @@
+{
+  "schemaVersion": 1,
+  "readerId": "reader:beyond-vibe-coding-engineering-in-the-age-of-ai-agents",
+  "sourceId": "mU8WKII1gpk",
+  "sourceAidSha256": "c14750f59436a716fcbc83a4c4c77bfbb97b86f87d576b6da82ec06c925c72fc",
+  "points": [
+    {
+      "atSeconds": 8,
+      "sectionId": "opening",
+      "claimIds": [
+        "r74-c01"
+      ],
+      "cueParaphrase": "Pocock argues that coding is more learnable than many people assume.",
+      "privateAidCheck": "Retained source-provided timed captions or source chapter start checked at 8s; synthesis paraphrase, not independently listening-certified quotation. Source-provided caption cue start."
+    },
+    {
+      "atSeconds": 130,
+      "sectionId": "skills",
+      "claimIds": [
+        "r74-c02"
+      ],
+      "cueParaphrase": "He describes moving from TypeScript education toward reusable instructions for coding agents.",
+      "privateAidCheck": "Retained source-provided timed captions or source chapter start checked at 130s; synthesis paraphrase, not independently listening-certified quotation. Source-provided caption cue start."
+    },
+    {
+      "atSeconds": 226,
+      "sectionId": "opening",
+      "claimIds": [
+        "r74-c03"
+      ],
+      "cueParaphrase": "The host describes uncertainty about how much coding and deployment work to entrust to an agent.",
+      "privateAidCheck": "Retained source-provided timed captions or source chapter start checked at 226s; synthesis paraphrase, not independently listening-certified quotation. Source-provided caption cue start."
+    },
+    {
+      "atSeconds": 304,
+      "sectionId": "tactical-strategic",
+      "claimIds": [
+        "r74-c04"
+      ],
+      "cueParaphrase": "Pocock distinguishes immediate tactical changes from strategic design that preserves a system's future usability.",
+      "privateAidCheck": "Retained source-provided timed captions or source chapter start checked at 304s; synthesis paraphrase, not independently listening-certified quotation. Source-provided caption cue start."
+    },
+    {
+      "atSeconds": 416,
+      "sectionId": "tactical-strategic",
+      "claimIds": [
+        "r74-c05"
+      ],
+      "cueParaphrase": "He predicts that repeatedly accepting generated code without understanding it can degrade the codebase and make future work harder.",
+      "privateAidCheck": "Retained source-provided timed captions or source chapter start checked at 416s; synthesis paraphrase, not independently listening-certified quotation. Source-provided caption cue start."
+    },
+    {
+      "atSeconds": 755,
+      "sectionId": "specification",
+      "claimIds": [
+        "r74-c06"
+      ],
+      "cueParaphrase": "A live demonstration begins with a skills-based approach to clarifying work in a course-video application.",
+      "privateAidCheck": "Retained source-provided timed captions or source chapter start checked at 755s; synthesis paraphrase, not independently listening-certified quotation. Creator chapter start."
+    },
+    {
+      "atSeconds": 921,
+      "sectionId": "specification",
+      "claimIds": [
+        "r74-c07"
+      ],
+      "cueParaphrase": "He shows domain terms for the course system and says shared vocabulary helps communication with the agent.",
+      "privateAidCheck": "Retained source-provided timed captions or source chapter start checked at 921s; synthesis paraphrase, not independently listening-certified quotation. Source-provided caption cue start."
+    },
+    {
+      "atSeconds": 1020,
+      "sectionId": "specification",
+      "claimIds": [
+        "r74-c08"
+      ],
+      "cueParaphrase": "The discussion identifies a communication gap between a brief request and the result its author intends.",
+      "privateAidCheck": "Retained source-provided timed captions or source chapter start checked at 1020s; synthesis paraphrase, not independently listening-certified quotation. Source-provided caption cue start."
+    },
+    {
+      "atSeconds": 1147,
+      "sectionId": "specification",
+      "claimIds": [
+        "r74-c09"
+      ],
+      "cueParaphrase": "The demonstrated workflow connects questioning with project vocabulary and records of architectural decisions.",
+      "privateAidCheck": "Retained source-provided timed captions or source chapter start checked at 1147s; synthesis paraphrase, not independently listening-certified quotation. Source-provided caption cue start."
+    },
+    {
+      "atSeconds": 1533,
+      "sectionId": "specification",
+      "claimIds": [
+        "r74-c10"
+      ],
+      "cueParaphrase": "For small changes Pocock describes proceeding in the same session; larger work gets a specification and smaller tickets.",
+      "privateAidCheck": "Retained source-provided timed captions or source chapter start checked at 1533s; synthesis paraphrase, not independently listening-certified quotation. Source-provided caption cue start."
+    },
+    {
+      "atSeconds": 1551,
+      "sectionId": "specification",
+      "claimIds": [
+        "r74-c11"
+      ],
+      "cueParaphrase": "Pocock treats roughly 150,000 tokens as an approximate personal caution point and emphasizes keeping working context small.",
+      "privateAidCheck": "Retained source-provided timed captions or source chapter start checked at 1551s; synthesis paraphrase, not independently listening-certified quotation. Source-provided caption cue start."
+    },
+    {
+      "atSeconds": 2084,
+      "sectionId": "parallelism",
+      "claimIds": [
+        "r74-c12"
+      ],
+      "cueParaphrase": "He describes parallel subagents working in separate Git worktrees before changes are combined for review.",
+      "privateAidCheck": "Retained source-provided timed captions or source chapter start checked at 2084s; synthesis paraphrase, not independently listening-certified quotation. Source-provided caption cue start."
+    },
+    {
+      "atSeconds": 2228,
+      "sectionId": "parallelism",
+      "claimIds": [
+        "r74-c13"
+      ],
+      "cueParaphrase": "He describes issue-based task tracking and separate checks against the specification and coding standards.",
+      "privateAidCheck": "Retained source-provided timed captions or source chapter start checked at 2228s; synthesis paraphrase, not independently listening-certified quotation. Source-provided caption cue start."
+    },
+    {
+      "atSeconds": 2692,
+      "sectionId": "verification",
+      "claimIds": [
+        "r74-c14"
+      ],
+      "cueParaphrase": "The discussion shifts from the implementation loop to how much work can be trusted and verified.",
+      "privateAidCheck": "Retained source-provided timed captions or source chapter start checked at 2692s; synthesis paraphrase, not independently listening-certified quotation. Source-provided caption cue start."
+    },
+    {
+      "atSeconds": 2969,
+      "sectionId": "verification",
+      "claimIds": [
+        "r74-c15"
+      ],
+      "cueParaphrase": "Pocock recommends fast feedback from types, tests and lint rules to constrain agent mistakes.",
+      "privateAidCheck": "Retained source-provided timed captions or source chapter start checked at 2969s; synthesis paraphrase, not independently listening-certified quotation. Source-provided caption cue start."
+    },
+    {
+      "atSeconds": 3151,
+      "sectionId": "architecture",
+      "claimIds": [
+        "r74-c16"
+      ],
+      "cueParaphrase": "The discussion turns to a starter tool stack, module boundaries and tests of meaningful behavior.",
+      "privateAidCheck": "Retained source-provided timed captions or source chapter start checked at 3151s; synthesis paraphrase, not independently listening-certified quotation. Creator chapter start."
+    },
+    {
+      "atSeconds": 3661,
+      "sectionId": "architecture",
+      "claimIds": [
+        "r74-c17"
+      ],
+      "cueParaphrase": "An architecture-improvement demonstration examines code and proposes deeper modules.",
+      "privateAidCheck": "Retained source-provided timed captions or source chapter start checked at 3661s; synthesis paraphrase, not independently listening-certified quotation. Creator chapter start."
+    },
+    {
+      "atSeconds": 4022,
+      "sectionId": "architecture",
+      "claimIds": [
+        "r74-c18"
+      ],
+      "cueParaphrase": "The displayed report proposes consolidating similar operations behind a shared, testable module.",
+      "privateAidCheck": "Retained source-provided timed captions or source chapter start checked at 4022s; synthesis paraphrase, not independently listening-certified quotation. Source-provided caption cue start."
+    },
+    {
+      "atSeconds": 4095,
+      "sectionId": "education",
+      "claimIds": [
+        "r74-c19"
+      ],
+      "cueParaphrase": "Pocock describes using an agent teaching workflow to explore unfamiliar design ideas and quiz a learner.",
+      "privateAidCheck": "Retained source-provided timed captions or source chapter start checked at 4095s; synthesis paraphrase, not independently listening-certified quotation. Creator chapter start."
+    },
+    {
+      "atSeconds": 4451,
+      "sectionId": "deployment",
+      "claimIds": [
+        "r74-c20"
+      ],
+      "cueParaphrase": "The speakers discuss managed hosting, agent-assisted deployment and security review.",
+      "privateAidCheck": "Retained source-provided timed captions or source chapter start checked at 4451s; synthesis paraphrase, not independently listening-certified quotation. Creator chapter start."
+    },
+    {
+      "atSeconds": 4819,
+      "sectionId": "deployment",
+      "claimIds": [
+        "r74-c21"
+      ],
+      "cueParaphrase": "Pocock says security is not the principal focus of his personal projects and recommends including security in review.",
+      "privateAidCheck": "Retained source-provided timed captions or source chapter start checked at 4819s; synthesis paraphrase, not independently listening-certified quotation. Source-provided caption cue start."
+    },
+    {
+      "atSeconds": 5010,
+      "sectionId": "skills",
+      "claimIds": [
+        "r74-c22"
+      ],
+      "cueParaphrase": "He values feedback from users when evaluating skills and describes the difficulty of formal evaluations.",
+      "privateAidCheck": "Retained source-provided timed captions or source chapter start checked at 5010s; synthesis paraphrase, not independently listening-certified quotation. Source-provided caption cue start."
+    },
+    {
+      "atSeconds": 5198,
+      "sectionId": "factory",
+      "claimIds": [
+        "r74-c23"
+      ],
+      "cueParaphrase": "He discusses personal projects and choices about balancing work with family time.",
+      "privateAidCheck": "Retained source-provided timed captions or source chapter start checked at 5198s; synthesis paraphrase, not independently listening-certified quotation. Source-provided caption cue start; coincides with chapter boundary."
+    },
+    {
+      "atSeconds": 5324,
+      "sectionId": "maintainers",
+      "claimIds": [
+        "r74-c24"
+      ],
+      "cueParaphrase": "He argues that inexpensive generated pull requests can increase maintainer triage work and recommends useful issues, evidence and reproductions.",
+      "privateAidCheck": "Retained source-provided timed captions or source chapter start checked at 5324s; synthesis paraphrase, not independently listening-certified quotation. Source-provided caption cue start."
+    },
+    {
+      "atSeconds": 5681,
+      "sectionId": "education",
+      "claimIds": [
+        "r74-c25"
+      ],
+      "cueParaphrase": "For new developers, he emphasizes working projects, strategic judgment and the ability to understand code.",
+      "privateAidCheck": "Retained source-provided timed captions or source chapter start checked at 5681s; synthesis paraphrase, not independently listening-certified quotation. Creator chapter start."
+    },
+    {
+      "atSeconds": 6281,
+      "sectionId": "factory",
+      "claimIds": [
+        "r74-c26"
+      ],
+      "cueParaphrase": "He sketches a software factory with automated triggers and human checkpoints adjusted to consequences and reversibility.",
+      "privateAidCheck": "Retained source-provided timed captions or source chapter start checked at 6281s; synthesis paraphrase, not independently listening-certified quotation. Source-provided caption cue start."
+    },
+    {
+      "atSeconds": 6463,
+      "sectionId": "factory",
+      "claimIds": [
+        "r74-c27"
+      ],
+      "cueParaphrase": "The conversation covers his course platform and personal video editor, while the host describes an AI-assisted editing handoff.",
+      "privateAidCheck": "Retained source-provided timed captions or source chapter start checked at 6463s; synthesis paraphrase, not independently listening-certified quotation. Source-provided caption cue start."
+    },
+    {
+      "atSeconds": 7009,
+      "sectionId": "factory",
+      "claimIds": [
+        "r74-c28"
+      ],
+      "cueParaphrase": "The discussion covers personal-agent coordination, an interface the guest reported ignoring, and limits of verifying creative work.",
+      "privateAidCheck": "Retained source-provided timed captions or source chapter start checked at 7009s; synthesis paraphrase, not independently listening-certified quotation. Creator chapter start; coincides with caption cue."
+    }
+  ]
+}

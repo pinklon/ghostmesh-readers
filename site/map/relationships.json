@@ -3,11 +3,11 @@
   "scope": "Local public editorial reading routes; no independent corroboration or cross-site graph admission.",
   "authority": "catalog-curated-editorial",
   "visibility": "public",
-  "readerCount": 73,
-  "assessmentCount": 73,
-  "relationshipCount": 169,
-  "sharePlaneRelationshipCount": 50,
-  "sharePlaneReviewCount": 33,
+  "readerCount": 74,
+  "assessmentCount": 74,
+  "relationshipCount": 171,
+  "sharePlaneRelationshipCount": 52,
+  "sharePlaneReviewCount": 34,
   "sharePlaneEdges": [
     {
       "from": "reader:when-code-gets-cheap-where-does-the-work-wait",
@@ -405,6 +405,22 @@
       "url": "https://shareplane.malott.ai/artifacts/done-has-a-half-life/",
       "type": "companion",
       "reason": "gives a complementary treatment of the ongoing cost of reconsidering completed work. A cached observation must be revisitable and eventually requalified when the world changes. Again, this is an editorial connection, not an independent validation of the video's claims.",
+      "basis": "curated-editorial-comparison"
+    },
+    {
+      "from": "reader:beyond-vibe-coding-engineering-in-the-age-of-ai-agents",
+      "title": "The Confidence to Delegate",
+      "url": "https://shareplane.malott.ai/artifacts/the-confidence-to-delegate/",
+      "type": "companion",
+      "reason": "Examines the distinction between capability and authority, and why operational assurance and recovery determine warranted delegation. It complements the trust ladder and the boundary between verified behavior and release permission.",
+      "basis": "curated-editorial-comparison"
+    },
+    {
+      "from": "reader:beyond-vibe-coding-engineering-in-the-age-of-ai-agents",
+      "title": "When the Gate Moves",
+      "url": "https://shareplane.malott.ai/artifacts/when-the-gate-moves/",
+      "type": "companion",
+      "reason": "Explores a changed boundary of valuable work and the move from producing candidates to demonstrating accepted outcomes. This Reader offers a specific engineering account of verification capacity and the costs that can remain after generation becomes cheap.",
       "basis": "curated-editorial-comparison"
     }
   ],
@@ -1594,6 +1610,22 @@
           "reader:the-cheap-answer-can-be-an-expensive-job"
         ],
         "rationale": "Three existing, published Reader destinations verified; closely tied to discovery, context discipline and cost per accepted job. More general works excluded."
+      }
+    },
+    {
+      "id": "reader:beyond-vibe-coding-engineering-in-the-age-of-ai-agents",
+      "slug": "beyond-vibe-coding-engineering-in-the-age-of-ai-agents",
+      "title": "Beyond Vibe Coding: Engineering in the Age of AI Agents",
+      "url": "https://youtube.shareplane.malott.ai/beyond-vibe-coding-engineering-in-the-age-of-ai-agents/",
+      "review": {
+        "reviewedAt": "2026-11-24",
+        "reviewedCatalogSize": 73,
+        "decision": "linked",
+        "reviewedTargets": [
+          "reader:when-code-gets-cheap-ambition-becomes-the-test",
+          "reader:the-cost-of-forgetting-why-agents-keep-reading-the-same-world"
+        ],
+        "rationale": "Two directly relevant Reader destinations checked against their actual served and accepted Production revisions. Reader 72 relates to accepted value; Reader 73 relates to durable context. Other potential connections are less specific or lack exact current accepted-revision verification."
       }
     }
   ],
@@ -3622,6 +3654,30 @@
       "provenance": [
         "/the-cost-of-forgetting-why-agents-keep-reading-the-same-world/",
         "/the-cheap-answer-can-be-an-expensive-job/"
+      ],
+      "basis": "curated-editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:beyond-vibe-coding-engineering-in-the-age-of-ai-agents",
+      "to": "reader:when-code-gets-cheap-ambition-becomes-the-test",
+      "type": "companion",
+      "reason": "Examines how cheap code generation shifts the meaningful standard from raw output to ambitious accepted value. This Reader adds a conditional economics of the engineering effort required to accept and maintain the next change.",
+      "provenance": [
+        "/beyond-vibe-coding-engineering-in-the-age-of-ai-agents/",
+        "/when-code-gets-cheap-ambition-becomes-the-test/"
+      ],
+      "basis": "curated-editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:beyond-vibe-coding-engineering-in-the-age-of-ai-agents",
+      "to": "reader:the-cost-of-forgetting-why-agents-keep-reading-the-same-world",
+      "type": "companion",
+      "reason": "Distinguishes reusable context from durable governed knowledge and accepted work. This Reader extends that argument to domain vocabulary, architectural decisions and module seams that reduce the obligation to rediscover intent.",
+      "provenance": [
+        "/beyond-vibe-coding-engineering-in-the-age-of-ai-agents/",
+        "/the-cost-of-forgetting-why-agents-keep-reading-the-same-world/"
       ],
       "basis": "curated-editorial-comparison",
       "direction": "outgoing"
