@@ -985,6 +985,18 @@
         "path": "site/when-code-gets-cheap-ambition-becomes-the-test/index.html",
         "sha256": "a0348b0c36b4c61fb7aeb752b7e2f3e95dc9ee23c692543db27fbe572b91e823"
       }
+    },
+    {
+      "id": "urn:ghostmesh-readers:reader:the-cost-of-forgetting-why-agents-keep-reading-the-same-world",
+      "type": "Reader",
+      "visibility": "public",
+      "epistemicStatus": "source-editorial",
+      "label": "The Cost of Forgetting: Why Agents Keep Reading the Same World",
+      "url": "https://youtube.shareplane.malott.ai/the-cost-of-forgetting-why-agents-keep-reading-the-same-world/",
+      "source": {
+        "path": "site/the-cost-of-forgetting-why-agents-keep-reading-the-same-world/index.html",
+        "sha256": "4745df2e4c2e5a8a5f40f16759b332236d92787d421fb3cc0ed17c2bb4da66d9"
+      }
     }
   ],
   "relationships": [

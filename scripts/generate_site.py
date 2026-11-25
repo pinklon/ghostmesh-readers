@@ -183,7 +183,7 @@ def governed_reader_connections(raw, r, byid):
   provenance=re.search(r'<section class="gm-related" id="related-thinking">',raw)
  if not provenance:
   raise ValueError(f'{slug}: missing article/rail boundary for Work placement')
- if slug=='when-code-gets-cheap-ambition-becomes-the-test':
+ if slug in {'when-code-gets-cheap-ambition-becomes-the-test', 'the-cost-of-forgetting-why-agents-keep-reading-the-same-world'}:
   # Reader #72: source/evidence then provenance, then onward-reading panels.
   # Keep this scoped; previous published Readers retain their approved order.
   # The canonical related section is now AFTER the complete provenance record.

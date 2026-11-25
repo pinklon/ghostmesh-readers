@@ -3,11 +3,11 @@
   "scope": "Local public editorial reading routes; no independent corroboration or cross-site graph admission.",
   "authority": "catalog-curated-editorial",
   "visibility": "public",
-  "readerCount": 72,
-  "assessmentCount": 72,
-  "relationshipCount": 166,
-  "sharePlaneRelationshipCount": 48,
-  "sharePlaneReviewCount": 32,
+  "readerCount": 73,
+  "assessmentCount": 73,
+  "relationshipCount": 169,
+  "sharePlaneRelationshipCount": 50,
+  "sharePlaneReviewCount": 33,
   "sharePlaneEdges": [
     {
       "from": "reader:when-code-gets-cheap-where-does-the-work-wait",
@@ -389,6 +389,22 @@
       "url": "https://shareplane.malott.ai/artifacts/the-best-ai-system-should-need-less-ai-tomorrow/",
       "type": "extends",
       "reason": "The published inference-retirement thesis asks what should become deterministic after validation. It extends the architecture/control side of cheap model tokens without verifying the video claims.",
+      "basis": "curated-editorial-comparison"
+    },
+    {
+      "from": "reader:the-cost-of-forgetting-why-agents-keep-reading-the-same-world",
+      "title": "The Application Is Disposable. The Context Is Not.",
+      "url": "https://shareplane.malott.ai/artifacts/the-application-is-disposable-the-context-is-not/",
+      "type": "companion",
+      "reason": "argues for preserved context independent of a particular application or execution surface. That is the conceptual basis for making capability and decision memory survive a session or a model change; it is not evidence about provider cache efficiency.",
+      "basis": "curated-editorial-comparison"
+    },
+    {
+      "from": "reader:the-cost-of-forgetting-why-agents-keep-reading-the-same-world",
+      "title": "Done Has a Half-Life",
+      "url": "https://shareplane.malott.ai/artifacts/done-has-a-half-life/",
+      "type": "companion",
+      "reason": "gives a complementary treatment of the ongoing cost of reconsidering completed work. A cached observation must be revisitable and eventually requalified when the world changes. Again, this is an editorial connection, not an independent validation of the video's claims.",
       "basis": "curated-editorial-comparison"
     }
   ],
@@ -1561,6 +1577,23 @@
           "reader:a-smaller-model-can-win-the-job-not-the-benchmark-war"
         ],
         "rationale": "Reviewed conceptual comparison with existing published Reader catalog; unrelated themes and unverified works excluded."
+      }
+    },
+    {
+      "id": "reader:the-cost-of-forgetting-why-agents-keep-reading-the-same-world",
+      "slug": "the-cost-of-forgetting-why-agents-keep-reading-the-same-world",
+      "title": "The Cost of Forgetting: Why Agents Keep Reading the Same World",
+      "url": "https://youtube.shareplane.malott.ai/the-cost-of-forgetting-why-agents-keep-reading-the-same-world/",
+      "review": {
+        "reviewedAt": "2026-11-24",
+        "reviewedCatalogSize": 72,
+        "decision": "linked",
+        "reviewedTargets": [
+          "reader:the-cost-of-forgetting-where-the-tools-are",
+          "reader:more-skills-worse-agents",
+          "reader:the-cheap-answer-can-be-an-expensive-job"
+        ],
+        "rationale": "Three existing, published Reader destinations verified; closely tied to discovery, context discipline and cost per accepted job. More general works excluded."
       }
     }
   ],
@@ -3553,6 +3586,42 @@
       "provenance": [
         "/when-code-gets-cheap-ambition-becomes-the-test/",
         "/a-smaller-model-can-win-the-job-not-the-benchmark-war/"
+      ],
+      "basis": "curated-editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:the-cost-of-forgetting-why-agents-keep-reading-the-same-world",
+      "to": "reader:the-cost-of-forgetting-where-the-tools-are",
+      "type": "companion",
+      "reason": "examines the operational failure to discover an existing tool. This Reader extends that concern into the cost of repetitive inference and evidence retrieval, and shows why a registered pointer must be consumed in a real task.",
+      "provenance": [
+        "/the-cost-of-forgetting-why-agents-keep-reading-the-same-world/",
+        "/the-cost-of-forgetting-where-the-tools-are/"
+      ],
+      "basis": "curated-editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:the-cost-of-forgetting-why-agents-keep-reading-the-same-world",
+      "to": "reader:more-skills-worse-agents",
+      "type": "companion",
+      "reason": "challenges the assumption that more instructions and capabilities necessarily improve work. Together they expose the tension between shrinking working context and maintaining the discoverability of rare but consequential procedures.",
+      "provenance": [
+        "/the-cost-of-forgetting-why-agents-keep-reading-the-same-world/",
+        "/more-skills-worse-agents/"
+      ],
+      "basis": "curated-editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:the-cost-of-forgetting-why-agents-keep-reading-the-same-world",
+      "to": "reader:the-cheap-answer-can-be-an-expensive-job",
+      "type": "companion",
+      "reason": "distinguishes candidate-answer pricing from the cost of accepted work. It is the closest economic companion to the cache and compaction examples here.",
+      "provenance": [
+        "/the-cost-of-forgetting-why-agents-keep-reading-the-same-world/",
+        "/the-cheap-answer-can-be-an-expensive-job/"
       ],
       "basis": "curated-editorial-comparison",
       "direction": "outgoing"

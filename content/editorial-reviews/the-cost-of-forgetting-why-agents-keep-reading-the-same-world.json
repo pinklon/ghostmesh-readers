@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "readerId": "reader:the-cost-of-forgetting-why-agents-keep-reading-the-same-world",
+  "sourceId": "0RF9ml43ups",
+  "sourceAidSha256": "da012abea27aba4d75d01dccb85ee474b83f0a69b48cbcf9b85d761a3b587edb",
+  "articleSha256": "0b63b41e43293a917408a1355cab9a54f806be4c838ee0029f96ff4d1699e422",
+  "evidenceRevision": "cc778a7fa40d605e0f095055fdb953eac15785b451f7236f95066aa9f1740fd7",
+  "reviewedAt": "2026-11-25T00:23:32Z",
+  "provenance": {
+    "kind": "codex-task-agent",
+    "reference": "Separate Work-mode Codex task agent reader73_review performed independent read-only source, editorial and privacy review and a scoped delta review of the corrected exact author, source map and evidence bindings. The retained review result is a Work-mode agent report, not native CLI or human review.",
+    "limits": "Public video retrieval throttled for this reviewer; it independently checked public metadata and source roles but did not independently listen to or certify speech or rehash original media. No creator performance experiment, live fleet economics or owner publication authority is established."
+  },
+  "summary": "REVISE solely for one canonical SharePlane Work link whose current public destination explicitly serves an unaccepted Development amendment. The substantive article, source grounding, cost arithmetic, visual grammar, prose preservation and privacy meet the independent reviewer’s owner-preview standard. Link disposition remains unresolved; no publication authority.",
+  "findings": [
+    "The source coverage maps seventeen approximate creator cues across all nine verified public chapter starts. Creator statements, vendor contracts, bounded observations and new analysis are differentiated. Public video retrieval throttled; no independent listening certification.",
+    "The article correctly distinguishes prompt-prefix computation, billed input, context size and external evidence or durable authority. Official Anthropic and OpenAI documentation supports the product-specific contract and retention distinctions, not the creator’s unverified numerical anecdotes.",
+    "Independently recomputed all numerical examples including cache miss and hit thresholds, cost totals, routing reversal, keep-alive probability and compaction payback. All are illustrative, not empirical GhostMesh benchmarks.",
+    "The four-layer synthesis includes cold-session overhead, cache expiry, model routing, revocations, stale evidence, provider accounting, progressive disclosure and justified infrastructure costs. A bounded accepted-outcome experiment is proposed, not executed.",
+    "Privacy scan found no protected issue locators, private media/transcript bytes, private paths, operational aggregate counts or identifying runtime details in the changed article and site projections. The source-aid digest is a retained integrity binding, not independent speech certification.",
+    "All three related Reader destinations returned HTTP 200. Both SharePlane Work links returned HTTP 200 after redirects, but The Application Is Disposable. The Context Is Not. currently identifies its served revision as a protected Development candidate with owner UAT pending and Production unchanged; that conflicts with the intended published Work-only relationship scope.",
+    "Focused delta review confirmed corrected C03, C09 and C13 assessments and map, exact incident source title and publication date, editorial chapter-label disclosure, canonical table and source-list classes, and identical substantive authored body text. Final source map and evidence binding were rehashed.",
+    "Final mechanical delta review verified the two inherited style blocks were consolidated without change to body text or claim bindings; share metadata retained identically. One inline style block enables the existing narrow CSS-only receipt check."
+  ],
+  "conclusion": "revise"
+}
