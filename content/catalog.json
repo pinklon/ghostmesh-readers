@@ -25128,6 +25128,825 @@
         },
         "editorialStatus": "OWNER_APPROVED_FOR_PROTECTED_RELEASE_PENDING_PRODUCTION_VERIFICATION"
       }
+    },
+    {
+      "id": "reader:beyond-vibe-coding-engineering-in-the-age-of-ai-agents",
+      "slug": "beyond-vibe-coding-engineering-in-the-age-of-ai-agents",
+      "title": "Beyond Vibe Coding: Engineering in the Age of AI Agents",
+      "category": "AI & Technology",
+      "tags": [
+        "agentic-work",
+        "software-engineering",
+        "verification",
+        "architecture",
+        "delegation",
+        "economics",
+        "testing",
+        "skills"
+      ],
+      "entities": [],
+      "source": {
+        "platform": "YouTube",
+        "url": "https://www.youtube.com/watch?v=mU8WKII1gpk",
+        "videoId": "mU8WKII1gpk",
+        "title": "How to Actually Code with AI (ft. Matt Pocock)",
+        "creator": "NetworkChuck",
+        "mediaAspect": "16:9",
+        "durationSeconds": 7356,
+        "uploadDate": "2026-11-20",
+        "dateNote": "Sixteen creator chapter starts from original source metadata, with editorial labels. Finer links follow source-provided timed caption cues, not independently listening-certified speech.",
+        "captionType": "Source-provided timed captions; 1,326 cues, source coverage and integrity verified. Isolated Opus packet warning during normalization.",
+        "creatorChapters": [
+          {
+            "atSeconds": 0,
+            "label": "Learning to program"
+          },
+          {
+            "atSeconds": 54,
+            "label": "Pocock’s background"
+          },
+          {
+            "atSeconds": 303,
+            "label": "Tactical and strategic work"
+          },
+          {
+            "atSeconds": 755,
+            "label": "Clarifying intent with documents"
+          },
+          {
+            "atSeconds": 1518,
+            "label": "Write the specification first"
+          },
+          {
+            "atSeconds": 2075,
+            "label": "Subagents, worktrees and review"
+          },
+          {
+            "atSeconds": 2692,
+            "label": "The trust ladder"
+          },
+          {
+            "atSeconds": 3151,
+            "label": "Starter stack and deep modules"
+          },
+          {
+            "atSeconds": 3661,
+            "label": "Architecture improvement demo"
+          },
+          {
+            "atSeconds": 4095,
+            "label": "What developers need to learn"
+          },
+          {
+            "atSeconds": 4451,
+            "label": "Hosting and deployment"
+          },
+          {
+            "atSeconds": 5198,
+            "label": "Open-source participation"
+          },
+          {
+            "atSeconds": 5681,
+            "label": "Education and hiring"
+          },
+          {
+            "atSeconds": 6279,
+            "label": "Software factories and video editing"
+          },
+          {
+            "atSeconds": 7009,
+            "label": "Agents beyond programming"
+          },
+          {
+            "atSeconds": 7261,
+            "label": "Closing reflection and prayer"
+          }
+        ]
+      },
+      "published": "2026-11-24",
+      "updated": "2026-11-25T06:03:45Z",
+      "overview": "Matt Pocock demonstrates an engineering workflow with domain vocabulary, adversarial questioning, specifications, architectural seams, worktrees, types, tests and review. This Reader examines how inexpensive generation changes the cost of accepting and maintaining software work.",
+      "whyItMatters": "When generating candidates becomes cheap, intent, independent verification, integration, release and later maintenance can become the limiting stages. Better tools and design may reduce these costs; the effect depends on the task and must be tested.",
+      "ghostMeshTakeaway": "Measure accepted, maintainable outcomes per unit of total effort. Preserve durable intent and bounded seams, test the actual property and keep verification, authorization and deployment distinct. Scale review and coordination to the real risk.",
+      "verdict": "Worth studying",
+      "architectureImpact": "experiment recommended",
+      "falsification": "Compare representative tasks under a fixed acceptance standard across baseline assistance, a versioned specification and seam, and increased concurrency. Count accepted outcomes, total effort, review backlog, admitted unresolved properties, escaped defects and later rework; keep interventions only if benefits exceed costs without unacceptable degradation.",
+      "evidenceState": "mixed-creator-claims-project-documents-independent-research-and-editorial-hypotheses",
+      "freshness": "Interview November 20, 2026; primary research and public documentation checked November 24, 2026 PT. Eight segment candidates staged under structural schemas, not semantic validation. Twenty-eight cue/chapter anchors checked. The interview's method is not independently performance-tested; illustrative economics are not observations.",
+      "lastEvidenceChecked": "2026-11-25T06:03:45Z",
+      "claims": [
+        {
+          "id": "r74-c01",
+          "proposition": "Pocock argues that coding is more learnable than many people assume.",
+          "kind": "speaker-opinion",
+          "status": "unverified",
+          "sourceLocation": "00:08 (8s), source-provided caption cue start",
+          "assessment": "Creator opinion; the interview does not measure learning outcomes.",
+          "limits": "Mapped source-provided caption cue start; not independently listening-certified speech. The video supports attribution of the account, not independent proof of an outcome.",
+          "references": [
+            "r74-video"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-24"
+        },
+        {
+          "id": "r74-c02",
+          "proposition": "He describes moving from TypeScript education toward reusable instructions for coding agents.",
+          "kind": "creator-report",
+          "status": "partially corroborated",
+          "sourceLocation": "02:10 (130s), source-provided caption cue start",
+          "assessment": "Creator report; his public repository documents skills, while the personal career account is not independently audited here.",
+          "limits": "Mapped source-provided caption cue start; not independently listening-certified speech. The video supports attribution of the account, not independent proof of an outcome.",
+          "references": [
+            "r74-video",
+            "r74-skills"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-24"
+        },
+        {
+          "id": "r74-c03",
+          "proposition": "The host describes uncertainty about how much coding and deployment work to entrust to an agent.",
+          "kind": "creator-report",
+          "status": "unverified",
+          "sourceLocation": "03:46 (226s), source-provided caption cue start",
+          "assessment": "Creator report of a personal difficulty; no general rate of novice failure follows.",
+          "limits": "Mapped source-provided caption cue start; not independently listening-certified speech. The video supports attribution of the account, not independent proof of an outcome.",
+          "references": [
+            "r74-video"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-24"
+        },
+        {
+          "id": "r74-c04",
+          "proposition": "Pocock distinguishes immediate tactical changes from strategic design that preserves a system's future usability.",
+          "kind": "speaker-opinion",
+          "status": "partially corroborated",
+          "sourceLocation": "05:04 (304s), source-provided caption cue start",
+          "assessment": "Creator opinion grounded in a documented design tradition; it does not establish that agents cannot perform strategic work.",
+          "limits": "Mapped source-provided caption cue start; not independently listening-certified speech. The video supports attribution of the account, not independent proof of an outcome.",
+          "references": [
+            "r74-video",
+            "r74-ousterhout"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-24"
+        },
+        {
+          "id": "r74-c05",
+          "proposition": "He predicts that repeatedly accepting generated code without understanding it can degrade the codebase and make future work harder.",
+          "kind": "speaker-inference",
+          "status": "unverified",
+          "sourceLocation": "06:56 (416s), source-provided caption cue start",
+          "assessment": "Creator prediction and plausible editorial mechanism; no longitudinal outcome is demonstrated.",
+          "limits": "Mapped source-provided caption cue start; not independently listening-certified speech. The video supports attribution of the account, not independent proof of an outcome.",
+          "references": [
+            "r74-video"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-24"
+        },
+        {
+          "id": "r74-c06",
+          "proposition": "A live demonstration begins with a skills-based approach to clarifying work in a course-video application.",
+          "kind": "creator-demonstration",
+          "status": "partially corroborated",
+          "sourceLocation": "12:35 (755s), creator chapter start",
+          "assessment": "Creator demonstration; chapter-level anchor. The setup does not by itself establish a successful change or productivity gain.",
+          "limits": "Mapped creator chapter start; not independently listening-certified speech. The video supports attribution of the account, not independent proof of an outcome.",
+          "references": [
+            "r74-video",
+            "r74-skills"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-24"
+        },
+        {
+          "id": "r74-c07",
+          "proposition": "He shows domain terms for the course system and says shared vocabulary helps communication with the agent.",
+          "kind": "creator-demonstration",
+          "status": "partially corroborated",
+          "sourceLocation": "15:21 (921s), source-provided caption cue start",
+          "assessment": "Creator demonstration and report; documented domain-vocabulary practices support the workflow, not the claimed improvement's magnitude.",
+          "limits": "Mapped source-provided caption cue start; not independently listening-certified speech. The video supports attribution of the account, not independent proof of an outcome.",
+          "references": [
+            "r74-video",
+            "r74-skills"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-24"
+        },
+        {
+          "id": "r74-c08",
+          "proposition": "The discussion identifies a communication gap between a brief request and the result its author intends.",
+          "kind": "speaker-opinion",
+          "status": "partially corroborated",
+          "sourceLocation": "17:00 (1020s), source-provided caption cue start",
+          "assessment": "Creator opinion supported by illustrative experience, not a measured failure rate or proof that structured questions eliminate the gap.",
+          "limits": "Mapped source-provided caption cue start; not independently listening-certified speech. The video supports attribution of the account, not independent proof of an outcome.",
+          "references": [
+            "r74-video"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-24"
+        },
+        {
+          "id": "r74-c09",
+          "proposition": "The demonstrated workflow connects questioning with project vocabulary and records of architectural decisions.",
+          "kind": "creator-demonstration",
+          "status": "partially corroborated",
+          "sourceLocation": "19:07 (1147s), source-provided caption cue start",
+          "assessment": "Creator demonstration and documented workflow; stale or incomplete records could also mislead later work.",
+          "limits": "Mapped source-provided caption cue start; not independently listening-certified speech. The video supports attribution of the account, not independent proof of an outcome.",
+          "references": [
+            "r74-video",
+            "r74-skills"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-24"
+        },
+        {
+          "id": "r74-c10",
+          "proposition": "For small changes Pocock describes proceeding in the same session; larger work gets a specification and smaller tickets.",
+          "kind": "creator-report",
+          "status": "partially corroborated",
+          "sourceLocation": "25:33 (1533s), source-provided caption cue start",
+          "assessment": "Creator report and documented behavior of the published workflow; an incomplete specification can propagate errors.",
+          "limits": "Mapped source-provided caption cue start; not independently listening-certified speech. The video supports attribution of the account, not independent proof of an outcome.",
+          "references": [
+            "r74-video",
+            "r74-skills"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-24"
+        },
+        {
+          "id": "r74-c11",
+          "proposition": "Pocock treats roughly 150,000 tokens as an approximate personal caution point and emphasizes keeping working context small.",
+          "kind": "speaker-advice",
+          "status": "unverified",
+          "sourceLocation": "25:51 (1551s), source-provided caption cue start",
+          "assessment": "Creator heuristic; neither an operating target, a universal threshold nor a universal decline in model quality is established.",
+          "limits": "Mapped source-provided caption cue start; not independently listening-certified speech. The video supports attribution of the account, not independent proof of an outcome.",
+          "references": [
+            "r74-video"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-24"
+        },
+        {
+          "id": "r74-c12",
+          "proposition": "He describes parallel subagents working in separate Git worktrees before changes are combined for review.",
+          "kind": "creator-report",
+          "status": "partially corroborated",
+          "sourceLocation": "34:44 (2084s), source-provided caption cue start",
+          "assessment": "Creator report; Git documents separate linked checkouts with shared repository state. A worktree is not a security sandbox, and this run's isolation and results are unverified.",
+          "limits": "Mapped source-provided caption cue start; not independently listening-certified speech. The video supports attribution of the account, not independent proof of an outcome.",
+          "references": [
+            "r74-video",
+            "r74-git"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-24"
+        },
+        {
+          "id": "r74-c13",
+          "proposition": "He describes issue-based task tracking and separate checks against the specification and coding standards.",
+          "kind": "creator-report",
+          "status": "partially corroborated",
+          "sourceLocation": "37:08 (2228s), source-provided caption cue start",
+          "assessment": "Creator report and documented workflow; separate reviews can still share errors or miss omitted requirements.",
+          "limits": "Mapped source-provided caption cue start; not independently listening-certified speech. The video supports attribution of the account, not independent proof of an outcome.",
+          "references": [
+            "r74-video",
+            "r74-skills"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-24"
+        },
+        {
+          "id": "r74-c14",
+          "proposition": "The discussion shifts from the implementation loop to how much work can be trusted and verified.",
+          "kind": "speaker-framing",
+          "status": "partially corroborated",
+          "sourceLocation": "44:52 (2692s), source-provided caption cue start",
+          "assessment": "Creator framing; claims about very large numbers of concurrent agents are aspirational, not independently demonstrated.",
+          "limits": "Mapped source-provided caption cue start; not independently listening-certified speech. The video supports attribution of the account, not independent proof of an outcome.",
+          "references": [
+            "r74-video"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-24"
+        },
+        {
+          "id": "r74-c15",
+          "proposition": "Pocock recommends fast feedback from types, tests and lint rules to constrain agent mistakes.",
+          "kind": "speaker-advice",
+          "status": "partially corroborated",
+          "sourceLocation": "49:29 (2969s), source-provided caption cue start",
+          "assessment": "Creator recommendation; these checks can detect the properties they encode, but passing checks does not establish full correctness or security.",
+          "limits": "Mapped source-provided caption cue start; not independently listening-certified speech. The video supports attribution of the account, not independent proof of an outcome.",
+          "references": [
+            "r74-video"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-24"
+        },
+        {
+          "id": "r74-c16",
+          "proposition": "The discussion turns to a starter tool stack, module boundaries and tests of meaningful behavior.",
+          "kind": "speaker-advice",
+          "status": "partially corroborated",
+          "sourceLocation": "52:31 (3151s), creator chapter start",
+          "assessment": "Creator advice; chapter-level anchor. Ousterhout's work supplies design lineage, not a causal test of AI-assisted engineering.",
+          "limits": "Mapped creator chapter start; not independently listening-certified speech. The video supports attribution of the account, not independent proof of an outcome.",
+          "references": [
+            "r74-video",
+            "r74-ousterhout"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-24"
+        },
+        {
+          "id": "r74-c17",
+          "proposition": "An architecture-improvement demonstration examines code and proposes deeper modules.",
+          "kind": "creator-demonstration",
+          "status": "partially corroborated",
+          "sourceLocation": "1:01:01 (3661s), creator chapter start",
+          "assessment": "Creator demonstration; chapter-level anchor. A proposal or report alone does not establish an implemented improvement.",
+          "limits": "Mapped creator chapter start; not independently listening-certified speech. The video supports attribution of the account, not independent proof of an outcome.",
+          "references": [
+            "r74-video",
+            "r74-skills"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-24"
+        },
+        {
+          "id": "r74-c18",
+          "proposition": "The displayed report proposes consolidating similar operations behind a shared, testable module.",
+          "kind": "creator-demonstration",
+          "status": "partially corroborated",
+          "sourceLocation": "1:07:02 (4022s), source-provided caption cue start",
+          "assessment": "Creator demonstration and favorable assessment; the interview does not establish implementation, test outcomes or whether the abstraction improves maintenance.",
+          "limits": "Mapped source-provided caption cue start; not independently listening-certified speech. The video supports attribution of the account, not independent proof of an outcome.",
+          "references": [
+            "r74-video",
+            "r74-ousterhout"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-24"
+        },
+        {
+          "id": "r74-c19",
+          "proposition": "Pocock describes using an agent teaching workflow to explore unfamiliar design ideas and quiz a learner.",
+          "kind": "creator-report",
+          "status": "unverified",
+          "sourceLocation": "1:08:15 (4095s), creator chapter start",
+          "assessment": "Creator report; chapter-level anchor. Reported learning experiences are not independent evidence of learning gains.",
+          "limits": "Mapped creator chapter start; not independently listening-certified speech. The video supports attribution of the account, not independent proof of an outcome.",
+          "references": [
+            "r74-video"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-24"
+        },
+        {
+          "id": "r74-c20",
+          "proposition": "The speakers discuss managed hosting, agent-assisted deployment and security review.",
+          "kind": "speaker-advice",
+          "status": "unverified",
+          "sourceLocation": "1:14:11 (4451s), creator chapter start",
+          "assessment": "Creator recommendations and reports; chapter-level anchor. Convenience and agent review do not establish suitable permissions, recovery, security or cost controls.",
+          "limits": "Mapped creator chapter start; not independently listening-certified speech. The video supports attribution of the account, not independent proof of an outcome.",
+          "references": [
+            "r74-video"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-24"
+        },
+        {
+          "id": "r74-c21",
+          "proposition": "Pocock says security is not the principal focus of his personal projects and recommends including security in review.",
+          "kind": "creator-report",
+          "status": "unverified",
+          "sourceLocation": "1:20:19 (4819s), source-provided caption cue start",
+          "assessment": "Creator report and recommendation; absence of a recalled incident is not an independent security assessment.",
+          "limits": "Mapped source-provided caption cue start; not independently listening-certified speech. The video supports attribution of the account, not independent proof of an outcome.",
+          "references": [
+            "r74-video"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-24"
+        },
+        {
+          "id": "r74-c22",
+          "proposition": "He values feedback from users when evaluating skills and describes the difficulty of formal evaluations.",
+          "kind": "speaker-opinion",
+          "status": "partially corroborated",
+          "sourceLocation": "1:23:30 (5010s), source-provided caption cue start",
+          "assessment": "Creator opinion and report; user feedback can reveal failures but selection and reporting biases leave silent failure rates unknown.",
+          "limits": "Mapped source-provided caption cue start; not independently listening-certified speech. The video supports attribution of the account, not independent proof of an outcome.",
+          "references": [
+            "r74-video"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-24"
+        },
+        {
+          "id": "r74-c23",
+          "proposition": "He discusses personal projects and choices about balancing work with family time.",
+          "kind": "creator-report",
+          "status": "unverified",
+          "sourceLocation": "1:26:38 (5198s), source-provided caption cue start; coincides with chapter boundary",
+          "assessment": "Creator report at a checked caption cue, coinciding with a source chapter boundary but concerning personal projects and work-family tradeoffs. Current operation and outcomes were not independently checked.",
+          "limits": "Mapped source-provided caption cue start; coincides with chapter boundary; not independently listening-certified speech. The video supports attribution of the account, not independent proof of an outcome.",
+          "references": [
+            "r74-video"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-24"
+        },
+        {
+          "id": "r74-c24",
+          "proposition": "He argues that inexpensive generated pull requests can increase maintainer triage work and recommends useful issues, evidence and reproductions.",
+          "kind": "speaker-opinion",
+          "status": "unverified",
+          "sourceLocation": "1:28:44 (5324s), source-provided caption cue start",
+          "assessment": "Creator opinion and editorially plausible workload mechanism; the interview does not quantify maintainer burden or establish a universal substitute contribution policy.",
+          "limits": "Mapped source-provided caption cue start; not independently listening-certified speech. The video supports attribution of the account, not independent proof of an outcome.",
+          "references": [
+            "r74-video"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-24"
+        },
+        {
+          "id": "r74-c25",
+          "proposition": "For new developers, he emphasizes working projects, strategic judgment and the ability to understand code.",
+          "kind": "speaker-advice",
+          "status": "unverified",
+          "sourceLocation": "1:34:41 (5681s), creator chapter start",
+          "assessment": "Creator career advice; chapter-level anchor. The discussion does not establish comparative hiring outcomes or the value of particular degrees.",
+          "limits": "Mapped creator chapter start; not independently listening-certified speech. The video supports attribution of the account, not independent proof of an outcome.",
+          "references": [
+            "r74-video"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-24"
+        },
+        {
+          "id": "r74-c26",
+          "proposition": "He sketches a software factory with automated triggers and human checkpoints adjusted to consequences and reversibility.",
+          "kind": "creator-proposal",
+          "status": "unverified",
+          "sourceLocation": "1:44:41 (6281s), source-provided caption cue start",
+          "assessment": "Creator proposal; neither safe unattended operation nor a demonstrated acceleration is established. Reversibility judgments can miss downstream harm.",
+          "limits": "Mapped source-provided caption cue start; not independently listening-certified speech. The video supports attribution of the account, not independent proof of an outcome.",
+          "references": [
+            "r74-video"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-24"
+        },
+        {
+          "id": "r74-c27",
+          "proposition": "The conversation covers his course platform and personal video editor, while the host describes an AI-assisted editing handoff.",
+          "kind": "creator-report",
+          "status": "unverified",
+          "sourceLocation": "1:47:43 (6463s), source-provided caption cue start",
+          "assessment": "Creator reports; the systems' implementation, accuracy and time savings are not independently verified.",
+          "limits": "Mapped source-provided caption cue start; not independently listening-certified speech. The video supports attribution of the account, not independent proof of an outcome.",
+          "references": [
+            "r74-video"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-24"
+        },
+        {
+          "id": "r74-c28",
+          "proposition": "The discussion covers personal-agent coordination, an interface the guest reported ignoring, and limits of verifying creative work.",
+          "kind": "creator-report",
+          "status": "partially corroborated",
+          "sourceLocation": "1:56:49 (7009s), creator chapter start; coincides with caption cue",
+          "assessment": "Creator reports and preferences; the interface account is not evidence that the whole project was abandoned. Model comparisons remain unverified. The closing prayer is a separate source chapter beginning at 02:01:01.",
+          "limits": "Mapped creator chapter start coinciding with a caption cue; not independently listening-certified speech. The video supports attribution of the account, not independent proof of an outcome.",
+          "references": [
+            "r74-video"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-24"
+        },
+        {
+          "id": "r74-e01",
+          "proposition": "The early-2025 METR randomized study observed 19% longer task time with AI tools in its study setting.",
+          "kind": "independent-research-result",
+          "status": "corroborated",
+          "sourceLocation": "N/A (separately considered public research)",
+          "assessment": "16 experienced open-source developers, 246 tasks; 95% CI +2% to +39%. This is evidence of the specified setting, not a universal effect.",
+          "limits": "Studied early-2025 tools and mature codebases. Later tools, participants, selection and measurement may differ.",
+          "references": [
+            "r74-metr"
+          ],
+          "counterevidence": [
+            "r74-copilot",
+            "r74-metr-update"
+          ],
+          "asOf": "2026-11-24",
+          "independentSourceCount": 1
+        },
+        {
+          "id": "r74-e02",
+          "proposition": "The February 2026 METR update reports uncertain later task-time estimates.",
+          "kind": "independent-research-result",
+          "status": "corroborated",
+          "sourceLocation": "N/A (separately considered public research)",
+          "assessment": "Original-participant subset estimate minus 18% with CI minus 38% to plus 9%; new recruits minus 4% with CI minus 15% to plus 9%. The update describes later evidence as weak or unreliable.",
+          "limits": "Selection and concurrent-agent timing issues undermine confident generalization; intervals span no difference.",
+          "references": [
+            "r74-metr-update"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-24",
+          "independentSourceCount": 1
+        },
+        {
+          "id": "r74-e03",
+          "proposition": "The earlier Copilot controlled experiment reported 55.8% faster completion of a bounded HTTP-server task.",
+          "kind": "independent-research-result",
+          "status": "corroborated",
+          "sourceLocation": "N/A (separately considered public research)",
+          "assessment": "The original research supports the reported task-specific acceleration, not a general delivery throughput claim.",
+          "limits": "One bounded JavaScript implementation task; no long-term maintenance, integration or deployment measurement.",
+          "references": [
+            "r74-copilot"
+          ],
+          "counterevidence": [
+            "r74-metr"
+          ],
+          "asOf": "2026-11-24",
+          "independentSourceCount": 1
+        },
+        {
+          "id": "r74-e04",
+          "proposition": "DORA's 2025 research characterizes AI as an amplifier of organizational conditions.",
+          "kind": "independent-research-result",
+          "status": "corroborated",
+          "sourceLocation": "N/A (separately considered public research)",
+          "assessment": "Survey of nearly 5,000 respondents and over 100 hours of qualitative research; a framework for interpreting observed associations.",
+          "limits": "Organizational association and self-reported/qualitative evidence, not causally establishing a particular engineering workflow's uplift.",
+          "references": [
+            "r74-dora"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-24",
+          "independentSourceCount": 1
+        }
+      ],
+      "references": [
+        {
+          "id": "r74-video",
+          "title": "How to Actually Code with AI (ft. Matt Pocock)",
+          "author": "NetworkChuck with Matt Pocock",
+          "publisher": "NetworkChuck",
+          "url": "https://www.youtube.com/watch?v=mU8WKII1gpk",
+          "publicationDate": "2026-11-20",
+          "datePrecision": "day",
+          "dateNote": "Original public video publication date.",
+          "eventDate": null,
+          "location": "Public source",
+          "sourceType": "primary-creator-video",
+          "independence": "Creator demonstration, advice and personal accounts; not an independently controlled performance or security study.",
+          "evidenceFamily": "r74-video",
+          "checkedAt": "2026-11-25T06:03:45Z"
+        },
+        {
+          "id": "r74-skills",
+          "title": "Matt Pocock's reusable agent skills",
+          "author": "Matt Pocock",
+          "publisher": "Matt Pocock / GitHub",
+          "url": "https://github.com/mattpocock/skills",
+          "publicationDate": "unknown",
+          "datePrecision": "unknown",
+          "dateNote": "Living public repository; original publication date unspecified.",
+          "eventDate": null,
+          "location": "Public source",
+          "sourceType": "project-documentation",
+          "independence": "Creator-maintained procedures establish documented workflow, not independent measured efficacy.",
+          "evidenceFamily": "r74-skills",
+          "checkedAt": "2026-11-25T06:03:45Z"
+        },
+        {
+          "id": "r74-ousterhout",
+          "title": "A Philosophy of Software Design, second edition",
+          "author": "John Ousterhout",
+          "publisher": "Stanford University / author site",
+          "url": "https://web.stanford.edu/~ouster/cgi-bin/book.php?trk=public_post_comment-text",
+          "publicationDate": "2021-07",
+          "datePrecision": "month",
+          "dateNote": "Author's second-edition notes identify July 2021.",
+          "eventDate": null,
+          "location": "Public source",
+          "sourceType": "original-design-work",
+          "independence": "Primary design lineage on complexity and deep modules, not a causal AI productivity experiment.",
+          "evidenceFamily": "r74-ousterhout",
+          "checkedAt": "2026-11-25T06:03:45Z"
+        },
+        {
+          "id": "r74-git",
+          "title": "Git worktree documentation",
+          "author": "Git contributors",
+          "publisher": "Git",
+          "url": "https://git-scm.com/docs/git-worktree",
+          "publicationDate": "unknown",
+          "datePrecision": "unknown",
+          "dateNote": "Living documentation; original publication date unspecified.",
+          "eventDate": null,
+          "location": "Public source",
+          "sourceType": "project-documentation",
+          "independence": "First-party worktree semantics, not evidence of runtime isolation or creator implementation results.",
+          "evidenceFamily": "r74-git",
+          "checkedAt": "2026-11-25T06:03:45Z"
+        },
+        {
+          "id": "r74-metr",
+          "title": "Measuring the Impact of Early-2025 AI on Experienced Open-Source Developer Productivity",
+          "author": "Becker et al.",
+          "publisher": "METR / arXiv",
+          "url": "https://arxiv.org/abs/2507.09089",
+          "publicationDate": "2025-07",
+          "datePrecision": "month",
+          "dateNote": "arXiv initial publication month; early-2025 measured task setting.",
+          "eventDate": "Early 2025",
+          "location": "Public source",
+          "sourceType": "randomized study",
+          "independence": "Independent randomized study of 16 experienced developers and 246 tasks using early-2025 tools in mature repositories. Does not generalize to every task or later model.",
+          "evidenceFamily": "r74-metr",
+          "checkedAt": "2026-11-25T06:03:45Z"
+        },
+        {
+          "id": "r74-metr-update",
+          "title": "We are Changing our Developer Productivity Experiment Design",
+          "author": "METR",
+          "publisher": "METR",
+          "url": "https://metr.org/blog/2026-02-24-uplift-update/",
+          "publicationDate": "2026-02-24",
+          "datePrecision": "day",
+          "dateNote": "Dated follow-up report, not a replication in all contexts.",
+          "eventDate": null,
+          "location": "Public source",
+          "sourceType": "original study",
+          "independence": "Research group's later estimates explicitly weakened by selection effects and concurrent-agent timing difficulties; not a robust current uplift estimate.",
+          "evidenceFamily": "r74-metr-update",
+          "checkedAt": "2026-11-25T06:03:45Z"
+        },
+        {
+          "id": "r74-copilot",
+          "title": "The Impact of AI on Developer Productivity: Evidence from GitHub Copilot",
+          "author": "Peng et al.",
+          "publisher": "arXiv",
+          "url": "https://arxiv.org/abs/2302.06590",
+          "publicationDate": "2023-02",
+          "datePrecision": "month",
+          "dateNote": "arXiv initial publication month.",
+          "eventDate": null,
+          "location": "Public source",
+          "sourceType": "randomized study",
+          "independence": "Original controlled experiment with a bounded JavaScript HTTP-server implementation; not a mature-system delivery or maintenance study.",
+          "evidenceFamily": "r74-copilot",
+          "checkedAt": "2026-11-25T06:03:45Z"
+        },
+        {
+          "id": "r74-dora",
+          "title": "2025 DORA report",
+          "author": "DORA researchers",
+          "publisher": "DORA",
+          "url": "https://dora.dev/research/2025/dora-report/",
+          "publicationDate": "2025",
+          "datePrecision": "year",
+          "dateNote": "Report year; nearly 5,000 survey respondents and over 100 qualitative research hours.",
+          "eventDate": null,
+          "location": "Public source",
+          "sourceType": "original study",
+          "independence": "Survey and qualitative research support organizational associations and an amplification framing, not universal causal attribution.",
+          "evidenceFamily": "r74-dora",
+          "checkedAt": "2026-11-25T06:03:45Z"
+        },
+        {
+          "id": "r74-small-batches",
+          "title": "Working in small batches",
+          "author": "DORA",
+          "publisher": "DORA",
+          "url": "https://dora.dev/capabilities/working-in-small-batches/",
+          "publicationDate": "unknown",
+          "datePrecision": "unknown",
+          "dateNote": "Living capability guidance; date unspecified.",
+          "eventDate": null,
+          "location": "Public source",
+          "sourceType": "methodological-guidance",
+          "independence": "Capability guidance supports short feedback and incremental delivery as practices, not proof of Pocock's productivity.",
+          "evidenceFamily": "r74-small-batches",
+          "checkedAt": "2026-11-25T06:03:45Z"
+        }
+      ],
+      "relationships": [
+        {
+          "target": "reader:when-code-gets-cheap-ambition-becomes-the-test",
+          "type": "companion",
+          "reason": "Examines how cheap code generation shifts the meaningful standard from raw output to ambitious accepted value. This Reader adds a conditional economics of the engineering effort required to accept and maintain the next change.",
+          "provenance": [
+            "/beyond-vibe-coding-engineering-in-the-age-of-ai-agents/",
+            "/when-code-gets-cheap-ambition-becomes-the-test/"
+          ],
+          "basis": "curated-editorial-comparison",
+          "direction": "outgoing"
+        },
+        {
+          "target": "reader:the-cost-of-forgetting-why-agents-keep-reading-the-same-world",
+          "type": "companion",
+          "reason": "Distinguishes reusable context from durable governed knowledge and accepted work. This Reader extends that argument to domain vocabulary, architectural decisions and module seams that reduce the obligation to rediscover intent.",
+          "provenance": [
+            "/beyond-vibe-coding-engineering-in-the-age-of-ai-agents/",
+            "/the-cost-of-forgetting-why-agents-keep-reading-the-same-world/"
+          ],
+          "basis": "curated-editorial-comparison",
+          "direction": "outgoing"
+        }
+      ],
+      "relationshipDisposition": "Two verified published Reader connections and two separately reviewed public SharePlane Work comparisons. Editorial companions, not independent corroboration of the interview or proposed metrics.",
+      "relationshipReview": {
+        "reviewedAt": "2026-11-24",
+        "reviewedCatalogSize": 73,
+        "decision": "linked",
+        "reviewedTargets": [
+          "reader:when-code-gets-cheap-ambition-becomes-the-test",
+          "reader:the-cost-of-forgetting-why-agents-keep-reading-the-same-world"
+        ],
+        "rationale": "Two directly relevant Reader destinations checked against their actual served and accepted Production revisions. Reader 72 relates to accepted value; Reader 73 relates to durable context. Other potential connections are less specific or lack exact current accepted-revision verification."
+      },
+      "sharePlaneRelationships": [
+        {
+          "title": "The Confidence to Delegate",
+          "url": "https://shareplane.malott.ai/artifacts/the-confidence-to-delegate/",
+          "type": "companion",
+          "reason": "Examines the distinction between capability and authority, and why operational assurance and recovery determine warranted delegation. It complements the trust ladder and the boundary between verified behavior and release permission.",
+          "basis": "curated-editorial-comparison"
+        },
+        {
+          "title": "When the Gate Moves",
+          "url": "https://shareplane.malott.ai/artifacts/when-the-gate-moves/",
+          "type": "companion",
+          "reason": "Explores a changed boundary of valuable work and the move from producing candidates to demonstrating accepted outcomes. This Reader offers a specific engineering account of verification capacity and the costs that can remain after generation becomes cheap.",
+          "basis": "curated-editorial-comparison"
+        }
+      ],
+      "sharePlaneReview": {
+        "reviewedAt": "2026-11-24",
+        "decision": "linked",
+        "rationale": "The Confidence to Delegate and When the Gate Moves were independently selected for specific editorial overlap. Their direct canonical live HTML bytes match retained approved Production revision evidence, rather than merely catalog membership or HTTP availability. They do not establish interview outcomes."
+      },
+      "review": {
+        "status": "accepted",
+        "summary": "One independent consolidated source, editorial and privacy review accepted the exact revised candidate. Tony explicitly approved publication on November 24, 2026 PT; protected merge and Production verification remain required."
+      },
+      "revisionHistory": [],
+      "editorialOrder": 73,
+      "variant": "editorial",
+      "accent": "amber",
+      "archiveCall": {
+        "label": "Measure accepted work, not agent output",
+        "text": "Start with a bounded behavior and a testable seam. Compare clarification, generation, verification, integration, release and observed rework at the same acceptance threshold."
+      },
+      "editorialDepth": {
+        "schemaVersion": 1,
+        "receiptPath": "content/editorial-depth/beyond-vibe-coding-engineering-in-the-age-of-ai-agents.json"
+      },
+      "legacyReceipt": {
+        "schema": "ghostmesh-reader-receipt-v2",
+        "source": {
+          "url": "https://www.youtube.com/watch?v=mU8WKII1gpk",
+          "videoId": "mU8WKII1gpk"
+        },
+        "custody": {
+          "status": "qualified-private-pack-verified",
+          "note": "Previously acquired closed private ReasonPack verified; retained original source-provided timed captions and cue coverage. Isolated Opus packet warning during normalization; verification does not attest perfect audio or independently certified speech. No reacquisition."
+        },
+        "reasonPack": {
+          "schema": "ghostmesh-reasoning-pack-v1",
+          "verification": "pass",
+          "manifestSha256": "c14750f59436a716fcbc83a4c4c77bfbb97b86f87d576b6da82ec06c925c72fc",
+          "transcription": "Source-provided timed captions, 1,326 cues; no second acquisition or automated fallback transcription. Not speech-certified or independently listened.",
+          "publicationBoundary": "Raw media, captions, complete transcript, private paths and private research inputs remain private. Public original analysis, navigation, public references and sanitized receipt only."
+        },
+        "sourceInspection": {
+          "method": "Existing source package, eight bounded prepared segments and original four primary evidence sources reused. After separate owner-authorized model analysis, eight schema-bound candidate observations were staged; consolidated source register checked 28 cue/chapter anchors. Structural staging is not independent semantic validation.",
+          "transcriptSha256": "407b24cd1119f1173130260f052f040cf2de9afd79234f9c98b0e5ab11781b30",
+          "caveat": "Source integrity and navigation aid do not certify exact speech, the model interpretation or creator performance. An isolated normalization packet warning occurred; integrity and caption coverage passed.",
+          "publicationBoundary": "Public source identity, URLs, timestamped original paraphrases, source digest bindings and limitations only. No raw private artifacts or internal operational information."
+        },
+        "editorialStatus": "OWNER_APPROVED_FOR_PROTECTED_RELEASE_PENDING_PRODUCTION_VERIFICATION"
+      }
     }
   ],
   "featuredId": "reader:ask-for-the-outcome-keep-the-boundary"
