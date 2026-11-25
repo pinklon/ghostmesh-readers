@@ -12,6 +12,623 @@
   ],
   "readers": [
     {
+      "id": "reader:the-agent-that-remembers-why-it-changed",
+      "slug": "the-agent-that-remembers-why-it-changed",
+      "title": "The Agent That Remembers Why It Changed",
+      "category": "AI & Technology",
+      "tags": [
+        "agentic-work",
+        "memory",
+        "verification",
+        "architecture",
+        "research",
+        "evaluation"
+      ],
+      "entities": [],
+      "source": {
+        "platform": "YouTube",
+        "url": "https://www.youtube.com/watch?v=fKgwmagOXUg",
+        "videoId": "fKgwmagOXUg",
+        "title": "Google Just Solved AI’s Biggest Bottleneck (Recursive Self-Improvement)",
+        "creator": "Cloud Codes",
+        "mediaAspect": "16:9",
+        "durationSeconds": 828,
+        "uploadDate": "2026-11-25",
+        "dateNote": "Ten source chapter starts with editorial labels; finer links refer to source-provided timed caption cues.",
+        "captionType": "Source-provided timed captions, 768 cues; package integrity verified, not independently listening-certified.",
+        "creatorChapters": [
+          {
+            "atSeconds": 0,
+            "label": "Frozen model weights"
+          },
+          {
+            "atSeconds": 85,
+            "label": "The agent harness and earlier research"
+          },
+          {
+            "atSeconds": 187,
+            "label": "An inherited decision without its reason"
+          },
+          {
+            "atSeconds": 250,
+            "label": "History of changes"
+          },
+          {
+            "atSeconds": 394,
+            "label": "Predictions and observed outcomes"
+          },
+          {
+            "atSeconds": 483,
+            "label": "The paired coding results"
+          },
+          {
+            "atSeconds": 559,
+            "label": "A negative model transition"
+          },
+          {
+            "atSeconds": 607,
+            "label": "Full history versus problem descriptions"
+          },
+          {
+            "atSeconds": 707,
+            "label": "What actually improves"
+          },
+          {
+            "atSeconds": 735,
+            "label": "Limitations and implications"
+          }
+        ]
+      },
+      "published": "2026-11-25",
+      "updated": "2026-11-25T12:57:08Z",
+      "overview": "Cloud Codes discusses a Google and Penn State preprint about continuity of engineering history in fixed-weight harness experiments. This investigation examines what the paper measures, its negative results, and the distinction between rationale and authority.",
+      "whyItMatters": "When contexts and models change, an inherited system can preserve a useful improvement or a historical accident. Evidence of a prior decision cannot establish current applicability or grant authority.",
+      "ghostMeshTakeaway": "Preserve interpretable change rationale and observed evidence where proportionate, assess current applicability, and keep acceptance, verification and authority distinct. Do not confuse a benchmark gain with operational permission.",
+      "verdict": "Worth studying",
+      "architectureImpact": "investigate",
+      "falsification": "Compare independent human-reviewed assessments of inherited already-accepted decisions with and without relevant historical explanations. Measure decision accuracy, effort, disagreements and later corrections; a null or worse result weakens the rationale-debt hypothesis. No autonomous system changes proposed.",
+      "evidenceState": "mixed-creator-claims-primary-preprint-results-and-editorial-inference",
+      "freshness": "Original video and primary preprint checked November 25, 2026 PT. Primary paper v1 is author-reported, not an independent replication. Twenty-three source cue anchors verified.",
+      "lastEvidenceChecked": "2026-11-25T12:57:08Z",
+      "claims": [
+        {
+          "id": "r75-c01",
+          "proposition": "Frozen weights: the presenter says the surrounding harness changes while the model’s weights do not.",
+          "kind": "creator-statement",
+          "status": "corroborated",
+          "sourceLocation": "00:06 (6s), source-provided caption cue",
+          "assessment": "The SIM preprint excerpt directly describes a fixed-weight harness comparison. Better measured system performance under those conditions does not establish that the model itself learned new weights.",
+          "limits": "The source supports creator attribution; paper agreement is not independent replication. Cue is not independently listening-certified.",
+          "references": [
+            "r75-video",
+            "r75-sim"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-25"
+        },
+        {
+          "id": "r75-c02",
+          "proposition": "The recursive-improvement question: the video raises whether the work solves recursive self-improvement, then frames the actual contribution as narrower.",
+          "kind": "creator-statement",
+          "status": "partially corroborated",
+          "sourceLocation": "00:16 (16s), source-provided caption cue",
+          "assessment": "The question is editorial framing. The fixed-weight experiment supports a narrower claim about evaluated harness improvement; the supplied survey distinguishes task execution from changing the mechanism that produces later improvements. Neither excerpt establishes an indefinitely improving successor.",
+          "limits": "The source supports creator attribution; paper agreement is not independent replication. Cue is not independently listening-certified.",
+          "references": [
+            "r75-video",
+            "r75-sim",
+            "r75-survey"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-25"
+        },
+        {
+          "id": "r75-c03",
+          "proposition": "The presenter contrasts a transferred workspace harness starting at 68.41 with the target seed's 73.89.",
+          "kind": "creator-statement",
+          "status": "corroborated",
+          "sourceLocation": "00:57 (57s), source-provided caption cue",
+          "assessment": "The v1 paper confirms both starting scores in Figure 3 and Table 6. This descriptive 5.48-point deficit shows that the changed setting warrants a fresh baseline; the single condition is not independently replicated.",
+          "limits": "The source supports creator attribution; paper agreement is not independent replication. Cue is not independently listening-certified.",
+          "references": [
+            "r75-video",
+            "r75-sim"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-25"
+        },
+        {
+          "id": "r75-c04",
+          "proposition": "Harness scope: the video describes the harness as governing context, available tools, and execution flow.",
+          "kind": "creator-statement",
+          "status": "partially corroborated",
+          "sourceLocation": "01:30 (90s), source-provided caption cue",
+          "assessment": "This is the presenter’s description of the system boundary. The supplied primary excerpt establishes that the study compares harnesses, but does not independently detail each interface or permission.",
+          "limits": "The source supports creator attribution; paper agreement is not independent replication. Cue is not independently listening-certified.",
+          "references": [
+            "r75-video",
+            "r75-sim"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-25"
+        },
+        {
+          "id": "r75-c05",
+          "proposition": "Overfitting: the video contrasts larger gains on practiced tasks with smaller gains on unfamiliar benchmarks.",
+          "kind": "creator-statement",
+          "status": "partially corroborated",
+          "sourceLocation": "02:09 (129s), source-provided caption cue",
+          "assessment": "The separate RRSI paper excerpt reports a distinction between within-distribution and out-of-distribution results and warns of overfitting. It supports the general concern, not the video’s exact figures or a conclusion that every change fails to transfer.",
+          "limits": "The source supports creator attribution; paper agreement is not independent replication. Cue is not independently listening-certified.",
+          "references": [
+            "r75-video",
+            "r75-rrsi"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-25"
+        },
+        {
+          "id": "r75-c06",
+          "proposition": "Missing rationale: the presenter argues that inherited code alone can leave the reason for a change, its expected effect, and its observed result unavailable to a later optimizer.",
+          "kind": "creator-statement",
+          "status": "partially corroborated",
+          "sourceLocation": "02:51 (171s), source-provided caption cue",
+          "assessment": "This is a plausible interpretation of the proposed memory’s purpose, but the supplied preprint excerpt does not establish that missing rationale caused every weak transfer or that all inherited harnesses lack such records.",
+          "limits": "The source supports creator attribution; paper agreement is not independent replication. Cue is not independently listening-certified.",
+          "references": [
+            "r75-video",
+            "r75-sim"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-25"
+        },
+        {
+          "id": "r75-c07",
+          "proposition": "The presenter interprets a completion-evidence example as a move from confidence toward observed evidence.",
+          "kind": "creator-statement",
+          "status": "partially corroborated",
+          "sourceLocation": "03:32 (212s), source-provided caption cue",
+          "assessment": "The presenter infers the mechanism from its stated purpose, rather than demonstrating implementation inspection. The paper discusses completion verification and an accepted edit that failed to fix target tasks; neither establishes universal benefit.",
+          "limits": "The source supports creator attribution; paper agreement is not independent replication. Cue is not independently listening-certified.",
+          "references": [
+            "r75-video",
+            "r75-sim"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-25"
+        },
+        {
+          "id": "r75-c08",
+          "proposition": "Memory ownership: the presenter says self-improvement memory belongs to the process revising the harness, rather than to the task-solving agent.",
+          "kind": "creator-statement",
+          "status": "corroborated",
+          "sourceLocation": "04:18 (258s), source-provided caption cue",
+          "assessment": "Section 3 of the preprint corroborates the distinction between history for assessing changes and the task-solving model's behavior. Fixed weights do not establish intrinsic learning or safe operation.",
+          "limits": "The source supports creator attribution; paper agreement is not independent replication. Cue is not independently listening-certified.",
+          "references": [
+            "r75-video",
+            "r75-sim"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-25"
+        },
+        {
+          "id": "r75-c09",
+          "proposition": "The presenter describes separate roles involved in assessing change proposals.",
+          "kind": "creator-statement",
+          "status": "partially corroborated",
+          "sourceLocation": "04:44 (284s), source-provided caption cue",
+          "assessment": "The paper describes separate proposal and selection roles. This is the reported experimental structure, not independent proof of judgment quality, operational authority or safety.",
+          "limits": "The source supports creator attribution; paper agreement is not independent replication. Cue is not independently listening-certified.",
+          "references": [
+            "r75-video",
+            "r75-sim"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-25"
+        },
+        {
+          "id": "r75-c10",
+          "proposition": "Prediction before observation: the presenter says the selected change’s expected effect is recorded before evaluation and compared with the observed outcome.",
+          "kind": "creator-statement",
+          "status": "corroborated",
+          "sourceLocation": "05:25 (325s), source-provided caption cue",
+          "assessment": "The paper describes expectations recorded before outcomes. That chronology is useful for interpretation but does not make a prediction true or prove the record is complete.",
+          "limits": "The source supports creator attribution; paper agreement is not independent replication. Cue is not independently listening-certified.",
+          "references": [
+            "r75-video",
+            "r75-sim"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-25"
+        },
+        {
+          "id": "r75-c11",
+          "proposition": "The presenter notes that the historical record describes chosen changes rather than every rejected alternative.",
+          "kind": "creator-statement",
+          "status": "corroborated",
+          "sourceLocation": "05:33 (333s), source-provided caption cue",
+          "assessment": "The paper confirms selective retention, including unsuccessful outcomes of chosen changes. Conclusions about comprehensiveness and selection bias remain editorial interpretation.",
+          "limits": "The source supports creator attribution; paper agreement is not independent replication. Cue is not independently listening-certified.",
+          "references": [
+            "r75-video",
+            "r75-sim"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-25"
+        },
+        {
+          "id": "r75-c12",
+          "proposition": "The presenter describes the full retained history being available to the decision roles.",
+          "kind": "creator-statement",
+          "status": "corroborated",
+          "sourceLocation": "05:49 (349s), source-provided caption cue",
+          "assessment": "The authors report that condition without a separate demonstration of long-run scaling. The creator raises growing-history cost later; this timestamp anchors the history claim only.",
+          "limits": "The source supports creator attribution; paper agreement is not independent replication. Cue is not independently listening-certified.",
+          "references": [
+            "r75-video",
+            "r75-sim"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-25"
+        },
+        {
+          "id": "r75-c13",
+          "proposition": "Provenance and interpretation: the video describes records combining rationale, predicted and observed outcomes, and information about the originating experiment.",
+          "kind": "creator-statement",
+          "status": "corroborated",
+          "sourceLocation": "06:47 (407s), source-provided caption cue",
+          "assessment": "The paper describes retained reasons, observed and expected outcomes and evaluation provenance. These are reported research inputs, not independent causal certification.",
+          "limits": "The source supports creator attribution; paper agreement is not independent replication. Cue is not independently listening-certified.",
+          "references": [
+            "r75-video",
+            "r75-sim"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-25"
+        },
+        {
+          "id": "r75-c14",
+          "proposition": "Acceptance is not success: the presenter distinguishes selection of a proposed change from evidence that it achieved its intended result.",
+          "kind": "creator-statement",
+          "status": "partially corroborated",
+          "sourceLocation": "07:08 (428s), source-provided caption cue",
+          "assessment": "The authors disclose an accepted edit that did not repair target tasks. The distinction between selection and verified outcome is supported; it does not establish safety.",
+          "limits": "The source supports creator attribution; paper agreement is not independent replication. Cue is not independently listening-certified.",
+          "references": [
+            "r75-video",
+            "r75-sim"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-25"
+        },
+        {
+          "id": "r75-c15",
+          "proposition": "Evaluation cost: the video estimates roughly four hours per coding round and about forty hours for ten rounds.",
+          "kind": "creator-statement",
+          "status": "unverified",
+          "sourceLocation": "07:48 (468s), source-provided caption cue",
+          "assessment": "These are video-reported timings, not independently verified cost or latency estimates for GhostMesh. Compute expense, review time, and opportunity cost could change the practical value of a measured gain.",
+          "limits": "The source supports creator attribution; paper agreement is not independent replication. Cue is not independently listening-certified.",
+          "references": [
+            "r75-video"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-25"
+        },
+        {
+          "id": "r75-c16",
+          "proposition": "Paired coding comparison: the video describes continuations with and without memory from common starting points.",
+          "kind": "creator-statement",
+          "status": "partially corroborated",
+          "sourceLocation": "08:23 (503s), source-provided caption cue",
+          "assessment": "The primary preprint excerpt confirms ten paired coding continuations. Pairing strengthens the comparison within the reported experimental design, but the supplied excerpt does not independently verify every task count or control described in the video.",
+          "limits": "The source supports creator attribution; paper agreement is not independent replication. Cue is not independently listening-certified.",
+          "references": [
+            "r75-video",
+            "r75-sim"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-25"
+        },
+        {
+          "id": "r75-c17",
+          "proposition": "Reported coding advantage: memory-assisted continuation finished higher in nine of ten pairs, with an average advantage of about 2.4 score points.",
+          "kind": "creator-statement",
+          "status": "corroborated",
+          "sourceLocation": "08:35 (515s), source-provided caption cue",
+          "assessment": "The primary preprint reports nine wins, one loss, a 2.36-point mean advantage, and a 95% interval of 1.05–3.68. These are author-reported results for the evaluated coding handoff, not independent replication or a guarantee for other settings.",
+          "limits": "The source supports creator attribution; paper agreement is not independent replication. Cue is not independently listening-certified.",
+          "references": [
+            "r75-video",
+            "r75-sim"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-25"
+        },
+        {
+          "id": "r75-c18",
+          "proposition": "A negative pair: the video notes that one coding continuation performed worse with memory.",
+          "kind": "creator-statement",
+          "status": "corroborated",
+          "sourceLocation": "09:04 (544s), source-provided caption cue",
+          "assessment": "The primary excerpt confirms one loss among the ten pairs. This counterexample limits any claim that carrying memory always helps; the excerpt does not explain its cause.",
+          "limits": "The source supports creator attribution; paper agreement is not independent replication. Cue is not independently listening-certified.",
+          "references": [
+            "r75-video",
+            "r75-sim"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-25"
+        },
+        {
+          "id": "r75-c19",
+          "proposition": "Fresh-start counterexample: the presenter reports that one successive-model continuation scored 0.8 points below a fresh run.",
+          "kind": "creator-statement",
+          "status": "corroborated",
+          "sourceLocation": "09:44 (584s), source-provided caption cue",
+          "assessment": "The preprint excerpt confirms one successive-model comparison was 0.8 points worse. It does not establish why, or justify extrapolating a trend from the video’s three reported comparisons.",
+          "limits": "The source supports creator attribution; paper agreement is not independent replication. Cue is not independently listening-certified.",
+          "references": [
+            "r75-video",
+            "r75-sim"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-25"
+        },
+        {
+          "id": "r75-c20",
+          "proposition": "Memory ablation: the video says full memory outperformed a problem-only version in six benchmark handoffs.",
+          "kind": "creator-statement",
+          "status": "corroborated",
+          "sourceLocation": "10:28 (628s), source-provided caption cue",
+          "assessment": "The full v1 paper reports that the full-history condition finished highest in six cross-dataset settings. Those settings generally have one optimization run per condition and compare whole conditions rather than each field separately.",
+          "limits": "The source supports creator attribution; paper agreement is not independent replication. Cue is not independently listening-certified.",
+          "references": [
+            "r75-video",
+            "r75-sim"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-25"
+        },
+        {
+          "id": "r75-c21",
+          "proposition": "Outside coding, the presenter cautions that conditions generally had one run and describes a model-based judge that may be biased.",
+          "kind": "creator-statement",
+          "status": "corroborated",
+          "sourceLocation": "11:17 (677s), source-provided caption cue",
+          "assessment": "The paper's limitations and ethics statement disclose single independent optimization runs outside coding and possible workspace judge bias. The scope is descriptive, not evidence of universal reliability.",
+          "limits": "The source supports creator attribution; paper agreement is not independent replication. Cue is not independently listening-certified.",
+          "references": [
+            "r75-video",
+            "r75-sim"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-25"
+        },
+        {
+          "id": "r75-c22",
+          "proposition": "The presenter cautions that the material is author-reported preprint research and questions reproducibility from public materials.",
+          "kind": "creator-statement",
+          "status": "partially corroborated",
+          "sourceLocation": "12:21 (741s), source-provided caption cue",
+          "assessment": "The paper is a preprint; independent replication is not established. Current code availability and whether a complete reproduction is possible remain unverified.",
+          "limits": "The source supports creator attribution; paper agreement is not independent replication. Cue is not independently listening-certified.",
+          "references": [
+            "r75-video",
+            "r75-sim"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-25"
+        },
+        {
+          "id": "r75-c23",
+          "proposition": "Interface boundary: the video says the studied handoffs use compatible interfaces between old and new harnesses.",
+          "kind": "creator-statement",
+          "status": "corroborated",
+          "sourceLocation": "13:18 (798s), source-provided caption cue",
+          "assessment": "The authors explicitly limit the study to settings with compatible harness interfaces. Portability across incompatible tools, permissions or operating environments remains unestablished.",
+          "limits": "The source supports creator attribution; paper agreement is not independent replication. Cue is not independently listening-certified.",
+          "references": [
+            "r75-video",
+            "r75-sim"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-25"
+        },
+        {
+          "id": "r75-e01",
+          "proposition": "The matched coding study reports a mean 2.36-point advantage over harness-only continuation.",
+          "kind": "original-research-result",
+          "status": "corroborated",
+          "sourceLocation": "N/A (separate primary research)",
+          "assessment": "Ten matched pairs, nine positive and one negative; 95% CI 1.05 to 3.68; reported paired p=0.003.",
+          "limits": "Author-reported preprint findings. The independent source run is the unit of analysis; no independent replication or productivity result.",
+          "references": [
+            "r75-sim"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-25"
+        },
+        {
+          "id": "r75-e02",
+          "proposition": "One continuing model-generation comparison scored 0.8 points below its fresh comparator.",
+          "kind": "original-research-result",
+          "status": "corroborated",
+          "sourceLocation": "N/A (separate primary research)",
+          "assessment": "Gemini 4 Argon: 94.8 versus 95.6 (Table 1). The other two subsequent generations had positive differences.",
+          "limits": "Descriptive single-run evidence, not a universal trend or proof of the cause.",
+          "references": [
+            "r75-sim"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-25"
+        },
+        {
+          "id": "r75-e03",
+          "proposition": "Transfer across model families can begin below a seed harness.",
+          "kind": "original-research-result",
+          "status": "corroborated",
+          "sourceLocation": "N/A (separate primary research)",
+          "assessment": "Workspace starting scores 68.41 versus 73.89; reported full-history final 84.75, inherited-only final 73.42, fresh final 82.98.",
+          "limits": "Author-reported individual comparison with limited independent repetition; no deployment fitness inference.",
+          "references": [
+            "r75-sim"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-25"
+        }
+      ],
+      "references": [
+        {
+          "id": "r75-video",
+          "title": "Google Just Solved AI’s Biggest Bottleneck (Recursive Self-Improvement)",
+          "author": "Cloud Codes",
+          "publisher": "Cloud Codes",
+          "url": "https://www.youtube.com/watch?v=fKgwmagOXUg",
+          "publicationDate": "2026-11-25",
+          "datePrecision": "day",
+          "dateNote": "Original publication or revision date; checked November 25, 2026.",
+          "eventDate": null,
+          "location": "Public source",
+          "sourceType": "primary-creator-video",
+          "independence": "Creator interpretation of research; not independent performance evidence.",
+          "evidenceFamily": "r75-video",
+          "checkedAt": "2026-11-25T12:57:08Z"
+        },
+        {
+          "id": "r75-sim",
+          "title": "Self-Improvement Memory Enables Continual Recursive Self-Improvement",
+          "author": "Xin Yu et al.",
+          "publisher": "Google / Pennsylvania State University / arXiv",
+          "url": "https://arxiv.org/abs/2611.18856",
+          "publicationDate": "2026-11-13",
+          "datePrecision": "day",
+          "dateNote": "Original publication or revision date; checked November 25, 2026.",
+          "eventDate": null,
+          "location": "Public source",
+          "sourceType": "research preprint",
+          "independence": "Original author-reported benchmark and paired coding results, not independent replication, causal operational proof or production safety evidence.",
+          "evidenceFamily": "r75-sim",
+          "checkedAt": "2026-11-25T12:57:08Z"
+        },
+        {
+          "id": "r75-rrsi",
+          "title": "RRSI: Regularized Recursive Self-Improvement of Agent Harnesses",
+          "author": "Peng Xia et al.",
+          "publisher": "arXiv",
+          "url": "https://arxiv.org/abs/2609.24972",
+          "publicationDate": "2026-09-21",
+          "datePrecision": "day",
+          "dateNote": "Original publication or revision date; checked November 25, 2026.",
+          "eventDate": null,
+          "location": "Public source",
+          "sourceType": "research preprint",
+          "independence": "Earlier related research on overfitting across benchmark distributions; not replication of SIM.",
+          "evidenceFamily": "r75-rrsi",
+          "checkedAt": "2026-11-25T12:57:08Z"
+        },
+        {
+          "id": "r75-rhi",
+          "title": "Recursive Harness Self-Improvement",
+          "author": "Hyunin Lee et al.",
+          "publisher": "arXiv",
+          "url": "https://arxiv.org/abs/2607.15524",
+          "publicationDate": "2026-07-17",
+          "datePrecision": "day",
+          "dateNote": "Original publication or revision date; checked November 25, 2026.",
+          "eventDate": null,
+          "location": "Public source",
+          "sourceType": "research preprint",
+          "independence": "Different experiment and analytical framing, not replication of the SIM result.",
+          "evidenceFamily": "r75-rhi",
+          "checkedAt": "2026-11-25T12:57:08Z"
+        },
+        {
+          "id": "r75-survey",
+          "title": "From Harness Optimization to Recursive Self-Improvement: A Survey of Language Model Agents",
+          "author": "Xin Yu et al.",
+          "publisher": "Author preprint",
+          "url": "https://lucasxinyu.github.io/harness-rsi/paper/",
+          "publicationDate": "2026-11-14",
+          "datePrecision": "day",
+          "dateNote": "Original publication or revision date; checked November 25, 2026.",
+          "eventDate": null,
+          "location": "Public source",
+          "sourceType": "methodological-guidance",
+          "independence": "Unreviewed taxonomy with overlapping authorship; not independent outcome evidence.",
+          "evidenceFamily": "r75-survey",
+          "checkedAt": "2026-11-25T12:57:08Z"
+        }
+      ],
+      "relationships": [
+        {
+          "target": "reader:the-cost-of-forgetting-why-agents-keep-reading-the-same-world",
+          "type": "companion",
+          "reason": "Explores reducing repeated context reconstruction through durable governed knowledge; Reader 75 asks how the historical rationale of changes remains meaningful when the model or evaluation setting changes.",
+          "provenance": [
+            "/the-agent-that-remembers-why-it-changed/",
+            "/the-cost-of-forgetting-why-agents-keep-reading-the-same-world/"
+          ],
+          "basis": "curated-editorial-comparison",
+          "direction": "outgoing"
+        },
+        {
+          "target": "reader:beyond-vibe-coding-engineering-in-the-age-of-ai-agents",
+          "type": "companion",
+          "reason": "Distinguishes candidate generation from accepted engineering outcomes. Reader 75 extends that inquiry to the evidence and assumptions inherited by a later maintainer, identifying rationale debt as distinct from verification debt.",
+          "provenance": [
+            "/the-agent-that-remembers-why-it-changed/",
+            "/beyond-vibe-coding-engineering-in-the-age-of-ai-agents/"
+          ],
+          "basis": "curated-editorial-comparison",
+          "direction": "outgoing"
+        }
+      ],
+      "relationshipDisposition": "Two published Readers and one separately verified SharePlane Work as editorial companions, not replication.",
+      "relationshipReview": {
+        "reviewedAt": "2026-11-25",
+        "reviewedCatalogSize": 74,
+        "decision": "linked",
+        "reviewedTargets": [
+          "reader:the-cost-of-forgetting-why-agents-keep-reading-the-same-world",
+          "reader:beyond-vibe-coding-engineering-in-the-age-of-ai-agents"
+        ],
+        "rationale": "Readers 73 and 74 address the two closest antecedent concepts, durable context and accepted engineering decisions; their actual served versions match approved Production bytes. Other candidates omitted for weaker direct relevance."
+      },
+      "sharePlaneRelationships": [
+        {
+          "title": "The Confidence to Delegate",
+          "url": "https://shareplane.malott.ai/artifacts/the-confidence-to-delegate/",
+          "type": "companion",
+          "reason": "Distinguishes model capability from operational assurance and warranted delegation. A record of historical rationale does not grant newer operational authority.",
+          "basis": "curated-editorial-comparison"
+        }
+      ],
+      "sharePlaneReview": {
+        "reviewedAt": "2026-11-25",
+        "decision": "linked",
+        "rationale": "The Confidence to Delegate supplies the distinct authority and operational assurance perspective. Direct canonical bytes were matched to retained approved Production revision, not catalog alone."
+      },
+      "review": {
+        "status": "accepted",
+        "summary": "One independently consolidated editorial, source and privacy review accepted the exact candidate for owner consideration. Owner publication approval remains pending."
+      },
+      "revisionHistory": [],
+      "editorialOrder": 74,
+      "variant": "editorial",
+      "accent": "violet",
+      "archiveCall": {
+        "label": "Remember the reason, test its relevance",
+        "text": "Preserve useful explanatory evidence without treating old approvals as present authority. An inherited decision needs context, not reverence."
+      },
+      "editorialDepth": {
+        "schemaVersion": 1,
+        "receiptPath": "content/editorial-depth/the-agent-that-remembers-why-it-changed.json"
+      },
+      "rank": 74
+    },
+    {
       "id": "reader:the-cost-of-forgetting-why-agents-keep-reading-the-same-world",
       "slug": "the-cost-of-forgetting-why-agents-keep-reading-the-same-world",
       "title": "The Cost of Forgetting: Why Agents Keep Reading the Same World",

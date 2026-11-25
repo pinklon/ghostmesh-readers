@@ -1009,6 +1009,18 @@
         "path": "site/beyond-vibe-coding-engineering-in-the-age-of-ai-agents/index.html",
         "sha256": "1f711acc598cd9ac5983990d09e935ae5c1b86de29b9d0663c10c680dc634cb8"
       }
+    },
+    {
+      "id": "urn:ghostmesh-readers:reader:the-agent-that-remembers-why-it-changed",
+      "type": "Reader",
+      "visibility": "public",
+      "epistemicStatus": "source-editorial",
+      "label": "The Agent That Remembers Why It Changed",
+      "url": "https://youtube.shareplane.malott.ai/the-agent-that-remembers-why-it-changed/",
+      "source": {
+        "path": "site/the-agent-that-remembers-why-it-changed/index.html",
+        "sha256": "51776285aa08ce7cbaefb6ecfca0597195b97222d12428830e016aed10cc6d78"
+      }
     }
   ],
   "relationships": [

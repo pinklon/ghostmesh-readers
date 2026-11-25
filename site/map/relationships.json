@@ -3,11 +3,11 @@
   "scope": "Local public editorial reading routes; no independent corroboration or cross-site graph admission.",
   "authority": "catalog-curated-editorial",
   "visibility": "public",
-  "readerCount": 74,
-  "assessmentCount": 74,
-  "relationshipCount": 171,
-  "sharePlaneRelationshipCount": 52,
-  "sharePlaneReviewCount": 34,
+  "readerCount": 75,
+  "assessmentCount": 75,
+  "relationshipCount": 173,
+  "sharePlaneRelationshipCount": 53,
+  "sharePlaneReviewCount": 35,
   "sharePlaneEdges": [
     {
       "from": "reader:when-code-gets-cheap-where-does-the-work-wait",
@@ -421,6 +421,14 @@
       "url": "https://shareplane.malott.ai/artifacts/when-the-gate-moves/",
       "type": "companion",
       "reason": "Explores a changed boundary of valuable work and the move from producing candidates to demonstrating accepted outcomes. This Reader offers a specific engineering account of verification capacity and the costs that can remain after generation becomes cheap.",
+      "basis": "curated-editorial-comparison"
+    },
+    {
+      "from": "reader:the-agent-that-remembers-why-it-changed",
+      "title": "The Confidence to Delegate",
+      "url": "https://shareplane.malott.ai/artifacts/the-confidence-to-delegate/",
+      "type": "companion",
+      "reason": "Distinguishes model capability from operational assurance and warranted delegation. A record of historical rationale does not grant newer operational authority.",
       "basis": "curated-editorial-comparison"
     }
   ],
@@ -1626,6 +1634,22 @@
           "reader:the-cost-of-forgetting-why-agents-keep-reading-the-same-world"
         ],
         "rationale": "Two directly relevant Reader destinations checked against their actual served and accepted Production revisions. Reader 72 relates to accepted value; Reader 73 relates to durable context. Other potential connections are less specific or lack exact current accepted-revision verification."
+      }
+    },
+    {
+      "id": "reader:the-agent-that-remembers-why-it-changed",
+      "slug": "the-agent-that-remembers-why-it-changed",
+      "title": "The Agent That Remembers Why It Changed",
+      "url": "https://youtube.shareplane.malott.ai/the-agent-that-remembers-why-it-changed/",
+      "review": {
+        "reviewedAt": "2026-11-25",
+        "reviewedCatalogSize": 74,
+        "decision": "linked",
+        "reviewedTargets": [
+          "reader:the-cost-of-forgetting-why-agents-keep-reading-the-same-world",
+          "reader:beyond-vibe-coding-engineering-in-the-age-of-ai-agents"
+        ],
+        "rationale": "Readers 73 and 74 address the two closest antecedent concepts, durable context and accepted engineering decisions; their actual served versions match approved Production bytes. Other candidates omitted for weaker direct relevance."
       }
     }
   ],
@@ -3678,6 +3702,30 @@
       "provenance": [
         "/beyond-vibe-coding-engineering-in-the-age-of-ai-agents/",
         "/the-cost-of-forgetting-why-agents-keep-reading-the-same-world/"
+      ],
+      "basis": "curated-editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:the-agent-that-remembers-why-it-changed",
+      "to": "reader:the-cost-of-forgetting-why-agents-keep-reading-the-same-world",
+      "type": "companion",
+      "reason": "Explores reducing repeated context reconstruction through durable governed knowledge; Reader 75 asks how the historical rationale of changes remains meaningful when the model or evaluation setting changes.",
+      "provenance": [
+        "/the-agent-that-remembers-why-it-changed/",
+        "/the-cost-of-forgetting-why-agents-keep-reading-the-same-world/"
+      ],
+      "basis": "curated-editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:the-agent-that-remembers-why-it-changed",
+      "to": "reader:beyond-vibe-coding-engineering-in-the-age-of-ai-agents",
+      "type": "companion",
+      "reason": "Distinguishes candidate generation from accepted engineering outcomes. Reader 75 extends that inquiry to the evidence and assumptions inherited by a later maintainer, identifying rationale debt as distinct from verification debt.",
+      "provenance": [
+        "/the-agent-that-remembers-why-it-changed/",
+        "/beyond-vibe-coding-engineering-in-the-age-of-ai-agents/"
       ],
       "basis": "curated-editorial-comparison",
       "direction": "outgoing"

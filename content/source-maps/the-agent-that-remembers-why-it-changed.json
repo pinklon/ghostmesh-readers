@@ -1,0 +1,215 @@
+{
+  "schemaVersion": 1,
+  "readerId": "reader:the-agent-that-remembers-why-it-changed",
+  "sourceId": "fKgwmagOXUg",
+  "sourceAidSha256": "522a048507f6f63d33b13854990095ee6d40eda500ce42ab198907f7b318ccf1",
+  "points": [
+    {
+      "atSeconds": 6,
+      "sectionId": "opening",
+      "claimIds": [
+        "r75-c01"
+      ],
+      "cueParaphrase": "Frozen weights: the presenter says the surrounding harness changes while the model’s weights do not.",
+      "privateAidCheck": "Retained caption cue start second 6 checked; original paraphrase, not independently listening-certified."
+    },
+    {
+      "atSeconds": 16,
+      "sectionId": "opening",
+      "claimIds": [
+        "r75-c02"
+      ],
+      "cueParaphrase": "The recursive-improvement question: the video raises whether the work solves recursive self-improvement, then frames the actual contribution as narrower.",
+      "privateAidCheck": "Retained caption cue start second 16 checked; original paraphrase, not independently listening-certified."
+    },
+    {
+      "atSeconds": 57,
+      "sectionId": "transfer",
+      "claimIds": [
+        "r75-c03"
+      ],
+      "cueParaphrase": "The presenter contrasts a transferred workspace harness starting at 68.41 with the target seed's 73.89.",
+      "privateAidCheck": "Retained caption cue start second 57 checked; original paraphrase, not independently listening-certified."
+    },
+    {
+      "atSeconds": 90,
+      "sectionId": "model-harness",
+      "claimIds": [
+        "r75-c04"
+      ],
+      "cueParaphrase": "Harness scope: the video describes the harness as governing context, available tools, and execution flow.",
+      "privateAidCheck": "Retained caption cue start second 90 checked; original paraphrase, not independently listening-certified."
+    },
+    {
+      "atSeconds": 129,
+      "sectionId": "model-harness",
+      "claimIds": [
+        "r75-c05"
+      ],
+      "cueParaphrase": "Overfitting: the video contrasts larger gains on practiced tasks with smaller gains on unfamiliar benchmarks.",
+      "privateAidCheck": "Retained caption cue start second 129 checked; original paraphrase, not independently listening-certified."
+    },
+    {
+      "atSeconds": 171,
+      "sectionId": "missing-why",
+      "claimIds": [
+        "r75-c06"
+      ],
+      "cueParaphrase": "Missing rationale: the presenter argues that inherited code alone can leave the reason for a change, its expected effect, and its observed result unavailable to a later optimizer.",
+      "privateAidCheck": "Retained caption cue start second 171 checked; original paraphrase, not independently listening-certified."
+    },
+    {
+      "atSeconds": 212,
+      "sectionId": "missing-why",
+      "claimIds": [
+        "r75-c07"
+      ],
+      "cueParaphrase": "The presenter interprets a completion-evidence example as a move from confidence toward observed evidence.",
+      "privateAidCheck": "Retained caption cue start second 212 checked; original paraphrase, not independently listening-certified."
+    },
+    {
+      "atSeconds": 258,
+      "sectionId": "memory-evidence",
+      "claimIds": [
+        "r75-c08"
+      ],
+      "cueParaphrase": "Memory ownership: the presenter says self-improvement memory belongs to the process revising the harness, rather than to the task-solving agent.",
+      "privateAidCheck": "Retained caption cue start second 258 checked; original paraphrase, not independently listening-certified."
+    },
+    {
+      "atSeconds": 284,
+      "sectionId": "memory-evidence",
+      "claimIds": [
+        "r75-c09"
+      ],
+      "cueParaphrase": "The presenter describes separate roles involved in assessing change proposals.",
+      "privateAidCheck": "Retained caption cue start second 284 checked; original paraphrase, not independently listening-certified."
+    },
+    {
+      "atSeconds": 325,
+      "sectionId": "memory-evidence",
+      "claimIds": [
+        "r75-c10"
+      ],
+      "cueParaphrase": "Prediction before observation: the presenter says the selected change’s expected effect is recorded before evaluation and compared with the observed outcome.",
+      "privateAidCheck": "Retained caption cue start second 325 checked; original paraphrase, not independently listening-certified."
+    },
+    {
+      "atSeconds": 333,
+      "sectionId": "memory-evidence",
+      "claimIds": [
+        "r75-c11"
+      ],
+      "cueParaphrase": "The presenter notes that the historical record describes chosen changes rather than every rejected alternative.",
+      "privateAidCheck": "Retained caption cue start second 333 checked; original paraphrase, not independently listening-certified."
+    },
+    {
+      "atSeconds": 349,
+      "sectionId": "memory-evidence",
+      "claimIds": [
+        "r75-c12"
+      ],
+      "cueParaphrase": "The presenter describes the full retained history being available to the decision roles.",
+      "privateAidCheck": "Retained caption cue start second 349 checked; original paraphrase, not independently listening-certified."
+    },
+    {
+      "atSeconds": 407,
+      "sectionId": "memory-evidence",
+      "claimIds": [
+        "r75-c13"
+      ],
+      "cueParaphrase": "Provenance and interpretation: the video describes records combining rationale, predicted and observed outcomes, and information about the originating experiment.",
+      "privateAidCheck": "Retained caption cue start second 407 checked; original paraphrase, not independently listening-certified."
+    },
+    {
+      "atSeconds": 428,
+      "sectionId": "governance",
+      "claimIds": [
+        "r75-c14"
+      ],
+      "cueParaphrase": "Acceptance is not success: the presenter distinguishes selection of a proposed change from evidence that it achieved its intended result.",
+      "privateAidCheck": "Retained caption cue start second 428 checked; original paraphrase, not independently listening-certified."
+    },
+    {
+      "atSeconds": 468,
+      "sectionId": "paired-result",
+      "claimIds": [
+        "r75-c15"
+      ],
+      "cueParaphrase": "Evaluation cost: the video estimates roughly four hours per coding round and about forty hours for ten rounds.",
+      "privateAidCheck": "Retained caption cue start second 468 checked; original paraphrase, not independently listening-certified."
+    },
+    {
+      "atSeconds": 503,
+      "sectionId": "paired-result",
+      "claimIds": [
+        "r75-c16"
+      ],
+      "cueParaphrase": "Paired coding comparison: the video describes continuations with and without memory from common starting points.",
+      "privateAidCheck": "Retained caption cue start second 503 checked; original paraphrase, not independently listening-certified."
+    },
+    {
+      "atSeconds": 515,
+      "sectionId": "paired-result",
+      "claimIds": [
+        "r75-c17"
+      ],
+      "cueParaphrase": "Reported coding advantage: memory-assisted continuation finished higher in nine of ten pairs, with an average advantage of about 2.4 score points.",
+      "privateAidCheck": "Retained caption cue start second 515 checked; original paraphrase, not independently listening-certified."
+    },
+    {
+      "atSeconds": 544,
+      "sectionId": "paired-result",
+      "claimIds": [
+        "r75-c18"
+      ],
+      "cueParaphrase": "A negative pair: the video notes that one coding continuation performed worse with memory.",
+      "privateAidCheck": "Retained caption cue start second 544 checked; original paraphrase, not independently listening-certified."
+    },
+    {
+      "atSeconds": 584,
+      "sectionId": "transfer",
+      "claimIds": [
+        "r75-c19"
+      ],
+      "cueParaphrase": "Fresh-start counterexample: the presenter reports that one successive-model continuation scored 0.8 points below a fresh run.",
+      "privateAidCheck": "Retained caption cue start second 584 checked; original paraphrase, not independently listening-certified."
+    },
+    {
+      "atSeconds": 628,
+      "sectionId": "transfer",
+      "claimIds": [
+        "r75-c20"
+      ],
+      "cueParaphrase": "Memory ablation: the video says full memory outperformed a problem-only version in six benchmark handoffs.",
+      "privateAidCheck": "Retained caption cue start second 628 checked; original paraphrase, not independently listening-certified."
+    },
+    {
+      "atSeconds": 677,
+      "sectionId": "limitations",
+      "claimIds": [
+        "r75-c21"
+      ],
+      "cueParaphrase": "Outside coding, the presenter cautions that conditions generally had one run and describes a model-based judge that may be biased.",
+      "privateAidCheck": "Retained caption cue start second 677 checked; original paraphrase, not independently listening-certified."
+    },
+    {
+      "atSeconds": 741,
+      "sectionId": "limitations",
+      "claimIds": [
+        "r75-c22"
+      ],
+      "cueParaphrase": "The presenter cautions that the material is author-reported preprint research and questions reproducibility from public materials.",
+      "privateAidCheck": "Retained caption cue start second 741 checked; original paraphrase, not independently listening-certified."
+    },
+    {
+      "atSeconds": 798,
+      "sectionId": "limitations",
+      "claimIds": [
+        "r75-c23"
+      ],
+      "cueParaphrase": "Interface boundary: the video says the studied handoffs use compatible interfaces between old and new harnesses.",
+      "privateAidCheck": "Retained caption cue start second 798 checked; original paraphrase, not independently listening-certified."
+    }
+  ]
+}
