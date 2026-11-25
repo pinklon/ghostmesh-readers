@@ -106,5 +106,17 @@
       "sitemap-http-200",
       "claim-register-http-200"
     ]
+  },
+  "beyond-vibe-coding-engineering-in-the-age-of-ai-agents": {
+    "mergeCommit": "2138eccfe7cdbdce27cf2557bc66f4de6db4cf92",
+    "url": "https://youtube.shareplane.malott.ai/beyond-vibe-coding-engineering-in-the-age-of-ai-agents/",
+    "verifiedAt": "2026-11-25T06:37:02Z",
+    "checks": [
+      "article-http-200",
+      "receipt-http-200",
+      "catalog-http-200",
+      "sitemap-http-200",
+      "claim-register-http-200"
+    ]
   }
 }
