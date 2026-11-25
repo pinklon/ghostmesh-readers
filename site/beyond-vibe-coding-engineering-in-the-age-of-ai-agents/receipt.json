@@ -21,7 +21,7 @@
     "caveat": "Source integrity and navigation aid do not certify exact speech, the model interpretation or creator performance. An isolated normalization packet warning occurred; integrity and caption coverage passed.",
     "publicationBoundary": "Public source identity, URLs, timestamped original paraphrases, source digest bindings and limitations only. No raw private artifacts or internal operational information."
   },
-  "editorialStatus": "INDEPENDENT_REVIEW_ACCEPTED_FOR_OWNER_CONSIDERATION_PUBLICATION_NOT_AUTHORIZED",
+  "editorialStatus": "OWNER_APPROVED_FOR_PROTECTED_RELEASE_PENDING_PRODUCTION_VERIFICATION",
   "normalization": {
     "id": "reader:beyond-vibe-coding-engineering-in-the-age-of-ai-agents",
     "slug": "beyond-vibe-coding-engineering-in-the-age-of-ai-agents",
@@ -801,7 +801,7 @@
     },
     "review": {
       "status": "accepted",
-      "summary": "One independent consolidated source, editorial and privacy review accepted the exact revised candidate for owner consideration. Owner publication authorization, protected merge and Production verification remain pending."
+      "summary": "One independent consolidated source, editorial and privacy review accepted the exact revised candidate. Tony explicitly approved publication on November 24, 2026 PT; protected merge and Production verification remain required."
     },
     "revisionHistory": [],
     "editorialOrder": 73,

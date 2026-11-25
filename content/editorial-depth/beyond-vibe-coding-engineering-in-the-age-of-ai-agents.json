@@ -287,8 +287,12 @@
   },
   "independentCorroboration": "qualified",
   "ownerDecision": {
-    "pullNumber": 218,
-    "commentId": null
+    "kind": "conversation",
+    "owner": "Tony Malott",
+    "approval": "On November 24, 2026 PT, after reviewing the canonical PR #218 preview at head b0f83a326ec9904bf3d2b5df290e60d34c42ed6a and affirming its editorial and visual approach, Tony explicitly stated 'Approve publishing'. This authorizes publication of the unchanged reviewed article through protected CI, merge and Production verification; no unrelated changes are authorized.",
+    "approvalDate": "2026-11-24",
+    "articleSha256": "02cf794d57f5044849793c57f808c79bcadda9528f8a1cae959363eb5333f951",
+    "evidenceRevision": "d21cfe1a2f695169a96c9f3f4b2c20574351ec2fc1d7f6f4279ea33430ab3ac4"
   },
   "decision": "accept",
   "gaps": [
@@ -308,7 +312,7 @@
       "rationale": "The two SharePlane Work relationships have publisher exact canonical release byte evidence; the independent reviewer's separate Work HTTP attempts returned 403, so another successful independent Work readback is not claimed."
     }
   ],
-  "decisionRationale": "The separate Work-mode task agent accepted the exact revised article, source map, evidence and privacy posture for owner consideration, with ten areas covered and no blocking editorial gaps. The owner has not authorized publication. Exact-head CI and hosted browser witness remain distinct technical checks.",
+  "decisionRationale": "The separate Work-mode task agent accepted the exact revised article, source map, evidence and privacy posture for owner consideration, with ten areas covered and no blocking editorial gaps. The owner explicitly approved publication of the exact reviewed preview on November 24, 2026 PT. Protected CI, merge and Production verification remain distinct technical checks.",
   "assessedAt": "2026-11-25T06:08:00Z",
   "presentationMarkupSha256": "e13a20e29d56c14ddb983433773feba199e92f67c6eb537cc11afc5607fc62ed"
 }
