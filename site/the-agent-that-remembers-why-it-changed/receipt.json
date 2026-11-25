@@ -21,7 +21,7 @@
     "caveat": "Package integrity and registry structure are not speech or semantic attestation. Creator-reported timing and current reproducibility are unverified; author study outcomes not independently replicated.",
     "publicationBoundary": "Public-safe paraphrases, citations, digests and limitations only."
   },
-  "editorialStatus": "INDEPENDENT_REVIEW_ACCEPTED_FOR_OWNER_CONSIDERATION_PUBLICATION_NOT_AUTHORIZED",
+  "editorialStatus": "OWNER_APPROVED_FOR_PROTECTED_RELEASE_PENDING_PRODUCTION_VERIFICATION",
   "normalization": {
     "id": "reader:the-agent-that-remembers-why-it-changed",
     "slug": "the-agent-that-remembers-why-it-changed",
@@ -623,7 +623,7 @@
     },
     "review": {
       "status": "accepted",
-      "summary": "One independently consolidated editorial, source and privacy review accepted the exact candidate for owner consideration. Owner publication approval remains pending."
+      "summary": "One independently consolidated editorial, source and privacy review accepted the exact candidate. Tony explicitly approved publication on November 25, 2026 PT; protected merge and Production verification remain required."
     },
     "revisionHistory": [],
     "editorialOrder": 74,

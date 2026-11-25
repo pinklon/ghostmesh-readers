@@ -247,8 +247,12 @@
   },
   "independentCorroboration": "none",
   "ownerDecision": {
-    "pullNumber": 221,
-    "commentId": null
+    "kind": "conversation",
+    "owner": "Tony Malott",
+    "approval": "On November 25, 2026 PT, Tony accepted the canonical PR #221 preview at head 1b325884e1f4a2641addf9b920e17804c2dccaf5, then explicitly answered approved to the separate question approving publication to Production. This authorizes protected release and Production verification of the unchanged reviewed article, with no unrelated changes.",
+    "approvalDate": "2026-11-25",
+    "articleSha256": "a0f29502c2b92d537843db5cd8da2ee1e5536dc07fa6636a749f36db2e057470",
+    "evidenceRevision": "7fe076ee01905b87e9dcb169ba713c19ffbf3078ea5d64baac1acbc6f11e1061"
   },
   "decision": "accept",
   "gaps": [
@@ -268,7 +272,7 @@
       "rationale": "Creator timing estimates and current research reproduction feasibility remain unverified, and benchmark scores do not establish operational efficacy."
     }
   ],
-  "decisionRationale": "Independent read-only Work-mode task agent accepted the exact revised article, source map, evidence and privacy posture for owner consideration. All ten assessment areas are covered and no blocking editorial gap remains. Owner publication authorization is pending.",
+  "decisionRationale": "Independent read-only Work-mode task agent accepted the exact revised article, source map, evidence and privacy posture for owner consideration. All ten assessment areas are covered and no blocking editorial gap remains. Tony explicitly approved publication of the exact reviewed candidate on November 25, 2026 PT. Protected CI, merge and Production verification remain distinct technical checks.",
   "assessedAt": "2026-11-25T13:01:00Z",
   "presentationMarkupSha256": "198b8c1893da91ea791b0bc6996f0de5154f0c0de69a303ed1e8ba66dbb89850"
 }
