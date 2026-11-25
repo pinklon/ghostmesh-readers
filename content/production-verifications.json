@@ -94,5 +94,17 @@
       "sitemap-http-200",
       "claim-register-http-200"
     ]
+  },
+  "the-cost-of-forgetting-why-agents-keep-reading-the-same-world": {
+    "mergeCommit": "8b18eb5f1b12590b343bd3e627cdce1fc324ab93",
+    "url": "https://youtube.shareplane.malott.ai/the-cost-of-forgetting-why-agents-keep-reading-the-same-world/",
+    "verifiedAt": "2026-11-25T00:45:01Z",
+    "checks": [
+      "article-http-200",
+      "receipt-http-200",
+      "catalog-http-200",
+      "sitemap-http-200",
+      "claim-register-http-200"
+    ]
   }
 }
