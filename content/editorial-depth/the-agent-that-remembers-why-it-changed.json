@@ -1,0 +1,278 @@
+{
+  "schemaVersion": 1,
+  "readerId": "reader:the-agent-that-remembers-why-it-changed",
+  "sourceId": "fKgwmagOXUg",
+  "sourceDigest": "43c2705d36418251ef4825b5456ca663df1020cfabab57513c2db5a8dcc854e9",
+  "sourceAidSha256": "522a048507f6f63d33b13854990095ee6d40eda500ce42ab198907f7b318ccf1",
+  "articleSha256": "a0f29502c2b92d537843db5cd8da2ee1e5536dc07fa6636a749f36db2e057470",
+  "evidenceRevision": "7fe076ee01905b87e9dcb169ba713c19ffbf3078ea5d64baac1acbc6f11e1061",
+  "sourceMapEvidenceSha256": "05a832d5137ce4780dd7fa136d43c60fa89d0b6071004d1bce33985d3f43af12",
+  "reviewEvidenceSha256": "cd7a7147f1e9dd766e22c0ac83a3390f5a8b3b961191358b5088d81df842ba63",
+  "candidateAuthor": "segfault",
+  "complexity": {
+    "tier": "extended",
+    "factors": [
+      "The source contains 23 mapped claims across ten chapters and three separately sourced research claims.",
+      "Quantitative preprint results, cross-model transfer, evaluation methodology, governance and rationale debt require separate analysis and serious counterarguments."
+    ],
+    "rationale": "The research is technically consequential despite the short video. Bounded empirical evidence, source interpretation, transfer limitations and explicit governance boundaries require extended editorial assessment."
+  },
+  "sourceMap": [
+    {
+      "atSeconds": 6,
+      "sectionId": "opening",
+      "claimIds": [
+        "r75-c01"
+      ],
+      "rationale": "Frozen weights: the presenter says the surrounding harness changes while the model’s weights do not."
+    },
+    {
+      "atSeconds": 16,
+      "sectionId": "opening",
+      "claimIds": [
+        "r75-c02"
+      ],
+      "rationale": "The recursive-improvement question: the video raises whether the work solves recursive self-improvement, then frames the actual contribution as narrower."
+    },
+    {
+      "atSeconds": 57,
+      "sectionId": "transfer",
+      "claimIds": [
+        "r75-c03"
+      ],
+      "rationale": "The presenter contrasts a transferred workspace harness starting at 68.41 with the target seed's 73.89."
+    },
+    {
+      "atSeconds": 90,
+      "sectionId": "model-harness",
+      "claimIds": [
+        "r75-c04"
+      ],
+      "rationale": "Harness scope: the video describes the harness as governing context, available tools, and execution flow."
+    },
+    {
+      "atSeconds": 129,
+      "sectionId": "model-harness",
+      "claimIds": [
+        "r75-c05"
+      ],
+      "rationale": "Overfitting: the video contrasts larger gains on practiced tasks with smaller gains on unfamiliar benchmarks."
+    },
+    {
+      "atSeconds": 171,
+      "sectionId": "missing-why",
+      "claimIds": [
+        "r75-c06"
+      ],
+      "rationale": "Missing rationale: the presenter argues that inherited code alone can leave the reason for a change, its expected effect, and its observed result unavailable to a later optimizer."
+    },
+    {
+      "atSeconds": 212,
+      "sectionId": "missing-why",
+      "claimIds": [
+        "r75-c07"
+      ],
+      "rationale": "The presenter interprets a completion-evidence example as a move from confidence toward observed evidence."
+    },
+    {
+      "atSeconds": 258,
+      "sectionId": "memory-evidence",
+      "claimIds": [
+        "r75-c08"
+      ],
+      "rationale": "Memory ownership: the presenter says self-improvement memory belongs to the process revising the harness, rather than to the task-solving agent."
+    },
+    {
+      "atSeconds": 284,
+      "sectionId": "memory-evidence",
+      "claimIds": [
+        "r75-c09"
+      ],
+      "rationale": "The presenter describes separate roles involved in assessing change proposals."
+    },
+    {
+      "atSeconds": 325,
+      "sectionId": "memory-evidence",
+      "claimIds": [
+        "r75-c10"
+      ],
+      "rationale": "Prediction before observation: the presenter says the selected change’s expected effect is recorded before evaluation and compared with the observed outcome."
+    },
+    {
+      "atSeconds": 333,
+      "sectionId": "memory-evidence",
+      "claimIds": [
+        "r75-c11"
+      ],
+      "rationale": "The presenter notes that the historical record describes chosen changes rather than every rejected alternative."
+    },
+    {
+      "atSeconds": 349,
+      "sectionId": "memory-evidence",
+      "claimIds": [
+        "r75-c12"
+      ],
+      "rationale": "The presenter describes the full retained history being available to the decision roles."
+    },
+    {
+      "atSeconds": 407,
+      "sectionId": "memory-evidence",
+      "claimIds": [
+        "r75-c13"
+      ],
+      "rationale": "Provenance and interpretation: the video describes records combining rationale, predicted and observed outcomes, and information about the originating experiment."
+    },
+    {
+      "atSeconds": 428,
+      "sectionId": "governance",
+      "claimIds": [
+        "r75-c14"
+      ],
+      "rationale": "Acceptance is not success: the presenter distinguishes selection of a proposed change from evidence that it achieved its intended result."
+    },
+    {
+      "atSeconds": 468,
+      "sectionId": "paired-result",
+      "claimIds": [
+        "r75-c15"
+      ],
+      "rationale": "Evaluation cost: the video estimates roughly four hours per coding round and about forty hours for ten rounds."
+    },
+    {
+      "atSeconds": 503,
+      "sectionId": "paired-result",
+      "claimIds": [
+        "r75-c16"
+      ],
+      "rationale": "Paired coding comparison: the video describes continuations with and without memory from common starting points."
+    },
+    {
+      "atSeconds": 515,
+      "sectionId": "paired-result",
+      "claimIds": [
+        "r75-c17"
+      ],
+      "rationale": "Reported coding advantage: memory-assisted continuation finished higher in nine of ten pairs, with an average advantage of about 2.4 score points."
+    },
+    {
+      "atSeconds": 544,
+      "sectionId": "paired-result",
+      "claimIds": [
+        "r75-c18"
+      ],
+      "rationale": "A negative pair: the video notes that one coding continuation performed worse with memory."
+    },
+    {
+      "atSeconds": 584,
+      "sectionId": "transfer",
+      "claimIds": [
+        "r75-c19"
+      ],
+      "rationale": "Fresh-start counterexample: the presenter reports that one successive-model continuation scored 0.8 points below a fresh run."
+    },
+    {
+      "atSeconds": 628,
+      "sectionId": "transfer",
+      "claimIds": [
+        "r75-c20"
+      ],
+      "rationale": "Memory ablation: the video says full memory outperformed a problem-only version in six benchmark handoffs."
+    },
+    {
+      "atSeconds": 677,
+      "sectionId": "limitations",
+      "claimIds": [
+        "r75-c21"
+      ],
+      "rationale": "Outside coding, the presenter cautions that conditions generally had one run and describes a model-based judge that may be biased."
+    },
+    {
+      "atSeconds": 741,
+      "sectionId": "limitations",
+      "claimIds": [
+        "r75-c22"
+      ],
+      "rationale": "The presenter cautions that the material is author-reported preprint research and questions reproducibility from public materials."
+    },
+    {
+      "atSeconds": 798,
+      "sectionId": "limitations",
+      "claimIds": [
+        "r75-c23"
+      ],
+      "rationale": "Interface boundary: the video says the studied handoffs use compatible interfaces between old and new harnesses."
+    }
+  ],
+  "assessment": {
+    "sourceCoverage": {
+      "disposition": "covered",
+      "rationale": "All 23 material source claims map to verified caption-start seconds and analytical sections; ten source chapters and three separately identified research claims are preserved."
+    },
+    "supportingArgument": {
+      "disposition": "covered",
+      "rationale": "Separates changed surrounding software from improved measured system performance and intrinsic model capability."
+    },
+    "evidenceRoles": {
+      "disposition": "covered",
+      "rationale": "Presenter attribution, primary preprint findings, related research, editorial inference and hypothetical governance examples remain distinct."
+    },
+    "counterargument": {
+      "disposition": "covered",
+      "rationale": "Negative transfer, ordinary decision records, alternative explanations, redundant formalism and uncertain value of long histories are examined."
+    },
+    "tradeoffs": {
+      "disposition": "covered",
+      "rationale": "Context maintenance, inherited assumptions, evaluation economics, review effort, stale decisions and changed constraints receive proportionate treatment."
+    },
+    "falsifiability": {
+      "disposition": "covered",
+      "rationale": "Proposed human-reviewed assessment of inherited accepted decisions measures review effort, errors, disagreements and corrections, including null and adverse outcomes; not an autonomous system."
+    },
+    "originalSynthesis": {
+      "disposition": "covered",
+      "rationale": "Rationale debt is an editorial concept distinct from verification debt, separating historical evidence, present relevance and current authority."
+    },
+    "performance": {
+      "disposition": "covered",
+      "rationale": "Paired coding results, confidence interval, significance, negative pair and model-transfer comparisons are correct and limited to experimental settings."
+    },
+    "economics": {
+      "disposition": "covered",
+      "rationale": "Presenter duration estimates remain unverified; benchmark scores are not equated to productivity, deployment economics or measured GhostMesh outcomes."
+    },
+    "threatGovernance": {
+      "disposition": "covered",
+      "rationale": "Evaluator validity, possible benchmark gaming, judge bias, authority and operational consequences are distinguished; no actionable offensive or self-modifying operational workflow is supplied."
+    }
+  },
+  "independentCorroboration": "none",
+  "ownerDecision": {
+    "kind": "conversation",
+    "owner": "Tony Malott",
+    "approval": "On November 25, 2026 PT, Tony accepted the canonical PR #221 preview at head 1b325884e1f4a2641addf9b920e17804c2dccaf5, then explicitly answered approved to the separate question approving publication to Production. This authorizes protected release and Production verification of the unchanged reviewed article, with no unrelated changes.",
+    "approvalDate": "2026-11-25",
+    "articleSha256": "a0f29502c2b92d537843db5cd8da2ee1e5536dc07fa6636a749f36db2e057470",
+    "evidenceRevision": "7fe076ee01905b87e9dcb169ba713c19ffbf3078ea5d64baac1acbc6f11e1061"
+  },
+  "decision": "accept",
+  "gaps": [
+    {
+      "type": "source",
+      "severity": "nonblocking",
+      "rationale": "Source-provided captions support approximate cue attribution; 768 deduplicated cue instances are not distinct start seconds or independently listening-certified speech."
+    },
+    {
+      "type": "evidence",
+      "severity": "nonblocking",
+      "rationale": "Author-reported research is a preprint and not independently replicated; external references supply related context rather than replication."
+    },
+    {
+      "type": "evidence",
+      "severity": "nonblocking",
+      "rationale": "Creator timing estimates and current research reproduction feasibility remain unverified, and benchmark scores do not establish operational efficacy."
+    }
+  ],
+  "decisionRationale": "Independent read-only Work-mode task agent accepted the exact revised article, source map, evidence and privacy posture for owner consideration. All ten assessment areas are covered and no blocking editorial gap remains. Tony explicitly approved publication of the exact reviewed candidate on November 25, 2026 PT. Protected CI, merge and Production verification remain distinct technical checks.",
+  "assessedAt": "2026-11-25T13:01:00Z",
+  "presentationMarkupSha256": "198b8c1893da91ea791b0bc6996f0de5154f0c0de69a303ed1e8ba66dbb89850"
+}
