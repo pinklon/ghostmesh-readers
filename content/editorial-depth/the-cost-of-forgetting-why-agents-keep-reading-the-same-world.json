@@ -7,7 +7,7 @@
   "articleSha256": "0b63b41e43293a917408a1355cab9a54f806be4c838ee0029f96ff4d1699e422",
   "evidenceRevision": "cc778a7fa40d605e0f095055fdb953eac15785b451f7236f95066aa9f1740fd7",
   "sourceMapEvidenceSha256": "8e1f58833d0e8ce4b1c78113d31ed338063ca7cd721fbd206dfeacda31303bdf",
-  "reviewEvidenceSha256": "d0f075d75644f80a49604e1b74d55f152229372ac1c4fcb1fbce153dbfa8872a",
+  "reviewEvidenceSha256": "1bba59af33bb602f7d863b3249341fc4daaf5b1b7408033274de0a81d69d698e",
   "candidateAuthor": "segfault",
   "complexity": {
     "tier": "extended",
@@ -198,16 +198,28 @@
     }
   },
   "independentCorroboration": "none",
-  "ownerDecision": null,
-  "decision": "hold",
+  "ownerDecision": {
+    "kind": "conversation",
+    "owner": "Tony Malott",
+    "approval": "On November 24, 2026 PT, after reviewing the exact hosted PR #215 preview, Tony explicitly instructed 'Publish it.' He then approved the sole outstanding scoped relationship substitution with The Semantic Operating System. This authorizes publication of the reviewed manuscript with that independently reviewed relationship delta through protected CI, merge and production verification; no other changes are authorized.",
+    "approvalDate": "2026-11-24",
+    "articleSha256": "0b63b41e43293a917408a1355cab9a54f806be4c838ee0029f96ff4d1699e422",
+    "evidenceRevision": "cc778a7fa40d605e0f095055fdb953eac15785b451f7236f95066aa9f1740fd7"
+  },
+  "decision": "accept",
   "gaps": [
     {
-      "type": "scope",
-      "severity": "blocking",
-      "rationale": "One otherwise relevant canonical SharePlane Work currently resolves to an explicitly unaccepted Development revision; owner decision to replace or clarify the relationship is outstanding."
+      "type": "source",
+      "severity": "nonblocking",
+      "rationale": "Local machine-generated transcription and approximate source cues are not independently listening-certified; package integrity is not speech certification."
+    },
+    {
+      "type": "evidence",
+      "severity": "nonblocking",
+      "rationale": "Creator anecdotes are not independently reproduced; cost exhibits are illustrative and the proposed GhostMesh experiment was not run."
     }
   ],
-  "decisionRationale": "Independent review accepted the substantive argument and method for owner visual consideration but returned REVISE for a single live relationship destination. Hold at draft, no publication or owner acceptance implied.",
-  "assessedAt": "2026-11-25T00:23:32Z",
+  "decisionRationale": "The owner explicitly authorized publication of the reviewed candidate and the single replacement Work relationship. The independent read-only Work-mode Codex task agent accepted the scoped correction. Source and cost limitations remain disclosed; protected CI, merge and live verification remain required.",
+  "assessedAt": "2026-11-25T00:40:26Z",
   "presentationMarkupSha256": "114d71e2004b32de716624cd2f740a64c07c64f767046e2f728348b17abead37"
 }

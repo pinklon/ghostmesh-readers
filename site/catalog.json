@@ -570,10 +570,10 @@
       },
       "sharePlaneRelationships": [
         {
-          "title": "The Application Is Disposable. The Context Is Not.",
-          "url": "https://shareplane.malott.ai/artifacts/the-application-is-disposable-the-context-is-not/",
+          "title": "The Semantic Operating System",
+          "url": "https://shareplane.malott.ai/artifacts/the-semantic-operating-system/",
           "type": "companion",
-          "reason": "argues for preserved context independent of a particular application or execution surface. That is the conceptual basis for making capability and decision memory survive a session or a model change; it is not evidence about provider cache efficiency.",
+          "reason": "explains durable identity, meaning, relationships, authority and state as governed conditions for reusable work. This is a conceptual foundation for capability discovery and memory surviving session or model changes, not evidence of provider cache efficiency.",
           "basis": "curated-editorial-comparison"
         },
         {
@@ -587,11 +587,11 @@
       "sharePlaneReview": {
         "reviewedAt": "2026-11-24",
         "decision": "linked",
-        "rationale": "Two specific catalog-backed public SharePlane works verified as conceptual comparisons, not provider measurements or independent video evidence."
+        "rationale": "Two specific catalog-backed public SharePlane works verified as conceptual comparisons, not provider measurements or independent video evidence. Owner approved replacement of the first Work after its live destination proved to serve a Development amendment; the Semantic Operating System resolves directly to its Semantic Lock."
       },
       "review": {
-        "status": "revise",
-        "summary": "Independent substantive editorial, source and privacy review accepted the article for visual owner consideration. One public Work relationship destination requires a scoped owner decision; release is held."
+        "status": "accepted",
+        "summary": "Independent source/editorial/privacy review and focused relationship review ACCEPT. Owner approved the exact manuscript, replacement relationship, and publication on November 24, 2026 PT; protected CI, merge and live verification remain required."
       },
       "revisionHistory": [],
       "editorialOrder": 72,
