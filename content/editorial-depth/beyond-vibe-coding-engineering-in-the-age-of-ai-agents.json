@@ -286,7 +286,10 @@
     }
   },
   "independentCorroboration": "qualified",
-  "ownerDecision": null,
+  "ownerDecision": {
+    "pullNumber": 218,
+    "commentId": null
+  },
   "decision": "accept",
   "gaps": [
     {
