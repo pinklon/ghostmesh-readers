@@ -1,0 +1,225 @@
+{
+  "schemaVersion": 1,
+  "readerId": "reader:the-cost-of-forgetting-why-agents-keep-reading-the-same-world",
+  "sourceId": "0RF9ml43ups",
+  "sourceDigest": "d6f721eba0d4e01952418bd03287d1a271d783ac3527ca5b28f6479e5332e16d",
+  "sourceAidSha256": "da012abea27aba4d75d01dccb85ee474b83f0a69b48cbcf9b85d761a3b587edb",
+  "articleSha256": "0b63b41e43293a917408a1355cab9a54f806be4c838ee0029f96ff4d1699e422",
+  "evidenceRevision": "cc778a7fa40d605e0f095055fdb953eac15785b451f7236f95066aa9f1740fd7",
+  "sourceMapEvidenceSha256": "8e1f58833d0e8ce4b1c78113d31ed338063ca7cd721fbd206dfeacda31303bdf",
+  "reviewEvidenceSha256": "1bba59af33bb602f7d863b3249341fc4daaf5b1b7408033274de0a81d69d698e",
+  "candidateAuthor": "segfault",
+  "complexity": {
+    "tier": "extended",
+    "factors": [
+      "Seventeen time-mapped creator claims and four supplemental original or operational claims require bounded evidence separation.",
+      "Provider-specific cache accounting, quantitative examples, architecture and privacy/security tradeoffs warrant extended assessment."
+    ],
+    "rationale": "A short video makes consequential and sometimes unverified claims across provider economics, agent architecture, and context management; each material statement is assessed separately."
+  },
+  "sourceMap": [
+    {
+      "atSeconds": 4,
+      "sectionId": "opening",
+      "claimIds": [
+        "r73-c01"
+      ],
+      "rationale": "Habits make users consume tokens/limits more quickly. PARTIAL: repeated input economics supported; no universal doubling or subscription limits quantified"
+    },
+    {
+      "atSeconds": 46,
+      "sectionId": "layer-1-the-model-is-not-reading-a-pdf-like-you-do",
+      "claimIds": [
+        "r73-c02"
+      ],
+      "rationale": "Conversation is reread every turn. PARTIAL: logical context and prefill explained; reject literal universal full resend/recompute with provider state"
+    },
+    {
+      "atSeconds": 64,
+      "sectionId": "source-chapters-and-claim-ledger",
+      "claimIds": [
+        "r73-c03"
+      ],
+      "rationale": "Seven tasks: ~160M input, ~0.5M output, roughly 200:1. Unverified creator report: no original logs or accounting denominator. The rounded figures imply 320:1 rather than the stated approximate 200:1."
+    },
+    {
+      "atSeconds": 79,
+      "sectionId": "layer-1-the-model-is-not-reading-a-pdf-like-you-do",
+      "claimIds": [
+        "r73-c04"
+      ],
+      "rationale": "Prompt prefix caching reduces repeated processing and read rates. SUPPORTED mechanism; read prices model-specific, context and latency distinct"
+    },
+    {
+      "atSeconds": 112,
+      "sectionId": "layer-1-the-model-is-not-reading-a-pdf-like-you-do",
+      "claimIds": [
+        "r73-c05"
+      ],
+      "rationale": "Editing an earlier token invalidates subsequent prefix. PARTIAL; eligible previous boundary can survive; certain supported additions preserve reuse"
+    },
+    {
+      "atSeconds": 150,
+      "sectionId": "layer-1-the-model-is-not-reading-a-pdf-like-you-do",
+      "claimIds": [
+        "r73-c06"
+      ],
+      "rationale": "Switching from warm Opus to cold Haiku can cost more. PARTIAL; exact anecdotal pricing/employee attribution UNKNOWN; illustrative comparison demonstrates conditions and counterexample"
+    },
+    {
+      "atSeconds": 218,
+      "sectionId": "layer-1-the-model-is-not-reading-a-pdf-like-you-do",
+      "claimIds": [
+        "r73-c07"
+      ],
+      "rationale": "Configure upfront, append, prefer scoped subagents to switching. PARTIAL; tool and model changes affect reuse, no absolute prohibition; evaluate handoff/rework and new authorization"
+    },
+    {
+      "atSeconds": 278,
+      "sectionId": "the-economics-of-a-warm-cache",
+      "claimIds": [
+        "r73-c08"
+      ],
+      "rationale": "Expiry roughly one hour on subscription and five minutes on API. PARTIAL; API five-minute default and longer options verified; exact subscription behavior UNKNOWN"
+    },
+    {
+      "atSeconds": 304,
+      "sectionId": "the-economics-of-a-warm-cache",
+      "claimIds": [
+        "r73-c09"
+      ],
+      "rationale": "~400k cache rebuild $3.50, refresh ~$0.08. Unverified specific creator numbers; official documentation supports the mechanism only. The Reader illustrates an expected-value inequality, not a recommendation to keep idle sessions warm."
+    },
+    {
+      "atSeconds": 363,
+      "sectionId": "layer-2-the-cheapest-context-may-be-the-context-you-never-send",
+      "claimIds": [
+        "r73-c10"
+      ],
+      "rationale": "One long unrelated session costs more than short focused sessions. PARTIAL; plausible tail size/attention savings, cold repeated setup may reverse outcome"
+    },
+    {
+      "atSeconds": 381,
+      "sectionId": "source-chapters-and-claim-ledger",
+      "claimIds": [
+        "r73-c11"
+      ],
+      "rationale": "Claude Code cache hit rate generally in 90s, attributed to product leader. UNKNOWN specific population/metric/attribution; no equating with vendor's separate API cohort or GhostMesh sample"
+    },
+    {
+      "atSeconds": 408,
+      "sectionId": "layer-2-the-cheapest-context-may-be-the-context-you-never-send",
+      "claimIds": [
+        "r73-c12"
+      ],
+      "rationale": "Clear or compact at a task boundary. SUPPORTED bounded mechanism; compacted summary may lose constraints and first request can miss existing prefix. Use tested checkpoint and compare forward costs"
+    },
+    {
+      "atSeconds": 433,
+      "sectionId": "layer-2-the-cheapest-context-may-be-the-context-you-never-send",
+      "claimIds": [
+        "r73-c13"
+      ],
+      "rationale": "Precise repo/file routing avoids excessive reads. Supported as an architectural mechanism; the documentation and observed discovery case illustrate selective retrieval. No measured reduction is promised."
+    },
+    {
+      "atSeconds": 500,
+      "sectionId": "layer-2-the-cheapest-context-may-be-the-context-you-never-send",
+      "claimIds": [
+        "r73-c14"
+      ],
+      "rationale": "Anthropic cut roughly 80% of certain system prompts. UNKNOWN exact private implementation/number; do not delete controls to target a ratio"
+    },
+    {
+      "atSeconds": 548,
+      "sectionId": "layer-2-the-cheapest-context-may-be-the-context-you-never-send",
+      "claimIds": [
+        "r73-c15"
+      ],
+      "rationale": "Reassess skills as models improve, prune irrelevant detail. PARTIAL; test behavior and keep discoverability, evidence and authority functions"
+    },
+    {
+      "atSeconds": 588,
+      "sectionId": "layer-2-the-cheapest-context-may-be-the-context-you-never-send",
+      "claimIds": [
+        "r73-c16"
+      ],
+      "rationale": "Progressive disclosure: metadata, then instruction, then needed resources. SUPPORTED; not proof every agent consumes an installed descriptor"
+    },
+    {
+      "atSeconds": 667,
+      "sectionId": "source-chapters-and-claim-ledger",
+      "claimIds": [
+        "r73-c17"
+      ],
+      "rationale": "Recap and creator community promotion. Covered, not a technical performance claim or recommendation to buy/join"
+    }
+  ],
+  "assessment": {
+    "sourceCoverage": {
+      "disposition": "covered",
+      "rationale": "Seventeen source-mapped creator claims across nine chapter starts with approximate Whisper timing and explicit source limitations."
+    },
+    "supportingArgument": {
+      "disposition": "covered",
+      "rationale": "Explains four distinct reuse units and accepted-outcome economics without conflating computation, billing, logical context or retrieval."
+    },
+    "evidenceRoles": {
+      "disposition": "covered",
+      "rationale": "Creator reports, marked unverified metrics, first-party API documents, bounded operational observations and original examples retain separate evidentiary roles."
+    },
+    "counterargument": {
+      "disposition": "covered",
+      "rationale": "Addresses cold-start overhead, model switching reversal, cache misses, stale evidence and infrastructure that may cost more than it saves."
+    },
+    "tradeoffs": {
+      "disposition": "covered",
+      "rationale": "Explicit compaction loss, keep-alive uncertainty, model choice, retention, source freshness and authorization tradeoffs."
+    },
+    "falsifiability": {
+      "disposition": "covered",
+      "rationale": "Proposes controlled cold/warm workloads, changed revision and revoked-access cases, acceptance rubrics, and route/counter attestation."
+    },
+    "originalSynthesis": {
+      "disposition": "covered",
+      "rationale": "Four independent validity layers and actual discovery failure case provide architectural analysis beyond the creator recommendations."
+    },
+    "performance": {
+      "disposition": "covered",
+      "rationale": "No unmeasured latency, physical KV reuse, fleet-wide hit rate or causal performance improvement asserted."
+    },
+    "economics": {
+      "disposition": "covered",
+      "rationale": "Reader-specific examples and equations independently recomputed, with stated assumptions, explicit countercases and accepted-job denominator."
+    },
+    "threatGovernance": {
+      "disposition": "covered",
+      "rationale": "Current authority at reuse, audience separation, revocation, retention, source trust and validation are treated as distinct from cache eligibility."
+    }
+  },
+  "independentCorroboration": "none",
+  "ownerDecision": {
+    "kind": "conversation",
+    "owner": "Tony Malott",
+    "approval": "On November 24, 2026 PT, after reviewing the exact hosted PR #215 preview, Tony explicitly instructed 'Publish it.' He then approved the sole outstanding scoped relationship substitution with The Semantic Operating System. This authorizes publication of the reviewed manuscript with that independently reviewed relationship delta through protected CI, merge and production verification; no other changes are authorized.",
+    "approvalDate": "2026-11-24",
+    "articleSha256": "0b63b41e43293a917408a1355cab9a54f806be4c838ee0029f96ff4d1699e422",
+    "evidenceRevision": "cc778a7fa40d605e0f095055fdb953eac15785b451f7236f95066aa9f1740fd7"
+  },
+  "decision": "accept",
+  "gaps": [
+    {
+      "type": "source",
+      "severity": "nonblocking",
+      "rationale": "Local machine-generated transcription and approximate source cues are not independently listening-certified; package integrity is not speech certification."
+    },
+    {
+      "type": "evidence",
+      "severity": "nonblocking",
+      "rationale": "Creator anecdotes are not independently reproduced; cost exhibits are illustrative and the proposed GhostMesh experiment was not run."
+    }
+  ],
+  "decisionRationale": "The owner explicitly authorized publication of the reviewed candidate and the single replacement Work relationship. The independent read-only Work-mode Codex task agent accepted the scoped correction. Source and cost limitations remain disclosed; protected CI, merge and live verification remain required.",
+  "assessedAt": "2026-11-25T00:40:26Z",
+  "presentationMarkupSha256": "114d71e2004b32de716624cd2f740a64c07c64f767046e2f728348b17abead37"
+}

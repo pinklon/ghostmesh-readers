@@ -24507,6 +24507,627 @@
         "schemaVersion": 1,
         "receiptPath": "content/editorial-depth/when-code-gets-cheap-ambition-becomes-the-test.json"
       }
+    },
+    {
+      "id": "reader:the-cost-of-forgetting-why-agents-keep-reading-the-same-world",
+      "slug": "the-cost-of-forgetting-why-agents-keep-reading-the-same-world",
+      "title": "The Cost of Forgetting: Why Agents Keep Reading the Same World",
+      "category": "AI & Technology",
+      "tags": [
+        "agentic-work",
+        "caching",
+        "context-engineering",
+        "economics",
+        "provenance",
+        "memory",
+        "architecture"
+      ],
+      "entities": [],
+      "source": {
+        "platform": "YouTube",
+        "url": "https://www.youtube.com/watch?v=0RF9ml43ups",
+        "videoId": "0RF9ml43ups",
+        "title": "Anthropic Engineer Explains: How to Stop Hitting Claude's Token Limit",
+        "creator": "Nate Herk | AI Automation",
+        "mediaAspect": "16:9",
+        "durationSeconds": 728,
+        "uploadDate": "2026-11-22",
+        "dateNote": "Nine creator chapter start times from original public metadata; labels are editorial paraphrases, with local Whisper timing aid for finer cues. Approximate, not independently listening-certified.",
+        "captionType": "Local Whisper large-v3 CPU timed transcript; original English subtitle retrieval was HTTP 429.",
+        "creatorChapters": [
+          {
+            "atSeconds": 0,
+            "label": "Usage limits"
+          },
+          {
+            "atSeconds": 22,
+            "label": "Why context rereads add up"
+          },
+          {
+            "atSeconds": 109,
+            "label": "The Lego problem"
+          },
+          {
+            "atSeconds": 150,
+            "label": "When a cheaper model costs more"
+          },
+          {
+            "atSeconds": 273,
+            "label": "Warm or cold?"
+          },
+          {
+            "atSeconds": 348,
+            "label": "The one-session trap"
+          },
+          {
+            "atSeconds": 472,
+            "label": "The instruction-overload habit"
+          },
+          {
+            "atSeconds": 585,
+            "label": "Load only when needed"
+          },
+          {
+            "atSeconds": 667,
+            "label": "Recommendations and promotion"
+          }
+        ]
+      },
+      "published": "2026-11-24",
+      "updated": "2026-11-25T00:09:57Z",
+      "overview": "Nate Herk argues that cache invalidation, oversized sessions and unnecessary global instructions consume agent usage. GhostMesh investigates four layers of reuse and the actual economics of accepted outcomes.",
+      "whyItMatters": "Provider caching, active working context, source evidence and governed memory have different validity and cost boundaries.",
+      "ghostMeshTakeaway": "Preserve the minimum sufficient currently authorized state, measure accepted outcomes, version evidence and keep capability discovery durable.",
+      "verdict": "Worth studying",
+      "architectureImpact": "experiment recommended",
+      "falsification": "Compare a representative read-only evidence-reconstruction task across baseline, stable-prefix and versioned evidence reuse; record acceptance, sources, costs, latency, freshness and authorization changes.",
+      "evidenceState": "mixed-creator-claims-provider-contracts-and-bounded-operational-observation",
+      "freshness": "Video November 22, 2026; official provider sources verified in the November 23 evidence registry and rechecked November 24. Metrics illustrative; creator anecdotes not independently verified.",
+      "lastEvidenceChecked": "2026-11-25T00:09:57Z",
+      "claims": [
+        {
+          "id": "r73-c01",
+          "proposition": "Habits make users consume tokens/limits more quickly",
+          "kind": "creator-statement",
+          "status": "partially corroborated",
+          "sourceLocation": "00:04 (4s)",
+          "assessment": "PARTIAL: repeated input economics supported; no universal doubling or subscription limits quantified",
+          "limits": "Approximate local speech-recognition cue; provider documentation supports only its specified mechanisms/models, not creator-specific performance or a universal outcome.",
+          "references": [
+            "r73-video",
+            "r73-anthropiccache",
+            "r73-openaicache"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-24"
+        },
+        {
+          "id": "r73-c02",
+          "proposition": "Conversation is reread every turn",
+          "kind": "creator-statement",
+          "status": "partially corroborated",
+          "sourceLocation": "00:46 (46s)",
+          "assessment": "PARTIAL: logical context and prefill explained; reject literal universal full resend/recompute with provider state",
+          "limits": "Approximate local speech-recognition cue; provider documentation supports only its specified mechanisms/models, not creator-specific performance or a universal outcome.",
+          "references": [
+            "r73-video",
+            "r73-anthropiccache",
+            "r73-openaicache"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-24"
+        },
+        {
+          "id": "r73-c03",
+          "proposition": "Seven tasks: ~160M input, ~0.5M output, roughly 200:1",
+          "kind": "creator-statement",
+          "status": "unverified",
+          "sourceLocation": "01:04 (64s)",
+          "assessment": "Unverified creator report: no original logs or accounting denominator. The rounded figures imply 320:1 rather than the stated approximate 200:1.",
+          "limits": "Original logs, accounting denominator and exact comparison absent. The arithmetic ratio of rounded numbers is 320:1, not the stated approximate 200:1.",
+          "references": [
+            "r73-video"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-24"
+        },
+        {
+          "id": "r73-c04",
+          "proposition": "Prompt prefix caching reduces repeated processing and read rates",
+          "kind": "creator-statement",
+          "status": "corroborated",
+          "sourceLocation": "01:19 (79s)",
+          "assessment": "SUPPORTED mechanism; read prices model-specific, context and latency distinct",
+          "limits": "Approximate local speech-recognition cue; provider documentation supports only its specified mechanisms/models, not creator-specific performance or a universal outcome.",
+          "references": [
+            "r73-video",
+            "r73-anthropiccache",
+            "r73-anthropicpricing",
+            "r73-openaicache"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-24"
+        },
+        {
+          "id": "r73-c05",
+          "proposition": "Editing an earlier token invalidates subsequent prefix",
+          "kind": "creator-statement",
+          "status": "partially corroborated",
+          "sourceLocation": "01:52 (112s)",
+          "assessment": "PARTIAL; eligible previous boundary can survive; certain supported additions preserve reuse",
+          "limits": "Approximate local speech-recognition cue; provider documentation supports only its specified mechanisms/models, not creator-specific performance or a universal outcome.",
+          "references": [
+            "r73-video",
+            "r73-anthropiccache",
+            "r73-openaicache",
+            "r73-anthropiccost"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-24"
+        },
+        {
+          "id": "r73-c06",
+          "proposition": "Switching from warm Opus to cold Haiku can cost more",
+          "kind": "creator-statement",
+          "status": "partially corroborated",
+          "sourceLocation": "02:30 (150s)",
+          "assessment": "PARTIAL; exact anecdotal pricing/employee attribution UNKNOWN; illustrative comparison demonstrates conditions and counterexample",
+          "limits": "Approximate local speech-recognition cue; provider documentation supports only its specified mechanisms/models, not creator-specific performance or a universal outcome.",
+          "references": [
+            "r73-video",
+            "r73-anthropicpricing",
+            "r73-openaicache"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-24"
+        },
+        {
+          "id": "r73-c07",
+          "proposition": "Configure upfront, append, prefer scoped subagents to switching",
+          "kind": "creator-statement",
+          "status": "partially corroborated",
+          "sourceLocation": "03:38 (218s)",
+          "assessment": "PARTIAL; tool and model changes affect reuse, no absolute prohibition; evaluate handoff/rework and new authorization",
+          "limits": "Approximate local speech-recognition cue; provider documentation supports only its specified mechanisms/models, not creator-specific performance or a universal outcome.",
+          "references": [
+            "r73-video",
+            "r73-anthropiccache",
+            "r73-openaicache",
+            "r73-anthropiccost"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-24"
+        },
+        {
+          "id": "r73-c08",
+          "proposition": "Expiry roughly one hour on subscription and five minutes on API",
+          "kind": "creator-statement",
+          "status": "partially corroborated",
+          "sourceLocation": "04:38 (278s)",
+          "assessment": "PARTIAL; API five-minute default and longer options verified; exact subscription behavior UNKNOWN",
+          "limits": "Direct API lifetimes do not establish subscription cache behavior.",
+          "references": [
+            "r73-video",
+            "r73-anthropiccache",
+            "r73-openaicache",
+            "r73-anthropiccost"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-24"
+        },
+        {
+          "id": "r73-c09",
+          "proposition": "~400k cache rebuild $3.50, refresh ~$0.08",
+          "kind": "creator-statement",
+          "status": "unverified",
+          "sourceLocation": "05:04 (304s)",
+          "assessment": "Unverified specific creator numbers; official documentation supports the mechanism only. The Reader illustrates an expected-value inequality, not a recommendation to keep idle sessions warm.",
+          "limits": "No original logs, model, billing basis or repeatable trial.",
+          "references": [
+            "r73-video",
+            "r73-anthropiccache",
+            "r73-anthropicpricing",
+            "r73-anthropiccost"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-24"
+        },
+        {
+          "id": "r73-c10",
+          "proposition": "One long unrelated session costs more than short focused sessions",
+          "kind": "creator-statement",
+          "status": "partially corroborated",
+          "sourceLocation": "06:03 (363s)",
+          "assessment": "PARTIAL; plausible tail size/attention savings, cold repeated setup may reverse outcome",
+          "limits": "Approximate local speech-recognition cue; provider documentation supports only its specified mechanisms/models, not creator-specific performance or a universal outcome.",
+          "references": [
+            "r73-video",
+            "r73-anthropiccost",
+            "r73-openaicache"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-24"
+        },
+        {
+          "id": "r73-c11",
+          "proposition": "Claude Code cache hit rate generally in 90s, attributed to product leader",
+          "kind": "creator-statement",
+          "status": "unverified",
+          "sourceLocation": "06:21 (381s)",
+          "assessment": "UNKNOWN specific population/metric/attribution; no equating with vendor's separate API cohort or GhostMesh sample",
+          "limits": "Specific population, metric and attribution not independently located.",
+          "references": [
+            "r73-video"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-24"
+        },
+        {
+          "id": "r73-c12",
+          "proposition": "Clear or compact at a task boundary",
+          "kind": "creator-statement",
+          "status": "corroborated",
+          "sourceLocation": "06:48 (408s)",
+          "assessment": "SUPPORTED bounded mechanism; compacted summary may lose constraints and first request can miss existing prefix. Use tested checkpoint and compare forward costs",
+          "limits": "Approximate local speech-recognition cue; provider documentation supports only its specified mechanisms/models, not creator-specific performance or a universal outcome.",
+          "references": [
+            "r73-video",
+            "r73-anthropiccost",
+            "r73-openaicache"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-24"
+        },
+        {
+          "id": "r73-c13",
+          "proposition": "Precise repo/file routing avoids excessive reads",
+          "kind": "creator-statement",
+          "status": "partially corroborated",
+          "sourceLocation": "07:13 (433s)",
+          "assessment": "Supported as an architectural mechanism; the documentation and observed discovery case illustrate selective retrieval. No measured reduction is promised.",
+          "limits": "Approximate local speech-recognition cue; provider documentation supports only its specified mechanisms/models, not creator-specific performance or a universal outcome.",
+          "references": [
+            "r73-video",
+            "r73-anthropicskills"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-24"
+        },
+        {
+          "id": "r73-c14",
+          "proposition": "Anthropic cut roughly 80% of certain system prompts",
+          "kind": "creator-statement",
+          "status": "unverified",
+          "sourceLocation": "08:20 (500s)",
+          "assessment": "UNKNOWN exact private implementation/number; do not delete controls to target a ratio",
+          "limits": "No independently located exact internal system-prompt measurement.",
+          "references": [
+            "r73-video",
+            "r73-anthropicincident"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-24"
+        },
+        {
+          "id": "r73-c15",
+          "proposition": "Reassess skills as models improve, prune irrelevant detail",
+          "kind": "creator-statement",
+          "status": "partially corroborated",
+          "sourceLocation": "09:08 (548s)",
+          "assessment": "PARTIAL; test behavior and keep discoverability, evidence and authority functions",
+          "limits": "Approximate local speech-recognition cue; provider documentation supports only its specified mechanisms/models, not creator-specific performance or a universal outcome.",
+          "references": [
+            "r73-video",
+            "r73-anthropicskills"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-24"
+        },
+        {
+          "id": "r73-c16",
+          "proposition": "Progressive disclosure: metadata, then instruction, then needed resources",
+          "kind": "creator-statement",
+          "status": "corroborated",
+          "sourceLocation": "09:48 (588s)",
+          "assessment": "SUPPORTED; not proof every agent consumes an installed descriptor",
+          "limits": "Approximate local speech-recognition cue; provider documentation supports only its specified mechanisms/models, not creator-specific performance or a universal outcome.",
+          "references": [
+            "r73-video",
+            "r73-anthropicskills"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-24"
+        },
+        {
+          "id": "r73-c17",
+          "proposition": "Recap and creator community promotion",
+          "kind": "creator-statement",
+          "status": "unverified",
+          "sourceLocation": "11:07 (667s)",
+          "assessment": "Covered, not a technical performance claim or recommendation to buy/join",
+          "limits": "Approximate local speech-recognition cue; provider documentation supports only its specified mechanisms/models, not creator-specific performance or a universal outcome.",
+          "references": [
+            "r73-video"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-24"
+        },
+        {
+          "id": "r73-c18",
+          "proposition": "Existing ReasonPack route was not selected after throttle; subsequent existing workflow verified",
+          "kind": "operational-observation",
+          "status": "unverified",
+          "sourceLocation": "N/A (GhostMesh observation)",
+          "assessment": "Observed operational case: the initially throttled route was not the only qualified route. Existing acquisition then verified; retained work matched original digests when resumed. No comparative token or cost measurement.",
+          "limits": "Case is not a causal performance measurement or promise of availability on every host.",
+          "references": [],
+          "counterevidence": [],
+          "asOf": "2026-11-24"
+        },
+        {
+          "id": "r73-c19",
+          "proposition": "Cached-input telemetry exists in current responder source and aggregate historical events",
+          "kind": "operational-observation",
+          "status": "unverified",
+          "sourceLocation": "N/A (GhostMesh observation)",
+          "assessment": "Observed installed responder telemetry structures and historical nonzero cached-input counters. Completed sample lacked attested resolved backend. Exact internal totals remain private; no provider billing, physical reuse or fleet-wide causal result.",
+          "limits": "No attested backend, provider cost, physical KV measurement, or representative mesh-wide benchmark.",
+          "references": [],
+          "counterevidence": [],
+          "asOf": "2026-11-24"
+        },
+        {
+          "id": "r73-c20",
+          "proposition": "Durable scoped-memory and lease/checkpoint authorities exist; deletion handling is consequential",
+          "kind": "operational-observation",
+          "status": "unverified",
+          "sourceLocation": "N/A (GhostMesh design/source)",
+          "assessment": "Scoped-memory and continuity authorities exist; offline deletion-handling evidence differs from integrated live deployment. Installed integration and current fleet-wide leases remain unknown.",
+          "limits": "Source or offline tests are not proof of current installed parity or fleet-wide acceptance.",
+          "references": [],
+          "counterevidence": [],
+          "asOf": "2026-11-24"
+        },
+        {
+          "id": "r73-c21",
+          "proposition": "Four-layer architecture, cost model and benchmark recommendation",
+          "kind": "editorial-synthesis",
+          "status": "unverified",
+          "sourceLocation": "N/A (editorial)",
+          "assessment": "Original engineering synthesis: four-layer model, illustrative cost equations and bounded acceptance experiment. The examples are not measured real-world results.",
+          "limits": "Illustrative assumptions; acceptance test proposed, not executed.",
+          "references": [
+            "r73-anthropiccache",
+            "r73-openaicache"
+          ],
+          "counterevidence": [],
+          "asOf": "2026-11-24"
+        }
+      ],
+      "references": [
+        {
+          "id": "r73-video",
+          "title": "Anthropic Engineer Explains: How to Stop Hitting Claude's Token Limit",
+          "author": "Nate Herk | AI Automation",
+          "publisher": "Nate Herk | AI Automation",
+          "url": "https://www.youtube.com/watch?v=0RF9ml43ups",
+          "publicationDate": "2026-11-22",
+          "datePrecision": "day",
+          "dateNote": "Original public source publication date.",
+          "eventDate": null,
+          "location": "Public source",
+          "sourceType": "primary-creator-video",
+          "independence": "Creator narration and secondary attributions; not an independent Anthropic presentation or controlled benchmark.",
+          "evidenceFamily": "r73-video",
+          "checkedAt": "2026-11-23T17:01:54Z"
+        },
+        {
+          "id": "r73-anthropiccache",
+          "title": "Prompt caching - Claude Platform Docs",
+          "author": "Anthropic",
+          "publisher": "Anthropic",
+          "url": "https://platform.claude.com/docs/en/build-with-claude/prompt-caching",
+          "publicationDate": "unknown",
+          "datePrecision": "unknown",
+          "dateNote": "Living documentation; original publication date not specified.",
+          "eventDate": null,
+          "location": "Public source",
+          "sourceType": "vendor-documentation",
+          "independence": "First-party API behavior and model-dependent rates; not independent performance replication.",
+          "evidenceFamily": "r73-anthropiccache",
+          "checkedAt": "2026-11-23T17:01:54Z"
+        },
+        {
+          "id": "r73-anthropicpricing",
+          "title": "Pricing - Claude Platform Docs",
+          "author": "Anthropic",
+          "publisher": "Anthropic",
+          "url": "https://platform.claude.com/docs/en/about-claude/pricing",
+          "publicationDate": "unknown",
+          "datePrecision": "unknown",
+          "dateNote": "Living documentation; original publication date not specified.",
+          "eventDate": null,
+          "location": "Public source",
+          "sourceType": "vendor-documentation",
+          "independence": "First-party list pricing, model and platform specific; not creator billing or subscription limits.",
+          "evidenceFamily": "r73-anthropicpricing",
+          "checkedAt": "2026-11-23T17:01:54Z"
+        },
+        {
+          "id": "r73-openaicache",
+          "title": "Prompt caching | OpenAI API",
+          "author": "OpenAI",
+          "publisher": "OpenAI",
+          "url": "https://developers.openai.com/api/docs/guides/prompt-caching",
+          "publicationDate": "unknown",
+          "datePrecision": "unknown",
+          "dateNote": "Living documentation; original publication date not specified.",
+          "eventDate": null,
+          "location": "Public source",
+          "sourceType": "vendor-documentation",
+          "independence": "First-party model-dependent cache contract and accounting; not a cross-vendor performance benchmark.",
+          "evidenceFamily": "r73-openaicache",
+          "checkedAt": "2026-11-23T17:01:54Z"
+        },
+        {
+          "id": "r73-anthropicskills",
+          "title": "Agent Skills - Claude Platform Docs",
+          "author": "Anthropic",
+          "publisher": "Anthropic",
+          "url": "https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview",
+          "publicationDate": "unknown",
+          "datePrecision": "unknown",
+          "dateNote": "Living documentation; original publication date not specified.",
+          "eventDate": null,
+          "location": "Public source",
+          "sourceType": "vendor-documentation",
+          "independence": "First-party progressive disclosure design; does not prove a specific installed agent consumes the capability.",
+          "evidenceFamily": "r73-anthropicskills",
+          "checkedAt": "2026-11-23T17:01:54Z"
+        },
+        {
+          "id": "r73-anthropiccost",
+          "title": "Optimizing for cost and intelligence - Claude Platform Docs",
+          "author": "Anthropic",
+          "publisher": "Anthropic",
+          "url": "https://platform.claude.com/docs/en/about-claude/models/optimizing-for-cost-and-intelligence",
+          "publicationDate": "unknown",
+          "datePrecision": "unknown",
+          "dateNote": "Living documentation; original publication date not specified.",
+          "eventDate": null,
+          "location": "Public source",
+          "sourceType": "vendor-benchmark",
+          "independence": "Provider-run controlled examples; not independent replication or a GhostMesh benchmark.",
+          "evidenceFamily": "r73-anthropiccost",
+          "checkedAt": "2026-11-25T00:09:18Z"
+        },
+        {
+          "id": "r73-anthropicincident",
+          "title": "An update on recent Claude Code quality reports",
+          "author": "Anthropic",
+          "publisher": "Anthropic",
+          "url": "https://www.anthropic.com/research/april-23-postmortem",
+          "publicationDate": "2026-04-23",
+          "datePrecision": "day",
+          "dateNote": "Original provider-published incident report.",
+          "eventDate": null,
+          "location": "Public source",
+          "sourceType": "vendor-incident-report",
+          "independence": "Provider-reported quality issue, not verification of the creator’s instruction-deletion percentage.",
+          "evidenceFamily": "r73-anthropicincident",
+          "checkedAt": "2026-11-25T00:09:18Z"
+        }
+      ],
+      "relationships": [
+        {
+          "target": "reader:the-cost-of-forgetting-where-the-tools-are",
+          "type": "companion",
+          "reason": "examines the operational failure to discover an existing tool. This Reader extends that concern into the cost of repetitive inference and evidence retrieval, and shows why a registered pointer must be consumed in a real task.",
+          "provenance": [
+            "/the-cost-of-forgetting-why-agents-keep-reading-the-same-world/",
+            "/the-cost-of-forgetting-where-the-tools-are/"
+          ],
+          "basis": "curated-editorial-comparison",
+          "direction": "outgoing"
+        },
+        {
+          "target": "reader:more-skills-worse-agents",
+          "type": "companion",
+          "reason": "challenges the assumption that more instructions and capabilities necessarily improve work. Together they expose the tension between shrinking working context and maintaining the discoverability of rare but consequential procedures.",
+          "provenance": [
+            "/the-cost-of-forgetting-why-agents-keep-reading-the-same-world/",
+            "/more-skills-worse-agents/"
+          ],
+          "basis": "curated-editorial-comparison",
+          "direction": "outgoing"
+        },
+        {
+          "target": "reader:the-cheap-answer-can-be-an-expensive-job",
+          "type": "companion",
+          "reason": "distinguishes candidate-answer pricing from the cost of accepted work. It is the closest economic companion to the cache and compaction examples here.",
+          "provenance": [
+            "/the-cost-of-forgetting-why-agents-keep-reading-the-same-world/",
+            "/the-cheap-answer-can-be-an-expensive-job/"
+          ],
+          "basis": "curated-editorial-comparison",
+          "direction": "outgoing"
+        }
+      ],
+      "relationshipDisposition": "Three Reader and two SharePlane Work editorial comparisons, not independent validation of video claims.",
+      "relationshipReview": {
+        "reviewedAt": "2026-11-24",
+        "reviewedCatalogSize": 72,
+        "decision": "linked",
+        "reviewedTargets": [
+          "reader:the-cost-of-forgetting-where-the-tools-are",
+          "reader:more-skills-worse-agents",
+          "reader:the-cheap-answer-can-be-an-expensive-job"
+        ],
+        "rationale": "Three existing, published Reader destinations verified; closely tied to discovery, context discipline and cost per accepted job. More general works excluded."
+      },
+      "sharePlaneRelationships": [
+        {
+          "title": "The Semantic Operating System",
+          "url": "https://shareplane.malott.ai/artifacts/the-semantic-operating-system/",
+          "type": "companion",
+          "reason": "explains durable identity, meaning, relationships, authority and state as governed conditions for reusable work. This is a conceptual foundation for capability discovery and memory surviving session or model changes, not evidence of provider cache efficiency.",
+          "basis": "curated-editorial-comparison"
+        },
+        {
+          "title": "Done Has a Half-Life",
+          "url": "https://shareplane.malott.ai/artifacts/done-has-a-half-life/",
+          "type": "companion",
+          "reason": "gives a complementary treatment of the ongoing cost of reconsidering completed work. A cached observation must be revisitable and eventually requalified when the world changes. Again, this is an editorial connection, not an independent validation of the video's claims.",
+          "basis": "curated-editorial-comparison"
+        }
+      ],
+      "sharePlaneReview": {
+        "reviewedAt": "2026-11-24",
+        "decision": "linked",
+        "rationale": "Two specific catalog-backed public SharePlane works verified as conceptual comparisons, not provider measurements or independent video evidence. Owner approved replacement of the first Work after its live destination proved to serve a Development amendment; the Semantic Operating System resolves directly to its Semantic Lock."
+      },
+      "review": {
+        "status": "accepted",
+        "summary": "Independent source/editorial/privacy review and focused relationship review ACCEPT. Owner approved the exact manuscript, replacement relationship, and publication on November 24, 2026 PT; protected CI, merge and live verification remain required."
+      },
+      "revisionHistory": [],
+      "editorialOrder": 72,
+      "variant": "editorial",
+      "accent": "cyan",
+      "archiveCall": {
+        "label": "Measure the cost of accepted work",
+        "text": "Track provider-correct token accounting, retrieval, latency, freshness, authority, rework and acceptance. Reuse only the minimum currently valid state."
+      },
+      "editorialDepth": {
+        "schemaVersion": 1,
+        "receiptPath": "content/editorial-depth/the-cost-of-forgetting-why-agents-keep-reading-the-same-world.json"
+      },
+      "legacyReceipt": {
+        "schema": "ghostmesh-reader-receipt-v2",
+        "source": {
+          "url": "https://www.youtube.com/watch?v=0RF9ml43ups",
+          "videoId": "0RF9ml43ups"
+        },
+        "custody": {
+          "status": "qualified-private-pack-verified",
+          "note": "Existing original media package and local Whisper timed transcript verified with matching retained manifest and source-aid digests. Source media and full transcript remain private."
+        },
+        "reasonPack": {
+          "schema": "ghostmesh-reasoning-pack-v1",
+          "verification": "pass",
+          "manifestSha256": "da012abea27aba4d75d01dccb85ee474b83f0a69b48cbcf9b85d761a3b587edb",
+          "transcription": "Local Whisper large-v3 on CPU; source caption download HTTP 429. Not speech-certified or independently listened.",
+          "publicationBoundary": "Original media, full transcript, timed VTT, raw metadata, and private pack remain private. Public original analysis and sanitized receipt only."
+        },
+        "sourceInspection": {
+          "method": "Existing source acquisition, local ASR and built-in verification; on resumption verified original manifest, transcript, timed VTT and composed research input against retained digests, with no repeat acquisition.",
+          "transcriptSha256": "0cface905594f24448b4735ac682e58c6af470ce1883b4b615f558487ad2d816",
+          "timedVttSha256": "d396bf192be1f648f5f1d5c35e35f19bf474d8e07837afa3b5169aa989bbe8ef",
+          "caveat": "Source package integrity and approximate navigation cues do not certify exact speech or the creator’s performance claims.",
+          "publicationBoundary": "Only public source URLs, original analysis, sanitized digests and limitations. No raw media, full transcript, private paths, or internal telemetry values."
+        },
+        "editorialStatus": "OWNER_APPROVED_FOR_PROTECTED_RELEASE_PENDING_PRODUCTION_VERIFICATION"
+      }
     }
   ],
   "featuredId": "reader:ask-for-the-outcome-keep-the-boundary"
