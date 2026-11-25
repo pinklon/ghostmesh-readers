@@ -118,5 +118,17 @@
       "sitemap-http-200",
       "claim-register-http-200"
     ]
+  },
+  "the-agent-that-remembers-why-it-changed": {
+    "mergeCommit": "0a11943926c620c2756618b23c5b0d57ef4ba960",
+    "url": "https://youtube.shareplane.malott.ai/the-agent-that-remembers-why-it-changed/",
+    "verifiedAt": "2026-11-25T13:38:14Z",
+    "checks": [
+      "article-http-200",
+      "receipt-http-200",
+      "catalog-http-200",
+      "sitemap-http-200",
+      "claim-register-http-200"
+    ]
   }
 }
