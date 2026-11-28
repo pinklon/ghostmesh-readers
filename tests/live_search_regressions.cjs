@@ -139,6 +139,28 @@ const readerCount = require('../content/catalog.json').readers.length;
       await mixed.close();
     }
 
+    // A title/category-only hit without display metadata still gives context.
+    const old = await browser.newContext();
+    await old.route('**/readers/unified-search-index.json', route => route.abort());
+    await old.route('**/readers/search-index.json', route => route.fulfill({
+      status: 200, contentType: 'application/json', body: JSON.stringify({
+        schema: 'ghostmesh-public-reader-text-v1', readerCount: 1,
+        readers: [{id:'reader:fallback', title:'Unique title lantern', category:'Unique category prism',
+          url:'/fallback/', text:'Separate article body context. '.repeat(8)}]
+      })
+    }));
+    const oldPage = await old.newPage();
+    await oldPage.goto(base + '/');
+    await oldPage.locator('#home-query').fill('unique category prism');
+    await oldPage.locator('.gm-home-live .gm-result-excerpt').waitFor();
+    assert.match(await oldPage.locator('.gm-home-live .gm-result-excerpt').textContent(), /Separate article body context/);
+    await oldPage.locator('.gm-search-control').click();
+    await oldPage.locator('#gm-search-input').fill('unique title lantern');
+    await oldPage.locator('[data-reader-search-results] .gm-result-excerpt').waitFor();
+    assert.match(await oldPage.locator('[data-reader-search-results] .gm-result-excerpt').textContent(), /Separate article body context/);
+    assert.equal(await oldPage.locator('[data-reader-search-results] .gm-result-match').count(),0);
+    await old.close();
+
     // A stale Reader slice must not be presented as unified coverage.
     const stale = await browser.newContext();
     await stale.route('**/readers/unified-search-index.json', route => route.fulfill({

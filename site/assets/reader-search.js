@@ -108,11 +108,16 @@
     }
     const text = normalize(article.text);
     const term = text.includes(query) ? query : query.split(/\s+/).find(x => text.includes(x));
-    if (term && !normalize(display.summary || '').includes(term)) {
+    if (term && !normalize(typeof display.summary === 'string' ? display.summary : '').includes(term)) {
       const passage = document.createElement('span');
       passage.className = 'gm-result-match';
       passage.textContent = 'Matching passage: ' + excerpt(article.text, term);
       link.append(passage);
+    } else if (!(typeof display.summary === 'string' && display.summary.trim())) {
+      const fallback = document.createElement('span');
+      fallback.className = 'gm-result-excerpt';
+      fallback.textContent = article.text.slice(0, 190).trim() + (article.text.length > 190 ? '…' : '');
+      link.append(fallback);
     }
     return link;
   }
