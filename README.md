@@ -47,7 +47,7 @@ The public site is immutable, static Git content. Mac Studio, Hyperion and the G
 
 ## Hosting connection
 
-The existing Netlify project `shareplane-youtube` is connected to GitHub repository `pinklon/ghostmesh-readers`, production branch `main`. Keep `site/` as the publish directory. The existing Git-to-Netlify build emits the verified static unified search index; independent SharePlane-triggered refresh is separately commissioned. Do not create another Netlify project or modify Cloudflare DNS. The live domain is `youtube.shareplane.malott.ai`.
+The existing Netlify project `shareplane-youtube` is connected to GitHub repository `pinklon/ghostmesh-readers`, production branch `main`. Keep `site/` as the publish directory. The existing Git-to-Netlify build emits the verified static unified search index from the canonical public publisher feeds; search-only punctuation normalization enforces the Reader output convention without changing any Work. Independent SharePlane-triggered refresh is separately commissioned. Do not create another Netlify project or modify Cloudflare DNS. The live domain is `youtube.shareplane.malott.ai`.
 
 ## Recovery
 

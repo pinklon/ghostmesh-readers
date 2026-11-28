@@ -21,6 +21,16 @@ class UnifiedIndexTests(unittest.TestCase):
         self.assertEqual(len(result["records"]), 2)
         self.assertEqual({x["indexDepth"] for x in result["records"]}, {"full-text", "public-corpus"})
 
+    def test_search_only_punctuation_normalization_preserves_source(self):
+        readers, share = fixtures()
+        original = "Idea" + chr(8212) + "evidence"
+        share["records"][0]["text"] = original
+        result = build(readers, share)
+        work = next(row for row in result["records"] if row["source"] == "SharePlane")
+        self.assertEqual(work["text"], "Idea - evidence")
+        self.assertEqual(share["records"][0]["text"], original)
+        self.assertEqual(result["sources"]["SharePlane"]["sourceCatalogSha256"], share["sourceCatalogSha256"])
+
     def test_incomplete_coverage_fails(self):
         with self.assertRaisesRegex(ValueError, "coverage incomplete"):
             build(*fixtures(), min_shareplane=2)

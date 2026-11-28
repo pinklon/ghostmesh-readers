@@ -69,7 +69,9 @@ def build(readers, shareplane, *, min_readers=1, min_shareplane=1, expected_sour
             raise ValueError("Published SharePlane Work lacks identity or route")
         fields = [x.get("thesis", ""), x.get("abstract", ""), x.get("text", "")]
         fields += x.get("topics", [])
-        text = " ".join(str(v) for v in fields if v).strip()
+        # Search-only typography normalization; canonical Work bytes remain untouched.
+        # The Reader public output contract excludes U+2014, including derived JSON.
+        text = " ".join(str(v) for v in fields if v).replace("\u2014", " - ").strip()
         if not text:
             raise ValueError("Published SharePlane Work lacks searchable metadata")
         route = public_url(HOSTS["SharePlane"], x["canonicalUrl"])
