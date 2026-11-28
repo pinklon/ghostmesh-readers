@@ -6,6 +6,12 @@ The public, video-first companion to [SharePlane](https://shareplane.malott.ai/)
 
 **Netlify project:** `shareplane-youtube` (existing site ID: `27352ed6-0f74-4756-832e-95ba49e31b09`). **Publish directory:** `site/`, configured by `netlify.toml`; the dependency-free build verifies and emits the public unified search index.
 
+## Provider-neutral preview build
+
+Run `python3 -m scripts.build_public_site` from the repository root and serve the resulting `site/` directory. This is the same search-projection implementation invoked by the incumbent Netlify entry point. The output contains only public static files; no hosting credential is required. A Cloudflare preview must preserve canonical URLs, response headers, feed content type, search coverage, and the existing public evidence boundary. Netlify remains the sole production publisher until a separate owner-authorized cutover. No DNS or provider refresh-hook change is made by this build.
+
+The local Cloudflare Pages compatibility check uses `npx wrangler@4.121.0 pages dev site --compatibility-date=2026-08-11 --ip 127.0.0.1`. Verify canonical routes, decoded response bytes and security headers against the generated directory, plus the RSS content type and unknown-route 404. A hosted preview and DNS cutover remain separate from this local check.
+
 ## Small page and asset corrections
 
 For isolated text, HTML, CSS, JavaScript, image, or metadata corrections, edit only the affected source or published `site/` members and any demonstrated deterministic dependents. Inspect the changed-file diff and run focused existing checks for that scope; reuse passing evidence when inputs have not changed. Do not regenerate unrelated Readers, trigger a full content refresh, add a second publication path, or invent another validation or approval layer for a small correction. The existing Git-to-Netlify release remains the sole deployment path; its provider may process the site directory, so do not claim verified member-only upload without provider evidence. Shared template or generator changes justify their actual broader dependent outputs. Preserve the existing owner publication decision, source/privacy boundaries, and required release checks.

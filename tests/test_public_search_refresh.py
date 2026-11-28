@@ -10,8 +10,12 @@ from test_unified_search_index import fixtures
 
 
 class PublicRefreshTests(unittest.TestCase):
+    def test_netlify_compatibility_entry_uses_same_build(self):
+        from scripts import build_public_site, netlify_unified_search_build
+        self.assertIs(netlify_unified_search_build.main, build_public_site.main)
+
     def test_incumbent_build_uses_canonical_public_feeds(self):
-        from scripts import netlify_unified_search_build as build
+        from scripts import build_public_site as build
         with patch.dict("os.environ", {}, clear=True), patch.object(build, "refresh") as run:
             build.main()
             run.assert_called_once_with(
@@ -20,7 +24,7 @@ class PublicRefreshTests(unittest.TestCase):
                 build.MIN_READERS, build.MIN_WORKS, Path("site/catalog.json"))
 
     def test_incumbent_build_rejects_noncanonical_override(self):
-        from scripts import netlify_unified_search_build as build
+        from scripts import build_public_site as build
         with patch.dict("os.environ", {"SHAREPLANE_PUBLIC_CORPUS_URL": "https://shareplane.malott.ai/other.json"}, clear=True), patch.object(build, "refresh") as run:
             with self.assertRaises(SystemExit):
                 build.main()
