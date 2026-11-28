@@ -2,7 +2,7 @@
 
 The public, video-first companion to [SharePlane](https://shareplane.malott.ai/). The Readers site is deliberately separate from SharePlane Production and private ReasonPack processing.
 
-**Live collection:** https://youtube.shareplane.malott.ai/
+**Live collection:** https://youtube.shareplane.malott.ai/ (incumbent canonical address). **Cloudflare destination:** https://readers.ghostmesh.ai/ (parallel verified site; canonical projection pending activation).
 
 **Netlify project:** `shareplane-youtube` (existing site ID: `27352ed6-0f74-4756-832e-95ba49e31b09`). **Publish directory:** `site/`, configured by `netlify.toml`; the dependency-free build verifies and emits the public unified search index.
 
@@ -11,6 +11,12 @@ The public, video-first companion to [SharePlane](https://shareplane.malott.ai/)
 Run `python3 -m scripts.build_public_site` from the repository root and serve the resulting `site/` directory. This is the same search-projection implementation invoked by the incumbent Netlify entry point. The output contains only public static files; no hosting credential is required. A Cloudflare preview must preserve canonical URLs, response headers, feed content type, search coverage, and the existing public evidence boundary. Netlify remains the sole production publisher until a separate owner-authorized cutover. No DNS or provider refresh-hook change is made by this build.
 
 The local Cloudflare Pages compatibility check uses `npx wrangler@4.121.0 pages dev site --compatibility-date=2026-08-11 --ip 127.0.0.1`. Verify canonical routes, decoded response bytes and security headers against the generated directory, plus the RSS content type and unknown-route 404. A hosted preview and DNS cutover remain separate from this local check.
+
+## Canonical Reader destination
+
+For a new Cloudflare candidate, run `python3 -m scripts.build_public_site --canonical-output /path/to/new-directory`. The directory must not exist. The command uses the same verified static search build, then projects delivery URLs to `https://readers.ghostmesh.ai` in the separate output directory. It does not change authored Readers, historical release events, original receipts, selected artwork, or the incumbent `site/` files. Netlify continues to use its unchanged legacy build while the domain transition is qualified.
+
+The projection changes only known local URL attributes, discovery routes, Reader search URLs and derived page-hash bindings. The existing knowledge manifest is regenerated against the served projection; its source/schema hashes and semantic IDs stay intact. The generated `/.well-known/ghostmesh-origin-migration.json` binds the exact original and projected bytes for every changed file. Unexpected legacy hostname occurrences or mismatched prior page digests fail the build. Preview, production activation, old-domain redirects and Netlify cancellation remain distinct decisions.
 
 ## Small page and asset corrections
 
