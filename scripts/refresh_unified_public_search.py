@@ -39,7 +39,7 @@ def fetch_shareplane_bytes(url):
     return body
 
 
-def refresh(readers_path, corpus_url, catalog_url, output_path, min_readers, min_works):
+def refresh(readers_path, corpus_url, catalog_url, output_path, min_readers, min_works, reader_catalog_path=None):
     # Independent live-catalog bytes establish the expected digest. Never trust
     # the digest merely because the corpus asserts it.
     catalog = fetch_shareplane_bytes(catalog_url)
@@ -48,7 +48,8 @@ def refresh(readers_path, corpus_url, catalog_url, output_path, min_readers, min
     corpus = json.loads(corpus_bytes)
     readers = json.loads(Path(readers_path).read_text(encoding="utf-8"))
     output = build(readers, corpus, min_readers=min_readers,
-                   min_shareplane=min_works, expected_source_sha=source_sha)
+                   min_shareplane=min_works, expected_source_sha=source_sha,
+                   reader_catalog=json.loads(Path(reader_catalog_path).read_text(encoding="utf-8")) if reader_catalog_path else None)
     serialized = json.dumps(output, indent=2, ensure_ascii=False) + "\n"
     target = Path(output_path)
     target.parent.mkdir(parents=True, exist_ok=True)
@@ -74,9 +75,10 @@ def main():
     parser.add_argument("--output", type=Path, default=Path("site/readers/unified-search-index.json"))
     parser.add_argument("--min-readers", type=int, default=75)
     parser.add_argument("--min-shareplane", type=int, default=119)
+    parser.add_argument("--reader-catalog", type=Path, default=Path("site/catalog.json"))
     args = parser.parse_args()
     refresh(args.readers, args.corpus_url, args.catalog_url, args.output,
-            args.min_readers, args.min_shareplane)
+            args.min_readers, args.min_shareplane, args.reader_catalog)
 
 
 if __name__ == "__main__":

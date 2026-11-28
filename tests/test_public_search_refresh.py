@@ -17,7 +17,7 @@ class PublicRefreshTests(unittest.TestCase):
             run.assert_called_once_with(
                 Path("site/readers/search-index.json"), build.CANONICAL_CORPUS,
                 build.CANONICAL_CATALOG, Path("site/readers/unified-search-index.json"),
-                build.MIN_READERS, build.MIN_WORKS)
+                build.MIN_READERS, build.MIN_WORKS, Path("site/catalog.json"))
 
     def test_incumbent_build_rejects_noncanonical_override(self):
         from scripts import netlify_unified_search_build as build

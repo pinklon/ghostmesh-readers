@@ -28,6 +28,7 @@ def main():
         Path("site/readers/unified-search-index.json"),
         MIN_READERS,
         MIN_WORKS,
+        Path("site/catalog.json"),
     )
 
 
