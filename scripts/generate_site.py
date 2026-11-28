@@ -89,7 +89,7 @@ def projected_publication_status(raw, reader, depth=None):
  verified=json.loads(verified_path.read_text()).get(reader['slug']) if verified_path.exists() else None
  verified_ok=(isinstance(verified,dict)
               and re.fullmatch(r'[0-9a-f]{40}',str(verified.get('mergeCommit','')))
-              and verified.get('url')=='https://youtube.shareplane.malott.ai/'+reader['slug']+'/'
+              and verified.get('url') in {origin+'/'+reader['slug']+'/' for origin in ('https://youtube.shareplane.malott.ai','https://readers.ghostmesh.ai')}
               and re.fullmatch(r'\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}Z',str(verified.get('verifiedAt','')))
               and {'article-http-200','receipt-http-200','catalog-http-200','sitemap-http-200','claim-register-http-200'}<=set(verified.get('checks',[])))
  if authorized:

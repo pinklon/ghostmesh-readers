@@ -4,9 +4,30 @@
 
 This is the one publication queue and release path for `pinklon/ghostmesh-readers`. One accepted publisher owns a candidate from source handoff through the final production receipt. Source custodians and independent reviewers can supply evidence or read-only findings; they do not start competing uploads. The public repository contains original analysis and sanitized receipts, never copied media, captions, full transcripts, private source packs, signed URLs, or credentials.
 
+## Cloudflare destination transition (Reader #76 onward)
+
+Following the owner-approved move to https://readers.ghostmesh.ai/, the normal publication destination is the Cloudflare Pages project `ghostmesh-readers`. The November 28 canonical deployment is verified. This forward runbook is effective when its exact source revision is admitted to main; until then, hold new production Reader releases rather than publishing only to Netlify.
+
+Retain every existing content, source-custody, editorial, Creative Lock, relationship, responsive UAT, independent review, exact-head GitHub protection and owner publication requirement. The one explicit decision to **publish** a reviewed Reader covers the normal protected merge and its Cloudflare release. It does not authorize unrelated provider changes. No second publisher, separate PREPARE approval or duplicated UAT.
+
+Use the existing provider-neutral build from the exact qualified checkout, with a new output directory:
+
+```sh
+python3 -m scripts.build_public_site --canonical-output /absolute/path/to/new-output
+npx wrangler@4.121.0 pages deploy /absolute/path/to/new-output --project-name ghostmesh-readers --branch reader-review --commit-hash EXACT_HEAD
+```
+
+Use the immutable preview URL returned by Wrangler for the normal owner UAT; preview routes are noindex. Preserve the generated directory and its origin receipt. For a private candidate, use the existing approved local/private review path instead; never create a public preview merely to qualify it.
+
+After the owner's exact-head publication decision and protected merge, confirm the admitted tree matches the qualified candidate (including every public input); requalify material drift. Reuse the qualified output, or deterministically rebuild it from the admitted tree and compare the bytes. The accountable publisher uses the existing scoped Cloudflare Pages authority to deploy that output to project `ghostmesh-readers`, branch `main`, with the actual admitted SHA. Check the provider's Production deployment ID and exact source, then the live canonical URL, rendered article/player/share, receipt, catalog, both relationship planes, sitemap, claim register, and cross-search counts. Record `production-verifications.json` with the actual new hostname, merge SHA, verification time and existing checks only after verified production. Preserve historical verification URLs and old source identities verbatim. Netlify is legacy continuity only and must not be used as the success witness for new publishing.
+
+If Cloudflare authentication, preview, merge or verification fails, hold and report the precise failure; do not switch back to Netlify. The old automatic Netlify build remains incidental during transition until separately retired. The legacy SharePlane refresh hook is not commissioned for Cloudflare; use the same authorized canonical build on release, not a second publisher.
+
+For #76 onward, include the Reader-specific original social artwork and matching canonical metadata as part of the normal Creative Lock and preview. The visible article, exact title, summary, date and source attribution rule the SEO metadata. Do not fabricate authors, dates, citations or visuals. Keep the opt-in source player and genuine video thumbnail distinct from the editorial social card. Reuse the Reader #71 approved artwork pattern: a dedicated article asset directory with original master and exact rendered 1200×630 PNG, article-specific metadata and content-hash admission in the existing public asset allowlist. Do not expand the separate two-card issue #45 scope or use source-video imagery as original artwork.
+
 ## Reader release contract v2 (owner-approved November 9, 2026)
 
-For Reader #48 onward, one explicit owner decision to **publish the reviewed candidate** authorizes the normal transition from draft to ready, protected merge, and the existing GitHub-to-Netlify Production deployment, provided the exact candidate and required checks remain unchanged and passing. No subsequent conversational approval is required for those routine steps. An editorial acceptance that does **not** say publish remains editorial-only; never infer deployment authority from a review comment or a thumbs-up on ambiguous material.
+For Reader #48 onward, one explicit owner decision to **publish the reviewed candidate** authorizes the normal transition from draft to ready, protected merge, and the normal Production deployment (Cloudflare from #76 onward; Netlify historically), provided the exact candidate and required checks remain unchanged and passing. No subsequent conversational approval is required for those routine steps. An editorial acceptance that does **not** say publish remains editorial-only; never infer deployment authority from a review comment or a thumbs-up on ambiguous material.
 
 **One bounded pass:** complete the manuscript, claim/source/privacy review, and both relationship assessments; generate the existing site projections; run existing CI; inspect the deployed preview at desktop and narrow mobile width; then release the identical head. Reuse passing, hash-bound checks and prior editorial findings. Re-run only when their relevant inputs change or a genuine failure occurs. No new orchestrator, queue, publisher, broad site rewrite, or duplicate independent review.
 
