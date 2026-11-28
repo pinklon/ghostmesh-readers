@@ -31,6 +31,25 @@ class UnifiedIndexTests(unittest.TestCase):
         self.assertEqual(share["records"][0]["text"], original)
         self.assertEqual(result["sources"]["SharePlane"]["sourceCatalogSha256"], share["sourceCatalogSha256"])
 
+    def test_editorial_metadata_is_source_bound_and_allowlisted(self):
+        readers, share = fixtures()
+        share["records"][0].update(abstract="Public Work overview.", thesis="Public significance.",
+                                   date="2026-11-01", topics=["architecture"])
+        reader = {"id": "reader:one", "slug": "one", "title": "One", "category": "AI",
+                  "overview": "Public Reader overview.", "whyItMatters": "Public relevance.",
+                  "published": "2026-11-02", "tags": ["evaluation"], "review": "not a display field"}
+        catalog = {"schemaVersion": 1, "host": "https://youtube.shareplane.malott.ai", "readers": [reader]}
+        result = build(readers, share, reader_catalog=catalog)
+        by_id = {row["id"]: row for row in result["records"]}
+        self.assertEqual(by_id["reader:one"]["display"], {"summary": reader["overview"], "significance": reader["whyItMatters"],
+                                                         "category": "AI", "date": reader["published"], "tags": ["evaluation"]})
+        self.assertEqual(by_id["artifact:two"]["display"]["summary"], "Public Work overview.")
+        self.assertEqual(by_id["reader:one"]["text"], readers["readers"][0]["text"])
+        with self.assertRaisesRegex(ValueError, "identity"):
+            build(readers, share, reader_catalog={**catalog, "readers": [{**reader, "title": "Changed"}]})
+        with self.assertRaisesRegex(ValueError, "coverage"):
+            build(readers, share, reader_catalog={**catalog, "readers": []})
+
     def test_incomplete_coverage_fails(self):
         with self.assertRaisesRegex(ValueError, "coverage incomplete"):
             build(*fixtures(), min_shareplane=2)

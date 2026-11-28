@@ -69,6 +69,58 @@
     const end = Math.min(article.length, at + 130);
     return (start ? '…' : '') + article.slice(start, end).trim() + (end < article.length ? '…' : '');
   };
+  function resultLink(article, query, compact=false) {
+    const link = document.createElement('a');
+    link.href = article.url;
+    const display = article.display || {};
+    const meta = document.createElement('small');
+    const labels = [article.source === 'SharePlane' ? 'SharePlane Work' : 'GhostMesh Reader', display.category || article.category];
+    if (typeof display.date === 'string' && /^\d{4}-\d{2}-\d{2}/.test(display.date)) {
+      const date = new Date(display.date.slice(0,10) + 'T00:00:00Z');
+      if (!Number.isNaN(date.valueOf())) labels.push(new Intl.DateTimeFormat('en-GB',{day:'numeric',month:'short',year:'numeric',timeZone:'UTC'}).format(date));
+    }
+    meta.textContent = labels.filter(Boolean).join(' · ');
+    const title = document.createElement('strong');
+    title.textContent = article.title;
+    link.append(meta, title);
+    if (typeof display.summary === 'string' && display.summary.trim()) {
+      const summary = document.createElement('span');
+      summary.className = 'gm-result-overview';
+      summary.textContent = display.summary;
+      link.append(summary);
+    }
+    if (!compact && typeof display.significance === 'string' && display.significance.trim() && display.significance !== display.summary) {
+      const significance = document.createElement('span');
+      significance.className = 'gm-result-significance';
+      significance.textContent = display.significance;
+      link.append(significance);
+    }
+    if (Array.isArray(display.tags)) {
+      const tags = document.createElement('span');
+      tags.className = 'gm-result-tags';
+      for (const value of display.tags.slice(0,3)) {
+        if (typeof value !== 'string') continue;
+        const tag = document.createElement('span');
+        tag.textContent = value.replaceAll('-', ' ');
+        tags.append(tag);
+      }
+      if (tags.children.length) link.append(tags);
+    }
+    const text = normalize(article.text);
+    const term = text.includes(query) ? query : query.split(/\s+/).find(x => text.includes(x));
+    if (term && !normalize(typeof display.summary === 'string' ? display.summary : '').includes(term)) {
+      const passage = document.createElement('span');
+      passage.className = 'gm-result-match';
+      passage.textContent = 'Matching passage: ' + excerpt(article.text, term);
+      link.append(passage);
+    } else if (!(typeof display.summary === 'string' && display.summary.trim())) {
+      const fallback = document.createElement('span');
+      fallback.className = 'gm-result-excerpt';
+      fallback.textContent = article.text.slice(0, 190).trim() + (article.text.length > 190 ? '…' : '');
+      link.append(fallback);
+    }
+    return link;
+  }
   const findMatches = (articles, query) => {
     const terms = query.split(/\s+/).filter(Boolean);
     if (!terms.length) return [];
@@ -150,17 +202,7 @@
       const matches = findMatches(articles, query).filter(article => limited || activeSource === 'All' || article.source === activeSource);
       status.textContent = matchText(matches.length);
       for (const article of matches) {
-        const link = document.createElement('a');
-        link.href = article.url;
-        const type = document.createElement('small');
-        type.textContent = (article.source === 'SharePlane' ? 'SHAREPLANE / ' : 'READER / ') + (article.category || 'PUBLIC WORK');
-        const title = document.createElement('strong');
-        title.textContent = article.title;
-        const snippet = document.createElement('span');
-        snippet.textContent = excerpt(article.text,
-          normalize(article.text).includes(query) ? query : (terms.find(term => normalize(article.text).includes(term)) || terms[0]));
-        link.append(type, title, snippet);
-        results.append(link);
+        results.append(resultLink(article, query));
       }
     } catch (_) {
       if (!dialog.open || revision !== renderRevision) return;
@@ -226,16 +268,7 @@
         listing.textContent = inventoryText(articles, limited);
         panel.append(listing, summary);
         for (const article of matches.slice(0, 5)) {
-          const link = document.createElement('a');
-          link.href = article.url;
-          const label = document.createElement('strong');
-          label.textContent = article.title;
-          const snippet = document.createElement('span');
-          snippet.textContent = excerpt(article.text, normalize(article.text).includes(query) ? query : query.split(/\s+/)[0]);
-          const type = document.createElement('small');
-          type.textContent = article.source === 'SharePlane' ? 'SHAREPLANE' : 'READER';
-          link.append(type, label, snippet);
-          panel.append(link);
+          panel.append(resultLink(article, query, true));
         }
       } catch (_) {
         panel.textContent = 'Live article search is unavailable. Submit the query to browse the Reader archive.';
