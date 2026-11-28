@@ -4,20 +4,30 @@ from pathlib import Path
 from html.parser import HTMLParser
 from urllib.parse import urlsplit,unquote
 from datetime import datetime,date,timezone
-import json,os,re,sys,xml.etree.ElementTree as ET
+import hashlib,json,os,re,sys,xml.etree.ElementTree as ET
 from generate_site import projections,CATEGORIES,validate_text,validate_link_only_source,validate_paper_source,validate_article_source,validate_repository_source,validate_media_source
 from editorial_depth import validate_reader as validate_editorial_depth
+from reader_canonical import errors as canonical_reader_errors
 from scout_feed import validate_scout,validate_events
 from scout_pages import validate_editions,review_url,edition_url
 from scout_research import validate_research
 ROOT=Path(__file__).resolve().parents[1];SITE=ROOT/'site'
 VERDICTS={'Essential','Worth studying','Interesting, unproven','Mostly recycled','Misleading','Not worth your time'}
 STATES={'corroborated','partially corroborated','contradicted','disputed','unverified'}
-RELATIONS={'examines same claim','extends','challenges','responds to','shares entity','informs architecture','related topic'}
+RELATIONS={'examines same claim','extends','challenges','responds to','shares entity','informs architecture','related topic','companion'}
 # This static site publishes only reviewed text assets. New asset formats require
 # an explicit policy change, so an unfamiliar capture container fails closed.
 PUBLIC_TEXT_EXTENSIONS={'.html','.json','.jsonld','.js','.css','.svg','.xml','.webmanifest'}
 PUBLIC_TEXT_PATHS={'robots.txt','_headers','llms.txt','social/previews/home.png','social/previews/the-inbox-was-a-boundary.png'}
+# Tony approved publication of this exact standalone source asset on November 7.
+# This admits its fixed path and bytes, not Python files generally or execution.
+PUBLIC_PINNED_TEXT_ASSETS={
+ 'reader71/hero.png':'c19e4cfca32dfbad31af4d87def7757d0d4fa181fbae9000612df35acbe83164',
+ 'reader71/square.png':'ebb29949c1f01cd8e8720cf5e72f028013812bc52f6169b78b975defeacc5db9',
+ 'reader71/og.png':'51becffbfceee3d071500923ebac4670958befb4231c447be389e5524e76ec7c',
+ 'assets/when-code-gets-cheap-verified-delivery-qwen.png':'444f77a9fc830efec614ed9325c82dcdf64c071ae91e1e751bfa7aebf6bb7054',
+ 'scout/essays/the-page-left-the-context/retention-probe.py':'1141bbf0efe11407c45455d412067f551fe1304df8ae92f15d5f13ef606010a6'
+}
 SOURCE_EXTENSIONS=set('.vtt .srt .sbv .ass .ssa .sub .ttml .dfxp .scc .sami .smi .lrc .srv1 .srv2 .srv3 .json3 .mkv .mka .mks .mp4 .m4a .m4v .mp3 .webm .wav .wave .mov .qt .ogg .ogv .oga .opus .flac .aac .aiff .aif .avi .wmv .wma .asf .flv .f4v .mpeg .mpg .mpe .m2v .ts .mts .m2ts .3gp .3g2 .vob .amr .ape .ac3 .aax'.split())
 def chapter_label_errors(raw,published):
  """Forward-only navigation lint; do not retroactively rewrite historical Reader pages."""
@@ -35,6 +45,16 @@ def capture_signature(data):
          or data[:4] in (b'RIFF',b'FORM')
          or data[4:8] in (b'ftyp',b'moov',b'mdat')
          or data.startswith((b'\x00\x00\x01\xba',b'\x00\x00\x01\xb3')))
+def new_reader_canonical_errors(reader, authored):
+ """New-Reader-only guard: fail before publication, never rewrite history."""
+ if reader['editorialOrder'] < 51:return []  # #51 is order 50 and remains immutable.
+ slug=reader['slug'];errors=[]
+ if not isinstance(reader.get('archiveCall'),dict):
+  errors.append(f'{slug}: new Reader archiveCall must live in catalog, not a Python registry')
+ if authored.count('<p class="gm-publication-status" data-gm-release-status="">')!=1:
+  errors.append(f'{slug}: new Reader needs one projected publication-status marker before independent review')
+ return errors
+
 def source_custody_errors(reader):
  """Check honest public receipt labels; private evidence itself stays outside Git."""
  slug=reader['slug'];receipt=reader.get('legacyReceipt') or {};custody=receipt.get('custody') or {}
@@ -74,11 +94,13 @@ class Page(HTMLParser):
 def check(root=ROOT, *, local_only=False):
  site=root/'site';errors=[]
  event_pr=None
+ draft_pr=False
  if os.environ.get('GITHUB_EVENT_NAME')=='pull_request':
   try:
    event=json.loads(Path(os.environ['GITHUB_EVENT_PATH']).read_text())
    event_pr=event['number']
    if not isinstance(event_pr,int) or isinstance(event_pr,bool) or event_pr<1:raise ValueError
+   draft_pr=event['pull_request']['draft'] is True
   except (OSError,KeyError,ValueError,TypeError):
    return ['GitHub pull request identity unavailable for editorial gate']
  require_merged=os.environ.get('GITHUB_EVENT_NAME')=='push' and os.environ.get('GITHUB_REF')=='refs/heads/main'
@@ -131,8 +153,29 @@ def check(root=ROOT, *, local_only=False):
   require(re.findall(r'data-start="(\d+)"',raw)==old.get('chapterStarts',[]),'Chapter timestamps drift: '+old['slug'])
  for r in readers:
   slug=r['slug'];p=site/slug/'index.html';raw=p.read_text();a=pages[p]
-  errors.extend(validate_editorial_depth(root,r,event_pr=event_pr,require_merged=require_merged,
-                                        verify_owner_remote=not local_only))
+  annotated=(slug=='uncensored-private-or-sovereign' and 'data-layout-family="annotated-editorial"' in raw)
+  errors.extend(canonical_reader_errors(r,raw))
+  require(raw.count('src="/assets/reader-search.js"')==1,
+          f'{slug}: shared Search controller missing or duplicated')
+  if r['editorialOrder'] >= 67:  # Reader #68 forward; historical metadata remains unchanged.
+   descriptions=[attrs.get('content','').strip() for tag,attrs in a.tags
+                 if tag=='meta' and attrs.get('name')=='description']
+   require(len(descriptions)==1 and len(descriptions[0])>=40,
+           f'{slug}: missing or generic page description')
+   for other in readers:
+    if other['slug']==slug:continue
+    other_tags=pages[site/other['slug']/'index.html'].tags
+    prior=[attrs.get('content','').strip() for tag,attrs in other_tags
+           if tag=='meta' and attrs.get('name')=='description']
+    require(not prior or descriptions[0]!=prior[0],
+            f'{slug}: copied description from {other["slug"]}')
+  authored=(root/'content/readers'/f'{slug}.html').read_text()
+  errors.extend(new_reader_canonical_errors(r,authored))
+  # A draft PR is the preview vehicle, before the owner can inspect and accept.
+  # Only new Readers may defer editorial acceptance; ready PRs and main remain strict.
+  if not (draft_pr and slug not in {old['slug'] for old in baseline}):
+   errors.extend(validate_editorial_depth(root,r,event_pr=event_pr,require_merged=require_merged,
+                                         verify_owner_remote=not local_only))
   timestamp(r['updated'],slug+' updated')
   try:date.fromisoformat(r['published'])
   except ValueError:errors.append(slug+': invalid publication date')
@@ -162,16 +205,23 @@ def check(root=ROOT, *, local_only=False):
    if slug not in {old['slug'] for old in baseline}:errors.extend(source_custody_errors(r))
    aspect=r['source'].get('mediaAspect')
    require(aspect in {'16:9','9:16','1:1','unknown'},f'{slug}: source aspect missing or invalid')
-   if aspect!='unknown' or r['source'].get('unknownAspectPlayerApproved'):
+   if annotated:
+    require(raw.count('id="video-frame"')==1 and 'id="play-source"' in raw and 'class="source-film"' in raw,
+            f'{slug}: annotated opt-in source player missing')
+    require('class="source-chapters"' in raw, f'{slug}: annotated source chapters missing')
+   elif aspect!='unknown' or r['source'].get('unknownAspectPlayerApproved'):
     require(raw.count('gm-media-frame')==1 and raw.count(f'data-gm-aspect="{aspect}"')==1,f'{slug}: shared source player or aspect missing')
     require('gm-source-layout' in raw or 'class="player gm-media-frame"' in raw or 'class="player-ratio gm-media-frame"' in raw,f'{slug}: source player layout missing')
    else:
     try:validate_link_only_source(raw,r['source']['url'])
     except ValueError as exc:errors.append(f'{slug}: {exc}')
   for problem in chapter_label_errors(raw,r['published']):require(False,f'{slug}: {problem}')
-  for marker in ['at-a-glance','external-evidence','related-thinking']:require(marker in a.ids,f'{slug}: missing {marker}')
-  require('data-theme-toggle' in raw and '/assets/theme.js' in raw,f'{slug}: theme missing')
-  require(raw.find('id="at-a-glance"')<min([pos for token in ['data-gm-aspect=','id="source"','class="theater"'] if (pos:=raw.find(token))>=0] or [len(raw)]),f'{slug}: brief after source')
+  for marker in (['source-film','independent-evidence','related-thinking'] if annotated else ['at-a-glance','external-evidence','related-thinking']):require(marker in a.ids,f'{slug}: missing {marker}')
+  require('data-theme-toggle' in raw and (('id="theme-toggle"' in raw and '<script' in raw) if annotated else '/assets/theme.js' in raw),f'{slug}: theme missing')
+  if annotated:
+   require(raw.find('class="gm-brief"')<raw.find('id="source-film"'),f'{slug}: brief after source')
+  else:
+   require(raw.find('id="at-a-glance"')<min([pos for token in ['data-gm-aspect=','id="source"','class="theater"'] if (pos:=raw.find(token))>=0] or [len(raw)]),f'{slug}: brief after source')
   receipt=json.loads((site/slug/'receipt.json').read_text());require(receipt['normalization']['id']==r['id'],f'{slug}: receipt identity')
   refs={x['id']:x for x in r['references']};require(len(refs)==len(r['references']),f'{slug}: duplicate reference IDs')
   require(len({c['id'] for c in r['claims']})==len(r['claims']),f'{slug}: duplicate claim IDs')
@@ -216,6 +266,25 @@ def check(root=ROOT, *, local_only=False):
   require(assessment.get('reviewedTargets')==targets,f'{slug}: relationship review targets differ from catalog edges')
   require(assessment.get('decision')==('linked' if targets else 'none'),f'{slug}: relationship review decision does not match edges')
   require(len(str(assessment.get('rationale','')).strip())>=80,f'{slug}: relationship review needs a substantive rationale, including justified none')
+  # The 41st published Reader has editorialOrder 40 (zero-based); older snapshots remain valid.
+  external=r.get('sharePlaneRelationships',[])
+  ext_review=r.get('sharePlaneReview')
+  if r['editorialOrder']>=40:
+   require(isinstance(ext_review,dict),f'{slug}: missing separate SharePlane Work review')
+  if ext_review is not None:
+   require(isinstance(ext_review,dict),f'{slug}: invalid SharePlane review')
+   if isinstance(ext_review,dict):
+    require(ext_review.get('decision')==('linked' if external else 'none'),f'{slug}: SharePlane review mismatch')
+    require(len(str(ext_review.get('rationale','')).strip())>=80,f'{slug}: SharePlane review rationale too short')
+    try: require(date.fromisoformat(ext_review.get('reviewedAt',''))<=datetime.now(timezone.utc).date(),f'{slug}: SharePlane review date future')
+    except (ValueError,TypeError):errors.append(f'{slug}: invalid SharePlane review date')
+  seen_external=set()
+  for ext in external:
+   url=ext.get('url','')
+   require((url.startswith('https://shareplane.malott.ai/artifacts/') and url.endswith('/')) or url == 'https://shareplane.malott.ai/tools/token-burn/',f'{slug}: invalid external Work URL')
+   require(url not in seen_external,f'{slug}: duplicate external Work URL')
+   seen_external.add(url)
+   require(ext.get('type') in {'extends','challenges','informs architecture','related topic','foundation','counterpoint','companion'} and len(ext.get('reason',''))>=80,f'{slug}: unqualified external Work relationship')
  # Scan all public files, including unlinked assets and JSON, rather than only HTML.
  for p in root.rglob('*'):
   if '.git' in p.parts or '__pycache__' in p.parts:continue
@@ -225,8 +294,11 @@ def check(root=ROOT, *, local_only=False):
   require(p.suffix.lower() not in SOURCE_EXTENSIONS,f'Private source media: {p.relative_to(root)}')
   require(not p.name.lower().startswith(('transcript','captions','subtitles')),f'Private source artifact: {p.relative_to(root)}')
   if p.is_relative_to(site):
-   require(p.suffix.lower() in PUBLIC_TEXT_EXTENSIONS or p.relative_to(site).as_posix() in PUBLIC_TEXT_PATHS,f'Unapproved public file type: {p.relative_to(site)}')
+   public_path=p.relative_to(site).as_posix()
+   require(p.suffix.lower() in PUBLIC_TEXT_EXTENSIONS or public_path in PUBLIC_TEXT_PATHS or public_path in PUBLIC_PINNED_TEXT_ASSETS,f'Unapproved public file type: {p.relative_to(site)}')
    payload=p.read_bytes()
+   if public_path in PUBLIC_PINNED_TEXT_ASSETS:
+    require(hashlib.sha256(payload).hexdigest()==PUBLIC_PINNED_TEXT_ASSETS[public_path],f'Pinned public asset digest mismatch: {public_path}')
    require(not capture_signature(payload),f'Private source capture signature: {p.relative_to(site)}')
    if p.suffix.lower()=='.png':
     continue
@@ -234,7 +306,7 @@ def check(root=ROOT, *, local_only=False):
    except UnicodeDecodeError:
     errors.append(f'Non-text public asset: {p.relative_to(site)}');continue
    require(b'\x00' not in payload,f'Binary public asset: {p.relative_to(site)}')
-  if p.is_relative_to(site) and p.suffix in {'.html','.json','.jsonld','.js','.css','.xml'}:
+  if p.is_relative_to(site) and (p.suffix in {'.html','.json','.jsonld','.js','.css','.xml'} or p.relative_to(site).as_posix() in PUBLIC_PINNED_TEXT_ASSETS):
    raw=p.read_text();require(not re.search(r'/Users/|/srv/ghostmesh/|/private/var/|gh[pousr]_[A-Za-z0-9]{20,}|(?:X-Amz-Signature|access_token|client_secret)=',raw),f'Private marker: {p.relative_to(site)}')
    if p.suffix in {'.json','.jsonld'}:
     try:validate_text(json.loads(raw))
@@ -259,6 +331,6 @@ if __name__=='__main__':
  for e in errors:print('FAIL:',e)
  if errors:sys.exit(1)
  if local_only:
-  print('PASS: LOCAL STATIC CHECK ONLY; NOT RELEASE QUALIFIED; authenticated GitHub owner decisions were NOT verified')
+  print('PASS: LOCAL STATIC CHECK ONLY; NOT RELEASE QUALIFIED; remote owner attestations and exact-head merge were NOT verified')
  else:
   print('PASS: all Readers, projections, evidence mapping, relationships, URLs, sitemap, editorial text and public boundary')

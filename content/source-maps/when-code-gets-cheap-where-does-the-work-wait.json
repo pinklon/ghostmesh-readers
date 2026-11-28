@@ -1,0 +1,98 @@
+{
+  "schemaVersion": 1,
+  "readerId": "reader:when-code-gets-cheap-where-does-the-work-wait",
+  "sourceId": "S6SEgMooZpE",
+  "sourceAidSha256": "cce96fd7c338a0b540cff1c186a4e5e39e825ff8f15540edd340c957225ff92d",
+  "points": [
+    {
+      "atSeconds": 20,
+      "sectionId": "full-read-the-interview-against-the-evidence",
+      "claimIds": [
+        "when-code-gets-cheap-where-does-the-work-wait--claim-1"
+      ],
+      "cueParaphrase": "Approximate interview cue covering this proposition: The new repository system replaces Git.",
+      "privateAidCheck": "Verified source audio and locally timed speech-to-text aid. Cue starts are approximate."
+    },
+    {
+      "atSeconds": 71,
+      "sectionId": "full-read-the-interview-against-the-evidence",
+      "claimIds": [
+        "when-code-gets-cheap-where-does-the-work-wait--claim-2"
+      ],
+      "cueParaphrase": "Approximate interview cue covering this proposition: Parallel agent worktrees contributed to more concurrent engineering activity.",
+      "privateAidCheck": "Verified source audio and locally timed speech-to-text aid. Cue starts are approximate."
+    },
+    {
+      "atSeconds": 106,
+      "sectionId": "full-read-the-interview-against-the-evidence",
+      "claimIds": [
+        "when-code-gets-cheap-where-does-the-work-wait--claim-3"
+      ],
+      "cueParaphrase": "Approximate interview cue covering this proposition: Frontier labs’ token use rose 17-fold, compared with roughly twofold elsewhere.",
+      "privateAidCheck": "Verified source audio and locally timed speech-to-text aid. Cue starts are approximate."
+    },
+    {
+      "atSeconds": 196,
+      "sectionId": "full-read-the-interview-against-the-evidence",
+      "claimIds": [
+        "when-code-gets-cheap-where-does-the-work-wait--claim-4"
+      ],
+      "cueParaphrase": "Approximate interview cue covering this proposition: Review, testing and delivery can constrain the gains from faster coding.",
+      "privateAidCheck": "Verified source audio and locally timed speech-to-text aid. Cue starts are approximate."
+    },
+    {
+      "atSeconds": 279,
+      "sectionId": "full-what-pando-actually-changed",
+      "claimIds": [
+        "when-code-gets-cheap-where-does-the-work-wait--claim-5"
+      ],
+      "cueParaphrase": "Approximate interview cue covering this proposition: OpenAI moved its monorepo to Pando as agent traffic strained the existing backend.",
+      "privateAidCheck": "Verified source audio and locally timed speech-to-text aid. Cue starts are approximate."
+    },
+    {
+      "atSeconds": 409,
+      "sectionId": "full-what-pando-actually-changed",
+      "claimIds": [
+        "when-code-gets-cheap-where-does-the-work-wait--claim-6"
+      ],
+      "cueParaphrase": "Approximate interview cue covering this proposition: A flood of checkouts is a distinct problem from collisions on main.",
+      "privateAidCheck": "Verified source audio and locally timed speech-to-text aid. Cue starts are approximate."
+    },
+    {
+      "atSeconds": 589,
+      "sectionId": "voice-and-prototyping",
+      "claimIds": [
+        "when-code-gets-cheap-where-does-the-work-wait--claim-7"
+      ],
+      "cueParaphrase": "Approximate interview cue covering this proposition: Voice will be central to reaching the next billion users.",
+      "privateAidCheck": "Verified source audio and locally timed speech-to-text aid. Cue starts are approximate."
+    },
+    {
+      "atSeconds": 696,
+      "sectionId": "voice-and-prototyping",
+      "claimIds": [
+        "when-code-gets-cheap-where-does-the-work-wait--claim-8"
+      ],
+      "cueParaphrase": "Approximate interview cue covering this proposition: A leader’s voice prototype made the idea concrete before assigning implementation.",
+      "privateAidCheck": "Verified source audio and locally timed speech-to-text aid. Cue starts are approximate."
+    },
+    {
+      "atSeconds": 804,
+      "sectionId": "full-read-the-interview-against-the-evidence",
+      "claimIds": [
+        "when-code-gets-cheap-where-does-the-work-wait--claim-9"
+      ],
+      "cueParaphrase": "Approximate interview cue covering this proposition: A product that benefits from model upgrades is better positioned.",
+      "privateAidCheck": "Verified source audio and locally timed speech-to-text aid. Cue starts are approximate."
+    },
+    {
+      "atSeconds": 864,
+      "sectionId": "full-read-the-interview-against-the-evidence",
+      "claimIds": [
+        "when-code-gets-cheap-where-does-the-work-wait--claim-10"
+      ],
+      "cueParaphrase": "Approximate interview cue covering this proposition: The ads team reached a $1 billion annualized revenue run rate quickly using LLMs.",
+      "privateAidCheck": "Verified source audio and locally timed speech-to-text aid. Cue starts are approximate."
+    }
+  ]
+}

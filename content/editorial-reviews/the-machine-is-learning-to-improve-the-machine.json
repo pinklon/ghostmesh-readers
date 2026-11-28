@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "readerId": "reader:the-machine-is-learning-to-improve-the-machine",
+  "sourceId": "K81vU-gykmQ",
+  "sourceAidSha256": "45524e92424c1abf7c4c82972af35353f8a0d8d4c8ed6b4097100bd16fc41f79",
+  "articleSha256": "08a33769540a80bce110543e0735c0033663b0ed92ed130ec4915a66ca81bebc",
+  "evidenceRevision": "265d544789eafabf34bd80a2706526d409c2665f9c3654c5bf7bd525ebc683c3",
+  "reviewedAt": "2026-11-18T00:00:00Z",
+  "provenance": {
+    "kind": "codex-task-agent",
+    "reference": "Separate read-only Reader #68 reviewer attested PASS on November 18 at PR #197 exact head 4f9368eb23775715598207f00da064277e161551. PR #197 issue comment 6981342701 is segfault's contemporaneous relay of that independent review, not a reviewer-authored authenticated GitHub signature. The authored HTML remains byte-identical at SHA-256 08a33769540a80bce110543e0735c0033663b0ed92ed130ec4915a66ca81bebc.",
+    "limits": "Independent editorial, source, public-file privacy and documentary review only. No independent audiovisual listening, private transcript playback, experiment replication, production UAT or authenticated original GitHub reviewer identity. The review did not certify later generated wrapper changes. Review date is known only to the day; 00:00 UTC in reviewedAt is a date-normalization sentinel, not the actual review time."
+  },
+  "summary": "ACCEPT FOR OWNER REVIEW: the independently reviewed Reader #68 article distinguishes recursive research assistance from fixed-model software iteration, preserves source-specific caveats and release authority, and has no blocking editorial/source/privacy defect. The exact authored HTML is unchanged since review.",
+  "findings": [
+    "Nine approximate ASR speech-entry cues cover the primary video argument and are explicitly identified as navigation aids rather than creator-authored chapters or independently certified audiovisual timing.",
+    "OpenAI's High AI Self-Improvement classification is separated from Vals task-specific benchmarks, Ondrej's Cloudroom/software claims and GhostMesh's original argument; no single source is misrepresented as independent proof of full autonomy.",
+    "Four diagrams distinguish research versus software feedback loops, threshold context, correlated model-review errors and the escalating production permission boundary without fabricated measurements.",
+    "The article acknowledges useful gains from research assistance and agents while withholding unsupported claims of autonomous research, safe release, commercial return or task replication.",
+    "Independent public-source and privacy review found no exposed raw media, retained transcript, private source paths or credentials in the reviewed published files; creatorChapters is a legacy schema key qualified by explicit non-creator cue disclosure."
+  ],
+  "conclusion": "accept-for-owner-review"
+}

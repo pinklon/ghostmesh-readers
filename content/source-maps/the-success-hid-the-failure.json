@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "readerId": "reader:the-success-hid-the-failure",
+  "sourceId": "pz74r-4dGfQ",
+  "sourceAidSha256": "6dbdaa5540d5090aa91d9c0f2c1fbccb1cc4456f93be29fcbee1f5d1645ca7f3",
+  "points": [
+    {
+      "atSeconds": 518,
+      "sectionId": "evidence",
+      "claimIds": ["the-success-hid-the-failure--claim-1"],
+      "cueParaphrase": "The presenter describes an agent searching port numbers during task execution, illustrating avoidable work hidden inside a successful result.",
+      "privateAidCheck": "Read-only recheck of retained Whisper VTT on Hyperion found the port-number passage at approximately 08:38. Automated transcription is not independent audio verification or a reconstruction of Warp's internal logs."
+    },
+    {
+      "atSeconds": 537,
+      "sectionId": "evidence",
+      "claimIds": ["the-success-hid-the-failure--claim-2"],
+      "cueParaphrase": "The presentation introduces rubrics for redundant tests, verbosity and execution efficiency.",
+      "privateAidCheck": "Verified private ReasonPack manifest and local timed aid; rubric validity outside direct verification."
+    },
+    {
+      "atSeconds": 827,
+      "sectionId": "evidence",
+      "claimIds": ["the-success-hid-the-failure--claim-3"],
+      "cueParaphrase": "Skill Doctor proposes improvements to operating instructions from inspected runs.",
+      "privateAidCheck": "Verified private ReasonPack manifest and local timed aid; remediation benefit unreplicated."
+    },
+    {
+      "atSeconds": 1041,
+      "sectionId": "evidence",
+      "claimIds": ["the-success-hid-the-failure--claim-4"],
+      "cueParaphrase": "The speaker describes fluctuating efficiency scores and associates a merged skill change with an upward trend.",
+      "privateAidCheck": "Read-only recheck of retained Whisper VTT on Hyperion places trend discussion around 17:21 and a claimed merged-skill inflection later. No matched baseline or causal effect verified."
+    },
+    {
+      "atSeconds": 1095,
+      "sectionId": "evidence",
+      "claimIds": ["the-success-hid-the-failure--claim-5"],
+      "cueParaphrase": "The presentation introduces the suggested-PR dashboard and an inbox of changes awaiting team review.",
+      "privateAidCheck": "Read-only recheck of retained Whisper VTT on Hyperion places the PR dashboard around 18:00 and team-review inbox shortly after 18:15. Production safety remains unmeasured."
+    }
+  ]
+}

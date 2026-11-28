@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "readerId": "reader:the-cost-of-forgetting-where-the-tools-are",
+  "sourceId": "P5QCrpdr9gU",
+  "sourceAidSha256": "67facce90a71958f4f6b7397dc4097357ec23a5d26bc99d835988d0e31c90b6f",
+  "points": [
+    {
+      "atSeconds": 293,
+      "sectionId": "source-results",
+      "claimIds": [
+        "the-cost-of-forgetting-where-the-tools-are--claim-1",
+        "the-cost-of-forgetting-where-the-tools-are--claim-2"
+      ],
+      "cueParaphrase": "The benchmark-summary cue introduces the reported cost and quality comparison; the paper supplies the configuration-specific counterevidence.",
+      "privateAidCheck": "The upstream custodian attests the retained caption-derived aid and hash. This publisher has not replayed the private aid or listened to audio; the cue is taken from the locked source locators."
+    },
+    {
+      "atSeconds": 390,
+      "sectionId": "source-generalization",
+      "claimIds": [
+        "the-cost-of-forgetting-where-the-tools-are--claim-3"
+      ],
+      "cueParaphrase": "The suggested-trial cue is compared with primary results on web and security tasks; repeated repository use is not a universal prerequisite.",
+      "privateAidCheck": "The upstream custodian attests the retained caption-derived aid and hash. This publisher has not replayed the private aid or listened to audio; the cue is taken from the locked source locators."
+    },
+    {
+      "atSeconds": 226,
+      "sectionId": "source-pruning",
+      "claimIds": [
+        "the-cost-of-forgetting-where-the-tools-are--claim-4"
+      ],
+      "cueParaphrase": "The pruning cue locates the feature discussion; the GhostMesh discovery concern is an explicit architectural inference, not a demonstrated TokenEconomizer failure.",
+      "privateAidCheck": "The upstream custodian attests the retained caption-derived aid and hash. This publisher has not replayed the private aid or listened to audio; the cue is taken from the locked source locators."
+    }
+  ]
+}

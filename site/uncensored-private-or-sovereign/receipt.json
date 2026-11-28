@@ -1,0 +1,311 @@
+{
+  "source": {
+    "url": "https://www.youtube.com/watch?v=FbiOr73tRPk",
+    "videoId": "FbiOr73tRPk"
+  },
+  "custody": {
+    "status": "private-hash-identified-capture-set",
+    "note": "Full-duration retained audio and timecoded ASR aid checked privately; not a verified ReasonPack build."
+  },
+  "reasonPack": {
+    "verification": "unknown"
+  },
+  "sourceInspection": {
+    "method": "Source metadata and retained private full-duration audio with timecoded ASR aid",
+    "caveat": "ASR recognition errors; no full audiovisual authentication or independent outcome replication",
+    "publicationBoundary": "No raw media, VTT, transcript or private paths",
+    "timedAidSha256": "5a79630651338f5dfc375b51a0baf1716cfbb9faa722fd7d2072bb5aa4b86b53"
+  },
+  "normalization": {
+    "id": "reader:uncensored-private-or-sovereign",
+    "slug": "uncensored-private-or-sovereign",
+    "title": "Uncensored, Private, or Sovereign?",
+    "variant": "editorial",
+    "category": "AI & Technology",
+    "tags": [
+      "open weights",
+      "local inference",
+      "AI privacy",
+      "model behavior",
+      "AI sovereignty",
+      "evaluation"
+    ],
+    "accent": "red",
+    "editorialOrder": 65,
+    "published": "2026-11-16",
+    "updated": "2026-11-16T00:00:00Z",
+    "lastEvidenceChecked": "2026-11-16",
+    "overview": "Jack Roberts presents five levels of control over AI, from less restrictive hosted models and a second-model checker to always-available hosting, images and video, and local inference. The Reader distinguishes his demonstrations from the separate questions of privacy, reliability and operational sovereignty.",
+    "whyItMatters": "Operators considering an uncensored service, self-hosted model or mobile deployment need to distinguish refusal policy, data custody and control of the complete system. The video is a useful survey of options, not proof that a model is accurate, private or independent of its surrounding services.",
+    "ghostMeshTakeaway": "Control is a system property, not a model label. Audit weights, inference location, service dependencies, access boundaries, durable context and revocation separately, then validate claimed behavior under tests that include error handling and pressure to agree.",
+    "verdict": "Interesting, unproven",
+    "architectureImpact": "experiment recommended",
+    "archiveCall": {
+      "label": "Test the whole boundary",
+      "text": "Evaluate the model, hosting, memory, network control and verification path together before claiming independence."
+    },
+    "evidenceState": "unverified",
+    "falsification": "Repeat the bounded model tests, inspect data flows and third-party dependencies, and check whether observed behavior survives matched prompts, adversarial claims and a loss of external service access.",
+    "freshness": "November 2026 video and bounded local/hosted experiments; not a representative model benchmark.",
+    "entities": [],
+    "source": {
+      "platform": "YouTube",
+      "url": "https://www.youtube.com/watch?v=FbiOr73tRPk",
+      "videoId": "FbiOr73tRPk",
+      "title": "Uncensored AI Feels Illegal... Use it Whilst You Can",
+      "creator": "Jack Roberts",
+      "mediaAspect": "16:9",
+      "durationSeconds": 1589,
+      "uploadDate": "2026-11-15",
+      "dateNote": "Creator chapters and privately retained full-duration audio/ASR aid; no full audiovisual authentication or independent outcome replication.",
+      "captionType": "Private timecoded ASR transcript derived from retained audio; recognition errors present; not a verified ReasonPack package.",
+      "creatorChapters": [
+        {
+          "atSeconds": 104,
+          "label": "Level 1: Abliterated behavior"
+        },
+        {
+          "atSeconds": 133,
+          "label": "DeepSeek Flash demonstration"
+        },
+        {
+          "atSeconds": 351,
+          "label": "Level 2: Model checking"
+        },
+        {
+          "atSeconds": 492,
+          "label": "Level 3: Remote availability"
+        },
+        {
+          "atSeconds": 900,
+          "label": "Level 4: Image and video"
+        },
+        {
+          "atSeconds": 1079,
+          "label": "Level 5: Local inference"
+        },
+        {
+          "atSeconds": 1083,
+          "label": "Private versus uncensored"
+        },
+        {
+          "atSeconds": 1253,
+          "label": "Gemma demonstration"
+        }
+      ]
+    },
+    "references": [
+      {
+        "id": "r66-ref1",
+        "title": "Uncensored AI Feels Illegal... Use it Whilst You Can",
+        "author": "Jack Roberts",
+        "publisher": "YouTube",
+        "url": "https://www.youtube.com/watch?v=FbiOr73tRPk",
+        "publicationDate": "2026-11-15",
+        "datePrecision": "day",
+        "eventDate": null,
+        "location": "Public source",
+        "sourceType": "primary video",
+        "independence": "Creator presentation, not independent confirmation of performance or privacy.",
+        "evidenceFamily": "r66-video",
+        "checkedAt": "2026-11-16T00:00:00Z",
+        "dateNote": "Timecoded private ASR aid checked at eight cues; exact speech and brand names require source caution."
+      }
+    ],
+    "claims": [
+      {
+        "id": "r66-cue1",
+        "proposition": "Level one removes some model refusal behavior",
+        "kind": "creator-claim",
+        "status": "unverified",
+        "sourceLocation": "01:44",
+        "assessment": "The creator introduces abliterated behavior.",
+        "limits": "No general safety, reliability or permission conclusion follows from this demonstration.",
+        "references": [
+          "r66-ref1"
+        ],
+        "counterevidence": [],
+        "asOf": "2026-11-16"
+      },
+      {
+        "id": "r66-cue2",
+        "proposition": "An uncensored service offers model switching",
+        "kind": "creator-claim",
+        "status": "unverified",
+        "sourceLocation": "02:13",
+        "assessment": "A model-switching interface is shown.",
+        "limits": "ASR model names are uncertain; service claims are not independently tested.",
+        "references": [
+          "r66-ref1"
+        ],
+        "counterevidence": [],
+        "asOf": "2026-11-16"
+      },
+      {
+        "id": "r66-cue3",
+        "proposition": "A second model can check the first",
+        "kind": "creator-claim",
+        "status": "unverified",
+        "sourceLocation": "05:51",
+        "assessment": "The creator proposes a checker-model pattern.",
+        "limits": "A second model does not guarantee independent correctness.",
+        "references": [
+          "r66-ref1"
+        ],
+        "counterevidence": [],
+        "asOf": "2026-11-16"
+      },
+      {
+        "id": "r66-cue4",
+        "proposition": "Hosted operation makes the assistant available remotely",
+        "kind": "creator-claim",
+        "status": "unverified",
+        "sourceLocation": "08:12",
+        "assessment": "The creator shifts from a laptop to a persistent hosted service.",
+        "limits": "Availability is separate from authorization, privacy and server hardening.",
+        "references": [
+          "r66-ref1"
+        ],
+        "counterevidence": [],
+        "asOf": "2026-11-16"
+      },
+      {
+        "id": "r66-cue5",
+        "proposition": "Image and video tools extend the workflow",
+        "kind": "creator-claim",
+        "status": "unverified",
+        "sourceLocation": "15:00",
+        "assessment": "Level four introduces multimodal generation.",
+        "limits": "Provider rules, data retention and quality vary by service.",
+        "references": [
+          "r66-ref1"
+        ],
+        "counterevidence": [],
+        "asOf": "2026-11-16"
+      },
+      {
+        "id": "r66-cue6",
+        "proposition": "Level five brings inference onto local devices",
+        "kind": "creator-claim",
+        "status": "unverified",
+        "sourceLocation": "17:59",
+        "assessment": "Local computer and phone execution are proposed.",
+        "limits": "The surrounding software and dependencies still need inspection.",
+        "references": [
+          "r66-ref1"
+        ],
+        "counterevidence": [],
+        "asOf": "2026-11-16"
+      },
+      {
+        "id": "r66-cue7",
+        "proposition": "Uncensored does not imply private",
+        "kind": "creator-claim",
+        "status": "unverified",
+        "sourceLocation": "18:03",
+        "assessment": "The creator explicitly separates behavioral restrictions from privacy.",
+        "limits": "Specific service privacy practices are not independently established by this statement.",
+        "references": [
+          "r66-ref1"
+        ],
+        "counterevidence": [],
+        "asOf": "2026-11-16"
+      },
+      {
+        "id": "r66-cue8",
+        "proposition": "The creator demonstrates a local Gemma-family model",
+        "kind": "creator-claim",
+        "status": "unverified",
+        "sourceLocation": "20:53",
+        "assessment": "A local model interface is shown.",
+        "limits": "Exact model identity and performance are not authenticated by the ASR aid.",
+        "references": [
+          "r66-ref1"
+        ],
+        "counterevidence": [],
+        "asOf": "2026-11-16"
+      }
+    ],
+    "relationships": [
+      {
+        "target": "reader:the-boundary-is-bigger-than-the-box",
+        "type": "companion",
+        "reason": "Separates the location of model weights from the network, identity and service boundaries that determine actual privacy.",
+        "provenance": [
+          "/uncensored-private-or-sovereign/",
+          "/the-boundary-is-bigger-than-the-box/"
+        ],
+        "basis": "curated-editorial-comparison",
+        "direction": "outgoing"
+      },
+      {
+        "target": "reader:the-stop-button-is-outside-the-chat",
+        "type": "extends",
+        "reason": "Adds revocation and independent operator authority to the video's claims about always-available systems.",
+        "provenance": [
+          "/uncensored-private-or-sovereign/",
+          "/the-stop-button-is-outside-the-chat/"
+        ],
+        "basis": "curated-editorial-comparison",
+        "direction": "outgoing"
+      },
+      {
+        "target": "reader:the-second-brain-still-needs-a-judgment",
+        "type": "companion",
+        "reason": "Connects local autonomy to the separate need to audit memory, factual claims and continuity.",
+        "provenance": [
+          "/uncensored-private-or-sovereign/",
+          "/the-second-brain-still-needs-a-judgment/"
+        ],
+        "basis": "curated-editorial-comparison",
+        "direction": "outgoing"
+      }
+    ],
+    "sharePlaneRelationships": [
+      {
+        "url": "https://shareplane.malott.ai/artifacts/own-memory-rent-intelligence-agent-stack/",
+        "title": "Own the Memory, Rent the Intelligence",
+        "reason": "Separates owner-controlled memory from replaceable inference services, sharpening the Reader's definition of sovereignty.",
+        "type": "companion",
+        "basis": "curated-editorial-comparison"
+      },
+      {
+        "url": "https://shareplane.malott.ai/artifacts/the-semantic-operating-system/",
+        "title": "The Semantic Operating System",
+        "reason": "Examines the larger architecture of meaning, memory and orchestration beyond a model's local execution status.",
+        "type": "companion",
+        "basis": "curated-editorial-comparison"
+      }
+    ],
+    "relationshipDisposition": "Tony approved three Reader and two separate SharePlane Work comparisons on 2026-11-16; none is evidence for the creator's claims.",
+    "relationshipReview": {
+      "reviewedAt": "2026-11-16",
+      "reviewedCatalogSize": 65,
+      "decision": "linked",
+      "reviewedTargets": [
+        "reader:the-boundary-is-bigger-than-the-box",
+        "reader:the-stop-button-is-outside-the-chat",
+        "reader:the-second-brain-still-needs-a-judgment"
+      ],
+      "rationale": "Owner approved these three source-relevant conceptual companions; no independent claim verification is implied."
+    },
+    "sharePlaneReview": {
+      "reviewedAt": "2026-11-16",
+      "decision": "linked",
+      "rationale": "Owner approved two separately labeled SharePlane Work connections as conceptual architecture comparisons."
+    },
+    "review": {
+      "status": "pending",
+      "summary": "Independent exact-input editorial, source and privacy review pending; owner publication approval recorded in issue #186."
+    },
+    "editorialDepth": {
+      "schemaVersion": 1,
+      "receiptPath": "content/editorial-depth/uncensored-private-or-sovereign.json"
+    }
+  },
+  "editorial": {
+    "overview": "Jack Roberts presents five levels of control over AI, from less restrictive hosted models and a second-model checker to always-available hosting, images and video, and local inference. The Reader distinguishes his demonstrations from the separate questions of privacy, reliability and operational sovereignty.",
+    "whyItMatters": "Operators considering an uncensored service, self-hosted model or mobile deployment need to distinguish refusal policy, data custody and control of the complete system. The video is a useful survey of options, not proof that a model is accurate, private or independent of its surrounding services.",
+    "ghostMeshTakeaway": "Control is a system property, not a model label. Audit weights, inference location, service dependencies, access boundaries, durable context and revocation separately, then validate claimed behavior under tests that include error handling and pressure to agree."
+  }
+}

@@ -3,8 +3,8 @@
   "scope": "Public Scout research reading routes; links are editorial, not corroboration.",
   "authority": "scout-research-curated-editorial",
   "visibility": "public",
-  "recordCount": 21,
-  "relationshipCount": 11,
+  "recordCount": 29,
+  "relationshipCount": 20,
   "nodes": [
     {
       "id": "scout:cloudflare-security-audit-skill",
@@ -14,11 +14,25 @@
       "url": "https://youtube.shareplane.malott.ai/scout/reviews/cloudflare-security-audit-skill/"
     },
     {
+      "id": "scout:essay:a-comma-at-the-handoff",
+      "sourceId": "essay:a-comma-at-the-handoff",
+      "type": "essay",
+      "title": "A Comma at the Handoff",
+      "url": "https://youtube.shareplane.malott.ai/scout/essays/a-comma-at-the-handoff/"
+    },
+    {
       "id": "scout:essay:a-faster-review-button-is-not-a-better-decision",
       "sourceId": "essay:a-faster-review-button-is-not-a-better-decision",
       "type": "essay",
       "title": "A Faster Review Button Is Not a Better Decision",
       "url": "https://youtube.shareplane.malott.ai/scout/essays/a-faster-review-button-is-not-a-better-decision/"
+    },
+    {
+      "id": "scout:essay:an-addressed-comment-is-not-a-fixed-defect",
+      "sourceId": "essay:an-addressed-comment-is-not-a-fixed-defect",
+      "type": "essay",
+      "title": "An Addressed Comment Is Not a Fixed Defect",
+      "url": "https://youtube.shareplane.malott.ai/scout/essays/an-addressed-comment-is-not-a-fixed-defect/"
     },
     {
       "id": "scout:essay:assisted-permissions-and-human-approval",
@@ -56,11 +70,53 @@
       "url": "https://youtube.shareplane.malott.ai/scout/essays/latent-states-are-not-an-agent-api/"
     },
     {
+      "id": "scout:essay:silence-is-not-security-coverage",
+      "sourceId": "essay:silence-is-not-security-coverage",
+      "type": "essay",
+      "title": "Silence Is Not Security Coverage",
+      "url": "https://youtube.shareplane.malott.ai/scout/essays/silence-is-not-security-coverage/"
+    },
+    {
+      "id": "scout:essay:the-agent-can-build-the-app-who-lets-it-touch-the-data",
+      "sourceId": "essay:the-agent-can-build-the-app-who-lets-it-touch-the-data",
+      "type": "essay",
+      "title": "The Agent Can Build the App. Who Lets It Touch the Data?",
+      "url": "https://youtube.shareplane.malott.ai/scout/essays/the-agent-can-build-the-app-who-lets-it-touch-the-data/"
+    },
+    {
+      "id": "scout:essay:the-approval-must-survive-the-summary",
+      "sourceId": "essay:the-approval-must-survive-the-summary",
+      "type": "essay",
+      "title": "The Approval Must Survive the Summary",
+      "url": "https://youtube.shareplane.malott.ai/scout/essays/the-approval-must-survive-the-summary/"
+    },
+    {
+      "id": "scout:essay:the-context-is-there-the-state-is-wrong",
+      "sourceId": "essay:the-context-is-there-the-state-is-wrong",
+      "type": "essay",
+      "title": "The Context Is There. The State Is Wrong.",
+      "url": "https://youtube.shareplane.malott.ai/scout/essays/the-context-is-there-the-state-is-wrong/"
+    },
+    {
+      "id": "scout:essay:the-page-left-the-context",
+      "sourceId": "essay:the-page-left-the-context",
+      "type": "essay",
+      "title": "The Page Left the Context",
+      "url": "https://youtube.shareplane.malott.ai/scout/essays/the-page-left-the-context/"
+    },
+    {
       "id": "scout:essay:the-plateau-that-lied",
       "sourceId": "essay:the-plateau-that-lied",
       "type": "essay",
       "title": "The Plateau That Lied",
       "url": "https://youtube.shareplane.malott.ai/scout/essays/the-plateau-that-lied/"
+    },
+    {
+      "id": "scout:essay:the-plateau-that-lied-reproducing-the-experiment",
+      "sourceId": "essay:the-plateau-that-lied-reproducing-the-experiment",
+      "type": "essay",
+      "title": "The Plateau That Lied: Reproducing the Experiment",
+      "url": "https://youtube.shareplane.malott.ai/scout/essays/the-plateau-that-lied-reproducing-the-experiment/"
     },
     {
       "id": "scout:essay:the-signal-is-not-the-finding",
@@ -156,6 +212,20 @@
   ],
   "edges": [
     {
+      "from": "scout:essay:a-comma-at-the-handoff",
+      "to": "scout:report:mcp-tasks-cancellation-status-and-retention",
+      "type": "approved related work",
+      "fromUrl": "https://youtube.shareplane.malott.ai/scout/essays/a-comma-at-the-handoff/",
+      "toUrl": "https://youtube.shareplane.malott.ai/scout/essays/mcp-tasks-cancellation-status-and-retention/"
+    },
+    {
+      "from": "scout:essay:an-addressed-comment-is-not-a-fixed-defect",
+      "to": "scout:essay:a-faster-review-button-is-not-a-better-decision",
+      "type": "approved related work",
+      "fromUrl": "https://youtube.shareplane.malott.ai/scout/essays/an-addressed-comment-is-not-a-fixed-defect/",
+      "toUrl": "https://youtube.shareplane.malott.ai/scout/essays/a-faster-review-button-is-not-a-better-decision/"
+    },
+    {
       "from": "scout:essay:assisted-permissions-and-human-approval",
       "to": "scout:essay:a-faster-review-button-is-not-a-better-decision",
       "type": "approved related work",
@@ -175,6 +245,55 @@
       "type": "approved related work",
       "fromUrl": "https://youtube.shareplane.malott.ai/scout/essays/did-the-evidence-change-the-answer/",
       "toUrl": "https://youtube.shareplane.malott.ai/scout/essays/the-plateau-that-lied/"
+    },
+    {
+      "from": "scout:essay:silence-is-not-security-coverage",
+      "to": "scout:essay:the-signal-is-not-the-finding",
+      "type": "approved related work",
+      "fromUrl": "https://youtube.shareplane.malott.ai/scout/essays/silence-is-not-security-coverage/",
+      "toUrl": "https://youtube.shareplane.malott.ai/scout/essays/the-signal-is-not-the-finding/"
+    },
+    {
+      "from": "scout:essay:the-agent-can-build-the-app-who-lets-it-touch-the-data",
+      "to": "scout:essay:assisted-permissions-and-human-approval",
+      "type": "approved related work",
+      "fromUrl": "https://youtube.shareplane.malott.ai/scout/essays/the-agent-can-build-the-app-who-lets-it-touch-the-data/",
+      "toUrl": "https://youtube.shareplane.malott.ai/scout/essays/assisted-permissions-and-human-approval/"
+    },
+    {
+      "from": "scout:essay:the-agent-can-build-the-app-who-lets-it-touch-the-data",
+      "to": "scout:essay:the-approval-must-survive-the-summary",
+      "type": "approved related work",
+      "fromUrl": "https://youtube.shareplane.malott.ai/scout/essays/the-agent-can-build-the-app-who-lets-it-touch-the-data/",
+      "toUrl": "https://youtube.shareplane.malott.ai/scout/essays/the-approval-must-survive-the-summary/"
+    },
+    {
+      "from": "scout:essay:the-context-is-there-the-state-is-wrong",
+      "to": "scout:essay:the-approval-must-survive-the-summary",
+      "type": "approved related work",
+      "fromUrl": "https://youtube.shareplane.malott.ai/scout/essays/the-context-is-there-the-state-is-wrong/",
+      "toUrl": "https://youtube.shareplane.malott.ai/scout/essays/the-approval-must-survive-the-summary/"
+    },
+    {
+      "from": "scout:essay:the-page-left-the-context",
+      "to": "scout:method:reviewing-visual-claims-in-claude-pdf-answers",
+      "type": "approved related work",
+      "fromUrl": "https://youtube.shareplane.malott.ai/scout/essays/the-page-left-the-context/",
+      "toUrl": "https://youtube.shareplane.malott.ai/scout/essays/reviewing-visual-claims-in-claude-pdf-answers/"
+    },
+    {
+      "from": "scout:essay:the-plateau-that-lied-reproducing-the-experiment",
+      "to": "scout:essay:the-plateau-that-lied",
+      "type": "approved related work",
+      "fromUrl": "https://youtube.shareplane.malott.ai/scout/essays/the-plateau-that-lied-reproducing-the-experiment/",
+      "toUrl": "https://youtube.shareplane.malott.ai/scout/essays/the-plateau-that-lied/"
+    },
+    {
+      "from": "scout:essay:the-plateau-that-lied-reproducing-the-experiment",
+      "to": "scout:journal:research-journal",
+      "type": "approved related work",
+      "fromUrl": "https://youtube.shareplane.malott.ai/scout/essays/the-plateau-that-lied-reproducing-the-experiment/",
+      "toUrl": "https://youtube.shareplane.malott.ai/scout/research-journal/"
     },
     {
       "from": "scout:essay:what-survives-a-checkpoint",

@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "reader": "reader:claude-lean-and-the-riemann-hypothesis",
+  "status": "owner-selected-editorial-art",
+  "purpose": "Reader opening artwork, catalog thumbnail, and OG/Twitter preview. Editorial illustrations, not mathematical source diagrams or proof certificates.",
+  "masters": {
+    "hero": {
+      "sha256": "d56fcbe1a76bc31c66167e738a0953172df8b803039834d22f267f485f4e40f5",
+      "dimensions": [
+        1672,
+        941
+      ]
+    },
+    "square": {
+      "sha256": "b8f0dc46d19b4b4e987d546bb8cca4974a2dda208bcb1db350a750a15ba917c8",
+      "dimensions": [
+        1254,
+        1254
+      ]
+    }
+  },
+  "published": {
+    "hero": {
+      "url": "/reader71/hero.png",
+      "sha256": "c19e4cfca32dfbad31af4d87def7757d0d4fa181fbae9000612df35acbe83164",
+      "dimensions": [
+        1440,
+        810
+      ]
+    },
+    "square": {
+      "url": "/reader71/square.png",
+      "sha256": "ebb29949c1f01cd8e8720cf5e72f028013812bc52f6169b78b975defeacc5db9",
+      "dimensions": [
+        800,
+        800
+      ]
+    },
+    "og": {
+      "url": "/reader71/og.png",
+      "sha256": "51becffbfceee3d071500923ebac4670958befb4231c447be389e5524e76ec7c",
+      "dimensions": [
+        1200,
+        630
+      ]
+    }
+  },
+  "limits": "Artistic typography and mathematical schematic elements are decorative and may not match formal Lean or analytic-number-theory notation. Source evidence remains the text and links of Reader 71.",
+  "ownerApproval": "Owner selected the generated 16:9 hero and square thumbnail in the Reader 71 conversation November 21, 2026.",
+  "sourceCorrection": "Owner selected the GhostMesh design; a review found false expressions in the initial art. The final imagery removes the reversed zero-free statement and fictional Lean theorem. A derived square preserves the corrected hero design and keeps the formal verification vs scientific acceptance distinction visible."
+}

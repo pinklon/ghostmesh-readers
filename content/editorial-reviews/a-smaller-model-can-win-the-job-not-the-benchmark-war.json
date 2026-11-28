@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "readerId": "reader:a-smaller-model-can-win-the-job-not-the-benchmark-war",
+  "sourceId": "nMVFSVIXIBc",
+  "sourceAidSha256": "618d13b92578c32d2b8ef54be78ee45ec2c732dbdaa3f9afdd31548b00a001ee",
+  "articleSha256": "fc21cda52fdf0cc3a6b901ba7f1338de38c29ff8a71f57352074ac9ad927aefa",
+  "evidenceRevision": "064e80f296920fbfb3f0b015cceb7ec65a379d96fb33a4c4050b0e39bce026bb",
+  "reviewedAt": "2026-11-20T21:51:50Z",
+  "provenance": {
+    "kind": "codex-task-agent",
+    "reference": "Independent read-only Codex task completed for Reader #70 and accepted on the exact reviewed candidate, as reported by Pale Horse in the owner-private Reader review discussion. The original review task and attachment identifiers remain in the private review record and are not reproduced in the public repository.",
+    "limits": "The executing writer retained the independent reviewer's reported findings but did not access the raw 5.6 KB report, because the available Slack file transport could not retrieve it. No benchmark replication, complete audiovisual certification or model-cost measurements are claimed. The earlier private approval locator remains in historical Git objects, while current production source and pages exclude it."
+  },
+  "summary": "ACCEPT FOR OWNER CONSIDERATION, as attested by Pale Horse from the independent Codex task at exact pre-receipt head 080fc4af3b743b9dfabc88fb79582c1b3e36f9e8. Locked text, source/privacy correction, and companion links were accepted. Full raw report was not directly retrievable by the executing agent.",
+  "findings": [
+    "Pale Horse reported that the independent reviewer compared all 31 locked manuscript text blocks with the exact candidate, including the four restored source dossier paragraphs; no further locked-text correction was requested.",
+    "Pale Horse reported that the private approval conversation locator is absent from the current article, catalog, receipt and generated public artifacts; the same URL remains in historical Git objects, so historic erasure is not claimed.",
+    "The independent reviewer previously checked the two SharePlane Work destinations as published, substantive editorial companions rather than independent corroboration of NeuralNine model scores; the cost essay presenting non-final copy remains excluded.",
+    "Pale Horse reported a desktop and mobile preview review for the polished Reader layout, and repository Static Reader Checks passed on reviewed source head 080fc4af3b743b9dfabc88fb79582c1b3e36f9e8.",
+    "The evaluation reports a creator-claimed comparison on one 1000-item Shopify classification sample; unequal prompt scaffolding, exact-match scoring, unreplicated predictions, train/test overlap and whole-job costs are not independently resolved."
+  ],
+  "conclusion": "accept-for-owner-review"
+}

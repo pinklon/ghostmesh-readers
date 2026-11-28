@@ -1,0 +1,188 @@
+{
+  "schemaVersion": 1,
+  "readerId": "reader:a-model-that-says-yes-is-not-necessarily-a-model-that-knows",
+  "sourceId": "9tOu4r-FiQI",
+  "sourceAidSha256": "a41f9f1dd5cd65c51e9933f68fe79bb9ce46d5828fe40256e189f3c0c2c49eed",
+  "points": [
+    {
+      "atSeconds": 4,
+      "sectionId": "mechanism",
+      "claimIds": [
+        "a-model-that-says-yes-is-not-necessarily-a-model-that-knows--claim-1"
+      ],
+      "cueParaphrase": "Abliterated models will answer virtually anything",
+      "privateAidCheck": "Approximate local speech transcript cue; not certified exact speech or independently reproduced outcome."
+    },
+    {
+      "atSeconds": 90,
+      "sectionId": "mechanism",
+      "claimIds": [
+        "a-model-that-says-yes-is-not-necessarily-a-model-that-knows--claim-2"
+      ],
+      "cueParaphrase": "Restricted models failed defenders during recent cyber incidents",
+      "privateAidCheck": "Approximate local speech transcript cue; not certified exact speech or independently reproduced outcome."
+    },
+    {
+      "atSeconds": 218,
+      "sectionId": "mechanism",
+      "claimIds": [
+        "a-model-that-says-yes-is-not-necessarily-a-model-that-knows--claim-3"
+      ],
+      "cueParaphrase": "A refusal direction can be isolated by comparing model activations",
+      "privateAidCheck": "Approximate local speech transcript cue; not certified exact speech or independently reproduced outcome."
+    },
+    {
+      "atSeconds": 345,
+      "sectionId": "boundaries",
+      "claimIds": [
+        "a-model-that-says-yes-is-not-necessarily-a-model-that-knows--claim-4"
+      ],
+      "cueParaphrase": "Defenders should hack themselves first with less-restricted models",
+      "privateAidCheck": "Approximate local speech transcript cue; not certified exact speech or independently reproduced outcome."
+    },
+    {
+      "atSeconds": 448,
+      "sectionId": "mechanism",
+      "claimIds": [
+        "a-model-that-says-yes-is-not-necessarily-a-model-that-knows--claim-5"
+      ],
+      "cueParaphrase": "The 2024 paper proves refusal removal preserves intelligence",
+      "privateAidCheck": "Approximate local speech transcript cue; not certified exact speech or independently reproduced outcome."
+    },
+    {
+      "atSeconds": 530,
+      "sectionId": "mechanism",
+      "claimIds": [
+        "a-model-that-says-yes-is-not-necessarily-a-model-that-knows--claim-6"
+      ],
+      "cueParaphrase": "DeepSeek refusals fell from 100% to 2% with zero trade-off",
+      "privateAidCheck": "Approximate local speech transcript cue; not certified exact speech or independently reproduced outcome."
+    },
+    {
+      "atSeconds": 567,
+      "sectionId": "mechanism",
+      "claimIds": [
+        "a-model-that-says-yes-is-not-necessarily-a-model-that-knows--claim-7"
+      ],
+      "cueParaphrase": "Jailbreaking, fine-tuning and abliteration are distinct routes",
+      "privateAidCheck": "Approximate local speech transcript cue; not certified exact speech or independently reproduced outcome."
+    },
+    {
+      "atSeconds": 635,
+      "sectionId": "mechanism",
+      "claimIds": [
+        "a-model-that-says-yes-is-not-necessarily-a-model-that-knows--claim-8"
+      ],
+      "cueParaphrase": "Heretic automates censorship removal while constraining divergence",
+      "privateAidCheck": "Approximate local speech transcript cue; not certified exact speech or independently reproduced outcome."
+    },
+    {
+      "atSeconds": 740,
+      "sectionId": "hardware",
+      "claimIds": [
+        "a-model-that-says-yes-is-not-necessarily-a-model-that-knows--claim-9"
+      ],
+      "cueParaphrase": "SuperDeepSeek V4 Flash has ~306B parameters and runs on paired DGX Sparks",
+      "privateAidCheck": "Approximate local speech transcript cue; not certified exact speech or independently reproduced outcome."
+    },
+    {
+      "atSeconds": 858,
+      "sectionId": "hardware",
+      "claimIds": [
+        "a-model-that-says-yes-is-not-necessarily-a-model-that-knows--claim-10"
+      ],
+      "cueParaphrase": "A rule of thumb is 0.6 GB per billion parameters",
+      "privateAidCheck": "Approximate local speech transcript cue; not certified exact speech or independently reproduced outcome."
+    },
+    {
+      "atSeconds": 1000,
+      "sectionId": "hardware",
+      "claimIds": [
+        "a-model-that-says-yes-is-not-necessarily-a-model-that-knows--claim-11"
+      ],
+      "cueParaphrase": "Memory bandwidth materially affects decoding throughput",
+      "privateAidCheck": "Approximate local speech transcript cue; not certified exact speech or independently reproduced outcome."
+    },
+    {
+      "atSeconds": 1090,
+      "sectionId": "hardware",
+      "claimIds": [
+        "a-model-that-says-yes-is-not-necessarily-a-model-that-knows--claim-12"
+      ],
+      "cueParaphrase": "Open weights should be archived against future restrictions",
+      "privateAidCheck": "Approximate local speech transcript cue; not certified exact speech or independently reproduced outcome."
+    },
+    {
+      "atSeconds": 1212,
+      "sectionId": "boundaries",
+      "claimIds": [
+        "a-model-that-says-yes-is-not-necessarily-a-model-that-knows--claim-13"
+      ],
+      "cueParaphrase": "API, local and rented GPU are three deployment paths",
+      "privateAidCheck": "Approximate local speech transcript cue; not certified exact speech or independently reproduced outcome."
+    },
+    {
+      "atSeconds": 1351,
+      "sectionId": "hardware",
+      "claimIds": [
+        "a-model-that-says-yes-is-not-necessarily-a-model-that-knows--claim-14"
+      ],
+      "cueParaphrase": "KYC providers may be government honeypots",
+      "privateAidCheck": "Approximate local speech transcript cue; not certified exact speech or independently reproduced outcome."
+    },
+    {
+      "atSeconds": 1385,
+      "sectionId": "hardware",
+      "claimIds": [
+        "a-model-that-says-yes-is-not-necessarily-a-model-that-knows--claim-15"
+      ],
+      "cueParaphrase": "Venice offers an abliterated DeepSeek variant and zero retention",
+      "privateAidCheck": "Approximate local speech transcript cue; not certified exact speech or independently reproduced outcome."
+    },
+    {
+      "atSeconds": 1650,
+      "sectionId": "hardware",
+      "claimIds": [
+        "a-model-that-says-yes-is-not-necessarily-a-model-that-knows--claim-16"
+      ],
+      "cueParaphrase": "A Qwen variant is practical on consumer unified-memory systems",
+      "privateAidCheck": "Approximate local speech transcript cue; not certified exact speech or independently reproduced outcome."
+    },
+    {
+      "atSeconds": 1700,
+      "sectionId": "hardware",
+      "claimIds": [
+        "a-model-that-says-yes-is-not-necessarily-a-model-that-knows--claim-17"
+      ],
+      "cueParaphrase": "Ollama simplifies local download and execution",
+      "privateAidCheck": "Approximate local speech transcript cue; not certified exact speech or independently reproduced outcome."
+    },
+    {
+      "atSeconds": 1934,
+      "sectionId": "product",
+      "claimIds": [
+        "a-model-that-says-yes-is-not-necessarily-a-model-that-knows--claim-18"
+      ],
+      "cueParaphrase": "Cloudroom connects Pi to self-hosted inference",
+      "privateAidCheck": "Approximate local speech transcript cue; not certified exact speech or independently reproduced outcome."
+    },
+    {
+      "atSeconds": 2015,
+      "sectionId": "product",
+      "claimIds": [
+        "a-model-that-says-yes-is-not-necessarily-a-model-that-knows--claim-19"
+      ],
+      "cueParaphrase": "Paired DGX Sparks achieve 60 to 110 output tokens/s",
+      "privateAidCheck": "Approximate local speech transcript cue; not certified exact speech or independently reproduced outcome."
+    },
+    {
+      "atSeconds": 2106,
+      "sectionId": "product",
+      "claimIds": [
+        "a-model-that-says-yes-is-not-necessarily-a-model-that-knows--claim-20"
+      ],
+      "cueParaphrase": "Cloudroom users ship 43% more commits or PRs in week one",
+      "privateAidCheck": "Approximate local speech transcript cue; not certified exact speech or independently reproduced outcome."
+    }
+  ]
+}

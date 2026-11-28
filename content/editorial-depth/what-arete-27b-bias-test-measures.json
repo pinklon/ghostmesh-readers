@@ -1,0 +1,128 @@
+{
+  "schemaVersion": 1,
+  "readerId": "reader:what-arete-27b-bias-test-measures",
+  "sourceId": "Zvei95OaIg8",
+  "sourceDigest": "71595967ace03f6a836c888350acf80b7879d52bf6728dbb35e7012dbe2e4952",
+  "sourceAidSha256": "ebee1f772d805e327f8a6376df24e33bfeb69cc0ee86cbdf3a629eb084d0c6f8",
+  "articleSha256": "c0da173a009a8059b6b574d58c1c3b34ecca0de85813c7a28f82b8aadc8deeee",
+  "evidenceRevision": "1f239eec710a27f65611d05572bda6d9bd543d38c659e7b787a2e558b02a8daa",
+  "sourceMapEvidenceSha256": "66b5336e033f5d64a6372e958406a84efeecea7165c2f7dcb1f77276cc17cd23",
+  "reviewEvidenceSha256": "14717584bb790f822f8befad28de193eb2f2e9dc0d0499a2fc6a4a3e5c7da8c4",
+  "candidateAuthor": "pinklon",
+  "complexity": {
+    "tier": "brief",
+    "factors": [
+      "An 8-minute source with seven mapped claims and a recommendation for a bounded experiment."
+    ],
+    "rationale": "The short Reader examines one fine-tune and its evaluation. It proposes an experiment rather than a production architecture change."
+  },
+  "sourceMap": [
+    {
+      "atSeconds": 28,
+      "sectionId": "what-changed",
+      "claimIds": [
+        "what-arete-27b-bias-test-measures--claim-1"
+      ],
+      "rationale": "Maps the retained approximate speech cue to the article section that examines the claim."
+    },
+    {
+      "atSeconds": 114,
+      "sectionId": "what-the-score-measures",
+      "claimIds": [
+        "what-arete-27b-bias-test-measures--claim-2"
+      ],
+      "rationale": "Maps the retained approximate speech cue to the article section that examines the claim."
+    },
+    {
+      "atSeconds": 149,
+      "sectionId": "what-the-score-measures",
+      "claimIds": [
+        "what-arete-27b-bias-test-measures--claim-3"
+      ],
+      "rationale": "Maps the retained approximate speech cue to the article section that examines the claim."
+    },
+    {
+      "atSeconds": 209,
+      "sectionId": "what-the-score-measures",
+      "claimIds": [
+        "what-arete-27b-bias-test-measures--claim-4"
+      ],
+      "rationale": "Maps the retained approximate speech cue to the article section that examines the claim."
+    },
+    {
+      "atSeconds": 258,
+      "sectionId": "what-changed",
+      "claimIds": [
+        "what-arete-27b-bias-test-measures--claim-5"
+      ],
+      "rationale": "Maps the retained approximate speech cue to the article section that examines the claim."
+    },
+    {
+      "atSeconds": 300,
+      "sectionId": "capability-and-trial",
+      "claimIds": [
+        "what-arete-27b-bias-test-measures--claim-6"
+      ],
+      "rationale": "Maps the retained approximate speech cue to the article section that examines the claim."
+    },
+    {
+      "atSeconds": 328,
+      "sectionId": "capability-and-trial",
+      "claimIds": [
+        "what-arete-27b-bias-test-measures--claim-7"
+      ],
+      "rationale": "Maps the retained approximate speech cue to the article section that examines the claim."
+    }
+  ],
+  "assessment": {
+    "sourceCoverage": {
+      "disposition": "covered",
+      "rationale": "The draft covers the model lineage, measured fact and framing scores, training method, and capability checks."
+    },
+    "supportingArgument": {
+      "disposition": "covered",
+      "rationale": "The matched developer comparison measures targeted changes against the base model under the documented settings."
+    },
+    "evidenceRoles": {
+      "disposition": "covered",
+      "rationale": "The three cited records come from the developer. A public benchmark permits replication but does not supply it."
+    },
+    "counterargument": {
+      "disposition": "covered",
+      "rationale": "The article explains why public materials and a blinded model judge add value even when the rubric has limits."
+    },
+    "tradeoffs": {
+      "disposition": "covered",
+      "rationale": "The article distinguishes improved factual coverage from a change in refusal or framing behavior."
+    },
+    "falsifiability": {
+      "disposition": "covered",
+      "rationale": "A proposed blind comparison specifies held-out prompts, matched settings, separate scores and a basis for reconsidering adoption."
+    },
+    "originalSynthesis": {
+      "disposition": "covered",
+      "rationale": "The article ties adoption to whether the improvement survives a different rubric, topic mix and reviewer."
+    },
+    "performance": {
+      "disposition": "covered",
+      "rationale": "The article scopes the capability claim to the developer’s two measured benchmarks and notes harness differences."
+    },
+    "economics": {
+      "disposition": "not-applicable",
+      "rationale": "The video and reviewed reports do not establish comparative serving costs or an economic decision."
+    },
+    "threatGovernance": {
+      "disposition": "covered",
+      "rationale": "The draft distinguishes ordinary quality, unsupported assertions, and safeguards for politically sensitive answers."
+    }
+  },
+  "independentCorroboration": "none",
+  "ownerDecision": {
+    "pullNumber": 128,
+    "commentId": 6711456366
+  },
+  "decision": "accept",
+  "gaps": [],
+  "decisionRationale": "The independent reviewer accepted the exact public copy and verified the seven mapped passages against the retained timed aid. Owner acceptance is recorded separately.",
+  "assessedAt": "2026-11-07T17:39:03Z"
+}

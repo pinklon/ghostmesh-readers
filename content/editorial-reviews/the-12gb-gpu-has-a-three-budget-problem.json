@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "readerId": "reader:the-12gb-gpu-has-a-three-budget-problem",
+  "sourceId": "r2KBVvh_8Do",
+  "sourceAidSha256": "42d8e0c3728c5a4b0cba2271e1949e7ac86c41963a98e521fa1603d36b5f2301",
+  "articleSha256": "06d4d2486da60bda43b382b2200eb93af7fc88b7447d534e4024891e1f32f16d",
+  "evidenceRevision": "6fbdafb972815896a2f96172214f83d433ea8fa80ddcfffb20eaec273d29e93e",
+  "reviewedAt": "2026-11-13T18:49:00Z",
+  "provenance": {
+    "kind": "codex-task-agent",
+    "reference": "Independent agent /root/reader57_independent_review examined PR #167 original head and then separately inspected corrected exact authored HTML and source-map bytes on GhostMesh VPS. Reviewer made no edits and issued explicit ACCEPT-FOR-OWNER-REVIEW after three mechanical HOLD defects were corrected.",
+    "limits": "Private captions and original audio timing not independently authenticated by a full audiovisual listen-through. Community performance measurements not reproduced. Review does not certify browser/mobile acceptance, GitHub CI, production deployment, or owner publication authority."
+  },
+  "summary": "ACCEPT for owner editorial review on corrected article and manifest-bound source map. Core manuscript preserved; ten exact video cue links map to appropriate sections, claim/evidence distinctions remain bounded, and no raw source assets or private paths were exposed.",
+  "findings": [
+    "Official Qwen configuration supports 64 layers, sixteen full-attention layers, four KV heads and head dimension 256; the cited 65536 bytes/token and approximately 17.2 decimal GB at 262K tokens are arithmetically correct.",
+    "RTX 3060 96K, RTX 3080 shorter-context, and dual-GPU 262K reports are carefully distinguished as community or source-specific observations, not a single reproduced configuration.",
+    "MTP benefits and contradictory community measurements are presented with conditions and limits rather than a guaranteed speedup.",
+    "All ten exact timestamp links occur both in chapter navigation and mapped prose sections; qualification is a bounded section matching the source map.",
+    "Source map now binds the retained ReasonPack manifest digest; caption digest remains separately represented in source inspection.",
+    "Seven claim records and nine references support source, model maker and community evidence-role distinctions.",
+    "Three Reader connections and one separately labeled SharePlane Work comparison are editorial connections, not independent corroboration.",
+    "The locked manuscript SHA256 fa538ba1230d01e3d59406bd74b9229489203dcfc5f01408116cc7d9560e0396 is unchanged, and corrected markup preserves the argument.",
+    "No raw transcript, media, credentials, private filesystem paths or tailnet addresses were identified in the reviewed public source artifacts.",
+    "Source upload date is explicitly unverified. Independent editorial review does not establish benchmark reproduction or production acceptance."
+  ],
+  "conclusion": "accept-for-owner-review"
+}

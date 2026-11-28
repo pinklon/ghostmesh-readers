@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "readerId": "reader:the-cost-of-forgetting-where-the-tools-are",
+  "sourceId": "P5QCrpdr9gU",
+  "sourceAidSha256": "67facce90a71958f4f6b7397dc4097357ec23a5d26bc99d835988d0e31c90b6f",
+  "articleSha256": "94fe479b8f6333c9da27eba4156e1b1ec833d455719149638d6cb504c1263d6d",
+  "evidenceRevision": "0bdfb7f15e20c1945b52afacaec9498010e67a3d54b9b5faa3fcc431330f5fc8",
+  "reviewedAt": "2026-11-09T00:01:11.423186+00:00",
+  "provenance": {
+    "kind": "codex-task-agent",
+    "reference": "Actual fresh read-only qualitative review and privacy-delta re-review by existing native Codex task /root/editorial_review at checkpoint43f43556272fc4c0e3602a0d6fadce59b51811b4. The reviewer carried forward its prior ten-area assessment after verifying only the exact owner-authorized privacy substitutions. Earlier HOLD records are retained privately; they are not relabeled as acceptance.",
+    "limits": "The reviewer inspected the exact manuscript, authored/generated page, source map, catalog, schema/gate diff, regression tests, runbook and primary paper/pinned README. No private aid replay, audio listening, plugin execution, benchmark reproduction or browser QA was performed. Task provenance is a retained declaration, not cryptographic identity authentication."
+  },
+  "summary": "ACCEPT FOR OWNER REVIEW of the exact privacy-amended article and source map. Missing approved text is restored; the prior privacy conflict is resolved by the explicitly approved narrow amendment. Draft preview and exact-head Production decisions remain separate.",
+  "findings": [
+    "All39 main-body paragraphs are retained, with only two owner-authorized privacy sentence replacements within them and the corresponding method/custody naming correction. Three full brief paragraphs, six exact relationship explanations and the final assessment-change paragraph are present.",
+    "The generated page now has one brief after the title, one authored claim register and one Reader relationship group, with distinct outbound Work links.",
+    "The paper is mapped as counterevidence to universal quality improvement and universal repeated-repository requirements; the local pruning concern remains an unmeasured architectural inference.",
+    "Paper Table 1 supports the attributed cost and quality ranges. Paper Table 4 and the pinned README support the explicit distinction between experimental settings and current defaults.",
+    "The argument has a serious full-context cost objection, operational tradeoffs and a bounded falsifiable ablation plan. No benchmark or fleet-wide adoption was performed.",
+    "Three distinct timed source-map sections cover the four material claims. Cue locations are derived from the approved source and upstream custody attestation; this reviewer did not verify them against private audio.",
+    "The F01\u2013F08 ledger accurately distinguishes local repair, proposal and unknown outcomes. Module passes are not represented as aggregate release eligibility.",
+    "The prior privacy HOLD is resolved: the independently verified delta removes the private host name and machine count under the owner's express wording decision, preserving the discovery argument. No private naming remains in the new article or its generated receipt.",
+    "No raw transcript, credential or private host filesystem path was detected. The review does not establish audio accuracy, runtime performance, visual QA, owner acceptance or publication."
+  ],
+  "conclusion": "accept-for-owner-review"
+}

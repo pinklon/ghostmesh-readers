@@ -1,0 +1,319 @@
+{
+  "source": {
+    "url": "https://www.youtube.com/watch?v=O_zcc6Xl12g",
+    "videoId": "O_zcc6Xl12g"
+  },
+  "custody": {
+    "status": "qualified-source-with-asr-limits",
+    "note": "Prior private ReasonPack verification reported PASS; original manifest digest not recovered in this worktree. Publisher transcript and targeted ASR corroborate paraphrases, not operational metrics."
+  },
+  "reasonPack": {
+    "verification": "unknown"
+  },
+  "sourceInspection": {
+    "method": "Private ASR with targeted segment repair, cross-checked against AI Engineer reading edition",
+    "caveat": "ASR may contain recognition errors; no independent quality or metrics audit",
+    "publicationBoundary": "No raw media, transcripts, VTT or private source paths",
+    "timedAidSha256": "bfc68ef2104a0b550ca6af7ab0c6287e0e85dc628bc45b970c664363ad99664a"
+  },
+  "normalization": {
+    "id": "reader:the-best-agent-instructions-arent-instructions",
+    "slug": "the-best-agent-instructions-arent-instructions",
+    "title": "The Best Agent Instructions Aren't Instructions",
+    "variant": "editorial",
+    "category": "AI & Technology",
+    "tags": [
+      "AI agents",
+      "software engineering",
+      "deterministic constraints",
+      "runtime verification",
+      "technical debt"
+    ],
+    "accent": "teal",
+    "editorialOrder": 62,
+    "published": "2026-11-15",
+    "updated": "2026-11-15T00:00:00Z",
+    "lastEvidenceChecked": "2026-11-15",
+    "overview": "Lauren Tan's case for codebases that constrain mistakes, verify behavior, and earn the right to automate.",
+    "whyItMatters": "A high pull-request rate and low revert rate do not prove quality; enforceable boundaries and runtime evidence matter.",
+    "ghostMeshTakeaway": "Improve APIs, encode repeated corrections in deterministic checks, and examine user-visible behavior before expanding autonomous merges.",
+    "verdict": "Worth studying",
+    "architectureImpact": "experiment recommended",
+    "archiveCall": {
+      "label": "Constrain mistakes, then verify behavior",
+      "text": "Move recurring corrections into code and tests; judge outcomes rather than PR counts."
+    },
+    "evidenceState": "unverified",
+    "falsification": "Compare comparable accepted outcomes, escaped defects, rework, user impact and review burden before treating low reverts as quality.",
+    "freshness": "Speaker-reported operating data requires independent, scoped verification.",
+    "entities": [],
+    "source": {
+      "platform": "YouTube",
+      "url": "https://www.youtube.com/watch?v=O_zcc6Xl12g",
+      "videoId": "O_zcc6Xl12g",
+      "title": "All Code Is Slop (Except Mine)",
+      "creator": "Lauren Tan",
+      "mediaAspect": "16:9",
+      "durationSeconds": 1051,
+      "uploadDate": "2026-11-14",
+      "dateNote": "Publisher metadata; timed cues are source-relative and approximate.",
+      "captionType": "Private local ASR and publisher reading edition; not public transcript custody."
+    },
+    "references": [
+      {
+        "id": "r63-video",
+        "title": "All Code Is Slop (Except Mine)",
+        "author": "Lauren Tan",
+        "publisher": "AI Engineer",
+        "url": "https://www.youtube.com/watch?v=O_zcc6Xl12g",
+        "publicationDate": "2026-11-14",
+        "datePrecision": "day",
+        "eventDate": null,
+        "location": "Public source",
+        "sourceType": "speaker original recording",
+        "independence": "Primary speaker or publisher account, not independent operational audit.",
+        "evidenceFamily": "r63-video",
+        "checkedAt": "2026-11-15T00:00:00Z",
+        "dateNote": "Public source, scoped attribution."
+      },
+      {
+        "id": "r63-reading",
+        "title": "Lauren Tan talk reading edition",
+        "author": "AI Engineer",
+        "publisher": "AI Engineer",
+        "url": "https://ai.engineer/code/2026/talks/lauren-tan",
+        "publicationDate": "2026-11-14",
+        "datePrecision": "day",
+        "eventDate": null,
+        "location": "Public source",
+        "sourceType": "publisher machine-generated reading aid",
+        "independence": "Primary speaker or publisher account, not independent operational audit.",
+        "evidenceFamily": "r63-reading",
+        "checkedAt": "2026-11-15T00:00:00Z",
+        "dateNote": "Public source, scoped attribution."
+      }
+    ],
+    "claims": [
+      {
+        "id": "r63-personal-volume",
+        "proposition": "Lauren Tan reports personally shipping about 3,000 pull requests in a month.",
+        "kind": "creator-claim",
+        "status": "unverified",
+        "sourceLocation": "00:45",
+        "assessment": "Speaker reports personally shipping about 3,000 pull requests in a month.",
+        "limits": "Speaker or publisher account; no independent repository or operational audit.",
+        "references": [
+          "r63-video",
+          "r63-reading"
+        ],
+        "counterevidence": [],
+        "asOf": "2026-11-15"
+      },
+      {
+        "id": "r63-trust-pyramid",
+        "proposition": "Tan proposes a deterministic-first reliability pyramid.",
+        "kind": "creator-claim",
+        "status": "unverified",
+        "sourceLocation": "02:03",
+        "assessment": "Architecture and deterministic checks are prioritized before verification and prose guidance.",
+        "limits": "Speaker or publisher account; no independent repository or operational audit.",
+        "references": [
+          "r63-video",
+          "r63-reading"
+        ],
+        "counterevidence": [],
+        "asOf": "2026-11-15"
+      },
+      {
+        "id": "r63-repository-input",
+        "proposition": "Existing repository patterns shape subsequent agent changes.",
+        "kind": "creator-claim",
+        "status": "unverified",
+        "sourceLocation": "04:20",
+        "assessment": "Existing code is agent input; recurring workarounds may propagate.",
+        "limits": "Speaker or publisher account; no independent repository or operational audit.",
+        "references": [
+          "r63-video",
+          "r63-reading"
+        ],
+        "counterevidence": [],
+        "asOf": "2026-11-15"
+      },
+      {
+        "id": "r63-dune-useeffect",
+        "proposition": "Dune restricts React useEffect outside selected framework internals.",
+        "kind": "creator-claim",
+        "status": "unverified",
+        "sourceLocation": "05:35",
+        "assessment": "Dune framework restricts useEffect in product code; targeted audio repair recovered the example.",
+        "limits": "Speaker or publisher account; no independent repository or operational audit.",
+        "references": [
+          "r63-video",
+          "r63-reading"
+        ],
+        "counterevidence": [],
+        "asOf": "2026-11-15"
+      },
+      {
+        "id": "r63-electron-boundary",
+        "proposition": "Electron renderer/main import boundaries are enforced through structure and checks.",
+        "kind": "creator-claim",
+        "status": "unverified",
+        "sourceLocation": "06:25",
+        "assessment": "Electron renderer and main boundaries enforced with directory structure and lint/dependency checks.",
+        "limits": "Speaker or publisher account; no independent repository or operational audit.",
+        "references": [
+          "r63-video",
+          "r63-reading"
+        ],
+        "counterevidence": [],
+        "asOf": "2026-11-15"
+      },
+      {
+        "id": "r63-comment-workaround",
+        "proposition": "Workaround comments can normalize repeated antipatterns.",
+        "kind": "creator-claim",
+        "status": "unverified",
+        "sourceLocation": "08:15",
+        "assessment": "Agent-authored comments can normalize recurring workaround patterns.",
+        "limits": "Speaker or publisher account; no independent repository or operational audit.",
+        "references": [
+          "r63-video",
+          "r63-reading"
+        ],
+        "counterevidence": [],
+        "asOf": "2026-11-15"
+      },
+      {
+        "id": "r63-evidence-review",
+        "proposition": "Team review increasingly uses runtime screenshots, videos and state artifacts.",
+        "kind": "creator-claim",
+        "status": "unverified",
+        "sourceLocation": "09:52",
+        "assessment": "Review shifts toward videos, screenshots, diagrams, and runtime artifacts.",
+        "limits": "Speaker or publisher account; no independent repository or operational audit.",
+        "references": [
+          "r63-video",
+          "r63-reading"
+        ],
+        "counterevidence": [],
+        "asOf": "2026-11-15"
+      },
+      {
+        "id": "r63-formal",
+        "proposition": "Selected formal and property-based verification methods are discussed.",
+        "kind": "creator-claim",
+        "status": "unverified",
+        "sourceLocation": "10:55",
+        "assessment": "Selected TLA+ model checking and other verification techniques described as experimental.",
+        "limits": "Speaker or publisher account; no independent repository or operational audit.",
+        "references": [
+          "r63-video",
+          "r63-reading"
+        ],
+        "counterevidence": [],
+        "asOf": "2026-11-15"
+      },
+      {
+        "id": "r63-team-volume",
+        "proposition": "The team reports roughly 11,000 pull requests in a month.",
+        "kind": "creator-claim",
+        "status": "unverified",
+        "sourceLocation": "13:38",
+        "assessment": "Team reported about 11,000 pull requests in a month.",
+        "limits": "Speaker or publisher account; no independent repository or operational audit.",
+        "references": [
+          "r63-video",
+          "r63-reading"
+        ],
+        "counterevidence": [],
+        "asOf": "2026-11-15"
+      },
+      {
+        "id": "r63-reverts",
+        "proposition": "The team reports a revert rate near 0.5 percent.",
+        "kind": "creator-claim",
+        "status": "unverified",
+        "sourceLocation": "14:26",
+        "assessment": "Relative revert rate reported near 0.5%; not equated with defect rate.",
+        "limits": "Speaker or publisher account; no independent repository or operational audit.",
+        "references": [
+          "r63-video",
+          "r63-reading"
+        ],
+        "counterevidence": [],
+        "asOf": "2026-11-15"
+      },
+      {
+        "id": "r63-automerged-fixes",
+        "proposition": "Automated release testing may open and merge fixes.",
+        "kind": "creator-claim",
+        "status": "unverified",
+        "sourceLocation": "16:39",
+        "assessment": "Release testing may open and auto-merge bug-fix PRs after runtime fuzzing.",
+        "limits": "Speaker or publisher account; no independent repository or operational audit.",
+        "references": [
+          "r63-video",
+          "r63-reading"
+        ],
+        "counterevidence": [],
+        "asOf": "2026-11-15"
+      }
+    ],
+    "relationships": [
+      {
+        "target": "reader:when-code-gets-cheap-where-does-the-work-wait",
+        "type": "extends",
+        "reason": "Reader #42 identifies the shifted review and integration bottleneck; Tan describes enforceable architecture and behavior proof to address it.",
+        "provenance": [
+          "/the-best-agent-instructions-arent-instructions/",
+          "/when-code-gets-cheap-where-does-the-work-wait/"
+        ],
+        "basis": "curated-editorial-comparison",
+        "direction": "outgoing"
+      },
+      {
+        "target": "reader:the-1000-ai-workflow-is-a-routing-problem",
+        "type": "companion",
+        "reason": "Reader #62 studies routing and parallel throughput; Tan addresses the inner-loop quality constraints needed before scaling autonomy.",
+        "provenance": [
+          "/the-best-agent-instructions-arent-instructions/",
+          "/the-1000-ai-workflow-is-a-routing-problem/"
+        ],
+        "basis": "curated-editorial-comparison",
+        "direction": "outgoing"
+      }
+    ],
+    "relationshipDisposition": "owner-approved two Reader links, issue #179, 2026-11-14",
+    "relationshipReview": {
+      "reviewedAt": "2026-11-14",
+      "reviewedCatalogSize": 62,
+      "decision": "linked",
+      "reviewedTargets": [
+        "reader:when-code-gets-cheap-where-does-the-work-wait",
+        "reader:the-1000-ai-workflow-is-a-routing-problem"
+      ],
+      "rationale": "Creative Lock issue #179 explicitly approves exactly two editorial comparisons; no source corroboration implied."
+    },
+    "sharePlaneRelationships": [],
+    "sharePlaneReview": {
+      "reviewedAt": "2026-11-14",
+      "decision": "none",
+      "rationale": "Owner-locked negative assessment: no sufficiently justified SharePlane Work link."
+    },
+    "review": {
+      "status": "pending",
+      "summary": "Reconstructed candidate requires fresh exact-head independent editorial/source/privacy/depth review."
+    },
+    "editorialDepth": {
+      "schemaVersion": 1,
+      "receiptPath": "content/editorial-depth/the-best-agent-instructions-arent-instructions.json"
+    },
+    "publicationStatus": null
+  },
+  "editorial": {
+    "overview": "Lauren Tan's case for codebases that constrain mistakes, verify behavior, and earn the right to automate.",
+    "whyItMatters": "A high pull-request rate and low revert rate do not prove quality; enforceable boundaries and runtime evidence matter.",
+    "ghostMeshTakeaway": "Improve APIs, encode repeated corrections in deterministic checks, and examine user-visible behavior before expanding autonomous merges."
+  }
+}

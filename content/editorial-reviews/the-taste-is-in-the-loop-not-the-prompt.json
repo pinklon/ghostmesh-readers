@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "readerId": "reader:the-taste-is-in-the-loop-not-the-prompt",
+  "sourceId": "-bv2xKQzZio",
+  "sourceAidSha256": "ae6ac9eb784cf234951f2814bc66aef2f18ce13d1c4d56e9b38c9ed2ffcbcbbe",
+  "articleSha256": "1f7006da41219c12d598bf4cb2e62784e0bed26b0cc87b411778aeaddf934078",
+  "evidenceRevision": "ffdb9997f5620c47c335725e3abd4a8c725d4b89e02f5f0f61a356ecb9fa5a54",
+  "reviewedAt": "2026-11-12T18:09:24Z",
+  "provenance": {
+    "kind": "codex-task-agent",
+    "reference": "Independent review agent /root/reader56_independent_review, PR #160 exact head 8aefe1fdf5b4a8ddbdfd39dbfed95d953ecd2479. The separate agent returned initial HOLD findings and then accepted their exact-head corrections. It is not Pale Horse.",
+    "limits": "Public English automatic VTT SHA-256 and creator Cook documents were checked. No independent listening or visual demonstration certification, replicated quality/cost experiment, native iPhone accessibility test, or production deployment review. The reviewer made no repository writes or GitHub comments; this file records its attributable findings through segfault coordination."
+  },
+  "summary": "ACCEPT independent editorial/source/privacy gate for exact corrected head 8aefe1fdf5b4a8ddbdfd39dbfed95d953ecd2479. The 66% cue, publication-date precision, claim count and nine-point source-map defect are resolved. Owner exact-head publication authority and deployment remain separate.",
+  "findings": [
+    "The reference-driven design and sustained critique thesis is supported by the hash-verified automatic captions and Leon Lin's primary Cook README, SKILL.md, target/bar and critic protocol.",
+    "The 99.9% target is explicitly aspirational, not a measured achievement. The creator's approximately 66% self-assessment at 06:18 is subjective, not a calibrated similarity metric.",
+    "The source-map distinguishes the 04:58 numeric-target introduction at 298 seconds from the specific 06:18 creator assessment at 378 seconds. Nine claims and nine source-map points are distinct from eight visible video chapter cues.",
+    "Creator-reported approximately 45 hours and 11 million output tokens are examples, not independently reproduced cost or quality benchmarks. No efficiency or accessibility improvement is claimed as proven.",
+    "Fresh-context critic ratings challenge builder self-assessment but do not establish statistical independence, blinded reproducibility or population validity.",
+    "Reader #50, #53 and #55 are separate editorial comparisons and not source corroboration. Demo Debt is a separately labeled SharePlane Work analogy; its destination retains a migration and semantic-candidate caveat.",
+    "No copied raw transcript, captions, media, signed source URL, private paths or credentials were identified in the public manuscript. The automatic VTT is not listening-certified.",
+    "The article explains what the video argues before critique, retains counterarguments and operational tradeoffs, and offers bounded keep/adapt/reject guidance without unsupported design-outcome claims.",
+    "Existing browser width evidence is coordinator-supplied; the reviewer did not independently certify live deployment binding, native iPhone behavior or full accessibility compliance."
+  ],
+  "conclusion": "accept-for-owner-review"
+}

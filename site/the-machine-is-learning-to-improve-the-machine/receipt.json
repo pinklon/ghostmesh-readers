@@ -1,0 +1,312 @@
+{
+  "source": {
+    "url": "https://youtu.be/K81vU-gykmQ",
+    "videoId": "K81vU-gykmQ"
+  },
+  "custody": {
+    "status": "qualified-private-pack-verified",
+    "note": "Original media and privately generated timecode aid retained off-repository; ReasonPack verify completed successfully."
+  },
+  "reasonPack": {
+    "verification": "pass",
+    "manifestSha256": "45524e92424c1abf7c4c82972af35353f8a0d8d4c8ed6b4097100bd16fc41f79"
+  },
+  "sourceInspection": {
+    "method": "Original audio transcribed locally using Whisper large-v3",
+    "caveat": "Not a full audiovisual frame-by-frame review; claims not replicated",
+    "publicationBoundary": "No original media, SRT, transcript or private paths",
+    "timedAidSha256": "c88b45c3e07083e34306e210edeff017109faf1d67f5df7e8a8dfdaaf4837065"
+  },
+  "normalization": {
+    "id": "reader:the-machine-is-learning-to-improve-the-machine",
+    "slug": "the-machine-is-learning-to-improve-the-machine",
+    "title": "The Machine Is Learning to Improve the Machine",
+    "variant": "editorial",
+    "category": "AI & Technology",
+    "tags": [
+      "recursive self-improvement",
+      "GPT-6.2",
+      "AI research",
+      "software agents",
+      "release governance"
+    ],
+    "accent": "red",
+    "editorialOrder": 67,
+    "published": "2026-11-17",
+    "updated": "2026-11-17T00:00:00Z",
+    "lastEvidenceChecked": "2026-11-17",
+    "overview": "GPT-6.2 Astra's High AI Self-Improvement classification concerns AI-assisted research. A persistent fixed-model coding factory is a separate feedback loop; neither alone confers autonomous production authority.",
+    "whyItMatters": "Conflating research capability, software iteration and release approval hides where independent evidence and human accountability remain necessary.",
+    "ghostMeshTakeaway": "Let agents inspect, propose and test within bounded scopes; require independent operational acceptance, explicit release authority and rollback before production changes.",
+    "verdict": "Worth studying",
+    "architectureImpact": "experiment recommended",
+    "archiveCall": {
+      "label": "Separate capability from authority",
+      "text": "Assess research assistance and software iteration as distinct loops. Require observed results before increasing release permissions."
+    },
+    "evidenceState": "partially verified",
+    "falsification": "Reproduce bounded research and software tasks with independent grading, controlled baselines, recorded operator interventions and verified production behavior.",
+    "freshness": "Creator video and OpenAI system material dated November 17, 2026; no independently reproduced autonomous research or software production system.",
+    "entities": [],
+    "source": {
+      "platform": "YouTube",
+      "url": "https://youtu.be/K81vU-gykmQ",
+      "videoId": "K81vU-gykmQ",
+      "title": "RSI is here?! GPT 6.2 is ‘high’ on recursive self-improvement",
+      "creator": "David Ondrej",
+      "mediaAspect": "16:9",
+      "durationSeconds": 1629,
+      "uploadDate": "2026-11-17",
+      "dateNote": "Nine approximate speech-entry anchors derived from private Whisper large-v3 SRT; not creator-authored chapters.",
+      "captionType": "Private independently generated Whisper large-v3 transcript; source media and transcript never published.",
+      "creatorChapters": [
+        {
+          "atSeconds": 0,
+          "label": "Opening framing"
+        },
+        {
+          "atSeconds": 58,
+          "label": "Benchmark discussion"
+        },
+        {
+          "atSeconds": 220,
+          "label": "Cloudroom demonstration"
+        },
+        {
+          "atSeconds": 473,
+          "label": "Self-improvement threshold"
+        },
+        {
+          "atSeconds": 681,
+          "label": "Coding comparison"
+        },
+        {
+          "atSeconds": 833,
+          "label": "Security loops"
+        },
+        {
+          "atSeconds": 973,
+          "label": "Autonomous release and model agreement"
+        },
+        {
+          "atSeconds": 1262,
+          "label": "Mixed verdict"
+        },
+        {
+          "atSeconds": 1466,
+          "label": "Pre-production model review"
+        }
+      ]
+    },
+    "references": [
+      {
+        "id": "r68-ref1",
+        "title": "RSI is here?! GPT 6.2 is ‘high’ on recursive self-improvement",
+        "author": "David Ondrej",
+        "publisher": "YouTube",
+        "url": "https://youtu.be/K81vU-gykmQ",
+        "publicationDate": "2026-11-17",
+        "datePrecision": "day",
+        "eventDate": null,
+        "location": "Public source",
+        "sourceType": "primary video",
+        "independence": "Creator promotion and timed private ASR; claims not independently replicated.",
+        "evidenceFamily": "r68-video",
+        "checkedAt": "2026-11-17T00:00:00Z"
+      },
+      {
+        "id": "r68-ref2",
+        "title": "GPT-6.2 Astra and Sol: AI Self-Improvement capabilities",
+        "author": "OpenAI",
+        "publisher": "OpenAI Deployment Safety",
+        "url": "https://deploymentsafety.openai.com/gpt-6-2-astra-sol/ai-self-improvement-capabilities",
+        "publicationDate": "2026-11-17",
+        "datePrecision": "day",
+        "eventDate": null,
+        "location": "Public source",
+        "sourceType": "primary system card",
+        "independence": "Developer self-assessment; direct source for its own classification.",
+        "evidenceFamily": "openai-system",
+        "checkedAt": "2026-11-17T00:00:00Z"
+      },
+      {
+        "id": "r68-ref3",
+        "title": "RSI Index",
+        "author": "Vals AI",
+        "publisher": "Vals AI",
+        "url": "https://www.vals.ai/benchmarks/rsi_index",
+        "publicationDate": "unknown",
+        "datePrecision": "unknown",
+        "dateNote": "The benchmark landing page does not establish a single publication date for all evaluations; checked November 17, 2026.",
+        "eventDate": null,
+        "location": "Public source",
+        "sourceType": "benchmark publisher",
+        "independence": "Independent benchmark publisher, specific coverage and limitations.",
+        "evidenceFamily": "vals-rsi",
+        "checkedAt": "2026-11-17T00:00:00Z"
+      },
+      {
+        "id": "r68-ref4",
+        "title": "Introducing GPT-6.2 Astra and Sol",
+        "author": "OpenAI",
+        "publisher": "OpenAI",
+        "url": "https://openai.com/index/introducing-gpt-6-2-astra-sol/",
+        "publicationDate": "2026-11-17",
+        "datePrecision": "day",
+        "eventDate": null,
+        "location": "Public source",
+        "sourceType": "primary model announcement",
+        "independence": "Developer-controlled claims, not independent replication.",
+        "evidenceFamily": "openai-release",
+        "checkedAt": "2026-11-17T00:00:00Z"
+      }
+    ],
+    "claims": [
+      {
+        "id": "r68-c1",
+        "proposition": "Astra High AI Self-Improvement classification",
+        "kind": "independently reported",
+        "status": "corroborated",
+        "sourceLocation": "07:53",
+        "assessment": "OpenAI system card reports Astra High, Sol below High; this is a bounded capability classification.",
+        "limits": "Not proof of autonomous frontier research.",
+        "references": [
+          "r68-ref2"
+        ],
+        "counterevidence": [],
+        "asOf": "2026-11-17"
+      },
+      {
+        "id": "r68-c2",
+        "proposition": "AI research assistance differs from fixed-model software iteration",
+        "kind": "analysis",
+        "status": "partially corroborated",
+        "sourceLocation": "07:53",
+        "assessment": "Two different improvement objects and verification boundaries.",
+        "limits": "Conceptual distinction; not a measured deployment claim.",
+        "references": [
+          "r68-ref2"
+        ],
+        "counterevidence": [],
+        "asOf": "2026-11-17"
+      },
+      {
+        "id": "r68-c3",
+        "proposition": "Cloudroom persistent coding and two-model review",
+        "kind": "creator-claim",
+        "status": "unverified",
+        "sourceLocation": "03:40",
+        "assessment": "Creator demonstrates/promotes software factory and reviewer model patterns.",
+        "limits": "No independent production outcome or commercial claim validation.",
+        "references": [
+          "r68-ref1"
+        ],
+        "counterevidence": [],
+        "asOf": "2026-11-17"
+      },
+      {
+        "id": "r68-c4",
+        "proposition": "Cross-model agreement is not independent operational proof",
+        "kind": "analysis",
+        "status": "partially corroborated",
+        "sourceLocation": "16:13",
+        "assessment": "Shared context and flawed tests can produce correlated agreement.",
+        "limits": "Failure mode inference, not a quantified correlation estimate.",
+        "references": [
+          "r68-ref1"
+        ],
+        "counterevidence": [],
+        "asOf": "2026-11-17"
+      },
+      {
+        "id": "r68-c5",
+        "proposition": "Vals RSI Index findings are evaluation-specific",
+        "kind": "independently reported",
+        "status": "corroborated",
+        "sourceLocation": "00:58",
+        "assessment": "Reported benchmark evidence is heterogeneous across task categories.",
+        "limits": "Not a universal scalar RSI capability.",
+        "references": [
+          "r68-ref3"
+        ],
+        "counterevidence": [],
+        "asOf": "2026-11-17"
+      }
+    ],
+    "relationships": [
+      {
+        "target": "reader:a-factory-that-grades-itself-still-needs-a-judge",
+        "type": "companion",
+        "reason": "Independent grading and evaluator boundary",
+        "provenance": [
+          "/the-machine-is-learning-to-improve-the-machine/",
+          "/a-factory-that-grades-itself-still-needs-a-judge/"
+        ],
+        "basis": "curated-editorial-comparison",
+        "direction": "outgoing"
+      },
+      {
+        "target": "reader:unsupervised-is-a-permission",
+        "type": "companion",
+        "reason": "Autonomy is defined by permission and release authority",
+        "provenance": [
+          "/the-machine-is-learning-to-improve-the-machine/",
+          "/unsupervised-is-a-permission/"
+        ],
+        "basis": "curated-editorial-comparison",
+        "direction": "outgoing"
+      },
+      {
+        "target": "reader:the-threshold-is-a-claim-not-a-test",
+        "type": "companion",
+        "reason": "Capability thresholds must not be mistaken for field acceptance",
+        "provenance": [
+          "/the-machine-is-learning-to-improve-the-machine/",
+          "/the-threshold-is-a-claim-not-a-test/"
+        ],
+        "basis": "curated-editorial-comparison",
+        "direction": "outgoing"
+      }
+    ],
+    "sharePlaneRelationships": [
+      {
+        "url": "https://shareplane.malott.ai/artifacts/stop-prompting-agents-start-managing-workers/",
+        "title": "Stop Prompting Agents. Start Managing Workers.",
+        "reason": "Tony’s published Work frames agents as bounded workers whose authority grows only through measured outcomes and retained evidence. This is an operational companion to #68’s software loop, not independent corroboration of the creator or model claims.",
+        "type": "companion",
+        "basis": "curated-editorial-comparison"
+      }
+    ],
+    "relationshipDisposition": "Three directly relevant Readers were selected in Creative Lock #196. After owner preview feedback, one source-relevant SharePlane Work is added as a separately labeled operational companion, not corroborating evidence.",
+    "relationshipReview": {
+      "reviewedAt": "2026-11-17",
+      "reviewedCatalogSize": 67,
+      "decision": "linked",
+      "reviewedTargets": [
+        "reader:a-factory-that-grades-itself-still-needs-a-judge",
+        "reader:unsupervised-is-a-permission",
+        "reader:the-threshold-is-a-claim-not-a-test"
+      ],
+      "rationale": "Three subject-specific companions; editorial linkage, not corroborating sources."
+    },
+    "sharePlaneReview": {
+      "reviewedAt": "2026-11-17",
+      "decision": "linked",
+      "rationale": "Owner preview feedback requested a relevant SharePlane connection. Stop Prompting Agents. Start Managing Workers. is an independently published Tony Work on bounded authority and evidence-driven agent management, precisely relevant to this Reader’s software iteration loop; it does not validate the source video or OpenAI assessment."
+    },
+    "review": {
+      "status": "accepted-for-owner-review",
+      "summary": "Independent editorial/source/privacy review passed on exact PR #197 head; manuscript bytes are unchanged. Publication must still satisfy technical and production verification."
+    },
+    "editorialDepth": {
+      "schemaVersion": 1,
+      "receiptPath": "content/editorial-depth/the-machine-is-learning-to-improve-the-machine.json"
+    },
+    "revisionHistory": []
+  },
+  "editorial": {
+    "overview": "GPT-6.2 Astra's High AI Self-Improvement classification concerns AI-assisted research. A persistent fixed-model coding factory is a separate feedback loop; neither alone confers autonomous production authority.",
+    "whyItMatters": "Conflating research capability, software iteration and release approval hides where independent evidence and human accountability remain necessary.",
+    "ghostMeshTakeaway": "Let agents inspect, propose and test within bounded scopes; require independent operational acceptance, explicit release authority and rollback before production changes."
+  }
+}

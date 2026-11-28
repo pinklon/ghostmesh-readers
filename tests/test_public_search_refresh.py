@@ -10,6 +10,22 @@ from test_unified_search_index import fixtures
 
 
 class PublicRefreshTests(unittest.TestCase):
+    def test_incumbent_build_uses_canonical_public_feeds(self):
+        from scripts import netlify_unified_search_build as build
+        with patch.dict("os.environ", {}, clear=True), patch.object(build, "refresh") as run:
+            build.main()
+            run.assert_called_once_with(
+                Path("site/readers/search-index.json"), build.CANONICAL_CORPUS,
+                build.CANONICAL_CATALOG, Path("site/readers/unified-search-index.json"),
+                build.MIN_READERS, build.MIN_WORKS)
+
+    def test_incumbent_build_rejects_noncanonical_override(self):
+        from scripts import netlify_unified_search_build as build
+        with patch.dict("os.environ", {"SHAREPLANE_PUBLIC_CORPUS_URL": "https://shareplane.malott.ai/other.json"}, clear=True), patch.object(build, "refresh") as run:
+            with self.assertRaises(SystemExit):
+                build.main()
+            run.assert_not_called()
+
     def test_rejects_untrusted_corpus_host(self):
         for url in ("http://shareplane.malott.ai/corpus.json",
                     "https://evil.example/corpus.json",

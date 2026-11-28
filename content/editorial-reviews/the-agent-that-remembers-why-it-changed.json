@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "readerId": "reader:the-agent-that-remembers-why-it-changed",
+  "sourceId": "fKgwmagOXUg",
+  "sourceAidSha256": "522a048507f6f63d33b13854990095ee6d40eda500ce42ab198907f7b318ccf1",
+  "articleSha256": "a0f29502c2b92d537843db5cd8da2ee1e5536dc07fa6636a749f36db2e057470",
+  "evidenceRevision": "7fe076ee01905b87e9dcb169ba713c19ffbf3078ea5d64baac1acbc6f11e1061",
+  "reviewedAt": "2026-11-25T13:01:00Z",
+  "provenance": {
+    "kind": "codex-task-agent",
+    "reference": "A genuinely separate read-only Work-mode Codex task agent performed one consolidated independent source, editorial and privacy review, including an in-place source-semantic audit and exact candidate binding. Actual findings retained for owner inspection.",
+    "limits": "Caption-supported attribution does not certify exact speech or independently reproduce the research. Browser qualification, CI, owner authority and Production verification remain separate."
+  },
+  "summary": "ACCEPT FOR OWNER REVIEW. No blocking editorial, source, attribution or privacy gaps remain in the exact revised candidate. Owner publication authority remains pending.",
+  "findings": [
+    "An independent in-place source-semantic audit reviewed all 23 claims: 22 supported attribution, one initially required precision correction, none unsupported or unknown. The completion-evidence claim is now correctly framed as the presenter's inference, not demonstrated implementation inspection.",
+    "All 23 timestamp anchors matched retained cue starts. The full-history claim and subsequent scaling discussion are appropriately distinguished.",
+    "Paired study mean 2.36 score points, nine positive pairs, one negative pair of 0.61 points, 95% interval 1.05–3.68, and paired p=0.003 agree with the original paper.",
+    "Workspace starting deficit and successive-generation negative result match the paper. Results outside paired coding comparison remain descriptive rather than replicated statistical evidence.",
+    "All four registered primary research references were independently consulted. No false implication of independent replication, verified creator timing or current reproducibility.",
+    "Creative Lock exact; 338 ordered text units, 82 ordered links and three relationship rationales preserved in generation. Source map, CSS and rail match; previous 74 catalog objects unchanged.",
+    "Independent exact live canonical readbacks for Readers 73 and 74 and Work 118 match approved Production revisions, including Work 118's authoritative release digest.",
+    "Privacy scan found zero overlapping twelve-token transcript windows across 4,748 normalized authored words; no private paths, credentials, protected destinations or raw caption markers in authored/rendered article, map, receipt or new catalog record.",
+    "Metadata now accurately says finds, and the fresh comparator is described as independently optimized.",
+    "The 768 cue count refers to normalized deduplicated caption instances, not unique start seconds; source speech and reported research findings have not been independently certified or replicated."
+  ],
+  "conclusion": "accept-for-owner-review"
+}

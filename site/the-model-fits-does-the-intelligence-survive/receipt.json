@@ -1,0 +1,288 @@
+{
+  "schema": "ghostmesh-reader-receipt-v2",
+  "createdAt": "2026-11-13T05:10:00Z",
+  "source": {
+    "url": "https://www.youtube.com/watch?v=DHW0sia6JFI",
+    "videoId": "DHW0sia6JFI"
+  },
+  "reasonPack": {
+    "verification": "not-claimed"
+  },
+  "sourceInspection": {
+    "method": "Pop Theory video and original English automatic subtitles; developer and DeepSeek technical sources inspected in editorial preparation.",
+    "timedAidSha256": "855dcb3bdcce41e7735416c52451241bb9d66c5572e05d630d872fec8d882657",
+    "coverage": "18:30; seven chapter-range cue anchors from original caption aid.",
+    "caveat": "Developer performance and fidelity claims are unreplicated; latest repository changes are not retrospective validation.",
+    "publicationBoundary": "Only original analysis and sanitized source references; no captions, transcript, media or private custody paths."
+  },
+  "custody": {
+    "status": "private-original-auto-caption-aid",
+    "note": "Caption aid remains outside Git; automated transcription may contain errors."
+  },
+  "normalization": {
+    "id": "reader:the-model-fits-does-the-intelligence-survive",
+    "slug": "the-model-fits-does-the-intelligence-survive",
+    "title": "The Model Fits. Does the Intelligence Survive?",
+    "category": "AI & Technology",
+    "tags": [
+      "local AI",
+      "mixture of experts",
+      "quantization",
+      "CPU inference",
+      "model fidelity"
+    ],
+    "entities": [
+      "Pop Theory",
+      "DeepSeek",
+      "llama-modchip"
+    ],
+    "source": {
+      "platform": "YouTube",
+      "url": "https://www.youtube.com/watch?v=DHW0sia6JFI",
+      "videoId": "DHW0sia6JFI",
+      "title": "This 284B AI Model Runs With No GPU Just 64GB RAM",
+      "creator": "Pop Theory",
+      "mediaAspect": "16:9",
+      "durationSeconds": 1110,
+      "uploadDate": "unknown",
+      "dateNote": "Video upload date not independently certified; November 9 is the evidence cutoff in the source.",
+      "captionType": "Original English automatic captions, private aid; errors possible"
+    },
+    "published": "2026-11-13",
+    "updated": "2026-11-13T05:10:00Z",
+    "overview": "A developer reports running a 284-billion-parameter model on a CPU-only laptop. The engineering is interesting. The unanswered question is what survives the compression.",
+    "whyItMatters": "Extreme quantization and sparse model activation may shift local compute feasibility, but tokens per second do not measure retained intelligence.",
+    "ghostMeshTakeaway": "Reproduce the exact CPU-only workload and compare quality to matched higher-precision and smaller-model baselines before treating model size as an operational advantage.",
+    "verdict": "Interesting, unproven",
+    "architectureImpact": "experiment recommended",
+    "falsification": "Reproduce the hardware/software configuration and compare task-specific accuracy, reliability, latency, context prefill, memory headroom and cost against higher-precision and smaller models.",
+    "evidenceState": "unverified",
+    "lastEvidenceChecked": "2026-11-13T05:10:00Z",
+    "freshness": "November 9 video cutoff; newer project repository quality and platform claims are distinct and not independently verified here.",
+    "variant": "editorial",
+    "accent": "teal",
+    "claims": [
+      {
+        "id": "r58-reported-demo",
+        "proposition": "A developer reported a CPU-only 284B model at approximately 9–10 tokens per second.",
+        "kind": "third-party-report",
+        "status": "unverified",
+        "sourceLocation": "00:00",
+        "assessment": "Video introduces and qualifies the reported result.",
+        "limits": "No independent end-to-end replication.",
+        "references": [
+          "r58-video"
+        ],
+        "counterevidence": [],
+        "asOf": "2026-11-12"
+      },
+      {
+        "id": "r58-moe-quantization",
+        "proposition": "The MoE model has roughly 284B total / 13B active parameters and a reported 1.71-bit compressed representation.",
+        "kind": "third-party-report",
+        "status": "unverified",
+        "sourceLocation": "02:24",
+        "assessment": "Video describes sparse activation, memory fit and custom code.",
+        "limits": "Compressed fidelity relative to higher precision not established.",
+        "references": [
+          "r58-video",
+          "r58-deepseek-model-card"
+        ],
+        "counterevidence": [],
+        "asOf": "2026-11-12"
+      },
+      {
+        "id": "r58-throughput",
+        "proposition": "Developer reports distinct prefill, decode and speculative-decoding rates.",
+        "kind": "third-party-report",
+        "status": "unverified",
+        "sourceLocation": "07:01",
+        "assessment": "Video distinguishes approximately 43–44 prefill, 9–10 decode and higher speculative peaks.",
+        "limits": "Developer measurements, not independently benchmarked.",
+        "references": [
+          "r58-video"
+        ],
+        "counterevidence": [],
+        "asOf": "2026-11-12"
+      },
+      {
+        "id": "r58-quality",
+        "proposition": "Low-bit compression does not by itself prove retained original model capability.",
+        "kind": "third-party-report",
+        "status": "unverified",
+        "sourceLocation": "09:25",
+        "assessment": "Video questions quality retention at extreme compression.",
+        "limits": "No matched higher-precision full-weight capability evaluation.",
+        "references": [
+          "r58-video"
+        ],
+        "counterevidence": [],
+        "asOf": "2026-11-12"
+      },
+      {
+        "id": "r58-reproducibility",
+        "proposition": "AVX-512, memory headroom, patched software and missing independent replication limit broad usability.",
+        "kind": "third-party-report",
+        "status": "unverified",
+        "sourceLocation": "14:01",
+        "assessment": "Video describes hardware and software caveats.",
+        "limits": "As-of video cutoff; newer repo claims must be assessed separately.",
+        "references": [
+          "r58-video"
+        ],
+        "counterevidence": [],
+        "asOf": "2026-11-12"
+      },
+      {
+        "id": "r58-compatibility",
+        "proposition": "Memory capacity and memory bandwidth constrain practical CPU inference differently.",
+        "kind": "third-party-report",
+        "status": "unverified",
+        "sourceLocation": "15:28",
+        "assessment": "Video examines hardware prerequisites and bandwidth.",
+        "limits": "Specific systems and workloads will differ.",
+        "references": [
+          "r58-video"
+        ],
+        "counterevidence": [],
+        "asOf": "2026-11-12"
+      },
+      {
+        "id": "r58-conclusion",
+        "proposition": "A developer experiment is not yet a broadly qualified local inference tool.",
+        "kind": "third-party-report",
+        "status": "unverified",
+        "sourceLocation": "17:14",
+        "assessment": "Video distinguishes demo from operational utility and smaller high-precision alternatives.",
+        "limits": "Product judgment and recommended independent tests are GhostMesh synthesis.",
+        "references": [
+          "r58-video"
+        ],
+        "counterevidence": [],
+        "asOf": "2026-11-12"
+      }
+    ],
+    "references": [
+      {
+        "id": "r58-video",
+        "title": "This 284B AI Model Runs With No GPU Just 64GB RAM",
+        "author": "Pop Theory",
+        "publisher": "Pop Theory / YouTube",
+        "url": "https://www.youtube.com/watch?v=DHW0sia6JFI",
+        "publicationDate": "unknown",
+        "datePrecision": "unknown",
+        "eventDate": null,
+        "location": "00:00–18:30 analysis",
+        "sourceType": "third-party technical video analysis",
+        "independence": "Commentary on an original developer claim; not an independent CPU-only replication or quality benchmark.",
+        "evidenceFamily": "r58-video",
+        "checkedAt": "2026-11-13T05:10:00Z",
+        "dateNote": "November 9 is the evidence cutoff stated in the video; source publication date is not separately certified."
+      },
+      {
+        "id": "r58-deepseek-model-card",
+        "title": "DeepSeek-V4-Flash model card",
+        "author": "DeepSeek AI",
+        "publisher": "DeepSeek AI / Hugging Face",
+        "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash",
+        "publicationDate": "2026",
+        "datePrecision": "year",
+        "eventDate": null,
+        "location": "Model overview and architecture table",
+        "sourceType": "first-party model documentation",
+        "independence": "Primary model specification; does not corroborate third-party quantization throughput or preserved fidelity.",
+        "evidenceFamily": "r58-deepseek-model-card",
+        "checkedAt": "2026-11-13T05:10:00Z",
+        "dateNote": "Only the publication year is attributed; exact day not independently verified."
+      }
+    ],
+    "relationships": [
+      {
+        "target": "reader:the-model-is-not-the-demonstration",
+        "type": "companion",
+        "reason": "An attractive demonstration cannot stand in for qualified model capability; this experiment tests that distinction at extreme quantization.",
+        "provenance": [
+          "/the-model-fits-does-the-intelligence-survive/",
+          "/the-model-is-not-the-demonstration/"
+        ],
+        "basis": "curated-editorial-comparison",
+        "direction": "outgoing"
+      },
+      {
+        "target": "reader:the-operator-is-part-of-the-denominator",
+        "type": "companion",
+        "reason": "Inference economics must include actual workload, waiting time and operator constraints, not only model size or peak token rates.",
+        "provenance": [
+          "/the-model-fits-does-the-intelligence-survive/",
+          "/the-operator-is-part-of-the-denominator/"
+        ],
+        "basis": "curated-editorial-comparison",
+        "direction": "outgoing"
+      },
+      {
+        "target": "reader:offline-is-not-the-same-as-independent",
+        "type": "companion",
+        "reason": "Local execution gives control over placement but not automatic independence from specialized software, validation and source provenance.",
+        "provenance": [
+          "/the-model-fits-does-the-intelligence-survive/",
+          "/offline-is-not-the-same-as-independent/"
+        ],
+        "basis": "curated-editorial-comparison",
+        "direction": "outgoing"
+      }
+    ],
+    "relationshipDisposition": "Owner admitted three source-specific Reader editorial comparisons, not source corroboration.",
+    "relationshipReview": {
+      "reviewedAt": "2026-11-12",
+      "reviewedCatalogSize": 57,
+      "decision": "linked",
+      "reviewedTargets": [
+        "reader:the-model-is-not-the-demonstration",
+        "reader:the-operator-is-part-of-the-denominator",
+        "reader:offline-is-not-the-same-as-independent"
+      ],
+      "rationale": "Tony approved three Reader comparisons after cross-catalog assessment; each concerns model demonstration, inference economics or local operating independence."
+    },
+    "sharePlaneRelationships": [
+      {
+        "title": "The Right Model Is the One Your Eval Can Defend",
+        "url": "https://shareplane.malott.ai/artifacts/the-right-model-is-the-one-your-eval-can-defend/",
+        "type": "companion",
+        "reason": "Moves beyond parameter count and throughput to defensible quality, latency, cost and workload evaluation.",
+        "basis": "curated-editorial-comparison"
+      }
+    ],
+    "sharePlaneReview": {
+      "reviewedAt": "2026-11-12",
+      "decision": "linked",
+      "rationale": "Owner approved the specific published Work comparison over generic demo-themed alternatives. Public catalog currently lists 114, although Tony reports 115; no unverified Work identity inferred."
+    },
+    "review": {
+      "status": "ACCEPT independent source/privacy/editorial review; owner approved release",
+      "reviewer": "Independent read-only Codex CLI review, GhostMesh session 01a1d36f-a6e0-7cb1-b8ac-56e0fbe3fd7b",
+      "checkedAt": "2026-11-13T05:46:00Z",
+      "scope": "Seven source cues, 48 locked manuscript paragraphs, seven analysis sections and four owner-admitted relationships",
+      "findings": "Accepted exact authored article and evidence, with limits on private caption alignment and independent performance reproduction. Owner approved publication; browser preview examined by segfault."
+    },
+    "revisionHistory": [
+      {
+        "at": "2026-11-13T05:10:00Z",
+        "reason": "First mechanical projection of owner-approved Creative Lock for issue #164."
+      }
+    ],
+    "editorialOrder": 57,
+    "archiveCall": {
+      "label": "Evaluate the compression, not the headline",
+      "text": "On representative real tasks, compare this compressed build with the original higher-precision model and smaller high-precision alternatives. Record output quality, memory, prefill, decode speed and total cost."
+    },
+    "editorialDepth": {
+      "schemaVersion": 1,
+      "receiptPath": "content/editorial-depth/the-model-fits-does-the-intelligence-survive.json"
+    }
+  },
+  "editorial": {
+    "overview": "A developer reports running a 284-billion-parameter model on a CPU-only laptop. The engineering is interesting. The unanswered question is what survives the compression.",
+    "whyItMatters": "Extreme quantization and sparse model activation may shift local compute feasibility, but tokens per second do not measure retained intelligence.",
+    "ghostMeshTakeaway": "Reproduce the exact CPU-only workload and compare quality to matched higher-precision and smaller-model baselines before treating model size as an operational advantage."
+  }
+}

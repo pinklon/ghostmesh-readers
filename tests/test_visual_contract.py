@@ -20,6 +20,43 @@ class Tags(HTMLParser):
 
 
 class VisualContractTest(unittest.TestCase):
+    def test_reader66_generated_share_and_footer_are_styled(self):
+        page = (ROOT / 'site/uncensored-private-or-sovereign/index.html').read_text()
+        self.assertIn('data-layout-family="annotated-editorial"', page)
+        self.assertIn('data-style-scope="reader66-generated-chrome"', page)
+        self.assertIn('grid-template-columns:minmax(0,1fr) minmax(0,740px) minmax(0,1fr)', page)
+        self.assertIn('.gm-related .gm-cards .gm-related-copy h3{font:750 clamp(17px,1.8vw,21px)/1.3 var(--sans);letter-spacing:-.025em;text-transform:none', page)
+        for selector in ('.gm-sharebar{', '.gm-share-actions{',
+                         '.gm-share-button,', '.gm-reader-footer-inner{',
+                         '.gm-footer-links{', '.gm-work-routes{',
+                         '.gm-work-grid{', '.gm-claim-appendix{',
+                         '.gm-related .gm-cards{'):
+            self.assertIn('html[data-layout-family="annotated-editorial"] ' + selector, page)
+
+    def test_reader72_onward_reading_follows_provenance_and_claim_register(self):
+        slug = 'when-code-gets-cheap-ambition-becomes-the-test'
+        authored = (ROOT / 'content/readers' / f'{slug}.html').read_text()
+        generated = (ROOT / 'site' / slug / 'index.html').read_text()
+        # The publisher owns one related section; the generator owns the two
+        # catalog-backed relationship panels. They are endmatter, not evidence.
+        self.assertLess(authored.index('<!--GM_EVIDENCE-->'),
+                        authored.index('id="reasonpack-provenance"'))
+        self.assertLess(authored.index('id="reasonpack-provenance"'),
+                        authored.index('id="related-thinking"'))
+        indexes = [generated.index(value) for value in (
+            'id="external-evidence"',
+            'id="reasonpack-provenance"',
+            'id="related-thinking"',
+            'id="shareplane-thinking"',
+            'class="gm-sharebar"',
+            '</main>',
+        )]
+        self.assertEqual(indexes, sorted(indexes))
+        for name in ('reasonpack-provenance', 'related-thinking', 'shareplane-thinking'):
+            self.assertEqual(generated.count(f'id="{name}"'), 1)
+        self.assertEqual(generated.count('class="gm-related-copy"'), 2)
+        self.assertEqual(generated.count('class="gm-work-kind"'), 2)
+
     def test_player_and_related_projection_preserve_mobile_review_surface(self):
         catalog = json.loads((ROOT / 'content/catalog.json').read_text())
         by_id = {reader['id']: reader for reader in catalog['readers']}
@@ -31,15 +68,29 @@ class VisualContractTest(unittest.TestCase):
             with self.subTest(slug=reader['slug']):
                 page = (ROOT / 'site' / reader['slug'] / 'index.html').read_text()
                 if 'class="player gm-media-frame"' in page:
-                    self.assertIn('id="launch"', page)
+                    if reader['slug'] == 'uncensored-private-or-sovereign':
+                        # Approved annotated-editorial player uses its own opt-in
+                        # trigger; it still must not load an iframe on arrival.
+                        self.assertIn('id="play-source"', page)
+                        self.assertIn('id="video-frame"', page)
+                    else:
+                        self.assertIn('id="launch"', page)
+                    if reader['slug'] == 'a-model-that-says-yes-is-not-necessarily-a-model-that-knows':
+                        # The shared .launch rule removes the video box's aspect ratio.
+                        self.assertIn('class="source-launch" type="button" id="launch"', page)
+                        self.assertNotIn('class="launch source-launch"', page)
                     self.assertIn(f'data-gm-aspect="{reader["source"]["mediaAspect"]}"', page)
                     self.assertNotIn('<iframe', page)
                     if reader['source'].get('title'):
                         self.assertIn(html.escape(reader['source']['title']), page)
                 for edge in reader['relationships']:
                     target = by_id[edge['target']]
-                    self.assertIn(f'<a href="/{target["slug"]}/">', page)
-                    self.assertIn(html.escape(edge['reason']), page)
+                    # Newer Readers publish reviewed relationships on the map;
+                    # older Reader pages retain their original inline projections.
+                    surface = ((ROOT / 'site/map/index.html').read_text()
+                               if reader['editorialOrder'] >= 40 else page)
+                    self.assertIn(f'<a href="/{target["slug"]}/">', surface)
+                    self.assertIn(html.escape(edge['reason']), surface)
 
     def test_approved_home_hero_and_distinct_destinations(self):
         home = (ROOT / 'site/index.html').read_text()
@@ -127,7 +178,8 @@ class VisualContractTest(unittest.TestCase):
         parsed = Tags()
         parsed.feed(page)
         entries = [a for _, a in parsed.tags if 'gm-atlas-entry' in a.get('class', '').split()]
-        links = [a for _, a in parsed.tags if 'gm-atlas-link' in a.get('class', '').split()]
+        links = [a for _, a in parsed.tags if 'gm-atlas-link' in a.get('class', '').split()
+                 and 'gm-atlas-external' not in a.get('class', '').split()]
         graph = json.loads((ROOT / 'site/map/relationships.json').read_text())
         self.assertEqual(len(entries), len(catalog['readers']))
         self.assertEqual(len(links), sum(len(r['relationships']) for r in catalog['readers']))
@@ -207,10 +259,13 @@ class VisualContractTest(unittest.TestCase):
         home = (ROOT / 'site/index.html').read_text()
         archive = (ROOT / 'site/readers/index.html').read_text()
         article = (ROOT / 'site/the-model-is-not-the-demonstration/index.html').read_text()
-        for page in (home, archive, article):
+        # Home is a limited recent/featured selection; older Readers can rotate out.
+        for page in (archive, article):
             self.assertIn('data-gm-aspect="unknown"', page)
             self.assertIn('RHMsAm4ODDU', page)
-        self.assertIn('SOURCE SHAPE UNVERIFIED / OPT-IN PLAYER', home)
+        if 'data-source-id="RHMsAm4ODDU"' in home:
+            self.assertIn('data-gm-aspect="unknown"', home)
+            self.assertIn('SOURCE SHAPE UNVERIFIED / OPT-IN PLAYER', home)
         self.assertIn('Source shape unverified / opt-in player', archive)
         self.assertIn('id="play" hidden', article)
         self.assertIn('youtube-nocookie.com/embed/RHMsAm4ODDU', article)

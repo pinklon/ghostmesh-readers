@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "readerId": "reader:a-model-that-says-yes-is-not-necessarily-a-model-that-knows",
+  "sourceId": "9tOu4r-FiQI",
+  "sourceAidSha256": "a41f9f1dd5cd65c51e9933f68fe79bb9ce46d5828fe40256e189f3c0c2c49eed",
+  "articleSha256": "bab5b2ce62c51aebf00b81f5f3a7be3ad8eb677c534a25b53126c9af33de7a4a",
+  "evidenceRevision": "ef52c4d5fbdaffe72d21efee7b770285ed749a7bfed97b9317d240f31bead437",
+  "reviewedAt": "2026-11-02T22:36:00Z",
+  "provenance": {
+    "kind": "codex-task-agent",
+    "reference": "Independent review /root/review_reader120_independently of PR120 exact head ef73f3c772fe2d99e2e04529878630ad5d274720; retained source and primary-source review reused only for unchanged content.",
+    "limits": "All20 retained machine-aid cues checked in original review, not full audiovisual replay. No runtime benchmark or independent browser layout rerun. This is editorial acceptance for owner review, not authenticated owner acceptance or production permission."
+  },
+  "summary": "Substantive source/copy/privacy review accepted for owner consideration. Corrected map spans four analytical sections with all20 exact seek links; final local validator preflight is reported separately from remote owner and production gates.",
+  "findings": [
+    "All20 claim identities agree across authored and canonical copy; claims8/10 bindings corrected and unsupported claims remain unknown.",
+    "Arditi counterevidence names TruthfulQA declines and Qwen/Yi exceptions; model quality is not equated with refusal reduction.",
+    "Cloudroom creator stake is explicit, vendor observations remain noncausal, and source title is distinguished from editorial title.",
+    "Canonical sourceInspection.timedAidSha256 now agrees with verified timed VTT and source map; original manifest remains separately identified.",
+    "Both unqualified optional SharePlane cards are removed. Two relevant Reader comparisons remain proposed, not corroboration or approved graph edges.",
+    "RelationshipReview rationale still mentions two removed SharePlane works; this stale explanatory metadata is nonblocking to semantic copy but should be cleaned during packaging.",
+    "All20 exact source links exist inside mapped analytical sections; canonical timed aid, map identity, claim IDs and current article hashes are consistent. Grouping of some privacy/throughput cues is broad, not a claim of new corroboration."
+  ],
+  "conclusion": "accept-for-owner-review"
+}

@@ -1,0 +1,98 @@
+{
+  "schemaVersion": 1,
+  "readerId": "reader:the-12gb-gpu-has-a-three-budget-problem",
+  "sourceId": "r2KBVvh_8Do",
+  "sourceAidSha256": "42d8e0c3728c5a4b0cba2271e1949e7ac86c41963a98e521fa1603d36b5f2301",
+  "points": [
+    {
+      "atSeconds": 0,
+      "sectionId": "opening",
+      "claimIds": [
+        "r59-synthesis"
+      ],
+      "cueParaphrase": "The video opens by combining hardware capacity and performance headline claims.",
+      "privateAidCheck": "Chapter metadata cross-read against privately retained caption aid; independently listened timing not certified; do not expose raw aid."
+    },
+    {
+      "atSeconds": 136,
+      "sectionId": "full-deconstruction",
+      "claimIds": [
+        "r59-cache"
+      ],
+      "cueParaphrase": "The source discusses the context cache as an additional memory constraint.",
+      "privateAidCheck": "Chapter metadata cross-read against privately retained caption aid; independently listened timing not certified; do not expose raw aid."
+    },
+    {
+      "atSeconds": 243,
+      "sectionId": "full-deconstruction",
+      "claimIds": [
+        "r59-weights"
+      ],
+      "cueParaphrase": "The source separates quantized model weight size from occupied memory.",
+      "privateAidCheck": "Chapter metadata cross-read against privately retained caption aid; independently listened timing not certified; do not expose raw aid."
+    },
+    {
+      "atSeconds": 299,
+      "sectionId": "full-deconstruction",
+      "claimIds": [
+        "r59-3080"
+      ],
+      "cueParaphrase": "The source describes a shorter-context decoding rate on a distinct GPU.",
+      "privateAidCheck": "Chapter metadata cross-read against privately retained caption aid; independently listened timing not certified; do not expose raw aid."
+    },
+    {
+      "atSeconds": 416,
+      "sectionId": "full-deconstruction",
+      "claimIds": [
+        "r59-mtp"
+      ],
+      "cueParaphrase": "The source introduces multi-token prediction as a conditional speed technique.",
+      "privateAidCheck": "Chapter metadata cross-read against privately retained caption aid; independently listened timing not certified; do not expose raw aid."
+    },
+    {
+      "atSeconds": 487,
+      "sectionId": "full-deconstruction",
+      "claimIds": [
+        "r59-3060"
+      ],
+      "cueParaphrase": "The source describes a longer-context configuration using an RTX 3060.",
+      "privateAidCheck": "Chapter metadata cross-read against privately retained caption aid; independently listened timing not certified; do not expose raw aid."
+    },
+    {
+      "atSeconds": 574,
+      "sectionId": "full-deconstruction",
+      "claimIds": [
+        "r59-dual"
+      ],
+      "cueParaphrase": "The source describes memory pooling across two GPUs rather than one card.",
+      "privateAidCheck": "Chapter metadata cross-read against privately retained caption aid; independently listened timing not certified; do not expose raw aid."
+    },
+    {
+      "atSeconds": 751,
+      "sectionId": "qualification",
+      "claimIds": [
+        "r59-synthesis"
+      ],
+      "cueParaphrase": "The source offers a practical sizing calculation for the memory budget.",
+      "privateAidCheck": "Chapter metadata cross-read against privately retained caption aid; independently listened timing not certified; do not expose raw aid."
+    },
+    {
+      "atSeconds": 857,
+      "sectionId": "qualification",
+      "claimIds": [
+        "r59-cache"
+      ],
+      "cueParaphrase": "The source discusses constraints when the context window is substantially populated.",
+      "privateAidCheck": "Chapter metadata cross-read against privately retained caption aid; independently listened timing not certified; do not expose raw aid."
+    },
+    {
+      "atSeconds": 878,
+      "sectionId": "ghostmesh-verdict",
+      "claimIds": [
+        "r59-synthesis"
+      ],
+      "cueParaphrase": "The video closes with a performance interpretation bounded by its tests.",
+      "privateAidCheck": "Chapter metadata cross-read against privately retained caption aid; independently listened timing not certified; do not expose raw aid."
+    }
+  ]
+}

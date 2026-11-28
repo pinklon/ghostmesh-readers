@@ -2,6 +2,96 @@
   "schema": "ghostmesh-public-release-events-v1",
   "events": [
     {
+      "id": "scout:validate-the-association-not-just-the-extracted-value:source-boundary-update-20261116",
+      "kind": "material-scout-update",
+      "subjectId": "validate-the-association-not-just-the-extracted-value",
+      "url": "https://youtube.shareplane.malott.ai/scout/essays/validate-the-association-not-just-the-extracted-value/",
+      "title": "Validate the Association, Not Just the Extracted Value",
+      "summary": "Separates the released clip-aware grouping change from untested end-to-end table ownership across parser, core and consumer versions.",
+      "publicDate": "2026-11-16"
+    },
+    {
+      "id": "scout:before-the-model-sees-the-spreadsheet:source-boundary-update-20261116",
+      "kind": "material-scout-update",
+      "subjectId": "before-the-model-sees-the-spreadsheet",
+      "url": "https://youtube.shareplane.malott.ai/scout/essays/before-the-model-sees-the-spreadsheet/",
+      "title": "Before the Model Sees the Spreadsheet",
+      "summary": "Adds worksheet coverage to formula/cache validation: the documented Gemini XLS/XLSX path reads the first sheet; no API experiment performed.",
+      "publicDate": "2026-11-16"
+    },
+    {
+      "id": "scout:silence-is-not-security-coverage:first-public-release",
+      "kind": "new-scout-research",
+      "subjectId": "silence-is-not-security-coverage",
+      "url": "https://youtube.shareplane.malott.ai/scout/essays/silence-is-not-security-coverage/",
+      "title": "Silence Is Not Security Coverage",
+      "summary": "Repository activity and notification volume cannot tell you whether still-running software remains protected.",
+      "publicDate": "2026-11-16"
+    },
+    {
+      "id": "scout:a-comma-at-the-handoff:first-public-release",
+      "kind": "new-scout-research",
+      "subjectId": "a-comma-at-the-handoff",
+      "url": "https://youtube.shareplane.malott.ai/scout/essays/a-comma-at-the-handoff/",
+      "title": "A Comma at the Handoff",
+      "summary": "A client can request extensions that a receiving agent supports, yet have those requests misread before activation.",
+      "publicDate": "2026-11-07"
+    },
+    {
+      "id": "scout:the-page-left-the-context:first-public-release",
+      "kind": "new-scout-research",
+      "subjectId": "the-page-left-the-context",
+      "url": "https://youtube.shareplane.malott.ai/scout/essays/the-page-left-the-context/",
+      "title": "The Page Left the Context",
+      "summary": "DR Pixel's historical page-hit metric remains true after an original page image is evicted. A bounded offline probe separates evidence acquisition from availability at the answer, while allowing source-linked derived facts to replace originals under an explicit reading policy.",
+      "publicDate": "2026-11-07"
+    },
+    {
+      "id": "scout:an-addressed-comment-is-not-a-fixed-defect:first-public-release",
+      "kind": "new-scout-research",
+      "subjectId": "an-addressed-comment-is-not-a-fixed-defect",
+      "url": "https://youtube.shareplane.malott.ai/scout/essays/an-addressed-comment-is-not-a-fixed-defect/",
+      "title": "An Addressed Comment Is Not a Fixed Defect",
+      "summary": "Copilot's new metrics can guide an investigation without proving that a repair is complete.",
+      "publicDate": "2026-11-07"
+    },
+    {
+      "id": "scout:the-plateau-that-lied-reproducing-the-experiment:first-public-release",
+      "kind": "new-scout-research",
+      "subjectId": "the-plateau-that-lied-reproducing-the-experiment",
+      "url": "https://youtube.shareplane.malott.ai/scout/essays/the-plateau-that-lied-reproducing-the-experiment/",
+      "title": "The Plateau That Lied: Reproducing the Experiment",
+      "summary": "Three deterministic synthetic experiments with a pinned source package, full generated result rows, and explicit limits on independent replication.",
+      "publicDate": "2026-11-06"
+    },
+    {
+      "id": "scout:the-context-is-there-the-state-is-wrong:first-public-release",
+      "kind": "new-scout-research",
+      "subjectId": "the-context-is-there-the-state-is-wrong",
+      "url": "https://youtube.shareplane.malott.ai/scout/essays/the-context-is-there-the-state-is-wrong/",
+      "title": "The Context Is There. The State Is Wrong.",
+      "summary": "A long context can preserve every decision while an agent still reconstructs the wrong current state. History, state, evidence and authority require different controls.",
+      "publicDate": "2026-11-06"
+    },
+    {
+      "id": "scout:the-agent-can-build-the-app-who-lets-it-touch-the-data:first-public-release",
+      "kind": "new-scout-research",
+      "subjectId": "the-agent-can-build-the-app-who-lets-it-touch-the-data",
+      "url": "https://youtube.shareplane.malott.ai/scout/essays/the-agent-can-build-the-app-who-lets-it-touch-the-data/",
+      "title": "The Agent Can Build the App. Who Lets It Touch the Data?",
+      "summary": "An agent can generate an application, but its authority to call data queries must be granted, scoped and enforced separately.",
+      "publicDate": "2026-11-06"
+    },
+    {
+      "id": "scout:the-approval-must-survive-the-summary:first-public-release",
+      "kind": "new-scout-research",
+      "subjectId": "the-approval-must-survive-the-summary",
+      "url": "https://youtube.shareplane.malott.ai/scout/essays/the-approval-must-survive-the-summary/",
+      "title": "The Approval Must Survive the Summary",
+      "summary": "An agent that remembers the work still needs a reliable account of who may authorize it, which execution owns it, and whether it already happened.",
+      "publicDate": "2026-11-03"
+    },
+    {
       "id": "scout:did-the-evidence-change-the-answer:first-public-release",
       "kind": "new-scout-research",
       "subjectId": "did-the-evidence-change-the-answer",
@@ -217,6 +307,15 @@
       "title": "Copilot CLI 1.0.104 documents different background-task waits by mode",
       "summary": "GitHub’s release notes distinguish interactive and SDK Autopilot waiting from the timeout retained by prompt-mode Autopilot.",
       "publicDate": "2026-10-28"
+    },
+    {
+      "id": "reader:the-second-brain-still-needs-a-judgment:first-public-release",
+      "kind": "new-reader",
+      "subjectId": "reader:the-second-brain-still-needs-a-judgment",
+      "url": "https://youtube.shareplane.malott.ai/the-second-brain-still-needs-a-judgment/",
+      "title": "The Second Brain Still Needs a Judgment",
+      "summary": "The finding. Nick Saraev makes a compelling case for a simpler personal AI knowledge base. Collect information incrementally, preserve the source, extract useful metadata, search it efficiently, and give the model only the context it needs. Much of the fashionable machinery surrounding AI memory is optional.",
+      "publicDate": "2026-11-08"
     }
   ]
 }

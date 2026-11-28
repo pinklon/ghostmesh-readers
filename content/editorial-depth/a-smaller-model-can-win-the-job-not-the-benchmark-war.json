@@ -1,0 +1,155 @@
+{
+  "schemaVersion": 1,
+  "readerId": "reader:a-smaller-model-can-win-the-job-not-the-benchmark-war",
+  "sourceId": "nMVFSVIXIBc",
+  "sourceDigest": "9e51a5b58fe2563f249284f2509d20112fd9fe881a5ed0cddc62f868201fbc88",
+  "sourceAidSha256": "618d13b92578c32d2b8ef54be78ee45ec2c732dbdaa3f9afdd31548b00a001ee",
+  "articleSha256": "fc21cda52fdf0cc3a6b901ba7f1338de38c29ff8a71f57352074ac9ad927aefa",
+  "evidenceRevision": "064e80f296920fbfb3f0b015cceb7ec65a379d96fb33a4c4050b0e39bce026bb",
+  "sourceMapEvidenceSha256": "a270888e4fec6937aeece81126f4af40df6147fa50310391e1c2840d330addbf",
+  "reviewEvidenceSha256": "8f7499a29c7ba0cd63e3a6c45a268170e47639e19f37a73e6a50b64a8a685b48",
+  "candidateAuthor": "segfault",
+  "complexity": {
+    "tier": "brief",
+    "factors": [
+      "Twelve-minute source with six creator/editorial claim records, seven approximate video chapter cues and linked creator code",
+      "One narrow Shopify classification comparison that requires source attribution, privacy and economic uncertainty qualifiers"
+    ],
+    "rationale": "Brief but source-specific review is appropriate for a 12:29 demonstration with six claims and no endorsed production architecture change. Real source and comparative evaluation limits are preserved."
+  },
+  "sourceMap": [
+    {
+      "atSeconds": 0,
+      "sectionId": "opening-an-upset-with-a-very-narrow-playing-field",
+      "claimIds": [
+        "r70-scores"
+      ],
+      "rationale": "Creator introduces the task-specific model comparison."
+    },
+    {
+      "atSeconds": 60,
+      "sectionId": "the-experiment-reconstructed",
+      "claimIds": [
+        "r70-splits"
+      ],
+      "rationale": "Video explains preparation into JSONL classification examples."
+    },
+    {
+      "atSeconds": 180,
+      "sectionId": "the-experiment-reconstructed",
+      "claimIds": [
+        "r70-sponsor"
+      ],
+      "rationale": "Sponsor disclosure and hosted training rationale."
+    },
+    {
+      "atSeconds": 300,
+      "sectionId": "what-the-video-actually-reports",
+      "claimIds": [
+        "r70-splits",
+        "r70-scores"
+      ],
+      "rationale": "Creator presents the seeded 5,000/1,000 sample and initial baseline; public prepare.py qualifies evaluation labels from the full training split before sampling, not exclusively from the 5,000 sampled training items."
+    },
+    {
+      "atSeconds": 420,
+      "sectionId": "where-the-headline-outruns-the-evidence",
+      "claimIds": [
+        "r70-conditions"
+      ],
+      "rationale": "Creator configures hosted fine-tuning and evaluation conditions."
+    },
+    {
+      "atSeconds": 540,
+      "sectionId": "where-the-headline-outruns-the-evidence",
+      "claimIds": [
+        "r70-conditions"
+      ],
+      "rationale": "Training curve, checkpoints and adapter download."
+    },
+    {
+      "atSeconds": 660,
+      "sectionId": "what-the-video-actually-reports",
+      "claimIds": [
+        "r70-scores"
+      ],
+      "rationale": "Video announces tuned model results."
+    }
+  ],
+  "assessment": {
+    "sourceCoverage": {
+      "disposition": "covered",
+      "rationale": "Seven approximate timed cues and creator code reconstruct the bounded 12:29 classification task without representing machine captions as independently certified speech."
+    },
+    "supportingArgument": {
+      "disposition": "covered",
+      "rationale": "The article distinguishes a specific reported classification result from general model intelligence and gives concrete reasons to test task specialization."
+    },
+    "evidenceRoles": {
+      "disposition": "covered",
+      "rationale": "Creator video claims and code details are separated from editorial analysis and the two SharePlane conceptual companions, which do not reproduce the benchmark."
+    },
+    "counterargument": {
+      "disposition": "covered",
+      "rationale": "The analysis acknowledges that a small specialized model could win a narrow job while warning against treating one creator-reported sample as general superiority."
+    },
+    "tradeoffs": {
+      "disposition": "covered",
+      "rationale": "Different prompts, category distribution, data leakage, inference and training cost, validation effort and operational risk are identified as unpriced or unresolved factors."
+    },
+    "falsifiability": {
+      "disposition": "covered",
+      "rationale": "The Reader specifies pinned datasets, duplicate inspection, matched labels and prompts, paired item predictions, multiple seeds, and accepted-job cost comparison as necessary follow-up checks."
+    },
+    "originalSynthesis": {
+      "disposition": "covered",
+      "rationale": "The GhostMesh conclusion recommends routing repeatable classification to a bounded specialized system while escalating uncertain cases under measured acceptance criteria; no routing evaluation is claimed."
+    },
+    "performance": {
+      "disposition": "covered",
+      "rationale": "The 68.2 percent GPT-6 Luna and 69.8/73.0 percent tuned Qwen creator scores remain source-attributed; statistical significance and generality are not certified."
+    },
+    "economics": {
+      "disposition": "covered",
+      "rationale": "Hardware and training demonstration are not confused with measured total cost per accepted classification, and inference retirement links are described as editorial extensions only."
+    },
+    "threatGovernance": {
+      "disposition": "not-applicable",
+      "rationale": "The Reader does not authorize deployment, sensitive-data transfer or production AI routing; operational governance remains an untested proposed boundary."
+    }
+  },
+  "independentCorroboration": "none",
+  "ownerDecision": {
+    "kind": "conversation",
+    "owner": "Tony Malott",
+    "approval": "On November 20, 2026, Tony directed segfault in the existing Reader #70 conversation: 'Segfault, just take control of this and get it over the line. This has been bouncing back and forth between you and Pale Horse and Sis Call for a while now.' This is recorded as instruction to complete the existing reviewed Reader #70 publication through normal CI, merge and production gates. It is not an independent review or permission to bypass any required control.",
+    "approvalDate": "2026-11-20",
+    "articleSha256": "fc21cda52fdf0cc3a6b901ba7f1338de38c29ff8a71f57352074ac9ad927aefa",
+    "evidenceRevision": "064e80f296920fbfb3f0b015cceb7ec65a379d96fb33a4c4050b0e39bce026bb"
+  },
+  "decision": "accept",
+  "gaps": [
+    {
+      "type": "source",
+      "severity": "nonblocking",
+      "rationale": "The original private audio was not independently certified as speech, and chapter timing is based on stated private caption and representative-frame spot checks."
+    },
+    {
+      "type": "evidence",
+      "severity": "nonblocking",
+      "rationale": "No independent model training or product classification rerun was produced, and per-item paired errors, dataset overlap and exact vendor model defaults remain unverified."
+    },
+    {
+      "type": "test",
+      "severity": "nonblocking",
+      "rationale": "No controlled end-to-end operational comparison covers accepted classifications, latency, retraining cost, human review and escalation overhead."
+    },
+    {
+      "type": "risk",
+      "severity": "nonblocking",
+      "rationale": "The private approval locator is absent from current public artifacts but remains in earlier Git object history; historical removal is not claimed."
+    }
+  ],
+  "decisionRationale": "The actual independent reviewer accepted the source-grounded Reader at reviewed source head 080fc4af, as recorded by Pale Horse. This receipt retains that scoped attestation and its limits. Final publication requires the distinct authenticated owner decision and exact-head CI before merge.",
+  "assessedAt": "2026-11-20T21:51:50Z"
+}

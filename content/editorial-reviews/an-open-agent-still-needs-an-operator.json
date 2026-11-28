@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "readerId": "reader:an-open-agent-still-needs-an-operator",
+  "sourceId": "ynEEbqKQSaY",
+  "sourceAidSha256": "9e44fa0e514e8874d289b3e357f0e2e40124da604d1ea06a55a672c5a008ffe7",
+  "articleSha256": "69e47d78700dbd1a7f84c572c1b8a896be0be44b4e21e58b3753b6b301bc4e39",
+  "evidenceRevision": "e57e8c693dbf3b769302bd6cba1f79a0771bc94bdf23862922f9984425de7b29",
+  "reviewedAt": "2026-11-15T11:51:54Z",
+  "provenance": {
+    "kind": "codex-task-agent",
+    "reference": "Pale Horse independent editorial/source/privacy review, Slack #reader64 thread message 1794743514.052389, at PR #183 head cf2e7724d44e2e86d4137bfbd6b19465589700e9, following two REVISE findings and their exact-head corrections.",
+    "limits": "The reviewer inspected maker documentation and public/repository text, not the private VTT or throttled source video. This is not audio/transcript certification, independent Nod deployment testing, owner visual acceptance, or merge authorization."
+  },
+  "summary": "ACCEPT FOR OWNER REVIEW. Source metadata and use-case inference classification are corrected; remaining claims are bounded to creator pitch, maker documentation and GhostMesh interpretation.",
+  "findings": [
+    "The source title and HTML meta description now identify Chase AI and Nod, with no erroneous Lauren Tan attribution from Reader #63.",
+    "The five source timestamps map to their intended claim sections and the source map; these are navigational cues rather than certified verbatim transcription.",
+    "The use-case judgment r64-use-cases is correctly attributed to GhostMesh editorial inference, not maker documentation or independently measured utility.",
+    "Two Reader relationships and three SharePlane comparisons preserve their editorial role without being presented as independent corroboration.",
+    "The inspected public/private evidence boundary retains source-aid digest and caveats, without publishing the private VTT or claiming a product benchmark."
+  ],
+  "conclusion": "accept-for-owner-review"
+}

@@ -29,6 +29,27 @@ def paper_cover(source):
 # test, not verification labels. Keep the source-grounding checks below when
 # adding a Reader; never infer a call from its category or claim count.
 CALLS = {
+    'more-skills-worse-agents': ('Test skill discovery, not file count', 'Watch the discovery and pruning argument at 01:42 and 14:19. Compare identical tasks with scoped skill indexes, measure selection errors and context cost, and preserve rarely used incident-response procedures.'),
+    'when-every-ai-website-looks-good': (
+        'Test usefulness before decoration', 'Apply the five design principles to one existing screen. Compare comprehension, task completion, accessibility and time to useful information, not visual polish alone.'),
+    'offline-is-not-the-same-as-independent': (
+        'Test the whole local boundary', 'Watch the privacy claim at 00:50 and tool actions at 04:33. Test outbound isolation, retrieval, memory correction and tool authorization before granting operational authority.'),
+    'the-paper-is-not-the-experiment': (
+        'Require the experiment receipt', 'Bind consequential claims to actual code, data and run logs, then assess integrity, completeness and scientific sufficiency separately. Run a bounded matched-harness replication before expanding controls.'),
+    'the-second-brain-still-needs-a-judgment': (
+        'The recommendation', 'The recommendation. Start with simple retrieval, including BM25. Preserve original records and their provenance. Represent decisions, qualifications, and supersession explicitly. Measure failures before adding semantic indexes or other infrastructure. A second brain should improve judgment, not merely accelerate recall.'),
+    'the-cost-of-forgetting-where-the-tools-are': (
+        'Test cost without losing discovery', 'Watch the micro-skills at 01:49 and tool pruning at 03:46. Compare billed cost and accepted work while deliberately requiring a rarely used authorized tool.'),
+    'the-router-is-not-the-organization': (
+        'Test the operating boundary', 'Watch the router-worker separation at 02:00 and the watchdog at 08:56. Compare accepted work, interruption recovery and total cost before adopting the architecture.'),
+    'the-success-hid-the-failure': (
+        'Worth studying', 'Watch the hidden execution friction at 08:38 and Skill Doctor at 13:47. Test one recurring GhostMesh instruction defect against existing receipts before adding continuous grading.'),
+    'what-arete-27b-bias-test-measures': (
+        'Worth studying', 'Keep Arete as a candidate for a controlled comparison. Compare it with base Qwen under the same inference settings and have reviewers score factual coverage, unsupported assertions, refusals, and framing separately.'),
+    'when-code-gets-cheap-where-does-the-work-wait': (
+        'Worth studying', 'Watch Raji on review and testing at 03:16 and Pando at 04:39. Use the evidence to decide which stage of your own delivery flow to measure.'),
+
+    'a-model-that-says-yes-is-not-necessarily-a-model-that-knows': ('Test findings, not compliance', 'Compare refusal-suppressed and base models on identical authorized tasks; measure confirmed findings, tool safety, latency and false positives.'),
     'the-cockpit-is-not-the-control-plane': ('Pilot the cockpit, not the authority', 'Compare worktrees, browser annotation and reviewed changes on a disposable task; keep durable ownership and completion outside the interface.'),
     'the-session-count-is-not-the-system': ('Watch workflow, not volume', 'Borrow bounded tasks, critical review and read-only loops; treat session counts as self-report and test whether automation saves actual owner attention.'),
     'the-model-is-not-the-demonstration': ('Test the complete task', 'Treat Kimi benchmark and narrated demo claims as reasons for a pinned trial, then compare accepted work, full cost and review authority.'),
@@ -73,6 +94,12 @@ CALLS = {
 
 
 def _poster(reader):
+    # Reader 71 is a written-source investigation; use its approved original
+    # GhostMesh artwork rather than the generic plain-text article fallback.
+    if reader['slug'] == 'claude-lean-and-the-riemann-hypothesis':
+        return ('<img class="r71-card-cover" src="/reader71/square.png" '
+                'width="800" height="800" loading="lazy" decoding="async" '
+                'alt="GhostMesh Reader 71 editorial thumbnail: Claude, Lean, and the Riemann Hypothesis. Conceptual illustration, not a proof diagram.">')
     source = reader['source']
     if source.get('kind') in {'article', 'repository'}:
         return (f'<div class="gm-archive-source-unknown">{_e(source["publisher"])}<br>'
@@ -99,11 +126,22 @@ def _poster(reader):
 def card(reader, number=None):
     """One complete, linkable archive entry; caller controls order and heading context."""
     slug = reader['slug']
-    if slug not in CALLS:
-        raise ValueError(f'Reader requires a source-grounded archive call: {slug}')
     if not reader.get('whyItMatters') or not reader.get('ghostMeshTakeaway'):
         raise ValueError(f'Reader lacks source guidance: {slug}')
-    call_label, call = CALLS[slug]
+    # New Readers author their archive recommendation in their existing catalog
+    # record. Historical curated calls remain unchanged; no per-Reader code edit.
+    if 'archiveCall' in reader:
+        archive_call = reader['archiveCall']
+        if (not isinstance(archive_call, dict) or set(archive_call) != {'label', 'text'}
+                or not all(isinstance(archive_call[k], str) and archive_call[k].strip()
+                           for k in ('label', 'text'))
+                or len(archive_call['label']) > 90 or not 40 <= len(archive_call['text']) <= 600):
+            raise ValueError(f'Reader archiveCall needs a short label and a source-grounded 40-600 character recommendation: {slug}')
+        call_label, call = archive_call['label'], archive_call['text']
+    elif slug in CALLS:
+        call_label, call = CALLS[slug]
+    else:
+        raise ValueError(f'Reader missing archiveCall in content/catalog.json: {slug}')
     unverified = sum(claim['status'] == 'unverified' for claim in reader['claims'])
     total = len(reader['claims'])
     written = reader['source'].get('kind') in {'paper', 'article', 'repository'}

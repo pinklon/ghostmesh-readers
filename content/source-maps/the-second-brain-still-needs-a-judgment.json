@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 1,
+  "readerId": "reader:the-second-brain-still-needs-a-judgment",
+  "sourceId": "LP7bfT4vOlo",
+  "sourceAidSha256": "45017ef77b520e1c4a8b84c33ab1c0755caa54882ce6435c82cc540802d94e0b",
+  "points": [
+    {
+      "atSeconds": 574,
+      "sectionId": "source-performance",
+      "claimIds": [
+        "the-second-brain-still-needs-a-judgment--claim-1",
+        "the-second-brain-still-needs-a-judgment--claim-2"
+      ],
+      "cueParaphrase": "Machine ASR separately reports inference-time and vector database/embedding maintenance-cost nine-tenths reductions; neither is independently measured here.",
+      "privateAidCheck": "Publisher checked retained transcript/VTT/cue-map integrity and inspected the mapped ASR text. Machine ASR remains unlistened; no visual or numerical verification."
+    },
+    {
+      "atSeconds": 582,
+      "sectionId": "source-bm25",
+      "claimIds": [
+        "the-second-brain-still-needs-a-judgment--claim-3"
+      ],
+      "cueParaphrase": "The video names BM25 at this passage. The separate BEIR published abstract supports the research finding about a robust baseline; video speech is not evidence of the paper result.",
+      "privateAidCheck": "Publisher checked retained transcript/VTT/cue-map integrity and inspected the mapped ASR text. Machine ASR remains unlistened; no visual or numerical verification."
+    },
+    {
+      "atSeconds": 571,
+      "sectionId": "source-bm25",
+      "claimIds": [
+        "the-second-brain-still-needs-a-judgment--claim-4"
+      ],
+      "cueParaphrase": "The presenter dismisses RAG at this later passage after defining it more broadly near the beginning. The article distinguishes lexical retrieval from the wider architecture, without claiming a benchmark.",
+      "privateAidCheck": "Publisher checked retained transcript/VTT/cue-map integrity and inspected the mapped ASR text. Machine ASR remains unlistened; no visual or numerical verification."
+    },
+    {
+      "atSeconds": 130,
+      "sectionId": "source-recency",
+      "claimIds": [
+        "the-second-brain-still-needs-a-judgment--claim-5"
+      ],
+      "cueParaphrase": "The source product-price example motivates a recency boost; the article separately tests whether newer records necessarily carry authority.",
+      "privateAidCheck": "Publisher checked retained transcript/VTT/cue-map integrity and inspected the mapped ASR text. Machine ASR remains unlistened; no visual or numerical verification."
+    },
+    {
+      "atSeconds": 437,
+      "sectionId": "source-summaries",
+      "claimIds": [
+        "the-second-brain-still-needs-a-judgment--claim-6"
+      ],
+      "cueParaphrase": "The proposed pipeline retains original material, likely-query summaries and technical atoms, with summary matches pointing to raw data.",
+      "privateAidCheck": "Publisher checked retained transcript/VTT/cue-map integrity and inspected the mapped ASR text. Machine ASR remains unlistened; no visual or numerical verification."
+    },
+    {
+      "atSeconds": 232,
+      "sectionId": "source-archive",
+      "claimIds": [
+        "the-second-brain-still-needs-a-judgment--claim-7"
+      ],
+      "cueParaphrase": "The source reports tens of thousands of records across development history, model sessions and transcripts; creator metadata supplies Engram spelling.",
+      "privateAidCheck": "Publisher checked retained transcript/VTT/cue-map integrity and inspected the mapped ASR text. Machine ASR remains unlistened; no visual or numerical verification."
+    },
+    {
+      "atSeconds": 176,
+      "sectionId": "source-retrieve",
+      "claimIds": [
+        "the-second-brain-still-needs-a-judgment--claim-8"
+      ],
+      "cueParaphrase": "The presenter describes context-rot, cost and latency concerns; the cited long-context study supplies bounded research context, not an Engram benchmark.",
+      "privateAidCheck": "Publisher checked retained transcript/VTT/cue-map integrity and inspected the mapped ASR text. Machine ASR remains unlistened; no visual or numerical verification."
+    }
+  ]
+}

@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 1,
+  "readerId": "reader:the-1000-ai-workflow-is-a-routing-problem",
+  "sourceId": "dSHSsMY8u88",
+  "sourceAidSha256": "5b31be4e138794d0e5a69123b0d2e34102d62cb7d9dd3448eb3b43649ab6581c",
+  "points": [
+    {
+      "atSeconds": 170,
+      "sectionId": "headline",
+      "claimIds": [
+        "r62-usage"
+      ],
+      "cueParaphrase": "Usage-limit claim; creator-reported, not independently audited.",
+      "privateAidCheck": "Local VTT timestamp guide only. Private transcript and media excluded."
+    },
+    {
+      "atSeconds": 241,
+      "sectionId": "reusable-instructions",
+      "claimIds": [
+        "r62-snippets"
+      ],
+      "cueParaphrase": "Reusable prompt snippets; creator-reported, not independently audited.",
+      "privateAidCheck": "Local VTT timestamp guide only. Private transcript and media excluded."
+    },
+    {
+      "atSeconds": 673,
+      "sectionId": "cost-per-task",
+      "claimIds": [
+        "r62-cost"
+      ],
+      "cueParaphrase": "Cost per completed task; creator-reported, not independently audited.",
+      "privateAidCheck": "Local VTT timestamp guide only. Private transcript and media excluded."
+    },
+    {
+      "atSeconds": 781,
+      "sectionId": "independent-review",
+      "claimIds": [
+        "r62-review"
+      ],
+      "cueParaphrase": "Gemini review; creator-reported, not independently audited.",
+      "privateAidCheck": "Local VTT timestamp guide only. Private transcript and media excluded."
+    },
+    {
+      "atSeconds": 872,
+      "sectionId": "independent-review",
+      "claimIds": [
+        "r62-productivity"
+      ],
+      "cueParaphrase": "Productivity claim; creator-reported, not independently audited.",
+      "privateAidCheck": "Local VTT timestamp guide only. Private transcript and media excluded."
+    },
+    {
+      "atSeconds": 938,
+      "sectionId": "independent-review",
+      "claimIds": [
+        "r62-production"
+      ],
+      "cueParaphrase": "Direct-to-production practice; creator-reported, not independently audited.",
+      "privateAidCheck": "Local VTT timestamp guide only. Private transcript and media excluded."
+    },
+    {
+      "atSeconds": 952,
+      "sectionId": "independent-review",
+      "claimIds": [
+        "r62-review"
+      ],
+      "cueParaphrase": "Cross-family review; creator-reported, not independently audited.",
+      "privateAidCheck": "Local VTT timestamp guide only. Private transcript and media excluded."
+    },
+    {
+      "atSeconds": 1177,
+      "sectionId": "agent-count",
+      "claimIds": [
+        "r62-agents"
+      ],
+      "cueParaphrase": "Ten-agent delegation; creator-reported, not independently audited.",
+      "privateAidCheck": "Local VTT timestamp guide only. Private transcript and media excluded."
+    },
+    {
+      "atSeconds": 1431,
+      "sectionId": "agent-count",
+      "claimIds": [
+        "r62-role"
+      ],
+      "cueParaphrase": "Role framing; creator-reported, not independently audited.",
+      "privateAidCheck": "Local VTT timestamp guide only. Private transcript and media excluded."
+    },
+    {
+      "atSeconds": 1641,
+      "sectionId": "script-loops",
+      "claimIds": [
+        "r62-loops"
+      ],
+      "cueParaphrase": "Standing loops; creator-reported, not independently audited.",
+      "privateAidCheck": "Local VTT timestamp guide only. Private transcript and media excluded."
+    },
+    {
+      "atSeconds": 1748,
+      "sectionId": "script-loops",
+      "claimIds": [
+        "r62-feature"
+      ],
+      "cueParaphrase": "Limits on feature invention; creator-reported, not independently audited.",
+      "privateAidCheck": "Local VTT timestamp guide only. Private transcript and media excluded."
+    }
+  ]
+}

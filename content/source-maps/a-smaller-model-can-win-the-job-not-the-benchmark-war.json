@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 1,
+  "readerId": "reader:a-smaller-model-can-win-the-job-not-the-benchmark-war",
+  "sourceId": "nMVFSVIXIBc",
+  "sourceAidSha256": "618d13b92578c32d2b8ef54be78ee45ec2c732dbdaa3f9afdd31548b00a001ee",
+  "points": [
+    {
+      "atSeconds": 0,
+      "sectionId": "opening-an-upset-with-a-very-narrow-playing-field",
+      "claimIds": [
+        "r70-scores"
+      ],
+      "cueParaphrase": "Creator introduces the task-specific model comparison.",
+      "privateAidCheck": "Approximate video chapter checked using private automatic captions and sample frames, without independent audio transcription."
+    },
+    {
+      "atSeconds": 60,
+      "sectionId": "the-experiment-reconstructed",
+      "claimIds": [
+        "r70-splits"
+      ],
+      "cueParaphrase": "Video explains preparation into JSONL classification examples.",
+      "privateAidCheck": "Approximate video chapter checked using private automatic captions and sample frames, without independent audio transcription."
+    },
+    {
+      "atSeconds": 180,
+      "sectionId": "the-experiment-reconstructed",
+      "claimIds": [
+        "r70-sponsor"
+      ],
+      "cueParaphrase": "Sponsor disclosure and hosted training rationale.",
+      "privateAidCheck": "Approximate video chapter checked using private automatic captions and sample frames, without independent audio transcription."
+    },
+    {
+      "atSeconds": 300,
+      "sectionId": "what-the-video-actually-reports",
+      "claimIds": [
+        "r70-splits",
+        "r70-scores"
+      ],
+      "cueParaphrase": "Creator presents the seeded 5,000/1,000 sample and initial baseline; public prepare.py qualifies evaluation labels from the full training split before sampling, not exclusively from the 5,000 sampled training items.",
+      "privateAidCheck": "Approximate video chapter checked using private automatic captions and sample frames, without independent audio transcription."
+    },
+    {
+      "atSeconds": 420,
+      "sectionId": "where-the-headline-outruns-the-evidence",
+      "claimIds": [
+        "r70-conditions"
+      ],
+      "cueParaphrase": "Creator configures hosted fine-tuning and evaluation conditions.",
+      "privateAidCheck": "Approximate video chapter checked using private automatic captions and sample frames, without independent audio transcription."
+    },
+    {
+      "atSeconds": 540,
+      "sectionId": "where-the-headline-outruns-the-evidence",
+      "claimIds": [
+        "r70-conditions"
+      ],
+      "cueParaphrase": "Training curve, checkpoints and adapter download.",
+      "privateAidCheck": "Approximate video chapter checked using private automatic captions and sample frames, without independent audio transcription."
+    },
+    {
+      "atSeconds": 660,
+      "sectionId": "what-the-video-actually-reports",
+      "claimIds": [
+        "r70-scores"
+      ],
+      "cueParaphrase": "Video announces tuned model results.",
+      "privateAidCheck": "Approximate video chapter checked using private automatic captions and sample frames, without independent audio transcription."
+    }
+  ]
+}

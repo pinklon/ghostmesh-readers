@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "readerId": "reader:claude-lean-and-the-riemann-hypothesis",
+  "sourceId": "alpoge-riemann-hypothesis-announcement-2026",
+  "sourceAidSha256": "3fc97784b71ddd44ff8aa0a177e99622a1c61b13cfa843a0989ee4a7a0cfeb8d",
+  "points": [
+    {
+      "atSeconds": null,
+      "sectionId": "ii.-what-alpöge-and-claude-say-they-did",
+      "claimIds": [
+        "r71-author",
+        "r71-attribution"
+      ],
+      "cueParaphrase": "The author announcement supports only first-person claims about discovery and model contributions, not independent provenance of each insight.",
+      "privateAidCheck": "Source is the retained original November 20 author note, independently cross-read against dated MIT verification statements; no transcript or compiled proof was reproduced by GhostMesh."
+    },
+    {
+      "atSeconds": null,
+      "sectionId": "iii.-verification-that-matters",
+      "claimIds": [
+        "r71-compilation",
+        "r71-kernels",
+        "r71-statement",
+        "r71-arithmetic"
+      ],
+      "cueParaphrase": "The original formal-proof claim is distinguished from MIT independent checker reports, exact target comparison and the Robin/Lagarias arithmetic cross-check.",
+      "privateAidCheck": "Source is the retained original November 20 author note, independently cross-read against dated MIT verification statements; no transcript or compiled proof was reproduced by GhostMesh."
+    },
+    {
+      "atSeconds": null,
+      "sectionId": "v.-three-ways-this-could-still-change",
+      "claimIds": [
+        "r71-community"
+      ],
+      "cueParaphrase": "The original claim is compared against still-running checks and Clay institutional status without misrepresenting either as a formal proof rejection.",
+      "privateAidCheck": "Source is the retained original November 20 author note, independently cross-read against dated MIT verification statements; no transcript or compiled proof was reproduced by GhostMesh."
+    }
+  ]
+}

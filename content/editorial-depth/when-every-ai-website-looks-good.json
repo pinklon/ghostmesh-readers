@@ -1,0 +1,180 @@
+{
+  "schemaVersion": 1,
+  "readerId": "reader:when-every-ai-website-looks-good",
+  "sourceId": "mImbbszCjCI",
+  "sourceDigest": "1167d34f765432b66c4c3419c71ac48b95d28836c572feeb3e04510852db0fb2",
+  "sourceAidSha256": "67ef2383a3927d4dc5f367fc39e86fc25603b647964110bddcaff1545482897d",
+  "articleSha256": "7c30bfcbf8934e1cf49bb89662de9b5715f61fe9cb06cfb7d979e04a4363e427",
+  "evidenceRevision": "410f2c4d4c13bd1ea776b80058d8443b28d1ef53e581aafd1e742d885844f7c2",
+  "sourceMapEvidenceSha256": "b4e168ae45751dad3f40fa2017ef122afb7edb60f6cad00e8c128db6f275831b",
+  "reviewEvidenceSha256": "bdd558e17d21acbb6ecc647acbfb00b9b103ab8793acec96bf3ce0b221e063e9",
+  "candidateAuthor": "pinklon",
+  "complexity": {
+    "tier": "extended",
+    "factors": [
+      "Nine material catalog claims include four source-reported marketing metrics with missing experiment details",
+      "Five distinct design patterns are evaluated across marketing pages and higher-stakes operational interfaces"
+    ],
+    "rationale": "Nine material claims trigger extended review even though the source lasts 11:18. The analysis requires separate source cues, counterargument, limitations and test implications across multiple design patterns."
+  },
+  "sourceMap": [
+    {
+      "atSeconds": 24,
+      "sectionId": "film",
+      "claimIds": [
+        "when-every-ai-website-looks-good--mirror-test"
+      ],
+      "rationale": "Presenter's framework for matching visitor intent; useful heuristic, not an independently validated experiment."
+    },
+    {
+      "atSeconds": 69,
+      "sectionId": "mirror-analysis",
+      "claimIds": [
+        "when-every-ai-website-looks-good--trucking-lift"
+      ],
+      "rationale": "79.3 percent improvement reported by the presenter; metric denominator and study design unverified."
+    },
+    {
+      "atSeconds": 85,
+      "sectionId": "mirror-analysis",
+      "claimIds": [
+        "when-every-ai-website-looks-good--mirror-test"
+      ],
+      "rationale": "Who is this for, what do I get, and what do I do next; adapt for operational surfaces."
+    },
+    {
+      "atSeconds": 108,
+      "sectionId": "mirror-analysis",
+      "claimIds": [
+        "when-every-ai-website-looks-good--city-click-lift"
+      ],
+      "rationale": "90 percent pricing clickthrough increase attributed to a marketing example; no primary experiment verified."
+    },
+    {
+      "atSeconds": 125,
+      "sectionId": "mirror-analysis",
+      "claimIds": [
+        "when-every-ai-website-looks-good--campaign-monitor-lift"
+      ],
+      "rationale": "31.4 percent signup increase attributed to wording; no primary experiment verified."
+    },
+    {
+      "atSeconds": 164,
+      "sectionId": "film",
+      "claimIds": [
+        "when-every-ai-website-looks-good--accent-budget"
+      ],
+      "rationale": "Restricted emphasis is useful; more than one semantic status color may be needed in operations."
+    },
+    {
+      "atSeconds": 209,
+      "sectionId": "film",
+      "claimIds": [
+        "when-every-ai-website-looks-good--accent-budget"
+      ],
+      "rationale": "Interior-design analogy, not a validated universal application-interface requirement."
+    },
+    {
+      "atSeconds": 259,
+      "sectionId": "film",
+      "claimIds": [
+        "when-every-ai-website-looks-good--functional-depth"
+      ],
+      "rationale": "Background, middle and foreground should express hierarchy; mobile overlap needs rendered QA."
+    },
+    {
+      "atSeconds": 414,
+      "sectionId": "motion-analysis",
+      "claimIds": [
+        "when-every-ai-website-looks-good--purposeful-motion"
+      ],
+      "rationale": "Movement should show product, direct attention or explain change; not a universal numerical limit."
+    },
+    {
+      "atSeconds": 494,
+      "sectionId": "motion-analysis",
+      "claimIds": [
+        "when-every-ai-website-looks-good--purposeful-motion"
+      ],
+      "rationale": "Critical words immediately available and reduced-motion pathway required."
+    },
+    {
+      "atSeconds": 549,
+      "sectionId": "film",
+      "claimIds": [
+        "when-every-ai-website-looks-good--interactive-proof"
+      ],
+      "rationale": "This is an approximate player chapter lead-in; the free-sample passage begins seconds later and the article does not claim the 549-second line states a measured outcome."
+    },
+    {
+      "atSeconds": 577,
+      "sectionId": "interactive-proof-analysis",
+      "claimIds": [
+        "when-every-ai-website-looks-good--outgrow-rate"
+      ],
+      "rationale": "Approximately 45 percent conversion rate attributed to vendor Outgrow, not a 45 percent improvement; independent denominator unavailable."
+    }
+  ],
+  "assessment": {
+    "sourceCoverage": {
+      "disposition": "covered",
+      "rationale": "The exact 11:18 source has a hash-verified retained manifest, full local-Whisper transcript and timed VTT. The reviewed map covers twelve source moments while explicitly limiting ASR, listening and frame certainty."
+    },
+    "supportingArgument": {
+      "disposition": "covered",
+      "rationale": "The unchanged locked manuscript develops five design patterns and the distinct GhostMesh question of whether a page makes a real task and promise understandable; authored sections preserve that argument in full."
+    },
+    "evidenceRoles": {
+      "disposition": "covered",
+      "rationale": "All nine claims remain unverified or source-attributed. Four marketing numbers are treated as reported examples; contextual design references and original GhostMesh inference are not converted into independent experimental proof."
+    },
+    "counterargument": {
+      "disposition": "covered",
+      "rationale": "The article grants the value of clear marketing hierarchy while challenging direct transfer to dense operational consoles, where multiple states, authority, safety and accessible motion can matter more than one sales action."
+    },
+    "tradeoffs": {
+      "disposition": "covered",
+      "rationale": "Semantic emphasis is weighed against risk and state colors; depth against mobile overlap; motion against reduced-motion and immediate text; interactive proof against unnecessary effort or false precision."
+    },
+    "falsifiability": {
+      "disposition": "covered",
+      "rationale": "The proposed before-and-after checks name real screens and compare mobile and desktop comprehension, time to useful information, task completion, errors, accessibility and perceived quality; none is claimed as completed."
+    },
+    "originalSynthesis": {
+      "disposition": "covered",
+      "rationale": "The distinct conclusion turns marketing design advice into an inspectable interface rule: a surface should make an honest promise, expose its evidence and help a person choose the next valid action."
+    },
+    "performance": {
+      "disposition": "covered",
+      "rationale": "The reported 79.3, 90 and 31.4 percent improvements and approximately 45 percent rate are explicitly attributed and denominator-limited. The article claims no replicated lift, causal proof or general transferability."
+    },
+    "economics": {
+      "disposition": "covered",
+      "rationale": "Cheap AI frontend production and reported marketing conversion are separated from durable utility and business value. No return-on-investment or product revenue effect is inferred from the cited examples."
+    },
+    "threatGovernance": {
+      "disposition": "covered",
+      "rationale": "The operational-console comparison calls for visible state, owner, consequence and safe action. It does not assert a measured security improvement or deployed GhostMesh control from the marketing source."
+    }
+  },
+  "independentCorroboration": "none",
+  "ownerDecision": {
+    "pullNumber": 148,
+    "commentId": 6787160412
+  },
+  "decision": "accept",
+  "gaps": [
+    {
+      "type": "source",
+      "severity": "nonblocking",
+      "rationale": "The retained local-Whisper transcript and timed VTT were hash-checked but not certified by end-to-end listening or frame inspection; source links are approximate seeks."
+    },
+    {
+      "type": "evidence",
+      "severity": "nonblocking",
+      "rationale": "Presenter and vendor marketing metrics lack qualified primary experiment denominators, confidence intervals and independent replication; they remain attributed and unverified in the article."
+    }
+  ],
+  "decisionRationale": "Independent editorial/source/privacy review accepts this exact authored HTML, source map and current catalog for owner review. Three substantive analytical sections meet the extended mapping purpose; the film section is navigation only. The PR 148 owner acceptance comment is still pending, represented by a null commentId, so this receipt must pass only nonrelease validation until a genuine later owner decision is bound.",
+  "assessedAt": "2026-11-11T00:24:05Z"
+}

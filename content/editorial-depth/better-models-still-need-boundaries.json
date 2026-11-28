@@ -1,0 +1,151 @@
+{
+  "readerId": "reader:better-models-still-need-boundaries",
+  "sourceId": "OEY-vm7qRHc",
+  "sourceDigest": "fd17f26e6cddab4e7afa6c486717e4ac7a054459efad846b8b87b3e22c0c46c7",
+  "sourceAidSha256": "47e9b3b0457f1190e78a7a21fc460037a9c384f74e1d8ebdd1f473accc6171d6",
+  "articleSha256": "1df22c937c0058f5306a6c30ff0f55a57e467f5d1be82430d1602d8bced25ca9",
+  "evidenceRevision": "f763703fe4d17a90b13c0839591519a92525b797818c57bff85028371ea8d3bf",
+  "schemaVersion": 1,
+  "sourceMapEvidenceSha256": "7df23b86c21c114e4e07abcec9e8c9de7af3d9182cddbb47e71fc60f217f8a48",
+  "reviewEvidenceSha256": "f369a2f20b735b6f723ed2295fb38319124e69202b0353a38defad5f69fb8fed",
+  "candidateAuthor": "pinklon",
+  "complexity": {
+    "tier": "extended",
+    "factors": [
+      "Eight material claims and four analytical sections across hardware access, research capability and security authority",
+      "Consequential incident and revocation interpretation with distinct first-party, independent and guidance sources",
+      "Four separately assessed Reader and SharePlane editorial relationship routes"
+    ],
+    "rationale": "The cross-domain source argument and security implication warrant extended source, countercase, economics, performance and threat-governance review even though the video itself is shorter than thirty minutes."
+  },
+  "sourceMap": [
+    {
+      "atSeconds": 266,
+      "sectionId": "capacity-analysis",
+      "claimIds": [
+        "r52-inventory"
+      ],
+      "rationale": "At 04:26 the video returns to reported H200 inventory; Reuters supplies the separate written count and anonymous-source qualification, not an inventory audit."
+    },
+    {
+      "atSeconds": 172,
+      "sectionId": "capacity-analysis",
+      "claimIds": [
+        "r52-rental"
+      ],
+      "rationale": "At 02:52 the creator discusses alternative compute access; this approximate lead-in cue does not establish rental eligibility or an available service."
+    },
+    {
+      "atSeconds": 667,
+      "sectionId": "research-analysis",
+      "claimIds": [
+        "r52-research",
+        "r52-compute-cause"
+      ],
+      "rationale": "At 11:07 the source introduces AI research progress; METR separately estimates model-capability growth and states its compute-scaling and access limitations."
+    },
+    {
+      "atSeconds": 858,
+      "sectionId": "research-analysis",
+      "claimIds": [
+        "r52-human-role"
+      ],
+      "rationale": "At 14:18 the creator acknowledges humans in the loop; this bounds any claim of autonomous research judgment."
+    },
+    {
+      "atSeconds": 907,
+      "sectionId": "authority-analysis",
+      "claimIds": [
+        "r52-tool-path"
+      ],
+      "rationale": "At 15:07 the source discusses the internal AI-tool access path; Binance supplies the separately attributed preliminary account."
+    },
+    {
+      "atSeconds": 883,
+      "sectionId": "authority-analysis",
+      "claimIds": [
+        "r52-revocation"
+      ],
+      "rationale": "At 14:43 the security segment provides topic context; the Binance written account, not this cue, supplies the authorization-revocation detail."
+    },
+    {
+      "atSeconds": 1036,
+      "sectionId": "capability-objection",
+      "claimIds": [
+        "r52-forecast"
+      ],
+      "rationale": "At 17:16 the creator advances a frontier-access defense forecast; its universal outcome and timetable remain unverified."
+    }
+  ],
+  "assessment": {
+    "sourceCoverage": {
+      "disposition": "covered",
+      "rationale": "Complete retained transcript read; all seven timed locators independently inspected and all manifest members hash-matched. The four mapped analytical sections cover all eight claims; the new source-first passage restores the creator argument without adopting excluded allegations."
+    },
+    "supportingArgument": {
+      "disposition": "covered",
+      "rationale": "Chip inventory is separated from usable capacity, research capability growth from a procurement mandate, and model assistance from downstream authorization. Each step states the narrower conclusion warranted by its source."
+    },
+    "evidenceRoles": {
+      "disposition": "covered",
+      "rationale": "Reuters syndication remains the same reporting family; METR is a scoped external assessment of company-supplied partly redacted data; Binance is preliminary first-party reporting; OWASP is guidance. ASR locators and creator forecasts do not upgrade those roles."
+    },
+    "counterargument": {
+      "disposition": "covered",
+      "rationale": "The article concedes that stronger models may materially assist defense and that containment around an incapable system is insufficient. It asks for capability and authority tests separately rather than treating either as a substitute."
+    },
+    "tradeoffs": {
+      "disposition": "covered",
+      "rationale": "Remote access can improve capability while adding dependency; local equipment can reduce one dependency while adding serving and maintenance burdens. Neither choice is assigned unsupported universal economic or security superiority."
+    },
+    "falsifiability": {
+      "disposition": "covered",
+      "rationale": "The proposed synthetic disposable workflow fixes task/tools/permissions, compares task quality, review effort and cost, then separately tests operation scope and revocation with destination readback. It is explicitly unperformed and supplies no execution authorization."
+    },
+    "originalSynthesis": {
+      "disposition": "covered",
+      "rationale": "The source-first geopolitical/research/cyber forecast is interpreted through three distinct practical questions: usable access, useful capability and effective authority. The resulting test is specific without inventing a new platform requirement."
+    },
+    "performance": {
+      "disposition": "covered",
+      "rationale": "METR growth-rate wording matches its report rather than per-task speed. No independent research or security benchmark is claimed; future comparison requires task quality and human review effort alongside time."
+    },
+    "economics": {
+      "disposition": "covered",
+      "rationale": "The article challenges conversion of chip counts or a forecast into procurement decisions without workload, cost and deployment constraints. It names cost and reviewer effort for a future test without claiming savings."
+    },
+    "threatGovernance": {
+      "disposition": "covered",
+      "rationale": "Tool identity and downstream permissions determine reach, while revocation must be checked at the destination. The hypothetical test excludes production credentials, real funds and live attacks and distinguishes uncertain outcomes from safe retries."
+    }
+  },
+  "independentCorroboration": "none",
+  "ownerDecision": {
+    "kind": "conversation",
+    "owner": "Tony Malott",
+    "approval": "Owner explicitly approved publication of the exact fresh independently reviewed Reader 52 candidate and admission of its three reviewed Reader relationships and one separately reviewed SharePlane Work as editorial comparisons, subject to protected merge and production verification. Claims remain unverified; this does not certify source assertions or forecasts.",
+    "approvalDate": "2026-11-11",
+    "articleSha256": "1df22c937c0058f5306a6c30ff0f55a57e467f5d1be82430d1602d8bced25ca9",
+    "evidenceRevision": "f763703fe4d17a90b13c0839591519a92525b797818c57bff85028371ea8d3bf"
+  },
+  "decision": "accept",
+  "gaps": [
+    {
+      "type": "source",
+      "severity": "nonblocking",
+      "rationale": "Machine transcription and topic cues are not listening-certified; no frame review was performed and the final seconds remain outside timed text."
+    },
+    {
+      "type": "evidence",
+      "severity": "nonblocking",
+      "rationale": "Attributed reporting, company incident analysis and METR assessment were not independently replicated; no actual capability or revocation experiment was run."
+    },
+    {
+      "type": "test",
+      "severity": "nonblocking",
+      "rationale": "Browser UAT is documented by the publisher at the target head, not independently executed in this review. Full tests, hosted checks and production qualification remain with the publisher."
+    }
+  ],
+  "decisionRationale": "Fresh independent ACCEPT FOR OWNER REVIEW at exact d93aa1ca article/evidence bindings. Source-first framing and provenance CSS corrections are acceptable; all source roles, eight unverified claims and four editorial comparisons remain bounded. No incumbent identity or owner authority is claimed. Canonical integration and release checks remain separate.",
+  "assessedAt": "2026-11-11T23:32:42.202230+00:00"
+}

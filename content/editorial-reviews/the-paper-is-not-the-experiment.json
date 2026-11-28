@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "readerId": "reader:the-paper-is-not-the-experiment",
+  "sourceId": "ULIGFaPLd_Y",
+  "sourceAidSha256": "95d4a375a431d4a4c38344981ca2678df2e2a0f360cb797808c3b1fc6ea2cb3d",
+  "articleSha256": "6f0a86eac1c5fec1092d6e0675209af0009222468f1397bdb8102961257f81d9",
+  "evidenceRevision": "43fd1fc82610fa5124d44288f93ec8a5e8e653fd504b5604bda20423bd05f24a",
+  "reviewedAt": "2026-11-09T06:18:37.893566+00:00",
+  "provenance": {
+    "kind": "codex-task-agent",
+    "reference": "Reader #48 PR #143 independent copy/privacy reviewer findings, as relayed in the owner-authorized completion instruction: initial HOLD corrected, final ACCEPT scoped to correction c3ae6753d5fae6b4aa2b56e262bd2f1435f2d630. This record retains that finding; it is not a new independent review.",
+    "limits": "The retained ACCEPT covers the copy/privacy correction only, not independent source certification. Source captions and the private aid are unavailable to this coding executor. No direct video listening certification, independent study reproduction or scientific numerical replication is claimed. Reviewer task identity and original review timestamp are unavailable; reviewedAt records receipt serialization of the relayed findings, not a newly observed reviewer session."
+  },
+  "summary": "The initial copy/privacy HOLD was corrected; the relayed final ACCEPT is scoped to correction c3ae675. Tony accepted the reviewed preview and qualified evidence posture and authorized publication on 2026-11-09. This receipt does not broaden that independent review into source certification.",
+  "findings": [
+    "The relayed initial HOLD was corrected before the final independent copy/privacy ACCEPT scoped to c3ae6753d5fae6b4aa2b56e262bd2f1435f2d630. No additional independent source-review finding is inferred.",
+    "The approved article and all four Reader and two SharePlane relationship rationales are preserved exactly. These relationships are editorial comparisons, not independent corroboration.",
+    "The owner-supplied locked editorial assessment reports that the primary study abstract independently corroborates nine configurations times fifteen tasks, 135 submissions, zero all-condition passes and 114 integrity failures. This is corroboration against the primary abstract, not independent experimental reproduction or a new source check by this executor.",
+    "Other numerical outcomes, aggregate hours and model-specific denominators remain study-reported. The primary paper and official code, data, trajectories and judge artifacts belong to the same research project and do not establish independent replication.",
+    "Video timing retains the existing private source-caption aid provenance and stated hashes. The copy/privacy ACCEPT does not certify listening, source-caption accuracy, private aid access or scientific numerical replication."
+  ],
+  "conclusion": "accept-for-owner-review"
+}

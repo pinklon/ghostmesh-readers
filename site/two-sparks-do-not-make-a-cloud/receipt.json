@@ -1,0 +1,343 @@
+{
+  "source": {
+    "url": "https://www.youtube.com/watch?v=pAC1SRr1_Rc",
+    "videoId": "pAC1SRr1_Rc"
+  },
+  "custody": {
+    "status": "private-auto-caption-sha-identified",
+    "note": "Automatic VTT retained outside public repository; video metadata and creator chapters reviewed."
+  },
+  "reasonPack": {
+    "verification": "unknown"
+  },
+  "sourceInspection": {
+    "method": "Source metadata and private English-original automatic captions",
+    "caveat": "ASR name errors; no independent full audiovisual authentication or replicated outcomes",
+    "publicationBoundary": "No raw media, VTT, transcript or private paths",
+    "timedAidSha256": "eda5b04e8858018628672a2467d44dc97016c25ed600f8e134fc4104ae44f8f3"
+  },
+  "normalization": {
+    "id": "reader:two-sparks-do-not-make-a-cloud",
+    "slug": "two-sparks-do-not-make-a-cloud",
+    "title": "Two Sparks Do Not Make a Cloud",
+    "variant": "editorial",
+    "category": "AI & Technology",
+    "tags": [
+      "DGX Spark",
+      "local AI",
+      "cloud coding agents",
+      "memory bandwidth",
+      "model serving",
+      "agent evaluation"
+    ],
+    "accent": "red",
+    "editorialOrder": 66,
+    "published": "2026-11-17",
+    "updated": "2026-11-17T00:00:00Z",
+    "lastEvidenceChecked": "2026-11-17",
+    "overview": "LinuxBTW compares local Qwen on two DGX Sparks with Claude, Grok and Codex during a Minecraft setup challenge; the video demonstrates mismatched completion and functional success, not a controlled benchmark.",
+    "whyItMatters": "Hardware ownership can increase model capacity and control, but local-cloud replacement depends on accepted task outcomes, intervention, performance, tooling and real costs.",
+    "ghostMeshTakeaway": "Separate creator-reported completion from verified compliance. Evaluate 128GB-node memory fit and interconnect against a single 96GB Blackwell GPU without equating capacity with measured token throughput.",
+    "verdict": "Worth studying",
+    "architectureImpact": "experiment recommended",
+    "archiveCall": {
+      "label": "Measure accepted results",
+      "text": "Compare task compliance, elapsed human time, memory fit and fully burdened cost before assigning cloud work to local hardware."
+    },
+    "evidenceState": "unverified",
+    "falsification": "Repeat the same Minecraft installation and world task on identical VM images with matched permissions, time limits and independent operational acceptance checks.",
+    "freshness": "Creator video dated September 8, 2026; maker specifications checked in November 2026; no independently reproduced agent benchmark.",
+    "entities": [],
+    "source": {
+      "platform": "YouTube",
+      "url": "https://www.youtube.com/watch?v=pAC1SRr1_Rc",
+      "videoId": "pAC1SRr1_Rc",
+      "title": "I Bought 2 NVIDIA DGX Sparks to Replace Cloud AI",
+      "creator": "LinuxBTW",
+      "mediaAspect": "16:9",
+      "durationSeconds": 1650,
+      "uploadDate": "2026-09-08",
+      "dateNote": "Creator chapter metadata and privately retained automatic captions, not independent audiovisual verification.",
+      "captionType": "Private English-original automatic captions with recognition errors; SHA-256 evidence, no public transcript.",
+      "creatorChapters": [
+        {
+          "atSeconds": 0,
+          "label": "The local AI race"
+        },
+        {
+          "atSeconds": 79,
+          "label": "Why two Sparks"
+        },
+        {
+          "atSeconds": 195,
+          "label": "Spark hardware"
+        },
+        {
+          "atSeconds": 318,
+          "label": "The $10,000 decision"
+        },
+        {
+          "atSeconds": 398,
+          "label": "Setup"
+        },
+        {
+          "atSeconds": 463,
+          "label": "Local Qwen and cloud systems"
+        },
+        {
+          "atSeconds": 538,
+          "label": "Minecraft challenge"
+        },
+        {
+          "atSeconds": 671,
+          "label": "Agents begin"
+        },
+        {
+          "atSeconds": 737,
+          "label": "Quota and first failures"
+        },
+        {
+          "atSeconds": 854,
+          "label": "Claude result"
+        },
+        {
+          "atSeconds": 982,
+          "label": "Grok result"
+        },
+        {
+          "atSeconds": 1133,
+          "label": "Codex result"
+        },
+        {
+          "atSeconds": 1291,
+          "label": "Local Qwen result"
+        },
+        {
+          "atSeconds": 1463,
+          "label": "Failures"
+        },
+        {
+          "atSeconds": 1527,
+          "label": "Results"
+        }
+      ]
+    },
+    "references": [
+      {
+        "id": "r67-ref1",
+        "title": "I Bought 2 NVIDIA DGX Sparks to Replace Cloud AI",
+        "author": "LinuxBTW",
+        "publisher": "YouTube",
+        "url": "https://www.youtube.com/watch?v=pAC1SRr1_Rc",
+        "publicationDate": "2026-09-08",
+        "datePrecision": "day",
+        "eventDate": null,
+        "location": "Public source",
+        "sourceType": "primary video",
+        "independence": "Creator-controlled task demonstration; results not independently reproduced.",
+        "evidenceFamily": "r67-video",
+        "checkedAt": "2026-11-17T00:00:00Z",
+        "dateNote": "Creator chapter metadata, private automatically generated timed captions, known model-name recognition errors."
+      },
+      {
+        "id": "r67-ref2",
+        "title": "NVIDIA DGX Spark",
+        "author": "NVIDIA",
+        "publisher": "NVIDIA",
+        "url": "https://www.nvidia.com/en-us/products/workstations/dgx-spark/",
+        "publicationDate": "unknown",
+        "datePrecision": "unknown",
+        "eventDate": null,
+        "location": "Manufacturer page",
+        "sourceType": "maker specification",
+        "independence": "Product specification, not independent performance verification.",
+        "evidenceFamily": "nvidia-spark",
+        "checkedAt": "2026-11-17T00:00:00Z",
+        "dateNote": "Maker nominal memory and interconnect figures."
+      },
+      {
+        "id": "r67-ref3",
+        "title": "NVIDIA RTX PRO 6000 Blackwell",
+        "author": "NVIDIA",
+        "publisher": "NVIDIA",
+        "url": "https://www.nvidia.com/en-us/products/workstations/professional-desktop-gpus/rtx-pro-6000/",
+        "publicationDate": "unknown",
+        "datePrecision": "unknown",
+        "eventDate": null,
+        "location": "Manufacturer page",
+        "sourceType": "maker specification",
+        "independence": "Product specification, not token generation benchmark.",
+        "evidenceFamily": "nvidia-rtx",
+        "checkedAt": "2026-11-17T00:00:00Z",
+        "dateNote": "Maker nominal memory and bandwidth figures."
+      }
+    ],
+    "claims": [
+      {
+        "id": "r67-cue1",
+        "proposition": "Minecraft challenge on prepared VMs",
+        "kind": "creator-claim",
+        "status": "unverified",
+        "sourceLocation": "08:58",
+        "assessment": "The creator sets a mixed system-admin and creative world-building task.",
+        "limits": "Automatic captions and creator presentation are not independently replicated; timing and permissions are non-normalized.",
+        "references": [
+          "r67-ref1"
+        ],
+        "counterevidence": [],
+        "asOf": "2026-11-17"
+      },
+      {
+        "id": "r67-cue2",
+        "proposition": "Reported agent completion is not uniform success",
+        "kind": "creator-claim",
+        "status": "unverified",
+        "sourceLocation": "12:17",
+        "assessment": "Creator reports early functional/permission/quota failures.",
+        "limits": "Automatic captions and creator presentation are not independently replicated; timing and permissions are non-normalized.",
+        "references": [
+          "r67-ref1"
+        ],
+        "counterevidence": [],
+        "asOf": "2026-11-17"
+      },
+      {
+        "id": "r67-cue3",
+        "proposition": "Claude finishes quickly but panel fails",
+        "kind": "creator-claim",
+        "status": "unverified",
+        "sourceLocation": "14:14",
+        "assessment": "Creator-reported first-pass functional problem.",
+        "limits": "Automatic captions and creator presentation are not independently replicated; timing and permissions are non-normalized.",
+        "references": [
+          "r67-ref1"
+        ],
+        "counterevidence": [],
+        "asOf": "2026-11-17"
+      },
+      {
+        "id": "r67-cue6",
+        "proposition": "Grok reports completion without a working panel",
+        "kind": "creator-claim",
+        "status": "unverified",
+        "sourceLocation": "16:22",
+        "assessment": "Creator-reported approximately 18-minute run with a nonworking first-pass control panel.",
+        "limits": "Chapter location and automatic captions are not independent audiovisual verification; run conditions and result are not replicated.",
+        "references": [
+          "r67-ref1"
+        ],
+        "counterevidence": [],
+        "asOf": "2026-11-17"
+      },
+      {
+        "id": "r67-cue4",
+        "proposition": "Codex run requires tool and quota adjustments",
+        "kind": "creator-claim",
+        "status": "unverified",
+        "sourceLocation": "18:53",
+        "assessment": "Creator-reported restart/limit friction before a working panel.",
+        "limits": "Automatic captions and creator presentation are not independently replicated; timing and permissions are non-normalized.",
+        "references": [
+          "r67-ref1"
+        ],
+        "counterevidence": [],
+        "asOf": "2026-11-17"
+      },
+      {
+        "id": "r67-cue5",
+        "proposition": "Local Qwen continues substantially longer",
+        "kind": "creator-claim",
+        "status": "unverified",
+        "sourceLocation": "21:31",
+        "assessment": "Creator-reported 90 to 120 minute local run with later TLS/websocket repair.",
+        "limits": "Automatic captions and creator presentation are not independently replicated; timing and permissions are non-normalized.",
+        "references": [
+          "r67-ref1"
+        ],
+        "counterevidence": [],
+        "asOf": "2026-11-17"
+      }
+    ],
+    "relationships": [
+      {
+        "target": "reader:the-12gb-gpu-has-a-three-budget-problem",
+        "type": "companion",
+        "reason": "Separates weight fit, context and bandwidth budgets that a two-device memory total cannot reduce to one performance number.",
+        "provenance": [
+          "/two-sparks-do-not-make-a-cloud/",
+          "/the-12gb-gpu-has-a-three-budget-problem/"
+        ],
+        "basis": "curated-editorial-comparison",
+        "direction": "outgoing"
+      },
+      {
+        "target": "reader:uncensored-private-or-sovereign",
+        "type": "companion",
+        "reason": "Clarifies why locally owned weights and execution do not establish independence from tools, networks and other service dependencies.",
+        "provenance": [
+          "/two-sparks-do-not-make-a-cloud/",
+          "/uncensored-private-or-sovereign/"
+        ],
+        "basis": "curated-editorial-comparison",
+        "direction": "outgoing"
+      },
+      {
+        "target": "reader:the-grader-is-part-of-the-harness",
+        "type": "companion",
+        "reason": "Explains why self-declared agent completion must be distinguished from separately tested functional acceptance.",
+        "provenance": [
+          "/two-sparks-do-not-make-a-cloud/",
+          "/the-grader-is-part-of-the-harness/"
+        ],
+        "basis": "curated-editorial-comparison",
+        "direction": "outgoing"
+      }
+    ],
+    "sharePlaneRelationships": [
+      {
+        "url": "https://shareplane.malott.ai/tools/token-burn/",
+        "title": "Token Burn",
+        "reason": "A dated cost-composition comparison aid, not an empirical total-cost or break-even proof for DGX Sparks.",
+        "type": "companion",
+        "basis": "curated-editorial-comparison"
+      },
+      {
+        "url": "https://shareplane.malott.ai/artifacts/frontier-inference-without-frontier-custody/",
+        "title": "Frontier Inference Without Frontier Custody",
+        "reason": "Explains how local source custody and remote model capability can be separated architecturally.",
+        "type": "companion",
+        "basis": "curated-editorial-comparison"
+      }
+    ],
+    "relationshipDisposition": "Tony approved three source-relevant Readers and two separately labeled SharePlane Works for #67 Creative Lock on 2026-11-17. None independently corroborates the video.",
+    "relationshipReview": {
+      "reviewedAt": "2026-11-17",
+      "reviewedCatalogSize": 66,
+      "decision": "linked",
+      "reviewedTargets": [
+        "reader:the-12gb-gpu-has-a-three-budget-problem",
+        "reader:uncensored-private-or-sovereign",
+        "reader:the-grader-is-part-of-the-harness"
+      ],
+      "rationale": "Source-specific editorial companions cover memory fit, local custody and independent grading, rather than introducing unrelated generic AI reading."
+    },
+    "sharePlaneReview": {
+      "reviewedAt": "2026-11-17",
+      "decision": "linked",
+      "rationale": "Two Work comparisons independently address economic assumptions and custody architecture; neither proves the creator-reported benchmark."
+    },
+    "review": {
+      "status": "accepted-for-owner-review; published",
+      "summary": "Independent exact-input editorial/source/privacy review accepted for owner consideration; Tony approved publication and Reader #67 was released November 17, 2026. The creator demonstration and claimed benchmark outcomes remain unverified and have not been independently reproduced."
+    },
+    "editorialDepth": {
+      "schemaVersion": 1,
+      "receiptPath": "content/editorial-depth/two-sparks-do-not-make-a-cloud.json"
+    }
+  },
+  "editorial": {
+    "overview": "LinuxBTW compares local Qwen on two DGX Sparks with Claude, Grok and Codex during a Minecraft setup challenge; the video demonstrates mismatched completion and functional success, not a controlled benchmark.",
+    "whyItMatters": "Hardware ownership can increase model capacity and control, but local-cloud replacement depends on accepted task outcomes, intervention, performance, tooling and real costs.",
+    "ghostMeshTakeaway": "Separate creator-reported completion from verified compliance. Evaluate 128GB-node memory fit and interconnect against a single 96GB Blackwell GPU without equating capacity with measured token throughput."
+  }
+}

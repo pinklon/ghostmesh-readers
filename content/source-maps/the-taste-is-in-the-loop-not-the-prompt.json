@@ -1,0 +1,71 @@
+{
+  "schemaVersion": 1,
+  "readerId": "reader:the-taste-is-in-the-loop-not-the-prompt",
+  "sourceId": "-bv2xKQzZio",
+  "sourceAidSha256": "ae6ac9eb784cf234951f2814bc66aef2f18ce13d1c4d56e9b38c9ed2ffcbcbbe",
+  "points": [
+    {
+      "atSeconds": 53,
+      "sectionId": "references-not-prompts",
+      "claimIds": ["r56-references"],
+      "cueParaphrase": "The presenter contrasts short prompts with strong visual references and names design-reference discovery tools.",
+      "privateAidCheck": "English automatic VTT cues inspected; machine-generated speech aid, not independently listening- or screen-certified."
+    },
+    {
+      "atSeconds": 219,
+      "sectionId": "target-before-build",
+      "claimIds": ["r56-mockups"],
+      "cueParaphrase": "The presenter recommends making mockups and defining a target before implementing a full page.",
+      "privateAidCheck": "English automatic VTT cues inspected; exact rendered outputs and token savings not reproduced."
+    },
+    {
+      "atSeconds": 298,
+      "sectionId": "numeric-bar",
+      "claimIds": ["r56-score"],
+      "cueParaphrase": "The presenter introduces a high numerical quality target without a validated perceptual similarity metric.",
+      "privateAidCheck": "English automatic VTT cues inspected; numerical claims are creator-reported, not independently measured."
+    },
+    {
+      "atSeconds": 378,
+      "sectionId": "numeric-bar",
+      "claimIds": ["r56-sixty-six"],
+      "cueParaphrase": "The presenter describes a result as approximately 66% close, without a calibrated or independently reproduced quality measurement.",
+      "privateAidCheck": "English automatic VTT cue at 06:18–06:20 inspected; creator self-assessment, not listening-certified or independently measured."
+    },
+    {
+      "atSeconds": 451,
+      "sectionId": "iteration-and-cost",
+      "claimIds": ["r56-time"],
+      "cueParaphrase": "The presenter argues for sufficient iteration time; no controlled study of time versus outcome is provided.",
+      "privateAidCheck": "English automatic VTT cues inspected; elapsed implementation time and inference billing not reproduced."
+    },
+    {
+      "atSeconds": 522,
+      "sectionId": "slop-and-feedback",
+      "claimIds": ["r56-slop"],
+      "cueParaphrase": "The presenter identifies recurring generic AI visual patterns and advocates rejecting them explicitly.",
+      "privateAidCheck": "English automatic VTT cues inspected; aesthetic quality remains a judgment, not a universally measurable property."
+    },
+    {
+      "atSeconds": 615,
+      "sectionId": "slop-and-feedback",
+      "claimIds": ["r56-stepwise"],
+      "cueParaphrase": "The presenter recommends creating components and motion incrementally instead of asking for an entire animated page at once.",
+      "privateAidCheck": "English automatic VTT cues inspected; comparative delivery efficiency not tested."
+    },
+    {
+      "atSeconds": 711,
+      "sectionId": "independent-judgment",
+      "claimIds": ["r56-critics"],
+      "cueParaphrase": "A separate judge or fresh-context critic is proposed to challenge the building agent's own assessment.",
+      "privateAidCheck": "English automatic VTT cues inspected; critic independence and agreement are not benchmarked in the source."
+    },
+    {
+      "atSeconds": 773,
+      "sectionId": "cook-mechanics",
+      "claimIds": ["r56-cook"],
+      "cueParaphrase": "The Cook skill is introduced as a repeatable build, visual comparison, critique, revision, and recordkeeping loop.",
+      "privateAidCheck": "English automatic VTT cues and the creator's public Cook README/SKILL.md inspected; the workflow specification is verified, but its claimed outcomes are not independently replicated."
+    }
+  ]
+}

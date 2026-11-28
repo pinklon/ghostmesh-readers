@@ -1,0 +1,181 @@
+{
+  "schemaVersion": 1,
+  "readerId": "reader:the-best-agent-instructions-arent-instructions",
+  "sourceId": "O_zcc6Xl12g",
+  "sourceDigest": "fd419bacadc5a3016e9a4990320b6cca200ceb0a6dffff3ca84e7a4b9bcd3830",
+  "sourceAidSha256": "bfc68ef2104a0b550ca6af7ab0c6287e0e85dc628bc45b970c664363ad99664a",
+  "articleSha256": "76572eb775ce34c2f35d01f824e8778ef795e651ff809ae3fd91f8c562cdef9d",
+  "evidenceRevision": "7ce153fbd555e322f39b6835d10c38d6f9b50f3158f8ebe93e5ef89f8955d453",
+  "sourceMapEvidenceSha256": "b0704dc0025fe7a8031b8a17817892900f21879888cd7934f6113d739ef2aa4f",
+  "reviewEvidenceSha256": "c78bb4ff8dcfe0c0f1dfedfef6ec6d90120d0f585873f7e9a5419026a63ba9a6",
+  "candidateAuthor": "segfault",
+  "complexity": {
+    "tier": "extended",
+    "factors": [
+      "Eleven source-linked claims including high throughput and low revert figures without independently audited engineering outcomes",
+      "Recommendations concern executable architecture, verification, authorization and autonomous merge risks"
+    ],
+    "rationale": "The Reader requires extended assessment across source custody, reliability claims, governance, engineering tradeoffs and the testable GhostMesh response."
+  },
+  "sourceMap": [
+    {
+      "atSeconds": 45,
+      "sectionId": "first-assessment",
+      "claimIds": [
+        "r63-personal-volume"
+      ],
+      "rationale": "The personal pull-request count is a speaker claim, not a verified productivity result."
+    },
+    {
+      "atSeconds": 123,
+      "sectionId": "three-moves",
+      "claimIds": [
+        "r63-trust-pyramid"
+      ],
+      "rationale": "The deterministic-first hierarchy is the speaker's proposed engineering approach."
+    },
+    {
+      "atSeconds": 260,
+      "sectionId": "codebase",
+      "claimIds": [
+        "r63-repository-input"
+      ],
+      "rationale": "Repository context is presented as an agent input that can reproduce bad patterns."
+    },
+    {
+      "atSeconds": 335,
+      "sectionId": "architecture",
+      "claimIds": [
+        "r63-dune-useeffect"
+      ],
+      "rationale": "Dune useEffect example is supported by targeted repair and publisher transcript but not a universal React prohibition."
+    },
+    {
+      "atSeconds": 385,
+      "sectionId": "architecture",
+      "claimIds": [
+        "r63-electron-boundary"
+      ],
+      "rationale": "Electron main and renderer boundaries illustrate scoped enforceable dependencies."
+    },
+    {
+      "atSeconds": 495,
+      "sectionId": "codebase",
+      "claimIds": [
+        "r63-comment-workaround"
+      ],
+      "rationale": "Workaround comments may teach recurring mistakes; the claim is contextual."
+    },
+    {
+      "atSeconds": 592,
+      "sectionId": "verification",
+      "claimIds": [
+        "r63-evidence-review"
+      ],
+      "rationale": "Runtime screenshot and video review is described as practice, not certified effectiveness."
+    },
+    {
+      "atSeconds": 655,
+      "sectionId": "verification",
+      "claimIds": [
+        "r63-formal"
+      ],
+      "rationale": "Formal and property-based techniques remain speaker-described experiments."
+    },
+    {
+      "atSeconds": 818,
+      "sectionId": "numbers",
+      "claimIds": [
+        "r63-team-volume"
+      ],
+      "rationale": "The 11,000 team pull requests are reported volume, not independent quality evidence."
+    },
+    {
+      "atSeconds": 866,
+      "sectionId": "numbers",
+      "claimIds": [
+        "r63-reverts"
+      ],
+      "rationale": "The 0.5 percent revert rate cannot be equated with escaped defect rate."
+    },
+    {
+      "atSeconds": 999,
+      "sectionId": "outer-loop",
+      "claimIds": [
+        "r63-automerged-fixes"
+      ],
+      "rationale": "Autonomous release fixes are speaker-described and require separate deployment evidence."
+    }
+  ],
+  "assessment": {
+    "sourceCoverage": {
+      "disposition": "covered",
+      "rationale": "Eleven timed cues span the talk's engineering propositions, with private VTT custody and targeted repair limitations disclosed."
+    },
+    "supportingArgument": {
+      "disposition": "covered",
+      "rationale": "Architecture, executable constraints and runtime verification form a coherent engineering sequence through eight locked analysis sections."
+    },
+    "evidenceRoles": {
+      "disposition": "covered",
+      "rationale": "Speaker and publisher records are identified as primary accounts, not independent operational audits or replicated benchmarks."
+    },
+    "counterargument": {
+      "disposition": "covered",
+      "rationale": "The analysis recognizes that enforcing forbidden choices cannot by itself establish correct user-visible product behavior."
+    },
+    "tradeoffs": {
+      "disposition": "covered",
+      "rationale": "Narrow interfaces and deterministic checks are weighed against human judgment, effort and operational control overhead."
+    },
+    "falsifiability": {
+      "disposition": "covered",
+      "rationale": "The GhostMesh experiment proposes recurrence, verified completion, human review effort and escaped defects as comparative measures."
+    },
+    "originalSynthesis": {
+      "disposition": "covered",
+      "rationale": "Recurring GhostMesh handoffs and control proliferation are connected to the speaker's architecture principle as independent interpretation."
+    },
+    "performance": {
+      "disposition": "covered",
+      "rationale": "The 11,000 PR figure, revert percentage and performance claims are speaker-reported; no audited outcomes are asserted."
+    },
+    "economics": {
+      "disposition": "covered",
+      "rationale": "Operational cost and human review minutes are proposed as measures, with no fabricated return-on-investment arithmetic."
+    },
+    "threatGovernance": {
+      "disposition": "covered",
+      "rationale": "Authority boundaries and runtime evidence remain prerequisites before expanding autonomy or automatic merge scope."
+    }
+  },
+  "independentCorroboration": "none",
+  "ownerDecision": {
+    "kind": "conversation",
+    "owner": "Tony Malott",
+    "approval": "Tony reviewed the revised Reader #63 preview, said it looked good, explicitly instructed publication, and agreed to the plan for final independent review and exact-head release in this conversation.",
+    "approvalDate": "2026-11-14",
+    "articleSha256": "76572eb775ce34c2f35d01f824e8778ef795e651ff809ae3fd91f8c562cdef9d",
+    "evidenceRevision": "7ce153fbd555e322f39b6835d10c38d6f9b50f3158f8ebe93e5ef89f8955d453"
+  },
+  "decision": "accept",
+  "gaps": [
+    {
+      "type": "source",
+      "severity": "nonblocking",
+      "rationale": "The first local ASR pass corrupted a segment, which was targeted for repair and cross-checked; this is not a listening-certified transcript."
+    },
+    {
+      "type": "evidence",
+      "severity": "nonblocking",
+      "rationale": "Speaker-reported pull requests, reverts, performance and autonomous fixes lack independent internal-log or production audits."
+    },
+    {
+      "type": "risk",
+      "severity": "nonblocking",
+      "rationale": "The external YouTube thumbnail can be requested before the opt-in player activation; the iframe itself is created only on user action."
+    }
+  ],
+  "decisionRationale": "Independent Reviewer /root/reader63_review accepted exact candidate dc9082d with no blocking editorial findings across ten areas. Tony approved publication of the reviewed preview, while actual merge and production proof remain separate checks.",
+  "assessedAt": "2026-11-15T02:40:10Z"
+}

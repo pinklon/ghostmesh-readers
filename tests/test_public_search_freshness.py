@@ -13,11 +13,11 @@ def sources():
         {"id": f"artifact:work-{i}", "title": f"Work {i}",
          "canonicalUrl": f"https://shareplane.malott.ai/artifacts/work-{i}/",
          "publiclyAccessible": True}
-        for i in range(114)
+        for i in range(119)
     ]
     corpus = {"schemaVersion": "shareplane.reader-public-works-snapshot.v1",
               "sourceCatalogSha256": digest, "records": records,
-              "publicWorkCount": 114, "verifiedPublicRouteCount": 114}
+              "publicWorkCount": 119, "verifiedPublicRouteCount": 119}
     return catalog, json.dumps(corpus).encode(), digest
 
 
@@ -38,12 +38,12 @@ class FreshnessTests(unittest.TestCase):
         _, _, digest = sources()
         self.assertFalse(self.compare({
             "schema": "ghostmesh-unified-search-v1",
-            "sources": {"SharePlane": {"sourceCatalogSha256": digest, "count": 114}}}))
+            "sources": {"SharePlane": {"sourceCatalogSha256": digest, "count": 119}}}))
 
     def test_new_or_missing_source_requests_deploy(self):
         self.assertTrue(self.compare({
             "schema": "ghostmesh-unified-search-v1",
-            "sources": {"SharePlane": {"sourceCatalogSha256": "0" * 64, "count": 114}}}))
+            "sources": {"SharePlane": {"sourceCatalogSha256": "0" * 64, "count": 119}}}))
         self.assertTrue(self.compare({"schema": "not-yet-unified"}))
 
     def test_rejects_unqualified_corpus(self):

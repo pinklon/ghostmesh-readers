@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "readerId": "reader:the-router-is-not-the-organization",
+  "sourceId": "3DklR44DHnM",
+  "sourceDigest": "fe388b16a6a2adbedf97a6f049c58a1f6c67b402ff3344c8451f1d3b94efe071",
+  "sourceAidSha256": "3cacc402bc260a56792cc746c0bc95d3ab545a985e6e9f0589a5878ed67395fb",
+  "articleSha256": "5518baaf202eff4f7ca5dd63523900482502d0ddff9fb8922cf565c2855811c4",
+  "evidenceRevision": "7aea99ed50caab3522d11a16f5b18b4d569bfdc558fb132ae3b25230d7219b22",
+  "sourceMapEvidenceSha256": "507b70cb8ea049c628981a58048d7f56a54f2bd482784889b218b3c621883223",
+  "reviewEvidenceSha256": "cb023d379817ac3d355c0e6fa48a44278f221cf25658b018f40a0a425cc49b3d",
+  "candidateAuthor": "pinklon",
+  "complexity": {
+    "tier": "brief",
+    "factors": ["Four timestamped architectural claims in a short technical demonstration", "Presenter-reported timing without independent replication"],
+    "rationale": "A focused four-cue map covers the short source while the complete authored deconstruction retains deeper authority, cost and reliability analysis."
+  },
+  "sourceMap": [
+    {"atSeconds": 120, "sectionId": "full-deconstruction", "claimIds": ["the-router-is-not-the-organization--claim-1"], "rationale": "The video introduces the routing split; the argument distinguishes that architecture from organizational continuity."},
+    {"atSeconds": 175, "sectionId": "full-deconstruction", "claimIds": ["the-router-is-not-the-organization--claim-2"], "rationale": "The reported five-run timing comparison is presented as a source claim, not an independently reproduced benchmark."},
+    {"atSeconds": 216, "sectionId": "full-deconstruction", "claimIds": ["the-router-is-not-the-organization--claim-3"], "rationale": "The tickets and dependencies are visible workflow structures, not independently measured contributors to quality."},
+    {"atSeconds": 536, "sectionId": "full-deconstruction", "claimIds": ["the-router-is-not-the-organization--claim-4"], "rationale": "The watchdog addresses worker silence; it cannot certify outcome correctness or change authorization."}
+  ],
+  "assessment": {
+    "sourceCoverage": {"disposition": "covered", "rationale": "Four private timed-aid cue locations ground the described demonstration; independent replay of the complete source remains outside reviewer scope."},
+    "supportingArgument": {"disposition": "covered", "rationale": "The article grounds the router-worker separation, ticket specification and watchdog roles in presenter-described mechanisms."},
+    "evidenceRoles": {"disposition": "covered", "rationale": "Presenter observations, primary research prototype context and GhostMesh architectural inferences are separately identified."},
+    "counterargument": {"disposition": "covered", "rationale": "The text challenges a faster-task claim with output correctness, resource contention, intervention and integration costs."},
+    "tradeoffs": {"disposition": "covered", "rationale": "Parallel execution may lower supervision cost while increasing token spend, coordination and authority-boundary risk."},
+    "falsifiability": {"disposition": "covered", "rationale": "Matched trials explicitly compare accepted output, interruption recovery, total cost and defect discovery."},
+    "originalSynthesis": {"disposition": "covered", "rationale": "The original thesis distinguishes a task router from durable organizational memory, permissions and accepted state."},
+    "performance": {"disposition": "covered", "rationale": "The 15.7 versus 29.5-minute comparison remains a five-run presenter report, without a causal or correctness audit."},
+    "economics": {"disposition": "covered", "rationale": "The proposed decision metric counts tokens, review, coordination and recovery costs rather than elapsed time alone."},
+    "threatGovernance": {"disposition": "covered", "rationale": "Requesting, executing, accepting and applying consequential work retain explicit separate authority boundaries."}
+  },
+  "independentCorroboration": "none",
+  "ownerDecision": {
+    "kind": "conversation",
+    "owner": "Tony Malott",
+    "approval": "This is good. I accept. Let's publish it",
+    "approvalDate": "2026-11-08",
+    "articleSha256": "5518baaf202eff4f7ca5dd63523900482502d0ddff9fb8922cf565c2855811c4",
+    "evidenceRevision": "7aea99ed50caab3522d11a16f5b18b4d569bfdc558fb132ae3b25230d7219b22"
+  },
+  "decision": "accept",
+  "gaps": [
+    {"type": "evidence", "severity": "nonblocking", "rationale": "The presenter-reported timing comparison has not been independently reproduced or quality-normalized."},
+    {"type": "source", "severity": "nonblocking", "rationale": "The independent reviewer did not replay private Hyperion media or the timed transcript; cue custody is retained separately."}
+  ],
+  "decisionRationale": "Tony accepted the unchanged Reader manuscript in this conversation for publication. The simplified receipt binds that decision to the article and evidence digests; it is an editorial declaration and does not authenticate the conversation cryptographically.",
+  "assessedAt": "2026-11-08T21:26:57Z"
+}

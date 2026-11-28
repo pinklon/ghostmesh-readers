@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "readerId": "reader:claude-lean-and-the-riemann-hypothesis",
+  "sourceId": "alpoge-riemann-hypothesis-announcement-2026",
+  "sourceAidSha256": "3fc97784b71ddd44ff8aa0a177e99622a1c61b13cfa843a0989ee4a7a0cfeb8d",
+  "articleSha256": "8d85c4b49c131bc2dff49e82fc464ac85443a341a588392eb7e1417cfc08290d",
+  "evidenceRevision": "eb8d422652aee1a66e2ccbefe5b1f8fe5f1bfecee7e924a28393dfea7fcf69e2",
+  "reviewedAt": "2026-11-22T02:42:03Z",
+  "provenance": {
+    "kind": "slack-peer-review",
+    "reference": "Pale Horse returned exact-head read-only ACCEPT in the existing Reader 71 Slack coordination thread on 2026-11-21 18:42:03 PST for PR #210 at 72b2a367d0f09abf041d3634b0700a26380eeceb, limited to the CSS single-theme-icon correction and accurate Slack artwork-review provenance. The prior image/caption ACCEPT was also made in Slack on November 21 at 17:32:31 PST, not by a native Codex task.",
+    "limits": "Pale Horse inspected the bounded CSS and source/negative tests; the six browser theme-toggle cases were independently run by the implementing operator. The permitted Slack review cannot authenticate or replace an original editorial acceptance for a different Reader or changed claims; it is valid only for pinned Reader 71 non-CSS HTML, source digest and evidence revision."
+  },
+  "summary": "ACCEPT FOR OWNER REVIEW: one appearance SVG is displayed in each theme state; no source, theorem, claim, approved art or SharePlane relationship change. The historical artwork peer review is correctly classified as Slack, and the editor validator admits this only for the pinned presentation-only Reader 71 correction.",
+  "findings": [
+    "The initial artwork was rejected because a zero-free expression on the critical line reverses RH, the mock Lean theorem was fictional, and plot labels could mislead. The final fixed hero removes these false claims and places the nontrivial-zero conjecture on the critical line, with scientific acceptance explicitly not checked.",
+    "Three exact public PNG digests were matched against the asset manifest by the independent reviewer at commit cfd2c31. The square thumbnail is derived from the accepted fact-safe hero and emphasizes that formal verification is distinct from scientific acceptance.",
+    "The article includes an accessible illustration caption and metadata that do not suggest GhostMesh executed the proof. The text, evidence revision, seven mapped claims, source map and SharePlane conceptual relationships are unchanged.",
+    "Home, archive and Science category entries render the same original square cover instead of the generic article fallback. The published hero and OG image retain the accepted branding without changing existing two-card issue #45 social approval scope.",
+    "Artwork-specific acceptance: Pale Horse inspected all three replacement assets at cfd2c315, matched their SHA256 values, and confirmed the diagram no longer asserts a false zero-free critical line or invented Lean theorem. The original art placement, standalone square cover and route-scoped social metadata remain source-safe; optional minor lettering artifact is nonblocking.",
+    "The shared selector .gm-theme-control svg overrode the weaker SVG icon hide class. A more specific Reader 71 rule makes exactly one glyph visible per theme; Chrome verified 390/768/1440 widths in both states and after toggling. Pale Horse independently ACCEPTED the exact CSS-only source and the pinned Slack peer provenance at head 72b2a36."
+  ],
+  "conclusion": "accept-for-owner-review"
+}

@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "readerId": "reader:replacing-cowork-is-a-test-not-a-title",
+  "sourceId": "0i9W42yV3lE",
+  "sourceAidSha256": "4c0ae71943fecfc8e4ae7d44892d31b202c24e22532e4de1e55c06d3efd9746e",
+  "articleSha256": "3d24daf884ae416d6b6a1c57fea312d5a9dbf569ab7085e06d2b2e1c347ab80b",
+  "evidenceRevision": "7abc230d24e5b0ac87fa01431da809536850134b9deda4deaba9bdebe8890592",
+  "reviewedAt": "2026-11-12T15:29:24.521868+00:00",
+  "provenance": {
+    "kind": "codex-task-agent",
+    "reference": "Pale Horse independent bounded continuation, PR158 exact facc3bc891005cd50b7d9bea92ed9dcc4e6ba674, prior full review 095242f. Same reviewer; unchanged source evidence preserved.",
+    "limits": "Retained full machine transcript, timed neighborhoods, package checksums, complete article/catalog/map and official documentation inspected. No independent listening, screen-demo certification, security audit or outcome replication. Browser deployment binding is separate. Publication approval reported by coordinator; this reviewer does not exercise release authority. This pass checks only four scoped corrections; prior actual browser coverage is retained, not rerun."
+  },
+  "summary": "ACCEPT independent editorial gate for exact facc3bc891005cd50b7d9bea92ed9dcc4e6ba674. All four bounded corrections verified; prior source-map blocker resolved. Owner authorization and publisher release integration are separate.",
+  "findings": [
+    "RESOLVED: cue354/r55-sheets now binds actual-demo, enclosing the substantive Sheets authorization narrative and exact timestamp link. Seven cue mappings pass the unchanged validator with authentic replacement receipts.",
+    "Full retained machine transcript and all seven VTT neighborhoods were independently inspected. Manifest and all seven package members verify against retained checksums. Article and map match supplied exact hashes. No source reacquisition, listening certification or visual demo reproduction was performed.",
+    "Seven substantive cues are grounded at 0,148,354,453,649,832,960 seconds. These are editorial approximate machine-transcript cues, not creator chapters or verified quotations. The Vault tour does not demonstrate exfiltration resistance. Sheets authorization and return to Nod are preserved. Daily 7am Eastern needs-reply email is setup, not a proven sequence of future runs or independently inspected Gmail draft.",
+    "eBay Lincoln CDV search preserves engraving misclassification, best-offer/asking-price uncertainty, date-window limitation and unsaved Vault login distinction. Opus-to-Sonnet choice is observed while per-task routing remains a wish. Two Nod Gmail accounts are contrasted with the demonstrated Cowork checkbox, not every Cowork configuration. The article bounds memory assumptions, unshown Linux document creation and the personal $4 spend. Affiliate disclosure is explicit.",
+    "Official Nod launch/security/evaluation/privacy documentation was read. The article treats vendor mechanisms and benchmark reports as vendor claims: local storage is not offline processing, authorization checks have model and browser limitations, and simulated errands/memory/injection results are not an independent matched Cowork evaluation. Current Cowork documentation supports persistent cloud sessions while local computer access requires the desktop awake and open.",
+    "Editorial depth supplies concrete counterexamples, operational tradeoffs, a matched-task evaluation proposal, cost-per-accepted-result and authority boundaries. It does not claim that an evaluation has run, that provider choice guarantees routing, or that replacement is proven by a feature checklist.",
+    "Three proposed Reader comparisons are appropriate architectural analogies: Autonomy Needs an Interface, The Cockpit Is Not the Control Plane, and The Home Repo Is a Map Not a Monorepo. They are not product corroboration. Catalog admits no Reader or SharePlane edges; explicit zero Works is acceptable. Owner relationship decisions are not inferred from this review.",
+    "Privacy inspection found no raw retained transcript/media, private host paths or credentials in article/map. Source hashes attest integrity, not truth. No independent outcome corroboration is established.",
+    "Independent actual browser checks pass at 320/390/430/1440: no horizontal overflow, readable provenance, seven keyboard cue activations, anchors and tested claim expansion; no captured console errors. Browser worker does not independently certify deployment-to-commit binding, source video or full WCAG conformance.",
+    "Exact new-head CI verify succeeded. Authored diff is precisely cue sectionId, semantic strong replacing literal Markdown emphasis, 960-second label 16:00 and catalog six-to-seven claim count. No CSS, JavaScript, links or underlying source claims changed. Prior full review and browser limitations remain applicable."
+  ],
+  "conclusion": "accept-for-owner-review"
+}

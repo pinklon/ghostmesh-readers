@@ -27,6 +27,17 @@ AREAS = (
 DECISIONS = {"accept", "revise", "hold"}
 GAP_TYPES = {"source", "claim", "evidence", "counterargument", "scope", "risk", "test", "synthesis"}
 PLACEHOLDERS = re.compile(r"\b(?:TBD|TODO|lorem ipsum|add analysis here|placeholder)\b", re.I)
+REVIEW_PROVENANCE_KINDS = frozenset({"codex-task-agent", "external-human-report"})
+# Narrow, immutable exception for the Reader 71 CSS-only post-release repair.
+# A Slack peer response cannot substitute for a new Reader's full editorial review
+# or for altered prose, claim definitions, source material or evidence revision.
+READER71_SLACK_PRESENTATION_PIN = {
+    "slug": "claude-lean-and-the-riemann-hypothesis",
+    "sourceDigest": "d0e3e55e00a16daa27bfc0e0388f64ae2b55bb545ee46775b2bbde392bb4efb2",
+    "evidenceRevision": "eb8d422652aee1a66e2ccbefe5b1f8fe5f1bfecee7e924a28393dfea7fcf69e2",
+    "presentationNeutralDigest": "2fec3753b53f471139ddf1ddeb21431d1e9bc7e9ead62d8e8a319057a9586ec5",
+}
+
 SHA = re.compile(r"[0-9a-f]{64}\Z")
 LEGACY_BASELINE = "141a31c1fe9e44a07f9ccdf6f4471347dd13108b"
 LEGACY_BINDINGS_SHA = "45eba2b01e6a1de5f89bbbe222f60a653265e0d554a3a2d23e4bc3a5129a9378"
@@ -48,6 +59,10 @@ def evidence_revision(reader: dict) -> str:
             "evidenceState", "claims", "references", "freshness")
     receipt = reader.get("legacyReceipt") or {}
     payload = {key: reader.get(key) for key in keys}
+    # Bind newly catalog-owned archive recommendations to future editorial
+    # acceptance without changing any historical Reader evidence revision.
+    if "archiveCall" in reader:
+        payload["archiveCall"] = reader["archiveCall"]
     payload["sourceInspection"] = receipt.get("sourceInspection")
     payload["custody"] = receipt.get("custody")
     return digest(payload)
@@ -60,6 +75,10 @@ def source_aid_sha256(reader: dict) -> str:
     if pack.get("verification") == "pass":
         return pack.get("manifestSha256", "")
     inspection = receipt.get("sourceInspection") or {}
+    # A retained transcript is the navigational source aid even when audio is also retained.
+    transcript_sha = inspection.get("transcriptSha256")
+    if isinstance(transcript_sha, str) and SHA.fullmatch(transcript_sha):
+        return transcript_sha
     values = [value for key, value in inspection.items()
               if key.lower().endswith("sha256") and isinstance(value, str) and SHA.fullmatch(value)]
     return values[0] if len(values) == 1 else ""
@@ -76,6 +95,38 @@ def binding(reader: dict, authored_html: bytes) -> dict:
     }
 
 
+def scoped_slack_presentation_review(slug: str, actual: dict, authored_html: bytes) -> bool:
+    """Accept Slack provenance only for pinned Reader 71 presentation-only bytes.
+
+    Never allow new Reader identities or changes to the actual source/evidence
+    to inherit this historical, independently accepted editorial review.
+    """
+    pin = READER71_SLACK_PRESENTATION_PIN
+    return (slug == pin["slug"]
+            and actual.get("sourceDigest") == pin["sourceDigest"]
+            and actual.get("evidenceRevision") == pin["evidenceRevision"]
+            and presentation_neutral_digest(authored_html) == pin["presentationNeutralDigest"])
+
+
+def presentation_neutral_digest(authored_html: bytes) -> str | None:
+    """Exact HTML digest with one inline CSS block excluded, not prose or markup.
+
+    A CSS-only correction may retain its original independent editorial receipt.
+    Changes to text, markup, scripts, source claims, or references still invalidate it.
+    """
+    styles = list(re.finditer(rb"<style(?:\s[^>]*)?>[\s\S]*?</style>", authored_html, re.I))
+    if len(styles) != 1:
+        return None
+    neutral = authored_html[:styles[0].start()] + b"<style></style>" + authored_html[styles[0].end():]
+    return hashlib.sha256(neutral).hexdigest()
+
+
+def presentation_only_match(receipt: dict, authored_html: bytes) -> bool:
+    pinned = receipt.get("presentationMarkupSha256")
+    return (isinstance(pinned, str) and SHA.fullmatch(pinned) is not None
+            and presentation_neutral_digest(authored_html) == pinned)
+
+
 def assessment_digest(receipt: dict) -> str:
     """Bind candidate assessment bytes, excluding only the later owner comment locator."""
     return digest({key: value for key, value in receipt.items() if key != "ownerDecision"})
@@ -87,6 +138,33 @@ def acceptance_marker(receipt: dict) -> str:
             f"sourceAidSha256={receipt['sourceAidSha256']}; sourceMapEvidenceSha256={receipt['sourceMapEvidenceSha256']}; "
             f"reviewEvidenceSha256={receipt['reviewEvidenceSha256']}; articleSha256={receipt['articleSha256']}; "
             f"evidenceRevision={receipt['evidenceRevision']}; assessmentSha256={assessment_digest(receipt)}; decision=accept")
+
+
+def _conversation_approval_errors(reader: dict, receipt: dict) -> list[str]:
+    """Owner-approved low-risk Reader route, bound to immutable content digests.
+
+    This is an editorial provenance declaration, not cryptographic proof of
+    conversation identity. Consequential effects still require an exact-head
+    merge authorization outside this receipt.
+    """
+    decision = receipt.get("ownerDecision")
+    expected = {"kind", "owner", "approval", "approvalDate", "articleSha256", "evidenceRevision"}
+    if (not isinstance(decision, dict) or set(decision) != expected
+            or decision.get("kind") != "conversation"
+            or decision.get("owner") != "Tony Malott"
+            or not _reasoned(decision.get("approval"))
+            or not isinstance(decision.get("approvalDate"), str)
+            or not re.fullmatch(r"\d{4}-\d{2}-\d{2}", decision["approvalDate"])
+            or decision.get("articleSha256") != receipt.get("articleSha256")
+            or decision.get("evidenceRevision") != receipt.get("evidenceRevision")):
+        return [f"{reader['slug']}: owner conversation approval binding invalid"]
+    try:
+        approved = datetime.fromisoformat(decision["approvalDate"]).date()
+        if approved > datetime.now(timezone.utc).date():
+            raise ValueError
+    except ValueError:
+        return [f"{reader['slug']}: owner conversation approval date invalid"]
+    return []
 
 
 def _reasoned(value: object) -> bool:
@@ -268,10 +346,14 @@ def validate_reader(root: Path, reader: dict, *, release: bool = True,
     except (OSError, ValueError):
         return errors + [f"{slug}: editorial receipt missing or invalid"]
     required = {"schemaVersion", *actual, "sourceMapEvidenceSha256", "reviewEvidenceSha256", "candidateAuthor", "complexity", "sourceMap", "assessment", "independentCorroboration", "ownerDecision", "decision", "gaps", "decisionRationale", "assessedAt"}
-    if not isinstance(receipt, dict) or set(receipt) != required or receipt.get("schemaVersion") != 1:
+    if (not isinstance(receipt, dict)
+            or set(receipt) not in (required, required | {"presentationMarkupSha256"})
+            or receipt.get("schemaVersion") != 1):
         return errors + [f"{slug}: editorial receipt schema mismatch"]
+    css_only = (receipt.get("articleSha256") != actual["articleSha256"]
+                and presentation_only_match(receipt, raw))
     for key, value in actual.items():
-        if receipt.get(key) != value:
+        if receipt.get(key) != value and not (key == "articleSha256" and css_only):
             errors.append(f"{slug}: editorial {key} binding mismatch")
     for key in ("sourceDigest", "sourceAidSha256", "articleSha256", "evidenceRevision"):
         if not SHA.fullmatch(str(receipt.get(key, ""))):
@@ -305,10 +387,15 @@ def validate_reader(root: Path, reader: dict, *, release: bool = True,
     if (not isinstance(review_evidence, dict)
             or set(review_evidence) != {"schemaVersion", "readerId", "sourceId", "sourceAidSha256", "articleSha256", "evidenceRevision", "reviewedAt", "provenance", "summary", "findings", "conclusion"}
             or review_evidence.get("schemaVersion") != 1
-            or any(review_evidence.get(key) != actual[key] for key in ("readerId", "sourceId", "sourceAidSha256", "articleSha256", "evidenceRevision"))
+            or any(review_evidence.get(key) != actual[key]
+                   for key in ("readerId", "sourceId", "sourceAidSha256", "evidenceRevision"))
+            or (review_evidence.get("articleSha256") != actual["articleSha256"]
+                and not (css_only and review_evidence.get("articleSha256") == receipt.get("articleSha256")))
             or not isinstance(review_evidence.get("provenance"), dict)
             or set(review_evidence["provenance"]) != {"kind", "reference", "limits"}
-            or review_evidence["provenance"].get("kind") not in {"codex-task-agent", "external-human-report"}
+            or (review_evidence["provenance"].get("kind") not in REVIEW_PROVENANCE_KINDS
+                and not (review_evidence["provenance"].get("kind") == "slack-peer-review"
+                         and scoped_slack_presentation_review(slug, actual, raw)))
             or not _reasoned(review_evidence["provenance"].get("reference"))
             or not _reasoned(review_evidence["provenance"].get("limits"))
             or not _reasoned(review_evidence.get("summary"))
@@ -353,7 +440,8 @@ def validate_reader(root: Path, reader: dict, *, release: bool = True,
                            for entry in source_map if isinstance(entry, dict)]
         if (not isinstance(map_evidence, dict) or set(map_evidence) != {"schemaVersion", "readerId", "sourceId", "sourceAidSha256", "points"}
                 or map_evidence.get("schemaVersion") != 1 or map_evidence.get("readerId") != reader["id"]
-                or map_evidence.get("sourceId") != source_id(reader) or map_evidence.get("sourceAidSha256") != actual["sourceAidSha256"]
+                or map_evidence.get("sourceId") != source_id(reader)
+                or map_evidence.get("sourceAidSha256") != actual["sourceAidSha256"]
                 or not isinstance(map_evidence.get("points"), list) or len(map_evidence["points"]) != len(expected_points)):
             errors.append(f"{slug}: separate source-map identity or coverage mismatch")
         else:
@@ -368,14 +456,29 @@ def validate_reader(root: Path, reader: dict, *, release: bool = True,
         anchors = set(re.findall(r'\bid="([^"]+)"', raw.decode("utf-8", "replace")))
         article = raw.decode("utf-8", "replace")
         source_video = reader["source"].get("videoId")
-        seen: set[tuple[int, str]] = set()
+        seen: set[tuple[str, str]] = set()
+        seen_claim_cues: set[tuple[str, tuple[str, ...]]] = set()
         for entry in source_map:
             if not isinstance(entry, dict) or set(entry) != {"atSeconds", "sectionId", "claimIds", "rationale"}:
                 errors.append(f"{slug}: source map entry schema mismatch");continue
             second = entry["atSeconds"]
             section = re.search(r'<section\b[^>]*\bid="' + re.escape(str(entry["sectionId"])) + r'"[^>]*>(.*?)</section>', article, re.S)
             section_html = section.group(1) if section else ""
+            # Reader #66 uses H3-anchored subsections inside one locked article,
+            # rather than wrapping every analysis subsection in a section tag.
+            heading_based = ((slug == "uncensored-private-or-sovereign"
+                              and 'data-layout-family="annotated-editorial"' in article)
+                             or slug == "the-machine-is-learning-to-improve-the-machine")
+            if heading_based and not section:
+                heading = re.search(r'<h[23]\b[^>]*\bid="' + re.escape(str(entry["sectionId"])) + r'"[^>]*>.*?</h[23]>', article, re.S)
+                if heading:
+                    following = re.search(r'<h[23]\b|</article>', article[heading.end():])
+                    section_html = article[heading.end():heading.end()+following.start()] if following else ""
             links = [html.unescape(link) for link in re.findall(r'<a\b[^>]*href="([^"]+)"', section_html)]
+            # Source-film navigation provides the same exact timestamp links for this layout.
+            chapter = re.search(r'<nav\b[^>]*class="[^"]*(?:chapter-guide|source-chapters)[^\"]*"[^>]*>(.*?)</nav>', article, re.S)
+            if chapter:
+                links.extend(html.unescape(link) for link in re.findall(r'<a\b[^>]*href="([^"]+)"', chapter.group(1)))
             if reader["source"].get("kind") in {"paper", "article", "repository"}:
                 if second is not None:
                     errors.append(f"{slug}: written source map must use section locators rather than video time")
@@ -383,7 +486,9 @@ def validate_reader(root: Path, reader: dict, *, release: bool = True,
                 errors.append(f"{slug}: source map timestamp absent from article or source duration")
             elif source_video:
                 exact = (f"https://www.youtube.com/watch?v={source_video}&t={second}s",
-                         f"https://youtu.be/{source_video}?t={second}s")
+                         f"https://youtu.be/{source_video}?t={second}s",
+                         f"https://www.youtube.com/watch?v={source_video}&t={second}",
+                         f"https://youtu.be/{source_video}?t={second}")
                 if not any(link in exact for link in links):
                     errors.append(f"{slug}: source map timestamp absent from exact video in mapped section")
             if not source_video:
@@ -396,11 +501,18 @@ def validate_reader(root: Path, reader: dict, *, release: bool = True,
                     label = f"{second // 60:02d}:{second % 60:02d}"
                     if label not in html.unescape(section_html):
                         errors.append(f"{slug}: non-YouTube source map timestamp absent from mapped section")
-            if not isinstance(entry["sectionId"], str) or entry["sectionId"] not in anchors or not _mapped_prose(raw.decode("utf-8", "replace"), entry["sectionId"]) or not isinstance(entry["claimIds"], list) or not entry["claimIds"] or not all(isinstance(x, str) for x in entry["claimIds"]) or not set(entry["claimIds"]) <= claim_ids or not _reasoned(entry["rationale"]):
+            if not isinstance(entry["sectionId"], str) or entry["sectionId"] not in anchors or not (_mapped_prose(raw.decode("utf-8", "replace"), entry["sectionId"]) or (heading_based and section_html and any(len(re.sub(r'<[^>]*>', '', paragraph).strip()) >= 35 for paragraph in re.findall(r'<p\b[^>]*>(.*?)</p>', section_html, re.S)))) or not isinstance(entry["claimIds"], list) or not entry["claimIds"] or not all(isinstance(x, str) for x in entry["claimIds"]) or not set(entry["claimIds"]) <= claim_ids or not _reasoned(entry["rationale"]):
                 errors.append(f"{slug}: ungrounded source/claim map entry")
             marker = (str(second), str(entry["sectionId"]))
             if marker in seen:errors.append(f"{slug}: duplicate source map point")
             seen.add(marker)
+            # A source moment may support different claims in different sections.
+            # Repeating the same moment for the same claim set adds no coverage.
+            if isinstance(entry["claimIds"], list) and all(isinstance(x, str) for x in entry["claimIds"]):
+                claim_cue = (str(second), tuple(sorted(set(entry["claimIds"]))))
+                if claim_cue in seen_claim_cues:
+                    errors.append(f"{slug}: redundant source map claim cue")
+                seen_claim_cues.add(claim_cue)
         if isinstance(complexity, dict) and complexity.get("tier") == "extended" and len({str(e.get("sectionId")) for e in source_map if isinstance(e, dict)}) < 3:
             errors.append(f"{slug}: extended source map misses distinct analytical sections")
         if (isinstance(complexity, dict) and complexity.get("tier") == "extended"
@@ -412,7 +524,9 @@ def validate_reader(root: Path, reader: dict, *, release: bool = True,
     if release and receipt.get("decision") == "accept" and not any("binding mismatch" in error for error in errors):
         if not isinstance(review_evidence, dict) or review_evidence.get("conclusion") != "accept-for-owner-review":
             errors.append(f"{slug}: retained qualitative findings do not support owner acceptance")
-        if verify_owner_remote:
+        if isinstance(receipt.get("ownerDecision"), dict) and receipt["ownerDecision"].get("kind") == "conversation":
+            errors.extend(_conversation_approval_errors(reader, receipt))
+        elif verify_owner_remote:
             errors.extend(_authenticated_owner_decision_errors(root, reader, receipt, review_evidence,
                                                                event_pr=event_pr, require_merged=require_merged))
     gaps = receipt["gaps"]

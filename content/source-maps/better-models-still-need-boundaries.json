@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 1,
+  "readerId": "reader:better-models-still-need-boundaries",
+  "sourceId": "OEY-vm7qRHc",
+  "sourceAidSha256": "47e9b3b0457f1190e78a7a21fc460037a9c384f74e1d8ebdd1f473accc6171d6",
+  "points": [
+    {
+      "atSeconds": 266,
+      "sectionId": "capacity-analysis",
+      "claimIds": [
+        "r52-inventory"
+      ],
+      "cueParaphrase": "The creator discusses the reported inventory and alternative compute-access routes; availability and eligibility are not established.",
+      "privateAidCheck": "Publisher hashed and read the retained machine-ASR transcript and inspected the timed aid. These are provisional speech/topic locators, not listening-checked quotations, visual evidence or verified numerical outcomes."
+    },
+    {
+      "atSeconds": 172,
+      "sectionId": "capacity-analysis",
+      "claimIds": [
+        "r52-rental"
+      ],
+      "cueParaphrase": "The creator discusses the reported inventory and alternative compute-access routes; availability and eligibility are not established.",
+      "privateAidCheck": "Publisher hashed and read the retained machine-ASR transcript and inspected the timed aid. These are provisional speech/topic locators, not listening-checked quotations, visual evidence or verified numerical outcomes."
+    },
+    {
+      "atSeconds": 667,
+      "sectionId": "research-analysis",
+      "claimIds": [
+        "r52-research",
+        "r52-compute-cause"
+      ],
+      "cueParaphrase": "The creator introduces research acceleration and acknowledges human involvement; written METR qualifications are separately attributed.",
+      "privateAidCheck": "Publisher hashed and read the retained machine-ASR transcript and inspected the timed aid. These are provisional speech/topic locators, not listening-checked quotations, visual evidence or verified numerical outcomes."
+    },
+    {
+      "atSeconds": 858,
+      "sectionId": "research-analysis",
+      "claimIds": [
+        "r52-human-role"
+      ],
+      "cueParaphrase": "The creator introduces research acceleration and acknowledges human involvement; written METR qualifications are separately attributed.",
+      "privateAidCheck": "Publisher hashed and read the retained machine-ASR transcript and inspected the timed aid. These are provisional speech/topic locators, not listening-checked quotations, visual evidence or verified numerical outcomes."
+    },
+    {
+      "atSeconds": 907,
+      "sectionId": "authority-analysis",
+      "claimIds": [
+        "r52-tool-path"
+      ],
+      "cueParaphrase": "The creator discusses the Binance incident and internal tool; the company postmortem supplies separately attributed revocation detail.",
+      "privateAidCheck": "Publisher hashed and read the retained machine-ASR transcript and inspected the timed aid. These are provisional speech/topic locators, not listening-checked quotations, visual evidence or verified numerical outcomes."
+    },
+    {
+      "atSeconds": 883,
+      "sectionId": "authority-analysis",
+      "claimIds": [
+        "r52-revocation"
+      ],
+      "cueParaphrase": "The creator discusses the Binance incident and internal tool; the company postmortem supplies separately attributed revocation detail.",
+      "privateAidCheck": "Publisher hashed and read the retained machine-ASR transcript and inspected the timed aid. These are provisional speech/topic locators, not listening-checked quotations, visual evidence or verified numerical outcomes."
+    },
+    {
+      "atSeconds": 1036,
+      "sectionId": "capability-objection",
+      "claimIds": [
+        "r52-forecast"
+      ],
+      "cueParaphrase": "The creator advances a frontier-access defense forecast; this Reader keeps its universal outcome and timetable unverified.",
+      "privateAidCheck": "Publisher hashed and read the retained machine-ASR transcript and inspected the timed aid. These are provisional speech/topic locators, not listening-checked quotations, visual evidence or verified numerical outcomes."
+    }
+  ]
+}

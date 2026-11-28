@@ -72,8 +72,8 @@ def main():
                         help="Publisher-owned stable public Works corpus URL")
     parser.add_argument("--catalog-url", default="https://shareplane.malott.ai/native/v3/assets/catalog.js")
     parser.add_argument("--output", type=Path, default=Path("site/readers/unified-search-index.json"))
-    parser.add_argument("--min-readers", type=int, default=40)
-    parser.add_argument("--min-shareplane", type=int, default=114)
+    parser.add_argument("--min-readers", type=int, default=75)
+    parser.add_argument("--min-shareplane", type=int, default=119)
     args = parser.parse_args()
     refresh(args.readers, args.corpus_url, args.catalog_url, args.output,
             args.min_readers, args.min_shareplane)

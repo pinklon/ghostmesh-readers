@@ -22,7 +22,7 @@ def needs_refresh(corpus_url, catalog_url, deployed_index_url):
     if corpus.get("sourceCatalogSha256") != source_sha:
         raise ValueError("Public corpus and current catalog differ")
     works = corpus.get("records")
-    if (not isinstance(works, list) or len(works) < 114 or
+    if (not isinstance(works, list) or len(works) < 119 or
             corpus.get("publicWorkCount") != len(works) or
             corpus.get("verifiedPublicRouteCount") != len(works) or
             not all(row.get("publiclyAccessible") is True for row in works)):

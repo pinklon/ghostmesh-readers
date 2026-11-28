@@ -4,7 +4,7 @@ from pathlib import Path
 from html import escape
 from html.parser import HTMLParser
 from datetime import date
-import json,re,sys
+import json,re,sys,hashlib
 from scout_feed import validate_scout,validate_events,feed_xml
 from scout_pages import validate_editions,home as scout_home,review_page,edition_page,archive_page,method_page,review_url,edition_url
 from scout_research import validate_research, research_page, research_graph
@@ -44,7 +44,7 @@ def controls():return ('<header class="gm-site-header"><div class="gm-site-heade
  '<svg class="gm-theme-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.2 15.9A8.7 8.7 0 0 1 8.1 3.8 8.7 8.7 0 1 0 20.2 15.9Z"/></svg>'
  '<span class="gm-theme-label gm-visually-hidden">Appearance</span></button></div>'
  '</div><dialog class="gm-reader-search" data-reader-search aria-labelledby="gm-search-title"><div class="gm-reader-search-head"><div><p>GHOSTMESH / READER SEARCH</p><h2 id="gm-search-title">Search the published readings.</h2></div><button type="button" data-reader-search-close aria-label="Close Reader search">×</button></div>'
- f'<label for="gm-search-input">Search article text from all {READER_COUNT} public Readers</label><input id="gm-search-input" type="search" autocomplete="off" placeholder="A claim, source or phrase">'
+ f'<label for="gm-search-input">Search article text from all public Readers</label><input id="gm-search-input" type="search" autocomplete="off" placeholder="A claim, source or phrase">'
  '<p class="gm-reader-search-scope">Results are limited to the public Reader articles on this site. <a href="/readers/">Browse all Readers</a>.</p>'
  '<p data-reader-search-status role="status" aria-live="polite">Type to search the public Reader articles.</p><div data-reader-search-results></div></dialog></header>')
 def footer(include_email=True):return ('<footer aria-label="GhostMesh destinations" class="gm-reader-footer gm-site-footer"><div class="gm-reader-footer-inner">'
@@ -54,6 +54,60 @@ def footer(include_email=True):return ('<footer aria-label="GhostMesh destinatio
  '<a href="https://ghostmesh.ai/">GhostMesh.ai ↗</a><a href="https://shareplane.malott.ai/">SharePlane ↗</a><a href="https://malott.ai/">Tony Malott ↗</a>'
  +('<a href="mailto:ghostmesh@malott.ai?subject=GhostMesh%20Reader%20feedback">Contact GhostMesh ✉</a>' if include_email else '')+'</nav></div></footer>')
 def head():return '<link rel="alternate" type="application/rss+xml" title="GhostMesh Readers and Scout" href="/feed.xml"><script src="/assets/theme.js"></script><script src="/assets/reader-search.js" defer></script><link rel="stylesheet" href="/assets/reader-chrome.css"><link rel="stylesheet" href="/assets/knowledge.css"><link rel="stylesheet" href="/assets/reader-refresh.css">'
+def presentation_only_match(receipt, authored_html):
+ """Check CSS-only equivalence without requiring a sibling module in isolated builds."""
+ pinned=receipt.get('presentationMarkupSha256')
+ if not isinstance(pinned,str) or re.fullmatch(r'[0-9a-f]{64}',pinned) is None:return False
+ styles=list(re.finditer(rb'<style(?:\s[^>]*)?>[\s\S]*?</style>',authored_html,re.I))
+ if len(styles)!=1:return False
+ neutral=authored_html[:styles[0].start()]+b'<style></style>'+authored_html[styles[0].end():]
+ return hashlib.sha256(neutral).hexdigest()==pinned
+
+def projected_publication_status(raw, reader, depth=None):
+ """Project mutable release status without changing exact-byte reviewed prose.
+
+ New Reader manuscripts opt in by adding data-gm-release-status to their
+ publication-status paragraph before independent review. Historical pages are
+ unchanged. A rendered preview never claims production deployment.
+ """
+ marker=re.compile(r'(<p class="gm-publication-status" data-gm-release-status="">)(.*?)(</p>)',re.S)
+ matches=list(marker.finditer(raw))
+ if not matches:return raw
+ if len(matches)!=1:raise ValueError(f'{reader["slug"]}: duplicate publication-status marker')
+ bound=(isinstance(depth,dict) and depth.get('decision')=='accept'
+        and (depth.get('articleSha256')==hashlib.sha256(raw.encode()).hexdigest()
+             or presentation_only_match(depth,raw.encode())))
+ approval=depth.get('ownerDecision') if bound else None
+ authorized=(isinstance(approval,dict)
+             and ((approval.get('kind')=='conversation' and approval.get('owner')=='Tony Malott'
+                   and isinstance(approval.get('approval'),str) and len(approval['approval'].strip())>=35
+                   and re.fullmatch(r'\d{4}-\d{2}-\d{2}',str(approval.get('approvalDate','')))
+                   and approval.get('articleSha256')==depth['articleSha256']
+                   and approval.get('evidenceRevision')==depth.get('evidenceRevision'))
+                  or (isinstance(approval.get('commentId'),int) and approval['commentId']>0)))
+ verified_path=ROOT/'content/production-verifications.json'
+ verified=json.loads(verified_path.read_text()).get(reader['slug']) if verified_path.exists() else None
+ verified_ok=(isinstance(verified,dict)
+              and re.fullmatch(r'[0-9a-f]{40}',str(verified.get('mergeCommit','')))
+              and verified.get('url')=='https://youtube.shareplane.malott.ai/'+reader['slug']+'/'
+              and re.fullmatch(r'\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}Z',str(verified.get('verifiedAt','')))
+              and {'article-http-200','receipt-http-200','catalog-http-200','sitemap-http-200','claim-register-http-200'}<=set(verified.get('checks',[])))
+ if authorized:
+  status='Owner-approved for release, subject to protected merge and production verification. This page does not attest deployment.'
+  if verified_ok:
+   published=date.fromisoformat(reader.get('published',verified['verifiedAt'][:10])).strftime('%B %d, %Y').replace(' 0',' ')
+   status=f'Published {published}. Production release verified.'
+ elif verified_ok:
+  # A public release is a fact, not evidence of independent editorial acceptance.
+  published=date.fromisoformat(reader.get('published',verified['verifiedAt'][:10])).strftime('%B %d, %Y').replace(' 0',' ')
+  status=f'Published {published}. Production release verified; independent editorial review remains pending.'
+ elif bound:
+  status='Independent editorial review accepted for owner consideration. Publication has not been authorized.'
+ else:
+  status='Editorial draft. Independent acceptance and owner publication authorization are pending.'
+ match=matches[0]
+ return raw[:match.start(2)]+'<strong>Publication status:</strong> '+esc(status)+raw[match.end(2):]
+
 def brief(r):
  first={'paper':'What the paper studied','article':'What the article argues','repository':'What the repository contains'}.get(r['source'].get('kind'),'What the video is about')
  return '<section class="gm-brief" id="at-a-glance" aria-labelledby="brief-title"><div class="gm-brief-heading"><p class="gm-kicker">The reading / in three moves</p><h2 id="brief-title">Start with the distinction.</h2></div>'+''.join('<div class="gm-brief-point"><span class="gm-brief-index">0'+str(i)+'</span><div><h3>'+h+'</h3><p>'+esc(r[k])+'</p></div></div>' for i,(k,h) in enumerate([('overview',first),('whyItMatters','Why you should care'),('ghostMeshTakeaway','What GhostMesh takes away')],1))+f'<p class="gm-verdict"><strong>GhostMesh verdict: {esc(r["verdict"])}</strong>. Editorial recommendation, not factual verification. Architecture impact: {esc(r["architectureImpact"])}. Proposed only; no adoption implied.</p></section>'
@@ -88,6 +142,69 @@ def related(r,byid):
     out+=f'<article><span class="gm-related-index">↗</span><div class="gm-related-copy"><p class="gm-kicker">External study / outside the Reader graph</p><h3><a href="{esc(ref["url"])}">{esc(ref["title"])}</a></h3><p>{esc(ref["independence"])}</p></div><span class="gm-related-arrow" aria-hidden="true">↗</span></article>'
  out+='</div>'
  return out+'</section>'
+def governed_reader_connections(raw, r, byid):
+ """Project reviewed Reader/Work connections for #54 onward, without editing
+ independently accepted authored article bytes or introducing a second graph.
+ A justified zero renders visibly instead of looking like missing work.
+ """
+ if r.get('editorialOrder', -1) < 53:
+  return raw
+ slug=r['slug']
+ related_section=re.search(r'<section id="related-thinking" class="gm-related">.*?</section>',raw,re.S)
+ if not related_section:
+  raise ValueError(f'{slug}: missing canonical related-thinking section')
+ if raw.count('id="shareplane-thinking"'):
+  raise ValueError(f'{slug}: authored SharePlane Work section conflicts with catalog projection')
+ reader_html=related(r,byid)
+ if not r['relationships']:
+  # Preserve any separate independent-study cards for paper Readers even
+  # when no directed Reader edge was admitted.
+  reader_html=reader_html.replace('<div class="gm-cards">',
+      '<p class="gm-route-empty">No directed Reader connection admitted after source-specific review.</p>'
+      '<div class="gm-cards">',1)
+ raw=raw[:related_section.start()]+reader_html+raw[related_section.end():]
+ works=r.get('sharePlaneRelationships',[])
+ work_rows=''.join('<li><span class="gm-work-kind">'+esc(x['type'])+'</span>'
+                   '<a href="'+esc(x['url'])+'">'+esc(x['title'])+'</a>'
+                   '<span>'+esc(x['reason'])+'</span></li>' for x in works)
+ work_html=('<section id="shareplane-thinking" class="gm-work-routes"><h2>SharePlane Work comparison</h2>'
+            '<p class="gm-backmatter-note">Separately reviewed editorial connections, not independent validation of the video.</p>'
+            +('<ul class="gm-work-grid">'+work_rows+'</ul>' if works else
+              '<p class="gm-route-empty">No SharePlane Work connection admitted after separate review. '
+              +esc(r['sharePlaneReview']['rationale'])+'</p>')+'</section>')
+ provenance=re.search(r'<section\b(?=[^>]*id="reasonpack-provenance")(?=[^>]*class="gm-source-scope")[^>]*>',raw)
+ if not provenance:
+  # A non-video Reader may have a different provenance section. Keep Work
+  # comparisons in the reading column rather than inventing ReasonPack.
+  provenance=re.search(r'</article>\s*<aside class="rail">',raw)
+ if not provenance:
+  # The approved annotated-editorial layout has a related section but no
+  # separate provenance/rail boundary; place the Work plane beside it.
+  provenance=re.search(r'<section class="gm-related" id="related-thinking">',raw)
+ if not provenance:
+  raise ValueError(f'{slug}: missing article/rail boundary for Work placement')
+ if slug in {'when-code-gets-cheap-ambition-becomes-the-test', 'the-cost-of-forgetting-why-agents-keep-reading-the-same-world'}:
+  # Reader #72: source/evidence then provenance, then onward-reading panels.
+  # Keep this scoped; previous published Readers retain their approved order.
+  # The canonical related section is now AFTER the complete provenance record.
+  final_related=re.search(r'<section class="gm-related" id="related-thinking">.*?</section>',raw,re.S)
+  if not final_related or not (
+     raw.find('id="reasonpack-provenance"')<final_related.start()
+  ):
+   raise ValueError(f'{slug}: final related reading must follow provenance')
+  raw=raw[:final_related.end()]+work_html+raw[final_related.end():]
+ else:
+  raw=raw[:provenance.start()]+work_html+raw[provenance.start():]
+ # Reader rail offers both admitted graph planes at the same visual level.
+ rail='<a href="#related-thinking">Related thinking</a>'
+ if raw.count(rail)!=1:
+  if 'data-layout-family="annotated-editorial"' not in raw:
+   raise ValueError(f'{slug}: expected one Reader rail relationship link')
+ else:
+  raw=raw.replace(rail,rail+'<a href="#shareplane-thinking">SharePlane Work</a>',1)
+ return raw
+
+
 def relationship_map(readers,byid):
  if __package__:
   from .map_design import relationship_map as render
@@ -117,6 +234,12 @@ def home_card(r,number,featured=False):
         f'<div class="gm-home-actions"><a class="gm-home-open" href="/{esc(r["slug"])}/">Open Reader →</a>'
         f'<a class="gm-home-source" href="{esc(source["url"])}">{("Pinned repository" if repository else "Original article")} ↗</a></div></div>')
   if repository:visual=visual.replace('ORIGINAL ARTICLE','SOURCE CODE REPOSITORY').replace('ORIGINAL SOURCE / DIRECT LINK','PINNED COMMIT / DIRECT LINK')
+  if r['slug']=='claude-lean-and-the-riemann-hypothesis':
+   visual=('<div class="gm-home-visual gm-home-paper" data-reader-art="71">'
+           '<span class="gm-home-visual-label">GHOSTMESH READER 71 / ORIGINAL EDITORIAL ART</span>'
+           '<img class="r71-card-cover" src="/reader71/square.png" width="800" height="800" '
+           'loading="lazy" decoding="async" alt="Original GhostMesh Reader 71 artwork for Claude, Lean, and the Riemann Hypothesis.">'
+           '<span class="gm-home-visual-label">ORIGINAL SOURCE / DIRECT LINK</span></div>')
   return f'<article class="gm-card gm-home-card" data-category="{esc(r["category"])}" data-tags="{esc(" ".join(r["tags"]))}" data-date="{r["published"]}" data-rank="{r["rank"]}">'+visual+copy+'</article>'
  if source.get('kind')=='paper':
   if __package__:
@@ -298,6 +421,49 @@ def projections():
  byid={r['id']:r for r in readers};out={}
  for r in readers:
   raw=(ROOT/'content/readers'/f'{r["slug"]}.html').read_text()
+  depth_path=ROOT/'content/editorial-depth'/f'{r["slug"]}.json'
+  depth=json.loads(depth_path.read_text()) if depth_path.exists() else None
+  raw=projected_publication_status(raw,r,depth)
+  raw=governed_reader_connections(raw,r,byid)
+  if r['slug']=='more-skills-worse-agents' and len(r.get('relationships',[]))==3 and len(r.get('sharePlaneRelationships',[]))==1:
+   # Administrative public-stage labels. Preserve the exact accepted authored article.
+   replacements={
+    'The four editorial comparisons passed independent review; owner admission is pending.':
+     'The four editorial comparisons passed independent review and were admitted by the owner as navigation, not as proof of performance.',
+    'This reviewed editorial comparison remains proposed until owner admission; it does not corroborate the video.':
+     'This owner-admitted editorial comparison does not corroborate the video or establish its performance claims.',
+    'These editorial comparisons passed independent review, but are not yet admitted into the catalog graph or authorized for publication.':
+     'These editorial comparisons passed independent review and owner admission. They are reading routes, not independent corroboration.',
+    'Editorial preview only. ReasonPack verified, ASR not independently listened to. Independent review accepted for owner consideration. Four comparisons reviewed but not admitted; owner release authorization remains outstanding.':
+     'Owner-approved editorial edition. ReasonPack verified; machine ASR not independently listening-certified. Four reviewed editorial comparisons are admitted; performance claims remain unverified.'
+   }
+   for old,new in replacements.items():
+    if raw.count(old)!=1:raise ValueError('Reader 51 release label projection changed: '+old)
+    raw=raw.replace(old,new,1)
+  if r['slug']=='better-models-still-need-boundaries' and r.get('relationships') and r.get('sharePlaneRelationships'):
+   # Project the admitted cards without changing the reviewed source or deleting
+   # any of its substantive prose. The authored source remains hash-bound.
+   match=re.search(r'<section id="related-thinking" class="gm-related">(.*?)</section>',raw,re.S)
+   if not match:raise ValueError('Reader 52 related-thinking source wrapper changed')
+   body=match.group(1)
+   heading=re.search(r'<h2>.*?</h2>',body,re.S)
+   paragraphs=re.findall(r'<p>.*?</p>',body,re.S)
+   if not heading or len(paragraphs)!=4:raise ValueError('Reader 52 editorial comparison prose changed')
+   cards=''.join('<article><span class="gm-related-index">'+str(i).zfill(2)+'</span>'
+                 '<div class="gm-related-copy">'+para+'</div><span class="gm-related-arrow" aria-hidden="true">↗</span></article>'
+                 for i,para in enumerate(paragraphs[1:],1))
+   replacement='<section id="related-thinking" class="gm-related">'+heading.group(0)+paragraphs[0]+'<div class="gm-cards">'+cards+'</div></section>'
+   raw=raw[:match.start()]+replacement+raw[match.end():]
+   work=re.search(r'<section id="shareplane-thinking">(.*?)</section>',raw,re.S)
+   if not work:raise ValueError('Reader 52 SharePlane source wrapper changed')
+   work_body=work.group(1)
+   title=re.search(r'<h2>.*?</h2>',work_body,re.S)
+   prose=re.findall(r'<p>.*?</p>',work_body,re.S)
+   if not title or len(prose)!=1:raise ValueError('Reader 52 SharePlane editorial prose changed')
+   replacement=('<section id="shareplane-thinking" class="gm-work-routes">'+title.group(0)
+                +'<ul class="gm-work-grid"><li><span class="gm-work-kind">Conceptual extension</span>'
+                +prose[0]+'</li></ul></section>')
+   raw=raw[:work.start()]+replacement+raw[work.end():]
   if r['slug']=='the-threshold-is-a-claim-not-a-test':
    # Preserve the incumbent writer file byte-for-byte; normalize its colliding
    # local brief anchor and missing canonical only in this public projection.
@@ -312,6 +478,24 @@ def projections():
    if 'data-gm-share' not in raw:
     share='<div class="gm-sharebar" data-gm-share=""><span class="gm-share-label">Share this Video Deconstruction</span><div class="gm-share-actions"><button class="gm-share-button" data-native-share="" type="button">Share</button><button class="gm-share-button" data-copy-link="" type="button">Copy link</button><a class="gm-share-email" data-email-link="" href="mailto:">Email</a><span aria-live="polite" class="gm-share-message" data-gm-share-message="" role="status"></span></div></div>'
     raw=raw.replace('<!--GM_BRIEF-->',share+'<!--GM_BRIEF-->',1).replace('</body>','<script src="/assets/reader-share.js" defer></script></body>',1)
+  if r['slug']=='a-model-that-says-yes-is-not-necessarily-a-model-that-knows':
+   # Preserve the accepted article source; adapt its opt-in player ID only in projection.
+   raw=raw.replace('class="source-launch" type="button" id="source-launch"','class="source-launch" type="button" id="launch"',1)
+   raw=raw.replace("getElementById('source-launch')","getElementById('launch')")
+   raw=raw.replace('▶ Play the original video</button>',
+                   '<span class="gm-player-source-title">'+esc(r['source']['title'])+'</span> ▶ Play the original video</button>',1)
+   # The source's about:blank frame is still an iframe before consent. Mount only on play.
+   raw,n=re.subn(r'<iframe id="source-video"[^>]*></iframe>',
+                 '<div id="source-video" style="position:absolute;inset:0"></div>',raw,count=1)
+   if n!=1:raise ValueError('Accepted source player mount changed')
+   frame_adapter=('<script>(function(){const mount=document.getElementById("source-video");'
+                  'Object.defineProperty(mount,"src",{set:function(url){'
+                  'let frame=mount.querySelector("iframe");if(!frame){frame=document.createElement("iframe");'
+                  'frame.title="David Ondrej video under deconstruction";frame.allowFullscreen=true;'
+                  'frame.referrerPolicy="strict-origin-when-cross-origin";'
+                  'frame.allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";'
+                  'mount.appendChild(frame)}frame.src=url}})})();</script>')
+   raw=raw.replace('</body>',frame_adapter+'</body>',1)
   if r['source'].get('kind')=='paper':validate_paper_source(raw,r['source'])
   elif r['source'].get('kind')=='article':validate_article_source(raw,r['source'])
   elif r['source'].get('kind')=='repository':validate_repository_source(raw,r['source'])
@@ -327,6 +511,10 @@ def projections():
      raw=raw.replace('<div class="chapters"',introduction+'<div class="chapters"',1)
   raw=raw.replace('</head>',f'<meta name="gm-share-description" content="{esc(r["overview"])}"></head>',1)
   for slot,value in [('HEAD',head()),('CONTROLS',''),('BRIEF',brief(r)),('EVIDENCE',evidence(r)),('RELATED',related(r,byid))]:raw=raw.replace('<!--GM_'+slot+'-->',value)
+  # The shared search control is projected for every Reader, even when the
+  # authored page omits the optional GM_HEAD slot.
+  if '/assets/reader-search.js' not in raw:
+   raw=raw.replace('</head>','<script src="/assets/reader-search.js" defer></script></head>',1)
   old_header=re.search(r'<header(?:\s[^>]*)?>.*?</header>',raw,re.S)
   if not old_header:raise ValueError(f'{r["slug"]}: expected one site header')
   new_header=controls()
@@ -376,6 +564,73 @@ def projections():
    raw=raw.replace('</main>',share+'</main>',1)
    if '/assets/reader-share.js' not in raw:
     raw=raw.replace('</body>','<script defer src="/assets/reader-share.js"></script></body>',1)
+  if not re.search(r'<[^>]+\sdata-gm-share(?=[\s=>])',raw):
+   # Project the shared control for authored pages that omit it.
+   share=('<div class="gm-sharebar" data-gm-share=""><span class="gm-share-label">Share this Video Deconstruction</span>'
+          '<div class="gm-share-actions"><button class="gm-share-button" data-native-share="" type="button">Share</button>'
+          '<button class="gm-share-button" data-copy-link="" type="button">Copy link</button>'
+          '<a class="gm-share-email" data-email-link="" href="mailto:?subject='+esc(r['title'])+'">Email</a>'
+          '<span aria-live="polite" class="gm-share-message" data-gm-share-message="" role="status"></span></div></div>')
+   raw=raw.replace('</main>',share+'</main>',1)
+   if '/assets/reader-share.js' not in raw:
+    raw=raw.replace('</body>','<script defer src="/assets/reader-share.js"></script></body>',1)
+  if r['slug']=='uncensored-private-or-sovereign':
+   # Source-claim records remain inspectable without replacing the approved argument layout.
+   register='<details class="gm-claim-appendix"><summary>Inspect the eight mapped source claims and limits</summary>'+evidence(r)+'</details>'
+   raw=raw.replace('<section class="gm-related" id="related-thinking">',register+'<section class="gm-related" id="related-thinking">',1)
+   # The self-contained annotated route did not import the shared chrome CSS,
+   # while the generator projects shared footer/share controls into its markup.
+   # Scope the minimal shared presentation to this route; no article rewrite.
+   chrome='''<style data-style-scope="reader66-generated-chrome">
+@media(min-width:1240px){html[data-layout-family="annotated-editorial"] .layout{grid-template-columns:minmax(0,1fr) minmax(0,740px) minmax(0,1fr);gap:clamp(18px,2vw,30px)}html[data-layout-family="annotated-editorial"] .layout::after{content:"";grid-column:3;grid-row:1}html[data-layout-family="annotated-editorial"] .layout .toc{grid-column:1;grid-row:1}html[data-layout-family="annotated-editorial"] .layout .article-body{grid-column:2;grid-row:1}}
+html[data-layout-family="annotated-editorial"] .gm-work-routes{box-sizing:border-box;width:min(1100px,calc(100% - 48px));margin:64px auto 28px;padding:34px 0 0;border-top:1px solid var(--line);font-family:var(--sans);color:var(--ink)}
+html[data-layout-family="annotated-editorial"] .gm-work-routes h2{font:750 clamp(25px,2.5vw,32px)/1.15 var(--sans);letter-spacing:-.045em;margin:0 0 14px;text-align:left}
+html[data-layout-family="annotated-editorial"] .gm-backmatter-note{font:13px/1.65 var(--sans);color:var(--muted);margin:0 0 28px;padding:0 0 0 16px;border-left:2px solid var(--accent);max-width:75ch}
+html[data-layout-family="annotated-editorial"] .gm-work-grid{list-style:none;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:26px;margin:0;padding:0}
+html[data-layout-family="annotated-editorial"] .gm-work-grid>li{display:flex;flex-direction:column;align-items:flex-start;gap:9px;min-width:0;padding:20px 0 8px;border-top:1px solid var(--line)}
+html[data-layout-family="annotated-editorial"] .gm-work-kind{font:750 10px/1.4 var(--mono);letter-spacing:.12em;color:var(--accent);text-transform:uppercase}
+html[data-layout-family="annotated-editorial"] .gm-work-grid a{font:750 clamp(17px,1.8vw,21px)/1.3 var(--sans);letter-spacing:-.025em;color:var(--ink);text-decoration:none}
+html[data-layout-family="annotated-editorial"] .gm-work-grid a:hover{text-decoration:underline;text-underline-offset:4px;color:var(--accent)}
+html[data-layout-family="annotated-editorial"] .gm-work-grid li>span:last-child{font:13px/1.65 var(--sans);color:var(--muted);max-width:60ch}
+html[data-layout-family="annotated-editorial"] .gm-claim-appendix{box-sizing:border-box;width:min(1100px,calc(100% - 48px));margin:34px auto;padding:0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);color:var(--ink);font-family:var(--sans)}
+html[data-layout-family="annotated-editorial"] .gm-claim-appendix>summary{cursor:pointer;padding:17px 0;font:700 12px/1.5 var(--sans);list-style-position:inside}
+html[data-layout-family="annotated-editorial"] .gm-claim-appendix>summary:hover{color:var(--accent)}
+html[data-layout-family="annotated-editorial"] .gm-related{box-sizing:border-box;width:min(1100px,calc(100% - 48px));margin:52px auto 30px;padding:32px 0 0;border-top:1px solid var(--line);color:var(--ink);font-family:var(--sans)}
+html[data-layout-family="annotated-editorial"] .gm-related>.gm-kicker{font:750 10px/1.5 var(--mono);letter-spacing:.13em;color:var(--accent);text-transform:uppercase}
+html[data-layout-family="annotated-editorial"] .gm-related>h2{font:750 clamp(26px,2.7vw,34px)/1.15 var(--sans);letter-spacing:-.04em;margin:8px 0 14px}
+html[data-layout-family="annotated-editorial"] .gm-related>p:not(.gm-kicker){font:13px/1.65 var(--sans);color:var(--muted);max-width:75ch;margin:0 0 26px}
+html[data-layout-family="annotated-editorial"] .gm-related .gm-cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 28px}
+html[data-layout-family="annotated-editorial"] .gm-related .gm-cards>article{display:grid;grid-template-columns:28px minmax(0,1fr) 20px;gap:10px;padding:18px 0 12px;border-top:1px solid var(--line);min-width:0}
+html[data-layout-family="annotated-editorial"] .gm-related-index,html[data-layout-family="annotated-editorial"] .gm-related-arrow{font:750 12px/1.5 var(--mono);color:var(--accent)}
+html[data-layout-family="annotated-editorial"] .gm-related-copy{min-width:0}
+html[data-layout-family="annotated-editorial"] .gm-related-copy .gm-kicker{font:750 10px/1.5 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin:0 0 9px}
+html[data-layout-family="annotated-editorial"] .gm-related-copy h3{font:750 clamp(16px,1.6vw,20px)/1.3 var(--sans);margin:0 0 10px}
+html[data-layout-family="annotated-editorial"] .gm-related .gm-cards .gm-related-copy h3{font:750 clamp(17px,1.8vw,21px)/1.3 var(--sans);letter-spacing:-.025em;text-transform:none;margin:0 0 10px}
+html[data-layout-family="annotated-editorial"] .gm-related-copy h3 a{color:var(--ink);text-decoration:none}
+html[data-layout-family="annotated-editorial"] .gm-related-copy h3 a:hover{color:var(--accent);text-decoration:underline}
+html[data-layout-family="annotated-editorial"] .gm-related-copy>p:not(.gm-kicker){font:13px/1.6 var(--sans);color:var(--muted);margin:0}
+html[data-layout-family="annotated-editorial"] .gm-sharebar{box-sizing:border-box;width:100%;margin:34px 0 0;padding:14px max(24px,calc((100vw - 1100px)/2));border-top:1px solid #505861;border-bottom:1px solid #505861;background:#0e1114;display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap;color:#f4f5f7;font-family:var(--sans)}
+html[data-layout-family="annotated-editorial"] .gm-share-label{font:750 10px/1.5 var(--mono);letter-spacing:.13em;text-transform:uppercase;color:#c4cad2}
+html[data-layout-family="annotated-editorial"] .gm-share-actions{display:flex;align-items:center;justify-content:flex-end;flex-wrap:wrap;gap:10px;margin-left:auto}
+html[data-layout-family="annotated-editorial"] .gm-share-button,html[data-layout-family="annotated-editorial"] .gm-share-email{display:inline-flex;align-items:center;justify-content:center;min-height:38px;box-sizing:border-box;padding:8px 11px;border:1px solid transparent;border-radius:2px;background:transparent;color:#f4f5f7;font:700 12px/1.4 var(--sans);text-decoration:none;cursor:pointer}
+html[data-layout-family="annotated-editorial"] .gm-share-button:first-child{border-color:#87919b}
+html[data-layout-family="annotated-editorial"] .gm-share-button:hover,html[data-layout-family="annotated-editorial"] .gm-share-email:hover{border-color:#87919b;color:#fff}
+html[data-layout-family="annotated-editorial"] .gm-share-icon{display:block;width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex:none;margin-right:9px}
+html[data-layout-family="annotated-editorial"] .gm-share-message:empty{display:none}
+html[data-layout-family="annotated-editorial"] .gm-reader-footer{background:#0e1114;color:#f4f5f7;border-top:1px solid #343a42;margin-top:0}
+html[data-layout-family="annotated-editorial"] .gm-reader-footer-inner{box-sizing:border-box;max-width:1180px;margin:0 auto;padding:36px 28px;display:grid;grid-template-columns:minmax(240px,1fr) minmax(0,2fr);align-items:start;gap:32px}
+html[data-layout-family="annotated-editorial"] .gm-footer-brand{display:flex;align-items:center;gap:10px;color:#fff;text-decoration:none}
+html[data-layout-family="annotated-editorial"] .gm-footer-brand strong{font:750 15px/1.3 var(--sans);letter-spacing:.18em}
+html[data-layout-family="annotated-editorial"] .gm-footer-brand strong em{color:#ff7890;font-style:normal}
+html[data-layout-family="annotated-editorial"] .gm-reader-footer-note{color:#b4bac4;font:11px/1.7 var(--sans);margin:12px 0 0}
+html[data-layout-family="annotated-editorial"] .gm-footer-links{display:flex;flex-wrap:wrap;align-items:center;justify-content:flex-end;gap:10px 17px}
+html[data-layout-family="annotated-editorial"] .gm-footer-links a{color:#e4e7ee;font:650 12px/1.5 var(--sans);text-decoration:none;border-bottom:1px solid transparent;padding:5px 0}
+html[data-layout-family="annotated-editorial"] .gm-footer-links a:hover{color:#fff;border-bottom-color:#ff7890}
+html[data-layout-family="annotated-editorial"] .gm-share-button:focus-visible,html[data-layout-family="annotated-editorial"] .gm-share-email:focus-visible,html[data-layout-family="annotated-editorial"] .gm-footer-links a:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+@media(max-width:690px){html[data-layout-family="annotated-editorial"] .gm-work-grid,html[data-layout-family="annotated-editorial"] .gm-related .gm-cards{grid-template-columns:1fr;gap:14px}html[data-layout-family="annotated-editorial"] .gm-work-routes{margin-top:42px}html[data-layout-family="annotated-editorial"] .gm-sharebar{align-items:flex-start}html[data-layout-family="annotated-editorial"] .gm-share-actions{width:100%;margin-left:0;justify-content:flex-start}html[data-layout-family="annotated-editorial"] .gm-reader-footer-inner{grid-template-columns:1fr;gap:24px}html[data-layout-family="annotated-editorial"] .gm-footer-links{justify-content:flex-start}}
+@media print{html[data-layout-family="annotated-editorial"] .gm-sharebar,html[data-layout-family="annotated-editorial"] .gm-footer-links{display:none!important}}
+</style>'''
+   raw=raw.replace('</head>',chrome+'</head>',1)
   out[f'{r["slug"]}/index.html']=raw
   receipt=dict(r.get('legacyReceipt') or {'schema':'ghostmesh-reader-receipt-v2','source':r['source'],'custody':{'status':'historical-public-account-only','note':'No private source pack was opened or reverified during normalization. See original provenance on the Reader.'}})
   receipt['normalization']={k:v for k,v in r.items() if k not in ['legacyReceipt','rank']}

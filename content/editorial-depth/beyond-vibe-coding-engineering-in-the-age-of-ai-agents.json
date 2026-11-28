@@ -1,0 +1,318 @@
+{
+  "schemaVersion": 1,
+  "readerId": "reader:beyond-vibe-coding-engineering-in-the-age-of-ai-agents",
+  "sourceId": "mU8WKII1gpk",
+  "sourceDigest": "3bb28f2a0f423de9530419e7e75a7a59dee0356558891e7a8120c153c95b9806",
+  "sourceAidSha256": "c14750f59436a716fcbc83a4c4c77bfbb97b86f87d576b6da82ec06c925c72fc",
+  "articleSha256": "02cf794d57f5044849793c57f808c79bcadda9528f8a1cae959363eb5333f951",
+  "evidenceRevision": "d21cfe1a2f695169a96c9f3f4b2c20574351ec2fc1d7f6f4279ea33430ab3ac4",
+  "sourceMapEvidenceSha256": "e427d75eca20867281870853a1a09eea4d0d3eebf20b3f54ef704869fd10b4b0",
+  "reviewEvidenceSha256": "edc37e2ea03db6ee73a40e06513f37b773ea18ec2ec50fe5c81ec2fc441a4ae6",
+  "candidateAuthor": "segfault",
+  "complexity": {
+    "tier": "extended",
+    "factors": [
+      "The two-hour source covers sixteen creator chapters, twenty-eight mapped interview claims and four separate research claims.",
+      "Engineering delegation, architecture, assurance, concurrency, economics and developer education require assessment against empirical counterevidence and first-party design documentation."
+    ],
+    "rationale": "The interview is long, demonstrative and architecturally consequential. The extended Reader separately treats the source's assertions, authoritative documentation, bounded research results, original models and practical falsifiable implications."
+  },
+  "sourceMap": [
+    {
+      "atSeconds": 8,
+      "sectionId": "opening",
+      "claimIds": [
+        "r74-c01"
+      ],
+      "rationale": "Pocock argues that coding is more learnable than many people assume."
+    },
+    {
+      "atSeconds": 130,
+      "sectionId": "skills",
+      "claimIds": [
+        "r74-c02"
+      ],
+      "rationale": "He describes moving from TypeScript education toward reusable instructions for coding agents."
+    },
+    {
+      "atSeconds": 226,
+      "sectionId": "opening",
+      "claimIds": [
+        "r74-c03"
+      ],
+      "rationale": "The host describes uncertainty about how much coding and deployment work to entrust to an agent."
+    },
+    {
+      "atSeconds": 304,
+      "sectionId": "tactical-strategic",
+      "claimIds": [
+        "r74-c04"
+      ],
+      "rationale": "Pocock distinguishes immediate tactical changes from strategic design that preserves a system's future usability."
+    },
+    {
+      "atSeconds": 416,
+      "sectionId": "tactical-strategic",
+      "claimIds": [
+        "r74-c05"
+      ],
+      "rationale": "He predicts that repeatedly accepting generated code without understanding it can degrade the codebase and make future work harder."
+    },
+    {
+      "atSeconds": 755,
+      "sectionId": "specification",
+      "claimIds": [
+        "r74-c06"
+      ],
+      "rationale": "A live demonstration begins with a skills-based approach to clarifying work in a course-video application."
+    },
+    {
+      "atSeconds": 921,
+      "sectionId": "specification",
+      "claimIds": [
+        "r74-c07"
+      ],
+      "rationale": "He shows domain terms for the course system and says shared vocabulary helps communication with the agent."
+    },
+    {
+      "atSeconds": 1020,
+      "sectionId": "specification",
+      "claimIds": [
+        "r74-c08"
+      ],
+      "rationale": "The discussion identifies a communication gap between a brief request and the result its author intends."
+    },
+    {
+      "atSeconds": 1147,
+      "sectionId": "specification",
+      "claimIds": [
+        "r74-c09"
+      ],
+      "rationale": "The demonstrated workflow connects questioning with project vocabulary and records of architectural decisions."
+    },
+    {
+      "atSeconds": 1533,
+      "sectionId": "specification",
+      "claimIds": [
+        "r74-c10"
+      ],
+      "rationale": "For small changes Pocock describes proceeding in the same session; larger work gets a specification and smaller tickets."
+    },
+    {
+      "atSeconds": 1551,
+      "sectionId": "specification",
+      "claimIds": [
+        "r74-c11"
+      ],
+      "rationale": "Pocock treats roughly 150,000 tokens as an approximate personal caution point and emphasizes keeping working context small."
+    },
+    {
+      "atSeconds": 2084,
+      "sectionId": "parallelism",
+      "claimIds": [
+        "r74-c12"
+      ],
+      "rationale": "He describes parallel subagents working in separate Git worktrees before changes are combined for review."
+    },
+    {
+      "atSeconds": 2228,
+      "sectionId": "parallelism",
+      "claimIds": [
+        "r74-c13"
+      ],
+      "rationale": "He describes issue-based task tracking and separate checks against the specification and coding standards."
+    },
+    {
+      "atSeconds": 2692,
+      "sectionId": "verification",
+      "claimIds": [
+        "r74-c14"
+      ],
+      "rationale": "The discussion shifts from the implementation loop to how much work can be trusted and verified."
+    },
+    {
+      "atSeconds": 2969,
+      "sectionId": "verification",
+      "claimIds": [
+        "r74-c15"
+      ],
+      "rationale": "Pocock recommends fast feedback from types, tests and lint rules to constrain agent mistakes."
+    },
+    {
+      "atSeconds": 3151,
+      "sectionId": "architecture",
+      "claimIds": [
+        "r74-c16"
+      ],
+      "rationale": "The discussion turns to a starter tool stack, module boundaries and tests of meaningful behavior."
+    },
+    {
+      "atSeconds": 3661,
+      "sectionId": "architecture",
+      "claimIds": [
+        "r74-c17"
+      ],
+      "rationale": "An architecture-improvement demonstration examines code and proposes deeper modules."
+    },
+    {
+      "atSeconds": 4022,
+      "sectionId": "architecture",
+      "claimIds": [
+        "r74-c18"
+      ],
+      "rationale": "The displayed report proposes consolidating similar operations behind a shared, testable module."
+    },
+    {
+      "atSeconds": 4095,
+      "sectionId": "education",
+      "claimIds": [
+        "r74-c19"
+      ],
+      "rationale": "Pocock describes using an agent teaching workflow to explore unfamiliar design ideas and quiz a learner."
+    },
+    {
+      "atSeconds": 4451,
+      "sectionId": "deployment",
+      "claimIds": [
+        "r74-c20"
+      ],
+      "rationale": "The speakers discuss managed hosting, agent-assisted deployment and security review."
+    },
+    {
+      "atSeconds": 4819,
+      "sectionId": "deployment",
+      "claimIds": [
+        "r74-c21"
+      ],
+      "rationale": "Pocock says security is not the principal focus of his personal projects and recommends including security in review."
+    },
+    {
+      "atSeconds": 5010,
+      "sectionId": "skills",
+      "claimIds": [
+        "r74-c22"
+      ],
+      "rationale": "He values feedback from users when evaluating skills and describes the difficulty of formal evaluations."
+    },
+    {
+      "atSeconds": 5198,
+      "sectionId": "factory",
+      "claimIds": [
+        "r74-c23"
+      ],
+      "rationale": "He discusses personal projects and choices about balancing work with family time."
+    },
+    {
+      "atSeconds": 5324,
+      "sectionId": "maintainers",
+      "claimIds": [
+        "r74-c24"
+      ],
+      "rationale": "He argues that inexpensive generated pull requests can increase maintainer triage work and recommends useful issues, evidence and reproductions."
+    },
+    {
+      "atSeconds": 5681,
+      "sectionId": "education",
+      "claimIds": [
+        "r74-c25"
+      ],
+      "rationale": "For new developers, he emphasizes working projects, strategic judgment and the ability to understand code."
+    },
+    {
+      "atSeconds": 6281,
+      "sectionId": "factory",
+      "claimIds": [
+        "r74-c26"
+      ],
+      "rationale": "He sketches a software factory with automated triggers and human checkpoints adjusted to consequences and reversibility."
+    },
+    {
+      "atSeconds": 6463,
+      "sectionId": "factory",
+      "claimIds": [
+        "r74-c27"
+      ],
+      "rationale": "The conversation covers his course platform and personal video editor, while the host describes an AI-assisted editing handoff."
+    },
+    {
+      "atSeconds": 7009,
+      "sectionId": "factory",
+      "claimIds": [
+        "r74-c28"
+      ],
+      "rationale": "The discussion covers personal-agent coordination, an interface the guest reported ignoring, and limits of verifying creative work."
+    }
+  ],
+  "assessment": {
+    "sourceCoverage": {
+      "disposition": "covered",
+      "rationale": "Twenty-eight interview claims cover the complete source and sixteen creator chapter starts; four additional research claims are correctly treated as separately sourced, not video-timed material."
+    },
+    "supportingArgument": {
+      "disposition": "covered",
+      "rationale": "The distinction between candidate generation and accepted, maintainable engineering is consistently developed through specification, domain boundaries, integration, verification and operational evidence."
+    },
+    "evidenceRoles": {
+      "disposition": "covered",
+      "rationale": "Creator opinions, demonstrations, first-party documentation, independent studies, disclosed editorial illustrations and bounded operational observations remain distinct."
+    },
+    "counterargument": {
+      "disposition": "covered",
+      "rationale": "The article seriously considers tactical prototypes, excessive planning costs, improving models, automated verification, bounded-task acceleration and changed conditions since the early-2025 studies."
+    },
+    "tradeoffs": {
+      "disposition": "covered",
+      "rationale": "Specification overhead, misleading abstractions, stale records, integration dependencies, review capacity, irreversible effects and unnecessary gates receive concrete treatment."
+    },
+    "falsifiability": {
+      "disposition": "covered",
+      "rationale": "The proposed acceptance experiment defines comparable tasks, exact revisions, independent acceptance, baseline effort, variable isolation, outcome quality and predefined decision criteria."
+    },
+    "originalSynthesis": {
+      "disposition": "covered",
+      "rationale": "Verification debt, delegation bandwidth and engineering leverage are distinct mechanisms connected through a coherent accepted-outcome economic model."
+    },
+    "performance": {
+      "disposition": "covered",
+      "rationale": "No universal acceleration, creator productivity, model-context degradation threshold or GhostMesh performance measurement is asserted without evidence."
+    },
+    "economics": {
+      "disposition": "covered",
+      "rationale": "All illustrative arithmetic is correct. The 40-item queue or debt example, throughput ceilings, four-task break-even and accepted-outcome cost comparisons are explicitly hypothetical and conditional."
+    },
+    "threatGovernance": {
+      "disposition": "covered",
+      "rationale": "Worktree separation is distinguished from runtime isolation and authority. Tests, independent evidence, release permission, recovery and irreversible external effects are explicitly differentiated."
+    }
+  },
+  "independentCorroboration": "qualified",
+  "ownerDecision": {
+    "kind": "conversation",
+    "owner": "Tony Malott",
+    "approval": "On November 24, 2026 PT, after reviewing the canonical PR #218 preview at head b0f83a326ec9904bf3d2b5df290e60d34c42ed6a and affirming its editorial and visual approach, Tony explicitly stated 'Approve publishing'. This authorizes publication of the unchanged reviewed article through protected CI, merge and Production verification; no unrelated changes are authorized.",
+    "approvalDate": "2026-11-24",
+    "articleSha256": "02cf794d57f5044849793c57f808c79bcadda9528f8a1cae959363eb5333f951",
+    "evidenceRevision": "d21cfe1a2f695169a96c9f3f4b2c20574351ec2fc1d7f6f4279ea33430ab3ac4"
+  },
+  "decision": "accept",
+  "gaps": [
+    {
+      "type": "source",
+      "severity": "nonblocking",
+      "rationale": "Verified source-provided timed caption cues support approximate original paraphrase, not independently listening-certified speech or flawless normalized audio. The isolated packet warning is disclosed."
+    },
+    {
+      "type": "evidence",
+      "severity": "nonblocking",
+      "rationale": "Creator workflow outcomes and hypothetical GhostMesh models are not independently replicated. Empirical studies are bounded to their tasks, settings and model eras."
+    },
+    {
+      "type": "evidence",
+      "severity": "nonblocking",
+      "rationale": "The two SharePlane Work relationships have publisher exact canonical release byte evidence; the independent reviewer's separate Work HTTP attempts returned 403, so another successful independent Work readback is not claimed."
+    }
+  ],
+  "decisionRationale": "The separate Work-mode task agent accepted the exact revised article, source map, evidence and privacy posture for owner consideration, with ten areas covered and no blocking editorial gaps. The owner explicitly approved publication of the exact reviewed preview on November 24, 2026 PT. Protected CI, merge and Production verification remain distinct technical checks.",
+  "assessedAt": "2026-11-25T06:08:00Z",
+  "presentationMarkupSha256": "e13a20e29d56c14ddb983433773feba199e92f67c6eb537cc11afc5607fc62ed"
+}

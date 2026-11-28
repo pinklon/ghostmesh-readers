@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "readerId": "reader:the-home-repo-is-a-map-not-a-monorepo",
+  "sourceId": "hWe-j78vNpc",
+  "sourceAidSha256": "9fa88a70e81284ca6424cf8ebd9ee01bd680565e7356959fac1fc5aeb7dca44d",
+  "articleSha256": "fc111ab0134aa111258c6a4fa7e01ea563dbd212363a81b9dd2a78ccb9607523",
+  "evidenceRevision": "7a5cf37e091c03a3405fad268f855014dc5c542386f38b146ec3a15ae9a89ef4",
+  "reviewedAt": "2026-11-12T13:44:57.460751+00:00",
+  "provenance": {
+    "kind": "codex-task-agent",
+    "reference": "Pale Horse independent Reader54 review, PR157 exact f7887e9aa8851b74adf6f91c8aa92610105e5fe5, with independent bounded browser worker; not candidate author.",
+    "limits": "Complete retained machine transcript, chapter/cue checks, package hash verification, authored evidence and relevant public sources examined. No independent listening, screen-demo audit, security audit or outcome replication. Browser scope and publisher integration are separately limited."
+  },
+  "summary": "ACCEPT FOR OWNER REVIEW. Source-first argument, cue/claim grounding, privacy, substantive depth, proposed comparisons and responsive presentation are acceptable within disclosed machine-source limits. Owner graph and publication decisions remain pending.",
+  "findings": [
+    "Independently read complete retained 8:53 source-caption transcript and checked five mapped VTT neighborhoods against source metadata. Six creator chapter starts 0,27,140,173,282,343 match retained metadata. Map cues are chapter starts, not exact instant quotations: path/worktree detail occurs within the tour chapter. All five semantic sections enclose analytical paragraphs and correct video-time links.",
+    "Independently hashed manifest, transcript and timed captions and verified all seven member hashes plus manifest using retained checksum file on source host. Supplied manifest/article/map hashes match. No source reacquisition or transcription performed; integrity does not certify speaker accuracy or outcomes.",
+    "Source-first article faithfully preserves duplicated shared setup, versioned home launch point, separate code repositories, navigation/cloning/worktrees, progressive disclosure, monorepo preference and wiki/tooling use. It does not turn the creator into an opponent of monorepos. Course promotion is not treated as evidence.",
+    "Creator written guide was directly retrieved and read after web-tool retrieval failed. It supports read-only inventory until plan approval, shared versus repo-specific/installed material, harness-specific steering files, pointers and worktrees. The article is same-author support, not independent corroboration. The page shows Updated Nov 12, 2026; exact first-publication date was not separately established.",
+    "Official Git worktree docs support multiple working directories for one repository, not safe concurrent agent outcomes. Anthropic guidance supports project/user instruction loading for Claude Code only. The article correctly separates these mechanisms from permission enforcement and unmeasured productivity.",
+    "Editorial depth is substantive: stale central maps and broad tooling are considered failure modes; destination authority is distinguished from navigation; a bounded matched-task trial holds model/revisions/permissions stable and measures selection, scope and reviewer effort. No experiment has been executed or causal benefit quantified.",
+    "Three proposed Reader comparisons are grounded: tool discovery continuity, skill-metadata selection/sprawl, and visible ownership behind a common front door. Autonomy Needs an Interface is an architectural counterpoint to an unsafe inference about shared entry points, not a contradiction of its authored thesis. If encoded as a directed graph edge, companion or informs-architecture is more accurate than challenges. All remain proposed; catalog admits zero Reader and Work edges.",
+    "Relevant SharePlane Works were examined. Your Second Brain Is Not a Production Architecture is the strongest optional companion for the personal-wiki versus multi-user authority boundary. Architecture and Intent offers a broader authority/trust interpretation; The Semantic Operating System offers a broader continuity comparison. Recommend at most the first for owner consideration, with no graph admission or claim of empirical corroboration. Retaining explicit zero Work edges is acceptable for this exact candidate.",
+    "Privacy checks on article/map and manual review found no raw private source media, captions, transcripts, host paths or credentials. Public hashes are integrity identifiers. Five recommendations remain unverified; independent outcome corroboration is none.",
+    "Actual independent Chrome checks pass canonical #53 styling, 320/390/430/1440 layouts, wrapping provenance hashes, all six keyboard chapter seeks, local anchors and tested claim disclosure. No captured console errors. This is not full screen-reader/WCAG, exhaustive navigation, playback-listening or frame certification.",
+    "Exact-head CI verify succeeded. Authentic review/depth overlay is separately executed against unchanged repository validator; owner decision and production authority remain absent."
+  ],
+  "conclusion": "accept-for-owner-review"
+}

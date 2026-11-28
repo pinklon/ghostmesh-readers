@@ -19,6 +19,49 @@ from editorial_depth import AREAS, _get_json, acceptance_marker, binding, valida
 
 
 class EditorialDepthGate(unittest.TestCase):
+    def test_slack_peer_review_only_for_pinned_reader71_css(self):
+        from editorial_depth import REVIEW_PROVENANCE_KINDS, scoped_slack_presentation_review
+        catalog = json.loads((ROOT / "content/catalog.json").read_text())
+        reader = next(x for x in catalog["readers"] if x["slug"] == "claude-lean-and-the-riemann-hypothesis")
+        authored = (ROOT / "content/readers" / (reader["slug"] + ".html")).read_bytes()
+        actual = binding(reader, authored)
+        self.assertNotIn("slack-peer-review", REVIEW_PROVENANCE_KINDS)
+        self.assertTrue(scoped_slack_presentation_review(reader["slug"], actual, authored))
+        self.assertFalse(scoped_slack_presentation_review("some-new-reader", actual, authored))
+        altered = dict(actual, evidenceRevision="a" * 64)
+        self.assertFalse(scoped_slack_presentation_review(reader["slug"], altered, authored))
+        altered_source = dict(actual, sourceDigest="b" * 64)
+        self.assertFalse(scoped_slack_presentation_review(reader["slug"], altered_source, authored))
+        changed_text = authored.replace(b"The claim is extraordinary.", b"The claim is verified.", 1)
+        self.assertNotEqual(changed_text, authored)
+        self.assertFalse(scoped_slack_presentation_review(reader["slug"], actual, changed_text))
+
+    def test_presentation_only_fingerprint_allows_css_but_not_editorial_changes(self):
+        from editorial_depth import presentation_neutral_digest, presentation_only_match
+        reviewed = b'<style>.card { color: black }</style><main><p>Preserve the source claim.</p></main>'
+        adjusted = b'<style>.card { color: pink; display: grid }</style><main><p>Preserve the source claim.</p></main>'
+        receipt = {'presentationMarkupSha256': presentation_neutral_digest(reviewed)}
+        self.assertTrue(presentation_only_match(receipt, adjusted))
+        self.assertFalse(presentation_only_match(receipt, adjusted.replace(b'source claim', b'vendor claim')))
+        self.assertFalse(presentation_only_match(receipt, adjusted.replace(b'<p>', b'<h2>').replace(b'</p>', b'</h2>')))
+        self.assertFalse(presentation_only_match(receipt, adjusted + b'<script>alert(1)</script>'))
+        self.assertFalse(presentation_only_match(receipt, b'<main><p>Preserve the source claim.</p></main>'))
+
+    def test_conversation_approval_is_bound_to_article_and_evidence(self):
+        from editorial_depth import _conversation_approval_errors
+        reader = {"slug": "the-router-is-not-the-organization"}
+        receipt = {"articleSha256": "a" * 64, "evidenceRevision": "b" * 64,
+                   "ownerDecision": {"kind": "conversation", "owner": "Tony Malott",
+                                     "approval": "This is good. I accept. Let's publish it",
+                                     "approvalDate": "2026-11-08", "articleSha256": "a" * 64,
+                                     "evidenceRevision": "b" * 64}}
+        self.assertEqual([], _conversation_approval_errors(reader, receipt))
+        receipt["ownerDecision"]["articleSha256"] = "c" * 64
+        self.assertTrue(_conversation_approval_errors(reader, receipt))
+        receipt["ownerDecision"]["articleSha256"] = "a" * 64
+        receipt["ownerDecision"]["owner"] = "unknown"
+        self.assertTrue(_conversation_approval_errors(reader, receipt))
+
     def test_read_only_token_is_scoped_to_approved_repo_api_reads(self):
         seen = []
         def response(request, timeout):
@@ -137,6 +180,20 @@ class EditorialDepthGate(unittest.TestCase):
 
     def test_long_form_fixture_with_owner_acceptance_after_retained_findings_is_admitted(self):
         self.assertEqual([], validate_reader(self.root, self.reader))
+
+    def test_same_source_moment_and_claims_in_another_section_is_redundant(self):
+        # Different claims can legitimately use one moment; duplicating the
+        # same claims in another section must not inflate source coverage.
+        self.receipt["sourceMap"][1]["atSeconds"] = self.receipt["sourceMap"][0]["atSeconds"]
+        self.receipt["sourceMap"][1]["claimIds"] = self.receipt["sourceMap"][0]["claimIds"][:]
+        self.receipt["sourceMapEvidenceSha256"] = self.write_map(self.receipt)
+        self.assert_rejected("redundant source map claim cue")
+
+    def test_same_source_moment_for_different_claims_is_not_redundant(self):
+        self.receipt["sourceMap"][1]["atSeconds"] = self.receipt["sourceMap"][0]["atSeconds"]
+        self.receipt["sourceMapEvidenceSha256"] = self.write_map(self.receipt)
+        errors = validate_reader(self.root, self.reader)
+        self.assertFalse(any("redundant source map claim cue" in error for error in errors), errors)
 
     def test_local_only_skips_remote_owner_lookup_but_default_still_requires_it(self):
         with patch("editorial_depth._authenticated_owner_decision_errors", side_effect=RuntimeError("remote invoked")):

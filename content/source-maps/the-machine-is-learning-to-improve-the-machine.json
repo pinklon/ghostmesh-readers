@@ -1,0 +1,89 @@
+{
+  "schemaVersion": 1,
+  "readerId": "reader:the-machine-is-learning-to-improve-the-machine",
+  "sourceId": "K81vU-gykmQ",
+  "sourceAidSha256": "45524e92424c1abf7c4c82972af35353f8a0d8d4c8ed6b4097100bd16fc41f79",
+  "points": [
+    {
+      "atSeconds": 0,
+      "sectionId": "video-guide-the-argument-as-it-unfolds",
+      "claimIds": [
+        "r68-c3"
+      ],
+      "cueParaphrase": "Opening source framing introduces the creator's recursive self-improvement premise and its unverified scope.",
+      "privateAidCheck": "Private original-audio Whisper large-v3 timed SRT; approximate speech cue, not verified creator chapter. No independent task reproduction."
+    },
+    {
+      "atSeconds": 58,
+      "sectionId": "what-the-system-card-actually-establishes",
+      "claimIds": [
+        "r68-c5"
+      ],
+      "cueParaphrase": "Benchmark discussion raises task-dependent rankings and the limits of extending them to research autonomy.",
+      "privateAidCheck": "Private original-audio Whisper large-v3 timed SRT; approximate speech cue, not verified creator chapter. No independent task reproduction."
+    },
+    {
+      "atSeconds": 220,
+      "sectionId": "the-seductive-software-loop",
+      "claimIds": [
+        "r68-c3"
+      ],
+      "cueParaphrase": "Cloudroom demonstration presents a creator-reported software iteration workflow without replicated outcomes.",
+      "privateAidCheck": "Private original-audio Whisper large-v3 timed SRT; approximate speech cue, not verified creator chapter. No independent task reproduction."
+    },
+    {
+      "atSeconds": 473,
+      "sectionId": "what-the-system-card-actually-establishes",
+      "claimIds": [
+        "r68-c1"
+      ],
+      "cueParaphrase": "The threshold passage discusses the High AI Self-Improvement classification and its qualified meaning.",
+      "privateAidCheck": "Private original-audio Whisper large-v3 timed SRT; approximate speech cue, not verified creator chapter. No independent task reproduction."
+    },
+    {
+      "atSeconds": 681,
+      "sectionId": "two-loops-two-kinds-of-progress",
+      "claimIds": [
+        "r68-c2"
+      ],
+      "cueParaphrase": "Coding comparison contrasts fixed-model iteration on software with research that could affect future models.",
+      "privateAidCheck": "Private original-audio Whisper large-v3 timed SRT; approximate speech cue, not verified creator chapter. No independent task reproduction."
+    },
+    {
+      "atSeconds": 833,
+      "sectionId": "the-seductive-software-loop",
+      "claimIds": [
+        "r68-c3"
+      ],
+      "cueParaphrase": "Security-loop discussion motivates independent grading, permission limits and trusted feedback boundaries.",
+      "privateAidCheck": "Private original-audio Whisper large-v3 timed SRT; approximate speech cue, not verified creator chapter. No independent task reproduction."
+    },
+    {
+      "atSeconds": 973,
+      "sectionId": "the-seductive-software-loop",
+      "claimIds": [
+        "r68-c4"
+      ],
+      "cueParaphrase": "Autonomous release and second-model agreement introduce correlated error and release-authority concerns.",
+      "privateAidCheck": "Private original-audio Whisper large-v3 timed SRT; approximate speech cue, not verified creator chapter. No independent task reproduction."
+    },
+    {
+      "atSeconds": 1262,
+      "sectionId": "where-the-evidence-still-stops",
+      "claimIds": [
+        "r68-c4"
+      ],
+      "cueParaphrase": "The source's mixed verdict limits broad claims about the maturity of autonomous research or software delivery.",
+      "privateAidCheck": "Private original-audio Whisper large-v3 timed SRT; approximate speech cue, not verified creator chapter. No independent task reproduction."
+    },
+    {
+      "atSeconds": 1466,
+      "sectionId": "what-this-means-for-ghostmesh",
+      "claimIds": [
+        "r68-c4"
+      ],
+      "cueParaphrase": "Pre-production model review illustrates why agent consensus does not replace protected release acceptance.",
+      "privateAidCheck": "Private original-audio Whisper large-v3 timed SRT; approximate speech cue, not verified creator chapter. No independent task reproduction."
+    }
+  ]
+}

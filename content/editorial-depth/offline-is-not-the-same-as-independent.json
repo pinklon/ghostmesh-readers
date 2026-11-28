@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "readerId": "reader:offline-is-not-the-same-as-independent",
+  "sourceId": "UXaET1n3i7I",
+  "sourceDigest": "af8d41f4de1be615d481057b5d6c57e80f5482cd1f92d58208647502ce0bd6c6",
+  "sourceAidSha256": "0e4e7f2ad4544edfd54bd0f68e4332f9f5e066f0c0508a5a1300f1f01fa515f9",
+  "articleSha256": "b5167d6fc39fc509519e3481cbfff2e5a7575f3188bd9cc12841f56c2464987c",
+  "evidenceRevision": "719a6b7c8964e304b5d1abb4ffe85f6a72fb4cb416b5bba208491463df205447",
+  "sourceMapEvidenceSha256": "dfe10146eb7425eddfa1dc6b19d0c0da26b99e5af4cc22c046ec385a9a082051",
+  "reviewEvidenceSha256": "0df606815147e2f16b65fd02f063a979e7cd2ac8b67ad421e6d2bc0a9c845962",
+  "candidateAuthor": "pinklon",
+  "complexity": {
+    "tier": "brief",
+    "factors": ["A 7:41 product demonstration with six bounded creator-attributed claims", "Architecture experiment recommended, with no operational adoption proposed"],
+    "rationale": "A short demonstration with six materially mapped claims supports the existing standard-length Reader. The analysis proposes proportionate experiments without a consequential architecture-change recommendation."
+  },
+  "sourceMap": [
+    {"atSeconds": 50, "sectionId": "film", "claimIds": ["offline-is-not-the-same-as-independent--claim-1"], "rationale": "The privacy rationale is creator-attributed and not an independent network audit. Private ASR cue was inspected by the publisher, not listening-certified by this reviewer."},
+    {"atSeconds": 78, "sectionId": "film", "claimIds": ["offline-is-not-the-same-as-independent--claim-2"], "rationale": "Model selection and hardware configuration are creator-reported. The independent reviewer checked only the public mapping, not the private media or machine."},
+    {"atSeconds": 146, "sectionId": "film", "claimIds": ["offline-is-not-the-same-as-independent--claim-3"], "rationale": "The 02:26 performance claim is located consistently in the source map; the reviewer could not listen to certify its exact spoken onset or reproduce benchmark data."},
+    {"atSeconds": 181, "sectionId": "film", "claimIds": ["offline-is-not-the-same-as-independent--claim-4"], "rationale": "The displayed retrieval example does not establish measured accuracy, recall or abstention performance. Cue timing is an unverified navigation aid."},
+    {"atSeconds": 249, "sectionId": "film", "claimIds": ["offline-is-not-the-same-as-independent--claim-5"], "rationale": "Immediate note recall is distinguished from untested restart persistence, correction and deletion. Reviewer did not inspect source media or the running application."},
+    {"atSeconds": 273, "sectionId": "film", "claimIds": ["offline-is-not-the-same-as-independent--claim-6"], "rationale": "Visible timer, note and app-opening actions are not evidence of permission enforcement or failure handling; timing is not listening-certified."},
+    {"atSeconds": 325, "sectionId": "film", "claimIds": ["offline-is-not-the-same-as-independent--claim-1"], "rationale": "The zero-cloud privacy indicator is application-reported, not independently observed outbound traffic. This additional cue is not a network test."}
+  ],
+  "assessment": {
+    "sourceCoverage": {"disposition": "covered", "rationale": "All six material claims and seven cue-map entries are addressed. The reviewer checked internal mapping, not the inaccessible private media or listening-certified transcript."},
+    "supportingArgument": {"disposition": "covered", "rationale": "The analysis distinguishes inference locality from application-wide network isolation, reliable retrieval, durable memory and safe tool execution."},
+    "evidenceRoles": {"disposition": "covered", "rationale": "The demonstration is primary evidence only of creator presentation. Official Ollama documentation supports configuration distinctions, not this application's reported outcomes."},
+    "counterargument": {"disposition": "covered", "rationale": "The demonstration is recognized as a useful integration prototype. It is not faulted for lacking claims or enterprise qualification tests the creator did not perform."},
+    "tradeoffs": {"disposition": "covered", "rationale": "Local inference affords more owner control and avoids some API charges, while shifting hardware, network, maintenance and reliability duties onto the operator."},
+    "falsifiability": {"disposition": "covered", "rationale": "Network blocking, controlled retrieval questions, changed memory, denied tool actions and reproducible performance measurements are concrete proposed tests."},
+    "originalSynthesis": {"disposition": "covered", "rationale": "The original distinction is architectural: locality is a property, independence an operational claim, and trustworthiness a separately testable outcome."},
+    "performance": {"disposition": "covered", "rationale": "The claimed 20–30 tokens per second is creator-reported and explicitly unbenchmarked; proposed first-token, output, memory and task-duration measures are not fabricated results."},
+    "economics": {"disposition": "covered", "rationale": "Free local API usage is separated from hardware, electricity, storage and owner maintenance costs. No unsupported cost comparison is asserted."},
+    "threatGovernance": {"disposition": "covered", "rationale": "Tool permissions, argument validation, denied actions, prompt-injection exposure, interruption and execution receipts are raised as tests before granting operational authority."}
+  },
+  "independentCorroboration": "none",
+  "ownerDecision": {"pullNumber": 146, "commentId": 6745482937},
+  "decision": "accept",
+  "gaps": [
+    {"type": "source", "severity": "nonblocking", "rationale": "Independent reviewer could not access the private verified media or Whisper aid and YouTube retrieval was throttled. Source timestamps remain publisher-inspected ASR navigation aids, not listening-certified evidence. The pack manifest and VTT are distinct digests, and section locators now point to the common video section with reduced navigation precision."},
+    {"type": "evidence", "severity": "nonblocking", "rationale": "The demonstrated JARVIS system was not independently installed, audited for outbound traffic, benchmarked, or tested for memory and tool safety. Creator-reported claims remain unverified."},
+    {"type": "test", "severity": "nonblocking", "rationale": "The publisher's narrow-mobile browser witness was not completed in the constrained cloud execution environment; the available desktop preview was inspected separately."}
+  ],
+  "decisionRationale": "Accept for Tony's editorial decision based on substantive source-qualified analysis and the actual independent reviewer findings. The review does not certify private media, source timestamps or observed system behavior; no owner GitHub acceptance has been posted.",
+  "assessedAt": "2026-11-09T15:21:56Z"
+}

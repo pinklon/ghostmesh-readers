@@ -1,11 +1,437 @@
 {
-  "schema": "ghostmesh-reader-relationship-map-v1",
+  "schema": "ghostmesh-reader-relationship-map-v2",
   "scope": "Local public editorial reading routes; no independent corroboration or cross-site graph admission.",
   "authority": "catalog-curated-editorial",
   "visibility": "public",
-  "readerCount": 40,
-  "assessmentCount": 40,
-  "relationshipCount": 83,
+  "readerCount": 75,
+  "assessmentCount": 75,
+  "relationshipCount": 173,
+  "sharePlaneRelationshipCount": 53,
+  "sharePlaneReviewCount": 35,
+  "sharePlaneEdges": [
+    {
+      "from": "reader:when-code-gets-cheap-where-does-the-work-wait",
+      "title": "The Code Is No Longer the Hard Part",
+      "url": "https://shareplane.malott.ai/artifacts/the-code-is-no-longer-the-hard-part/",
+      "type": "extends",
+      "reason": "The interview's parallel coding account gives a concrete instance of the broader argument that review, integration and judgment become the binding constraints.",
+      "basis": "curated-editorial-comparison"
+    },
+    {
+      "from": "reader:when-code-gets-cheap-where-does-the-work-wait",
+      "title": "Demo Debt",
+      "url": "https://shareplane.malott.ai/artifacts/demo-debt/",
+      "type": "informs architecture",
+      "reason": "The distinction between impressive agent output and accepted production delivery connects to the Work's analysis of unfinished integration and operational obligations.",
+      "basis": "curated-editorial-comparison"
+    },
+    {
+      "from": "reader:when-code-gets-cheap-where-does-the-work-wait",
+      "title": "The Application Is Disposable. The Context Is Not.",
+      "url": "https://shareplane.malott.ai/artifacts/the-application-is-disposable-the-context-is-not/",
+      "type": "extends",
+      "reason": "High-volume generated code still depends on retained design intent, product context and durable evidence to become maintainable software.",
+      "basis": "curated-editorial-comparison"
+    },
+    {
+      "from": "reader:the-success-hid-the-failure",
+      "title": "The Code Is No Longer the Hard Part",
+      "url": "https://shareplane.malott.ai/artifacts/the-code-is-no-longer-the-hard-part/",
+      "type": "extends",
+      "reason": "The video illustrates why successful code generation can conceal expensive execution friction, extending the Work's thesis that review, judgment and operational integration become the binding constraints.",
+      "basis": "curated-editorial-comparison"
+    },
+    {
+      "from": "reader:the-success-hid-the-failure",
+      "title": "The Application Is Disposable. The Context Is Not.",
+      "url": "https://shareplane.malott.ai/artifacts/the-application-is-disposable-the-context-is-not/",
+      "type": "informs architecture",
+      "reason": "Changing an agent's skills based on prior runs requires durable context about instructions, decisions, evidence and rollback, directly connecting to the Work's argument for persistent authority beyond replaceable applications.",
+      "basis": "curated-editorial-comparison"
+    },
+    {
+      "from": "reader:the-router-is-not-the-organization",
+      "title": "Stop Prompting Agents. Start Managing Workers",
+      "url": "https://shareplane.malott.ai/artifacts/stop-prompting-agents-start-managing-workers/",
+      "type": "foundation",
+      "reason": "Worker contracts and orchestration provide architectural context for the routing demonstration; the Work gives explicit attention to managing workers beyond opening more agent sessions.",
+      "basis": "curated-editorial-comparison"
+    },
+    {
+      "from": "reader:the-router-is-not-the-organization",
+      "title": "The Agent Is Not the Product. The Control Plane Is.",
+      "url": "https://shareplane.malott.ai/artifacts/the-agent-is-not-the-product-the-control-plane-is/",
+      "type": "counterpoint",
+      "reason": "The Work's control-plane argument challenges the assumption that a router and worker dashboard are sufficient to retain accepted state, scope, authority and verified outcomes.",
+      "basis": "curated-editorial-comparison"
+    },
+    {
+      "from": "reader:the-router-is-not-the-organization",
+      "title": "The Semantic Operating System",
+      "url": "https://shareplane.malott.ai/artifacts/the-semantic-operating-system/",
+      "type": "extends",
+      "reason": "Durable task meaning, state and evidence expand the router pattern into an accountable operating layer.",
+      "basis": "curated-editorial-comparison"
+    },
+    {
+      "from": "reader:the-cost-of-forgetting-where-the-tools-are",
+      "title": "The Application Is Disposable. The Context Is Not.",
+      "url": "https://shareplane.malott.ai/artifacts/the-application-is-disposable-the-context-is-not/",
+      "type": "foundation",
+      "reason": "Reusable knowledge must outlive a particular execution surface. This is an editorial comparison, not independent corroboration of the benchmark.",
+      "basis": "curated-editorial-comparison"
+    },
+    {
+      "from": "reader:the-cost-of-forgetting-where-the-tools-are",
+      "title": "The Semantic Operating System",
+      "url": "https://shareplane.malott.ai/artifacts/the-semantic-operating-system/",
+      "type": "extends",
+      "reason": "A discoverable capability map protects operational context without forcing every detailed schema into every prompt. This is an editorial comparison, not independent corroboration of the benchmark.",
+      "basis": "curated-editorial-comparison"
+    },
+    {
+      "from": "reader:the-cost-of-forgetting-where-the-tools-are",
+      "title": "The Code Is No Longer the Hard Part",
+      "url": "https://shareplane.malott.ai/artifacts/the-code-is-no-longer-the-hard-part/",
+      "type": "companion",
+      "reason": "Optimize for correct, accepted outcomes rather than raw code output or isolated token counts. This is an editorial comparison, not independent corroboration of the benchmark.",
+      "basis": "curated-editorial-comparison"
+    },
+    {
+      "from": "reader:the-second-brain-still-needs-a-judgment",
+      "title": "Own the Memory, Rent the Intelligence",
+      "url": "https://shareplane.malott.ai/artifacts/own-memory-rent-intelligence-agent-stack/",
+      "type": "foundation",
+      "reason": "Establishes personal memory as user-owned context, permissions, evidence and reviewed memory updates across replaceable models. Reader47 proposes evaluating how a simpler lexical retrieval design can retain those distinctions.",
+      "basis": "curated-editorial-comparison"
+    },
+    {
+      "from": "reader:the-second-brain-still-needs-a-judgment",
+      "title": "Cognitive Capital",
+      "url": "https://shareplane.malott.ai/artifacts/cognitive-capital/",
+      "type": "extends",
+      "reason": "Adds a concrete retrieval and summary failure boundary to the economic thesis: stored text earns durable value through validation and judgment, not merely because inference is cheaper or more history is searchable.",
+      "basis": "curated-editorial-comparison"
+    },
+    {
+      "from": "reader:the-paper-is-not-the-experiment",
+      "title": "Stop Prompting Agents. Start Managing Workers.",
+      "url": "https://shareplane.malott.ai/artifacts/stop-prompting-agents-start-managing-workers/",
+      "type": "foundation",
+      "reason": "Defines work contracts, evidence, measurement and earned autonomy; Reader #48 supplies an empirical research benchmark for those principles.",
+      "basis": "curated-editorial-comparison"
+    },
+    {
+      "from": "reader:the-paper-is-not-the-experiment",
+      "title": "Own the Memory, Rent the Intelligence",
+      "url": "https://shareplane.malott.ai/artifacts/own-memory-rent-intelligence-agent-stack/",
+      "type": "companion",
+      "reason": "Preserving user-owned evidence, qualifications and governed memory prevents a model's latest polished summary from becoming authority without source traceability.",
+      "basis": "curated-editorial-comparison"
+    },
+    {
+      "from": "reader:offline-is-not-the-same-as-independent",
+      "title": "Your Second Brain Is Not a Production Architecture",
+      "url": "https://shareplane.malott.ai/artifacts/your-second-brain-is-not-a-production-architecture/",
+      "type": "companion",
+      "reason": "Extends the video's personal Markdown memory boundary into a separately governed production context; it does not corroborate the demonstration.",
+      "basis": "curated-editorial-comparison"
+    },
+    {
+      "from": "reader:when-every-ai-website-looks-good",
+      "title": "Demo Debt",
+      "url": "https://shareplane.malott.ai/artifacts/demo-debt/",
+      "type": "counterpoint",
+      "reason": "A polished demonstration can hide operational ownership, exceptions and recovery; this is not independent evidence for the reported marketing outcomes.",
+      "basis": "curated-editorial-comparison"
+    },
+    {
+      "from": "reader:when-every-ai-website-looks-good",
+      "title": "The Semantic Operating System",
+      "url": "https://shareplane.malott.ai/artifacts/the-semantic-operating-system/",
+      "type": "extends",
+      "reason": "Identity, meaning, authority, state and next valid action explain the additional demands of operational consoles.",
+      "basis": "curated-editorial-comparison"
+    },
+    {
+      "from": "reader:more-skills-worse-agents",
+      "title": "The Semantic Operating System",
+      "url": "https://shareplane.malott.ai/artifacts/the-semantic-operating-system/",
+      "type": "extends",
+      "reason": "Scoped meaning, capability discovery, provenance, authority and retained context provide a conceptual extension for building accountable agent workflows. This published Work is not independent proof that deleting 80 to 90 percent of skills improves performance.",
+      "basis": "curated-editorial-comparison"
+    },
+    {
+      "from": "reader:better-models-still-need-boundaries",
+      "title": "The Semantic Operating System",
+      "url": "https://shareplane.malott.ai/artifacts/the-semantic-operating-system/",
+      "type": "extends",
+      "reason": "The published Work’s account of meaning, state, evidence, authority and recovery conceptually extends the Reader’s distinction between frontier-model capability and effective delegated permission. It does not demonstrate the proposed architecture against the reported incident or validate the video’s forecasts.",
+      "basis": "curated-editorial-comparison"
+    },
+    {
+      "from": "reader:the-small-fix-is-a-boundary",
+      "title": "Demo Debt",
+      "url": "https://shareplane.malott.ai/artifacts/demo-debt/",
+      "type": "companion",
+      "reason": "A functioning demo does not establish a sustained user-tested service. This comparison contextualizes Cole's verification and scope advice, without testing any of his eleven claimed improvements.",
+      "basis": "curated-editorial-comparison"
+    },
+    {
+      "from": "reader:the-home-repo-is-a-map-not-a-monorepo",
+      "title": "Your Second Brain Is Not a Production Architecture",
+      "url": "https://shareplane.malott.ai/artifacts/your-second-brain-is-not-a-production-architecture/",
+      "type": "companion",
+      "reason": "The published Work distinguishes a useful private Markdown second brain from a shared production context plane with access, evidence and memory governance. It directly qualifies Pocock's personal home-repo/wiki pattern without treating either design as a measured universal solution.",
+      "basis": "curated-editorial-comparison"
+    },
+    {
+      "from": "reader:replacing-cowork-is-a-test-not-a-title",
+      "title": "Demo Debt",
+      "url": "https://shareplane.malott.ai/artifacts/demo-debt/",
+      "type": "companion",
+      "reason": "The Work explains why a convincing AI demo does not establish an operable service: recovery, support, permissions, cost and accepted workflow outcomes must be tested. It complements the Nod walkthrough critique without claiming any independent result for Nod or Cowork.",
+      "basis": "curated-editorial-comparison"
+    },
+    {
+      "from": "reader:the-taste-is-in-the-loop-not-the-prompt",
+      "title": "Demo Debt",
+      "url": "https://shareplane.malott.ai/artifacts/demo-debt/",
+      "type": "companion",
+      "reason": "Demo Debt distinguishes a convincing visible demonstration from sustained operating value. Cook is a procedure and selected demos, not yet evidence of cost-effective production design quality.",
+      "basis": "curated-editorial-comparison"
+    },
+    {
+      "from": "reader:a-factory-that-grades-itself-still-needs-a-judge",
+      "title": "The Code Is No Longer the Hard Part",
+      "url": "https://shareplane.malott.ai/artifacts/the-code-is-no-longer-the-hard-part/",
+      "type": "extends",
+      "reason": "The Work argues that producing code is no longer the binding constraint; review, integration, operational evidence and judgment increasingly determine accepted value. Lloyd’s factory proposes to improve the production system itself, but must demonstrate gains in those downstream outcomes rather than merely in its internal grader.",
+      "basis": "curated-editorial-comparison"
+    },
+    {
+      "from": "reader:the-model-fits-does-the-intelligence-survive",
+      "title": "The Right Model Is the One Your Eval Can Defend",
+      "url": "https://shareplane.malott.ai/artifacts/the-right-model-is-the-one-your-eval-can-defend/",
+      "type": "companion",
+      "reason": "Moves beyond parameter count and throughput to defensible quality, latency, cost and workload evaluation.",
+      "basis": "curated-editorial-comparison"
+    },
+    {
+      "from": "reader:the-12gb-gpu-has-a-three-budget-problem",
+      "title": "The Most Expensive Model Is Often Compensation for Missing Control",
+      "url": "https://shareplane.malott.ai/artifacts/the-most-expensive-model-is-often-compensation-for-missing-control/",
+      "type": "companion",
+      "reason": "The larger-compute purchase reflex can compensate for undefined workload or weak operational control; this Reader supplies a concrete GPU sizing example.",
+      "basis": "curated-editorial-comparison"
+    },
+    {
+      "from": "reader:the-playbook-may-be-reproducible",
+      "title": "Software Has Entered Its Re-Image Era",
+      "url": "https://shareplane.malott.ai/artifacts/software-has-entered-its-re-image-era/",
+      "type": "companion",
+      "reason": "Cheap software reproduction shifts the scarce work toward comprehension, maintenance and chosen outcomes.",
+      "basis": "curated-editorial-comparison"
+    },
+    {
+      "from": "reader:the-robot-is-the-easy-part",
+      "title": "Own the Memory, Rent the Intelligence",
+      "url": "https://shareplane.malott.ai/artifacts/own-memory-rent-intelligence-agent-stack/",
+      "type": "companion",
+      "reason": "A user-owned permission policy and approval gate provides the concrete control architecture missing from a conversational robot's report of read/draft/send limits.",
+      "basis": "curated-editorial-comparison"
+    },
+    {
+      "from": "reader:the-1000-ai-workflow-is-a-routing-problem",
+      "url": "https://shareplane.malott.ai/artifacts/the-code-is-no-longer-the-hard-part/",
+      "title": "The Code Is No Longer The Hard Part",
+      "type": "extends",
+      "reason": "This Work extends the distinction between generating abundant code and producing accepted engineering outcomes. It supports a comparison about review and integration cost, not a benchmark of Ondrej’s workflow.",
+      "basis": "curated-editorial-comparison"
+    },
+    {
+      "from": "reader:the-1000-ai-workflow-is-a-routing-problem",
+      "url": "https://shareplane.malott.ai/artifacts/the-agent-is-not-the-product-the-control-plane-is/",
+      "title": "The Agent Is Not The Product The Control Plane Is",
+      "type": "counterpoint",
+      "reason": "This Work provides the control-plane counterpoint: choosing an expensive reasoning model and a cheap executor cannot establish authorization, acceptance, provenance, or production safety on its own.",
+      "basis": "curated-editorial-comparison"
+    },
+    {
+      "from": "reader:an-open-agent-still-needs-an-operator",
+      "url": "https://shareplane.malott.ai/artifacts/when-agent-identity-is-not-enough/",
+      "title": "When Agent Identity Is Not Enough",
+      "reason": "Identity and resource access do not settle whether the next state transition is legitimate.",
+      "type": "companion",
+      "basis": "curated-editorial-comparison"
+    },
+    {
+      "from": "reader:an-open-agent-still-needs-an-operator",
+      "url": "https://shareplane.malott.ai/artifacts/beyond-the-agent/",
+      "title": "Beyond the Agent",
+      "reason": "A single agent completing a task does not establish institutional acceptance or evidence convergence.",
+      "type": "companion",
+      "basis": "curated-editorial-comparison"
+    },
+    {
+      "from": "reader:an-open-agent-still-needs-an-operator",
+      "url": "https://shareplane.malott.ai/artifacts/the-most-expensive-model-is-often-compensation-for-missing-control/",
+      "title": "The Most Expensive Model Is Often Compensation for Missing Control",
+      "reason": "Costs must include permission checks, validation, retries and operator intervention.",
+      "type": "companion",
+      "basis": "curated-editorial-comparison"
+    },
+    {
+      "from": "reader:the-best-model-shouldnt-do-every-job",
+      "url": "https://shareplane.malott.ai/artifacts/the-right-model-is-the-one-your-eval-can-defend/",
+      "title": "The Right Model Is the One Your Eval Can Defend",
+      "reason": "This Work provides failure classification, routing frontier and retest conditions, a practical method for evaluating model selection beyond the unreplicated creator anecdotes.",
+      "type": "companion",
+      "basis": "curated-editorial-comparison"
+    },
+    {
+      "from": "reader:the-best-model-shouldnt-do-every-job",
+      "url": "https://shareplane.malott.ai/artifacts/the-agent-was-never-the-unit-of-trust/",
+      "title": "The Agent Was Never the Unit of Trust",
+      "reason": "This Work examines boss, worker and checker failure modes and their governed verification loop, a concrete counterweight to the video's optimistic lead-worker framing.",
+      "type": "companion",
+      "basis": "curated-editorial-comparison"
+    },
+    {
+      "from": "reader:uncensored-private-or-sovereign",
+      "url": "https://shareplane.malott.ai/artifacts/own-memory-rent-intelligence-agent-stack/",
+      "title": "Own the Memory, Rent the Intelligence",
+      "reason": "Separates owner-controlled memory from replaceable inference services, sharpening the Reader's definition of sovereignty.",
+      "type": "companion",
+      "basis": "curated-editorial-comparison"
+    },
+    {
+      "from": "reader:uncensored-private-or-sovereign",
+      "url": "https://shareplane.malott.ai/artifacts/the-semantic-operating-system/",
+      "title": "The Semantic Operating System",
+      "reason": "Examines the larger architecture of meaning, memory and orchestration beyond a model's local execution status.",
+      "type": "companion",
+      "basis": "curated-editorial-comparison"
+    },
+    {
+      "from": "reader:two-sparks-do-not-make-a-cloud",
+      "url": "https://shareplane.malott.ai/tools/token-burn/",
+      "title": "Token Burn",
+      "reason": "A dated cost-composition comparison aid, not an empirical total-cost or break-even proof for DGX Sparks.",
+      "type": "companion",
+      "basis": "curated-editorial-comparison"
+    },
+    {
+      "from": "reader:two-sparks-do-not-make-a-cloud",
+      "url": "https://shareplane.malott.ai/artifacts/frontier-inference-without-frontier-custody/",
+      "title": "Frontier Inference Without Frontier Custody",
+      "reason": "Explains how local source custody and remote model capability can be separated architecturally.",
+      "type": "companion",
+      "basis": "curated-editorial-comparison"
+    },
+    {
+      "from": "reader:the-machine-is-learning-to-improve-the-machine",
+      "url": "https://shareplane.malott.ai/artifacts/stop-prompting-agents-start-managing-workers/",
+      "title": "Stop Prompting Agents. Start Managing Workers.",
+      "reason": "Tony’s published Work frames agents as bounded workers whose authority grows only through measured outcomes and retained evidence. This is an operational companion to #68’s software loop, not independent corroboration of the creator or model claims.",
+      "type": "companion",
+      "basis": "curated-editorial-comparison"
+    },
+    {
+      "from": "reader:the-cheap-answer-can-be-an-expensive-job",
+      "url": "https://shareplane.malott.ai/artifacts/done-has-a-half-life/",
+      "title": "Done Has a Half-Life",
+      "reason": "The published SharePlane Work carries completion economics into the ongoing cost of safely reconsidering an accepted result. This is a conceptual companion, not independent evidence about Astra or the video's claims.",
+      "type": "companion",
+      "basis": "curated-editorial-comparison"
+    },
+    {
+      "from": "reader:a-smaller-model-can-win-the-job-not-the-benchmark-war",
+      "title": "The Right Model Is the One Your Eval Can Defend",
+      "url": "https://shareplane.malott.ai/artifacts/the-right-model-is-the-one-your-eval-can-defend/",
+      "type": "companion",
+      "reason": "The SharePlane playbook specifies representative task samples, comparative model baselines, trace-level failure analysis, latency, operating cost and retest triggers. It provides the missing evaluation discipline for interpreting this narrow Shopify result; it does not independently reproduce NeuralNine's scores.",
+      "basis": "curated-editorial-comparison"
+    },
+    {
+      "from": "reader:a-smaller-model-can-win-the-job-not-the-benchmark-war",
+      "title": "The Best AI System Should Need Less AI Tomorrow",
+      "url": "https://shareplane.malott.ai/artifacts/the-best-ai-system-should-need-less-ai-tomorrow/",
+      "type": "extends",
+      "reason": "The inference retirement thesis extends task specialization into system design: preserve validated repeatable work in deterministic machinery and reserve expensive reasoning for uncertainty. This is an operational extension of the Reader's argument, not evidence that the fine-tuned classifiers will generalize.",
+      "basis": "curated-editorial-comparison"
+    },
+    {
+      "from": "reader:claude-lean-and-the-riemann-hypothesis",
+      "type": "companion",
+      "title": "Clear Thinking Is the Control Plane",
+      "url": "https://shareplane.malott.ai/artifacts/clear-thinking-is-the-control-plane/",
+      "reason": "This published SharePlane essay examines why apparent AI success is not enough: claims, evaluations, independent evidence and human judgment must be separated. Reader 71 applies that discipline to proof objects and mathematical acceptance."
+    },
+    {
+      "from": "reader:claude-lean-and-the-riemann-hypothesis",
+      "type": "companion",
+      "title": "Artifact Graph",
+      "url": "https://shareplane.malott.ai/artifacts/artifact-graph/",
+      "reason": "The published SharePlane Work explains how claim, source, provenance and receipt links preserve inspectable knowledge. Reader 71 uses that same source/claim architecture to distinguish author testimony, formal-checker reports and institutional recognition."
+    },
+    {
+      "from": "reader:when-code-gets-cheap-ambition-becomes-the-test",
+      "title": "The Right Model Is the One Your Eval Can Defend",
+      "url": "https://shareplane.malott.ai/artifacts/the-right-model-is-the-one-your-eval-can-defend/",
+      "type": "companion",
+      "reason": "A publicly published evaluation playbook for representative task samples, trace-level errors, model baselines and operating cost. It supplies a concrete qualification approach but not empirical evidence for Doshi.",
+      "basis": "curated-editorial-comparison"
+    },
+    {
+      "from": "reader:when-code-gets-cheap-ambition-becomes-the-test",
+      "title": "The Best AI System Should Need Less AI Tomorrow",
+      "url": "https://shareplane.malott.ai/artifacts/the-best-ai-system-should-need-less-ai-tomorrow/",
+      "type": "extends",
+      "reason": "The published inference-retirement thesis asks what should become deterministic after validation. It extends the architecture/control side of cheap model tokens without verifying the video claims.",
+      "basis": "curated-editorial-comparison"
+    },
+    {
+      "from": "reader:the-cost-of-forgetting-why-agents-keep-reading-the-same-world",
+      "title": "The Semantic Operating System",
+      "url": "https://shareplane.malott.ai/artifacts/the-semantic-operating-system/",
+      "type": "companion",
+      "reason": "explains durable identity, meaning, relationships, authority and state as governed conditions for reusable work. This is a conceptual foundation for capability discovery and memory surviving session or model changes, not evidence of provider cache efficiency.",
+      "basis": "curated-editorial-comparison"
+    },
+    {
+      "from": "reader:the-cost-of-forgetting-why-agents-keep-reading-the-same-world",
+      "title": "Done Has a Half-Life",
+      "url": "https://shareplane.malott.ai/artifacts/done-has-a-half-life/",
+      "type": "companion",
+      "reason": "gives a complementary treatment of the ongoing cost of reconsidering completed work. A cached observation must be revisitable and eventually requalified when the world changes. Again, this is an editorial connection, not an independent validation of the video's claims.",
+      "basis": "curated-editorial-comparison"
+    },
+    {
+      "from": "reader:beyond-vibe-coding-engineering-in-the-age-of-ai-agents",
+      "title": "The Confidence to Delegate",
+      "url": "https://shareplane.malott.ai/artifacts/the-confidence-to-delegate/",
+      "type": "companion",
+      "reason": "Examines the distinction between capability and authority, and why operational assurance and recovery determine warranted delegation. It complements the trust ladder and the boundary between verified behavior and release permission.",
+      "basis": "curated-editorial-comparison"
+    },
+    {
+      "from": "reader:beyond-vibe-coding-engineering-in-the-age-of-ai-agents",
+      "title": "When the Gate Moves",
+      "url": "https://shareplane.malott.ai/artifacts/when-the-gate-moves/",
+      "type": "companion",
+      "reason": "Explores a changed boundary of valuable work and the move from producing candidates to demonstrating accepted outcomes. This Reader offers a specific engineering account of verification capacity and the costs that can remain after generation becomes cheap.",
+      "basis": "curated-editorial-comparison"
+    },
+    {
+      "from": "reader:the-agent-that-remembers-why-it-changed",
+      "title": "The Confidence to Delegate",
+      "url": "https://shareplane.malott.ai/artifacts/the-confidence-to-delegate/",
+      "type": "companion",
+      "reason": "Distinguishes model capability from operational assurance and warranted delegation. A record of historical rationale does not grant newer operational authority.",
+      "basis": "curated-editorial-comparison"
+    }
+  ],
   "nodes": [
     {
       "id": "reader:ask-for-the-outcome-keep-the-boundary",
@@ -644,6 +1070,586 @@
           "reader:the-stop-button-is-outside-the-chat"
         ],
         "rationale": "The existing Orca, harness and stop-boundary Readers have specific complementary theses. Other AI Readers are too broad to imply corroboration."
+      }
+    },
+    {
+      "id": "reader:a-model-that-says-yes-is-not-necessarily-a-model-that-knows",
+      "slug": "a-model-that-says-yes-is-not-necessarily-a-model-that-knows",
+      "title": "A Model That Says Yes Is Not Necessarily a Model That Knows",
+      "url": "https://youtube.shareplane.malott.ai/a-model-that-says-yes-is-not-necessarily-a-model-that-knows/",
+      "review": {
+        "reviewedAt": "2026-11-08",
+        "reviewedCatalogSize": 43,
+        "decision": "linked",
+        "reviewedTargets": [
+          "reader:the-model-is-not-the-demonstration",
+          "reader:the-session-count-is-not-the-system"
+        ],
+        "rationale": "Owner-approved editorial comparison review of the complete 43-Reader catalog. These named links connect distinct theses using published Reader text and are navigation routes, not independent corroboration of source claims."
+      }
+    },
+    {
+      "id": "reader:when-code-gets-cheap-where-does-the-work-wait",
+      "slug": "when-code-gets-cheap-where-does-the-work-wait",
+      "title": "When code gets cheap, where does the work wait?",
+      "url": "https://youtube.shareplane.malott.ai/when-code-gets-cheap-where-does-the-work-wait/",
+      "review": {
+        "reviewedAt": "2026-11-08",
+        "reviewedCatalogSize": 43,
+        "decision": "linked",
+        "reviewedTargets": [
+          "reader:the-session-count-is-not-the-system",
+          "reader:the-cockpit-is-not-the-control-plane"
+        ],
+        "rationale": "Owner-approved editorial comparison review of the complete 43-Reader catalog. These named links connect distinct theses using published Reader text and are navigation routes, not independent corroboration of source claims."
+      }
+    },
+    {
+      "id": "reader:what-arete-27b-bias-test-measures",
+      "slug": "what-arete-27b-bias-test-measures",
+      "title": "What Arete-27B’s bias test actually measures",
+      "url": "https://youtube.shareplane.malott.ai/what-arete-27b-bias-test-measures/",
+      "review": {
+        "reviewedAt": "2026-11-08",
+        "reviewedCatalogSize": 43,
+        "decision": "linked",
+        "reviewedTargets": [
+          "reader:a-model-that-says-yes-is-not-necessarily-a-model-that-knows",
+          "reader:the-model-is-not-the-demonstration"
+        ],
+        "rationale": "Owner-approved editorial comparison review of the complete 43-Reader catalog. These named links connect distinct theses using published Reader text and are navigation routes, not independent corroboration of source claims."
+      }
+    },
+    {
+      "id": "reader:the-success-hid-the-failure",
+      "slug": "the-success-hid-the-failure",
+      "title": "The Success Hid the Failure",
+      "url": "https://youtube.shareplane.malott.ai/the-success-hid-the-failure/",
+      "review": {
+        "reviewedAt": "2026-11-08",
+        "reviewedCatalogSize": 44,
+        "decision": "linked",
+        "reviewedTargets": [
+          "reader:when-code-gets-cheap-where-does-the-work-wait",
+          "reader:the-cockpit-is-not-the-control-plane"
+        ],
+        "rationale": "Owner requested meaningful relationships. These two existing Readers supply distinct, source-specific comparisons about accepted work and control over execution, without implying independent validation of Warp's product assertions."
+      }
+    },
+    {
+      "id": "reader:the-router-is-not-the-organization",
+      "slug": "the-router-is-not-the-organization",
+      "title": "The Router Is Not the Organization",
+      "url": "https://youtube.shareplane.malott.ai/the-router-is-not-the-organization/",
+      "review": {
+        "reviewedAt": "2026-11-08",
+        "reviewedCatalogSize": 44,
+        "decision": "linked",
+        "reviewedTargets": [
+          "reader:the-session-count-is-not-the-system",
+          "reader:the-cockpit-is-not-the-control-plane",
+          "reader:the-harness-keeps-the-receipt"
+        ],
+        "rationale": "Owner-approved source-specific architectural comparisons, not proof of the video's benchmark."
+      }
+    },
+    {
+      "id": "reader:the-cost-of-forgetting-where-the-tools-are",
+      "slug": "the-cost-of-forgetting-where-the-tools-are",
+      "title": "The Cost of Forgetting Where the Tools Are",
+      "url": "https://youtube.shareplane.malott.ai/the-cost-of-forgetting-where-the-tools-are/",
+      "review": {
+        "reviewedAt": "2026-11-08",
+        "reviewedCatalogSize": 45,
+        "decision": "linked",
+        "reviewedTargets": [
+          "reader:the-missing-step-is-not-more-intelligence",
+          "reader:the-harness-keeps-the-receipt",
+          "reader:the-operator-is-part-of-the-denominator"
+        ],
+        "rationale": "Tony approved three specific Reader links that examine adjacent operational concerns. They are source-specific editorial comparisons, not independent verification of TokenEconomizer's performance results."
+      }
+    },
+    {
+      "id": "reader:the-second-brain-still-needs-a-judgment",
+      "slug": "the-second-brain-still-needs-a-judgment",
+      "title": "The Second Brain Still Needs a Judgment",
+      "url": "https://youtube.shareplane.malott.ai/the-second-brain-still-needs-a-judgment/",
+      "review": {
+        "reviewedAt": "2026-11-09",
+        "reviewedCatalogSize": 46,
+        "decision": "linked",
+        "reviewedTargets": [
+          "reader:the-agent-a-company-owns",
+          "reader:the-harness-keeps-the-receipt",
+          "reader:the-cost-of-forgetting-where-the-tools-are"
+        ],
+        "rationale": "All 46 existing Reader theses were reviewed. Tony approved exactly three outgoing comparisons about continuity, runtime authority and context/discovery economy. These are editorial connections, not independent corroboration of Saraev claims."
+      }
+    },
+    {
+      "id": "reader:the-paper-is-not-the-experiment",
+      "slug": "the-paper-is-not-the-experiment",
+      "title": "The Paper Is Not the Experiment",
+      "url": "https://youtube.shareplane.malott.ai/the-paper-is-not-the-experiment/",
+      "review": {
+        "reviewedAt": "2026-11-09",
+        "reviewedCatalogSize": 47,
+        "decision": "linked",
+        "reviewedTargets": [
+          "reader:the-experiment-ran-did-the-research-advance",
+          "reader:the-grader-is-part-of-the-harness",
+          "reader:the-harness-keeps-the-receipt",
+          "reader:the-success-hid-the-failure"
+        ],
+        "rationale": "Tony approved exactly four proposed outgoing editorial comparisons for Reader #48; all 47 existing Reader theses were considered during editorial candidate preparation. Independent relationship review remains pending."
+      }
+    },
+    {
+      "id": "reader:offline-is-not-the-same-as-independent",
+      "slug": "offline-is-not-the-same-as-independent",
+      "title": "Offline Is Not the Same as Independent",
+      "url": "https://youtube.shareplane.malott.ai/offline-is-not-the-same-as-independent/",
+      "review": {
+        "reviewedAt": "2026-11-09",
+        "reviewedCatalogSize": 48,
+        "decision": "linked",
+        "reviewedTargets": [
+          "reader:the-boundary-is-bigger-than-the-box",
+          "reader:the-stop-button-is-outside-the-chat"
+        ],
+        "rationale": "Tony approved these two thematic Reader links. Direct live URL health remains a publisher acceptance check; no inferred graph edges."
+      }
+    },
+    {
+      "id": "reader:when-every-ai-website-looks-good",
+      "slug": "when-every-ai-website-looks-good",
+      "title": "When Every AI Website Looks Good, What Makes One Actually Work?",
+      "url": "https://youtube.shareplane.malott.ai/when-every-ai-website-looks-good/",
+      "review": {
+        "reviewedAt": "2026-11-09",
+        "reviewedCatalogSize": 49,
+        "decision": "linked",
+        "reviewedTargets": [
+          "reader:make-good-work-inspectable",
+          "reader:the-page-is-part-of-the-proof",
+          "reader:autonomy-needs-an-interface"
+        ],
+        "rationale": "Tony approved all three exact routes in the Creative Lock on November 9. They are editorial relationships, not source corroboration."
+      }
+    },
+    {
+      "id": "reader:more-skills-worse-agents",
+      "slug": "more-skills-worse-agents",
+      "title": "When More Agent Skills Make Agents Worse",
+      "url": "https://youtube.shareplane.malott.ai/more-skills-worse-agents/",
+      "review": {
+        "reviewedAt": "2026-11-11",
+        "reviewedCatalogSize": 50,
+        "decision": "linked",
+        "reviewedTargets": [
+          "reader:make-good-work-inspectable",
+          "reader:autonomy-needs-an-interface",
+          "reader:the-cost-of-forgetting-where-the-tools-are"
+        ],
+        "rationale": "The incumbent independent reviewer accepted all three named Reader comparisons with source-limited rationales. The owner explicitly approved publishing this reviewed Reader and admitting its four editorial comparisons on November 11, 2026. No relationship is independent corroboration of the claimed deletion gains."
+      }
+    },
+    {
+      "id": "reader:better-models-still-need-boundaries",
+      "slug": "better-models-still-need-boundaries",
+      "title": "Better Models Still Need Boundaries",
+      "url": "https://youtube.shareplane.malott.ai/better-models-still-need-boundaries/",
+      "review": {
+        "reviewedAt": "2026-11-11",
+        "reviewedCatalogSize": 51,
+        "decision": "linked",
+        "reviewedTargets": [
+          "reader:the-stop-button-is-outside-the-chat",
+          "reader:the-experiment-ran-did-the-research-advance",
+          "reader:the-engine-is-not-the-service"
+        ],
+        "rationale": "A fresh independent reviewer screened all 51 prior Reader theses and accepted these three source-specific comparisons. On November 11, 2026 the owner separately authorized publication and graph admission. The relationships remain editorial and must not be counted as corroboration of the source claims."
+      }
+    },
+    {
+      "id": "reader:the-small-fix-is-a-boundary",
+      "slug": "the-small-fix-is-a-boundary",
+      "title": "The Small Fix Is a Boundary",
+      "url": "https://youtube.shareplane.malott.ai/the-small-fix-is-a-boundary/",
+      "review": {
+        "reviewedAt": "2026-11-11",
+        "reviewedCatalogSize": 52,
+        "decision": "linked",
+        "reviewedTargets": [
+          "reader:more-skills-worse-agents",
+          "reader:make-good-work-inspectable",
+          "reader:autonomy-needs-an-interface"
+        ],
+        "rationale": "Three owner-approved draft destinations; the Autonomy edge is provisionally retyped companion after independent reviewer found no substantive disagreement. Final graph admission requires owner confirmation and independent acceptance."
+      }
+    },
+    {
+      "id": "reader:the-home-repo-is-a-map-not-a-monorepo",
+      "slug": "the-home-repo-is-a-map-not-a-monorepo",
+      "title": "The Home Repo Is a Map, Not a Monorepo",
+      "url": "https://youtube.shareplane.malott.ai/the-home-repo-is-a-map-not-a-monorepo/",
+      "review": {
+        "reviewedAt": "2026-11-12",
+        "reviewedCatalogSize": 55,
+        "decision": "linked",
+        "reviewedTargets": [
+          "reader:the-cost-of-forgetting-where-the-tools-are",
+          "reader:more-skills-worse-agents",
+          "reader:autonomy-needs-an-interface"
+        ],
+        "rationale": "Owner requested repair of the omitted graph admission on published Readers #54 and #55. Three authored candidate targets were checked against their published theses and given source-limited directional rationales; no reciprocal edges or factual corroboration is implied. Independent relationship review on the exact amended record remains an acceptance gate."
+      }
+    },
+    {
+      "id": "reader:replacing-cowork-is-a-test-not-a-title",
+      "slug": "replacing-cowork-is-a-test-not-a-title",
+      "title": "Replacing Cowork Is a Test, Not a Title",
+      "url": "https://youtube.shareplane.malott.ai/replacing-cowork-is-a-test-not-a-title/",
+      "review": {
+        "reviewedAt": "2026-11-12",
+        "reviewedCatalogSize": 55,
+        "decision": "linked",
+        "reviewedTargets": [
+          "reader:autonomy-needs-an-interface",
+          "reader:the-cockpit-is-not-the-control-plane",
+          "reader:the-home-repo-is-a-map-not-a-monorepo"
+        ],
+        "rationale": "Owner requested repair of the omitted graph admission on published Readers #54 and #55. Three authored candidate targets were checked against their published theses and given source-limited directional rationales; no reciprocal edges or factual corroboration is implied. Independent relationship review on the exact amended record remains an acceptance gate."
+      }
+    },
+    {
+      "id": "reader:the-taste-is-in-the-loop-not-the-prompt",
+      "slug": "the-taste-is-in-the-loop-not-the-prompt",
+      "title": "The Taste Is in the Loop, Not the Prompt",
+      "url": "https://youtube.shareplane.malott.ai/the-taste-is-in-the-loop-not-the-prompt/",
+      "review": {
+        "reviewedAt": "2026-11-12",
+        "reviewedCatalogSize": 56,
+        "decision": "linked",
+        "reviewedTargets": [
+          "reader:when-every-ai-website-looks-good",
+          "reader:the-small-fix-is-a-boundary",
+          "reader:replacing-cowork-is-a-test-not-a-title"
+        ],
+        "rationale": "Three proposed source-specific analogies were compared against the published Reader theses across the catalog. Independent editorial acceptance and owner admission remain pending; no experimental corroboration or reciprocal edge is asserted."
+      }
+    },
+    {
+      "id": "reader:a-factory-that-grades-itself-still-needs-a-judge",
+      "slug": "a-factory-that-grades-itself-still-needs-a-judge",
+      "title": "A Factory That Grades Itself Still Needs a Judge",
+      "url": "https://youtube.shareplane.malott.ai/a-factory-that-grades-itself-still-needs-a-judge/",
+      "review": {
+        "reviewedAt": "2026-11-12",
+        "reviewedCatalogSize": 57,
+        "decision": "linked",
+        "reviewedTargets": [
+          "reader:the-second-brain-still-needs-a-judgment",
+          "reader:replacing-cowork-is-a-test-not-a-title",
+          "reader:the-taste-is-in-the-loop-not-the-prompt"
+        ],
+        "rationale": "Owner explicitly approved all three editorial comparisons in the Reader #57 conversation. These connect themes of independent judgment, demonstration proof, and evaluation limits, without adding source corroboration."
+      }
+    },
+    {
+      "id": "reader:the-model-fits-does-the-intelligence-survive",
+      "slug": "the-model-fits-does-the-intelligence-survive",
+      "title": "The Model Fits. Does the Intelligence Survive?",
+      "url": "https://youtube.shareplane.malott.ai/the-model-fits-does-the-intelligence-survive/",
+      "review": {
+        "reviewedAt": "2026-11-12",
+        "reviewedCatalogSize": 57,
+        "decision": "linked",
+        "reviewedTargets": [
+          "reader:the-model-is-not-the-demonstration",
+          "reader:the-operator-is-part-of-the-denominator",
+          "reader:offline-is-not-the-same-as-independent"
+        ],
+        "rationale": "Tony approved three Reader comparisons after cross-catalog assessment; each concerns model demonstration, inference economics or local operating independence."
+      }
+    },
+    {
+      "id": "reader:the-12gb-gpu-has-a-three-budget-problem",
+      "slug": "the-12gb-gpu-has-a-three-budget-problem",
+      "title": "The 12 GB GPU Has a Three-Budget Problem",
+      "url": "https://youtube.shareplane.malott.ai/the-12gb-gpu-has-a-three-budget-problem/",
+      "review": {
+        "reviewedAt": "2026-11-13",
+        "reviewedCatalogSize": 58,
+        "decision": "linked",
+        "reviewedTargets": [
+          "reader:the-model-fits-does-the-intelligence-survive",
+          "reader:the-operator-is-part-of-the-denominator",
+          "reader:the-engine-is-not-the-service"
+        ],
+        "rationale": "Source-specific conceptual comparisons, not empirical source corroboration; pending independent admission review."
+      }
+    },
+    {
+      "id": "reader:the-playbook-may-be-reproducible",
+      "slug": "the-playbook-may-be-reproducible",
+      "title": "You Can Copy the Playbook. Can You Copy the Judgment?",
+      "url": "https://youtube.shareplane.malott.ai/the-playbook-may-be-reproducible/",
+      "review": {
+        "reviewedAt": "2026-11-13",
+        "reviewedCatalogSize": 59,
+        "decision": "linked",
+        "reviewedTargets": [
+          "reader:when-software-becomes-legible",
+          "reader:the-second-brain-still-needs-a-judgment",
+          "reader:when-code-gets-cheap-where-does-the-work-wait"
+        ],
+        "rationale": "Three target Readers were inspected for distinct conceptual connections to observed software, retained context and scarce engineering judgment. The links orient readers but neither corroborate Marchese's examples nor establish reliability or authority."
+      }
+    },
+    {
+      "id": "reader:the-robot-is-the-easy-part",
+      "slug": "the-robot-is-the-easy-part",
+      "title": "The Robot Is the Easy Part. The Boundaries Are the Engineering.",
+      "url": "https://youtube.shareplane.malott.ai/the-robot-is-the-easy-part/",
+      "review": {
+        "reviewedAt": "2026-11-13",
+        "reviewedCatalogSize": 60,
+        "decision": "linked",
+        "reviewedTargets": [
+          "reader:unsupervised-is-a-permission",
+          "reader:the-stop-button-is-outside-the-chat",
+          "reader:the-model-is-not-the-demonstration"
+        ],
+        "rationale": "Tony accepted three distinct Reader routes for permission enforcement, stop/recovery outside chat and model attribution versus demonstrated system performance; strong alternatives were screened and not admitted."
+      }
+    },
+    {
+      "id": "reader:the-1000-ai-workflow-is-a-routing-problem",
+      "slug": "the-1000-ai-workflow-is-a-routing-problem",
+      "title": "The $1,000 AI Workflow Is Really a Routing Problem",
+      "url": "https://youtube.shareplane.malott.ai/the-1000-ai-workflow-is-a-routing-problem/",
+      "review": {
+        "reviewedAt": "2026-11-14",
+        "reviewedCatalogSize": 62,
+        "decision": "linked",
+        "reviewedTargets": [
+          "reader:the-router-is-not-the-organization",
+          "reader:when-code-gets-cheap-where-does-the-work-wait"
+        ],
+        "rationale": "Tony explicitly approved these two distinct Reader comparisons under issue #175: routing is insufficient without authority and acceptance, while parallel code generation shifts work into review and integration. Neither link is independent source corroboration."
+      }
+    },
+    {
+      "id": "reader:the-best-agent-instructions-arent-instructions",
+      "slug": "the-best-agent-instructions-arent-instructions",
+      "title": "The Best Agent Instructions Aren't Instructions",
+      "url": "https://youtube.shareplane.malott.ai/the-best-agent-instructions-arent-instructions/",
+      "review": {
+        "reviewedAt": "2026-11-14",
+        "reviewedCatalogSize": 62,
+        "decision": "linked",
+        "reviewedTargets": [
+          "reader:when-code-gets-cheap-where-does-the-work-wait",
+          "reader:the-1000-ai-workflow-is-a-routing-problem"
+        ],
+        "rationale": "Creative Lock issue #179 explicitly approves exactly two editorial comparisons; no source corroboration implied."
+      }
+    },
+    {
+      "id": "reader:an-open-agent-still-needs-an-operator",
+      "slug": "an-open-agent-still-needs-an-operator",
+      "title": "An Open Agent Still Needs an Operator",
+      "url": "https://youtube.shareplane.malott.ai/an-open-agent-still-needs-an-operator/",
+      "review": {
+        "reviewedAt": "2026-11-14",
+        "reviewedCatalogSize": 63,
+        "decision": "linked",
+        "reviewedTargets": [
+          "reader:the-1000-ai-workflow-is-a-routing-problem",
+          "reader:the-best-agent-instructions-arent-instructions"
+        ],
+        "rationale": "Owner explicitly approved #62 routing/authority and #63 enforceable-constraint comparisons for Reader #64; no source corroboration implied."
+      }
+    },
+    {
+      "id": "reader:the-best-model-shouldnt-do-every-job",
+      "slug": "the-best-model-shouldnt-do-every-job",
+      "title": "The Best Model Shouldn't Do Every Job",
+      "url": "https://youtube.shareplane.malott.ai/the-best-model-shouldnt-do-every-job/",
+      "review": {
+        "reviewedAt": "2026-11-15",
+        "reviewedCatalogSize": 64,
+        "decision": "linked",
+        "reviewedTargets": [
+          "reader:the-1000-ai-workflow-is-a-routing-problem",
+          "reader:the-best-agent-instructions-arent-instructions"
+        ],
+        "rationale": "Tony explicitly approved these two catalog-backed Reader comparisons; neither confirms model performance."
+      }
+    },
+    {
+      "id": "reader:uncensored-private-or-sovereign",
+      "slug": "uncensored-private-or-sovereign",
+      "title": "Uncensored, Private, or Sovereign?",
+      "url": "https://youtube.shareplane.malott.ai/uncensored-private-or-sovereign/",
+      "review": {
+        "reviewedAt": "2026-11-16",
+        "reviewedCatalogSize": 65,
+        "decision": "linked",
+        "reviewedTargets": [
+          "reader:the-boundary-is-bigger-than-the-box",
+          "reader:the-stop-button-is-outside-the-chat",
+          "reader:the-second-brain-still-needs-a-judgment"
+        ],
+        "rationale": "Owner approved these three source-relevant conceptual companions; no independent claim verification is implied."
+      }
+    },
+    {
+      "id": "reader:two-sparks-do-not-make-a-cloud",
+      "slug": "two-sparks-do-not-make-a-cloud",
+      "title": "Two Sparks Do Not Make a Cloud",
+      "url": "https://youtube.shareplane.malott.ai/two-sparks-do-not-make-a-cloud/",
+      "review": {
+        "reviewedAt": "2026-11-17",
+        "reviewedCatalogSize": 66,
+        "decision": "linked",
+        "reviewedTargets": [
+          "reader:the-12gb-gpu-has-a-three-budget-problem",
+          "reader:uncensored-private-or-sovereign",
+          "reader:the-grader-is-part-of-the-harness"
+        ],
+        "rationale": "Source-specific editorial companions cover memory fit, local custody and independent grading, rather than introducing unrelated generic AI reading."
+      }
+    },
+    {
+      "id": "reader:the-machine-is-learning-to-improve-the-machine",
+      "slug": "the-machine-is-learning-to-improve-the-machine",
+      "title": "The Machine Is Learning to Improve the Machine",
+      "url": "https://youtube.shareplane.malott.ai/the-machine-is-learning-to-improve-the-machine/",
+      "review": {
+        "reviewedAt": "2026-11-17",
+        "reviewedCatalogSize": 67,
+        "decision": "linked",
+        "reviewedTargets": [
+          "reader:a-factory-that-grades-itself-still-needs-a-judge",
+          "reader:unsupervised-is-a-permission",
+          "reader:the-threshold-is-a-claim-not-a-test"
+        ],
+        "rationale": "Three subject-specific companions; editorial linkage, not corroborating sources."
+      }
+    },
+    {
+      "id": "reader:the-cheap-answer-can-be-an-expensive-job",
+      "slug": "the-cheap-answer-can-be-an-expensive-job",
+      "title": "The Cheap Answer Can Be an Expensive Job",
+      "url": "https://youtube.shareplane.malott.ai/the-cheap-answer-can-be-an-expensive-job/",
+      "review": {
+        "reviewedAt": "2026-11-18",
+        "reviewedCatalogSize": 68,
+        "decision": "linked",
+        "reviewedTargets": [
+          "reader:the-best-model-shouldnt-do-every-job",
+          "reader:the-machine-is-learning-to-improve-the-machine"
+        ],
+        "rationale": "The approved model-routing Reader addresses task-specific selection. Reader #68 addresses evidence and authority at acceptance."
+      }
+    },
+    {
+      "id": "reader:a-smaller-model-can-win-the-job-not-the-benchmark-war",
+      "slug": "a-smaller-model-can-win-the-job-not-the-benchmark-war",
+      "title": "A Smaller Model Can Win the Job, Not the Benchmark War",
+      "url": "https://youtube.shareplane.malott.ai/a-smaller-model-can-win-the-job-not-the-benchmark-war/",
+      "review": {
+        "reviewedAt": "2026-11-20",
+        "reviewedCatalogSize": 69,
+        "decision": "linked",
+        "reviewedTargets": [
+          "reader:the-cheap-answer-can-be-an-expensive-job"
+        ],
+        "rationale": "Selected by Tony and confirmed in Creative Lock; source-independent editorial comparison, not benchmark corroboration."
+      }
+    },
+    {
+      "id": "reader:claude-lean-and-the-riemann-hypothesis",
+      "slug": "claude-lean-and-the-riemann-hypothesis",
+      "title": "Claude, Lean, and the Riemann Hypothesis: What Has Actually Been Proven?",
+      "url": "https://youtube.shareplane.malott.ai/claude-lean-and-the-riemann-hypothesis/",
+      "review": {
+        "reviewedAt": "2026-11-21",
+        "reviewedCatalogSize": 70,
+        "decision": "linked",
+        "reviewedTargets": [
+          "reader:the-paper-is-not-the-experiment",
+          "reader:a-smaller-model-can-win-the-job-not-the-benchmark-war"
+        ],
+        "rationale": "Pale Horse checked the canonical Reader routes for #48 and #70, and their arguments are relevant conceptual comparisons. The links do not purport to verify the RH result, and are limited to their respective editorial roles."
+      }
+    },
+    {
+      "id": "reader:when-code-gets-cheap-ambition-becomes-the-test",
+      "slug": "when-code-gets-cheap-ambition-becomes-the-test",
+      "title": "When Code Gets Cheap, Ambition Becomes the Test",
+      "url": "https://youtube.shareplane.malott.ai/when-code-gets-cheap-ambition-becomes-the-test/",
+      "review": {
+        "reviewedAt": "2026-11-22",
+        "reviewedCatalogSize": 71,
+        "decision": "linked",
+        "reviewedTargets": [
+          "reader:the-cheap-answer-can-be-an-expensive-job",
+          "reader:a-smaller-model-can-win-the-job-not-the-benchmark-war"
+        ],
+        "rationale": "Reviewed conceptual comparison with existing published Reader catalog; unrelated themes and unverified works excluded."
+      }
+    },
+    {
+      "id": "reader:the-cost-of-forgetting-why-agents-keep-reading-the-same-world",
+      "slug": "the-cost-of-forgetting-why-agents-keep-reading-the-same-world",
+      "title": "The Cost of Forgetting: Why Agents Keep Reading the Same World",
+      "url": "https://youtube.shareplane.malott.ai/the-cost-of-forgetting-why-agents-keep-reading-the-same-world/",
+      "review": {
+        "reviewedAt": "2026-11-24",
+        "reviewedCatalogSize": 72,
+        "decision": "linked",
+        "reviewedTargets": [
+          "reader:the-cost-of-forgetting-where-the-tools-are",
+          "reader:more-skills-worse-agents",
+          "reader:the-cheap-answer-can-be-an-expensive-job"
+        ],
+        "rationale": "Three existing, published Reader destinations verified; closely tied to discovery, context discipline and cost per accepted job. More general works excluded."
+      }
+    },
+    {
+      "id": "reader:beyond-vibe-coding-engineering-in-the-age-of-ai-agents",
+      "slug": "beyond-vibe-coding-engineering-in-the-age-of-ai-agents",
+      "title": "Beyond Vibe Coding: Engineering in the Age of AI Agents",
+      "url": "https://youtube.shareplane.malott.ai/beyond-vibe-coding-engineering-in-the-age-of-ai-agents/",
+      "review": {
+        "reviewedAt": "2026-11-24",
+        "reviewedCatalogSize": 73,
+        "decision": "linked",
+        "reviewedTargets": [
+          "reader:when-code-gets-cheap-ambition-becomes-the-test",
+          "reader:the-cost-of-forgetting-why-agents-keep-reading-the-same-world"
+        ],
+        "rationale": "Two directly relevant Reader destinations checked against their actual served and accepted Production revisions. Reader 72 relates to accepted value; Reader 73 relates to durable context. Other potential connections are less specific or lack exact current accepted-revision verification."
+      }
+    },
+    {
+      "id": "reader:the-agent-that-remembers-why-it-changed",
+      "slug": "the-agent-that-remembers-why-it-changed",
+      "title": "The Agent That Remembers Why It Changed",
+      "url": "https://youtube.shareplane.malott.ai/the-agent-that-remembers-why-it-changed/",
+      "review": {
+        "reviewedAt": "2026-11-25",
+        "reviewedCatalogSize": 74,
+        "decision": "linked",
+        "reviewedTargets": [
+          "reader:the-cost-of-forgetting-why-agents-keep-reading-the-same-world",
+          "reader:beyond-vibe-coding-engineering-in-the-age-of-ai-agents"
+        ],
+        "rationale": "Readers 73 and 74 address the two closest antecedent concepts, durable context and accepted engineering decisions; their actual served versions match approved Production bytes. Other candidates omitted for weaker direct relevance."
       }
     }
   ],
@@ -1640,6 +2646,1086 @@
       "provenance": [
         "/the-cockpit-is-not-the-control-plane/#scheduling-mobile-and-remote-execution-useful-but-not-free-of-governance-consequences",
         "/the-stop-button-is-outside-the-chat/#stop-surface"
+      ],
+      "basis": "curated-editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:a-model-that-says-yes-is-not-necessarily-a-model-that-knows",
+      "to": "reader:the-model-is-not-the-demonstration",
+      "type": "informs architecture",
+      "reason": "The earlier Reader separates a model's demonstration from established capability. This deconstruction applies that evidence boundary to refusal removal, inference claims and provider benchmarks; neither source independently validates the other's measurements.",
+      "provenance": [
+        "/a-model-that-says-yes-is-not-necessarily-a-model-that-knows/",
+        "/the-model-is-not-the-demonstration/"
+      ],
+      "basis": "curated-editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:a-model-that-says-yes-is-not-necessarily-a-model-that-knows",
+      "to": "reader:the-session-count-is-not-the-system",
+      "type": "extends",
+      "reason": "Both examine the gap between apparent local capability and dependable operational service. Session ownership, permissions and inference routing remain separate from the model's willingness to respond.",
+      "provenance": [
+        "/a-model-that-says-yes-is-not-necessarily-a-model-that-knows/",
+        "/the-session-count-is-not-the-system/"
+      ],
+      "basis": "curated-editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:when-code-gets-cheap-where-does-the-work-wait",
+      "to": "reader:the-session-count-is-not-the-system",
+      "type": "extends",
+      "reason": "This edition follows increasing parallel agent output into review, testing and integration bottlenecks. The earlier Reader examines durable session ownership and scheduler authority; they are complementary engineering analyses, not shared performance verification.",
+      "provenance": [
+        "/when-code-gets-cheap-where-does-the-work-wait/",
+        "/the-session-count-is-not-the-system/"
+      ],
+      "basis": "curated-editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:when-code-gets-cheap-where-does-the-work-wait",
+      "to": "reader:the-cockpit-is-not-the-control-plane",
+      "type": "informs architecture",
+      "reason": "The Orca cockpit Reader distinguishes operator visibility from durable ownership and completion. This interview similarly separates coding throughput from accepted product delivery, without independently measuring the same system.",
+      "provenance": [
+        "/when-code-gets-cheap-where-does-the-work-wait/",
+        "/the-cockpit-is-not-the-control-plane/"
+      ],
+      "basis": "curated-editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:what-arete-27b-bias-test-measures",
+      "to": "reader:a-model-that-says-yes-is-not-necessarily-a-model-that-knows",
+      "type": "examines same claim",
+      "reason": "Both deconstructions question what model alignment or refusal evaluations establish. Arete's political-response test and the refusal-removal demonstrations measure different behaviors; comparison is useful but cannot transfer benchmark conclusions.",
+      "provenance": [
+        "/what-arete-27b-bias-test-measures/",
+        "/a-model-that-says-yes-is-not-necessarily-a-model-that-knows/"
+      ],
+      "basis": "curated-editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:what-arete-27b-bias-test-measures",
+      "to": "reader:the-model-is-not-the-demonstration",
+      "type": "informs architecture",
+      "reason": "The earlier Reader distinguishes a witnessed demonstration from reproducible operational capability. Arete's published evaluation similarly needs a disclosed dataset, scoring rule and independent replication before broader performance claims.",
+      "provenance": [
+        "/what-arete-27b-bias-test-measures/",
+        "/the-model-is-not-the-demonstration/"
+      ],
+      "basis": "curated-editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:the-success-hid-the-failure",
+      "to": "reader:when-code-gets-cheap-where-does-the-work-wait",
+      "type": "extends",
+      "reason": "The earlier Reader identifies review and accepted delivery as bottlenecks after agent execution becomes cheap. This deconstruction exposes retries and tool-call waste hidden beneath a successful final result, making execution quality another measurable part of that bottleneck.",
+      "provenance": [
+        "/the-success-hid-the-failure/",
+        "/when-code-gets-cheap-where-does-the-work-wait/"
+      ],
+      "basis": "curated-editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:the-success-hid-the-failure",
+      "to": "reader:the-cockpit-is-not-the-control-plane",
+      "type": "informs architecture",
+      "reason": "The cockpit Reader separates visible dashboards from durable operational control. This analysis applies that distinction to grading agents: score trends are observability, while reviewed instruction changes, rollback and accepted outcomes provide the control boundary.",
+      "provenance": [
+        "/the-success-hid-the-failure/",
+        "/the-cockpit-is-not-the-control-plane/"
+      ],
+      "basis": "curated-editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:the-router-is-not-the-organization",
+      "to": "reader:the-session-count-is-not-the-system",
+      "type": "informs architecture",
+      "reason": "Both distinguish more concurrent sessions from governed, durable work; this Reader adds ticket and authority boundaries.",
+      "provenance": [
+        "/the-router-is-not-the-organization/",
+        "/the-session-count-is-not-the-system/"
+      ],
+      "basis": "curated-editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:the-router-is-not-the-organization",
+      "to": "reader:the-cockpit-is-not-the-control-plane",
+      "type": "companion",
+      "reason": "A visible router resembles a cockpit; neither inherently preserves accepted state and decision authority.",
+      "provenance": [
+        "/the-router-is-not-the-organization/",
+        "/the-cockpit-is-not-the-control-plane/"
+      ],
+      "basis": "curated-editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:the-router-is-not-the-organization",
+      "to": "reader:the-harness-keeps-the-receipt",
+      "type": "extends",
+      "reason": "The harness Reader's durable verification receipts supply the missing acceptance evidence after delegated execution.",
+      "provenance": [
+        "/the-router-is-not-the-organization/",
+        "/the-harness-keeps-the-receipt/"
+      ],
+      "basis": "curated-editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:the-cost-of-forgetting-where-the-tools-are",
+      "to": "reader:the-missing-step-is-not-more-intelligence",
+      "type": "informs architecture",
+      "reason": "A missing operational discovery path can defeat an otherwise capable model.",
+      "provenance": [
+        "/the-cost-of-forgetting-where-the-tools-are/",
+        "/the-missing-step-is-not-more-intelligence/"
+      ],
+      "basis": "curated-editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:the-cost-of-forgetting-where-the-tools-are",
+      "to": "reader:the-harness-keeps-the-receipt",
+      "type": "extends",
+      "reason": "Cost and success claims need preserved, reproducible evaluation evidence.",
+      "provenance": [
+        "/the-cost-of-forgetting-where-the-tools-are/",
+        "/the-harness-keeps-the-receipt/"
+      ],
+      "basis": "curated-editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:the-cost-of-forgetting-where-the-tools-are",
+      "to": "reader:the-operator-is-part-of-the-denominator",
+      "type": "companion",
+      "reason": "Owner interventions and operating burden belong in the denominator.",
+      "provenance": [
+        "/the-cost-of-forgetting-where-the-tools-are/",
+        "/the-operator-is-part-of-the-denominator/"
+      ],
+      "basis": "curated-editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:the-second-brain-still-needs-a-judgment",
+      "to": "reader:the-agent-a-company-owns",
+      "type": "extends",
+      "reason": "Moves from a company-owned agent that retains corrections, memory isolation and accountable continuity to the narrower retrieval question: whether summaries and recency preserve the governing decision rather than merely a plausible recollection.",
+      "provenance": [
+        "/the-second-brain-still-needs-a-judgment/",
+        "/the-agent-a-company-owns/"
+      ],
+      "basis": "curated-editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:the-second-brain-still-needs-a-judgment",
+      "to": "reader:the-harness-keeps-the-receipt",
+      "type": "informs architecture",
+      "reason": "Supplies the execution boundary for the memory argument: a retrieved approval is useful context, while durable authorization and effect receipts determine what may resume and what actually happened.",
+      "provenance": [
+        "/the-second-brain-still-needs-a-judgment/",
+        "/the-harness-keeps-the-receipt/"
+      ],
+      "basis": "curated-editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:the-second-brain-still-needs-a-judgment",
+      "to": "reader:the-cost-of-forgetting-where-the-tools-are",
+      "type": "companion",
+      "reason": "Examines the other side of context economy: loading less information is useful only if source and capability discovery remain available. Both require measuring accepted outcomes and recovery alongside reported cost savings.",
+      "provenance": [
+        "/the-second-brain-still-needs-a-judgment/",
+        "/the-cost-of-forgetting-where-the-tools-are/"
+      ],
+      "basis": "curated-editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:the-paper-is-not-the-experiment",
+      "to": "reader:the-experiment-ran-did-the-research-advance",
+      "type": "extends",
+      "reason": "Distinguishes executing a research workflow from making a scientifically meaningful advance. Reader #48 adds the evidence-integrity threshold that must be satisfied before the advancement question is even credible.",
+      "provenance": [
+        "/the-paper-is-not-the-experiment/",
+        "/the-experiment-ran-did-the-research-advance/"
+      ],
+      "basis": "curated-editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:the-paper-is-not-the-experiment",
+      "to": "reader:the-grader-is-part-of-the-harness",
+      "type": "companion",
+      "reason": "Examines evaluation design and recursive improvement. Reader #48 applies that concern to automated judgments over scientific code and trajectories, including judge error and rubric scope.",
+      "provenance": [
+        "/the-paper-is-not-the-experiment/",
+        "/the-grader-is-part-of-the-harness/"
+      ],
+      "basis": "curated-editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:the-paper-is-not-the-experiment",
+      "to": "reader:the-harness-keeps-the-receipt",
+      "type": "informs architecture",
+      "reason": "Connects scientific claim-to-log traceability to durable runtime evidence and authorization receipts. Both distinguish narrated completion from verified effects.",
+      "provenance": [
+        "/the-paper-is-not-the-experiment/",
+        "/the-harness-keeps-the-receipt/"
+      ],
+      "basis": "curated-editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:the-paper-is-not-the-experiment",
+      "to": "reader:the-success-hid-the-failure",
+      "type": "extends",
+      "reason": "Investigates hidden failures in tool traces despite apparent success. Reader #48 presents a scientific analogue in which professional-looking papers conceal missing or contradictory experimental work.",
+      "provenance": [
+        "/the-paper-is-not-the-experiment/",
+        "/the-success-hid-the-failure/"
+      ],
+      "basis": "curated-editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:offline-is-not-the-same-as-independent",
+      "to": "reader:the-boundary-is-bigger-than-the-box",
+      "type": "extends",
+      "reason": "The existing Reader expands the distinction between the place inference runs and the complete operational boundary.",
+      "provenance": [
+        "/offline-is-not-the-same-as-independent/",
+        "/the-boundary-is-bigger-than-the-box/"
+      ],
+      "basis": "curated-editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:offline-is-not-the-same-as-independent",
+      "to": "reader:the-stop-button-is-outside-the-chat",
+      "type": "companion",
+      "reason": "The existing Reader develops tool authorization, independent receipts and interruption beyond a visible tool transcript.",
+      "provenance": [
+        "/offline-is-not-the-same-as-independent/",
+        "/the-stop-button-is-outside-the-chat/"
+      ],
+      "basis": "curated-editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:when-every-ai-website-looks-good",
+      "to": "reader:make-good-work-inspectable",
+      "type": "extends",
+      "reason": "Inspectability connects generated visual output with verifiable quality; this is another Nate Herk source, not independent corroboration.",
+      "provenance": [
+        "/when-every-ai-website-looks-good/",
+        "/make-good-work-inspectable/"
+      ],
+      "basis": "curated-editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:when-every-ai-website-looks-good",
+      "to": "reader:the-page-is-part-of-the-proof",
+      "type": "companion",
+      "reason": "Evidence presentation and interface quality affect whether a reader can inspect a claim.",
+      "provenance": [
+        "/when-every-ai-website-looks-good/",
+        "/the-page-is-part-of-the-proof/"
+      ],
+      "basis": "curated-editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:when-every-ai-website-looks-good",
+      "to": "reader:autonomy-needs-an-interface",
+      "type": "challenges",
+      "reason": "Accountable operational interfaces require state, consequence and authority beyond landing-page persuasion.",
+      "provenance": [
+        "/when-every-ai-website-looks-good/",
+        "/autonomy-needs-an-interface/"
+      ],
+      "basis": "curated-editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:more-skills-worse-agents",
+      "to": "reader:make-good-work-inspectable",
+      "type": "companion",
+      "reason": "Inspectability and retained evidence help distinguish repeatable agent work from impressive narrated outcomes. This is a methodological comparison, not proof that pruning skills improves agent accuracy.",
+      "provenance": [
+        "/more-skills-worse-agents/",
+        "/make-good-work-inspectable/"
+      ],
+      "basis": "curated-editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:more-skills-worse-agents",
+      "to": "reader:autonomy-needs-an-interface",
+      "type": "challenges",
+      "reason": "An agent can retrieve and invoke a well-written skill without having authorization to change production systems. This comparison stresses accountable authority and observable action boundaries beyond instruction reuse.",
+      "provenance": [
+        "/more-skills-worse-agents/",
+        "/autonomy-needs-an-interface/"
+      ],
+      "basis": "curated-editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:more-skills-worse-agents",
+      "to": "reader:the-cost-of-forgetting-where-the-tools-are",
+      "type": "companion",
+      "reason": "Reducing discovery noise may save context, but removing rarely used tool knowledge can also impair incident response and capability recall. Both works support measuring accepted outcomes rather than rewarding file deletion.",
+      "provenance": [
+        "/more-skills-worse-agents/",
+        "/the-cost-of-forgetting-where-the-tools-are/"
+      ],
+      "basis": "curated-editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:better-models-still-need-boundaries",
+      "to": "reader:the-stop-button-is-outside-the-chat",
+      "type": "companion",
+      "reason": "A paused assistant or workflow does not prove that previously delegated account or on-chain authorization has been revoked. This editorial comparison addresses observable recovery authority, not evidence for the specific Binance incident.",
+      "provenance": [
+        "/better-models-still-need-boundaries/",
+        "/the-stop-button-is-outside-the-chat/"
+      ],
+      "basis": "curated-editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:better-models-still-need-boundaries",
+      "to": "reader:the-experiment-ran-did-the-research-advance",
+      "type": "companion",
+      "reason": "The distinction between AI-assisted research throughput and expert judgment complements Nate Jones’s discussion of research acceleration. Neither article independently replicates the reported improvement rate or proves a universal deployment deadline.",
+      "provenance": [
+        "/better-models-still-need-boundaries/",
+        "/the-experiment-ran-did-the-research-advance/"
+      ],
+      "basis": "curated-editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:better-models-still-need-boundaries",
+      "to": "reader:the-engine-is-not-the-service",
+      "type": "informs architecture",
+      "reason": "The gap between acquiring or renting Nvidia hardware and delivering a useful, recoverable model service is the practical systems question behind the compute-access report. This is a source-specific architectural connection, not verification of the chip inventory.",
+      "provenance": [
+        "/better-models-still-need-boundaries/",
+        "/the-engine-is-not-the-service/"
+      ],
+      "basis": "curated-editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:the-small-fix-is-a-boundary",
+      "to": "reader:more-skills-worse-agents",
+      "type": "companion",
+      "reason": "Cole's rule-pruning advice complements David Ondrej's concern about agent skill sprawl without validating a deletion percentage or general payoff.",
+      "provenance": [
+        "/the-small-fix-is-a-boundary/",
+        "/more-skills-worse-agents/"
+      ],
+      "basis": "curated-editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:the-small-fix-is-a-boundary",
+      "to": "reader:make-good-work-inspectable",
+      "type": "companion",
+      "reason": "The source's initial fixes ask for evidence of completion and real user-facing validation; the companion develops inspectable work without independently proving Cole's tips.",
+      "provenance": [
+        "/the-small-fix-is-a-boundary/",
+        "/make-good-work-inspectable/"
+      ],
+      "basis": "curated-editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:the-small-fix-is-a-boundary",
+      "to": "reader:autonomy-needs-an-interface",
+      "type": "companion",
+      "reason": "Both Readers require downstream authorization beyond prose rules or isolated hooks. This is a complementary treatment of effective authority, not a disagreement or independent corroboration.",
+      "provenance": [
+        "/the-small-fix-is-a-boundary/",
+        "/autonomy-needs-an-interface/"
+      ],
+      "basis": "curated-editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:the-home-repo-is-a-map-not-a-monorepo",
+      "to": "reader:the-cost-of-forgetting-where-the-tools-are",
+      "type": "companion",
+      "reason": "Pocock's home repo makes the discovery path stable across projects; this earlier Reader explains why agents repeatedly losing tool locations creates friction. The comparison supports navigation discipline, not a measurement of home-repo performance.",
+      "provenance": [
+        "/the-home-repo-is-a-map-not-a-monorepo/",
+        "/the-cost-of-forgetting-where-the-tools-are/"
+      ],
+      "basis": "curated-editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:the-home-repo-is-a-map-not-a-monorepo",
+      "to": "reader:more-skills-worse-agents",
+      "type": "companion",
+      "reason": "Shared skills become useful only when relevant instructions are selected and scoped. The earlier Reader challenges uncontrolled instruction sprawl; a home repository centralizes the location but does not by itself improve skill selection.",
+      "provenance": [
+        "/the-home-repo-is-a-map-not-a-monorepo/",
+        "/more-skills-worse-agents/"
+      ],
+      "basis": "curated-editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:the-home-repo-is-a-map-not-a-monorepo",
+      "to": "reader:autonomy-needs-an-interface",
+      "type": "companion",
+      "reason": "The home repo offers an entry point and links to execution surfaces, while this Reader keeps human decisions and downstream authorization at the actual destination. The comparison distinguishes discoverability from permission.",
+      "provenance": [
+        "/the-home-repo-is-a-map-not-a-monorepo/",
+        "/autonomy-needs-an-interface/"
+      ],
+      "basis": "curated-editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:replacing-cowork-is-a-test-not-a-title",
+      "to": "reader:autonomy-needs-an-interface",
+      "type": "companion",
+      "reason": "Nod's model-based action checker and connected service scopes raise the same accountable authorization boundary: a personal agent may propose an action, but permission and accepted effect must be inspected at the destination.",
+      "provenance": [
+        "/replacing-cowork-is-a-test-not-a-title/",
+        "/autonomy-needs-an-interface/"
+      ],
+      "basis": "curated-editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:replacing-cowork-is-a-test-not-a-title",
+      "to": "reader:the-cockpit-is-not-the-control-plane",
+      "type": "companion",
+      "reason": "An attractive personal-agent interface and responsive browser demonstration do not prove that retries, permissions, integration failures and operational recovery form a reliable control plane. This is an evaluation analogy, not Nod benchmarking.",
+      "provenance": [
+        "/replacing-cowork-is-a-test-not-a-title/",
+        "/the-cockpit-is-not-the-control-plane/"
+      ],
+      "basis": "curated-editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:replacing-cowork-is-a-test-not-a-title",
+      "to": "reader:the-home-repo-is-a-map-not-a-monorepo",
+      "type": "companion",
+      "reason": "A home repo and a personal agent each make cross-system context discoverable, but neither should turn links, skills or retrieved information into a blanket grant of production authority. Their governance questions are complementary.",
+      "provenance": [
+        "/replacing-cowork-is-a-test-not-a-title/",
+        "/the-home-repo-is-a-map-not-a-monorepo/"
+      ],
+      "basis": "curated-editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:the-taste-is-in-the-loop-not-the-prompt",
+      "to": "reader:when-every-ai-website-looks-good",
+      "type": "companion",
+      "reason": "Reader #50 questions how polished AI websites converge into a generic visual language. Cook proposes visual references and iterative criticism as a response, while neither source establishes objective taste measurement.",
+      "provenance": [
+        "/the-taste-is-in-the-loop-not-the-prompt/",
+        "/when-every-ai-website-looks-good/"
+      ],
+      "basis": "curated-editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:the-taste-is-in-the-loop-not-the-prompt",
+      "to": "reader:the-small-fix-is-a-boundary",
+      "type": "companion",
+      "reason": "Reader #53 shows why a narrow responsive fix requires direct visual and accessibility checks. Cook expands the iteration idea, but aspirational critic scores cannot substitute for actual device and text-scaling validation.",
+      "provenance": [
+        "/the-taste-is-in-the-loop-not-the-prompt/",
+        "/the-small-fix-is-a-boundary/"
+      ],
+      "basis": "curated-editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:the-taste-is-in-the-loop-not-the-prompt",
+      "to": "reader:replacing-cowork-is-a-test-not-a-title",
+      "type": "companion",
+      "reason": "Reader #55 separates a creator demonstration from sustained workflow proof. The same boundary applies to Cook: repository mechanics are inspectable, while comparative product-quality outcomes remain unverified.",
+      "provenance": [
+        "/the-taste-is-in-the-loop-not-the-prompt/",
+        "/replacing-cowork-is-a-test-not-a-title/"
+      ],
+      "basis": "curated-editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:a-factory-that-grades-itself-still-needs-a-judge",
+      "to": "reader:the-second-brain-still-needs-a-judgment",
+      "type": "companion",
+      "reason": "Reader #47 examines accountable human judgment in automated systems. Here the same question returns as the validity of factory-defined evaluation and its authority to admit changes.",
+      "provenance": [
+        "/a-factory-that-grades-itself-still-needs-a-judge/",
+        "/the-second-brain-still-needs-a-judgment/"
+      ],
+      "basis": "curated-editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:a-factory-that-grades-itself-still-needs-a-judge",
+      "to": "reader:replacing-cowork-is-a-test-not-a-title",
+      "type": "companion",
+      "reason": "Reader #55 distinguishes an agent demonstration from sustained operating proof. The software factory similarly needs real delivery evidence beyond its internal scores.",
+      "provenance": [
+        "/a-factory-that-grades-itself-still-needs-a-judge/",
+        "/replacing-cowork-is-a-test-not-a-title/"
+      ],
+      "basis": "curated-editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:a-factory-that-grades-itself-still-needs-a-judge",
+      "to": "reader:the-taste-is-in-the-loop-not-the-prompt",
+      "type": "companion",
+      "reason": "Reader #56 shows how iterative criticism can improve output while retaining subjective quality measurements. Lloyd extends the problem to an adaptive development factory.",
+      "provenance": [
+        "/a-factory-that-grades-itself-still-needs-a-judge/",
+        "/the-taste-is-in-the-loop-not-the-prompt/"
+      ],
+      "basis": "curated-editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:the-model-fits-does-the-intelligence-survive",
+      "to": "reader:the-model-is-not-the-demonstration",
+      "type": "companion",
+      "reason": "An attractive demonstration cannot stand in for qualified model capability; this experiment tests that distinction at extreme quantization.",
+      "provenance": [
+        "/the-model-fits-does-the-intelligence-survive/",
+        "/the-model-is-not-the-demonstration/"
+      ],
+      "basis": "curated-editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:the-model-fits-does-the-intelligence-survive",
+      "to": "reader:the-operator-is-part-of-the-denominator",
+      "type": "companion",
+      "reason": "Inference economics must include actual workload, waiting time and operator constraints, not only model size or peak token rates.",
+      "provenance": [
+        "/the-model-fits-does-the-intelligence-survive/",
+        "/the-operator-is-part-of-the-denominator/"
+      ],
+      "basis": "curated-editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:the-model-fits-does-the-intelligence-survive",
+      "to": "reader:offline-is-not-the-same-as-independent",
+      "type": "companion",
+      "reason": "Local execution gives control over placement but not automatic independence from specialized software, validation and source provenance.",
+      "provenance": [
+        "/the-model-fits-does-the-intelligence-survive/",
+        "/offline-is-not-the-same-as-independent/"
+      ],
+      "basis": "curated-editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:the-12gb-gpu-has-a-three-budget-problem",
+      "to": "reader:the-model-fits-does-the-intelligence-survive",
+      "type": "companion",
+      "reason": "Quantization fit does not establish retained useful model quality.",
+      "provenance": [
+        "/the-12gb-gpu-has-a-three-budget-problem/",
+        "/the-model-fits-does-the-intelligence-survive/"
+      ],
+      "basis": "curated-editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:the-12gb-gpu-has-a-three-budget-problem",
+      "to": "reader:the-operator-is-part-of-the-denominator",
+      "type": "companion",
+      "reason": "Actual prompt latency, context and concurrency determine service value beyond headline decode speed.",
+      "provenance": [
+        "/the-12gb-gpu-has-a-three-budget-problem/",
+        "/the-operator-is-part-of-the-denominator/"
+      ],
+      "basis": "curated-editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:the-12gb-gpu-has-a-three-budget-problem",
+      "to": "reader:the-engine-is-not-the-service",
+      "type": "related topic",
+      "reason": "Fast engine decoding under one setup is not equivalent to a qualified inference service.",
+      "provenance": [
+        "/the-12gb-gpu-has-a-three-budget-problem/",
+        "/the-engine-is-not-the-service/"
+      ],
+      "basis": "curated-editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:the-playbook-may-be-reproducible",
+      "to": "reader:when-software-becomes-legible",
+      "type": "companion",
+      "reason": "Readable software surfaces speed reconstruction without proving operational equivalence.",
+      "provenance": [
+        "/the-playbook-may-be-reproducible/",
+        "/when-software-becomes-legible/"
+      ],
+      "basis": "curated-editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:the-playbook-may-be-reproducible",
+      "to": "reader:the-second-brain-still-needs-a-judgment",
+      "type": "companion",
+      "reason": "Stored expertise and curated context still require judgment about the next action.",
+      "provenance": [
+        "/the-playbook-may-be-reproducible/",
+        "/the-second-brain-still-needs-a-judgment/"
+      ],
+      "basis": "curated-editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:the-playbook-may-be-reproducible",
+      "to": "reader:when-code-gets-cheap-where-does-the-work-wait",
+      "type": "related topic",
+      "reason": "Lower implementation costs move the bottleneck toward validation and choice.",
+      "provenance": [
+        "/the-playbook-may-be-reproducible/",
+        "/when-code-gets-cheap-where-does-the-work-wait/"
+      ],
+      "basis": "curated-editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:the-robot-is-the-easy-part",
+      "to": "reader:unsupervised-is-a-permission",
+      "type": "informs architecture",
+      "reason": "Its authority loop distinguishes merely asking an agent not to send from enforcing tool-level read, draft and send scopes.",
+      "provenance": [
+        "/the-robot-is-the-easy-part/",
+        "/unsupervised-is-a-permission/"
+      ],
+      "basis": "curated-editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:the-robot-is-the-easy-part",
+      "to": "reader:the-stop-button-is-outside-the-chat",
+      "type": "companion",
+      "reason": "The recovery argument clarifies why a motor-noise stop failure needs authority outside voice chat.",
+      "provenance": [
+        "/the-robot-is-the-easy-part/",
+        "/the-stop-button-is-outside-the-chat/"
+      ],
+      "basis": "curated-editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:the-robot-is-the-easy-part",
+      "to": "reader:the-model-is-not-the-demonstration",
+      "type": "companion",
+      "reason": "The evaluation lens separates a multi-model builder outcome from isolated Fable performance.",
+      "provenance": [
+        "/the-robot-is-the-easy-part/",
+        "/the-model-is-not-the-demonstration/"
+      ],
+      "basis": "curated-editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:the-1000-ai-workflow-is-a-routing-problem",
+      "to": "reader:the-router-is-not-the-organization",
+      "type": "challenges",
+      "reason": "Routing cannot replace authority and acceptance.",
+      "provenance": [
+        "/the-1000-ai-workflow-is-a-routing-problem/",
+        "/the-router-is-not-the-organization/"
+      ],
+      "basis": "curated-editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:the-1000-ai-workflow-is-a-routing-problem",
+      "to": "reader:when-code-gets-cheap-where-does-the-work-wait",
+      "type": "extends",
+      "reason": "Parallel coding shifts bottlenecks into review and integration.",
+      "provenance": [
+        "/the-1000-ai-workflow-is-a-routing-problem/",
+        "/when-code-gets-cheap-where-does-the-work-wait/"
+      ],
+      "basis": "curated-editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:the-best-agent-instructions-arent-instructions",
+      "to": "reader:when-code-gets-cheap-where-does-the-work-wait",
+      "type": "extends",
+      "reason": "Reader #42 identifies the shifted review and integration bottleneck; Tan describes enforceable architecture and behavior proof to address it.",
+      "provenance": [
+        "/the-best-agent-instructions-arent-instructions/",
+        "/when-code-gets-cheap-where-does-the-work-wait/"
+      ],
+      "basis": "curated-editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:the-best-agent-instructions-arent-instructions",
+      "to": "reader:the-1000-ai-workflow-is-a-routing-problem",
+      "type": "companion",
+      "reason": "Reader #62 studies routing and parallel throughput; Tan addresses the inner-loop quality constraints needed before scaling autonomy.",
+      "provenance": [
+        "/the-best-agent-instructions-arent-instructions/",
+        "/the-1000-ai-workflow-is-a-routing-problem/"
+      ],
+      "basis": "curated-editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:an-open-agent-still-needs-an-operator",
+      "to": "reader:the-1000-ai-workflow-is-a-routing-problem",
+      "type": "companion",
+      "reason": "Routing a task to a model does not establish authority for the resulting action.",
+      "provenance": [
+        "/an-open-agent-still-needs-an-operator/",
+        "/the-1000-ai-workflow-is-a-routing-problem/"
+      ],
+      "basis": "curated-editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:an-open-agent-still-needs-an-operator",
+      "to": "reader:the-best-agent-instructions-arent-instructions",
+      "type": "extends",
+      "reason": "An enforceable boundary is more reliable than hoping an agent remembers a rule.",
+      "provenance": [
+        "/an-open-agent-still-needs-an-operator/",
+        "/the-best-agent-instructions-arent-instructions/"
+      ],
+      "basis": "curated-editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:the-best-model-shouldnt-do-every-job",
+      "to": "reader:the-1000-ai-workflow-is-a-routing-problem",
+      "type": "companion",
+      "reason": "Compare another Fable routing experiment; both examine cost per verified outcome rather than model prestige.",
+      "provenance": [
+        "/the-best-model-shouldnt-do-every-job/",
+        "/the-1000-ai-workflow-is-a-routing-problem/"
+      ],
+      "basis": "curated-editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:the-best-model-shouldnt-do-every-job",
+      "to": "reader:the-best-agent-instructions-arent-instructions",
+      "type": "extends",
+      "reason": "Make delegation verifiable with definition-of-done checks rather than accumulating prompt instructions.",
+      "provenance": [
+        "/the-best-model-shouldnt-do-every-job/",
+        "/the-best-agent-instructions-arent-instructions/"
+      ],
+      "basis": "curated-editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:uncensored-private-or-sovereign",
+      "to": "reader:the-boundary-is-bigger-than-the-box",
+      "type": "companion",
+      "reason": "Separates the location of model weights from the network, identity and service boundaries that determine actual privacy.",
+      "provenance": [
+        "/uncensored-private-or-sovereign/",
+        "/the-boundary-is-bigger-than-the-box/"
+      ],
+      "basis": "curated-editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:uncensored-private-or-sovereign",
+      "to": "reader:the-stop-button-is-outside-the-chat",
+      "type": "extends",
+      "reason": "Adds revocation and independent operator authority to the video's claims about always-available systems.",
+      "provenance": [
+        "/uncensored-private-or-sovereign/",
+        "/the-stop-button-is-outside-the-chat/"
+      ],
+      "basis": "curated-editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:uncensored-private-or-sovereign",
+      "to": "reader:the-second-brain-still-needs-a-judgment",
+      "type": "companion",
+      "reason": "Connects local autonomy to the separate need to audit memory, factual claims and continuity.",
+      "provenance": [
+        "/uncensored-private-or-sovereign/",
+        "/the-second-brain-still-needs-a-judgment/"
+      ],
+      "basis": "curated-editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:two-sparks-do-not-make-a-cloud",
+      "to": "reader:the-12gb-gpu-has-a-three-budget-problem",
+      "type": "companion",
+      "reason": "Separates weight fit, context and bandwidth budgets that a two-device memory total cannot reduce to one performance number.",
+      "provenance": [
+        "/two-sparks-do-not-make-a-cloud/",
+        "/the-12gb-gpu-has-a-three-budget-problem/"
+      ],
+      "basis": "curated-editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:two-sparks-do-not-make-a-cloud",
+      "to": "reader:uncensored-private-or-sovereign",
+      "type": "companion",
+      "reason": "Clarifies why locally owned weights and execution do not establish independence from tools, networks and other service dependencies.",
+      "provenance": [
+        "/two-sparks-do-not-make-a-cloud/",
+        "/uncensored-private-or-sovereign/"
+      ],
+      "basis": "curated-editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:two-sparks-do-not-make-a-cloud",
+      "to": "reader:the-grader-is-part-of-the-harness",
+      "type": "companion",
+      "reason": "Explains why self-declared agent completion must be distinguished from separately tested functional acceptance.",
+      "provenance": [
+        "/two-sparks-do-not-make-a-cloud/",
+        "/the-grader-is-part-of-the-harness/"
+      ],
+      "basis": "curated-editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:the-machine-is-learning-to-improve-the-machine",
+      "to": "reader:a-factory-that-grades-itself-still-needs-a-judge",
+      "type": "companion",
+      "reason": "Independent grading and evaluator boundary",
+      "provenance": [
+        "/the-machine-is-learning-to-improve-the-machine/",
+        "/a-factory-that-grades-itself-still-needs-a-judge/"
+      ],
+      "basis": "curated-editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:the-machine-is-learning-to-improve-the-machine",
+      "to": "reader:unsupervised-is-a-permission",
+      "type": "companion",
+      "reason": "Autonomy is defined by permission and release authority",
+      "provenance": [
+        "/the-machine-is-learning-to-improve-the-machine/",
+        "/unsupervised-is-a-permission/"
+      ],
+      "basis": "curated-editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:the-machine-is-learning-to-improve-the-machine",
+      "to": "reader:the-threshold-is-a-claim-not-a-test",
+      "type": "companion",
+      "reason": "Capability thresholds must not be mistaken for field acceptance",
+      "provenance": [
+        "/the-machine-is-learning-to-improve-the-machine/",
+        "/the-threshold-is-a-claim-not-a-test/"
+      ],
+      "basis": "curated-editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:the-cheap-answer-can-be-an-expensive-job",
+      "to": "reader:the-best-model-shouldnt-do-every-job",
+      "type": "companion",
+      "reason": "Model-routing companion",
+      "provenance": [
+        "/the-cheap-answer-can-be-an-expensive-job/",
+        "/the-best-model-shouldnt-do-every-job/"
+      ],
+      "basis": "curated-editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:the-cheap-answer-can-be-an-expensive-job",
+      "to": "reader:the-machine-is-learning-to-improve-the-machine",
+      "type": "companion",
+      "reason": "Acceptance and authority companion",
+      "provenance": [
+        "/the-cheap-answer-can-be-an-expensive-job/",
+        "/the-machine-is-learning-to-improve-the-machine/"
+      ],
+      "basis": "curated-editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:a-smaller-model-can-win-the-job-not-the-benchmark-war",
+      "to": "reader:the-cheap-answer-can-be-an-expensive-job",
+      "type": "companion",
+      "reason": "Reader #69 explains why price and total cost of an accepted job are different measures. It is a conceptual editorial companion, not validation of the reported classification percentages.",
+      "provenance": [
+        "/a-smaller-model-can-win-the-job-not-the-benchmark-war/",
+        "/the-cheap-answer-can-be-an-expensive-job/"
+      ],
+      "basis": "curated-editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:claude-lean-and-the-riemann-hypothesis",
+      "to": "reader:the-paper-is-not-the-experiment",
+      "type": "companion",
+      "reason": "Reader #48 examines how impressive source claims diverge from independently witnessed experiments; here proof artifacts and checker runs deserve similarly separated evidentiary treatment. This is an analogy, not a validation of mathematical truth.",
+      "provenance": [
+        "/the-paper-is-not-the-experiment/",
+        "/a-smaller-model-can-win-the-job-not-the-benchmark-war/"
+      ],
+      "basis": "curated-editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:claude-lean-and-the-riemann-hypothesis",
+      "to": "reader:a-smaller-model-can-win-the-job-not-the-benchmark-war",
+      "type": "companion",
+      "reason": "Reader #70 separates performance on a narrow benchmark from general model intelligence. This investigation similarly separates kernel acceptance from stronger claims about AI creativity, human comprehension and institutional proof acceptance.",
+      "provenance": [
+        "/a-smaller-model-can-win-the-job-not-the-benchmark-war/",
+        "/the-paper-is-not-the-experiment/"
+      ],
+      "basis": "curated-editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:when-code-gets-cheap-ambition-becomes-the-test",
+      "to": "reader:the-cheap-answer-can-be-an-expensive-job",
+      "type": "companion",
+      "reason": "Reader #69 develops accepted-work cost accounting beyond token price. It is a complementary economic lens, not evidence that the interview forecasts are correct.",
+      "provenance": [
+        "/when-code-gets-cheap-ambition-becomes-the-test/",
+        "/the-cheap-answer-can-be-an-expensive-job/"
+      ],
+      "basis": "curated-editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:when-code-gets-cheap-ambition-becomes-the-test",
+      "to": "reader:a-smaller-model-can-win-the-job-not-the-benchmark-war",
+      "type": "companion",
+      "reason": "Reader #70 shows how specific workload evaluation limits general model-price comparisons. It is methodological background, not independent validation of Particle-1.",
+      "provenance": [
+        "/when-code-gets-cheap-ambition-becomes-the-test/",
+        "/a-smaller-model-can-win-the-job-not-the-benchmark-war/"
+      ],
+      "basis": "curated-editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:the-cost-of-forgetting-why-agents-keep-reading-the-same-world",
+      "to": "reader:the-cost-of-forgetting-where-the-tools-are",
+      "type": "companion",
+      "reason": "examines the operational failure to discover an existing tool. This Reader extends that concern into the cost of repetitive inference and evidence retrieval, and shows why a registered pointer must be consumed in a real task.",
+      "provenance": [
+        "/the-cost-of-forgetting-why-agents-keep-reading-the-same-world/",
+        "/the-cost-of-forgetting-where-the-tools-are/"
+      ],
+      "basis": "curated-editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:the-cost-of-forgetting-why-agents-keep-reading-the-same-world",
+      "to": "reader:more-skills-worse-agents",
+      "type": "companion",
+      "reason": "challenges the assumption that more instructions and capabilities necessarily improve work. Together they expose the tension between shrinking working context and maintaining the discoverability of rare but consequential procedures.",
+      "provenance": [
+        "/the-cost-of-forgetting-why-agents-keep-reading-the-same-world/",
+        "/more-skills-worse-agents/"
+      ],
+      "basis": "curated-editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:the-cost-of-forgetting-why-agents-keep-reading-the-same-world",
+      "to": "reader:the-cheap-answer-can-be-an-expensive-job",
+      "type": "companion",
+      "reason": "distinguishes candidate-answer pricing from the cost of accepted work. It is the closest economic companion to the cache and compaction examples here.",
+      "provenance": [
+        "/the-cost-of-forgetting-why-agents-keep-reading-the-same-world/",
+        "/the-cheap-answer-can-be-an-expensive-job/"
+      ],
+      "basis": "curated-editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:beyond-vibe-coding-engineering-in-the-age-of-ai-agents",
+      "to": "reader:when-code-gets-cheap-ambition-becomes-the-test",
+      "type": "companion",
+      "reason": "Examines how cheap code generation shifts the meaningful standard from raw output to ambitious accepted value. This Reader adds a conditional economics of the engineering effort required to accept and maintain the next change.",
+      "provenance": [
+        "/beyond-vibe-coding-engineering-in-the-age-of-ai-agents/",
+        "/when-code-gets-cheap-ambition-becomes-the-test/"
+      ],
+      "basis": "curated-editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:beyond-vibe-coding-engineering-in-the-age-of-ai-agents",
+      "to": "reader:the-cost-of-forgetting-why-agents-keep-reading-the-same-world",
+      "type": "companion",
+      "reason": "Distinguishes reusable context from durable governed knowledge and accepted work. This Reader extends that argument to domain vocabulary, architectural decisions and module seams that reduce the obligation to rediscover intent.",
+      "provenance": [
+        "/beyond-vibe-coding-engineering-in-the-age-of-ai-agents/",
+        "/the-cost-of-forgetting-why-agents-keep-reading-the-same-world/"
+      ],
+      "basis": "curated-editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:the-agent-that-remembers-why-it-changed",
+      "to": "reader:the-cost-of-forgetting-why-agents-keep-reading-the-same-world",
+      "type": "companion",
+      "reason": "Explores reducing repeated context reconstruction through durable governed knowledge; Reader 75 asks how the historical rationale of changes remains meaningful when the model or evaluation setting changes.",
+      "provenance": [
+        "/the-agent-that-remembers-why-it-changed/",
+        "/the-cost-of-forgetting-why-agents-keep-reading-the-same-world/"
+      ],
+      "basis": "curated-editorial-comparison",
+      "direction": "outgoing"
+    },
+    {
+      "from": "reader:the-agent-that-remembers-why-it-changed",
+      "to": "reader:beyond-vibe-coding-engineering-in-the-age-of-ai-agents",
+      "type": "companion",
+      "reason": "Distinguishes candidate generation from accepted engineering outcomes. Reader 75 extends that inquiry to the evidence and assumptions inherited by a later maintainer, identifying rationale debt as distinct from verification debt.",
+      "provenance": [
+        "/the-agent-that-remembers-why-it-changed/",
+        "/beyond-vibe-coding-engineering-in-the-age-of-ai-agents/"
       ],
       "basis": "curated-editorial-comparison",
       "direction": "outgoing"

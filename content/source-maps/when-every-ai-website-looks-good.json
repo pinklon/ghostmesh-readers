@@ -1,0 +1,116 @@
+{
+  "schemaVersion": 1,
+  "readerId": "reader:when-every-ai-website-looks-good",
+  "sourceId": "mImbbszCjCI",
+  "sourceAidSha256": "67ef2383a3927d4dc5f367fc39e86fc25603b647964110bddcaff1545482897d",
+  "points": [
+    {
+      "atSeconds": 24,
+      "sectionId": "film",
+      "claimIds": [
+        "when-every-ai-website-looks-good--mirror-test"
+      ],
+      "cueParaphrase": "Presenter's framework for matching visitor intent; useful heuristic, not an independently validated experiment.",
+      "privateAidCheck": "The publisher checked this cue against the verified private local-Whisper transcript and timestamp aid. No independent end-to-end listening, frame audit or replication is claimed."
+    },
+    {
+      "atSeconds": 69,
+      "sectionId": "mirror-analysis",
+      "claimIds": [
+        "when-every-ai-website-looks-good--trucking-lift"
+      ],
+      "cueParaphrase": "79.3 percent improvement reported by the presenter; metric denominator and study design unverified.",
+      "privateAidCheck": "The publisher checked this cue against the verified private local-Whisper transcript and timestamp aid. No independent end-to-end listening, frame audit or replication is claimed."
+    },
+    {
+      "atSeconds": 85,
+      "sectionId": "mirror-analysis",
+      "claimIds": [
+        "when-every-ai-website-looks-good--mirror-test"
+      ],
+      "cueParaphrase": "Who is this for, what do I get, and what do I do next; adapt for operational surfaces.",
+      "privateAidCheck": "The publisher checked this cue against the verified private local-Whisper transcript and timestamp aid. No independent end-to-end listening, frame audit or replication is claimed."
+    },
+    {
+      "atSeconds": 108,
+      "sectionId": "mirror-analysis",
+      "claimIds": [
+        "when-every-ai-website-looks-good--city-click-lift"
+      ],
+      "cueParaphrase": "90 percent pricing clickthrough increase attributed to a marketing example; no primary experiment verified.",
+      "privateAidCheck": "The publisher checked this cue against the verified private local-Whisper transcript and timestamp aid. No independent end-to-end listening, frame audit or replication is claimed."
+    },
+    {
+      "atSeconds": 125,
+      "sectionId": "mirror-analysis",
+      "claimIds": [
+        "when-every-ai-website-looks-good--campaign-monitor-lift"
+      ],
+      "cueParaphrase": "31.4 percent signup increase attributed to wording; no primary experiment verified.",
+      "privateAidCheck": "The publisher checked this cue against the verified private local-Whisper transcript and timestamp aid. No independent end-to-end listening, frame audit or replication is claimed."
+    },
+    {
+      "atSeconds": 164,
+      "sectionId": "film",
+      "claimIds": [
+        "when-every-ai-website-looks-good--accent-budget"
+      ],
+      "cueParaphrase": "Restricted emphasis is useful; more than one semantic status color may be needed in operations.",
+      "privateAidCheck": "The publisher checked this cue against the verified private local-Whisper transcript and timestamp aid. No independent end-to-end listening, frame audit or replication is claimed."
+    },
+    {
+      "atSeconds": 209,
+      "sectionId": "film",
+      "claimIds": [
+        "when-every-ai-website-looks-good--accent-budget"
+      ],
+      "cueParaphrase": "Interior-design analogy, not a validated universal application-interface requirement.",
+      "privateAidCheck": "The publisher checked this cue against the verified private local-Whisper transcript and timestamp aid. No independent end-to-end listening, frame audit or replication is claimed."
+    },
+    {
+      "atSeconds": 259,
+      "sectionId": "film",
+      "claimIds": [
+        "when-every-ai-website-looks-good--functional-depth"
+      ],
+      "cueParaphrase": "Background, middle and foreground should express hierarchy; mobile overlap needs rendered QA.",
+      "privateAidCheck": "The publisher checked this cue against the verified private local-Whisper transcript and timestamp aid. No independent end-to-end listening, frame audit or replication is claimed."
+    },
+    {
+      "atSeconds": 414,
+      "sectionId": "motion-analysis",
+      "claimIds": [
+        "when-every-ai-website-looks-good--purposeful-motion"
+      ],
+      "cueParaphrase": "Movement should show product, direct attention or explain change; not a universal numerical limit.",
+      "privateAidCheck": "The publisher checked this cue against the verified private local-Whisper transcript and timestamp aid. No independent end-to-end listening, frame audit or replication is claimed."
+    },
+    {
+      "atSeconds": 494,
+      "sectionId": "motion-analysis",
+      "claimIds": [
+        "when-every-ai-website-looks-good--purposeful-motion"
+      ],
+      "cueParaphrase": "Critical words immediately available and reduced-motion pathway required.",
+      "privateAidCheck": "The publisher checked this cue against the verified private local-Whisper transcript and timestamp aid. No independent end-to-end listening, frame audit or replication is claimed."
+    },
+    {
+      "atSeconds": 549,
+      "sectionId": "film",
+      "claimIds": [
+        "when-every-ai-website-looks-good--interactive-proof"
+      ],
+      "cueParaphrase": "Interactive tools can produce useful understanding before a commitment; evaluate usefulness and effort.",
+      "privateAidCheck": "The publisher checked this cue against the verified private local-Whisper transcript and timestamp aid. No independent end-to-end listening, frame audit or replication is claimed."
+    },
+    {
+      "atSeconds": 577,
+      "sectionId": "interactive-proof-analysis",
+      "claimIds": [
+        "when-every-ai-website-looks-good--outgrow-rate"
+      ],
+      "cueParaphrase": "Approximately 45 percent conversion rate attributed to vendor Outgrow, not a 45 percent improvement; independent denominator unavailable.",
+      "privateAidCheck": "The publisher checked this cue against the verified private local-Whisper transcript and timestamp aid. No independent end-to-end listening, frame audit or replication is claimed."
+    }
+  ]
+}

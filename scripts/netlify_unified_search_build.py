@@ -1,32 +1,33 @@
 #!/usr/bin/env python3
-"""Netlify static build entrypoint for unified public search.
+"""Build the verified static search projection in the existing Netlify Git build.
 
-The publisher supplies SHAREPLANE_PUBLIC_CORPUS_URL only after its public
-snapshot and route qualification are commissioned. An unset URL keeps the
-existing Reader-only preview functional until that handoff is accepted.
+The canonical publisher feeds are public; no credential or provider setting is
+required for a normal build. A mismatch or unavailable feed holds the build.
+Independent SharePlane-triggered refresh remains separately commissioned.
 """
 import os
 from pathlib import Path
 
 from .refresh_unified_public_search import refresh
 
+CANONICAL_CORPUS = "https://shareplane.malott.ai/native/v3/discovery/public-work-corpus.json"
+CANONICAL_CATALOG = "https://shareplane.malott.ai/native/v3/assets/catalog.js"
+MIN_READERS = 75
+MIN_WORKS = 119
+
 
 def main():
-    url = os.environ.get("SHAREPLANE_PUBLIC_CORPUS_URL", "").strip()
-    required = os.environ.get("SHAREPLANE_UNIFIED_SEARCH_REQUIRED", "").lower() == "true"
-    if not url:
-        if required:
-            raise SystemExit("Public SharePlane corpus URL is required for production search")
-        print("Public corpus not configured: Reader-only fallback retained")
-        return
+    url = os.environ.get("SHAREPLANE_PUBLIC_CORPUS_URL", CANONICAL_CORPUS).strip()
+    catalog = os.environ.get("SHAREPLANE_PUBLIC_CATALOG_URL", CANONICAL_CATALOG).strip()
+    if url != CANONICAL_CORPUS or catalog != CANONICAL_CATALOG:
+        raise SystemExit("Unified search requires the canonical public publisher feeds")
     refresh(
         Path("site/readers/search-index.json"),
         url,
-        os.environ.get("SHAREPLANE_PUBLIC_CATALOG_URL",
-                       "https://shareplane.malott.ai/native/v3/assets/catalog.js"),
+        catalog,
         Path("site/readers/unified-search-index.json"),
-        40,
-        114,
+        MIN_READERS,
+        MIN_WORKS,
     )
 
 
