@@ -2,17 +2,29 @@
 
 The public, video-first companion to [SharePlane](https://shareplane.malott.ai/). The Readers site is deliberately separate from SharePlane Production and private ReasonPack processing.
 
-**Live collection:** https://youtube.shareplane.malott.ai/
+**Live canonical collection:** https://readers.ghostmesh.ai/ (Cloudflare Pages, verified November 28, 2026). **Legacy continuity:** https://youtube.shareplane.malott.ai/ (Netlify until authorized redirects). Reader #76 and later follow the Cloudflare transition in the release runbook when admitted to main.
 
 **Netlify project:** `shareplane-youtube` (existing site ID: `27352ed6-0f74-4756-832e-95ba49e31b09`). **Publish directory:** `site/`, configured by `netlify.toml`; the dependency-free build verifies and emits the public unified search index.
 
+## Provider-neutral preview build
+
+Run `python3 -m scripts.build_public_site` from the repository root and serve the resulting `site/` directory. This is the same search-projection implementation invoked by the incumbent Netlify entry point. The output contains only public static files; no hosting credential is required. A Cloudflare preview must preserve canonical URLs, response headers, feed content type, search coverage, and the existing public evidence boundary. Cloudflare is the canonical production destination; Netlify runs only the legacy continuity build during transition. No DNS or provider refresh-hook change is made by this build.
+
+The local Cloudflare Pages compatibility check uses `npx wrangler@4.121.0 pages dev site --compatibility-date=2026-08-11 --ip 127.0.0.1`. Verify canonical routes, decoded response bytes and security headers against the generated directory, plus the RSS content type and unknown-route 404. A hosted preview and DNS cutover remain separate from this local check.
+
+## Canonical Reader destination
+
+For a new Cloudflare candidate, run `python3 -m scripts.build_public_site --canonical-output /path/to/new-directory`. The directory must not exist. The command uses the same verified static search build, then projects delivery URLs to `https://readers.ghostmesh.ai` in the separate output directory. It does not change authored Readers, historical release events, original receipts, selected artwork, or the incumbent `site/` files. Netlify continues to use its unchanged legacy build while the domain transition is qualified.
+
+The projection changes only known local URL attributes, discovery routes, Reader search URLs and derived page-hash bindings. The existing knowledge manifest is regenerated against the served projection; its source/schema hashes and semantic IDs stay intact. The generated `/.well-known/ghostmesh-origin-migration.json` binds the exact original and projected bytes for every changed file. Unexpected legacy hostname occurrences or mismatched prior page digests fail the build. Preview, production activation, old-domain redirects and Netlify cancellation remain distinct decisions.
+
 ## Small page and asset corrections
 
-For isolated text, HTML, CSS, JavaScript, image, or metadata corrections, edit only the affected source or published `site/` members and any demonstrated deterministic dependents. Inspect the changed-file diff and run focused existing checks for that scope; reuse passing evidence when inputs have not changed. Do not regenerate unrelated Readers, trigger a full content refresh, add a second publication path, or invent another validation or approval layer for a small correction. The existing Git-to-Netlify release remains the sole deployment path; its provider may process the site directory, so do not claim verified member-only upload without provider evidence. Shared template or generator changes justify their actual broader dependent outputs. Preserve the existing owner publication decision, source/privacy boundaries, and required release checks.
+For isolated text, HTML, CSS, JavaScript, image, or metadata corrections, edit only the affected source or published `site/` members and any demonstrated deterministic dependents. Inspect the changed-file diff and run focused existing checks for that scope; reuse passing evidence when inputs have not changed. Do not regenerate unrelated Readers, trigger a full content refresh, add a second publication path, or invent another validation or approval layer for a small correction. Use the authorized Cloudflare release path in the runbook for the canonical collection; the provider may process the site directory, so do not claim verified member-only upload without provider evidence. Shared template or generator changes justify their actual broader dependent outputs. Preserve the existing owner publication decision, source/privacy boundaries, and required release checks.
 
 ## Add a Reader
 
-Use the [Reader release runbook](docs/READER_RELEASE_RUNBOOK.md) for the single-owner queue, review handoff, normal Git/Netlify path, denial handling, and production receipt. The content contract below remains the authoring standard.
+Use the [Reader release runbook](docs/READER_RELEASE_RUNBOOK.md) for the single-owner queue, review handoff, normal Git/Cloudflare path, denial handling, and production receipt. The content contract below remains the authoring standard.
 
 For the next candidate, use the [one-pass checklist and creative design contract](docs/NEXT_READER.md) and run `make reader-prepare` once after the complete source-qualified manuscript, catalog entry and review inputs are staged. The target invokes the existing generators and local checks; hosted CI and owner publication authorization remain separate. `make reader-check` reruns the same deterministic checks without regenerating files.
 
@@ -23,13 +35,13 @@ The [Scout and RSS source contract](docs/SCOUT_AND_FEED.md) describes the separa
 3. Publish original editorial analysis, source-video timestamps, and a sanitized machine-readable `receipt.json` with claim-level provenance and evidence hashes. Keep copied media, source captions, and transcripts in access-controlled private custody, with hashes and an honest account of what was actually inspected. A verified private ReasonPack can establish custody, but is not required for every source-qualified Reader. Do not call loose retained files a verified pack. Never copy or commit third-party transcript, caption, or media files into `site/`, even if no page links to them. Receipt metadata must omit signed stream URLs, credentials, private paths, and nonpublic details.
 4. Update `content/catalog.json` and the Reader template, then run `python3 scripts/generate_site.py`; keep all existing slugs.
 5. Run the [draft preflight](docs/READER_RELEASE_RUNBOOK.md#draft-preflight) and inspect desktop and narrow-screen layouts before requesting editorial acceptance. The existing GitHub workflow runs the structural tests before the authenticated release check.
-6. Review the proposed change, merge into `main` only after checking the private source-custody record, exact public claims, independent editorial/privacy review, and site checks, then check the Netlify deployment. Confirm the source video, editorial analysis, and receipt load while private transcript and caption URLs remain unavailable.
+6. Review the proposed change, merge into `main` only after checking the private source-custody record, exact public claims, independent editorial/privacy review, and site checks, then deploy the qualified canonical build and check Cloudflare production. Confirm the source video, editorial analysis, and receipt load while private transcript and caption URLs remain unavailable.
 
 ## Source custody and publication
 
 Reader publication qualifies the **specific public analysis**, not the ReasonPack acquisition system. A candidate may use a verified private ReasonPack or a private, hash-identified capture set with a truthful source identity, coverage, acquisition method, and limitations. The public receipt must say which it is. Automatic captions, sampled frames, and partial audio may support bounded, attributed criticism; they do not verify exact unheard speech, an unseen demonstration, third-party consent, completed transactions, or outcomes. Check those points directly when the proposed claim depends on them, or narrow the claim. An independent editor checks the exact public copy and its evidence before owner-authorized release.
 
-Canonical ReasonPack production readiness, Gmail/runtime commissioning, cross-site graph admission, and publishing-provider migration are separate workstreams. None is a universal prerequisite for a reviewed Reader on this static Netlify site. This policy grants no permission to retry a denied source or runtime operation. Public media/caption privacy, source honesty, generated-site validation, and the owner's release decision still apply.
+Canonical ReasonPack production readiness, Gmail/runtime commissioning, cross-site graph admission, and publishing-provider migration are separate workstreams. None is a universal prerequisite for a reviewed Reader on this static site. This policy grants no permission to retry a denied source or runtime operation. Public media/caption privacy, source honesty, generated-site validation, and the owner's release decision still apply.
 
 ## Canonical Reader brief
 
@@ -47,11 +59,11 @@ The public site is immutable, static Git content. Mac Studio, Hyperion and the G
 
 ## Hosting connection
 
-The existing Netlify project `shareplane-youtube` is connected to GitHub repository `pinklon/ghostmesh-readers`, production branch `main`. Keep `site/` as the publish directory. The existing Git-to-Netlify build emits the verified static unified search index from the canonical public publisher feeds; search-only punctuation normalization enforces the Reader output convention without changing any Work. Independent SharePlane-triggered refresh is separately commissioned. Do not create another Netlify project or modify Cloudflare DNS. The live domain is `youtube.shareplane.malott.ai`.
+The canonical destination is Cloudflare Pages `ghostmesh-readers`, branch `main`, at `readers.ghostmesh.ai`. The generated `site/` directory is the source for the separate canonical-output projection. The incumbent Netlify project `shareplane-youtube` continues to serve the legacy hostname during migration. Use the existing provider-neutral build; the legacy refresh hook remains uncommissioned for Cloudflare. Do not change DNS or provider settings during a routine Reader release.
 
 ## Recovery
 
-Restore a previous successful Netlify deploy, or revert a publication commit. Do not force push or delete the public history as a routine rollback.
+Restore a previous verified Cloudflare Pages deployment only under separate rollback authority, or revert a publication commit under the existing repository policy. Retain Netlify as migration recovery until retirement. Do not force push or delete the public history as a routine rollback.
 
 ## Public evidence boundary
 

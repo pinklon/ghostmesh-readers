@@ -1,5 +1,8 @@
 """Regression tests for the single-pass Reader publication contract."""
 import hashlib
+import json
+import tempfile
+from unittest.mock import patch
 import sys
 import unittest
 from pathlib import Path
@@ -58,6 +61,28 @@ class ReaderPublicationDefaults(unittest.TestCase):
         self.assertIn('does not attest deployment', approved)
         self.assertEqual(hashlib.sha256(source.encode()).hexdigest(), authored_sha)
         self.assertEqual(projected_publication_status(source.replace('Status inserted', 'Changed'), reader, receipt).count('Owner-approved'), 0)
+
+    def test_verification_receipt_accepts_new_canonical_origin_only_for_exact_slug(self):
+        import generate_site
+        source = '<p class="gm-publication-status" data-gm-release-status="">Status</p>'
+        reader = {'slug': 'next-reader', 'published': '2026-11-28'}
+        receipt = {'mergeCommit': 'a' * 40, 'verifiedAt': '2026-11-28T12:00:00Z',
+                   'checks': ['article-http-200', 'receipt-http-200', 'catalog-http-200',
+                              'sitemap-http-200', 'claim-register-http-200']}
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            (root / 'content').mkdir()
+            record = root / 'content/production-verifications.json'
+            for origin, accepted in [('https://readers.ghostmesh.ai', True),
+                                     ('https://youtube.shareplane.malott.ai', True),
+                                     ('https://reader.example', False)]:
+                record.write_text(json.dumps({'next-reader': dict(receipt, url=origin+'/next-reader/')}))
+                with patch.object(generate_site, 'ROOT', root):
+                    result = projected_publication_status(source, reader)
+                self.assertEqual('Published November 28, 2026' in result, accepted)
+            record.write_text(json.dumps({'next-reader': dict(receipt, url='https://readers.ghostmesh.ai/other/')}))
+            with patch.object(generate_site, 'ROOT', root):
+                self.assertNotIn('Published November 28, 2026', projected_publication_status(source, reader))
 
     def test_published_reader_can_disclose_outstanding_independent_review(self):
         from pathlib import Path
