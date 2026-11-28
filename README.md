@@ -24,7 +24,7 @@ For isolated text, HTML, CSS, JavaScript, image, or metadata corrections, edit o
 
 ## Add a Reader
 
-Use the [Reader release runbook](docs/READER_RELEASE_RUNBOOK.md) for the single-owner queue, review handoff, normal Git/Netlify path, denial handling, and production receipt. The content contract below remains the authoring standard.
+Use the [Reader release runbook](docs/READER_RELEASE_RUNBOOK.md) for the single-owner queue, review handoff, normal Git/Cloudflare path, denial handling, and production receipt. The content contract below remains the authoring standard.
 
 For the next candidate, use the [one-pass checklist and creative design contract](docs/NEXT_READER.md) and run `make reader-prepare` once after the complete source-qualified manuscript, catalog entry and review inputs are staged. The target invokes the existing generators and local checks; hosted CI and owner publication authorization remain separate. `make reader-check` reruns the same deterministic checks without regenerating files.
 
@@ -35,13 +35,13 @@ The [Scout and RSS source contract](docs/SCOUT_AND_FEED.md) describes the separa
 3. Publish original editorial analysis, source-video timestamps, and a sanitized machine-readable `receipt.json` with claim-level provenance and evidence hashes. Keep copied media, source captions, and transcripts in access-controlled private custody, with hashes and an honest account of what was actually inspected. A verified private ReasonPack can establish custody, but is not required for every source-qualified Reader. Do not call loose retained files a verified pack. Never copy or commit third-party transcript, caption, or media files into `site/`, even if no page links to them. Receipt metadata must omit signed stream URLs, credentials, private paths, and nonpublic details.
 4. Update `content/catalog.json` and the Reader template, then run `python3 scripts/generate_site.py`; keep all existing slugs.
 5. Run the [draft preflight](docs/READER_RELEASE_RUNBOOK.md#draft-preflight) and inspect desktop and narrow-screen layouts before requesting editorial acceptance. The existing GitHub workflow runs the structural tests before the authenticated release check.
-6. Review the proposed change, merge into `main` only after checking the private source-custody record, exact public claims, independent editorial/privacy review, and site checks, then check the Netlify deployment. Confirm the source video, editorial analysis, and receipt load while private transcript and caption URLs remain unavailable.
+6. Review the proposed change, merge into `main` only after checking the private source-custody record, exact public claims, independent editorial/privacy review, and site checks, then deploy the qualified canonical build and check Cloudflare production. Confirm the source video, editorial analysis, and receipt load while private transcript and caption URLs remain unavailable.
 
 ## Source custody and publication
 
 Reader publication qualifies the **specific public analysis**, not the ReasonPack acquisition system. A candidate may use a verified private ReasonPack or a private, hash-identified capture set with a truthful source identity, coverage, acquisition method, and limitations. The public receipt must say which it is. Automatic captions, sampled frames, and partial audio may support bounded, attributed criticism; they do not verify exact unheard speech, an unseen demonstration, third-party consent, completed transactions, or outcomes. Check those points directly when the proposed claim depends on them, or narrow the claim. An independent editor checks the exact public copy and its evidence before owner-authorized release.
 
-Canonical ReasonPack production readiness, Gmail/runtime commissioning, cross-site graph admission, and publishing-provider migration are separate workstreams. None is a universal prerequisite for a reviewed Reader on this static Netlify site. This policy grants no permission to retry a denied source or runtime operation. Public media/caption privacy, source honesty, generated-site validation, and the owner's release decision still apply.
+Canonical ReasonPack production readiness, Gmail/runtime commissioning, cross-site graph admission, and publishing-provider migration are separate workstreams. None is a universal prerequisite for a reviewed Reader on this static site. This policy grants no permission to retry a denied source or runtime operation. Public media/caption privacy, source honesty, generated-site validation, and the owner's release decision still apply.
 
 ## Canonical Reader brief
 
@@ -59,11 +59,11 @@ The public site is immutable, static Git content. Mac Studio, Hyperion and the G
 
 ## Hosting connection
 
-The existing Netlify project `shareplane-youtube` is connected to GitHub repository `pinklon/ghostmesh-readers`, production branch `main`. Keep `site/` as the publish directory. The existing Git-to-Netlify build emits the verified static unified search index from the canonical public publisher feeds; search-only punctuation normalization enforces the Reader output convention without changing any Work. Independent SharePlane-triggered refresh is separately commissioned. Do not create another Netlify project or modify Cloudflare DNS. The live domain is `youtube.shareplane.malott.ai`.
+The canonical destination is Cloudflare Pages `ghostmesh-readers`, branch `main`, at `readers.ghostmesh.ai`. The generated `site/` directory is the source for the separate canonical-output projection. The incumbent Netlify project `shareplane-youtube` continues to serve the legacy hostname during migration. Use the existing provider-neutral build; the legacy refresh hook remains uncommissioned for Cloudflare. Do not change DNS or provider settings during a routine Reader release.
 
 ## Recovery
 
-Restore a previous successful Netlify deploy, or revert a publication commit. Do not force push or delete the public history as a routine rollback.
+Restore a previous verified Cloudflare Pages deployment only under separate rollback authority, or revert a publication commit under the existing repository policy. Retain Netlify as migration recovery until retirement. Do not force push or delete the public history as a routine rollback.
 
 ## Public evidence boundary
 

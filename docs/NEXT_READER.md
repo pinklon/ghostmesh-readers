@@ -27,7 +27,7 @@ Build the actual canonical generated candidate directly, not a parallel demonstr
 
 Use the existing optional Playwright/Chrome browser checker in targeted mode, not the costly full-site loop. Serve the generated site on an unused localhost port, set GM_SITE_ORIGIN to that URL, then run node scripts/browser_check.cjs --latest (or --reader SLUG for a named candidate). Evidence goes to GM_TEST_OUTPUT or the existing default temporary directory; normal full-site mode remains unchanged. The targeted mode checks computed appearance-icon visibility before and after the toggle. When Playwright or the browser is unavailable, mark the witness NOT_EXECUTED and name the missing capability.
 
-Netlify editorial PR previews may be public under the owner's current policy unless this specific draft is explicitly designated private. Raw source aids, protected URLs and internal approval locators are never public. **A request to finish is not an authorization to publish**; bind a separate explicit publication decision to the reviewed candidate. Favor scoped delta review for changes while preserving valid unchanged content and the existing narrowly pinned CSS-only exception.
+Cloudflare editorial previews may be public under the owner's current policy unless this specific draft is explicitly designated private. Raw source aids, protected URLs and internal approval locators are never public. **A request to finish is not an authorization to publish**; bind a separate explicit publication decision to the reviewed candidate. Favor scoped delta review for changes while preserving valid unchanged content and the existing narrowly pinned CSS-only exception.
 
 ## Before implementation
 
